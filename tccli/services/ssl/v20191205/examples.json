@@ -334,14 +334,6 @@
         "title": "下载证书"
       }
     ],
-    "HostCertificate": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HostCertificate\n<公共请求参数>\n\n{\n    \"ResourceType\": [\n        \"CDN\"\n    ],\n    \"CertificateId\": \"ahsgjahs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CertHostingInfo\": {\n            \"CertId\": \"lw0LEZmv\",\n            \"ResourceType\": \"CDN,CLB\",\n            \"RenewCertId\": null,\n            \"CreateTime\": \"2021-05-16T09:06:24.000000Z\"\n        },\n        \"RequestId\": \"5ca56-1eca6-5678-9754-2bda0\"\n    }\n}",
-        "title": "返回"
-      }
-    ],
     "ModifyCertificateAlias": [
       {
         "document": "",

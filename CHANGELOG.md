@@ -1,3 +1,271 @@
+# Release 3.0.1049.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 64 次发布
+
+发布时间：2024-01-19 01:06:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBGPIPL7Rules](https://cloud.tencent.com/document/api/297/103093)
+
+新增数据结构：
+
+* [BGPIPL7RuleEntry](https://cloud.tencent.com/document/api/297/95396#BGPIPL7RuleEntry)
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 15 次发布
+
+发布时间：2024-01-19 01:08:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskGroupInstance](https://cloud.tencent.com/document/api/1500/71784#TaskGroupInstance)
+
+	* <font color="#dd0000">**修改成员**：</font>TaskGroupInstanceExecuteLog
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 79 次发布
+
+发布时间：2024-01-19 01:09:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateShipper](https://cloud.tencent.com/document/api/614/58747)
+
+	* 新增入参：StorageType
+
+* [ModifyShipper](https://cloud.tencent.com/document/api/614/58743)
+
+	* 新增入参：StorageType
+
+
+修改数据结构：
+
+* [ShipperInfo](https://cloud.tencent.com/document/api/614/56471#ShipperInfo)
+
+	* 新增成员：StorageType
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 28 次发布
+
+发布时间：2024-01-19 01:09:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyOrganizationAccountStatus](https://cloud.tencent.com/document/api/664/103094)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 77 次发布
+
+发布时间：2024-01-19 01:11:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](https://cloud.tencent.com/document/api/1003/48088)
+
+* [CloseWan](https://cloud.tencent.com/document/api/1003/92737)
+
+	* 新增入参：InstanceGroupId, InstanceId
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceGrpId
+
+* [DescribeClusterInstanceGrps](https://cloud.tencent.com/document/api/1003/48303)
+
+	* 新增出参：InstanceGroupInfoList
+
+* [DescribeClusterParams](https://cloud.tencent.com/document/api/1003/79556)
+
+	* 新增入参：IsGlobal
+
+* [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/1003/48305)
+
+	* 新增入参：InstanceGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceId
+
+* [DescribeInstanceParams](https://cloud.tencent.com/document/api/1003/92729)
+
+	* 新增入参：IsGlobal
+
+* [ModifyVipVport](https://cloud.tencent.com/document/api/1003/86720)
+
+	* 新增入参：InstanceGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceGrpId
+
+* [OpenWan](https://cloud.tencent.com/document/api/1003/92732)
+
+	* 新增入参：InstanceId, InstanceGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceGrpId
+
+
+新增数据结构：
+
+* [CynosdbInstanceGroup](https://cloud.tencent.com/document/api/1003/48097#CynosdbInstanceGroup)
+
+修改数据结构：
+
+* [Ability](https://cloud.tencent.com/document/api/1003/48097#Ability)
+
+	* 新增成员：IsSupportManualSnapshot
+
+* [ModifiableInfo](https://cloud.tencent.com/document/api/1003/48097#ModifiableInfo)
+
+	* 新增成员：IsModifiable
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 53 次发布
+
+发布时间：2024-01-19 01:18:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CopyJobs](https://cloud.tencent.com/document/api/849/77740)
+
+	* 新增入参：TargetWorkspaceId
+
+
+修改数据结构：
+
+* [JobConfig](https://cloud.tencent.com/document/api/849/52010#JobConfig)
+
+	* 新增成员：IndexName, WorkspaceName
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 17 次发布
+
+发布时间：2024-01-19 01:18:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrivateZone](https://cloud.tencent.com/document/api/1338/55947#PrivateZone)
+
+	* 新增成员：DeletedVpcSet
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 52 次发布
+
+发布时间：2024-01-19 01:19:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* HostCertificate
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CertHostingInfo
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 70 次发布
+
+发布时间：2024-01-19 01:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDefaultCertificates](https://cloud.tencent.com/document/api/1552/80603)
+
+	* 新增入参：ZoneId
+
+	* <font color="#dd0000">**修改入参**：</font>Filters
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 7 次发布
+
+发布时间：2024-01-19 01:23:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMQTTInstance](https://cloud.tencent.com/document/api/1493/103099)
+* [DescribeMQTTInstanceList](https://cloud.tencent.com/document/api/1493/103098)
+* [DescribeMQTTProductSKUList](https://cloud.tencent.com/document/api/1493/103096)
+
+新增数据结构：
+
+* [MQTTInstanceItem](https://cloud.tencent.com/document/api/1493/96031#MQTTInstanceItem)
+* [MQTTProductSkuItem](https://cloud.tencent.com/document/api/1493/96031#MQTTProductSkuItem)
+
+
+
 # Release 3.0.1048.1
 
 ## 费用中心(billing) 版本：2018-07-09

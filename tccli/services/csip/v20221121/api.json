@@ -224,6 +224,13 @@
       "output": "DescribeVpcAssetsResponse",
       "status": "online"
     },
+    "ModifyOrganizationAccountStatus": {
+      "document": "修改集团账号状态",
+      "input": "ModifyOrganizationAccountStatusRequest",
+      "name": "修改集团账号状态",
+      "output": "ModifyOrganizationAccountStatusResponse",
+      "status": "online"
+    },
     "ModifyRiskCenterRiskStatus": {
       "document": "修改风险中心风险状态",
       "input": "ModifyRiskCenterRiskStatusRequest",
@@ -6865,6 +6872,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyOrganizationAccountStatusRequest": {
+      "document": "ModifyOrganizationAccountStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改集团账号状态，1 开启， 2关闭",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOrganizationAccountStatusResponse": {
+      "document": "ModifyOrganizationAccountStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值为0，则修改成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyRiskCenterRiskStatusRequest": {
       "document": "ModifyRiskCenterRiskStatus请求参数结构体",

@@ -256,6 +256,14 @@
         "title": "空示例"
       }
     ],
+    "ModifyOrganizationAccountStatus": [
+      {
+        "document": "修改集团账号状态",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOrganizationAccountStatus\n<公共请求参数>\n\n{\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改集团账号状态"
+      }
+    ],
     "ModifyRiskCenterRiskStatus": [
       {
         "document": "修改风险中心风险状态",

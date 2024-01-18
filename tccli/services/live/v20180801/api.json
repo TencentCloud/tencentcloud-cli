@@ -2962,7 +2962,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义回调地址。\n拉流转推任务相关事件会回调到该地址。",
+          "document": "自定义回调地址。\n拉流转推任务相关事件会回调到该地址。\n回调事件使用方法请查看：\nhttps://cloud.tencent.com/document/product/267/32744\nhttps://cloud.tencent.com/document/product/267/56208",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",

@@ -29,7 +29,8 @@ Output:
                 "ExpireTime": "2020-09-22T00:00:00+00:00",
                 "Alias": "EdgeOne default",
                 "Message": "",
-                "Type": "default"
+                "Type": "default",
+                "SignAlgo": "RSA 2048"
             }
         ]
     }

@@ -287,13 +287,6 @@
       "output": "DownloadCertificateResponse",
       "status": "online"
     },
-    "HostCertificate": {
-      "document": "证书托管接口已重构， 旧接口预下线， 近30天无请求\n\n云资源托管",
-      "input": "HostCertificateRequest",
-      "name": "云资源托管",
-      "output": "HostCertificateResponse",
-      "status": "deprecated"
-    },
     "ModifyCertificateAlias": {
       "document": "用户传入证书id和备注来修改证书备注。",
       "input": "ModifyCertificateAliasRequest",
@@ -845,52 +838,6 @@
           "name": "InstanceList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "CertHostingInfo": {
-      "document": "云资源配置详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "证书ID",
-          "example": "无",
-          "member": "string",
-          "name": "CertId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "已替换的新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "RenewCertId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "云资源托管 ，CDN或CLB：部分开启，CDN,CLB：已开启，null：未开启托管\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2021-05-16T09:06:24",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6580,52 +6527,6 @@
         }
       ],
       "usage": "out"
-    },
-    "HostCertificateRequest": {
-      "document": "HostCertificate请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "证书ID",
-          "example": "无",
-          "member": "string",
-          "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源类型：目前仅限于CLB,CDN",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "HostCertificateResponse": {
-      "document": "HostCertificate返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "云资源配置详情",
-          "example": "无",
-          "member": "CertHostingInfo",
-          "name": "CertHostingInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "LighthouseInstanceDetail": {
       "document": "Lighthouse实例",

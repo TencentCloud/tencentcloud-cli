@@ -1854,6 +1854,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1864,6 +1865,7 @@
           "example": "ins_d1fr3",
           "member": "string",
           "name": "TaskGroupInstanceObjectId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1874,19 +1876,10 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
-          "member": "string",
-          "name": "TaskGroupInstanceExecuteLog",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1894,6 +1887,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceCreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1904,6 +1898,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceUpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1914,6 +1909,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstanceStatusType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1924,6 +1920,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceStartTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1934,7 +1931,19 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupInstanceEndTime",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "TaskGroupInstanceExecuteLog",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1944,6 +1953,7 @@
           "example": "true",
           "member": "bool",
           "name": "TaskGroupInstanceIsRedo",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1954,6 +1964,7 @@
           "example": "10",
           "member": "int64",
           "name": "TaskGroupInstanceExecuteTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true

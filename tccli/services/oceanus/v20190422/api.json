@@ -1405,6 +1405,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标工作空间 SerialId",
+          "example": "无",
+          "member": "string",
+          "name": "TargetWorkspaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1418,7 +1427,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1428,7 +1437,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1438,7 +1447,7 @@
           "example": "无",
           "member": "CopyJobResult",
           "name": "CopyJobsResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4589,6 +4598,26 @@
           "example": "space-**",
           "member": "string",
           "name": "EsServerlessSpace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "es索引中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "index-**",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "es空间中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "space-**",
+          "member": "string",
+          "name": "WorkspaceName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

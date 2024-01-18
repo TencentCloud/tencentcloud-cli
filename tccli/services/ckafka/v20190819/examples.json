@@ -422,7 +422,7 @@
       {
         "document": "",
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroup\r\n&InstanceId=xxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GroupList\": [\n                {\n                    \"Group\": \"qcloud_tocos\",\n                    \"Protocol\": \"consumer\"\n                }\n            ]\n        },\n        \"RequestId\": \"c931f394-7d72-4ad4-8d70-5a225708c762\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"GroupList\": [\n                {\n                    \"Group\": \"abc\",\n                    \"Protocol\": \"abc\"\n                }\n            ],\n            \"GroupCountQuota\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "枚举消费分组"
       }
     ],

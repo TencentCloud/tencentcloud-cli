@@ -30,7 +30,9 @@ Output:
                 "MatchValue": "abc",
                 "Description": "abc",
                 "IsGlobal": 0,
-                "ModifiableInfo": {},
+                "ModifiableInfo": {
+                    "IsModifiable": 0
+                },
                 "IsFunc": true,
                 "Func": "abc"
             }

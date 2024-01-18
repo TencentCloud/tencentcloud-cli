@@ -19,31 +19,22 @@ Output:
 ```
 {
     "Response": {
+        "SuccessCount": 0,
+        "FailCount": 0,
         "CopyJobsResults": [
             {
-                "JobId": "cql-pqx9zh30",
-                "JobName": "jar3",
-                "TargetJobName": "",
-                "TargetJobId": "",
-                "Message": "Failed to get cluster group",
-                "Result": -1,
-                "ClusterName": "",
-                "ClusterId": ""
-            },
-            {
-                "JobId": "cql-njifzfwn",
-                "JobName": "OOM",
-                "TargetJobName": "OOM_2021-12-21_17_54_32",
-                "TargetJobId": "cql-2dhxz8sf",
-                "Message": "OK",
+                "JobId": "abc",
+                "JobName": "abc",
+                "TargetJobName": "abc",
+                "TargetJobId": "abc",
+                "Message": "abc",
                 "Result": 0,
-                "ClusterName": "依赖管理二期",
-                "ClusterId": "cluster-l0elpxde"
+                "ClusterName": "abc",
+                "ClusterId": "abc",
+                "JobType": 0
             }
         ],
-        "FailCount": 1,
-        "RequestId": "123456a",
-        "SuccessCount": 1
+        "RequestId": "abc"
     }
 }
 ```
