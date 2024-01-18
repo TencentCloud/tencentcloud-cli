@@ -294,6 +294,13 @@
       "output": "DescribeSavingPlanOverviewResponse",
       "status": "online"
     },
+    "DescribeSavingPlanResourceInfo": {
+      "document": "查询节省计划详情",
+      "input": "DescribeSavingPlanResourceInfoRequest",
+      "name": "查询节省计划可共享列表详情",
+      "output": "DescribeSavingPlanResourceInfoResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanUsage": {
       "document": "查用当前用户明细节省计划查询时段内的使用情况",
       "input": "DescribeSavingPlanUsageRequest",
@@ -9986,6 +9993,80 @@
       ],
       "type": "object"
     },
+    "DescribeSavingPlanResourceInfoRequest": {
+      "document": "DescribeSavingPlanResourceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买开始时间，格式yyyy-MM-dd",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "CreateStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买结束时间，格式yyyy-MM-dd",
+          "example": "2023-06-30",
+          "member": "string",
+          "name": "CreateEndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSavingPlanResourceInfoResponse": {
+      "document": "DescribeSavingPlanResourceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详细数据",
+          "example": "[]",
+          "member": "SavingPlanInfo",
+          "name": "SavingPlanInfoData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSavingPlanUsageRequest": {
       "document": "DescribeSavingPlanUsage请求参数结构体",
       "members": [
@@ -11161,7 +11242,7 @@
           "example": "0",
           "member": "int64",
           "name": "GoodsCategoryId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11172,7 +11253,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Region",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11183,7 +11264,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Zone",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11194,7 +11275,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11205,7 +11286,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PayMode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11238,7 +11319,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Purpose",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11271,6 +11352,17 @@
           "example": "\"\"",
           "member": "string",
           "name": "ActivityId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sku场景下没GoodsCategoryId， sku 场景下必选。\n询价的action,取值范围为\npurchase,renew,modify.\npurchase 新购询价\nrenew  续费询价\nmodify  变配询价",
+          "example": "purchase",
+          "member": "string",
+          "name": "Action",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -11372,6 +11464,88 @@
         }
       ],
       "usage": "both"
+    },
+    "MatchingSavingPlanProductRule": {
+      "document": "节省计划匹配规则明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含，排除产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "include 包含，exclude 排查",
+          "member": "string",
+          "name": "MatchFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_cvm_s5",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_cvm_bandwidth",
+          "member": "string",
+          "name": "BillingItemCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_cvm_bandwidth_traffic",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MatchingSavingPlanRegionRule": {
+      "document": "节省计划地域和可用区集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"100001\",\"100002\",\"100003\",\"100004\"]",
+          "member": "string",
+          "name": "ZoneIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MeasureAccountDosageCapacity": {
       "document": "组合包每个容量的返回值",
@@ -13164,6 +13338,92 @@
           "name": "Rate",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SavingPlanInfo": {
+      "document": "sp共享详情描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节省计划资源id",
+          "example": "svp-ita000eWl7rCto6",
+          "member": "string",
+          "name": "SpId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节省计划类型",
+          "example": "svp_common",
+          "member": "string",
+          "name": "SpType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 yyyy-mm-dd HH:mm:ss格式",
+          "example": "2023-06-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 yyyy-mm-dd HH:mm:ss格式\t",
+          "example": "2023-06-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买时间 yyyy-mm-dd HH:mm:ss格式",
+          "example": "2023-06-01 00:00:00",
+          "member": "string",
+          "name": "BuyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1 生效 2 失效 3 作废",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品匹配规则",
+          "example": "[{\"matchFlag\":\"include\",\"product_code\":\"p_eks\",\"sub_product_code\":\"sp_eks_standard_pod\"}]",
+          "member": "MatchingSavingPlanProductRule",
+          "name": "MatchingSavingPlanProductRule",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适用地域和可用区",
+          "example": "\"regionInfo\":[{\"regionId\":\"1\",\"zoneIdList\":[\"100001\",\"100002\",\"100003\",\"100004\",\"100005\",\"100006\",\"100007\",\"100008\"]}]}",
+          "member": "MatchingSavingPlanRegionRule",
+          "name": "MatchingSavingPlanRegionRule",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

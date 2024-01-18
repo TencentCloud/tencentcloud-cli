@@ -2749,6 +2749,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3917,6 +3926,16 @@
           "member": "uint64",
           "name": "Status",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通道id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8746,6 +8765,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

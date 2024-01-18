@@ -1981,7 +1981,7 @@
           "example": "1782",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1991,7 +1991,7 @@
           "example": "444353877",
           "member": "int64",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2001,7 +2001,7 @@
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2011,7 +2011,7 @@
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2021,7 +2021,7 @@
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
           "name": "UpdatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2031,7 +2031,7 @@
           "example": "0",
           "member": "int64",
           "name": "RecordCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2041,7 +2041,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2051,17 +2051,17 @@
           "example": "[]",
           "member": "VpcInfo",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN",
+          "document": "私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED\n，关联VPC失败：FAILED",
           "example": "ENABLED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2071,7 +2071,7 @@
           "example": "DISABLED",
           "member": "string",
           "name": "DnsForwardStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2081,7 +2081,7 @@
           "example": "[{TagKey: \"testtag\", TagValue: \"testtag\"}]",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2091,7 +2091,7 @@
           "example": "无",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2101,7 +2101,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsCustomTld",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2111,7 +2111,7 @@
           "example": "DISABLED",
           "member": "string",
           "name": "CnameSpeedupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2121,7 +2121,7 @@
           "example": "转发规则名",
           "member": "string",
           "name": "ForwardRuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2131,7 +2131,7 @@
           "example": "DOWN",
           "member": "string",
           "name": "ForwardRuleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2141,7 +2141,7 @@
           "example": "10.0.23.41:53,10.0.23.42:53,",
           "member": "string",
           "name": "ForwardAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2151,8 +2151,18 @@
           "example": "终端节点名",
           "member": "string",
           "name": "EndPointName",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已删除的vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VpcInfo",
+          "name": "DeletedVpcSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

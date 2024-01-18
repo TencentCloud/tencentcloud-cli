@@ -24,7 +24,9 @@ Output:
             "MatchValue": "",
             "Max": "0",
             "Min": "0",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_txsql_dictionary",
             "ParamType": "string"
@@ -39,7 +41,9 @@ Output:
             "MatchValue": "",
             "Max": "256",
             "Min": "8",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_length",
             "ParamType": "integer"
@@ -54,7 +58,9 @@ Output:
             "MatchValue": "",
             "Max": "50",
             "Min": "1",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_mixed_case_count",
             "ParamType": "integer"
@@ -69,7 +75,9 @@ Output:
             "MatchValue": "",
             "Max": "50",
             "Min": "1",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_number_count",
             "ParamType": "integer"
@@ -87,7 +95,9 @@ Output:
             "MatchValue": "",
             "Max": "2",
             "Min": "0",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_policy",
             "ParamType": "enum"
@@ -102,7 +112,9 @@ Output:
             "MatchValue": "",
             "Max": "50",
             "Min": "1",
-            "ModifiableInfo": {},
+            "ModifiableInfo": {
+                "IsModifiable": 0
+            },
             "NeedReboot": 0,
             "ParamName": "validate_password_special_char_count",
             "ParamType": "integer"

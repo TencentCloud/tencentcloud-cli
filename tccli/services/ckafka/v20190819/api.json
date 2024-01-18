@@ -8031,7 +8031,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "ckafka-i18j8cn1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8040,7 +8040,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "",
+          "example": "group",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8049,7 +8049,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8058,7 +8058,7 @@
         {
           "disabled": false,
           "document": "最大返回数量",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8073,9 +8073,10 @@
         {
           "disabled": false,
           "document": "返回结果集列表",
-          "example": "",
+          "example": "无",
           "member": "GroupResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

@@ -296,6 +296,14 @@
         "title": "删除DDoS防护的水印防护密钥"
       }
     ],
+    "DescribeBGPIPL7Rules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBGPIPL7Rules\n<公共请求参数>\n\n{\n    \"StatusList\": [\n        1\n    ],\n    \"Domain\": \"abc\",\n    \"Business\": \"abc\",\n    \"Ip\": \"abc\",\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"ProtocolList\": [\n        \"abc\"\n    ],\n    \"Cname\": \"abc\",\n    \"Export\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Region\": 1,\n                \"Id\": \"abc\",\n                \"Ip\": \"abc\",\n                \"RuleId\": \"abc\",\n                \"RuleName\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Domain\": \"abc\",\n                \"LbType\": 1,\n                \"KeepEnable\": 1,\n                \"KeepTime\": 1,\n                \"SourceType\": 1,\n                \"CertType\": 1,\n                \"SSLId\": \"abc\",\n                \"Cert\": \"abc\",\n                \"PrivateKey\": \"abc\",\n                \"SourceList\": [\n                    {\n                        \"Source\": \"abc\",\n                        \"Weight\": 1,\n                        \"Port\": 1,\n                        \"Backup\": 1\n                    }\n                ],\n                \"Status\": 1,\n                \"CCStatus\": 1,\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"CCLevel\": \"abc\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"HttpsToHttpEnable\": 1,\n                \"VirtualPort\": 1,\n                \"RewriteHttps\": 1,\n                \"ErrCode\": 1,\n                \"Version\": 1\n            }\n        ],\n        \"Healths\": [\n            {\n                \"Status\": 1,\n                \"Enable\": 1,\n                \"RuleId\": \"abc\",\n                \"Url\": \"abc\",\n                \"Interval\": 1,\n                \"AliveNum\": 1,\n                \"KickNum\": 1,\n                \"Method\": \"abc\",\n                \"StatusCode\": 1,\n                \"ProtocolFlag\": 1,\n                \"PassiveEnable\": 1,\n                \"BlockInter\": 1,\n                \"FailedCountInter\": 1,\n                \"FailedThreshold\": 1,\n                \"PassiveStatusCode\": 1,\n                \"PassiveStatus\": 1\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeBasicDeviceStatus": [
       {
         "document": "无",

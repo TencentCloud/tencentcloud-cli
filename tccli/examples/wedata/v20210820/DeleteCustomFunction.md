@@ -1,23 +1,26 @@
-**Example 1: 删除用户自定义函数**
+**Example 1: f**
 
-
+w
 
 Input: 
 
 ```
 tccli wedata DeleteCustomFunction --cli-unfold-argument  \
-    --ClusterIdentifier xx \
-    --FunctionId xx \
-    --ProjectId xx
+    --ClusterIdentifier sdf \
+    --FunctionId sdfsdf \
+    --ProjectId sdfsdf \
+    --FunctionName sdfsdf
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMessage": "xx",
-        "FunctionId": "xx",
-        "RequestId": "xx"
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "系统内部异常：NumberFormatException: For input string: \"sdfsdf\""
+        },
+        "RequestId": "fde6b682-e482-44d9-b774-9d97b30446f5"
     }
 }
 ```

@@ -6385,6 +6385,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NAME_EXIST",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11655,7 +11665,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterIdentifier",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -11664,7 +11674,7 @@
           "example": "无",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -11673,6 +11683,51 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL",
+          "example": "无",
+          "member": "string",
+          "name": "FunctionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式名",
+          "example": "无",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数命令格式",
+          "example": "无",
+          "member": "string",
+          "name": "CommandFormat",
           "required": false,
           "type": "string"
         }
@@ -11688,7 +11743,7 @@
           "example": "无",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11698,7 +11753,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -31673,7 +31728,7 @@
           "example": "mysql_input_node",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31683,7 +31738,7 @@
           "example": "datasource.table",
           "member": "string",
           "name": "DataSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31693,7 +31748,7 @@
           "example": "2000000",
           "member": "uint64",
           "name": "TotalReadRecords",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31703,7 +31758,7 @@
           "example": "89898292",
           "member": "uint64",
           "name": "TotalReadBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31713,7 +31768,7 @@
           "example": "8000",
           "member": "uint64",
           "name": "RecordSpeed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31723,7 +31778,7 @@
           "example": "3.5",
           "member": "float",
           "name": "ByteSpeed",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -31733,9 +31788,19 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalErrorRecords",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等待数据发送到下游的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "WaitWriterTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -31865,7 +31930,7 @@
           "example": "mysql_input_node",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31875,7 +31940,7 @@
           "example": "datasource.table",
           "member": "string",
           "name": "DataSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31885,7 +31950,7 @@
           "example": "2000000",
           "member": "uint64",
           "name": "TotalWriteRecords",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31895,7 +31960,7 @@
           "example": "89898292",
           "member": "uint64",
           "name": "TotalWriteBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31905,7 +31970,7 @@
           "example": "8000",
           "member": "uint64",
           "name": "RecordSpeed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -31915,7 +31980,7 @@
           "example": "3.5",
           "member": "float",
           "name": "ByteSpeed",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -31925,9 +31990,19 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalErrorRecords",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等待上游数据发送过来的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "WaitReaderTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -33118,6 +33193,28 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线任务导入到编排空间的任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ArrangeSpaceTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线任务状态区分1.未提交2.已提交3.已导出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OfflineTaskStatus",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -39802,6 +39899,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39812,6 +39910,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39822,6 +39921,7 @@
           "example": "123456",
           "member": "string",
           "name": "TableId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39832,6 +39932,7 @@
           "example": "rule1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39842,6 +39943,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39852,6 +39954,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleTemplateId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39862,6 +39965,7 @@
           "example": "准确性：表行数，与固定值比较",
           "member": "string",
           "name": "RuleTemplateContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39872,6 +39976,7 @@
           "example": "1",
           "member": "uint64",
           "name": "QualityDim",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39882,6 +39987,7 @@
           "example": "3",
           "member": "uint64",
           "name": "SourceObjectType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39892,6 +39998,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SourceObjectDataType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39902,6 +40009,7 @@
           "example": "int",
           "member": "string",
           "name": "SourceObjectDataTypeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39912,6 +40020,7 @@
           "example": "Name",
           "member": "string",
           "name": "SourceObjectValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39922,6 +40031,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ConditionType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39932,6 +40042,7 @@
           "example": "dt=1",
           "member": "string",
           "name": "ConditionExpression",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39942,6 +40053,7 @@
           "example": "select count(*) from person",
           "member": "string",
           "name": "CustomSql",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39952,6 +40064,7 @@
           "example": "无",
           "member": "CompareRule",
           "name": "CompareRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -39962,6 +40075,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -39972,6 +40086,7 @@
           "example": "demo",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39982,6 +40097,7 @@
           "example": "park",
           "member": "string",
           "name": "Operator",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -39992,6 +40108,7 @@
           "example": "123456",
           "member": "string",
           "name": "TargetDatabaseId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40002,6 +40119,7 @@
           "example": "123456",
           "member": "string",
           "name": "TargetDatabaseName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40012,6 +40130,7 @@
           "example": "123456",
           "member": "string",
           "name": "TargetTableId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40022,6 +40141,7 @@
           "example": "123456",
           "member": "string",
           "name": "TargetTableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40032,6 +40152,7 @@
           "example": "dt=${yyyymmdd}",
           "member": "string",
           "name": "TargetConditionExpr",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40042,6 +40163,7 @@
           "example": "a.age=b.age",
           "member": "string",
           "name": "RelConditionExpr",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40052,6 +40174,7 @@
           "example": "无",
           "member": "RuleFieldConfig",
           "name": "FieldConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -40062,6 +40185,7 @@
           "example": "true",
           "member": "bool",
           "name": "MultiSourceFlag",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -40072,6 +40196,7 @@
           "example": "true",
           "member": "bool",
           "name": "WhereFlag",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -40082,6 +40207,7 @@
           "example": "select count(1) from ${table_1}",
           "member": "string",
           "name": "TemplateSql",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40092,6 +40218,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SubQualityDim",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -40102,6 +40229,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TargetObjectType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -40112,6 +40240,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TargetObjectDataType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -40122,6 +40251,7 @@
           "example": "INT",
           "member": "string",
           "name": "TargetObjectDataTypeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40132,6 +40262,7 @@
           "example": "NULL",
           "member": "string",
           "name": "TargetObjectValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40142,8 +40273,97 @@
           "example": "[1]",
           "member": "uint64",
           "name": "SourceEngineTypes",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表负责人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tableowner",
+          "member": "string",
+          "name": "TableOwnerName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleGroupExecStrategy",
+          "name": "ExecStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleGroupSubscribe",
+          "name": "Subscription",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-20 12:22:22",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DatasourceId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "databaseId1",
+          "member": "string",
+          "name": "DatabaseId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控是否开启.0false,1true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -41317,7 +41537,8 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -41327,7 +41548,8 @@
           "example": "1",
           "member": "uint64",
           "name": "MonitorType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -41337,7 +41559,8 @@
           "example": "Default",
           "member": "string",
           "name": "ExecQueue",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41347,7 +41570,8 @@
           "example": "123456",
           "member": "string",
           "name": "ExecutorGroupId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41357,7 +41581,8 @@
           "example": "group1",
           "member": "string",
           "name": "ExecutorGroupName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41367,7 +41592,8 @@
           "example": "无",
           "member": "ProdSchedulerTask",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -41377,7 +41603,8 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41387,7 +41614,8 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41397,7 +41625,8 @@
           "example": "H",
           "member": "string",
           "name": "CycleType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41407,7 +41636,8 @@
           "example": "无",
           "member": "uint64",
           "name": "DelayTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -41417,7 +41647,8 @@
           "example": "1",
           "member": "uint64",
           "name": "CycleStep",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -41427,7 +41658,8 @@
           "example": "无",
           "member": "string",
           "name": "TaskAction",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41437,6 +41669,7 @@
           "example": "HIVE",
           "member": "string",
           "name": "ExecEngineType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -41447,12 +41680,35 @@
           "example": "无",
           "member": "string",
           "name": "ExecPlan",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RuleGroupMonitor": {
       "document": "规则组监控业务视图",
@@ -41727,6 +41983,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "RuleGroupId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -41737,6 +41994,7 @@
           "example": "无",
           "member": "SubscribeReceiver",
           "name": "Receivers",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -41747,6 +42005,7 @@
           "example": "[1,2]",
           "member": "uint64",
           "name": "SubscribeType",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -41757,8 +42016,31 @@
           "example": "[{\"hookType\":\"feishu\",\"hookAddress\":\"http://xxxxxxxx\"}]",
           "member": "SubscribeWebHook",
           "name": "WebHooks",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -42023,7 +42305,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -42033,7 +42315,7 @@
           "example": "表行数",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -42043,7 +42325,7 @@
           "example": "计算表的行数",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -42053,7 +42335,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -42063,7 +42345,7 @@
           "example": "2",
           "member": "uint64",
           "name": "SourceObjectType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -42073,7 +42355,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SourceObjectDataType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -42083,7 +42365,7 @@
           "example": "{}",
           "member": "string",
           "name": "SourceContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -42093,7 +42375,7 @@
           "example": "3",
           "member": "uint64",
           "name": "SourceEngineTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -42103,7 +42385,7 @@
           "example": "1",
           "member": "uint64",
           "name": "QualityDim",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -42113,7 +42395,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CompareType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -42123,7 +42405,7 @@
           "example": "100",
           "member": "uint64",
           "name": "CitationCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -42133,7 +42415,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -42143,7 +42425,7 @@
           "example": "wedata",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -42153,7 +42435,7 @@
           "example": "yyyy-MM-dd HH:mm:ss",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -42163,7 +42445,7 @@
           "example": "true",
           "member": "bool",
           "name": "WhereFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -42173,7 +42455,7 @@
           "example": "true",
           "member": "bool",
           "name": "MultiSourceFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -42183,7 +42465,7 @@
           "example": "123456",
           "member": "string",
           "name": "SqlExpression",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -42193,8 +42475,28 @@
           "example": "1",
           "member": "uint64",
           "name": "SubQualityDim",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql表达式解析对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SqlExpression",
+          "name": "ResolvedSqlExpression",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DatasourceTypes",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -44535,6 +44837,58 @@
           "name": "Speed",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExpression": {
+      "document": "数据质量自定义规则时的sql表达式解析对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sql表达式表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SqlExpressionTable",
+          "name": "TableExpressions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql表达式字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "param_1",
+          "member": "string",
+          "name": "ParamExpressions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SqlExpressionTable": {
+      "document": "数据质量自定义规则时的sql表达式解析表对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sql表达式表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table_1",
+          "member": "string",
+          "name": "TableExpression",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql表达式字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "column_1",
+          "member": "string",
+          "name": "ColumnExpression",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

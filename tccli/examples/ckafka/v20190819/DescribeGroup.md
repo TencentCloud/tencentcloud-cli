@@ -14,15 +14,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 1,
+            "TotalCount": 0,
             "GroupList": [
                 {
-                    "Group": "qcloud_tocos",
-                    "Protocol": "consumer"
+                    "Group": "abc",
+                    "Protocol": "abc"
                 }
-            ]
+            ],
+            "GroupCountQuota": 1
         },
-        "RequestId": "c931f394-7d72-4ad4-8d70-5a225708c762"
+        "RequestId": "abc"
     }
 }
 ```

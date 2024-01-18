@@ -1091,6 +1091,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tagKey\": \"1\", \"tagValue\":\"2\"]",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2764,6 +2774,32 @@
           "member": "string",
           "name": "TotalCost",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagInfo": {
+      "document": "分账标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

@@ -24,7 +24,7 @@
     "AddInstances": {
       "document": "本接口（AddInstances）用于集群添加实例",
       "input": "AddInstancesRequest",
-      "name": "购买实例",
+      "name": "集群添加实例",
       "output": "AddInstancesResponse",
       "status": "online"
     },
@@ -316,9 +316,9 @@
       "status": "online"
     },
     "DescribeClusterInstanceGrps": {
-      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。",
+      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。 该接口已废弃，推荐使用DescribeClusterInstanceGroups",
       "input": "DescribeClusterInstanceGrpsRequest",
-      "name": "查询实例组",
+      "name": "查询实例组（废弃）",
       "output": "DescribeClusterInstanceGrpsResponse",
       "status": "online"
     },
@@ -379,9 +379,9 @@
       "status": "online"
     },
     "DescribeInstanceParams": {
-      "document": "该接口(DescribeInstanceParams)查询实例参数",
+      "document": "该接口(DescribeInstanceParams)查询实例参数列表",
       "input": "DescribeInstanceParamsRequest",
-      "name": "查询实例参数",
+      "name": "查询实例参数列表",
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
@@ -1025,6 +1025,7 @@
           "example": "yes",
           "member": "string",
           "name": "IsSupportSlaveZone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1035,6 +1036,7 @@
           "example": "无",
           "member": "string",
           "name": "NonsupportSlaveZoneReason",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1045,6 +1047,7 @@
           "example": "yes",
           "member": "string",
           "name": "IsSupportRo",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1055,12 +1058,24 @@
           "example": "无",
           "member": "string",
           "name": "NonsupportRoReason",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持手动发起快照备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportManualSnapshot",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Account": {
       "document": "数据库账号信息",
@@ -1323,8 +1338,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。",
+          "disabled": true,
+          "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。",
           "example": "cynosmysql-grp-xxxxxxxx",
           "member": "string",
           "name": "InstanceGrpId",
@@ -2618,12 +2633,30 @@
       "document": "CloseWan请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例组id",
           "example": "cynosdbmysql-grp-o48ssqs5",
           "member": "string",
           "name": "InstanceGrpId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例组id",
+          "example": "cynosdbmysql-grp-o48ssqs5",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2638,7 +2671,7 @@
           "example": "734",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6128,6 +6161,222 @@
       ],
       "usage": "out"
     },
+    "CynosdbInstanceGroup": {
+      "document": "实例组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户appId",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除时间",
+          "example": "无",
+          "member": "string",
+          "name": "DeletedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例组ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例组类型。ha-ha组；ro-只读组",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网端口",
+          "example": "无",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网域名",
+          "example": "无",
+          "member": "string",
+          "name": "WanDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网ip",
+          "example": "无",
+          "member": "string",
+          "name": "WanIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网端口",
+          "example": "无",
+          "member": "int64",
+          "name": "WanPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网状态",
+          "example": "无",
+          "member": "string",
+          "name": "WanStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例组包含实例信息",
+          "example": "无",
+          "member": "CynosdbInstance",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正在回收IP信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OldAddrInfo",
+          "name": "OldAddrInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正在进行的任务",
+          "example": "无",
+          "member": "string",
+          "name": "ProcessingTasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "biz_net_service表id",
+          "example": "无",
+          "member": "int64",
+          "name": "NetServiceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CynosdbInstanceGrp": {
       "document": "实例组信息",
       "members": [
@@ -8145,17 +8394,27 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "实例组列表",
+          "example": "无",
+          "member": "CynosdbInstanceGrp",
+          "name": "InstanceGrpInfoList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例组列表",
           "example": "无",
-          "member": "CynosdbInstanceGrp",
-          "name": "InstanceGrpInfoList",
-          "required": true,
+          "member": "CynosdbInstanceGroup",
+          "name": "InstanceGroupInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8278,6 +8537,15 @@
           "example": "binlog",
           "member": "string",
           "name": "ParamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为全局参数",
+          "example": "yes",
+          "member": "string",
+          "name": "IsGlobal",
           "required": false,
           "type": "string"
         }
@@ -8497,12 +8765,21 @@
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "实例组ID。可以通过接口DescribeClusterInstanceGrps获取。",
-          "example": "cynosdbmysql-grp-jhi2gdi0",
+          "disabled": true,
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-jhi2gdi0",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例组ID",
+          "example": "cynosdbmysql-grp-as124sa5",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8752,6 +9029,15 @@
           "name": "ParamKeyword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为全局参数",
+          "example": "no",
+          "member": "string",
+          "name": "IsGlobal",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8957,8 +9243,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100",
-          "example": "0",
+          "document": "返回数量，默认为 20，取值范围为(0,100]",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8976,7 +9262,7 @@
         {
           "disabled": false,
           "document": "排序字段，取值范围：\n<li> CREATETIME：创建时间</li>\n<li> PERIODENDTIME：过期时间</li>",
-          "example": "xx",
+          "example": "CREATETIME",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -8985,7 +9271,7 @@
         {
           "disabled": false,
           "document": "排序类型，取值范围：\n<li> ASC：升序排序 </li>\n<li> DESC：降序排序 </li>",
-          "example": "xx",
+          "example": "ASC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -9002,8 +9288,8 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型：目前支持“MYSQL”， “POSTGRESQL”",
-          "example": "xx",
+          "document": "引擎类型：目前支持“MYSQL”",
+          "example": "MYSQL",
           "member": "string",
           "name": "DbType",
           "required": false,
@@ -9012,7 +9298,7 @@
         {
           "disabled": false,
           "document": "实例状态, 可选值:\ncreating 创建中\nrunning 运行中\nisolating 隔离中\nisolated 已隔离\nactivating 恢复中\nofflining 下线中\nofflined 已下线",
-          "example": "xx",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -9021,7 +9307,7 @@
         {
           "disabled": false,
           "document": "实例id列表",
-          "example": "[\"xx\"]",
+          "example": "[\"cynosdbmysql-ins-asd45qwe\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -9039,6 +9325,7 @@
           "example": "26",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9048,6 +9335,7 @@
           "example": "无",
           "member": "CynosdbInstance",
           "name": "InstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11319,7 +11607,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11329,7 +11617,7 @@
           "example": "无",
           "member": "ParamItemDetail",
           "name": "ParamsItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -11785,7 +12073,18 @@
     },
     "ModifiableInfo": {
       "document": "参数是否可修改的详细信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数是否可被修改, 1:可以 0:不可以",
+          "example": "无",
+          "member": "int64",
+          "name": "IsModifiable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "ModifyAccountDescriptionRequest": {
@@ -12984,6 +13283,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12994,6 +13294,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13004,6 +13305,7 @@
           "example": "1",
           "member": "string",
           "name": "OldValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13377,12 +13679,21 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例组id",
           "example": "xxx",
           "member": "string",
           "name": "InstanceGrpId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例组id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
           "type": "string"
         },
         {
@@ -14084,12 +14395,30 @@
       "document": "OpenWan请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例组id",
           "example": "cynosdbmysql-grp-o48ssqs5",
           "member": "string",
           "name": "InstanceGrpId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例组id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -14104,7 +14433,7 @@
           "example": "734",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14514,7 +14843,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14524,7 +14853,7 @@
           "example": "无",
           "member": "string",
           "name": "Default",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14534,7 +14863,7 @@
           "example": "无",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14544,7 +14873,7 @@
           "example": "无",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14554,7 +14883,7 @@
           "example": "无",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14564,7 +14893,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14574,7 +14903,7 @@
           "example": "无",
           "member": "int64",
           "name": "NeedReboot",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14584,7 +14913,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14594,7 +14923,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14604,7 +14933,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14614,7 +14943,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14624,7 +14953,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14634,7 +14963,7 @@
           "example": "无",
           "member": "ModifiableInfo",
           "name": "ModifiableInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14644,7 +14973,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsFunc",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14654,7 +14983,7 @@
           "example": "无",
           "member": "string",
           "name": "Func",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14706,7 +15035,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14716,7 +15045,7 @@
           "example": "无",
           "member": "string",
           "name": "Default",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14726,7 +15055,7 @@
           "example": "无",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14736,7 +15065,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14746,7 +15075,7 @@
           "example": "无",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14756,7 +15085,7 @@
           "example": "无",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14766,7 +15095,7 @@
           "example": "无",
           "member": "int64",
           "name": "NeedReboot",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14776,7 +15105,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14786,7 +15115,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14796,7 +15125,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14806,7 +15135,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsFunc",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14816,7 +15145,7 @@
           "example": "无",
           "member": "string",
           "name": "Func",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14941,7 +15270,7 @@
         {
           "disabled": false,
           "document": "策略，ACCEPT或者DROP",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -14950,8 +15279,8 @@
         },
         {
           "disabled": false,
-          "document": "来源IP或IP段，例如192.168.0.0/16",
-          "example": "无",
+          "document": "来源Ip或Ip段，例如192.168.0.0/16",
+          "example": "",
           "member": "string",
           "name": "CidrIp",
           "output_required": true,
@@ -14961,7 +15290,7 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "PortRange",
           "output_required": true,
@@ -14971,7 +15300,7 @@
         {
           "disabled": false,
           "document": "网络协议，支持udp、tcp等",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "IpProtocol",
           "output_required": true,
@@ -14981,7 +15310,7 @@
         {
           "disabled": false,
           "document": "协议端口ID或者协议端口组ID。",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "ServiceModule",
           "output_required": true,
@@ -14991,7 +15320,7 @@
         {
           "disabled": false,
           "document": "IP地址ID或者ID地址组ID。",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "AddressModule",
           "output_required": true,
@@ -15001,7 +15330,7 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -15011,7 +15340,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -15532,8 +15861,7 @@
           "member": "string",
           "name": "Names",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -15542,8 +15870,7 @@
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -15552,8 +15879,7 @@
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -15562,8 +15888,7 @@
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -15572,8 +15897,7 @@
           "member": "string",
           "name": "Operator",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -16309,6 +16633,7 @@
           "example": "xxx",
           "member": "string",
           "name": "OldDatabase",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16319,6 +16644,7 @@
           "example": "xxx",
           "member": "string",
           "name": "NewDatabase",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16335,6 +16661,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Database",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16345,6 +16672,7 @@
           "example": "xxx",
           "member": "RollbackTableInfo",
           "name": "Tables",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -16857,7 +17185,7 @@
           "example": "",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16867,7 +17195,7 @@
           "example": "",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16877,7 +17205,7 @@
           "example": "",
           "member": "PolicyRule",
           "name": "Inbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16887,7 +17215,7 @@
           "example": "",
           "member": "PolicyRule",
           "name": "Outbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16897,7 +17225,7 @@
           "example": "",
           "member": "string",
           "name": "SecurityGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16907,7 +17235,7 @@
           "example": "",
           "member": "string",
           "name": "SecurityGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16917,7 +17245,7 @@
           "example": "",
           "member": "string",
           "name": "SecurityGroupRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

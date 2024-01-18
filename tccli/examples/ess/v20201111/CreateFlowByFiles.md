@@ -838,3 +838,158 @@ Output:
 }
 ```
 
+**Example 14: 通过文件发起B2C合同-控件使用关键字定位方式**
+
+1.通过PDF文件发起合同
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】
+3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件类型为【KEYWORD】关键字类型，并设置关键字为【签名】，关键字查找顺序为【Positive-正序】关键字位置模式为【Middle-居中】，控件高宽为119x119（公章大小）
+4.指定C端签署方为个人【李四】，联系电话为【15100000000】
+5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小）
+6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】
+7.完成合同发起
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --FlowName 通过文件发起合同-关键字定位 \
+    --FlowDescription 通过文件发起合同 \
+    --Unordered False \
+    --FlowType 示例合同 \
+    --Deadline 1830268800 \
+    --SignBeanTag 1 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.ApproverIdCardType  \
+    --Approvers.0.ApproverIdCardNumber  \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 0 \
+    --Approvers.0.SignComponents.0.ComponentPosY 0 \
+    --Approvers.0.SignComponents.0.ComponentWidth 119 \
+    --Approvers.0.SignComponents.0.ComponentHeight 119 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.GenerateMode KEYWORD \
+    --Approvers.0.SignComponents.0.ComponentId 签名 \
+    --Approvers.0.SignComponents.0.KeywordOrder Positive \
+    --Approvers.0.SignComponents.0.RelativeLocation Middle \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.NotifyType NONE \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000 \
+    --Approvers.1.PreReadTime 10 \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 60 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 119 \
+    --Approvers.1.SignComponents.0.ComponentHeight 43 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
+    --Components.0.ComponentPage 1 \
+    --Components.0.ComponentPosX 360 \
+    --Components.0.ComponentPosY 360 \
+    --Components.0.ComponentWidth 100 \
+    --Components.0.ComponentHeight 100 \
+    --Components.0.ComponentType TEXT \
+    --Components.0.ComponentValue 我是一个单行文本 \
+    --Components.0.FileIndex 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": ""
+            }
+        ],
+        "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
+        "PreviewUrl": "",
+        "RequestId": "s1665674603446404796"
+    }
+}
+```
+
+**Example 15: 通过文件发起B2C合同-控件使用绝对定位方式**
+
+1.通过PDF文件发起合同
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【典子谦】
+3.通过绝对对位方式指定【典子谦示例企业】的签署控件为印章控件，控件位置为该文件的第1页，横坐标160，纵坐标260的位置，控件高宽为119x119（公章大小）
+4.指定C端签署方为个人【李四】，联系电话为【15100000000】
+5.通过绝对对位方式指定【李四】的签署控件为手写签名控件，控件位置为该文件的第1页，横坐标60，纵坐标260的位置，控件高宽为119x43（推荐的手写签名大小）
+6.通过绝对定位方式在合同文件的第1页，横坐标360，纵坐标360的位置放置一个单行文本控件，并写入内容【我是一个单行文本】
+7.完成合同发起
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --FlowName 通过文件发起合同 \
+    --FlowDescription 通过文件发起合同 \
+    --Unordered False \
+    --FlowType 示例合同 \
+    --Deadline 1830268800 \
+    --SignBeanTag 1 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.ApproverIdCardType  \
+    --Approvers.0.ApproverIdCardNumber  \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --Approvers.0.SignComponents.0.ComponentHeight 119 \
+    --Approvers.0.SignComponents.0.ComponentWidth 119 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.ComponentValue  \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.NotifyType NONE \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000 \
+    --Approvers.1.PreReadTime 10 \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 60 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 119 \
+    --Approvers.1.SignComponents.0.ComponentHeight 43 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq \
+    --Components.0.ComponentPage 1 \
+    --Components.0.ComponentPosX 360 \
+    --Components.0.ComponentPosY 360 \
+    --Components.0.ComponentWidth 100 \
+    --Components.0.ComponentHeight 100 \
+    --Components.0.ComponentType TEXT \
+    --Components.0.ComponentValue 我是一个单行文本 \
+    --Components.0.FileIndex 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": ""
+            }
+        ],
+        "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
+        "PreviewUrl": "",
+        "RequestId": "s1665674603446404796"
+    }
+}
+```
+

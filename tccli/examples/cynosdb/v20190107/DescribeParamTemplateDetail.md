@@ -28,7 +28,9 @@ Output:
                 "MatchValue": "",
                 "Max": "10240",
                 "Min": "0",
-                "ModifiableInfo": {},
+                "ModifiableInfo": {
+                    "IsModifiable": 1
+                },
                 "NeedReboot": 0,
                 "ParamName": "max_user_connections",
                 "ParamType": "integer",

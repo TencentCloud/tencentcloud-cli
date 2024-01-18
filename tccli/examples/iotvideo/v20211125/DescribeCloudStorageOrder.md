@@ -17,7 +17,8 @@ Output:
         "ExpireTime": 1,
         "PackageId": "abc",
         "Status": 1,
-        "RequestId": "abc"
+        "RequestId": "abc",
+        "ChannelId": 1
     }
 }
 ```

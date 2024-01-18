@@ -18,9 +18,9 @@ Output:
 ```
 {
     "Response": {
-        "SignUrl": "abc",
-        "ExpiredTime": 0,
-        "RequestId": "abc"
+        "ExpiredTime": 1706100107,
+        "RequestId": "s1705495307288609862",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD"
     }
 }
 ```
@@ -71,9 +71,9 @@ Output:
 ```
 {
     "Response": {
-        "SignUrl": "https://qian.tencent.com/xxxxxx?xxxx=xxx",
-        "ExpiredTime": 1685011753,
-        "RequestId": "xxxxxxxxxxxxxxx"
+        "ExpiredTime": 1706100167,
+        "RequestId": "s1705495367413358264",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100167&code=yDCNBUUckpvliyc7UxKACG8SaaySZ0Cq&shortKey=yDCNBUzgv1JtyCflmM2f&channel=TENCENTCLOUD"
     }
 }
 ```
@@ -97,9 +97,9 @@ Output:
 ```
 {
     "Response": {
-        "SignUrl": "https://qian.tencent.com/xxxxxx?xxxx=xxx",
-        "ExpiredTime": 1685011753,
-        "RequestId": "xxxxxxxxxxxxxxx"
+        "ExpiredTime": 1706100228,
+        "RequestId": "s1705495428038618994",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100228&code=yDCNBUUckpvlibzeUEMbkWeRNyTH5WNK&shortKey=yDCNBUzgvw1blVbE1L7c&channel=TENCENTCLOUD"
     }
 }
 ```
