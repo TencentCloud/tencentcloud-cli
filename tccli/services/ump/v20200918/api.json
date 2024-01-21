@@ -15,11 +15,11 @@
       "status": "online"
     },
     "CreateCapture": {
-      "document": "场内抓拍上报接口",
+      "document": "优mall产品下线\n\n场内抓拍上报接口",
       "input": "CreateCaptureRequest",
       "name": "抓拍上报接口",
       "output": "CreateCaptureResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMultiBizAlert": {
       "document": "集团广场的多经点位告警",

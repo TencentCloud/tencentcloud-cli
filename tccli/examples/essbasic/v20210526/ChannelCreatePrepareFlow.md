@@ -58,7 +58,7 @@ Output:
 
 1.这是一个B2C的合同模板， 创建发起合同签署链接，只指定一个子企业的参与方
 2.FlowApproverList参数指定的参与方不能更改， 未指定的参与方可以修改
-<img src="https://qcloudimg.tencent-cloud.cn/raw/f51c3d969db0093300094a22c6c01555.png" >
+<img src="https://qcloudimg.tencent-cloud.cn/raw/f51c3d969db0093300094a22c6c01555.png" />
 
 
 Input: 
@@ -97,7 +97,7 @@ Output:
 
 1.创建发起合同签署链接， 提前定义两个签署人， 分别是 B端渠道子客企业的员工和C端为张三这个自然人
 2.FlowApproverList参数指定的参与方不能更改
-<img src="https://qcloudimg.tencent-cloud.cn/raw/935a3cebf2881b25c1d87e234a303a13.png" >
+<img src="https://qcloudimg.tencent-cloud.cn/raw/935a3cebf2881b25c1d87e234a303a13.png" />
 
 
 Input: 

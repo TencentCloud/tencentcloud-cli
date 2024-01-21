@@ -8,7 +8,7 @@
       "status": "online"
     },
     "AddClusterCIDR": {
-      "document": "给GR集群增加可用的ClusterCIDR",
+      "document": "给GR集群增加可用的ClusterCIDR（开白才能使用此功能，如需要请联系我们）",
       "input": "AddClusterCIDRRequest",
       "name": "给集群增加ClusterCIDR",
       "output": "AddClusterCIDRResponse",
@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "实例列表，不支持竞价实例",
-          "example": "[]",
+          "example": "[\"ins-6pptcds4\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "实例额外需要设置参数信息(默认值)",
-          "example": "{}",
+          "example": "{\"MountTarget\":\"/data\",\"DockerGraphPath\":\"/data/docker\",\"Unschedulable\":0,\"DataDisks\":[{\"FileSystem\":\"xfs\",\"AutoFormatAndMount\":true,\"MountTarget\":\"/data\",\"DiskPartition\":\"/dev/vdb\"}],\"ExtraArgs\":{\"Kubelet\":[\"root-dir=/data/kubelet\",\"eviction-hard=memory.available<500Mi\",\"feature-gates=VolumeSubpathEnvExpansion=true\",\"kube-reserved=cpu=264m,memory=1000Mi\",\"system-reserved=cpu=110m,memory=1000Mi\",\"cpu-manager-policy=static\"]}}",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -1667,7 +1667,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
-          "example": "{}",
+          "example": "{\"SecurityService\":{\"Enabled\":false},\"MonitorService\":{\"Enabled\":true}}",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -1676,7 +1676,7 @@
         {
           "disabled": false,
           "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）",
-          "example": "{}",
+          "example": "{\"Password\":\"123\"}",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1685,7 +1685,7 @@
         {
           "disabled": false,
           "document": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)",
-          "example": "\"\"",
+          "example": "\"2345\"",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -1694,7 +1694,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。（目前仅支持设置单个sgId）",
-          "example": "[]",
+          "example": "[\"sg-lm0vqgxx\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1703,7 +1703,7 @@
         {
           "disabled": false,
           "document": "节点池选项",
-          "example": "{}",
+          "example": "{\"AddToNodePool\":true,\"NodePoolId\":\"np-hzfuue8h\",\"InheritConfigurationFromNodePool\":true}}",
           "member": "NodePoolOption",
           "name": "NodePool",
           "required": false,
@@ -1712,7 +1712,7 @@
         {
           "disabled": false,
           "document": "校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）",
-          "example": "[]",
+          "example": "[[\"GlobalRouteCIDRCheck\",\"VpcCniCIDRCheck\"]",
           "member": "string",
           "name": "SkipValidateOptions",
           "required": false,
@@ -1721,7 +1721,7 @@
         {
           "disabled": false,
           "document": "参数InstanceAdvancedSettingsOverride数组用于定制化地配置各台instance，与InstanceIds顺序对应。当传入InstanceAdvancedSettingsOverrides数组时，将覆盖默认参数InstanceAdvancedSettings；当没有传入参数InstanceAdvancedSettingsOverrides时，InstanceAdvancedSettings参数对每台instance生效。\n\n参数InstanceAdvancedSettingsOverride数组的长度应与InstanceIds数组一致；当长度大于InstanceIds数组长度时将报错；当长度小于InstanceIds数组时，没有对应配置的instace将使用默认配置。",
-          "example": "[]",
+          "example": "[{\"MountTarget\":\"/data\",\"DockerGraphPath\":\"/data/bcs/service/docker\",\"Unschedulable\":1,\"Labels\":[{\"Name\":\"topology.bkbcs.tencent.com/region\",\"Value\":\"shanghai\"}]}]",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettingsOverrides",
           "required": false,
@@ -1730,7 +1730,7 @@
         {
           "disabled": false,
           "document": "节点镜像",
-          "example": "无",
+          "example": "\"img-fjxtfi0n\"",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -1748,6 +1748,7 @@
           "example": "[",
           "member": "string",
           "name": "FailedInstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1757,6 +1758,7 @@
           "example": "[",
           "member": "string",
           "name": "SuccInstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1766,6 +1768,7 @@
           "example": "[",
           "member": "string",
           "name": "TimeoutInstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1775,6 +1778,7 @@
           "example": "[",
           "member": "string",
           "name": "FailedReasons",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9891,7 +9895,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "tke",
+          "example": "tke/eks/tkeedge/external",
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -9909,7 +9913,7 @@
           "example": "无",
           "member": "PendingRelease",
           "name": "ReleaseSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9919,7 +9923,7 @@
           "example": "1",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9929,7 +9933,7 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9939,7 +9943,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16386,7 +16390,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的路径",
-          "example": "/api/v1/namespaces",
+          "example": "\"/apis/application.tkestack.io/v1/namespaces/cls-0975tg3b/apps/cbs\"",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -16395,7 +16399,7 @@
         {
           "disabled": false,
           "document": "请求集群addon后允许接收的数据格式",
-          "example": "无",
+          "example": "\"application/json\"",
           "member": "string",
           "name": "Accept",
           "required": false,
@@ -16404,7 +16408,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的数据格式",
-          "example": "无",
+          "example": "\"application/merge-patch+json\"",
           "member": "string",
           "name": "ContentType",
           "required": false,
@@ -16413,7 +16417,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的数据",
-          "example": "无",
+          "example": "\"{\\\"kind\\\":\\\"App\\\",\\\"spec\\\":{\\\"chart\\\":{\\\"chartName\\\":\\\"cbs\\\",\\\"chartVersion\\\":\\\"1.1.2\\\"},\\\"values\\\":{\\\"values\\\":[],\\\"rawValues\\\":\\\"e30=\\\",\\\"rawValuesType\\\":\\\"json\\\"}}}\"",
           "member": "string",
           "name": "RequestBody",
           "required": false,
@@ -16422,7 +16426,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "cls-xxxxxxxx",
+          "example": "\"cls-0975tg3b\"",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -16449,7 +16453,7 @@
           "example": "[]",
           "member": "string",
           "name": "ResponseBody",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

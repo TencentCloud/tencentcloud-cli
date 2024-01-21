@@ -568,6 +568,20 @@
         "title": "删除项目参数"
       }
     ],
+    "DeleteProjectUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjectUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除项目用户"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjectUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb621c29-6ee3-49d2-a4e0-cb84b46e2590\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DeleteResource": [
       {
         "document": "",

@@ -91,8 +91,8 @@
     "CreateInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=CreateInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&AccountPassword=1234567a\n&ReadonlyPolicy.0=master\n&Privilege=rw\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=CreateInstanceAccount\n&InstanceId=crs-evst****\n&AccountName=redis_dev\n&AccountPassword=c1evuh****\n&ReadonlyPolicy.0=master\n&Privilege=rw\n&Remark=\"开发账号\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 114805324,\n        \"RequestId\": \"2cd067fd-71db-4d8f-b0ac-4e83********\"\n    }\n}",
         "title": "请求示例"
       }
     ],
