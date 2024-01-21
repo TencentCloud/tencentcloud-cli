@@ -272,6 +272,14 @@
         "title": "修改风险中心风险状态"
       }
     ],
+    "ModifyRiskCenterScanTask": [
+      {
+        "document": "修改风险中心扫描任务",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRiskCenterScanTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"Assets\": [\n        {\n            \"AssetName\": \"abc\",\n            \"InstanceType\": \"abc\",\n            \"AssetType\": \"abc\",\n            \"Asset\": \"abc\",\n            \"Region\": \"abc\"\n        }\n    ],\n    \"ScanAssetType\": 0,\n    \"ScanItem\": [\n        \"abc\"\n    ],\n    \"ScanPlanType\": 0,\n    \"ScanPlanContent\": \"abc\",\n    \"SelfDefiningAssets\": [\n        \"abc\"\n    ],\n    \"TaskId\": \"abc\",\n    \"TaskAdvanceCFG\": {\n        \"VulRisk\": [\n            {\n                \"RiskId\": \"abc\",\n                \"Enable\": 0\n            }\n        ],\n        \"WeakPwdRisk\": [\n            {\n                \"CheckItemId\": 0,\n                \"Enable\": 0\n            }\n        ],\n        \"CFGRisk\": [\n            {\n                \"ItemId\": \"abc\",\n                \"Enable\": 0,\n                \"ResourceType\": \"abc\"\n            }\n        ]\n    },\n    \"TaskMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改风险中心扫描任务"
+      }
+    ],
     "StopRiskCenterTask": [
       {
         "document": "停止扫风险中心扫描任务",

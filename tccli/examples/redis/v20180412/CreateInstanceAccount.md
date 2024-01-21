@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli redis CreateInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
-    --AccountName test \
-    --AccountPassword 1234567a \
+    --InstanceId crs-evst**** \
+    --AccountName redis_dev \
+    --AccountPassword c1evuh**** \
     --ReadonlyPolicy master \
-    --Privilege rw
+    --Privilege rw \
+    --Remark "开发账号"
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": 123456,
-        "RequestId": "0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db"
+        "TaskId": 114805324,
+        "RequestId": "2cd067fd-71db-4d8f-b0ac-4e83********"
     }
 }
 ```

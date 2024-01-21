@@ -17,28 +17,28 @@ Output:
                 "Fps": 30,
                 "TemplateId": 1000,
                 "Gop": 3,
-                "Acodec": "xx",
-                "Profile": "xx",
-                "Description": "xx",
+                "Acodec": "aac",
+                "Profile": "baseline",
+                "Description": "模板描述",
                 "VideoBitrate": 30,
                 "BitrateToOrig": 0,
                 "AiTransCode": 0,
                 "HeightToOrig": 0,
                 "AudioBitrate": 15,
                 "Rotate": 0,
-                "TemplateName": "xx",
+                "TemplateName": "模板名称",
                 "AdaptBitratePercent": 0.0,
-                "Vcodec": "xx",
+                "Vcodec": "h264",
                 "NeedAudio": 1,
-                "DRMTracks": "xx",
+                "DRMTracks": "AUDIO|UHD2",
                 "NeedVideo": 1,
-                "DRMType": "xx",
+                "DRMType": "widevine",
                 "ShortEdgeAsHeight": 0,
                 "Height": 250,
                 "FpsToOrig": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1dc2eb7b-b29b-4c5a-96f6-5699c54140fd"
     }
 }
 ```

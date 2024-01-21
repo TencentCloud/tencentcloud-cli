@@ -8280,7 +8280,17 @@
     },
     "DescribeLiveTranscodeTemplatesRequest": {
       "document": "DescribeLiveTranscodeTemplates请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "转码模板类型，默认0。\n0：普通转码模板。\n1：自适应码率转码模板。",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeLiveTranscodeTemplatesResponse": {
@@ -8292,7 +8302,7 @@
           "example": "无",
           "member": "TemplateInfo",
           "name": "Templates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

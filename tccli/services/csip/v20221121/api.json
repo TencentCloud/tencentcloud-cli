@@ -238,6 +238,13 @@
       "output": "ModifyRiskCenterRiskStatusResponse",
       "status": "online"
     },
+    "ModifyRiskCenterScanTask": {
+      "document": "修改风险中心扫描任务",
+      "input": "ModifyRiskCenterScanTaskRequest",
+      "name": "修改风险中心扫描任务",
+      "output": "ModifyRiskCenterScanTaskResponse",
+      "status": "online"
+    },
     "StopRiskCenterTask": {
       "document": "停止扫风险中心扫描任务",
       "input": "StopRiskCenterTaskRequest",
@@ -6945,6 +6952,144 @@
     "ModifyRiskCenterRiskStatusResponse": {
       "document": "ModifyRiskCenterRiskStatus返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRiskCenterScanTaskRequest": {
+      "document": "ModifyRiskCenterScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "helloworld",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0-全扫，1-指定资产扫，2-排除资产扫，3-手动填写扫；1和2则Assets字段必填，3则SelfDefiningAssets必填",
+          "example": "0",
+          "member": "int64",
+          "name": "ScanAssetType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扫描项目；port/poc/weakpass/webcontent/configrisk",
+          "example": "无",
+          "member": "string",
+          "name": "ScanItem",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0-周期任务,1-立即扫描,2-定时扫描,3-自定义；0,2,3则ScanPlanContent必填",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanPlanType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要修改的任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扫描资产信息列表",
+          "example": "无",
+          "member": "TaskAssetObject",
+          "name": "Assets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描计划详情",
+          "example": "无",
+          "member": "string",
+          "name": "ScanPlanContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip/域名/url数组",
+          "example": "无",
+          "member": "string",
+          "name": "SelfDefiningAssets",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置",
+          "example": "无",
+          "member": "TaskAdvanceCFG",
+          "name": "TaskAdvanceCFG",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "体检模式，0-标准模式，1-快速模式，2-高级模式，默认标准模式",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRiskCenterScanTaskResponse": {
+      "document": "ModifyRiskCenterScanTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0，修改成功，其他失败；-1为存在资产未认证",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未认证资产列表",
+          "example": "无",
+          "member": "string",
+          "name": "UnAuthAsset",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

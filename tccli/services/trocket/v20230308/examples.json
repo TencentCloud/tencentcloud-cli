@@ -22,11 +22,35 @@
         "title": "创建实例"
       }
     ],
+    "CreateMQTTInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Bandwidth\": 2,\n    \"Rules\": [\n        {\n            \"IpRule\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"remark\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"416510a6-f614-487d-bbca-e7fdbf72fc29\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateMQTTInstance": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"sunjianxiong-1\",\n    \"SkuCode\": \"basic_1k\",\n    \"Remark\": \"this is remark\",\n    \"VpcList\": [\n        {\n            \"VpcId\": \"vpc-9a5wnirv\",\n            \"SubnetId\": \"subnet-0tw6tlfi\"\n        }\n    ],\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"11111111\"\n        }\n    ]\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"02107c9d-cbea-418c-bafc-740300fdefad\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateMQTTTopic": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Topic\": \"topic1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"dff879db-cb6f-4ffb-b820-ea6f391a8da7\",\n        \"Topic\": \"topic1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateMQTTUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Remark\": \"33333\",\n    \"PermWrite\": true,\n    \"PermRead\": true,\n    \"Username\": \"123\",\n    \"Password\": \"456\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"25cb77a7-2add-4086-8fd2-a05b5bd34776\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -60,6 +84,38 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除实例"
+      }
+    ],
+    "DeleteMQTTInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"de89c7dd-7c3e-4546-a2ca-91c5baa0415f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteMQTTInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-wjgxr8jg\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"84afeb76-9175-47ec-a6f1-8d0af0c0aae6\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteMQTTTopic": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Topic\": \"111\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"f3a081b8-dc97-4d62-bb1a-d1aa9fe80da8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteMQTTUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Username\": \"123\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"74625f9b-ce92-43d5-ba0b-9a85ddb99041\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteRole": [
@@ -110,11 +166,73 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeMQTTClient": [
+      {
+        "document": "标准请求",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTClient\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25m2jz9j\",\n    \"ClientId\": \"recv01\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ClientAddress\": \"/11.176.16.157:43440\",\n        \"ClientId\": \"recv01\",\n        \"ConnectTime\": 1703581008199,\n        \"ConnectionStatus\": \"CONNECTED\",\n        \"CreateTime\": 1703581008198,\n        \"DisconnectTime\": 0,\n        \"Keepalive\": 60,\n        \"MQTTClientSubscriptions\": [\n            {\n                \"Qos\": 1,\n                \"TopicFilter\": \"mqtt-25m2jz9j%111/r1/\"\n            },\n            {\n                \"Qos\": 1,\n                \"TopicFilter\": \"mqtt-25m2jz9j%111/r/+/\"\n            },\n            {\n                \"Qos\": 2,\n                \"TopicFilter\": \"mqtt-25m2jz9j%111/r2/\"\n            }\n        ],\n        \"ProtocolVersion\": 4,\n        \"RequestId\": \"b0f34768-130d-4a15-89d3-d3ca1976b4b7\"\n    }\n}",
+        "title": "标准请求"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTClient\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"ClientId\": \"subscribe_client\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ClientAddress\": \"11.176.16.153:37360\",\n        \"ClientId\": \"subscribe_client\",\n        \"ConnectTime\": 1705632841108,\n        \"ConnectionStatus\": \"CONNECTED\",\n        \"CreateTime\": 1705632841106,\n        \"DisconnectTime\": 0,\n        \"Keepalive\": 60,\n        \"MQTTClientSubscriptions\": [\n            {\n                \"Qos\": 0,\n                \"TopicFilter\": \"mqtt-47ka4rdr%topic24\"\n            }\n        ],\n        \"ProtocolVersion\": 4,\n        \"RequestId\": \"4ec9c58c-e6ac-4149-9673-b8f0d526a6aa\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTInsPublicEndpoints": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInsPublicEndpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Bandwidth\": 0,\n        \"Endpoints\": [],\n        \"InstanceId\": \"mqtt-47ka4rdr\",\n        \"RequestId\": \"2cbe9dbc-57a3-4624-9ab8-30d25b54c70b\",\n        \"Rules\": []\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTInsVPCEndpoints": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInsVPCEndpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Endpoints\": [\n            {\n                \"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\",\n                \"Port\": 1883,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-tcp\",\n                \"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:1883\",\n                \"VpcId\": null\n            },\n            {\n                \"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\",\n                \"Port\": 8888,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-ws\",\n                \"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:8888\",\n                \"VpcId\": null\n            }\n        ],\n        \"RequestId\": \"31911506-4e35-45b6-8261-a51bf3d85bd5\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ClientNumLimit\": 1000,\n        \"CreatedTime\": 1705562417,\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"InstanceName\": \"sunjianxiong-1\",\n        \"InstanceStatus\": \"RUNNING\",\n        \"InstanceType\": \"BASIC\",\n        \"Remark\": \"this is remark\",\n        \"RequestId\": \"2251b9cf-aedd-4457-ac8d-bc705f48ccb8\",\n        \"SkuCode\": \"basic_1k\",\n        \"SubscriptionNumLimit\": 1000,\n        \"TopicNum\": 1,\n        \"TopicNumLimit\": 25,\n        \"TpsLimit\": 1000\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTInstanceCert": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInstanceCert\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": null,\n        \"RequestId\": \"a07a950a-43ea-4c13-a812-7ba4337d186a\",\n        \"SSLCaCertId\": null,\n        \"SSLServerCertId\": null\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMQTTInstanceList": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"CreateTime\": 1705565760,\n                \"InstanceId\": \"mqtt-wjgxr8jg\",\n                \"InstanceName\": \"sunjianxiong-0118-no-pub\",\n                \"InstanceStatus\": \"CREATE_FAILURE\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"\",\n                \"SkuCode\": \"mqtt_1k\",\n                \"SubscriptionNumLimit\": 1,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705562417,\n                \"InstanceId\": \"mqtt-7pnqmkrx\",\n                \"InstanceName\": \"sunjianxiong-1\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705562390,\n                \"InstanceId\": \"mqtt-92vrwg7q\",\n                \"InstanceName\": \"sunjianxiong-1\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705562343,\n                \"InstanceId\": \"mqtt-mzjj8pwq\",\n                \"InstanceName\": \"sunjianxiong-1\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705562309,\n                \"InstanceId\": \"mqtt-r8wq2qbr\",\n                \"InstanceName\": \"sunjianxiong\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705481574,\n                \"InstanceId\": \"mqtt-o98e9db4\",\n                \"InstanceName\": \"sunjianxiong-0117\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 1,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705391046,\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"InstanceName\": \"sun-0116\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 25,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705386756,\n                \"InstanceId\": \"mqtt-3jaepn74\",\n                \"InstanceName\": \"sunjianxiong\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705305132,\n                \"InstanceId\": \"mqtt-x4r9v2xq\",\n                \"InstanceName\": \"sunjianxiong-0115\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 1,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1704962679,\n                \"InstanceId\": \"mqtt-o47zowaz\",\n                \"InstanceName\": \"sjx-0111\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"\",\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 1000,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            }\n        ],\n        \"RequestId\": \"9424369d-904f-4fa2-b407-0bd5e536e989\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTMessage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Topic\": \"topic24\",\n    \"MsgId\": \"0B8D67F0002D6ACBCFC0557BCEBA0001\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"Hello MQTT111111\",\n        \"MessageId\": \"0B8D67F0002D6ACBCFC0557BCEBA0001\",\n        \"ProduceTime\": \"2024-01-17 14:22:57\",\n        \"ProducerAddr\": \"11.176.16.153:51134\",\n        \"Properties\": [\n            {\n                \"Key\": \"TRACE_ON\",\n                \"Value\": \"true\"\n            },\n            {\n                \"Key\": \"originMqttTopic\",\n                \"Value\": \"mqtt-47ka4rdr%topic24/1\"\n            },\n            {\n                \"Key\": \"INNER_MULTI_DISPATCH\",\n                \"Value\": \"%LMQ%mqtt-47ka4rdr%topic24%1%\"\n            },\n            {\n                \"Key\": \"IS_EMPTY_MSG\",\n                \"Value\": \"false\"\n            },\n            {\n                \"Key\": \"INNER_MULTI_QUEUE_OFFSET\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"retryTimes\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Key\": \"extData\",\n                \"Value\": \"{\\\"qosLevel\\\":\\\"1\\\"}\"\n            },\n            {\n                \"Key\": \"MSG_REGION\",\n                \"Value\": \"cd\"\n            },\n            {\n                \"Key\": \"qosLevel\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Key\": \"UNIQ_KEY\",\n                \"Value\": \"0B8D67F0002D6ACBCFC0557BCEBA0001\"\n            },\n            {\n                \"Key\": \"CLUSTER\",\n                \"Value\": \"rmqbk-mqtt\"\n            },\n            {\n                \"Key\": \"TAGS\",\n                \"Value\": \"MQTT_COMMON\"\n            },\n            {\n                \"Key\": \"__CLIENT_HOST\",\n                \"Value\": \"11.176.16.153:51134\"\n            }\n        ],\n        \"RequestId\": \"e658afc8-e2c0-463e-bf90-3103d881d59f\",\n        \"ShowTopicName\": \"topic24\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTMessageList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Topic\": \"topic24\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"StartTime\": 1705373755266,\n    \"EndTime\": 1705632955266,\n    \"TaskRequestId\": \" \"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": null,\n                \"MsgId\": \"0B8D67F0002D6ACBCFC0557BCEBA0001\",\n                \"ProduceTime\": \"2024-01-17 14:22:57\",\n                \"ProducerAddr\": \"11.176.16.153:51134\",\n                \"Qos\": \"1\",\n                \"SubTopic\": \"/1/\",\n                \"Tags\": \"MQTT_COMMON\"\n            },\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": null,\n                \"MsgId\": \"0B8D67F0002D6ACBCFC0557B1A980000\",\n                \"ProduceTime\": \"2024-01-17 14:22:11\",\n                \"ProducerAddr\": \"11.176.16.153:44044\",\n                \"Qos\": \"0\",\n                \"SubTopic\": \"\",\n                \"Tags\": \"MQTT_COMMON\"\n            }\n        ],\n        \"RequestId\": \"116cd3f5-668f-42fe-8572-fcd5d3a31377\",\n        \"TaskRequestId\": \"e3d14393-4701-4f62-8a7d-b52bd59b5ace\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "示例"
       }
     ],
@@ -129,6 +247,30 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTProductSKUList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MQTTProductSkuList\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"ProxySpecCore\": 2,\n                \"ProxySpecCount\": 1,\n                \"ProxySpecMemory\": 4,\n                \"SkuCode\": \"mqtt_1k\",\n                \"SubscriptionNumLimit\": 1,\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"ProxySpecCore\": 1,\n                \"ProxySpecCount\": 2,\n                \"ProxySpecMemory\": 2,\n                \"SkuCode\": \"basic_1k\",\n                \"SubscriptionNumLimit\": 1000,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000\n            }\n        ],\n        \"RequestId\": \"73a1275e-26ce-494c-90d0-d7f9d0510730\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTTopic": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Topic\": \"topic1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CreatedTime\": 1705567642,\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"Remark\": \"\",\n        \"RequestId\": \"acf7faf2-b2a9-431c-96b9-f589262da8f7\",\n        \"Topic\": \"topic1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTTopicList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTTopicList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"1111\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic24\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic23\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic22\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic21\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic20\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic19\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic18\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic17\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic16\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic15\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic14\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic13\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic12\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic11\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic10\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic9\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic8\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic7\"\n            },\n            {\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"Remark\": \"\",\n                \"Topic\": \"topic6\"\n            }\n        ],\n        \"RequestId\": \"d9042e88-c70e-4158-958c-8bb57d6c809f\",\n        \"TotalCount\": 25\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMQTTUserList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTUserList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedTime\": 1705392159000,\n                \"ModifiedTime\": 1705392159000,\n                \"Password\": \"sunjianxiong\",\n                \"PermRead\": true,\n                \"PermWrite\": true,\n                \"Remark\": \"\",\n                \"Username\": \"sunjianxiong\"\n            }\n        ],\n        \"RequestId\": \"8e86117c-a56c-4598-9e1f-4a039eed6e3a\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "示例"
       }
     ],
@@ -194,6 +336,46 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Remark\": \"tests\",\n    \"MessageRetention\": 25\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"becc23c2-b5e1-4df4-9df1-22ba8e5b20c3\"\n    }\n}",
         "title": "修改实例配置"
+      }
+    ],
+    "ModifyMQTTInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Bandwidth\": 2,\n    \"Rules\": [\n        {\n            \"IpRule\": \"2.2.2.2\",\n            \"Allow\": true,\n            \"Remark\": \"555\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"02eb3529-3440-44e9-b2c8-1e65c7017c09\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyMQTTInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Name\": \"sjx0119\",\n    \"Remark\": \"555\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"9955522b-ac27-46c1-8a16-3ed6f98f9c5c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyMQTTInstanceCertBinding": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTInstanceCertBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"SSLServerCertId\": \" \",\n    \"SSLCaCertId\": \" \"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"1d2d027f-1701-4bc6-8a2a-cede24d9c9ed\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyMQTTTopic": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Topic\": \"222\",\n    \"Remark\": \"444\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"29a02c3b-66ee-4442-acb7-3545b8e044b7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyMQTTUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Username\": \"222\",\n    \"Remark\": \"3333\",\n    \"PermRead\": true,\n    \"PermWrite\": true\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"85d3aeee-ba25-47cc-8c17-7ad837b877ba\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyRole": [

@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateInstanceAccount": {
-      "document": "创建实例子账号",
+      "document": "该接口（CreateInstanceAccount）用于自定义访问实例的账号。",
       "input": "CreateInstanceAccountRequest",
       "name": "创建实例子账号",
       "output": "CreateInstanceAccountResponse",
@@ -1619,7 +1619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -1628,7 +1628,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号名称",
+          "document": "自定义访问数据库的名称。\n- 仅由字母、数字、下划线、中划线组成。\n- 长度不能大于32位。",
           "example": "test",
           "member": "string",
           "name": "AccountName",
@@ -1637,7 +1637,7 @@
         },
         {
           "disabled": false,
-          "document": "1.长度8-30位,推荐使用12位以上的密码\n2.不能以\"/\"开头\n3.至少包含两项\n    a.小写字母a-z\n    b.大写字母A-Z\n    c.数字0-9\n    d.()`~!@#$%^&*-+=_|{}[]:;<>,.?/",
+          "document": "设置自定义账号的密码。密码复杂度要求如下：\n- 字符个数为[8,32]。\n- 至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的两种。\n- 不能以\"/\"开头。\n",
           "example": "1234567aA",
           "member": "string",
           "name": "AccountPassword",
@@ -1646,7 +1646,7 @@
         },
         {
           "disabled": false,
-          "document": "路由策略：填写master或者replication，表示主节点或者从节点",
+          "document": "指定账号的读请求路由分发至主节点或副本节点。未开启副本只读，不支持选择副本节点。\n- master：主节点\n- replication：副本节点",
           "example": "[\"master\"]",
           "member": "string",
           "name": "ReadonlyPolicy",
@@ -1655,7 +1655,7 @@
         },
         {
           "disabled": false,
-          "document": "读写策略：填写r、rw，表示只读、读写",
+          "document": "账户读写权限，支持选择只读与读写权限。\n- r：只读\n- rw: 读写权限",
           "example": "rw",
           "member": "string",
           "name": "Privilege",
@@ -1664,7 +1664,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号描述信息",
+          "document": "子账号描述信息，长度[0,64] 字节，支持中文。",
           "example": "\"\"",
           "member": "string",
           "name": "Remark",
@@ -1683,7 +1683,7 @@
           "example": "123456",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2731,7 +2731,7 @@
         {
           "disabled": false,
           "document": "数据库引擎名称，本接口取值：redis。",
-          "example": "crs-eb2w7dto",
+          "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -2740,7 +2740,7 @@
         {
           "disabled": false,
           "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n",
-          "example": "redis",
+          "example": "crs-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2758,6 +2758,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2767,6 +2768,7 @@
           "example": "10.10.0.1",
           "member": "string",
           "name": "VIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2776,6 +2778,7 @@
           "example": "6379",
           "member": "string",
           "name": "VPort",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

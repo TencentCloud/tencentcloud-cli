@@ -7,8 +7,8 @@ Input:
 ```
 tccli tke ForwardApplicationRequestV3 --cli-unfold-argument  \
     --Method GET \
-    --Path /api/v1/namespaces \
-    --ClusterName cls-xxxxxxxx
+    --Path /apis/application.tkestack.io/v1/namespaces/cls-gk7cm35k/apps/ \
+    --ClusterName cls-gk7cm35k
 ```
 
 Output: 

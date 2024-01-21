@@ -1,3 +1,119 @@
+# Release 3.0.1050.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 29 次发布
+
+发布时间：2024-01-22 01:09:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyRiskCenterScanTask](https://cloud.tencent.com/document/api/664/103117)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 117 次发布
+
+发布时间：2024-01-22 01:16:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLiveTranscodeTemplates](https://cloud.tencent.com/document/api/267/32641)
+
+	* 新增入参：TemplateType
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 8 次发布
+
+发布时间：2024-01-22 01:23:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMQTTInsPublicEndpoint](https://cloud.tencent.com/document/api/1493/103140)
+* [CreateMQTTTopic](https://cloud.tencent.com/document/api/1493/103139)
+* [CreateMQTTUser](https://cloud.tencent.com/document/api/1493/103121)
+* [DeleteMQTTInsPublicEndpoint](https://cloud.tencent.com/document/api/1493/103138)
+* [DeleteMQTTInstance](https://cloud.tencent.com/document/api/1493/103137)
+* [DeleteMQTTTopic](https://cloud.tencent.com/document/api/1493/103136)
+* [DeleteMQTTUser](https://cloud.tencent.com/document/api/1493/103120)
+* [DescribeMQTTClient](https://cloud.tencent.com/document/api/1493/103135)
+* [DescribeMQTTInsPublicEndpoints](https://cloud.tencent.com/document/api/1493/103134)
+* [DescribeMQTTInsVPCEndpoints](https://cloud.tencent.com/document/api/1493/103133)
+* [DescribeMQTTInstance](https://cloud.tencent.com/document/api/1493/103132)
+* [DescribeMQTTInstanceCert](https://cloud.tencent.com/document/api/1493/103131)
+* [DescribeMQTTMessage](https://cloud.tencent.com/document/api/1493/103123)
+* [DescribeMQTTMessageList](https://cloud.tencent.com/document/api/1493/103130)
+* [DescribeMQTTTopic](https://cloud.tencent.com/document/api/1493/103129)
+* [DescribeMQTTTopicList](https://cloud.tencent.com/document/api/1493/103128)
+* [DescribeMQTTUserList](https://cloud.tencent.com/document/api/1493/103119)
+* [ModifyMQTTInsPublicEndpoint](https://cloud.tencent.com/document/api/1493/103127)
+* [ModifyMQTTInstance](https://cloud.tencent.com/document/api/1493/103126)
+* [ModifyMQTTInstanceCertBinding](https://cloud.tencent.com/document/api/1493/103125)
+* [ModifyMQTTTopic](https://cloud.tencent.com/document/api/1493/103124)
+* [ModifyMQTTUser](https://cloud.tencent.com/document/api/1493/103118)
+
+新增数据结构：
+
+* [CustomMapEntry](https://cloud.tencent.com/document/api/1493/96031#CustomMapEntry)
+* [MQTTClientSubscription](https://cloud.tencent.com/document/api/1493/96031#MQTTClientSubscription)
+* [MQTTEndpointItem](https://cloud.tencent.com/document/api/1493/96031#MQTTEndpointItem)
+* [MQTTMessageItem](https://cloud.tencent.com/document/api/1493/96031#MQTTMessageItem)
+* [MQTTTopicItem](https://cloud.tencent.com/document/api/1493/96031#MQTTTopicItem)
+* [MQTTUserItem](https://cloud.tencent.com/document/api/1493/96031#MQTTUserItem)
+* [PublicAccessRule](https://cloud.tencent.com/document/api/1493/96031#PublicAccessRule)
+
+
+
+## 客流数字化平台(ump) 版本：2020-09-18
+
+### 第 4 次发布
+
+发布时间：2024-01-22 01:24:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCapture
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 70 次发布
+
+发布时间：2024-01-22 01:25:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteProjectUsers](https://cloud.tencent.com/document/api/1267/103141)
+
+
+
 # Release 3.0.1049.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
