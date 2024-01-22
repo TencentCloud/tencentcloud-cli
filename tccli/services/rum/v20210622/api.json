@@ -1,12 +1,5 @@
 {
   "actions": {
-    "CreateLogExport": {
-      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于创建日志下载任务\n\n默认接口请求频率限制：20次/秒。",
-      "input": "CreateLogExportRequest",
-      "name": "创建日志下载任务",
-      "output": "CreateLogExportResponse",
-      "status": "online"
-    },
     "CreateProject": {
       "document": "创建 RUM 应用（归属于某个团队）",
       "input": "CreateProjectRequest",
@@ -47,13 +40,6 @@
       "input": "DeleteInstanceRequest",
       "name": "删除 RUM 业务系统",
       "output": "DeleteInstanceResponse",
-      "status": "online"
-    },
-    "DeleteLogExport": {
-      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于删除日志下载任务\n\n默认接口请求频率限制：20次/秒。",
-      "input": "DeleteLogExportRequest",
-      "name": "删除日志下载任务",
-      "output": "DeleteLogExportResponse",
       "status": "online"
     },
     "DeleteProject": {
@@ -245,20 +231,6 @@
       "output": "DescribeErrorResponse",
       "status": "online"
     },
-    "DescribeLogExports": {
-      "document": "接口请求域名： rum.tencentcloudapi.com 。\n\n本接口用于获取日志下载任务列表\n\n默认接口请求频率限制：20次/秒",
-      "input": "DescribeLogExportsRequest",
-      "name": "获取日志下载任务列表",
-      "output": "DescribeLogExportsResponse",
-      "status": "online"
-    },
-    "DescribeLogList": {
-      "document": "(已下线，请用DescribeRumLogList)",
-      "input": "DescribeLogListRequest",
-      "name": "获取日志列表(已下线，请用DescribeRumLogList)",
-      "output": "DescribeLogListResponse",
-      "status": "online"
-    },
     "DescribeProjectLimits": {
       "document": "获取应用上报抽样信息",
       "input": "DescribeProjectLimitsRequest",
@@ -421,97 +393,6 @@
     "serviceShortName": "rum"
   },
   "objects": {
-    "CreateLogExportRequest": {
-      "document": "CreateLogExport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目ID",
-          "example": "1",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出起始时间",
-          "example": "2022-01-20 00:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出结束时间",
-          "example": "2022-01-21 00:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出检索语句",
-          "example": "*",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出数量, 最大值1000万",
-          "example": "10",
-          "member": "int64",
-          "name": "Count",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出时间排序。desc，asc，默认为desc",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出数据格式。json，csv，默认为json",
-          "example": "json",
-          "member": "string",
-          "name": "Format",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLogExportResponse": {
-      "document": "CreateLogExport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志导出ID",
-          "example": "export-f5e4c354-2441-4ea5-848e-8fc25e0f2c24",
-          "member": "string",
-          "name": "ExportID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateProjectRequest": {
       "document": "CreateProject请求参数结构体",
       "members": [
@@ -947,52 +828,6 @@
     "DeleteInstanceResponse": {
       "document": "DeleteInstance返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLogExportRequest": {
-      "document": "DeleteLogExport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目ID",
-          "example": "1",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "日志导出ID",
-          "example": "export-xxx",
-          "member": "string",
-          "name": "ExportID",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteLogExportResponse": {
-      "document": "DeleteLogExport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否成功，成功则为success；失败则直接返回Error，不返回该参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5367,143 +5202,6 @@
       ],
       "type": "object"
     },
-    "DescribeLogExportsRequest": {
-      "document": "DescribeLogExports请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目ID",
-          "example": "1",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLogExportsResponse": {
-      "document": "DescribeLogExports返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志导出记录列表",
-          "example": "无",
-          "member": "LogExport",
-          "name": "LogExportSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLogListRequest": {
-      "document": "DescribeLogList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "排序方式  desc  asc（必填）",
-          "example": "asc",
-          "member": "string",
-          "name": "Sort",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "searchlog  histogram（必填）",
-          "example": "searchlog",
-          "member": "string",
-          "name": "ActionType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "项目ID（必填）",
-          "example": "100",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间（必填）",
-          "example": "2021-09-26 21:01:46",
-          "member": "string",
-          "name": "StartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
-          "example": "无",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "上下文，加载更多日志时使用，透传上次返回的 Context 值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时",
-          "example": "无",
-          "member": "string",
-          "name": "Context",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）例：\"id:120001 AND type:\\\"log\\\"\"",
-          "example": "id:100",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间（必填）",
-          "example": "2021-09-26 21:01:46",
-          "member": "string",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLogListResponse": {
-      "document": "DescribeLogList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回字符串",
-          "example": "无",
-          "member": "string",
-          "name": "Result",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeProjectLimitsRequest": {
       "document": "DescribeProjectLimits请求参数结构体",
       "members": [
@@ -6592,132 +6290,6 @@
         }
       ],
       "usage": "in"
-    },
-    "LogExport": {
-      "document": "日志导出记录",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志导出路径",
-          "example": "https://export.xxx.xxx.xxx.com",
-          "member": "string",
-          "name": "CosPath",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出任务创建时间",
-          "example": "2022-01-21 16:45:41",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出任务ID",
-          "example": "export-xxx",
-          "member": "string",
-          "name": "ExportID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出文件名",
-          "example": "log_expo",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志文件大小",
-          "example": "866",
-          "member": "int64",
-          "name": "FileSize",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出格式",
-          "example": "json",
-          "member": "string",
-          "name": "Format",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出时间排序",
-          "example": "asc",
-          "member": "string",
-          "name": "Order",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出查询语句",
-          "example": "*",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出起始时间",
-          "example": "2022-01-20 00:00:00",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志导出结束时间",
-          "example": "2022-01-21 00:00:00",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志下载状态。Queuing:导出正在排队中，Processing:导出正在进行中，Complete:导出完成，Failed:导出失败，Expired:日志导出已过期（三天有效期）。",
-          "example": "Completed",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "ModifyInstanceRequest": {
       "document": "ModifyInstance请求参数结构体",

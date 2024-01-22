@@ -16,22 +16,22 @@ Output:
     "Response": {
         "DownloadHeaders": [
             {
-                "Value": "xx",
-                "Key": "xx"
+                "Value": "value",
+                "Key": "key"
             }
         ],
         "UploadHeaders": [
             {
-                "Value": "xx",
-                "Key": "xx"
+                "Value": "value1",
+                "Key": "key1"
             }
         ],
-        "UploadUrl": "xx",
-        "DownloadUrl": "xx",
-        "RequestId": "xx",
+        "UploadUrl": "http://url",
+        "DownloadUrl": "http://url/download",
+        "RequestId": "asdasd-asfasfas-asfasfa",
         "OutDate": true,
-        "PackageVersion": "xx",
-        "PackageName": "xx"
+        "PackageVersion": "version",
+        "PackageName": "name"
     }
 }
 ```

@@ -1,3 +1,206 @@
+# Release 3.0.1051.1
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 9 次发布
+
+发布时间：2024-01-23 01:18:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* FaceFusionLite
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 25 次发布
+
+发布时间：2024-01-23 01:20:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageMultiThumbnail](https://cloud.tencent.com/document/api/1131/103174)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 32 次发布
+
+发布时间：2024-01-23 01:25:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentDealNewElem](https://cloud.tencent.com/document/api/563/16047#AgentDealNewElem)
+
+	* 新增成员：SubGoodsName
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 32 次发布
+
+发布时间：2024-01-23 01:26:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateLogExport
+* DeleteLogExport
+* DescribeLogExports
+* DescribeLogList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* LogExport
+
+
+
+## 云开发 CloudBase(tcb) 版本：2018-06-08
+
+### 第 101 次发布
+
+发布时间：2024-01-23 01:27:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudBaseProjectVersion](https://cloud.tencent.com/document/api/876/34822#CloudBaseProjectVersion)
+
+	* 新增成员：Uin, BuildFinishTime, DeployFinishTime, BuildId, SourceUrl, FailReasonShort, FirstInitRepo
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 1 次发布
+
+发布时间：2024-01-22 11:36:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterInstances](https://cloud.tencent.com/document/api/#/#)
+* [DescribeNodePools](https://cloud.tencent.com/document/api/#/#)
+
+新增数据结构：
+
+* [Annotation](https://cloud.tencent.com/document/api/#/##Annotation)
+* [AutoscalingAdded](https://cloud.tencent.com/document/api/#/##AutoscalingAdded)
+* [ExternalNodeInfo](https://cloud.tencent.com/document/api/#/##ExternalNodeInfo)
+* [ExternalNodePoolInfo](https://cloud.tencent.com/document/api/#/##ExternalNodePoolInfo)
+* [Filter](https://cloud.tencent.com/document/api/#/##Filter)
+* [Instance](https://cloud.tencent.com/document/api/#/##Instance)
+* [InstanceAdvancedSettings](https://cloud.tencent.com/document/api/#/##InstanceAdvancedSettings)
+* [InstanceExtraArgs](https://cloud.tencent.com/document/api/#/##InstanceExtraArgs)
+* [InternetAccessible](https://cloud.tencent.com/document/api/#/##InternetAccessible)
+* [Label](https://cloud.tencent.com/document/api/#/##Label)
+* [ManuallyAdded](https://cloud.tencent.com/document/api/#/##ManuallyAdded)
+* [NativeNodeInfo](https://cloud.tencent.com/document/api/#/##NativeNodeInfo)
+* [NativeNodePoolInfo](https://cloud.tencent.com/document/api/#/##NativeNodePoolInfo)
+* [NodeCountSummary](https://cloud.tencent.com/document/api/#/##NodeCountSummary)
+* [NodePool](https://cloud.tencent.com/document/api/#/##NodePool)
+* [RegularNodeInfo](https://cloud.tencent.com/document/api/#/##RegularNodeInfo)
+* [RegularNodePoolInfo](https://cloud.tencent.com/document/api/#/##RegularNodePoolInfo)
+* [RuntimeConfig](https://cloud.tencent.com/document/api/#/##RuntimeConfig)
+* [SortBy](https://cloud.tencent.com/document/api/#/##SortBy)
+* [SuperNodeInfo](https://cloud.tencent.com/document/api/#/##SuperNodeInfo)
+* [SuperNodePoolInfo](https://cloud.tencent.com/document/api/#/##SuperNodePoolInfo)
+* [Taint](https://cloud.tencent.com/document/api/#/##Taint)
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 9 次发布
+
+发布时间：2024-01-23 01:30:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMQTTInsPublicEndpoint](https://cloud.tencent.com/document/api/1493/103140)
+
+	* <font color="#dd0000">**修改入参**：</font>Rules
+
+
+
+
+## 客流数字化平台(ump) 版本：2020-09-18
+
+### 第 5 次发布
+
+发布时间：2024-01-23 01:31:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCameraAlerts
+* CreateCameraState
+* CreateMultiBizAlert
+* CreateProgramState
+* CreateServerState
+* DeleteMultiBizAlert
+* DeleteTask
+* DescribeCameras
+* DescribeConfig
+* DescribeImage
+* DescribeMultiBizBaseImage
+* DescribeTasks
+* DescribeZones
+* ModifyMultiBizConfig
+* ReportServiceRegister
+* SearchImage
+
+
+
 # Release 3.0.1050.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

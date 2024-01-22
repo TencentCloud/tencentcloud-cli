@@ -13,25 +13,38 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
         "TotalCount": 1,
         "AutoSnapshotPolicies": [
             {
-                "AutoSnapshotPolicyId": "asp-12345",
-                "PolicyName": "未命名",
-                "RegionName": "ap-guangzhou",
-                "CreationTime": "2021-08-26 15:19:46",
+                "AutoSnapshotPolicyId": "abc",
+                "PolicyName": "abc",
+                "CreationTime": "abc",
+                "FileSystemNums": 1,
+                "DayOfWeek": "abc",
+                "Hour": "abc",
+                "IsActivated": 1,
+                "NextActiveTime": "abc",
+                "Status": "abc",
+                "AppId": 1,
                 "AliveDays": 1,
-                "DayOfWeek": "1",
-                "Hour": "1",
-                "IsActivated": 0,
-                "AppId": 1255558577,
-                "FileSystemNums": 0,
-                "Status": "available",
-                "NextActiveTime": "2021-11-22 01:00:00",
-                "FileSystems": []
+                "RegionName": "abc",
+                "FileSystems": [
+                    {
+                        "CreationToken": "abc",
+                        "FileSystemId": "abc",
+                        "SizeByte": 1,
+                        "StorageType": "abc",
+                        "TotalSnapshotSize": 1,
+                        "CreationTime": "abc",
+                        "ZoneId": 1
+                    }
+                ],
+                "DayOfMonth": "abc",
+                "IntervalDays": 1,
+                "CrossRegionsAliveDays": 1
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

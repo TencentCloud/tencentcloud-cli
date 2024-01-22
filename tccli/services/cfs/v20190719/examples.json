@@ -124,7 +124,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoSnapshotPolicies\n<公共请求参数>\n\n{\n    \"AutoSnapshotPolicyId\": \"asp-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"TotalCount\": 1,\n        \"AutoSnapshotPolicies\": [\n            {\n                \"AutoSnapshotPolicyId\": \"asp-12345\",\n                \"PolicyName\": \"未命名\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"CreationTime\": \"2021-08-26 15:19:46\",\n                \"AliveDays\": 1,\n                \"DayOfWeek\": \"1\",\n                \"Hour\": \"1\",\n                \"IsActivated\": 0,\n                \"AppId\": 1255558577,\n                \"FileSystemNums\": 0,\n                \"Status\": \"available\",\n                \"NextActiveTime\": \"2021-11-22 01:00:00\",\n                \"FileSystems\": []\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AutoSnapshotPolicies\": [\n            {\n                \"AutoSnapshotPolicyId\": \"abc\",\n                \"PolicyName\": \"abc\",\n                \"CreationTime\": \"abc\",\n                \"FileSystemNums\": 1,\n                \"DayOfWeek\": \"abc\",\n                \"Hour\": \"abc\",\n                \"IsActivated\": 1,\n                \"NextActiveTime\": \"abc\",\n                \"Status\": \"abc\",\n                \"AppId\": 1,\n                \"AliveDays\": 1,\n                \"RegionName\": \"abc\",\n                \"FileSystems\": [\n                    {\n                        \"CreationToken\": \"abc\",\n                        \"FileSystemId\": \"abc\",\n                        \"SizeByte\": 1,\n                        \"StorageType\": \"abc\",\n                        \"TotalSnapshotSize\": 1,\n                        \"CreationTime\": \"abc\",\n                        \"ZoneId\": 1\n                    }\n                ],\n                \"DayOfMonth\": \"abc\",\n                \"IntervalDays\": 1,\n                \"CrossRegionsAliveDays\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询快照策略"
       }
     ],
@@ -195,8 +195,8 @@
     "DescribeCfsSnapshots": [
       {
         "document": "",
-        "input": "https://cfs.tencentcloudapi.com/?Action=DescribeCfsSnapshots\n&FileSystemId=cfs-12345\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalSize\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Snapshots\": [\n            {\n                \"Status\": 1,\n                \"SnapshotName\": \"xx\",\n                \"Percent\": 1,\n                \"FileSystemId\": \"xx\",\n                \"Size\": 1,\n                \"AppId\": 1,\n                \"SnapshotId\": \"xx\",\n                \"AliveDay\": 1,\n                \"CreationTime\": \"xx\",\n                \"DeleteTime\": \"xx\",\n                \"FsName\": \"xx\",\n                \"RegionName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfsSnapshots\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Snapshots\": [\n            {\n                \"CreationTime\": \"abc\",\n                \"SnapshotName\": \"abc\",\n                \"SnapshotId\": \"abc\",\n                \"Status\": \"abc\",\n                \"RegionName\": \"abc\",\n                \"FileSystemId\": \"abc\",\n                \"Size\": 1,\n                \"AliveDay\": 1,\n                \"Percent\": 1,\n                \"AppId\": 1,\n                \"DeleteTime\": \"abc\",\n                \"FsName\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"SnapshotType\": \"abc\",\n                \"SnapshotTime\": \"abc\"\n            }\n        ],\n        \"TotalSize\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询快照"
       }
     ],
@@ -212,7 +212,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMountTargets\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NumberOfMountTargets\": 1,\n        \"RequestId\": \"12345-54321-12345\",\n        \"MountTargets\": [\n            {\n                \"MountTargetId\": \"mount-12345\",\n                \"VpcId\": \"vpc-12345\",\n                \"CidrBlock\": \"xx\",\n                \"CcnID\": \"xx\",\n                \"NetworkInterface\": \"vpc\",\n                \"SubnetName\": \"test\",\n                \"FileSystemId\": \"cfs-12345\",\n                \"VpcName\": \"12345\",\n                \"LifeCycleState\": \"available\",\n                \"SubnetId\": \"subnet-12345\",\n                \"IpAddress\": \"10.0.0.10\",\n                \"FSID\": \"12345\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NumberOfMountTargets\": 1,\n        \"RequestId\": \"12345-54321-12345\",\n        \"MountTargets\": [\n            {\n                \"MountTargetId\": \"mount-12345\",\n                \"VpcId\": \"vpc-12345\",\n                \"CidrBlock\": \"10.0.0.0/24\",\n                \"CcnID\": \"ccn-123456\",\n                \"NetworkInterface\": \"vpc\",\n                \"SubnetName\": \"test\",\n                \"FileSystemId\": \"cfs-12345\",\n                \"VpcName\": \"12345\",\n                \"LifeCycleState\": \"available\",\n                \"SubnetId\": \"subnet-12345\",\n                \"IpAddress\": \"10.0.0.10\",\n                \"FSID\": \"12345\"\n            }\n        ]\n    }\n}",
         "title": "查询文件系统挂载点"
       }
     ],
@@ -331,7 +331,7 @@
     "UpdateCfsSnapshotAttribute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsSnapshotAttribute\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snapcfs-12345\",\n    \"SnapshotName\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsSnapshotAttribute\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"abc\",\n    \"SnapshotName\": \"abc\",\n    \"AliveDays\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"SnapshotId\": \"snapcfs-12345\"\n    }\n}",
         "title": "更新快照内容"
       }

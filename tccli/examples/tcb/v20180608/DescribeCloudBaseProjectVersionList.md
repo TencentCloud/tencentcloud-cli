@@ -6,58 +6,69 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseProjectVersionList --cli-unfold-argument  \
-    --EnvId xx \
+    --EnvId lowcode-abc \
     --PageNum 1 \
-    --PageSize 1 \
-    --ProjectName xx \
-    --StartTime xx \
-    --EndTime xx
+    --PageSize 10 \
+    --ProjectName project
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "ProjectVersions": [
             {
-                "Status": "xx",
+                "Name": "abc",
+                "Sam": "abc",
+                "Source": {
+                    "Type": "abc",
+                    "Url": "abc",
+                    "Name": "abc",
+                    "WorkDir": "abc",
+                    "CodingPackageName": "abc",
+                    "CodingPackageVersion": "abc",
+                    "RawCode": "abc",
+                    "Branch": "abc",
+                    "ProjectId": 0,
+                    "ProjectName": "abc"
+                },
+                "CreateTime": 0,
                 "UpdateTime": 0,
-                "EnvId": "xx",
-                "Name": "xx",
-                "Sam": "xx",
-                "Tags": [
-                    "xx"
-                ],
-                "RcJson": "xx",
-                "CDId": "xx",
-                "NetworkConfig": "xx",
+                "Status": "abc",
                 "Parameters": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "Source": {
-                    "CodingPackageVersion": "xx",
-                    "WorkDir": "xx",
-                    "Name": "xx",
-                    "Url": "xx",
-                    "RawCode": "xx",
-                    "Type": "xx",
-                    "CodingPackageName": "xx"
-                },
-                "FailReason": "xx",
-                "AddonConfig": "xx",
+                "Type": "abc",
+                "CIId": "abc",
+                "CDId": "abc",
+                "EnvId": "abc",
                 "VersionNum": 0,
-                "ExtensionId": "xx",
-                "FailType": "xx",
-                "CIId": "xx",
-                "Type": "xx",
-                "CreateTime": 0
+                "FailReason": "abc",
+                "RcJson": "abc",
+                "AddonConfig": "abc",
+                "Tags": [
+                    "abc"
+                ],
+                "NetworkConfig": "abc",
+                "ExtensionId": "abc",
+                "FailType": "abc",
+                "RepoUrl": "abc",
+                "AutoDeployOnCodeChange": true,
+                "BuildPercent": 0,
+                "Uin": "abc",
+                "BuildFinishTime": "abc",
+                "DeployFinishTime": "abc",
+                "BuildId": "abc",
+                "SourceUrl": "abc",
+                "FailReasonShort": "abc",
+                "FirstInitRepo": "abc"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

@@ -249,7 +249,7 @@
         {
           "disabled": false,
           "document": "DID应用ID",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "DAPId",
           "required": false,
@@ -295,7 +295,7 @@
         {
           "disabled": false,
           "document": "凭证列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "Credentials",
           "required": false,
@@ -331,7 +331,7 @@
         {
           "disabled": false,
           "document": "是否签名，ture时signatureValue为待签名内容由调用端自行签名，false时signatureValue为平台自动已签名的内容。默认false",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Unsigned",
           "required": false,
@@ -507,7 +507,7 @@
         {
           "disabled": false,
           "document": "可验证凭证内容",
-          "example": "无",
+          "example": "{\\n\\t\\\"cptId\\\": 1,\\n\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\\"expirationDate\\\": \\\"2023-12-01T10:00:00+08:00\\\",\\n\\t\\\"issuanceDate\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\\"context\\\": \\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\n\\t\\\"id\\\": \\\"fw1652844bee8e5ecf1b404242b83f1b\\\",\\n\\t\\\"type\\\": [\\\"VerifiableCredential\\\"],\\n\\t\\\"credentialSubject\\\": {\\n\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\\"id\\\": \\\"8818fdd61eb84e4a745a3b04c96e5237\\\",\\n\\t\\t\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\t\\t\\\"status\\\": 1\\n\\t\\t},\\n\\t\\t\\\"action\\\": \\\"updateCredentialState\\\",\\n\\t\\t\\\"orignCredential\\\": \\\"{\\\\\\\"cptId\\\\\\\":1,\\\\\\\"issuer\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\\\\\",\\\\\\\"expirationDate\\\\\\\":\\\\\\\"2023-12-01T10:00:00+08:00\\\\\\\",\\\\\\\"issuanceDate\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"context\\\\\\\":\\\\\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\\\\\",\\\\\\\"id\\\\\\\":\\\\\\\"8818fdd61eb84e4a745a3b04c96e5237\\\\\\\",\\\\\\\"type\\\\\\\":[\\\\\\\"VerifiableCredential\\\\\\\"],\\\\\\\"credentialSubject\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"updateCredentialState\\\\\\\"},\\\\\\\"proof\\\\\\\":{\\\\\\\"created\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"creator\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\\\\\",\\\\\\\"signatureValue\\\\\\\":\\\\\\\"MEUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0w1JmI=\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Secp256r1\\\\\\\",\\\\\\\"metaDigest\\\\\\\":\\\\\\\"6a216f84cb9w1b6170cb017cccd6w1d0b81aad200d5691914d6045471d0dd1ad\\\\\\\",\\\\\\\"vcDigest\\\\\\\":\\\\\\\"c7e13w1bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf\\\\\\\",\\\\\\\"privacy\\\\\\\":\\\\\\\"Public\\\\\\\",\\\\\\\"salt\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"HZdDU\\\\\\\"}}}\\\"\\n\\t},\\n\\t\\\"proof\\\": {\\n\\t\\t\\\"created\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\t\\\"creator\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\",\\n\\t\\t\\\"signatureValue\\\": \\\"MEUCIDkLg6EqmwvEHYLtjumpeqKz/hIi6EROMDXPPpNIxORHAiEA8T0LMI59tkBTz+llu/GkjToj5M8k5SwXFoU3fnjQ3mo=\\\",\\n\\t\\t\\\"type\\\": \\\"Secp256r1\\\",\\n\\t\\t\\\"metaDigest\\\": \\\"46894b7f54365d685ba587608d2b74f800404ebb76f5c32dd90bc3916e844ae2\\\",\\n\\t\\t\\\"vcDigest\\\": \\\"d086ba831ab3185971c168w125bf2bd487d7eced3ede8d623b30cfe9da03bcaf\\\",\\n\\t\\t\\\"privacy\\\": \\\"Public\\\",\\n\\t\\t\\\"salt\\\": {\\n\\t\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\t\\\"id\\\": \\\"4dPOH\\\",\\n\\t\\t\\t\\t\\\"issuer\\\": \\\"OJH5M\\\",\\n\\t\\t\\t\\t\\\"status\\\": \\\"lm2W4\\\"\\n\\t\\t\\t},\\n\\t\\t\\t\\\"action\\\": \\\"r95wA\\\",\\n\\t\\t\\t\\\"orignCredential\\\": \\\"b3H4j\\\"\\n\\t\\t}\\n\\t}\\n}",
           "member": "string",
           "name": "Credential",
           "required": true,
@@ -522,7 +522,7 @@
         {
           "disabled": false,
           "document": "凭证唯一id",
-          "example": "a",
+          "example": "8818fdd61eb84e4a745a3b04c96e5237",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -544,7 +544,7 @@
         {
           "disabled": false,
           "document": "凭证颁发者Did",
-          "example": "did:tdid:c859:0x833e89118443c623a8ab063d9ef08268268fe3a4",
+          "example": "did:tdid:w1:0x833e89118443c623a8ab063d9ef08268268fe3a4",
           "member": "string",
           "name": "Issuer",
           "output_required": false,
@@ -555,7 +555,7 @@
         {
           "disabled": false,
           "document": "VC摘要，对应凭证Proof的vcDigest字段",
-          "example": "a",
+          "example": "c7e13c5bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf",
           "member": "string",
           "name": "VCDigest",
           "output_required": false,
@@ -566,7 +566,7 @@
         {
           "disabled": false,
           "document": "交易摘要，对应凭证Proof的txDigest字段 ",
-          "example": "a",
+          "example": "c7e13c5bcfa879c922f9141d085facc0ce1973e8d27d48238130",
           "member": "string",
           "name": "TXDigest",
           "output_required": false,
@@ -577,7 +577,7 @@
         {
           "disabled": false,
           "document": "颁布凭证的UTC时间戳",
-          "example": "1",
+          "example": "1695125060",
           "member": "uint64",
           "name": "IssueTime",
           "output_required": false,
@@ -588,7 +588,7 @@
         {
           "disabled": false,
           "document": "凭证过期的UTC时间戳",
-          "example": "无",
+          "example": "1701396000",
           "member": "uint64",
           "name": "ExpireTime",
           "output_required": false,
@@ -599,7 +599,7 @@
         {
           "disabled": false,
           "document": "凭证模板id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CPTId",
           "output_required": false,
@@ -610,7 +610,7 @@
         {
           "disabled": false,
           "document": "凭证签名",
-          "example": "无",
+          "example": "EUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0c5JmI=",
           "member": "string",
           "name": "Signature",
           "output_required": false,
@@ -621,7 +621,7 @@
         {
           "disabled": false,
           "document": "元数据摘要",
-          "example": "无",
+          "example": "6a216f84cb9c5b6170cb017cccd6c5d0b81aad200d5691914d6045471d0dd1ad",
           "member": "string",
           "name": "MetaDigest",
           "output_required": false,
@@ -1305,7 +1305,7 @@
         {
           "disabled": false,
           "document": "操作鉴权凭证",
-          "example": "无",
+          "example": "{\\n\\t\\\"cptId\\\": 1,\\n\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\\"expirationDate\\\": \\\"2023-12-01T10:00:00+08:00\\\",\\n\\t\\\"issuanceDate\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\\"context\\\": \\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\n\\t\\\"id\\\": \\\"fw1652844bee8e5ecf1b404242b83f1b\\\",\\n\\t\\\"type\\\": [\\\"VerifiableCredential\\\"],\\n\\t\\\"credentialSubject\\\": {\\n\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\\"id\\\": \\\"8818fdd61eb84e4a745a3b04c96e5237\\\",\\n\\t\\t\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\t\\t\\\"status\\\": 1\\n\\t\\t},\\n\\t\\t\\\"action\\\": \\\"updateCredentialState\\\",\\n\\t\\t\\\"orignCredential\\\": \\\"{\\\\\\\"cptId\\\\\\\":1,\\\\\\\"issuer\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\\\\\",\\\\\\\"expirationDate\\\\\\\":\\\\\\\"2023-12-01T10:00:00+08:00\\\\\\\",\\\\\\\"issuanceDate\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"context\\\\\\\":\\\\\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\\\\\",\\\\\\\"id\\\\\\\":\\\\\\\"8818fdd61eb84e4a745a3b04c96e5237\\\\\\\",\\\\\\\"type\\\\\\\":[\\\\\\\"VerifiableCredential\\\\\\\"],\\\\\\\"credentialSubject\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"updateCredentialState\\\\\\\"},\\\\\\\"proof\\\\\\\":{\\\\\\\"created\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"creator\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\\\\\",\\\\\\\"signatureValue\\\\\\\":\\\\\\\"MEUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0w1JmI=\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Secp256r1\\\\\\\",\\\\\\\"metaDigest\\\\\\\":\\\\\\\"6a216f84cb9w1b6170cb017cccd6w1d0b81aad200d5691914d6045471d0dd1ad\\\\\\\",\\\\\\\"vcDigest\\\\\\\":\\\\\\\"c7e13w1bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf\\\\\\\",\\\\\\\"privacy\\\\\\\":\\\\\\\"Public\\\\\\\",\\\\\\\"salt\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"HZdDU\\\\\\\"}}}\\\"\\n\\t},\\n\\t\\\"proof\\\": {\\n\\t\\t\\\"created\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\t\\\"creator\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\",\\n\\t\\t\\\"signatureValue\\\": \\\"MEUCIDkLg6EqmwvEHYLtjumpeqKz/hIi6EROMDXPPpNIxORHAiEA8T0LMI59tkBTz+llu/GkjToj5M8k5SwXFoU3fnjQ3mo=\\\",\\n\\t\\t\\\"type\\\": \\\"Secp256r1\\\",\\n\\t\\t\\\"metaDigest\\\": \\\"46894b7f54365d685ba587608d2b74f800404ebb76f5c32dd90bc3916e844ae2\\\",\\n\\t\\t\\\"vcDigest\\\": \\\"d086ba831ab3185971c168w125bf2bd487d7eced3ede8d623b30cfe9da03bcaf\\\",\\n\\t\\t\\\"privacy\\\": \\\"Public\\\",\\n\\t\\t\\\"salt\\\": {\\n\\t\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\t\\\"id\\\": \\\"4dPOH\\\",\\n\\t\\t\\t\\t\\\"issuer\\\": \\\"OJH5M\\\",\\n\\t\\t\\t\\t\\\"status\\\": \\\"lm2W4\\\"\\n\\t\\t\\t},\\n\\t\\t\\t\\\"action\\\": \\\"r95wA\\\",\\n\\t\\t\\t\\\"orignCredential\\\": \\\"b3H4j\\\"\\n\\t\\t}\\n\\t}\\n}",
           "member": "string",
           "name": "OperateCredential",
           "required": false,
@@ -1351,7 +1351,7 @@
         {
           "disabled": false,
           "document": "更新VC状态的临时凭证内容，通过创建凭证接口(CreateCredential)生成并签名，凭证类型为：OperateCredential, 为安全起见凭证过期时间不适合太长，建议设置为1分钟内",
-          "example": "无",
+          "example": "{\\n\\t\\\"cptId\\\": 1,\\n\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\\"expirationDate\\\": \\\"2023-12-01T10:00:00+08:00\\\",\\n\\t\\\"issuanceDate\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\\"context\\\": \\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\n\\t\\\"id\\\": \\\"fw1652844bee8e5ecf1b404242b83f1b\\\",\\n\\t\\\"type\\\": [\\\"VerifiableCredential\\\"],\\n\\t\\\"credentialSubject\\\": {\\n\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\\"id\\\": \\\"8818fdd61eb84e4a745a3b04c96e5237\\\",\\n\\t\\t\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\t\\t\\\"status\\\": 1\\n\\t\\t},\\n\\t\\t\\\"action\\\": \\\"updateCredentialState\\\",\\n\\t\\t\\\"orignCredential\\\": \\\"{\\\\\\\"cptId\\\\\\\":1,\\\\\\\"issuer\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\\\\\",\\\\\\\"expirationDate\\\\\\\":\\\\\\\"2023-12-01T10:00:00+08:00\\\\\\\",\\\\\\\"issuanceDate\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"context\\\\\\\":\\\\\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\\\\\",\\\\\\\"id\\\\\\\":\\\\\\\"8818fdd61eb84e4a745a3b04c96e5237\\\\\\\",\\\\\\\"type\\\\\\\":[\\\\\\\"VerifiableCredential\\\\\\\"],\\\\\\\"credentialSubject\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"updateCredentialState\\\\\\\"},\\\\\\\"proof\\\\\\\":{\\\\\\\"created\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"creator\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\\\\\",\\\\\\\"signatureValue\\\\\\\":\\\\\\\"MEUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0w1JmI=\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Secp256r1\\\\\\\",\\\\\\\"metaDigest\\\\\\\":\\\\\\\"6a216f84cb9w1b6170cb017cccd6w1d0b81aad200d5691914d6045471d0dd1ad\\\\\\\",\\\\\\\"vcDigest\\\\\\\":\\\\\\\"c7e13w1bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf\\\\\\\",\\\\\\\"privacy\\\\\\\":\\\\\\\"Public\\\\\\\",\\\\\\\"salt\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"HZdDU\\\\\\\"}}}\\\"\\n\\t},\\n\\t\\\"proof\\\": {\\n\\t\\t\\\"created\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\t\\\"creator\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\",\\n\\t\\t\\\"signatureValue\\\": \\\"MEUCIDkLg6EqmwvEHYLtjumpeqKz/hIi6EROMDXPPpNIxORHAiEA8T0LMI59tkBTz+llu/GkjToj5M8k5SwXFoU3fnjQ3mo=\\\",\\n\\t\\t\\\"type\\\": \\\"Secp256r1\\\",\\n\\t\\t\\\"metaDigest\\\": \\\"46894b7f54365d685ba587608d2b74f800404ebb76f5c32dd90bc3916e844ae2\\\",\\n\\t\\t\\\"vcDigest\\\": \\\"d086ba831ab3185971c168w125bf2bd487d7eced3ede8d623b30cfe9da03bcaf\\\",\\n\\t\\t\\\"privacy\\\": \\\"Public\\\",\\n\\t\\t\\\"salt\\\": {\\n\\t\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\t\\\"id\\\": \\\"4dPOH\\\",\\n\\t\\t\\t\\t\\\"issuer\\\": \\\"OJH5M\\\",\\n\\t\\t\\t\\t\\\"status\\\": \\\"lm2W4\\\"\\n\\t\\t\\t},\\n\\t\\t\\t\\\"action\\\": \\\"r95wA\\\",\\n\\t\\t\\t\\\"orignCredential\\\": \\\"b3H4j\\\"\\n\\t\\t}\\n\\t}\\n}",
           "member": "string",
           "name": "OperateCredential",
           "required": false,
