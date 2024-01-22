@@ -19,8 +19,8 @@ Output:
             {
                 "MountTargetId": "mount-12345",
                 "VpcId": "vpc-12345",
-                "CidrBlock": "xx",
-                "CcnID": "xx",
+                "CidrBlock": "10.0.0.0/24",
+                "CcnID": "ccn-123456",
                 "NetworkInterface": "vpc",
                 "SubnetName": "test",
                 "FileSystemId": "cfs-12345",

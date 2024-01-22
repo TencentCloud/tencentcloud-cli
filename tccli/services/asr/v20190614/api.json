@@ -584,7 +584,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id，且ChannelNum=1时可用）；\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
+          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id/16k_zh_large/16k_dialect_large，且ChannelNum=1时可用）；\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
           "example": "0",
           "member": "int64",
           "name": "SpeakerDiarization",

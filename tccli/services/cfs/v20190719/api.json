@@ -563,7 +563,7 @@
         {
           "disabled": false,
           "document": "协议与售卖详情",
-          "example": "无",
+          "example": "NFS",
           "member": "AvailableProtoStatus",
           "name": "Protocols",
           "output_required": true,
@@ -573,7 +573,7 @@
         {
           "disabled": false,
           "document": "存储类型。返回值中 SD 为通用标准型存储， HP为通用性能型存储， TB为Turbo标准型， TP 为Turbo性能型。",
-          "example": "无",
+          "example": "SD",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -583,7 +583,7 @@
         {
           "disabled": false,
           "document": "是否支持预付费。返回值中 true 为支持、false 为不支持",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Prepayment",
           "output_required": true,
@@ -1277,7 +1277,7 @@
         {
           "disabled": false,
           "document": "快照名称",
-          "example": "xx",
+          "example": "snapshot-xxx",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -1304,7 +1304,7 @@
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1323,7 +1323,7 @@
         {
           "disabled": false,
           "document": "迁移任务名称",
-          "example": "无",
+          "example": "copytask",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -1368,7 +1368,7 @@
         {
           "disabled": false,
           "document": "文件系统实例Id",
-          "example": "无",
+          "example": "cfs-xxxxxx",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1377,7 +1377,7 @@
         {
           "disabled": false,
           "document": "文件系统路径",
-          "example": "无",
+          "example": "/cfs/123",
           "member": "string",
           "name": "FsPath",
           "required": true,
@@ -1404,7 +1404,7 @@
         {
           "disabled": false,
           "document": "数据源桶名称，名称和地址至少有一个",
-          "example": "无",
+          "example": "testbucket-125xxxxxxx",
           "member": "string",
           "name": "BucketName",
           "required": false,
@@ -1413,7 +1413,7 @@
         {
           "disabled": false,
           "document": "数据源桶地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "required": false,
@@ -1422,7 +1422,7 @@
         {
           "disabled": false,
           "document": "数据源桶地址，名称和地址至少有一个",
-          "example": "无",
+          "example": "https://testbucket-125xxxxxx.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "BucketAddress",
           "required": false,
@@ -1431,7 +1431,7 @@
         {
           "disabled": false,
           "document": "清单地址，迁移方式为清单迁移时必填",
-          "example": "无",
+          "example": "https://testbucket-125xxxxxxx.cos.ap-guangzhou.myqcloud.com/cos_bucket_inventory/125xxxxx/brucetest/test/20240122/manifest.json",
           "member": "string",
           "name": "ListAddress",
           "required": false,
@@ -1699,7 +1699,7 @@
         {
           "disabled": false,
           "document": "迁移任务ID",
-          "example": "无",
+          "example": "cfsmigrate-aeddcd1d",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1852,7 +1852,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "xx",
+          "example": "CreationTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -1870,7 +1870,7 @@
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1880,7 +1880,7 @@
           "example": "无",
           "member": "AutoSnapshotPolicyInfo",
           "name": "AutoSnapshotPolicies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1935,7 +1935,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretId\n",
-          "example": "20",
+          "example": "AKIXXXXXXX",
           "member": "string",
           "name": "SrcSecretId",
           "required": true,
@@ -1944,7 +1944,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretKey",
-          "example": "无",
+          "example": "02de6bxxxxxx",
           "member": "string",
           "name": "SrcSecretKey",
           "required": true,
@@ -2283,7 +2283,7 @@
         },
         {
           "disabled": false,
-          "document": "分页起始位置",
+          "document": "分页起始位置，默认为0",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
@@ -2292,7 +2292,7 @@
         },
         {
           "disabled": false,
-          "document": "页面长度",
+          "document": "页面长度，默认为20",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2301,7 +2301,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "过滤条件。\n<br>SnapshotId - Array of String - 是否必填：否 -（过滤条件）按快照ID过滤。\n<br>SnapshotName - Array of String - 是否必填：否 -（过滤条件）按照快照名称过滤。\n<br>FileSystemId - Array of String - 是否必填：否 -（过滤条件）按文件系统ID过滤。\n<br>FsName - Array of String - 是否必填：否 -（过滤条件）按文件系统名过滤。\n<br>Status - Array of String - 是否必填：否 -（过滤条件）按按照快照状态过滤。(creating：表示创建中 | available：表示可用。| rollbacking：表示回滚。| rollbacking_new：表示由快照创建新文件系统中。\n<br>tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键进行过滤。\n<br>tag:tag-key - Array of String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2311,7 +2311,7 @@
         {
           "disabled": false,
           "document": "排序取值",
-          "example": "xx",
+          "example": "CreationTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -2338,7 +2338,7 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2348,7 +2348,7 @@
           "example": "fsf",
           "member": "SnapshotInfo",
           "name": "Snapshots",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2358,7 +2358,7 @@
           "example": "333",
           "member": "uint64",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2460,7 +2460,7 @@
           "example": "无",
           "member": "MountInfo",
           "name": "MountTargets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2470,7 +2470,7 @@
           "example": "1",
           "member": "int64",
           "name": "NumberOfMountTargets",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2930,7 +2930,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1000443431",
+          "example": "1000443xxxx",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -2960,7 +2960,7 @@
         {
           "disabled": false,
           "document": "文件系统标签列表",
-          "example": "无",
+          "example": "\"TagKey\": \"xxxxx\", \"TagValue\": \"xxxxx\"",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -2970,7 +2970,7 @@
         {
           "disabled": false,
           "document": "文件系统生命周期管理状态\nNotAvailable：不可用\nAvailable:可用",
-          "example": "无",
+          "example": "NotAvailable",
           "member": "string",
           "name": "TieringState",
           "output_required": true,
@@ -2980,7 +2980,7 @@
         {
           "disabled": false,
           "document": "分层存储详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"TieringSizeInBytes\": 0",
           "member": "TieringDetailInfo",
           "name": "TieringDetail",
           "output_required": true,
@@ -2996,22 +2996,20 @@
         {
           "disabled": false,
           "document": "值",
-          "example": "xx",
+          "example": "cfs-12345",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "名称",
-          "example": "xx",
+          "example": "cfsId",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3025,7 +3023,7 @@
           "example": "name",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3035,7 +3033,7 @@
           "example": "migrate-001",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3045,7 +3043,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MigrationType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3055,7 +3053,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MigrationMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3065,7 +3063,7 @@
           "example": "xx-123455",
           "member": "string",
           "name": "BucketName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3075,7 +3073,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3085,7 +3083,7 @@
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
           "member": "string",
           "name": "BucketAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3095,177 +3093,177 @@
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com/list.csv",
           "member": "string",
           "name": "ListAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文件系统实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "testcfs",
           "member": "string",
           "name": "FsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文件系统实例Id",
-          "example": "无",
+          "example": "cfs-xxxx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统路径",
-          "example": "无",
+          "example": "/cfs/test",
           "member": "string",
           "name": "FsPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "同名文件迁移时覆盖策略，默认为0。0: 最后修改时间优先；1: 全覆盖；2: 不覆盖",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "CoverType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-01-09 15:03:57",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "完成/终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-01-20 15:03:57",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "FileTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已迁移文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "FileMigratedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "迁移失败文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "FileFailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "FileTotalSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已迁移文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "FileMigratedSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "迁移失败文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "512",
           "member": "int64",
           "name": "FileFailedSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "全部清单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileTotalList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已完成文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileCompletedList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileFailedList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "源桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
           "member": "string",
           "name": "BucketPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4030,7 +4028,7 @@
         {
           "disabled": false,
           "document": "迁移任务名称",
-          "example": "无",
+          "example": "cfsmigrate-xxxxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4077,9 +4075,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "xx",
+          "example": "abc",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4087,9 +4086,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "xx",
+          "example": "abc",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4639,7 +4639,7 @@
         {
           "disabled": false,
           "document": "文件系统快照名称",
-          "example": "xx",
+          "example": "snapshot123",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -4648,7 +4648,7 @@
         {
           "disabled": false,
           "document": "文件系统快照保留天数",
-          "example": "xx",
+          "example": "7",
           "member": "uint64",
           "name": "AliveDays",
           "required": false,
@@ -4666,7 +4666,7 @@
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

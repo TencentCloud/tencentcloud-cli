@@ -1,6 +1,6 @@
-**Example 1: 启动拉流转推**
+**Example 1: 启动输入在线媒体流**
 
-启动一个拉流转推任务，将在线媒体流"https://a.b/test.mp4"输入TRTC房间，音视频编码采用默认编码值，转推成功后返回TaskId
+启动一个输入在线媒体流任务，将在线媒体流"https://a.b/test.mp4"输入TRTC房间，音视频编码采用默认编码值，转推成功后返回TaskId
 
 Input: 
 

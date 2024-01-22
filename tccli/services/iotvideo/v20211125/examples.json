@@ -296,6 +296,14 @@
         "title": "拉取云存事件列表"
       }
     ],
+    "DescribeCloudStorageMultiThumbnail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageMultiThumbnail\n<公共请求参数>\n\n{\n    \"ProductId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"MultiThumbnail\": \"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg|/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ThumbnailURLInfoList\": [\n            {\n                \"ThumbnailURL\": \"abc\",\n                \"ExpireTime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "拉取多个云存事件缩略图"
+      }
+    ],
     "DescribeCloudStorageOrder": [
       {
         "document": "",

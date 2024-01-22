@@ -1,3 +1,245 @@
+# Release 3.0.927.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 43 次发布
+
+发布时间：2024-01-23 01:13:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
+
+	* 新增入参：From, IsUseId
+
+* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
+
+	* 新增入参：ShowType
+
+	* <font color="#dd0000">**修改入参**：</font>RuleType
+
+	* 新增出参：RuleTypeDataList
+
+
+新增数据结构：
+
+* [CustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CustomWhiteRule)
+
+修改数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：RuleType, IocName, IocInfo, DirectionList, LastHitTime, CustomRule
+
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+
+	* 新增成员：InternalUuid
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：SourceName, TargetName
+
+* [SecurityGroupListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupListData)
+
+	* 新增成员：ProtocolPortName
+
+* [SecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupRule)
+
+	* 新增成员：Uid
+
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+
+	* 新增成员：TargetName, SourceName
+
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 4 次发布
+
+发布时间：2024-01-23 01:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* FaceFusionLite
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 20 次发布
+
+发布时间：2024-01-23 01:20:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageMultiThumbnail](http://document.tencentcloudapi.woa.com/document/product/1131/83005)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 68 次发布
+
+发布时间：2024-01-23 01:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentOverview)
+
+	* 新增成员：EnableExternal
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 11 次发布
+
+发布时间：2024-01-23 01:23:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
+
+	* 新增成员：SubGoodsName
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 30 次发布
+
+发布时间：2024-01-23 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateLogExport
+* DeleteLogExport
+* DescribeLogExports
+* DescribeLogList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* LogExport
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 9 次发布
+
+发布时间：2024-01-23 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83003)
+
+	* <font color="#dd0000">**修改入参**：</font>Rules
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 40 次发布
+
+发布时间：2024-01-23 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncodeParams)
+
+	* 新增成员：Volume
+
+	* <font color="#dd0000">**修改成员**：</font>SampleRate, Channel, BitRate
+
+* [VideoEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncodeParams)
+
+	* <font color="#dd0000">**修改成员**：</font>Width, Height, Fps, BitRate, Gop
+
+
+
+
+## 客流数字化平台(ump) 版本：2020-09-18
+
+### 第 3 次发布
+
+发布时间：2024-01-23 01:28:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCameraAlerts
+* CreateCameraState
+* CreateMultiBizAlert
+* CreateProgramState
+* CreateServerState
+* DeleteMultiBizAlert
+* DeleteTask
+* DescribeCameras
+* DescribeConfig
+* DescribeImage
+* DescribeMultiBizBaseImage
+* DescribeTasks
+* DescribeZones
+* ModifyMultiBizConfig
+* ReportServiceRegister
+* SearchImage
+
+
+
 # Release 3.0.926.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

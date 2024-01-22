@@ -1,13 +1,5 @@
 {
   "actions": {
-    "CreateLogExport": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogExport\n<公共请求参数>\n\n{\n    \"ID\": 1,\n    \"StartTime\": \"2022-01-20 00:00:00\",\n    \"EndTime\": \"2022-01-21 00:00:00\",\n    \"Count\": 1,\n    \"Query\": \"*\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ExportID\": \"export-xxx\",\n        \"RequestId\": \"ec04a9c2-2815-4314-abf8-bc648de7b7b2\"\n    }\n}",
-        "title": "创建日志下载任务"
-      }
-    ],
     "CreateProject": [
       {
         "document": "创建 RUM 应用",
@@ -60,14 +52,6 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "删除 RUM 业务系统"
-      }
-    ],
-    "DeleteLogExport": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLogExport\n<公共请求参数>\n\n{\n    \"ID\": 1,\n    \"ExportID\": \"export-xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"537f5775-2fd4-4264-b5a8-7c482f22d648\"\n    }\n}",
-        "title": "删除日志下载任务"
       }
     ],
     "DeleteProject": [
@@ -340,22 +324,6 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaData\n<公共请求参数>\n\n{\n    \"Query\": \"U0hPVyBNRUFTVVJFTUVOVFMgTElNSVQgMTAw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c762c7dc-c42a-4e40-9090-82b079b982aa\",\n        \"Result\": \"{\\\"request_id\\\":\\\"5cdde60cf37352dc647cceb4-1805ea023f7\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"series\\\":[{\\\"name\\\":\\\"measurements\\\",\\\"columns\\\":[\\\"name\\\"],\\\"values\\\":[[\\\"custom_url_info\\\"],[\\\"custom_url_statistics\\\"],[\\\"dau_project_unique\\\"],[\\\"dau_user_event_unique\\\"],[\\\"event_url_info\\\"],[\\\"event_url_statistics\\\"],[\\\"fetch_project_statistics\\\"],[\\\"fetch_status_error_count\\\"],[\\\"fetch_url_info\\\"],[\\\"fetch_url_statistics\\\"],[\\\"log_url_info\\\"],[\\\"log_url_statistics\\\"],[\\\"mau_project_unique\\\"],[\\\"performance_page_statistics\\\"],[\\\"performance_project_statistics\\\"],[\\\"pv_url_info\\\"],[\\\"pv_url_statistics\\\"],[\\\"report_count\\\"],[\\\"set_data_url_statistics\\\"],[\\\"static_project_statistics\\\"],[\\\"static_resource_statistics\\\"],[\\\"static_status_error_count\\\"],[\\\"static_url_source\\\"],[\\\"tccm_client_internal_metrics\\\"],[\\\"telegraf_agent\\\"],[\\\"telegraf_gather\\\"],[\\\"telegraf_statsd\\\"],[\\\"telegraf_write\\\"],[\\\"user_event_user_event_unique\\\"],[\\\"uv_page_unique\\\"],[\\\"uv_project_unique\\\"],[\\\"wau_project_unique\\\"],[\\\"webvitals_page_statistics\\\"],[\\\"webvitals_project_statistics\\\"]]}],\\\"total\\\":0}]}\"\n    }\n}",
         "title": "11"
-      }
-    ],
-    "DescribeLogExports": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogExports\n<公共请求参数>\n\n{\n    \"ID\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"LogExportSet\": [\n            {\n                \"CosPath\": \"https://export-gz.xxx.xxx.com\",\n                \"Count\": 1,\n                \"CreateTime\": \"2022-01-21 17:05:57\",\n                \"EndTime\": \"2022-01-21 00:00:00\",\n                \"ExportID\": \"export-1\",\n                \"FileName\": \"log_tar.gz\",\n                \"FileSize\": 862,\n                \"Format\": \"json\",\n                \"Order\": \"desc\",\n                \"Query\": \"*\",\n                \"StartTime\": \"2022-01-20 00:00:00\",\n                \"Status\": \"Completed\"\n            }\n        ],\n        \"RequestId\": \"a4c0bd54-d2d5-4045-a831-38a6f1fd294d\"\n    }\n}",
-        "title": "获取日志下载任务列表"
-      }
-    ],
-    "DescribeLogList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogList\n<公共请求参数>\n\n{\n    \"Sort\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"ActionType\": \"\\\"searchlog\\\"\",\n    \"Limit\": \"10\",\n    \"Context\": \"\\\"xxx\\\"\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取日志列表"
       }
     ],
     "DescribeProjectLimits": [

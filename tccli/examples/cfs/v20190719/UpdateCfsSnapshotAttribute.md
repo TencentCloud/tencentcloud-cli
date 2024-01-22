@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli cfs UpdateCfsSnapshotAttribute --cli-unfold-argument  \
-    --SnapshotId snapcfs-12345 \
-    --SnapshotName xx
+    --SnapshotId abc \
+    --SnapshotName abc \
+    --AliveDays 1
 ```
 
 Output: 

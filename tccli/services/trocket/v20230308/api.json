@@ -637,7 +637,7 @@
           "example": "无",
           "member": "PublicAccessRule",
           "name": "Rules",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],

@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云安全一体化平台(csip) 版本：2022-11-21
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 26 次发布
+### 第 43 次发布
 
-发布时间：2024-01-22 01:10:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/82980)
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 50 次发布
-
-发布时间：2024-01-22 01:17:13
+发布时间：2024-01-23 01:13:05
 
 本次发布包含了以下内容：
 
@@ -28,18 +12,77 @@
 
 修改接口：
 
-* [DescribeLiveTranscodeTemplates](http://document.tencentcloudapi.woa.com/document/product/267/32641)
+* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
 
-	* 新增入参：TemplateType
+	* 新增入参：From, IsUseId
+
+* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
+
+	* 新增入参：ShowType
+
+	* <font color="#dd0000">**修改入参**：</font>RuleType
+
+	* 新增出参：RuleTypeDataList
+
+
+新增数据结构：
+
+* [CustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CustomWhiteRule)
+
+修改数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：RuleType, IocName, IocInfo, DirectionList, LastHitTime, CustomRule
+
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+
+	* 新增成员：InternalUuid
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：SourceName, TargetName
+
+* [SecurityGroupListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupListData)
+
+	* 新增成员：ProtocolPortName
+
+* [SecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupRule)
+
+	* 新增成员：Uid
+
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+
+	* 新增成员：TargetName, SourceName
 
 
 
 
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+## 人脸融合(facefusion) 版本：2022-09-27
 
-### 第 8 次发布
 
-发布时间：2024-01-22 01:23:44
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 4 次发布
+
+发布时间：2024-01-23 01:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* FaceFusionLite
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 20 次发布
+
+发布时间：2024-01-23 01:20:15
 
 本次发布包含了以下内容：
 
@@ -47,46 +90,130 @@
 
 新增接口：
 
+* [DescribeCloudStorageMultiThumbnail](http://document.tencentcloudapi.woa.com/document/product/1131/83005)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 68 次发布
+
+发布时间：2024-01-23 01:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentOverview)
+
+	* 新增成员：EnableExternal
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 11 次发布
+
+发布时间：2024-01-23 01:23:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
+
+	* 新增成员：SubGoodsName
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 30 次发布
+
+发布时间：2024-01-23 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateLogExport
+* DeleteLogExport
+* DescribeLogExports
+* DescribeLogList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* LogExport
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 9 次发布
+
+发布时间：2024-01-23 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
 * [CreateMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83003)
-* [CreateMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/83002)
-* [CreateMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82984)
-* [DeleteMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83001)
-* [DeleteMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/83000)
-* [DeleteMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82999)
-* [DeleteMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82983)
-* [DescribeMQTTClient](http://document.tencentcloudapi.woa.com/document/product/1739/82998)
-* [DescribeMQTTInsPublicEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82997)
-* [DescribeMQTTInsVPCEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82996)
-* [DescribeMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82995)
-* [DescribeMQTTInstanceCert](http://document.tencentcloudapi.woa.com/document/product/1739/82994)
-* [DescribeMQTTMessage](http://document.tencentcloudapi.woa.com/document/product/1739/82986)
-* [DescribeMQTTMessageList](http://document.tencentcloudapi.woa.com/document/product/1739/82993)
-* [DescribeMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82992)
-* [DescribeMQTTTopicList](http://document.tencentcloudapi.woa.com/document/product/1739/82991)
-* [DescribeMQTTUserList](http://document.tencentcloudapi.woa.com/document/product/1739/82982)
-* [ModifyMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/82990)
-* [ModifyMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82989)
-* [ModifyMQTTInstanceCertBinding](http://document.tencentcloudapi.woa.com/document/product/1739/82988)
-* [ModifyMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82987)
-* [ModifyMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82981)
 
-新增数据结构：
+	* <font color="#dd0000">**修改入参**：</font>Rules
 
-* [CustomMapEntry](http://document.tencentcloudapi.woa.com/document/product/1739/81437#CustomMapEntry)
-* [MQTTClientSubscription](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTClientSubscription)
-* [MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTEndpointItem)
-* [MQTTMessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTMessageItem)
-* [MQTTTopicItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTTopicItem)
-* [MQTTUserItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTUserItem)
-* [PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PublicAccessRule)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 40 次发布
+
+发布时间：2024-01-23 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncodeParams)
+
+	* 新增成员：Volume
+
+	* <font color="#dd0000">**修改成员**：</font>SampleRate, Channel, BitRate
+
+* [VideoEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncodeParams)
+
+	* <font color="#dd0000">**修改成员**：</font>Width, Height, Fps, BitRate, Gop
+
 
 
 
 ## 客流数字化平台(ump) 版本：2020-09-18
 
-### 第 2 次发布
+### 第 3 次发布
 
-发布时间：2024-01-22 01:24:37
+发布时间：2024-01-23 01:28:43
 
 本次发布包含了以下内容：
 
@@ -94,23 +221,22 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* CreateCapture
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 27 次发布
-
-发布时间：2024-01-22 01:25:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteProjectUsers](http://document.tencentcloudapi.woa.com/document/product/1607/83004)
+* CreateCameraAlerts
+* CreateCameraState
+* CreateMultiBizAlert
+* CreateProgramState
+* CreateServerState
+* DeleteMultiBizAlert
+* DeleteTask
+* DescribeCameras
+* DescribeConfig
+* DescribeImage
+* DescribeMultiBizBaseImage
+* DescribeTasks
+* DescribeZones
+* ModifyMultiBizConfig
+* ReportServiceRegister
+* SearchImage
 
 
 
@@ -15544,6 +15670,60 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 43 次发布
+
+发布时间：2024-01-23 01:13:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddEnterpriseSecurityGroupRules](http://document.tencentcloudapi.woa.com/document/product/1132/64234)
+
+	* 新增入参：From, IsUseId
+
+* [DescribeBlockIgnoreList](http://document.tencentcloudapi.woa.com/document/product/1132/77082)
+
+	* 新增入参：ShowType
+
+	* <font color="#dd0000">**修改入参**：</font>RuleType
+
+	* 新增出参：RuleTypeDataList
+
+
+新增数据结构：
+
+* [[CustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CustomWhiteRule)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[CustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CustomWhiteRule))
+
+修改数据结构：
+
+* [BlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BlockIgnoreRule)
+
+	* 新增成员：RuleType, IocName, IocInfo, DirectionList, LastHitTime, CustomRule
+
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+
+	* 新增成员：InternalUuid
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：SourceName, TargetName
+
+* [SecurityGroupListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupListData)
+
+	* 新增成员：ProtocolPortName
+
+* [SecurityGroupRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SecurityGroupRule)
+
+	* 新增成员：Uid
+
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+
+	* 新增成员：TargetName, SourceName
+
+
 ### 第 42 次发布
 
 发布时间：2024-01-09 01:10:07
@@ -24363,7 +24543,7 @@
 
 新增接口：
 
-* [[ModifyRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/82980)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/82980)
 
 ### 第 25 次发布
 
@@ -43977,6 +44157,18 @@
 
 ## 人脸融合(facefusion) 版本：2018-12-01
 
+### 第 4 次发布
+
+发布时间：2024-01-23 01:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* FaceFusionLite
+
 ### 第 3 次发布
 
 发布时间：2023-09-08 01:57:17
@@ -49542,6 +49734,18 @@
 
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 20 次发布
+
+发布时间：2024-01-23 01:20:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCloudStorageMultiThumbnail](http://document.tencentcloudapi.woa.com/document/product/1131/83005)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 19 次发布
 
@@ -55499,6 +55703,23 @@
 
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 68 次发布
+
+发布时间：2024-01-23 01:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentOverview)
+
+	* 新增成员：EnableExternal
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
 
 ### 第 67 次发布
 
@@ -63059,6 +63280,21 @@
 
 ## 渠道合作伙伴(partners) 版本：2018-03-21
 
+### 第 11 次发布
+
+发布时间：2024-01-23 01:23:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentDealNewElem](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentDealNewElem)
+
+	* 新增成员：SubGoodsName
+
+
 ### 第 10 次发布
 
 发布时间：2023-07-21 01:34:53
@@ -65917,6 +66153,25 @@
 
 
 ## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 30 次发布
+
+发布时间：2024-01-23 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateLogExport
+* DeleteLogExport
+* DescribeLogExports
+* DescribeLogList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* LogExport
 
 ### 第 29 次发布
 
@@ -84131,6 +84386,21 @@
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
+### 第 9 次发布
+
+发布时间：2024-01-23 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83003)
+
+	* <font color="#dd0000">**修改入参**：</font>Rules
+
+
 ### 第 8 次发布
 
 发布时间：2024-01-22 01:23:44
@@ -84141,38 +84411,38 @@
 
 新增接口：
 
-* [[CreateMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83003)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/83002)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82984)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83001)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/83000)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82999)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82983)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTClient](http://document.tencentcloudapi.woa.com/document/product/1739/82998)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTInsPublicEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82997)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTInsVPCEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82996)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82995)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTInstanceCert](http://document.tencentcloudapi.woa.com/document/product/1739/82994)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTMessage](http://document.tencentcloudapi.woa.com/document/product/1739/82986)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTMessageList](http://document.tencentcloudapi.woa.com/document/product/1739/82993)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82992)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTTopicList](http://document.tencentcloudapi.woa.com/document/product/1739/82991)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMQTTUserList](http://document.tencentcloudapi.woa.com/document/product/1739/82982)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/82990)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82989)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyMQTTInstanceCertBinding](http://document.tencentcloudapi.woa.com/document/product/1739/82988)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82987)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82981)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83003)
+* [CreateMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/83002)
+* [CreateMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82984)
+* [DeleteMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/83001)
+* [DeleteMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/83000)
+* [DeleteMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82999)
+* [DeleteMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82983)
+* [DescribeMQTTClient](http://document.tencentcloudapi.woa.com/document/product/1739/82998)
+* [DescribeMQTTInsPublicEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82997)
+* [DescribeMQTTInsVPCEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82996)
+* [DescribeMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82995)
+* [DescribeMQTTInstanceCert](http://document.tencentcloudapi.woa.com/document/product/1739/82994)
+* [DescribeMQTTMessage](http://document.tencentcloudapi.woa.com/document/product/1739/82986)
+* [DescribeMQTTMessageList](http://document.tencentcloudapi.woa.com/document/product/1739/82993)
+* [DescribeMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82992)
+* [DescribeMQTTTopicList](http://document.tencentcloudapi.woa.com/document/product/1739/82991)
+* [DescribeMQTTUserList](http://document.tencentcloudapi.woa.com/document/product/1739/82982)
+* [ModifyMQTTInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/82990)
+* [ModifyMQTTInstance](http://document.tencentcloudapi.woa.com/document/product/1739/82989)
+* [ModifyMQTTInstanceCertBinding](http://document.tencentcloudapi.woa.com/document/product/1739/82988)
+* [ModifyMQTTTopic](http://document.tencentcloudapi.woa.com/document/product/1739/82987)
+* [ModifyMQTTUser](http://document.tencentcloudapi.woa.com/document/product/1739/82981)
 
 新增数据结构：
 
-* [[CustomMapEntry](http://document.tencentcloudapi.woa.com/document/product/1739/81437#CustomMapEntry)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[CustomMapEntry](http://document.tencentcloudapi.woa.com/document/product/1739/81437#CustomMapEntry))
-* [[MQTTClientSubscription](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTClientSubscription)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MQTTClientSubscription](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTClientSubscription))
-* [[MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTEndpointItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTEndpointItem))
-* [[MQTTMessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTMessageItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MQTTMessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTMessageItem))
-* [[MQTTTopicItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTTopicItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MQTTTopicItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTTopicItem))
-* [[MQTTUserItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTUserItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MQTTUserItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTUserItem))
-* [[PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PublicAccessRule)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PublicAccessRule))
+* [CustomMapEntry](http://document.tencentcloudapi.woa.com/document/product/1739/81437#CustomMapEntry)
+* [MQTTClientSubscription](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTClientSubscription)
+* [MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTEndpointItem)
+* [MQTTMessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTMessageItem)
+* [MQTTTopicItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTTopicItem)
+* [MQTTUserItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTUserItem)
+* [PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PublicAccessRule)
 
 ### 第 7 次发布
 
@@ -84565,6 +84835,27 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 40 次发布
+
+发布时间：2024-01-23 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncodeParams)
+
+	* 新增成员：Volume
+
+	* <font color="#dd0000">**修改成员**：</font>SampleRate, Channel, BitRate
+
+* [VideoEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncodeParams)
+
+	* <font color="#dd0000">**修改成员**：</font>Width, Height, Fps, BitRate, Gop
+
 
 ### 第 39 次发布
 
@@ -87934,6 +88225,33 @@
 
 
 ## 客流数字化平台(ump) 版本：2020-09-18
+
+### 第 3 次发布
+
+发布时间：2024-01-23 01:28:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCameraAlerts
+* CreateCameraState
+* CreateMultiBizAlert
+* CreateProgramState
+* CreateServerState
+* DeleteMultiBizAlert
+* DeleteTask
+* DescribeCameras
+* DescribeConfig
+* DescribeImage
+* DescribeMultiBizBaseImage
+* DescribeTasks
+* DescribeZones
+* ModifyMultiBizConfig
+* ReportServiceRegister
+* SearchImage
 
 ### 第 2 次发布
 
@@ -95430,7 +95748,7 @@
 
 新增接口：
 
-* [[DeleteProjectUsers](http://document.tencentcloudapi.woa.com/document/product/1607/83004)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteProjectUsers](http://document.tencentcloudapi.woa.com/document/product/1607/83004)
 
 ### 第 26 次发布
 

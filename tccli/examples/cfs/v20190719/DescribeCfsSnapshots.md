@@ -13,25 +13,33 @@ Output:
 ```
 {
     "Response": {
-        "TotalSize": 1,
         "TotalCount": 1,
-        "RequestId": "xx",
         "Snapshots": [
             {
-                "Status": 1,
-                "SnapshotName": "xx",
-                "Percent": 1,
-                "FileSystemId": "xx",
+                "CreationTime": "abc",
+                "SnapshotName": "abc",
+                "SnapshotId": "abc",
+                "Status": "abc",
+                "RegionName": "abc",
+                "FileSystemId": "abc",
                 "Size": 1,
-                "AppId": 1,
-                "SnapshotId": "xx",
                 "AliveDay": 1,
-                "CreationTime": "xx",
-                "DeleteTime": "xx",
-                "FsName": "xx",
-                "RegionName": "xx"
+                "Percent": 1,
+                "AppId": 1,
+                "DeleteTime": "abc",
+                "FsName": "abc",
+                "Tags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "SnapshotType": "abc",
+                "SnapshotTime": "abc"
             }
-        ]
+        ],
+        "TotalSize": 1,
+        "RequestId": "abc"
     }
 }
 ```

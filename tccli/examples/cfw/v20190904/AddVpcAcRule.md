@@ -19,7 +19,7 @@ tccli cfw AddVpcAcRule --cli-unfold-argument  \
     --Rules.0.Uuid 0 \
     --Rules.0.DetectedTimes 0 \
     --Rules.0.Port 53 \
-    --Rules.0.Description wo lie kai \
+    --Rules.0.Description for test \
     --From src
 ```
 
