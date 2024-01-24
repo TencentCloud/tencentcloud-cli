@@ -1573,6 +1573,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2099,7 +2100,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2109,7 +2110,7 @@
           "example": "[]",
           "member": "SdkAppIdBuyInfo",
           "name": "SdkAppIdBuyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2119,7 +2120,7 @@
           "example": "[]",
           "member": "PackageBuyInfo",
           "name": "PackageBuyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2434,7 +2435,7 @@
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2444,7 +2445,7 @@
           "example": "14000000.tccc.qcloud.com",
           "member": "string",
           "name": "ExtensionDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2454,7 +2455,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2464,7 +2465,7 @@
           "example": "sip.tcc.qcloud.com",
           "member": "string",
           "name": "OutboundProxy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2474,7 +2475,7 @@
           "example": "tls",
           "member": "string",
           "name": "Transport",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3047,6 +3048,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3056,6 +3058,7 @@
           "example": "[]",
           "member": "SipTrunkInfo",
           "name": "SipTrunkList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4803,7 +4806,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

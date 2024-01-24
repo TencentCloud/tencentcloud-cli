@@ -788,20 +788,38 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间类型",
-          "example": "1",
-          "member": "int64",
-          "name": "TimeType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "nat实例Id",
           "example": "cfwnat-id",
           "member": "string",
           "name": "NatInstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间类型",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "选择开始时间",
+          "example": "2023-12-20 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择结束时间",
+          "example": "2023-12-20 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
           "type": "string"
         }
       ],

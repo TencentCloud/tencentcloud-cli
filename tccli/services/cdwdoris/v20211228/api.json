@@ -2956,6 +2956,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ResultBytes的MB格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.415",
+          "member": "float",
+          "name": "ResultBytesMB",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MemoryUsage的MB表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "99.863",
+          "member": "float",
+          "name": "MemoryUsageMB",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DurationMs的秒表示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.361",
+          "member": "float",
+          "name": "DurationSec",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

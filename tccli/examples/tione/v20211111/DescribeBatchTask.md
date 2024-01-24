@@ -1,12 +1,12 @@
-**Example 1: 查询跑批任务**
+**Example 1: 查询批量预测任务**
 
-查看单个离线批处理任务详情
+查询单个批量预测任务详情
 
 Input: 
 
 ```
 tccli tione DescribeBatchTask --cli-unfold-argument  \
-    --BatchTaskId xx
+    --BatchTaskId batch-78ugzrxxxxx
 ```
 
 Output: 
@@ -14,124 +14,120 @@ Output:
 {
     "Response": {
         "BatchTaskDetail": {
-            "BatchTaskName": "xx",
-            "BatchTaskId": "xx",
-            "EndTime": "xx",
-            "SubUin": "xx",
-            "ChargeStatus": "xx",
-            "Status": "xx",
-            "UpdateTime": "xx",
-            "VpcId": "xx",
-            "Tags": [
+            "BatchTaskId": "batch-78ugzrxxxxx",
+            "BatchTaskName": "示例任务",
+            "Uin": "100011111111",
+            "SubUin": "100011111111",
+            "Region": "ap-shanghai",
+            "ChargeType": "PREPAID",
+            "ResourceGroupId": "ersg-l5pg11111",
+            "ResourceGroupName": "示例资源组",
+            "ResourceConfigInfo": {
+                "Role": "WORKER",
+                "Cpu": 4000,
+                "Memory": 8192,
+                "GpuType": "T4",
+                "Gpu": 0,
+                "InstanceType": "",
+                "InstanceTypeAlias": "",
+                "InstanceNum": 1,
+                "RDMAConfig": {
+                    "Enable": true
+                }
+            },
+            "Tags": [],
+            "ModelInfo": {
+                "ModelId": "m-76225796131111111111",
+                "ModelName": "classify-cpu",
+                "ModelVersionId": "mv-v1-76225796131111111111",
+                "ModelVersion": "v1",
+                "ModelSource": "COS",
+                "ModelType": "NORMAL",
+                "CosPathInfo": {
+                    "Bucket": "example-sh-125651111",
+                    "Region": "ap-shanghai",
+                    "Paths": [
+                        "classify/classify/"
+                    ]
+                },
+                "AlgorithmFramework": "PYTORCH"
+            },
+            "ImageInfo": {
+                "ImageType": "PRESET",
+                "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-cpu:example-v1",
+                "RegistryRegion": "",
+                "RegistryId": ""
+            },
+            "CodePackagePath": {
+                "Bucket": "",
+                "Region": "",
+                "Paths": []
+            },
+            "StartCmd": "",
+            "DataConfigs": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "MappingPath": "",
+                    "DataSourceType": "COS",
+                    "DataSetSource": null,
+                    "COSSource": {
+                        "Bucket": "example-test-sh-125658111111",
+                        "Region": "ap-shanghai",
+                        "Paths": [
+                            "data/test/"
+                        ]
+                    },
+                    "CFSSource": null,
+                    "HDFSSource": null,
+                    "CFSTurboSource": null,
+                    "GooseFSSource": null
                 }
             ],
             "Outputs": [
                 {
-                    "DataSetSource": {
-                        "Id": "xx"
-                    },
-                    "CFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "DataSourceType": "xx",
-                    "HDFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
+                    "MappingPath": "",
+                    "DataSourceType": "COS",
+                    "DataSetSource": null,
                     "COSSource": {
+                        "Bucket": "example-test-sh-125658111111",
+                        "Region": "ap-shanghai",
                         "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
+                            "output/"
+                        ]
                     },
-                    "MappingPath": "xx"
+                    "CFSSource": null,
+                    "HDFSSource": null,
+                    "GooseFSSource": null,
+                    "CFSTurboSource": null
                 }
             ],
-            "PodList": [
-                "batch-xxx-xxx-worker-0"
-            ],
-            "CodePackagePath": {
-                "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
-            },
-            "ResourceGroupId": "xx",
-            "LatestInstanceId": "xx",
-            "SubnetId": "xx",
-            "DataConfigs": [
-                {
-                    "DataSetSource": {
-                        "Id": "xx"
-                    },
-                    "CFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "DataSourceType": "xx",
-                    "HDFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "COSSource": {
-                        "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
-                    },
-                    "MappingPath": "xx"
-                }
-            ],
-            "FailureReason": "xx",
-            "Remark": "xx",
-            "StartTime": "xx",
-            "BillingInfo": "xx",
-            "Region": "xx",
-            "ResourceGroupName": "xx",
-            "LogEnable": true,
-            "ModelInfo": {
-                "ModelName": "xx",
-                "ModelVersion": "xx",
-                "ModelSource": "xx",
-                "ModelType": "xx",
-                "AlgorithmFramework": "xx",
-                "ModelVersionId": "xx",
-                "ModelId": "xx"
-            },
-            "ImageInfo": {
-                "ImageUrl": "xx",
-                "RegistryRegion": "xx",
-                "RegistryId": "xx",
-                "ImageType": "xx"
-            },
-            "Uin": "xx",
-            "RuntimeInSeconds": 1,
-            "ResourceConfigInfo": {
-                "InstanceType": "xx",
-                "InstanceNum": 1,
-                "Cpu": 1,
-                "Role": "xx",
-                "Memory": 1,
-                "Gpu": 1,
-                "GpuType": "xx",
-                "InstanceTypeAlias": "xx"
-            },
-            "ChargeType": "xx",
-            "CreateTime": "xx",
-            "StartCmd": "xx",
+            "LogEnable": false,
             "LogConfig": {
-                "TopicId": "xx",
-                "LogsetId": "xx"
+                "LogsetId": "",
+                "TopicId": ""
+            },
+            "VpcId": "",
+            "SubnetId": "",
+            "Status": "SUCCEED",
+            "RuntimeInSeconds": 89,
+            "CreateTime": "2023-12-26 20:15:41",
+            "UpdateTime": "2023-12-26 20:17:38",
+            "StartTime": "2023-12-26 20:16:07",
+            "EndTime": "2023-12-26 20:17:36",
+            "ChargeStatus": "NOT_BILLING",
+            "LatestInstanceId": "batch-78ugzrxxxxx-78ufl1m111w",
+            "Remark": "",
+            "FailureReason": "job succeed",
+            "BillingInfo": "",
+            "PodList": [],
+            "ModelInferenceCodeInfo": {
+                "Bucket": "example-test-sh-125658111111",
+                "Region": "ap-shanghai",
+                "Paths": [
+                    "classify/classify/batch/model_service.py"
+                ]
             }
         },
-        "RequestId": "xx"
+        "RequestId": "2ec5cd1e-311b-1111-9119-3da111160111"
     }
 }
 ```

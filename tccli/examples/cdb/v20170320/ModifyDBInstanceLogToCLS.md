@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb ModifyDBInstanceLogToCLS --cli-unfold-argument  \
     --InstanceId cdb-ewa3b \
-    --LogType errorLog \
+    --LogType error \
     --Status ON \
     --CreateLogset True \
     --Logset sub_fyrtjbqw \

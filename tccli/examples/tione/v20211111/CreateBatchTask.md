@@ -1,16 +1,12 @@
 **Example 1: CreateBatchTask**
 
-离线批处理示例请求
+批量预测示例请求
 
 Input: 
 
 ```
 tccli tione CreateBatchTask --cli-unfold-argument  \
     --BatchTaskName task-xx \
-    --JobType 1 \
-    --CronInfo.StartTime 2020-09-22 \
-    --CronInfo.EndTime 2020-09-22 \
-    --CronInfo.CronConfig 0 1 * * * \
     --ChargeType POSTPAID_BY_HOUR \
     --ResourceGroupId trsg-c7xxxx \
     --ResourceConfigInfo.Role WORKER \

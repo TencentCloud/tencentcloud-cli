@@ -1,4 +1,4 @@
-**Example 1: 跑批任务列表**
+**Example 1: 批量预测任务列表**
 
 批量预测任务列表信息
 
@@ -6,110 +6,79 @@ Input:
 
 ```
 tccli tione DescribeBatchTasks --cli-unfold-argument  \
-    --Filters.0.Name abc \
+    --Filters.0.Name BatchTaskName \
     --Filters.0.Values abc \
     --Filters.0.Negative True \
     --Filters.0.Fuzzy True \
     --TagFilters.0.TagKey abc \
     --TagFilters.0.TagValues abc \
-    --Offset 1 \
+    --Offset 0 \
     --Limit 1 \
-    --Order abc \
-    --OrderField abc
+    --Order ASC \
+    --OrderField CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "BatchTaskSet": [
             {
-                "BatchTaskId": "abc",
-                "BatchTaskName": "abc",
+                "BatchTaskId": "batch-78ugzrxxxxx",
+                "BatchTaskName": "示例任务",
                 "ModelInfo": {
-                    "ModelId": "abc",
-                    "ModelName": "abc",
-                    "ModelVersionId": "abc",
-                    "ModelVersion": "abc",
-                    "ModelSource": "abc",
+                    "ModelId": "m-882512801111",
+                    "ModelName": "classify-cpu",
+                    "ModelVersionId": "mv-v1-8825128049111111",
+                    "ModelVersion": "v1",
+                    "ModelSource": "COS",
+                    "ModelType": "NORMAL",
                     "CosPathInfo": {
-                        "Bucket": "abc",
-                        "Region": "abc",
+                        "Bucket": "example-gz-12111111111",
+                        "Region": "ap-guangzhou",
                         "Paths": [
-                            "abc"
+                            "classify/"
                         ]
                     },
-                    "AlgorithmFramework": "abc",
-                    "ModelType": "abc"
+                    "AlgorithmFramework": "PYTORCH"
                 },
                 "ImageInfo": {
-                    "ImageType": "abc",
-                    "ImageUrl": "abc",
-                    "RegistryRegion": "abc",
-                    "RegistryId": "abc"
+                    "ImageType": "PRESET",
+                    "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch:example",
+                    "RegistryRegion": "",
+                    "RegistryId": ""
                 },
-                "ChargeType": "abc",
-                "ChargeStatus": "abc",
-                "ResourceGroupId": "abc",
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "ChargeStatus": "NOT_BILLING",
+                "ResourceGroupId": "",
+                "ResourceGroupName": "",
                 "ResourceConfigInfo": {
-                    "Role": "abc",
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "GpuType": "abc",
-                    "Gpu": 1,
-                    "InstanceType": "abc",
+                    "Role": "WORKER",
+                    "Cpu": 2000,
+                    "Memory": 4096,
+                    "GpuType": "",
+                    "Gpu": 0,
+                    "InstanceType": "TI.S.MEDIUM.POST",
+                    "InstanceTypeAlias": "2C4G",
                     "InstanceNum": 1,
-                    "InstanceTypeAlias": "abc",
                     "RDMAConfig": {
                         "Enable": true
                     }
                 },
-                "Tags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
-                "Status": "abc",
-                "RuntimeInSeconds": 1,
-                "CreateTime": "abc",
-                "StartTime": "abc",
-                "EndTime": "abc",
-                "UpdateTime": "abc",
-                "Outputs": [
-                    {
-                        "MappingPath": "abc",
-                        "DataSourceType": "abc",
-                        "DataSetSource": {
-                            "Id": "abc"
-                        },
-                        "COSSource": {
-                            "Bucket": "abc",
-                            "Region": "abc",
-                            "Paths": [
-                                "abc"
-                            ]
-                        },
-                        "CFSSource": {
-                            "Id": "abc",
-                            "Path": "abc"
-                        },
-                        "HDFSSource": {
-                            "Id": "abc",
-                            "Path": "abc"
-                        },
-                        "GooseFSSource": {
-                            "Id": "abc"
-                        }
-                    }
-                ],
-                "ResourceGroupName": "abc",
-                "FailureReason": "abc",
-                "BillingInfo": "abc"
+                "Tags": [],
+                "Status": "SUCCEED",
+                "RuntimeInSeconds": 112,
+                "CreateTime": "2023-12-26 20:23:36",
+                "UpdateTime": "2023-12-26 20:23:36",
+                "StartTime": "2023-12-26 20:24:20",
+                "EndTime": "2023-12-26 20:26:12",
+                "Outputs": [],
+                "FailureReason": "job succeed",
+                "BillingInfo": ""
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 69,
+        "RequestId": "0ec7a782-111-111-a063-11111111111"
     }
 }
 ```

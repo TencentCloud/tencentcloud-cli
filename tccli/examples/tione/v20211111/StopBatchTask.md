@@ -1,4 +1,4 @@
-**Example 1: 停止跑批任务**
+**Example 1: 停止批量预测任务**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione StopBatchTask --cli-unfold-argument  \
-    --BatchTaskId xx
+    --BatchTaskId batch-78ugzrxxxxx
 ```
 
 Output: 

@@ -664,8 +664,8 @@
     ],
     "ModifyDBInstanceSpec": [
       {
-        "document": "修改实例postgres-6bwgamo3配置为内存2GB、存储200GB。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"Storage\": \"200\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": \"2\"\n}",
+        "document": "修改实例postgres-6bwgamo3配置为Cpu1核、内存2GB、存储200GB。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"Storage\": 200,\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"123\"\n    }\n}",
         "title": "修改实例配置。"
       }
