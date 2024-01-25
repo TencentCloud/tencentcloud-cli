@@ -1336,6 +1336,32 @@
         "title": "管理不支持的扩展服务"
       }
     ],
+    "ModifyFlowDeadline": [
+      {
+        "document": "1.合同发起时设置合同截止时间为1704988032，该合同有3个签署人A，B，C\n2.合同发起时A签署人设置签署截止时间为1704978032，B，C签署人未单独设置签署人截止时间（默认和合同保持一致）\n3.通过接口对整个合同延期后，A签署人截止时间不变（还是1704978032），B，C签署人的签署截止时间和合同截止时间延期为1705977064",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlowDeadline\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRt2UUgygqxyp7yUuO5zjEwqXwsIljA\"\n    },\n    \"FlowId\": \"yDCNtUUckpvrcvf4UELZnZDvMStFgT7K\",\n    \"Deadline\": 1705977064\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1705924585583461781\"\n    }\n}",
+        "title": "延期整个合同-合同发起时有签署人单独设置了签署截止时间"
+      },
+      {
+        "document": "1.合同发起时设置合同截止时间为1704988032，该合同有3个签署人A，B，C\n2.合同发起时并未为签署人未单独设置签署人截止时间（默认和合同保持一致）\n3.通过接口对整个合同延期后，A，B，C签署人的签署截止时间和合同截止时间延期为1705977064",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlowDeadline\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRt2UUgygqxyp7yUuO5zjEwqXwsIljA\"\n    },\n    \"FlowId\": \"yDCNtUUckpvrcvf4UELZnZDvMStFgT7K\",\n    \"Deadline\": 1705977064\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1705924585583461781\"\n    }\n}",
+        "title": "延期整个合同-合同发起时没有签署人设置签署人签署截止时间"
+      },
+      {
+        "document": "1.将签署流程yDCNtUUckpvrezq3UudRJ1LEXDLa8Lga 中 签署人角色编号 yDwhyUUckp2cmuh4Uu2bfpvRH48OvSw7 对应的签署人设置的签署截止时间延长到1705976964",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlowDeadline\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRt2UUgygqxyp7yUuO5zjEwqXwsIljA\"\n    },\n    \"FlowId\": \"yDCNtUUckpvrezq3UudRJ1LEXDLa8Lga\",\n    \"Deadline\": 1705976964,\n    \"RecipientId\": \"yDwhyUUckp2cmuh4Uu2bfpvRH48OvSw7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1705924585583461780\"\n    }\n}",
+        "title": "延期签署方的签署截止时间"
+      },
+      {
+        "document": "1.将签署流程yDCNtUUckpvrezq3UudRJ1LEXDLa9Lga中 签署人角色编号yDwhyUUckp2cmuh4Uu2bfpvRH48OvSw8 对应的签署人设置的签署截止时间延长到1705976980\n2.此时合同已经过期，无法操作",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFlowDeadline\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRt2UUgygqxyp7yUuO5zjEwqXwsIljA\"\n    },\n    \"FlowId\": \"yDCNtUUckpvrezq3UudRJ1LEXDLa9Lga\",\n    \"Deadline\": 1705976980,\n    \"RecipientId\": \"yDwhyUUckp2cmuh4Uu2bfpvRH48OvSw8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"此签署流程已经终止，当前处于流程已经过期状态，无法进行延期操作，请确认后重试\"\n        },\n        \"RequestId\": \"s1705991274996790452\"\n    }\n}",
+        "title": "延期签署方的签署截止时间失败-签署流程已过期"
+      }
+    ],
     "ModifyIntegrationDepartment": [
       {
         "document": "更新部门ID对应部门的部门名称、客户系统部门ID和排序号。",

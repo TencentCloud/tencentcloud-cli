@@ -77,6 +77,13 @@
       "output": "DeleteUserRoleProjectResponse",
       "status": "online"
     },
+    "DescribeCloudMonitorReportCorpDataList": {
+      "document": "上报免费试用馆信息",
+      "input": "DescribeCloudMonitorReportCorpDataListRequest",
+      "name": "上报免费试用馆信息",
+      "output": "DescribeCloudMonitorReportCorpDataListResponse",
+      "status": "online"
+    },
     "DescribeDatasourceList": {
       "document": "查询数据源列表",
       "input": "DescribeDatasourceListRequest",
@@ -386,6 +393,88 @@
         }
       ],
       "usage": "both"
+    },
+    "CorpStatisticData": {
+      "document": "企业统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2023-05-01\"",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DatasourceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TableNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页面数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CorpStatisticDataInfo": {
+      "document": "企业统计数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业统计数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CorpStatisticData",
+          "name": "CorpStatisticDataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CorpUserListData": {
       "document": "企业用户列表",
@@ -1939,6 +2028,82 @@
       ],
       "type": "object"
     },
+    "DescribeCloudMonitorReportCorpDataListRequest": {
+      "document": "DescribeCloudMonitorReportCorpDataList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "uin列表",
+          "example": "[\"a\",\"b\",\"c\"]",
+          "member": "string",
+          "name": "UinList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "\"2023-12-20\"",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudMonitorReportCorpDataListResponse": {
+      "document": "DescribeCloudMonitorReportCorpDataList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接口数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CorpStatisticDataInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatasourceListRequest": {
       "document": "DescribeDatasourceList请求参数结构体",
       "members": [
@@ -2611,6 +2776,72 @@
           "name": "TicketNum",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ErrorInfo": {
+      "document": "自定义错误信息对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误说明字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorTip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误等级字段\nERROR\nWARN\nINFO\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指引文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocLink",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快速指引说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FAQ",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留字段1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReservedField",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

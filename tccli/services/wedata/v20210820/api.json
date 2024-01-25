@@ -6251,7 +6251,7 @@
         {
           "disabled": false,
           "document": "任务版本信息",
-          "example": "TaskVersionDsDTO",
+          "example": "BatchCreateTaskVersionDs",
           "member": "BatchCreateTaskVersionDsDTOLite",
           "name": "TaskVersionDTOs",
           "required": true,
@@ -6292,6 +6292,15 @@
           "name": "AlarmRecipientTypes",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要校验父任务已经提交到调度\t",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedCheckParentSubmitted",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13212,6 +13221,7 @@
           "example": "无",
           "member": "UserFileDTO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13356,7 +13366,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -17186,7 +17196,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -20433,7 +20443,7 @@
           "example": "无",
           "member": "CodeDetailResult",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -20708,20 +20718,11 @@
         {
           "disabled": false,
           "document": "要查询的搜索范围",
-          "example": "12",
+          "example": "无",
           "member": "string",
           "name": "SearchScope",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "搜索范围列表",
-          "example": "无",
-          "member": "string",
-          "name": "SearchScopes",
-          "required": true,
-          "type": "list"
         },
         {
           "disabled": false,
@@ -20749,6 +20750,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索范围列表",
+          "example": "无",
+          "member": "string",
+          "name": "SearchScopes",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -20797,12 +20807,57 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
-          "example": "1",
+          "document": "开发态/生产态",
+          "example": "dev",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "111",
+          "member": "string",
+          "name": "WorkflowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹ID",
+          "example": "1111",
+          "member": "string",
+          "name": "FolderIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID",
+          "example": "1111",
+          "member": "string",
+          "name": "DatasourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹路径",
+          "example": "/datastudio/project/",
+          "member": "string",
+          "name": "FolderPaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "Y",
+          "member": "string",
+          "name": "TaskStatus",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20816,7 +20871,7 @@
           "example": "无",
           "member": "CodeSearchResult",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -22807,7 +22862,7 @@
         },
         {
           "disabled": false,
-          "document": "是否一级拉取",
+          "document": "是否一级拉取 true 是 \nfalse 否",
           "example": "无",
           "member": "bool",
           "name": "FirstLevelPull",
@@ -22843,7 +22898,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含工作流",
+          "document": "是否包含工作流 true 是 \nfalse 否",
           "example": "无",
           "member": "bool",
           "name": "IncludeWorkflow",
@@ -22852,7 +22907,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含任务",
+          "document": "是否包含任务 true 是 \nfalse 否",
           "example": "无",
           "member": "bool",
           "name": "IncludeTask",
@@ -22888,7 +22943,7 @@
         },
         {
           "disabled": false,
-          "document": "是否包含任务目录",
+          "document": "是否包含任务目录 true 是 \nfalse 否",
           "example": "无",
           "member": "bool",
           "name": "IncludeTaskFolder",
@@ -24259,7 +24314,7 @@
           "example": "无",
           "member": "FunctionTypeOrKind",
           "name": "Kinds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -24269,7 +24324,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -24296,7 +24351,7 @@
           "example": "无",
           "member": "FunctionTypeOrKind",
           "name": "Types",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -24306,7 +24361,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -27787,7 +27842,7 @@
           "example": "无",
           "member": "OrganizationalFunction",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -27797,7 +27852,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -28725,7 +28780,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "1",
+          "example": "18984080899330334",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -28734,7 +28789,7 @@
         {
           "disabled": false,
           "document": "名字，供搜索",
-          "example": "1",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -28743,7 +28798,7 @@
         {
           "disabled": false,
           "document": "文件类型",
-          "example": "1",
+          "example": "app,csv,jar,py,sh,xml,zip",
           "member": "string",
           "name": "FileType",
           "required": false,
@@ -28752,7 +28807,7 @@
         {
           "disabled": false,
           "document": "文件路径",
-          "example": "1",
+          "example": "/path",
           "member": "string",
           "name": "FilePath",
           "required": false,
@@ -28760,8 +28815,8 @@
         },
         {
           "disabled": false,
-          "document": "文件夹类型",
-          "example": "1",
+          "document": "文件夹类型\npersonal 个人\nproject 项目\nresource 资源",
+          "example": "personal",
           "member": "string",
           "name": "DirType",
           "required": false,
@@ -28779,7 +28834,7 @@
           "example": "无",
           "member": "ResourcePathTree",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -39688,8 +39743,8 @@
         },
         {
           "disabled": false,
-          "document": "文件路径",
-          "example": "无",
+          "document": "文件路径\n项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql",
+          "example": "/datastudio/personal/sqlTTT.sql",
           "member": "string",
           "name": "FilePath",
           "required": true,
@@ -39707,6 +39762,7 @@
           "example": "无",
           "member": "UserFileInfo",
           "name": "UserFileInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -49870,7 +49926,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -49880,7 +49936,7 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -49890,7 +49946,7 @@
           "example": "/SPARK/CUSTOM",
           "member": "string",
           "name": "LayerPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -49900,7 +49956,7 @@
           "example": "/SPARK",
           "member": "string",
           "name": "ParentLayerPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -49910,7 +49966,7 @@
           "example": "HIVE、SPARK",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49920,7 +49976,7 @@
           "example": "ANALYSIS、ENCRYPTION",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49930,7 +49986,7 @@
           "example": "BUILD_IN、CUSTOM",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49940,7 +49996,7 @@
           "example": "NEW、SAVED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49950,7 +50006,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49960,7 +50016,7 @@
           "example": "无",
           "member": "string",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49970,7 +50026,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49980,7 +50036,7 @@
           "example": "无",
           "member": "string",
           "name": "ReturnDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -49990,7 +50046,7 @@
           "example": "无",
           "member": "string",
           "name": "Example",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -50000,7 +50056,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterIdentifier",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -50010,7 +50066,7 @@
           "example": "无",
           "member": "string",
           "name": "FuncId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -50020,7 +50076,7 @@
           "example": "无",
           "member": "string",
           "name": "ClassName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -50030,7 +50086,7 @@
           "example": "无",
           "member": "FunctionVersion",
           "name": "ResourceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -50040,7 +50096,7 @@
           "example": "无",
           "member": "int64",
           "name": "OperatorUserIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -50050,7 +50106,7 @@
           "example": "无",
           "member": "int64",
           "name": "OwnerUserIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -50060,7 +50116,7 @@
           "example": "无",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -50070,7 +50126,47 @@
           "example": "无",
           "member": "string",
           "name": "SubmitErrorMsg",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "函数命令格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandFormat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubmitTimestamp",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -52414,6 +52510,33 @@
           "name": "WorkflowId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除脚本",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteScript",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除是否通知下游",
+          "example": "无",
+          "member": "string",
+          "name": "OperateIsInform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否终止进行中的任务",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -52423,10 +52546,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID",
-          "example": "11111",
+          "document": "是否删除成功",
+          "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -57285,7 +57409,7 @@
           "example": "无",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -57295,7 +57419,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -57858,13 +57982,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "脚本路径",
-          "example": "无",
+          "document": "脚本路径\n项目区1470575647377821696项目，f1目录下：\n/datastudio/project/1470575647377821696/f1/sql1234.sql\n个人区：\n/datastudio/personal/sqlTTT.sql",
+          "example": "/datastudio/personal/sqlTTT.sql",
           "member": "string",
           "name": "FilePath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57873,8 +57996,7 @@
           "member": "string",
           "name": "ProjectId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57883,8 +58005,7 @@
           "member": "string",
           "name": "Version",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57893,8 +58014,7 @@
           "member": "string",
           "name": "Operation",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57903,8 +58023,7 @@
           "member": "string",
           "name": "ExtraInfo",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57913,8 +58032,7 @@
           "member": "string",
           "name": "BucketName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57923,8 +58041,7 @@
           "member": "string",
           "name": "Region",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -57933,8 +58050,7 @@
           "member": "string",
           "name": "FileExtensionType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -59624,7 +59740,7 @@
           "example": "无",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -59634,7 +59750,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -60246,7 +60362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "taskId列表",
           "example": "无",
           "member": "string",
           "name": "TaskIds",
@@ -60255,7 +60371,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "项目Id",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -60264,7 +60380,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "工作流id",
           "example": "无",
           "member": "string",
           "name": "WorkFlowId",
@@ -60273,7 +60389,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "工作流名称",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -60282,7 +60398,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "工作流任务列表",
           "example": "无",
           "member": "StageCloudApiRequest",
           "name": "Tasks",
@@ -60291,7 +60407,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "备注",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -60300,7 +60416,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "运行参数，map的Json形式",
           "example": "无",
           "member": "string",
           "name": "RunParams",
@@ -60309,7 +60425,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "脚本内容",
           "example": "无",
           "member": "string",
           "name": "ScriptContent",
@@ -60318,7 +60434,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "版本号",
           "example": "无",
           "member": "string",
           "name": "VersionId",
@@ -60333,7 +60449,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "提交运行jobid",
           "example": "无",
           "member": "int64",
           "name": "JobId",
@@ -60343,7 +60459,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "运行记录id",
           "example": "无",
           "member": "int64",
           "name": "RecordId",

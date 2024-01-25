@@ -20,3 +20,28 @@ Output:
 }
 ```
 
+**Example 2: 工作流不存在**
+
+失败示例1
+
+Input: 
+
+```
+tccli wedata RemoveWorkflowDs --cli-unfold-argument  \
+    --ProjectId 123456 \
+    --WorkflowId 123455
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "要删除的工作流不存在"
+        },
+        "RequestId": "9849acb3-fde9-4c6e-806c-9230fe4ccf01"
+    }
+}
+```
+

@@ -43,9 +43,9 @@
       "status": "online"
     },
     "CreateCCCSkillGroup": {
-      "document": "创建技能组",
+      "document": "新建技能组",
       "input": "CreateCCCSkillGroupRequest",
-      "name": "创建技能组",
+      "name": "新建技能组",
       "output": "CreateCCCSkillGroupResponse",
       "status": "online"
     },
@@ -1234,7 +1234,7 @@
           "example": "10",
           "member": "int64",
           "name": "SkillGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1865,6 +1865,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1874,6 +1875,7 @@
           "example": "[]",
           "member": "ActiveCarrierPrivilegeNumber",
           "name": "ActiveCarrierPrivilegeNumbers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1883,6 +1885,7 @@
           "example": "[]",
           "member": "uint64",
           "name": "PendingApplicantIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

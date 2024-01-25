@@ -88,7 +88,7 @@ tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
     --TaskVersionDTOs.0.TaskInfo.MinDateTime abc \
     --TaskVersionDTOs.0.TaskInfo.MaxDateTime abc \
     --TaskVersionDTOs.0.TaskInfo.ExecutionTTL 0 \
-    --TaskVersionDTOs.0.TaskInfo.SelfDepend 0 \
+    --TaskVersionDTOs.0.TaskInfo.SelfDepend abc \
     --TaskVersionDTOs.0.TaskInfo.LeftCoordinate 0 \
     --TaskVersionDTOs.0.TaskInfo.TopCoordinate 0 \
     --TaskVersionDTOs.0.TaskInfo.TaskExt.TaskId abc \
@@ -673,7 +673,8 @@ tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
     --AutoRun True \
     --AlarmWays abc \
     --AlarmRecipientTypes abc \
-    --ProjectId abc
+    --ProjectId abc \
+    --NeedCheckParentSubmitted True
 ```
 
 Output: 
@@ -804,7 +805,7 @@ tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
     --TaskVersionDTOs.0.TaskInfo.MinDateTime abc \
     --TaskVersionDTOs.0.TaskInfo.MaxDateTime abc \
     --TaskVersionDTOs.0.TaskInfo.ExecutionTTL 0 \
-    --TaskVersionDTOs.0.TaskInfo.SelfDepend 0 \
+    --TaskVersionDTOs.0.TaskInfo.SelfDepend abc \
     --TaskVersionDTOs.0.TaskInfo.LeftCoordinate 0 \
     --TaskVersionDTOs.0.TaskInfo.TopCoordinate 0 \
     --TaskVersionDTOs.0.TaskInfo.TaskExt.TaskId abc \
@@ -1389,7 +1390,8 @@ tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
     --AutoRun True \
     --AlarmWays abc \
     --AlarmRecipientTypes abc \
-    --ProjectId abc
+    --ProjectId abc \
+    --NeedCheckParentSubmitted True
 ```
 
 Output: 
@@ -1402,6 +1404,249 @@ Output:
             "ErrorDesc": "abc"
         },
         "RequestId": "abc"
+    }
+}
+```
+
+**Example 4: 失败示例0926**
+
+失败示例0926
+
+Input: 
+
+```
+tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
+    --TaskVersionDTOs.0.TaskInfo.ProjectId 1470547050521227264 \
+    --ProjectId 1470547050521227264
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "任务校验: 任务: null 可能不合法: null"
+        },
+        "RequestId": "7d6b3b60-4fd9-47b1-ba33-68a731417dd9"
+    }
+}
+```
+
+**Example 5: 脚本不存在**
+
+脚本不存在
+
+Input: 
+
+```
+tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
+    --TaskVersionDTOs.0.VersionRemark 1 \
+    --TaskVersionDTOs.0.TaskInfo.TaskId 20230523111629378 \
+    --TaskVersionDTOs.0.TaskInfo.VirtualFlag False \
+    --TaskVersionDTOs.0.TaskInfo.TaskName gallop_shell_ancestor_0523 \
+    --TaskVersionDTOs.0.TaskInfo.WorkflowId 25c3d6e2-f918-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.0.TaskInfo.WorkflowName gallop_workflow_2 \
+    --TaskVersionDTOs.0.TaskInfo.FolderId 977f8e67-f3e8-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.0.TaskInfo.CreateTime 2023-05-23 11:16:29 \
+    --TaskVersionDTOs.0.TaskInfo.LastUpdate 2023-05-23 11:20:34 \
+    --TaskVersionDTOs.0.TaskInfo.Status NS \
+    --TaskVersionDTOs.0.TaskInfo.InCharge gallopcai \
+    --TaskVersionDTOs.0.TaskInfo.InChargeId gallopcai \
+    --TaskVersionDTOs.0.TaskInfo.StartTime 2023-05-23 00:00:00 \
+    --TaskVersionDTOs.0.TaskInfo.EndTime 2023-07-12 00:00:00 \
+    --TaskVersionDTOs.0.TaskInfo.ExecutionStartTime 00:00 \
+    --TaskVersionDTOs.0.TaskInfo.ExecutionEndTime 23:59 \
+    --TaskVersionDTOs.0.TaskInfo.ProjectId 1470547050521227264 \
+    --TaskVersionDTOs.0.TaskInfo.CycleType MINUTE_CYCLE \
+    --TaskVersionDTOs.0.TaskInfo.CycleStep 5 \
+    --TaskVersionDTOs.0.TaskInfo.DelayTime 0 \
+    --TaskVersionDTOs.0.TaskInfo.StartupTime 0 \
+    --TaskVersionDTOs.0.TaskInfo.RetryWait 5 \
+    --TaskVersionDTOs.0.TaskInfo.Retriable 1 \
+    --TaskVersionDTOs.0.TaskInfo.TaskAction  \
+    --TaskVersionDTOs.0.TaskInfo.TryLimit 5 \
+    --TaskVersionDTOs.0.TaskInfo.RunPriority 6 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.TypeId 35 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.TypeDesc Shell \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.CreateTime 2022-02-12 11:13:41 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.RunJarName IdexShell.jar \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.KillAble 0 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.TypeSort 数据计算 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.InCharge admin \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.BrokerParallelism 10 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.TaskParallelism 10 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.DoRedoParallelism 10000 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.DowngradePriorityTries 2 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.RetryWait 5 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.RetryLimit 5 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.DefaultAliveWait 720 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.PollingSeconds 5 \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.ParamList <parameters><parameter><name>hdpClient</name><value>/usr/hdp/current/hadoop-client</value></parameter><parameter><name>hiveClient</name><value>/usr/hdp/current/hive-client</value></parameter></parameters> \
+    --TaskVersionDTOs.0.TaskInfo.TaskType.ExcludeCommonLib False \
+    --TaskVersionDTOs.0.TaskInfo.BrokerIp ins-n8mprktf \
+    --TaskVersionDTOs.0.TaskInfo.ExecutionTTL -1 \
+    --TaskVersionDTOs.0.TaskInfo.SelfDepend serial \
+    --TaskVersionDTOs.0.TaskInfo.LeftCoordinate 345 \
+    --TaskVersionDTOs.0.TaskInfo.TopCoordinate 227 \
+    --TaskVersionDTOs.0.TaskInfo.Notes  \
+    --TaskVersionDTOs.0.TaskInfo.InstanceInitStrategy T_PLUS_0 \
+    --TaskVersionDTOs.0.TaskInfo.ScriptChange True \
+    --TaskVersionDTOs.0.TaskInfo.Submit False \
+    --TaskVersionDTOs.0.TaskInfo.Creater gallopcai \
+    --TaskVersionDTOs.0.TaskInfo.DependencyRel and \
+    --TaskVersionDTOs.0.TaskInfo.DependencyWorkflow no \
+    --TaskVersionDTOs.0.TaskInfo.ProductName DATA_DEV \
+    --TaskVersionDTOs.0.TaskInfo.OwnId 100028448903 \
+    --TaskVersionDTOs.0.TaskInfo.UserId 100028660434 \
+    --TaskVersionDTOs.0.TaskInfo.TenantId 1315051789 \
+    --TaskVersionDTOs.0.TaskInfo.UpdateUser gallopcai \
+    --TaskVersionDTOs.0.TaskInfo.UpdateTime 2023-05-23 11:20:34 \
+    --TaskVersionDTOs.0.TaskInfo.UpdateUserId 100028660434 \
+    --TaskVersionDTOs.0.TaskInfo.ResourceGroup 20221205070125178145 \
+    --TaskVersionDTOs.0.TaskInfo.VersionDesc 新增 \
+    --TaskVersionDTOs.0.TaskInfo.UserFileId 3318ac88-b69f-44d7-a2b8-1424f1d0d29e \
+    --TaskVersionDTOs.1.VersionRemark 1 \
+    --TaskVersionDTOs.1.TaskInfo.TaskId 20230523111838986 \
+    --TaskVersionDTOs.1.TaskInfo.VirtualFlag False \
+    --TaskVersionDTOs.1.TaskInfo.TaskName gallop_shell_child1_0523 \
+    --TaskVersionDTOs.1.TaskInfo.WorkflowId 25c3d6e2-f918-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.1.TaskInfo.WorkflowName gallop_workflow_2 \
+    --TaskVersionDTOs.1.TaskInfo.FolderId 977f8e67-f3e8-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.1.TaskInfo.CreateTime 2023-05-23 11:18:39 \
+    --TaskVersionDTOs.1.TaskInfo.LastUpdate 2023-05-23 11:28:43 \
+    --TaskVersionDTOs.1.TaskInfo.Status NS \
+    --TaskVersionDTOs.1.TaskInfo.InCharge gallopcai \
+    --TaskVersionDTOs.1.TaskInfo.InChargeId gallopcai \
+    --TaskVersionDTOs.1.TaskInfo.StartTime 2023-05-23 00:00:00 \
+    --TaskVersionDTOs.1.TaskInfo.EndTime 2023-07-12 00:00:00 \
+    --TaskVersionDTOs.1.TaskInfo.ExecutionStartTime 00:00 \
+    --TaskVersionDTOs.1.TaskInfo.ExecutionEndTime 23:59 \
+    --TaskVersionDTOs.1.TaskInfo.ProjectId 1470547050521227264 \
+    --TaskVersionDTOs.1.TaskInfo.CycleType MINUTE_CYCLE \
+    --TaskVersionDTOs.1.TaskInfo.CycleStep 5 \
+    --TaskVersionDTOs.1.TaskInfo.DelayTime 0 \
+    --TaskVersionDTOs.1.TaskInfo.StartupTime 0 \
+    --TaskVersionDTOs.1.TaskInfo.RetryWait 5 \
+    --TaskVersionDTOs.1.TaskInfo.Retriable 1 \
+    --TaskVersionDTOs.1.TaskInfo.TaskAction  \
+    --TaskVersionDTOs.1.TaskInfo.TryLimit 5 \
+    --TaskVersionDTOs.1.TaskInfo.RunPriority 6 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.TypeId 35 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.TypeDesc Shell \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.CreateTime 2022-02-12 11:13:41 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.RunJarName IdexShell.jar \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.KillAble 0 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.TypeSort 数据计算 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.InCharge admin \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.BrokerParallelism 10 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.TaskParallelism 10 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.DoRedoParallelism 10000 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.DowngradePriorityTries 2 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.RetryWait 5 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.RetryLimit 5 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.DefaultAliveWait 720 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.PollingSeconds 5 \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.ParamList <parameters><parameter><name>hdpClient</name><value>/usr/hdp/current/hadoop-client</value></parameter><parameter><name>hiveClient</name><value>/usr/hdp/current/hive-client</value></parameter></parameters> \
+    --TaskVersionDTOs.1.TaskInfo.TaskType.ExcludeCommonLib False \
+    --TaskVersionDTOs.1.TaskInfo.BrokerIp ins-n8mprktf \
+    --TaskVersionDTOs.1.TaskInfo.ExecutionTTL -1 \
+    --TaskVersionDTOs.1.TaskInfo.SelfDepend serial \
+    --TaskVersionDTOs.1.TaskInfo.LeftCoordinate 341 \
+    --TaskVersionDTOs.1.TaskInfo.TopCoordinate 383 \
+    --TaskVersionDTOs.1.TaskInfo.Notes  \
+    --TaskVersionDTOs.1.TaskInfo.InstanceInitStrategy T_PLUS_0 \
+    --TaskVersionDTOs.1.TaskInfo.ScriptChange False \
+    --TaskVersionDTOs.1.TaskInfo.Submit False \
+    --TaskVersionDTOs.1.TaskInfo.Creater gallopcai \
+    --TaskVersionDTOs.1.TaskInfo.DependencyRel and \
+    --TaskVersionDTOs.1.TaskInfo.DependencyWorkflow no \
+    --TaskVersionDTOs.1.TaskInfo.ProductName DATA_DEV \
+    --TaskVersionDTOs.1.TaskInfo.OwnId 100028448903 \
+    --TaskVersionDTOs.1.TaskInfo.UserId 100028660434 \
+    --TaskVersionDTOs.1.TaskInfo.TenantId 1315051789 \
+    --TaskVersionDTOs.1.TaskInfo.UpdateUser gallopcai \
+    --TaskVersionDTOs.1.TaskInfo.UpdateTime 2023-05-23 11:23:59 \
+    --TaskVersionDTOs.1.TaskInfo.UpdateUserId 100028660434 \
+    --TaskVersionDTOs.1.TaskInfo.ResourceGroup 20221205070125178145 \
+    --TaskVersionDTOs.1.TaskInfo.VersionDesc 新增 \
+    --TaskVersionDTOs.2.VersionRemark 1 \
+    --TaskVersionDTOs.2.TaskInfo.TaskId 20230523111746635 \
+    --TaskVersionDTOs.2.TaskInfo.VirtualFlag False \
+    --TaskVersionDTOs.2.TaskInfo.TaskName gallop_shell_parent_0523 \
+    --TaskVersionDTOs.2.TaskInfo.WorkflowId 25c3d6e2-f918-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.2.TaskInfo.WorkflowName gallop_workflow_2 \
+    --TaskVersionDTOs.2.TaskInfo.FolderId 977f8e67-f3e8-11ed-8909-bc97e105ba60 \
+    --TaskVersionDTOs.2.TaskInfo.CreateTime 2023-05-23 11:17:46 \
+    --TaskVersionDTOs.2.TaskInfo.LastUpdate 2023-05-23 11:28:42 \
+    --TaskVersionDTOs.2.TaskInfo.Status NS \
+    --TaskVersionDTOs.2.TaskInfo.InCharge gallopcai \
+    --TaskVersionDTOs.2.TaskInfo.InChargeId gallopcai \
+    --TaskVersionDTOs.2.TaskInfo.StartTime 2023-05-23 00:00:00 \
+    --TaskVersionDTOs.2.TaskInfo.EndTime 2023-07-12 00:00:00 \
+    --TaskVersionDTOs.2.TaskInfo.ExecutionStartTime 00:00 \
+    --TaskVersionDTOs.2.TaskInfo.ExecutionEndTime 23:59 \
+    --TaskVersionDTOs.2.TaskInfo.ProjectId 1470547050521227264 \
+    --TaskVersionDTOs.2.TaskInfo.CycleType MINUTE_CYCLE \
+    --TaskVersionDTOs.2.TaskInfo.CycleStep 5 \
+    --TaskVersionDTOs.2.TaskInfo.DelayTime 0 \
+    --TaskVersionDTOs.2.TaskInfo.StartupTime 0 \
+    --TaskVersionDTOs.2.TaskInfo.RetryWait 5 \
+    --TaskVersionDTOs.2.TaskInfo.Retriable 1 \
+    --TaskVersionDTOs.2.TaskInfo.TaskAction  \
+    --TaskVersionDTOs.2.TaskInfo.TryLimit 5 \
+    --TaskVersionDTOs.2.TaskInfo.RunPriority 6 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.TypeId 35 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.TypeDesc Shell \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.CreateTime 2022-02-12 11:13:41 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.RunJarName IdexShell.jar \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.KillAble 0 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.TypeSort 数据计算 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.InCharge admin \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.BrokerParallelism 10 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.TaskParallelism 10 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.DoRedoParallelism 10000 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.DowngradePriorityTries 2 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.RetryWait 5 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.RetryLimit 5 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.DefaultAliveWait 720 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.PollingSeconds 5 \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.ParamList <parameters><parameter><name>hdpClient</name><value>/usr/hdp/current/hadoop-client</value></parameter><parameter><name>hiveClient</name><value>/usr/hdp/current/hive-client</value></parameter></parameters> \
+    --TaskVersionDTOs.2.TaskInfo.TaskType.ExcludeCommonLib False \
+    --TaskVersionDTOs.2.TaskInfo.BrokerIp ins-n8mprktf \
+    --TaskVersionDTOs.2.TaskInfo.ExecutionTTL -1 \
+    --TaskVersionDTOs.2.TaskInfo.SelfDepend serial \
+    --TaskVersionDTOs.2.TaskInfo.LeftCoordinate 329 \
+    --TaskVersionDTOs.2.TaskInfo.TopCoordinate 301 \
+    --TaskVersionDTOs.2.TaskInfo.Notes  \
+    --TaskVersionDTOs.2.TaskInfo.InstanceInitStrategy T_PLUS_0 \
+    --TaskVersionDTOs.2.TaskInfo.ScriptChange False \
+    --TaskVersionDTOs.2.TaskInfo.Submit False \
+    --TaskVersionDTOs.2.TaskInfo.Creater gallopcai \
+    --TaskVersionDTOs.2.TaskInfo.DependencyRel and \
+    --TaskVersionDTOs.2.TaskInfo.DependencyWorkflow no \
+    --TaskVersionDTOs.2.TaskInfo.ProductName DATA_DEV \
+    --TaskVersionDTOs.2.TaskInfo.OwnId 100028448903 \
+    --TaskVersionDTOs.2.TaskInfo.UserId 100028660434 \
+    --TaskVersionDTOs.2.TaskInfo.TenantId 1315051789 \
+    --TaskVersionDTOs.2.TaskInfo.UpdateUser gallopcai \
+    --TaskVersionDTOs.2.TaskInfo.UpdateTime 2023-05-23 11:23:10 \
+    --TaskVersionDTOs.2.TaskInfo.UpdateUserId 100028660434 \
+    --TaskVersionDTOs.2.TaskInfo.ResourceGroup 20221205070125178145 \
+    --TaskVersionDTOs.2.TaskInfo.VersionDesc 新增 \
+    --AutoRun True \
+    --ProjectId 1470547050521227264
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "提交任务失败: 20230523111838986, 任务脚本文件复制失败，请查看脚本文件是否存在或者检查datastuido服务是否正常"
+        },
+        "RequestId": "cbffc50d-3289-47a2-8f4b-1077d4815c61"
     }
 }
 ```

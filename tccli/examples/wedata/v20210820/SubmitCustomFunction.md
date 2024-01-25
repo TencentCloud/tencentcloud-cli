@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli wedata SubmitCustomFunction --cli-unfold-argument  \
-    --Comment xx \
-    --ClusterIdentifier xx \
-    --FunctionId xx \
-    --ProjectId xxx
+    --Comment test \
+    --ClusterIdentifier emr-terse \
+    --FunctionId d65df5af-28b4-4171-9a24-ce96fc4e83fa \
+    --ProjectId 153160354643453465952
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMessage": "xx",
-        "FunctionId": "xx",
-        "RequestId": "xx"
+        "ErrorMessage": "test",
+        "FunctionId": "d65df5af-28b4-4171-9a24-ce96fc4e83fa",
+        "RequestId": "ef431542-96ae-467c-b821-f594df8ac83c"
     }
 }
 ```

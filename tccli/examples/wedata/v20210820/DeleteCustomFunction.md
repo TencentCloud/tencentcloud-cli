@@ -1,6 +1,6 @@
-**Example 1: f**
+**Example 1: 删除自定义函数**
 
-w
+删除自定义函数
 
 Input: 
 

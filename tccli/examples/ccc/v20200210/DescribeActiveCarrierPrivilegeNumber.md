@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ccc DescribeActiveCarrierPrivilegeNumber --cli-unfold-argument ```
+tccli ccc DescribeActiveCarrierPrivilegeNumber --cli-unfold-argument  \
+    --SdkAppId 1400000000
+```
 
 Output: 
 ```
@@ -14,16 +16,16 @@ Output:
         "TotalCount": 1,
         "ActiveCarrierPrivilegeNumbers": [
             {
-                "SdkAppId": 140000000,
-                "Caller": "00860101234",
-                "Callee": "008618612341234"
+                "SdkAppId": 1,
+                "Caller": "abc",
+                "Callee": "abc",
+                "CreateTime": 0
             }
         ],
         "PendingApplicantIds": [
-            1,
-            2
+            1
         ],
-        "RequestId": "xxxxX"
+        "RequestId": "abc"
     }
 }
 ```

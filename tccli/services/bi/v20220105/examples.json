@@ -100,6 +100,14 @@
         "title": "项目内-删除用户接口"
       }
     ],
+    "DescribeCloudMonitorReportCorpDataList": [
+      {
+        "document": "上报免费试用馆信息",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudMonitorReportCorpDataList\n<公共请求参数>\n\n{\n    \"UinList\": [\n        \"abc\"\n    ],\n    \"Date\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"Data\": {\n            \"CorpStatisticDataList\": [\n                {\n                    \"Date\": \"abc\",\n                    \"Uin\": \"abc\",\n                    \"DatasourceNum\": 0,\n                    \"TableNum\": 0,\n                    \"PageNum\": 0,\n                    \"TotalNum\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "上报免费试用馆信息"
+      }
+    ],
     "DescribeDatasourceList": [
       {
         "document": "查询数据源列表",

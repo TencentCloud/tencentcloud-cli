@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata ImportProjectParamDs --cli-unfold-argument  \
-    --ProjectId abc \
-    --FileName xxxx.json
+    --ProjectId 130921313 \
+    --FileName file.json
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
     "Response": {
         "Data": {
             "Success": true,
-            "Message": "abc"
+            "Message": "file.json"
         },
-        "RequestId": "abc"
+        "RequestId": "2fe0e0e3-9e79-49fb-872b-4c6a1abdc335"
     }
 }
 ```

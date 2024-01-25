@@ -1,3 +1,151 @@
+# Release 3.0.929.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 9 次发布
+
+发布时间：2024-01-25 01:05:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudMonitorReportCorpDataList](http://document.tencentcloudapi.woa.com/document/product/1707/83138)
+
+新增数据结构：
+
+* [CorpStatisticData](http://document.tencentcloudapi.woa.com/document/product/1707/80324#CorpStatisticData)
+* [CorpStatisticDataInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#CorpStatisticDataInfo)
+* [ErrorInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#ErrorInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 71 次发布
+
+发布时间：2024-01-25 01:13:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAuditInstanceList](http://document.tencentcloudapi.woa.com/document/product/1003/83139)
+
+新增数据结构：
+
+* [AuditInstanceFilters](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditInstanceFilters)
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditInstanceInfo)
+* [InstanceAuditStatus](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAuditStatus)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 50 次发布
+
+发布时间：2024-01-25 01:16:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：Protocol
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 64 次发布
+
+发布时间：2024-01-25 01:17:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyFlowDeadline](http://document.tencentcloudapi.woa.com/document/product/1668/83140)
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* 新增成员：Deadline
+
+* [FlowCreateApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowCreateApprover)
+
+	* 新增成员：Deadline
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 121 次发布
+
+发布时间：2024-01-25 01:17:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyFlowDeadline](http://document.tencentcloudapi.woa.com/document/product/1595/83141)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 29 次发布
+
+发布时间：2024-01-25 01:37:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchCreateTaskVersionDs](http://document.tencentcloudapi.woa.com/document/product/1607/82942)
+
+	* 新增入参：NeedCheckParentSubmitted
+
+* [DescribeCodeSearchInfo](http://document.tencentcloudapi.woa.com/document/product/1607/83098)
+
+	* 新增入参：WorkflowIds, FolderIds, DatasourceIds, FolderPaths, TaskStatus
+
+	* <font color="#dd0000">**修改入参**：</font>SearchScopes
+
+* [RemoveWorkflowDs](http://document.tencentcloudapi.woa.com/document/product/1607/81248)
+
+	* 新增入参：DeleteScript, OperateIsInform, DeleteMode
+
+
+修改数据结构：
+
+* [OrganizationalFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrganizationalFunction)
+
+	* 新增成员：SchemaName, CommandFormat, OwnerName, SubmitTimestamp
+
+
+
+
 # Release 3.0.928.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

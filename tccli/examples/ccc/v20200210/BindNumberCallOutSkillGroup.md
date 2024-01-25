@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli ccc BindNumberCallOutSkillGroup --cli-unfold-argument ```
+tccli ccc BindNumberCallOutSkillGroup --cli-unfold-argument  \
+    --Number 0086075512345678 \
+    --SkillGroupIds 1 2 3 \
+    --SdkAppId 1400000000
+```
 
 Output: 
 ```
