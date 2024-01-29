@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli camp DeletePod --cli-unfold-argument  \
-    --InstanceID ins-xxxx
-```
+tccli camp DeletePod --cli-unfold-argument ```
 
 Output: 
 ```

@@ -3941,17 +3941,7 @@
     },
     "DeletePodRequest": {
       "document": "DeletePod请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "无",
-          "member": "string",
-          "name": "InstanceID",
-          "required": true,
-          "type": "string"
-        }
-      ],
+      "members": [],
       "type": "object"
     },
     "DeletePodResponse": {

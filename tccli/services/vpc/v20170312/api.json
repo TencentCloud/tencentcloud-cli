@@ -427,6 +427,13 @@
       "output": "CreateNatGatewayDestinationIpPortTranslationNatRuleResponse",
       "status": "online"
     },
+    "CreateNatGatewayInternal": {
+      "document": "本接口(CreateNatGateway)用于创建TCB NAT网关。\n在对新建的NAT网关做其他操作前，需先确认此网关已被创建完成（DescribeNatGateway接口返回的实例State字段为AVAILABLE）。",
+      "input": "CreateNatGatewayInternalRequest",
+      "name": "创建NAT网关内部接口",
+      "output": "CreateNatGatewayInternalResponse",
+      "status": "online"
+    },
     "CreateNatGatewayServiceInternal": {
       "document": "用于添加经jnsgw的服务 原始VPC OSS接口: AddNatgwService",
       "input": "CreateNatGatewayServiceInternalRequest",
@@ -873,6 +880,13 @@
       "input": "DeleteNatGatewayDestinationIpPortTranslationNatRuleRequest",
       "name": "删除NAT网关端口转发规则",
       "output": "DeleteNatGatewayDestinationIpPortTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "DeleteNatGatewayInternal": {
+      "document": "本接口（DeleteNatGateway）用于删除TCB NAT网关。\n删除 NAT 网关后，系统会自动删除路由表中包含此 NAT 网关的路由项，同时也会解绑弹性公网IP（EIP）。",
+      "input": "DeleteNatGatewayInternalRequest",
+      "name": "删除NAT网关内部接口",
+      "output": "DeleteNatGatewayInternalResponse",
       "status": "online"
     },
     "DeleteNatGatewayServiceInternal": {
@@ -9052,6 +9066,23 @@
       ],
       "type": "object"
     },
+    "CreateNatGatewayInternalRequest": {
+      "document": "CreateNatGatewayInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateNatGatewayInternalResponse": {
+      "document": "CreateNatGatewayInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNatGatewayRequest": {
       "document": "CreateNatGateway请求参数结构体",
       "members": [
@@ -12996,6 +13027,23 @@
     },
     "DeleteNatGatewayDestinationIpPortTranslationNatRuleResponse": {
       "document": "DeleteNatGatewayDestinationIpPortTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNatGatewayInternalRequest": {
+      "document": "DeleteNatGatewayInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteNatGatewayInternalResponse": {
+      "document": "DeleteNatGatewayInternal返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -36301,6 +36349,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -36311,6 +36360,7 @@
           "example": "无",
           "member": "bool",
           "name": "Primary",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -36321,6 +36371,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIpAddress",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36331,6 +36382,7 @@
           "example": "无",
           "member": "string",
           "name": "AddressId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36341,6 +36393,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36351,6 +36404,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsWanIpBlocked",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -36361,6 +36415,7 @@
           "example": "无",
           "member": "string",
           "name": "State",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36371,6 +36426,18 @@
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已废弃字段",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIpState",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

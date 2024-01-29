@@ -748,6 +748,8 @@ tccli/services/sts/v20180813/api.json
 tccli/services/sts/v20180813/examples.json
 tccli/services/subcontract/__init__.py
 tccli/services/subcontract/subcontract_client.py
+tccli/services/svp/__init__.py
+tccli/services/svp/svp_client.py
 tccli/services/taf/__init__.py
 tccli/services/taf/taf_client.py
 tccli/services/taf/v20200210/api.json

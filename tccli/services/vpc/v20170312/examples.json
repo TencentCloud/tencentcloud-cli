@@ -572,6 +572,14 @@
         "title": "创建NAT的转发规则"
       }
     ],
+    "CreateNatGatewayInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatGatewayInternal\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建Nat内部实例"
+      }
+    ],
     "CreateNatGatewayServiceInternal": [
       {
         "document": "",
@@ -1112,6 +1120,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-3isn9hr0\",\n    \"DestinationIpPortTranslationNatRules\": [\n        {\n            \"Description\": \"xx\",\n            \"PublicIpAddress\": \"139.199.232.238\",\n            \"PrivatePort\": 9999,\n            \"IpProtocol\": \"TCP\",\n            \"PublicPort\": 999,\n            \"PrivateIpAddress\": \"10.0.9.2\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "删除NAT的端口转发规则"
+      }
+    ],
+    "DeleteNatGatewayInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayInternal\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除NAT网关实例"
       }
     ],
     "DeleteNatGatewayServiceInternal": [

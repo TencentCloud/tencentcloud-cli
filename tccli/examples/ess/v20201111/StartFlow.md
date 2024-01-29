@@ -8,8 +8,8 @@ Input:
 
 ```
 tccli ess StartFlow --cli-unfold-argument  \
-    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
-    --FlowId c7b5ca37ae*******2b4c6644
+    --Operator.UserId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --FlowId yDRS4UUgygqdcjjtUuO4zjESYiOVONL1
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
             "Code": "OperationDenied.DocumentNoAvailable",
             "Message": "电子文档不可用，请稍后重试。"
         },
-        "RequestId": "s1692*******0872"
+        "RequestId": "uO4zjEwxRFIf8q1"
     }
 }
 ```
@@ -33,8 +33,8 @@ Input:
 
 ```
 tccli ess StartFlow --cli-unfold-argument  \
-    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
-    --FlowId c7b5ca37ae*******2b4c6644
+    --Operator.UserId yDxZ1UyKQDSIMaUuO5zjEypPWudeHbnG \
+    --FlowId yDwJ0UUckpk2071xUxgm9jJEvuhEhqD7
 ```
 
 Output: 
@@ -42,7 +42,7 @@ Output:
 {
     "Response": {
         "Status": "START",
-        "RequestId": "s12**********789"
+        "RequestId": "xgm9jJv5GGyJXCh"
     }
 }
 ```

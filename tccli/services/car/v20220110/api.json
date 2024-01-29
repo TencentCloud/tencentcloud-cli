@@ -84,6 +84,13 @@
       "output": "DescribeApplicationVersionResponse",
       "status": "online"
     },
+    "DescribeConcurrentCount": {
+      "document": "获取并发计数",
+      "input": "DescribeConcurrentCountRequest",
+      "name": "获取并发计数",
+      "output": "DescribeConcurrentCountResponse",
+      "status": "online"
+    },
     "DescribeCosCredential": {
       "document": "用于查询 COS 密钥信息请求",
       "input": "DescribeCosCredentialRequest",
@@ -772,6 +779,53 @@
           "name": "Versions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentCountRequest": {
+      "document": "DescribeConcurrentCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "cap-abcdefgh",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConcurrentCountResponse": {
+      "document": "DescribeConcurrentCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发运行数，包括预启动中的、已连接的、等待重连、清理恢复等所有非空闲的并发数，所以刷新项目或断开并发包的用户连接，都会影响到该值",
+          "example": "6",
+          "member": "uint64",
+          "name": "Running",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

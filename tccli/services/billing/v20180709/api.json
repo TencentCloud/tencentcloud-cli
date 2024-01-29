@@ -5068,6 +5068,34 @@
       ],
       "usage": "out"
     },
+    "DeductionProperty": {
+      "document": "动态抵扣参数JsonData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key值",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteAllocationTagRequest": {
       "document": "DeleteAllocationTag请求参数结构体",
       "members": [
@@ -11619,6 +11647,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前周期容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CycleCapacitySize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前周期余量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CycleCapacityRemain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12044,6 +12092,16 @@
           "name": "ExpiredTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动态抵扣参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeductionProperty",
+          "name": "DeductionProperties",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -12490,6 +12548,16 @@
           "name": "ExpiredTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动态抵扣参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeductionProperty",
+          "name": "DeductionProperties",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

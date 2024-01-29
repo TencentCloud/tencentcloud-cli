@@ -1,3 +1,139 @@
+# Release 3.0.930.1
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 38 次发布
+
+发布时间：2024-01-29 01:13:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EmrListInstance](http://document.tencentcloudapi.woa.com/document/product/589/33981#EmrListInstance)
+
+	* 新增成员：IsDedicatedCluster
+
+	* <font color="#dd0000">**修改成员**：</font>IsSupportOutsideCluster
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 21 次发布
+
+发布时间：2024-01-29 01:17:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#InstanceDetail)
+
+	* 新增成员：ZoneList
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 36 次发布
+
+发布时间：2024-01-29 01:19:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceClusterShard](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceClusterShard)
+
+	* 新增成员：RunId
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+	* 新增成员：IPv6
+
+* [Instances](http://document.tencentcloudapi.woa.com/document/product/239/20022#Instances)
+
+	* 新增成员：IPv6
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 50 次发布
+
+发布时间：2024-01-29 01:20:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41675)
+
+	* 新增入参：IsCheckResource
+
+	* 新增出参：TaskId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 28 次发布
+
+发布时间：2024-01-29 01:22:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillingData](http://document.tencentcloudapi.woa.com/document/product/1738/83242)
+
+新增数据结构：
+
+* [BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData)
+* [BillingDataFilter](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingDataFilter)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 126 次发布
+
+发布时间：2024-01-29 01:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83244)
+* [DeleteNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83243)
+
+
+
 # Release 3.0.929.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

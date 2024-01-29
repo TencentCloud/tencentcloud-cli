@@ -276,7 +276,7 @@
     "SetUserBlockedByStrRoomId": {
       "document": "通过云API设置mute/unmute状态，适用于主播/房主/管理员等通过后台禁言/解禁言某个用户的场景。支持所有平台，Android、iOS、Windows 、 macOS 、WebSDK及小程序。注：当房间号为字符串类型时请使用该API",
       "input": "SetUserBlockedByStrRoomIdRequest",
-      "name": "设置字符串房间音视频状态",
+      "name": "设置字符串房间mute，unmute状态",
       "output": "SetUserBlockedByStrRoomIdResponse",
       "status": "online"
     },
@@ -5776,7 +5776,7 @@
         },
         {
           "disabled": false,
-          "document": "0表示unMute,1表示mute",
+          "document": "多次mute使用最后一次mute值。\n0表示unMute所有,1表示mute音视频，2表示mute音频，3表示mute视频。",
           "example": "1",
           "member": "uint64",
           "name": "IsMute",
