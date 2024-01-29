@@ -8,7 +8,7 @@
       "status": "online"
     },
     "GetFileTranslate": {
-      "document": "在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。\n•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见文档翻译结果回调。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。",
+      "document": "在调用文档翻译请求接口后，有回调和轮询两种方式获取识别结果。\n•当采用回调方式时，翻译完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见参数说明。",
       "input": "GetFileTranslateRequest",
       "name": "文件翻译结果查询",
       "output": "GetFileTranslateResponse",
@@ -116,7 +116,7 @@
         },
         {
           "disabled": false,
-          "document": "回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。",
+          "document": "回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。",
           "example": "http://test.com",
           "member": "string",
           "name": "CallbackUrl",
@@ -144,6 +144,7 @@
           "example": "无",
           "member": "Task",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -236,6 +237,7 @@
           "example": "2132131",
           "member": "GetFileTranslateData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

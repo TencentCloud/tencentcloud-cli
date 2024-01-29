@@ -511,7 +511,7 @@
         },
         {
           "disabled": false,
-          "document": "使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。",
+          "document": "使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。",
           "example": "无",
           "member": "string",
           "name": "Ciphertext",
@@ -530,7 +530,7 @@
           "example": "554ef4b3-3071-11ea-a86a-5254006d0810",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -540,7 +540,7 @@
           "example": "dGVzdA==",
           "member": "string",
           "name": "Plaintext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

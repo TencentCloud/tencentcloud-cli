@@ -997,7 +997,7 @@
     "ModifyDBInstanceLogToCLS": [
       {
         "document": "CDB实例慢日志、错误日志投递到CLS",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"errorLog\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": \"1\",\n    \"CreateIndex\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"error\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": \"1\",\n    \"CreateIndex\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "开启或关闭CDB日志投递CLS"
       }

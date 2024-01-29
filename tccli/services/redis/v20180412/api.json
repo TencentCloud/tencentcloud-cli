@@ -6043,7 +6043,7 @@
           "example": "无",
           "member": "string",
           "name": "ShardName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6053,7 +6053,7 @@
           "example": "无",
           "member": "string",
           "name": "ShardId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6063,7 +6063,7 @@
           "example": "无",
           "member": "int64",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6073,7 +6073,7 @@
           "example": "无",
           "member": "int64",
           "name": "Keys",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6083,7 +6083,7 @@
           "example": "无",
           "member": "string",
           "name": "Slots",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6093,7 +6093,7 @@
           "example": "无",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6103,8 +6103,18 @@
           "example": "无",
           "member": "float",
           "name": "StorageSlope",
-          "required": true,
+          "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Runid",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6112,8 +6122,8 @@
           "document": "实例运行时节点 ID。",
           "example": "无",
           "member": "string",
-          "name": "Runid",
-          "required": true,
+          "name": "RunId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6123,7 +6133,7 @@
           "example": "无",
           "member": "int64",
           "name": "Connected",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7003,11 +7013,21 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Vip6",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IPv6",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7457,10 +7477,20 @@
         },
         {
           "disabled": false,
-          "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IPv6",
           "member": "string",
           "name": "Vip6",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPv6",
+          "member": "string",
+          "name": "IPv6",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

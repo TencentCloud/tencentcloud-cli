@@ -3677,7 +3677,7 @@
           "example": "emr-xxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3687,7 +3687,7 @@
           "example": "状态描述",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3697,7 +3697,7 @@
           "example": "集群名字",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3707,7 +3707,7 @@
           "example": "集群地域",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3717,7 +3717,7 @@
           "example": "663622",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3727,7 +3727,7 @@
           "example": "创建时间",
           "member": "string",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3737,7 +3737,7 @@
           "example": "运行时间",
           "member": "string",
           "name": "RunTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3747,7 +3747,7 @@
           "example": "集群ID",
           "member": "string",
           "name": "MasterIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3757,7 +3757,7 @@
           "example": "集群版本",
           "member": "string",
           "name": "EmrVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3767,7 +3767,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3777,7 +3777,7 @@
           "example": "23321",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3787,7 +3787,7 @@
           "example": "44333",
           "member": "uint64",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3797,7 +3797,7 @@
           "example": "4555",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3807,7 +3807,7 @@
           "example": "4552",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3817,7 +3817,7 @@
           "example": "3422",
           "member": "uint64",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3827,7 +3827,7 @@
           "example": "45666",
           "member": "uint64",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3837,7 +3837,7 @@
           "example": "zone",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3847,7 +3847,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3857,7 +3857,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3867,7 +3867,7 @@
           "example": "告警信息",
           "member": "string",
           "name": "AlarmInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3877,7 +3877,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsWoodpeckerCluster",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3887,7 +3887,7 @@
           "example": "emr",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3897,7 +3897,7 @@
           "example": "emr",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3907,7 +3907,7 @@
           "example": "vpc-lzd3w8jz",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3917,7 +3917,7 @@
           "example": "subnet-3d73yezg",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3927,7 +3927,7 @@
           "example": "spark",
           "member": "string",
           "name": "ClusterClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3937,7 +3937,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsMultiZoneCluster",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3947,7 +3947,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsHandsCluster",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3957,7 +3957,7 @@
           "example": "[\"hdfs-2.8.5\",true]",
           "member": "SoftDependInfo",
           "name": "OutSideSoftInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3967,7 +3967,17 @@
           "example": "true",
           "member": "bool",
           "name": "IsSupportOutsideCluster",
-          "required": false,
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否专有集群场景集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDedicatedCluster",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -4641,7 +4651,7 @@
           "example": "show databases;",
           "member": "string",
           "name": "Statement",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4651,7 +4661,7 @@
           "example": "884c8989d757036f:ed89c04200000000",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4661,7 +4671,7 @@
           "example": "1686101465000",
           "member": "int64",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4671,7 +4681,7 @@
           "example": "3s104.599ms",
           "member": "string",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4681,7 +4691,7 @@
           "example": "1686101465000",
           "member": "int64",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4691,7 +4701,7 @@
           "example": "FINISHED",
           "member": "string",
           "name": "State",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4701,7 +4711,7 @@
           "example": "592",
           "member": "int64",
           "name": "RowsFetched",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4711,7 +4721,7 @@
           "example": "无",
           "member": "string",
           "name": "User",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4721,7 +4731,7 @@
           "example": "Default",
           "member": "string",
           "name": "DefaultDB",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4731,7 +4741,7 @@
           "example": "12.13.14.11:27002",
           "member": "string",
           "name": "Coordinator",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4741,7 +4751,7 @@
           "example": "12.15 MB",
           "member": "string",
           "name": "MaxNodePeakMemoryUsage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4751,7 +4761,7 @@
           "example": "QUERY",
           "member": "string",
           "name": "QueryType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4761,7 +4771,7 @@
           "example": "0",
           "member": "int64",
           "name": "ScanHDFSRows",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4771,7 +4781,7 @@
           "example": "599",
           "member": "int64",
           "name": "ScanKUDURows",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4781,7 +4791,7 @@
           "example": "599",
           "member": "int64",
           "name": "ScanRowsTotal",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4791,7 +4801,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalBytesRead",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4801,7 +4811,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalBytesSent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4811,7 +4821,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCpuTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4821,7 +4831,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalInnerBytesSent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4831,7 +4841,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalScanBytesSent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4841,7 +4851,7 @@
           "example": "无",
           "member": "int64",
           "name": "EstimatedPerHostMemBytes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4851,7 +4861,27 @@
           "example": "无",
           "member": "int64",
           "name": "NumRowsFetchedFromCache",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f44f47eda7f8a920:a555717b00000000",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单节点内存峰值和(Bytes)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4324",
+          "member": "int64",
+          "name": "PerNodePeakMemoryBytesSum",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

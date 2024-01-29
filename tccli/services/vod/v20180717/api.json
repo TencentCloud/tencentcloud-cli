@@ -14718,7 +14718,7 @@
         },
         {
           "disabled": false,
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -18014,6 +18014,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaCastEvent",
+          "name": "MediaCastStatusChangedEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20996,6 +21006,34 @@
         }
       ],
       "usage": "out"
+    },
+    "MediaCastEvent": {
+      "document": "媒体转推事件通知消息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体转推 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CastId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转推状态，取值有：\n<li>Working ：运行中；</li>\n<li>Scheduled ：等待定时时间到达后启动；</li>\n<li>Stopped ：已经停止转推；</li>\n<li>Idle ：空闲。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Working",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MediaClassInfo": {
       "document": "分类信息描述",

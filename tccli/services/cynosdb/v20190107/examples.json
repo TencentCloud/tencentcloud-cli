@@ -238,6 +238,14 @@
         "title": "查询数据库账号列表"
       }
     ],
+    "DescribeAuditInstanceList": [
+      {
+        "document": "获取审计实例列表",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditInstanceList\n<公共请求参数>\n\n{\n    \"AuditMode\": 0,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cynosdbmysql-ins-6990cckk\"\n            ],\n            \"Name\": \"InstanceId\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"AuditSwitch\": 0,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\",\n        \"Items\": [\n            {\n                \"RealStorage\": 0,\n                \"BillingAmount\": 0,\n                \"LowRealStorage\": 0,\n                \"InstanceId\": \"cynosdbmysql-ins-6990cckk\",\n                \"CreateAt\": \"2022-03-02 10:09:08\",\n                \"AuditStatus\": \"1\",\n                \"LogExpireDay\": 1,\n                \"AuditAll\": true,\n                \"InstanceInfo\": {\n                    \"ProjectId\": 0,\n                    \"TagList\": [\n                        {\n                            \"TagKey\": \"test\",\n                            \"TagValue\": \"1\"\n                        }\n                    ]\n                },\n                \"HighRealStorage\": 0,\n                \"HighLogExpireDay\": 30,\n                \"LowLogExpireDay\": 7\n            }\n        ]\n    }\n}",
+        "title": "获取审计实例列表"
+      }
+    ],
     "DescribeAuditLogFiles": [
       {
         "document": "",

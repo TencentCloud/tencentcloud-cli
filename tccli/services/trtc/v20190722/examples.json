@@ -106,7 +106,7 @@
     ],
     "DescribeStreamIngest": [
       {
-        "document": "查询SdkAppId为1234567890下的TaskId为1234的转推任务状态",
+        "document": "查询SdkAppId为1234567890下的TaskId为1234的任务状态",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "查询任务"
@@ -322,10 +322,10 @@
     ],
     "StartStreamIngest": [
       {
-        "document": "启动一个拉流转推任务，将在线媒体流\"https://a.b/test.mp4\"输入TRTC房间，音视频编码采用默认编码值，转推成功后返回TaskId",
+        "document": "启动一个输入在线媒体流任务，将在线媒体流\"https://a.b/test.mp4\"输入TRTC房间，音视频编码采用默认编码值，转推成功后返回TaskId",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"RoomId\": \"room123\",\n    \"UserId\": \"robot123\",\n    \"UserSig\": \"xxxxxxxxxxxxxxx\",\n    \"PrivateMapKey\": \"xxxxxxxxxxxxxxx\",\n    \"RoomIdType\": 1,\n    \"StreamUrl\": \"https://a.b/test.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
-        "title": "启动拉流转推"
+        "title": "启动输入在线媒体流"
       }
     ],
     "StopMCUMixTranscode": [
@@ -357,7 +357,7 @@
         "document": "将SdkAppId为1234567890下的任务1234停止",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
-        "title": "停止拉流转推"
+        "title": "停止输入在线媒体流"
       }
     ],
     "UpdatePublishCdnStream": [

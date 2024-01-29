@@ -422,6 +422,14 @@
         "title": "集装箱识别示例代码"
       }
     ],
+    "RecognizeEncryptedIDCardOCR": [
+      {
+        "document": "身份证识别（安全加密版）示例",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeEncryptedIDCardOCR\n<公共请求参数>\n\n{\n    \"ImageBase64\": \"\",\n    \"ImageUrl\": \"\",\n    \"CardSide\": \"\",\n    \"Config\": \"\",\n    \"EncryptedBody\": \"cpA8uWgtLjDSY8NvIoRe/UH0LlAa8+a3Jj6lVN5+9u4LFQxEj3x3QqNnPXZJ3f5aAcEYZPxnaglJVSzimWT8rDKJmnFRU2309cJysuV7GVZgfiLPlAtZ659BRUYTgZD2aLSSD2WJZt1izHmPx1Lt1A==\",\n    \"Encryption\": {\n        \"Algorithm\": \"AES-256-CBC\",\n        \"TagList\": [],\n        \"CiphertextBlob\": \"sBmIZTmfcZ4FZIskKB1PC3yYx0a/CxBh8KwnQWgsgK96UeHeswIJdH7Gt4LW8yiIUjFq7PdikshkRdYPk9OWWEfAWb70DjfNnWLhI8FMMT72A+V+uWeQZN4VtwWdH6I2FrV4aXYxblq7cHHALvL1Ey8x0Cl9CFBeIrQsBGNnnW8=\",\n        \"Iv\": \"U2KHDqXYtpCl3l5BRuH0qw==\",\n        \"EncryptList\": [\n            \"EncryptedBody\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"\",\n        \"AdvancedInfo\": \"\",\n        \"Authority\": \"\",\n        \"Birth\": \"\",\n        \"EncryptedBody\": \"R+psIR59D8HR23D2S1SpEDrR0GPkpzQ+ynmilaOGMI0b/qKNJVYxo/myjctCdswpctobCP+QDd1nG0tYe651VfkcgBYcRPjEKp7sXKIKsOL7f6kilHoLkCCbpzXGq+Q6c+A+TdxUC36xT8jfYF/5mFqRD/qnEqlg/9L/6SeJ+6TQ0CWPmlAzw2dRWvSHq/sigMd98CAsk9M7VvqYFYM9uuIm62etac2/i8OpVSww3RVuIDNprJS/iM4BlmA3Y8hdv2EDp5zZy9BIo1Nzx+qAVhpMxasLs/1sEBBDaxRzP6o=\",\n        \"Encryption\": {\n            \"Algorithm\": \"AES-256-CBC\",\n            \"CiphertextBlob\": \"sBmIZTmfcZ4FZIskKB1PC3yYx0a/CxBh8KwnQWgsgK96UeHeswIJdH7Gt4LW8yiIUjFq7PdikshkRdYPk9OWWEfAWb70DjfNnWLhI8FMMT72A+V+uWeQZN4VtwWdH6I2FrV4aXYxblq7cHHALvL1Ey8x0Cl9CFBeIrQsBGNnnW8=\",\n            \"EncryptList\": [\n                \"EncryptedBody\"\n            ],\n            \"Iv\": \"U2KHDqXYtpCl3l5BRuH0qw==\",\n            \"TagList\": null\n        },\n        \"IdNum\": \"\",\n        \"Name\": \"\",\n        \"Nation\": \"\",\n        \"ReflectDetailInfos\": [],\n        \"RequestId\": \"9782fbce-de72-4325-8e07-ffb3d540be90\",\n        \"Sex\": \"\",\n        \"ValidDate\": \"\"\n    }\n}",
+        "title": "身份证识别（安全加密版）示例"
+      }
+    ],
     "RecognizeForeignPermanentResidentIdCard": [
       {
         "document": "外国人永久居留身份证识别",

@@ -21,11 +21,15 @@ Output:
     "Response": {
         "Data": [
             {
-                "Domain": "abc",
+                "RuleType": 0,
                 "Ioc": "abc",
+                "IocInfo": "abc",
+                "Domain": "abc",
+                "IP": "abc",
                 "Level": "abc",
                 "EventName": "abc",
                 "Direction": 0,
+                "DirectionList": "0,1",
                 "Protocol": "abc",
                 "Address": "abc",
                 "Action": 0,
@@ -36,7 +40,14 @@ Output:
                 "UniqueId": "abc",
                 "MatchTimes": 0,
                 "Country": "abc",
-                "Comment": "abc"
+                "Comment": "abc",
+                "LastHitTime": "abc",
+                "CustomRule": {
+                    "SrcIP": "abc",
+                    "DstIP": "abc",
+                    "IdsRuleName": "abc",
+                    "IdsRuleId": "abc"
+                }
             }
         ],
         "Total": 0,
@@ -44,6 +55,15 @@ Output:
         "ReturnMsg": "abc",
         "SourceList": [
             "abc"
+        ],
+        "RuleTypeDataList": [
+            0,
+            122,
+            30,
+            55,
+            12,
+            232,
+            0
         ],
         "RequestId": "abc"
     }

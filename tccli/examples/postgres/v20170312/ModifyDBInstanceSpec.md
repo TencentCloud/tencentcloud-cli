@@ -1,6 +1,6 @@
 **Example 1: 修改实例配置。**
 
-修改实例postgres-6bwgamo3配置为内存2GB、存储200GB。
+修改实例postgres-6bwgamo3配置为Cpu1核、内存2GB、存储200GB。
 
 Input: 
 

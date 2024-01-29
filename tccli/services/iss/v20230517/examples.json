@@ -520,13 +520,13 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoDownloadUrl\n<公共请求参数>\n\n{\n    \"ChannelId\": \"4dfb778c-xxxxxx\",\n    \"BeginTime\": \"1668996000\",\n    \"EndTime\": \"1668996600\",\n    \"FileType\": \"mp4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Url\": \"https://somedomain/video.mp4?source=xxxxxx\",\n            \"ActualBeginTime\": \"1668996000\",\n            \"ActualEndTime\": \"1668996600\"\n        },\n        \"RequestId\": \"MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw==\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Url\": \"https://userdomain/video.mp4?source=xxxxxx\",\n            \"ActualBeginTime\": \"1668996000\",\n            \"ActualEndTime\": \"1668996600\"\n        },\n        \"RequestId\": \"******************\"\n    }\n}",
         "title": "获取云录像下载URL"
       },
       {
         "document": "指定请求参数IsRespActualTime为true， 不指定或IsRespActualTime为false时，不返回实际的时间",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoDownloadUrl\n<公共请求参数>\n\n{\n    \"ChannelId\": \"4dfb778c-xxxxxxx\",\n    \"BeginTime\": \"1668996000\",\n    \"EndTime\": \"1668996600\",\n    \"FileType\": \"mp4\",\n    \"IsRespActualTime\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Url\": \"https://somedomain/video.mp4?source=xxxxxx\",\n            \"ActualBeginTime\": \"1668996000\",\n            \"ActualEndTime\": \"1668996600\"\n        },\n        \"RequestId\": \"MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw==\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Url\": \"https://userdomain/video.mp4?source=xxxxxx\",\n            \"ActualBeginTime\": \"1668996000\",\n            \"ActualEndTime\": \"1668996600\"\n        },\n        \"RequestId\": \"******************\"\n    }\n}",
         "title": "获取云录像下载URL和实际下载的录像时间"
       }
     ],

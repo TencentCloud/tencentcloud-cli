@@ -1,6 +1,6 @@
 **Example 1: 查询任务**
 
-查询SdkAppId为1234567890下的TaskId为1234的转推任务状态
+查询SdkAppId为1234567890下的TaskId为1234的任务状态
 
 Input: 
 

@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateFlow": {
-      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能\n<br>\n\n<font color=\"red\">相关视频指引</font>\n<a href=\"https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4\" target=\"_blank\">创建静默（自动）签署模板和开通自动签署</a>",
+      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能\n<br>\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4\" target=\"_blank\">创建静默（自动）签署模板和开通自动签署</a><br>\n2. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/flow_document_start.mp4\" target=\"_blank\">用模版创建发起合同</a><br>",
       "input": "CreateFlowRequest",
       "name": "模板发起合同-创建签署流程",
       "output": "CreateFlowResponse",
@@ -143,7 +143,7 @@
     "CreateFlowSignUrl": {
       "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该接口可生成签署链接的签署人必须仅有手写签名、时间类型和印章类型的签署控件，**不支持填写控件** 。\n2. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateFlowSignUrlRequest",
-      "name": "获取用户H5签署链接",
+      "name": "获取H5签署链接",
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -446,6 +446,13 @@
       "input": "ModifyExtendedServiceRequest",
       "name": "管理企业扩展服务",
       "output": "ModifyExtendedServiceResponse",
+      "status": "online"
+    },
+    "ModifyFlowDeadline": {
+      "document": "在已发起的签署流程中，支持对签署截止日期进行延期操作，主要涉及以下两个维度：\n1. 合同（流程）维度：只需要传递签署流程ID。这将对签署流程和发起时未单独设定签署截止时间的签署人进行延期操作。\n2. 签署人维度：需要传递流程ID和签署人ID。此操作将对签署人进行延期操作，尤其对于有序的合同（流程），签署截止时间不能超过后一位合同（流程）签署人的流程截止时间。\n\n此接口有如下限制条件：\n1. 执行操作的员工需为发起方企业的超级管理员、法定代表人或签署流程的发起人。\n2. 在延长整个签署流程时，签署流程应至少还有一方未签署（即签署流程不能处于已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态）。\n3. 在延长整个签署流程时，新的签署截止日期应晚于合同已设定的签署截止日期和当前日期。\n4. 在延长签署方的截止时间时，签署方不能处于流程完结或已终止状态（即签署人不能处于已签署、已拒签、已过期、已撤回、拒绝填写、已解除等状态）。\n5. 在延长签署方的截止时间时，签署方的新签署截止日期应晚于当前日期和签署方已设定的截止日期。若为有序合同，还应早于或等于下一签署人的截止日期，且早于签署流程整体的截止日期。\n6. 不支持操作合同组合同。",
+      "input": "ModifyFlowDeadlineRequest",
+      "name": "管理签署流程截止时间",
+      "output": "ModifyFlowDeadlineResponse",
       "status": "online"
     },
     "ModifyIntegrationDepartment": {
@@ -788,6 +795,15 @@
           "name": "SignInstructionContent",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人的签署截止时间，格式为Unix标准时间戳（秒）\n\n注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`",
+          "example": "1705977064",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2279,20 +2295,20 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。",
+          "document": "用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。\n\n[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)",
           "example": "无",
           "member": "string",
-          "name": "FlowId",
+          "name": "TemplateId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。\n可登录腾讯电子签控制台，在 \"模板\"->\"模板中心\"->\"列表展示设置\"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。",
+          "document": "合同流程ID，为32位字符串。\n此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。",
           "example": "无",
           "member": "string",
-          "name": "TemplateId",
-          "required": true,
+          "name": "FlowId",
+          "required": false,
           "type": "string"
         },
         {
@@ -2821,7 +2837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n\n注: 如果是预览模式(即NeedPreview设置为true)时, 此处不会有值返回。",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n\n注: 如果是预览模式(即NeedPreview设置为true)时, 此处不会有值返回。\n\n[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -3477,7 +3493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n\n注:\n此返回的合同流程ID，需再次调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口将合同开始后，合同才能进入签署环节\n\n",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n\n注:\n此返回的合同流程ID，需再次调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口将合同开始后，合同才能进入签署环节，[点击产看FlowId在控制台中的位置（只在进如签署环节后有效）](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)\n\n",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -6367,7 +6383,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的合同流程ID列表最多支持100个流程ID。 \n如果某个合同流程ID不存在，系统会跳过此ID的查询，继续查询剩余存在的合同流程。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "document": "查询的合同流程ID列表最多支持100个流程ID。 \n如果某个合同流程ID不存在，系统会跳过此ID的查询，继续查询剩余存在的合同流程。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n\n[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "[yDRCLUUgygq2xun5UuO4zjEwg0vjoimj]",
           "member": "string",
           "name": "FlowIds",
@@ -6542,7 +6558,7 @@
         },
         {
           "disabled": false,
-          "document": "需要查询的流程ID列表，最多可传入100个ID。\n如果要查询合同组的信息，则不需要传入此参数，只需传入 FlowGroupId 参数即可。",
+          "document": "需要查询的流程ID列表，最多可传入100个ID。\n如果要查询合同组的信息，则不需要传入此参数，只需传入 FlowGroupId 参数即可。\n\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n\n[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)",
           "example": "[\"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"]",
           "member": "string",
           "name": "FlowIds",
@@ -8604,6 +8620,15 @@
           "name": "SignTypeSelector",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Deadline\n签署人的签署截止时间，格式为Unix标准时间戳（秒）\n\n注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`",
+          "example": "1604912664",
+          "member": "int64",
+          "name": "Deadline",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -9491,6 +9516,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlowDeadlineRequest": {
+      "document": "ModifyFlowDeadline请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。\n<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>\n<li>可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>",
+          "example": "yDw7hUUckpkmkwraUunP4DbSHZaRRhKP",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署流程或签署人新的签署截止时间，格式为Unix标准时间戳（秒）",
+          "example": "1705976978",
+          "member": "int64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色编号，为32位字符串\n<ul><li>若指定了此参数，则只调整签署流程中此签署人的签署截止时间，否则调整合同整体的签署截止时间（合同截止时间+发起时未设置签署人截止时间的参与人的签署截止时间）</li>\n<li>通过[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)发起合同，或通过[模板发起合同-创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)时，返回参数[Approvers](https://qian.tencent.com/developers/companyApis/dataTypes/#approveritem)会返回此信息，建议开发者妥善保存</li>\n<li>也可通过[查询合同流程的详情信息](https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo)接口查询签署人的RecipientId编号</li></ul>",
+          "example": "yDRvoUUgygqoh324UuO4zjE8OBoGfRNr",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFlowDeadlineResponse": {
+      "document": "ModifyFlowDeadline返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

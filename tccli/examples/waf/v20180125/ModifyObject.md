@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli waf ModifyObject --cli-unfold-argument  \
+    --ObjectId abc \
     --Status 0 \
-    --InstanceId xx \
-    --ObjectId xx \
-    --OpType Status
+    --InstanceId abc \
+    --OpType abc \
+    --Proxy 1 \
+    --IpHeaders abc
 ```
 
 Output: 

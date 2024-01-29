@@ -78,6 +78,12 @@
         "input": "https://ssl.tencentcloudapi.com/?Action=DeleteCertificate\n&CertificateId=CertificateId\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DeleteResult\": true,\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "删除证书"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCheckResource\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteResult\": false,\n        \"TaskId\": \"1251261\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "异步删除"
       }
     ],
     "DeleteManager": [

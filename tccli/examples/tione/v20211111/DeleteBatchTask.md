@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DeleteBatchTask --cli-unfold-argument  \
-    --BatchTaskId xx
+    --BatchTaskId batch-78ugzrxxxxx
 ```
 
 Output: 

@@ -19,3 +19,26 @@ Output:
 }
 ```
 
+**Example 2: 异步删除**
+
+
+
+Input: 
+
+```
+tccli ssl DeleteCertificate --cli-unfold-argument  \
+    --CertificateId abc \
+    --IsCheckResource True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DeleteResult": false,
+        "TaskId": "1251261",
+        "RequestId": "abc"
+    }
+}
+```
+

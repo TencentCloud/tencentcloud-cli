@@ -90,6 +90,28 @@
         "title": "为指定配置组创建新版本"
       }
     ],
+    "CreateL4Proxy": [
+      {
+        "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为中国大陆可用区的四层实例。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4Proxy\n<公共请求参数>\n\n{\n    \"ProxyName\": \"test\",\n    \"ZoneId\": \"zone-2jc2xy3hr7f7\",\n    \"Area\": \"mainland\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProxyId\": \"sid-2jc2hl2hr8f7\",\n        \"RequestId\": \"0se57a54-cc42-11ed-8efb-525401a961b1\"\n    }\n}",
+        "title": "新建加速区域为中国大陆可用区的四层代理实例"
+      },
+      {
+        "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为全球可用区（不含中国大陆）的四层实例，且开启独立 DDoS 防护，提供加速区域范围的全力防护。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4Proxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2jc2xy3hr7f7\",\n    \"ProxyName\": \"test\",\n    \"Area\": \"overseas\",\n    \"DDosProtectionConfig\": {\n        \"LevelOverseas\": \"ANYCAST_ALLIN\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProxyId\": \"sid-2jc2hl2hr8f7\",\n        \"RequestId\": \"0se57a54-cc42-11ed-8efb-525401a961b1\"\n    }\n}",
+        "title": "新建加速区域为全球可用区（不含中国大陆），开启独立 DDoS 防护的四层代理实例"
+      }
+    ],
+    "CreateL4ProxyRules": [
+      {
+        "document": "在 ZoneId 为 zone-24wjy25v1cwi 下 ProxyId 为 sid-2qwk27xf7j9g 的实例中创建一条转发规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateL4ProxyRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"L4ProxyRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"PortRange\": [\n                \"80\"\n            ],\n            \"OriginType\": \"IP_DOMAIN\",\n            \"OriginValue\": [\n                \"119.23.100.45\"\n            ],\n            \"OriginPortRange\": \"90\",\n            \"ClientIPPassThroughMode\": \"TOA\",\n            \"SessionPersist\": \"on\",\n            \"SessionPersistTime\": 3600,\n            \"RuleTag\": \"test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8h5358-df6d-4d2a-ac39-1706cbf8a707\",\n        \"L4ProxyRuleIds\": [\n            \"rule-2qzkbvx3hxl1\"\n        ]\n    }\n}",
+        "title": "创建四层代理转发规则"
+      }
+    ],
     "CreateOriginGroup": [
       {
         "document": "创建HTTP专用型源站组",
@@ -258,6 +280,22 @@
         "title": "删除应用代理规则"
       }
     ],
+    "DeleteL4Proxy": [
+      {
+        "document": "删除 ZoneId 为 zone-24wjy25v1cwi 下，ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL4Proxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8h5258-cdda-4f82-b7sc-0aef4a219244\"\n    }\n}",
+        "title": "删除四层代理实例"
+      }
+    ],
+    "DeleteL4ProxyRules": [
+      {
+        "document": "将 ZoneId 为 zone-24wjy25v1cwi 中 ProxyId 为 sid-2qwk27xf7j9g 中 RuleId 为 rule-2qzkbvx3hxl7 和 rule-3pszkbox0hm1 的规则批量删除。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL4ProxyRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"RuleIds\": [\n        \"rule-2qzkbvx3hxl7\",\n        \"rule-3pszkbox0hm1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8h5358-3159-4337-adc7-7604e01e0fa9\"\n    }\n}",
+        "title": "批量删除四层代理转发规则"
+      }
+    ],
     "DeleteOriginGroup": [
       {
         "document": "删除源站组",
@@ -336,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailablePlans\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9fa0c8b-3c73-9ec2-cb5c-faa4725e0e07\",\n        \"PlanInfo\": [\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta\",\n                \"Price\": 450000,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_with_bot\",\n                \"Price\": 1262500,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_cm\",\n                \"Price\": 380000,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 3000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"sta_cm_with_bot\",\n                \"Price\": 1192500,\n                \"Request\": 50000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent\",\n                \"Price\": 10228400,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_with_bot\",\n                \"Price\": 11216400,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_cm\",\n                \"Price\": 8637300,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            },\n            {\n                \"Area\": \"mainland\",\n                \"Currency\": \"CNY\",\n                \"Flux\": 10000000000000,\n                \"Frequency\": \"m\",\n                \"PlanType\": \"ent_cm_with_bot\",\n                \"Price\": 9625300,\n                \"Request\": 80000000,\n                \"SiteNumber\": 1\n            }\n        ]\n    }\n}",
         "title": "查询当前账户可用套餐信息列表"
+      }
+    ],
+    "DescribeBillingData": [
+      {
+        "document": "查询指定 zone-id 在指定 region-id 下的内容加速流量计费用量，查询时间粒度为天。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-01-01T00:00:00+08:00\",\n    \"EndTime\": \"2024-01-24T03:20:00+08:00\",\n    \"Interval\": \"day\",\n    \"MetricName\": \"acc_flux\",\n    \"Filters\": [\n        {\n            \"Type\": \"region-id\",\n            \"Value\": \"MidEast\"\n        }\n    ],\n    \"ZoneIds\": [\n        \"zone-2smdfso9dr58\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"457e8933-4296-4878-9a7f-fb888559e29e\",\n        \"Data\": [\n            {\n                \"Time\": \"2023-12-31T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-01T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-02T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-03T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-04T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-05T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-06T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-07T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-08T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-09T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-10T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-11T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-12T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-13T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-14T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-15T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-16T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-17T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-18T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-19T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-20T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-21T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-22T16:00:00Z\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2024-01-23T16:00:00Z\",\n                \"Value\": 0\n            }\n        ]\n    }\n}",
+        "title": "查询指定站点在指定计费大区的内容加速流量"
       }
     ],
     "DescribeConfigGroupVersionDetail": [
@@ -432,6 +478,22 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentifications\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Identifications\": [\n            {\n                \"ZoneName\": \"example.com\",\n                \"Status\": \"pending\",\n                \"Ascription\": {\n                    \"Subdomain\": \"edgeonereclaim\",\n                    \"RecordType\": \"TXT\",\n                    \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n                },\n                \"OriginalNameServers\": [\n                    \"ns1.example.com\",\n                    \"ns2.example.com\"\n                ],\n                \"FileAscription\": {\n                    \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\",\n                    \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8gs50b24-7df5-47f4-96ae-95825d53er3c\"\n    }\n}",
         "title": "查询站点的验证状态"
+      }
+    ],
+    "DescribeL4Proxy": [
+      {
+        "document": "查询站点 ID 为 zone-24wjy25v1cwi 的站点下四层代理实例列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeL4Proxy\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 10,\n    \"Filters\": [],\n    \"ZoneId\": \"zone-24wjy25v1cwi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"L4Proxies\": [\n            {\n                \"ZoneId\": \"zone-24wjy25v1cwi\",\n                \"ProxyId\": \"sid-2qwk27xf7j9g\",\n                \"ProxyName\": \"test\",\n                \"Area\": \"mainland\",\n                \"Cname\": \"test.24wjy25v1cwi.eo.dnse5.com\",\n                \"Ips\": [],\n                \"Status\": \"online\",\n                \"Ipv6\": \"off\",\n                \"StaticIp\": \"off\",\n                \"AccelerateMainland\": \"off\",\n                \"UpdateTime\": \"2023-09-22T15:31:04+00:00\"\n            }\n        ],\n        \"RequestId\": \"6f8h5258-cdda-4f82-b7sc-0aef4a219244\"\n    }\n}",
+        "title": "查询站点下四层代理实例列表"
+      }
+    ],
+    "DescribeL4ProxyRules": [
+      {
+        "document": "查询 Zoneld 为 zone-24wjy25v1cwi 下 Proxyld 为 sid-2qwk27xf7j9g 下的转发规则列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeL4ProxyRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"Offset\": 1,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"L4ProxyRules\": [\n            {\n                \"RuleId\": \"rule-2qzkbvx3hxl1\",\n                \"Protocol\": \"TCP\",\n                \"PortRange\": [\n                    \"80\"\n                ],\n                \"OriginType\": \"IP_DOMAIN\",\n                \"OriginValue\": [\n                    \"119.23.100.45\"\n                ],\n                \"OriginPortRange\": \"90\",\n                \"ClientIPPassThroughMode\": \"TOA\",\n                \"SessionPersist\": \"on\",\n                \"SessionPersistTime\": 3600,\n                \"RuleTag\": \"test\",\n                \"Status\": \"online\"\n            }\n        ],\n        \"RequestId\": \"6f8h5358-cdda-4f82-b7sc-0aef4a219244\"\n    }\n}",
+        "title": "查询四层代理实例转发规则列表"
       }
     ],
     "DescribeOriginGroup": [
@@ -726,6 +788,38 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Hosts\": [\n        \"abc.test.com\"\n    ],\n    \"Mode\": \"eofreecert\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "配置免费证书"
+      }
+    ],
+    "ModifyL4Proxy": [
+      {
+        "document": "将 ZoneId 为 zone-24wjy25v1cwi 下 ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例的 IPv6 访问配置调整为开启。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL4Proxy\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"Ipv6\": \"on\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbdb42f0-6a1e-4d397783c36csdf\"\n    }\n}",
+        "title": "修改 IPv6 访问配置"
+      }
+    ],
+    "ModifyL4ProxyRules": [
+      {
+        "document": "将 ZoneId 为 zone-24wjy25v1cwi 中 ProxyId 为 sid-2qwk27xf7j9g 中 RuleId 为 rule-2qzkbvx3hxl7 的规则的 RuleTag 调整为 service-1，Protocol 调整为 TCP，ClientIPPassThroughMode 调整为 TOA。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL4ProxyRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"L4ProxyRules\": [\n        {\n            \"RuleId\": \"rule-2qzkbvx3hxl7\",\n            \"RuleTag\": \"service-1\",\n            \"Protocol\": \"TCP\",\n            \"ClientIPPassThroughMode\": \"TOA\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3df3e931-3119-4237-adc7-7604e01e0fa9\"\n    }\n}",
+        "title": "修改四层代理转发规则"
+      }
+    ],
+    "ModifyL4ProxyRulesStatus": [
+      {
+        "document": "将 ZoneId 为 zone-24wjy25v1cwi 中 ProxyId 为 sid-2qwk27xf7j9g 中 RuleId 为 rule-2qzkbvx3hxl7 和 rule-3pszkbox0hm1 的规则全部停用。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL4ProxyRulesStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"RuleIds\": [\n        \"rule-2qzkbvx3hxl7\",\n        \"rule-3pszkbox0hm1\"\n    ],\n    \"Status\": \"offline\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8h5358-3159-4337-adc7-7604e01e0fa9\"\n    }\n}",
+        "title": "批量修改四层代理转发规则状态"
+      }
+    ],
+    "ModifyL4ProxyStatus": [
+      {
+        "document": "将 ZoneId 为 zone-24wjy25v1cwi 下 ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例启用。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL4ProxyStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-24wjy25v1cwi\",\n    \"ProxyId\": \"sid-2qwk27xf7j9g\",\n    \"Status\": \"online\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8h5258-cdda-4f82-b7sc-0aef4a219244\"\n    }\n}",
+        "title": "启用四层代理实例"
       }
     ],
     "ModifyOriginGroup": [

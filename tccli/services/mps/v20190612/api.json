@@ -484,7 +484,7 @@
       "status": "online"
     },
     "EditMedia": {
-      "document": "对视频进行编辑，生成一个新的视频。编辑的功能包括：\n  \n\n一、**剪辑任务**：简单的视频剪辑，如剪辑、拼接等\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。\n\n二、**合成任务**：通过接口描述信息，合成一个新的视频。\n1. 多轨道（视频、音频、字幕）、多类型元素（视频、图片、音频、文字、空）\n2. 图像级别：贴图、缩放、任意角度旋转、镜像等\n3. 音频级别：音量控制、淡入淡出、混音等\n4. 视频级别：转场、倍数播放、拼接、剪切、字幕、画中画、音画分离、出入场动效等",
+      "document": "对视频进行编辑，生成一个新的视频。编辑的功能包括：\n \n\n一、**剪辑任务**：简单的视频剪辑，如剪辑、拼接等\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。\n\n二、**合成任务**：通过接口描述信息，合成一个新的视频。\n1. 多轨道（视频、音频、字幕）、多类型元素（视频、图片、音频、文字、空）\n2. 图像级别：贴图、缩放、任意角度旋转、镜像等\n3. 音频级别：音量控制、淡入淡出、混音等\n4. 视频级别：转场、倍数播放、拼接、剪切、字幕、画中画、音画分离、出入场动效等",
       "input": "EditMediaRequest",
       "name": "编辑视频",
       "output": "EditMediaResponse",
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "ProcessMedia": {
-      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。",
+      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。\n10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）",
       "input": "ProcessMediaRequest",
       "name": "发起媒体处理",
       "output": "ProcessMediaResponse",
@@ -5953,7 +5953,7 @@
         },
         {
           "disabled": false,
-          "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
+          "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：5.1声道</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为5.1声道。\n默认值：2。",
           "example": "2",
           "member": "int64",
           "name": "AudioChannel",
@@ -8840,6 +8840,15 @@
           "name": "TaskNotifyConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8853,6 +8862,7 @@
           "example": "157482",
           "member": "int64",
           "name": "ScheduleId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14998,9 +15008,10 @@
         {
           "disabled": false,
           "document": "雪碧图模板 ID。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -15008,9 +15019,10 @@
         {
           "disabled": false,
           "document": "截取雪碧图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15018,9 +15030,10 @@
         {
           "disabled": false,
           "document": "截取雪碧图后，雪碧图图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}_{number}.{format}`。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15028,9 +15041,10 @@
         {
           "disabled": false,
           "document": "截取雪碧图后，Web VTT 文件的输出路径，只能为相对路径。如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}.{format}`。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "WebVttObjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15038,9 +15052,10 @@
         {
           "disabled": false,
           "document": "截取雪碧图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -16664,6 +16679,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。\n\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
+          "example": "URL",
+          "member": "string",
+          "name": "NotifyType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。",
           "example": "Queue",
           "member": "string",
@@ -16701,17 +16727,6 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。\n\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
-          "example": "URL",
-          "member": "string",
-          "name": "NotifyType",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -19931,6 +19946,15 @@
           "name": "TaskNotifyConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，需要保证对应资源是开启状态。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -21828,7 +21852,7 @@
         },
         {
           "disabled": false,
-          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
+          "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>\n<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
           "example": "无",
           "member": "int64",
           "name": "ScheduleId",
@@ -21937,6 +21961,7 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23636,6 +23661,16 @@
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，对于没有关联资源ID的，用账号主资源ID填充。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

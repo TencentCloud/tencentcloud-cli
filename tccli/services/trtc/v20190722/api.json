@@ -92,9 +92,9 @@
       "status": "online"
     },
     "DescribeStreamIngest": {
-      "document": "您可以查询转推任务的状态。",
+      "document": "您可以查询输入在线媒体流任务的状态。",
       "input": "DescribeStreamIngestRequest",
-      "name": "查询转推任务",
+      "name": "查询输入在线媒体流",
       "output": "DescribeStreamIngestResponse",
       "status": "online"
     },
@@ -262,7 +262,7 @@
     "StartStreamIngest": {
       "document": "将一个在线媒体流推到TRTC房间。\n使用此接口的前提条件：需要购买 [尊享版或旗舰版套餐包](https://cloud.tencent.com/document/product/647/85386\n)",
       "input": "StartStreamIngestRequest",
-      "name": "开始拉流转推",
+      "name": "开启输入在线媒体流",
       "output": "StartStreamIngestResponse",
       "status": "online"
     },
@@ -288,9 +288,9 @@
       "status": "online"
     },
     "StopStreamIngest": {
-      "document": "停止一个拉流转推任务。",
+      "document": "停止一个输入在线媒体流任务。",
       "input": "StopStreamIngestRequest",
-      "name": "停止拉流转推",
+      "name": "停止输入在线媒体流",
       "output": "StopStreamIngestResponse",
       "status": "online"
     },
@@ -482,7 +482,7 @@
           "example": "48000",
           "member": "uint64",
           "name": "SampleRate",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -491,7 +491,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Channel",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -500,7 +500,16 @@
           "example": "64",
           "member": "uint64",
           "name": "BitRate",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音量，取值范围[0,300]。默认100，表示原始音量；0表示静音。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Volume",
+          "required": false,
           "type": "int"
         }
       ],
@@ -5331,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "拉流转推机器人的UserId，用于进房发起拉流转推任务。",
+          "document": "输入在线媒体流机器人的UserId，用于进房发起拉流转推任务。",
           "example": "recorder_1234",
           "member": "string",
           "name": "UserId",
@@ -5340,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "拉流转推机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
+          "document": "输入在线媒体流机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
           "example": "recorder_1234_sig",
           "member": "string",
           "name": "UserSig",
@@ -5400,7 +5409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉流转推的任务 ID。任务 ID 是对一次拉流转推生命周期过程的唯一标识，结束任务时会失去意义。任务 ID 需要业务保存下来，作为下次针对这个任务操作的参数。",
+          "document": "输入在线媒体流的任务 ID。任务 ID 是对一次输入在线媒体流生命周期过程的唯一标识，结束任务时会失去意义。任务 ID 需要业务保存下来，作为下次针对这个任务操作的参数。",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -6189,7 +6198,7 @@
           "example": "1280",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6198,7 +6207,7 @@
           "example": "720",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6207,7 +6216,7 @@
           "example": "15",
           "member": "uint64",
           "name": "Fps",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6216,7 +6225,7 @@
           "example": "1500",
           "member": "uint64",
           "name": "BitRate",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -6225,7 +6234,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Gop",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],

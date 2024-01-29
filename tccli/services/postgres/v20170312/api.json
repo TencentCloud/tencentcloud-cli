@@ -6853,7 +6853,7 @@
           "example": "1300",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6863,7 +6863,7 @@
           "example": "1300",
           "member": "int64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6873,7 +6873,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7630,7 +7630,7 @@
         {
           "disabled": false,
           "document": "修改后的实例内存大小，单位GiB。",
-          "example": "1000",
+          "example": "16",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -7639,7 +7639,7 @@
         {
           "disabled": false,
           "document": "修改后的实例磁盘大小，单位GiB。",
-          "example": "16",
+          "example": "1000",
           "member": "uint64",
           "name": "Storage",
           "required": true,
@@ -7647,7 +7647,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券：\n<li>0：否\n<li>1：是\n默认值：0",
+          "document": "是否自动使用代金券：\n<li>0：否</li>\n<li>1：是</li>\n默认值：0",
           "example": "0",
           "member": "uint64",
           "name": "AutoVoucher",
@@ -7674,7 +7674,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例配置完成变更后的切换时间。\n<li>0：立即切换 \n<li>1：指定时间切换\n<li>2：维护时间窗口内切换\n默认值：0 ",
+          "document": "指定实例配置完成变更后的切换时间。\n<li>0：立即切换 </li>\n<li>1：指定时间切换</li>\n<li>2：维护时间窗口内</li>切换\n默认值：0 ",
           "example": "1",
           "member": "uint64",
           "name": "SwitchTag",

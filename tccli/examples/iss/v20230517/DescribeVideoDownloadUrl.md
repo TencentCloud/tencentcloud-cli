@@ -17,11 +17,11 @@ Output:
 {
     "Response": {
         "Data": {
-            "Url": "https://somedomain/video.mp4?source=xxxxxx",
+            "Url": "https://userdomain/video.mp4?source=xxxxxx",
             "ActualBeginTime": "1668996000",
             "ActualEndTime": "1668996600"
         },
-        "RequestId": "MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw=="
+        "RequestId": "******************"
     }
 }
 ```
@@ -46,11 +46,11 @@ Output:
 {
     "Response": {
         "Data": {
-            "Url": "https://somedomain/video.mp4?source=xxxxxx",
+            "Url": "https://userdomain/video.mp4?source=xxxxxx",
             "ActualBeginTime": "1668996000",
             "ActualEndTime": "1668996600"
         },
-        "RequestId": "MTg0YzZhOWY5NmFfYjBkMDJmMWVfMF8xNw=="
+        "RequestId": "******************"
     }
 }
 ```

@@ -15,9 +15,9 @@
       "status": "online"
     },
     "CreateBatchTask": {
-      "document": "创建跑批任务",
+      "document": "创建批量预测任务",
       "input": "CreateBatchTaskRequest",
-      "name": "创建跑批任务",
+      "name": "创建批量预测任务",
       "output": "CreateBatchTaskResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "DeleteBatchTask": {
-      "document": "删除跑批任务",
+      "document": "删除批量预测任务",
       "input": "DeleteBatchTaskRequest",
-      "name": "删除跑批任务",
+      "name": "删除批量预测任务",
       "output": "DeleteBatchTaskResponse",
       "status": "online"
     },
@@ -148,23 +148,23 @@
       "status": "online"
     },
     "DescribeBatchTask": {
-      "document": "查询跑批任务",
+      "document": "查询批量预测任务",
       "input": "DescribeBatchTaskRequest",
-      "name": "查询跑批任务",
+      "name": "查询批量预测任务",
       "output": "DescribeBatchTaskResponse",
       "status": "online"
     },
     "DescribeBatchTaskInstances": {
-      "document": "查询跑批实例列表",
+      "document": "查询批量预测任务实例列表",
       "input": "DescribeBatchTaskInstancesRequest",
-      "name": "跑批实例列表",
+      "name": "查询批量预测任务实例列表",
       "output": "DescribeBatchTaskInstancesResponse",
       "status": "online"
     },
     "DescribeBatchTasks": {
-      "document": "批量预测任务列表信息",
+      "document": "查询批量预测任务列表信息",
       "input": "DescribeBatchTasksRequest",
-      "name": "跑批任务列表",
+      "name": "查询批量预测任务列表",
       "output": "DescribeBatchTasksResponse",
       "status": "online"
     },
@@ -484,9 +484,9 @@
       "status": "online"
     },
     "StopBatchTask": {
-      "document": "停止跑批任务",
+      "document": "停止批量预测任务",
       "input": "StopBatchTaskRequest",
-      "name": "停止跑批任务",
+      "name": "停止批量预测任务",
       "output": "StopBatchTaskResponse",
       "status": "online"
     },
@@ -759,25 +759,25 @@
       "usage": "in"
     },
     "BatchTaskDetail": {
-      "document": "跑批任务详情",
+      "document": "批量预测任务详情",
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "123123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrxxxxx",
           "member": "string",
           "name": "BatchTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跑批任务名称",
-          "example": "test",
+          "document": "批量预测任务名称",
+          "example": "测试任务",
           "member": "string",
           "name": "BatchTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -787,7 +787,7 @@
           "example": "1000000001",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -797,7 +797,7 @@
           "example": "1000000002",
           "member": "string",
           "name": "SubUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -807,7 +807,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -817,27 +817,27 @@
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包年包月资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "ersg-l5pg11111",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "包年包月资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "resource_group",
+          "example": "测试资源组",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -847,7 +847,7 @@
           "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -857,7 +857,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -867,7 +867,7 @@
           "example": "无",
           "member": "ModelInfo",
           "name": "ModelInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -877,7 +877,7 @@
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -887,7 +887,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "CodePackagePath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -897,7 +897,7 @@
           "example": "sh start.sh",
           "member": "string",
           "name": "StartCmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -907,7 +907,7 @@
           "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -917,7 +917,7 @@
           "example": "无",
           "member": "DataConfig",
           "name": "Outputs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -927,7 +927,7 @@
           "example": "false",
           "member": "bool",
           "name": "LogEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -937,27 +937,27 @@
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-fgb3u1kx",
+          "example": "vpc-fgb3u111",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-jhzi2m3j",
+          "example": "subnet-jhzi111",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -967,17 +967,17 @@
           "example": "STOPPING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "60",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -987,7 +987,7 @@
           "example": "2022-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -997,7 +997,7 @@
           "example": "2022-01-01 00:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1007,7 +1007,7 @@
           "example": "2022-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1017,47 +1017,47 @@
           "example": "2022-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
-          "example": "BILLING",
+          "document": "计费状态，取值范围:\nBILLING: 计费中\nNOT_BILLING: 未计费\nWHITELIST_USING: 白名单使用中\nWHITELIST_STOP: 白名单到期\nARREARS_STOP: 欠费停止",
+          "example": "NOT_BILLING",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近一次实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123123",
+          "example": "batch-78ugzrxxxxx-78ufl1m1111",
           "member": "string",
           "name": "LatestInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1067,17 +1067,17 @@
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "运行中的Pod的名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"batch-5idelmcnd3b4-5idelqlj5d6o-worker-0\"]",
+          "example": "[]",
           "member": "string",
           "name": "PodList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1087,7 +1087,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelInferenceCodeInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1155,21 +1155,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "JOB-123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrxxxx",
           "member": "string",
           "name": "BatchTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跑批任务名称",
-          "example": "test",
+          "document": "批量预测任务名称",
+          "example": "示例任务",
           "member": "string",
           "name": "BatchTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1179,7 +1179,7 @@
           "example": "[]",
           "member": "ModelInfo",
           "name": "ModelInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1189,7 +1189,7 @@
           "example": "[]",
           "member": "ImageInfo",
           "name": "ImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1199,17 +1199,17 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
+          "document": "计费状态，取值范围:\nBILLING: 计费中\nNOT_BILLING: 未计费\nWHITELIST_USING: 白名单使用中\nWHITELIST_STOP: 白名单到期\nARREARS_STOP: 欠费停止",
           "example": "NOT_BILLING",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1219,7 +1219,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1229,7 +1229,7 @@
           "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1239,17 +1239,17 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "任务状态",
-          "example": "无",
+          "document": "任务状态, 取值范围:\nINIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1259,47 +1259,47 @@
           "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "无",
+          "document": "任务创建时间",
+          "example": "2023-12-26 20:23:36",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务开始运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-26 20:24:20",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-26 20:26:12",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-26 20:23:36",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1309,7 +1309,7 @@
           "example": "[]",
           "member": "DataConfig",
           "name": "Outputs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1319,7 +1319,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1329,17 +1329,17 @@
           "example": "无",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计费金额信息，eg：2.00元/小时 (for 按量计费)",
+          "document": "按量计费信息",
           "example": "2.00元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1804,8 +1804,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
-          "example": "test",
+          "document": "批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "example": "示例任务",
           "member": "string",
           "name": "BatchTaskName",
           "required": true,
@@ -1831,8 +1831,8 @@
         },
         {
           "disabled": false,
-          "document": "结果输出",
-          "example": "[]",
+          "document": "结果输出存储信息",
+          "example": "[{\"DataSourceType\": \"COS\", \"COSSource\": { \"Bucket\": \"test-1256581234\", \"Region\": \"ap-shanghai\", \"Paths\": [\"output/\"]}}]",
           "member": "DataConfig",
           "name": "Outputs",
           "required": true,
@@ -1848,7 +1848,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "工作类型 1:单次 2:周期",
           "example": "1",
           "member": "uint64",
@@ -1857,7 +1857,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "任务周期描述",
           "example": "无",
           "member": "CronInfo",
@@ -1868,7 +1868,7 @@
         {
           "disabled": false,
           "document": "包年包月资源组ID",
-          "example": "1",
+          "example": "rsc-123456789",
           "member": "string",
           "name": "ResourceGroupId",
           "required": false,
@@ -1922,7 +1922,7 @@
         {
           "disabled": false,
           "document": "数据配置",
-          "example": "[]",
+          "example": "[{\"DataSourceType\": \"COS\", \"COSSource\": { \"Bucket\": \"test-1256581234\", \"Region\": \"ap-shanghai\", \"Paths\": [\"data/test/\"]}}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "required": false,
@@ -1981,10 +1981,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "123123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrx2xxx",
           "member": "string",
           "name": "BatchTaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4159,8 +4160,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "123123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrxxxxx",
           "member": "string",
           "name": "BatchTaskId",
           "required": true,
@@ -4567,8 +4568,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务id",
-          "example": "JOB-123",
+          "document": "批量预测任务id",
+          "example": "batch-78ugzrxxxxx",
           "member": "string",
           "name": "BatchTaskId",
           "required": true,
@@ -4582,11 +4583,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量预测实例结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BatchTaskInstance",
           "name": "BatchInstances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4604,8 +4605,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "123123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrxxxxx",
           "member": "string",
           "name": "BatchTaskId",
           "required": true,
@@ -4619,10 +4620,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量预测任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BatchTaskDetail",
           "name": "BatchTaskDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4640,8 +4642,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
-          "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
+          "document": "过滤器\n\nName支持的取值范围：\nBatchTaskId, BatchTaskName, Status, ModelVersionId\n\n其中Status 的有效取值范围:\nINIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED",
+          "example": "[{ \"Name\": \"BatchTaskName\", \"Values\": [\"example\"] }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4649,7 +4651,7 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "document": "标签过滤器",
           "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -4659,7 +4661,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4667,8 +4669,8 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为10，最大为50",
-          "example": "10",
+          "document": "限制数目，默认为20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4685,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "document": "排序字段。当前仅支持 \"CreateTime\"。\n不传此字段则按照DB默认排序结果返回",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
@@ -4700,19 +4702,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量",
+          "document": "批量预测任务总数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量预测任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BatchTaskSetItem",
           "name": "BatchTaskSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13181,8 +13185,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跑批任务ID",
-          "example": "123123",
+          "document": "批量预测任务ID",
+          "example": "batch-78ugzrxxxxx",
           "member": "string",
           "name": "BatchTaskId",
           "required": true,

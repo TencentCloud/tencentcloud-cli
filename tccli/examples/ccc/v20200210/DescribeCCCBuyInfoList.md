@@ -13,63 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5ac74e13-ef15-41a6-9639-f1bc8c9896bd",
-        "TotalCount": 602,
+        "TotalCount": 0,
         "SdkAppIdBuyList": [
             {
                 "SdkAppId": 1400000000,
-                "Name": "xiao",
-                "StaffBuyNum": 2,
+                "Name": "abc",
+                "StaffBuyNum": 0,
                 "StaffBuyList": [
                     {
-                        "Num": 50,
+                        "Num": 0,
+                        "EndTime": 1623988825,
                         "BuyTime": 1613988825,
-                        "EndTime": 1623988825
-                    },
-                    {
-                        "Num": 10,
-                        "BuyTime": 1623988825,
-                        "EndTime": 1624988825
+                        "SipNum": 0
                     }
                 ],
                 "PhoneNumBuyList": [
                     {
-                        "PhoneNum": "86020111111",
-                        "Type": 1,
-                        "CallType": 1,
-                        "State": 1,
+                        "PhoneNum": "abc",
+                        "Type": 0,
+                        "CallType": 0,
                         "EndTime": 1623988825,
-                        "BuyTime": 1613988825
-                    },
-                    {
-                        "PhoneNum": "86020111112",
-                        "Type": 1,
-                        "CallType": 1,
-                        "State": 1,
-                        "EndTime": 1623988825,
-                        "BuyTime": 1613988825
+                        "BuyTime": 1613988825,
+                        "State": 0
                     }
-                ]
+                ],
+                "SipBuyNum": 0
             }
         ],
         "PackageBuyList": [
             {
-                "PackageId": "1001",
-                "Type": 1,
-                "CapacitySize": 10000,
-                "CapacityRemain": 189,
-                "EndTime": 1623988825,
-                "BuyTime": 1613988825
-            },
-            {
-                "PackageId": "2001",
-                "Type": 1,
-                "CapacitySize": 10000,
-                "CapacityRemain": 189,
+                "PackageId": "abc",
+                "Type": 0,
+                "CapacitySize": 0,
+                "CapacityRemain": 0,
                 "EndTime": 1623988825,
                 "BuyTime": 1613988825
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

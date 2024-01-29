@@ -63,6 +63,20 @@
       "output": "CreateConfigGroupVersionResponse",
       "status": "online"
     },
+    "CreateL4Proxy": {
+      "document": "用于创建四层代理实例。",
+      "input": "CreateL4ProxyRequest",
+      "name": "创建四层代理实例",
+      "output": "CreateL4ProxyResponse",
+      "status": "online"
+    },
+    "CreateL4ProxyRules": {
+      "document": "用于创建四层代理实例规则，支持单条或者批量创建。",
+      "input": "CreateL4ProxyRulesRequest",
+      "name": "创建四层代理转发规则",
+      "output": "CreateL4ProxyRulesResponse",
+      "status": "online"
+    },
     "CreateOriginGroup": {
       "document": "创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。",
       "input": "CreateOriginGroupRequest",
@@ -147,6 +161,20 @@
       "output": "DeleteApplicationProxyRuleResponse",
       "status": "online"
     },
+    "DeleteL4Proxy": {
+      "document": "用于删除四层代理实例。",
+      "input": "DeleteL4ProxyRequest",
+      "name": "删除四层代理实例",
+      "output": "DeleteL4ProxyResponse",
+      "status": "online"
+    },
+    "DeleteL4ProxyRules": {
+      "document": "用于删除四层代理转发规则，支持单条或者批量操作。",
+      "input": "DeleteL4ProxyRulesRequest",
+      "name": "删除四层代理转发规则",
+      "output": "DeleteL4ProxyRulesResponse",
+      "status": "online"
+    },
     "DeleteOriginGroup": {
       "document": "删除源站组，若源站组仍然被服务（例如：四层代理，域名服务，负载均衡，规则引起）引用，将不允许删除。",
       "input": "DeleteOriginGroupRequest",
@@ -215,6 +243,13 @@
       "input": "DescribeAvailablePlansRequest",
       "name": "查询当前账户可购买套餐信息列表",
       "output": "DescribeAvailablePlansResponse",
+      "status": "online"
+    },
+    "DescribeBillingData": {
+      "document": "通过本接口查询计费数据。",
+      "input": "DescribeBillingDataRequest",
+      "name": "查询计费数据",
+      "output": "DescribeBillingDataResponse",
       "status": "online"
     },
     "DescribeConfigGroupVersionDetail": {
@@ -299,6 +334,20 @@
       "input": "DescribeIdentificationsRequest",
       "name": "查询站点的验证信息",
       "output": "DescribeIdentificationsResponse",
+      "status": "online"
+    },
+    "DescribeL4Proxy": {
+      "document": "用于查询四层代理实例列表。",
+      "input": "DescribeL4ProxyRequest",
+      "name": "查询四层代理实例列表",
+      "output": "DescribeL4ProxyResponse",
+      "status": "online"
+    },
+    "DescribeL4ProxyRules": {
+      "document": "查询四层代理实例下的规则列表。",
+      "input": "DescribeL4ProxyRulesRequest",
+      "name": "查询四层代理实例规则列表",
+      "output": "DescribeL4ProxyRulesResponse",
       "status": "online"
     },
     "DescribeOriginGroup": {
@@ -488,6 +537,34 @@
       "input": "ModifyHostsCertificateRequest",
       "name": "配置域名证书",
       "output": "ModifyHostsCertificateResponse",
+      "status": "online"
+    },
+    "ModifyL4Proxy": {
+      "document": "用于修改四层代理实例的配置。",
+      "input": "ModifyL4ProxyRequest",
+      "name": "修改四层代理实例",
+      "output": "ModifyL4ProxyResponse",
+      "status": "online"
+    },
+    "ModifyL4ProxyRules": {
+      "document": "用于修改四层代理转发规则，支持单条或者批量修改。",
+      "input": "ModifyL4ProxyRulesRequest",
+      "name": "修改四层代理转发规则",
+      "output": "ModifyL4ProxyRulesResponse",
+      "status": "online"
+    },
+    "ModifyL4ProxyRulesStatus": {
+      "document": "用于启用/停用四层代理转发规则状态，支持单条或者批量操作。",
+      "input": "ModifyL4ProxyRulesStatusRequest",
+      "name": "修改四层代理转发规则状态",
+      "output": "ModifyL4ProxyRulesStatusResponse",
+      "status": "online"
+    },
+    "ModifyL4ProxyStatus": {
+      "document": "用于启用/停用四层代理实例。",
+      "input": "ModifyL4ProxyStatusRequest",
+      "name": "修改四层代理实例状态",
+      "output": "ModifyL4ProxyStatusResponse",
       "status": "online"
     },
     "ModifyOriginGroup": {
@@ -1764,6 +1841,56 @@
         }
       ],
       "usage": "out"
+    },
+    "BillingData": {
+      "document": "计费数据项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "Time",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Value",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillingDataFilter": {
+      "document": "计费数据过滤条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称。",
+          "example": "host",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数值。",
+          "example": "test.example.com",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "BindSecurityTemplateToEntityRequest": {
       "document": "BindSecurityTemplateToEntity请求参数结构体",
@@ -3314,6 +3441,152 @@
       ],
       "type": "object"
     },
+    "CreateL4ProxyRequest": {
+      "document": "CreateL4Proxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gps1z8cx8y2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例名称，可输入 1-50 个字符，允许的字符为 a-z、0-9、-，且 - 不能单独注册或连续使用，不能放在开头或结尾。创建完成后不支持修改。\n",
+          "example": "proxy-name",
+          "member": "string",
+          "name": "ProxyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例加速区域。\n<li>mainland：中国大陆可用区；</li>\n<li>overseas：全球可用区（不含中国大陆）；</li>\n<li>global：全球可用区。</li>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 IPv6 访问，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n\n",
+          "example": "on",
+          "member": "string",
+          "name": "Ipv6",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启固定 IP，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "example": "off",
+          "member": "string",
+          "name": "StaticIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启中国大陆网络优化，不填写时默认为 off。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n",
+          "example": "on",
+          "member": "string",
+          "name": "AccelerateMainland",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "L3/L4 DDoS 防护配置，不填写时默认使用平台默认防护选项。详情参考 [独立 DDoS 防护](https://cloud.tencent.com/document/product/1552/95994)。",
+          "example": "无",
+          "member": "DDosProtectionConfig",
+          "name": "DDosProtectionConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL4ProxyResponse": {
+      "document": "CreateL4Proxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "四层实例 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL4ProxyRulesRequest": {
+      "document": "CreateL4ProxyRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-67e6b1962",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "proxy-19389e5dwwxfs",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则列表。单次最多支持 200 条转发规则。\n注意：L4ProxyRule 在此处使用时，Protocol、PortRange、OriginType、OriginValue、OriginPortRange 为必填字段；ClientIPPassThroughMode、SessionPersist、SessionPersistTime、RuleTag 均为选填字段；RuleId、Status 请勿填写。",
+          "example": "无",
+          "member": "L4ProxyRule",
+          "name": "L4ProxyRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL4ProxyRulesResponse": {
+      "document": "CreateL4ProxyRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增转发规则的 ID，以数组的形式返回。",
+          "example": "无",
+          "member": "string",
+          "name": "L4ProxyRuleIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOriginGroupRequest": {
       "document": "CreateOriginGroup请求参数结构体",
       "members": [
@@ -4052,6 +4325,45 @@
       ],
       "usage": "out"
     },
+    "DDosProtectionConfig": {
+      "document": "适用于四层代理或 Web 站点服务的独立 DDoS 防护规格配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中国大陆地区独立 DDoS 防护的规格。详情请参考 [独立 DDoS 防护相关费用](https://cloud.tencent.com/document/product/1552/94162)\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>BASE30_MAX300：开启独立 DDoS 防护，提供 30 Gbps 保底防护带宽，可配置最高 300 Gpbs 弹性防护带宽；</li>\n<li>BASE60_MAX600：开启独立 DDoS 防护，提供 60 Gbps 保底防护带宽，可配置最高 600 Gpbs 弹性防护带宽。</li>不填写参数时，取默认值 PLATFORM。",
+          "example": "PLATFORM",
+          "member": "string",
+          "name": "LevelMainland",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中国大陆地区独立 DDoS 防护的弹性防护带宽配置。\n仅当开启中国大陆区域独立 DDos 防护时有效（详见 LevelMainland 参数配置），且取值范围有如下限制：\n<li>开启中国大陆地区独立 DDoS 防护，使用 30 Gbps 保底防护带宽规格时（ LevelMainland 参数值为 BASE30_MAX300 ）：有效取值范围为 30 至 300，单位为 Gbps；</li>\n<li>开启中国大陆地区独立 DDoS 防护，使用 60 Gbps 保底防护带宽规格时（ LevelMainland 参数值为 BASE60_MAX600 ）：有效取值范围为 60 至 600，单位为 Gbps；</li>\n<li>使用平台默认防护（ LevelMainland 参数值为 PLATFORM ）：不支持配置，本参数值无效。</li>",
+          "example": "30",
+          "member": "uint64",
+          "name": "MaxBandwidthMainland",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球（除中国大陆以外）地区独立 DDoS 防护的规格。\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>ANYCAST300：开启独立 DDoS 防护，提供合计最大 300 Gbps 防护带宽；</li>\n<li>ANYCAST_ALLIN：开启独立 DDoS 防护，使用全部可用防护资源进行防护。</li>不填写参数时，取默认值 PLATFORM。",
+          "example": "ANYCAST_ALLIN",
+          "member": "string",
+          "name": "LevelOverseas",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DefaultServerCertInfo": {
       "document": "https 服务端证书配置",
       "members": [
@@ -4310,6 +4622,87 @@
     },
     "DeleteApplicationProxyRuleResponse": {
       "document": "DeleteApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL4ProxyRequest": {
+      "document": "DeleteL4Proxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-67e6b1962",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "proxy-19389e5dwwxfs",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL4ProxyResponse": {
+      "document": "DeleteL4Proxy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL4ProxyRulesRequest": {
+      "document": "DeleteL4ProxyRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-67e6b1962",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "proxy-19389e5dwwxfs",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则 ID 列表。单次最多支持 200 条转发规则。",
+          "example": "[\"rule-sdacd\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL4ProxyRulesResponse": {
+      "document": "DeleteL4ProxyRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4875,7 +5268,89 @@
           "example": "无",
           "member": "PlanInfo",
           "name": "PlanInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingDataRequest": {
+      "document": "DescribeBillingData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "zone-2siulp074dz3",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标列表，取值有：\n<li>acc_flux: 内容加速流量，单位为 Byte；</li>\n<li>smt_flux: 智能加速流量，单位为 Byte；</li>\n<li>l4_flux: 四层加速流量，单位为 Byte；</li>\n<li>sec_flux: 独立防护流量，单位为 Byte；</li>\n<li>zxctg_flux: 中国大陆网络优化流量，单位为 Byte；</li>\n<li>acc_bandwidth: 内容加速带宽，单位为 bps；</li>\n<li>smt_bandwidth: 智能加速带宽，单位为 bps；</li>\n<li>l4_bandwidth: 四层加速带宽，单位为 bps；</li>\n<li>sec_bandwidth: 独立防护带宽，单位为 bps；</li>\n<li>zxctg_bandwidth: 中国大陆网络优化带宽，单位为 bps；</li>\n<li>sec_request_clean: HTTP/HTTPS 请求，单位为次；</li>\n<li>smt_request_clean: 智能加速请求，单位为次；</li>\n<li>quic_request: QUIC 请求，单位为次；</li>\n<li>bot_request_clean: Bot 请求，单位为次；</li>\n<li>cls_count: 实时日志推送条数，单位为条；</li>\n<li>ddos_bandwidth: 弹性 DDoS 防护带宽，单位为 bps。</li>",
+          "example": "acc_flux",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间粒度，取值有：\n<li>5min：5 分钟粒度；</li>\n<li>hour：1 小时粒度；</li>\n<li>day：1 天粒度。</li>",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，详细的过滤条件取值如下：\n<li>host<br>   按照【<strong>域名</strong>】进行过滤。示例值：test.example.com。<br>   类型：String<br>   必选：否</li>\n<li>proxy-id<br>   按照【<strong>四层代理实例 ID</strong>】进行过滤。示例值：sid-2rugn89bkla9。<br>   类型：String<br>   必选：否</li>\n<li>region-id<br>   按照【<strong>计费大区</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项如下：<br>   CH：中国大陆境内<br>   AF：非洲<br>   AS1：亚太一区<br>   AS2：亚太二区<br>   AS3：亚太三区<br>   EU：欧洲<br>   MidEast：中东<br>   NA：北美<br>   SA：南美</li>",
+          "example": "无",
+          "member": "BillingDataFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingDataResponse": {
+      "document": "DescribeBillingData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据点列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillingData",
+          "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5781,6 +6256,163 @@
           "member": "Identification",
           "name": "Identifications",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ProxyRequest": {
+      "document": "DescribeL4Proxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "四层代理实例所属站点的 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，不填写时默认为 0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。\t",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有四层代理实例信息。详细的过滤条件如下：\n<li>proxy-id：按照四层代理实例 ID 进行过滤；</li>\n<li>ddos-protection-type：按照安全防护类型进行过滤。</li>\n\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ProxyResponse": {
+      "document": "DescribeL4Proxy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "四层代理实例的数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例列表。",
+          "example": "无",
+          "member": "L4Proxy",
+          "name": "L4Proxies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ProxyRulesRequest": {
+      "document": "DescribeL4ProxyRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2q79r12251hk",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "sid-2q79r12251hk",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，不填写时默认为 0。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。\t",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values的上限为20。不填写时返回当前四层实例下所有的规则信息，详细的过滤条件如下： \n <li>rule-tag：按照规则标签对四层代理实例下的规则进行过滤。</li>\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL4ProxyRulesResponse": {
+      "document": "DescribeL4ProxyRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则总数。",
+          "example": "121",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则列表。\t",
+          "example": "无",
+          "member": "L4ProxyRule",
+          "name": "L4ProxyRules",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8798,6 +9430,282 @@
       ],
       "usage": "out"
     },
+    "L4Proxy": {
+      "document": "四层代理实例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gpv1z8cx8y2",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "sid-2gpv1z8cx8y2",
+          "member": "string",
+          "name": "ProxyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例名称。",
+          "example": "proxy-name",
+          "member": "string",
+          "name": "ProxyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例的加速区域。 \n<li>mainland：中国大陆可用区；</li>\n<li>overseas： 全球可用区（不含中国大陆）；</li>\n <li>global：全球可用区。</li>\t",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入 CNAME。",
+          "example": "8dde93816fba8809.jakeyjing.fun.acc.tyxcdn.com.",
+          "member": "string",
+          "name": "Cname",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启固定 IP 后，该值会返回对应的接入 IP；未开启时，该值为空。",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "Ips",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例状态。\n<li>online：已启用；</li>\n<li>offline：已停用；</li>\n<li>progress：部署中；</li>\t\n<li>stopping：停用中；</li>\n<li>banned：已封禁；</li>\n<li>fail：部署失败/停用失败。</li>\t",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 IPv6 访问。 \n<li>on：开启；</li> \n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Ipv6",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启固定 IP。\n <li>on：开启；</li> <li>off：关闭。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "StaticIp",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启中国大陆网络优化。\n <li>on：开启</li> <li>off：关闭</li>",
+          "example": "off",
+          "member": "string",
+          "name": "AccelerateMainland",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全防护配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DDosProtectionConfig",
+          "name": "DDosProtectionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例下的转发规则数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "L4ProxyRuleCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新变更时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "L4ProxyRule": {
+      "document": "四层代理转发规则详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则 ID。\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数请勿填写；在 ModifyL4ProxyRules 作为入参使用时，该参数必填。",
+          "example": "rule-xxx",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发协议。取值有：\n<li>TCP：TCP 协议；</li>\n<li>UDP：UDP 协议。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数必填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写时表示不修改。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发端口，支持按照以下形式填写：\n<li>单端口，如：80；</li>\n<li>端口段，如：81-85。表示 81、82、83、84、85 五个端口。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数必填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写时表示不修改。",
+          "example": "[\"80\"]",
+          "member": "string",
+          "name": "PortRange",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IP/域名源站；</li>\n<li>ORIGIN_GROUP：源站组；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数必填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写时表示不修改。",
+          "example": "IP_DOMAIN",
+          "member": "string",
+          "name": "OriginType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站地址：\n<li>当 OriginType 为 IP_DOMAIN 时，填写 IP 或域名，如 8.8.8.8 或 test.com ；</li>\n<li>当 OriginType 为 ORIGIN_GROUP 时，填写源站组 ID，如 og-537y24vf5b41；</li>\n<li>当 OriginType 为 LB 时，填写负载均衡实例 ID，如 lb-2qwk30xf7s9g。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数必填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写时表示不修改。\n",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "OriginValue",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站端口，支持按照以下形式填写：\n<li>单端口，如：80；</li>\n<li>端口段，如：81-85，表示 81、82、83、84、85 五个端口。填写端口段时，则需要与转发端口段长度保持一致，例如转发端口：80-90，则转发端口：90-100。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数必填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写时表示不修改。",
+          "example": "80-90",
+          "member": "string",
+          "name": "OriginPortRange",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传递客户端 IP 的形式，取值有：\n<li>TOA：TOA（仅 Protocol = TCP 时可选）；</li> \n<li>PPV1：Proxy Protocol 传递，协议版本 V1（仅 Protocol = TCP 时可选）；</li>\n<li>PPV2：Proxy Protocol 传递，协议版本 V2；</li> \n<li>SPP：Simple Proxy Protocol 传递，（仅 Protocol = UDP 时可选）；</li> \n<li>OFF：不传递。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数选填，不填写时默认为 OFF；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写表示不修改。",
+          "example": "TOA",
+          "member": "string",
+          "name": "ClientIPPassThroughMode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启会话保持，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数选填，不填写时默认为 off；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写表示不修改。",
+          "example": "off",
+          "member": "string",
+          "name": "SessionPersist",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话保持时间，取值范围为 30-3600，单位为秒。\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数选填，仅当 SessionPersist = on 时，该值才会生效，且当 SessionPersist = on ，该值不填写默认为 3600；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写表示不修改。",
+          "example": "3600",
+          "member": "uint64",
+          "name": "SessionPersistTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则标签。可输入1-50 个任意字符。\n注意：L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数选填；在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写表示不修改。",
+          "example": "rule-service1",
+          "member": "string",
+          "name": "RuleTag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，取值有：\n<li>online：已启用；</li>\n<li>offline：已停用；</li>\n<li>progress：部署中；</li>\n<li>stopping：停用中；</li>\n<li>fail：部署失败/停用失败。</li>\n注意：L4ProxyRule 在 CreateL4ProxyRules、ModifyL4ProxyRules 作为入参使用时，该参数请勿填写。",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "L7OfflineLog": {
       "document": "七层离线日志详细信息。",
       "members": [
@@ -9512,6 +10420,204 @@
     },
     "ModifyHostsCertificateResponse": {
       "document": "ModifyHostsCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyRequest": {
+      "document": "ModifyL4Proxy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2gpv1z8cx8y2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID。",
+          "example": "sid-2gpv1z8sx8y2",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 IPv6 访问。 不填该参数时，表示不修改该配置。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li> \n<li>off：关闭。</li>\n",
+          "example": "off",
+          "member": "string",
+          "name": "Ipv6",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启中国大陆网络优化。不填该参数时，表示不修改该配置。该配置仅在部分加速区域和安全防护配置下支持开启，详情请参考 [新建四层代理实例](https://cloud.tencent.com/document/product/1552/90025) 。取值为：\n<li>on：开启；</li> \n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "AccelerateMainland",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyResponse": {
+      "document": "ModifyL4Proxy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyRulesRequest": {
+      "document": "ModifyL4ProxyRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-21xfqlh4qjee",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "proxy-00dde48321vd",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则列表。单次最多支持 200 条转发规则。\n注意：L4ProxyRule 在此处使用时，RuleId 为必填字段；Protocol、PortRange、OriginType、OriginValue、OriginPortRange、ClientIPPassThroughMode、SessionPersist、SessionPersistTime、RuleTag 均为选填字段，不填写表示不修改；Status 请勿填写。",
+          "example": "无",
+          "member": "L4ProxyRule",
+          "name": "L4ProxyRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyRulesResponse": {
+      "document": "ModifyL4ProxyRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyRulesStatusRequest": {
+      "document": "ModifyL4ProxyRulesStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-21xfqlh4qjee",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "proxy-00dde483-9a2b-11ec-bcb0",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则 ID 列表。单次最多支持 200 条转发规则。",
+          "example": "[\"rule-xxx\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用。</li>",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyRulesStatusResponse": {
+      "document": "ModifyL4ProxyRulesStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyStatusRequest": {
+      "document": "ModifyL4ProxyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-67e6b19620",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例 ID。",
+          "example": "sid-2nvaw7ab73kc",
+          "member": "string",
+          "name": "ProxyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理实例状态，取值有：\n<li>online：启用；</li>\n<li>offline：停用。</li>",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL4ProxyStatusResponse": {
+      "document": "ModifyL4ProxyStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

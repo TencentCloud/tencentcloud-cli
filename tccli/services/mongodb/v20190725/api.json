@@ -3467,6 +3467,16 @@
         },
         {
           "disabled": false,
+          "document": "实例当前可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "mongos节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",

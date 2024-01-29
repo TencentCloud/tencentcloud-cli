@@ -24234,6 +24234,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24244,6 +24245,7 @@
           "example": "无",
           "member": "bool",
           "name": "Primary",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -24254,6 +24256,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIpAddress",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24264,6 +24267,7 @@
           "example": "无",
           "member": "string",
           "name": "AddressId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24274,6 +24278,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24284,6 +24289,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsWanIpBlocked",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -24294,6 +24300,7 @@
           "example": "无",
           "member": "string",
           "name": "State",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24304,6 +24311,7 @@
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

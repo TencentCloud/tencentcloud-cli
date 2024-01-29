@@ -88,7 +88,8 @@ Output:
                 "Volume": 10240,
                 "VpcId": "vpc-gfb3****",
                 "Vport": 27017,
-                "Zone": "ap-guangzhou-2"
+                "Zone": "ap-guangzhou-2",
+                "ZoneList": []
             }
         ],
         "RequestId": "230c9c0e-a56f-4639-81ee-3cb46905c087",

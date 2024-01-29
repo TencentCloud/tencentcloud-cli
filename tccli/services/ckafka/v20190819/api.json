@@ -7936,6 +7936,7 @@
           "example": "无",
           "member": "RouteResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15028,7 +15029,7 @@
           "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

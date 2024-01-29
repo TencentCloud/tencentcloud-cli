@@ -11616,6 +11616,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "eks集群内pod的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12546,7 +12556,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名列表",
+          "document": "指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)",
           "example": "[\"K8sPodCpuCoreUsed\"]",
           "member": "string",
           "name": "MetricNames",
@@ -12555,7 +12565,7 @@
         },
         {
           "disabled": false,
-          "document": "维度条件，操作符支持=、in\n配置文档参考：https://cloud.tencent.com/document/product/248/53821",
+          "document": "维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)",
           "example": "无",
           "member": "MidQueryCondition",
           "name": "Conditions",
@@ -16264,7 +16274,7 @@
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16274,7 +16284,7 @@
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16284,7 +16294,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16294,7 +16304,7 @@
           "example": "tke集群",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16304,7 +16314,7 @@
           "example": "Name=cluster_name,Value=x",
           "member": "Label",
           "name": "ExternalLabels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16314,7 +16324,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16324,7 +16334,7 @@
           "example": "xxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16334,7 +16344,7 @@
           "example": "xxx",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16344,8 +16354,18 @@
           "example": "xxx",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启公网访问，true 开启，false 未开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableExternal",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

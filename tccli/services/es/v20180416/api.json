@@ -7218,6 +7218,15 @@
           "name": "CerebroPrivateDomain",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变更为https集群，默认是http",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -463,7 +463,7 @@
       "status": "online"
     },
     "DescribeDBInstanceLogToCLS": {
-      "document": "本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过appId、Region以及实例ID过滤出当前实例日志投递CLS的配置。",
+      "document": "本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。",
       "input": "DescribeDBInstanceLogToCLSRequest",
       "name": "查询实例日志投递CLS的配置",
       "output": "DescribeDBInstanceLogToCLSResponse",
@@ -9059,6 +9059,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS服务所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13489,6 +13498,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS服务所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14778,7 +14797,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型：error/slowLog",
+          "document": "日志类型：error/slowlog",
           "example": "error",
           "member": "string",
           "name": "LogType",
@@ -14847,6 +14866,15 @@
           "name": "CreateIndex",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "CLS所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -3,7 +3,7 @@
     "BindNumberCallOutSkillGroup": [
       {
         "document": "绑定号码和技能组",
-        "input": "{\n\"Number\":\"0086075512345678\",\n\"SkillGroupIds\": [1,2,3],\n\"SdkAppId\": 1400000000\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindNumberCallOutSkillGroup\n<公共请求参数>\n\n{\n    \"Number\": \"0086075512345678\",\n    \"SkillGroupIds\": [\n        1,\n        2,\n        3\n    ],\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "绑定号码和技能组"
       }
@@ -107,8 +107,8 @@
     "DescribeActiveCarrierPrivilegeNumber": [
       {
         "document": "查询生效的白名单规则",
-        "input": "{\n    \"SdkAppId\": 1400000000\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActiveCarrierPrivilegeNumbers\": [\n            {\n                \"SdkAppId\": 140000000,\n                \"Caller\": \"00860101234\",\n                \"Callee\": \"008618612341234\"\n            }\n        ],\n        \"PendingApplicantIds\": [\n            1,\n            2\n        ],\n        \"RequestId\": \"xxxxX\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeActiveCarrierPrivilegeNumber\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ActiveCarrierPrivilegeNumbers\": [\n            {\n                \"SdkAppId\": 1,\n                \"Caller\": \"abc\",\n                \"Callee\": \"abc\",\n                \"CreateTime\": 0\n            }\n        ],\n        \"PendingApplicantIds\": [\n            1\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询生效的白名单规则"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "https://ccc.tencentcloudapi.com/?Action=DescribeCCCBuyInfoList\n&SdkAppIds.0=1400000000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 602,\n        \"SdkAppIdBuyList\": [\n            {\n                \"SdkAppId\": 1400000000,\n                \"Name\": \"xiao\",\n                \"StaffBuyNum\": 2,\n                \"StaffBuyList\": [\n                    {\n                        \"Num\": 50,\n                        \"BuyTime\": 1613988825,\n                        \"EndTime\": 1623988825\n                    },\n                    {\n                        \"Num\": 10,\n                        \"BuyTime\": 1623988825,\n                        \"EndTime\": 1624988825\n                    }\n                ],\n                \"PhoneNumBuyList\": [\n                    {\n                        \"PhoneNum\": \"86020111111\",\n                        \"Type\": 1,\n                        \"CallType\": 1,\n                        \"State\": 1,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825\n                    },\n                    {\n                        \"PhoneNum\": \"86020111112\",\n                        \"Type\": 1,\n                        \"CallType\": 1,\n                        \"State\": 1,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825\n                    }\n                ]\n            }\n        ],\n        \"PackageBuyList\": [\n            {\n                \"PackageId\": \"1001\",\n                \"Type\": 1,\n                \"CapacitySize\": 10000,\n                \"CapacityRemain\": 189,\n                \"EndTime\": 1623988825,\n                \"BuyTime\": 1613988825\n            },\n            {\n                \"PackageId\": \"2001\",\n                \"Type\": 1,\n                \"CapacitySize\": 10000,\n                \"CapacityRemain\": 189,\n                \"EndTime\": 1623988825,\n                \"BuyTime\": 1613988825\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SdkAppIdBuyList\": [\n            {\n                \"SdkAppId\": 1400000000,\n                \"Name\": \"abc\",\n                \"StaffBuyNum\": 0,\n                \"StaffBuyList\": [\n                    {\n                        \"Num\": 0,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825,\n                        \"SipNum\": 0\n                    }\n                ],\n                \"PhoneNumBuyList\": [\n                    {\n                        \"PhoneNum\": \"abc\",\n                        \"Type\": 0,\n                        \"CallType\": 0,\n                        \"EndTime\": 1623988825,\n                        \"BuyTime\": 1613988825,\n                        \"State\": 0\n                    }\n                ],\n                \"SipBuyNum\": 0\n            }\n        ],\n        \"PackageBuyList\": [\n            {\n                \"PackageId\": \"abc\",\n                \"Type\": 0,\n                \"CapacitySize\": 0,\n                \"CapacityRemain\": 0,\n                \"EndTime\": 1623988825,\n                \"BuyTime\": 1613988825\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取用户购买信息列表示例"
       }
     ],
@@ -315,7 +315,7 @@
     "UnbindNumberCallOutSkillGroup": [
       {
         "document": "解绑号码外呼技能组",
-        "input": "{\n\"Number\":\"0086075512345678\",\n\"SkillGroupIds\": [1,2,3],\n\"SdkAppId\": 1400000000\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindNumberCallOutSkillGroup\n<公共请求参数>\n\n{\n    \"Number\": \"0086075512345678\",\n    \"SkillGroupIds\": [\n        1,\n        2,\n        3\n    ],\n    \"SdkAppId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "解绑号码外呼技能组"
       }

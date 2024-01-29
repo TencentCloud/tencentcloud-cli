@@ -3249,6 +3249,7 @@
           "example": "demo",
           "member": "string",
           "name": "CompatibleRuntimes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3258,6 +3259,7 @@
           "example": "test",
           "member": "string",
           "name": "CodeSha256",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3267,6 +3269,7 @@
           "example": "http://demo",
           "member": "string",
           "name": "Location",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3276,6 +3279,7 @@
           "example": "2023-01-01",
           "member": "string",
           "name": "AddTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3285,6 +3289,7 @@
           "example": "demo",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3294,6 +3299,7 @@
           "example": "LicenseInfoDemo",
           "member": "string",
           "name": "LicenseInfo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3303,6 +3309,7 @@
           "example": "l1",
           "member": "int64",
           "name": "LayerVersion",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3312,6 +3319,7 @@
           "example": "ln",
           "member": "string",
           "name": "LayerName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3321,6 +3329,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

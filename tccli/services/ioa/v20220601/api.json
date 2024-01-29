@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "私有化默认分组id-名称-操作系统\n1\t全网终端\tWin\n2\t未分组终端\tWin\n30000000\t服务器\tWin\n40000101\t全网终端\tLinux\n40000102\t未分组终端\tLinux\n40000103\t服务器\tLinux\n40000201\t全网终端\tmacOS\n40000202\t未分组终端\tmacOS\n40000203\t服务器\tmacOS\n40000401\t全网终端\tAndroid\n40000402\t未分组终端\tAndroid\n40000501\t全网终端\tiOS\n40000502\t未分组终端\tiOS",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "GroupId",
           "required": false,
@@ -128,7 +128,7 @@
         {
           "disabled": false,
           "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -137,7 +137,7 @@
         {
           "disabled": false,
           "document": "在线状态 2 在线 0，1 离线",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
           "required": false,
@@ -164,7 +164,7 @@
         {
           "disabled": false,
           "document": "获取第几页--兼容旧接口,参数同Condition(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNum",
           "required": false,
@@ -173,7 +173,7 @@
         {
           "disabled": false,
           "document": "每页获取数--兼容旧接口,参数同Condition(只支持32位)",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -182,7 +182,7 @@
         {
           "disabled": false,
           "document": "授权状态 4未授权 5已授权",
-          "example": "无",
+          "example": "4",
           "member": "int64",
           "name": "Status",
           "required": false,

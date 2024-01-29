@@ -25,24 +25,24 @@ Output:
                 "FileName": "wedata-spark-1.0-SNAPSHOT.jar",
                 "FileExtensionType": "jar",
                 "Md5Value": null,
-                "CreateTime": 1665648126363,
-                "UpdateTime": 1665648126363,
+                "CreateTime": "1665648126363",
+                "UpdateTime": "1665648126363",
                 "Size": 8148,
                 "FileUploadType": "resource",
-                "LocalPath": "/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
-                "RemotePath": "/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
+                "LocalPath": "/datastudio/resource/jaydenjhu/wedata-spark-1.0-SNAPSHOT.jar",
+                "RemotePath": "/datastudio/resource/1171938931991703552/jaydenjhu/wedata-spark-1.0-SNAPSHOT.jar",
                 "OwnerName": "fe",
                 "Owner": "100022256608",
                 "PathDepth": "5",
                 "ProjectId": "1171938931991703552",
                 "ExtraInfo": null,
-                "LocalTmpPath": "/tmp//datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.jar",
+                "LocalTmpPath": "/tmp//datastudio/resource/1171938931991703552/jaydenjhu/wedata-spark-1.0-SNAPSHOT.jar",
                 "ZipPath": null,
                 "Bucket": "agent-test-1257305158",
                 "Region": "ap-guangzhou"
             }
         ],
-        "RequestId": "12321312"
+        "RequestId": "75431931-7d27-4034-b3de-3dc3348a220e"
     }
 }
 ```

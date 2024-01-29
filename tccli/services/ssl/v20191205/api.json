@@ -2417,11 +2417,20 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "",
+          "example": "qwrqwr1",
           "member": "string",
           "name": "CertificateId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除时是否检查证书关联了云资源。默认不检查。如选择检查(需要授权服务角色SSL_QCSLinkedRoleInReplaceLoadCertificate)删除将变成异步,接口会返回异步任务ID。需使用DescribeDeleteCertificatesTaskResult接口查询删除是否成功。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCheckResource",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2432,11 +2441,22 @@
         {
           "disabled": false,
           "document": "删除结果（true：删除成功，false：删除失败）",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "DeleteResult",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步删除的任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12566",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

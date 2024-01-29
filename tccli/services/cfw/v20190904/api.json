@@ -1118,10 +1118,28 @@
         },
         {
           "disabled": false,
-          "document": "是否延迟下发，1则延迟下发，否则立即下发",
+          "document": "（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发",
           "example": "1",
           "member": "uint64",
           "name": "IsDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源 默认空 覆盖导入是 batch_import_cover",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用id 默认不需要",
+          "example": "无",
+          "member": "int64",
+          "name": "IsUseId",
           "required": false,
           "type": "int"
         }
@@ -1137,6 +1155,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1146,6 +1165,7 @@
           "example": "无",
           "member": "SecurityGroupSimplifyRule",
           "name": "Rules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1236,6 +1256,7 @@
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuids",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1424,6 +1445,46 @@
       "members": [
         {
           "disabled": false,
+          "document": "1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ip或白名单内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ioc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产实例名称、自定义策略名称等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称名称",
+          "member": "string",
+          "name": "IocName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "白名单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广东省深圳市",
+          "member": "string",
+          "name": "IocInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -1439,16 +1500,6 @@
           "member": "string",
           "name": "IP",
           "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "规则ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Ioc",
-          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1480,6 +1531,16 @@
           "name": "Direction",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所有方向聚合成字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1",
+          "member": "string",
+          "name": "DirectionList",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1590,6 +1651,26 @@
           "name": "Comment",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次命中时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "LastHitTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则细节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomWhiteRule",
+          "name": "CustomRule",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -2754,6 +2835,15 @@
           "name": "ParamTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内部id",
+          "example": "xxx",
+          "member": "int64",
+          "name": "InternalUuid",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3070,6 +3160,56 @@
         }
       ],
       "type": "object"
+    },
+    "CustomWhiteRule": {
+      "document": "自定义白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12.11.23.123",
+          "member": "string",
+          "name": "SrcIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问目的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111.11.1.2",
+          "member": "string",
+          "name": "DstIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx漏洞",
+          "member": "string",
+          "name": "IdsRuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20001",
+          "member": "string",
+          "name": "IdsRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DatabaseWhiteListRuleData": {
       "document": "数据库白名单规则数据",
@@ -3958,6 +4098,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问目的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4661,20 +4821,11 @@
         {
           "disabled": false,
           "document": "方向：1互联网入站，0互联网出站，3内网，空 全部方向",
-          "example": "in",
+          "example": "1",
           "member": "string",
           "name": "Direction",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "规则类型：1封禁，2放通",
-          "example": "block",
-          "member": "uint64",
-          "name": "RuleType",
-          "required": true,
-          "type": "int"
         },
         {
           "disabled": false,
@@ -4702,6 +4853,24 @@
           "name": "SearchValue",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型：1封禁，2放通",
+          "example": "block",
+          "member": "uint64",
+          "name": "RuleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "blocklist 封禁列表\nwhitelist 白名单列表",
+          "example": "blocklist",
+          "member": "string",
+          "name": "ShowType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4715,6 +4884,7 @@
           "example": "无",
           "member": "BlockIgnoreRule",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4724,6 +4894,7 @@
           "example": "100",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4733,6 +4904,7 @@
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4742,6 +4914,7 @@
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4751,6 +4924,17 @@
           "example": "无",
           "member": "string",
           "name": "SourceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应规则类型的数量，示例：[0,122,30,55,12,232,0]，封禁0个，IP地址122个，域名30个，威胁情报55个，资产实例12个，自定义策略232个，入侵防御规则0个",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleTypeDataList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4992,7 +5176,7 @@
           "example": "50",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11586,6 +11770,7 @@
           "example": "1",
           "member": "uint64",
           "name": "OrderIndex",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11596,6 +11781,7 @@
           "example": "ipm-dyodhpby",
           "member": "string",
           "name": "SourceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11606,6 +11792,7 @@
           "example": "7",
           "member": "uint64",
           "name": "SourceType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11616,6 +11803,7 @@
           "example": "subnet-fmo10koi",
           "member": "string",
           "name": "TargetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11626,6 +11814,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TargetType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11636,6 +11825,7 @@
           "example": "ANY",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11646,6 +11836,7 @@
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11656,6 +11847,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Strategy",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11666,6 +11858,7 @@
           "example": "test",
           "member": "string",
           "name": "Detail",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11676,6 +11869,7 @@
           "example": "0",
           "member": "uint64",
           "name": "BothWay",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11686,6 +11880,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11696,6 +11891,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11706,6 +11902,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsNew",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11716,6 +11913,7 @@
           "example": "vpc-8xuf8kf5",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11726,6 +11924,7 @@
           "example": "subnet-fmo10koi",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11736,6 +11935,7 @@
           "example": "InstanceName",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11746,6 +11946,7 @@
           "example": "PublicIp",
           "member": "string",
           "name": "PublicIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11756,6 +11957,7 @@
           "example": "PrivateIp",
           "member": "string",
           "name": "PrivateIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11766,6 +11968,7 @@
           "example": "Cidr",
           "member": "string",
           "name": "Cidr",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11776,6 +11979,7 @@
           "example": "ppmg-jz17vpis",
           "member": "string",
           "name": "ServiceTemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11786,6 +11990,7 @@
           "example": "BothWayInfo",
           "member": "SecurityGroupBothWayInfo",
           "name": "BothWayInfo",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11796,6 +12001,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Direction",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11806,6 +12012,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtocolPortType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11816,6 +12023,7 @@
           "example": "无",
           "member": "string",
           "name": "Uuid",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11826,6 +12034,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11836,6 +12045,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetGroupNameIn",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11846,6 +12056,7 @@
           "example": "无",
           "member": "string",
           "name": "AssetGroupNameOut",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11856,9 +12067,21 @@
           "example": "无",
           "member": "string",
           "name": "ParameterName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口协议类型参数模板名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProtocolPortName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12020,6 +12243,17 @@
           "member": "string",
           "name": "Enable",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则对应的唯一内部id",
+          "example": "xxx",
+          "member": "string",
+          "name": "Uid",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13721,6 +13955,28 @@
           "example": "test",
           "member": "string",
           "name": "ParamTemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问目的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceName",
           "output_required": false,
           "required": false,
           "type": "string",

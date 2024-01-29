@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1234567811",
+        "RequestId": "2fe0e0e3-9e79-49fb-872b-4c6a1abdc335",
         "Data": [
             {
                 "Name": "jaydenjhu",
@@ -37,8 +37,8 @@ Output:
                 "Name": "1-201111193502.zip",
                 "IsLeaf": true,
                 "ResourceId": "03343a77-b586-4b78-8e3e-2f1c30ba273a",
-                "LocalPath": "/datastudio/resource/jaydenjhu/xxxx/1-201111193502.zip",
-                "RemotePath": "/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/1-201111193502.zip",
+                "LocalPath": "/datastudio/resource/jaydenjhu/1-201111193502.zip",
+                "RemotePath": "/datastudio/resource/1171938931991703552/jaydenjhu/1-201111193502.zip",
                 "FileExtensionType": "zip",
                 "Size": 4015960,
                 "Md5Value": null,

@@ -7,11 +7,11 @@ Input:
 ```
 tccli waf AddAttackWhiteRule --cli-unfold-argument  \
     --Status 1 \
-    --Rules.0.MatchField xx \
-    --Rules.0.MatchContent xx \
-    --Rules.0.MatchMethod xx \
-    --Domain xx \
-    --SignatureId xx \
+    --Rules.0.MatchField URL \
+    --Rules.0.MatchContent /url \
+    --Rules.0.MatchMethod eq \
+    --Domain www.testwaf.com \
+    --SignatureIds 90501998 90501999 \
     --RuleId 1
 ```
 
@@ -19,8 +19,8 @@ Output:
 ```
 {
     "Response": {
-        "RuleId": 1,
-        "RequestId": "xx"
+        "RuleId": 109102367,
+        "RequestId": "76a16020-6e13-4028-823b-b20fb33ecf44"
     }
 }
 ```

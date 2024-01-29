@@ -203,6 +203,13 @@
       "output": "DescribeAccountsResponse",
       "status": "online"
     },
+    "DescribeAuditInstanceList": {
+      "document": "获取审计实例列表",
+      "input": "DescribeAuditInstanceListRequest",
+      "name": "获取审计实例列表",
+      "output": "DescribeAuditInstanceListResponse",
+      "status": "online"
+    },
     "DescribeAuditLogFiles": {
       "document": "本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。",
       "input": "DescribeAuditLogFilesRequest",
@@ -1435,6 +1442,68 @@
         }
       ],
       "type": "object"
+    },
+    "AuditInstanceFilters": {
+      "document": "查询审计实例的过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件值。支持InstanceId-实例ID，InstanceName-实例名称，ProjectId-项目ID，TagKey-标签键，Tag-标签（以竖线分割，例：Tagkey|Tagvalue）。",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true表示精确查找，false表示模糊匹配。",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "筛选值",
+          "example": "cynosdbmysql-ins-3nskq234",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditInstanceInfo": {
+      "document": "审计实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23414",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AuditLog": {
       "document": "审计日志详细信息",
@@ -7031,6 +7100,89 @@
       ],
       "type": "object"
     },
+    "DescribeAuditInstanceListRequest": {
+      "document": "DescribeAuditInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例审计开启的状态。1-已开启审计；0-未开启审计。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询实例列表的过滤条件。",
+          "example": "无",
+          "member": "AuditInstanceFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例的审计规则模式。1-规则审计；0-全审计。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次请求返回的数量。默认值为30，最大值为 20000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为 0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListResponse": {
+      "document": "DescribeAuditInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的实例总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceAuditStatus",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAuditLogFilesRequest": {
       "document": "DescribeAuditLogFiles请求参数结构体",
       "members": [
@@ -10902,6 +11054,142 @@
           "example": "无",
           "member": "RuleTemplateInfo",
           "name": "RuleTemplates",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceAuditStatus": {
+      "document": "实例审计详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cynosdbmysql-ins-3nskq234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计状态。ON-表示审计已开启，OFF-表示审计关闭。",
+          "example": "ON",
+          "member": "string",
+          "name": "AuditStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志保留时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "uint64",
+          "name": "LowLogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "173749.248",
+          "member": "float",
+          "name": "BillingAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45639.68",
+          "member": "float",
+          "name": "HighRealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128109.568",
+          "member": "float",
+          "name": "LowRealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为全审计。true-表示全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAll",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审计开通时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-12 11:41:42",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditInstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "173749.248",
+          "member": "float",
+          "name": "RealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所应用的规则模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateIds",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
