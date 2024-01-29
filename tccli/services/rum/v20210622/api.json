@@ -3819,8 +3819,8 @@
         },
         {
           "disabled": false,
-          "document": "无需关注，是否查询zhiyan",
-          "example": "无",
+          "document": "1: 查询智研\n0: 走旧逻辑，已下线，勿使用",
+          "example": "1",
           "member": "int64",
           "name": "IsNewData",
           "required": false,

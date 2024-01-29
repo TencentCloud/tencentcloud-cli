@@ -23,6 +23,7 @@ Output:
                 "CSType": 1,
                 "CSShiftDuration": 1,
                 "CSExpiredTime": 0,
+                "ChannelId": 1,
                 "CreatedAt": 0,
                 "UpdatedAt": 0
             }

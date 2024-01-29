@@ -666,6 +666,14 @@
         "title": "查询实例错误日志"
       }
     ],
+    "DescribeInstanceAlarmEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAlarmEvents\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"mnksadas-cb0d-4943-9b17-c3306ed3d\"\n    }\n}",
+        "title": "查询实例事件信息"
+      }
+    ],
     "DescribeInstanceParamRecords": [
       {
         "document": "",

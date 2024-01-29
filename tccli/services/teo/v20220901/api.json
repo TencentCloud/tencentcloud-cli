@@ -43,16 +43,16 @@
       "status": "online"
     },
     "CreateApplicationProxy": {
-      "document": "创建应用代理",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版 [创建四层代理实例](https://cloud.tencent.com/document/product/1552/103417) 。",
       "input": "CreateApplicationProxyRequest",
-      "name": "创建应用代理",
+      "name": "创建应用代理（旧）",
       "output": "CreateApplicationProxyResponse",
       "status": "online"
     },
     "CreateApplicationProxyRule": {
-      "document": "创建应用代理规则",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [创建四层代理转发规则\n](https://cloud.tencent.com/document/product/1552/103416) 。",
       "input": "CreateApplicationProxyRuleRequest",
-      "name": "创建应用代理规则",
+      "name": "创建应用代理规则（旧）",
       "output": "CreateApplicationProxyRuleResponse",
       "status": "online"
     },
@@ -148,16 +148,16 @@
       "status": "online"
     },
     "DeleteApplicationProxy": {
-      "document": "删除应用代理",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [删除四层代理实例\n](https://cloud.tencent.com/document/product/1552/103415) 。",
       "input": "DeleteApplicationProxyRequest",
-      "name": "删除应用代理",
+      "name": "删除应用代理（旧）",
       "output": "DeleteApplicationProxyResponse",
       "status": "online"
     },
     "DeleteApplicationProxyRule": {
-      "document": "删除应用代理规则",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [删除四层代理转发规则](https://cloud.tencent.com/document/product/1552/103414) 。",
       "input": "DeleteApplicationProxyRuleRequest",
-      "name": "删除应用代理规则",
+      "name": "删除应用代理规则（旧）",
       "output": "DeleteApplicationProxyRuleResponse",
       "status": "online"
     },
@@ -232,9 +232,9 @@
       "status": "online"
     },
     "DescribeApplicationProxies": {
-      "document": "查询应用代理列表。",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，新版接口中将四层代理实例列表的查询和四层转发规则的查询拆分成两个接口，详情请参考 [查询四层代理实例列表](https://cloud.tencent.com/document/product/1552/103413) 和 [查询四层代理转发规则列表](https://cloud.tencent.com/document/product/1552/103412)。",
       "input": "DescribeApplicationProxiesRequest",
-      "name": "查询应用代理列表",
+      "name": "查询应用代理列表（旧）",
       "output": "DescribeApplicationProxiesResponse",
       "status": "online"
     },
@@ -344,9 +344,9 @@
       "status": "online"
     },
     "DescribeL4ProxyRules": {
-      "document": "查询四层代理实例下的规则列表。",
+      "document": "查询四层代理实例下的转发规则列表。",
       "input": "DescribeL4ProxyRulesRequest",
-      "name": "查询四层代理实例规则列表",
+      "name": "查询四层代理转发规则列表",
       "output": "DescribeL4ProxyRulesResponse",
       "status": "online"
     },
@@ -505,30 +505,30 @@
       "status": "online"
     },
     "ModifyApplicationProxy": {
-      "document": "修改应用代理",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [修改四层代理实例\n](https://cloud.tencent.com/document/product/1552/103411) 。",
       "input": "ModifyApplicationProxyRequest",
-      "name": "修改应用代理",
+      "name": "修改应用代理（旧）",
       "output": "ModifyApplicationProxyResponse",
       "status": "online"
     },
     "ModifyApplicationProxyRule": {
-      "document": "修改应用代理规则",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [修改四层代理转发规则\n](https://cloud.tencent.com/document/product/1552/103410) 。",
       "input": "ModifyApplicationProxyRuleRequest",
-      "name": "修改应用代理规则",
+      "name": "修改应用代理规则（旧）",
       "output": "ModifyApplicationProxyRuleResponse",
       "status": "online"
     },
     "ModifyApplicationProxyRuleStatus": {
-      "document": "修改应用代理规则的状态",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [修改四层代理转发规则状态\n](https://cloud.tencent.com/document/product/1552/103409) 。",
       "input": "ModifyApplicationProxyRuleStatusRequest",
-      "name": "修改应用代理规则的状态",
+      "name": "修改应用代理规则的状态（旧）",
       "output": "ModifyApplicationProxyRuleStatusResponse",
       "status": "online"
     },
     "ModifyApplicationProxyStatus": {
-      "document": "修改应用代理的状态",
+      "document": "本接口为旧版，如需调用请尽快迁移至新版，详情请参考 [修改四层代理实例状态](https://cloud.tencent.com/document/product/1552/103408) 。",
       "input": "ModifyApplicationProxyStatusRequest",
-      "name": "修改应用代理的状态",
+      "name": "修改应用代理的状态（旧）",
       "output": "ModifyApplicationProxyStatusResponse",
       "status": "online"
     },
@@ -5194,6 +5194,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "站点ID。该参数必填。",
+          "example": "zone-vawer2vadg",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>proxy-id<br>   按照【<strong>代理ID</strong>】进行过滤。代理ID形如：proxy-ev2sawbwfd。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-vawer2vadg。<br>   类型：String<br>   必选：否</li><li>rule-tag<br>   按照【<strong>规则标签</strong>】对应用代理下的规则进行过滤。规则标签形如：rule-service-1。<br>   类型：String<br>   必选：否</li>",
+          "example": "[{\"Name\": \"proxy-id\", [\"proxy-124521xfqlh4qjee\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "分页查询偏移量。默认为0。",
           "example": "0",
           "member": "int64",
@@ -5209,15 +5227,6 @@
           "name": "Limit",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>proxy-id<br>   按照【<strong>代理ID</strong>】进行过滤。代理ID形如：proxy-ev2sawbwfd。<br>   类型：String<br>   必选：否</li><li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-vawer2vadg。<br>   类型：String<br>   必选：否</li><li>rule-tag<br>   按照【<strong>规则标签</strong>】对应用代理下的规则进行过滤。规则标签形如：rule-service-1。<br>   类型：String<br>   必选：否</li>",
-          "example": "[{\"Name\": \"proxy-id\", [\"proxy-124521xfqlh4qjee\"]}]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"

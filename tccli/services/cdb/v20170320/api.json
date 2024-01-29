@@ -546,6 +546,13 @@
       "output": "DescribeErrorLogDataResponse",
       "status": "online"
     },
+    "DescribeInstanceAlarmEvents": {
+      "document": "查询实例发生的事件信息",
+      "input": "DescribeInstanceAlarmEventsRequest",
+      "name": "查询实例发生的事件信息",
+      "output": "DescribeInstanceAlarmEventsResponse",
+      "status": "online"
+    },
     "DescribeInstanceParamRecords": {
       "document": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。",
       "input": "DescribeInstanceParamRecordsRequest",
@@ -10313,6 +10320,23 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAlarmEventsRequest": {
+      "document": "DescribeInstanceAlarmEvents请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceAlarmEventsResponse": {
+      "document": "DescribeInstanceAlarmEvents返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

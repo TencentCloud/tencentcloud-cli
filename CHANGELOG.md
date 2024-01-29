@@ -1,3 +1,417 @@
+# Release 3.0.1053.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 152 次发布
+
+发布时间：2024-01-30 01:08:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceAlarmEvents](https://cloud.tencent.com/document/api/236/103572)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 26 次发布
+
+发布时间：2024-01-30 01:16:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](https://cloud.tencent.com/document/api/1131/95522)
+
+	* 新增入参：ChannelId
+
+
+修改数据结构：
+
+* [PackageInfo](https://cloud.tencent.com/document/api/1131/76635#PackageInfo)
+
+	* 新增成员：ChannelId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 73 次发布
+
+发布时间：2024-01-30 01:24:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApplicationProxies](https://cloud.tencent.com/document/api/1552/80690)
+
+	* 新增入参：ZoneId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 74 次发布
+
+发布时间：2024-01-30 01:28:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AcquireLock
+* AnalyzeDependentTasks
+* BatchCreateTaskVersionAsync
+* BatchCreateVirtualTaskDs
+* BatchDeleteTasksDsAsync
+* BatchRunTasksDs
+* BatchUpdateTasksDs
+* CheckCustomFunctionPremise
+* CheckTaskNameExistDs
+* CheckTaskPriorityDs
+* ClearRecycleTask
+* CommitWorkflow
+* CompareDsTaskVersionInfo
+* CopyTaskDs
+* CopyWorkflowDs
+* CreateBrowsingHistory
+* CreateFileVersion
+* CreateLink
+* CreatePath
+* CreateProjectParamDs
+* CreateResourceDirectory
+* CreateScriptsImportTasksDs
+* CreateTaskDs
+* CreateTaskFolder
+* CreateTaskInParamDs
+* CreateTaskOutParamDs
+* CreateTaskOutputRegistries
+* CreateTaskOutputRegistry
+* CreateTaskParamDs
+* CreateWorkflowDs
+* DeleteBatchWorkflowDs
+* DeleteDsEvent
+* DeleteDsEventListener
+* DeleteDsEventPublisher
+* DeleteEventListenerByTaskId
+* DeleteLink
+* DeleteProjectParamVersionDs
+* DeleteRecordList
+* DeleteRecycleTask
+* DeleteResourcePath
+* DeleteTaskFolder
+* DeleteTaskInParamDs
+* DeleteTaskOutParamDs
+* DeleteTaskOutputRegistry
+* DescribeAllParamDs
+* DescribeBatchTestRun
+* DescribeBrowsingHistories
+* DescribeChildrenDs
+* DescribeChildrenPathTrees
+* DescribeCodeDetail
+* DescribeCodeDetailV2
+* DescribeCodeSearchAuditInfo
+* DescribeCodeSearchAuditInfoV2
+* DescribeCodeSearchCount
+* DescribeCodeSearchInfo
+* DescribeCodeSearchInfoV2
+* DescribeCrontabTopNDs
+* DescribeCustomFunctionVersionList
+* DescribeDataDevelopTaskType
+* DescribeDataTableImportProgress
+* DescribeDependTasksDevDs
+* DescribeDependencyTasksForProjectClone
+* DescribeDependencyWorkflowForProjectClone
+* DescribeDevelopmentSpaceSupportType
+* DescribeDsEvent
+* DescribeDsEventDetail
+* DescribeDsEventListener
+* DescribeDsEventListenerList
+* DescribeDsEventPublisher
+* DescribeDsEventPublisherList
+* DescribeDsKettleServerFolderTree
+* DescribeDsLatestTaskVersionInfo
+* DescribeDsNotSubmitTasksAndCanRunByWorkflow
+* DescribeDsTaskVersionInfo
+* DescribeDsTaskVersionList
+* DescribeEtlTaskType
+* DescribeEventListenerByTaskId
+* DescribeEventListenerTask
+* DescribeExecutionLog
+* DescribeFatherDatasourceInfoDs
+* DescribeFileVersions
+* DescribeGlobalWorkflowDs
+* DescribeImportableOfflineTask
+* DescribeInfoTransByTypeIdDs
+* DescribeLock
+* DescribeNewSqlTaskResult
+* DescribeParentTask
+* DescribePathTrees
+* DescribeProdWorkflowCanvasInfoDs
+* DescribeProjectParamDs
+* DescribeProjectParamDsPage
+* DescribeProjectParamVersionDs
+* DescribeProjectParamVersionInfoDs
+* DescribeRecordList
+* DescribeRecycleTaskDetail
+* DescribeRecycleTaskList
+* DescribeScriptsImportTaskType
+* DescribeSqlTaskResult
+* DescribeTaskBindVirtualTask
+* DescribeTaskDetailDs
+* DescribeTaskInParamDs
+* DescribeTaskLatestRunTime
+* DescribeTaskListByConditionDs
+* DescribeTaskOutParamDs
+* DescribeTaskOutputRegistries
+* DescribeTaskParamDs
+* DescribeTaskParentRunTime
+* DescribeTaskTypeByScriptType
+* DescribeTasksForProjectClone
+* DescribeTestRun
+* DescribeToken
+* DescribeWorkflowByFordIds
+* DescribeWorkflowCanvasInfoDs
+* DescribeWorkflowCanvasOpLogs
+* DescribeWorkflowCanvasOperators
+* DescribeWorkflowForProjectClone
+* DescribeWorkflowParamDs
+* DescribeWorkflowSchedulerInfoDs
+* DescribeWorkflowTasksForProjectClone
+* DownloadNewSqlResult
+* DownloadSqlResult
+* ExportDsEvent
+* ExportFiles
+* ExportProjectParamDs
+* ExportWorkflowXml
+* ExportWorkflowZip
+* FindDependTaskListDs
+* FindDependTaskListsDs
+* FindFuzzyTasksDs
+* FindTaskByRemotePath
+* GetAdvanceRunParams
+* GetBatchDetailErrorLog
+* GetCosToken
+* GetLatestAnalyseInfo
+* GetLatestTestRunInfo
+* GetPathTrees
+* GetResourceCosPath
+* GetResourcePathTree
+* GetRunSonListDs
+* GetTestRunTaskInstancesStatusInfo
+* HeartBeat
+* ImportDsEvent
+* ImportFiles
+* ImportOfflineTask
+* ImportProjectParamDs
+* ImportTableData
+* ImportWorkflowXml
+* ImportWorkflowZip
+* JudgeResourceFile
+* JudgeTaskListenEvent
+* KillTasksTestRun
+* ListBatchDetail
+* ListBatchJob
+* ModifyTaskFolder
+* ModifyTaskInfoDs
+* ModifyTaskLinksDs
+* ModifyTaskScriptDs
+* MoveFile
+* MoveTasksToFolder
+* PreviewDataTableCsv
+* QueryWorkflowVersion
+* RegisterDsEvent
+* RegisterDsEventListener
+* RegisterDsEventPublisher
+* ReleaseLock
+* RenameFile
+* RenameResource
+* RenameResourceFile
+* RenameResourcePath
+* RenameTaskDs
+* RenewWorkflowDs
+* RenewWorkflowFolderDs
+* RenewWorkflowOwnerDs
+* RenewWorkflowSchedulerInfoDs
+* ReplaceProjectParamVersionDs
+* RestoreRecycleTask
+* RollbackCustomFunctionVersion
+* SavePositionsDs
+* ScriptUsedByOtherTaskDs
+* StopAdhocTask
+* StopTestRun
+* SubmitBatchTestRun
+* SubmitIntegrationTask
+* SubmitPySparkTask
+* SubmitPythonTask
+* SubmitShellTask
+* SubmitTestRun
+* UpdateBatchTaskAdvancedSettings
+* UpdateBatchTaskDatasource
+* UpdateBatchTaskInCharge
+* UpdateBatchTaskParameter
+* UpdateBatchTaskParams
+* UpdateBatchTaskResourceGroup
+* UpdateBatchTaskSchedule
+* UpdateDsEvent
+* UpdateEventListener
+* UpdateTaskDs
+* UpdateWorkflowInfo
+* UploadAdvanceRunParams
+* UploadFilesDs
+* UploadResource
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AdhocRecordInfoDto
+* AdhocSubTaskDto
+* AlarmExtVO
+* AlarmVO
+* AnalyzeDependentTask
+* AsyncResourceVO
+* AttributeItemVO
+* BatchCreateVirtualTaskDTO
+* BatchJobVO
+* BatchResultDs
+* BatchTaskOperateNew
+* BizParams
+* BrowsingHistory
+* CheckTaskNameExistResult
+* CheckTaskPriorityTaskDTO
+* CloneObjectDTO
+* CloneTaskModeInfo
+* CloneTaskModePageInfoInfo
+* CodeDetailResult
+* CodeMatchInfo
+* CodeSearchAuditDTO
+* CodeSearchAuditInfo
+* CodeSearchAuditResult
+* CodeSearchCountInfo
+* CodeSearchInfo
+* CodeSearchInfoPage
+* CodeSearchResult
+* CollectionEventDTO
+* CollectionEventListenerTaskDTO
+* CollectionParamDTO
+* Columns
+* CosTokenResponse
+* CreateTaskOutputRegistry
+* CsvReadDTO
+* CsvRow
+* CustomizeBusinessEntityDTO
+* DeleteUserFileDTO
+* DependencyConfigDsDTO
+* DependencyConfigDsDTONoRecur
+* DependencyConfigDsDTONoRecurV3
+* DependencyStrategy
+* DependencyTaskDTO
+* DependencyWorkflowDTO
+* DescribeLockResp
+* DescribeTestRunBatchItem
+* DescribeWorkflowCanvasOplogRequestFilter
+* DsKettleServerFolderTreeNodeDto
+* EventDsDto
+* EventListenerDTO
+* EventListenerNewDTO
+* EventListenerTaskInfo
+* EventPublisherDTO
+* ExportEventDTO
+* ExportFile
+* ExportRequestInfo
+* ImportRequestInfo
+* ImportTableDTO
+* KillTestRunTasksResponseResult
+* LatestAnalyseInfoTask
+* LatestTestRunInfoTask
+* ListBatchJobPages
+* NewPathDTO
+* ParamDsRequest
+* ParamGetTaskInstancesStatusInfoResponseInstance
+* ParamGetTestRunTaskInstancesStatusInfoTask
+* ParamMapDsDto
+* ParamTaskDsRequest
+* ParameterInfoDsDto
+* ParameterVersionDsDto
+* Params
+* PathTreeNode
+* PathTreeNodeParams
+* ProjectCloneTaskInfo
+* ProjectCloneTaskInfoPageNew
+* ProjectCloneWorkflowInfo
+* ProjectCloneWorkflowInfoPageNew
+* RecycleFilePageInfo
+* RecycleTaskInfo
+* RecycleTaskPageInfo
+* RenameResourceDTO
+* RowColumn
+* ScriptTypeInfo
+* ShareStorageFileDTO
+* ShareStorageFileMappingDTO
+* SparkParameterDTO
+* SubCloneObjectDTO
+* TCHouseXTaskParameter
+* TableHybrisReq
+* TaskBaseInfo
+* TaskDataRegistry
+* TaskDataRegistryDTO
+* TaskDatasourceDTO
+* TaskDatasourceDTOPage
+* TaskDsDTO
+* TaskDsDTOLite
+* TaskDsDTOLiteV3
+* TaskDsDTONoRecur
+* TaskDsDTONoRecurV3
+* TaskDsDTOPage
+* TaskExtVO
+* TaskInfoWithInstance
+* TaskParentSchedulerDependency
+* TaskTypeExtParamVO
+* TaskTypeExtVO
+* TaskTypeVO
+* TaskVersionDsDTO
+* TestRunBatchItem
+* UpdateBatchTaskParameterDTO
+* UploadResourceRequestInfo
+* UserFileDTONew
+* UserFileVersionDto
+* VirtualTaskInfo
+* VirtualTaskInfoPage
+* WorkflowCanvasOpLogResult
+* WorkflowCanvasOperatorsDs
+* WorkflowCanvasOplog
+* WorkflowDsDTO
+* WorkflowDsDTOPage
+* WorkflowScheduleDtoDs
+* WorkflowVersionInfo
+
+
+
 # Release 3.0.1052.1
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
