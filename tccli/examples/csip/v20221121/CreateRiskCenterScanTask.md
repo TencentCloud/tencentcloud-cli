@@ -18,6 +18,10 @@ tccli csip CreateRiskCenterScanTask --cli-unfold-argument  \
     --ScanPlanContent abc \
     --SelfDefiningAssets abc \
     --ScanFrom abc \
+    --TaskAdvanceCFG.PortRisk.0.PortSets abc \
+    --TaskAdvanceCFG.PortRisk.0.CheckType 0 \
+    --TaskAdvanceCFG.PortRisk.0.Detail abc \
+    --TaskAdvanceCFG.PortRisk.0.Enable 0 \
     --TaskMode 0
 ```
 

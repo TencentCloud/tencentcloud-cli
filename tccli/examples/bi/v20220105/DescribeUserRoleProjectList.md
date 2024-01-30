@@ -6,15 +6,23 @@ Input:
 
 ```
 tccli bi DescribeUserRoleProjectList --cli-unfold-argument  \
-    --ProjectId 1 \
     --PageNo 0 \
-    --PageSize 10
+    --PageSize 0 \
+    --ProjectId 0 \
+    --IsOnlyBindAppUser True
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ErrorInfo": {
+            "ErrorTip": "abc",
+            "ErrorLevel": "abc",
+            "DocLink": "abc",
+            "FAQ": "abc",
+            "ReservedField": "abc"
+        },
         "Extra": "abc",
         "Data": {
             "Total": 0,
@@ -48,7 +56,11 @@ Output:
                     "PhoneNumber": "abc",
                     "AreaCode": "abc",
                     "RootAccount": true,
-                    "CorpAdmin": true
+                    "CorpAdmin": true,
+                    "AppUserId": "abc",
+                    "AppUserAliasName": "abc",
+                    "AppUserName": "abc",
+                    "InValidateAppRange": true
                 }
             ]
         },

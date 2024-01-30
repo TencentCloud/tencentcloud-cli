@@ -1321,7 +1321,7 @@
           "example": "\"xxx\"",
           "member": "string",
           "name": "DeviceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1331,7 +1331,7 @@
           "example": "\"xxx\"",
           "member": "string",
           "name": "DeviceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1341,7 +1341,7 @@
           "example": "2",
           "member": "int64",
           "name": "LicenseCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1351,7 +1351,7 @@
           "example": "30",
           "member": "int64",
           "name": "RemainDay",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1361,7 +1361,7 @@
           "example": "167840945",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1371,7 +1371,7 @@
           "example": "86400",
           "member": "string",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1381,8 +1381,18 @@
           "example": "无",
           "member": "string",
           "name": "LicenseIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每月license的限定时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "66000",
+          "member": "int64",
+          "name": "MonthlyRemainTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1560,6 +1570,7 @@
           "example": "无",
           "member": "Device",
           "name": "Devices",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1569,6 +1580,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1595,6 +1607,7 @@
           "example": "10",
           "member": "int64",
           "name": "Valid",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1604,6 +1617,7 @@
           "example": "8",
           "member": "int64",
           "name": "Bound",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1613,6 +1627,7 @@
           "example": "2",
           "member": "int64",
           "name": "UnBound",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1622,6 +1637,17 @@
           "example": "1",
           "member": "int64",
           "name": "Expire",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当月用量超时授权个数",
+          "example": "0",
+          "member": "int64",
+          "name": "MonthlyExpire",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1672,6 +1698,15 @@
           "name": "DeviceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "license状态：0:未绑定；1:已绑定；2:已停服；3:已退费",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1685,6 +1720,7 @@
           "example": "无",
           "member": "License",
           "name": "Licenses",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1694,6 +1730,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -23,8 +23,9 @@ Output:
                 "DeviceName": "xxx",
                 "LicenseCount": 2,
                 "RemainDay": 30,
-                "ExpireTime": 167840945,
-                "Duration": 86400,
+                "ExpireTime": "167840945",
+                "Duration": "86400",
+                "MonthlyRemainTime": 66000,
                 "LicenseIds": [
                     "trro-2e24a74a-67ea-1732-076d-75bf772529a",
                     "trro-2e24a74a-67ea-1732-073d-75bf772579a"
@@ -35,8 +36,9 @@ Output:
                 "DeviceName": "xxx",
                 "LicenseCount": 2,
                 "RemainDay": 30,
-                "ExpireTime": 167840945,
-                "Duration": 86400,
+                "ExpireTime": "167840945",
+                "Duration": "86400",
+                "MonthlyRemainTime": 66000,
                 "LicenseIds": [
                     "trro-2e24a74a-67ea-1732-076d-75bf772529a",
                     "trro-2e24a74a-67ea-1732-073d-75bf772579a"

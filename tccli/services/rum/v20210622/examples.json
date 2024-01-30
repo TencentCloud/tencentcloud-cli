@@ -214,14 +214,6 @@
         "title": "22"
       }
     ],
-    "DescribeDataPerformanceProject": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPerformanceProject\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取PerformanceProject信息"
-      }
-    ],
     "DescribeDataPvUrlInfo": [
       {
         "document": "",

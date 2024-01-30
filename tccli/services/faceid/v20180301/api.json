@@ -8167,7 +8167,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证成功时，是否跳过结果展示页面，自动跳转到RedirectURL，默认为false。",
+          "document": "开始验证时，是否跳过开始验证页面，如果为true直接进入验证流程，默认false。如果触发降级策略，此配置将不会生效。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSkipStartPage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "验证成功时，是否跳过结果展示页面，自动跳转到RedirectURL，默认false。",
           "example": "false",
           "member": "bool",
           "name": "AutoSkip",
