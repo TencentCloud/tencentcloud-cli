@@ -1,81 +1,30 @@
 # 本版本更新包含以下内容：
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 38 次发布
+### 第 86 次发布
 
-发布时间：2024-01-29 01:13:58
+发布时间：2024-01-30 01:08:43
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [EmrListInstance](http://document.tencentcloudapi.woa.com/document/product/589/33981#EmrListInstance)
+* [DescribeInstanceAlarmEvents](http://document.tencentcloudapi.woa.com/document/product/236/83245)
 
-	* 新增成员：IsDedicatedCluster
+新增数据结构：
 
-	* <font color="#dd0000">**修改成员**：</font>IsSupportOutsideCluster
-
-
+* [InstEventInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstEventInfo)
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
 ### 第 21 次发布
 
-发布时间：2024-01-29 01:17:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#InstanceDetail)
-
-	* 新增成员：ZoneList
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
-
-
-## 云数据库Redis(redis) 版本：2018-04-12
-
-### 第 36 次发布
-
-发布时间：2024-01-29 01:19:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceClusterShard](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceClusterShard)
-
-	* 新增成员：RunId
-
-* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
-
-	* 新增成员：IPv6
-
-* [Instances](http://document.tencentcloudapi.woa.com/document/product/239/20022#Instances)
-
-	* 新增成员：IPv6
-
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 50 次发布
-
-发布时间：2024-01-29 01:20:30
+发布时间：2024-01-30 01:17:39
 
 本次发布包含了以下内容：
 
@@ -83,54 +32,420 @@
 
 修改接口：
 
-* [DeleteCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41675)
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
 
-	* 新增入参：IsCheckResource
-
-	* 新增出参：TaskId
+	* 新增入参：ChannelId
 
 
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：ChannelId
 
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
 
-### 第 28 次发布
 
-发布时间：2024-01-29 01:22:39
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 51 次发布
+
+发布时间：2024-01-30 01:22:15
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeBillingData](http://document.tencentcloudapi.woa.com/document/product/1738/83242)
+* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
 
-新增数据结构：
+	* 新增入参：EncryptAlgorithms
 
-* [BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData)
-* [BillingDataFilter](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingDataFilter)
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 126 次发布
+### 第 127 次发布
 
-发布时间：2024-01-29 01:25:19
+发布时间：2024-01-30 01:27:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
 * [CreateNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83244)
+
+	* 新增入参：NatGatewayName, VpcId, NatType, InternetMaxBandwidthOut, MaxConcurrentConnection, AddressCount, Zone, Tags
+
+	* 新增出参：NatGatewaySet
+
 * [DeleteNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83243)
+
+	* 新增入参：NatGatewayId, NatType
+
+
+新增数据结构：
+
+* [DestinationIpPortTranslationNatRuleInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleInternal)
+* [NatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayInternal)
+
+修改数据结构：
+
+* [NatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGateway)
+
+	* 新增成员：NatType
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 31 次发布
+
+发布时间：2024-01-30 01:28:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AcquireLock
+* AnalyzeDependentTasks
+* BatchCreateTaskVersionAsync
+* BatchCreateVirtualTaskDs
+* BatchDeleteTasksDsAsync
+* BatchRunTasksDs
+* BatchUpdateTasksDs
+* CheckCustomFunctionPremise
+* CheckTaskNameExistDs
+* CheckTaskPriorityDs
+* ClearRecycleTask
+* CommitWorkflow
+* CompareDsTaskVersionInfo
+* CopyTaskDs
+* CopyWorkflowDs
+* CreateBrowsingHistory
+* CreateFileVersion
+* CreateLink
+* CreatePath
+* CreateProjectParamDs
+* CreateResourceDirectory
+* CreateScriptsImportTasksDs
+* CreateTaskDs
+* CreateTaskFolder
+* CreateTaskInParamDs
+* CreateTaskOutParamDs
+* CreateTaskOutputRegistries
+* CreateTaskOutputRegistry
+* CreateTaskParamDs
+* CreateWorkflowDs
+* DeleteBatchWorkflowDs
+* DeleteDsEvent
+* DeleteDsEventListener
+* DeleteDsEventPublisher
+* DeleteEventListenerByTaskId
+* DeleteLink
+* DeleteProjectParamVersionDs
+* DeleteRecordList
+* DeleteRecycleTask
+* DeleteResourcePath
+* DeleteTaskFolder
+* DeleteTaskInParamDs
+* DeleteTaskOutParamDs
+* DeleteTaskOutputRegistry
+* DescribeAllParamDs
+* DescribeBatchTestRun
+* DescribeBrowsingHistories
+* DescribeChildrenDs
+* DescribeChildrenPathTrees
+* DescribeCodeDetail
+* DescribeCodeDetailV2
+* DescribeCodeSearchAuditInfo
+* DescribeCodeSearchAuditInfoV2
+* DescribeCodeSearchCount
+* DescribeCodeSearchInfo
+* DescribeCodeSearchInfoV2
+* DescribeCrontabTopNDs
+* DescribeCustomFunctionVersionList
+* DescribeDataDevelopTaskType
+* DescribeDataTableImportProgress
+* DescribeDependTasksDevDs
+* DescribeDependencyTasksForProjectClone
+* DescribeDependencyWorkflowForProjectClone
+* DescribeDevelopmentSpaceSupportType
+* DescribeDsEvent
+* DescribeDsEventDetail
+* DescribeDsEventListener
+* DescribeDsEventListenerList
+* DescribeDsEventPublisher
+* DescribeDsEventPublisherList
+* DescribeDsKettleServerFolderTree
+* DescribeDsLatestTaskVersionInfo
+* DescribeDsNotSubmitTasksAndCanRunByWorkflow
+* DescribeDsTaskVersionInfo
+* DescribeDsTaskVersionList
+* DescribeEtlTaskType
+* DescribeEventListenerByTaskId
+* DescribeEventListenerTask
+* DescribeExecutionLog
+* DescribeFatherDatasourceInfoDs
+* DescribeFileVersions
+* DescribeGlobalWorkflowDs
+* DescribeImportableOfflineTask
+* DescribeInfoTransByTypeIdDs
+* DescribeLock
+* DescribeNewSqlTaskResult
+* DescribeParentTask
+* DescribePathTrees
+* DescribeProdWorkflowCanvasInfoDs
+* DescribeProjectParamDs
+* DescribeProjectParamDsPage
+* DescribeProjectParamVersionDs
+* DescribeProjectParamVersionInfoDs
+* DescribeRecordList
+* DescribeRecycleTaskDetail
+* DescribeRecycleTaskList
+* DescribeScriptsImportTaskType
+* DescribeSqlTaskResult
+* DescribeTaskBindVirtualTask
+* DescribeTaskDetailDs
+* DescribeTaskInParamDs
+* DescribeTaskLatestRunTime
+* DescribeTaskListByConditionDs
+* DescribeTaskOutParamDs
+* DescribeTaskOutputRegistries
+* DescribeTaskParamDs
+* DescribeTaskParentRunTime
+* DescribeTaskTypeByScriptType
+* DescribeTasksForProjectClone
+* DescribeTestRun
+* DescribeToken
+* DescribeWorkflowByFordIds
+* DescribeWorkflowCanvasInfoDs
+* DescribeWorkflowCanvasOpLogs
+* DescribeWorkflowCanvasOperators
+* DescribeWorkflowForProjectClone
+* DescribeWorkflowParamDs
+* DescribeWorkflowSchedulerInfoDs
+* DescribeWorkflowTasksForProjectClone
+* DownloadNewSqlResult
+* DownloadSqlResult
+* ExportDsEvent
+* ExportFiles
+* ExportProjectParamDs
+* ExportWorkflowXml
+* ExportWorkflowZip
+* FindDependTaskListDs
+* FindDependTaskListsDs
+* FindFuzzyTasksDs
+* FindTaskByRemotePath
+* GetAdvanceRunParams
+* GetBatchDetailErrorLog
+* GetCosToken
+* GetLatestAnalyseInfo
+* GetLatestTestRunInfo
+* GetPathTrees
+* GetResourceCosPath
+* GetResourcePathTree
+* GetRunSonListDs
+* GetTestRunTaskInstancesStatusInfo
+* HeartBeat
+* ImportDsEvent
+* ImportFiles
+* ImportOfflineTask
+* ImportProjectParamDs
+* ImportTableData
+* ImportWorkflowXml
+* ImportWorkflowZip
+* JudgeResourceFile
+* JudgeTaskListenEvent
+* KillTasksTestRun
+* ListBatchDetail
+* ListBatchJob
+* ModifyTaskFolder
+* ModifyTaskInfoDs
+* ModifyTaskLinksDs
+* ModifyTaskScriptDs
+* MoveFile
+* MoveTasksToFolder
+* PreviewDataTableCsv
+* QueryWorkflowVersion
+* RegisterDsEvent
+* RegisterDsEventListener
+* RegisterDsEventPublisher
+* ReleaseLock
+* RenameFile
+* RenameResource
+* RenameResourceFile
+* RenameResourcePath
+* RenameTaskDs
+* RenewWorkflowDs
+* RenewWorkflowFolderDs
+* RenewWorkflowOwnerDs
+* RenewWorkflowSchedulerInfoDs
+* ReplaceProjectParamVersionDs
+* RestoreRecycleTask
+* RollbackCustomFunctionVersion
+* SavePositionsDs
+* ScriptUsedByOtherTaskDs
+* StopAdhocTask
+* StopTestRun
+* SubmitBatchTestRun
+* SubmitIntegrationTask
+* SubmitPySparkTask
+* SubmitPythonTask
+* SubmitShellTask
+* SubmitTestRun
+* UpdateBatchTaskAdvancedSettings
+* UpdateBatchTaskDatasource
+* UpdateBatchTaskInCharge
+* UpdateBatchTaskParameter
+* UpdateBatchTaskParams
+* UpdateBatchTaskResourceGroup
+* UpdateBatchTaskSchedule
+* UpdateDsEvent
+* UpdateEventListener
+* UpdateTaskDs
+* UpdateWorkflowInfo
+* UploadAdvanceRunParams
+* UploadFilesDs
+* UploadResource
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AdhocRecordInfoDto
+* AdhocSubTaskDto
+* AlarmExtVO
+* AlarmVO
+* AnalyzeDependentTask
+* AsyncResourceVO
+* AttributeItemVO
+* BatchCreateVirtualTaskDTO
+* BatchJobVO
+* BatchResultDs
+* BatchTaskOperateNew
+* BizParams
+* BrowsingHistory
+* CheckTaskNameExistResult
+* CheckTaskPriorityTaskDTO
+* CloneObjectDTO
+* CloneTaskModeInfo
+* CloneTaskModePageInfoInfo
+* CodeDetailResult
+* CodeMatchInfo
+* CodeSearchAuditDTO
+* CodeSearchAuditInfo
+* CodeSearchAuditResult
+* CodeSearchCountInfo
+* CodeSearchInfo
+* CodeSearchInfoPage
+* CodeSearchResult
+* CollectionEventDTO
+* CollectionEventListenerTaskDTO
+* CollectionParamDTO
+* Columns
+* CosTokenResponse
+* CreateTaskOutputRegistry
+* CsvReadDTO
+* CsvRow
+* CustomizeBusinessEntityDTO
+* DeleteUserFileDTO
+* DependencyConfigDsDTO
+* DependencyConfigDsDTONoRecur
+* DependencyConfigDsDTONoRecurV3
+* DependencyStrategy
+* DependencyTaskDTO
+* DependencyWorkflowDTO
+* DescribeLockResp
+* DescribeTestRunBatchItem
+* DescribeWorkflowCanvasOplogRequestFilter
+* DsKettleServerFolderTreeNodeDto
+* EventDsDto
+* EventListenerDTO
+* EventListenerNewDTO
+* EventListenerTaskInfo
+* EventPublisherDTO
+* ExportEventDTO
+* ExportFile
+* ExportRequestInfo
+* ImportRequestInfo
+* ImportTableDTO
+* KillTestRunTasksResponseResult
+* LatestAnalyseInfoTask
+* LatestTestRunInfoTask
+* ListBatchJobPages
+* NewPathDTO
+* ParamDsRequest
+* ParamGetTaskInstancesStatusInfoResponseInstance
+* ParamGetTestRunTaskInstancesStatusInfoTask
+* ParamMapDsDto
+* ParamTaskDsRequest
+* ParameterInfoDsDto
+* ParameterVersionDsDto
+* Params
+* PathTreeNode
+* PathTreeNodeParams
+* ProjectCloneTaskInfo
+* ProjectCloneTaskInfoPageNew
+* ProjectCloneWorkflowInfo
+* ProjectCloneWorkflowInfoPageNew
+* RecycleFilePageInfo
+* RecycleTaskInfo
+* RecycleTaskPageInfo
+* RenameResourceDTO
+* RowColumn
+* ScriptTypeInfo
+* ShareStorageFileDTO
+* ShareStorageFileMappingDTO
+* SparkParameterDTO
+* SubCloneObjectDTO
+* TCHouseXTaskParameter
+* TableHybrisReq
+* TaskBaseInfo
+* TaskDataRegistry
+* TaskDataRegistryDTO
+* TaskDatasourceDTO
+* TaskDatasourceDTOPage
+* TaskDsDTO
+* TaskDsDTOLite
+* TaskDsDTOLiteV3
+* TaskDsDTONoRecur
+* TaskDsDTONoRecurV3
+* TaskDsDTOPage
+* TaskExtVO
+* TaskInfoWithInstance
+* TaskParentSchedulerDependency
+* TaskTypeExtParamVO
+* TaskTypeExtVO
+* TaskTypeVO
+* TaskVersionDsDTO
+* TestRunBatchItem
+* UpdateBatchTaskParameterDTO
+* UploadResourceRequestInfo
+* UserFileDTONew
+* UserFileVersionDto
+* VirtualTaskInfo
+* VirtualTaskInfoPage
+* WorkflowCanvasOpLogResult
+* WorkflowCanvasOperatorsDs
+* WorkflowCanvasOplog
+* WorkflowDsDTO
+* WorkflowDsDTOPage
+* WorkflowScheduleDtoDs
+* WorkflowVersionInfo
 
 
 
@@ -11203,6 +11518,22 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 86 次发布
+
+发布时间：2024-01-30 01:08:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstanceAlarmEvents](http://document.tencentcloudapi.woa.com/document/product/236/83245)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[InstEventInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstEventInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[InstEventInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstEventInfo))
 
 ### 第 85 次发布
 
@@ -49897,6 +50228,28 @@
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
+### 第 21 次发布
+
+发布时间：2024-01-30 01:17:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+
+	* 新增入参：ChannelId
+
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：ChannelId
+
+
 ### 第 20 次发布
 
 发布时间：2024-01-23 01:20:15
@@ -70032,6 +70385,21 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 51 次发布
+
+发布时间：2024-01-30 01:22:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
+
+	* 新增入参：EncryptAlgorithms
+
+
 ### 第 50 次发布
 
 发布时间：2024-01-29 01:20:30
@@ -79079,12 +79447,12 @@
 
 新增接口：
 
-* [[DescribeBillingData](http://document.tencentcloudapi.woa.com/document/product/1738/83242)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBillingData](http://document.tencentcloudapi.woa.com/document/product/1738/83242)
 
 新增数据结构：
 
-* [[BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData)](http://document.tencentcloudapi.woa.com/document/product/1738/81211#[BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData))
-* [[BillingDataFilter](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingDataFilter)](http://document.tencentcloudapi.woa.com/document/product/1738/81211#[BillingDataFilter](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingDataFilter))
+* [BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData)
+* [BillingDataFilter](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingDataFilter)
 
 ### 第 27 次发布
 
@@ -91311,6 +91679,39 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 127 次发布
+
+发布时间：2024-01-30 01:27:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83244)
+
+	* 新增入参：NatGatewayName, VpcId, NatType, InternetMaxBandwidthOut, MaxConcurrentConnection, AddressCount, Zone, Tags
+
+	* 新增出参：NatGatewaySet
+
+* [DeleteNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83243)
+
+	* 新增入参：NatGatewayId, NatType
+
+
+新增数据结构：
+
+* [[DestinationIpPortTranslationNatRuleInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleInternal)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[DestinationIpPortTranslationNatRuleInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleInternal))
+* [[NatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayInternal)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[NatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayInternal))
+
+修改数据结构：
+
+* [NatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGateway)
+
+	* 新增成员：NatType
+
+
 ### 第 126 次发布
 
 发布时间：2024-01-29 01:25:19
@@ -91321,8 +91722,8 @@
 
 新增接口：
 
-* [[CreateNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83244)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83243)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83244)
+* [DeleteNatGatewayInternal](http://document.tencentcloudapi.woa.com/document/product/215/83243)
 
 ### 第 125 次发布
 
@@ -96136,6 +96537,341 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 31 次发布
+
+发布时间：2024-01-30 01:28:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AcquireLock
+* AnalyzeDependentTasks
+* BatchCreateTaskVersionAsync
+* BatchCreateVirtualTaskDs
+* BatchDeleteTasksDsAsync
+* BatchRunTasksDs
+* BatchUpdateTasksDs
+* CheckCustomFunctionPremise
+* CheckTaskNameExistDs
+* CheckTaskPriorityDs
+* ClearRecycleTask
+* CommitWorkflow
+* CompareDsTaskVersionInfo
+* CopyTaskDs
+* CopyWorkflowDs
+* CreateBrowsingHistory
+* CreateFileVersion
+* CreateLink
+* CreatePath
+* CreateProjectParamDs
+* CreateResourceDirectory
+* CreateScriptsImportTasksDs
+* CreateTaskDs
+* CreateTaskFolder
+* CreateTaskInParamDs
+* CreateTaskOutParamDs
+* CreateTaskOutputRegistries
+* CreateTaskOutputRegistry
+* CreateTaskParamDs
+* CreateWorkflowDs
+* DeleteBatchWorkflowDs
+* DeleteDsEvent
+* DeleteDsEventListener
+* DeleteDsEventPublisher
+* DeleteEventListenerByTaskId
+* DeleteLink
+* DeleteProjectParamVersionDs
+* DeleteRecordList
+* DeleteRecycleTask
+* DeleteResourcePath
+* DeleteTaskFolder
+* DeleteTaskInParamDs
+* DeleteTaskOutParamDs
+* DeleteTaskOutputRegistry
+* DescribeAllParamDs
+* DescribeBatchTestRun
+* DescribeBrowsingHistories
+* DescribeChildrenDs
+* DescribeChildrenPathTrees
+* DescribeCodeDetail
+* DescribeCodeDetailV2
+* DescribeCodeSearchAuditInfo
+* DescribeCodeSearchAuditInfoV2
+* DescribeCodeSearchCount
+* DescribeCodeSearchInfo
+* DescribeCodeSearchInfoV2
+* DescribeCrontabTopNDs
+* DescribeCustomFunctionVersionList
+* DescribeDataDevelopTaskType
+* DescribeDataTableImportProgress
+* DescribeDependTasksDevDs
+* DescribeDependencyTasksForProjectClone
+* DescribeDependencyWorkflowForProjectClone
+* DescribeDevelopmentSpaceSupportType
+* DescribeDsEvent
+* DescribeDsEventDetail
+* DescribeDsEventListener
+* DescribeDsEventListenerList
+* DescribeDsEventPublisher
+* DescribeDsEventPublisherList
+* DescribeDsKettleServerFolderTree
+* DescribeDsLatestTaskVersionInfo
+* DescribeDsNotSubmitTasksAndCanRunByWorkflow
+* DescribeDsTaskVersionInfo
+* DescribeDsTaskVersionList
+* DescribeEtlTaskType
+* DescribeEventListenerByTaskId
+* DescribeEventListenerTask
+* DescribeExecutionLog
+* DescribeFatherDatasourceInfoDs
+* DescribeFileVersions
+* DescribeGlobalWorkflowDs
+* DescribeImportableOfflineTask
+* DescribeInfoTransByTypeIdDs
+* DescribeLock
+* DescribeNewSqlTaskResult
+* DescribeParentTask
+* DescribePathTrees
+* DescribeProdWorkflowCanvasInfoDs
+* DescribeProjectParamDs
+* DescribeProjectParamDsPage
+* DescribeProjectParamVersionDs
+* DescribeProjectParamVersionInfoDs
+* DescribeRecordList
+* DescribeRecycleTaskDetail
+* DescribeRecycleTaskList
+* DescribeScriptsImportTaskType
+* DescribeSqlTaskResult
+* DescribeTaskBindVirtualTask
+* DescribeTaskDetailDs
+* DescribeTaskInParamDs
+* DescribeTaskLatestRunTime
+* DescribeTaskListByConditionDs
+* DescribeTaskOutParamDs
+* DescribeTaskOutputRegistries
+* DescribeTaskParamDs
+* DescribeTaskParentRunTime
+* DescribeTaskTypeByScriptType
+* DescribeTasksForProjectClone
+* DescribeTestRun
+* DescribeToken
+* DescribeWorkflowByFordIds
+* DescribeWorkflowCanvasInfoDs
+* DescribeWorkflowCanvasOpLogs
+* DescribeWorkflowCanvasOperators
+* DescribeWorkflowForProjectClone
+* DescribeWorkflowParamDs
+* DescribeWorkflowSchedulerInfoDs
+* DescribeWorkflowTasksForProjectClone
+* DownloadNewSqlResult
+* DownloadSqlResult
+* ExportDsEvent
+* ExportFiles
+* ExportProjectParamDs
+* ExportWorkflowXml
+* ExportWorkflowZip
+* FindDependTaskListDs
+* FindDependTaskListsDs
+* FindFuzzyTasksDs
+* FindTaskByRemotePath
+* GetAdvanceRunParams
+* GetBatchDetailErrorLog
+* GetCosToken
+* GetLatestAnalyseInfo
+* GetLatestTestRunInfo
+* GetPathTrees
+* GetResourceCosPath
+* GetResourcePathTree
+* GetRunSonListDs
+* GetTestRunTaskInstancesStatusInfo
+* HeartBeat
+* ImportDsEvent
+* ImportFiles
+* ImportOfflineTask
+* ImportProjectParamDs
+* ImportTableData
+* ImportWorkflowXml
+* ImportWorkflowZip
+* JudgeResourceFile
+* JudgeTaskListenEvent
+* KillTasksTestRun
+* ListBatchDetail
+* ListBatchJob
+* ModifyTaskFolder
+* ModifyTaskInfoDs
+* ModifyTaskLinksDs
+* ModifyTaskScriptDs
+* MoveFile
+* MoveTasksToFolder
+* PreviewDataTableCsv
+* QueryWorkflowVersion
+* RegisterDsEvent
+* RegisterDsEventListener
+* RegisterDsEventPublisher
+* ReleaseLock
+* RenameFile
+* RenameResource
+* RenameResourceFile
+* RenameResourcePath
+* RenameTaskDs
+* RenewWorkflowDs
+* RenewWorkflowFolderDs
+* RenewWorkflowOwnerDs
+* RenewWorkflowSchedulerInfoDs
+* ReplaceProjectParamVersionDs
+* RestoreRecycleTask
+* RollbackCustomFunctionVersion
+* SavePositionsDs
+* ScriptUsedByOtherTaskDs
+* StopAdhocTask
+* StopTestRun
+* SubmitBatchTestRun
+* SubmitIntegrationTask
+* SubmitPySparkTask
+* SubmitPythonTask
+* SubmitShellTask
+* SubmitTestRun
+* UpdateBatchTaskAdvancedSettings
+* UpdateBatchTaskDatasource
+* UpdateBatchTaskInCharge
+* UpdateBatchTaskParameter
+* UpdateBatchTaskParams
+* UpdateBatchTaskResourceGroup
+* UpdateBatchTaskSchedule
+* UpdateDsEvent
+* UpdateEventListener
+* UpdateTaskDs
+* UpdateWorkflowInfo
+* UploadAdvanceRunParams
+* UploadFilesDs
+* UploadResource
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AdhocRecordInfoDto
+* AdhocSubTaskDto
+* AlarmExtVO
+* AlarmVO
+* AnalyzeDependentTask
+* AsyncResourceVO
+* AttributeItemVO
+* BatchCreateVirtualTaskDTO
+* BatchJobVO
+* BatchResultDs
+* BatchTaskOperateNew
+* BizParams
+* BrowsingHistory
+* CheckTaskNameExistResult
+* CheckTaskPriorityTaskDTO
+* CloneObjectDTO
+* CloneTaskModeInfo
+* CloneTaskModePageInfoInfo
+* CodeDetailResult
+* CodeMatchInfo
+* CodeSearchAuditDTO
+* CodeSearchAuditInfo
+* CodeSearchAuditResult
+* CodeSearchCountInfo
+* CodeSearchInfo
+* CodeSearchInfoPage
+* CodeSearchResult
+* CollectionEventDTO
+* CollectionEventListenerTaskDTO
+* CollectionParamDTO
+* Columns
+* CosTokenResponse
+* CreateTaskOutputRegistry
+* CsvReadDTO
+* CsvRow
+* CustomizeBusinessEntityDTO
+* DeleteUserFileDTO
+* DependencyConfigDsDTO
+* DependencyConfigDsDTONoRecur
+* DependencyConfigDsDTONoRecurV3
+* DependencyStrategy
+* DependencyTaskDTO
+* DependencyWorkflowDTO
+* DescribeLockResp
+* DescribeTestRunBatchItem
+* DescribeWorkflowCanvasOplogRequestFilter
+* DsKettleServerFolderTreeNodeDto
+* EventDsDto
+* EventListenerDTO
+* EventListenerNewDTO
+* EventListenerTaskInfo
+* EventPublisherDTO
+* ExportEventDTO
+* ExportFile
+* ExportRequestInfo
+* ImportRequestInfo
+* ImportTableDTO
+* KillTestRunTasksResponseResult
+* LatestAnalyseInfoTask
+* LatestTestRunInfoTask
+* ListBatchJobPages
+* NewPathDTO
+* ParamDsRequest
+* ParamGetTaskInstancesStatusInfoResponseInstance
+* ParamGetTestRunTaskInstancesStatusInfoTask
+* ParamMapDsDto
+* ParamTaskDsRequest
+* ParameterInfoDsDto
+* ParameterVersionDsDto
+* Params
+* PathTreeNode
+* PathTreeNodeParams
+* ProjectCloneTaskInfo
+* ProjectCloneTaskInfoPageNew
+* ProjectCloneWorkflowInfo
+* ProjectCloneWorkflowInfoPageNew
+* RecycleFilePageInfo
+* RecycleTaskInfo
+* RecycleTaskPageInfo
+* RenameResourceDTO
+* RowColumn
+* ScriptTypeInfo
+* ShareStorageFileDTO
+* ShareStorageFileMappingDTO
+* SparkParameterDTO
+* SubCloneObjectDTO
+* TCHouseXTaskParameter
+* TableHybrisReq
+* TaskBaseInfo
+* TaskDataRegistry
+* TaskDataRegistryDTO
+* TaskDatasourceDTO
+* TaskDatasourceDTOPage
+* TaskDsDTO
+* TaskDsDTOLite
+* TaskDsDTOLiteV3
+* TaskDsDTONoRecur
+* TaskDsDTONoRecurV3
+* TaskDsDTOPage
+* TaskExtVO
+* TaskInfoWithInstance
+* TaskParentSchedulerDependency
+* TaskTypeExtParamVO
+* TaskTypeExtVO
+* TaskTypeVO
+* TaskVersionDsDTO
+* TestRunBatchItem
+* UpdateBatchTaskParameterDTO
+* UploadResourceRequestInfo
+* UserFileDTONew
+* UserFileVersionDto
+* VirtualTaskInfo
+* VirtualTaskInfoPage
+* WorkflowCanvasOpLogResult
+* WorkflowCanvasOperatorsDs
+* WorkflowCanvasOplog
+* WorkflowDsDTO
+* WorkflowDsDTOPage
+* WorkflowScheduleDtoDs
+* WorkflowVersionInfo
 
 ### 第 30 次发布
 

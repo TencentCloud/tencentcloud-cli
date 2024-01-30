@@ -2260,11 +2260,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量值（bit）",
+          "document": "流量值（byte）",
           "example": "98",
           "member": "float",
           "name": "Current",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2274,7 +2274,7 @@
           "example": "1690424186",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

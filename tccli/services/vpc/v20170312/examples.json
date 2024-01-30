@@ -575,8 +575,8 @@
     "CreateNatGatewayInternal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatGatewayInternal\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatGatewayInternal\n<公共请求参数>\n\n{\n    \"NatGatewayName\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"MaxConcurrentConnection\": 1,\n    \"AddressCount\": 1,\n    \"Zone\": \"abc\",\n    \"Tags\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"abc\",\n                \"NatGatewayName\": \"abc\",\n                \"CreatedTime\": \"abc\",\n                \"InternetMaxBandwidthOut\": 1,\n                \"MaxConcurrentConnection\": 1,\n                \"PublicIpAddressSet\": [\n                    {\n                        \"AddressId\": \"abc\",\n                        \"PublicIpAddress\": \"abc\",\n                        \"IsBlocked\": true,\n                        \"BlockType\": \"abc\"\n                    }\n                ],\n                \"NetworkState\": \"abc\",\n                \"DestinationIpPortTranslationNatRuleSet\": [\n                    {\n                        \"IpProtocol\": \"abc\",\n                        \"PublicIpAddress\": \"abc\",\n                        \"PublicPort\": 1,\n                        \"PrivateIpAddress\": \"abc\",\n                        \"PrivatePort\": 1,\n                        \"Description\": \"abc\",\n                        \"CreatedTime\": \"2024-01-16 00:00:00\"\n                    }\n                ],\n                \"VpcId\": \"abc\",\n                \"Zone\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"GatewayType\": \"abc\",\n                \"NatType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建Nat内部实例"
       }
     ],
@@ -1125,7 +1125,7 @@
     "DeleteNatGatewayInternal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayInternal\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNatGatewayInternal\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-12345678\",\n    \"NatType\": \"TCB\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除NAT网关实例"
       }

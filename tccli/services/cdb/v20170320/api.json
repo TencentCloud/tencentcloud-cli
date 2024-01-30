@@ -560,6 +560,13 @@
       "output": "DescribeErrorLogDataResponse",
       "status": "online"
     },
+    "DescribeInstanceAlarmEvents": {
+      "document": "查询实例发生的事件信息",
+      "input": "DescribeInstanceAlarmEventsRequest",
+      "name": "查询实例发生的事件信息",
+      "output": "DescribeInstanceAlarmEventsResponse",
+      "status": "online"
+    },
     "DescribeInstanceParamRecords": {
       "document": "该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。",
       "input": "DescribeInstanceParamRecordsRequest",
@@ -10431,6 +10438,116 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceAlarmEventsRequest": {
+      "document": "DescribeInstanceAlarmEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "\"cdb-0mu6taqx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件查询范围开始时间，闭区间。",
+          "example": "\"2024-01-15 00:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件查询范围截止时间，闭区间。",
+          "example": "\"2024-01-30 00:00:00\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件名称。\nOutofmemory - 内存OOM（有状态事件）\nSwitch - 主从切换（有状态事件）\nRoremove - 只读实例剔除（有状态事件）\nBackendInstanceMigration - 服务器故障导致实例迁移（有状态事件）\nMemoryUsedHigh - 内存使用率过高（有状态事件）\n\nCPUExpansion - CPU性能扩容（无状态事件）\nCPUExpansionFailed - CPU性能扩容失败（无状态事件）\nCPUContraction - CPU性能回缩（无状态事件）\n\n具体事件信息描述见：https://cloud.tencent.com/document/product/248/87533",
+          "example": "[\"Switch\"]",
+          "member": "string",
+          "name": "EventName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "事件状态。\"1\" - 发生事件；\"0\" - 恢复事件；\"-\" - 无状态事件。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "EventStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。按事件发生事件进行排序，\"DESC\"-倒排；”ASC“-正序，默认倒排。",
+          "example": "\"DESC\"",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件展示数量。",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAlarmEventsResponse": {
+      "document": "DescribeInstanceAlarmEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "98",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstEventInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceParamRecordsRequest": {
       "document": "DescribeInstanceParamRecords请求参数结构体",
       "members": [
@@ -12873,6 +12990,42 @@
         }
       ],
       "type": "object"
+    },
+    "InstEventInfo": {
+      "document": "实例事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Switch\"",
+          "member": "string",
+          "name": "EventName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "EventStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件发生时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”2024-01-17 06:10:59“",
+          "member": "string",
+          "name": "OccurTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstanceAuditLogFilters": {
       "document": "审计日志搜索过滤器",

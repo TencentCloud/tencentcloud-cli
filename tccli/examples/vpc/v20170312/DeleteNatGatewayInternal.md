@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli vpc DeleteNatGatewayInternal --cli-unfold-argument ```
+tccli vpc DeleteNatGatewayInternal --cli-unfold-argument  \
+    --NatGatewayId nat-12345678 \
+    --NatType TCB
+```
 
 Output: 
 ```
