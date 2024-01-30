@@ -7581,6 +7581,52 @@
       ],
       "usage": "out"
     },
+    "PortRiskAdvanceCFGParamItem": {
+      "document": "端口风险高级配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口集合,以逗号分隔",
+          "example": "80,443",
+          "member": "string",
+          "name": "PortSets",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测项类型，0-系统定义，1-用户自定义",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测项描述",
+          "example": "xx",
+          "member": "string",
+          "name": "Detail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用，1-启用，0-禁用",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "PortViewPortRisk": {
       "document": "端口视角的端口风险对象",
       "members": [
@@ -8951,13 +8997,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "端口风险高级配置",
+          "example": "无",
+          "member": "PortRiskAdvanceCFGParamItem",
+          "name": "PortRisk",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "漏洞风险高级配置",
           "example": "无",
           "member": "TaskCenterVulRiskInputParam",
           "name": "VulRisk",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8966,8 +9020,7 @@
           "member": "TaskCenterWeakPwdRiskInputParam",
           "name": "WeakPwdRisk",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8976,8 +9029,7 @@
           "member": "TaskCenterCFGRiskInputParam",
           "name": "CFGRisk",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"

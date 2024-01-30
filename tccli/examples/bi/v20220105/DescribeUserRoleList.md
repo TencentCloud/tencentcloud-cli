@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: 用户信息列表**
 
 用户信息列表
 
@@ -6,16 +6,26 @@ Input:
 
 ```
 tccli bi DescribeUserRoleList --cli-unfold-argument  \
-    --UserType  \
-    --Keyword  \
     --PageNo 0 \
-    --PageSize 20
+    --PageSize 0 \
+    --AllPage True \
+    --UserType abc \
+    --Keyword abc \
+    --ProjectId abc \
+    --IsOnlyBindAppUser True
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ErrorInfo": {
+            "ErrorTip": "abc",
+            "ErrorLevel": "abc",
+            "DocLink": "abc",
+            "FAQ": "abc",
+            "ReservedField": "abc"
+        },
         "Extra": "abc",
         "Data": {
             "Total": 0,
@@ -49,7 +59,11 @@ Output:
                     "PhoneNumber": "abc",
                     "AreaCode": "abc",
                     "RootAccount": true,
-                    "CorpAdmin": true
+                    "CorpAdmin": true,
+                    "AppUserId": "abc",
+                    "AppUserAliasName": "abc",
+                    "AppUserName": "abc",
+                    "InValidateAppRange": true
                 }
             ]
         },

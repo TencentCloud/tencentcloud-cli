@@ -1,7 +1,7 @@
 {
   "actions": {
     "BatchUpdateFirmware": {
-      "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件 ",
+      "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件",
       "input": "BatchUpdateFirmwareRequest",
       "name": "批量更新固件",
       "output": "BatchUpdateFirmwareResponse",
@@ -344,7 +344,7 @@
       "status": "online"
     },
     "ListFirmwares": {
-      "document": "本接口（ListFirmwares）用于获取固件列表 ",
+      "document": "本接口（ListFirmwares）用于获取固件列表",
       "input": "ListFirmwaresRequest",
       "name": "获取固件列表",
       "output": "ListFirmwaresResponse",
@@ -469,6 +469,13 @@
       "output": "UpdateDevicesEnableStateResponse",
       "status": "online"
     },
+    "UpdateOtaTaskStatus": {
+      "document": "本接口（UpdateOtaTask）当固件升级大任务处于没有在全部成功的状态时，可修改为取消状态，取消部分或全部设备的升级;或其它允许的可修改的状态",
+      "input": "UpdateOtaTaskStatusRequest",
+      "name": "更新固件升级任务状态",
+      "output": "UpdateOtaTaskStatusResponse",
+      "status": "online"
+    },
     "UpdatePrivateCA": {
       "document": "更新私有CA证书",
       "input": "UpdatePrivateCARequest",
@@ -498,7 +505,7 @@
       "status": "online"
     },
     "UploadFirmware": {
-      "document": "本接口（UploadFirmware）用于上传设备固件信息 ",
+      "document": "本接口（UploadFirmware）用于上传设备固件信息",
       "input": "UploadFirmwareRequest",
       "name": "上传固件信息",
       "output": "UploadFirmwareResponse",
@@ -611,6 +618,15 @@
           "name": "TimeoutInterval",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务类型，默认静态升级值为空或1，动态升级值为7。",
+          "example": "7",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -624,7 +640,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4370,6 +4386,15 @@
           "name": "FirmwareDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件用户自定义配置信息",
+          "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
+          "member": "string",
+          "name": "FirmwareUserDefined",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4735,7 +4760,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4745,7 +4770,7 @@
           "example": "无",
           "member": "FirmwareInfo",
           "name": "Firmwares",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6644,6 +6669,51 @@
       ],
       "type": "object"
     },
+    "UpdateOtaTaskStatusRequest": {
+      "document": "UpdateOtaTaskStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "ABCDE12345",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务ID",
+          "example": "11236",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固件任务取消状态",
+          "example": "6",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOtaTaskStatusResponse": {
+      "document": "UpdateOtaTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdatePrivateCARequest": {
       "document": "UpdatePrivateCA请求参数结构体",
       "members": [
@@ -6917,6 +6987,15 @@
           "example": "1.0.0",
           "member": "string",
           "name": "FirmwareDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件用户自定义配置信息",
+          "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
+          "member": "string",
+          "name": "FirmwareUserDefined",
           "required": false,
           "type": "string"
         }

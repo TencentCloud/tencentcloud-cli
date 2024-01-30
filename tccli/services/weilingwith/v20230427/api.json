@@ -3859,6 +3859,24 @@
           "name": "GroupIdSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否激活，默认全部，\"1\"激活，\"0\"未激活",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "IsActive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为摄像头，默认全部，\"true\"摄像头，\"false\"非摄像头",
+          "example": "\"false\"",
+          "member": "string",
+          "name": "IsCamera",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6615,7 +6633,7 @@
         },
         {
           "disabled": false,
-          "document": "产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ProductAbility",
@@ -6749,6 +6767,26 @@
           "example": "xx/xx/xx",
           "member": "string",
           "name": "GroupInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通信在/离线状态（online=normal+fault，offline）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online",
+          "member": "string",
+          "name": "DeviceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备业务状态（normal、fault、offline）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8727,8 +8765,8 @@
         },
         {
           "disabled": false,
-          "document": "产品能力:信令数据、音视频，用二进制表示，第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "daga",
+          "document": "产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "ProductAbility",
           "output_required": false,

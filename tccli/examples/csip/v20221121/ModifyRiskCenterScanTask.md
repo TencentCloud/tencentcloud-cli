@@ -18,6 +18,10 @@ tccli csip ModifyRiskCenterScanTask --cli-unfold-argument  \
     --ScanPlanContent abc \
     --SelfDefiningAssets abc \
     --TaskId abc \
+    --TaskAdvanceCFG.PortRisk.0.PortSets abc \
+    --TaskAdvanceCFG.PortRisk.0.CheckType 0 \
+    --TaskAdvanceCFG.PortRisk.0.Detail abc \
+    --TaskAdvanceCFG.PortRisk.0.Enable 0 \
     --TaskAdvanceCFG.VulRisk.0.RiskId abc \
     --TaskAdvanceCFG.VulRisk.0.Enable 0 \
     --TaskAdvanceCFG.WeakPwdRisk.0.CheckItemId 0 \

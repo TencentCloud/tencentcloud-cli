@@ -855,11 +855,11 @@
       "status": "online"
     },
     "DescribeAttackLogInfo": {
-      "document": "网络攻击日志详情",
+      "document": "DescribeAttackEventInfo 接口替代\n\n网络攻击日志详情",
       "input": "DescribeAttackLogInfoRequest",
       "name": "网络攻击日志详情",
       "output": "DescribeAttackLogInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAttackLogs": {
       "document": "按分页形式展示网络攻击日志列表",

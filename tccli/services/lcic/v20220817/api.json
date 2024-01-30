@@ -2947,6 +2947,15 @@
           "name": "RoomId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求RTMP推流链接，0：否，1：是，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RTMPStreamingURL",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3220,6 +3229,16 @@
           "example": "无",
           "member": "string",
           "name": "RecordBackground",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RTMP推流链接",
+          "example": "无",
+          "member": "string",
+          "name": "RTMPStreamingURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -16,6 +16,13 @@ Output:
 ```
 {
     "Response": {
+        "ErrorInfo": {
+            "ErrorTip": "abc",
+            "ErrorLevel": "abc",
+            "DocLink": "abc",
+            "FAQ": "abc",
+            "ReservedField": "abc"
+        },
         "Extra": "abc",
         "Msg": "abc",
         "Data": {
@@ -42,7 +49,19 @@ Output:
                     ],
                     "PanelScope": "abc",
                     "IsExternalManage": true,
-                    "ManagePlatform": "abc"
+                    "ManagePlatform": "abc",
+                    "ConfigList": [
+                        {
+                            "ModuleGroup": "abc",
+                            "Components": [
+                                {
+                                    "ModuleId": "abc",
+                                    "IncludeType": "abc",
+                                    "Params": "abc"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "Total": 1,

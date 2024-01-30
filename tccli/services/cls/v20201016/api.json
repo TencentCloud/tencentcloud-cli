@@ -49,6 +49,13 @@
       "output": "CreateAlarmNoticeResponse",
       "status": "online"
     },
+    "CreateAlarmShield": {
+      "document": "该接口用于创建告警屏蔽规则。",
+      "input": "CreateAlarmShieldRequest",
+      "name": "创建告警屏蔽规则",
+      "output": "CreateAlarmShieldResponse",
+      "status": "online"
+    },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
@@ -161,6 +168,13 @@
       "output": "DeleteAlarmNoticeResponse",
       "status": "online"
     },
+    "DeleteAlarmShield": {
+      "document": "该接口用于删除告警屏蔽规则。",
+      "input": "DeleteAlarmShieldRequest",
+      "name": "删除告警屏蔽规则",
+      "output": "DeleteAlarmShieldResponse",
+      "status": "online"
+    },
     "DeleteConfig": {
       "document": "删除采集规则配置",
       "input": "DeleteConfigRequest",
@@ -264,6 +278,13 @@
       "input": "DescribeAlarmNoticesRequest",
       "name": "获取通知渠道组列表",
       "output": "DescribeAlarmNoticesResponse",
+      "status": "online"
+    },
+    "DescribeAlarmShields": {
+      "document": "获取告警屏蔽配置规则",
+      "input": "DescribeAlarmShieldsRequest",
+      "name": "获取告警屏蔽配置规则",
+      "output": "DescribeAlarmShieldsResponse",
       "status": "online"
     },
     "DescribeAlarms": {
@@ -467,6 +488,13 @@
       "input": "ModifyAlarmNoticeRequest",
       "name": "修改通知渠道组",
       "output": "ModifyAlarmNoticeResponse",
+      "status": "online"
+    },
+    "ModifyAlarmShield": {
+      "document": "该接口用于修改告警屏蔽规则。",
+      "input": "ModifyAlarmShieldRequest",
+      "name": "修改告警屏蔽",
+      "output": "ModifyAlarmShieldResponse",
       "status": "online"
     },
     "ModifyConfig": {
@@ -999,6 +1027,132 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmShieldInfo": {
+      "document": "告警屏蔽任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知渠道组Id",
+          "example": "notice-ea115e5a-04c4-421e-9ba3-fb177e9025cb",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则id",
+          "example": "ea115e5a-04c4-421e-9ba3-fb177e9025cb",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽开始时间（秒级时间戳）。",
+          "example": "1701933943",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽结束时间（秒级时间戳）。",
+          "example": "1701993943",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型。1：屏蔽所有通知，2：按照Rule参数屏蔽匹配规则的通知。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\"]\",\"Type\":\"Value\"}]}]}",
+          "member": "string",
+          "name": "Rule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽原因。",
+          "example": "发布，暂时屏蔽",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建来源。\n1. 控制台，2.api，3.告警通知",
+          "example": "1",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者。",
+          "example": "100001（张三）",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则状态。\n0：暂未生效，1：生效中，2：已失效",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间。",
+          "example": "1701933943",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则更新时间。",
+          "example": "1701933943",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2844,6 +2998,88 @@
           "example": "alarm-479dec34-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmShieldRequest": {
+      "document": "CreateAlarmShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知渠道组id。",
+          "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽开始时间（秒级时间戳）。",
+          "example": "1701872657",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽结束时间（秒级时间戳）。",
+          "example": "1701883657",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型。1：屏蔽所有通知，2：按照Rule参数屏蔽匹配规则的通知。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽原因。",
+          "example": "屏蔽原因",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\\\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\\\"]\",\"Type\":\"Value\"}]}]}",
+          "member": "string",
+          "name": "Rule",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmShieldResponse": {
+      "document": "CreateAlarmShield返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽规则ID。",
+          "example": "cb37f589-6232-431a-xxxx-e2b61fb375d1",
+          "member": "string",
+          "name": "TaskId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4775,6 +5011,42 @@
       ],
       "type": "object"
     },
+    "DeleteAlarmShieldRequest": {
+      "document": "DeleteAlarmShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽规则id。",
+          "example": "bb42f112-a74d-456e-b3c4-ff5472911b42",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知渠道组id。",
+          "example": "notice-bb42f112-a74d-456e-b3c4-ff5472911b42",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAlarmShieldResponse": {
+      "document": "DeleteAlarmShield返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConfigExtraRequest": {
       "document": "DeleteConfigExtra请求参数结构体",
       "members": [
@@ -5243,6 +5515,80 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmShieldsRequest": {
+      "document": "DescribeAlarmShields请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知渠道组id。",
+          "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- taskId:按照【规则id】进行过滤。类型：String  必选：否\n- status:按照【规则状态】进行过滤。类型：String。 支持 0:暂未生效，1:生效中，2:已失效。 必选：否\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmShieldsResponse": {
+      "document": "DescribeAlarmShields返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的规则总数目",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警屏蔽规则详情",
+          "example": "无",
+          "member": "AlarmShieldInfo",
+          "name": "AlarmShields",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9202,6 +9548,96 @@
     },
     "ModifyAlarmResponse": {
       "document": "ModifyAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmShieldRequest": {
+      "document": "ModifyAlarmShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽规则ID。",
+          "example": "cb37f589-6232-431a-xxxx-e2b61fb375d1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知渠道组id。",
+          "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
+          "member": "string",
+          "name": "AlarmNoticeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽开始时间（秒级时间戳）。",
+          "example": "1701872657",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽结束时间（秒级时间戳）。",
+          "example": "1701883657",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型。1：屏蔽所有通知，2：按照Rule参数屏蔽匹配规则的通知。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\"]\",\"Type\":\"Value\"}]}]}",
+          "member": "string",
+          "name": "Rule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽原因。",
+          "example": "屏蔽原因",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmShieldResponse": {
+      "document": "ModifyAlarmShield返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

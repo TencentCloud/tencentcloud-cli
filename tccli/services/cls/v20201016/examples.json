@@ -56,6 +56,14 @@
         "title": "创建通知渠道组"
       }
     ],
+    "CreateAlarmShield": [
+      {
+        "document": "创建告警屏蔽",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmShield\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"StartTime\": 1701872657,\n    \"EndTime\": 1701883657,\n    \"Type\": 1,\n    \"Rule\": \"\",\n    \"Reason\": \"系统发布，暂时屏蔽\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
+        "title": "创建告警屏蔽"
+      }
+    ],
     "CreateConfig": [
       {
         "document": "创建采集规则配置",
@@ -184,6 +192,14 @@
         "title": "删除通知渠道组"
       }
     ],
+    "DeleteAlarmShield": [
+      {
+        "document": "删除告警屏蔽",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmShield\n<公共请求参数>\n\n{\n    \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
+        "title": "删除告警屏蔽"
+      }
+    ],
     "DeleteConfig": [
       {
         "document": "",
@@ -302,6 +318,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmNotices\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AlarmNotices\": [],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取通知渠道组列表"
+      }
+    ],
+    "DescribeAlarmShields": [
+      {
+        "document": "获取告警屏蔽配置信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmShields\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-ea115e5a-04c4-421e-9ba3-fb177e9025cb\",\n    \"Filters\": [\n        {\n            \"Key\": \"status\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AlarmShields\": [\n            {\n                \"AlarmNoticeId\": \"notice-ea115e5a-04c4-421e-9ba3-fb177e9025cb\",\n                \"TaskId\": \"ea115e5a-04c4-421e-9ba3-fb177e9025cb\",\n                \"StartTime\": 1701933943,\n                \"EndTime\": 1701993943,\n                \"Type\": 1,\n                \"Rule\": \"\",\n                \"Reason\": \"系统发布，暂时屏蔽\",\n                \"Source\": 1,\n                \"Operator\": \"1001（张三）\",\n                \"Status\": 1,\n                \"CreateTime\": 1701933943,\n                \"UpdateTime\": 1701933943\n            }\n        ],\n        \"RequestId\": \"11115e5a-04c4-421e-9ba3-fb177e902511\"\n    }\n}",
+        "title": "获取告警屏蔽配置信息"
       }
     ],
     "DescribeAlarms": [
@@ -540,6 +564,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmNotice\n<公共请求参数>\n\n{\n    \"AlarmNoticeId\": \"notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89\",\n    \"Name\": \"test\",\n    \"Type\": \"All\",\n    \"WebCallbacks\": [\n        {\n            \"CallbackType\": \"Http\",\n            \"Url\": \"http://www.testnotice.com/callback\",\n            \"Method\": \"POST\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改通知渠道组"
+      }
+    ],
+    "ModifyAlarmShield": [
+      {
+        "document": "修改告警屏蔽",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmShield\n<公共请求参数>\n\n{\n    \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"StartTime\": 1701872657,\n    \"EndTime\": 1701892657,\n    \"Type\": 1,\n    \"Rule\": \"\",\n    \"Reason\": \"修改原因\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
+        "title": "修改告警屏蔽"
       }
     ],
     "ModifyConfig": [

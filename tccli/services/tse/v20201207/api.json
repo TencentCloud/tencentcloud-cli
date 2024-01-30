@@ -572,7 +572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型，Pods或Percent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，Pods\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Pods",
           "member": "string",
           "name": "Type",
@@ -611,7 +611,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "稳定窗口时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "稳定窗口时间，扩容时默认0，缩容时默认300\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "300",
           "member": "int64",
           "name": "StabilizationWindowSeconds",
@@ -633,7 +633,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩缩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AutoScalerPolicy",
           "name": "Policies",
@@ -1588,12 +1588,12 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启指标伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1604,7 +1604,7 @@
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "CreateTime",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1615,7 +1615,7 @@
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "ModifyTime",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1626,7 +1626,7 @@
           "example": "strategy-448e24f7",
           "member": "string",
           "name": "StrategyId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1637,7 +1637,7 @@
           "example": "autoscaler-92aaca7b",
           "member": "string",
           "name": "AutoScalerId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1661,30 +1661,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标类型\n- Resource",
           "example": "Resource",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标资源名称\n- cpu\n- memory\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cpu",
           "member": "string",
           "name": "ResourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "指标目标类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标目标类型，目前只支持百分比Utilization\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Utilization",
           "member": "string",
           "name": "TargetType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1695,6 +1698,7 @@
           "example": "80",
           "member": "int64",
           "name": "TargetValue",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1706,7 +1710,7 @@
       "document": "定时伸缩策略配置",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启定时伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1790,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "定时伸缩目标节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "int64",
           "name": "TargetReplicas",
@@ -1801,7 +1805,7 @@
         },
         {
           "disabled": false,
-          "document": "定时伸缩cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时伸缩cron表达式，无需输入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0 00 00 * * *",
           "member": "string",
           "name": "Crontab",
@@ -2004,6 +2008,16 @@
     "CreateCloudNativeAPIGatewayPublicNetworkResponse": {
       "document": "CreateCloudNativeAPIGatewayPublicNetwork返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreatePublicNetworkResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2851,6 +2865,42 @@
         }
       ],
       "type": "object"
+    },
+    "CreatePublicNetworkResult": {
+      "document": "创建kong客户端公网结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端公网网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network-xxxxxxxx",
+          "member": "string",
+          "name": "NetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateWafDomainsRequest": {
       "document": "CreateWafDomains请求参数结构体",

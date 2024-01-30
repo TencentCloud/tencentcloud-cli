@@ -28,13 +28,6 @@ Output:
             },
             {
                 "Status": 0,
-                "Duration": "486400",
-                "ExpireTime": "1688954610",
-                "RemainDay": 112,
-                "Count": 2
-            },
-            {
-                "Status": 0,
                 "Duration": "186400",
                 "ExpireTime": "1689386610",
                 "RemainDay": 117,
