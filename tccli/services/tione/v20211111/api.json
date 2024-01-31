@@ -4148,6 +4148,34 @@
       ],
       "usage": "out"
     },
+    "DefaultInnerCallInfo": {
+      "document": "默认内网调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可以进行调用的VPC-ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认内网调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InnerHttpAddr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DefaultNginxGatewayCallInfo": {
       "document": "默认Nginx网关结构",
       "members": [
@@ -4770,7 +4798,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询每页大小，最大30; 默认20",
+          "document": "分页查询每页大小，默认20",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -4845,7 +4873,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理",
+          "document": "资源组类型;\n枚举值:\n空: 通用, TRAIN: 训练, INFERENCE: 推理",
           "example": "INFERENCE",
           "member": "string",
           "name": "Type",
@@ -4881,7 +4909,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为30;\n注意：小于0则默认为20；大于30则默认为30",
+          "document": "分页查询每页大小，默认20",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -8021,12 +8049,13 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "CosPathInfo",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InferGatewayCallInfo": {
       "document": "服务的调用信息，服务组下唯一",
@@ -8202,6 +8231,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CreateSuccess",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8362,6 +8402,28 @@
           "example": "无",
           "member": "ServiceEIPInfo",
           "name": "ServiceEIPInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivateLinkInfo",
+          "name": "PrivateLinkInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认内网调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DefaultInnerCallInfo",
+          "name": "DefaultInnerCallInfos",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -10963,6 +11025,67 @@
       ],
       "usage": "both"
     },
+    "PrivateLinkInfo": {
+      "document": "私有连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有连接所在的VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-2413",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接所在的子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-123",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP内网调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InnerHttpAddr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS内网调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InnerHttpsAddr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CreateSuccess",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PushTrainingMetricsRequest": {
       "document": "PushTrainingMetrics请求参数结构体",
       "members": [
@@ -12045,8 +12168,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
@@ -12055,8 +12178,8 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
@@ -12133,6 +12256,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组类别 托管 NORMAL，纳管 SW\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ResourceGroupSWType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12146,7 +12279,7 @@
           "example": "ms-ttt",
           "member": "string",
           "name": "ServiceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12156,7 +12289,7 @@
           "example": "ttt",
           "member": "string",
           "name": "InnerHttpAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12166,7 +12299,7 @@
           "example": "ttt",
           "member": "string",
           "name": "InnerHttpsAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12176,7 +12309,7 @@
           "example": "ttt",
           "member": "string",
           "name": "OuterHttpAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12186,7 +12319,7 @@
           "example": "ttt",
           "member": "string",
           "name": "OuterHttpsAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12196,7 +12329,7 @@
           "example": "ttt",
           "member": "string",
           "name": "AppKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12206,8 +12339,18 @@
           "example": "ttt",
           "member": "string",
           "name": "AppSecret",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -12300,7 +12443,7 @@
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12310,7 +12453,7 @@
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12320,7 +12463,7 @@
           "example": "222222",
           "member": "string",
           "name": "CreatedBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12330,7 +12473,7 @@
           "example": "2021-09-02T21:32:06+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12340,7 +12483,7 @@
           "example": "2021-09-02T21:32:06+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12350,7 +12493,7 @@
           "example": "555555",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12360,7 +12503,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ServiceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12370,7 +12513,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RunningServiceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12380,7 +12523,7 @@
           "example": "{}",
           "member": "Service",
           "name": "Services",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12390,7 +12533,7 @@
           "example": "Normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12400,7 +12543,7 @@
           "example": "{}",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12410,7 +12553,7 @@
           "example": "2",
           "member": "string",
           "name": "LatestVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12420,7 +12563,7 @@
           "example": "ARREARS_STOP",
           "member": "string",
           "name": "BusinessStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12430,7 +12573,7 @@
           "example": "1.2 元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12440,7 +12583,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "CreateSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12450,8 +12593,28 @@
           "example": "UPDATING",
           "member": "string",
           "name": "WeightUpdateStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务组下运行的pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplicasCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务组下期望的pod数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AvailableReplicasCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12650,17 +12813,6 @@
         },
         {
           "disabled": false,
-          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sss",
-          "member": "string",
-          "name": "PodList",
-          "output_required": true,
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "资源总量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "ResourceInfo",
@@ -12759,7 +12911,18 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sss",
+          "member": "string",
+          "name": "PodList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
           "document": "Pod列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Pod",

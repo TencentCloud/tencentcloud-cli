@@ -1,19 +1,19 @@
 **Example 1: 申请创建客户账户**
 
-
+申请创建客户账户
 
 Input: 
 
 ```
 tccli intlpartnersmgt CreateAccount --cli-unfold-argument  \
-    --Extended 11111111 \
+    --Extended test \
     --CountryCode 852 \
     --Area HK \
     --PhoneNum 18888888888 \
     --AccountType business \
     --Mail account@qq.com \
-    --Password 111111 \
-    --ConfirmPassword 111111
+    --Password ABCabc123! \
+    --ConfirmPassword ABCabc123
 ```
 
 Output: 

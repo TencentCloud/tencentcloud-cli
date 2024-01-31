@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CreateAccount": {
-      "document": "在合作伙伴平台，创建腾讯云账号，子客户注册完成后，自动与合作伙伴账号绑定。\n\n注意事项：<br>\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。<br>\n2、客户首次登录需要补充个人信息",
+      "document": "当前接口用作一级经销商/二级经销商创建腾讯云子客账号，账号创建完成后将自动与合作伙伴账号绑定。\n注意事项：\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。\n2、客户首次登录需要补充个人信息\n3、该接口需要申请白名单使用，请联系渠道经理发起申请流程。",
       "input": "CreateAccountRequest",
       "name": "创建客户接口",
       "output": "CreateAccountResponse",
@@ -796,7 +796,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -225,6 +225,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -234,6 +235,7 @@
           "example": "无",
           "member": "ResourceRegionInfo",
           "name": "ResourceRegionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -243,6 +245,7 @@
           "example": "zone",
           "member": "string",
           "name": "ProductType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -466,7 +469,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -476,7 +479,7 @@
           "example": "广州",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -486,7 +489,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -496,7 +499,7 @@
           "example": "华南地区",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -506,7 +509,7 @@
           "example": "South China",
           "member": "string",
           "name": "LocationEn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -516,7 +519,7 @@
           "example": "華南地区.",
           "member": "string",
           "name": "LocationJp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -526,7 +529,7 @@
           "example": "화난 지방",
           "member": "string",
           "name": "LocationKo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -536,7 +539,7 @@
           "example": "Guangzhou",
           "member": "string",
           "name": "RegionNameEn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -546,7 +549,7 @@
           "example": "広州.広州",
           "member": "string",
           "name": "RegionNameJp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -556,7 +559,7 @@
           "example": "광저우",
           "member": "string",
           "name": "RegionNameKo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -566,7 +569,7 @@
           "example": "地域简称",
           "member": "string",
           "name": "RegionShortName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -576,7 +579,7 @@
           "example": "1",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -586,7 +589,7 @@
           "example": "gz.xxx.tencentyun.com",
           "member": "string",
           "name": "InnerDomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -596,7 +599,7 @@
           "example": "ap-guangzhou.xxx.tencentyun.com",
           "member": "string",
           "name": "OuterDomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -606,7 +609,7 @@
           "example": "国内",
           "member": "string",
           "name": "RegionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -616,7 +619,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -626,7 +629,7 @@
           "example": "无",
           "member": "ResourceZoneinfo",
           "name": "ResourceZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -636,7 +639,7 @@
           "example": "online",
           "member": "string",
           "name": "OnlineState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -646,7 +649,7 @@
           "example": "TEST",
           "member": "string",
           "name": "ProductWhiteList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -656,8 +659,18 @@
           "example": "1",
           "member": "int64",
           "name": "RegionTypeMC",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "[\"上线地域\", \"金融地域\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "产品特性",
+          "member": "string",
+          "name": "ProductFeature",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -672,7 +685,7 @@
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -682,7 +695,7 @@
           "example": "广州四区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -692,7 +705,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -702,7 +715,7 @@
           "example": "100001",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -712,7 +725,7 @@
           "example": "Guangzhou Zone 4",
           "member": "string",
           "name": "ZoneNameEn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -722,7 +735,7 @@
           "example": "広州4区",
           "member": "string",
           "name": "ZoneNameJp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -732,7 +745,7 @@
           "example": "광저우 4구",
           "member": "string",
           "name": "ZoneNameKo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -742,7 +755,7 @@
           "example": "GZ_ZONE4_WHITELIST",
           "member": "string",
           "name": "WhiteList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -752,7 +765,7 @@
           "example": "GZ_ZONE4_WHITELIST",
           "member": "string",
           "name": "ProductWhiteList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -762,7 +775,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -772,7 +785,7 @@
           "example": "公有云&自研",
           "member": "string",
           "name": "SaleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -782,7 +795,7 @@
           "example": "公有云&自研",
           "member": "string",
           "name": "MachineRoomType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -792,7 +805,7 @@
           "example": "生命周期状态",
           "member": "string",
           "name": "LifeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -802,7 +815,7 @@
           "example": "online",
           "member": "string",
           "name": "OnlineState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -812,7 +825,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ParentZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -822,7 +835,7 @@
           "example": "1",
           "member": "string",
           "name": "ParentZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -832,7 +845,7 @@
           "example": "1",
           "member": "string",
           "name": "ParentZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -842,8 +855,18 @@
           "example": "1",
           "member": "string",
           "name": "ZoneType",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区的产品特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"金融可用区\", \"支付可用区\"]",
+          "member": "string",
+          "name": "ProductFeature",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

@@ -521,7 +521,7 @@
     "ModifyAlarmShield": {
       "document": "该接口用于修改告警屏蔽规则。",
       "input": "ModifyAlarmShieldRequest",
-      "name": "修改告警屏蔽",
+      "name": "修改告警屏蔽规则",
       "output": "ModifyAlarmShieldResponse",
       "status": "online"
     },

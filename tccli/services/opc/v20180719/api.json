@@ -87,7 +87,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -97,7 +97,7 @@
           "example": "测试活动",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -107,7 +107,7 @@
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -117,7 +117,7 @@
           "example": "2021-01-01 00:00:00",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -127,7 +127,7 @@
           "example": "https://cloud.tencent.com/act/season",
           "member": "string",
           "name": "PageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -137,8 +137,48 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动用户侧名称",
+          "example": "促销活动",
+          "member": "string",
+          "name": "TradeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营活动Id",
+          "example": "活动类别id",
+          "member": "uint64",
+          "name": "CategoryId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营活动",
+          "example": "活动类别名称",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别英文",
+          "example": "活动类别",
+          "member": "string",
+          "name": "CategoryType",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

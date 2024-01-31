@@ -1,3 +1,156 @@
+# Release 3.0.933.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 66 次发布
+
+发布时间：2024-02-01 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79297)
+
+	* 新增入参：ReportType
+
+* [DescribeFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1668/79296)
+
+	* 新增入参：ReportType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 123 次发布
+
+发布时间：2024-02-01 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/75739)
+
+	* 新增入参：ReportType
+
+* [DescribeChannelFlowEvidenceReport](http://document.tencentcloudapi.woa.com/document/product/1595/76717)
+
+	* 新增入参：ReportType
+
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RegistrationOrganizationInfo)
+
+	* 新增成员：BusinessLicense
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 5 次发布
+
+发布时间：2024-02-01 01:21:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActivityNonSensitiveInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityNonSensitiveInfo)
+
+	* 新增成员：TradeName, CategoryId, CategoryName, CategoryType
+
+
+
+
+## 地域管理系统(region) 版本：2022-06-27
+
+### 第 4 次发布
+
+发布时间：2024-02-01 01:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ResourceRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ResourceRegionInfo)
+
+	* 新增成员：ProductFeature
+
+* [ResourceZoneinfo](http://document.tencentcloudapi.woa.com/document/product/1605/76897#ResourceZoneinfo)
+
+	* 新增成员：ProductFeature
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 50 次发布
+
+发布时间：2024-02-01 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DefaultInnerCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DefaultInnerCallInfo)
+* [PrivateLinkInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PrivateLinkInfo)
+
+修改数据结构：
+
+* [InferCodeInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#InferCodeInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CosPathInfo
+
+* [IngressPrivateLinkInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#IngressPrivateLinkInfo)
+
+	* 新增成员：State
+
+* [IntranetCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#IntranetCallInfo)
+
+	* 新增成员：PrivateLinkInfos, DefaultInnerCallInfos
+
+* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
+
+	* 新增成员：ResourceGroupSWType
+
+* [ServiceCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceCallInfo)
+
+	* 新增成员：AuthorizationEnable
+
+* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
+
+	* 新增成员：ReplicasCount, AvailableReplicasCount
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>PodList
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.932.1
 
 ## API 网关(apigateway) 版本：2018-08-08
