@@ -1,3 +1,55 @@
+# Release 3.0.1055.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 149 次发布
+
+发布时间：2024-01-31 11:46:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowEvidenceReport](https://cloud.tencent.com/document/api/1323/79686)
+
+	* 新增入参：ReportType
+
+* [DescribeFlowEvidenceReport](https://cloud.tencent.com/document/api/1323/83441)
+
+	* 新增入参：ReportType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 151 次发布
+
+发布时间：2024-01-31 11:46:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateChannelFlowEvidenceReport](https://cloud.tencent.com/document/api/1420/79688)
+
+	* 新增入参：ReportType
+
+* [DescribeChannelFlowEvidenceReport](https://cloud.tencent.com/document/api/1420/83442)
+
+	* 新增入参：ReportType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
 # Release 3.0.1054.1
 
 ## API 网关(apigateway) 版本：2018-08-08

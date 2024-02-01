@@ -10,7 +10,8 @@ tccli essbasic CreateChannelFlowEvidenceReport --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
     --Agent.ProxyAppId  \
-    --FlowId yDSLVUUckpo1c11xUxtOq8cvKy24by9M
+    --FlowId yDSLVUUckpo1c11xUxtOq8cvKy24by9M \
+    --ReportType 0
 ```
 
 Output: 
@@ -48,6 +49,34 @@ Output:
             "Code": "OperationDenied.FlowStatusForbid",
             "Message": "当前流程状态不支持出证"
         },
+        "RequestId": "78062b87-6571-4f9a-b7a2-ba2d8d6c6698"
+    }
+}
+```
+
+**Example 3: 创建并返回公证处核验报告**
+
+通过已完成签署的流程FlowId，发起出证请求，获取公证处核验报告的ID。
+
+Input: 
+
+```
+tccli essbasic CreateChannelFlowEvidenceReport --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --FlowId yDSLVUUckpo1c11xUxtOq8cvKy24by9M \
+    --ReportType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ReportId": "yDSLVUUckpo3nva8UEnf33kvzHQ19GcL",
+        "Status": "EvidenceStatusSuccess",
+        "ReportUrl": "",
         "RequestId": "78062b87-6571-4f9a-b7a2-ba2d8d6c6698"
     }
 }

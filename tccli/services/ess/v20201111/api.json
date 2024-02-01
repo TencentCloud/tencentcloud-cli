@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateDocument": {
-      "document": "创建签署流程电子文档<br />\n\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)",
+      "document": "创建签署流程电子文档<br />\n\n###  调用流程\n该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n\n### 填充模版中定义的填写控件\n模版中配置的<font color=\"red\">发起人填充控件</font>可以通过本接口的**FormFields数组**字段填充\n![image](https://qcloudimg.tencent-cloud.cn/raw/37457e0e450fc221effddfcb8b1bad55.png)\n填充的传参示例如下\n```\n    request.FormFields = [{\n            \"ComponentName\": \"项目的名字\",\n            \"ComponentValue\": \"休闲山庄\"\n        }, {\n            \"ComponentName\": \"项目的地址\",\n            \"ComponentValue\": \"凤凰山北侧\",\n        }, {\n            \"ComponentName\": \"范围\",\n            \"ComponentValue\": \"凤凰山至107国道\",\n        }, {\n            \"ComponentName\": \"面积\",\n            \"ComponentValue\": \"100亩\",\n        }, {\n            \"ComponentName\": \"基本情况\",\n            \"ComponentValue\": \"完好\",\n        }, , {\n            \"ComponentName\": \"用途\",\n            \"ComponentValue\": \"经营农家乐\",\n        }\n    ]\n```\n合成后合同样子示例\n![image](https://qcloudimg.tencent-cloud.cn/raw/140a2fb771ac66a185d0a000d37485f6.png)",
       "input": "CreateDocumentRequest",
       "name": "模板发起合同-创建电子文档",
       "output": "CreateDocumentResponse",
@@ -2903,6 +2903,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定申请的报告类型，可选类型如下：\n<ul><li> **0** :合同签署报告（默认）</li>\n<li> **1** :公证处核验报告</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6508,6 +6517,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定申请的报告类型，可选类型如下：\n<ul><li> **0** :合同签署报告（默认）</li>\n<li> **1** :公证处核验报告</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
