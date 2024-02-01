@@ -8,8 +8,7 @@ Input:
 tccli iotexplorer DescribeInstance --cli-unfold-argument  \
     --ProjectId prj-1aoioii9 \
     --InstanceId ins-BoSq3gRJ27 \
-    --ProductId -1 \
-    --Include TotalDevice ActivateDevice UsedDeviceNum
+    --ProductId -1
 ```
 
 Output: 
@@ -29,7 +28,9 @@ Output:
             "UpdateTime": "2021-07-20T14:52:16+08:00",
             "ExpireTime": "0001-01-01T00:00:00Z",
             "TotalDevice": 15,
-            "ActivateDevice": 0
+            "ActivateDevice": 0,
+            "Description": "",
+            "Status": 0
         },
         "RequestId": "8bbbaa15-9918-4fd9-a70c-dbb47dwac0ca"
     }

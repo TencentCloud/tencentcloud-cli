@@ -1,3 +1,296 @@
+# Release 3.0.934.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 18 次发布
+
+发布时间：2024-02-02 01:07:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VoicePrintCompare](http://document.tencentcloudapi.woa.com/document/product/1093/83293)
+
+新增数据结构：
+
+* [VoicePrintCompareData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCompareData)
+
+
+
+## 品牌经营管家(bma) 版本：2022-11-15
+
+### 第 4 次发布
+
+发布时间：2024-02-02 01:07:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FakeURLData](http://document.tencentcloudapi.woa.com/document/product/1665/79244#FakeURLData)
+
+	* 新增成员：OfflineTime
+
+
+
+
+## 品牌经营管家(bma) 版本：2021-06-24
+
+
+
+## 品牌经营管家(bma) 版本：2020-11-25
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 53 次发布
+
+发布时间：2024-02-02 01:10:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HighLightItem](http://document.tencentcloudapi.woa.com/document/product/614/56471#HighLightItem)
+
+修改数据结构：
+
+* [LogContextInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogContextInfo)
+
+	* 新增成员：HighLights
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 28 次发布
+
+发布时间：2024-02-02 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
+
+	* 新增入参：MemberId
+
+	* 新增出参：AssetMapInstanceTypeList
+
+* [DescribeVULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/82460)
+
+	* 新增入参：MemberId
+
+	* 新增出参：VulTagList
+
+
+新增数据结构：
+
+* [AssetInstanceTypeMap](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetInstanceTypeMap)
+* [Element](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Element)
+* [ServiceSupport](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServiceSupport)
+
+修改数据结构：
+
+* [CVMAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CVMAssetVO)
+
+	* 新增成员：CVMAgentStatus, CVMStatus, DefenseModel, TatStatus, CpuTrend, MemoryTrend, AgentStatus, CloseDefenseCount, InstanceState, SecurityGroupIds, AgentMemRss, AgentCpuPer
+
+* [RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId
+
+* [VULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULRiskAdvanceCFGList)
+
+	* 新增成员：Payload, References, CVSS, AttackHeat, ServiceSupport, RecentScanTime
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 69 次发布
+
+发布时间：2024-02-02 01:11:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostInfo)
+
+	* 新增成员：Asset
+
+	* <font color="#dd0000">**修改成员**：</font>Placement, HostIp, HostType, HostResource
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 83 次发布
+
+发布时间：2024-02-02 01:12:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNetAttackSetting](http://document.tencentcloudapi.woa.com/document/product/296/82099)
+
+	* 新增出参：Scope, InstanceIds, ExcludeInstanceIds, AutoInclude
+
+* [DescribeVulDefenceSetting](http://document.tencentcloudapi.woa.com/document/product/296/82282)
+
+	* 新增出参：InstanceIds, AutoInclude, ExcludeInstanceIds
+
+* [ModifyNetAttackSetting](http://document.tencentcloudapi.woa.com/document/product/296/82079)
+
+	* 新增入参：Scope, InstanceIds, ExcludeInstanceIds, AutoInclude
+
+* [ModifyVulDefenceSetting](http://document.tencentcloudapi.woa.com/document/product/296/82168)
+
+	* 新增入参：ExcludeInstanceIds, AutoInclude, InstanceIds
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 27 次发布
+
+发布时间：2024-02-02 01:17:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadFirmware](http://document.tencentcloudapi.woa.com/document/product/1081/53872)
+
+	* 新增入参：FirmwareUserDefined
+
+
+修改数据结构：
+
+* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1081/34988#InstanceDetail)
+
+	* 新增成员：Description, Status
+
+* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
+
+	* 新增成员：DeviceCount
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 12 次发布
+
+发布时间：2024-02-02 01:18:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddUserDevice](http://document.tencentcloudapi.woa.com/document/product/1740/81498)
+
+	* 新增入参：SNCode
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 52 次发布
+
+发布时间：2024-02-02 01:23:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplyCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41678)
+
+	* 新增入参：DnsNames
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 16 次发布
+
+发布时间：2024-02-02 01:24:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImageAuthorizedInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78857)
+
+	* 新增出参：TrialAuthorizedCnt, UsedTrialAuthorizedCnt, PurchasedAuthorizedCnt, UsedPurchasedAuthorizedCnt, CanApplyFreeImageAuthorize
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 51 次发布
+
+发布时间：2024-02-02 01:26:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindAutoScalerResourceStrategyToGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83301)
+* [CreateAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83300)
+* [DeleteAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83299)
+* [DescribeAutoScalerResourceStrategies](http://document.tencentcloudapi.woa.com/document/product/1364/83298)
+* [DescribeAutoScalerResourceStrategyBindingGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83297)
+* [DescribePublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/83296)
+* [ModifyAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83295)
+* [UnbindAutoScalerResourceStrategyFromGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83294)
+
+新增数据结构：
+
+* [CloudNativeAPIGatewayStrategyBindingGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyBindingGroupInfo)
+* [DescribePublicNetworkResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicNetworkResult)
+* [ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult)
+* [ListCloudNativeAPIGatewayStrategyResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyResult)
+
+
+
 # Release 3.0.933.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

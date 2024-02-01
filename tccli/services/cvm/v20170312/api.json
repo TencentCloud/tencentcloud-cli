@@ -4901,7 +4901,7 @@
           "example": "\"Placement\": {           \"Pool\": \"qcloud\",           \"Zone\": \"ap",
           "member": "CommInfo",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4911,7 +4911,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "HostIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4921,7 +4921,7 @@
           "example": "Y0-MM52-124",
           "member": "string",
           "name": "HostType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4931,8 +4931,18 @@
           "example": "\"HostResource\": {           \"CpuTotal\": 2400,           \"CpuAvai",
           "member": "HostResourceInfo",
           "name": "HostResource",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固资号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“TYSV14072E4K”",
+          "member": "string",
+          "name": "Asset",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -400,7 +400,7 @@
       "status": "online"
     },
     "DescribeLogContext": {
-      "document": "本接口用于搜索日志上下文附近的内容",
+      "document": "本接口用于搜索日志上下文附近的内容\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
       "input": "DescribeLogContextRequest",
       "name": "上下文检索",
       "output": "DescribeLogContextResponse",
@@ -6751,6 +6751,7 @@
           "example": "无",
           "member": "LogContextInfo",
           "name": "LogContextInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6760,6 +6761,7 @@
           "example": "true",
           "member": "bool",
           "name": "PrevOver",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6769,6 +6771,7 @@
           "example": "true",
           "member": "bool",
           "name": "NextOver",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8288,6 +8291,32 @@
       ],
       "usage": "out"
     },
+    "HighLightItem": {
+      "document": "日志内容高亮描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "高亮的日志Key",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高亮的语法",
+          "example": "",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HistogramInfo": {
       "document": "直方图详细信息",
       "members": [
@@ -8799,6 +8828,16 @@
           "name": "IndexStatus",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志内容的高亮描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HighLightItem",
+          "name": "HighLights",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

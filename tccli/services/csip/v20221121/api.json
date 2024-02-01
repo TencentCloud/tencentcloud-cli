@@ -915,6 +915,42 @@
       ],
       "usage": "out"
     },
+    "AssetInstanceTypeMap": {
+      "document": "资产类型和实例类型的映射",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型和实例类型映射关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "InstanceTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AssetTag": {
       "document": "安全中心资产标签",
       "members": [
@@ -2666,6 +2702,138 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 未安装  1安装 2:安装中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CVMAgentStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:开启 0:未开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CVMStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:客户端已安装 0：未安装 2: Agentless\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DefenseModel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:已安装 0:未安装\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TatStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Element",
+          "name": "CpuTrend",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存趋势图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Element",
+          "name": "MemoryTrend",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:agent在线 0:agent离线 2:主机离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AgentStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本月防护关闭次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CloseDefenseCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[sg-xx]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物理内存占用KB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AgentMemRss",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU使用率百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "AgentCpuPer",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3648,6 +3816,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "-",
           "example": "无",
           "member": "Filter",
@@ -3667,6 +3844,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3676,6 +3854,7 @@
           "example": "无",
           "member": "CVMAssetVO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3685,6 +3864,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3694,6 +3874,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "DefenseStatusList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3703,6 +3884,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "VpcList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3712,6 +3894,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AssetTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3721,6 +3904,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "SystemTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3730,6 +3914,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "IpTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3739,6 +3924,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AppIdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3748,6 +3934,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "ZoneList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3757,6 +3944,17 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "OsList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型和实例类型的对应关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetInstanceTypeMap",
+          "name": "AssetMapInstanceTypeList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5776,6 +5974,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "任务ID",
           "example": "无",
           "member": "string",
@@ -5804,6 +6011,7 @@
           "example": "无",
           "member": "VULRiskAdvanceCFGList",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5813,6 +6021,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5822,6 +6031,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RiskLevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5831,6 +6041,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "VULTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5840,6 +6051,17 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "CheckFromLists",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "VulTagList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6319,6 +6541,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Element": {
+      "document": "统计条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ExtendServiceItem": {
       "document": "扩展订单服务列表",
@@ -8150,18 +8400,7 @@
           "member": "string",
           "name": "Id",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "APP ID",
-          "example": "x",
-          "member": "string",
-          "name": "AppId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8170,8 +8409,7 @@
           "member": "string",
           "name": "PublicIPDomain",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8180,8 +8418,16 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APP ID",
+          "example": "x",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9000,6 +9246,52 @@
       ],
       "usage": "out"
     },
+    "ServiceSupport": {
+      "document": "产品支持情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称:\n\"cfw_waf_virtual\", \"cwp_detect\", \"cwp_defense\", \"cwp_fix\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_waf_virtual",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已处理的资产总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SupportHandledCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的资产总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SupportTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持该产品1支持；0不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsSupport",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StopRiskCenterTaskRequest": {
       "document": "StopRiskCenterTask请求参数结构体",
       "members": [
@@ -9387,7 +9679,7 @@
         {
           "disabled": false,
           "document": "多云资产唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "Arn",
           "output_required": false,
@@ -9832,6 +10124,66 @@
           "example": "无",
           "member": "string",
           "name": "ImpactComponent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞Payload\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "技术参考\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "References",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvss评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CVSS",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AttackHeat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全产品支持情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceSupport",
+          "name": "ServiceSupport",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecentScanTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

@@ -31,7 +31,8 @@ Output:
             "EnableProductScript": "",
             "CreatorNickName": "name",
             "CreateUserId": 1,
-            "BindStrategy": 0
+            "BindStrategy": 0,
+            "DeviceCount": 1
         },
         "RequestId": "1c469fbf-d80c-4299-9b54-31340898b839"
     }

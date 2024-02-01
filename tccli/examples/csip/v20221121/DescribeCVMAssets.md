@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeCVMAssets --cli-unfold-argument  \
+    --MemberId abc \
     --Filter.Limit 0 \
     --Filter.Offset 0 \
     --Filter.Order abc \
@@ -88,6 +89,8 @@ Output:
                         "Value": "测试B"
                     }
                 ],
+                "RiskExposure": 0,
+                "BASAgentStatus": 0,
                 "Uin": "100011616646",
                 "VpcId": "vpc-4c9w05r5",
                 "VpcName": "",
