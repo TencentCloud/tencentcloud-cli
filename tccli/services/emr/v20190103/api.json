@@ -50,7 +50,7 @@
       "status": "online"
     },
     "DescribeEmrApplicationStatics": {
-      "document": " yarn application 统计接口查询",
+      "document": "yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
       "name": "查询YARN的任务统计信息",
       "output": "DescribeEmrApplicationStaticsResponse",
@@ -2414,7 +2414,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回数量，默认值为100，最大值为100。",
+          "document": "每页返回数量，默认值为100，最大值为100。\n如果offset和limit都不填，或者都填0，则返回全部数据",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2673,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "页容量",
+          "document": "页容量，范围为[10,100]",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2692,7 +2692,7 @@
           "example": "无",
           "member": "ApplicationStatics",
           "name": "Statics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2702,7 +2702,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2712,7 +2712,7 @@
           "example": "[\"root.default\"]",
           "member": "string",
           "name": "Queues",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2722,7 +2722,7 @@
           "example": "[\"hadoop\"]",
           "member": "string",
           "name": "Users",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2732,7 +2732,7 @@
           "example": "[\"MAPREDUCE\"]",
           "member": "string",
           "name": "ApplicationTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3074,7 +3074,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回数量，默认值为10，最大值为100。",
+          "document": "每页返回数量，默认值为100，最大值为100。\n如果limit和offset都为0，则查询全部记录；",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -3175,7 +3175,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回数量，默认值为10，最大值为100。",
+          "document": "每页返回数量，默认值为100，最大值为100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -3391,7 +3391,7 @@
         },
         {
           "disabled": false,
-          "document": "分页的大小",
+          "document": "分页的大小。\n默认查询全部；PageNo和PageSize不合理的设置，都是查询全部",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -3428,7 +3428,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3438,7 +3438,7 @@
           "example": "无",
           "member": "UserManagerUserBriefInfo",
           "name": "UserManagerUserList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

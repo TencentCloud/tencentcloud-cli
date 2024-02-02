@@ -11,12 +11,17 @@ Output:
 ```
 {
     "Response": {
-        "ScannedImageCnt": 1,
         "TotalAuthorizedCnt": 1,
-        "NotScannedLocalImageCnt": 1,
-        "RequestId": "xx",
         "UsedAuthorizedCnt": 1,
-        "NotScannedImageCnt": 1
+        "ScannedImageCnt": 1,
+        "NotScannedImageCnt": 1,
+        "NotScannedLocalImageCnt": 1,
+        "TrialAuthorizedCnt": 1,
+        "UsedTrialAuthorizedCnt": 1,
+        "PurchasedAuthorizedCnt": 1,
+        "UsedPurchasedAuthorizedCnt": 1,
+        "CanApplyFreeImageAuthorize": true,
+        "RequestId": "abc"
     }
 }
 ```

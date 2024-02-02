@@ -343,7 +343,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"Limit\": 20,\n        \"Offset\": 1,\n        \"RequestId\": \"176466\",\n        \"Databases\": []\n    }\n}",
-        "title": "查询数据库列表"
+        "title": "获取集群数据库列表"
       }
     ],
     "DescribeClusterDetail": [
@@ -989,7 +989,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwer\",\n    \"Database\": \"testDb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Databases\": [\n            \"testDb\"\n        ]\n    }\n}",
-        "title": "搜索集群database列表"
+        "title": "搜索集群数据库列表"
       }
     ],
     "SearchClusterTables": [

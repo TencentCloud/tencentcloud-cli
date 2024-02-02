@@ -20627,7 +20627,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalAuthorizedCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20637,7 +20637,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UsedAuthorizedCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20647,7 +20647,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ScannedImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20657,7 +20657,7 @@
           "example": "1",
           "member": "uint64",
           "name": "NotScannedImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20667,8 +20667,58 @@
           "example": "1",
           "member": "uint64",
           "name": "NotScannedLocalImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "试用镜像授权数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TrialAuthorizedCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用试用镜像授权数",
+          "example": "无",
+          "member": "uint64",
+          "name": "UsedTrialAuthorizedCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已购镜像授权数",
+          "example": "无",
+          "member": "uint64",
+          "name": "PurchasedAuthorizedCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用已购镜像授权数",
+          "example": "无",
+          "member": "uint64",
+          "name": "UsedPurchasedAuthorizedCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可免费领取镜像授权数",
+          "example": "无",
+          "member": "bool",
+          "name": "CanApplyFreeImageAuthorize",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

@@ -1,10 +1,24 @@
 {
   "actions": {
+    "BindAutoScalerResourceStrategyToGroups": {
+      "document": "弹性伸缩策略批量绑定网关分组",
+      "input": "BindAutoScalerResourceStrategyToGroupsRequest",
+      "name": "弹性伸缩策略批量绑定网关分组",
+      "output": "BindAutoScalerResourceStrategyToGroupsResponse",
+      "status": "online"
+    },
     "CloseWafProtection": {
       "document": "关闭 WAF 防护",
       "input": "CloseWafProtectionRequest",
       "name": "关闭 WAF 防护",
       "output": "CloseWafProtectionResponse",
+      "status": "online"
+    },
+    "CreateAutoScalerResourceStrategy": {
+      "document": "创建弹性伸缩策略",
+      "input": "CreateAutoScalerResourceStrategyRequest",
+      "name": "创建弹性伸缩策略",
+      "output": "CreateAutoScalerResourceStrategyResponse",
       "status": "online"
     },
     "CreateCloudNativeAPIGateway": {
@@ -84,6 +98,13 @@
       "output": "CreateWafDomainsResponse",
       "status": "online"
     },
+    "DeleteAutoScalerResourceStrategy": {
+      "document": "删除弹性伸缩策略",
+      "input": "DeleteAutoScalerResourceStrategyRequest",
+      "name": "删除弹性伸缩策略",
+      "output": "DeleteAutoScalerResourceStrategyResponse",
+      "status": "online"
+    },
     "DeleteCloudNativeAPIGateway": {
       "document": "删除云原生API网关实例",
       "input": "DeleteCloudNativeAPIGatewayRequest",
@@ -159,6 +180,20 @@
       "input": "DeleteWafDomainsRequest",
       "name": "删除 WAF 防护域名",
       "output": "DeleteWafDomainsResponse",
+      "status": "online"
+    },
+    "DescribeAutoScalerResourceStrategies": {
+      "document": "查看弹性伸缩策略列表",
+      "input": "DescribeAutoScalerResourceStrategiesRequest",
+      "name": "查看弹性伸缩策略列表",
+      "output": "DescribeAutoScalerResourceStrategiesResponse",
+      "status": "online"
+    },
+    "DescribeAutoScalerResourceStrategyBindingGroups": {
+      "document": "查看弹性伸缩策略绑定的网关分组",
+      "input": "DescribeAutoScalerResourceStrategyBindingGroupsRequest",
+      "name": "查看弹性伸缩策略绑定的网关分组",
+      "output": "DescribeAutoScalerResourceStrategyBindingGroupsResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGateway": {
@@ -280,6 +315,13 @@
       "output": "DescribeOneCloudNativeAPIGatewayServiceResponse",
       "status": "online"
     },
+    "DescribePublicNetwork": {
+      "document": "查询云原生API网关实例公网详情",
+      "input": "DescribePublicNetworkRequest",
+      "name": "查询云原生API网关实例公网详情",
+      "output": "DescribePublicNetworkResponse",
+      "status": "online"
+    },
     "DescribeSREInstanceAccessAddress": {
       "document": "查询引擎实例访问地址",
       "input": "DescribeSREInstanceAccessAddressRequest",
@@ -327,6 +369,13 @@
       "input": "DescribeZookeeperServerInterfacesRequest",
       "name": "查询zookeeper服务接口列表",
       "output": "DescribeZookeeperServerInterfacesResponse",
+      "status": "online"
+    },
+    "ModifyAutoScalerResourceStrategy": {
+      "document": "更新弹性伸缩策略",
+      "input": "ModifyAutoScalerResourceStrategyRequest",
+      "name": "更新弹性伸缩策略",
+      "output": "ModifyAutoScalerResourceStrategyResponse",
       "status": "online"
     },
     "ModifyCloudNativeAPIGateway": {
@@ -418,6 +467,13 @@
       "input": "OpenWafProtectionRequest",
       "name": "开启 WAF 防护",
       "output": "OpenWafProtectionResponse",
+      "status": "online"
+    },
+    "UnbindAutoScalerResourceStrategyFromGroups": {
+      "document": "弹性伸缩策略批量解绑网关分组",
+      "input": "UnbindAutoScalerResourceStrategyFromGroupsRequest",
+      "name": "弹性伸缩策略批量解绑网关分组",
+      "output": "UnbindAutoScalerResourceStrategyFromGroupsResponse",
       "status": "online"
     },
     "UpdateCloudNativeAPIGatewayCertificateInfo": {
@@ -644,6 +700,61 @@
         }
       ],
       "usage": "both"
+    },
+    "BindAutoScalerResourceStrategyToGroupsRequest": {
+      "document": "BindAutoScalerResourceStrategyToGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关分组ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindAutoScalerResourceStrategyToGroupsResponse": {
+      "document": "BindAutoScalerResourceStrategyToGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BoundK8SInfo": {
       "document": "服务治理引擎绑定的kubernetes信息",
@@ -1706,6 +1817,62 @@
       ],
       "usage": "both"
     },
+    "CloudNativeAPIGatewayStrategyBindingGroupInfo": {
+      "document": "策略绑定的网关分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-2e781178",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayNodeConfig",
+          "name": "NodeConfig",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "BindTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bound",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CloudNativeAPIGatewayStrategyCronScalerConfig": {
       "document": "定时伸缩策略配置",
       "members": [
@@ -1844,6 +2011,107 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateAutoScalerResourceStrategyRequest": {
+      "document": "CreateAutoScalerResourceStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "strategy-test",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标伸缩配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyAutoScalerConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": true,
+          "document": "定时伸缩配置列表",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
+          "name": "CronScalerConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": true,
+          "document": "最大节点数",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
+          "name": "CronConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoScalerResourceStrategyResponse": {
+      "document": "CreateAutoScalerResourceStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": true,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "strategy-xxxxxxxx",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCloudNativeAPIGatewayCanaryRuleRequest": {
       "document": "CreateCloudNativeAPIGatewayCanaryRule请求参数结构体",
@@ -2938,6 +3206,52 @@
       ],
       "type": "object"
     },
+    "DeleteAutoScalerResourceStrategyRequest": {
+      "document": "DeleteAutoScalerResourceStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoScalerResourceStrategyResponse": {
+      "document": "DeleteAutoScalerResourceStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudNativeAPIGatewayCanaryRuleRequest": {
       "document": "DeleteCloudNativeAPIGatewayCanaryRule请求参数结构体",
       "members": [
@@ -3434,6 +3748,114 @@
     "DeleteWafDomainsResponse": {
       "document": "DeleteWafDomains返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalerResourceStrategiesRequest": {
+      "document": "DescribeAutoScalerResourceStrategies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalerResourceStrategiesResponse": {
+      "document": "DescribeAutoScalerResourceStrategies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云原生API网关实例弹性伸缩策略列表响应结果。",
+          "example": "无",
+          "member": "ListCloudNativeAPIGatewayStrategyResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalerResourceStrategyBindingGroupsRequest": {
+      "document": "DescribeAutoScalerResourceStrategyBindingGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移量",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询数量限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScalerResourceStrategyBindingGroupsResponse": {
+      "document": "DescribeAutoScalerResourceStrategyBindingGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例策略绑定网关分组列表响应结果",
+          "example": "无",
+          "member": "ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4835,6 +5257,97 @@
         }
       ],
       "type": "object"
+    },
+    "DescribePublicNetworkRequest": {
+      "document": "DescribePublicNetwork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关分组ID",
+          "example": "group-xxxx1234",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络ID",
+          "example": "network-xxxxxxxx",
+          "member": "string",
+          "name": "NetworkId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicNetworkResponse": {
+      "document": "DescribePublicNetwork返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云原生API网关公网详情响应结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribePublicNetworkResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicNetworkResult": {
+      "document": "查询客户端公网信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端公网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayConfig",
+          "name": "PublicNetwork",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeSREInstanceAccessAddressRequest": {
       "document": "DescribeSREInstanceAccessAddress请求参数结构体",
@@ -7081,6 +7594,58 @@
       ],
       "usage": "out"
     },
+    "ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult": {
+      "document": "获取云原生API网关实例策略绑定网关分组列表响应结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生API网关实例策略绑定网关分组列表",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyBindingGroupInfo",
+          "name": "GroupInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListCloudNativeAPIGatewayStrategyResult": {
+      "document": "获取云原生API网关实例策略响应结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生API网关实例策略列表。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategy",
+          "name": "StrategyList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ListFilter": {
       "document": "列表过滤条件，模糊匹配",
       "members": [
@@ -7106,6 +7671,106 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyAutoScalerResourceStrategyRequest": {
+      "document": "ModifyAutoScalerResourceStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "strategy-test",
+          "member": "string",
+          "name": "StrategyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标伸缩配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyAutoScalerConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": true,
+          "document": "定时伸缩配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
+          "name": "CronScalerConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": true,
+          "document": "最大节点数",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指标伸缩配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
+          "name": "CronConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoScalerResourceStrategyResponse": {
+      "document": "ModifyAutoScalerResourceStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCloudNativeAPIGatewayCanaryRuleRequest": {
       "document": "ModifyCloudNativeAPIGatewayCanaryRule请求参数结构体",
@@ -9037,6 +9702,61 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindAutoScalerResourceStrategyFromGroupsRequest": {
+      "document": "UnbindAutoScalerResourceStrategyFromGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关分组ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindAutoScalerResourceStrategyFromGroupsResponse": {
+      "document": "UnbindAutoScalerResourceStrategyFromGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateCloudNativeAPIGatewayCertificateInfoRequest": {
       "document": "UpdateCloudNativeAPIGatewayCertificateInfo请求参数结构体",

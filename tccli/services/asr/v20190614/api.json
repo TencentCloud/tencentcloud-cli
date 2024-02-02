@@ -140,6 +140,13 @@
       "output": "UpdateAsrVocabResponse",
       "status": "online"
     },
+    "VoicePrintCompare": {
+      "document": "通过比对两段音频内说话人的声纹，得到一个打分，可通过打分判断两段音频声纹相似度,  打分区间[0 - 100]。 音频要求：16k采样率， 16bit位深，pcm或者wav格式， 单声道，总时长不超过30秒的音频，base64编码数据大小不超过2M，音频内容只有一个说话人声音，并且尽可能清晰，这样结果更加准确。",
+      "input": "VoicePrintCompareRequest",
+      "name": "说话人比对",
+      "output": "VoicePrintCompareResponse",
+      "status": "online"
+    },
     "VoicePrintCount": {
       "document": "统计并返回注册的说话人id总数",
       "input": "VoicePrintCountRequest",
@@ -2152,6 +2159,96 @@
         }
       ],
       "usage": "out"
+    },
+    "VoicePrintCompareData": {
+      "document": "音频声纹比对结果，包含比对分数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配度 取值范围(0.0 - 100.0)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "string",
+          "name": "Score",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验证结果 0: 未通过 1: 通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Decision",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintCompareRequest": {
+      "document": "VoicePrintCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav；pcm和wav音频无损压缩，识别准确度更高",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前仅支持16k，请填写16000",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对比源音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
+          "example": "无",
+          "member": "string",
+          "name": "SrcAudioData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比目标音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
+          "example": "无",
+          "member": "string",
+          "name": "DestAudioData",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintCompareResponse": {
+      "document": "VoicePrintCompare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频声纹比对结果，包含相似度打分",
+          "example": "无",
+          "member": "VoicePrintCompareData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VoicePrintCountData": {
       "document": "统计返回[说话人注册数量](https://cloud.tencent.com/document/product/1093/96061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",

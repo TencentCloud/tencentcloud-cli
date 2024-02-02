@@ -5048,7 +5048,7 @@
         },
         {
           "disabled": false,
-          "document": "多域名查询时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode 指标暂不支持）",
+          "document": "多域名查询时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）",
           "example": "false",
           "member": "bool",
           "name": "Detail",
@@ -5148,7 +5148,7 @@
           "example": "day",
           "member": "string",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5158,7 +5158,7 @@
           "example": "无",
           "member": "ResourceData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6478,7 +6478,7 @@
         },
         {
           "disabled": false,
-          "document": "Domains 传入多个时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode 指标暂不支持）",
+          "document": "Domains 传入多个时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）",
           "example": "false",
           "member": "bool",
           "name": "Detail",
@@ -6515,7 +6515,7 @@
           "example": "5min",
           "member": "string",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6525,7 +6525,7 @@
           "example": "无",
           "member": "ResourceOriginData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

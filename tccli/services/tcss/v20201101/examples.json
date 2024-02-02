@@ -1426,7 +1426,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAuthorizedInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ScannedImageCnt\": 1,\n        \"TotalAuthorizedCnt\": 1,\n        \"NotScannedLocalImageCnt\": 1,\n        \"RequestId\": \"xx\",\n        \"UsedAuthorizedCnt\": 1,\n        \"NotScannedImageCnt\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalAuthorizedCnt\": 1,\n        \"UsedAuthorizedCnt\": 1,\n        \"ScannedImageCnt\": 1,\n        \"NotScannedImageCnt\": 1,\n        \"NotScannedLocalImageCnt\": 1,\n        \"TrialAuthorizedCnt\": 1,\n        \"UsedTrialAuthorizedCnt\": 1,\n        \"PurchasedAuthorizedCnt\": 1,\n        \"UsedPurchasedAuthorizedCnt\": 1,\n        \"CanApplyFreeImageAuthorize\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询镜像授权信息"
       }
     ],

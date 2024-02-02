@@ -1,4 +1,4 @@
-**Example 1: 搜索集群database列表**
+**Example 1: 搜索集群数据库列表**
 
 
 

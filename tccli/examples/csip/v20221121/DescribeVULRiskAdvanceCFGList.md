@@ -7,6 +7,7 @@ Input:
 
 ```
 tccli csip DescribeVULRiskAdvanceCFGList --cli-unfold-argument  \
+    --MemberId abc \
     --TaskId abc
 ```
 
@@ -19,6 +20,7 @@ Output:
                 "RiskId": "abc",
                 "VULName": "abc",
                 "RiskLevel": "abc",
+                "EMGCVulType": 0,
                 "CheckFrom": "abc",
                 "Enable": 0,
                 "VULType": "abc",
@@ -47,6 +49,12 @@ Output:
             }
         ],
         "CheckFromLists": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "VulTagList": [
             {
                 "Value": "abc",
                 "Text": "abc"

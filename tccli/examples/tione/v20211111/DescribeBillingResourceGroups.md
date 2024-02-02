@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceGroups --cli-unfold-argument  \
-    --Type abc \
     --Filters.0.Name abc \
     --Filters.0.Values abc \
     --Filters.0.Negative True \

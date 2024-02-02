@@ -41,7 +41,7 @@ Output:
                 ]
             }
         ],
-        "Interval": 5
+        "Interval": "5min"
     }
 }
 ```

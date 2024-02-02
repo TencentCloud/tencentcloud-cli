@@ -3752,7 +3752,7 @@
           "example": "无",
           "member": "InstanceDetail",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4047,6 +4047,7 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6102,17 +6103,17 @@
           "example": "test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例类型（0 公共实例 1 标准企业实例 2专享企业实例）",
+          "document": "实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6122,7 +6123,7 @@
           "example": "test",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6132,7 +6133,7 @@
           "example": "test",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6142,17 +6143,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalDeviceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "以注册设备数",
+          "document": "已注册设备数",
           "example": "1",
           "member": "int64",
           "name": "UsedDeviceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6162,7 +6163,7 @@
           "example": "1",
           "member": "int64",
           "name": "ProjectNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6172,7 +6173,7 @@
           "example": "1",
           "member": "int64",
           "name": "ProductNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6182,7 +6183,7 @@
           "example": "1234243",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6192,7 +6193,7 @@
           "example": "234132432",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6202,7 +6203,7 @@
           "example": "23142134123",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6212,7 +6213,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalDevice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6222,7 +6223,27 @@
           "example": "1",
           "member": "int64",
           "name": "ActivateDevice",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7675,7 +7696,7 @@
           "example": "1",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7685,7 +7706,7 @@
           "example": "1",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7695,7 +7716,7 @@
           "example": "0",
           "member": "int64",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7705,7 +7726,7 @@
           "example": "0",
           "member": "string",
           "name": "EncryptionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7715,7 +7736,7 @@
           "example": "0",
           "member": "string",
           "name": "NetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7725,7 +7746,7 @@
           "example": "0",
           "member": "int64",
           "name": "DataProtocol",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7735,7 +7756,7 @@
           "example": "0",
           "member": "string",
           "name": "ProductDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7745,7 +7766,7 @@
           "example": "0",
           "member": "string",
           "name": "DevStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7755,7 +7776,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7765,7 +7786,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7775,7 +7796,7 @@
           "example": "0",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7785,7 +7806,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProductType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7795,7 +7816,7 @@
           "example": "0",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7805,7 +7826,7 @@
           "example": "0",
           "member": "int64",
           "name": "ModuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7815,7 +7836,7 @@
           "example": "1",
           "member": "string",
           "name": "EnableProductScript",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7825,7 +7846,7 @@
           "example": "1",
           "member": "int64",
           "name": "CreateUserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7835,7 +7856,7 @@
           "example": "1",
           "member": "string",
           "name": "CreatorNickName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7845,7 +7866,17 @@
           "example": "1",
           "member": "uint64",
           "name": "BindStrategy",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeviceCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9030,6 +9061,15 @@
           "example": "mcu",
           "member": "string",
           "name": "FwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件用户自定义配置信息",
+          "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
+          "member": "string",
+          "name": "FirmwareUserDefined",
           "required": false,
           "type": "string"
         }

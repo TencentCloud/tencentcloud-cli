@@ -29346,6 +29346,7 @@
           "example": "1",
           "member": "uint64",
           "name": "NetAttackEnable",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29355,6 +29356,47 @@
           "example": "1",
           "member": "uint64",
           "name": "NetAttackAlarmStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 全部旗舰版主机，0 InstanceIds列表主机",
+          "example": "1",
+          "member": "uint64",
+          "name": "Scope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"d92d72\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自选排除主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"d92d7\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新增资产自动包含 0 不包含 1包含",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoInclude",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -34809,7 +34851,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -34819,7 +34861,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Scope",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -34829,7 +34871,7 @@
           "example": "[\"05f0bcab-726c-4ea4-8109-bcd03d5598f7\"]",
           "member": "string",
           "name": "Quuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -34839,9 +34881,39 @@
           "example": "123",
           "member": "uint64",
           "name": "FlagshipCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响主机id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新增旗舰版主机自动加入;1是，0否 ",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoInclude",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除的主机id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ins\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -48123,6 +48195,42 @@
           "name": "NetAttackAlarmStatus",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1 全部旗舰版主机，0 Quuids列表主机",
+          "example": "1",
+          "member": "uint64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自选主机",
+          "example": "[\"d92d7\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自选排除的主机",
+          "example": "[\"d92d\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新增资产自动包含 0 不包含 1包含",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoInclude",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -48613,10 +48721,37 @@
         },
         {
           "disabled": false,
-          "document": "作用弄范围内旗舰版主机列表",
+          "document": "作用范围内旗舰版主机列表",
           "example": "[\"d92d723e-4aac-4f4a-bbf9-e5430e29d289\"]",
           "member": "string",
           "name": "Quuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排除作用范围内旗舰版主机列表",
+          "example": "[\"d92d\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新增资产自动包含 0 不包含 1包含",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoInclude",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "作用范围内旗舰版主机列表",
+          "example": "[\"d92d7\"]",
+          "member": "string",
+          "name": "InstanceIds",
           "required": false,
           "type": "list"
         }

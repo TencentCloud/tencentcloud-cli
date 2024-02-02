@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeModelService --cli-unfold-argument  \
-    --ServiceId ms-xxxxx-1
+    --ServiceId ms-xxxxxx-1
 ```
 
 Output: 
@@ -14,251 +14,119 @@ Output:
 {
     "Response": {
         "Service": {
-            "ServiceGroupId": "abc",
-            "ServiceId": "abc",
-            "ServiceGroupName": "abc",
-            "ServiceDescription": "abc",
+            "ServiceGroupId": "ms-ndxkhtb2",
+            "ServiceId": "ms-ndxkhtb2-1",
+            "ServiceGroupName": "luis-test-timeout",
+            "ServiceDescription": "",
             "ServiceInfo": {
                 "Replicas": 0,
                 "ImageInfo": {
-                    "ImageType": "abc",
-                    "ImageUrl": "abc",
-                    "RegistryRegion": "abc",
-                    "RegistryId": "abc"
+                    "ImageType": "CCR",
+                    "ImageUrl": "ccr.ccs.tencentyun.com/tiemsdev/hellotest:latest",
+                    "RegistryRegion": "ap-guangzhou",
+                    "RegistryId": ""
                 },
-                "Env": [
-                    {
-                        "Name": "abc",
-                        "Value": "abc"
-                    }
-                ],
+                "Env": [],
                 "Resources": {
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "Gpu": 1,
-                    "GpuType": "abc",
-                    "RealGpu": 1,
-                    "RealGpuDetailSet": [
-                        {
-                            "Name": "abc",
-                            "Value": 1
-                        }
-                    ]
+                    "Cpu": 2000,
+                    "Memory": 4096,
+                    "Gpu": 0,
+                    "RealGpu": 0,
+                    "GpuType": "",
+                    "RealGpuDetailSet": []
                 },
-                "InstanceType": "abc",
-                "ModelInfo": {
-                    "ModelId": "abc",
-                    "ModelName": "abc",
-                    "ModelVersionId": "abc",
-                    "ModelVersion": "abc",
-                    "ModelSource": "abc",
-                    "CosPathInfo": {
-                        "Bucket": "abc",
-                        "Region": "abc",
-                        "Paths": [
-                            "abc"
-                        ]
-                    },
-                    "AlgorithmFramework": "abc",
-                    "ModelType": "abc",
-                    "ModelFormat": "abc"
-                },
-                "InferCodeInfo": {
-                    "CosPathInfo": {
-                        "Bucket": "abc",
-                        "Region": "abc",
-                        "Paths": [
-                            "abc"
-                        ]
-                    }
-                },
-                "VolumeMount": {
-                    "VolumeSourceType": "abc",
-                    "CFSConfig": {
-                        "Id": "abc",
-                        "Path": "abc",
-                        "MountType": "abc",
-                        "Protocol": "abc"
-                    }
-                },
-                "LogEnable": true,
-                "LogConfig": {
-                    "LogsetId": "abc",
-                    "TopicId": "abc"
-                },
+                "InstanceType": "TI.S.MEDIUM.POST",
+                "ModelInfo": null,
+                "InferCodeInfo": null,
+                "VolumeMount": null,
+                "LogEnable": false,
+                "LogConfig": null,
                 "AuthorizationEnable": true,
-                "ScaleMode": "abc",
-                "HorizontalPodAutoscaler": {
-                    "MinReplicas": 0,
-                    "MaxReplicas": 0,
-                    "HpaMetrics": [
-                        {
-                            "Name": "abc",
-                            "Value": 0
-                        }
-                    ]
-                },
-                "CronScaleJobs": [
-                    {
-                        "Name": "abc",
-                        "TargetReplicas": 0,
-                        "MinReplicas": 0,
-                        "MaxReplicas": 0,
-                        "Schedule": "abc",
-                        "ExcludeDates": [
-                            "abc"
-                        ]
-                    }
-                ],
-                "ScaleStrategy": "abc",
-                "ScheduledAction": "abc",
+                "ScaleMode": "MANUAL",
+                "HorizontalPodAutoscaler": null,
+                "CronScaleJobs": [],
+                "ScaleStrategy": "",
+                "ScheduledAction": null,
                 "Status": {
                     "Replicas": 0,
                     "UpdatedReplicas": 0,
                     "ReadyReplicas": 0,
                     "AvailableReplicas": 0,
                     "UnavailableReplicas": 0,
-                    "Status": "abc",
-                    "StatefulSetCondition": [
-                        {
-                            "Message": "abc",
-                            "Reason": "abc",
-                            "Status": "abc",
-                            "Type": "abc",
-                            "LastTransitionTime": "abc"
-                        }
-                    ],
+                    "Status": "Stopped",
+                    "Reason": "",
                     "Conditions": [
                         {
-                            "Message": "abc",
-                            "Reason": "abc",
-                            "Status": "abc",
-                            "Type": "abc",
-                            "LastTransitionTime": "abc"
-                        }
-                    ],
-                    "Reason": "abc"
-                },
-                "Weight": 1,
-                "PodList": [
-                    "abc"
-                ],
-                "Pods": {
-                    "Name": "abc",
-                    "Uid": "abc",
-                    "ChargeType": "abc",
-                    "Phase": "abc",
-                    "IP": "abc",
-                    "CreateTime": "abc",
-                    "Containers": {
-                        "Name": "abc",
-                        "ContainerId": "abc",
-                        "Image": "abc",
-                        "Status": {
-                            "RestartCount": 0,
-                            "State": "abc",
-                            "Ready": true,
-                            "Reason": "abc",
-                            "Message": "abc"
-                        }
-                    },
-                    "ContainerInfos": [
+                            "Message": "Deployment has minimum availability.",
+                            "Reason": "MinimumReplicasAvailable",
+                            "Status": "True",
+                            "Type": "Available",
+                            "LastTransitionTime": "2023-12-27T16:21:02+08:00",
+                            "LastUpdateTime": "2023-12-27T16:21:02+08:00"
+                        },
                         {
-                            "Name": "abc",
-                            "ContainerId": "abc",
-                            "Image": "abc",
-                            "Status": {
-                                "RestartCount": 0,
-                                "State": "abc",
-                                "Ready": true,
-                                "Reason": "abc",
-                                "Message": "abc"
-                            }
+                            "Message": "ReplicaSet \"ms-ndxkhtb2-1-8579fcbb7f\" has successfully progressed.",
+                            "Reason": "NewReplicaSetAvailable",
+                            "Status": "True",
+                            "Type": "Progressing",
+                            "LastTransitionTime": "2023-12-27T16:21:02+08:00",
+                            "LastUpdateTime": "2023-12-27T16:22:54+08:00"
                         }
                     ]
                 },
-                "PodInfos": [
-                    {
-                        "Name": "abc",
-                        "Uid": "abc",
-                        "ChargeType": "abc",
-                        "Phase": "abc",
-                        "IP": "abc",
-                        "CreateTime": "abc",
-                        "Containers": {
-                            "Name": "abc",
-                            "ContainerId": "abc",
-                            "Image": "abc",
-                            "Status": {
-                                "RestartCount": 0,
-                                "State": "abc",
-                                "Ready": true,
-                                "Reason": "abc",
-                                "Message": "abc"
-                            }
-                        }
-                    }
-                ],
+                "Weight": 0,
+                "PodList": [],
+                "Pods": null,
+                "PodInfos": [],
                 "ResourceTotal": {
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "Gpu": 1,
-                    "GpuType": "abc",
-                    "RealGpu": 1,
-                    "RealGpuDetailSet": [
-                        {
-                            "Name": "abc",
-                            "Value": 1
-                        }
-                    ]
+                    "Cpu": 0,
+                    "Memory": 0,
+                    "Gpu": 0,
+                    "RealGpu": 0,
+                    "GpuType": "",
+                    "RealGpuDetailSet": []
                 },
-                "OldReplicas": 0,
+                "OldReplicas": 1,
                 "HybridBillingPrepaidReplicas": 0,
                 "OldHybridBillingPrepaidReplicas": 0,
                 "ServiceLimit": {
-                    "EnableInstanceRpsLimit": true,
-                    "InstanceRpsLimit": 0
+                    "EnableInstanceRpsLimit": false,
+                    "InstanceRpsLimit": 1000000,
+                    "EnableInstanceReqLimit": false,
+                    "InstanceReqLimit": 1000000
                 },
-                "ModelHotUpdateEnable": true,
-                "ModelTurboEnable": true
+                "Command": "",
+                "ModelHotUpdateEnable": false,
+                "ModelTurboEnable": false,
+                "ServiceEIP": null
             },
-            "ClusterId": "abc",
-            "Region": "abc",
-            "Namespace": "abc",
-            "ChargeType": "abc",
-            "ResourceGroupId": "abc",
-            "ResourceGroupName": "abc",
-            "Tags": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ],
-            "IngressName": "abc",
-            "CreatedBy": "abc",
-            "CreateTime": "abc",
-            "UpdateTime": "abc",
-            "Uin": "abc",
-            "SubUin": "abc",
+            "ClusterId": "manger",
+            "Region": "ap-guangzhou",
+            "Namespace": "infer-100005348929",
+            "ChargeType": "POSTPAID_BY_HOUR",
+            "ResourceGroupId": "",
+            "ResourceGroupName": "",
+            "Tags": [],
+            "IngressName": "user-ingress-gz-6",
+            "CreatedBy": "243224118",
+            "CreateTime": "2023-12-27T08:20:48Z",
+            "UpdateTime": "2023-12-27T09:18:59Z",
+            "Uin": "100005348929",
+            "SubUin": "",
             "AppId": 0,
-            "BusinessStatus": "abc",
-            "ServiceLimit": {
-                "EnableInstanceRpsLimit": true,
-                "InstanceRpsLimit": 0
-            },
-            "ScheduledAction": {
-                "ScheduleStop": true,
-                "ScheduleStopTime": "abc"
-            },
-            "CreateFailedReason": "abc",
-            "Status": "abc",
-            "BillingInfo": "abc",
-            "Weight": 0,
-            "CreateSource": "abc",
-            "Version": "abc",
-            "LatestVersion": "abc"
+            "BusinessStatus": "CREATE_SUCCEED",
+            "CreateFailedReason": "CREATE_SUCCEED",
+            "Status": "Stopped",
+            "BillingInfo": "",
+            "Weight": 100,
+            "CreateSource": "DEFAULT",
+            "Version": "1",
+            "LatestVersion": "1",
+            "ResourceGroupSWType": "",
+            "ServiceLimit": null,
+            "ScheduledAction": null
         },
-        "RequestId": "abc"
+        "RequestId": "841f61f9-daed-49aa-88a3-b3f860be5be4"
     }
 }
 ```

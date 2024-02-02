@@ -1,11 +1,27 @@
 {
   "actions": {
+    "BindAutoScalerResourceStrategyToGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAutoScalerResourceStrategyToGroups\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"StrategyId\": \"strategy-7bb4fcb0\",\n    \"GroupIds\": [\n        \"group-2e781178\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": true\n    }\n}",
+        "title": "弹性伸缩策略批量绑定网关分组"
+      }
+    ],
     "CloseWafProtection": [
       {
         "document": "关闭 WAF 防护",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "关闭 WAF 防护"
+      }
+    ],
+    "CreateAutoScalerResourceStrategy": [
+      {
+        "document": "创建弹性伸缩策略",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoScalerResourceStrategy\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4a34cf5f\",\n    \"StrategyName\": \"strategy-test\",\n    \"Description\": \"desc\",\n    \"MaxReplicas\": 15,\n    \"Config\": {\n        \"Enabled\": true,\n        \"Metrics\": [\n            {\n                \"Type\": \"Resource\",\n                \"ResourceName\": \"cpu\",\n                \"TargetType\": \"Utilization\",\n                \"TargetValue\": 50\n            },\n            {\n                \"Type\": \"Pods\",\n                \"ResourceName\": \"tcp-connection-num\",\n                \"TargetType\": \"AverageValue\",\n                \"TargetValue\": 5\n            }\n        ]\n    },\n    \"CronScalerConfig\": {\n        \"Enabled\": true,\n        \"Params\": [\n            {\n                \"Period\": \"1 * *\",\n                \"StartAt\": \"17:00\",\n                \"TargetReplicas\": 10\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\",\n        \"Result\": true\n    }\n}",
+        "title": "创建弹性伸缩策略"
       }
     ],
     "CreateCloudNativeAPIGateway": [
@@ -96,6 +112,14 @@
         "title": "新建 WAF 防护域名"
       }
     ],
+    "DeleteAutoScalerResourceStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoScalerResourceStrategy\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"StrategyId\": \"strategy-7bb4fcb0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": true\n    }\n}",
+        "title": "删除弹性伸缩策略"
+      }
+    ],
     "DeleteCloudNativeAPIGateway": [
       {
         "document": "",
@@ -182,6 +206,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWafDomains\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Domains\": [\n        \"example.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除 WAF 防护域名"
+      }
+    ],
+    "DescribeAutoScalerResourceStrategies": [
+      {
+        "document": "查看弹性伸缩策略列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalerResourceStrategies\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4a34cf5f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"StrategyList\": [\n                {\n                    \"StrategyId\": \"strategy-7bb4fcb0\",\n                    \"StrategyName\": \"test\",\n                    \"CreateTime\": \"2021-09-09 11:52:30\",\n                    \"ModifyTime\": \"2021-09-09 11:52:30\",\n                    \"Description\": \"测试\",\n                    \"GatewayId\": \"gateway-4a34cf5f\",\n                    \"Config\": {\n                        \"AutoScalerId\": \"autoscaler-92aaca7b\",\n                        \"StrategyId\": \"strategy-448e24f7\",\n                        \"Enabled\": true,\n                        \"MaxReplicas\": 15,\n                        \"Metrics\": [\n                            {\n                                \"Type\": \"Resource\",\n                                \"ResourceName\": \"cpu\",\n                                \"TargetType\": \"Utilization\",\n                                \"TargetValue\": 50\n                            },\n                            {\n                                \"Type\": \"Pods\",\n                                \"ResourceName\": \"tcp-connection-num\",\n                                \"TargetType\": \"AverageValue\",\n                                \"TargetValue\": 5\n                            }\n                        ],\n                        \"CreateTime\": \"2023-03-08 16:57:18\",\n                        \"ModifyTime\": \"2023-03-08 16:57:18\"\n                    },\n                    \"CronConfig\": {\n                        \"StrategyId\": \"strategy-448e24f7\",\n                        \"Enabled\": true,\n                        \"Params\": [\n                            {\n                                \"Period\": \"\",\n                                \"StartAt\": \"17:00\",\n                                \"TargetReplicas\": 0\n                            }\n                        ],\n                        \"CreateTime\": \"2023-03-08 16:57:18\",\n                        \"ModifyTime\": \"2023-03-08 16:57:18\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+        "title": "查看弹性伸缩策略列表"
+      }
+    ],
+    "DescribeAutoScalerResourceStrategyBindingGroups": [
+      {
+        "document": "查看弹性伸缩策略绑定的网关分组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalerResourceStrategyBindingGroups\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"StrategyId\": \"strategy-7bb4fcb0\",\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GroupInfos\": [\n                {\n                    \"GroupId\": \"group-2e781178\",\n                    \"GroupName\": \"test\",\n                    \"NodeConfig\": {\n                        \"Specification\": \"1c2g\",\n                        \"Number\": 2\n                    },\n                    \"BindTime\": \"2021-09-09 11:52:30\",\n                    \"Status\": \"bound\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查看弹性伸缩策略绑定的网关分组"
       }
     ],
     "DescribeCloudNativeAPIGateway": [
@@ -320,6 +360,14 @@
         "title": "获取云原生网关服务详情"
       }
     ],
+    "DescribePublicNetwork": [
+      {
+        "document": "查询云原生API网关实例公网详情",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"GroupId\": \"greoup-xxxxxxxx\",\n    \"NetworkId\": \"network-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"PublicNetwork\": {\n                \"ConsoleType\": \"abc\",\n                \"HttpUrl\": \"abc\",\n                \"HttpsUrl\": \"abc\",\n                \"NetType\": \"abc\",\n                \"AdminUser\": \"abc\",\n                \"AdminPassword\": \"abc\",\n                \"Status\": \"abc\",\n                \"AccessControl\": {\n                    \"Mode\": \"abc\",\n                    \"CidrWhiteList\": [\n                        \"abc\"\n                    ],\n                    \"CidrBlackList\": [\n                        \"abc\"\n                    ]\n                },\n                \"SubnetId\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"Description\": \"abc\",\n                \"SlaType\": \"abc\",\n                \"SlaName\": \"abc\",\n                \"Vip\": \"abc\",\n                \"InternetMaxBandwidthOut\": 1,\n                \"MultiZoneFlag\": true,\n                \"MasterZoneId\": \"abc\",\n                \"SlaveZoneId\": \"abc\",\n                \"MasterZoneName\": \"abc\",\n                \"SlaveZoneName\": \"abc\",\n                \"NetworkId\": \"abc\"\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询云原生API网关实例公网详情"
+      }
+    ],
     "DescribeSREInstanceAccessAddress": [
       {
         "document": "",
@@ -374,6 +422,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZookeeperServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Interface\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询nacos服务接口列表"
+      }
+    ],
+    "ModifyAutoScalerResourceStrategy": [
+      {
+        "document": "更新弹性伸缩策略",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScalerResourceStrategy\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-4a34cf5f\",\n    \"StrategyId\": \"strategy-7bb4fcb0\",\n    \"StrategyName\": \"strategy-test\",\n    \"Description\": \"desc\",\n    \"MaxReplicas\": 5,\n    \"Config\": {\n        \"Metrics\": [\n            {\n                \"Type\": \"Resource\",\n                \"ResourceName\": \"cpu\",\n                \"TargetType\": \"Utilization\",\n                \"TargetValue\": 80\n            }\n        ]\n    },\n    \"CronScalerConfig\": {\n        \"Enabled\": true,\n        \"Params\": [\n            {\n                \"Period\": \"1 * *\",\n                \"StartAt\": \"17:00\",\n                \"TargetReplicas\": 10\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": true\n    }\n}",
+        "title": "更新弹性伸缩策略"
       }
     ],
     "ModifyCloudNativeAPIGateway": [
@@ -478,6 +534,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "开启 WAF 防护"
+      }
+    ],
+    "UnbindAutoScalerResourceStrategyFromGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindAutoScalerResourceStrategyFromGroups\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"StrategyId\": \"strategy-7bb4fcb0\",\n    \"GroupIds\": [\n        \"group-2e781178\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": true\n    }\n}",
+        "title": "弹性伸缩策略批量解绑网关分组"
       }
     ],
     "UpdateCloudNativeAPIGatewayCertificateInfo": [

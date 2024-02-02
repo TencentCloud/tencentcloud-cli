@@ -620,6 +620,15 @@
           "name": "DeleteDnsAutoRecord",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "域名数组（多域名证书可以上传）。\t",
+          "example": "无",
+          "member": "string",
+          "name": "DnsNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
