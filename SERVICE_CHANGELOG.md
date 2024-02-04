@@ -1,10 +1,33 @@
 # 本版本更新包含以下内容：
 
-## 语音识别(asr) 版本：2019-06-14
+## cxm(cxm) 版本：2017-03-12
 
-### 第 18 次发布
+### 第 3 次发布
 
-发布时间：2024-02-02 01:07:10
+发布时间：2024-02-05 01:12:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
+
+	* 新增入参：IsElastic
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+
+	* 新增入参：IsElastic
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 49 次发布
+
+发布时间：2024-02-05 01:16:00
 
 本次发布包含了以下内容：
 
@@ -12,260 +35,27 @@
 
 新增接口：
 
-* [VoicePrintCompare](http://document.tencentcloudapi.woa.com/document/product/1093/83293)
+* [ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)
+* [GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)
 
 新增数据结构：
 
-* [VoicePrintCompareData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCompareData)
-
-
-
-## 品牌经营管家(bma) 版本：2022-11-15
-
-### 第 4 次发布
-
-发布时间：2024-02-02 01:07:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)
 
 修改数据结构：
 
-* [FakeURLData](http://document.tencentcloudapi.woa.com/document/product/1665/79244#FakeURLData)
+* [GeneralCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GeneralCard)
 
-	* 新增成员：OfflineTime
+	* 新增成员：Address
 
 
 
 
-## 品牌经营管家(bma) 版本：2021-06-24
-
-
-
-## 品牌经营管家(bma) 版本：2020-11-25
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 53 次发布
-
-发布时间：2024-02-02 01:10:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [HighLightItem](http://document.tencentcloudapi.woa.com/document/product/614/56471#HighLightItem)
-
-修改数据结构：
-
-* [LogContextInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogContextInfo)
-
-	* 新增成员：HighLights
-
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 28 次发布
-
-发布时间：2024-02-02 01:11:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
-
-	* 新增入参：MemberId
-
-	* 新增出参：AssetMapInstanceTypeList
-
-* [DescribeVULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/82460)
-
-	* 新增入参：MemberId
-
-	* 新增出参：VulTagList
-
-
-新增数据结构：
-
-* [AssetInstanceTypeMap](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetInstanceTypeMap)
-* [Element](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Element)
-* [ServiceSupport](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServiceSupport)
-
-修改数据结构：
-
-* [CVMAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#CVMAssetVO)
-
-	* 新增成员：CVMAgentStatus, CVMStatus, DefenseModel, TatStatus, CpuTrend, MemoryTrend, AgentStatus, CloseDefenseCount, InstanceState, SecurityGroupIds, AgentMemRss, AgentCpuPer
-
-* [RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey)
-
-	* <font color="#dd0000">**修改成员**：</font>AppId
-
-* [VULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULRiskAdvanceCFGList)
-
-	* 新增成员：Payload, References, CVSS, AttackHeat, ServiceSupport, RecentScanTime
-
-
-
-
-## 云服务器(cvm) 版本：2019-12-12
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 69 次发布
-
-发布时间：2024-02-02 01:11:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostInfo)
-
-	* 新增成员：Asset
-
-	* <font color="#dd0000">**修改成员**：</font>Placement, HostIp, HostType, HostResource
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 83 次发布
-
-发布时间：2024-02-02 01:12:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeNetAttackSetting](http://document.tencentcloudapi.woa.com/document/product/296/82099)
-
-	* 新增出参：Scope, InstanceIds, ExcludeInstanceIds, AutoInclude
-
-* [DescribeVulDefenceSetting](http://document.tencentcloudapi.woa.com/document/product/296/82282)
-
-	* 新增出参：InstanceIds, AutoInclude, ExcludeInstanceIds
-
-* [ModifyNetAttackSetting](http://document.tencentcloudapi.woa.com/document/product/296/82079)
-
-	* 新增入参：Scope, InstanceIds, ExcludeInstanceIds, AutoInclude
-
-* [ModifyVulDefenceSetting](http://document.tencentcloudapi.woa.com/document/product/296/82168)
-
-	* 新增入参：ExcludeInstanceIds, AutoInclude, InstanceIds
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 27 次发布
-
-发布时间：2024-02-02 01:17:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UploadFirmware](http://document.tencentcloudapi.woa.com/document/product/1081/53872)
-
-	* 新增入参：FirmwareUserDefined
-
-
-修改数据结构：
-
-* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1081/34988#InstanceDetail)
-
-	* 新增成员：Description, Status
-
-* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
-
-	* 新增成员：DeviceCount
-
-
-
-
-## 智能视图计算平台(iss) 版本：2023-05-17
+## 流量反欺诈(taf) 版本：2020-02-10
 
 ### 第 12 次发布
 
-发布时间：2024-02-02 01:18:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddUserDevice](http://document.tencentcloudapi.woa.com/document/product/1740/81498)
-
-	* 新增入参：SNCode
-
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 52 次发布
-
-发布时间：2024-02-02 01:23:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ApplyCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41678)
-
-	* 新增入参：DnsNames
-
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 16 次发布
-
-发布时间：2024-02-02 01:24:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeImageAuthorizedInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78857)
-
-	* 新增出参：TrialAuthorizedCnt, UsedTrialAuthorizedCnt, PurchasedAuthorizedCnt, UsedPurchasedAuthorizedCnt, CanApplyFreeImageAuthorize
-
-
-
-
-## 微服务引擎(tse) 版本：2020-12-07
-
-### 第 51 次发布
-
-发布时间：2024-02-02 01:26:59
+发布时间：2024-02-05 01:22:49
 
 本次发布包含了以下内容：
 
@@ -273,21 +63,13 @@
 
 新增接口：
 
-* [BindAutoScalerResourceStrategyToGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83301)
-* [CreateAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83300)
-* [DeleteAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83299)
-* [DescribeAutoScalerResourceStrategies](http://document.tencentcloudapi.woa.com/document/product/1364/83298)
-* [DescribeAutoScalerResourceStrategyBindingGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83297)
-* [DescribePublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/83296)
-* [ModifyAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83295)
-* [UnbindAutoScalerResourceStrategyFromGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83294)
+* [ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)
 
 新增数据结构：
 
-* [CloudNativeAPIGatewayStrategyBindingGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyBindingGroupInfo)
-* [DescribePublicNetworkResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicNetworkResult)
-* [ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult)
-* [ListCloudNativeAPIGatewayStrategyResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyResult)
+* [ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)
+* [ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)
+* [ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)
 
 
 
@@ -4972,11 +4754,11 @@
 
 新增接口：
 
-* [[VoicePrintCompare](http://document.tencentcloudapi.woa.com/document/product/1093/83293)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [VoicePrintCompare](http://document.tencentcloudapi.woa.com/document/product/1093/83293)
 
 新增数据结构：
 
-* [[VoicePrintCompareData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCompareData)](http://document.tencentcloudapi.woa.com/document/product/1093/37824#[VoicePrintCompareData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCompareData))
+* [VoicePrintCompareData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCompareData)
 
 ### 第 17 次发布
 
@@ -21098,7 +20880,7 @@
 
 新增数据结构：
 
-* [[HighLightItem](http://document.tencentcloudapi.woa.com/document/product/614/56471#HighLightItem)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[HighLightItem](http://document.tencentcloudapi.woa.com/document/product/614/56471#HighLightItem))
+* [HighLightItem](http://document.tencentcloudapi.woa.com/document/product/614/56471#HighLightItem)
 
 修改数据结构：
 
@@ -24961,9 +24743,9 @@
 
 新增数据结构：
 
-* [[AssetInstanceTypeMap](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetInstanceTypeMap)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[AssetInstanceTypeMap](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetInstanceTypeMap))
-* [[Element](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Element)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[Element](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Element))
-* [[ServiceSupport](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServiceSupport)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[ServiceSupport](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServiceSupport))
+* [AssetInstanceTypeMap](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetInstanceTypeMap)
+* [Element](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Element)
+* [ServiceSupport](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServiceSupport)
 
 修改数据结构：
 
@@ -29622,6 +29404,25 @@
 
 
 ## cxm(cxm) 版本：2017-03-12
+
+### 第 3 次发布
+
+发布时间：2024-02-05 01:12:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
+
+	* 新增入参：IsElastic
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+
+	* 新增入参：IsElastic
+
 
 ### 第 2 次发布
 
@@ -45015,6 +44816,30 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 49 次发布
+
+发布时间：2024-02-05 01:16:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address))
+
+修改数据结构：
+
+* [GeneralCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GeneralCard)
+
+	* 新增成员：Address
+
 
 ### 第 48 次发布
 
@@ -72194,6 +72019,24 @@
 
 ## 流量反欺诈(taf) 版本：2020-02-10
 
+### 第 12 次发布
+
+发布时间：2024-02-05 01:22:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput))
+* [[ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput))
+* [[ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput))
+
 ### 第 11 次发布
 
 发布时间：2023-05-24 01:42:50
@@ -86979,21 +86822,21 @@
 
 新增接口：
 
-* [[BindAutoScalerResourceStrategyToGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83301)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83300)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83299)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAutoScalerResourceStrategies](http://document.tencentcloudapi.woa.com/document/product/1364/83298)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAutoScalerResourceStrategyBindingGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83297)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/83296)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83295)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UnbindAutoScalerResourceStrategyFromGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83294)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BindAutoScalerResourceStrategyToGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83301)
+* [CreateAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83300)
+* [DeleteAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83299)
+* [DescribeAutoScalerResourceStrategies](http://document.tencentcloudapi.woa.com/document/product/1364/83298)
+* [DescribeAutoScalerResourceStrategyBindingGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83297)
+* [DescribePublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/83296)
+* [ModifyAutoScalerResourceStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/83295)
+* [UnbindAutoScalerResourceStrategyFromGroups](http://document.tencentcloudapi.woa.com/document/product/1364/83294)
 
 新增数据结构：
 
-* [[CloudNativeAPIGatewayStrategyBindingGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyBindingGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CloudNativeAPIGatewayStrategyBindingGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyBindingGroupInfo))
-* [[DescribePublicNetworkResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicNetworkResult)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[DescribePublicNetworkResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicNetworkResult))
-* [[ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult))
-* [[ListCloudNativeAPIGatewayStrategyResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyResult)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[ListCloudNativeAPIGatewayStrategyResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyResult))
+* [CloudNativeAPIGatewayStrategyBindingGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayStrategyBindingGroupInfo)
+* [DescribePublicNetworkResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicNetworkResult)
+* [ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyBindingGroupInfoResult)
+* [ListCloudNativeAPIGatewayStrategyResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ListCloudNativeAPIGatewayStrategyResult)
 
 ### 第 50 次发布
 
@@ -89622,6 +89465,29 @@
 * [TaskContent](http://document.tencentcloudapi.woa.com/document/product/1320/50571#TaskContent)
 * [ZoneArea](http://document.tencentcloudapi.woa.com/document/product/1320/50571#ZoneArea)
 * [ZoneConfig](http://document.tencentcloudapi.woa.com/document/product/1320/50571#ZoneConfig)
+
+
+
+
+## 向量数据库(vdb) 版本：2023-06-16
+
+### 第 1 次发布
+
+发布时间：2024-02-02 14:50:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1758/83304)
+
+新增数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1758/83305#InstanceInfo)
+* [Network](http://document.tencentcloudapi.woa.com/document/product/1758/83305#Network)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1758/83305#Tag)
 
 
 

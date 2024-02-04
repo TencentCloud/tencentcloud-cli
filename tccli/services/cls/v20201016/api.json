@@ -13229,7 +13229,7 @@
       "usage": "in"
     },
     "TopicInfo": {
-      "document": "日志主题信息",
+      "document": "主题基本信息",
       "members": [
         {
           "disabled": false,
@@ -13243,7 +13243,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "主题ID",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
@@ -13253,7 +13253,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "主题名称",
           "example": "test",
           "member": "string",
           "name": "TopicName",
@@ -13273,7 +13273,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启索引",
+          "document": "主题是否开启索引（主题类型需为日志主题）",
           "example": "true",
           "member": "bool",
           "name": "Index",
@@ -13283,7 +13283,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "AssumerName",
@@ -13303,7 +13303,7 @@
         },
         {
           "disabled": false,
-          "document": "日主主题是否开启采集",
+          "document": "主题是否开启采集",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -13313,7 +13313,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -13343,7 +13343,7 @@
         },
         {
           "disabled": false,
-          "document": "日主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -13373,7 +13373,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
@@ -13383,7 +13383,7 @@
         },
         {
           "disabled": false,
-          "document": "开启日志沉降，热存储的生命周期， hotPeriod < Period。\n热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "HotPeriod",

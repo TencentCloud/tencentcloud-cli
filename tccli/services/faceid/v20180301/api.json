@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ApplyCardVerification": {
+      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n    </tbody>\n    </table>",
+      "input": "ApplyCardVerificationRequest",
+      "name": "发起证件识别",
+      "output": "ApplyCardVerificationResponse",
+      "status": "online"
+    },
     "ApplyLivenessToken": {
       "document": "每次调用活体服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。",
       "input": "ApplyLivenessTokenRequest",
@@ -152,6 +159,13 @@
       "input": "GetActionSequenceRequest",
       "name": "获取动作顺序",
       "output": "GetActionSequenceResponse",
+      "status": "online"
+    },
+    "GetCardVerificationResult": {
+      "document": "获取证件识别结果",
+      "input": "GetCardVerificationResultRequest",
+      "name": "获取证件识别结果",
+      "output": "GetCardVerificationResultResponse",
       "status": "online"
     },
     "GetDetectInfo": {
@@ -372,6 +386,224 @@
     "serviceShortName": "faceid"
   },
   "objects": {
+    "Address": {
+      "document": "海外证件地址",
+      "members": [
+        {
+          "disabled": false,
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮政编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PostalCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Subdivision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完整地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormattedAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址栏第一行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineOne",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址栏第二行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineTwo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址栏第三行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineThree",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址栏第四行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineFour",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址栏第五行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LineFive",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplyCardVerificationRequest": {
+      "document": "ApplyCardVerification请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证件国家\n\n",
+          "example": "IDN：Indonesia; HKG: Hong Kong;  THA: Thailand;  MYS: Malaysia;  SGP: Singapore; JPN: Japan; PHL: Philippines;   AUTO:  支持200+国家的卡证，若有需求请联系商务",
+          "member": "string",
+          "name": "Nationality",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件类型\n",
+          "example": "ID_CARD; PASSPORT; DRIVING_LICENSE; AUTO 支持上述3类卡证的自动识别",
+          "member": "string",
+          "name": "CardType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件正面的 Base64 值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的图片分辨率：8000*8000。 图片的 ImageUrlFront、ImageBase64Front 必须提供一个，如果都提供，只使用 ImageUrlFront。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64Front",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件反面的 Base64 值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的最大图片分辨率：8000*8000。部分证件的ImageUrlBack、ImageBase64Back 必须提供一个，如果都提供，只使用 ImageUrlBack。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBase64Back",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件反面的 Url值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的最大图片分辨率：8000*8000。 图片的 ImageUrlFront、ImageBase64Front 必须提供一个，如果都提供，只使用 ImageUrlFront。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrlFront",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件反面的 Url值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。 支持的最大图片分辨率：8000*8000。 部分证件的ImageUrlBack、ImageBase64Back 必须提供一个，如果都提供，只使用 ImageUrlBack。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrlBack",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyCardVerificationResponse": {
+      "document": "ApplyCardVerification返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程唯一token，用于获取结果 ",
+          "example": "无",
+          "member": "string",
+          "name": "CardVerificationToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用拉取结果接口之前的建议等待时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "AsyncCardVerificationWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用拉取结果接口轮询的最大轮询次数",
+          "example": "无",
+          "member": "uint64",
+          "name": "AsyncCardVerificationMaxPollingTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用拉取结果接口轮询的间隔时间，单位秒",
+          "example": "无",
+          "member": "uint64",
+          "name": "AsyncCardVerificationPollingWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ApplyLivenessTokenRequest": {
       "document": "ApplyLivenessToken请求参数结构体",
       "members": [
@@ -3373,6 +3605,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Address",
+          "name": "Address",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3466,6 +3708,103 @@
           "example": "",
           "member": "string",
           "name": "ActionSequence",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCardVerificationResultRequest": {
+      "document": "GetCardVerificationResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发起证件识别接口返回的唯一token",
+          "example": "无",
+          "member": "string",
+          "name": "CardVerificationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCardVerificationResultResponse": {
+      "document": "GetCardVerificationResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通过状态",
+          "example": "0：PASSED 1：WARNING 2：REJECTED 3：PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴伪信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WarnInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IDN：Indonesia HKG：Hong Kong THA：Thailand MYS：Malaysia SGP：Singapore  JPN：Japan  PHL：Philippines",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1：ID CARD; 2：PASSPORT;  3：DRIVING LICENSE;  4：VISA ; -1：UNSUPPORTED",
+          "member": "string",
+          "name": "CardType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ID_CARD：-NATIONAL_ID -CONSULAR_ID -ELECTORAL_ID -RESIDENT_PERMIT_ID -TAX_ID -STUDENT_ID -PASSPORT_CARD_ID -MILITARY_ID -PUBLIC_SAFETY_ID -HEALTH_ID -OTHER_ID -VISA -UNKOWN   DRIVING_LICENSE: -REGULAR_DRIVING_LICENSE -LEARNING_DRIVING_LICENSE   PASSPORT: -E_PASSPORT(mobile only)",
+          "member": "string",
+          "name": "CardSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件照的文字识别结果\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CardInfo",
+          "name": "CardInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入参中的token",
+          "example": "无",
+          "member": "string",
+          "name": "IDVerificationToken",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -1,3 +1,78 @@
+# Release 3.0.935.1
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 3 次发布
+
+发布时间：2024-02-05 01:12:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
+
+	* 新增入参：IsElastic
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+
+	* 新增入参：IsElastic
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 49 次发布
+
+发布时间：2024-02-05 01:16:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)
+* [GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)
+
+新增数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)
+
+修改数据结构：
+
+* [GeneralCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GeneralCard)
+
+	* 新增成员：Address
+
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 12 次发布
+
+发布时间：2024-02-05 01:22:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)
+
+新增数据结构：
+
+* [ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)
+* [ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)
+* [ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)
+
+
+
 # Release 3.0.934.1
 
 ## 语音识别(asr) 版本：2019-06-14
