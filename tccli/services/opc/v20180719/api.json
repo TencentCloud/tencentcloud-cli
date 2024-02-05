@@ -56,6 +56,13 @@
       "output": "DescribeCvmRenewInstanceDetailResponse",
       "status": "online"
     },
+    "GetActivityRegFormRecordList": {
+      "document": "查询活动报名表单记录列表",
+      "input": "GetActivityRegFormRecordListRequest",
+      "name": "查询活动报名表单记录列表",
+      "output": "GetActivityRegFormRecordListResponse",
+      "status": "online"
+    },
     "SyncProductIntroPageData": {
       "document": "同步产品介绍页资源位数据",
       "input": "SyncProductIntroPageDataRequest",
@@ -183,6 +190,194 @@
         }
       ],
       "usage": "out"
+    },
+    "ActivityRegFormRecord": {
+      "document": "活动报名表单记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "点石活动ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12202",
+          "member": "uint64",
+          "name": "ActivityId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报名场次列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Basics\",\"businessExpand\"]",
+          "member": "string",
+          "name": "FormSessionList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lam",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯科技",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo@tencent.com",
+          "member": "string",
+          "name": "Mail",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称/职位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "engineer",
+          "member": "string",
+          "name": "Position",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话国际区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13412526590",
+          "member": "string",
+          "name": "Phone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同意条款 0-不同意 1-同意\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Agreement",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参与方式 0-线下参与 1-线上参与\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ParticipationMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "联系方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ActivityRegFormRecordContactInfo",
+          "name": "ContactInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-25 15:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-25 15:00:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ActivityRegFormRecordContactInfo": {
+      "document": "活动报名表单记录联系方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "同意邮件联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgreeMail",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同意短信联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgreeSms",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同意手机联系 0-否 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgreePhone",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AddActivityWhitelistUinRequest": {
       "document": "AddActivityWhitelistUin请求参数结构体",
@@ -561,6 +756,71 @@
           "member": "InstanceDetail",
           "name": "InstanceDetail",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetActivityRegFormRecordListRequest": {
+      "document": "GetActivityRegFormRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "点石活动ID",
+          "example": "12202",
+          "member": "uint64",
+          "name": "ActivityId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetActivityRegFormRecordListResponse": {
+      "document": "GetActivityRegFormRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录列表",
+          "example": "无",
+          "member": "ActivityRegFormRecord",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

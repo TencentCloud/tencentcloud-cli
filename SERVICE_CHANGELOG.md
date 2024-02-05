@@ -1,33 +1,10 @@
 # 本版本更新包含以下内容：
 
-## cxm(cxm) 版本：2017-03-12
+## 运营产品中心(opc) 版本：2018-07-19
 
-### 第 3 次发布
+### 第 6 次发布
 
-发布时间：2024-02-05 01:12:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
-
-	* 新增入参：IsElastic
-
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
-
-	* 新增入参：IsElastic
-
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 49 次发布
-
-发布时间：2024-02-05 01:16:00
+发布时间：2024-02-06 01:20:12
 
 本次发布包含了以下内容：
 
@@ -35,41 +12,12 @@
 
 新增接口：
 
-* [ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)
-* [GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)
+* [GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)
 
 新增数据结构：
 
-* [Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)
-
-修改数据结构：
-
-* [GeneralCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GeneralCard)
-
-	* 新增成员：Address
-
-
-
-
-## 流量反欺诈(taf) 版本：2020-02-10
-
-### 第 12 次发布
-
-发布时间：2024-02-05 01:22:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)
-
-新增数据结构：
-
-* [ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)
-* [ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)
-* [ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
+* [ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)
 
 
 
@@ -44827,12 +44775,12 @@
 
 新增接口：
 
-* [[ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ApplyCardVerification](http://document.tencentcloudapi.woa.com/document/product/1007/83318)
+* [GetCardVerificationResult](http://document.tencentcloudapi.woa.com/document/product/1007/83317)
 
 新增数据结构：
 
-* [[Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address))
+* [Address](http://document.tencentcloudapi.woa.com/document/product/1007/41958#Address)
 
 修改数据结构：
 
@@ -63378,6 +63326,23 @@
 
 ## 运营产品中心(opc) 版本：2018-07-19
 
+### 第 6 次发布
+
+发布时间：2024-02-06 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)](http://document.tencentcloudapi.woa.com/document/product/1602/76727#[ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord))
+* [[ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)](http://document.tencentcloudapi.woa.com/document/product/1602/76727#[ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo))
+
 ### 第 5 次发布
 
 发布时间：2024-02-01 01:21:00
@@ -72029,13 +71994,13 @@
 
 新增接口：
 
-* [[ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ManagePortraitRisk](http://document.tencentcloudapi.woa.com/document/product/1031/83319)
 
 新增数据结构：
 
-* [[ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput))
-* [[ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput))
-* [[ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)](http://document.tencentcloudapi.woa.com/document/product/1031/43310#[ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput))
+* [ManagePortraitRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskInput)
+* [ManagePortraitRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskOutput)
+* [ManagePortraitRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManagePortraitRiskValueOutput)
 
 ### 第 11 次发布
 

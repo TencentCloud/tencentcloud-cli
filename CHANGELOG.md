@@ -1,3 +1,26 @@
+# Release 3.0.936.1
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 6 次发布
+
+发布时间：2024-02-06 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)
+
+新增数据结构：
+
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
+* [ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)
+
+
+
 # Release 3.0.935.1
 
 ## cxm(cxm) 版本：2017-03-12
