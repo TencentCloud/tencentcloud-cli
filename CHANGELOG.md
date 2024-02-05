@@ -1,3 +1,50 @@
+# Release 3.0.1057.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 81 次发布
+
+发布时间：2024-02-05 10:48:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HighLightItem](https://cloud.tencent.com/document/api/614/56471#HighLightItem)
+
+修改数据结构：
+
+* [LogContextInfo](https://cloud.tencent.com/document/api/614/56471#LogContextInfo)
+
+	* 新增成员：HighLights
+
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 18 次发布
+
+发布时间：2024-02-05 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ManagePortraitRisk](https://cloud.tencent.com/document/api/1031/103776)
+
+新增数据结构：
+
+* [ManagePortraitRiskInput](https://cloud.tencent.com/document/api/1031/43310#ManagePortraitRiskInput)
+* [ManagePortraitRiskOutput](https://cloud.tencent.com/document/api/1031/43310#ManagePortraitRiskOutput)
+* [ManagePortraitRiskValueOutput](https://cloud.tencent.com/document/api/1031/43310#ManagePortraitRiskValueOutput)
+
+
+
 # Release 3.0.1056.1
 
 ## 语音识别(asr) 版本：2019-06-14

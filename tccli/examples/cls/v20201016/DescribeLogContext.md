@@ -18,29 +18,49 @@ Output:
 ```
 {
     "Response": {
-        "NextOver": false,
-        "PrevOver": false,
         "LogContextInfos": [
             {
-                "Content": "xxxxxxx",
-                "HostName": "abc",
-                "Filename": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
-                "PkgId": "528C1318606EFEB8-1A0",
-                "PkgLogId": 196609,
-                "Source": "100.105.60.255",
-                "BTime": 323232323
+                "BTime": 1706685527008,
+                "Content": "{\"create_time\":\"2022-06-07 17:17:10\",\"Caller\":\"cache/topic.go:92\",\"Time\":\"2024-01-31 15:18:46\",\"Level\":\"INFO\"}",
+                "Filename": "/var/log/cls_cgi.log",
+                "HighLights": [
+                    {
+                        "Key": "user_topic_id",
+                        "Values": [
+                            "<cls_highlight>74ee1b12-9b3d-4a2b-80dd-8322c74126fb</cls_highlight>"
+                        ]
+                    }
+                ],
+                "HostName": "eks",
+                "IndexStatus": "",
+                "PkgId": "5BD4618A65B32B70-117",
+                "PkgLogId": 30736474,
+                "RawLog": "",
+                "Source": "9.148.222.202"
             },
             {
-                "Content": "x1x2x3",
-                "HostName": "abcd",
-                "Filename": "/usr/local/services/cls_cgi_api3-1.0/log/cls_cgi.log.20210425",
-                "PkgId": "528C1318606EFEB8-1A1",
-                "PkgLogId": 196609,
-                "Source": "100.105.60.255",
-                "BTime": 323232323
+                "BTime": 1706685528008,
+                "Content": "{\"create_time\":\"2022-06-07 17:17:10\",\"Caller\":\"cache/topic.go:92\",\"Time\":\"2024-01-31 15:18:46\",\"Level\":\"INFO\"}",
+                "Filename": "/var/log/cls_cgi.log",
+                "HighLights": [
+                    {
+                        "Key": "user_topic_id",
+                        "Values": [
+                            "<cls_highlight>74ee1b12-9b3d-4a2b-80dd-8322c74126fb</cls_highlight>"
+                        ]
+                    }
+                ],
+                "HostName": "eks",
+                "IndexStatus": "",
+                "PkgId": "5BD4618A65B32B70-118",
+                "PkgLogId": 42008582,
+                "RawLog": "",
+                "Source": "9.148.222.202"
             }
         ],
-        "RequestId": "b276cb6e-4687-11eb-b378-0242ac130002"
+        "NextOver": true,
+        "PrevOver": true,
+        "RequestId": "0d6109ac-e925-4670-9ccc-dc2bd4024a32"
     }
 }
 ```

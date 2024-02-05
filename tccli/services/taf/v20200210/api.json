@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ManagePortraitRisk": {
+      "document": "虚假流量识别",
+      "input": "ManagePortraitRiskRequest",
+      "name": "虚假流量识别",
+      "output": "ManagePortraitRiskResponse",
+      "status": "online"
+    },
     "RecognizeCustomizedAudience": {
       "document": "流量反欺诈-流量验准定制版",
       "input": "RecognizeCustomizedAudienceRequest",
@@ -465,6 +472,138 @@
         }
       ],
       "usage": "in"
+    },
+    "ManagePortraitRiskInput": {
+      "document": "业务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求时间戳秒",
+          "example": "1686263179",
+          "member": "int64",
+          "name": "PostTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户公网ip（仅支持IPv4）",
+          "example": "203.205.141.118",
+          "member": "string",
+          "name": "UserIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道号",
+          "example": "1234",
+          "member": "int64",
+          "name": "Channel",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ManagePortraitRiskOutput": {
+      "document": "业务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码（0，成功，其他失败）",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码对应的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagePortraitRiskValueOutput",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ManagePortraitRiskRequest": {
+      "document": "ManagePortraitRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "ManagePortraitRiskInput",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ManagePortraitRiskResponse": {
+      "document": "ManagePortraitRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagePortraitRiskOutput",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManagePortraitRiskValueOutput": {
+      "document": "业务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应的IP",
+          "example": "无",
+          "member": "string",
+          "name": "UserIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回风险等级, 0 - 4，0代表无风险，数值越大，风险越高",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OutputRecognizeTargetAudience": {
       "document": "流量反欺诈-验准返回值",

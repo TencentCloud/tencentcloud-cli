@@ -5245,7 +5245,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志包下载链接。\n下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。",
+          "document": "日志包下载链接。\n下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。链接有效期1天。",
           "example": "无",
           "member": "DomainLog",
           "name": "DomainLogs",
