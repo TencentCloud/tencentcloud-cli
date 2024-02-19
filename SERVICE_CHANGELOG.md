@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 运营产品中心(opc) 版本：2018-07-19
+## 容器镜像服务(tcr) 版本：2019-09-24
 
-### 第 6 次发布
+### 第 31 次发布
 
-发布时间：2024-02-06 01:20:12
+发布时间：2024-02-19 10:38:04
 
 本次发布包含了以下内容：
 
@@ -12,12 +12,7 @@
 
 新增接口：
 
-* [GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)
-
-新增数据结构：
-
-* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
-* [ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)
+* [ModifyServiceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1141/83321)
 
 
 
@@ -63336,12 +63331,12 @@
 
 新增接口：
 
-* [[GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetActivityRegFormRecordList](http://document.tencentcloudapi.woa.com/document/product/1602/83320)
 
 新增数据结构：
 
-* [[ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)](http://document.tencentcloudapi.woa.com/document/product/1602/76727#[ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord))
-* [[ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)](http://document.tencentcloudapi.woa.com/document/product/1602/76727#[ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo))
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
+* [ActivityRegFormRecordContactInfo](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecordContactInfo)
 
 ### 第 5 次发布
 
@@ -74794,6 +74789,18 @@
 
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 31 次发布
+
+发布时间：2024-02-19 10:38:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyServiceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1141/83321)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 30 次发布
 

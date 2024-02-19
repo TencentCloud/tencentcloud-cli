@@ -484,7 +484,7 @@
       "status": "online"
     },
     "SyncProxyOrganizationOperators": {
-      "document": "此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于第三方应用平台的，无法针对员工做新增/更新/离职等操作。 \n\n- **新增员工的场景**:    通过本接口提前导入员工列表, 然后调用<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>分享给对应的员工进行实名, 新增员工后员工的状态为**未实名**, 通过链接实名后状态变为**已实名**, 已实名员工就可以参与合同的发起和签署\n\n- **员工离职的场景**: 通过本接口将员工置为离职, 员工无法登录控制台和腾讯电子签小程序进行操作了,   同时给此员工分配的openid会被回收可以给其他新员工使用 (离职后员工数据会被置空,  再次加入公司会从零开始) ,  若员工信息有误可通过离职后在新增来解决,  离职员工状态为**离职**\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/7a27a6bb0e4d39c2f6aa2a0b39946181/channel_SyncProxyOrganizationOperators.png)\n\n**注**:    \n-  新增员工可以配置白名单限制注册使用对应openid的员工必须满足SyncProxyOrganizationOperators导入的(默认生成子客登录链接生成的链接可以任意员工点击注册绑定对应的openid), 此白名单需要咨询接入经理\n-  <font color='red'>超管和法人无法通过此接口离职</font>,  需要超管和法人将权限转移给其他人后才可通过此接口离职\n- 新增员工的场景同ID不同员工会覆盖掉上一个同ID的员工, 如果上一个员工已经实名则不会被覆盖",
+      "document": "此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。\n子客Web控制台的组织架构管理，依赖于第三方应用平台的，无法在页面针对员工做新增/更新/离职等操作， 必须通过 API 来操作。 \n\n- **新增员工的场景**:    通过本接口提前导入员工列表, 然后调用<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>分享给对应的员工进行实名, 新增员工后员工的状态为**未实名**, 通过链接实名后状态变为**已实名**, 已实名员工就可以参与合同的发起。\n\n- **员工离职的场景**: 通过本接口将员工置为离职, 员工无法登录控制台和腾讯电子签小程序进行操作了,   同时给此员工分配的openid会被回收可以给其他新员工使用 (离职后员工数据会被置空,  再次加入公司会从零开始) ,  若员工信息有误可通过离职后在新增来解决,  离职员工状态为**离职**。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/7a27a6bb0e4d39c2f6aa2a0b39946181/channel_SyncProxyOrganizationOperators.png)\n\n**注**:    \n-  新增员工可以配置白名单限制注册使用对应openid的员工必须满足SyncProxyOrganizationOperators导入的(默认生成子客登录链接生成的链接可以任意员工点击注册绑定对应的openid), 此白名单需要咨询接入经理\n-  <font color='red'>超管和法人无法通过此接口离职</font>,  需要超管和法人将权限转移给其他人后才可通过此接口离职\n- 新增员工的场景同ID不同员工会覆盖掉上一个同ID的员工, 如果上一个员工已经实名则不会被覆盖",
       "input": "SyncProxyOrganizationOperatorsRequest",
       "name": "企业员工新增或离职",
       "output": "SyncProxyOrganizationOperatorsResponse",
@@ -3830,7 +3830,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型<br/>EMBED_WEB_THEME：嵌入式主题\n<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置",
+          "document": "主题类型<br/>EMBED_WEB_THEME：嵌入式主题\n<ul>\n<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>\n<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，\n目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "ThemeType",

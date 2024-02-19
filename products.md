@@ -105,7 +105,7 @@
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | 2023-07-11 11:12:29 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-01-25 01:16:22 |
 | ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-02-05 01:15:32 |
-| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-02-06 01:15:24 |
+| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-02-07 01:15:19 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2023-12-18 11:22:04 |
 | faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2024-02-05 01:16:00 |
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | 2023-07-11 11:14:39 |
@@ -184,7 +184,7 @@
 | postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | 2024-01-24 10:40:33 |
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2024-01-19 01:19:28 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | 2024-01-09 01:22:36 |
-| rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2024-02-05 01:21:26 |
+| rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2024-02-19 10:36:00 |
 | redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2024-01-29 01:19:25 |
 | region | [地域管理系统](http://document.tencentcloudapi.woa.com/document/product/1596) | 2024-02-01 01:21:56 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2023-12-25 01:56:15 |
@@ -224,7 +224,7 @@
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | 2024-01-18 10:26:33 |
 | tcmpp | [腾讯云小程序平台](http://document.tencentcloudapi.woa.com/document/product/) | 2024-01-12 10:35:15 |
 | tcop | [腾讯云可观测平台](http://document.tencentcloudapi.woa.com/document/product/-1) | 2023-07-11 11:30:34 |
-| tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2023-12-12 02:29:49 |
+| tcr | [容器镜像服务](http://document.tencentcloudapi.woa.com/document/product/1141) | 2024-02-19 10:38:04 |
 | tcss | [容器安全服务](http://document.tencentcloudapi.woa.com/document/product/1285) | 2024-02-02 01:24:05 |
 | tcv | [腾讯云图数据可视化](http://document.tencentcloudapi.woa.com/document/product/665) | 2023-07-11 11:32:41 |
 | tdapg | [TDSQL-A PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | 2023-08-17 02:59:23 |
