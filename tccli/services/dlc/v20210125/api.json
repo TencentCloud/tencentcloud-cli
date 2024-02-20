@@ -9487,7 +9487,7 @@
           "example": "无",
           "member": "TaskResultInfo",
           "name": "TaskInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -15802,7 +15802,7 @@
           "example": "fdd9c5fa21ca11eca6fb5254006c64af",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15812,7 +15812,7 @@
           "example": "COSDataCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15822,7 +15822,7 @@
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15832,7 +15832,7 @@
           "example": "select * from test limit 10;",
           "member": "string",
           "name": "SQL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15842,7 +15842,7 @@
           "example": "DDL",
           "member": "string",
           "name": "SQLType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15852,7 +15852,7 @@
           "example": "2",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15862,7 +15862,7 @@
           "example": "1024",
           "member": "int64",
           "name": "DataAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15872,7 +15872,7 @@
           "example": "42",
           "member": "int64",
           "name": "UsedTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15882,7 +15882,7 @@
           "example": "cosn://dlc-nj-125849872/test/DLCQueryResults/2021/09/",
           "member": "string",
           "name": "OutputPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15892,7 +15892,7 @@
           "example": "1632991895728",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15902,7 +15902,7 @@
           "example": "success",
           "member": "string",
           "name": "OutputMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15912,7 +15912,7 @@
           "example": "OK, No rows affected (0.000000 seconds)",
           "member": "string",
           "name": "RowAffectInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15922,7 +15922,7 @@
           "example": "无",
           "member": "Column",
           "name": "ResultSchema",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15932,7 +15932,7 @@
           "example": "[[\\\"3\\\",\\\"kk\\\"],[\\\"3\\\",\\\"kk\\\"]]",
           "member": "string",
           "name": "ResultSet",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15942,7 +15942,7 @@
           "example": "nextMarker=\\u0026nextKey=test/DLCQueryResults/2021/10/15/2c60388",
           "member": "string",
           "name": "NextToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15952,7 +15952,7 @@
           "example": "100",
           "member": "int64",
           "name": "Percentage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15962,7 +15962,7 @@
           "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
           "member": "string",
           "name": "ProgressDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15972,7 +15972,7 @@
           "example": "table",
           "member": "string",
           "name": "DisplayFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15982,9 +15982,19 @@
           "example": "1000",
           "member": "int64",
           "name": "TotalTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "获取结果消耗的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "QueryResultTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

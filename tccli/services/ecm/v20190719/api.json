@@ -2942,7 +2942,7 @@
         {
           "disabled": false,
           "document": "模块默认安全组列表",
-          "example": "无",
+          "example": "[\"esg-ggdr123\",\"esg-15fd123\",\"esg-mt9b9123\"]",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -4645,18 +4645,20 @@
         {
           "disabled": false,
           "document": "支持的导入镜像的操作系统类型",
-          "example": "",
+          "example": "        \"ImportImageOsListSupported\": {             \"Windows\": [                 \"Windows Server 2008\",                  \"Windows Server 2012\",                  \"Windows Server 2016\"             ],              \"Linux\": [                 \"CentOS\",                  \"Ubuntu\",                  \"Debian\",                  \"OpenSUSE\",                  \"SUSE\",                  \"CoreOS\",                  \"FreeBSD\",                  \"Other Linux\"             ]         }",
           "member": "ImageOsList",
           "name": "ImportImageOsListSupported",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "支持的导入镜像的操作系统版本",
-          "example": "",
+          "example": "\"ImportImageOsVersionSet\": [             {                 \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ],                  \"OsVersions\": [                     \"-\"                 ]             },              {                 \"OsVersions\": [                     \"-\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"-\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"5\",                      \"6\",                      \"7\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"7\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"6\",                      \"7\",                      \"8\",                      \"9\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"10\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"5\",                      \"6\",                      \"7\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"11\",                      \"12\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"10\",                      \"11\",                      \"12\",                      \"13\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"10\",                      \"12\",                      \"14\",                      \"16\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             },              {                 \"OsVersions\": [                     \"-\"                 ],                  \"OsName\": \"CentOS 7.4 64位\",                  \"Architecture\": [                     \"x86_64\",                      \"i386\"                 ]             }         ]",
           "member": "OsVersion",
           "name": "ImportImageOsVersionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4782,7 +4784,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。\nzone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nmodule-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。\nimage-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。\nvpc-id String      是否必填：否      （过滤条件）按照实例的vpc id过滤。\nsubnet-id String      是否必填：否      （过滤条件）按照实例的subnet id过滤。\n\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。",
-          "example": "",
+          "example": "{\"Filters\":[{\"Values\":[\"ap-ningbo-ecm2-1\"],\"Name\":\"zone\"}]}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4791,7 +4793,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4800,7 +4802,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20(如果查询结果数目大于等于20)，最大值为100。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4809,7 +4811,7 @@
         {
           "disabled": false,
           "document": "指定排序字段。目前支持的可选值如下\ntimestamp 按实例创建时间排序。\n注意：目前仅支持按创建时间排序，后续可能会有扩展。\n如果不传，默认按实例创建时间排序",
-          "example": "",
+          "example": "timestamp",
           "member": "string",
           "name": "OrderByField",
           "required": false,
@@ -4818,7 +4820,7 @@
         {
           "disabled": false,
           "document": "指定排序是降序还是升序。0表示降序； 1表示升序。如果不传默认为降序",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "OrderDirection",
           "required": false,
@@ -4833,18 +4835,20 @@
         {
           "disabled": false,
           "document": "返回的实例相关信息列表的长度。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回的实例相关信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5205,7 +5209,7 @@
           "example": "17",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5215,7 +5219,7 @@
           "example": "无",
           "member": "ModuleItem",
           "name": "ModuleItemSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7551,7 +7555,7 @@
         {
           "disabled": false,
           "document": "运营商名称",
-          "example": "无",
+          "example": "CTCC",
           "member": "string",
           "name": "ProviderName",
           "output_required": true,
@@ -7561,7 +7565,7 @@
         {
           "disabled": false,
           "document": "节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ProviderNodeNum",
           "output_required": true,
@@ -7581,7 +7585,7 @@
         {
           "disabled": false,
           "document": "Zone实例信息结构体数组",
-          "example": "无",
+          "example": "[           {               \"ZoneName\": \"北京三区（电信）\",               \"InstanceNum\": 1           }       ]",
           "member": "ZoneInstanceInfo",
           "name": "ZoneInstanceInfoSet",
           "output_required": true,
@@ -7591,7 +7595,7 @@
         {
           "disabled": false,
           "document": "实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ProviderInstanceNum",
           "output_required": false,
@@ -7642,7 +7646,7 @@
         {
           "disabled": false,
           "document": "申请IPv6 Cidr Block的个数。作为入参数时为必选。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Count",
           "required": false,
@@ -7767,7 +7771,7 @@
         {
           "disabled": false,
           "document": "镜像所有者",
-          "example": "无",
+          "example": "12345678",
           "member": "int64",
           "name": "ImageOwner",
           "output_required": true,
@@ -8081,30 +8085,30 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "ein-5afzpqpk",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称，如ens-34241f3s。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "proxyIns0410009",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例状态。取值范围：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关机\nSTARTING：表示开机中\nSTOPPING：表示关机中\nREBOOTING：表示重启中\nSHUTDOWN：表示停止待销毁\nTERMINATING：表示销毁中。",
-          "example": "无",
+          "example": "TERMINATED",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8114,7 +8118,7 @@
           "example": "无",
           "member": "Image",
           "name": "Image",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8124,7 +8128,7 @@
           "example": "无",
           "member": "SimpleModule",
           "name": "SimpleModule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8134,7 +8138,7 @@
           "example": "无",
           "member": "Position",
           "name": "Position",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8144,7 +8148,7 @@
           "example": "无",
           "member": "Internet",
           "name": "Internet",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8154,17 +8158,17 @@
           "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8174,117 +8178,117 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例最后一次操作。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TerminateInstances",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例最后一次操作结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OPERATING",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例业务状态。取值范围：\nNORMAL：表示正常状态的实例\nEXPIRED：表示过期的实例\nPROTECTIVELY_ISOLATED：表示被安全隔离的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "系统盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "SystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "数据盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "DataDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例UUID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3d4b86db-6380-4fe4-8f0b-c9e78fa92ba0",
           "member": "string",
           "name": "UUID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "付费方式。\n    0为后付费。\n    1为预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "过期时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "隔离时间。格式为yyyy-mm-dd HH:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-18 16:59:51",
           "member": "string",
           "name": "IsolatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否自动续费。\n      0为不自动续费。\n      1为自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "过期状态。\n    NORMAL 表示机器运行正常。\n    WILL_EXPIRE 表示即将过期。\n    EXPIRED 表示已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "ExpireState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8294,7 +8298,7 @@
           "example": "无",
           "member": "DiskInfo",
           "name": "SystemDisk",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8304,27 +8308,27 @@
           "example": "无",
           "member": "DiskInfo",
           "name": "DataDisks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "新实例标志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "NewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "esg-g4k9lznc",
           "member": "string",
           "name": "SecurityGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8334,17 +8338,17 @@
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例运营商字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CTCC",
           "member": "string",
           "name": "ISP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8354,7 +8358,7 @@
           "example": "无",
           "member": "PhysicalPosition",
           "name": "PhysicalPosition",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -8602,7 +8606,7 @@
           "example": "无",
           "member": "InstanceFamilyConfig",
           "name": "InstanceFamilyConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8612,7 +8616,7 @@
           "example": "VIS.16XLARGE128",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8622,7 +8626,7 @@
           "example": "2",
           "member": "int64",
           "name": "Vcpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8632,7 +8636,7 @@
           "example": "4",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8642,7 +8646,7 @@
           "example": "2.5 GHz",
           "member": "string",
           "name": "Frequency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8652,7 +8656,7 @@
           "example": "Intel Xeon Skylake 6133",
           "member": "string",
           "name": "CpuModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8662,17 +8666,17 @@
           "example": "无",
           "member": "InstanceFamilyTypeConfig",
           "name": "InstanceFamilyTypeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型额外信息 是一个json字符串，如果存在则表示特殊机型，格式如下：{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"dataDiskSize\":3200,\"systemDiskSize\":60, \"systemDiskSizeShow\":\"系统盘默认60G\",\"dataDiskSizeShow\":\"本地NVMe SSD 硬盘3200 GB\"}",
           "member": "string",
           "name": "ExtInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8682,7 +8686,7 @@
           "example": "1",
           "member": "float",
           "name": "Vgpu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8692,7 +8696,7 @@
           "example": "NVDIA Tesla T4",
           "member": "string",
           "name": "GpuModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10716,60 +10720,60 @@
         {
           "disabled": false,
           "document": "模块Id。",
-          "example": "无",
+          "example": "em-n212345",
           "member": "string",
           "name": "ModuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模块名称。",
-          "example": "无",
+          "example": "t1_u2",
           "member": "string",
           "name": "ModuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模块状态：\nNORMAL：正常。\nDELETING：删除中 \nDELETEFAILED：删除失败。",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "ModuleState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认系统盘大小。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DefaultSystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认数据盘大小。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DefaultDataDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认机型。",
-          "example": "无",
+          "example": "          \"InstanceTypeConfig\": {             \"CpuModelName\": \"Intel Xeon Skylake 6133\",             \"ExtInfo\": \"\",             \"Frequency\": \"2.5 GHz\",             \"GpuModelName\": null,             \"InstanceFamilyConfig\": {               \"InstanceFamily\": \"S5\",               \"InstanceFamilyName\": \"标准型S5\"             },             \"InstanceFamilyTypeConfig\": {               \"InstanceFamilyType\": \"S\",               \"InstanceFamilyTypeName\": \"标准型\"             },             \"InstanceType\": \"S5.2XLARGE16\",             \"Memory\": 16,             \"Vcpu\": 8,             \"Vgpu\": null           }",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10779,27 +10783,27 @@
           "example": "无",
           "member": "Image",
           "name": "DefaultImage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2020-02-18 16:59:51",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认出带宽。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "DefaultBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10809,47 +10813,47 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否关闭IP直通。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "CloseIpDirect",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认安全组id列表。",
-          "example": "无",
+          "example": "[\"esg-ggdr1234\",\"esg-15fd1234\",\"esg-mt9b1234\"]",
           "member": "string",
           "name": "SecurityGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "默认入带宽。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "DefaultBandwidthIn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "自定义脚本数据",
-          "example": "无",
+          "example": "AAA123***===SG",
           "member": "string",
           "name": "UserData",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10859,7 +10863,7 @@
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10869,17 +10873,17 @@
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否禁止外网ip",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DisableWanIp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -11342,150 +11346,170 @@
         {
           "disabled": false,
           "document": "网络带宽上限",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "MaxBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘上限",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "MaxSystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络带宽下限",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MinBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘下限",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "MinSystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大数据盘大小",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "MaxDataDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最小数据盘大小",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "MinDataDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议带宽",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "SuggestBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议硬盘大小",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "SuggestDataDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议系统盘大小",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "SuggestSystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Cpu核数峰值",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "MaxVcpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Cpu核最小值",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MinVcpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单次请求最大cpu核数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MaxVcpuPerReq",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "带宽步长",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "PerBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘步长",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "PerDataDisk",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总模块数量",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "MaxModuleNum",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持cbs",
+          "example": "false",
+          "member": "bool",
+          "name": "CBSSupported",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘数量限制",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskNumLimit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -11578,7 +11602,7 @@
         {
           "disabled": false,
           "document": "节点是否支持LB",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "LBSupported",
           "output_required": true,
@@ -12000,7 +12024,7 @@
         {
           "disabled": false,
           "document": "实例所在的Zone的信息。",
-          "example": "",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfo",
           "required": true,
@@ -12010,7 +12034,7 @@
         {
           "disabled": false,
           "document": "实例所在的国家的信息。",
-          "example": "",
+          "example": "无",
           "member": "Country",
           "name": "Country",
           "required": true,
@@ -12020,7 +12044,7 @@
         {
           "disabled": false,
           "document": "实例所在的Area的信息。",
-          "example": "",
+          "example": "无",
           "member": "Area",
           "name": "Area",
           "required": true,
@@ -12030,7 +12054,7 @@
         {
           "disabled": false,
           "document": "实例所在的省份的信息。",
-          "example": "",
+          "example": "无",
           "member": "Province",
           "name": "Province",
           "required": true,
@@ -12040,7 +12064,7 @@
         {
           "disabled": false,
           "document": "实例所在的城市的信息。",
-          "example": "",
+          "example": "无",
           "member": "City",
           "name": "City",
           "required": true,
@@ -12050,12 +12074,22 @@
         {
           "disabled": false,
           "document": "实例所在的Region的信息。",
-          "example": "",
+          "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例是否支持ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Ipv6Supported",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12856,7 +12890,7 @@
         {
           "disabled": false,
           "document": "是否保留数据盘数据，取值\"true\"/\"false\"。默认为\"true\"",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "KeepData",
           "required": false,
@@ -12865,7 +12899,7 @@
         {
           "disabled": false,
           "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\nTRUE：表示保持镜像的登录设置\nFALSE：表示不保持镜像的登录设置\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "KeepImageLogin",
           "required": false,
@@ -13212,7 +13246,7 @@
         {
           "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\nLinux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? / ]中的特殊符。Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) ` ~ ! @ # $ % ^ & - + = | { } [ ] : ; ' , . ? /]中的特殊符号。",
-          "example": "无",
+          "example": "pwd123",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -13221,7 +13255,7 @@
         {
           "disabled": false,
           "document": "公网出带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用模块下的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthIn的值",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -13230,7 +13264,7 @@
         {
           "disabled": false,
           "document": "模块ID。如果未传该参数，则必须传ImageId，InstanceType，DataDiskSize，InternetMaxBandwidthOut参数",
-          "example": "无",
+          "example": "em-12345",
           "member": "string",
           "name": "ModuleId",
           "required": false,
@@ -13239,7 +13273,7 @@
         {
           "disabled": false,
           "document": "镜像ID。如果未传该参数或者传的值为空，则使用模块下的默认值",
-          "example": "无",
+          "example": "img-12345",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -13248,7 +13282,7 @@
         {
           "disabled": false,
           "document": "实例显示名称。\n不指定实例显示名称则默认显示‘未命名’。\n购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server\\_{R:3}，购买1台时，实例显示名称为server\\_3；购买2台时，实例显示名称分别为server\\_3，server\\_4。\n支持指定多个模式串{R:x}。\n购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server\\_1，server\\_2。\n如果购买的实例属于不同的地域或运营商，则上述规则在每个地域和运营商内独立计数。\n最多支持60个字符（包含模式串）。",
-          "example": "无",
+          "example": "tsIns",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -13257,7 +13291,7 @@
         {
           "disabled": false,
           "document": "主机名称\n点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。\nWindows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。\n其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -13266,7 +13300,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。目前为保留参数，请勿使用。",
-          "example": "无",
+          "example": "qwerty**sfd",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -13293,7 +13327,7 @@
         {
           "disabled": false,
           "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB",
-          "example": "无",
+          "example": "AA1234***==SG",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -13302,7 +13336,7 @@
         {
           "disabled": false,
           "document": "机型。如果未传该参数或者传的值为空，则使用模块下的默认值",
-          "example": "无",
+          "example": "S4.2XLARGE16",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -13311,7 +13345,7 @@
         {
           "disabled": false,
           "document": "数据盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DataDiskSize",
           "required": false,
@@ -13320,7 +13354,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "无",
+          "example": "[             \"esg-g4k23455\"           ]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -13329,7 +13363,7 @@
         {
           "disabled": false,
           "document": "系统盘大小，单位是G。如果未传该参数或者传的值为0，则使用模块下的默认值",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "SystemDiskSize",
           "required": false,
@@ -13338,7 +13372,7 @@
         {
           "disabled": false,
           "document": "公网入带宽上限，单位：Mbps。\n1.如果未传该参数或者传的值为0，则使用对应模块的默认值。\n2.如果未传该参数或者传的值为0且未指定模块，则使用InternetMaxBandwidthOut",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "InternetMaxBandwidthIn",
           "required": false,
@@ -13347,7 +13381,7 @@
         {
           "disabled": false,
           "document": "实例计费类型。其中：\n0，按资源维度后付费，计算当日用量峰值，例如CPU，内存，硬盘等，仅适用于非GNR系列机型；\n1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；\n2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；\n该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstanceChargeType",
           "required": false,
@@ -13356,7 +13390,7 @@
         {
           "disabled": false,
           "document": "密钥对。",
-          "example": "无",
+          "example": "[\"skey-dk12345\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,
@@ -13365,7 +13399,7 @@
         {
           "disabled": false,
           "document": "保持镜像的原始设置。该参数与Password或KeyIds.N不能同时指定。只有使用自定义镜像、共享镜像或外部导入镜像创建实例时才能指定该参数为TRUE。取值范围：\nTRUE：表示保持镜像的登录设置\nFALSE：表示不保持镜像的登录设置\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TRUE",
           "member": "string",
           "name": "KeepImageLogin",
           "required": false,
@@ -13398,7 +13432,7 @@
         {
           "disabled": false,
           "document": "创建中的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ein-8cnmds12\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "output_required": true,
@@ -14931,7 +14965,7 @@
         {
           "disabled": false,
           "document": "待销毁的实例ID列表。",
-          "example": "无",
+          "example": "[\"ein-ce71234\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -14940,7 +14974,7 @@
         {
           "disabled": false,
           "document": "是否定时销毁，默认为否。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "TerminateDelay",
           "required": false,
@@ -14949,7 +14983,7 @@
         {
           "disabled": false,
           "document": "定时销毁的时间，格式形如：\"2019-08-05 12:01:30\"，若非定时销毁，则此参数被忽略。",
-          "example": "无",
+          "example": "2020-06-01 16:04:48",
           "member": "string",
           "name": "TerminateTime",
           "required": false,
@@ -14958,7 +14992,7 @@
         {
           "disabled": false,
           "document": "是否关联删除已绑定的弹性网卡和弹性IP，默认为true。\n当为true时，一并删除弹性网卡和弹性IP；\n当为false时，只销毁主机，保留弹性网卡和弹性IP。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AssociatedResourceDestroy",
           "required": false,
@@ -15030,9 +15064,10 @@
         {
           "disabled": false,
           "document": "私有网络ID，形如vpc-xxx。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15040,9 +15075,10 @@
         {
           "disabled": false,
           "document": "私有网络子网ID，形如subnet-xxx。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15050,9 +15086,10 @@
         {
           "disabled": false,
           "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：\nTRUE：表示用作公网网关\nFALSE：表示不用作公网网关\n\n默认取值：FALSE。",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "AsVpcGateway",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -15060,9 +15097,10 @@
         {
           "disabled": false,
           "document": "私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PrivateIpAddresses",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -15070,12 +15108,24 @@
         {
           "disabled": false,
           "document": "为弹性网卡指定随机生成的 IPv6 地址数量。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Ipv6AddressCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "runInstances接口创建三网ipv6地址使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ipv6SubnetIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

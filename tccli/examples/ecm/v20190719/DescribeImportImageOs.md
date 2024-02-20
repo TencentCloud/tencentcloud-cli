@@ -28,10 +28,10 @@ Output:
                 "Other Linux"
             ]
         },
-        "RequestId": "xx",
+        "RequestId": "ef14668d-1daa-4e98-b545-c121a5e4ef18",
         "ImportImageOsVersionSet": [
             {
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -44,7 +44,7 @@ Output:
                 "OsVersions": [
                     "-"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -54,7 +54,7 @@ Output:
                 "OsVersions": [
                     "-"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -66,7 +66,7 @@ Output:
                     "6",
                     "7"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -76,7 +76,7 @@ Output:
                 "OsVersions": [
                     "7"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -89,7 +89,7 @@ Output:
                     "8",
                     "9"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -99,7 +99,7 @@ Output:
                 "OsVersions": [
                     "10"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -111,7 +111,7 @@ Output:
                     "6",
                     "7"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -122,7 +122,7 @@ Output:
                     "11",
                     "12"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -135,7 +135,7 @@ Output:
                     "12",
                     "13"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -148,7 +148,7 @@ Output:
                     "14",
                     "16"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"
@@ -158,7 +158,7 @@ Output:
                 "OsVersions": [
                     "-"
                 ],
-                "OsName": "xx",
+                "OsName": "CentOS 7.4 64位",
                 "Architecture": [
                     "x86_64",
                     "i386"

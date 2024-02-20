@@ -561,7 +561,7 @@
       "status": "online"
     },
     "VerifyOfdVatInvoiceOCR": {
-      "document": "本接口支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
+      "document": "本接口支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（铁路电子客票）、电子发票（航空运输电子客票行程单）识别，返回发票代码、发票号码、开票日期、验证码、机器编号、密码区，购买方和销售方信息，包括名称、纳税人识别号、地址电话、开户行及账号，以及价税合计、开票人、收款人、复核人、税额、不含税金额等字段信息。",
       "input": "VerifyOfdVatInvoiceOCRRequest",
       "name": "OFD发票识别",
       "output": "VerifyOfdVatInvoiceOCRResponse",
@@ -10999,6 +10999,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "曾持证件号码。",
+          "example": "PAK310080010103",
+          "member": "string",
+          "name": "PreviousNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签发机关。",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedAuthority",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -17605,7 +17625,7 @@
         },
         {
           "disabled": false,
-          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票\n61：电子发票（航空运输电子客票行程单）\n83：电子发票（铁路电子发票）",
+          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票\n61：电子发票（航空运输电子客票行程单）\n83：电子发票（铁路电子发票）\n0915：全电纸质（二手车统一销售发票）\n0903：全电纸质（机动车统一发票）",
           "example": "01",
           "member": "string",
           "name": "Type",

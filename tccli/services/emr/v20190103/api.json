@@ -8985,6 +8985,15 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容指定配置组",
+          "example": "无",
+          "member": "ScaleOutServiceConfGroupsInfo",
+          "name": "ScaleOutServiceConfGroupsInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9355,6 +9364,30 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ScaleOutServiceConfGroupsInfo": {
+      "document": "扩容指定配置组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件版本名称 如 HDFS-2.8.5",
+          "example": "HDFS-2.8.5",
+          "member": "string",
+          "name": "ServiceComponentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置组名 如hdfs-core-defaultGroup    ConfGroupName参数传入 代表配置组维度 \n                                                             ConfGroupName参数不传 默认 代表集群维度",
+          "example": "hdfs-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -1809,7 +1809,7 @@
           "example": "testName",
           "member": "string",
           "name": "SecretName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1819,7 +1819,7 @@
           "example": "test",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1829,7 +1829,7 @@
           "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
           "member": "string",
           "name": "KmsKeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1839,7 +1839,7 @@
           "example": "12345",
           "member": "uint64",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1849,7 +1849,7 @@
           "example": "Initializing",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1859,7 +1859,7 @@
           "example": "1234",
           "member": "uint64",
           "name": "DeleteTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1869,7 +1869,7 @@
           "example": "1234",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1879,7 +1879,7 @@
           "example": "DEFAULT",
           "member": "string",
           "name": "KmsKeyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1889,7 +1889,7 @@
           "example": "Enabled",
           "member": "int64",
           "name": "RotationStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1899,17 +1899,17 @@
           "example": "1574160561",
           "member": "uint64",
           "name": "NextRotationTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "0 -- 用户自定义凭据；\n1 -- 云产品凭据；\n2 -- SSH密钥对凭据；\n3 -- 云API密钥对凭据；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 -- 用户自定义凭据；\n1 -- 云产品凭据；\n2 -- SSH密钥对凭据；\n3 -- 云API密钥对凭据；\n4 -- Redis类型凭据；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CloudProduct",
           "member": "int64",
           "name": "SecretType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1919,7 +1919,7 @@
           "example": "MYSQL",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1929,7 +1929,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1939,7 +1939,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1949,7 +1949,7 @@
           "example": "无",
           "member": "string",
           "name": "AssociatedInstanceIDs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1959,7 +1959,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TargetUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1969,7 +1969,7 @@
           "example": "7",
           "member": "int64",
           "name": "RotationFrequency",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1979,7 +1979,7 @@
           "example": "skey-a1b2c3d4",
           "member": "string",
           "name": "ResourceID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1989,7 +1989,7 @@
           "example": "2022-12-28 15:07:11",
           "member": "string",
           "name": "RotationBeginTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

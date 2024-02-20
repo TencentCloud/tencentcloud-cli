@@ -490,6 +490,13 @@
       "output": "DescribeSupportProxyVersionResponse",
       "status": "online"
     },
+    "DescribeTasks": {
+      "document": "查询任务列表",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTasksResponse",
+      "status": "online"
+    },
     "DescribeZones": {
       "document": "本接口(DescribeZones)用于查询可售卖地域可用区信息。",
       "input": "DescribeZonesRequest",
@@ -2346,6 +2353,414 @@
       ],
       "usage": "out"
     },
+    "BizTaskInfo": {
+      "document": "任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "0",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "123",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "string",
+          "name": "DelayTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步任务流id",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输入信息",
+          "example": "xx",
+          "member": "string",
+          "name": "Input",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "实例组id",
+          "example": "cynosdbmysql-grp-xx",
+          "member": "string",
+          "name": "InstanceGrpId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例组id",
+          "example": "cynosdbmysql-grp-xx",
+          "member": "string",
+          "name": "InstanceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cynosmysql-ins-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务操作对象id",
+          "example": "cynosmysql-ins-xx",
+          "member": "string",
+          "name": "ObjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务操作对象类型",
+          "example": "cluster",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者uin",
+          "example": "1",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输出信息",
+          "example": "1",
+          "member": "string",
+          "name": "Output",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "taskCreateCluster",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发本任务的父任务ID",
+          "example": "0",
+          "member": "int64",
+          "name": "TriggerTaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度",
+          "example": "100",
+          "member": "int64",
+          "name": "Process",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改参数任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyParamsData",
+          "name": "ModifyParamsData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建集群任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateClustersData",
+          "name": "CreateClustersData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群回档任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollbackData",
+          "name": "RollbackData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例变配任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyInstanceData",
+          "name": "ModifyInstanceData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手动备份任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManualBackupData",
+          "name": "ManualBackupData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改内核版本任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyDbVersionData",
+          "name": "ModifyDbVersionData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClusterSlaveData",
+          "name": "ClusterSlaveData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转换集群日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchClusterLogBin",
+          "name": "SwitchClusterLogBin",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改实例参数数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BizTaskModifyParamsData",
+          "name": "ModifyInstanceParamsData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维护时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskMaintainInfo",
+          "name": "TaskMaintainInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BizTaskModifyInstanceParam": {
+      "document": "实例参数修改任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例参数修改任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "ModifyInstanceParamList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BizTaskModifyParamsData": {
+      "document": "修改参数任务数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群参数修改数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyParamItem",
+          "name": "ClusterParamList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例参数修改数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BizTaskModifyInstanceParam",
+          "name": "ModifyInstanceParams",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CloseAuditServiceRequest": {
       "document": "CloseAuditService请求参数结构体",
       "members": [
@@ -2750,6 +3165,52 @@
       ],
       "usage": "out"
     },
+    "ClusterSlaveData": {
+      "document": "集群从可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "旧主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "OldMasterZone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ap-guangzhou-5]",
+          "member": "string",
+          "name": "OldSlaveZone",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "NewMasterZone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新从可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ap-guangzhou-5]",
+          "member": "string",
+          "name": "NewSlaveZone",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CopyClusterPasswordComplexityRequest": {
       "document": "CopyClusterPasswordComplexity请求参数结构体",
       "members": [
@@ -3140,6 +3601,42 @@
         }
       ],
       "type": "object"
+    },
+    "CreateClustersData": {
+      "document": "创建集群任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例CPU",
+          "example": "",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例内存",
+          "example": "",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群存储上限",
+          "example": "",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateClustersRequest": {
       "document": "CreateClusters请求参数结构体",
@@ -10272,6 +10769,89 @@
       ],
       "type": "object"
     },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务开始时间起始值",
+          "example": "2021-06-23 20:31:57",
+          "member": "string",
+          "name": "StartTimeBegin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间结束值",
+          "example": "2021-06-23 21:31:57",
+          "member": "string",
+          "name": "StartTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "QueryFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询列表长度",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询列表偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表总条数",
+          "example": "153",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "BizTaskInfo",
+          "name": "TaskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
       "members": [
@@ -11798,6 +12378,42 @@
       ],
       "usage": "both"
     },
+    "ManualBackupData": {
+      "document": "手动备份任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份类型。snapshot-快照备份",
+          "example": "无",
+          "member": "string",
+          "name": "BackupType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。auto-自动备份，manual-手动",
+          "example": "无",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份时间",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifiableInfo": {
       "document": "参数是否可修改的详细信息",
       "members": [
@@ -12765,6 +13381,118 @@
       ],
       "type": "object"
     },
+    "ModifyDbVersionData": {
+      "document": "修改数据库内核版本任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改前版本",
+          "example": "",
+          "member": "string",
+          "name": "OldVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改后版本",
+          "example": "",
+          "member": "string",
+          "name": "NewVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级方式",
+          "example": "",
+          "member": "string",
+          "name": "UpgradeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyInstanceData": {
+      "document": "实例变配任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变配后CPU",
+          "example": "",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变配后内存",
+          "example": "",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变配后存储上限",
+          "example": "",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变配前CPU",
+          "example": "",
+          "member": "int64",
+          "name": "OldCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变配前内存",
+          "example": "",
+          "member": "int64",
+          "name": "OldMemory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变配前存储上限",
+          "example": "",
+          "member": "int64",
+          "name": "OldStorageLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级方式。升级完成后切换或维护时间内切换",
+          "example": "",
+          "member": "string",
+          "name": "UpgradeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyInstanceNameRequest": {
       "document": "ModifyInstanceName请求参数结构体",
       "members": [
@@ -13020,6 +13748,42 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyParamsData": {
+      "document": "修改参数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改前参数值",
+          "example": "",
+          "member": "string",
+          "name": "OldValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改后参数值",
+          "example": "",
+          "member": "string",
+          "name": "CurValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyProxyDescRequest": {
       "document": "ModifyProxyDesc请求参数结构体",
@@ -16041,6 +16805,142 @@
       ],
       "type": "object"
     },
+    "RollbackData": {
+      "document": "回档任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例CPU",
+          "example": "5",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例内存",
+          "example": "48",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群存储上限",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原集群id",
+          "example": "cynosdbmysql-xx",
+          "member": "string",
+          "name": "OriginalClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原集群名",
+          "example": "test",
+          "member": "string",
+          "name": "OriginalClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回档方式",
+          "example": "ROLLBACK_STRATEGY_SNAP",
+          "member": "string",
+          "name": "RollbackStrategy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照时间",
+          "example": "2022.01.01",
+          "member": "string",
+          "name": "SnapshotTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回档到serverlessls集群时最小CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MinCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回档到serverlessls集群时最大CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SnapShotId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回档数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollbackDatabase",
+          "name": "RollbackDatabases",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回档数据表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollbackTable",
+          "name": "RollbackTables",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupFileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RollbackDatabase": {
       "document": "回滚数据库信息",
       "members": [
@@ -16867,6 +17767,22 @@
       ],
       "usage": "out"
     },
+    "SwitchClusterLogBin": {
+      "document": "转换集群log bin开关",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SwitchClusterVpcRequest": {
       "document": "SwitchClusterVpc请求参数结构体",
       "members": [
@@ -17132,6 +18048,42 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskMaintainInfo": {
+      "document": "TaskMaintainInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行开始时间(距离0点的秒数)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10920",
+          "member": "int64",
+          "name": "MaintainStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "持续的时间(单位：秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "MaintainDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以执行的时间，枚举值：[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\", \"Sat\", \"Sun\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Mon\"",
+          "member": "string",
+          "name": "MaintainWeekDays",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TemplateParamInfo": {
       "document": "参数模板详情",

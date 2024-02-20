@@ -295,9 +295,9 @@
       "status": "online"
     },
     "UpdateFileSystemBandwidthLimit": {
-      "document": "更新文件系统带宽\n仅吞吐型支持此接口",
+      "document": "更新文件系统吞吐\n仅吞吐型支持此接口",
       "input": "UpdateFileSystemBandwidthLimitRequest",
-      "name": "更新文件系统带宽",
+      "name": "更新文件系统吞吐",
       "output": "UpdateFileSystemBandwidthLimitResponse",
       "status": "online"
     }
@@ -924,7 +924,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售40TiB，即40960 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售20TiB，即20480 GiB；扩容步长10TiB，10240 GiB。",
+          "document": "文件系统容量，turbo系列必填，单位为GiB。 turbo标准型单位GB，起售20TiB，即20480 GiB；扩容步长20TiB，即20480 GiB。turbo性能型起售10TiB，即10240 GiB；扩容步长10TiB，10240 GiB。",
           "example": "40960",
           "member": "uint64",
           "name": "Capacity",

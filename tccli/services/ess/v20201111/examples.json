@@ -3,15 +3,21 @@
     "BindEmployeeUserIdWithClientOpenId": [
       {
         "document": "传入UserId和OpenId，绑定成功。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQxx2u1\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665xxxxx74024539\",\n        \"Status\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"UserId\": \"yDRS4UUgygqdcj56UuO4zjExBQcOiB68\",\n    \"OpenId\": \"n9527\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc0b0a6b-01b4-4042-b236-c5356af1d5d8\",\n        \"Status\": 1\n    }\n}",
         "title": "员工Userid与客户系统Openid绑定"
       },
       {
-        "document": "调用此接口时，请确保用户ID参数未经过绑定，否则接口将返回错误信息。以传入UserId已绑定为例，接口提示不需重新绑定。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQxx2u1\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该userId已绑定该openId，无需重新绑定\"\n        },\n        \"RequestId\": \"5116xxxx-xxxx-xxxx-xxxx-xxxx5f02877b\"\n    }\n}",
-        "title": "错误示例-重复绑定"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"UserId\": \"yDSLmUUckpou8bj8UyvAk4FBqAoWzvy4\",\n    \"OpenId\": \"n9527\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该openid已绑定其他userid，请解绑后重试\"\n        },\n        \"RequestId\": \"535482ad-caa5-4302-909c-de054bf4df99\"\n    }\n}",
+        "title": "错误示例-重复使用OpenId绑定其他UserId"
+      },
+      {
+        "document": "接口绑定是不幂等的",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"UserId\": \"yDSLmUUckpou8bj8UyvAk4FBqAoWzvy4\",\n    \"OpenId\": \"n9527\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该userId已绑定该openId，无需重新绑定\"\n        },\n        \"RequestId\": \"535482ad-caa5-4302-909c-de054bf4df99\"\n    }\n}",
+        "title": "错误示例-重复使用OpenId绑定同一个UserId"
       }
     ],
     "CancelFlow": [
@@ -1423,14 +1429,14 @@
     "UnbindEmployeeUserIdWithClientOpenId": [
       {
         "document": "传入经过绑定的员工UserId与客户系统OpenId，调用此接口解绑成功，返回值Status为1。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj\"\n    },\n    \"UserId\": \"yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy\",\n    \"OpenId\": \"open_user1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16652185xxx032958\",\n        \"Status\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc\"\n    },\n    \"UserId\": \"yDxbNUyKQDxGYNUuO4zjEwvl3XYQmAcO\",\n    \"OpenId\": \"n9527\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665674603446404796\",\n        \"Status\": 1\n    }\n}",
         "title": "解除员工UserId与客户系统OpenId的绑定"
       },
       {
         "document": "在调用此接口时，需确保OpenId已通过调用<a href=\"https://qian.tencent.com/developers/companyApis/staffs/BindEmployeeUserIdWithClientOpenId\" target=\"_blank\">BindEmployeeUserIdWithClientOpenId</a>接口与电子签系统的UserId绑定过。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj\"\n    },\n    \"UserId\": \"yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy\",\n    \"OpenId\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该openId并未绑定企业员工\"\n        },\n        \"RequestId\": \"dec22fb5-xxxx-xxxx-xxxx-xxxxxxc514d6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc\"\n    },\n    \"UserId\": \"yDwJ0UUckpk2077eUxgm9jJv5GGyJXCh\",\n    \"OpenId\": \"n9527\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该openId并未绑定企业员工\"\n        },\n        \"RequestId\": \"s1615674603446404796\"\n    }\n}",
         "title": "错误示例-OpenId未经过绑定"
       }
     ],
