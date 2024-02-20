@@ -721,6 +721,13 @@
       "output": "ModifyServiceAccountResponse",
       "status": "online"
     },
+    "ModifyServiceAccountPassword": {
+      "document": "更新服务级账号密码",
+      "input": "ModifyServiceAccountPasswordRequest",
+      "name": "更新服务级账号密码",
+      "output": "ModifyServiceAccountPasswordResponse",
+      "status": "online"
+    },
     "ModifyTagRetentionRule": {
       "document": "更新版本保留规则",
       "input": "ModifyTagRetentionRuleRequest",
@@ -7256,6 +7263,70 @@
           "member": "string",
           "name": "RegistryId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceAccountPasswordRequest": {
+      "document": "ModifyServiceAccountPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号名",
+          "example": "tcr$robot",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否随机生成密码",
+          "example": "true",
+          "member": "bool",
+          "name": "Random",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务级账号密码，长度在8到20之间且需包含至少一个大写字符，一个小写字符和一个数字",
+          "example": "MyPass",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceAccountPasswordResponse": {
+      "document": "ModifyServiceAccountPassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义用户密码，仅展示一次，请注意留存\t",
+          "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

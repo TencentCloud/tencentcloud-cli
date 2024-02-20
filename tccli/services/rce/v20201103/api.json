@@ -266,7 +266,7 @@
         },
         {
           "disabled": false,
-          "document": "场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理\n控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root\n活动防刷默认场景码：e_activity_antirush \n登陆保护默认场景码：e_login_protection\n注册保护默认场景码：e_register_protection",
+          "document": "场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理\n控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root\n活动防刷默认场景码：e_activity_antirush \n登录保护默认场景码：e_login_protection\n注册保护默认场景码：e_register_protection",
           "example": "e_activity_antirush",
           "member": "string",
           "name": "SceneCode",

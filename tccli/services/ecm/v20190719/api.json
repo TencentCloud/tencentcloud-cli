@@ -7657,7 +7657,7 @@
         {
           "disabled": false,
           "document": "镜像ID",
-          "example": "无",
+          "example": "img-gfoqboh1",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -7667,7 +7667,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "无",
+          "example": "测试镜像",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -7677,7 +7677,7 @@
         {
           "disabled": false,
           "document": "镜像状态",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "ImageState",
           "output_required": true,
@@ -7687,7 +7687,7 @@
         {
           "disabled": false,
           "document": "镜像类型",
-          "example": "无",
+          "example": "PRIVATE_IMAGE",
           "member": "string",
           "name": "ImageType",
           "output_required": true,
@@ -7697,7 +7697,7 @@
         {
           "disabled": false,
           "document": "操作系统名称",
-          "example": "无",
+          "example": "CentOS 7.6.0 64位",
           "member": "string",
           "name": "ImageOsName",
           "output_required": true,
@@ -7707,7 +7707,7 @@
         {
           "disabled": false,
           "document": "镜像描述",
-          "example": "无",
+          "example": "测试用",
           "member": "string",
           "name": "ImageDescription",
           "output_required": true,
@@ -7717,7 +7717,7 @@
         {
           "disabled": false,
           "document": "镜像导入时间",
-          "example": "无",
+          "example": "2024-02-06 12:32:47",
           "member": "string",
           "name": "ImageCreateTime",
           "output_required": true,
@@ -7727,7 +7727,7 @@
         {
           "disabled": false,
           "document": "操作系统位数",
-          "example": "无",
+          "example": "x86_64",
           "member": "string",
           "name": "Architecture",
           "output_required": true,
@@ -7737,7 +7737,7 @@
         {
           "disabled": false,
           "document": "操作系统类型",
-          "example": "无",
+          "example": "linux",
           "member": "string",
           "name": "OsType",
           "output_required": true,
@@ -7747,7 +7747,7 @@
         {
           "disabled": false,
           "document": "操作系统版本",
-          "example": "无",
+          "example": "16.0",
           "member": "string",
           "name": "OsVersion",
           "output_required": true,
@@ -7757,7 +7757,7 @@
         {
           "disabled": false,
           "document": "操作系统平台",
-          "example": "无",
+          "example": "Ubuntu",
           "member": "string",
           "name": "Platform",
           "output_required": true,
@@ -7777,7 +7777,7 @@
         {
           "disabled": false,
           "document": "镜像大小。单位：GB",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "ImageSize",
           "output_required": true,
@@ -7797,7 +7797,7 @@
         {
           "disabled": false,
           "document": "镜像来源类型",
-          "example": "无",
+          "example": "EXTERNAL_IMPORT",
           "member": "string",
           "name": "ImageSource",
           "output_required": true,
@@ -7807,7 +7807,7 @@
         {
           "disabled": false,
           "document": "中间态和失败时候的任务ID",
-          "example": "无",
+          "example": "1234",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -7817,7 +7817,7 @@
         {
           "disabled": false,
           "document": "是否支持CloudInit",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsSupportCloudInit",
           "output_required": true,
@@ -8881,80 +8881,80 @@
         {
           "disabled": false,
           "document": "密钥对的ID，是密钥对的唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "skey-mv9yzyjj",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥对名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TencentKeyp",
           "member": "string",
           "name": "KeyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥对所属的项目ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥对描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥对的纯文本公钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ssh-rsa AAAA**123== skey_437619",
           "member": "string",
           "name": "PublicKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "PrivateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "钥关联的实例ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "AssociatedInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2019-08-12T02:53:39Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11501,7 +11501,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11511,7 +11511,7 @@
           "example": "无",
           "member": "Country",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11521,7 +11521,7 @@
           "example": "无",
           "member": "Area",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11531,7 +11531,7 @@
           "example": "无",
           "member": "Province",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11541,7 +11541,7 @@
           "example": "无",
           "member": "City",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11551,7 +11551,7 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11561,17 +11561,17 @@
           "example": "无",
           "member": "ISP",
           "name": "ISPSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商数量。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ISPNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11581,7 +11581,7 @@
           "example": "无",
           "member": "bool",
           "name": "LBSupported",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -11908,30 +11908,30 @@
         {
           "disabled": false,
           "document": "机位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "B90CEE7*******2455CA9F1A",
           "member": "string",
           "name": "PosId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "机架\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18C8C045F6AFD0965*******20127A9",
           "member": "string",
           "name": "RackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "交换机\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "99563FCAD565AC179*******4EA92123",
           "member": "string",
           "name": "SwitchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14558,6 +14558,7 @@
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14565,9 +14566,10 @@
         {
           "disabled": false,
           "document": "硬盘ID。此参数暂不可用。",
-          "example": "无",
+          "example": "ldisk-1ly4f53h",
           "member": "string",
           "name": "DiskId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14578,6 +14580,7 @@
           "example": "100",
           "member": "int64",
           "name": "DiskSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -14591,9 +14594,10 @@
         {
           "disabled": false,
           "document": "标签健。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tag-key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14601,9 +14605,10 @@
         {
           "disabled": false,
           "document": "标签值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tag-val",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

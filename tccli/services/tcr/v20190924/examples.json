@@ -854,6 +854,20 @@
         "title": "更新服务级账号"
       }
     ],
+    "ModifyServiceAccountPassword": [
+      {
+        "document": "自定义服务级账号密码",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccountPassword\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-gijwqid7\",\n    \"Name\": \"robot\",\n    \"Random\": false,\n    \"Password\": \"NewPass123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Password\": \"NewPass123\",\n        \"RequestId\": \"8c63b1e6-02b8-48af-94c2-416aa71e0c12\"\n    }\n}",
+        "title": "自定义服务级账号密码"
+      },
+      {
+        "document": "重置服务级账号密码",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccountPassword\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-gijwqid7\",\n    \"Name\": \"robot\",\n    \"Random\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Password\": \"kukui1ECDL8kr9cm6W66Me8PlhHemFmC\",\n        \"RequestId\": \"60e7d0ce-c8ed-4495-9814-9397482f0d4a\"\n    }\n}",
+        "title": "重置服务级账号密码"
+      }
+    ],
     "ModifyTagRetentionRule": [
       {
         "document": "",

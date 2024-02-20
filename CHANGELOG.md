@@ -1,3 +1,64 @@
+# Release 3.0.1058.1
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 73 次发布
+
+发布时间：2024-02-20 01:15:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Node](https://cloud.tencent.com/document/api/1108/42574#Node)
+
+	* <font color="#dd0000">**修改成员**：</font>LBSupported
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 153 次发布
+
+发布时间：2024-02-20 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeBillUsageDetail
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* BillUsageDetail
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 65 次发布
+
+发布时间：2024-02-19 10:37:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyServiceAccountPassword](https://cloud.tencent.com/document/api/1141/103857)
+
+
+
 # Release 3.0.1057.1
 
 ## 日志服务(cls) 版本：2020-10-16
