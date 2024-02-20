@@ -8,6 +8,20 @@
         "title": "查询eks"
       }
     ],
+    "DescribeInstancesInner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesInner\n<公共请求参数>\n\n{\n    \"ProductCategory\": \"eks\",\n    \"Filters\": [\n        {\n            \"Name\": \"instance-id\",\n            \"Values\": [\n                \"eks-c14btqas\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"CPU\": 200,\n                \"CreatedTime\": \"2024-01-30T03:58:07Z\",\n                \"HostIp\": \"50.4.4.61\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceId\": \"eks-c14btqas\",\n                \"InstanceName\": \"未命名\",\n                \"InstanceState\": \"RUNNING\",\n                \"InstanceType\": \"S5.MEDIUM2\",\n                \"Memory\": 2048,\n                \"OsName\": \"tlinux3.1x86_64\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.4\"\n                ],\n                \"SecurityGroupIds\": [],\n                \"Uuid\": \"092fd485-bf64-4c3d-9953-9e70d469fcac\",\n                \"VirtualPrivateCloud\": {\n                    \"InnerSubnetId\": 2666254,\n                    \"InnerVpcId\": 11407341,\n                    \"SubnetId\": \"subnet-kwi1sziq\",\n                    \"VpcId\": \"vpc-49m1esiv\"\n                }\n            }\n        ],\n        \"RequestId\": \"c8657534-890c-4279-96fe-fbaa07547d52\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据instance-id查询实例信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesInner\n<公共请求参数>\n\n{\n    \"ProductCategory\": \"eks\",\n    \"Filters\": [\n        {\n            \"Name\": \"vpc-id\",\n            \"Values\": [\n                \"vpc-j61z1zf1\"\n            ]\n        },\n        {\n            \"Name\": \"private-ip-address\",\n            \"Values\": [\n                \"172.16.0.10\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"CPU\": 200,\n                \"CreatedTime\": \"2024-02-19T03:09:10Z\",\n                \"HostIp\": \"50.4.4.54\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceId\": \"eks-diluc888\",\n                \"InstanceName\": \"未命名\",\n                \"InstanceState\": \"RUNNING\",\n                \"InstanceType\": \"S5.MEDIUM2\",\n                \"Memory\": 2048,\n                \"OsName\": \"tlinux3.1x86_64\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.10\"\n                ],\n                \"SecurityGroupIds\": [],\n                \"Uuid\": \"1e9189d4-7bfc-4c3f-a752-ef33b428fc0a\",\n                \"VirtualPrivateCloud\": {\n                    \"InnerSubnetId\": 2672440,\n                    \"InnerVpcId\": 11410742,\n                    \"SubnetId\": \"subnet-1f5ehuc0\",\n                    \"VpcId\": \"vpc-j61z1zf1\"\n                }\n            }\n        ],\n        \"RequestId\": \"3b5932af-b291-4f25-a51c-663a4fc1aa91\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据vpc-id和ip查询实例信息"
+      }
+    ],
     "DescribeReservedPacks": [
       {
         "document": "根据reserved-pack-id查询预扣包。",

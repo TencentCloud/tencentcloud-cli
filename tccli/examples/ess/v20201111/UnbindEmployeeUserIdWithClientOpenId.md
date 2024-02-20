@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli ess UnbindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj \
-    --UserId yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy \
-    --OpenId open_user1
+    --Operator.UserId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --UserId yDxbNUyKQDxGYNUuO4zjEwvl3XYQmAcO \
+    --OpenId n9527
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s16652185xxx032958",
+        "RequestId": "s1665674603446404796",
         "Status": 1
     }
 }
@@ -29,9 +29,9 @@ Input:
 
 ```
 tccli ess UnbindEmployeeUserIdWithClientOpenId --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj \
-    --UserId yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy \
-    --OpenId 123
+    --Operator.UserId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --UserId yDwJ0UUckpk2077eUxgm9jJv5GGyJXCh \
+    --OpenId n9527
 ```
 
 Output: 
@@ -42,7 +42,7 @@ Output:
             "Code": "InvalidParameter",
             "Message": "该openId并未绑定企业员工"
         },
-        "RequestId": "dec22fb5-xxxx-xxxx-xxxx-xxxxxxc514d6"
+        "RequestId": "s1615674603446404796"
     }
 }
 ```

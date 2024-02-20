@@ -796,20 +796,6 @@
         "title": "查询批量企业认证"
       }
     ],
-    "DescribeBillUsageDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"ydxxxxxx\",\n        \"ProxyOrganizationOpenId\": \"orgxxxx\"\n    },\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.Limit\",\n            \"Message\": \"分页参数不合法\"\n        },\n        \"RequestId\": \"s169935778xxxxxxx\"\n    }\n}",
-        "title": "查询失败样例"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"20230902\",\n    \"EndTime\": \"20230930\",\n    \"Offset\": 0,\n    \"Limit\": 1000,\n    \"Agent\": {\n        \"AppId\": \"ydxxxxxx\",\n        \"ProxyOrganizationOpenId\": \"orgxxxx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CostTime\": 1695037514,\n                \"CostType\": 1,\n                \"FlowId\": \"yDwJOU5e7ikveIUxMW0p2uJxxxxxxxxxx\",\n                \"FlowName\": \"腾讯电子签xxxxx合同\",\n                \"OperatorName\": \"张三;李斯\",\n                \"QuotaName\": \"签署报告（出证服务）\",\n                \"QuotaType\": \"CloudProve\",\n                \"Remark\": \"\",\n                \"Status\": 4,\n                \"UseCount\": 1\n            }\n        ],\n        \"RequestId\": \"s16992572741898xxxx\",\n        \"Total\": 1\n    }\n}",
-        "title": "查询渠道客户消耗"
-      }
-    ],
     "DescribeChannelFlowEvidenceReport": [
       {
         "document": "获取全部签署完成的合同的公证处核验报告，返回报告 URL",

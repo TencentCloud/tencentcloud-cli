@@ -36,7 +36,11 @@ Output:
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
-                    "Nullable": "NULLABLE"
+                    "Nullable": "NULLABLE",
+                    "Position": 0,
+                    "CreateTime": "abc",
+                    "ModifiedTime": "abc",
+                    "IsPartition": true
                 },
                 {
                     "Name": "b",
@@ -44,7 +48,11 @@ Output:
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
-                    "Nullable": "NULLABLE"
+                    "Nullable": "NULLABLE",
+                    "Position": 0,
+                    "CreateTime": "abc",
+                    "ModifiedTime": "abc",
+                    "IsPartition": true
                 }
             ],
             "ResultSet": "[[\"3\",\"kk\"],[\"3\",\"kk\"],[\"9143\",\" \\\"28992\\\"\"],[\"19048\",\" \\\"11266\\\"\"],[\"16711\",\" \\\"17422\\\"\"],[\"3816\",\" \\\"18501\\\"\"],[\"16428\",\" \\\"13774\\\"\"],[\"30190\",\" \\\"5177\\\"\"],[\"24824\",\" \\\"19479\\\"\"],[\"9709\",\" \\\"5532\\\"\"]]",

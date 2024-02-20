@@ -1,3 +1,149 @@
+# Release 3.0.939.1
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 4 次发布
+
+发布时间：2024-02-21 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstancesInner](http://document.tencentcloudapi.woa.com/document/product/1752/83327)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 72 次发布
+
+发布时间：2024-02-21 01:13:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/1003/83328)
+
+新增数据结构：
+
+* [BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo)
+* [BizTaskModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyInstanceParam)
+* [BizTaskModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyParamsData)
+* [ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData)
+* [CreateClustersData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CreateClustersData)
+* [ManualBackupData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ManualBackupData)
+* [ModifyDbVersionData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyDbVersionData)
+* [ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)
+* [ModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamsData)
+* [RollbackData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RollbackData)
+* [SwitchClusterLogBin](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SwitchClusterLogBin)
+* [TaskMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TaskMaintainInfo)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 88 次发布
+
+发布时间：2024-02-21 01:14:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskResultInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResultInfo)
+
+	* 新增成员：QueryResultTime
+
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 21 次发布
+
+发布时间：2024-02-21 01:15:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Module](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Module)
+
+	* <font color="#dd0000">**修改成员**：</font>DisableWanIp
+
+* [NetworkStorageRange](http://document.tencentcloudapi.woa.com/document/product/1108/42574#NetworkStorageRange)
+
+	* 新增成员：CBSSupported, DiskNumLimit
+
+* [Node](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Node)
+
+	* <font color="#dd0000">**修改成员**：</font>LBSupported
+
+* [Position](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Position)
+
+	* 新增成员：Ipv6Supported
+
+* [VirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1108/42574#VirtualPrivateCloud)
+
+	* 新增成员：Ipv6SubnetIds
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 124 次发布
+
+发布时间：2024-02-21 01:16:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeBillUsageDetail
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* BillUsageDetail
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 凭据管理系统(ssm) 版本：2019-09-23
+
+### 第 9 次发布
+
+发布时间：2024-02-21 01:23:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
+
+	* <font color="#dd0000">**修改成员**：</font>RotationFrequency, ResourceID, RotationBeginTime
+
+
+
+
 # Release 3.0.938.1
 
 ## 容器服务(tke) 版本：2022-05-01
