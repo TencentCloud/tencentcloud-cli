@@ -242,7 +242,7 @@
 | tiia | [图像分析](http://document.tencentcloudapi.woa.com/document/product/865) | 2023-09-01 02:35:39 |
 | tione | [TI-ONE 训练平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2024-02-01 01:25:33 |
 | tiw | [互动白板](http://document.tencentcloudapi.woa.com/document/product/1137) | 2023-12-29 01:25:11 |
-| tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2022-09-09 06:30:19 |
+| tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2024-02-20 15:17:50 |
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2024-01-12 10:35:53 |
 | tmt | [机器翻译](http://document.tencentcloudapi.woa.com/document/product/551) | 2024-01-30 01:25:49 |
 | tocservice | [自研上云](http://document.tencentcloudapi.woa.com/document/product/) | 2023-07-11 11:36:34 |

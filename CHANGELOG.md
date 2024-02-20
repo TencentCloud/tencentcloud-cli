@@ -1,3 +1,65 @@
+# Release 3.0.938.1
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 2 次发布
+
+发布时间：2024-02-20 15:17:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/83324)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/457/83322)
+* [DescribeNodePools](http://document.tencentcloudapi.woa.com/document/product/457/83326)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateInstantInspectJob
+* DescribeInstantInspectTask
+
+新增数据结构：
+
+* [Annotation](http://document.tencentcloudapi.woa.com/document/product/457/74869#Annotation)
+* [AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoscalingAdded)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/74869#Cluster)
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/457/74869#Disk)
+* [ExternalNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodeInfo)
+* [ExternalNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodePoolInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/457/74869#Filter)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/457/74869#Instance)
+* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceAdvancedSettings)
+* [InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceExtraArgs)
+* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/457/74869#InternetAccessible)
+* [ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManuallyAdded)
+* [NativeNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodeInfo)
+* [NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)
+* [NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodeCountSummary)
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool)
+* [RegularNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodeInfo)
+* [RegularNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodePoolInfo)
+* [RuntimeConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#RuntimeConfig)
+* [SortBy](http://document.tencentcloudapi.woa.com/document/product/457/74869#SortBy)
+* [SuperNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodeInfo)
+* [SuperNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodePoolInfo)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/457/74869#Tag)
+* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/457/74869#TagSpecification)
+* [Taint](http://document.tencentcloudapi.woa.com/document/product/457/74869#Taint)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClusterInspectionTask
+* ClusterInspectionTaskOverview
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+
+
 # Release 3.0.937.1
 
 ## 容器镜像服务(tcr) 版本：2019-09-24

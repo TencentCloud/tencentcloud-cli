@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 容器镜像服务(tcr) 版本：2019-09-24
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 31 次发布
+### 第 2 次发布
 
-发布时间：2024-02-19 10:38:04
+发布时间：2024-02-20 15:17:50
 
 本次发布包含了以下内容：
 
@@ -12,7 +12,51 @@
 
 新增接口：
 
-* [ModifyServiceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1141/83321)
+* [DescribeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/83324)
+* [DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/457/83322)
+* [DescribeNodePools](http://document.tencentcloudapi.woa.com/document/product/457/83326)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateInstantInspectJob
+* DescribeInstantInspectTask
+
+新增数据结构：
+
+* [Annotation](http://document.tencentcloudapi.woa.com/document/product/457/74869#Annotation)
+* [AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoscalingAdded)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/457/74869#Cluster)
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/457/74869#Disk)
+* [ExternalNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodeInfo)
+* [ExternalNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodePoolInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/457/74869#Filter)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/457/74869#Instance)
+* [InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceAdvancedSettings)
+* [InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceExtraArgs)
+* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/457/74869#InternetAccessible)
+* [ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManuallyAdded)
+* [NativeNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodeInfo)
+* [NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)
+* [NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodeCountSummary)
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool)
+* [RegularNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodeInfo)
+* [RegularNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodePoolInfo)
+* [RuntimeConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#RuntimeConfig)
+* [SortBy](http://document.tencentcloudapi.woa.com/document/product/457/74869#SortBy)
+* [SuperNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodeInfo)
+* [SuperNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodePoolInfo)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/457/74869#Tag)
+* [TagSpecification](http://document.tencentcloudapi.woa.com/document/product/457/74869#TagSpecification)
+* [Taint](http://document.tencentcloudapi.woa.com/document/product/457/74869#Taint)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClusterInspectionTask
+* ClusterInspectionTaskOverview
+
+
+
+## 容器服务(tke) 版本：2018-05-25
 
 
 
@@ -74800,7 +74844,7 @@
 
 新增接口：
 
-* [[ModifyServiceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1141/83321)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyServiceAccountPassword](http://document.tencentcloudapi.woa.com/document/product/1141/83321)
 
 ### 第 30 次发布
 
@@ -85021,6 +85065,58 @@
 
 ## 容器服务(tke) 版本：2022-05-01
 
+### 第 2 次发布
+
+发布时间：2024-02-20 15:17:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/83324)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeClusters](http://document.tencentcloudapi.woa.com/document/product/457/83322)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNodePools](http://document.tencentcloudapi.woa.com/document/product/457/83326)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateInstantInspectJob
+* DescribeInstantInspectTask
+
+新增数据结构：
+
+* [[Annotation](http://document.tencentcloudapi.woa.com/document/product/457/74869#Annotation)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Annotation](http://document.tencentcloudapi.woa.com/document/product/457/74869#Annotation))
+* [[AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoscalingAdded)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[AutoscalingAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoscalingAdded))
+* [[Cluster](http://document.tencentcloudapi.woa.com/document/product/457/74869#Cluster)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Cluster](http://document.tencentcloudapi.woa.com/document/product/457/74869#Cluster))
+* [[Disk](http://document.tencentcloudapi.woa.com/document/product/457/74869#Disk)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Disk](http://document.tencentcloudapi.woa.com/document/product/457/74869#Disk))
+* [[ExternalNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[ExternalNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodeInfo))
+* [[ExternalNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodePoolInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[ExternalNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#ExternalNodePoolInfo))
+* [[Filter](http://document.tencentcloudapi.woa.com/document/product/457/74869#Filter)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Filter](http://document.tencentcloudapi.woa.com/document/product/457/74869#Filter))
+* [[Instance](http://document.tencentcloudapi.woa.com/document/product/457/74869#Instance)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Instance](http://document.tencentcloudapi.woa.com/document/product/457/74869#Instance))
+* [[InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceAdvancedSettings)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[InstanceAdvancedSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceAdvancedSettings))
+* [[InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceExtraArgs)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[InstanceExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceExtraArgs))
+* [[InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/457/74869#InternetAccessible)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/457/74869#InternetAccessible))
+* [[ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManuallyAdded)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[ManuallyAdded](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManuallyAdded))
+* [[NativeNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[NativeNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodeInfo))
+* [[NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo))
+* [[NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodeCountSummary)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[NodeCountSummary](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodeCountSummary))
+* [[NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool))
+* [[RegularNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[RegularNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodeInfo))
+* [[RegularNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodePoolInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[RegularNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#RegularNodePoolInfo))
+* [[RuntimeConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#RuntimeConfig)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[RuntimeConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#RuntimeConfig))
+* [[SortBy](http://document.tencentcloudapi.woa.com/document/product/457/74869#SortBy)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[SortBy](http://document.tencentcloudapi.woa.com/document/product/457/74869#SortBy))
+* [[SuperNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[SuperNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodeInfo))
+* [[SuperNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodePoolInfo)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[SuperNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#SuperNodePoolInfo))
+* [[Tag](http://document.tencentcloudapi.woa.com/document/product/457/74869#Tag)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Tag](http://document.tencentcloudapi.woa.com/document/product/457/74869#Tag))
+* [[TagSpecification](http://document.tencentcloudapi.woa.com/document/product/457/74869#TagSpecification)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[TagSpecification](http://document.tencentcloudapi.woa.com/document/product/457/74869#TagSpecification))
+* [[Taint](http://document.tencentcloudapi.woa.com/document/product/457/74869#Taint)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[Taint](http://document.tencentcloudapi.woa.com/document/product/457/74869#Taint))
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClusterInspectionTask
+* ClusterInspectionTaskOverview
+
 ### 第 1 次发布
 
 发布时间：2022-06-15 06:12:45
@@ -85036,9 +85132,9 @@
 
 新增数据结构：
 
-* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterInspectionTask)
-* [ClusterInspectionTaskOverview](http://document.tencentcloudapi.woa.com/document/product/#/##ClusterInspectionTaskOverview)
-* [Label](http://document.tencentcloudapi.woa.com/document/product/#/##Label)
+* [ClusterInspectionTask](http://document.tencentcloudapi.woa.com/document/product/457/74869#ClusterInspectionTask)
+* [ClusterInspectionTaskOverview](http://document.tencentcloudapi.woa.com/document/product/457/74869#ClusterInspectionTaskOverview)
+* [Label](http://document.tencentcloudapi.woa.com/document/product/457/74869#Label)
 
 
 
