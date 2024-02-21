@@ -80,6 +80,14 @@
         "title": "删除手机邮箱"
       }
     ],
+    "DeleteReservedPreDomainInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"ResourceIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DeleteTemplate": [
       {
         "document": "",
@@ -152,6 +160,22 @@
         "title": "获取已验证的手机邮箱列表"
       }
     ],
+    "DescribePreDomainList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreDomainList\n<公共请求参数>\n\n{\n    \"Page\": 0,\n    \"Size\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ReservedDomainList\": [\n            {\n                \"Domain\": \"abc\",\n                \"RegTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"RenewEndTime\": \"abc\",\n                \"RestoreEndTime\": \"abc\",\n                \"ReservedEndTime\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeReservedPreDomainInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abc\"\n    ],\n    \"ReservedStatus\": 0,\n    \"ReservedTimeSort\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"Domain\": \"abc\",\n                \"ReservedStatus\": 0,\n                \"FailReason\": \"abc\",\n                \"ChangeOwnerTime\": \"abc\",\n                \"RegTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeTemplate": [
       {
         "document": "",
@@ -206,6 +230,14 @@
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDomainBatch\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"Domains\": [\n        \"h101.dlgslb.cn\",\n        \"h103.dlgslb.cn\"\n    ],\n    \"PayMode\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
         "title": "批量域名续费"
+      }
+    ],
+    "ReservedPreDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abc\"\n    ],\n    \"TemplateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"abc\",\n                \"FailReason\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "SendPhoneEmailCode": [

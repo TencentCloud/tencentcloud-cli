@@ -817,7 +817,7 @@
           "example": "无",
           "member": "DifferenceDetail",
           "name": "Difference",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -827,7 +827,7 @@
           "example": "无",
           "member": "SkippedDetail",
           "name": "Skipped",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3267,7 +3267,7 @@
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3277,7 +3277,7 @@
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

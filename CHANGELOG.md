@@ -1,3 +1,83 @@
+# Release 3.0.1060.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 30 次发布
+
+发布时间：2024-02-22 01:14:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteReservedPreDomainInfo](https://cloud.tencent.com/document/api/242/103890)
+* [DescribePreDomainList](https://cloud.tencent.com/document/api/242/103889)
+* [DescribeReservedPreDomainInfo](https://cloud.tencent.com/document/api/242/103888)
+* [ReservedPreDomains](https://cloud.tencent.com/document/api/242/103887)
+
+新增数据结构：
+
+* [FailReservedDomainInfo](https://cloud.tencent.com/document/api/242/38895#FailReservedDomainInfo)
+* [ReservedDomainInfo](https://cloud.tencent.com/document/api/242/38895#ReservedDomainInfo)
+* [ReservedPreDomainInfo](https://cloud.tencent.com/document/api/242/38895#ReservedPreDomainInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 27 次发布
+
+发布时间：2024-02-22 01:17:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](https://cloud.tencent.com/document/api/1131/95522)
+
+	* 新增入参：CSUserId
+
+
+修改数据结构：
+
+* [PackageInfo](https://cloud.tencent.com/document/api/1131/76635#PackageInfo)
+
+	* 新增成员：CSUserId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 71 次发布
+
+发布时间：2024-02-22 01:21:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowLog](https://cloud.tencent.com/document/api/239/37984)
+
+	* 新增出参：InstanceSlowLogDetail
+
+
+
+
 # Release 3.0.1059.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

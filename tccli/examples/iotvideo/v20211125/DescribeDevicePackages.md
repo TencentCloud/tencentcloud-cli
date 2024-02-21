@@ -8,6 +8,7 @@ Input:
 tccli iotvideo DescribeDevicePackages --cli-unfold-argument  \
     --ProductId abc \
     --DeviceName abc \
+    --CSUserId sdfsdf \
     --Limit 1 \
     --Offset 1
 ```
@@ -24,6 +25,7 @@ Output:
                 "CSShiftDuration": 1,
                 "CSExpiredTime": 0,
                 "ChannelId": 1,
+                "CSUserId": "sdfsdf",
                 "CreatedAt": 0,
                 "UpdatedAt": 0
             }

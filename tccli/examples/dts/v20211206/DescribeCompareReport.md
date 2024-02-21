@@ -15,25 +15,85 @@ Output:
 {
     "Response": {
         "Abstract": {
-            "CheckedTables": 4,
-            "Conclusion": "same",
-            "DifferentRows": 0,
-            "DifferentTables": 0,
-            "SkippedTables": 0,
-            "Status": "success",
-            "TotalTables": 4
+            "Options": {
+                "Method": "abc",
+                "SampleRate": 0,
+                "ThreadCount": 0
+            },
+            "Objects": {
+                "ObjectMode": "abc",
+                "ObjectItems": [
+                    {
+                        "DbName": "abc",
+                        "SchemaName": "abc",
+                        "DbMode": "abc",
+                        "TableMode": "abc",
+                        "Tables": [
+                            {
+                                "TableName": "abc",
+                                "ColumnMode": "abc",
+                                "Columns": [
+                                    {
+                                        "ColumnName": "abc"
+                                    }
+                                ]
+                            }
+                        ],
+                        "ViewMode": "abc",
+                        "Views": [
+                            {
+                                "ViewName": "abc"
+                            }
+                        ]
+                    }
+                ],
+                "AdvancedObjects": [
+                    "abc"
+                ]
+            },
+            "Conclusion": "abc",
+            "Status": "abc",
+            "TotalTables": 1,
+            "CheckedTables": 1,
+            "DifferentTables": 1,
+            "SkippedTables": 1,
+            "NearlyTableCount": 1,
+            "DifferentRows": 1,
+            "SrcSampleRows": 1,
+            "DstSampleRows": 1,
+            "StartedAt": "abc",
+            "FinishedAt": "abc"
         },
         "Detail": {
             "Difference": {
-                "Items": [],
-                "TotalCount": 0
+                "TotalCount": 1,
+                "Items": [
+                    {
+                        "Db": "abc",
+                        "Table": "abc",
+                        "Chunk": 0,
+                        "SrcItem": "abc",
+                        "DstItem": "abc",
+                        "IndexName": "abc",
+                        "LowerBoundary": "abc",
+                        "UpperBoundary": "abc",
+                        "CostTime": 0,
+                        "FinishedAt": "abc"
+                    }
+                ]
             },
             "Skipped": {
-                "Items": [],
-                "TotalCount": 0
+                "TotalCount": 1,
+                "Items": [
+                    {
+                        "Db": "abc",
+                        "Table": "abc",
+                        "Reason": "abc"
+                    }
+                ]
             }
         },
-        "RequestId": "ac300ff0-00f2-11ed-b005-4930e69d89c2"
+        "RequestId": "abc"
     }
 }
 ```
