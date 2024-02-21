@@ -1,3 +1,167 @@
+# Release 3.0.940.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 22 次发布
+
+发布时间：2024-02-22 01:14:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)
+* [DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)
+* [DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)
+* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
+
+新增数据结构：
+
+* [FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)
+* [ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 11 次发布
+
+发布时间：2024-02-22 01:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCompareReport](http://document.tencentcloudapi.woa.com/document/product/571/78337)
+
+	* 新增入参：UnknownLimit, UnknownOffset, UnknownDB, UnknownTable
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 22 次发布
+
+发布时间：2024-02-22 01:18:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+
+	* 新增入参：CSUserId
+
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：CSUserId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 7 次发布
+
+发布时间：2024-02-22 01:21:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
+
+	* 新增成员：FromSource, ExtParam
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 37 次发布
+
+发布时间：2024-02-22 01:22:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)
+* [AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)
+* [BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)
+* [BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)
+* [DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)
+* [DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)
+* [DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)
+* [DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)
+* [DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)
+
+修改接口：
+
+* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
+
+	* 新增出参：InstanceSlowLogDetail
+
+
+新增数据结构：
+
+* [LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)
+* [WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 90 次发布
+
+发布时间：2024-02-22 01:25:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：IsBackupTargetInstance, BillingLabelVersion
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage, CanEditRoute
+
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+
+	* 新增成员：BillingLabelVersion
+
+
+
+
 # Release 3.0.939.1
 
 ## cxm(cxm) 版本：2017-03-12

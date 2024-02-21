@@ -491,7 +491,7 @@
       },
       {
         "document": "指定策略ID，修改简单策略相关属性。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_USAGE\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"91413a64-9587-486b-aef4-9aba5e8a0068\"\n    }\n}",
         "title": "修改简单类型告警触发策略"
       }

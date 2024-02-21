@@ -5228,6 +5228,15 @@
         },
         {
           "disabled": false,
+          "document": "用户id",
+          "example": "sdfdsf",
+          "member": "string",
+          "name": "CSUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "通道id",
           "example": "0",
           "member": "uint64",
@@ -8553,6 +8562,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gjhghjk",
+          "member": "string",
+          "name": "CSUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

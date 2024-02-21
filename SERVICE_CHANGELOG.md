@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## cxm(cxm) 版本：2017-03-12
+## 域名注册(domain) 版本：2018-08-08
 
-### 第 4 次发布
+### 第 22 次发布
 
-发布时间：2024-02-21 01:13:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstancesInner](http://document.tencentcloudapi.woa.com/document/product/1752/83327)
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 72 次发布
-
-发布时间：2024-02-21 01:13:27
+发布时间：2024-02-22 01:14:57
 
 本次发布包含了以下内容：
 
@@ -28,30 +12,81 @@
 
 新增接口：
 
-* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/1003/83328)
+* [DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)
+* [DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)
+* [DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)
+* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
 
 新增数据结构：
 
-* [BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo)
-* [BizTaskModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyInstanceParam)
-* [BizTaskModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyParamsData)
-* [ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData)
-* [CreateClustersData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CreateClustersData)
-* [ManualBackupData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ManualBackupData)
-* [ModifyDbVersionData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyDbVersionData)
-* [ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)
-* [ModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamsData)
-* [RollbackData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RollbackData)
-* [SwitchClusterLogBin](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SwitchClusterLogBin)
-* [TaskMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TaskMaintainInfo)
+* [FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)
+* [ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 数据传输服务(dts) 版本：2021-12-06
 
-### 第 88 次发布
+### 第 11 次发布
 
-发布时间：2024-02-21 01:14:33
+发布时间：2024-02-22 01:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCompareReport](http://document.tencentcloudapi.woa.com/document/product/571/78337)
+
+	* 新增入参：UnknownLimit, UnknownOffset, UnknownDB, UnknownTable
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 22 次发布
+
+发布时间：2024-02-22 01:18:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+
+	* 新增入参：CSUserId
+
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：CSUserId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 7 次发布
+
+发布时间：2024-02-22 01:21:29
 
 本次发布包含了以下内容：
 
@@ -59,18 +94,54 @@
 
 修改数据结构：
 
-* [TaskResultInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResultInfo)
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
 
-	* 新增成员：QueryResultTime
-
-
+	* 新增成员：FromSource, ExtParam
 
 
-## 边缘计算机器(ecm) 版本：2019-07-19
 
-### 第 21 次发布
 
-发布时间：2024-02-21 01:15:37
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 37 次发布
+
+发布时间：2024-02-22 01:22:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)
+* [AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)
+* [BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)
+* [BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)
+* [DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)
+* [DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)
+* [DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)
+* [DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)
+* [DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)
+
+修改接口：
+
+* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
+
+	* 新增出参：InstanceSlowLogDetail
+
+
+新增数据结构：
+
+* [LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)
+* [WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 90 次发布
+
+发布时间：2024-02-22 01:25:06
 
 本次发布包含了以下内容：
 
@@ -78,68 +149,15 @@
 
 修改数据结构：
 
-* [Module](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Module)
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>DisableWanIp
+	* 新增成员：IsBackupTargetInstance, BillingLabelVersion
 
-* [NetworkStorageRange](http://document.tencentcloudapi.woa.com/document/product/1108/42574#NetworkStorageRange)
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage, CanEditRoute
 
-	* 新增成员：CBSSupported, DiskNumLimit
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
 
-* [Node](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Node)
-
-	* <font color="#dd0000">**修改成员**：</font>LBSupported
-
-* [Position](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Position)
-
-	* 新增成员：Ipv6Supported
-
-* [VirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1108/42574#VirtualPrivateCloud)
-
-	* 新增成员：Ipv6SubnetIds
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 124 次发布
-
-发布时间：2024-02-21 01:16:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeBillUsageDetail
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* BillUsageDetail
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 凭据管理系统(ssm) 版本：2019-09-23
-
-### 第 9 次发布
-
-发布时间：2024-02-21 01:23:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SecretMetadata](http://document.tencentcloudapi.woa.com/document/product/1140/40530#SecretMetadata)
-
-	* <font color="#dd0000">**修改成员**：</font>RotationFrequency, ResourceID, RotationBeginTime
+	* 新增成员：BillingLabelVersion
 
 
 
@@ -29486,7 +29504,7 @@
 
 新增接口：
 
-* [[DescribeInstancesInner](http://document.tencentcloudapi.woa.com/document/product/1752/83327)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstancesInner](http://document.tencentcloudapi.woa.com/document/product/1752/83327)
 
 ### 第 3 次发布
 
@@ -29571,22 +29589,22 @@
 
 新增接口：
 
-* [[DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/1003/83328)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/1003/83328)
 
 新增数据结构：
 
-* [[BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo))
-* [[BizTaskModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyInstanceParam)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[BizTaskModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyInstanceParam))
-* [[BizTaskModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyParamsData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[BizTaskModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyParamsData))
-* [[ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData))
-* [[CreateClustersData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CreateClustersData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[CreateClustersData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CreateClustersData))
-* [[ManualBackupData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ManualBackupData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ManualBackupData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ManualBackupData))
-* [[ModifyDbVersionData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyDbVersionData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ModifyDbVersionData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyDbVersionData))
-* [[ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData))
-* [[ModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamsData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[ModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamsData))
-* [[RollbackData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RollbackData)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[RollbackData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RollbackData))
-* [[SwitchClusterLogBin](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SwitchClusterLogBin)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[SwitchClusterLogBin](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SwitchClusterLogBin))
-* [[TaskMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TaskMaintainInfo)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[TaskMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TaskMaintainInfo))
+* [BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo)
+* [BizTaskModifyInstanceParam](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyInstanceParam)
+* [BizTaskModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskModifyParamsData)
+* [ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData)
+* [CreateClustersData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CreateClustersData)
+* [ManualBackupData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ManualBackupData)
+* [ModifyDbVersionData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyDbVersionData)
+* [ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)
+* [ModifyParamsData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamsData)
+* [RollbackData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#RollbackData)
+* [SwitchClusterLogBin](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SwitchClusterLogBin)
+* [TaskMaintainInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TaskMaintainInfo)
 
 ### 第 71 次发布
 
@@ -36112,6 +36130,27 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 22 次发布
+
+发布时间：2024-02-22 01:14:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo))
+* [[ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo))
+* [[ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo))
+
 ### 第 21 次发布
 
 发布时间：2023-12-15 01:13:28
@@ -36835,6 +36874,21 @@
 
 
 ## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 11 次发布
+
+发布时间：2024-02-22 01:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCompareReport](http://document.tencentcloudapi.woa.com/document/product/571/78337)
+
+	* 新增入参：UnknownLimit, UnknownOffset, UnknownDB, UnknownTable
+
 
 ### 第 10 次发布
 
@@ -50577,6 +50631,28 @@
 
 ## 物联网智能视频服务(iotvideo) 版本：2021-11-25
 
+### 第 22 次发布
+
+发布时间：2024-02-22 01:18:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+
+	* 新增入参：CSUserId
+
+
+修改数据结构：
+
+* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+
+	* 新增成员：CSUserId
+
+
 ### 第 21 次发布
 
 发布时间：2024-01-30 01:17:39
@@ -63550,6 +63626,21 @@
 
 ## 运营产品中心(opc) 版本：2018-07-19
 
+### 第 7 次发布
+
+发布时间：2024-02-22 01:21:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
+
+	* 新增成员：FromSource, ExtParam
+
+
 ### 第 6 次发布
 
 发布时间：2024-02-06 01:20:12
@@ -66315,6 +66406,38 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 37 次发布
+
+发布时间：2024-02-22 01:22:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
+
+	* 新增出参：InstanceSlowLogDetail
+
+
+新增数据结构：
+
+* [[LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)](http://document.tencentcloudapi.woa.com/document/product/239/20022#[LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail))
+* [[WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)](http://document.tencentcloudapi.woa.com/document/product/239/20022#[WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail))
 
 ### 第 36 次发布
 
@@ -77112,6 +77235,27 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 90 次发布
+
+发布时间：2024-02-22 01:25:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：IsBackupTargetInstance, BillingLabelVersion
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage, CanEditRoute
+
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+
+	* 新增成员：BillingLabelVersion
+
 
 ### 第 89 次发布
 

@@ -1,10 +1,24 @@
 {
   "actions": {
+    "AddLanCheck": {
+      "document": "添加内网连接检查",
+      "input": "AddLanCheckRequest",
+      "name": "添加内网连接检查",
+      "output": "AddLanCheckResponse",
+      "status": "online"
+    },
     "AddReplicationInstance": {
       "document": "添加复制组成员",
       "input": "AddReplicationInstanceRequest",
       "name": "添加复制组成员",
       "output": "AddReplicationInstanceResponse",
+      "status": "online"
+    },
+    "AddWanCheck": {
+      "document": "添加外网连接检查",
+      "input": "AddWanCheckRequest",
+      "name": "添加外网连接检查",
+      "output": "AddWanCheckResponse",
       "status": "online"
     },
     "AllocateWanAddress": {
@@ -26,6 +40,20 @@
       "input": "AssociateSecurityGroupsRequest",
       "name": "绑定安全组",
       "output": "AssociateSecurityGroupsResponse",
+      "status": "online"
+    },
+    "BeginLanCheck": {
+      "document": "添加内网连接检查",
+      "input": "BeginLanCheckRequest",
+      "name": "开始内网连接检查",
+      "output": "BeginLanCheckResponse",
+      "status": "online"
+    },
+    "BeginWanCheck": {
+      "document": "添加内网连接检查",
+      "input": "BeginWanCheckRequest",
+      "name": "开始外网连接检查",
+      "output": "BeginWanCheckResponse",
       "status": "online"
     },
     "ChangeInstanceRole": {
@@ -112,6 +140,13 @@
       "output": "DeleteInstanceAccountResponse",
       "status": "online"
     },
+    "DeleteLanCheck": {
+      "document": "添加内网连接检查",
+      "input": "DeleteLanCheckRequest",
+      "name": "删除内网连接检查",
+      "output": "DeleteLanCheckResponse",
+      "status": "online"
+    },
     "DeleteParamTemplate": {
       "document": "删除参数模板",
       "input": "DeleteParamTemplateRequest",
@@ -124,6 +159,13 @@
       "input": "DeleteReplicationInstanceRequest",
       "name": "删除复制组成员",
       "output": "DeleteReplicationInstanceResponse",
+      "status": "online"
+    },
+    "DeleteWanCheck": {
+      "document": "删除外网连接检查",
+      "input": "DeleteWanCheckRequest",
+      "name": "删除外网连接检查",
+      "output": "DeleteWanCheckResponse",
       "status": "online"
     },
     "DescribeAutoBackupConfig": {
@@ -308,6 +350,20 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DescribeLanCheck": {
+      "document": "添加内网连接检查",
+      "input": "DescribeLanCheckRequest",
+      "name": "查询内网连接检查",
+      "output": "DescribeLanCheckResponse",
+      "status": "online"
+    },
+    "DescribeLinkCheckFlow": {
+      "document": "查询连接检查流程进度",
+      "input": "DescribeLinkCheckFlowRequest",
+      "name": "查询连接检查流程进度",
+      "output": "DescribeLinkCheckFlowResponse",
+      "status": "online"
+    },
     "DescribeMaintenanceWindow": {
       "document": "查询实例维护时间窗，在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换",
       "input": "DescribeMaintenanceWindowRequest",
@@ -397,6 +453,13 @@
       "input": "DescribeTendisSlowLogRequest",
       "name": "查询Tendis慢查询",
       "output": "DescribeTendisSlowLogResponse",
+      "status": "online"
+    },
+    "DescribeWanCheck": {
+      "document": "添加内网连接检查",
+      "input": "DescribeWanCheckRequest",
+      "name": "查询外网连接检查",
+      "output": "DescribeWanCheckResponse",
       "status": "online"
     },
     "DestroyPostpaidInstance": {
@@ -739,6 +802,23 @@
       ],
       "usage": "out"
     },
+    "AddLanCheckRequest": {
+      "document": "AddLanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddLanCheckResponse": {
+      "document": "AddLanCheck返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddReplicationInstanceRequest": {
       "document": "AddReplicationInstance请求参数结构体",
       "members": [
@@ -785,6 +865,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddWanCheckRequest": {
+      "document": "AddWanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddWanCheckResponse": {
+      "document": "AddWanCheck返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1003,6 +1100,60 @@
         }
       ],
       "usage": "both"
+    },
+    "BeginLanCheckRequest": {
+      "document": "BeginLanCheck请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BeginLanCheckResponse": {
+      "document": "BeginLanCheck返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BeginWanCheckRequest": {
+      "document": "BeginWanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BeginWanCheckResponse": {
+      "document": "BeginWanCheck返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID。",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BigKeyInfo": {
       "document": "大Key详情",
@@ -2185,6 +2336,23 @@
       ],
       "type": "object"
     },
+    "DeleteLanCheckRequest": {
+      "document": "DeleteLanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteLanCheckResponse": {
+      "document": "DeleteLanCheck返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteParamTemplateRequest": {
       "document": "DeleteParamTemplate请求参数结构体",
       "members": [
@@ -2258,6 +2426,23 @@
           "type": "float",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWanCheckRequest": {
+      "document": "DeleteWanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteWanCheckResponse": {
+      "document": "DeleteWanCheck返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4269,6 +4454,90 @@
       ],
       "type": "object"
     },
+    "DescribeLanCheckRequest": {
+      "document": "DescribeLanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLanCheckResponse": {
+      "document": "DescribeLanCheck返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "具体的检查任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LanProbeJobDetail",
+          "name": "TaskInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinkCheckFlowRequest": {
+      "document": "DescribeLinkCheckFlow请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLinkCheckFlowResponse": {
+      "document": "DescribeLinkCheckFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程ID。",
+          "example": "486489",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进度0-100",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 成功、0 进行中、-1 失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMaintenanceWindowRequest": {
       "document": "DescribeMaintenanceWindow请求参数结构体",
       "members": [
@@ -4936,10 +5205,20 @@
         },
         {
           "disabled": false,
-          "document": "慢查询详情。",
+          "document": "该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。",
           "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowlogDetail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢查询详情。",
+          "example": "无",
+          "member": "InstanceSlowlogDetail",
+          "name": "InstanceSlowLogDetail",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5251,6 +5530,43 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWanCheckRequest": {
+      "document": "DescribeWanCheck请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWanCheckResponse": {
+      "document": "DescribeWanCheck返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 检查通过 \n-1检查未通过\n1 正在检查 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "具体的检查任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WanProbeJobDetail",
+          "name": "TaskInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7669,6 +7985,11 @@
         }
       ],
       "type": "object"
+    },
+    "LanProbeJobDetail": {
+      "document": "LanProbeJobDetail 内网检查工作详情",
+      "members": [],
+      "usage": "both"
     },
     "ManualBackupInstanceRequest": {
       "document": "ManualBackupInstance请求参数结构体",
@@ -10934,6 +11255,11 @@
         }
       ],
       "type": "object"
+    },
+    "WanProbeJobDetail": {
+      "document": "WanProbeJobDetail 外网网检查工作详情",
+      "members": [],
+      "usage": "both"
     },
     "ZoneCapacityConf": {
       "document": "可用区内产品信息",

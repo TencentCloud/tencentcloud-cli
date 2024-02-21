@@ -1,11 +1,45 @@
 {
   "actions": {
+    "AddLanCheck": [
+      {
+        "document": "失败-不是该账号下的实例",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.InstanceNotExists\",\n            \"Message\": \"record not found\"\n        },\n        \"RequestId\": \"296741e1-1246-4ffd-a8a9-53e443bb6617\"\n    }\n}",
+        "title": "失败"
+      },
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c254150-2ff7-443c-bdf0-89204903ef46\"\n    }\n}",
+        "title": "成功"
+      },
+      {
+        "document": "成功2",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f606f4b4-ade1-41e2-be7b-5d5e2906be6c\"\n    }\n}",
+        "title": "成功2"
+      },
+      {
+        "document": "添加cvm失败:列表中任务数量最多只能有20个",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.Unknown\",\n            \"Message\": \"添加cvm失败:列表中任务数量最多只能有20个\"\n        },\n        \"RequestId\": \"38b58a6f-9dac-4249-b564-9b2370bc88c3\"\n    }\n}",
+        "title": "添加cvm失败:列表中任务数量最多只能有20个"
+      }
+    ],
     "AddReplicationInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"InstanceRole\": \"rw\",\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "AddWanCheck": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddWanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c04113b8-80dc-4074-af07-2581bace132e\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "AllocateWanAddress": [
@@ -30,6 +64,22 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"SecurityGroupId\": \"sg-ajr1jzgj\",\n    \"InstanceIds\": [\n        \"crs-eb2w7dto\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a1\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "BeginLanCheck": [
+      {
+        "document": "太过频繁",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeginLanCheck\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-p4w1qhvr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.InstanceNotExists\",\n            \"Message\": \"BeginLanCheck timeSpan is too small err: timeSpan is crs-p4w1qhvr\"\n        },\n        \"RequestId\": \"bf9a9dbe-432f-45cf-9643-75b325753e17\"\n    }\n}",
+        "title": "太过频繁"
+      }
+    ],
+    "BeginWanCheck": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeginWanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "ChangeInstanceRole": [
@@ -134,6 +184,14 @@
         "title": "请求示例"
       }
     ],
+    "DeleteLanCheck": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7e8bfa1-3404-4e21-900b-238627a67a97\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DeleteParamTemplate": [
       {
         "document": "",
@@ -148,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReplicationInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-sa5dsfs\",\n    \"SyncType\": true,\n    \"GroupId\": \"crs-rpl-sa5dsfs\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4ed5948-d156-4931-b9c3-10133a0bb6c9\",\n        \"TaskId\": 10856\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DeleteWanCheck": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DescribeAutoBackupConfig": [
@@ -358,6 +424,22 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLanCheck": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatus\": 0,\n        \"TaskInfo\": [\n            {}\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例1"
+      }
+    ],
+    "DescribeLinkCheckFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLinkCheckFlow\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 401136159,\n        \"Progress\": 100,\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMaintenanceWindow": [
       {
         "document": "",
@@ -434,7 +516,7 @@
       {
         "document": "通过 DescribeSlowLog 接口查询一实例的慢查询详情，包含：慢查询的命令、命令行信息、延迟时间、客户端地址、节点ID等信息。",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asda****\",\n    \"EndTime\": \"2019-09-09 12:12:41\",\n    \"BeginTime\": \"2019-09-08 12:12:41\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceSlowlogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"keys\",\n                \"CommandLine\": \"keys OtherResControler:orion.ovs.client.1514259512471:orion.ovs.entprise.9281083591:sence:*\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"24a05f0d545da235f07a5bc5deebb937********\",\n                \"Command\": \"get\",\n                \"CommandLine\": \"get slot::fsm::status::orion.ovs.client.1508751991541::1db7ffcf9216bc1fd939e6c710514f6fb40fd4fe1525f\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\",\n        \"TotalCount\": 106980\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSlowlogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"keys\",\n                \"CommandLine\": \"keys OtherResControler:orion.ovs.client.1514259512471:orion.ovs.entprise.9281083591:sence:*\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"24a05f0d545da235f07a5bc5deebb937********\",\n                \"Command\": \"get\",\n                \"CommandLine\": \"get slot::fsm::status::orion.ovs.client.1508751991541::1db7ffcf9216bc1fd939e6c710514f6fb40fd4fe1525f\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            }\n        ],\n        \"InstanceSlowLogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"keys\",\n                \"CommandLine\": \"keys OtherResControler:orion.ovs.client.1514259512471:orion.ovs.entprise.9281083591:sence:*\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"24a05f0d545da235f07a5bc5deebb937********\",\n                \"Command\": \"get\",\n                \"CommandLine\": \"get slot::fsm::status::orion.ovs.client.1508751991541::1db7ffcf9216bc1fd939e6c710514f6fb40fd4fe1525f\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\",\n        \"TotalCount\": 106980\n    }\n}",
         "title": "查询实例慢查询记录"
       }
     ],
@@ -460,6 +542,14 @@
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeTendisSlowLog\n&InstanceId=crs-asdasdas\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 106980,\n        \"TendisSlowLogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7a6604337\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeWanCheck": [
+      {
+        "document": "成功-未执行",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWanCheck\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"611e166f-0769-4a2e-bd30-3784d9ccc106\",\n        \"TaskInfo\": [\n            {},\n            {},\n            {}\n        ],\n        \"TaskStatus\": 0\n    }\n}",
+        "title": "成功-未执行"
       }
     ],
     "DestroyPostpaidInstance": [

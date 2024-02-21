@@ -40,7 +40,7 @@ tccli as ModifyScalingPolicy --cli-unfold-argument  \
     --MetricAlarm.ComparisonOperator GREATER_THAN \
     --MetricAlarm.Statistic AVERAGE \
     --MetricAlarm.Threshold 50 \
-    --MetricAlarm.MetricName CPU_USAGE \
+    --MetricAlarm.MetricName CPU_UTILIZATION \
     --NotificationUserGroupIds 1678 \
     --AdjustmentValue 1
 ```

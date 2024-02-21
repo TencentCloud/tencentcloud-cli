@@ -817,7 +817,7 @@
           "example": "无",
           "member": "DifferenceDetail",
           "name": "Difference",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -827,7 +827,7 @@
           "example": "无",
           "member": "SkippedDetail",
           "name": "Skipped",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3263,6 +3263,42 @@
           "name": "SkippedTable",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验结果未知的 limit",
+          "example": "10",
+          "member": "int64",
+          "name": "UnknownLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "校验结果未知的 offset",
+          "example": "0",
+          "member": "int64",
+          "name": "UnknownOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，结果未知的库名",
+          "example": "db1",
+          "member": "string",
+          "name": "UnknownDB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，结果未知的表名\t",
+          "example": "t1",
+          "member": "string",
+          "name": "UnknownTable",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3276,7 +3312,7 @@
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3286,7 +3322,7 @@
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -435,8 +435,8 @@
     "DescribeDevicePackages": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePackages\n<公共请求参数>\n\n{\n    \"ProductId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Packages\": [\n            {\n                \"Status\": 0,\n                \"CSType\": 1,\n                \"CSShiftDuration\": 1,\n                \"CSExpiredTime\": 0,\n                \"ChannelId\": 1,\n                \"CreatedAt\": 0,\n                \"UpdatedAt\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePackages\n<公共请求参数>\n\n{\n    \"ProductId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"CSUserId\": \"sdfsdf\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Packages\": [\n            {\n                \"Status\": 0,\n                \"CSType\": 1,\n                \"CSShiftDuration\": 1,\n                \"CSExpiredTime\": 0,\n                \"ChannelId\": 1,\n                \"CSUserId\": \"sdfsdf\",\n                \"CreatedAt\": 0,\n                \"UpdatedAt\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "拉取有效套餐列表"
       }
     ],
