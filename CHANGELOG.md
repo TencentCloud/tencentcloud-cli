@@ -1,3 +1,136 @@
+# Release 3.0.1061.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 33 次发布
+
+发布时间：2024-02-23 01:07:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomization](https://cloud.tencent.com/document/api/1093/48601)
+
+* [GetCustomizationList](https://cloud.tencent.com/document/api/1093/48498)
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 81 次发布
+
+发布时间：2024-02-23 01:13:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskResult](https://cloud.tencent.com/document/api/1342/66644)
+
+	* 新增入参：IsTransformDataType
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 23 次发布
+
+发布时间：2024-02-23 01:14:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AdvancedObjectsItem](https://cloud.tencent.com/document/api/571/82108#AdvancedObjectsItem)
+* [DifferenceAdvancedObjectsDetail](https://cloud.tencent.com/document/api/571/82108#DifferenceAdvancedObjectsDetail)
+* [DifferenceData](https://cloud.tencent.com/document/api/571/82108#DifferenceData)
+* [DifferenceDataDetail](https://cloud.tencent.com/document/api/571/82108#DifferenceDataDetail)
+* [DifferenceRowDetail](https://cloud.tencent.com/document/api/571/82108#DifferenceRowDetail)
+* [RowsCountDifference](https://cloud.tencent.com/document/api/571/82108#RowsCountDifference)
+
+修改数据结构：
+
+* [CompareDetailInfo](https://cloud.tencent.com/document/api/571/82108#CompareDetailInfo)
+
+	* 新增成员：DifferenceAdvancedObjects, DifferenceData, DifferenceRow
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 12 次发布
+
+发布时间：2024-02-23 01:18:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListTasks](https://cloud.tencent.com/document/api/1344/97294)
+
+	* 新增入参：BeginTime, EndTime
+
+
+修改数据结构：
+
+* [SubTaskData](https://cloud.tencent.com/document/api/1344/95952#SubTaskData)
+
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
+
+* [TaskData](https://cloud.tencent.com/document/api/1344/95952#TaskData)
+
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 75 次发布
+
+发布时间：2024-02-23 01:28:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AttributeItemDTO](https://cloud.tencent.com/document/api/1267/76336#AttributeItemDTO)
+* [InstanceLifeCycleOpsDto](https://cloud.tencent.com/document/api/1267/76336#InstanceLifeCycleOpsDto)
+* [InstanceLifeDetailDto](https://cloud.tencent.com/document/api/1267/76336#InstanceLifeDetailDto)
+
+修改数据结构：
+
+* [InstanceLogInfo](https://cloud.tencent.com/document/api/1267/76336#InstanceLogInfo)
+
+	* 新增成员：ExtensionInfo
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, Tries, LastUpdate, BrokerIp, FileSize, OriginFileName, CreateTime, InstanceLogType, TaskName, CostTime, InstanceStatus, CodeFileName
+
+* [InstanceOpsDto](https://cloud.tencent.com/document/api/1267/76336#InstanceOpsDto)
+
+	* 新增成员：RelatedInstanceList, RelatedInstanceSize, OwnerId, UserId, InstanceLifeCycleOpsDto, RetryAttempts
+
+
+
+
 # Release 3.0.1060.1
 
 ## 域名注册(domain) 版本：2018-08-08

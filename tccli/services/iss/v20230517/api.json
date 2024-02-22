@@ -2326,7 +2326,7 @@
         },
         {
           "disabled": false,
-          "document": "操作命令（enable：启用；disable：禁用；delete：删除）",
+          "document": "操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）",
           "example": "enable",
           "member": "string",
           "name": "Cmd",
@@ -3879,7 +3879,7 @@
         {
           "disabled": false,
           "document": "服务节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "上海1",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -3889,7 +3889,7 @@
         {
           "disabled": false,
           "document": "服务节点 ID（对应为其他接口中所需的 ClusterId）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "b2181417-03ce-4ea3-ae39-************",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -3899,7 +3899,7 @@
         {
           "disabled": false,
           "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -3942,7 +3942,7 @@
         {
           "disabled": false,
           "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2d203ed6-c0e9-4ef0-817b-************",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -3952,7 +3952,7 @@
         {
           "disabled": false,
           "document": "播放域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.demo.com",
           "member": "string",
           "name": "PlayDomain",
           "output_required": true,
@@ -3962,7 +3962,7 @@
         {
           "disabled": false,
           "document": "CNAME 记录值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "d0bf30383016f5ac52aff************.play-***.ap-shanghai.tencentiss.cn",
           "member": "string",
           "name": "InternalDomain",
           "output_required": true,
@@ -3972,7 +3972,7 @@
         {
           "disabled": false,
           "document": "是否上传证书（0：否，1：是）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HaveCert",
           "output_required": true,
@@ -3982,7 +3982,7 @@
         {
           "disabled": false,
           "document": "服务节点 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "b2181417-03ce-4ea3-ae39-************",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -3992,7 +3992,7 @@
         {
           "disabled": false,
           "document": "服务节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "上海1",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -4002,7 +4002,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "130****012",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -4018,7 +4018,7 @@
         {
           "disabled": false,
           "document": "服务节点描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "上海1",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -4028,7 +4028,7 @@
         {
           "disabled": false,
           "document": "服务节点 ID（对应为其他接口中所需的 ClusterId）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "b2181417-03ce-4ea3-ae39-************",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -4038,7 +4038,7 @@
         {
           "disabled": false,
           "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -4356,7 +4356,7 @@
         {
           "disabled": false,
           "document": "接入协议的字典码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10001",
           "member": "string",
           "name": "TypeCode",
           "output_required": true,
@@ -4366,7 +4366,7 @@
         {
           "disabled": false,
           "document": "接入协议类型值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Value",
           "output_required": true,
@@ -4376,7 +4376,7 @@
         {
           "disabled": false,
           "document": "接入协议的类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "海康SDK",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -4564,7 +4564,7 @@
         {
           "disabled": false,
           "document": "组织 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "237",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
@@ -4574,7 +4574,7 @@
         {
           "disabled": false,
           "document": "组织名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "组织237",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -4584,7 +4584,7 @@
         {
           "disabled": false,
           "document": "组织父节点 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "236",
           "member": "string",
           "name": "ParentId",
           "output_required": true,
@@ -4594,7 +4594,7 @@
         {
           "disabled": false,
           "document": "组织层级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Level",
           "output_required": true,
@@ -4604,7 +4604,7 @@
         {
           "disabled": false,
           "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1300***012",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -4614,7 +4614,7 @@
         {
           "disabled": false,
           "document": "组织结构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0,236",
           "member": "string",
           "name": "ParentIds",
           "output_required": true,
@@ -4624,7 +4624,7 @@
         {
           "disabled": false,
           "document": "设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -4634,7 +4634,7 @@
         {
           "disabled": false,
           "document": "设备在线数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8",
           "member": "int64",
           "name": "Online",
           "output_required": true,
@@ -5350,7 +5350,7 @@
         {
           "disabled": false,
           "document": "鉴权配置ID（uuid）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "e8317c5b-7087-4126-bca0-************",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -5360,7 +5360,7 @@
         {
           "disabled": false,
           "document": "是否开播放鉴权（1:开启,0:关闭）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PullState",
           "output_required": true,
@@ -5370,7 +5370,7 @@
         {
           "disabled": false,
           "document": "播放密钥（仅支持字母数字，长度0-10位）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcdefg",
           "member": "string",
           "name": "PullSecret",
           "output_required": true,
@@ -5380,7 +5380,7 @@
         {
           "disabled": false,
           "document": "播放过期时间（单位：分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PullExpired",
           "output_required": true,
@@ -5390,7 +5390,7 @@
         {
           "disabled": false,
           "document": "是否开启推流鉴权（1:开启,0:关闭）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PushState",
           "output_required": true,
@@ -5400,7 +5400,7 @@
         {
           "disabled": false,
           "document": "推流密钥（仅支持字母数字，长度0-10位）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcdefg",
           "member": "string",
           "name": "PushSecret",
           "output_required": true,
@@ -5410,7 +5410,7 @@
         {
           "disabled": false,
           "document": "推流过期时间（单位：分钟）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PushExpired",
           "output_required": true,
@@ -5420,7 +5420,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1300***012",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -5463,7 +5463,7 @@
         {
           "disabled": false,
           "document": "简单任务或复杂任务ID",
-          "example": "无",
+          "example": "4d3535ba-3d81-4154-85ac-************",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6716,7 +6716,7 @@
         {
           "disabled": false,
           "document": "录像上云计划ID",
-          "example": "无",
+          "example": "f06d500f-64fb-42c0-b804-************",
           "member": "string",
           "name": "PlanId",
           "output_required": true,
@@ -6726,7 +6726,7 @@
         {
           "disabled": false,
           "document": "录像上云计划名称",
-          "example": "无",
+          "example": "录像上云计划1",
           "member": "string",
           "name": "PlanName",
           "output_required": true,
@@ -6736,7 +6736,7 @@
         {
           "disabled": false,
           "document": "录像上云模板ID",
-          "example": "无",
+          "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -6746,7 +6746,7 @@
         {
           "disabled": false,
           "document": "录像上云计划描述",
-          "example": "无",
+          "example": "这是计划的一部分",
           "member": "string",
           "name": "Describe",
           "output_required": true,
@@ -6766,7 +6766,7 @@
         {
           "disabled": false,
           "document": "录像上云计划状态，1:正常使用中，0:删除中，无法使用",
-          "example": "无",
+          "example": " 1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -6776,7 +6776,7 @@
         {
           "disabled": false,
           "document": "通道数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "ChannelCount",
           "output_required": true,
@@ -6786,7 +6786,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
           "output_required": true,
@@ -6796,7 +6796,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
@@ -6967,7 +6967,7 @@
         {
           "disabled": false,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -6977,7 +6977,7 @@
         {
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "录像上云模板1",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -7007,7 +7007,7 @@
         {
           "disabled": false,
           "document": "上云倍速（支持1，2，4倍速）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Scale",
           "output_required": true,
@@ -7017,7 +7017,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
           "output_required": true,
@@ -7027,7 +7027,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
@@ -7332,7 +7332,7 @@
         {
           "disabled": false,
           "document": "子任务数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -7348,7 +7348,7 @@
         {
           "disabled": false,
           "document": "复杂任务ID",
-          "example": "无",
+          "example": "4d3535ba-3d81-4154-85ac-************",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7357,7 +7357,7 @@
         {
           "disabled": false,
           "document": "页码，默认为1",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -7366,7 +7366,7 @@
         {
           "disabled": false,
           "document": "每页数量，默认为10",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -7375,7 +7375,7 @@
         {
           "disabled": false,
           "document": "默认不对该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -7422,7 +7422,7 @@
         {
           "disabled": false,
           "document": "任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -7438,7 +7438,7 @@
         {
           "disabled": false,
           "document": "页码，默认为1",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -7446,8 +7446,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认为10",
-          "example": "无",
+          "document": "每页数量，默认为20",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -7455,7 +7455,7 @@
         },
         {
           "disabled": false,
-          "document": "默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice",
+          "document": "默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，\nBatchUpgradeDevice，\nBatchResetDevice,\nBatchRebootDevice",
           "example": "无",
           "member": "string",
           "name": "Operation",
@@ -7464,10 +7464,28 @@
         },
         {
           "disabled": false,
-          "document": "默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED",
-          "example": "无",
+          "document": "默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消",
+          "example": "2",
           "member": "int64",
           "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1703645732",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1703645832",
+          "member": "int64",
+          "name": "EndTime",
           "required": false,
           "type": "int"
         }
@@ -8443,7 +8461,7 @@
         {
           "disabled": false,
           "document": "子任务ID",
-          "example": "无",
+          "example": "9effe2a2-60d3-418b-9546-************",
           "member": "string",
           "name": "SubTaskId",
           "output_required": true,
@@ -8453,7 +8471,7 @@
         {
           "disabled": false,
           "document": "任务状态1:NEW,2:RUNNING,3:COMPLETED ,4:FAILED",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -8463,7 +8481,7 @@
         {
           "disabled": false,
           "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "设备离线",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
@@ -8473,7 +8491,7 @@
         {
           "disabled": false,
           "document": "任务进度",
-          "example": "无",
+          "example": "0.66",
           "member": "float",
           "name": "Progress",
           "output_required": true,
@@ -8483,7 +8501,7 @@
         {
           "disabled": false,
           "document": "操作类型",
-          "example": "无",
+          "example": "DisableDevice",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -8493,7 +8511,7 @@
         {
           "disabled": false,
           "document": "操作类型中文描述",
-          "example": "无",
+          "example": "禁用设备",
           "member": "string",
           "name": "ActionZhDesc",
           "output_required": true,
@@ -8503,7 +8521,7 @@
         {
           "disabled": false,
           "document": "资源ID",
-          "example": "无",
+          "example": "f8656fa3-e7fa-4cad-a4cc-************",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -8513,7 +8531,7 @@
         {
           "disabled": false,
           "document": "启动任务时间",
-          "example": "无",
+          "example": "2023-11-02 10:00:12.324",
           "member": "string",
           "name": "StartedAt",
           "output_required": true,
@@ -8523,7 +8541,7 @@
         {
           "disabled": false,
           "document": "创建任务时间",
-          "example": "无",
+          "example": "2023-11-02 10:00:12.324",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -8533,7 +8551,7 @@
         {
           "disabled": false,
           "document": "更新任务时间",
-          "example": "无",
+          "example": "2023-11-02 10:00:12.334",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
@@ -8543,12 +8561,52 @@
         {
           "disabled": false,
           "document": "任务运行时间，单位ms",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Runtime",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f8656fa3-e7fa-4cad-a4cc-************",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "设备1",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f7ca505f-be1b-4ce8-849b-************",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通道1",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8559,7 +8617,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "4d3535ba-3d81-4154-85ac-************",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -8569,7 +8627,7 @@
         {
           "disabled": false,
           "document": "任务状态1:NEW,2:RUNNING,3:COMPLETED ,4:FAILED",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -8579,7 +8637,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "设备响应超时",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
@@ -8589,7 +8647,7 @@
         {
           "disabled": false,
           "document": "进度（0-1）",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "Progress",
           "output_required": true,
@@ -8599,7 +8657,7 @@
         {
           "disabled": false,
           "document": "任务操作类型，批量任务类型以Batch开头",
-          "example": "无",
+          "example": "BatchDisableDevice",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -8609,7 +8667,7 @@
         {
           "disabled": false,
           "document": "操作类型中文描述",
-          "example": "无",
+          "example": "批量禁用设备",
           "member": "string",
           "name": "ActionZhDesc",
           "output_required": true,
@@ -8619,7 +8677,7 @@
         {
           "disabled": false,
           "document": "任务类型 1.简单 2.复杂 3.子任务",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TaskType",
           "output_required": true,
@@ -8629,7 +8687,7 @@
         {
           "disabled": false,
           "document": "任务资源id（复杂任务该字段无效）",
-          "example": "无",
+          "example": "f8656fa3-e7fa-4cad-a4cc-************",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -8639,7 +8697,7 @@
         {
           "disabled": false,
           "document": "总任务数（仅复杂任务有效）",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -8649,7 +8707,7 @@
         {
           "disabled": false,
           "document": "成功任务数（仅复杂任务有效）",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "SuccessCount",
           "output_required": true,
@@ -8659,7 +8717,7 @@
         {
           "disabled": false,
           "document": "失败任务数（仅复杂任务有效）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "FailCount",
           "output_required": true,
@@ -8669,7 +8727,7 @@
         {
           "disabled": false,
           "document": "运行任务数（仅复杂任务有效）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RunningCount",
           "output_required": true,
@@ -8679,7 +8737,7 @@
         {
           "disabled": false,
           "document": "启动任务时间",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "StartedAt",
           "output_required": true,
@@ -8689,7 +8747,7 @@
         {
           "disabled": false,
           "document": "创建任务时间",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -8699,7 +8757,7 @@
         {
           "disabled": false,
           "document": "更新任务时间",
-          "example": "无",
+          "example": "2023-09-06 15:52:35",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
@@ -8709,12 +8767,52 @@
         {
           "disabled": false,
           "document": "任务运行时间，单位ms",
-          "example": "无",
+          "example": "300",
           "member": "int64",
           "name": "Runtime",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f8656fa3-e7fa-4cad-a4cc-************",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "设备1",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f7ca505f-be1b-4ce8-849b-************",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通道1",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9640,7 +9738,7 @@
         {
           "disabled": false,
           "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -9650,7 +9748,7 @@
         {
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "录像上云模板1",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -9680,7 +9778,7 @@
         {
           "disabled": false,
           "document": "上云倍速（支持1，2，4倍速）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Scale",
           "output_required": true,
@@ -9690,7 +9788,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "CreateAt",
           "output_required": true,
@@ -9700,7 +9798,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-09-06 15:52:34",
           "member": "string",
           "name": "UpdateAt",
           "output_required": true,
@@ -9716,12 +9814,11 @@
         {
           "disabled": false,
           "document": "模板名称（不修改名称时，不需要带该字段）",
-          "example": "无",
+          "example": "录像上云模板1",
           "member": "string",
           "name": "TemplateName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9730,8 +9827,7 @@
           "member": "RecordTemplateTimeSections",
           "name": "TimeSections",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9740,18 +9836,16 @@
           "member": "RecordTemplateTimeSections",
           "name": "DevTimeSections",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "上云倍速（支持1，2，4倍速）",
-          "example": "无",
+          "example": " 2",
           "member": "int64",
           "name": "Scale",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"

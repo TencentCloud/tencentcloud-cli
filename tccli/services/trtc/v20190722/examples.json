@@ -348,7 +348,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-npC9yhU7sHLvaLOLcCAwP8-QDXVHHjbYz2nNoK-rO+8oZWQndibuK9pP-POfqMns0GVUTco6wE.\"\n    }\n}",
         "title": "停止转推任务"
       }
     ],

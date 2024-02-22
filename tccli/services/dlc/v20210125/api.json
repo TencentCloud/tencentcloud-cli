@@ -9474,6 +9474,15 @@
           "name": "MaxResults",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否转化数据类型",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTransformDataType",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

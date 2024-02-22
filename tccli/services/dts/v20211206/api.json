@@ -505,6 +505,62 @@
     "serviceShortName": "dts"
   },
   "objects": {
+    "AdvancedObjectsItem": {
+      "document": "数据库不一致的详情，mongodb业务用到",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象类型,可能得值有：account,index,shardkey,schema\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "account",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端分块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "other.test",
+          "member": "string",
+          "name": "SrcChunk",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端分块\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "other.test",
+          "member": "string",
+          "name": "DstChunk",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " ",
+          "member": "string",
+          "name": "SrcItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " ",
+          "member": "string",
+          "name": "DstItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CheckStep": {
       "document": "检查步骤",
       "members": [
@@ -828,6 +884,36 @@
           "member": "SkippedDetail",
           "name": "Skipped",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DifferenceAdvancedObjectsDetail",
+          "name": "DifferenceAdvancedObjects",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DifferenceDataDetail",
+          "name": "DifferenceData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据行不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DifferenceRowDetail",
+          "name": "DifferenceRow",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -5060,6 +5146,134 @@
       ],
       "usage": "out"
     },
+    "DifferenceAdvancedObjectsDetail": {
+      "document": "数据库不一致的详情，mongodb业务用到",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不一致详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdvancedObjectsItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceData": {
+      "document": "数据不一致详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_c",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_s",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ObjectID(\"626cb354184dd55f78b95f7f\")",
+          "member": "string",
+          "name": "SrcChunk",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ObjectID(\"626cb354184dd55f78b95f7f\")",
+          "member": "string",
+          "name": "DstChunk",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"$numberInt\":\"17\"}",
+          "member": "string",
+          "name": "SrcItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"$numberInt\":\"18\"}",
+          "member": "string",
+          "name": "DstItem",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-26 18:54:40",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceDataDetail": {
+      "document": "mongodb数据不一致性详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mongo数据不一致详细列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DifferenceData",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DifferenceDetail": {
       "document": "数据不一致的表详情",
       "members": [
@@ -5187,6 +5401,32 @@
           "name": "FinishedAt",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceRowDetail": {
+      "document": "mongodb行数校验不一致性详情结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "不一致总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不一致列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RowsCountDifference",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -8281,6 +8521,52 @@
         }
       ],
       "usage": "both"
+    },
+    "RowsCountDifference": {
+      "document": "mongodb行校验不一致详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_core",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "SrcCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "105",
+          "member": "int64",
+          "name": "DstCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SkipCheckItemRequest": {
       "document": "SkipCheckItem请求参数结构体",
