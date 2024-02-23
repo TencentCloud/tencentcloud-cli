@@ -69,7 +69,9 @@ Output:
                                 "Phone": "k",
                                 "Stress": false
                             }
-                        ]
+                        ],
+                        "KeywordTag": 0,
+                        "ReferenceWord": "word"
                     }
                 ]
             },
@@ -104,7 +106,9 @@ Output:
                                 "Phone": "ai3",
                                 "Stress": false
                             }
-                        ]
+                        ],
+                        "KeywordTag": 0,
+                        "ReferenceWord": "word"
                     }
                 ]
             }

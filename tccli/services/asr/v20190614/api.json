@@ -481,7 +481,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "标签信息",
           "example": "无",
           "member": "string",
@@ -501,7 +501,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1098,7 +1098,7 @@
       "document": "GetCustomizationList请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
           "example": "无",
           "member": "string",

@@ -1,35 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 域名注册(domain) 版本：2018-08-08
+## 语音识别(asr) 版本：2019-06-14
 
-### 第 22 次发布
+### 第 19 次发布
 
-发布时间：2024-02-22 01:14:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)
-* [DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)
-* [DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)
-* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
-
-新增数据结构：
-
-* [FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)
-* [ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)
-* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 11 次发布
-
-发布时间：2024-02-22 01:15:16
+发布时间：2024-02-23 01:08:08
 
 本次发布包含了以下内容：
 
@@ -37,9 +12,56 @@
 
 修改接口：
 
-* [DescribeCompareReport](http://document.tencentcloudapi.woa.com/document/product/571/78337)
+* [CreateCustomization](http://document.tencentcloudapi.woa.com/document/product/1093/48601)
 
-	* 新增入参：UnknownLimit, UnknownOffset, UnknownDB, UnknownTable
+* [GetCustomizationList](http://document.tencentcloudapi.woa.com/document/product/1093/48498)
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 89 次发布
+
+发布时间：2024-02-23 01:14:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskResult](http://document.tencentcloudapi.woa.com/document/product/1342/66644)
+
+	* 新增入参：IsTransformDataType
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 12 次发布
+
+发布时间：2024-02-23 01:15:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AdvancedObjectsItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#AdvancedObjectsItem)
+* [DifferenceAdvancedObjectsDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceAdvancedObjectsDetail)
+* [DifferenceData](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceData)
+* [DifferenceDataDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceDataDetail)
+* [DifferenceRowDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceRowDetail)
+* [RowsCountDifference](http://document.tencentcloudapi.woa.com/document/product/571/78340#RowsCountDifference)
+
+修改数据结构：
+
+* [CompareDetailInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#CompareDetailInfo)
+
+	* 新增成员：DifferenceAdvancedObjects, DifferenceData, DifferenceRow
 
 
 
@@ -48,11 +70,11 @@
 
 
 
-## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+## 智能视图计算平台(iss) 版本：2023-05-17
 
-### 第 22 次发布
+### 第 13 次发布
 
-发布时间：2024-02-22 01:18:34
+发布时间：2024-02-23 01:19:02
 
 本次发布包含了以下内容：
 
@@ -60,52 +82,29 @@
 
 修改接口：
 
-* [DescribeDevicePackages](http://document.tencentcloudapi.woa.com/document/product/1131/81389)
+* [ListTasks](http://document.tencentcloudapi.woa.com/document/product/1740/81714)
 
-	* 新增入参：CSUserId
+	* 新增入参：BeginTime, EndTime
 
 
 修改数据结构：
 
-* [PackageInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#PackageInfo)
+* [SubTaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SubTaskData)
 
-	* 新增成员：CSUserId
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
 
+* [TaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#TaskData)
 
-
-
-## 物联网智能视频服务(iotvideo) 版本：2020-12-15
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2019-11-26
-
-
-
-## 运营产品中心(opc) 版本：2018-07-19
-
-### 第 7 次发布
-
-发布时间：2024-02-22 01:21:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ActivityRegFormRecord](http://document.tencentcloudapi.woa.com/document/product/1602/76727#ActivityRegFormRecord)
-
-	* 新增成员：FromSource, ExtParam
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
 
 
 
 
-## 云数据库Redis(redis) 版本：2018-04-12
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 37 次发布
+### 第 44 次发布
 
-发布时间：2024-02-22 01:22:05
+发布时间：2024-02-23 01:19:28
 
 本次发布包含了以下内容：
 
@@ -113,51 +112,41 @@
 
 新增接口：
 
-* [AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)
-* [AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)
-* [BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)
-* [BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)
-* [DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)
-* [DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)
-* [DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)
-* [DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)
-* [DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)
-
-修改接口：
-
-* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
-
-	* 新增出参：InstanceSlowLogDetail
-
+* [DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)
 
 新增数据结构：
 
-* [LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)
-* [WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
 
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-### 第 90 次发布
+### 第 32 次发布
 
-发布时间：2024-02-22 01:25:06
+发布时间：2024-02-23 01:28:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增数据结构：
+
+* [AttributeItemDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AttributeItemDTO)
+* [InstanceLifeCycleOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeCycleOpsDto)
+* [InstanceLifeDetailDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeDetailDto)
+
 修改数据结构：
 
-* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+* [InstanceLogInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogInfo)
 
-	* 新增成员：IsBackupTargetInstance, BillingLabelVersion
+	* 新增成员：ExtensionInfo
 
-	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Remark, CreateTime, Status, Version, NodeDistribution, MaxStorage, CanEditRoute
+	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, Tries, LastUpdate, BrokerIp, FileSize, OriginFileName, CreateTime, InstanceLogType, TaskName, CostTime, InstanceStatus, CodeFileName
 
-* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+* [InstanceOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceOpsDto)
 
-	* 新增成员：BillingLabelVersion
+	* 新增成员：RelatedInstanceList, RelatedInstanceSize, OwnerId, UserId, InstanceLifeCycleOpsDto, RetryAttempts
 
 
 
@@ -4832,6 +4821,21 @@
 
 
 ## 语音识别(asr) 版本：2019-06-14
+
+### 第 19 次发布
+
+发布时间：2024-02-23 01:08:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomization](http://document.tencentcloudapi.woa.com/document/product/1093/48601)
+
+* [GetCustomizationList](http://document.tencentcloudapi.woa.com/document/product/1093/48498)
+
 
 ### 第 18 次发布
 
@@ -33503,6 +33507,21 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 89 次发布
+
+发布时间：2024-02-23 01:14:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskResult](http://document.tencentcloudapi.woa.com/document/product/1342/66644)
+
+	* 新增入参：IsTransformDataType
+
+
 ### 第 88 次发布
 
 发布时间：2024-02-21 01:14:33
@@ -36140,16 +36159,16 @@
 
 新增接口：
 
-* [[DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83333)
+* [DescribePreDomainList](http://document.tencentcloudapi.woa.com/document/product/242/83332)
+* [DescribeReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/83331)
+* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
 
 新增数据结构：
 
-* [[FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo))
-* [[ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo))
-* [[ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo))
+* [FailReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#FailReservedDomainInfo)
+* [ReservedDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedDomainInfo)
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
 
 ### 第 21 次发布
 
@@ -36874,6 +36893,30 @@
 
 
 ## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 12 次发布
+
+发布时间：2024-02-23 01:15:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AdvancedObjectsItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#AdvancedObjectsItem)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[AdvancedObjectsItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#AdvancedObjectsItem))
+* [[DifferenceAdvancedObjectsDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceAdvancedObjectsDetail)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[DifferenceAdvancedObjectsDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceAdvancedObjectsDetail))
+* [[DifferenceData](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceData)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[DifferenceData](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceData))
+* [[DifferenceDataDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceDataDetail)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[DifferenceDataDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceDataDetail))
+* [[DifferenceRowDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceRowDetail)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[DifferenceRowDetail](http://document.tencentcloudapi.woa.com/document/product/571/78340#DifferenceRowDetail))
+* [[RowsCountDifference](http://document.tencentcloudapi.woa.com/document/product/571/78340#RowsCountDifference)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[RowsCountDifference](http://document.tencentcloudapi.woa.com/document/product/571/78340#RowsCountDifference))
+
+修改数据结构：
+
+* [CompareDetailInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#CompareDetailInfo)
+
+	* 新增成员：DifferenceAdvancedObjects, DifferenceData, DifferenceRow
+
 
 ### 第 11 次发布
 
@@ -51447,6 +51490,32 @@
 
 ## 智能视图计算平台(iss) 版本：2023-05-17
 
+### 第 13 次发布
+
+发布时间：2024-02-23 01:19:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListTasks](http://document.tencentcloudapi.woa.com/document/product/1740/81714)
+
+	* 新增入参：BeginTime, EndTime
+
+
+修改数据结构：
+
+* [SubTaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SubTaskData)
+
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
+
+* [TaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#TaskData)
+
+	* 新增成员：DeviceId, DeviceName, ChannelId, ChannelName
+
+
 ### 第 12 次发布
 
 发布时间：2024-02-02 01:18:44
@@ -52765,6 +52834,22 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 44 次发布
+
+发布时间：2024-02-23 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance))
 
 ### 第 43 次发布
 
@@ -66417,15 +66502,15 @@
 
 新增接口：
 
-* [[AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83343)
+* [AddWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83342)
+* [BeginLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83341)
+* [BeginWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83340)
+* [DeleteLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83339)
+* [DeleteWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83338)
+* [DescribeLanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83337)
+* [DescribeLinkCheckFlow](http://document.tencentcloudapi.woa.com/document/product/239/83336)
+* [DescribeWanCheck](http://document.tencentcloudapi.woa.com/document/product/239/83335)
 
 修改接口：
 
@@ -66436,8 +66521,8 @@
 
 新增数据结构：
 
-* [[LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)](http://document.tencentcloudapi.woa.com/document/product/239/20022#[LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail))
-* [[WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)](http://document.tencentcloudapi.woa.com/document/product/239/20022#[WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail))
+* [LanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#LanProbeJobDetail)
+* [WanProbeJobDetail](http://document.tencentcloudapi.woa.com/document/product/239/20022#WanProbeJobDetail)
 
 ### 第 36 次发布
 
@@ -97382,6 +97467,33 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 32 次发布
+
+发布时间：2024-02-23 01:28:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AttributeItemDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AttributeItemDTO)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[AttributeItemDTO](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AttributeItemDTO))
+* [[InstanceLifeCycleOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeCycleOpsDto)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[InstanceLifeCycleOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeCycleOpsDto))
+* [[InstanceLifeDetailDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeDetailDto)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[InstanceLifeDetailDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLifeDetailDto))
+
+修改数据结构：
+
+* [InstanceLogInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogInfo)
+
+	* 新增成员：ExtensionInfo
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, Tries, LastUpdate, BrokerIp, FileSize, OriginFileName, CreateTime, InstanceLogType, TaskName, CostTime, InstanceStatus, CodeFileName
+
+* [InstanceOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceOpsDto)
+
+	* 新增成员：RelatedInstanceList, RelatedInstanceSize, OwnerId, UserId, InstanceLifeCycleOpsDto, RetryAttempts
+
 
 ### 第 31 次发布
 

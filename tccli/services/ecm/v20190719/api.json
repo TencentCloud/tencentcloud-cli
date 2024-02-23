@@ -5595,7 +5595,7 @@
         {
           "disabled": false,
           "document": "实例计费类型。其中：\n0，按资源维度后付费，计算当日用量峰值，例如CPU，内存，硬盘等，仅适用于非GNR系列机型；\n1，按小时后付费，单价：xx元/实例/小时，仅适用于GNR机型，如需开通该计费方式请提工单申请；\n2，按月后付费，单价：xx元/实例/月，仅适用于GNR机型；\n该字段不填时，非GNR机型会默认选择0；GNR机型默认选择2。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstanceChargeType",
           "required": false,
@@ -5613,7 +5613,7 @@
           "example": "无",
           "member": "InstancesPrice",
           "name": "InstancePrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6644,7 +6644,7 @@
         {
           "disabled": false,
           "document": "可以通过以下方式获取可用的实例ID：\n通过登录控制台查询实例ID。\n通过调用接口 DescribeInstances ，取返回信息中的 InstanceId 获取实例ID。",
-          "example": "无",
+          "example": "[\"ein-8cnm1234\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6653,7 +6653,7 @@
         {
           "disabled": false,
           "document": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：skey-11112222。\n\n可以通过以下方式获取可用的密钥ID：\n通过登录控制台查询密钥ID。\n通过调用接口 DescribeKeyPairs ，取返回信息中的 KeyId 获取密钥对ID。",
-          "example": "无",
+          "example": "[\"skey-dklg1234\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -6662,7 +6662,7 @@
         {
           "disabled": false,
           "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：\nTRUE：表示在正常关机失败后进行强制关机。\nFALSE：表示在正常关机失败后不进行强制关机。\n\n默认取值：FALSE。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ForceStop",
           "required": false,

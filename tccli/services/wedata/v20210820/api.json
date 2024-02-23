@@ -3477,6 +3477,45 @@
       ],
       "usage": "out"
     },
+    "AttributeItemDTO": {
+      "document": "aiops基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AttributeItemDsVO": {
       "document": "AttributeItemVO参数",
       "members": [
@@ -30361,6 +30400,150 @@
       ],
       "usage": "both"
     },
+    "InstanceLifeCycleOpsDto": {
+      "document": "实例生命周期详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurRunDate",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例生命次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LifeRound",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行类型 重跑/补录/周期/非周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Tries",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLifeDetailDto",
+          "name": "InstanceLifeDetailDtoList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Runner运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunnerState",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorDesc",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误告警级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorCodeLevel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例日志简略信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLogInfo",
+          "name": "InstanceLogListOpsDto",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceLifeDetailDto": {
+      "document": "实例生命周期detail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该状态开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceList": {
       "document": "离线运维实例列表",
       "members": [
@@ -30593,6 +30776,7 @@
           "member": "string",
           "name": "TaskId",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30603,6 +30787,7 @@
           "member": "string",
           "name": "CurRunDate",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30613,6 +30798,7 @@
           "member": "string",
           "name": "Tries",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30623,6 +30809,7 @@
           "member": "string",
           "name": "LastUpdate",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30633,6 +30820,7 @@
           "member": "string",
           "name": "BrokerIp",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30643,6 +30831,7 @@
           "member": "string",
           "name": "FileSize",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30653,6 +30842,7 @@
           "member": "string",
           "name": "OriginFileName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30663,6 +30853,7 @@
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30673,6 +30864,7 @@
           "member": "string",
           "name": "InstanceLogType",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30683,6 +30875,7 @@
           "member": "string",
           "name": "TaskName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30693,6 +30886,7 @@
           "member": "string",
           "name": "CostTime",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30703,6 +30897,7 @@
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30713,11 +30908,23 @@
           "member": "string",
           "name": "CodeFileName",
           "output_required": false,
+          "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttributeItemDTO",
+          "name": "ExtensionInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InstanceLogInfoOpsDto": {
       "document": "实例日志信息详情",
@@ -31522,6 +31729,72 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联实例信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceOpsDto",
+          "name": "RelatedInstanceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联实例信息数量，不和RelatedInstanceList强关联。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RelatedInstanceSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ownerId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLifeCycleOpsDto",
+          "name": "InstanceLifeCycleOpsDto",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RetryAttempts",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

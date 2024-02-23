@@ -218,7 +218,7 @@
       "status": "online"
     },
     "EnableRestProxy": {
-      "document": "当restful api为关闭状态时，可以通过此接口开启restful apu",
+      "document": "当restful api为关闭状态时，可以通过此接口开启restful api。",
       "input": "EnableRestProxyRequest",
       "name": "开启restful api",
       "output": "EnableRestProxyResponse",
@@ -3205,7 +3205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对应于appid",
+          "document": "集群 ID。",
           "example": "5674209986",
           "member": "string",
           "name": "ClusterId",
