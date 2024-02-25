@@ -1,3 +1,101 @@
+# Release 3.0.942.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 73 次发布
+
+发布时间：2024-02-26 01:13:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterInstanceGroups](http://document.tencentcloudapi.woa.com/document/product/1003/83345)
+
+
+
+## 智能编辑(ie) 版本：2020-03-04
+
+### 第 4 次发布
+
+发布时间：2024-02-26 01:17:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaCuttingOutForm](http://document.tencentcloudapi.woa.com/document/product/1186/42824#MediaCuttingOutForm)
+
+	* 新增成员：MaxImageCount
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 28 次发布
+
+发布时间：2024-02-26 01:18:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDeviceFirmWare](http://document.tencentcloudapi.woa.com/document/product/1081/83346)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 14 次发布
+
+发布时间：2024-02-26 01:20:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OrderFlowPackage](http://document.tencentcloudapi.woa.com/document/product/1385/82763)
+
+	* 新增入参：AutoVoucher, VoucherIds
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 70 次发布
+
+发布时间：2024-02-26 01:20:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindingPolicyTag](http://document.tencentcloudapi.woa.com/document/product/248/67219)
+
+	* 新增入参：TagOperation
+
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+
+	* 新增成员：TagOperation
+
+
+
+
 # Release 3.0.941.1
 
 ## 语音识别(asr) 版本：2019-06-14

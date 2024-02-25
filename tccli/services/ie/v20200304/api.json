@@ -1835,8 +1835,7 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1845,8 +1844,7 @@
           "member": "string",
           "name": "FillType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1855,8 +1853,7 @@
           "member": "int64",
           "name": "SpriteRowCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1865,8 +1862,7 @@
           "member": "int64",
           "name": "SpriteColumnCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1875,8 +1871,7 @@
           "member": "SpriteImageInfo",
           "name": "SpriteInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1885,8 +1880,16 @@
           "member": "DynamicImageInfo",
           "name": "DynamicInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "最大截图数量。<br/>\n雪碧图指的是小图。<br/>\n对于区间截图，指每个子区间的最大截图数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxImageCount",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
