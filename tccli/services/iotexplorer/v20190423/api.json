@@ -231,6 +231,13 @@
       "output": "DescribeDeviceDataHistoryResponse",
       "status": "online"
     },
+    "DescribeDeviceFirmWare": {
+      "document": "获取设备固件信息",
+      "input": "DescribeDeviceFirmWareRequest",
+      "name": "获取设备固件信息",
+      "output": "DescribeDeviceFirmWareResponse",
+      "status": "online"
+    },
     "DescribeDeviceLocationSolve": {
       "document": "获取实时位置解析",
       "input": "DescribeDeviceLocationSolveRequest",
@@ -2894,6 +2901,52 @@
           "disabled": false,
           "document": "设备数据",
           "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceFirmWareRequest": {
+      "document": "DescribeDeviceFirmWare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID。",
+          "example": "R7NHIV278R",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称。",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceFirmWareResponse": {
+      "document": "DescribeDeviceFirmWare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固件信息",
+          "example": "fef",
           "member": "string",
           "name": "Data",
           "required": true,

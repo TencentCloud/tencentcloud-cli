@@ -5,32 +5,40 @@
 Input: 
 
 ```
-tccli lcic DescribeDocumentsByRoom --cli-unfold-argument ```
+tccli lcic DescribeDocumentsByRoom --cli-unfold-argument  \
+    --RoomId 1 \
+    --SdkAppId 1234567
+```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "Documents": [
             {
-                "DocumentId": "xx",
-                "DocumentUrl": "xx",
-                "DocumentName": "xx",
-                "Owner": "xx",
+                "DocumentId": "Klpwo90M",
+                "DocumentUrl": "https://www.klpa.com",
+                "DocumentName": "llppqom",
+                "Owner": "abc",
                 "SdkAppId": 1,
                 "Permission": 1,
-                "TranscodeResult": "xx",
+                "TranscodeResult": "1909",
                 "TranscodeType": 1,
                 "TranscodeProgress": 1,
                 "TranscodeState": 1,
-                "TranscodeInfo": "xx",
-                "DocumentType": "xx",
+                "TranscodeInfo": "abc",
+                "DocumentType": "abc",
                 "DocumentSize": 1,
-                "UpdateTime": 1
+                "UpdateTime": 1,
+                "Pages": 1,
+                "Width": 1,
+                "Height": 1,
+                "Cover": "abc",
+                "Preview": "abc"
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

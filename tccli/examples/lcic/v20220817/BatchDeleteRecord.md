@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli lcic BatchDeleteRecord --cli-unfold-argument ```
+tccli lcic BatchDeleteRecord --cli-unfold-argument  \
+    --RoomIds 0 \
+    --SdkAppId 1
+```
 
 Output: 
 ```
@@ -14,7 +17,7 @@ Output:
         "RoomIds": [
             0
         ],
-        "RequestId": "xx"
+        "RequestId": "xdfdfgdfgser"
     }
 }
 ```

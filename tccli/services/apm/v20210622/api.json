@@ -626,8 +626,8 @@
         },
         {
           "disabled": false,
-          "document": "Trace数据保存时长",
-          "example": "604800",
+          "document": "Trace数据保存时长，单位为天默认存储为3天",
+          "example": "3",
           "member": "int64",
           "name": "TraceDuration",
           "required": false,
@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "实例上报额度值",
+          "document": "实例上报额度值，默认赋值为0表示不限制上报额度",
           "example": "100000000",
           "member": "uint64",
           "name": "SpanDailyCounters",

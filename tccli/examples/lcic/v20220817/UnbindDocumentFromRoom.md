@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lcic UnbindDocumentFromRoom --cli-unfold-argument  \
-    --DocumentId xx \
+    --DocumentId Klp9NM \
     --RoomId 123
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

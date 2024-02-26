@@ -1,3 +1,161 @@
+# Release 3.0.1062.1
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 124 次发布
+
+发布时间：2024-02-27 01:11:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteInstancesActionTimer](https://cloud.tencent.com/document/api/213/103951)
+* [DescribeInstancesActionTimer](https://cloud.tencent.com/document/api/213/103950)
+* [ImportInstancesActionTimer](https://cloud.tencent.com/document/api/213/103949)
+
+修改接口：
+
+* [CreateHpcCluster](https://cloud.tencent.com/document/api/213/83222)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+* [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+
+修改数据结构：
+
+* [HpcClusterInfo](https://cloud.tencent.com/document/api/213/15753#HpcClusterInfo)
+
+	* 新增成员：HpcClusterType, HpcClusterBusinessId
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 80 次发布
+
+发布时间：2024-02-26 01:12:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/api/1003/103934)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 56 次发布
+
+发布时间：2024-02-26 01:17:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDeviceFirmWare](https://cloud.tencent.com/document/api/1081/103935)
+
+
+
+## 实时互动-教育版(lcic) 版本：2022-08-17
+
+### 第 51 次发布
+
+发布时间：2024-02-27 01:18:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AnswerInfo](https://cloud.tencent.com/document/api/1639/81423#AnswerInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Answer, CostTime, UserId, IsCorrect
+
+* [BatchUserInfo](https://cloud.tencent.com/document/api/1639/81423#BatchUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>SdkAppId, UserId, OriginId
+
+* [GroupInfo](https://cloud.tencent.com/document/api/1639/81423#GroupInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>GroupId, GroupName, TeacherId, GroupType, SubGroupIds
+
+* [MemberRecord](https://cloud.tencent.com/document/api/1639/81423#MemberRecord)
+
+	* <font color="#dd0000">**修改成员**：</font>IPAddress, Location, Device, PerMemberMicCount, PerMemberMessageCount, Role, GroupId, SubGroupId, Stage, CurrentState
+
+* [MessageList](https://cloud.tencent.com/document/api/1639/81423#MessageList)
+
+	* <font color="#dd0000">**修改成员**：</font>Timestamp, FromAccount, Seq, MessageBody
+
+* [TextMarkConfig](https://cloud.tencent.com/document/api/1639/81423#TextMarkConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Color
+
+* [WatermarkConfig](https://cloud.tencent.com/document/api/1639/81423#WatermarkConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>Url, Width, Height, LocationX, LocationY
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 16 次发布
+
+发布时间：2024-02-26 01:19:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OrderFlowPackage](https://cloud.tencent.com/document/api/1385/102108)
+
+	* 新增入参：AutoVoucher, VoucherIds
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 106 次发布
+
+发布时间：2024-02-26 01:19:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindingPolicyTag](https://cloud.tencent.com/document/api/248/67219)
+
+	* 新增入参：TagOperation
+
+
+修改数据结构：
+
+* [AlarmPolicy](https://cloud.tencent.com/document/api/248/30354#AlarmPolicy)
+
+	* 新增成员：TagOperation
+
+
+
+
 # Release 3.0.1061.1
 
 ## 语音识别(asr) 版本：2019-06-14

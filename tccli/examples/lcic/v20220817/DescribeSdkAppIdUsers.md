@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli lcic DescribeSdkAppIdUsers --cli-unfold-argument ```
+tccli lcic DescribeSdkAppIdUsers --cli-unfold-argument  \
+    --SdkAppId 123456
+```
 
 Output: 
 ```
@@ -14,13 +16,14 @@ Output:
         "Total": 1,
         "Users": [
             {
-                "Name": "xx",
-                "UserId": "xx",
-                "Avatar": "xx",
-                "SdkAppId": 1
+                "SdkAppId": 1,
+                "UserId": "3091",
+                "Name": "Name",
+                "Avatar": "https://www.dsdjk.png",
+                "OriginId": "2CvDgjRNjylAsBZB4iZc0F6koXe"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

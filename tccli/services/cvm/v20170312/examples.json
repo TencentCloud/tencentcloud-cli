@@ -118,6 +118,14 @@
         "title": "检测镜像是否允许删除"
       }
     ],
+    "DeleteInstancesActionTimer": [
+      {
+        "document": "删除定时任务`865d042d-0219-46c3-9821-6028c96cfb7c`。",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstancesActionTimer\n<公共请求参数>\n\n{\n    \"ActionTimerIds\": [\n        \"865d042d-0219-46c3-9821-6028c96cfb7c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e185c04-116f-47b7-b21c-e13580c5d0f2\"\n    }\n}",
+        "title": "删除指定定时任务"
+      }
+    ],
     "DeleteKeyPairs": [
       {
         "document": "",
@@ -288,6 +296,14 @@
         "title": "查询实例的最新操作情况"
       }
     ],
+    "DescribeInstancesActionTimer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesActionTimer\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-37qv3ucj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionTimers\": [\n            {\n                \"TimerAction\": \"TerminateInstances\",\n                \"ActionTime\": \"2020-02-02 10:00:00\",\n                \"Externals\": {}\n            }\n        ],\n        \"RequestId\": \"af3ab130-244d-4c66-a8a0-03cad009f825\"\n    }\n}",
+        "title": "查询定时任务"
+      }
+    ],
     "DescribeInstancesModification": [
       {
         "document": "查询指定实例支持调整的机型配置",
@@ -436,6 +452,14 @@
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://111-1251233127.cosd.myqcloud.com/Windows%20Server%202008%20R2%20x64a.vmdk\",\n    \"ImageDescription\": \"sampleimage\",\n    \"ImageName\": \"sample\",\n    \"Architecture\": \"x86_64\",\n    \"OsType\": \"CentOS\",\n    \"OsVersion\": \"6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "导入镜像"
+      }
+    ],
+    "ImportInstancesActionTimer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportInstancesActionTimer\n<公共请求参数>\n\n{\n    \"ActionTimer\": {\n        \"TimerAction\": \"TerminateInstances\",\n        \"ActionTime\": \"2018-08-01 20:00:00\"\n    },\n    \"InstanceIds\": [\n        \"ins-37qv3ucj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionTimerIds\": [\n            \"865d042d-0219-46c3-9821-6028c96cfb7c\"\n        ],\n        \"RequestId\": \"d4617dd8-071a-4bd6-aabf-f8026f757189\"\n    }\n}",
+        "title": "导入定时任务"
       }
     ],
     "ImportKeyPair": [

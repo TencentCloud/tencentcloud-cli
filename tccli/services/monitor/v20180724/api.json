@@ -2176,6 +2176,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多标签交/并集关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2700,6 +2710,15 @@
           "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
           "member": "string",
           "name": "EbSubject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标识标签取交/并集关系",
+          "example": "intersection",
+          "member": "string",
+          "name": "TagOperation",
           "required": false,
           "type": "string"
         }

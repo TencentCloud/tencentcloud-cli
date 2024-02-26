@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tccli"
-version = "3.0.1061.1"
+version = "3.0.1062.1"
 authors = [
   { name="tencentcloudapi", email="tencentcloudapi@tencent.com" },
 ]
@@ -21,7 +21,7 @@ classifiers = [
 dependencies = [
     "jmespath==0.10.0",
     "six==1.16.0",
-    "tencentcloud-sdk-python>=3.0.1061",
+    "tencentcloud-sdk-python>=3.0.1062",
 ]
 
 [project.urls]

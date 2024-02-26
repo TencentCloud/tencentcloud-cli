@@ -98,6 +98,13 @@
       "output": "DeleteImagesResponse",
       "status": "online"
     },
+    "DeleteInstancesActionTimer": {
+      "document": "本接口 (DeleteInstancesActionTimer) 用于删除定时任务。",
+      "input": "DeleteInstancesActionTimerRequest",
+      "name": "删除定时任务",
+      "output": "DeleteInstancesActionTimerResponse",
+      "status": "online"
+    },
     "DeleteKeyPairs": {
       "document": "本接口 (DeleteKeyPairs) 用于删除已在腾讯云托管的密钥对。\n\n* 可以同时删除多个密钥对。\n* 不能删除已被实例或镜像引用的密钥对，所以需要独立判断是否所有密钥对都被成功删除。",
       "input": "DeleteKeyPairsRequest",
@@ -231,6 +238,13 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DescribeInstancesActionTimer": {
+      "document": "本接口 (DescribeInstancesActionTimer) 用于查询定时任务信息。",
+      "input": "DescribeInstancesActionTimerRequest",
+      "name": "查询定时任务信息",
+      "output": "DescribeInstancesActionTimerResponse",
+      "status": "online"
+    },
     "DescribeInstancesModification": {
       "document": "本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。",
       "input": "DescribeInstancesModificationRequest",
@@ -355,6 +369,13 @@
       "input": "ImportImageRequest",
       "name": "外部镜像导入",
       "output": "ImportImageResponse",
+      "status": "online"
+    },
+    "ImportInstancesActionTimer": {
+      "document": "导入定时任务",
+      "input": "ImportInstancesActionTimerRequest",
+      "name": "导入定时任务",
+      "output": "ImportInstancesActionTimerResponse",
       "status": "online"
     },
     "ImportKeyPair": {
@@ -617,7 +638,7 @@
       "status": "online"
     },
     "ResizeInstanceDisks": {
-      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。\n\n* 目前只支持扩容非弹性盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。",
+      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。\n\n* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 默认扩容方式为关机后扩容。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。",
       "input": "ResizeInstanceDisksRequest",
       "name": "扩容实例磁盘",
       "output": "ResizeInstanceDisksResponse",
@@ -1487,6 +1508,24 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群类型。",
+          "example": "CDC/CHC/STANDARD",
+          "member": "string",
+          "name": "HpcClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。",
+          "example": "比如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
+          "member": "string",
+          "name": "HpcClusterBusinessId",
           "required": false,
           "type": "string"
         }
@@ -2445,6 +2484,33 @@
       ],
       "type": "object"
     },
+    "DeleteInstancesActionTimerRequest": {
+      "document": "DeleteInstancesActionTimer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时任务ID列表，可以通过DescribeInstancesActionTimer接口查询。只能删除未执行的定时任务。",
+          "example": "[\"865d042d-0219-46c3-9821-6028c96cfb7c\\r\\n\"]",
+          "member": "string",
+          "name": "ActionTimerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancesActionTimerResponse": {
+      "document": "DeleteInstancesActionTimer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteKeyPairsRequest": {
       "document": "DeleteKeyPairs请求参数结构体",
       "members": [
@@ -2937,6 +3003,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群类型。",
+          "example": "CDC/CHC/STANDARD",
+          "member": "string",
+          "name": "HpcClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t",
+          "example": "比如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
+          "member": "string",
+          "name": "HpcClusterBusinessId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3281,6 +3365,88 @@
           "name": "InstanceVncUrl",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesActionTimerRequest": {
+      "document": "DescribeInstancesActionTimer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时任务ID列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionTimerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按照一个或者多个实例ID查询。",
+          "example": "[\"ins-37qv3ucj\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务执行时间，格式如：2018-05-01 19:00:00，必须大于当前时间5分钟。",
+          "example": "无",
+          "member": "string",
+          "name": "TimerAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。",
+          "example": "无",
+          "member": "string",
+          "name": "EndActionTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。",
+          "example": "无",
+          "member": "string",
+          "name": "StartActionTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务状态列表。<br><li>UNDO：未执行<br><li>DOING：正在执行<br><li>DONE：执行完成。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesActionTimerResponse": {
+      "document": "DescribeInstancesActionTimer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时任务信息列表。",
+          "example": "无",
+          "member": "ActionTimer",
+          "name": "ActionTimers",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4986,81 +5152,101 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "HpcClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高性能计算集群名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "高性能计算集群备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群下设备容量",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "CvmQuotaTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群所在可用区",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群当前已有设备量",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "CurrentNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群内实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HpcClusterBusinessId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5402,6 +5588,52 @@
     "ImportImageResponse": {
       "document": "ImportImage返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportInstancesActionTimerRequest": {
+      "document": "ImportInstancesActionTimer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id列表，可以通过DescribeInstances接口查询到。",
+          "example": "[\"ins-37qv3ucj\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "定时器任务信息，目前仅支持定时销毁。",
+          "example": "无",
+          "member": "ActionTimer",
+          "name": "ActionTimer",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportInstancesActionTimerResponse": {
+      "document": "ImportInstancesActionTimer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时器id列表",
+          "example": "[\"865d042d-0219-46c3-9821-6028c96cfb7c\"]",
+          "member": "string",
+          "name": "ActionTimerIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

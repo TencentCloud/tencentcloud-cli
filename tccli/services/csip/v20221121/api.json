@@ -1606,7 +1606,7 @@
         {
           "disabled": false,
           "document": "修复方案",
-          "example": "正确配置FTP服务，正常情况下ftp禁止对外访问，设置强登陆密码，设置登陆用户的读写权限等。",
+          "example": "正确配置FTP服务，正常情况下ftp禁止对外访问，设置强登录密码，设置登录用户的读写权限等。",
           "member": "string",
           "name": "Fix",
           "output_required": true,

@@ -31,7 +31,18 @@ Output:
                 "Resolution": 1,
                 "MaxRTCMember": 1,
                 "ReplayUrl": "abc",
-                "EnableDirectControl": 0
+                "RecordUrl": "abc",
+                "MaxMicNumber": 1,
+                "EnableDirectControl": 1,
+                "InteractionMode": 0,
+                "VideoOrientation": 0,
+                "IsGradingRequiredPostClass": 0,
+                "RoomType": 0,
+                "EndDelayTime": 0,
+                "LiveType": 1,
+                "RecordLiveUrl": "abc",
+                "EnableAutoStart": 1,
+                "RecordBackground": "abc"
             }
         ],
         "RequestId": "abc"

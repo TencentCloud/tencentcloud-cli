@@ -5,20 +5,23 @@
 Input: 
 
 ```
-tccli lcic DescribeGroup --cli-unfold-argument ```
+tccli lcic DescribeGroup --cli-unfold-argument  \
+    --GroupId abcdfdfg \
+    --SdkAppId 12345678
+```
 
 Output: 
 ```
 {
     "Response": {
-        "GroupId": "xx",
-        "GroupName": "xx",
-        "TeacherId": "xx",
+        "GroupId": "9012",
+        "GroupName": "test",
+        "TeacherId": "jklP90Mp",
         "GroupType": 1,
         "SubGroupIds": [
-            "xx"
+            "12290"
         ],
-        "RequestId": "xx"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

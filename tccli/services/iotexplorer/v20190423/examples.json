@@ -306,6 +306,14 @@
         "title": "获取设备历史数据"
       }
     ],
+    "DescribeDeviceFirmWare": [
+      {
+        "document": "获取设备固件信息",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeDeviceFirmWare\n&ProductId=R7NHIV278R\n&DeviceName=dev1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"DeviceLabel\\\":\\\"{}\\\",\\\"FwVer\\\":\\\"V3.0.1\\\",\\\"Imei\\\":\\\"11-22-33-44\\\",\\\"Mac\\\":\\\"\\\",\\\"ModuleHardinfo\\\":\\\"ESP8266\\\",\\\"ModuleSoftinfo\\\":\\\"V1.0\\\"}\",\n        \"RequestId\": \"afd60755-55d5-430c-a833-734aa81ec264\"\n    }\n}",
+        "title": "获取设备固件信息"
+      }
+    ],
     "DescribeDeviceLocationSolve": [
       {
         "document": "获取实时位置解析",

@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli lcic DescribeGroupMemberList --cli-unfold-argument ```
+tccli lcic DescribeGroupMemberList --cli-unfold-argument  \
+    --GroupId abcdfdfg \
+    --SdkAppId 12345678
+```
 
 Output: 
 ```

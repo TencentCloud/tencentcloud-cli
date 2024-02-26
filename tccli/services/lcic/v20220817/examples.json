@@ -43,8 +43,8 @@
     "BatchDeleteRecord": [
       {
         "document": "批量删除",
-        "input": "{\n  \"RoomIds\": [\n    0\n  ],\n  \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteRecord\n<公共请求参数>\n\n{\n    \"RoomIds\": [\n        0\n    ],\n    \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            0\n        ],\n        \"RequestId\": \"xdfdfgdfgser\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -59,16 +59,16 @@
     "BatchRegister": [
       {
         "document": "批量注册用户",
-        "input": "{\n  \"Users\": [\n    {\n      \"SdkAppId\": 1,\n      \"Name\": \"xx\",\n      \"OriginId\": \"xx\",\n      \"Avatar\": \"xx\"\n    }\n  ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"SdkAppId\": 1,\n                \"UserId\": \"xx\",\n                \"OriginId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchRegister\n<公共请求参数>\n\n{\n    \"Users\": [\n        {\n            \"SdkAppId\": 190912,\n            \"Name\": \"test\",\n            \"OriginId\": \"use109\",\n            \"Avatar\": \"http://user.com？pic=123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Users\": [\n            {\n                \"SdkAppId\": 1091,\n                \"UserId\": \"58HJKL908\",\n                \"OriginId\": \"58HJKL908\"\n            }\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
     "BindDocumentToRoom": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDocumentToRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\",\n    \"RoomId\": 123\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDocumentToRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"dmop89Kq\",\n    \"RoomId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "绑定文档到房间"
       }
     ],
@@ -91,7 +91,7 @@
     "CreateGroupWithSubGroup": [
       {
         "document": "聚合子群组创建联合群组",
-        "input": "{\n    \"GroupName\": \"test\",\n   \"SdkAppId\": 12345678,\n   \"TeacherId\": \"dfgdfg\",\n   \"SubGroupIds\":[\"abc\", \"bcd\"]\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroupWithSubGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"test\",\n    \"SdkAppId\": 12345678,\n    \"TeacherId\": \"dfgdfg\",\n    \"SubGroupIds\": [\n        \"abc\",\n        \"bcd\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"GroupId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "聚合子群组创建联合群组"
       }
@@ -115,15 +115,15 @@
     "DeleteAppCustomContent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"Scenes\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAppCustomContent\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123,\n    \"Scenes\": [\n        \"元素\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "删除应用自定义内容"
       }
     ],
     "DeleteDocument": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"fzlaopmjpj\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "删除文档"
       }
@@ -131,7 +131,7 @@
     "DeleteGroup": [
       {
         "document": "删除群组",
-        "input": "{\n    \"GroupIds\": [\"abcdfdfg\"],\n   \"SdkAppId\": 12345678\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"abcdfdfg\"\n    ],\n    \"SdkAppId\": 12345678\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "删除群组"
       }
@@ -147,8 +147,8 @@
     "DeleteRecord": [
       {
         "document": "删除指定房间的录制文件",
-        "input": "{\n  \"RoomId\": 0,\n  \"SdkAppId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecord\n<公共请求参数>\n\n{\n    \"RoomId\": 34343430,\n    \"SdkAppId\": 232013\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -196,7 +196,7 @@
       {
         "document": "获取当前房间的成员列表。房间结束或过期后无法使用",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurrentMemberList\n<公共请求参数>\n\n{\n    \"RoomId\": 123,\n    \"Page\": 1,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"MemberRecords\": [\n            {\n                \"UserName\": \"xx\",\n                \"Mic\": 1,\n                \"UserId\": \"xx\",\n                \"Rewords\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"Camera\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"PresentTime\": 1,\n                \"Silence\": 1\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"109912\",\n                \"UserName\": \"Name\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1,\n                \"IPAddress\": \"1.1.1.1\",\n                \"Location\": \"abc\",\n                \"Device\": 0,\n                \"PerMemberMicCount\": 0,\n                \"PerMemberMessageCount\": 0,\n                \"Role\": 1,\n                \"GroupId\": \"abc\",\n                \"SubGroupId\": [\n                    \"abc\"\n                ],\n                \"Stage\": 0,\n                \"CurrentState\": 1\n            }\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "获取当前房间的成员列表"
       }
     ],
@@ -232,23 +232,23 @@
       {
         "document": "批量获取文档信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocuments\n<公共请求参数>\n\n{\n    \"SchoolId\": 1,\n    \"Page\": 0,\n    \"Limit\": 0,\n    \"Permission\": [\n        1\n    ],\n    \"Owner\": \"abc\",\n    \"Keyword\": \"abc\",\n    \"DocumentId\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"abc\",\n                \"DocumentUrl\": \"abc\",\n                \"DocumentName\": \"abc\",\n                \"Owner\": \"abc\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"abc\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"abc\",\n                \"DocumentType\": \"abc\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1,\n                \"Pages\": 1,\n                \"Width\": 1,\n                \"Height\": 1,\n                \"Cover\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 50,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"abc\",\n                \"DocumentUrl\": \"http://www.hfjk.kop.com\",\n                \"DocumentName\": \"KLOPP\",\n                \"Owner\": \"abc\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"90920\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"abc\",\n                \"DocumentType\": \"abc\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1,\n                \"Pages\": 1,\n                \"Width\": 1,\n                \"Height\": 1,\n                \"Cover\": \"abc\",\n                \"Preview\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
     "DescribeDocumentsByRoom": [
       {
         "document": "获取指定课堂文档",
-        "input": "{\n  \"RoomId\": 1,\n  \"SdkAppId\":1234567\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Documents\": [\n            {\n                \"DocumentId\": \"xx\",\n                \"DocumentUrl\": \"xx\",\n                \"DocumentName\": \"xx\",\n                \"Owner\": \"xx\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"xx\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"xx\",\n                \"DocumentType\": \"xx\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocumentsByRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"SdkAppId\": 1234567\n}",
+        "output": "{\n    \"Response\": {\n        \"Documents\": [\n            {\n                \"DocumentId\": \"Klpwo90M\",\n                \"DocumentUrl\": \"https://www.klpa.com\",\n                \"DocumentName\": \"llppqom\",\n                \"Owner\": \"abc\",\n                \"SdkAppId\": 1,\n                \"Permission\": 1,\n                \"TranscodeResult\": \"1909\",\n                \"TranscodeType\": 1,\n                \"TranscodeProgress\": 1,\n                \"TranscodeState\": 1,\n                \"TranscodeInfo\": \"abc\",\n                \"DocumentType\": \"abc\",\n                \"DocumentSize\": 1,\n                \"UpdateTime\": 1,\n                \"Pages\": 1,\n                \"Width\": 1,\n                \"Height\": 1,\n                \"Cover\": \"abc\",\n                \"Preview\": \"abc\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "获取指定课堂文档"
       }
     ],
     "DescribeGroup": [
       {
         "document": "获取群组详情",
-        "input": "{\n    \"GroupId\": \"abcdfdfg\",\n   \"SdkAppId\": 12345678\n}",
-        "output": "{\n    \"Response\": {\n        \"GroupId\": \"xx\",\n        \"GroupName\": \"xx\",\n        \"TeacherId\": \"xx\",\n        \"GroupType\": 1,\n        \"SubGroupIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"9012\",\n        \"GroupName\": \"test\",\n        \"TeacherId\": \"jklP90Mp\",\n        \"GroupType\": 1,\n        \"SubGroupIds\": [\n            \"12290\"\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "获取群组详情"
       }
     ],
@@ -269,7 +269,7 @@
     "DescribeGroupMemberList": [
       {
         "document": "获取群组成员列表",
-        "input": "{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupMemberList\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\",\n        \"Total\": 2,\n        \"MemberIds\": [\n            \"dfgdfgd\",\n            \"dfgsdfg\"\n        ]\n    }\n}",
         "title": "获取群组成员列表"
       }
@@ -308,7 +308,7 @@
       {
         "document": "获取房间统计信息示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomStatistics\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"Page\": 1,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"PeakMemberNumber\": 1,\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"xx\",\n                \"UserName\": \"xx\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1,\n                \"IPAddress\": \"xx\",\n                \"Location\": \"xx\",\n                \"Device\": 0\n            }\n        ],\n        \"RealStartTime\": 1,\n        \"RealEndTime\": 1,\n        \"MessageCount\": 1,\n        \"MicCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PeakMemberNumber\": 1,\n        \"MemberNumber\": 1,\n        \"Total\": 1,\n        \"MemberRecords\": [\n            {\n                \"UserId\": \"90813\",\n                \"UserName\": \"Name\",\n                \"PresentTime\": 1,\n                \"Camera\": 1,\n                \"Mic\": 1,\n                \"Silence\": 1,\n                \"AnswerQuestions\": 1,\n                \"HandUps\": 1,\n                \"FirstJoinTimestamp\": 1,\n                \"LastQuitTimestamp\": 1,\n                \"Rewords\": 1,\n                \"IPAddress\": \"1.1.1.1\",\n                \"Location\": \"country\",\n                \"Device\": 0,\n                \"PerMemberMicCount\": 0,\n                \"PerMemberMessageCount\": 0,\n                \"Role\": 1,\n                \"GroupId\": \"abc\",\n                \"SubGroupId\": [\n                    \"abc\"\n                ],\n                \"Stage\": 0,\n                \"CurrentState\": 1\n            }\n        ],\n        \"RealStartTime\": 1,\n        \"RealEndTime\": 1,\n        \"MessageCount\": 1,\n        \"MicCount\": 1,\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -323,8 +323,8 @@
     "DescribeSdkAppIdUsers": [
       {
         "document": "获取应用下用户列表",
-        "input": "{\n  \"SdkAppId\": 123456\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"Name\": \"xx\",\n                \"UserId\": \"xx\",\n                \"Avatar\": \"xx\",\n                \"SdkAppId\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSdkAppIdUsers\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123456\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"SdkAppId\": 1,\n                \"UserId\": \"3091\",\n                \"Name\": \"Name\",\n                \"Avatar\": \"https://www.dsdjk.png\",\n                \"OriginId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\"\n            }\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "获取应用下用户列表"
       }
     ],
@@ -380,15 +380,15 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRooms\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"Page\": 1,\n    \"Limit\": 1,\n    \"Status\": [\n        0,\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rooms\": [\n            {\n                \"Name\": \"abc\",\n                \"RoomId\": 1,\n                \"Status\": 1,\n                \"StartTime\": 1,\n                \"EndTime\": 1,\n                \"RealStartTime\": 1,\n                \"RealEndTime\": 1,\n                \"Resolution\": 1,\n                \"MaxRTCMember\": 1,\n                \"ReplayUrl\": \"abc\",\n                \"EnableDirectControl\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rooms\": [\n            {\n                \"Name\": \"abc\",\n                \"RoomId\": 1,\n                \"Status\": 1,\n                \"StartTime\": 1,\n                \"EndTime\": 1,\n                \"RealStartTime\": 1,\n                \"RealEndTime\": 1,\n                \"Resolution\": 1,\n                \"MaxRTCMember\": 1,\n                \"ReplayUrl\": \"abc\",\n                \"RecordUrl\": \"abc\",\n                \"MaxMicNumber\": 1,\n                \"EnableDirectControl\": 1,\n                \"InteractionMode\": 0,\n                \"VideoOrientation\": 0,\n                \"IsGradingRequiredPostClass\": 0,\n                \"RoomType\": 0,\n                \"EndDelayTime\": 0,\n                \"LiveType\": 1,\n                \"RecordLiveUrl\": \"abc\",\n                \"EnableAutoStart\": 1,\n                \"RecordBackground\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],
     "GetWatermark": [
       {
         "document": "获取水印配置",
-        "input": "{\n  \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TeacherLogo\": {\n            \"Url\": \"xx\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BoardLogo\": {\n            \"Url\": \"xx\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BackgroundPicture\": {\n            \"Url\": \"xx\"\n        },\n        \"Text\": {\n            \"Text\": \"xx\",\n            \"Color\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWatermark\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TeacherLogo\": {\n            \"Url\": \"https://www.adkadl.com\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BoardLogo\": {\n            \"Url\": \"abc\",\n            \"Width\": 0,\n            \"Height\": 0,\n            \"LocationX\": 0,\n            \"LocationY\": 0\n        },\n        \"BackgroundPicture\": {\n            \"Url\": \"abc\"\n        },\n        \"Text\": {\n            \"Text\": \"abc\",\n            \"Color\": \"abc\"\n        },\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -403,8 +403,8 @@
     "LoginOriginId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginOriginId\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"OriginId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n        \"Token\": \"3o32r0j134m13aa0uva0jvj90qj4j004198\",\n        \"RequestId\": \"213das\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginOriginId\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"OriginId\": \"useMPoL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"2CvDgjRNjylAsBZB4iZc0F6koXe\",\n        \"Token\": \"3o32r0j134m13aa0uva0jvj90qj4j004198\",\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "源账号登录"
       }
     ],
@@ -419,15 +419,15 @@
     "ModifyApp": [
       {
         "document": "修改应用的相关信息",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234657,\n    \"Callback\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Callback\": \"abc\",\n    \"CallbackKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "修改应用"
       }
     ],
     "ModifyGroup": [
       {
         "document": "根据成员列表创建群组",
-        "input": "{\n    \"GroupId\": \"test\",\n   \"SdkAppId\": 12345678,\n   \"GroupName\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"test\",\n    \"SdkAppId\": 12345678,\n    \"GroupName\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"213das\"\n    }\n}",
         "title": "修改群组"
       }
@@ -489,8 +489,8 @@
     "SetWatermark": [
       {
         "document": "设置水印",
-        "input": "{\n  \"SdkAppId\": 1,\n  \"TeacherUrl\": \"xx\",\n  \"BoardUrl\": \"xx\",\n  \"VideoUrl\": \"xx\",\n  \"BoardW\": 0,\n  \"BoardH\": 0,\n  \"BoardX\": 0,\n  \"BoardY\": 0,\n  \"TeacherW\": 0,\n  \"TeacherH\": 0,\n  \"TeacherX\": 0,\n  \"TeacherY\": 0,\n  \"Text\": \"xx\",\n  \"TextColor\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetWatermark\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123333,\n    \"TeacherUrl\": \"https://tcic-backend-record-22112222.cos.ap-beujing.myqcloud.com/teacher-02_219090_210001.png\",\n    \"BoardUrl\": \"https://tcic-backend-record-22112222.cos.ap-beujing.myqcloud.com/board-02_219090_210001.png\",\n    \"VideoUrl\": \"https://tcic-backend-record-22112222.cos.ap-beujing.myqcloud.com/video-02_219090_210001.png\",\n    \"BoardW\": 0,\n    \"BoardH\": 0,\n    \"BoardX\": 50,\n    \"BoardY\": 50,\n    \"TeacherW\": 0,\n    \"TeacherH\": 0,\n    \"TeacherX\": 50,\n    \"TeacherY\": 50,\n    \"Text\": \"文本内容\",\n    \"TextColor\": \"黑\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -505,8 +505,8 @@
     "UnbindDocumentFromRoom": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindDocumentFromRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"xx\",\n    \"RoomId\": 123\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindDocumentFromRoom\n<公共请求参数>\n\n{\n    \"DocumentId\": \"Klp9NM\",\n    \"RoomId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "文档从房间解绑"
       }
     ]

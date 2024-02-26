@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli lcic DeleteRecord --cli-unfold-argument ```
+tccli lcic DeleteRecord --cli-unfold-argument  \
+    --RoomId 34343430 \
+    --SdkAppId 232013
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

@@ -1109,7 +1109,7 @@
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-mov2697v\n&SecurityGroups.0=esg-0t3h9lmk\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"88487432-ee86-4e5d-861b-774374123f89\"\n    }\n}",
-        "title": "购买负载均衡实例"
+        "title": "设置负载均衡的安全组"
       }
     ],
     "SetSecurityGroupForLoadbalancers": [
@@ -1117,7 +1117,7 @@
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=SetSecurityGroupForLoadbalancers\n&LoadBalancerIds.0=lb-mov2697v\n&SecurityGroup=esg-0t3h9lmk\n&OperationType=ADD\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"88487432-ee86-4e5d-861b-774374121234\"\n    }\n}",
-        "title": "购买负载均衡实例"
+        "title": "绑定安全组到负载均衡实例"
       }
     ],
     "StartInstances": [

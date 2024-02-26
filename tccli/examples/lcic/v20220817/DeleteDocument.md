@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lcic DeleteDocument --cli-unfold-argument  \
-    --DocumentId xx
+    --DocumentId fzlaopmjpj
 ```
 
 Output: 

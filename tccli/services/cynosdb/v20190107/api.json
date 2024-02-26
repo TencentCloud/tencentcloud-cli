@@ -301,6 +301,13 @@
       "output": "DescribeClusterDetailDatabasesResponse",
       "status": "online"
     },
+    "DescribeClusterInstanceGroups": {
+      "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。",
+      "input": "DescribeClusterInstanceGroupsRequest",
+      "name": "查询集群实例组",
+      "output": "DescribeClusterInstanceGroupsResponse",
+      "status": "online"
+    },
     "DescribeClusterInstanceGrps": {
       "document": "本接口（DescribeClusterInstanceGrps）用于查询实例组信息。 该接口已废弃，推荐使用DescribeClusterInstanceGroups",
       "input": "DescribeClusterInstanceGrpsRequest",
@@ -8669,6 +8676,53 @@
           "name": "Detail",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInstanceGroupsRequest": {
+      "document": "DescribeClusterInstanceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-oib3wx0i",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInstanceGroupsResponse": {
+      "document": "DescribeClusterInstanceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例组个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例组列表",
+          "example": "无",
+          "member": "CynosdbInstanceGroup",
+          "name": "InstanceGroupInfoList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

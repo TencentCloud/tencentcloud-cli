@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli lcic CreateGroupWithSubGroup --cli-unfold-argument ```
+tccli lcic CreateGroupWithSubGroup --cli-unfold-argument  \
+    --GroupName test \
+    --SdkAppId 12345678 \
+    --TeacherId dfgdfg \
+    --SubGroupIds abc bcd
+```
 
 Output: 
 ```

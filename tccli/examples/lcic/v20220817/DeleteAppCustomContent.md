@@ -7,14 +7,14 @@ Input:
 ```
 tccli lcic DeleteAppCustomContent --cli-unfold-argument  \
     --SdkAppId 123 \
-    --Scenes xx
+    --Scenes 元素
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "213das"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```
