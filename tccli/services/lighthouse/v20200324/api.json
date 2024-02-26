@@ -1130,6 +1130,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-1ha0grzx",
+          "member": "string",
+          "name": "OriginInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3094,7 +3104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>uuid</li>按照【实例UUID】进行过滤。\n类型：String\n必选：否\n<li>app-id</li>按照【APPID】进行过滤。\n类型：Int\n必选：否\n<li>instance-id</li>按照【实例ID】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。",
+          "document": "过滤器列表。\n<li>uuid</li>按照【实例UUID】进行过滤。\n类型：String\n必选：否\n<li>app-id</li>按照【APPID】进行过滤。\n类型：Int\n必选：否\n<li>instance-id</li>按照【实例ID】进行过滤。\n类型：String\n必选：否\n<li>public-ip-address</li>按照【实例主网卡的公网 IP】进行过滤。\n类型：String\n必选：否\n<li>origin-instance-id</li>按照【CVM实例ID】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3107,7 +3117,7 @@
           "example": "1",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -3116,7 +3126,7 @@
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],

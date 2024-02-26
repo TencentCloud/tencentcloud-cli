@@ -66,7 +66,8 @@ Output:
                 "ExpiredTime": "2023-06-26T08:49:56Z",
                 "IsolatedTime": null,
                 "BlueprintImageUrl": "",
-                "VpcId": "vpc-auk9c3lx"
+                "VpcId": "vpc-auk9c3lx",
+                "OriginInstanceId": "ins-pl1cv3xo"
             }
         ],
         "RequestId": "efca6489-c9ba-4e50-b604-bc190cdbe21d"

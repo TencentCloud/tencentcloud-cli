@@ -13902,7 +13902,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例 ID",
-          "example": "",
+          "example": "lb-cuxw2rxx",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -13911,7 +13911,7 @@
         {
           "disabled": false,
           "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定5个安全组，如果要解绑所有安全组，可不传此参数，或传入空数组",
-          "example": "",
+          "example": "sg-0936o7xx",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -13938,7 +13938,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例ID数组",
-          "example": "",
+          "example": "lb-5b70qdxx",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -13947,7 +13947,7 @@
         {
           "disabled": false,
           "document": "安全组ID，如 esg-12345678",
-          "example": "",
+          "example": "sg-12345678",
           "member": "string",
           "name": "SecurityGroup",
           "required": true,
@@ -13956,7 +13956,7 @@
         {
           "disabled": false,
           "document": "ADD 绑定安全组；\nDEL 解绑安全组",
-          "example": "",
+          "example": "ADD",
           "member": "string",
           "name": "OperationType",
           "required": true,

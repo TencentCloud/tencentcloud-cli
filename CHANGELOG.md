@@ -1,3 +1,71 @@
+# Release 3.0.943.1
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 70 次发布
+
+发布时间：2024-02-27 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)
+* [DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)
+* [ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)
+
+修改接口：
+
+* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+
+修改数据结构：
+
+* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
+
+	* 新增成员：HpcClusterType, HpcClusterBusinessId
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 45 次发布
+
+发布时间：2024-02-27 01:19:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+
+修改数据结构：
+
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
+
+	* 新增成员：OriginInstanceId
+
+
+
+
 # Release 3.0.942.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

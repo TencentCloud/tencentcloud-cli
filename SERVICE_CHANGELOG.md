@@ -1,80 +1,50 @@
 # 本版本更新包含以下内容：
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 73 次发布
-
-发布时间：2024-02-26 01:13:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeClusterInstanceGroups](http://document.tencentcloudapi.woa.com/document/product/1003/83345)
+## 云服务器(cvm) 版本：2019-12-12
 
 
 
-## 智能编辑(ie) 版本：2020-03-04
-
-### 第 4 次发布
-
-发布时间：2024-02-26 01:17:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [MediaCuttingOutForm](http://document.tencentcloudapi.woa.com/document/product/1186/42824#MediaCuttingOutForm)
-
-	* 新增成员：MaxImageCount
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 28 次发布
-
-发布时间：2024-02-26 01:18:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDeviceFirmWare](http://document.tencentcloudapi.woa.com/document/product/1081/83346)
-
-
-
-## 多网聚合加速(mna) 版本：2021-01-19
-
-### 第 14 次发布
-
-发布时间：2024-02-26 01:20:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [OrderFlowPackage](http://document.tencentcloudapi.woa.com/document/product/1385/82763)
-
-	* 新增入参：AutoVoucher, VoucherIds
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
+## 云服务器(cvm) 版本：2017-03-12
 
 ### 第 70 次发布
 
-发布时间：2024-02-26 01:20:36
+发布时间：2024-02-27 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)
+* [DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)
+* [ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)
+
+修改接口：
+
+* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+
+修改数据结构：
+
+* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
+
+	* 新增成员：HpcClusterType, HpcClusterBusinessId
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 45 次发布
+
+发布时间：2024-02-27 01:19:36
 
 本次发布包含了以下内容：
 
@@ -82,16 +52,16 @@
 
 修改接口：
 
-* [BindingPolicyTag](http://document.tencentcloudapi.woa.com/document/product/248/67219)
+* [DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)
 
-	* 新增入参：TagOperation
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
 
 
 修改数据结构：
 
-* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
 
-	* 新增成员：TagOperation
+	* 新增成员：OriginInstanceId
 
 
 
@@ -25462,6 +25432,38 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 70 次发布
+
+发布时间：2024-02-27 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
+
+	* 新增入参：HpcClusterType, HpcClusterBusinessId
+
+
+修改数据结构：
+
+* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
+
+	* 新增成员：HpcClusterType, HpcClusterBusinessId
+
+
 ### 第 69 次发布
 
 发布时间：2024-02-02 01:11:47
@@ -29538,7 +29540,7 @@
 
 新增接口：
 
-* [[DescribeClusterInstanceGroups](http://document.tencentcloudapi.woa.com/document/product/1003/83345)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClusterInstanceGroups](http://document.tencentcloudapi.woa.com/document/product/1003/83345)
 
 ### 第 72 次发布
 
@@ -49733,7 +49735,7 @@
 
 新增接口：
 
-* [[DescribeDeviceFirmWare](http://document.tencentcloudapi.woa.com/document/product/1081/83346)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDeviceFirmWare](http://document.tencentcloudapi.woa.com/document/product/1081/83346)
 
 ### 第 27 次发布
 
@@ -52818,6 +52820,28 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 45 次发布
+
+发布时间：2024-02-27 01:19:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+
+修改数据结构：
+
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
+
+	* 新增成员：OriginInstanceId
+
 
 ### 第 44 次发布
 
