@@ -18,7 +18,7 @@
       {
         "document": "",
         "input": "https://ft.tencentcloudapi.com/?Action=ChangeAgePic\n&Image=xxxxx\n&AgeInfos.0.Age=10\n&AgeInfos.0.FaceRect.X=10\n&AgeInfos.0.FaceRect.Y=10\n&AgeInfos.0.FaceRect.Width=20\n&AgeInfos.0.FaceRect.Height=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"ResultUrl\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "调用返回成功"
       }
     ],

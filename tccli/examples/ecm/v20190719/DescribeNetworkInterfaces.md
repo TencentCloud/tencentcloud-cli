@@ -11,96 +11,60 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "NetworkInterfaceSet": [
             {
-                "NetworkInterfaceId": "eni-n1s3wvux",
-                "NetworkInterfaceName": "字符串",
-                "NetworkInterfaceDescription": "字符串",
-                "SubnetId": "subnet-0790w1hs",
-                "VpcId": "vpc-f3khnq0z",
-                "GroupSet": [],
-                "Primary": false,
-                "MacAddress": "20:90:6F:6D:D9:B9",
+                "NetworkInterfaceId": "eni-dqcedwp7",
+                "NetworkInterfaceName": "TEST",
+                "NetworkInterfaceDescription": "TEST",
+                "SubnetId": "subnet-o6pv7si8",
+                "VpcId": "vpc-j8s8351p",
+                "GroupSet": [
+                    "esg-fcx8o80o"
+                ],
+                "Primary": true,
+                "MacAddress": "20:90:6F:34:59:4F",
                 "State": "AVAILABLE",
                 "PrivateIpAddressSet": [
                     {
-                        "PrivateIpAddress": "10.0.0.8",
+                        "PrivateIpAddress": "11.171.73.41",
                         "Primary": true,
-                        "PublicIpAddress": "",
+                        "PublicIpAddress": "60.28.209.138",
                         "AddressId": "",
-                        "Description": "",
-                        "IsWanIpBlocked": false,
+                        "Description": "TEST",
+                        "IsWanIpBlocked": true,
                         "State": "AVAILABLE"
                     }
                 ],
-                "Attachment": null,
-                "Zone": "ap-hangzhou-ecm-1",
-                "EcmRegion": "ap-hangzhou-ecm",
-                "CreatedTime": "2020-08-20 15:26:42",
-                "Ipv6AddressSet": [],
-                "TagSet": [],
-                "EniType": 0
-            },
-            {
-                "NetworkInterfaceId": "eni-f1xjkw1b",
-                "NetworkInterfaceName": "安全组测试网卡",
-                "NetworkInterfaceDescription": "安全组测试网卡描述",
-                "SubnetId": "subnet-0790w1hs",
-                "VpcId": "vpc-f3khnq0z",
-                "GroupSet": [],
-                "Primary": false,
-                "MacAddress": "20:90:6F:69:1E:03",
-                "State": "AVAILABLE",
-                "PrivateIpAddressSet": [
+                "Attachment": {
+                    "InstanceId": "ein-05ihbvco",
+                    "DeviceIndex": 1,
+                    "InstanceAccountId": "1257940589",
+                    "AttachTime": "2022-11-17 08:49:10"
+                },
+                "Zone": "ap-guangzhou-yunyou-cm-1",
+                "CreatedTime": "2022-11-17 08:49:10",
+                "Ipv6AddressSet": [
                     {
-                        "PrivateIpAddress": "10.0.0.16",
+                        "Address": " 2409:8c50:a00:2035:0:9b58:a740:5945",
                         "Primary": true,
-                        "PublicIpAddress": "",
                         "AddressId": "",
-                        "Description": "",
-                        "IsWanIpBlocked": false,
-                        "State": "AVAILABLE"
+                        "Description": "TEST",
+                        "IsWanIpBlocked": true,
+                        "State": "PENDING"
                     }
                 ],
-                "Attachment": null,
-                "Zone": "ap-hangzhou-ecm-1",
-                "EcmRegion": "ap-hangzhou-ecm",
-                "CreatedTime": "2020-08-20 16:02:14",
-                "Ipv6AddressSet": [],
-                "TagSet": [],
-                "EniType": 0
-            },
-            {
-                "NetworkInterfaceId": "eni-rb7kjij1",
-                "NetworkInterfaceName": "安全组测试网卡",
-                "NetworkInterfaceDescription": "安全组测试网卡描述",
-                "SubnetId": "subnet-5gnb2gls",
-                "VpcId": "vpc-mbnu07m1",
-                "GroupSet": [],
-                "Primary": false,
-                "MacAddress": "20:90:6F:90:0C:EF",
-                "State": "AVAILABLE",
-                "PrivateIpAddressSet": [
+                "TagSet": [
                     {
-                        "PrivateIpAddress": "10.0.0.9",
-                        "Primary": true,
-                        "PublicIpAddress": "",
-                        "AddressId": "",
-                        "Description": "",
-                        "IsWanIpBlocked": false,
-                        "State": "AVAILABLE"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "Attachment": null,
-                "Zone": "ap-qingdao-ecm-1",
-                "EcmRegion": "ap-qingdao-ecm",
-                "CreatedTime": "2020-09-08 10:58:51",
-                "Ipv6AddressSet": [],
-                "TagSet": [],
-                "EniType": 0
+                "EniType": 1,
+                "EcmRegion": "ap-ningbo-ecm-ct2",
+                "Business": "cvm"
             }
         ],
-        "TotalCount": 3,
         "RequestId": "8f7fb33d-642f-43d7-bc8f-2d17efbfb49c"
     }
 }

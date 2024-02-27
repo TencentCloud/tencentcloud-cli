@@ -7237,7 +7237,7 @@
         },
         {
           "disabled": false,
-          "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
+          "document": "音频通道，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n<li>0：音频声道数和原始音频保持一致</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。\n默认值：2。",
           "example": "1",
           "member": "int64",
           "name": "AudioChannel",
@@ -7287,7 +7287,7 @@
         },
         {
           "disabled": false,
-          "document": "音频通道方式，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
+          "document": "音频通道，可选值：\n<li>1：单通道</li>\n<li>2：双通道</li>\n<li>6：立体声</li>\n<li>0：音频声道数和原始音频保持一致</li>\n当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。",
           "example": "1",
           "member": "int64",
           "name": "AudioChannel",

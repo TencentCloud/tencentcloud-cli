@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddMetricScaleStrategy": {
+      "document": "添加扩缩容规则，按负载和时间",
+      "input": "AddMetricScaleStrategyRequest",
+      "name": "添加扩缩容负载规则",
+      "output": "AddMetricScaleStrategyResponse",
+      "status": "online"
+    },
     "AddUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
@@ -21,6 +28,13 @@
       "output": "CreateInstanceResponse",
       "status": "online"
     },
+    "DeleteAutoScaleStrategy": {
+      "document": "删除自动扩缩容规则，后台销毁根据该规则扩缩容出来的节点",
+      "input": "DeleteAutoScaleStrategyRequest",
+      "name": "删除自动扩缩容规则",
+      "output": "DeleteAutoScaleStrategyResponse",
+      "status": "online"
+    },
     "DeleteUserManagerUserList": {
       "document": "删除用户列表（用户管理）",
       "input": "DeleteUserManagerUserListRequest",
@@ -28,11 +42,25 @@
       "output": "DeleteUserManagerUserListResponse",
       "status": "online"
     },
+    "DescribeAutoScaleGroupGlobalConf": {
+      "document": "获取自动扩缩容全局配置",
+      "input": "DescribeAutoScaleGroupGlobalConfRequest",
+      "name": "获取伸缩组全局配置",
+      "output": "DescribeAutoScaleGroupGlobalConfResponse",
+      "status": "online"
+    },
     "DescribeAutoScaleRecords": {
       "document": "获取集群的自动扩缩容的详细记录",
       "input": "DescribeAutoScaleRecordsRequest",
       "name": "获取自动扩缩容记录",
       "output": "DescribeAutoScaleRecordsResponse",
+      "status": "online"
+    },
+    "DescribeAutoScaleStrategies": {
+      "document": "获取自动扩缩容规则",
+      "input": "DescribeAutoScaleStrategiesRequest",
+      "name": "获取自动扩缩容规则",
+      "output": "DescribeAutoScaleStrategiesResponse",
       "status": "online"
     },
     "DescribeClusterNodes": {
@@ -161,6 +189,13 @@
       "output": "InquiryPriceUpdateInstanceResponse",
       "status": "online"
     },
+    "ModifyAutoScaleStrategy": {
+      "document": "修改自动扩缩容规则",
+      "input": "ModifyAutoScaleStrategyRequest",
+      "name": "修改自动扩缩容规则",
+      "output": "ModifyAutoScaleStrategyResponse",
+      "status": "online"
+    },
     "ModifyResourcePools": {
       "document": "刷新YARN的动态资源池",
       "input": "ModifyResourcePoolsRequest",
@@ -260,6 +295,51 @@
     "serviceShortName": "emr"
   },
   "objects": {
+    "AddMetricScaleStrategyRequest": {
+      "document": "AddMetricScaleStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-dttol202",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1表示按负载规则扩容，2表示按时间规则扩容。",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按时间扩缩容的规则。",
+          "example": "无",
+          "member": "TimeAutoScaleStrategy",
+          "name": "TimeAutoScaleStrategy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "AddMetricScaleStrategyResponse": {
+      "document": "AddMetricScaleStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddUsersForUserManagerRequest": {
       "document": "AddUsersForUserManager请求参数结构体",
       "members": [
@@ -623,6 +703,89 @@
         }
       ],
       "usage": "out"
+    },
+    "AutoScaleResourceConf": {
+      "document": "弹性扩缩容规格配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群实例ID。",
+          "example": "123",
+          "member": "int64",
+          "name": "ClusterId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动扩缩容保留最小实例数。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScaleLowerBound",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动扩缩容最大实例数。",
+          "example": "29",
+          "member": "int64",
+          "name": "ScaleUpperBound",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容规则类型，1为按负载指标扩容规则，2为按时间扩容规则",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下次能可扩容时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "NextTimeCanScale",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "GraceDownFlag",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BootstrapAction": {
       "document": "引导脚本",
@@ -2210,6 +2373,86 @@
       ],
       "usage": "in"
     },
+    "DayRepeatStrategy": {
+      "document": "弹性扩缩容按天重复任务描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重复任务执行的具体时刻，例如\"01:02:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ExecuteAtTimeOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每隔Step天执行一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "Step",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteAutoScaleStrategyRequest": {
+      "document": "DeleteAutoScaleStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-3ap64zl6",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩缩容规则类型，1表示按照负载指标扩缩容，2表示按照时间规则扩缩容。",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID。",
+          "example": "42",
+          "member": "int64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组Id",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoScaleStrategyResponse": {
+      "document": "DeleteAutoScaleStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteUserManagerUserListRequest": {
       "document": "DeleteUserManagerUserList请求参数结构体",
       "members": [
@@ -2299,6 +2542,53 @@
       ],
       "usage": "in"
     },
+    "DescribeAutoScaleGroupGlobalConfRequest": {
+      "document": "DescribeAutoScaleGroupGlobalConf请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScaleGroupGlobalConfResponse": {
+      "document": "DescribeAutoScaleGroupGlobalConf返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群所有伸缩组全局信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "GroupGlobalConfs",
+          "name": "GroupGlobalConfs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAutoScaleRecordsRequest": {
       "document": "DescribeAutoScaleRecords请求参数结构体",
       "members": [
@@ -2363,6 +2653,52 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScaleStrategiesRequest": {
+      "document": "DescribeAutoScaleStrategies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-dttol202",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组id",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScaleStrategiesResponse": {
+      "document": "DescribeAutoScaleStrategies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按时间伸缩规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimeAutoScaleStrategy",
+          "name": "TimeBasedAutoScaleStrategies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4530,6 +4866,56 @@
       ],
       "usage": "in"
     },
+    "GroupGlobalConfs": {
+      "document": "集群所有伸缩组全局参数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoScaleResourceConf",
+          "name": "GroupGlobalConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前伸缩组扩容出来的节点数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CurrentNodes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前伸缩组扩容出来的后付费节点数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CurrentPostPaidNodes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前伸缩组扩容出来的竞价实例节点数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CurrentSpotPaidNodes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HiveQuery": {
       "document": "Hive查询详情",
       "members": [
@@ -6061,6 +6447,60 @@
       ],
       "usage": "both"
     },
+    "ModifyAutoScaleStrategyRequest": {
+      "document": "ModifyAutoScaleStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-3ap64zl6",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩缩容规则类型，1表示按负载指标扩缩容，2表示按时间扩缩容。",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按时间扩缩容的规则。",
+          "example": "无",
+          "member": "TimeAutoScaleStrategy",
+          "name": "TimeAutoScaleStrategies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组Id",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoScaleStrategyResponse": {
+      "document": "ModifyAutoScaleStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyResourcePoolsRequest": {
       "document": "ModifyResourcePools请求参数结构体",
       "members": [
@@ -6435,6 +6875,32 @@
         }
       ],
       "type": "object"
+    },
+    "MonthRepeatStrategy": {
+      "document": "定时伸缩每月重复任务策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重复任务执行的具体时刻，例如\"01:02:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ExecuteAtTimeOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每月中的天数时间段描述，长度只能为2，例如[2,10]表示每月2-10号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "DaysOfMonthRange",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MultiDisk": {
       "document": "多云盘参数",
@@ -7236,6 +7702,22 @@
           "name": "LocalDataDisk",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NotRepeatStrategy": {
+      "document": "弹性扩缩容执行一次规则上下文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该次任务执行的具体完整时间，格式为\"2020-07-13 00:00:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ExecuteAt",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8435,6 +8917,72 @@
         }
       ],
       "usage": "out"
+    },
+    "RepeatStrategy": {
+      "document": "定时伸缩任务策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "取值范围\"DAY\",\"DOW\",\"DOM\",\"NONE\"，分别表示按天重复、按周重复、按月重复和一次执行。",
+          "example": "",
+          "member": "string",
+          "name": "RepeatType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按天重复规则，当RepeatType为\"DAY\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "DayRepeatStrategy",
+          "name": "DayRepeat",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按周重复规则，当RepeatType为\"DOW\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "WeekRepeatStrategy",
+          "name": "WeekRepeat",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按月重复规则，当RepeatType为\"DOM\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "MonthRepeatStrategy",
+          "name": "MonthRepeat",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一次执行规则，当RepeatType为\"NONE\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "NotRepeatStrategy",
+          "name": "NotRepeat",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为\"2020-07-23 00:00:00\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Expire",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Resource": {
       "document": "资源详情",
@@ -9948,6 +10496,232 @@
       ],
       "type": "object"
     },
+    "TimeAutoScaleStrategy": {
+      "document": "时间扩缩容规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名字，集群内唯一。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "uint64",
+          "name": "IntervalTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容动作，1表示扩容，2表示缩容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ScaleAction",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "ScaleNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，1表示有效，2表示无效，3表示暂停。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyStatus",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，越小越高。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "uint64",
+          "name": "RetryValidTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间扩缩容重复策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "RepeatStrategy",
+          "name": "RepeatStrategy",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1 ",
+          "member": "uint64",
+          "name": "StrategyId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "GraceDownFlag",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "GraceDownTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设配置组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigGroupAssigned",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容资源计算方法，\"DEFAULT\",\"INSTANCE\", \"CPU\", \"MEMORYGB\"。\n\"DEFAULT\"表示默认方式，与\"INSTANCE\"意义相同。\n\"INSTANCE\"表示按照节点计算，默认方式。\n\"CPU\"表示按照机器的核数计算。\n\"MEMORYGB\"表示按照机器内存数计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "MeasureMethod",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销毁策略, \"DEFAULT\",默认销毁策略，由缩容规则触发缩容，\"TIMING\"表示定时销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "TerminatePolicy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最长使用时间， 秒数，最短1小时，最长24小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "MaxUse",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点部署服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SoftDeployInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动进程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ServiceNodeInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补偿扩容，0表示不开启，1表示开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompensateFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TopologyInfo": {
       "document": "集群节点拓扑信息",
       "members": [
@@ -10243,6 +11017,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeekRepeatStrategy": {
+      "document": "定时扩容每周重复任务策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重复任务执行的具体时刻，例如\"01:02:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ExecuteAtTimeOfDay",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每周几的数字描述，例如，[1,3,4]表示每周周一、周三、周四。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "DaysOfWeek",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

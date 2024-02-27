@@ -1,3 +1,88 @@
+# Release 3.0.1063.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 56 次发布
+
+发布时间：2024-02-28 01:08:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCostExplorerSummary](https://cloud.tencent.com/document/api/555/103991)
+
+新增数据结构：
+
+* [AnalyseActionTypeDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseActionTypeDetail)
+* [AnalyseAmountDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseAmountDetail)
+* [AnalyseBusinessDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseBusinessDetail)
+* [AnalyseConditionDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseConditionDetail)
+* [AnalyseConditions](https://cloud.tencent.com/document/api/555/19183#AnalyseConditions)
+* [AnalyseDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseDetail)
+* [AnalyseHeaderDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseHeaderDetail)
+* [AnalyseHeaderTimeDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseHeaderTimeDetail)
+* [AnalyseOwnerUinDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseOwnerUinDetail)
+* [AnalysePayModeDetail](https://cloud.tencent.com/document/api/555/19183#AnalysePayModeDetail)
+* [AnalyseProjectDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseProjectDetail)
+* [AnalyseRegionDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseRegionDetail)
+* [AnalyseTimeDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseTimeDetail)
+* [AnalyseZoneDetail](https://cloud.tencent.com/document/api/555/19183#AnalyseZoneDetail)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 153 次发布
+
+发布时间：2024-02-28 01:09:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854)
+
+	* 新增入参：OpResourceId
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 60 次发布
+
+发布时间：2024-02-28 01:16:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddMetricScaleStrategy](https://cloud.tencent.com/document/api/589/103997)
+* [DeleteAutoScaleStrategy](https://cloud.tencent.com/document/api/589/103996)
+* [DescribeAutoScaleGroupGlobalConf](https://cloud.tencent.com/document/api/589/103999)
+* [DescribeAutoScaleStrategies](https://cloud.tencent.com/document/api/589/103998)
+* [ModifyAutoScaleStrategy](https://cloud.tencent.com/document/api/589/103995)
+
+新增数据结构：
+
+* [AutoScaleResourceConf](https://cloud.tencent.com/document/api/589/33981#AutoScaleResourceConf)
+* [DayRepeatStrategy](https://cloud.tencent.com/document/api/589/33981#DayRepeatStrategy)
+* [GroupGlobalConfs](https://cloud.tencent.com/document/api/589/33981#GroupGlobalConfs)
+* [MonthRepeatStrategy](https://cloud.tencent.com/document/api/589/33981#MonthRepeatStrategy)
+* [NotRepeatStrategy](https://cloud.tencent.com/document/api/589/33981#NotRepeatStrategy)
+* [RepeatStrategy](https://cloud.tencent.com/document/api/589/33981#RepeatStrategy)
+* [TimeAutoScaleStrategy](https://cloud.tencent.com/document/api/589/33981#TimeAutoScaleStrategy)
+* [WeekRepeatStrategy](https://cloud.tencent.com/document/api/589/33981#WeekRepeatStrategy)
+
+
+
 # Release 3.0.1062.1
 
 ## 云服务器(cvm) 版本：2017-03-12

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddMetricScaleStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddMetricScaleStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyType\": 0,\n    \"TimeAutoScaleStrategy\": {\n        \"StrategyId\": 1,\n        \"StrategyName\": \"abc\",\n        \"IntervalTime\": 1,\n        \"ScaleAction\": 1,\n        \"ScaleNum\": 1,\n        \"StrategyStatus\": 1,\n        \"Priority\": 1,\n        \"RetryValidTime\": 1,\n        \"RepeatStrategy\": {\n            \"RepeatType\": \"abc\",\n            \"DayRepeat\": {\n                \"ExecuteAtTimeOfDay\": \"abc\",\n                \"Step\": 1\n            },\n            \"WeekRepeat\": {\n                \"ExecuteAtTimeOfDay\": \"abc\",\n                \"DaysOfWeek\": [\n                    1\n                ]\n            },\n            \"MonthRepeat\": {\n                \"ExecuteAtTimeOfDay\": \"abc\",\n                \"DaysOfMonthRange\": [\n                    1\n                ]\n            },\n            \"NotRepeat\": {\n                \"ExecuteAt\": \"abc\"\n            },\n            \"Expire\": \"abc\"\n        },\n        \"GraceDownFlag\": true,\n        \"GraceDownTime\": 0,\n        \"Tags\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"ConfigGroupAssigned\": \"abc\",\n        \"MeasureMethod\": \"abc\",\n        \"TerminatePolicy\": \"abc\",\n        \"MaxUse\": 0,\n        \"SoftDeployInfo\": [\n            0\n        ],\n        \"ServiceNodeInfo\": [\n            0\n        ],\n        \"CompensateFlag\": 0,\n        \"GroupId\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41ac1575-64fa-4e23-b6df-6c1f509dd528\"\n    }\n}",
+        "title": "添加扩缩容规则成功示例"
+      }
+    ],
     "AddUsersForUserManager": [
       {
         "document": "",
@@ -24,6 +32,14 @@
         "title": "创建实例"
       }
     ],
+    "DeleteAutoScaleStrategy": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DeleteAutoScaleStrategy\n&InstanceId=emr-3ap64zl6\n&StrategyType=1\n&StrategyId=42\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0bef5627-4e40-4245-ba9c-2a83517b6880\"\n    }\n}",
+        "title": "删除弹性扩缩容规则示例"
+      }
+    ],
     "DeleteUserManagerUserList": [
       {
         "document": "test",
@@ -32,12 +48,28 @@
         "title": "test"
       }
     ],
+    "DescribeAutoScaleGroupGlobalConf": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScaleGroupGlobalConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupGlobalConfs\": [\n            {\n                \"GroupGlobalConf\": {\n                    \"Id\": 0,\n                    \"ClusterId\": 0,\n                    \"ScaleLowerBound\": 0,\n                    \"ScaleUpperBound\": 0,\n                    \"StrategyType\": 0,\n                    \"NextTimeCanScale\": 1,\n                    \"GraceDownFlag\": true\n                },\n                \"CurrentNodes\": 0,\n                \"CurrentPostPaidNodes\": 0,\n                \"CurrentSpotPaidNodes\": 0\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取伸缩组全局配置"
+      }
+    ],
     "DescribeAutoScaleRecords": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScaleRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-3ap64zl6\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RecordList\": [\n            {\n                \"StrategyName\": \"abc\",\n                \"ScaleAction\": \"abc\",\n                \"ActionStatus\": \"abc\",\n                \"ActionTime\": \"abc\",\n                \"ScaleInfo\": \"abc\",\n                \"ExpectScaleNum\": 0,\n                \"EndTime\": \"abc\",\n                \"StrategyType\": 0,\n                \"SpecInfo\": \"abc\",\n                \"CompensateFlag\": 0,\n                \"CompensateCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取弹性扩缩容历史示例"
+      }
+    ],
+    "DescribeAutoScaleStrategies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScaleStrategies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GroupId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TimeBasedAutoScaleStrategies\": [\n            {\n                \"StrategyId\": 1,\n                \"StrategyName\": \"abc\",\n                \"IntervalTime\": 1,\n                \"ScaleAction\": 1,\n                \"ScaleNum\": 1,\n                \"StrategyStatus\": 1,\n                \"Priority\": 1,\n                \"RetryValidTime\": 1,\n                \"RepeatStrategy\": {\n                    \"RepeatType\": \"abc\",\n                    \"DayRepeat\": {\n                        \"ExecuteAtTimeOfDay\": \"abc\",\n                        \"Step\": 1\n                    },\n                    \"WeekRepeat\": {\n                        \"ExecuteAtTimeOfDay\": \"abc\",\n                        \"DaysOfWeek\": [\n                            1\n                        ]\n                    },\n                    \"MonthRepeat\": {\n                        \"ExecuteAtTimeOfDay\": \"abc\",\n                        \"DaysOfMonthRange\": [\n                            1\n                        ]\n                    },\n                    \"NotRepeat\": {\n                        \"ExecuteAt\": \"abc\"\n                    },\n                    \"Expire\": \"abc\"\n                },\n                \"GraceDownFlag\": true,\n                \"GraceDownTime\": 0,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"ConfigGroupAssigned\": \"abc\",\n                \"MeasureMethod\": \"abc\",\n                \"TerminatePolicy\": \"abc\",\n                \"MaxUse\": 0,\n                \"SoftDeployInfo\": [\n                    0\n                ],\n                \"ServiceNodeInfo\": [\n                    0\n                ],\n                \"CompensateFlag\": 0,\n                \"GroupId\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取自动扩缩容规则"
       }
     ],
     "DescribeClusterNodes": [
@@ -188,6 +220,20 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceUpdateInstance\n<公共请求参数>\n\n{\n    \"Placement\": {\n        \"ProjectId\": \"0\",\n        \"Zone\": \"100003\"\n    },\n    \"TimeSpan\": \"3600\",\n    \"UpdateSpec\": {\n        \"ResourceId\": \"emr-vm-a0xxx9on\",\n        \"CPUCores\": \"8\",\n        \"Memory\": \"16\"\n    },\n    \"PayMode\": \"0\",\n    \"Currency\": \"CNY\",\n    \"TimeUnit\": \"s\"\n}",
         "output": "{\n    \"Response\": {\n        \"DiscountCost\": 2.01,\n        \"OriginalCost\": 3.04,\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\",\n        \"TimeSpan\": 3600,\n        \"TimeUnit\": \"s\",\n        \"PriceDetail\": [\n            {\n                \"Formula\": \"(1).变配订单金额：2870.4 元[ 新配置单价3546.4*时长1*折扣100% - 旧配置单价676*时长1*折扣100%]<br/>(2).时长:1月\",\n                \"DiscountCost\": 2870.4,\n                \"ResourceId\": \"emr-vm-xxxxxxx\",\n                \"OriginalCost\": 2870.4\n            }\n        ]\n    }\n}",
         "title": "变配询价"
+      }
+    ],
+    "ModifyAutoScaleStrategy": [
+      {
+        "document": "修改扩缩容规则",
+        "input": "https://emr.tencentcloudapi.com/?Action=ModifyAutoScaleStrategy\n&InstanceId=emr-3ap64zl6\n&StrategyType=1\n&LoadAutoScaleStrategies.0.StrategyId=52\n&LoadAutoScaleStrategies.0.ScaleNum=4\n&LoadAutoScaleStrategies.0.ScaleAction=2\n&LoadAutoScaleStrategies.0.Priority=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23108dcf-506a-4246-b0bf-dca8ef2b0845\"\n    }\n}",
+        "title": "修改扩缩容规则成功示例"
+      },
+      {
+        "document": "修改扩缩容规则",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScaleStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyType\": 0,\n    \"TimeAutoScaleStrategies\": [\n        {\n            \"StrategyId\": 1,\n            \"StrategyName\": \"abc\",\n            \"IntervalTime\": 1,\n            \"ScaleAction\": 1,\n            \"ScaleNum\": 1,\n            \"StrategyStatus\": 1,\n            \"Priority\": 1,\n            \"RetryValidTime\": 1,\n            \"RepeatStrategy\": {\n                \"RepeatType\": \"abc\",\n                \"DayRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"Step\": 1\n                },\n                \"WeekRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"DaysOfWeek\": [\n                        1\n                    ]\n                },\n                \"MonthRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"DaysOfMonthRange\": [\n                        1\n                    ]\n                },\n                \"NotRepeat\": {\n                    \"ExecuteAt\": \"abc\"\n                },\n                \"Expire\": \"abc\"\n            },\n            \"GraceDownFlag\": true,\n            \"GraceDownTime\": 0,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"ConfigGroupAssigned\": \"abc\",\n            \"MeasureMethod\": \"abc\",\n            \"TerminatePolicy\": \"abc\",\n            \"MaxUse\": 0,\n            \"SoftDeployInfo\": [\n                0\n            ],\n            \"ServiceNodeInfo\": [\n                0\n            ],\n            \"CompensateFlag\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改扩缩容规则"
       }
     ],
     "ModifyResourcePools": [

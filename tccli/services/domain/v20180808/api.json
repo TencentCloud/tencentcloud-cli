@@ -3204,7 +3204,7 @@
         },
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "tmpl-qdpjnfe8",
           "member": "string",
           "name": "TemplateId",

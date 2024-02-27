@@ -126,6 +126,13 @@
       "output": "DescribeCostDetailResponse",
       "status": "online"
     },
+    "DescribeCostExplorerSummary": {
+      "document": "查看成本分析明细",
+      "input": "DescribeCostExplorerSummaryRequest",
+      "name": "查看成本分析明细",
+      "output": "DescribeCostExplorerSummaryResponse",
+      "status": "online"
+    },
     "DescribeCostSummaryByProduct": {
       "document": "获取按产品汇总消耗详情",
       "input": "DescribeCostSummaryByProductRequest",
@@ -351,6 +358,567 @@
         }
       ],
       "usage": "out"
+    },
+    "AnalyseActionTypeDetail": {
+      "document": "成本分析交易类型复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易类型code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prepay_purchase",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "包年包月新购",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseAmountDetail": {
+      "document": "成本分析金额返回数据模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "费用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cost",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Display",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseBusinessDetail": {
+      "document": "成本分析产品返回复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品码code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "billVirtualId",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "月度计费精度差异",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalyseConditionDetail": {
+      "document": "成本分析过滤框复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseBusinessDetail",
+          "name": "Business",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseProjectDetail",
+          "name": "Project",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseRegionDetail",
+          "name": "Region",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalysePayModeDetail",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseActionTypeDetail",
+          "name": "ActionType",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseZoneDetail",
+          "name": "Zone",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源所有者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseOwnerUinDetail",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseAmountDetail",
+          "name": "Amount",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalyseConditions": {
+      "document": "成本分析查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_cvm",
+          "member": "string",
+          "name": "ProductCodes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_cpu",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID：资源所属可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "string",
+          "name": "ZoneIds",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID:资源所属地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "47",
+          "member": "string",
+          "name": "RegionIds",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID:资源所属项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ProjectIds",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式 prePay(表示包年包月)/postPay(表示按量计费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayModes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型，查询交易类型（请使用交易类型code入参）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postpay_deduct_d",
+          "member": "string",
+          "name": "ActionTypes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"二级业务\":\"CoreDB_740044\"}",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用类型，查询费用类型（请使用费用类型code入参)入参枚举如下：\ncashPayAmount:现金 \nincentivePayAmount:赠送金 \nvoucherPayAmount:优惠券 \ntax:税金 \ncostBeforeTax:税前价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cashPayAmount",
+          "member": "string",
+          "name": "FeeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询成本分析数据的用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUins",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用资源的用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909614900",
+          "member": "string",
+          "name": "OwnerUins",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗类型，查询消耗类型（请使用消耗类型code入参）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prepay_purchase",
+          "member": "string",
+          "name": "ConsumptionTypes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseDetail": {
+      "document": "成本分析数据复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "'2023-01-01 00:00:00'",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "金额",
+          "example": "0",
+          "member": "string",
+          "name": "Total",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期明细金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseTimeDetail",
+          "name": "TimeDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalyseHeaderDetail": {
+      "document": "成本分析表头数据复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表头日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                     \"name\":\"2023-12-01 00:00:00\"                 }",
+          "member": "AnalyseHeaderTimeDetail",
+          "name": "HeadDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "'2023-12-01 00:00:00'",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "总计",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalyseHeaderTimeDetail": {
+      "document": "成本分析header表头数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseOwnerUinDetail": {
+      "document": "成本分析使用者uin复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "使用者uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalysePayModeDetail": {
+      "document": "成本分析支付方式复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费模式code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "按量计费",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseProjectDetail": {
+      "document": "成本分析项目返回复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseRegionDetail": {
+      "document": "成本分析地域返回复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "其他",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AnalyseTimeDetail": {
+      "document": "成本分返回值复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-01 00:00:00",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "Money",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AnalyseZoneDetail": {
+      "document": "成本分析可用区复杂类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "其他",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ApplicableProducts": {
       "document": "适用商品信息",
@@ -5562,6 +6130,173 @@
       ],
       "type": "object"
     },
+    "DescribeCostExplorerSummaryRequest": {
+      "document": "DescribeCostExplorerSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss",
+          "example": "2024-01-01 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单类型：1-费用账单、2-消耗账单",
+          "example": "1",
+          "member": "string",
+          "name": "BillType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计周期：日-day，月-month；",
+          "example": "day",
+          "member": "string",
+          "name": "PeriodType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类维度（数据汇总维度），查询分类维度（请使用分类维度code入参）入参枚举值：\ndefault=仅总计\nfeeType=费用类型\nbillType=账单类型\nbusiness=产品\nproduct=子产品\nregion=地域\nzone=可用区\nactionType=交易类型\npayMode =计费模式\ntags=标签\nproject =项目\npayerUin=支付者账号\nownerUin=使用者账号",
+          "example": "business",
+          "member": "string",
+          "name": "Dimensions",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "费用类型：cost-总费用，totalCost-原价费用",
+          "example": "cost",
+          "member": "string",
+          "name": "FeeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数量，每页最大值为100",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始页，当PageNo=1表示第一页， PageNo=2表示第二页，依次类推。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分账标签值",
+          "example": "test",
+          "member": "string",
+          "name": "TagKeyStr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要筛选框， 1-表示需要， 0-表示不需要，若不传默认不需要。",
+          "example": "0",
+          "member": "string",
+          "name": "NeedConditionValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选参数",
+          "example": "{}",
+          "member": "AnalyseConditions",
+          "name": "Conditions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCostExplorerSummaryResponse": {
+      "document": "DescribeCostExplorerSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表头信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"name\":\"产品\",             \"total\":\"总计\",             \"headDetail\":[                 {                     \"name\":\"2023-12-01 00:00:00\"                 },                 {                     \"name\":\"2024-01-01 00:00:00\"                 }             ]         }",
+          "member": "AnalyseHeaderDetail",
+          "name": "Header",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                 \"name\":\"云服务器CVM\",                 \"total\":11.63454774,                 \"timeDetail\":[                     {                         \"time\":\"2023-12-01 00:00:00\",                         \"money\":\"2.92527168\"                     },                     {                         \"time\":\"2024-01-01 00:00:00\",                         \"money\":\"8.70927606\"                     }                 ]             }",
+          "member": "AnalyseDetail",
+          "name": "Detail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据总计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"name\":\"总计\",             \"total\":7662.59744864,             \"timeDetail\":[                 {                     \"name\":\"2023-12-01 00:00:00\",                     \"money\":\"7313.09744864\"                 },                 {                     \"name\":\"2024-01-01 00:00:00\",                     \"money\":\"349.50000000\"                 }             ]         }",
+          "member": "AnalyseDetail",
+          "name": "TotalDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "筛选框\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnalyseConditionDetail",
+          "name": "ConditionValue",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCostSummaryByProductRequest": {
       "document": "DescribeCostSummaryByProduct请求参数结构体",
       "members": [
@@ -6071,7 +6806,7 @@
         },
         {
           "disabled": false,
-          "document": "订单号",
+          "document": "子订单号",
           "example": "202202021234567",
           "member": "string",
           "name": "OrderId",
@@ -6108,6 +6843,7 @@
           "example": "无",
           "member": "Deal",
           "name": "Deals",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6117,6 +6853,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

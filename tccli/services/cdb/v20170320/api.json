@@ -3957,7 +3957,7 @@
           "example": "841592f6-dd318344-aea19230-38912726",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9693,6 +9693,15 @@
           "name": "ForReadonlyInstance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9706,7 +9715,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15101,7 +15110,7 @@
           "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15826,7 +15835,7 @@
           "example": "b4a719b5-ffb34ab6-816c43c1-8c6a23eb",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18820,7 +18829,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
