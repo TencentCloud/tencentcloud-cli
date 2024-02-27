@@ -56,7 +56,7 @@
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=GetModelList\r\n&Offset=0\r\n&Limit=3\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ModelInfos\": [\n            {\n                \"ModelId\": \"id1\",\n                \"Description\": \"desc\",\n                \"LUTFileUrl\": \"LUTFileUrl\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelIdNum\": 1,\n        \"ModelInfos\": [\n            {\n                \"ModelId\": \"id1\",\n                \"Description\": \"desc\",\n                \"LUTFileUrl\": \"LUTFileUrl\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "人脸特效-人脸试妆-拉起素材列表"
       }
     ],

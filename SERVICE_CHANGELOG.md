@@ -1,14 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云服务器(cvm) 版本：2019-12-12
+## 费用中心(billing) 版本：2018-07-09
 
+### 第 47 次发布
 
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 70 次发布
-
-发布时间：2024-02-27 01:12:26
+发布时间：2024-02-28 01:08:16
 
 本次发布包含了以下内容：
 
@@ -16,35 +12,32 @@
 
 新增接口：
 
-* [DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)
-* [DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)
-* [ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)
+* [DescribeCostExplorerSummary](http://document.tencentcloudapi.woa.com/document/product/555/83350)
 
-修改接口：
+新增数据结构：
 
-* [CreateHpcCluster](http://document.tencentcloudapi.woa.com/document/product/213/76696)
-
-	* 新增入参：HpcClusterType, HpcClusterBusinessId
-
-* [DescribeHpcClusters](http://document.tencentcloudapi.woa.com/document/product/213/76694)
-
-	* 新增入参：HpcClusterType, HpcClusterBusinessId
-
-
-修改数据结构：
-
-* [HpcClusterInfo](http://document.tencentcloudapi.woa.com/document/product/213/15753#HpcClusterInfo)
-
-	* 新增成员：HpcClusterType, HpcClusterBusinessId
+* [AnalyseActionTypeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseActionTypeDetail)
+* [AnalyseAmountDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseAmountDetail)
+* [AnalyseBusinessDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseBusinessDetail)
+* [AnalyseConditionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditionDetail)
+* [AnalyseConditions](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditions)
+* [AnalyseDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseDetail)
+* [AnalyseHeaderDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderDetail)
+* [AnalyseHeaderTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderTimeDetail)
+* [AnalyseOwnerUinDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseOwnerUinDetail)
+* [AnalysePayModeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalysePayModeDetail)
+* [AnalyseProjectDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseProjectDetail)
+* [AnalyseRegionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseRegionDetail)
+* [AnalyseTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseTimeDetail)
+* [AnalyseZoneDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseZoneDetail)
 
 
 
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+### 第 87 次发布
 
-### 第 45 次发布
-
-发布时间：2024-02-27 01:19:36
+发布时间：2024-02-28 01:09:44
 
 本次发布包含了以下内容：
 
@@ -52,17 +45,108 @@
 
 修改接口：
 
-* [DescribeAccountInstances](http://document.tencentcloudapi.woa.com/document/product/1207/83344)
+* [CloseWanService](http://document.tencentcloudapi.woa.com/document/product/236/15863)
 
-	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+	* 新增入参：OpResourceId
 
+* [DescribeDBSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15854)
+
+	* 新增入参：OpResourceId
+
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15853)
+
+	* 新增入参：OpResourceId
+
+* [OpenWanService](http://document.tencentcloudapi.woa.com/document/product/236/15875)
+
+	* 新增入参：OpResourceId
+
+* [SwitchDBInstanceMasterSlave](http://document.tencentcloudapi.woa.com/document/product/236/52171)
+
+	* 新增入参：DstNodeId
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 58 次发布
+
+发布时间：2024-02-28 01:11:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetLoadBalancerStartStatus](http://document.tencentcloudapi.woa.com/document/product/214/83351)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 39 次发布
+
+发布时间：2024-02-28 01:16:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddMetricScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83354)
+* [DeleteAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83353)
+* [DescribeAutoScaleGroupGlobalConf](http://document.tencentcloudapi.woa.com/document/product/589/83356)
+* [DescribeAutoScaleStrategies](http://document.tencentcloudapi.woa.com/document/product/589/83355)
+* [ModifyAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83352)
+
+新增数据结构：
+
+* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
+* [DayRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#DayRepeatStrategy)
+* [GroupGlobalConfs](http://document.tencentcloudapi.woa.com/document/product/589/33981#GroupGlobalConfs)
+* [MonthRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#MonthRepeatStrategy)
+* [NotRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#NotRepeatStrategy)
+* [RepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RepeatStrategy)
+* [TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy)
+* [WeekRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#WeekRepeatStrategy)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 51 次发布
+
+发布时间：2024-02-28 01:16:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
 
-	* 新增成员：OriginInstanceId
+	* 新增成员：AppId
 
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 53 次发布
+
+发布时间：2024-02-28 01:23:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckCertificateExist](http://document.tencentcloudapi.woa.com/document/product/400/83357)
 
 
 
@@ -5943,6 +6027,35 @@
 
 ## 费用中心(billing) 版本：2018-07-09
 
+### 第 47 次发布
+
+发布时间：2024-02-28 01:08:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCostExplorerSummary](http://document.tencentcloudapi.woa.com/document/product/555/83350)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AnalyseActionTypeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseActionTypeDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseActionTypeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseActionTypeDetail))
+* [[AnalyseAmountDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseAmountDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseAmountDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseAmountDetail))
+* [[AnalyseBusinessDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseBusinessDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseBusinessDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseBusinessDetail))
+* [[AnalyseConditionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditionDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseConditionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditionDetail))
+* [[AnalyseConditions](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditions)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseConditions](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditions))
+* [[AnalyseDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseDetail))
+* [[AnalyseHeaderDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseHeaderDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderDetail))
+* [[AnalyseHeaderTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderTimeDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseHeaderTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderTimeDetail))
+* [[AnalyseOwnerUinDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseOwnerUinDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseOwnerUinDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseOwnerUinDetail))
+* [[AnalysePayModeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalysePayModeDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalysePayModeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalysePayModeDetail))
+* [[AnalyseProjectDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseProjectDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseProjectDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseProjectDetail))
+* [[AnalyseRegionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseRegionDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseRegionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseRegionDetail))
+* [[AnalyseTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseTimeDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseTimeDetail))
+* [[AnalyseZoneDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseZoneDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AnalyseZoneDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseZoneDetail))
+
 ### 第 46 次发布
 
 发布时间：2024-01-26 01:07:02
@@ -11331,6 +11444,37 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 87 次发布
+
+发布时间：2024-02-28 01:09:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloseWanService](http://document.tencentcloudapi.woa.com/document/product/236/15863)
+
+	* 新增入参：OpResourceId
+
+* [DescribeDBSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15854)
+
+	* 新增入参：OpResourceId
+
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15853)
+
+	* 新增入参：OpResourceId
+
+* [OpenWanService](http://document.tencentcloudapi.woa.com/document/product/236/15875)
+
+	* 新增入参：OpResourceId
+
+* [SwitchDBInstanceMasterSlave](http://document.tencentcloudapi.woa.com/document/product/236/52171)
+
+	* 新增入参：DstNodeId
+
 
 ### 第 86 次发布
 
@@ -19119,6 +19263,18 @@
 
 ## 负载均衡(clb) 版本：2018-03-17
 
+### 第 58 次发布
+
+发布时间：2024-02-28 01:11:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[SetLoadBalancerStartStatus](http://document.tencentcloudapi.woa.com/document/product/214/83351)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 57 次发布
 
 发布时间：2024-01-05 01:10:54
@@ -25442,9 +25598,9 @@
 
 新增接口：
 
-* [[DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83349)
+* [DescribeInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83348)
+* [ImportInstancesActionTimer](http://document.tencentcloudapi.woa.com/document/product/213/83347)
 
 修改接口：
 
@@ -38842,6 +38998,33 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 39 次发布
+
+发布时间：2024-02-28 01:16:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddMetricScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83354)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83353)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAutoScaleGroupGlobalConf](http://document.tencentcloudapi.woa.com/document/product/589/83356)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAutoScaleStrategies](http://document.tencentcloudapi.woa.com/document/product/589/83355)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83352)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf))
+* [[DayRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#DayRepeatStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[DayRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#DayRepeatStrategy))
+* [[GroupGlobalConfs](http://document.tencentcloudapi.woa.com/document/product/589/33981#GroupGlobalConfs)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[GroupGlobalConfs](http://document.tencentcloudapi.woa.com/document/product/589/33981#GroupGlobalConfs))
+* [[MonthRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#MonthRepeatStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[MonthRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#MonthRepeatStrategy))
+* [[NotRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#NotRepeatStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[NotRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#NotRepeatStrategy))
+* [[RepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RepeatStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[RepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RepeatStrategy))
+* [[TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy))
+* [[WeekRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#WeekRepeatStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[WeekRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#WeekRepeatStrategy))
+
 ### 第 38 次发布
 
 发布时间：2024-01-29 01:13:58
@@ -39765,6 +39948,21 @@
 
 
 ## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 51 次发布
+
+发布时间：2024-02-28 01:16:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：AppId
+
 
 ### 第 50 次发布
 
@@ -71064,6 +71262,18 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 53 次发布
+
+发布时间：2024-02-28 01:23:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckCertificateExist](http://document.tencentcloudapi.woa.com/document/product/400/83357)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 52 次发布
 

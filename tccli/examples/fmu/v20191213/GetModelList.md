@@ -14,6 +14,7 @@ Output:
 ```
 {
     "Response": {
+        "ModelIdNum": 1,
         "ModelInfos": [
             {
                 "ModelId": "id1",

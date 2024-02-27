@@ -1,3 +1,155 @@
+# Release 3.0.944.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 47 次发布
+
+发布时间：2024-02-28 01:08:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCostExplorerSummary](http://document.tencentcloudapi.woa.com/document/product/555/83350)
+
+新增数据结构：
+
+* [AnalyseActionTypeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseActionTypeDetail)
+* [AnalyseAmountDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseAmountDetail)
+* [AnalyseBusinessDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseBusinessDetail)
+* [AnalyseConditionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditionDetail)
+* [AnalyseConditions](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseConditions)
+* [AnalyseDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseDetail)
+* [AnalyseHeaderDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderDetail)
+* [AnalyseHeaderTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseHeaderTimeDetail)
+* [AnalyseOwnerUinDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseOwnerUinDetail)
+* [AnalysePayModeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalysePayModeDetail)
+* [AnalyseProjectDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseProjectDetail)
+* [AnalyseRegionDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseRegionDetail)
+* [AnalyseTimeDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseTimeDetail)
+* [AnalyseZoneDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AnalyseZoneDetail)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 87 次发布
+
+发布时间：2024-02-28 01:09:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloseWanService](http://document.tencentcloudapi.woa.com/document/product/236/15863)
+
+	* 新增入参：OpResourceId
+
+* [DescribeDBSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15854)
+
+	* 新增入参：OpResourceId
+
+* [ModifyDBInstanceSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/236/15853)
+
+	* 新增入参：OpResourceId
+
+* [OpenWanService](http://document.tencentcloudapi.woa.com/document/product/236/15875)
+
+	* 新增入参：OpResourceId
+
+* [SwitchDBInstanceMasterSlave](http://document.tencentcloudapi.woa.com/document/product/236/52171)
+
+	* 新增入参：DstNodeId
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 58 次发布
+
+发布时间：2024-02-28 01:11:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetLoadBalancerStartStatus](http://document.tencentcloudapi.woa.com/document/product/214/83351)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 39 次发布
+
+发布时间：2024-02-28 01:16:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddMetricScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83354)
+* [DeleteAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83353)
+* [DescribeAutoScaleGroupGlobalConf](http://document.tencentcloudapi.woa.com/document/product/589/83356)
+* [DescribeAutoScaleStrategies](http://document.tencentcloudapi.woa.com/document/product/589/83355)
+* [ModifyAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83352)
+
+新增数据结构：
+
+* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
+* [DayRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#DayRepeatStrategy)
+* [GroupGlobalConfs](http://document.tencentcloudapi.woa.com/document/product/589/33981#GroupGlobalConfs)
+* [MonthRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#MonthRepeatStrategy)
+* [NotRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#NotRepeatStrategy)
+* [RepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#RepeatStrategy)
+* [TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy)
+* [WeekRepeatStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#WeekRepeatStrategy)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 51 次发布
+
+发布时间：2024-02-28 01:16:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：AppId
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 53 次发布
+
+发布时间：2024-02-28 01:23:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckCertificateExist](http://document.tencentcloudapi.woa.com/document/product/400/83357)
+
+
+
 # Release 3.0.943.1
 
 ## 云服务器(cvm) 版本：2019-12-12
