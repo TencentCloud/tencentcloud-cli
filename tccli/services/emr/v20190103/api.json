@@ -210,6 +210,13 @@
       "output": "ModifyAutoScaleStrategyResponse",
       "status": "online"
     },
+    "ModifyPackageVersion": {
+      "document": "修改或新增插件包",
+      "input": "ModifyPackageVersionRequest",
+      "name": "ModifyPackageVersion",
+      "output": "ModifyPackageVersionResponse",
+      "status": "online"
+    },
     "ModifyResourcePools": {
       "document": "刷新YARN的动态资源池",
       "input": "ModifyResourcePoolsRequest",
@@ -6737,6 +6744,43 @@
     "ModifyAutoScaleStrategyResponse": {
       "document": "ModifyAutoScaleStrategy返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageVersionRequest": {
+      "document": "ModifyPackageVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "base64json",
+          "example": "base64json",
+          "member": "string",
+          "name": "ResultBody",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageVersionResponse": {
+      "document": "ModifyPackageVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "base64json",
+          "example": "base64json",
+          "member": "string",
+          "name": "ResultBody",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

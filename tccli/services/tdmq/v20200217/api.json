@@ -203,13 +203,6 @@
       "output": "DeleteProClusterResponse",
       "status": "online"
     },
-    "DeleteProClusters": {
-      "document": "接口支持删除多个集群，目前已废弃\n\n删除专业集群——预付费，仅通过API 调用，支持同时删除多个集群",
-      "input": "DeleteProClustersRequest",
-      "name": "删除专业集群",
-      "output": "DeleteProClustersResponse",
-      "status": "deprecated"
-    },
     "DeleteRabbitMQUser": {
       "document": "删除RabbitMQ的用户",
       "input": "DeleteRabbitMQUserRequest",
@@ -4697,53 +4690,6 @@
           "name": "DealName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteProClustersRequest": {
-      "document": "DeleteProClusters请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群Id列表",
-          "example": "[\"pulsar-rd42kgdwpe4g\",\"pulsar-rd42kgdwpe5g\"]",
-          "member": "string",
-          "name": "ClusterIds",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteProClustersResponse": {
-      "document": "DeleteProClusters返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "退还实例订单号",
-          "example": "[\"20231020394041338776131\",\"20231020394041338776132\"]",
-          "member": "string",
-          "name": "DealNames",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群ID",
-          "example": "[\"pulsar-rd42kgdwpe4g\",\"pulsar-rd42kgdwpe5g\"]",
-          "member": "string",
-          "name": "ClusterIds",
-          "output_required": false,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13966,6 +13912,26 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-03 11:58:39.447",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-03 11:58:39.447",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14065,7 +14031,7 @@
           "example": "amqp-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14075,7 +14041,7 @@
           "example": "abc",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14085,7 +14051,7 @@
           "example": "4.9.3",
           "member": "string",
           "name": "InstanceVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14095,7 +14061,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14105,7 +14071,7 @@
           "example": "5",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14115,7 +14081,7 @@
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14125,7 +14091,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14135,7 +14101,7 @@
           "example": "1200",
           "member": "uint64",
           "name": "MaxBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14145,7 +14111,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14155,7 +14121,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14165,7 +14131,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14175,7 +14141,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14185,7 +14151,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14195,7 +14161,7 @@
           "example": "vip-basic-1",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14205,7 +14171,7 @@
           "example": "异常信息",
           "member": "string",
           "name": "ExceptionInformation",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14215,9 +14181,29 @@
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp://127.0.0.1:5672",
+          "member": "string",
+          "name": "PublicAccessEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 接入点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "VpcEndpointInfo",
+          "name": "Vpcs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

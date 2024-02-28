@@ -25,7 +25,7 @@
     "CancelInstanceRefresh": [
       {
         "document": "取消伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"asr-juhf6ytr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
         "title": "取消实例刷新活动"
       }

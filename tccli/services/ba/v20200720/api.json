@@ -86,7 +86,7 @@
           "example": "1",
           "member": "string",
           "name": "IsTenPayMasked",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -96,7 +96,7 @@
           "example": "1",
           "member": "string",
           "name": "IsAuthenticated",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -106,7 +106,17 @@
           "example": "1",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大客户标识：\n1004、1003、1002、1001\n\n其余为普通的用户",
+          "example": "9999",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
