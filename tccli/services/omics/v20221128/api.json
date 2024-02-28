@@ -294,6 +294,15 @@
         },
         {
           "disabled": false,
+          "document": "计算集群Service CIDR，不能与VPC网段重合。",
+          "example": "192.168.0.0/20",
+          "member": "string",
+          "name": "ServiceCidr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "资源配额。",
           "example": "无",
           "member": "ResourceQuota",
@@ -812,7 +821,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvironmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -822,7 +831,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -832,7 +841,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -842,7 +851,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -852,7 +861,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -862,7 +871,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -872,7 +881,27 @@
           "example": "无",
           "member": "bool",
           "name": "Available",
-          "required": false,
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境是否为默认环境。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境是否为托管环境。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsManaged",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -882,7 +911,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -892,7 +921,7 @@
           "example": "无",
           "member": "ResourceIds",
           "name": "ResourceIds",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -902,7 +931,7 @@
           "example": "无",
           "member": "string",
           "name": "LastWorkflowUuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -912,7 +941,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreationTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1414,6 +1443,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Nextflow引擎版本，取值范围：\n- 22.10.4\n- 22.10.8 \n- 23.10.1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NFVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1823,15 +1863,6 @@
         },
         {
           "disabled": false,
-          "document": "任务缓存清理时间（小时）。不填表示不清理。",
-          "example": "无",
-          "member": "uint64",
-          "name": "CacheClearDelay",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "项目ID。（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
@@ -1868,6 +1899,15 @@
         },
         {
           "disabled": false,
+          "document": "任务缓存清理时间（小时）。不填或0表示不清理。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CacheClearDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "应用版本ID。不填表示使用当前最新版本。",
           "example": "无",
           "member": "string",
@@ -1892,6 +1932,15 @@
           "name": "NFOption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)",
+          "example": "无",
+          "member": "string",
+          "name": "WorkDir",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2563,12 +2612,21 @@
         },
         {
           "disabled": false,
-          "document": "任务缓存清理时间（小时）。不填表示不清理。",
+          "document": "任务缓存清理时间（小时）。不填或0表示不清理。",
           "example": "无",
           "member": "uint64",
           "name": "CacheClearDelay",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)",
+          "example": "无",
+          "member": "string",
+          "name": "WorkDir",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -56,6 +56,14 @@
         "title": "取消组织成员和组织管理员子账号的授权关系"
       }
     ],
+    "CheckAccountDelete": [
+      {
+        "document": "成员账号删除检查",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAccountDelete\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111\n}",
+        "output": "{\n    \"Response\": {\n        \"AllowDelete\": false,\n        \"NotAllowReason\": {\n            \"IsCreateMember\": true,\n            \"DeletionPermission\": true,\n            \"IsAssignManager\": true,\n            \"IsAuthManager\": true,\n            \"IsShareManager\": true,\n            \"OperateProcess\": true,\n            \"BillingPermission\": true,\n            \"ExistResources\": [],\n            \"DetectFailedResources\": []\n        },\n        \"RequestId\": \"71295d81-d334-4fc0-af6a-5ac3d5e84b26\"\n    }\n}",
+        "title": "成员账号删除检查"
+      }
+    ],
     "CreateOrganization": [
       {
         "document": "",

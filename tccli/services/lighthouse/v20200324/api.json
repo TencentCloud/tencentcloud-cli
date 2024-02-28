@@ -539,6 +539,13 @@
       "output": "ModifyDisksAttributeResponse",
       "status": "online"
     },
+    "ModifyDisksBackupQuota": {
+      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。该操作目前仅支持云硬盘类型为数据盘的云硬盘。",
+      "input": "ModifyDisksBackupQuotaRequest",
+      "name": "调整云硬盘备份点配额",
+      "output": "ModifyDisksBackupQuotaResponse",
+      "status": "online"
+    },
     "ModifyDisksRenewFlag": {
       "document": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。",
       "input": "ModifyDisksRenewFlagRequest",
@@ -684,6 +691,13 @@
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
       "output": "ResetInstancesPasswordResponse",
+      "status": "online"
+    },
+    "ResizeDisks": {
+      "document": "本接口(ResizeDisks)用于扩容云硬盘。该操作目前仅支持云硬盘类型为数据盘的云硬盘。",
+      "input": "ResizeDisksRequest",
+      "name": "扩容云硬盘",
+      "output": "ResizeDisksResponse",
       "status": "online"
     },
     "RestartDockerContainers": {
@@ -7600,6 +7614,42 @@
       ],
       "type": "object"
     },
+    "ModifyDisksBackupQuotaRequest": {
+      "document": "ModifyDisksBackupQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云硬盘ID列表，可通过[DescribeDisks](https://cloud.tencent.com/document/api/1207/66093)接口查询。列表最大长度为15。",
+          "example": "[\"lhdisk-guzg7nsa\"]\t",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘备份点配额。取值范围: [0, 500]。调整后的配额必须不小于已存在的备份点数量。",
+          "example": "4",
+          "member": "int64",
+          "name": "DiskBackupQuota",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDisksBackupQuotaResponse": {
+      "document": "ModifyDisksBackupQuota返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDisksRenewFlagRequest": {
       "document": "ModifyDisksRenewFlag请求参数结构体",
       "members": [
@@ -8727,6 +8777,42 @@
     },
     "ResetInstancesPasswordResponse": {
       "document": "ResetInstancesPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDisksRequest": {
+      "document": "ResizeDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云硬盘ID列表，可通过[DescribeDisks](https://cloud.tencent.com/document/api/1207/66093)接口查询。列表最大长度为15。",
+          "example": "[\"lhdisk-guzg7nsa\"]\t",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扩容后的云硬盘大小。单位: GB。高性能云硬盘大小取值范围：[10, 4000] ,SSD云硬盘大小取值范围：[20, 4000]。扩容后的云硬盘大小必须大于当前云硬盘大小。",
+          "example": "40",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDisksResponse": {
+      "document": "ResizeDisks返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

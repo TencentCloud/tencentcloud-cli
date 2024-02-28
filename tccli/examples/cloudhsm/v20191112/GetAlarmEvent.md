@@ -13,15 +13,31 @@ Output:
     "Response": {
         "AlarmConfig": [
             {
-                "Uin": "xx",
-                "Event": "xx",
+                "BeginTime": "",
+                "EndTime": "",
+                "Event": "MEM",
                 "Limit": 0,
-                "Status": 0,
-                "BeginTime": "xx",
-                "EndTime": "xx"
+                "Status": 1,
+                "Uin": "123456789"
+            },
+            {
+                "BeginTime": "",
+                "EndTime": "",
+                "Event": "CPU",
+                "Limit": 1,
+                "Status": 1,
+                "Uin": "123456789"
+            },
+            {
+                "BeginTime": "",
+                "EndTime": "",
+                "Event": "TCP",
+                "Limit": 99,
+                "Status": 1,
+                "Uin": "123456789"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "2045f89b-7673-4cd7-9580-77f0a048fb26"
     }
 }
 ```

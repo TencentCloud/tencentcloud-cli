@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cloudhsm ModifyVsmAttributes --cli-unfold-argument  \
-    --SgIds xx \
-    --VpcId xx \
-    --ResourceId xx \
-    --SubnetId xx \
-    --ResourceName xx \
-    --Type xx
+    --SgIds sg-abcdefgh \
+    --VpcId vpc-abcdefgh \
+    --ResourceId hsm-1234abcd \
+    --SubnetId subnet-1234abcd \
+    --ResourceName default-hsmName \
+    --Type Default
 ```
 
 Output: 

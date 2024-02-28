@@ -1,3 +1,336 @@
+# Release 3.0.1064.1
+
+## ICP备案(ba) 版本：2020-07-20
+
+### 第 4 次发布
+
+发布时间：2024-02-29 01:08:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGetAuthInfo](https://cloud.tencent.com/document/api/243/59312)
+
+	* 新增出参：Level
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 55 次发布
+
+发布时间：2024-02-29 01:10:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateListInfo](https://cloud.tencent.com/document/api/1132/49071#TemplateListInfo)
+
+	* 新增成员：IPNum
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 101 次发布
+
+发布时间：2024-02-28 15:22:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetLoadBalancerStartStatus](https://cloud.tencent.com/document/api/214/103994)
+
+
+
+## 云加密机(cloudhsm) 版本：2019-11-12
+
+### 第 7 次发布
+
+发布时间：2024-02-29 01:11:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ResourceInfo](https://cloud.tencent.com/document/api/639/41450#ResourceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AlarmStatus
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 31 次发布
+
+发布时间：2024-02-29 01:14:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePreDomainList](https://cloud.tencent.com/document/api/242/103889)
+
+	* 新增入参：EndTime
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 150 次发布
+
+发布时间：2024-02-29 01:16:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApproverInfo](https://cloud.tencent.com/document/api/1323/70369#ApproverInfo)
+
+	* 新增成员：Components
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 154 次发布
+
+发布时间：2024-02-29 01:16:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverInfo](https://cloud.tencent.com/document/api/1420/61525#FlowApproverInfo)
+
+	* 新增成员：Components
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 28 次发布
+
+发布时间：2024-02-29 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudStorage](https://cloud.tencent.com/document/api/1131/77505)
+
+	* 新增入参：StorageRegion
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 58 次发布
+
+发布时间：2024-02-29 01:19:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDisksBackupQuota](https://cloud.tencent.com/document/api/1207/104011)
+* [ResizeDisks](https://cloud.tencent.com/document/api/1207/104010)
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 12 次发布
+
+发布时间：2024-02-29 01:21:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunApplication](https://cloud.tencent.com/document/api/1643/89094)
+
+	* 新增入参：WorkDir
+
+	* <font color="#dd0000">**修改入参**：</font>CacheClearDelay
+
+* [RunWorkflow](https://cloud.tencent.com/document/api/1643/100857)
+
+	* 新增入参：WorkDir
+
+
+修改数据结构：
+
+* [ClusterOption](https://cloud.tencent.com/document/api/1643/89100#ClusterOption)
+
+	* 新增成员：ServiceCidr
+
+* [Environment](https://cloud.tencent.com/document/api/1643/89100#Environment)
+
+	* 新增成员：IsDefault, IsManaged
+
+	* <font color="#dd0000">**修改成员**：</font>EnvironmentId, Name, Description, Region, Type, Status, Available, Message, ResourceIds, LastWorkflowUuid, CreationTime
+
+* [NFOption](https://cloud.tencent.com/document/api/1643/89100#NFOption)
+
+	* 新增成员：NFVersion
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 29 次发布
+
+发布时间：2024-02-29 01:21:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckAccountDelete](https://cloud.tencent.com/document/api/850/104012)
+
+新增数据结构：
+
+* [NotAllowReason](https://cloud.tencent.com/document/api/850/67060#NotAllowReason)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 74 次发布
+
+发布时间：2024-02-29 01:25:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [L4ProxyRule](https://cloud.tencent.com/document/api/1552/80721#L4ProxyRule)
+
+	* 新增成员：BuId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 76 次发布
+
+发布时间：2024-02-29 01:29:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeColumnsMeta](https://cloud.tencent.com/document/api/1267/101829)
+
+	* 新增入参：ComplianceId
+
+* [DescribeInstanceLogDetail](https://cloud.tencent.com/document/api/1267/95235)
+
+	* 新增入参：StartCount, LineCount
+
+
+修改数据结构：
+
+* [ColumnBasicInfo](https://cloud.tencent.com/document/api/1267/76336#ColumnBasicInfo)
+
+	* 新增成员：Scale
+
+* [ColumnLineageInfo](https://cloud.tencent.com/document/api/1267/76336#ColumnLineageInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>TableId
+
+* [ColumnMeta](https://cloud.tencent.com/document/api/1267/76336#ColumnMeta)
+
+	* 新增成员：LevelName, LevelRank
+
+* [CompareRule](https://cloud.tencent.com/document/api/1267/76336#CompareRule)
+
+	* 新增成员：ComputeExpression
+
+* [InstanceLogInfoOpsDto](https://cloud.tencent.com/document/api/1267/76336#InstanceLogInfoOpsDto)
+
+	* 新增成员：LineCount
+
+* [RuleGroup](https://cloud.tencent.com/document/api/1267/76336#RuleGroup)
+
+	* 新增成员：StrategyConfig, SubscribeConfig
+
+* [TableBasicInfo](https://cloud.tencent.com/document/api/1267/76336#TableBasicInfo)
+
+	* 新增成员：Location
+
+* [TableLineageInfo](https://cloud.tencent.com/document/api/1267/76336#TableLineageInfo)
+
+	* 新增成员：DisplayType, EngineType, TableType
+
+* [TableMeta](https://cloud.tencent.com/document/api/1267/76336#TableMeta)
+
+	* 新增成员：MetaCrawlType, IsView, Location
+
+	* <font color="#dd0000">**修改成员**：</font>DataSourceCategory, Columns
+
+
+
+
 # Release 3.0.1063.1
 
 ## 费用中心(billing) 版本：2018-07-09

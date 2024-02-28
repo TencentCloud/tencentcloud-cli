@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=CheckEdgeClusterCIDR\n&VpcId=vpc-xxx\n&PodCIDR=10.0.1.10/24\n&ServiceCIDR=192.168.0.0/16\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ConflictCode\": \"0\",\n        \"ConflictMsg\": \"OK\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ConflictCode\": 0,\n        \"ConflictMsg\": \"OK\"\n    }\n}",
         "title": "检查边缘计算集群的CIDR是否冲突示例"
       }
     ],

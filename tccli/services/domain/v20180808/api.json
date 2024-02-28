@@ -1760,6 +1760,15 @@
           "name": "Size",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于结束时间筛选",
+          "example": "2023-01-01",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

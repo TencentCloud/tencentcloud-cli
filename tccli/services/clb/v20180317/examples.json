@@ -828,6 +828,14 @@
         "title": "解绑所有安全组"
       }
     ],
+    "SetLoadBalancerStartStatus": [
+      {
+        "document": "启停负载均衡实例",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLoadBalancerStartStatus\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-xxxxxxxx\",\n    \"OperationType\": \"Stop\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启停负载均衡实例"
+      }
+    ],
     "SetSecurityGroupForLoadbalancers": [
       {
         "document": "",

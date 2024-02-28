@@ -49,6 +49,13 @@
       "output": "CancelOrganizationMemberAuthAccountResponse",
       "status": "online"
     },
+    "CheckAccountDelete": {
+      "document": "成员账号删除检查",
+      "input": "CheckAccountDeleteRequest",
+      "name": "成员账号删除检查",
+      "output": "CheckAccountDeleteResponse",
+      "status": "online"
+    },
     "CreateOrganization": {
       "document": "创建企业组织",
       "input": "CreateOrganizationRequest",
@@ -720,6 +727,51 @@
     "CancelOrganizationMemberAuthAccountResponse": {
       "document": "CancelOrganizationMemberAuthAccount返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAccountDeleteRequest": {
+      "document": "CheckAccountDelete请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员uin。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAccountDeleteResponse": {
+      "document": "CheckAccountDelete返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员是否允许删除。 true-是、false-否",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowDelete",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不允许删除原因。",
+          "example": "无",
+          "member": "NotAllowReason",
+          "name": "NotAllowReason",
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3021,6 +3073,102 @@
         }
       ],
       "type": "object"
+    },
+    "NotAllowReason": {
+      "document": "不允许删除的原因。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建的成员。true-是、false-否；成员不是创建的成员不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCreateMember",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员删除许可。true-开启、false-关闭；成员删除许可关闭时不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionPermission",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可信服务委派管理员。true-是、false-否；成员是可信服务委派管理员不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAssignManager",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否主体管理员。true-是、false-否；成员是主体管理员不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAuthManager",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否共享资源管理员。true-是、false-否；成员是共享资源管理员不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsShareManager",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员是否设置了操作审批。true-是、false-否；成员设置了操作审批时不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "OperateProcess",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许解除成员财务权限。true-是、false-否；成员不能解除财务权限时不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "BillingPermission",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存在的资源列表。账号存在资源时不允许删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "ExistResources",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测失败的资源列表。账号有资源检测失败时不允许删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "DetectFailedResources",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OrgFinancialByMonth": {
       "document": "按月获取组织财务信息",

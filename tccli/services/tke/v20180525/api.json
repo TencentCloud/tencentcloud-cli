@@ -2355,7 +2355,7 @@
           "example": "0",
           "member": "int64",
           "name": "ConflictCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2365,7 +2365,7 @@
           "example": "OK",
           "member": "string",
           "name": "ConflictMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5391,7 +5391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "集群id，边缘集群需要先开启公网访问才能添加ecm节点",
           "example": "cls-abcd1234",
           "member": "string",
           "name": "ClusterID",
@@ -5400,7 +5400,7 @@
         },
         {
           "disabled": false,
-          "document": "模块id",
+          "document": "边缘模块id",
           "example": "em-1234abcd",
           "member": "string",
           "name": "ModuleId",
@@ -5509,6 +5509,7 @@
           "example": "ecm-abcd1234",
           "member": "string",
           "name": "EcmIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5861,7 +5862,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "集群id，边缘集群需要先开启公网访问才能添加cvm节点",
           "example": "cls-abcd1234",
           "member": "string",
           "name": "ClusterID",
@@ -5871,7 +5872,7 @@
         {
           "disabled": false,
           "document": "CVM创建透传参数，json化字符串格式，如需要保证扩展集群节点请求幂等性需要在此参数添加ClientToken字段，详见[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口。",
-          "example": "{}",
+          "example": "{\"InstanceChargeType\":\"POSTPAID_BY_HOUR\",\"Placement\":{\"Zone\":\"ap-guangzhou-3\",\"ProjectId\":0},\"InstanceType\":\"S5.SMALL2\",\"SystemDisk\":{\"DiskType\":\"CLOUD_BSSD\",\"DiskSize\":50},\"VirtualPrivateCloud\":{\"VpcId\":\"vpc-xxx\",\"SubnetId\":\"subnet-xxx\",\"AsVpcGateway\":false},\"InternetAccessible\":{\"InternetChargeType\":\"TRAFFIC_POSTPAID_BY_HOUR\",\"InternetMaxBandwidthOut\":1,\"PublicIpAssigned\":true},\"InstanceCount\":1,\"ImageId\":\"img-xxxx\",\"InstanceName\":\"tkeedge_cls-xxxx_worker\",\"LoginSettings\":{\"KeyIds\":[\"skey-xxxx\"]},\"SecurityGroupIds\":[\"sg-xxx\"],\"EnhancedService\":{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true}}}",
           "member": "string",
           "name": "RunInstancePara",
           "required": true,
@@ -5898,7 +5899,7 @@
         {
           "disabled": false,
           "document": "实例扩展信息",
-          "example": "{}",
+          "example": "{\"podNum\":61,\"RuntimePath\":\"\"}",
           "member": "string",
           "name": "External",
           "required": false,
@@ -5934,6 +5935,7 @@
           "example": "[\"cvm-197252sp\",\"cvm-19725win\",\"cvm-19623ash\"]",
           "member": "string",
           "name": "CvmIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10681,11 +10683,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "可升级的集群组件和\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可升级的集群组件及其版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"x\":{\"ImageName\":\"x\",\"ImageVersion\":\"v1\"}}",
           "member": "string",
           "name": "ComponentVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10695,7 +10697,7 @@
           "example": "1.0.1",
           "member": "string",
           "name": "EdgeVersionCurrent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10705,7 +10707,7 @@
           "example": "reg.test.com/myedge",
           "member": "string",
           "name": "RegistryPrefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10715,7 +10717,7 @@
           "example": "running",
           "member": "string",
           "name": "ClusterUpgradeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10725,7 +10727,7 @@
           "example": "tunnel: image pulling",
           "member": "string",
           "name": "ClusterUpgradeStatusReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13617,7 +13619,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡名",
+          "document": "网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡",
           "example": "eth0",
           "member": "string",
           "name": "Interface",
@@ -13663,6 +13665,7 @@
           "example": "www.tencent.com",
           "member": "string",
           "name": "Link",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13672,6 +13675,7 @@
           "example": "123456",
           "member": "string",
           "name": "Token",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13681,6 +13685,7 @@
           "example": "wget www.tencent.com",
           "member": "string",
           "name": "Command",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13690,6 +13695,7 @@
           "example": "v_20220725193138",
           "member": "string",
           "name": "ScriptVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

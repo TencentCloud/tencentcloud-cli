@@ -2171,6 +2171,15 @@
           "name": "ChannelId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

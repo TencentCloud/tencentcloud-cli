@@ -3901,7 +3901,7 @@
         },
         {
           "disabled": false,
-          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为 ip,net,domain,template,location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为 ip,net,domain,template,location,dnsparse\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "TargetType",
@@ -12923,6 +12923,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板包含地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IPNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13764,7 +13774,7 @@
         },
         {
           "disabled": false,
-          "document": "访问目的类型，类型可以为：net，domain",
+          "document": "访问目的类型，类型可以为：net，domain，dnsparse",
           "example": "net",
           "member": "string",
           "name": "DestType",

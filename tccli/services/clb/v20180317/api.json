@@ -588,6 +588,13 @@
       "output": "SetLoadBalancerSecurityGroupsResponse",
       "status": "online"
     },
+    "SetLoadBalancerStartStatus": {
+      "document": "启停负载均衡实例或者监听器。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。\n该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。",
+      "input": "SetLoadBalancerStartStatusRequest",
+      "name": "启停负载均衡实例或者监听器",
+      "output": "SetLoadBalancerStartStatusResponse",
+      "status": "online"
+    },
     "SetSecurityGroupForLoadbalancers": {
       "document": "绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。",
       "input": "SetSecurityGroupForLoadbalancersRequest",
@@ -10649,6 +10656,51 @@
     },
     "SetLoadBalancerSecurityGroupsResponse": {
       "document": "SetLoadBalancerSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerStartStatusRequest": {
+      "document": "SetLoadBalancerStartStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型。Start：启动实例，Stop：停止实例。",
+          "example": "Stop",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID。",
+          "example": "\"lb-xxxxxxxx\"",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID。如果该字段为空，则表示操作负载均衡实例，如果不为空，则表示操作监听器。",
+          "example": "[\"lbl-xxxxxxxx\"]",
+          "member": "string",
+          "name": "ListenerIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetLoadBalancerStartStatusResponse": {
+      "document": "SetLoadBalancerStartStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

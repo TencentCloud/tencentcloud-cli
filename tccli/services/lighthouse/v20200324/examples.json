@@ -622,6 +622,14 @@
         "title": "修改磁盘名称"
       }
     ],
+    "ModifyDisksBackupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDisksBackupQuota\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-guzg7nsa\"\n    ],\n    \"DiskBackupQuota\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"822edbc4-5d4a-4e19-9d61-2a243f04d06e\"\n    }\n}",
+        "title": "调整云硬盘备份点配额"
+      }
+    ],
     "ModifyDisksRenewFlag": [
       {
         "document": "",
@@ -788,6 +796,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=ResetInstancesPassword\n&InstanceIds.0=lhins-ruy9d2tw\n&Password=xxxxxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e194541-9937-471e-beaa-957a84dcf9d0\"\n    }\n}",
         "title": "重置一个实例的密码"
+      }
+    ],
+    "ResizeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-guzg7nsa\"\n    ],\n    \"DiskSize\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"822edbc4-5d4a-4e19-9d61-2a243f04d06e\"\n    }\n}",
+        "title": "扩容云硬盘"
       }
     ],
     "RestartDockerContainers": [
