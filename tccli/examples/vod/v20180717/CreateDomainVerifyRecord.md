@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli vod CreateDomainVerifyRecord --cli-unfold-argument ```
+tccli vod CreateDomainVerifyRecord --cli-unfold-argument  \
+    --Domain abc.com
+```
 
 Output: 
 ```

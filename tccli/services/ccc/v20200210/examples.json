@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AbortPredictiveDialingCampaign": [
+      {
+        "document": "停止预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AbortPredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "停止预测式外呼任务示例"
+      }
+    ],
     "BindNumberCallOutSkillGroup": [
       {
         "document": "绑定号码和技能组",
@@ -64,6 +72,14 @@
         "title": "创建话机账号"
       }
     ],
+    "CreatePredictiveDialingCampaign": [
+      {
+        "document": "创建预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"Name\": \"新能源SUV推荐\",\n    \"Callees\": [\n        \"+8613012345678\",\n        \"+8613012345679\",\n        \"+8613012345670\"\n    ],\n    \"Callers\": [\n        \"0086075586013388\"\n    ],\n    \"CallOrder\": 0,\n    \"SkillGroupId\": 255,\n    \"IVRId\": 4600,\n    \"Priority\": 3,\n    \"ExpectedAbandonRate\": 10,\n    \"RetryTimes\": 1,\n    \"RetryInterval\": 1800,\n    \"StartTime\": 1708483433,\n    \"EndTime\": 1708485433\n}",
+        "output": "{\n    \"Response\": {\n        \"CampaignId\": 2569,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建预测式外呼任务示例"
+      }
+    ],
     "CreateSDKLoginToken": [
       {
         "document": "创建 SDK 登录 Token",
@@ -94,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExtension\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "删除话机账号"
+      }
+    ],
+    "DeletePredictiveDialingCampaign": [
+      {
+        "document": "删除预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除预测式外呼任务示例"
       }
     ],
     "DeleteStaff": [
@@ -208,6 +232,30 @@
         "title": "获取 PSTN 活动会话列表示例"
       }
     ],
+    "DescribePredictiveDialingCampaign": [
+      {
+        "document": "查询预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"CampaignId\": 2569,\n        \"Name\": \"新能源SUV推荐\",\n        \"CallOrder\": 0,\n        \"SkillGroupId\": 255,\n        \"IVRId\": 4600,\n        \"Priority\": 3,\n        \"ExpectedAbandonRate\": 10,\n        \"RetryTimes\": 1,\n        \"RetryInterval\": 1800,\n        \"StartTime\": 1708483433,\n        \"EndTime\": 1708485433,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询预测式外呼任务示例"
+      }
+    ],
+    "DescribePredictiveDialingCampaigns": [
+      {
+        "document": "查询预测式外呼任务列表",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePredictiveDialingCampaigns\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"PageSize\": 25,\n    \"PageNumber\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 66,\n        \"CampaignList\": [\n            {\n                \"CampaignId\": 2567,\n                \"Name\": \"新能源SUV推荐1\",\n                \"Status\": 0,\n                \"StatusReason\": 0,\n                \"CalleeCount\": 1000,\n                \"FinishedCalleeCount\": 0,\n                \"Priority\": 3,\n                \"SkillGroupId\": 255\n            },\n            {\n                \"CampaignId\": 2568,\n                \"Name\": \"新能源SUV推荐2\",\n                \"Status\": 0,\n                \"StatusReason\": 0,\n                \"CalleeCount\": 1000,\n                \"FinishedCalleeCount\": 0,\n                \"Priority\": 3,\n                \"SkillGroupId\": 255\n            },\n            {\n                \"CampaignId\": 2569,\n                \"Name\": \"新能源SUV推荐3\",\n                \"Status\": 0,\n                \"StatusReason\": 0,\n                \"CalleeCount\": 1000,\n                \"FinishedCalleeCount\": 0,\n                \"Priority\": 3,\n                \"SkillGroupId\": 255\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询预测式外呼任务列表示例"
+      }
+    ],
+    "DescribePredictiveDialingSessions": [
+      {
+        "document": "查询预测式外呼呼叫列表",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePredictiveDialingSessions\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569,\n    \"PageSize\": 25,\n    \"PageNumber\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 66,\n        \"SessionList\": [\n            \"a5be1044-e8b0-4f02-9b25-64baee24374b\",\n            \"22c3e170-f307-47c8-9f10-1b77413a646f\",\n            \"e8557b17-d68b-4475-9a97-639a1108887b\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询预测式外呼呼叫列表示例"
+      }
+    ],
     "DescribeProtectedTelCdr": [
       {
         "document": "",
@@ -296,12 +344,28 @@
         "title": "修改客服示例"
       }
     ],
+    "PausePredictiveDialingCampaign": [
+      {
+        "document": "暂停预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PausePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "暂停预测式外呼任务示例"
+      }
+    ],
     "ResetExtensionPassword": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetExtensionPassword\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\",\n        \"Password\": \"xxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "重置话机注册密码"
+      }
+    ],
+    "ResumePredictiveDialingCampaign": [
+      {
+        "document": "恢复预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumePredictiveCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "恢复预测式外呼任务示例"
       }
     ],
     "StopAutoCalloutTask": [
@@ -326,6 +390,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindStaffSkillGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"StaffEmail\": \"staff1@xxx.com\",\n    \"SkillGroupList\": [\n        100,\n        101\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\"\n    }\n}",
         "title": "解绑坐席所属技能组示例"
+      }
+    ],
+    "UpdatePredictiveDialingCampaign": [
+      {
+        "document": "更新预测式外呼任务",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569,\n    \"Name\": \"新能源SUV推荐\",\n    \"Callees\": [\n        \"+8613012345678\",\n        \"+8613012345679\",\n        \"+8613012345670\"\n    ],\n    \"Callers\": [\n        \"0086075586013388\"\n    ],\n    \"CallOrder\": 0,\n    \"SkillGroupId\": 255,\n    \"IVRId\": 4600,\n    \"Priority\": 3,\n    \"ExpectedAbandonRate\": 10,\n    \"RetryTimes\": 1,\n    \"RetryInterval\": 1800,\n    \"StartTime\": 1708483433,\n    \"EndTime\": 1708485433\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "更新预测式外呼任务示例"
       }
     ]
   },

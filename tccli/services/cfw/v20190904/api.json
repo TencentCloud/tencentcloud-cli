@@ -77,6 +77,13 @@
       "output": "CreateBlockIgnoreRuleListResponse",
       "status": "online"
     },
+    "CreateBlockIgnoreRuleNew": {
+      "document": "批量添加入侵防御封禁列表、放通列表规则",
+      "input": "CreateBlockIgnoreRuleNewRequest",
+      "name": "批量添加入侵防御封禁列表、放通列表规则（新）",
+      "output": "CreateBlockIgnoreRuleNewResponse",
+      "status": "online"
+    },
     "CreateChooseVpcs": {
       "document": "创建、选择vpc",
       "input": "CreateChooseVpcsRequest",
@@ -152,6 +159,13 @@
       "input": "DeleteBlockIgnoreRuleListRequest",
       "name": "批量删除入侵防御封禁列表、放通列表规则",
       "output": "DeleteBlockIgnoreRuleListResponse",
+      "status": "online"
+    },
+    "DeleteBlockIgnoreRuleNew": {
+      "document": "批量删除入侵防御封禁列表、放通列表规则（新）",
+      "input": "DeleteBlockIgnoreRuleNewRequest",
+      "name": "批量删除入侵防御封禁列表、放通列表规则（新）",
+      "output": "DeleteBlockIgnoreRuleNewResponse",
       "status": "online"
     },
     "DeleteIdsWhiteRule": {
@@ -537,6 +551,13 @@
       "input": "ModifyBlockIgnoreRuleRequest",
       "name": "编辑单条入侵防御封禁列表、放通列表规则",
       "output": "ModifyBlockIgnoreRuleResponse",
+      "status": "online"
+    },
+    "ModifyBlockIgnoreRuleNew": {
+      "document": "编辑单条入侵防御封禁列表、放通列表规则（新）",
+      "input": "ModifyBlockIgnoreRuleNewRequest",
+      "name": "编辑单条入侵防御封禁列表、放通列表规则（新）",
+      "output": "ModifyBlockIgnoreRuleNewResponse",
       "status": "online"
     },
     "ModifyBlockTop": {
@@ -1401,6 +1422,106 @@
       ],
       "usage": "both"
     },
+    "BanAndAllowRule": {
+      "document": "封禁列表和放通列表结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封禁和放通对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Ioc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0互联网出站 1互联网入站 5内网访问源 6内网访问目的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1",
+          "member": "string",
+          "name": "DirectionList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3000-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则评论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "生产环境放通",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义白名单规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomWhiteRule",
+          "name": "CustomRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BanAndAllowRuleDel": {
+      "document": "封禁列表和放通列表结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封禁和放通对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Ioc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0互联网出站 1互联网入站 5内网访问源 6内网访问目的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0,1",
+          "member": "string",
+          "name": "DirectionList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则",
+          "member": "int64",
+          "name": "RuleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BetaInfoByACL": {
       "document": "规则关联的beta任务",
       "members": [
@@ -2012,8 +2133,8 @@
         },
         {
           "disabled": false,
-          "document": "运维模式 1 IP白名单 2 身份认证",
-          "example": "1",
+          "document": "运维模式 1 IP白名单 2 身份认证  0 非运维模式",
+          "example": "0",
           "member": "int64",
           "name": "OmMode",
           "required": false,
@@ -2305,6 +2426,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockIgnoreRuleNewRequest": {
+      "document": "CreateBlockIgnoreRuleNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "非自定义类型规则列表",
+          "example": "无",
+          "member": "BanAndAllowRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "RuleType: 1黑名单 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据",
+          "example": "无",
+          "member": "int64",
+          "name": "CoverDuplicate",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockIgnoreRuleNewResponse": {
+      "document": "CreateBlockIgnoreRuleNew返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3549,6 +3715,60 @@
     },
     "DeleteBlockIgnoreRuleListResponse": {
       "document": "DeleteBlockIgnoreRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlockIgnoreRuleNewRequest": {
+      "document": "DeleteBlockIgnoreRuleNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除全部",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteAll",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "BanAndAllowRuleDel",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "封禁：1，放通：100，\n主要用于全部删除时区分列表类型",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "blocklist 封禁列表 whitelist 白名单列表",
+          "example": "blocklist",
+          "member": "string",
+          "name": "ShowType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlockIgnoreRuleNewResponse": {
+      "document": "DeleteBlockIgnoreRuleNew返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9137,6 +9357,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIgnoreRuleNewRequest": {
+      "document": "ModifyBlockIgnoreRuleNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "BanAndAllowRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIgnoreRuleNewResponse": {
+      "document": "ModifyBlockIgnoreRuleNew返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

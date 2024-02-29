@@ -4883,6 +4883,24 @@
           "name": "DeleteKFFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次批量操作涉及任务，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5833,6 +5851,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "本次批量操作涉及任务，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5936,15 +5964,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
-          "example": "无",
-          "member": "string",
-          "name": "TaskIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "任务类型",
           "example": "无",
           "member": "int64",
@@ -5960,6 +5979,24 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量运行集成任务，目前仅实时集成用到了这个参数",
+          "example": "无",
+          "member": "StartTaskInfo",
+          "name": "StartTaskInfoSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5973,7 +6010,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5983,7 +6020,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5993,8 +6030,18 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次批量操作成功任务id，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6048,7 +6095,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6058,7 +6105,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6068,8 +6115,18 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次批量操作涉及成功任务，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6255,6 +6312,15 @@
           "name": "Event",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次批量操作涉及任务，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6348,6 +6414,15 @@
           "name": "InchargeIds",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次批量操作涉及任务，用于审计",
+          "example": "无",
+          "member": "string",
+          "name": "TaskNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -45386,6 +45461,56 @@
         }
       ],
       "type": "object"
+    },
+    "StartTaskInfo": {
+      "document": "批量运行集成任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量运行任务类型，比如START，TIMESTAMP，RESTORE，RESUME等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "START",
+          "member": "string",
+          "name": "Event",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务Id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批量运行任务配置，目前仅用与实时集成基于时间位点启动。基于时间位点启动，需要设置一个name=timestamp, value=具体时间戳的RecordField的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordField",
+          "name": "Config",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StopBaselineRequest": {
       "document": "StopBaseline请求参数结构体",

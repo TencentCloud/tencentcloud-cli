@@ -178,6 +178,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Vendor",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -188,6 +189,7 @@
           "example": "xxx",
           "member": "string",
           "name": "SN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -198,6 +200,7 @@
           "example": "xxx",
           "member": "string",
           "name": "DeviceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -208,6 +211,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -218,8 +222,20 @@
           "example": "无",
           "member": "string",
           "name": "DataKey",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。不填默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "output_required": true,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -300,6 +316,15 @@
           "name": "Encrypted",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。不填默认公有云网关。\n具体含义：\n公有云网关：即该设备只能接入公有云网关（就近接入）\n自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入）\n公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -313,7 +338,7 @@
           "example": "dasdfrfwer32e4r",
           "member": "string",
           "name": "DataKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -323,7 +348,7 @@
           "example": "xxx",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -333,7 +358,7 @@
           "example": "\"xxxxx\"",
           "member": "string",
           "name": "Signature",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -775,7 +800,7 @@
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -785,7 +810,7 @@
           "example": "\"xxx\"",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -795,7 +820,7 @@
           "example": "169043203113091072",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -805,7 +830,7 @@
           "example": "169043203113091072",
           "member": "string",
           "name": "LastTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -815,8 +840,18 @@
           "example": "\"xxx\"",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入环境。0：公有云网关；1：自有网关；2：公有云网关和自有网关。默认公有云网关。 具体含义： 公有云网关：即该设备只能接入公有云网关（就近接入） 自有网关：即该设备只能接入已经注册上线的自有网关（就近接入或固定ip接入） 公有云网关和自有网关：即该设备同时可以接入公有云网关和已经注册上线的自有网关（就近接入或固定ip接入）",
+          "example": "0",
+          "member": "int64",
+          "name": "AccessScope",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1263,6 +1298,16 @@
         },
         {
           "disabled": false,
+          "document": "购买时间，Unix时间戳格式，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1697181612",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "生效时间，Unix时间戳格式，单位：秒",
           "example": "1697181612",
           "member": "int64",
@@ -1319,6 +1364,16 @@
           "name": "RenewFlag",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费",
+          "example": "0",
+          "member": "int64",
+          "name": "ModifyStatus",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1608,6 +1663,24 @@
           "name": "TimeGranularity",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1621,6 +1694,7 @@
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1630,6 +1704,7 @@
           "example": "216516",
           "member": "float",
           "name": "MaxValue",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1639,6 +1714,7 @@
           "example": "25151",
           "member": "float",
           "name": "AvgValue",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1648,6 +1724,7 @@
           "example": "35465464",
           "member": "float",
           "name": "TotalValue",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1782,6 +1859,24 @@
           "name": "TimeGranularity",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1795,6 +1890,7 @@
           "example": "无",
           "member": "FlowDetails",
           "name": "FlowDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1845,6 +1941,15 @@
           "name": "Metrics",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1858,8 +1963,19 @@
           "example": "无",
           "member": "MonitorData",
           "name": "MonitorData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM']\nMC=中国大陆\nAP=亚太\nEU=欧洲\nAM=美洲",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1902,7 +2018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID",
+          "document": "设备ID。若不指定设备，可传\"-1\"",
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
@@ -1935,6 +2051,24 @@
           "name": "TimeGranularity",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1948,6 +2082,7 @@
           "example": "\"http://xxxx\"",
           "member": "string",
           "name": "FilePath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -3698,6 +3698,15 @@
           "name": "DynamicPosType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "水印在输出时的层级，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ZOrder",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5276,7 +5285,7 @@
         },
         {
           "disabled": false,
-          "document": "回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。",
+          "document": "回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用10.4及以上SDK版本，如您有需求，请联系腾讯云技术支持。",
           "example": "FeedBackRoomParams",
           "member": "McuFeedBackRoomParams",
           "name": "FeedBackRoomParams",

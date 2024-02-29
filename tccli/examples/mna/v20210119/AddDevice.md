@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "RequestId": "xxx",
-        "DeviceId": "xx",
+        "DeviceId": "mna-test1",
         "DataKey": "xxx",
         "Signature": "xxxx"
     }

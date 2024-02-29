@@ -9,7 +9,7 @@ tccli ecm ModifyPrivateIpAddressesAttribute --cli-unfold-argument  \
     --NetworkInterfaceId eni-pwbqma5d \
     --PrivateIpAddresses.0.PrivateIpAddress 192.168.2.7 \
     --PrivateIpAddresses.0.Description new-name \
-    --EcmRegion "ap-guangzhou-ecm"
+    --EcmRegion ap-guangzhou-ecm
 ```
 
 Output: 

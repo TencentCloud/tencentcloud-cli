@@ -4130,6 +4130,15 @@
         },
         {
           "disabled": false,
+          "document": "机器组中机器离线清理时间",
+          "example": "30",
+          "member": "int64",
+          "name": "DelayCleanupTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
           "member": "MetaTagInfo",
@@ -7291,11 +7300,11 @@
       "type": "object"
     },
     "DynamicIndex": {
-      "document": "动态索引配置，启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。",
+      "document": "键值索引自动配置，启用后自动将日志内的字段添加到键值索引中，包括日志中后续新增的字段。",
       "members": [
         {
           "disabled": false,
-          "document": "动态索引配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键值索引自动配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "Status",
@@ -8996,7 +9005,7 @@
           "example": "559d015f-fac7-43cd-ad6e-3c4523fe8767",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9006,7 +9015,7 @@
           "example": "test",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9016,7 +9025,7 @@
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9026,7 +9035,7 @@
           "example": "2021-03-05 00:40:22",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9036,7 +9045,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9046,7 +9055,7 @@
           "example": "\"true\"",
           "member": "string",
           "name": "AutoUpdate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9056,7 +9065,7 @@
           "example": "\"12:00:00\"",
           "member": "string",
           "name": "UpdateStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9066,7 +9075,7 @@
           "example": "\"13:00:00\"",
           "member": "string",
           "name": "UpdateEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9076,8 +9085,18 @@
           "example": "true",
           "member": "bool",
           "name": "ServiceLogging",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器组中机器离线定期清理时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "DelayCleanupTime",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -9086,7 +9105,7 @@
           "example": "无",
           "member": "MetaTagInfo",
           "name": "MetaTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9096,7 +9115,7 @@
           "example": "0",
           "member": "uint64",
           "name": "OSType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -10520,6 +10539,15 @@
         },
         {
           "disabled": false,
+          "document": "机器组中机器定期离线清理时间",
+          "example": "30",
+          "member": "int64",
+          "name": "DelayCleanupTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "机器组元数据信息列表",
           "example": "无",
           "member": "MetaTagInfo",
@@ -11649,7 +11677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全文索引配置, 如果为空时代表未开启全文索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全文索引配置, 为空时代表未开启全文索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "FullTextInfo",
           "name": "FullText",
@@ -11660,7 +11688,7 @@
         },
         {
           "disabled": false,
-          "document": "键值索引配置，如果为空时代表未开启键值索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键值索引配置，为空时代表未开启键值索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleKeyValueInfo",
           "name": "KeyValue",
@@ -11671,7 +11699,7 @@
         },
         {
           "disabled": false,
-          "document": "元字段索引配置，如果为空时代表未开启元字段索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元字段索引配置，为空时代表未开启元字段索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "空",
           "member": "RuleTagInfo",
           "name": "Tag",
@@ -11682,7 +11710,7 @@
         },
         {
           "disabled": false,
-          "document": "动态索引配置，为空时代表未开启动态索引。\n启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键值索引自动配置，为空时代表未开启该功能。\n启用后自动将日志内的字段添加到键值索引中，包括日志中后续新增的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DynamicIndex",
           "name": "DynamicIndex",

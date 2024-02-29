@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli mna GetNetMonitor --cli-unfold-argument ```
+tccli mna GetNetMonitor --cli-unfold-argument  \
+    --Metrics TxRate \
+    --EndTime 1662624800 \
+    --DeviceId mna-xxx \
+    --BeginTime 1662622200
+```
 
 Output: 
 ```
@@ -171,56 +176,9 @@ Output:
                         "Current": 338834939.199999
                     }
                 ]
-            },
-            {
-                "Time": "1673602380",
-                "BusinessMetrics": -1,
-                "SlotNetInfo": [
-                    {
-                        "NetInfoName": "eth0",
-                        "PublicIP": "9.223.110.232",
-                        "Current": -1
-                    },
-                    {
-                        "NetInfoName": "eth1",
-                        "PublicIP": "9.223.96.218",
-                        "Current": -1
-                    }
-                ]
-            },
-            {
-                "Time": "1673602440",
-                "BusinessMetrics": -1,
-                "SlotNetInfo": [
-                    {
-                        "NetInfoName": "eth0",
-                        "PublicIP": "9.223.110.232",
-                        "Current": -1
-                    },
-                    {
-                        "NetInfoName": "eth1",
-                        "PublicIP": "9.223.96.218",
-                        "Current": -1
-                    }
-                ]
-            },
-            {
-                "Time": "1673602500",
-                "BusinessMetrics": -1,
-                "SlotNetInfo": [
-                    {
-                        "NetInfoName": "eth0",
-                        "PublicIP": "9.223.110.232",
-                        "Current": -1
-                    },
-                    {
-                        "NetInfoName": "eth1",
-                        "PublicIP": "9.223.96.218",
-                        "Current": -1
-                    }
-                ]
             }
         ],
+        "AccessRegion": "MC",
         "RequestId": "xxx"
     }
 }

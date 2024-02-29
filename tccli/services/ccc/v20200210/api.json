@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AbortPredictiveDialingCampaign": {
+      "document": "停止预测式外呼任务",
+      "input": "AbortPredictiveDialingCampaignRequest",
+      "name": "停止预测式外呼任务",
+      "output": "AbortPredictiveDialingCampaignResponse",
+      "status": "online"
+    },
     "BindNumberCallOutSkillGroup": {
       "document": "绑定号码外呼技能组",
       "input": "BindNumberCallOutSkillGroupRequest",
@@ -56,6 +63,13 @@
       "output": "CreateExtensionResponse",
       "status": "online"
     },
+    "CreatePredictiveDialingCampaign": {
+      "document": "创建预测式外呼任务",
+      "input": "CreatePredictiveDialingCampaignRequest",
+      "name": "创建预测式外呼任务",
+      "output": "CreatePredictiveDialingCampaignResponse",
+      "status": "online"
+    },
     "CreateSDKLoginToken": {
       "document": "创建 SDK 登录 Token。",
       "input": "CreateSDKLoginTokenRequest",
@@ -82,6 +96,13 @@
       "input": "DeleteExtensionRequest",
       "name": "删除话机账号",
       "output": "DeleteExtensionResponse",
+      "status": "online"
+    },
+    "DeletePredictiveDialingCampaign": {
+      "document": "删除预测式外呼任务",
+      "input": "DeletePredictiveDialingCampaignRequest",
+      "name": "删除预测式外呼任务",
+      "output": "DeletePredictiveDialingCampaignResponse",
       "status": "online"
     },
     "DeleteStaff": {
@@ -182,6 +203,27 @@
       "output": "DescribePSTNActiveSessionListResponse",
       "status": "online"
     },
+    "DescribePredictiveDialingCampaign": {
+      "document": "查询预测式外呼任务",
+      "input": "DescribePredictiveDialingCampaignRequest",
+      "name": "查询预测式外呼任务",
+      "output": "DescribePredictiveDialingCampaignResponse",
+      "status": "online"
+    },
+    "DescribePredictiveDialingCampaigns": {
+      "document": "查询预测式外呼任务列表",
+      "input": "DescribePredictiveDialingCampaignsRequest",
+      "name": "查询预测式外呼任务列表",
+      "output": "DescribePredictiveDialingCampaignsResponse",
+      "status": "online"
+    },
+    "DescribePredictiveDialingSessions": {
+      "document": "查询预测式外呼呼叫列表",
+      "input": "DescribePredictiveDialingSessionsRequest",
+      "name": "查询预测式外呼呼叫列表",
+      "output": "DescribePredictiveDialingSessionsResponse",
+      "status": "online"
+    },
     "DescribeProtectedTelCdr": {
       "document": "获取主被叫受保护的电话服务记录与录音",
       "input": "DescribeProtectedTelCdrRequest",
@@ -259,11 +301,25 @@
       "output": "ModifyStaffResponse",
       "status": "online"
     },
+    "PausePredictiveDialingCampaign": {
+      "document": "暂停预测式外呼任务",
+      "input": "PausePredictiveDialingCampaignRequest",
+      "name": "暂停预测式外呼任务",
+      "output": "PausePredictiveDialingCampaignResponse",
+      "status": "online"
+    },
     "ResetExtensionPassword": {
       "document": "重置话机注册密码",
       "input": "ResetExtensionPasswordRequest",
       "name": "重置话机注册密码",
       "output": "ResetExtensionPasswordResponse",
+      "status": "online"
+    },
+    "ResumePredictiveDialingCampaign": {
+      "document": "恢复预测式外呼任务",
+      "input": "ResumePredictiveDialingCampaignRequest",
+      "name": "恢复预测式外呼任务",
+      "output": "ResumePredictiveDialingCampaignResponse",
       "status": "online"
     },
     "StopAutoCalloutTask": {
@@ -286,6 +342,13 @@
       "name": "解绑坐席所属技能组",
       "output": "UnbindStaffSkillGroupListResponse",
       "status": "online"
+    },
+    "UpdatePredictiveDialingCampaign": {
+      "document": "任务未启动前，更新预测式外呼任务。",
+      "input": "UpdatePredictiveDialingCampaignRequest",
+      "name": "更新预测式外呼任务",
+      "output": "UpdatePredictiveDialingCampaignResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -295,6 +358,42 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AbortPredictiveDialingCampaignRequest": {
+      "document": "AbortPredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AbortPredictiveDialingCampaignResponse": {
+      "document": "AbortPredictiveDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ActiveCarrierPrivilegeNumber": {
       "document": "生效运营商白名单号码",
       "members": [
@@ -1342,6 +1441,151 @@
       ],
       "type": "object"
     },
+    "CreatePredictiveDialingCampaignRequest": {
+      "document": "CreatePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫列表，支持 E.164 或不带国家码形式的号码",
+          "example": "+8613012345678",
+          "member": "string",
+          "name": "Callees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "主叫列表，使用管理端展示的号码格式",
+          "example": "0086075586013388",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "CallOrder",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用的座席技能组 ID",
+          "example": "255",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5",
+          "example": "3",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预期呼损率，百分比，5 - 50",
+          "example": "10",
+          "member": "int64",
+          "name": "ExpectedAbandonRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试间隔时间，单位秒，60 - 86400",
+          "example": "1800",
+          "member": "int64",
+          "name": "RetryInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "example": "1708483433",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "example": "1708485433",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定的 IVR Id",
+          "example": "4600",
+          "member": "int64",
+          "name": "IVRId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试次数，0 - 2",
+          "example": "2",
+          "member": "int64",
+          "name": "RetryTimes",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePredictiveDialingCampaignResponse": {
+      "document": "CreatePredictiveDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSDKLoginTokenRequest": {
       "document": "CreateSDKLoginToken请求参数结构体",
       "members": [
@@ -1562,6 +1806,42 @@
     },
     "DeleteExtensionResponse": {
       "document": "DeleteExtension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePredictiveDialingCampaignRequest": {
+      "document": "DeletePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePredictiveDialingCampaignResponse": {
+      "document": "DeletePredictiveDialingCampaign返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2708,6 +2988,395 @@
           "member": "PSTNSessionInfo",
           "name": "Sessions",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingCampaignRequest": {
+      "document": "DescribePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingCampaignResponse": {
+      "document": "DescribePredictiveDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "CallOrder",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用的座席技能组 ID",
+          "example": "255",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定的 IVR ID",
+          "example": "4600",
+          "member": "int64",
+          "name": "IVRId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5",
+          "example": "3",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预期呼损率，百分比，5 - 50",
+          "example": "10",
+          "member": "int64",
+          "name": "ExpectedAbandonRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试次数，0 - 2",
+          "example": "2",
+          "member": "int64",
+          "name": "RetryTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试间隔时间，单位秒，60 - 86400",
+          "example": "1800",
+          "member": "int64",
+          "name": "RetryInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "example": "1708483433",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "example": "1708485433",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingCampaignsElement": {
+      "document": "查询预测式外呼任务列表元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态 0 待开始 1 进行中 2 已暂停 3 已终止 4 已完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态原因 0 正常 1 手动结束 2 超时结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StatusReason",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被叫号码个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "CalleeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已完成的被叫个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FinishedCalleeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用的座席技能组 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "255",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribePredictiveDialingCampaignsRequest": {
+      "document": "DescribePredictiveDialingCampaigns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸，最大为 100",
+          "example": "25",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务列表名称关键字",
+          "example": "推荐",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务列表技能组 ID",
+          "example": "255",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingCampaignsResponse": {
+      "document": "DescribePredictiveDialingCampaigns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "66",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribePredictiveDialingCampaignsElement",
+          "name": "CampaignList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingSessionsRequest": {
+      "document": "DescribePredictiveDialingSessions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生成的任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸，最大为 1000",
+          "example": "25",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePredictiveDialingSessionsResponse": {
+      "document": "DescribePredictiveDialingSessions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总量",
+          "example": "3000",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫的 session id 列表，通过 https://cloud.tencent.com/document/product/679/47714 可以批量获取呼叫详细话单",
+          "example": "无",
+          "member": "string",
+          "name": "SessionList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4396,6 +5065,42 @@
       ],
       "usage": "out"
     },
+    "PausePredictiveDialingCampaignRequest": {
+      "document": "PausePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PausePredictiveDialingCampaignResponse": {
+      "document": "PausePredictiveDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PhoneNumBuyInfo": {
       "document": "号码购买信息",
       "members": [
@@ -4499,6 +5204,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumePredictiveDialingCampaignRequest": {
+      "document": "ResumePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumePredictiveDialingCampaignResponse": {
+      "document": "ResumePredictiveDialingCampaign返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5806,6 +6547,150 @@
     },
     "UnbindStaffSkillGroupListResponse": {
       "document": "UnbindStaffSkillGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePredictiveDialingCampaignRequest": {
+      "document": "UpdatePredictiveDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生成的任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被叫列表，支持 E.164 或不带国家码形式的号码",
+          "example": "+8613012345678",
+          "member": "string",
+          "name": "Callees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "主叫列表，使用管理端展示的号码格式",
+          "example": "0086075586013388",
+          "member": "string",
+          "name": "Callers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "CallOrder",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用的座席技能组 ID",
+          "example": "255",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "相同应用内多个任务运行优先级，从高到底 1 - 5",
+          "example": "3",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预期呼损率，百分比，5 - 50\t",
+          "example": "10",
+          "member": "int64",
+          "name": "ExpectedAbandonRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试间隔时间，单位秒，60 - 86400",
+          "example": "1800",
+          "member": "int64",
+          "name": "RetryInterval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "example": "1708483433",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "example": "1708485433",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定的 IVR ID",
+          "example": "4600",
+          "member": "int64",
+          "name": "IVRId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫重试次数，0 - 2",
+          "example": "2",
+          "member": "int64",
+          "name": "RetryTimes",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePredictiveDialingCampaignResponse": {
+      "document": "UpdatePredictiveDialingCampaign返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

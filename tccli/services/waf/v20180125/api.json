@@ -56,6 +56,13 @@
       "output": "CreateAccessExportResponse",
       "status": "online"
     },
+    "CreateDeals": {
+      "document": "计费资源购买、续费下单接口",
+      "input": "CreateDealsRequest",
+      "name": "计费实例创建订单",
+      "output": "CreateDealsResponse",
+      "status": "online"
+    },
     "CreateHost": {
       "document": "clb-waf中添加防护域名",
       "input": "CreateHostRequest",
@@ -3807,6 +3814,251 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDealsGoods": {
+      "document": "计费下单接口出入参Goods",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品数量",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品明细",
+          "example": "GoodsDetail",
+          "member": "CreateDealsGoodsDetail",
+          "name": "GoodsDetail",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）\n高级版: 102375(新购),102376(续费),102377(变配)\n企业版 : 102378(新购),102379(续费),102380(变配)\n旗舰版 : 102369(新购),102370(续费),102371(变配)\n域名包 : 102372(新购),102373(续费),102374(变配)\n业务扩展包 : 101040(新购),101041(续费),101042(变配)\n\n高级版-CLB: 新购 101198  续费 101199 变配 101200\n企业版-CLB 101204(新购),101205(续费),101206(变配)\n旗舰版-CLB : 101201(新购),101202(续费),101203(变配)\n域名包-CLB: 101207(新购),101208(续费),101209(变配)\n业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101201",
+          "member": "int64",
+          "name": "GoodsCategoryId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买waf实例区域ID\n1 表示购买大陆资源;\n9表示购买非中国大陆资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateDealsGoodsDetail": {
+      "document": "产品明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位，支持购买d、m、y 即（日、月、年）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面\n\nSaas 高级版 ：sp_wsm_waf_premium\nSaas企业版 ：sp_wsm_waf_enterprise\nSaas旗舰版 ：sp_wsm_waf_ultimate\nSaas 业务扩展包：sp_wsm_waf_qpsep\nSaas 域名扩展包：sp_wsm_waf_domain\n\n高级版-CLB:sp_wsm_waf_premium_clb\n企业版-CLB : sp_wsm_waf_enterprise_clb\n旗舰版-CLB:sp_wsm_waf_ultimate_clb\n 业务扩展包-CLB：sp_wsm_waf_qpsep_clb\n域名扩展包-CLB：sp_wsm_waf_domain_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_wsm_waf_ultimate_clb",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型\n高级版 ：1000827\n企业版 ：1000830\n旗舰版 ：1000832\n域名包 : 1000834\n业务扩展包 : 1000481\n高级版-CLB:1001150\n企业版-CLB : 1001152\n旗舰版-CLB:1001154\n域名包-CLB: 1001156\n业务扩展包-CLB : 1001160\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "waf实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_122345",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:自动续费，0:不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "waf购买的实际地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "int64",
+          "name": "RealRegion",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项标签数组\nSaas 高级版  sv_wsm_waf_package_premium \nSaas 企业版  sv_wsm_waf_package_enterprise\nSaas 旗舰版  sv_wsm_waf_package_ultimate \nSaas 非中国大陆高级版  sv_wsm_waf_package_premium_intl\nSaas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl\nSaas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl\nSaas 业务扩展包  sv_wsm_waf_qps_ep\nSaas 域名扩展包  sv_wsm_waf_domain\n\n高级版CLB   sv_wsm_waf_package_premium_clb\n企业版CLB  sv_wsm_waf_package_enterprise_clb\n旗舰版CLB   sv_wsm_waf_package_ultimate_clb\n非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl\n非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl\n非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl\n业务扩展包CLB sv_wsm_waf_qps_ep_clb\n域名扩展包CLB  sv_wsm_waf_domain_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sv_wsm_waf_package_ultimate_clb\"]",
+          "member": "string",
+          "name": "LabelTypes",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项标签数量，一般和SvLabelType一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "LabelCounts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变配使用，实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-28 17:38:59",
+          "member": "string",
+          "name": "CurDeadline",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对存在的实例购买bot 或api 安全\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_swdq23",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_2kxtlvk40hsvdnw7",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateDealsRequest": {
+      "document": "CreateDeals请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费下单入参",
+          "example": "详见Goods实体",
+          "member": "CreateDealsGoods",
+          "name": "Goods",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDealsResponse": {
+      "document": "CreateDeals返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费下单响应结构体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "详见DealData实体",
+          "member": "DealData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:成功，0:失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回message\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "返回message",
+          "member": "string",
+          "name": "ReturnMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10325,10 +10577,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段名",
+          "document": "字段名； 过滤\n子订单号过滤通过name 为：DealName； value为子订单号",
           "example": "InstanceType",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10339,6 +10592,7 @@
           "example": "[\"clb\",\"saas\"]",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10349,6 +10603,7 @@
           "example": "true",
           "member": "bool",
           "name": "ExactMatch",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false

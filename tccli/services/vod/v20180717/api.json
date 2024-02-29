@@ -532,6 +532,13 @@
       "output": "DescribeDailyPlayStatFileListResponse",
       "status": "online"
     },
+    "DescribeDefaultDistributionConfig": {
+      "document": "该接口用于查询默认分发配置。\n* 分发域名和分发协议，即媒体文件分发 URL 中的域名和协议。媒体文件按默认分发配置进行分发。\n* 播放密钥，用于计算播放器签名。",
+      "input": "DescribeDefaultDistributionConfigRequest",
+      "name": "查询默认分发配置",
+      "output": "DescribeDefaultDistributionConfigResponse",
+      "status": "online"
+    },
     "DescribeDrmDataKey": {
       "document": "本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中 [DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643) 的升级版本。\n\n如果您是新接入点播加密的用户，不要使用该 API，请参考 [视频加密综述](https://cloud.tencent.com/document/product/266/45552) 使用推荐的加密方式。",
       "input": "DescribeDrmDataKeyRequest",
@@ -894,6 +901,13 @@
       "input": "ModifyContentReviewTemplateRequest",
       "name": "修改音视频内容审核模板",
       "output": "ModifyContentReviewTemplateResponse",
+      "status": "online"
+    },
+    "ModifyDefaultDistributionConfig": {
+      "document": "该接口用于修改默认分发配置。\n* 分发域名和分发协议，即媒体文件分发 URL 中的域名和协议。媒体文件按默认分发配置进行分发。\n* 播放密钥，用于计算播放器签名。",
+      "input": "ModifyDefaultDistributionConfigRequest",
+      "name": "修改默认分发配置",
+      "output": "ModifyDefaultDistributionConfigResponse",
       "status": "online"
     },
     "ModifyDefaultStorageRegion": {
@@ -9478,7 +9492,17 @@
     },
     "CreateDomainVerifyRecordRequest": {
       "document": "CreateDomainVerifyRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要接入点播的加速域名。",
+          "example": "abc.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateDomainVerifyRecordResponse": {
@@ -13611,6 +13635,73 @@
           "name": "PlayStatFileSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultDistributionConfigRequest": {
+      "document": "DescribeDefaultDistributionConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDefaultDistributionConfigResponse": {
+      "document": "DescribeDefaultDistributionConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": true,
+          "document": "分发配置的域名(已废弃）。",
+          "example": "test.vod2.myqcluod.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分发配置的域名。",
+          "example": "test.vod2.myqcluod.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分发配置的协议，为 HTTP 或 HTTPS。",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。",
+          "example": "123",
+          "member": "string",
+          "name": "PlayKey",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -24192,6 +24283,60 @@
     },
     "ModifyContentReviewTemplateResponse": {
       "document": "ModifyContentReviewTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultDistributionConfigRequest": {
+      "document": "ModifyDefaultDistributionConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分发域名，取值为点播域名列表里的域名。不填或者填空，表示不修改域名。",
+          "example": "test.vod2.myqcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分发协议，取值为 HTTP 或者 HTTPS。",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Scheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放密钥，由大小写字母（a - Z）或者数字（0 - 9）组成，长度在8 - 20个字符之间。",
+          "example": "123",
+          "member": "string",
+          "name": "PlayKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDefaultDistributionConfigResponse": {
+      "document": "ModifyDefaultDistributionConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

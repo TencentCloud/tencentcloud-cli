@@ -161,7 +161,7 @@
     "CreateDomainVerifyRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainVerifyRecord\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainVerifyRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"DNSVerifyInfo\": {\n            \"SubDomain\": \"abc\",\n            \"Record\": \"abc\",\n            \"RecordType\": \"abc\"\n        },\n        \"FileVerifyInfo\": {\n            \"FileVerifyUrl\": \"abc\",\n            \"FileVerifyDomains\": [\n                \"abc\"\n            ],\n            \"FileVerifyName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "生成域名解析记录"
       }
@@ -746,6 +746,14 @@
         "title": "查询2020-12-0-1到2020-12-02的播放统计文件列表"
       }
     ],
+    "DescribeDefaultDistributionConfig": [
+      {
+        "document": "查询默认分发配置。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDefaultDistributionConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\",\n        \"Domain\": \"test.vod2.myqcluod.com\",\n        \"DomainName\": \"test.vod2.myqcluod.com\",\n        \"Scheme\": \"HTTPS\",\n        \"PlayKey\": \"abc12342a\"\n    }\n}",
+        "title": "查询默认分发配置"
+      }
+    ],
     "DescribeDrmDataKey": [
       {
         "document": "",
@@ -1292,6 +1300,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContentReviewTemplate\n<公共请求参数>\n\n{\n    \"PornConfigure\": {\n        \"ImgReviewInfo\": {\n            \"BlockConfidence\": \"90\",\n            \"Switch\": \"ON\",\n            \"ReviewConfidence\": \"60\",\n            \"LabelSet\": [\n                \"sexy\"\n            ]\n        }\n    },\n    \"Definition\": \"30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"67ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改内容审核模板，开启令人反感的信息的审核任务并指定过滤标签及分数阈值"
+      }
+    ],
+    "ModifyDefaultDistributionConfig": [
+      {
+        "document": "修改默认分发配置修改默认分发配置。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefaultDistributionConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"test.vod2.myqcloud.com\",\n    \"Scheme\": \"HTTPS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "修改默认分发配置"
       }
     ],
     "ModifyDefaultStorageRegion": [

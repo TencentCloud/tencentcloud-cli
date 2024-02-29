@@ -94,6 +94,14 @@
         "title": "空值返回"
       }
     ],
+    "CreateBlockIgnoreRuleNew": [
+      {
+        "document": "入侵防御接口新-添加IP为放通列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlockIgnoreRuleNew\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"1.2.3.4\",\n            \"DirectionList\": \"0\",\n            \"EndTime\": \"3000-01-01 00:00:00\",\n            \"Comment\": \"test\"\n        }\n    ],\n    \"RuleType\": 2,\n    \"CoverDuplicate\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f493b05-6637-41f5-8977-18a55bdebbff\"\n    }\n}",
+        "title": "入侵防御接口新-添加IP为放通列表"
+      }
+    ],
     "CreateChooseVpcs": [
       {
         "document": "",
@@ -192,6 +200,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlockIgnoreRuleList\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"IP\": \"abc\",\n            \"Direction\": 0,\n            \"Domain\": \"abc\"\n        }\n    ],\n    \"RuleType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量删除入侵防御封禁列表、放通列表规则"
+      }
+    ],
+    "DeleteBlockIgnoreRuleNew": [
+      {
+        "document": "删除示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlockIgnoreRuleNew\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"Ioc\": \"100.12.31.2\",\n            \"RuleType\": 2\n        }\n    ],\n    \"DeleteAll\": 0,\n    \"RuleType\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"19df3039-eec2-4a8a-8a51-d552b9cf67f3\"\n    }\n}",
+        "title": "删除示例"
       }
     ],
     "DeleteIdsWhiteRule": [
@@ -632,6 +648,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockIgnoreRule\n<公共请求参数>\n\n{\n    \"Rule\": {\n        \"IP\": \"abc\",\n        \"Domain\": \"abc\",\n        \"Direction\": 0,\n        \"EndTime\": \"abc\",\n        \"Comment\": \"abc\",\n        \"StartTime\": \"abc\"\n    },\n    \"RuleType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "空值返回"
+      }
+    ],
+    "ModifyBlockIgnoreRuleNew": [
+      {
+        "document": "编辑放通列表示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockIgnoreRuleNew\n<公共请求参数>\n\n{\n    \"Rule\": {\n        \"Ioc\": \"100.12.31.2\",\n        \"DirectionList\": \"0,1\",\n        \"EndTime\": \"2025-01-02 14:39:30\",\n        \"Comment\": \"test\"\n    },\n    \"RuleType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a185559-4d5f-40a4-bb56-c5c4a48f86c1\"\n    }\n}",
+        "title": "编辑放通列表示例"
       }
     ],
     "ModifyBlockTop": [
