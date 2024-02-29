@@ -163,17 +163,23 @@
     "BatchStartIntegrationTasks": [
       {
         "document": "批量运行任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStartIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStartIntegrationTasks\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"abc\"\n    ],\n    \"TaskType\": 0,\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 0,\n        \"FailedCount\": 0,\n        \"TotalCount\": 0,\n        \"TaskNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "BatchStartIntegrationTasks"
       }
     ],
     "BatchStopIntegrationTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"TaskType\": 201\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopIntegrationTasks\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"abc\"\n    ],\n    \"TaskType\": 0,\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 0,\n        \"FailedCount\": 0,\n        \"TotalCount\": 0,\n        \"TaskNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "BatchStopIntegrationTasks"
+      },
+      {
+        "document": "测试环境实际停止用例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopIntegrationTasks\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"l9c13c798-6488-4de6-971e-21796f797929\"\n    ],\n    \"TaskType\": 201,\n    \"ProjectId\": \"1486804694126882816\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"RequestId\": \"fc4e5ff1-262e-43f9-aa09-5b5543905423\",\n        \"SuccessCount\": 1,\n        \"TaskNames\": [\n            \"l9c13c798-6488-4de6-971e-21796f797929\"\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "batchstop"
       }
     ],
     "BatchStopOpsTasks": [

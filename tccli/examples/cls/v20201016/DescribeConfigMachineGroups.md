@@ -17,6 +17,7 @@ Output:
             {
                 "AutoUpdate": "",
                 "CreateTime": "2023-11-24 10:22:58",
+                "DelayCleanupTime": 0,
                 "GroupId": "59613f03-304e-492d-8bcc-af04716f4111",
                 "GroupName": "test-filter",
                 "MachineGroupType": {

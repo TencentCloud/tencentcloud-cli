@@ -6840,6 +6840,15 @@
           "name": "InstanceChargeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例的Cpu大小，单位Core",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7174,6 +7183,15 @@
           "name": "BackupPeriod",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例日志备份保留时长，取值范围为7-1830，单位是天",
+          "example": "7",
+          "member": "uint64",
+          "name": "LogBackupRetentionPeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7698,6 +7716,15 @@
           "name": "SwitchEndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的实例CPU大小，单位Core。",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

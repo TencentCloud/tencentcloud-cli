@@ -31,6 +31,7 @@ Output:
                 "UpdateStartTime": "",
                 "UpdateEndTime": "",
                 "ServiceLogging": true,
+                "DelayCleanupTime": 30,
                 "MetaTags": [],
                 "Tags": []
             }

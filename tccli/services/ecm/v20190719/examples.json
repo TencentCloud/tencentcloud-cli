@@ -931,7 +931,7 @@
     "ModifyPrivateIpAddressesAttribute": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyPrivateIpAddressesAttribute\n&NetworkInterfaceId=eni-pwbqma5d\n&PrivateIpAddresses.0.PrivateIpAddress=192.168.2.7\n&PrivateIpAddresses.0.Description=new-name\n&EcmRegion=\"ap-guangzhou-ecm\"\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=ModifyPrivateIpAddressesAttribute\n&NetworkInterfaceId=eni-pwbqma5d\n&PrivateIpAddresses.0.PrivateIpAddress=192.168.2.7\n&PrivateIpAddresses.0.Description=new-name\n&EcmRegion=ap-guangzhou-ecm\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "修改弹性网卡内网IP属性"
       }

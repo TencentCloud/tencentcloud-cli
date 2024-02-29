@@ -385,6 +385,13 @@
       "output": "DescribeEnvironmentsResponse",
       "status": "online"
     },
+    "DescribeMqMsgTrace": {
+      "document": "查询消息轨迹",
+      "input": "DescribeMqMsgTraceRequest",
+      "name": "查询消息轨迹",
+      "output": "DescribeMqMsgTraceResponse",
+      "status": "online"
+    },
     "DescribeMsgTrace": {
       "document": "查询消息轨迹",
       "input": "DescribeMsgTraceRequest",
@@ -6355,6 +6362,114 @@
       ],
       "type": "object"
     },
+    "DescribeMqMsgTraceRequest": {
+      "document": "DescribeMqMsgTrace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pulsar、rocketmq、rabbitmq、cmq",
+          "example": "pulsar",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id，cmq为空",
+          "example": "pulsar-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，cmq为空",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题，cmq为空，rocketmq查询死信时值为groupId",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cmq必填，其他协议填空",
+          "example": "xxx",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组、订阅",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询死信时该值为true，只对Rocketmq有效",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDlqMsg",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMqMsgTraceResponse": {
+      "document": "DescribeMqMsgTrace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "[\n    {\n        \"Stage\": \"produce\",\n        \"Data\": {\n            \"ProducerName\": \"生产者名\",\n            \"ProduceTime\": \"消息生产时间\",\n            \"ProducerAddr\": \"客户端地址\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"persist\",\n        \"Data\": {\n            \"PersistTime\": \"存储时间\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"consume\",\n        \"Data\": {\n            \"TotalCount\": 2,\n            \"RocketMqConsumeLogs\": [\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                },\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                }\n            ]    \n        }\n    }\n]",
+          "example": "xxx",
+          "member": "TraceResult",
+          "name": "Result",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息轨迹页展示的topic名称",
+          "example": "topic",
+          "member": "string",
+          "name": "ShowTopicName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMsgTraceRequest": {
       "document": "DescribeMsgTrace请求参数结构体",
       "members": [
@@ -7323,7 +7438,7 @@
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -7364,7 +7479,7 @@
         },
         {
           "disabled": false,
-          "document": "排序依据的字段：\nMessageHeapCount - 消息堆积数；\nMessageRateInOut - 生产消费速率之和；\nMessageRateIn - 生产速率；\nMessageRateOut - 消费速率；",
+          "document": "排序依据的字段：\nConsumerNumber - 在线消费者数量；\nMessageHeapCount - 消息堆积数；\nMessageRateInOut - 生产消费速率之和；\nMessageRateIn - 生产速率；\nMessageRateOut - 消费速率；",
           "example": "MessageHeapCount",
           "member": "string",
           "name": "SortElement",

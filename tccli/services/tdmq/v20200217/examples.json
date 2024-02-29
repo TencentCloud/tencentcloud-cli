@@ -452,6 +452,14 @@
         "title": "获取命名空间列表"
       }
     ],
+    "DescribeMqMsgTrace": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMqMsgTrace\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"GroupName\": \"xx\",\n    \"QueueName\": \"xx\",\n    \"QueryDlqMsg\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Stage\": \"xx\",\n                \"Data\": \"xx\"\n            }\n        ],\n        \"ShowTopicName\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMsgTrace": [
       {
         "document": "",

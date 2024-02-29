@@ -1,3 +1,279 @@
+# Release 3.0.946.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 45 次发布
+
+发布时间：2024-03-01 01:10:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AbortPredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83371)
+* [CreatePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83370)
+* [DeletePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83369)
+* [DescribePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83368)
+* [DescribePredictiveDialingCampaigns](http://document.tencentcloudapi.woa.com/document/product/679/83367)
+* [DescribePredictiveDialingSessions](http://document.tencentcloudapi.woa.com/document/product/679/83366)
+* [PausePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83365)
+* [ResumePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83364)
+* [UpdatePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83363)
+
+新增数据结构：
+
+* [DescribePredictiveDialingCampaignsElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#DescribePredictiveDialingCampaignsElement)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 89 次发布
+
+发布时间：2024-03-01 01:10:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：CdcId
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/236/15865)
+
+	* 新增入参：CdcId
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 45 次发布
+
+发布时间：2024-03-01 01:11:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83374)
+* [DeleteBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83373)
+* [ModifyBlockIgnoreRuleNew](http://document.tencentcloudapi.woa.com/document/product/1132/83372)
+
+新增数据结构：
+
+* [BanAndAllowRule](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BanAndAllowRule)
+* [BanAndAllowRuleDel](http://document.tencentcloudapi.woa.com/document/product/1132/49071#BanAndAllowRuleDel)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 54 次发布
+
+发布时间：2024-03-01 01:12:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56440)
+
+	* 新增入参：DelayCleanupTime
+
+* [ModifyMachineGroup](http://document.tencentcloudapi.woa.com/document/product/614/56436)
+
+	* 新增入参：DelayCleanupTime
+
+
+修改数据结构：
+
+* [MachineGroupInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MachineGroupInfo)
+
+	* 新增成员：DelayCleanupTime
+
+	* <font color="#dd0000">**修改成员**：</font>MetaTags, OSType
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 15 次发布
+
+发布时间：2024-03-01 01:21:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76748)
+
+	* 新增入参：AccessScope
+
+* [GetFlowStatistic](http://document.tencentcloudapi.woa.com/document/product/1385/76368)
+
+	* 新增入参：AccessRegion, GatewayType
+
+* [GetMultiFlowStatistic](http://document.tencentcloudapi.woa.com/document/product/1385/77111)
+
+	* 新增入参：AccessRegion, GatewayType
+
+* [GetNetMonitor](http://document.tencentcloudapi.woa.com/document/product/1385/82549)
+
+	* 新增入参：GatewayType
+
+	* 新增出参：AccessRegion
+
+* [GetStatisticData](http://document.tencentcloudapi.woa.com/document/product/1385/76558)
+
+	* 新增入参：AccessRegion, GatewayType
+
+
+修改数据结构：
+
+* [ActivateHardware](http://document.tencentcloudapi.woa.com/document/product/1385/55846#ActivateHardware)
+
+	* 新增成员：AccessScope
+
+* [DeviceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DeviceBaseInfo)
+
+	* 新增成员：AccessScope
+
+* [FlowPackageInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#FlowPackageInfo)
+
+	* 新增成员：CreateTime, ModifyStatus
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 27 次发布
+
+发布时间：2024-03-01 01:23:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceUpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/409/18102)
+
+	* 新增入参：Cpu
+
+* [ModifyBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/68067)
+
+	* 新增入参：LogBackupRetentionPeriod
+
+* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/409/63689)
+
+	* 新增入参：Cpu
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 92 次发布
+
+发布时间：2024-03-01 01:26:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMqMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/83375)
+
+修改接口：
+
+* [DescribeRabbitMQQueues](http://document.tencentcloudapi.woa.com/document/product/1179/82449)
+
+	* <font color="#dd0000">**修改入参**：</font>VirtualHost
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 41 次发布
+
+发布时间：2024-03-01 01:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+	* 新增成员：ZOrder
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 34 次发布
+
+发布时间：2024-03-01 01:29:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchDeleteIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77623)
+
+	* 新增入参：Name, TaskNames
+
+* [BatchResumeIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77618)
+
+	* 新增出参：TaskNames
+
+* [BatchStartIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77617)
+
+	* 新增入参：StartTaskInfoSet
+
+	* <font color="#dd0000">**修改入参**：</font>TaskIds
+
+	* 新增出参：TaskNames
+
+* [BatchStopIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77616)
+
+	* 新增出参：TaskNames
+
+* [BatchSuspendIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77615)
+
+	* 新增入参：TaskNames
+
+* [BatchUpdateIntegrationTasks](http://document.tencentcloudapi.woa.com/document/product/1607/77614)
+
+	* 新增入参：TaskNames
+
+
+新增数据结构：
+
+* [StartTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#StartTaskInfo)
+
+
+
 # Release 3.0.945.1
 
 ## ICP备案(ba) 版本：2020-07-20

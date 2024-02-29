@@ -5,7 +5,13 @@
 Input: 
 
 ```
-tccli mna GetMultiFlowStatistic --cli-unfold-argument ```
+tccli mna GetMultiFlowStatistic --cli-unfold-argument  \
+    --DeviceIds mna-obzuio2pij mna-ps9x7eako2 \
+    --BeginTime 1675255591 \
+    --EndTime 1675860391 \
+    --Type 1 \
+    --TimeGranularity 1
+```
 
 Output: 
 ```

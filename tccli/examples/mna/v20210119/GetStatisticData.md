@@ -7,16 +7,18 @@ Input:
 ```
 tccli mna GetStatisticData --cli-unfold-argument  \
     --EndTime 1659514692 \
-    --DeviceId xx \
+    --DeviceId mna-test1 \
     --TimeGranularity 1 \
-    --BeginTime 1659513692
+    --BeginTime 1659513692 \
+    --AccessRegion MC \
+    --GatewayType 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "test-req",
         "FilePath": "http://geekyang-cos-1257943044.cos-internal.ap-guangzhou.tencentcos.cn/test/175527768616861696.xlsx"
     }
 }
