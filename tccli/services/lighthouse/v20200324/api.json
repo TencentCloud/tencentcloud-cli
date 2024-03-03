@@ -1678,6 +1678,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否支持自动配置IPv6。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportIpv6",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7681,7 +7691,7 @@
         {
           "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
           "output_required": true,
@@ -7766,6 +7776,26 @@
           "name": "InstanceRestrictState",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述实例是否支持IPv6。",
+          "example": "无",
+          "member": "SupportIpv6Detail",
+          "name": "SupportIpv6Detail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IPv6地址列表。",
+          "example": "[\"2402:4e00:c000:100:c0b4:df6e:e276:6\"]",
+          "member": "string",
+          "name": "PublicIpv6Addresses",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8146,6 +8176,26 @@
           "name": "PublicIpAssigned",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IPv4地址出带宽。",
+          "example": "1",
+          "member": "int64",
+          "name": "PublicIpv4MaxBandwidthOut",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IPv6地址出带宽。",
+          "example": "1",
+          "member": "int64",
+          "name": "PublicIpv6MaxBandwidthOut",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10306,6 +10356,42 @@
         }
       ],
       "type": "object"
+    },
+    "SupportIpv6Detail": {
+      "document": "实例支持IPv6详情描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否支持开启IPv6。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupport",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情。\n\n当IsSupport为True，Detail枚举值为:\n\nEFFECTIVE_IMMEDIATELY: 立即生效\n\nEFFECTIVE_AFTER_REBOOT: 分配过程需要开关机，用户需备份数据\n\n \n\n当IsSupport为False，Detail枚举值为:\n\nHAD_BEEN_ASSIGNED: 已分配IPv6地址\n\nREGION_NOT_SUPPORT: 地域不支持\n\nBLUEPRINT_NOT_SUPPORT: 镜像不支持\n\nBUNDLE_INSTANCE_NOT_SUPPORT: 套餐实例不支持\n\nBUNDLE_BANDWIDTH_NOT_SUPPORT: 套餐带宽不支持",
+          "example": "无",
+          "member": "string",
+          "name": "Detail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SystemDisk": {
       "document": "描述了操作系统所在块设备即系统盘的信息。",

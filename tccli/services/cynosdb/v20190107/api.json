@@ -12326,6 +12326,45 @@
       ],
       "usage": "out"
     },
+    "InstanceBasicSpec": {
+      "document": "实例基础规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "memory\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Mem",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceInitInfo": {
       "document": "实例初始化配置信息",
       "members": [
@@ -12545,6 +12584,30 @@
         }
       ],
       "usage": "out"
+    },
+    "InstanceSimpleSpec": {
+      "document": "实例简易规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CPU",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "memory",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "InstanceSpec": {
       "document": "实例可售卖规格详细信息，创建实例时Cpu/Memory确定实例规格，存储可选大小为[MinStorageSize,MaxStorageSize]",
@@ -13028,6 +13091,56 @@
         }
       ],
       "usage": "out"
+    },
+    "MigrateInstanceInfoDetail": {
+      "document": "Migrate InstanceInfo Detail",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SrcInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DstInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DstInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifiableInfo": {
       "document": "参数是否可修改的详细信息",
@@ -17037,6 +17150,15 @@
           "name": "DstInstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "迁移的实例实例信息",
+          "example": "无",
+          "member": "MigrateInstanceInfoDetail",
+          "name": "MigrateInstanceInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17050,6 +17172,7 @@
           "example": "123",
           "member": "int64",
           "name": "MigrateDBTaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17059,6 +17182,7 @@
           "example": "running",
           "member": "string",
           "name": "MigrateTaskStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17068,6 +17192,7 @@
           "example": "无",
           "member": "MigrateInstanceInfo",
           "name": "SrcInstanceInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17077,6 +17202,7 @@
           "example": "无",
           "member": "MigrateInstanceInfo",
           "name": "DstInstanceInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17086,8 +17212,19 @@
           "example": "2023-02-10 16:49:19",
           "member": "string",
           "name": "ExpireTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "迁移实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrateInstanceInfoDetail",
+          "name": "MigrateInstanceInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -18974,6 +19111,15 @@
           "name": "InstanceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例规格",
+          "example": "无",
+          "member": "InstanceSimpleSpec",
+          "name": "InstanceCpuMemorys",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18987,6 +19133,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18996,6 +19143,7 @@
           "example": "1",
           "member": "int64",
           "name": "Mem",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19005,8 +19153,19 @@
           "example": "3000",
           "member": "int64",
           "name": "StorageLimit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceBasicSpec",
+          "name": "InstanceSimpleSpecs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -19291,6 +19450,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否迁移ro组",
+          "example": "无",
+          "member": "bool",
+          "name": "MigrateRoGroup",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -19304,6 +19472,7 @@
           "example": "12324",
           "member": "int64",
           "name": "MigrateDBTaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

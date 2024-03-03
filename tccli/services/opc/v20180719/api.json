@@ -28,6 +28,13 @@
       "output": "CheckUinFollowerResponse",
       "status": "online"
     },
+    "CheckUserOrgInfo": {
+      "document": "检查腾讯云用户是否已经成为私域用户",
+      "input": "CheckUserOrgInfoRequest",
+      "name": "检查腾讯云用户是否已经成为私域用户",
+      "output": "CheckUserOrgInfoResponse",
+      "status": "online"
+    },
     "ConfirmActivityGoodsQuotaDeduction": {
       "document": "活动商品下单确认商品配额扣减",
       "input": "ConfirmActivityGoodsQuotaDeductionRequest",
@@ -588,6 +595,63 @@
           "member": "bool",
           "name": "Result",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUserOrgInfoRequest": {
+      "document": "CheckUserOrgInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "132132861",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUserOrgInfoResponse": {
+      "document": "CheckUserOrgInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "123132",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加入私域时间",
+          "example": "2020-09-19 00:00:00",
+          "member": "string",
+          "name": "JoinTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 不是私域用户\n1: 是私域用户\n",
+          "example": "1",
+          "member": "uint64",
+          "name": "InCompanyWechatOrg",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

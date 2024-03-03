@@ -32,6 +32,14 @@
         "title": "查询TCC中UIN的关联关系"
       }
     ],
+    "CheckUserOrgInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUserOrgInfo\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"100035685964\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnerUin\": \"100035685964\",\n        \"JoinTime\": \"2023-09-19 18:46:57\",\n        \"InCompanyWechatOrg\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "检查用户是否是私域用户"
+      }
+    ],
     "ConfirmActivityGoodsQuotaDeduction": [
       {
         "document": "",

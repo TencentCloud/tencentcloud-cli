@@ -1,3 +1,178 @@
+# Release 3.0.947.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 29 次发布
+
+发布时间：2024-03-04 01:12:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopAttackInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83377)
+
+新增数据结构：
+
+* [TagCount](http://document.tencentcloudapi.woa.com/document/product/1726/80814#TagCount)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 74 次发布
+
+发布时间：2024-03-04 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryMigrateDBTask](http://document.tencentcloudapi.woa.com/document/product/1003/77385)
+
+	* 新增入参：MigrateInstanceInfos
+
+	* 新增出参：MigrateInstanceInfos
+
+* [SwitchSpec](http://document.tencentcloudapi.woa.com/document/product/1003/77382)
+
+	* 新增入参：InstanceCpuMemorys
+
+	* 新增出参：InstanceSimpleSpecs
+
+* [TransferFromCDB](http://document.tencentcloudapi.woa.com/document/product/1003/77381)
+
+	* 新增入参：MigrateRoGroup
+
+
+新增数据结构：
+
+* [InstanceBasicSpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceBasicSpec)
+* [InstanceSimpleSpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceSimpleSpec)
+* [MigrateInstanceInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#MigrateInstanceInfoDetail)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 47 次发布
+
+发布时间：2024-03-04 01:20:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SupportIpv6Detail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#SupportIpv6Detail)
+
+修改数据结构：
+
+* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
+
+	* 新增成员：SupportIpv6
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：SupportIpv6Detail, PublicIpv6Addresses
+
+* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InternetAccessible)
+
+	* 新增成员：PublicIpv4MaxBandwidthOut, PublicIpv6MaxBandwidthOut
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 71 次发布
+
+发布时间：2024-03-04 01:21:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusAgentOverview](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAgentOverview)
+
+	* 新增成员：DesiredAgentNum, ReadyAgentNum
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 10 次发布
+
+发布时间：2024-03-04 01:22:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateVolume](http://document.tencentcloudapi.woa.com/document/product/1725/83382)
+* [DeleteVolume](http://document.tencentcloudapi.woa.com/document/product/1725/83381)
+* [DeleteVolumeData](http://document.tencentcloudapi.woa.com/document/product/1725/83380)
+* [DescribeVolumes](http://document.tencentcloudapi.woa.com/document/product/1725/83379)
+* [ModifyVolume](http://document.tencentcloudapi.woa.com/document/product/1725/83378)
+
+新增数据结构：
+
+* [Volume](http://document.tencentcloudapi.woa.com/document/product/1725/80781#Volume)
+
+
+
+## 运营产品中心(opc) 版本：2018-07-19
+
+### 第 8 次发布
+
+发布时间：2024-03-04 01:22:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckUserOrgInfo](http://document.tencentcloudapi.woa.com/document/product/1602/83383)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 52 次发布
+
+发布时间：2024-03-04 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83387)
+* [DeleteGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83386)
+* [DescribeGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83385)
+* [ModifyGovernanceInstances](http://document.tencentcloudapi.woa.com/document/product/1364/83384)
+
+新增数据结构：
+
+* [GovernanceInstance](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceInstance)
+* [GovernanceInstanceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceInstanceInput)
+* [GovernanceInstanceUpdate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceInstanceUpdate)
+* [Metadata](http://document.tencentcloudapi.woa.com/document/product/1364/54942#Metadata)
+
+
+
 # Release 3.0.946.1
 
 ## 云联络中心(ccc) 版本：2020-02-10
