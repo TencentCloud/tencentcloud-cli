@@ -316,6 +316,17 @@
         },
         {
           "disabled": false,
+          "document": "地址池地址类型：IPV4、IPV6、DOMAIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPV4",
+          "member": "string",
+          "name": "AddrType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "流量策略: WEIGHT负载均衡，ALL解析全部\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL",
           "member": "string",
@@ -338,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "OK正常，DOWN故障，WARN风险，UNKNOWN探测中，UNMONITORED未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OK正常，DOWN故障，WARN风险，UNKNOWN未知\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OK",
           "member": "string",
           "name": "Status",
@@ -448,6 +459,17 @@
           "member": "string",
           "name": "PoolName",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址池地址类型：IPV4、IPV6、DOMAIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPV4",
+          "member": "string",
+          "name": "AddrType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

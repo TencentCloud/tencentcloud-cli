@@ -1,3 +1,90 @@
+# Release 3.0.948.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 46 次发布
+
+发布时间：2024-03-05 01:09:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateCCCSkillGroup](http://document.tencentcloudapi.woa.com/document/product/679/83388)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 59 次发布
+
+发布时间：2024-03-05 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SpecAvailability](http://document.tencentcloudapi.woa.com/document/product/214/30694#SpecAvailability)
+
+	* <font color="#dd0000">**修改成员**：</font>SpecType, Availability
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2023-10-24
+
+### 第 2 次发布
+
+发布时间：2024-03-05 01:18:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddressPool](http://document.tencentcloudapi.woa.com/document/product/1696/83274#AddressPool)
+
+	* 新增成员：AddrType
+
+* [AddressPoolDetail](http://document.tencentcloudapi.woa.com/document/product/1696/83274#AddressPoolDetail)
+
+	* 新增成员：AddrType
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 22 次发布
+
+发布时间：2024-03-05 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDeal](http://document.tencentcloudapi.woa.com/document/product/240/43667)
+
+	* 新增出参：InstanceId
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
 # Release 3.0.947.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

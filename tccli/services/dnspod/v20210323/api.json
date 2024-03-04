@@ -1940,7 +1940,7 @@
         },
         {
           "disabled": false,
-          "document": "权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。",
+          "document": "权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
@@ -2425,6 +2425,7 @@
           "example": "1212",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2434,6 +2435,7 @@
           "example": "无",
           "member": "DeleteRecordBatchDetail",
           "name": "DetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7444,7 +7446,7 @@
         },
         {
           "disabled": false,
-          "document": "权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。",
+          "document": "权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。",
           "example": "20",
           "member": "uint64",
           "name": "Weight",
