@@ -14,33 +14,78 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 3,
         "ZoneResourceSet": [
             {
-                "LocalZone": false,
-                "EdgeZone": false,
+                "MasterZone": "ap-guangzhou",
                 "SlaveZone": null,
-                "MasterZone": "ap-guangzhou-1",
-                "IPVersion": "IPv4",
-                "ZoneRegion": "ap-guangzhou",
+                "IPVersion": "IPv6",
                 "ResourceSet": [
                     {
                         "Isp": "BGP",
                         "Type": [
                             "BGP"
-                        ]
-                    },
-                    {
-                        "Isp": "CMCC",
-                        "Type": [
-                            "CMCC"
-                        ]
+                        ],
+                        "TypeSet": [],
+                        "AvailabilitySet": []
                     }
                 ],
-                "ZoneResourceType": "SHARED"
+                "ZoneRegion": "ap-guangzhou",
+                "LocalZone": false,
+                "EdgeZone": false,
+                "ZoneResourceType": "SHARED",
+                "Egress": "center_egress1"
+            },
+            {
+                "MasterZone": "ap-guangzhou",
+                "SlaveZone": null,
+                "IPVersion": "IPv6_Nat",
+                "ResourceSet": [
+                    {
+                        "Isp": "BGP",
+                        "Type": [
+                            "BGP"
+                        ],
+                        "TypeSet": [],
+                        "AvailabilitySet": []
+                    }
+                ],
+                "ZoneRegion": "ap-guangzhou",
+                "LocalZone": false,
+                "EdgeZone": false,
+                "ZoneResourceType": "SHARED",
+                "Egress": "center_egress1"
+            },
+            {
+                "MasterZone": "ap-guangzhou-2",
+                "SlaveZone": null,
+                "IPVersion": "IPv4",
+                "ResourceSet": [
+                    {
+                        "Isp": "BGP",
+                        "Type": [
+                            "BGP"
+                        ],
+                        "TypeSet": [],
+                        "AvailabilitySet": []
+                    },
+                    {
+                        "Isp": "INTERNAL",
+                        "Type": [
+                            "INTERNAL"
+                        ],
+                        "TypeSet": [],
+                        "AvailabilitySet": []
+                    }
+                ],
+                "ZoneRegion": "ap-guangzhou",
+                "LocalZone": false,
+                "EdgeZone": false,
+                "ZoneResourceType": "SHARED",
+                "Egress": "center_egress1"
             }
         ],
-        "RequestId": "d09b91ba-a81e-4ca3-b423-c64e60127c64"
+        "TotalCount": 3,
+        "RequestId": "e0d11bcf-c3fa-45b8-b438-a4b642dbaad6"
     }
 }
 ```

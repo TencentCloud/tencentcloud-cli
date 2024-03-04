@@ -187,8 +187,8 @@
     "DescribeAppDetail": [
       {
         "document": "获取应用配置",
-        "input": "{\n    \"ApplicationId\": \"3028839\",\n    \"DeveloperId\": \"db5bb499-8691-463f-ac64-1a48f80d968a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppConfig\": {},\n        \"RequestId\": \"9dfae8e8a8c5e4b27b7abf37caa2e5bf\",\n        \"SceneConfig\": [\n            {}\n        ],\n        \"SdkAppId\": \"1400315010\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppDetail\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"3028839\",\n    \"DeveloperId\": \"db5bb499-8691-463f-ac64-1a48f80d968a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SdkAppId\": \"abc\",\n        \"AppConfig\": {\n            \"ApplicationId\": \"abc\",\n            \"AppName\": \"abc\",\n            \"State\": 0,\n            \"AppVersion\": 0,\n            \"CreatedAt\": \"abc\",\n            \"Callback\": \"abc\",\n            \"CallbackKey\": \"abc\"\n        },\n        \"SceneConfig\": [\n            {\n                \"Scene\": \"abc\",\n                \"LogoUrl\": \"abc\",\n                \"HomeUrl\": \"abc\",\n                \"JSUrl\": \"abc\",\n                \"CSSUrl\": \"abc\"\n            }\n        ],\n        \"TransferConfig\": {\n            \"State\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取应用配置"
       }
     ],

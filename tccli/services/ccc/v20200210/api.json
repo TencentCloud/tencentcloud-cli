@@ -343,6 +343,13 @@
       "output": "UnbindStaffSkillGroupListResponse",
       "status": "online"
     },
+    "UpdateCCCSkillGroup": {
+      "document": "更新技能组",
+      "input": "UpdateCCCSkillGroupRequest",
+      "name": "更新技能组",
+      "output": "UpdateCCCSkillGroupResponse",
+      "status": "online"
+    },
     "UpdatePredictiveDialingCampaign": {
       "document": "任务未启动前，更新预测式外呼任务。",
       "input": "UpdatePredictiveDialingCampaignRequest",
@@ -3923,7 +3930,7 @@
         {
           "disabled": false,
           "document": "按手机号筛选",
-          "example": "[\"13012345678\"]",
+          "example": "[\"008613012345678\"]",
           "member": "string",
           "name": "Phones",
           "required": false,
@@ -6547,6 +6554,69 @@
     },
     "UnbindStaffSkillGroupListResponse": {
       "document": "UnbindStaffSkillGroupList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCCCSkillGroupRequest": {
+      "document": "UpdateCCCSkillGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填）",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "技能组ID",
+          "example": "12345678",
+          "member": "int64",
+          "name": "SkillGroupID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的技能组名字",
+          "example": "foobar",
+          "member": "string",
+          "name": "SkillGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的最大并发数,同振最大为2",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "true同振，false顺振",
+          "example": "true",
+          "member": "bool",
+          "name": "RingAll",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCCCSkillGroupResponse": {
+      "document": "UpdateCCCSkillGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

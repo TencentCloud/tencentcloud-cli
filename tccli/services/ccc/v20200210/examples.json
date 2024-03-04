@@ -392,6 +392,14 @@
         "title": "解绑坐席所属技能组示例"
       }
     ],
+    "UpdateCCCSkillGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCCCSkillGroup\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000,\n    \"SkillGroupID\": 1234,\n    \"SkillGroupName\": \"abc\",\n    \"MaxConcurrency\": 1,\n    \"RingAll\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新技能组信息"
+      }
+    ],
     "UpdatePredictiveDialingCampaign": [
       {
         "document": "更新预测式外呼任务",

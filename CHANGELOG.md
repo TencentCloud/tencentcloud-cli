@@ -1,3 +1,101 @@
+# Release 3.0.1068.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 60 次发布
+
+发布时间：2024-03-05 01:09:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateCCCSkillGroup](https://cloud.tencent.com/document/api/679/104097)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 102 次发布
+
+发布时间：2024-03-05 01:11:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SpecAvailability](https://cloud.tencent.com/document/api/214/30694#SpecAvailability)
+
+	* <font color="#dd0000">**修改成员**：</font>SpecType, Availability
+
+
+
+
+## 实时互动-教育版(lcic) 版本：2022-08-17
+
+### 第 52 次发布
+
+发布时间：2024-03-05 01:18:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAppDetail](https://cloud.tencent.com/document/api/1639/85701)
+
+	* 新增出参：TransferConfig
+
+* [ModifyApp](https://cloud.tencent.com/document/api/1639/81546)
+
+	* 新增入参：TransferId, TransferUrl
+
+
+新增数据结构：
+
+* [TransferItem](https://cloud.tencent.com/document/api/1639/81423#TransferItem)
+
+修改数据结构：
+
+* [AppConfig](https://cloud.tencent.com/document/api/1639/81423#AppConfig)
+
+	* 新增成员：ApplicationId, AppName, State, AppVersion, CreatedAt, Callback, CallbackKey
+
+* [SceneItem](https://cloud.tencent.com/document/api/1639/81423#SceneItem)
+
+	* 新增成员：Scene, LogoUrl, HomeUrl, JSUrl, CSSUrl
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 35 次发布
+
+发布时间：2024-03-05 01:20:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDeal](https://cloud.tencent.com/document/api/240/43667)
+
+	* 新增出参：InstanceId
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
 # Release 3.0.1067.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

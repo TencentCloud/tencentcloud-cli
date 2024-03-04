@@ -2077,7 +2077,7 @@
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2087,7 +2087,7 @@
           "example": "1116.67",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2097,7 +2097,7 @@
           "example": "759.33",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2107,7 +2107,17 @@
           "example": "purchase",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前订单的资源Id。",
+          "example": "cmgo-******",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

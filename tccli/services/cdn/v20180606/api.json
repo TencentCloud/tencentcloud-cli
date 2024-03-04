@@ -581,9 +581,10 @@
         {
           "disabled": false,
           "document": "启用请求头部及请求url访问控制开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -594,6 +595,7 @@
           "example": "无",
           "member": "AccessControlRule",
           "name": "AccessControlRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -604,6 +606,7 @@
           "example": "无",
           "member": "int64",
           "name": "ReturnCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1223,9 +1226,10 @@
         {
           "disabled": false,
           "document": "防盗链配置开关，取值有：\non：开启\noff：关闭\n开启时必须且只配置一种模式，其余模式需要设置为 null",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1236,6 +1240,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeA",
           "name": "TypeA",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1246,6 +1251,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeB",
           "name": "TypeB",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1256,6 +1262,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeC",
           "name": "TypeC",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1266,6 +1273,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeD",
           "name": "TypeD",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1276,6 +1284,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeE",
           "name": "TypeE",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1286,6 +1295,7 @@
           "example": "无",
           "member": "AdvancedAuthenticationTypeF",
           "name": "TypeF",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1995,9 +2005,10 @@
         {
           "disabled": false,
           "document": "防盗链配置开关，取值有：\non：开启\noff：关闭\n开启时必须且只配置一种模式，其余模式需要设置为 null",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2008,6 +2019,7 @@
           "example": "md5",
           "member": "string",
           "name": "AuthAlgorithm",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2018,6 +2030,7 @@
           "example": "无",
           "member": "AuthenticationTypeA",
           "name": "TypeA",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2028,6 +2041,7 @@
           "example": "无",
           "member": "AuthenticationTypeB",
           "name": "TypeB",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2038,6 +2052,7 @@
           "example": "无",
           "member": "AuthenticationTypeC",
           "name": "TypeC",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2048,6 +2063,7 @@
           "example": "无",
           "member": "AuthenticationTypeD",
           "name": "TypeD",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2503,9 +2519,10 @@
         {
           "disabled": false,
           "document": "Bot cookie策略配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2516,6 +2533,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2526,6 +2544,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleValue",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2536,6 +2555,7 @@
           "example": "无",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2546,6 +2566,7 @@
           "example": "无",
           "member": "string",
           "name": "RedirectUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2556,6 +2577,7 @@
           "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2569,9 +2591,10 @@
         {
           "disabled": false,
           "document": "Bot js策略配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2582,6 +2605,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2592,6 +2616,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleValue",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2602,6 +2627,7 @@
           "example": "无",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2612,6 +2638,7 @@
           "example": "无",
           "member": "string",
           "name": "RedirectUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2622,6 +2649,7 @@
           "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3335,9 +3363,10 @@
         {
           "disabled": false,
           "document": "使用CacheTag作为CacheKey的一部分配置开关，取值有\non：开启，使用CacheTag作为CacheKey的一部分\noff：关闭，不使用CacheTag作为CacheKey的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3348,6 +3377,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3837,9 +3867,10 @@
         {
           "disabled": false,
           "document": "智能压缩配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3850,6 +3881,7 @@
           "example": "无",
           "member": "CompressionRule",
           "name": "CompressionRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3939,9 +3971,10 @@
         {
           "disabled": false,
           "document": "使用Cookie作为Cache的一部分配置开关，取值有：\non：开启，使用Cookie作为Cache的一部分\noff：关闭，不使用Cookie作为Cache的一部分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3952,6 +3985,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9212,9 +9246,10 @@
         {
           "disabled": false,
           "document": "下行速度配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9225,6 +9260,7 @@
           "example": "无",
           "member": "CappingRule",
           "name": "CappingRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9591,9 +9627,10 @@
         {
           "disabled": false,
           "document": "回源跟随配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9604,6 +9641,7 @@
           "example": "无",
           "member": "RedirectConfig",
           "name": "RedirectConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9617,9 +9655,10 @@
         {
           "disabled": false,
           "document": "访问强制跳转配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -9627,9 +9666,10 @@
         {
           "disabled": false,
           "document": "访问强制跳转类型\nhttp：强制 http 跳转\nhttps：强制 https 跳转\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "RedirectType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9637,9 +9677,10 @@
         {
           "disabled": false,
           "document": "强制跳转时返回状态码 \n支持 301、302\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "302",
           "member": "int64",
           "name": "RedirectStatusCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9647,9 +9688,10 @@
         {
           "disabled": false,
           "document": "强制跳转时是否返回增加的头部。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "CarryHeaders",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9764,9 +9806,10 @@
         {
           "disabled": false,
           "document": "图片优化-GuetzliAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9806,9 +9849,10 @@
         {
           "disabled": false,
           "document": "组成Cachekey配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9819,6 +9863,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9860,9 +9905,10 @@
         {
           "disabled": false,
           "document": "HSTS 配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9873,6 +9919,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxAge",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9883,6 +9930,7 @@
           "example": "无",
           "member": "string",
           "name": "IncludeSubDomains",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10510,9 +10558,10 @@
         {
           "disabled": false,
           "document": "IP 限频配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10523,6 +10572,7 @@
           "example": "无",
           "member": "int64",
           "name": "Qps",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10602,9 +10652,10 @@
         {
           "disabled": false,
           "document": "域名开启源站ipv6配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10618,9 +10669,10 @@
         {
           "disabled": false,
           "document": "域名开启ipv6访问配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12494,9 +12546,10 @@
         {
           "disabled": false,
           "document": "离线缓存配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12670,9 +12723,10 @@
         {
           "disabled": false,
           "document": "回源鉴权高级配置开关，取值有：\non：开启\noff：关闭\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12683,6 +12737,7 @@
           "example": "无",
           "member": "OriginAuthenticationTypeA",
           "name": "TypeA",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12712,9 +12767,10 @@
         {
           "disabled": false,
           "document": "合并回源配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13793,9 +13849,10 @@
         {
           "disabled": false,
           "document": "CacheKey是否由QueryString组成配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13803,9 +13860,10 @@
         {
           "disabled": false,
           "document": "是否重新排序\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Reorder",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13813,9 +13871,10 @@
         {
           "disabled": false,
           "document": "使用/排除部分url参数，取值有：\nincludeAll：包含所有\nexcludeAll：排除所有\nincludeCustom：自定义包含\nexcludeCustom：自定义排除\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "includeCustom",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13823,9 +13882,10 @@
         {
           "disabled": false,
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "key1;key2",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13999,9 +14059,10 @@
         {
           "disabled": false,
           "document": "referer 黑白名单配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14012,6 +14073,7 @@
           "example": "无",
           "member": "RefererRule",
           "name": "RefererRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -14280,9 +14342,10 @@
         {
           "disabled": false,
           "document": "自定义请求头配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14293,6 +14356,7 @@
           "example": "无",
           "member": "HttpHeaderPathRule",
           "name": "HeaderRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -14384,9 +14448,10 @@
         {
           "disabled": false,
           "document": "自定义响应头配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14397,6 +14462,7 @@
           "example": "无",
           "member": "HttpHeaderPathRule",
           "name": "HeaderRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -14410,9 +14476,10 @@
         {
           "disabled": false,
           "document": "源站头部缓存配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14426,9 +14493,10 @@
         {
           "disabled": false,
           "document": "总是回源校验配置开关，取值有：\non：开启\noff：关闭\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14439,6 +14507,7 @@
           "example": "无",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14550,9 +14619,10 @@
         {
           "disabled": false,
           "document": "路径保留参数配置开关，取值有：\non：开启，CacheKey由QueryString组成\noff：关闭，CacheKey不由QueryString组成\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14563,6 +14633,7 @@
           "example": "无",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14573,6 +14644,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -15656,9 +15728,10 @@
         {
           "disabled": false,
           "document": "scheme作为cache key配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -15797,9 +15870,10 @@
         {
           "disabled": false,
           "document": "SEO 搜索引擎优化配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16248,7 +16322,7 @@
         {
           "disabled": false,
           "document": "状态码缓存过期配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
           "output_required": true,
@@ -16624,9 +16698,10 @@
         {
           "disabled": false,
           "document": "图片优化-TpgAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -17613,9 +17688,10 @@
         {
           "disabled": false,
           "document": "UserAgent黑白名单配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -17626,6 +17702,7 @@
           "example": "无",
           "member": "UserAgentFilterRule",
           "name": "FilterRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -17730,9 +17807,10 @@
         {
           "disabled": false,
           "document": "视频拖拽配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17864,9 +17942,10 @@
         {
           "disabled": false,
           "document": "图片优化-WebpAdapter配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
