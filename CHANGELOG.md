@@ -1,3 +1,117 @@
+# Release 3.0.1067.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 32 次发布
+
+发布时间：2024-03-04 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopAttackInfo](https://cloud.tencent.com/document/api/664/104060)
+
+新增数据结构：
+
+* [TagCount](https://cloud.tencent.com/document/api/664/90825#TagCount)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 107 次发布
+
+发布时间：2024-03-04 01:19:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusAgentOverview](https://cloud.tencent.com/document/api/248/30354#PrometheusAgentOverview)
+
+	* 新增成员：DesiredAgentNum, ReadyAgentNum
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 13 次发布
+
+发布时间：2024-03-04 01:21:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateVolume](https://cloud.tencent.com/document/api/1643/104065)
+* [DeleteVolume](https://cloud.tencent.com/document/api/1643/104064)
+* [DeleteVolumeData](https://cloud.tencent.com/document/api/1643/104063)
+* [DescribeVolumes](https://cloud.tencent.com/document/api/1643/104062)
+* [ModifyVolume](https://cloud.tencent.com/document/api/1643/104061)
+
+新增数据结构：
+
+* [Volume](https://cloud.tencent.com/document/api/1643/89100#Volume)
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 32 次发布
+
+发布时间：2024-03-04 01:26:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCodeBatches](https://cloud.tencent.com/document/api/1458/101819)
+
+	* 新增入参：Status
+
+* [DescribeCodeBatchs](https://cloud.tencent.com/document/api/1458/75017)
+
+	* 新增入参：Status
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 58 次发布
+
+发布时间：2024-03-04 01:26:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateGovernanceInstances](https://cloud.tencent.com/document/api/1364/104069)
+* [DeleteGovernanceInstances](https://cloud.tencent.com/document/api/1364/104068)
+* [DescribeGovernanceInstances](https://cloud.tencent.com/document/api/1364/104067)
+* [ModifyGovernanceInstances](https://cloud.tencent.com/document/api/1364/104066)
+
+新增数据结构：
+
+* [GovernanceInstance](https://cloud.tencent.com/document/api/1364/54942#GovernanceInstance)
+* [GovernanceInstanceInput](https://cloud.tencent.com/document/api/1364/54942#GovernanceInstanceInput)
+* [GovernanceInstanceUpdate](https://cloud.tencent.com/document/api/1364/54942#GovernanceInstanceUpdate)
+* [Metadata](https://cloud.tencent.com/document/api/1364/54942#Metadata)
+
+
+
 # Release 3.0.1065.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

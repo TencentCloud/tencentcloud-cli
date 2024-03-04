@@ -96,6 +96,14 @@
         "title": "创建引擎实例"
       }
     ],
+    "CreateGovernanceInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建治理中心服务实例"
+      }
+    ],
     "CreateNativeGatewayServerGroup": [
       {
         "document": "创建云原生网关引擎分组",
@@ -190,6 +198,14 @@
         "input": "https://tse.tencentcloudapi.com/?Action=DeleteEngine\n&InstanceId=ins-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\"\n    }\n}",
         "title": "删除引擎实例"
+      }
+    ],
+    "DeleteGovernanceInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"Id\": \"xx\",\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1,\n            \"Metadatas\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除治理中心服务实例"
       }
     ],
     "DeleteNativeGatewayServerGroup": [
@@ -326,6 +342,14 @@
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeCloudNativeAPIGateways\n&Limit=20\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adc44984-762c-42e0-b39a-80777e5c3bcc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GatewayList\": [\n                {\n                    \"CreateTime\": \"2021-09-09 11:52:30\",\n                    \"Description\": \"测试\",\n                    \"GatewayId\": \"gateway-7bb4fcb0\",\n                    \"GatewayVersion\": \"2.4.1\",\n                    \"Name\": \"test\",\n                    \"NodeConfig\": {\n                        \"Number\": 2,\n                        \"Specification\": \"1c2g\"\n                    },\n                    \"Status\": \"Creating\",\n                    \"Type\": \"Kong\",\n                    \"VpcConfig\": {\n                        \"SubnetId\": \"subnet-xxx\",\n                        \"VpcId\": \"vpc-xxx\"\n                    },\n                    \"Tags\": [\n                        {\n                            \"TagKey\": \"xx\",\n                            \"TagValue\": \"xx\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
         "title": "测试获取云原生API网关实例列表"
+      }
+    ],
+    "DescribeGovernanceInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceInstances\n<公共请求参数>\n\n{\n    \"Protocol\": \"xx\",\n    \"Service\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Isolate\": true,\n    \"Namespace\": \"xx\",\n    \"Host\": \"xx\",\n    \"HealthStatus\": true,\n    \"Offset\": 1,\n    \"InstanceVersion\": \"xx\",\n    \"Limit\": 1,\n    \"Metadatas\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Protocol\": \"xx\",\n                \"Weight\": 1,\n                \"Service\": \"xx\",\n                \"EnableHealthCheck\": true,\n                \"Isolate\": true,\n                \"Ttl\": 1,\n                \"Namespace\": \"xx\",\n                \"Id\": \"xx\",\n                \"Healthy\": true,\n                \"Host\": \"xx\",\n                \"Version\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"Port\": 1,\n                \"CreateTime\": \"xx\",\n                \"Metadatas\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询治理中心服务实例"
       }
     ],
     "DescribeNacosReplicas": [
@@ -494,6 +518,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsoleNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"NetworkType\": \"Open\",\n    \"Operate\": \"Open\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改云原生API网关实例Konga网络配置"
+      }
+    ],
+    "ModifyGovernanceInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"Id\": \"xx\",\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1,\n            \"Metadatas\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改治理中心服务实例"
       }
     ],
     "ModifyNativeGatewayServerGroup": [

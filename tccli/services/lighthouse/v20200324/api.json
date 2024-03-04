@@ -6905,7 +6905,7 @@
         {
           "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
           "output_required": true,

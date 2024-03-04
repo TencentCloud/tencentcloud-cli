@@ -2629,6 +2629,15 @@
           "name": "CorpId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批次状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2728,6 +2737,15 @@
           "example": "0",
           "member": "uint64",
           "name": "CorpId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批次状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
           "required": false,
           "type": "int"
         }

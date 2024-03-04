@@ -84,6 +84,13 @@
       "output": "CreateEngineResponse",
       "status": "online"
     },
+    "CreateGovernanceInstances": {
+      "document": "创建治理中心服务实例",
+      "input": "CreateGovernanceInstancesRequest",
+      "name": "创建治理中心服务实例",
+      "output": "CreateGovernanceInstancesResponse",
+      "status": "online"
+    },
     "CreateNativeGatewayServerGroup": {
       "document": "创建云原生网关引擎分组",
       "input": "CreateNativeGatewayServerGroupRequest",
@@ -166,6 +173,13 @@
       "input": "DeleteEngineRequest",
       "name": "删除引擎实例",
       "output": "DeleteEngineResponse",
+      "status": "online"
+    },
+    "DeleteGovernanceInstances": {
+      "document": "删除治理中心服务实例",
+      "input": "DeleteGovernanceInstancesRequest",
+      "name": "删除治理中心服务实例",
+      "output": "DeleteGovernanceInstancesResponse",
       "status": "online"
     },
     "DeleteNativeGatewayServerGroup": {
@@ -285,6 +299,13 @@
       "input": "DescribeCloudNativeAPIGatewaysRequest",
       "name": "获取云原生网关实例列表",
       "output": "DescribeCloudNativeAPIGatewaysResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceInstances": {
+      "document": "查询治理中心服务实例",
+      "input": "DescribeGovernanceInstancesRequest",
+      "name": "查询治理中心服务实例",
+      "output": "DescribeGovernanceInstancesResponse",
       "status": "online"
     },
     "DescribeNacosReplicas": {
@@ -432,6 +453,13 @@
       "input": "ModifyConsoleNetworkRequest",
       "name": "修改云原生API网关实例Konga网络配置",
       "output": "ModifyConsoleNetworkResponse",
+      "status": "online"
+    },
+    "ModifyGovernanceInstances": {
+      "document": "修改治理中心服务实例",
+      "input": "ModifyGovernanceInstancesRequest",
+      "name": "修改治理中心服务实例",
+      "output": "ModifyGovernanceInstancesResponse",
       "status": "online"
     },
     "ModifyNativeGatewayServerGroup": {
@@ -3044,6 +3072,52 @@
       ],
       "usage": "out"
     },
+    "CreateGovernanceInstancesRequest": {
+      "document": "CreateGovernanceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务实例信息。",
+          "example": "无",
+          "member": "GovernanceInstanceInput",
+          "name": "GovernanceInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceInstancesResponse": {
+      "document": "CreateGovernanceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNativeGatewayServerGroupRequest": {
       "document": "CreateNativeGatewayServerGroup请求参数结构体",
       "members": [
@@ -3621,6 +3695,52 @@
     "DeleteEngineResponse": {
       "document": "DeleteEngine返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceInstancesRequest": {
+      "document": "DeleteGovernanceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的服务实例信息。",
+          "example": "无",
+          "member": "GovernanceInstanceUpdate",
+          "name": "GovernanceInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceInstancesResponse": {
+      "document": "DeleteGovernanceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4921,6 +5041,143 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeGovernanceInstancesRequest": {
+      "document": "DescribeGovernanceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所在的服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在命名空间名。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例ip过滤，多个ip使用英文逗号分隔。",
+          "example": "192.168.1.1,10.10.10.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例版本过滤。",
+          "example": "v1",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例协议过滤。",
+          "example": "grpc",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例健康状态过滤。false：表示不健康，true：表示健康。",
+          "example": "true",
+          "member": "bool",
+          "name": "HealthStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。",
+          "example": "1",
+          "member": "bool",
+          "name": "Isolate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceInstancesResponse": {
+      "document": "DescribeGovernanceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务实例总数量。",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务里实例列表。",
+          "example": "无",
+          "member": "GovernanceInstance",
+          "name": "Content",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeInstanceRegionInfo": {
       "document": "实例地域信息描述",
@@ -6335,6 +6592,414 @@
       ],
       "usage": "out"
     },
+    "GovernanceInstance": {
+      "document": "治理中心实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id。",
+          "example": "5d8e809b8dd6a8a57ff2f81cab40fc57ad4e8b55d",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在命名空间名。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ip地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例端口信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通信协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grpc",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启健康检查。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例是否健康。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Healthy",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例是否隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Isolate",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-11 18:49:51",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-11 18:49:51",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上报心跳间隔。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GovernanceInstanceInput": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所在服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例服务所在命名空间。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例负载均衡权重信息。不填默认为100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例默认健康信息。不填默认为健康。",
+          "example": "true",
+          "member": "bool",
+          "name": "Healthy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例隔离信息。不填默认为非隔离。",
+          "example": "true",
+          "member": "bool",
+          "name": "Isolate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ip。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例监听端口。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例使用协议。不填默认为空。",
+          "example": "grpc",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本。不填默认为空。",
+          "example": "v1",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用健康检查。不填默认不启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上报心跳时间间隔。若 EnableHealthCheck 为不启用，则此参数不生效；若 EnableHealthCheck 启用，此参数不填，则默认 ttl 为 5s。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GovernanceInstanceUpdate": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所在服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例服务所在命名空间。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治理中心服务实例id。",
+          "example": "0662cc4b73fae0a4b911363f25a51e3434de0d8c343",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例负载均衡权重信息。不填默认为100。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例默认健康信息。不填默认为健康。",
+          "example": "true",
+          "member": "bool",
+          "name": "Healthy",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例隔离信息。不填默认为非隔离。",
+          "example": "true",
+          "member": "bool",
+          "name": "Isolate",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ip。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例监听端口。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例使用协议。不填默认为空。",
+          "example": "grpc",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本。不填默认为空。",
+          "example": "v1",
+          "member": "string",
+          "name": "InstanceVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用健康检查。不填默认不启用。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHealthCheck",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上报心跳时间间隔。若 EnableHealthCheck 为不启用，则此参数不生效；若 EnableHealthCheck 启用，此参数不填，则默认 ttl 为 5s。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Ttl",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据信息。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "InstancePort": {
       "document": "实例监听端口信息",
       "members": [
@@ -7672,6 +8337,32 @@
       ],
       "usage": "in"
     },
+    "Metadata": {
+      "document": "元数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据键名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据键值。不填则默认为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAutoScalerResourceStrategyRequest": {
       "document": "ModifyAutoScalerResourceStrategy请求参数结构体",
       "members": [
@@ -8357,6 +9048,52 @@
     "ModifyConsoleNetworkResponse": {
       "document": "ModifyConsoleNetwork返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceInstancesRequest": {
+      "document": "ModifyGovernanceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务实例信息。",
+          "example": "无",
+          "member": "GovernanceInstanceUpdate",
+          "name": "GovernanceInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceInstancesResponse": {
+      "document": "ModifyGovernanceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

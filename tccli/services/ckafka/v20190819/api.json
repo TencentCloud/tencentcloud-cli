@@ -3751,7 +3751,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型: [标准版实例]填写 \"standard\" (默认), [专业版实例]填写 \"profession\"",
+          "document": "实例类型: [标准版实例]填写 \"standard\" (默认), [专业版实例]填写 \"profession\",[高级版实例]填写\"premium\"",
           "example": "profession",
           "member": "string",
           "name": "SpecificationsType",
@@ -3796,7 +3796,7 @@
         },
         {
           "disabled": false,
-          "document": "专业版实例磁盘类型，标准版实例不需要填写。\"CLOUD_SSD\"：SSD云硬盘；\"CLOUD_BASIC\"：高性能云硬盘。不传默认为 \"CLOUD_BASIC\"",
+          "document": "专业版/高级版实例磁盘类型，标准版实例不需要填写。\"CLOUD_SSD\"：SSD云硬盘；\"CLOUD_BASIC\"：高性能云硬盘。不传默认为 \"CLOUD_BASIC\"",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -10313,7 +10313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession",
+          "document": "国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium",
           "example": "profession",
           "member": "string",
           "name": "InstanceType",
@@ -10340,7 +10340,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)",
+          "document": "实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)",
           "example": "40",
           "member": "int64",
           "name": "Bandwidth",
@@ -10349,7 +10349,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)",
+          "document": "实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)",
           "example": "{\"DiskType\":\"SSD\", \"DiskSize\": 500}",
           "member": "InquiryDiskParam",
           "name": "InquiryDiskParam",
@@ -10376,7 +10376,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)",
+          "document": "购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)",
           "example": "40",
           "member": "int64",
           "name": "Partition",
@@ -10488,7 +10488,7 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -10498,7 +10498,7 @@
           "example": "1.0",
           "member": "float",
           "name": "UnitPriceDiscount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -10508,7 +10508,7 @@
           "example": "1.0",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -10518,7 +10518,7 @@
           "example": "1.0",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -10528,7 +10528,7 @@
           "example": "100.0",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -10538,7 +10538,7 @@
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10548,7 +10548,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10558,7 +10558,7 @@
           "example": "SSD",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10568,7 +10568,7 @@
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10578,7 +10578,7 @@
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10588,7 +10588,7 @@
           "example": "100",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

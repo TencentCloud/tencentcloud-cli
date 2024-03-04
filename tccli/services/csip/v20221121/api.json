@@ -210,6 +210,13 @@
       "output": "DescribeTaskLogURLResponse",
       "status": "online"
     },
+    "DescribeTopAttackInfo": {
+      "document": "查询TOP攻击信息",
+      "input": "DescribeTopAttackInfoRequest",
+      "name": "查询TOP攻击信息",
+      "output": "DescribeTopAttackInfoResponse",
+      "status": "online"
+    },
     "DescribeVULRiskAdvanceCFGList": {
       "document": "查询漏洞风险高级配置",
       "input": "DescribeVULRiskAdvanceCFGListRequest",
@@ -5775,6 +5782,43 @@
       ],
       "type": "object"
     },
+    "DescribeTopAttackInfoRequest": {
+      "document": "DescribeTopAttackInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "被调用的集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "OperatedMemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopAttackInfoResponse": {
+      "document": "DescribeTopAttackInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Top攻击类型/攻击者次数",
+          "example": "漏洞攻击:1234",
+          "member": "TagCount",
+          "name": "TopAttackInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVULRiskAdvanceCFGListRequest": {
       "document": "DescribeVULRiskAdvanceCFGList请求参数结构体",
       "members": [
@@ -9257,6 +9301,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TagCount": {
+      "document": "产品日志条数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CFW",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Tags": {
       "document": "主机标签信息",

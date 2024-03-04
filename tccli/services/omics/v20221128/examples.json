@@ -8,12 +8,36 @@
         "title": "创建环境"
       }
     ],
+    "CreateVolume": [
+      {
+        "document": "创建缓存卷。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVolume\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"menv-ry46eloh\",\n    \"Name\": \"测试缓存就\",\n    \"Type\": \"SHARED\",\n    \"Spec\": \"HP\",\n    \"Capacity\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d79c957c-adca-4e29-81ba-1add68284e09\",\n        \"VolumeId\": \"vol-mpcb5xnl\"\n    }\n}",
+        "title": "创建缓存卷"
+      }
+    ],
     "DeleteEnvironment": [
       {
         "document": "删除环境。",
         "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironment\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"env-lljckw12\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1de0885-6294-4176-9358-dc505fbfa42d\",\n        \"WorkflowUuid\": \"bc5b790b-407e-42c7-b488-a252fee1dcc7\"\n    }\n}",
         "title": "删除环境"
+      }
+    ],
+    "DeleteVolume": [
+      {
+        "document": "删除缓存卷。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolume\n<公共请求参数>\n\n{\n    \"VolumeId\": \"vol-mpcb5xnl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b900d9e-26bc-4d91-83b8-f5ade6b3a594\"\n    }\n}",
+        "title": "删除缓存卷"
+      }
+    ],
+    "DeleteVolumeData": [
+      {
+        "document": "删除缓存卷数据。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolumeData\n<公共请求参数>\n\n{\n    \"VolumeId\": \"vol-mpcb5xnl\",\n    \"Path\": \"/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef303ee0-8b7b-48e1-9663-272df381e93a\"\n    }\n}",
+        "title": "删除缓存卷数据"
       }
     ],
     "DescribeEnvironments": [
@@ -56,6 +80,14 @@
         "title": "查询表格行数据"
       }
     ],
+    "DescribeVolumes": [
+      {
+        "document": "查询缓存卷列表。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVolumes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"menv-ry46eloh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5020059-1511-4f45-ab7e-5188a78bda4b\",\n        \"TotalCount\": 1,\n        \"Volumes\": [\n            {\n                \"BandwidthLimit\": 380,\n                \"Capacity\": 32768,\n                \"DefaultMountPath\": \"/vol-8w7rfq4b\",\n                \"Description\": \"\",\n                \"EnvironmentId\": \"menv-ry46eloh\",\n                \"IsDefault\": true,\n                \"Name\": \"默认缓存卷（menv-ry46eloh）\",\n                \"Spec\": \"HP\",\n                \"Status\": \"AVAILABLE\",\n                \"Type\": \"SHARED\",\n                \"Usage\": 973150879744,\n                \"VolumeId\": \"vol-8w7rfq4b\"\n            }\n        ]\n    }\n}",
+        "title": "查询缓存卷列表"
+      }
+    ],
     "GetRunCalls": [
       {
         "document": "查询作业详情。",
@@ -92,6 +124,14 @@
         "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportTableFile\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"Name\": \"test_table\",\n    \"Description\": \"测试表格\",\n    \"CosUri\": \"cos://bucket/test.csv\",\n    \"DataType\": [\n        \"String\",\n        \"File\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TableId\": \"tab-fancy-saffron-slug-701244\",\n        \"RequestId\": \"50d781c7-eab9-4339-93ed-c312a2452d9d\"\n    }\n}",
         "title": "导入表格文件"
+      }
+    ],
+    "ModifyVolume": [
+      {
+        "document": "修改缓存卷。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVolume\n<公共请求参数>\n\n{\n    \"VolumeId\": \"vol-mpcb5xnl\",\n    \"Name\": \"新名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ad01102-de15-43fb-8de3-02b0107cf08c\"\n    }\n}",
+        "title": "修改缓存卷"
       }
     ],
     "RetryRuns": [

@@ -7,11 +7,32 @@
       "output": "CreateEnvironmentResponse",
       "status": "online"
     },
+    "CreateVolume": {
+      "document": "创建缓存卷。",
+      "input": "CreateVolumeRequest",
+      "name": "创建缓存卷",
+      "output": "CreateVolumeResponse",
+      "status": "online"
+    },
     "DeleteEnvironment": {
       "document": "删除环境。",
       "input": "DeleteEnvironmentRequest",
       "name": "删除环境",
       "output": "DeleteEnvironmentResponse",
+      "status": "online"
+    },
+    "DeleteVolume": {
+      "document": "删除缓存卷。",
+      "input": "DeleteVolumeRequest",
+      "name": "删除缓存卷",
+      "output": "DeleteVolumeResponse",
+      "status": "online"
+    },
+    "DeleteVolumeData": {
+      "document": "删除缓存卷数据。",
+      "input": "DeleteVolumeDataRequest",
+      "name": "删除缓存卷数据",
+      "output": "DeleteVolumeDataResponse",
       "status": "online"
     },
     "DescribeEnvironments": {
@@ -49,6 +70,13 @@
       "output": "DescribeTablesRowsResponse",
       "status": "online"
     },
+    "DescribeVolumes": {
+      "document": "查询缓存卷列表。",
+      "input": "DescribeVolumesRequest",
+      "name": "查询缓存卷列表",
+      "output": "DescribeVolumesResponse",
+      "status": "online"
+    },
     "GetRunCalls": {
       "document": "查询作业详情。",
       "input": "GetRunCallsRequest",
@@ -75,6 +103,13 @@
       "input": "ImportTableFileRequest",
       "name": "导入表格文件",
       "output": "ImportTableFileResponse",
+      "status": "online"
+    },
+    "ModifyVolume": {
+      "document": "修改缓存卷。",
+      "input": "ModifyVolumeRequest",
+      "name": "修改缓存卷",
+      "output": "ModifyVolumeResponse",
       "status": "online"
     },
     "RetryRuns": {
@@ -396,6 +431,88 @@
       ],
       "type": "object"
     },
+    "CreateVolumeRequest": {
+      "document": "CreateVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷类型，取值范围：\n* SHARED：多点挂载共享存储",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷规格，取值范围：\n\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型",
+          "example": "无",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷大小（GB），Turbo系列需要指定。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVolumeResponse": {
+      "document": "CreateVolume返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DatabaseOption": {
       "document": "数据库配置。",
       "members": [
@@ -439,6 +556,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeDataRequest": {
+      "document": "DeleteVolumeData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeDataResponse": {
+      "document": "DeleteVolumeData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeRequest": {
+      "document": "DeleteVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeResponse": {
+      "document": "DeleteVolume返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -802,6 +982,80 @@
           "name": "Rows",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVolumesRequest": {
+      "document": "DescribeVolumes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID。",
+          "example": "env-dus7da1",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器，支持过滤字段：\n- Name：名称\n- IsDefault：是否为默认",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVolumesResponse": {
+      "document": "DescribeVolumes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Volume",
+          "name": "Volumes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1396,6 +1650,51 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyVolumeRequest": {
+      "document": "ModifyVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVolumeResponse": {
+      "document": "ModifyVolume返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NFOption": {
       "document": "Nextflow选项。",
@@ -2918,6 +3217,132 @@
         }
       ],
       "usage": "in"
+    },
+    "Volume": {
+      "document": "缓存卷。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存卷ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vol-chs8x9",
+          "member": "string",
+          "name": "VolumeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认数据卷",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认数据卷",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷类型，取值范围：\n* SHARED：多点挂载共享存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHARED",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷规格，取值范围：\n\n- SD：通用标准型\n- HP：通用性能型\n- TB：turbo标准型\n- TP：turbo性能型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HP",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷大小（GB）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Capacity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷使用量（Byte）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Usage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷吞吐上限（MiB/s）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "float",
+          "name": "BandwidthLimit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认挂载路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/vlm-vhs6snl",
+          "member": "string",
+          "name": "DefaultMountPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为默认缓存卷。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"
