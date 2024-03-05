@@ -56,6 +56,13 @@
       "output": "CreateApplicationProxyRuleResponse",
       "status": "online"
     },
+    "CreateCLSIndex": {
+      "document": "针对指定实时日志投递任务（task-id），在对应的腾讯云 CLS 日志主题中创建投递日志字段对应的键值索引。如果您在腾讯云 CLS 已经创建索引，本接口将采用合并的方式追加索引。",
+      "input": "CreateCLSIndexRequest",
+      "name": "创建 CLS 索引",
+      "output": "CreateCLSIndexResponse",
+      "status": "online"
+    },
     "CreateConfigGroupVersion": {
       "document": "在版本管理模式下，用于创建指定配置组的新版本。版本管理功能内测中，当前仅白名单开放。",
       "input": "CreateConfigGroupVersionRequest",
@@ -103,6 +110,13 @@
       "input": "CreatePurgeTaskRequest",
       "name": "创建清除缓存任务",
       "output": "CreatePurgeTaskResponse",
+      "status": "online"
+    },
+    "CreateRealtimeLogDeliveryTask": {
+      "document": "通过本接口创建实时日志投递任务。本接口有如下限制：\n同一个实体（七层域名或者四层代理实例）在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到一个实时日志投递任务中。建议先通过 [DescribeRealtimeLogDeliveryTasks](https://tcloud4api.woa.com/document/product/1657/343539?!preview&!document=1)  接口根据实体查询实时日志投递任务列表，检查实体是否已经被添加到另一实时日志投递任务中。",
+      "input": "CreateRealtimeLogDeliveryTaskRequest",
+      "name": "创建实时日志投递任务",
+      "output": "CreateRealtimeLogDeliveryTaskResponse",
       "status": "online"
     },
     "CreateRule": {
@@ -180,6 +194,13 @@
       "input": "DeleteOriginGroupRequest",
       "name": "删除源站组",
       "output": "DeleteOriginGroupResponse",
+      "status": "online"
+    },
+    "DeleteRealtimeLogDeliveryTask": {
+      "document": "通过本接口删除实时日志投递任务。",
+      "input": "DeleteRealtimeLogDeliveryTaskRequest",
+      "name": "删除实时日志投递任务",
+      "output": "DeleteRealtimeLogDeliveryTaskResponse",
       "status": "online"
     },
     "DeleteRules": {
@@ -385,6 +406,13 @@
       "output": "DescribePurgeTasksResponse",
       "status": "online"
     },
+    "DescribeRealtimeLogDeliveryTasks": {
+      "document": "通过本接口查询实时日志投递任务列表。",
+      "input": "DescribeRealtimeLogDeliveryTasksRequest",
+      "name": "查询实时日志投递任务列表",
+      "output": "DescribeRealtimeLogDeliveryTasksResponse",
+      "status": "online"
+    },
     "DescribeRules": {
       "document": "查询规则引擎规则。",
       "input": "DescribeRulesRequest",
@@ -572,6 +600,13 @@
       "input": "ModifyOriginGroupRequest",
       "name": "修改源站组",
       "output": "ModifyOriginGroupResponse",
+      "status": "online"
+    },
+    "ModifyRealtimeLogDeliveryTask": {
+      "document": "通过本接口修改实时日志投递任务配置。本接口有如下限制：<li>不支持修改实时日志投递任务目的地类型（TaskType）；</li><li>不支持修改数据投递类型（LogType）</li><li>不支持修改数据投递区域（Area）</li><li>当原实时日志投递任务的目的地为腾讯云 CLS 时，不支持修改目的地详细配置，如日志集、日志主题。</li>",
+      "input": "ModifyRealtimeLogDeliveryTaskRequest",
+      "name": "修改实时日志投递任务",
+      "output": "ModifyRealtimeLogDeliveryTaskResponse",
       "status": "online"
     },
     "ModifyRule": {
@@ -2494,6 +2529,45 @@
       ],
       "usage": "both"
     },
+    "CLSTopic": {
+      "document": "实时日志投递到腾讯云 CLS 的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 CLS 日志集 ID。\t",
+          "example": "1a6efff1-0e40-4d37-a4ed-02c92513406b",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 CLS 日志主题 ID。",
+          "example": "0b3a07c0-5cf6-4017-8a75-cd4459aea588",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 CLS 日志集所在的地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "LogSetRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Cache": {
       "document": "缓存时间设置",
       "members": [
@@ -3377,6 +3451,42 @@
       ],
       "type": "object"
     },
+    "CreateCLSIndexRequest": {
+      "document": "CreateCLSIndex请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2bu6nf2gzvms",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务 ID。",
+          "example": "7bf419a1-0e89-4304-89fa-6a21f27a1538",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSIndexResponse": {
+      "document": "CreateCLSIndex返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConfigGroupVersionRequest": {
       "document": "CreateConfigGroupVersion请求参数结构体",
       "members": [
@@ -3873,6 +3983,151 @@
       ],
       "type": "object"
     },
+    "CreateRealtimeLogDeliveryTaskRequest": {
+      "document": "CreateRealtimeLogDeliveryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务的名称，格式为数字、英文、-和_组合，最多 200 个字符。",
+          "example": "test_log_task",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务类型，取值有：\n<li>cls: 推送到腾讯云 CLS；</li>\n<li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>\n<li>s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "example": "cls",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：\n<li>七层域名：domain.example.com；</li>\n<li>四层代理实例：sid-2s69eb5wcms7。</li>",
+          "example": "[\"domain.example.com\"]",
+          "member": "string",
+          "name": "EntityList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据投递类型，取值有：\n<li>domain：站点加速日志；</li>\n<li>application：四层代理日志；</li>\n<li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>\n<li>web-attack：托管规则日志；</li>\n<li>web-rule：自定义规则日志；</li>\n<li>web-bot：Bot管理日志。</li>",
+          "example": "domain",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据投递区域，取值有：\n<li>mainland：中国大陆境内；</li>\n<li>overseas：全球（不含中国大陆）。</li>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的预设字段列表。",
+          "example": "[\"RequestID\",\"ClientIP\",\"RequestTime\"]",
+          "member": "string",
+          "name": "Fields",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "投递的自定义字段列表，支持在 HTTP 请求头、响应头、Cookie 中提取指定字段值。自定义字段名称不能重复，且最多不能超过 200 个字段。",
+          "example": "无",
+          "member": "CustomField",
+          "name": "CustomFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志投递的过滤条件，不填表示投递全量日志。",
+          "example": "无",
+          "member": "DeliveryCondition",
+          "name": "DeliveryConditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采样比例，采用千分制，取值范围为1-1000，例如：填写 605 表示采样比例为 60.5%。不填表示采样比例为 100%。",
+          "example": "605",
+          "member": "uint64",
+          "name": "Sample",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CLS 的配置信息。当 TaskType 取值为 cls 时，该参数必填。",
+          "example": "无",
+          "member": "CLSTopic",
+          "name": "CLS",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义 HTTP 服务的配置信息。当 TaskType 取值为 custom_endpoint 时，该参数必填。",
+          "example": "无",
+          "member": "CustomEndpoint",
+          "name": "CustomEndpoint",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "AWS S3 兼容存储桶的配置信息。当 TaskType 取值为 s3 时，该参数必填。",
+          "example": "无",
+          "member": "S3",
+          "name": "S3",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRealtimeLogDeliveryTaskResponse": {
+      "document": "CreateRealtimeLogDeliveryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的任务ID。",
+          "example": "ace8680b-55b9-498b-a113-056ab68d1da1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRuleRequest": {
       "document": "CreateRule请求参数结构体",
       "members": [
@@ -4156,6 +4411,117 @@
         }
       ],
       "type": "object"
+    },
+    "CustomEndpoint": {
+      "document": "实时日志投递到自定义 HTTP(S) 接口的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实时日志投递的自定义 HTTP 接口地址，暂仅支持 HTTP/HTTPS 协议。",
+          "example": "http://custom.edgeone.com/post/log",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填写自定义的 SecretId 用于生成加密签名，如果源站需要鉴权此参数必填。",
+          "example": "your-access-id",
+          "member": "string",
+          "name": "AccessId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填写自定义的 SecretKey 用于生成加密签名，如果源站需要鉴权此参数必填。",
+          "example": "your-access-key",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据压缩类型，取值有: <li> gzip：使用 gzip 方式压缩。</li>不填表示不启用压缩。",
+          "example": "gzip",
+          "member": "string",
+          "name": "CompressType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "POST 请求投递日志时，使用的应用层协议类型，取值有： \n<li>http：HTTP 协议；</li>\n<li>https：HTTPS 协议。</li>如果不填默认根据填写的 URL 地址解析出协议类型。\t",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。",
+          "example": "无",
+          "member": "Header",
+          "name": "Headers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomField": {
+      "document": "实时日志投递任务中的自定义日志字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "从 HTTP 请求和响应中的指定位置提取数据，取值有：\n<li>ReqHeader：从 HTTP 请求头中提取指定字段值；</li>\n<li>RspHeader：从 HTTP 响应头中提取指定字段值；</li>\n<li>Cookie: 从 Cookie 中提取指定字段值。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ReqHeader",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要提取值的参数名称，例如：Accept-Language。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Accept-Language",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否投递该字段，不填表示不投递此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DDoS": {
       "document": "DDoS配置",
@@ -4749,6 +5115,42 @@
       ],
       "type": "object"
     },
+    "DeleteRealtimeLogDeliveryTaskRequest": {
+      "document": "DeleteRealtimeLogDeliveryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务 ID。",
+          "example": "ace8680b-55b9-498b-a113-056ab68d1da1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRealtimeLogDeliveryTaskResponse": {
+      "document": "DeleteRealtimeLogDeliveryTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRulesRequest": {
       "document": "DeleteRules请求参数结构体",
       "members": [
@@ -4883,6 +5285,23 @@
         }
       ],
       "type": "object"
+    },
+    "DeliveryCondition": {
+      "document": "实时日志投递条件，用于定义投递日志范围。DeliveryCondition 数组内多个项的关系为“或”，内层 Conditions 数组内多个项的关系为“且”。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志过滤条件，详细的过滤条件如下：\n<li>EdgeResponseStatusCode：按照 EdgeOne 节点响应返回给客户端的状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 0 的整数</li>\n<li>OriginResponseStatusCode：按照源站响应状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 -1 的整数</li>\n<li>SecurityAction：按照请求命中安全规则后的最终处置动作进行过滤。<br>   支持运算符：equal<br>   可选项如下：<br>   -：未知/未命中<br>   Monitor：观察<br>   JSChallenge：JavaScript 挑战<br>   Deny：拦截<br>   Allow：放行<br>   BlockIP：IP 封禁<br>   Redirect：重定向<br>   ReturnCustomPage：返回自定义页面<br>   ManagedChallenge：托管挑战<br>   Silence：静默<br>   LongDelay：长时间等待后响应<br>   ShortDelay：短时间等待后响应</li>",
+          "example": "无",
+          "member": "QueryCondition",
+          "name": "Conditions",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeployConfigGroupVersionRequest": {
       "document": "DeployConfigGroupVersion请求参数结构体",
@@ -6862,6 +7281,80 @@
           "example": "无",
           "member": "Task",
           "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeLogDeliveryTasksRequest": {
+      "document": "DescribeRealtimeLogDeliveryTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-21xfqlh4qjee",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有实时日志投递任务信息。详细的过滤条件如下：\n<li>task-id：按照实时日志投递任务 ID进行过滤。不支持模糊查询。</li>\n<li>task-name：按照实时日志投递任务名称进行过滤。支持模糊查询，使用模糊查询时，仅支持填写一个实时日志投递任务名称。</li>\n<li>entity-list：按照实时日志投递任务对应的实体进行过滤。不支持模糊查询。示例值：domain.example.com 或者 sid-2s69eb5wcms7。</li>\n<li>task-type：按照实时日志投递任务类型进行过滤。不支持模糊查询。可选项如下：<br>   cls: 推送到腾讯云 CLS；<br>   custom_endpoint：推送到自定义 HTTP(S) 地址；<br>   s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRealtimeLogDeliveryTasksResponse": {
+      "document": "DescribeRealtimeLogDeliveryTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的实时日志投递任务个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合查询条件的所有实时日志投递任务列表。",
+          "example": "无",
+          "member": "RealtimeLogDeliveryTask",
+          "name": "RealtimeLogDeliveryTasks",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10720,6 +11213,123 @@
       ],
       "type": "object"
     },
+    "ModifyRealtimeLogDeliveryTaskRequest": {
+      "document": "ModifyRealtimeLogDeliveryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-xxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务 ID。",
+          "example": "cdda4cbc-a83e-4a54-be68-82339e80bb2f",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务的名称，格式为数字、英文、-和_组合，最多 200 个字符。不填保持原有配置。",
+          "example": "test_log_task",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务的状态，取值有：\n<li>enabled: 启用；</li>\n<li>disabled: 停用。</li>不填保持原有配置。",
+          "example": "enabled",
+          "member": "string",
+          "name": "DeliveryStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：\n<li>七层域名：domain.example.com；</li>\n<li>四层代理实例：sid-2s69eb5wcms7。</li>不填保持原有配置。",
+          "example": "[\"domain.example.com\"]",
+          "member": "string",
+          "name": "EntityList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "投递的预设字段列表。不填保持原有配置。",
+          "example": "[\"RequestID\",\"ClientIP\",\"RequestTime\"]",
+          "member": "string",
+          "name": "Fields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "投递的自定义字段列表，支持在 HTTP 请求头、响应头、Cookie 中提取指定字段值。自定义字段名称不能重复，且最多不能超过 200 个字段。不填保持原有配置。",
+          "example": "无",
+          "member": "CustomField",
+          "name": "CustomFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志投递的过滤条件。不填表示投递全量日志。",
+          "example": "无",
+          "member": "DeliveryCondition",
+          "name": "DeliveryConditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采样比例，采用千分制，取值范围为1-1000，例如：填写 605 表示采样比例为 60.5%。不填保持原有配置。",
+          "example": "605",
+          "member": "uint64",
+          "name": "Sample",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义 HTTP 服务的配置信息，不填保持原有配置。 ",
+          "example": "无",
+          "member": "CustomEndpoint",
+          "name": "CustomEndpoint",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "AWS S3 兼容存储桶的配置信息，不填保持原有配置。",
+          "example": "无",
+          "member": "S3",
+          "name": "S3",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRealtimeLogDeliveryTaskResponse": {
+      "document": "ModifyRealtimeLogDeliveryTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRuleRequest": {
       "document": "ModifyRule请求参数结构体",
       "members": [
@@ -12538,6 +13148,172 @@
       ],
       "usage": "both"
     },
+    "RealtimeLogDeliveryTask": {
+      "document": "实时日志投递任务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实时日志投递任务 ID。",
+          "example": "cdda4cbc-a83e-4a54-be68-82339e80bb2f",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务的名称。",
+          "example": "test_log_task",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务的状态，取值有： <li>enabled: 已启用；</li> <li>disabled: 已停用；</li><li>deleted: 异常删除状态，请检查目的地腾讯云 CLS 日志集/日志主题是否已被删除。</li>",
+          "example": "enabled",
+          "member": "string",
+          "name": "DeliveryStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务类型，取值有： <li>cls: 推送到腾讯云 CLS；</li> <li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li> <li>s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "example": "cls",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下： <li>七层域名：domain.example.com；</li> <li>四层代理实例：sid-2s69eb5wcms7。</li>\t",
+          "example": "[\"domain.example.com\"]",
+          "member": "string",
+          "name": "EntityList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据投递类型，取值有： <li>domain：站点加速日志；</li> <li>application：四层代理日志；</li> <li>web-rateLiming：速率限制和 CC 攻击防护日志；</li> <li>web-attack：托管规则日志；</li> <li>web-rule：自定义规则日志；</li> <li>web-bot：Bot管理日志。</li>",
+          "example": "domain",
+          "member": "string",
+          "name": "LogType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据投递区域，取值有： <li>mainland：中国大陆境内；</li> <li>overseas：全球（不含中国大陆）。</li>",
+          "example": "mainland",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递的预设字段列表。",
+          "example": "[\"RequestID\",\"ClientIP\",\"RequestTime\"]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递的自定义字段列表。",
+          "example": "无",
+          "member": "CustomField",
+          "name": "CustomFields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志投递的过滤条件。",
+          "example": "无",
+          "member": "DeliveryCondition",
+          "name": "DeliveryConditions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采样比例，采用千分制，取值范围为1-1000，例如：605 表示采样比例为 60.5%。",
+          "example": "605",
+          "member": "uint64",
+          "name": "Sample",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS 的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSTopic",
+          "name": "CLS",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义 HTTP 服务的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomEndpoint",
+          "name": "CustomEndpoint",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AWS S3 兼容存储桶的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "S3",
+          "name": "S3",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Resource": {
       "document": "计费资源",
       "members": [
@@ -13241,6 +14017,78 @@
         }
       ],
       "usage": "out"
+    },
+    "S3": {
+      "document": "实时日志投递到 AWS S3 兼容存储桶的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "不包含存储桶名称或路径的 URL，例如：`https://storage.googleapis.com`、`https://s3.ap-northeast-2.amazonaws.com`、`https://cos.ap-nanjing.myqcloud.com`。",
+          "example": "https://cos.ap-beijing.myqcloud.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶所在的地域，例如：`ap-northeast-2`。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶名称和日志存储目录，例如：`your_bucket_name/EO-logs/`。如果存储桶中无此目录则会自动创建。",
+          "example": "test-s3-1310708577/hello/world",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问存储桶使用的 Access Key ID。",
+          "example": "TeAI8Ye2MkUAWoNJCk",
+          "member": "string",
+          "name": "AccessId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问存储桶使用的 secret key。",
+          "example": "MsiAACHihAAXuH83Ayd7j0VRJ9SYNCOSxwe",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据压缩类型，取值有: <li> gzip：gzip压缩。</li>不填表示不启用压缩。",
+          "example": "gzip",
+          "member": "string",
+          "name": "CompressType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SecEntry": {
       "document": "安全数据Entry返回值",

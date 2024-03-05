@@ -236,14 +236,6 @@
         "title": "删除专业集群"
       }
     ],
-    "DeleteProClusters": [
-      {
-        "document": "删除专业集群，支持同时删除多个专业集群",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProClusters\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ClusterIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "删除专业集群"
-      }
-    ],
     "DeleteRabbitMQUser": [
       {
         "document": "-",
@@ -450,6 +442,22 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"ClusterId\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentSet\": [\n            {\n                \"EnvironmentId\": \"abc\",\n                \"Remark\": \"abc\",\n                \"MsgTTL\": 0,\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\",\n                \"NamespaceId\": \"abc\",\n                \"NamespaceName\": \"abc\",\n                \"TopicNum\": 0,\n                \"RetentionPolicy\": {\n                    \"TimeInMinutes\": 0,\n                    \"SizeInMB\": 0\n                },\n                \"AutoSubscriptionCreation\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取命名空间列表"
+      }
+    ],
+    "DescribeMqMsgTrace": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMqMsgTrace\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"Protocol\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"GroupName\": \"xx\",\n    \"QueueName\": \"xx\",\n    \"QueryDlqMsg\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Stage\": \"xx\",\n                \"Data\": \"xx\"\n            }\n        ],\n        \"ShowTopicName\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsg\n&EnvironmentId=default\n&TopicName=msg_dev\n&MsgId=16836:8:-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Properties\": \"{\\\"publish-time\\\": \\\"1597747661679\\\", \\\"X-Pulsar-num-batch-message\\\": \\\"1\\\", \\\"MESSAGE_ID\\\": \\\"16836:8:-1\\\", \\\"X-Pulsar-producer-name\\\": \\\"fisrtProducer\\\", \\\"bookies-address\\\": \\\"9.139.220.16:3181#9.139.220.8:3181\\\"}\",\n        \"Body\": \"i just a10 testing!\",\n        \"BatchId\": \"1\",\n        \"ProduceTime\": \"2020-08-18 18:47:41\",\n        \"MsgId\": \"16836:8:-1\",\n        \"ProducerName\": \"fisrtProducer\",\n        \"RequestId\": \"msgs\"\n    }\n}",
+        "title": "获取消息详情"
       }
     ],
     "DescribeMsgTrace": [

@@ -1113,7 +1113,7 @@ def doDescribeDeviceEventHistory(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBatch(args, parsed_globals):
+def doDescribeBindUsr(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1142,11 +1142,11 @@ def doDescribeBatch(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBatchRequest()
+    model = models.DescribeBindUsrRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeBatch(model)
+        rsp = client.DescribeBindUsr(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2985,58 +2985,6 @@ def doInheritCloudStorageUser(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBindUsr(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBindUsrRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeBindUsr(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doGetFirmwareURL(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3141,7 +3089,7 @@ def doDeleteOtaVersion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeDeviceCommLog(args, parsed_globals):
+def doDescribeBatch(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3170,11 +3118,11 @@ def doDescribeDeviceCommLog(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDeviceCommLogRequest()
+    model = models.DescribeBatchRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeDeviceCommLog(model)
+        rsp = client.DescribeBatch(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3383,6 +3331,58 @@ def doDeleteProduct(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteProduct(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBatchs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBatchsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeBatchs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4753,7 +4753,7 @@ def doDescribeCloudStorage(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeBatchs(args, parsed_globals):
+def doDescribeDeviceCommLog(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4782,11 +4782,11 @@ def doDescribeBatchs(args, parsed_globals):
     client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeBatchsRequest()
+    model = models.DescribeDeviceCommLogRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeBatchs(model)
+        rsp = client.DescribeDeviceCommLog(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6451,6 +6451,58 @@ def doRunTestOtaVersion(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.RunTestOtaVersion(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeP2PInfo(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.IotvideoClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeP2PInfoRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeP2PInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -8273,7 +8325,7 @@ ACTION_MAP = {
     "EditFirmware": doEditFirmware,
     "PublishMessage": doPublishMessage,
     "DescribeDeviceEventHistory": doDescribeDeviceEventHistory,
-    "DescribeBatch": doDescribeBatch,
+    "DescribeBindUsr": doDescribeBindUsr,
     "ImportModelDefinition": doImportModelDefinition,
     "DescribeStream": doDescribeStream,
     "DescribeCloudStorageThumbnailList": doDescribeCloudStorageThumbnailList,
@@ -8309,14 +8361,14 @@ ACTION_MAP = {
     "DeleteIotDataType": doDeleteIotDataType,
     "DisableOtaVersion": doDisableOtaVersion,
     "InheritCloudStorageUser": doInheritCloudStorageUser,
-    "DescribeBindUsr": doDescribeBindUsr,
     "GetFirmwareURL": doGetFirmwareURL,
     "DeleteOtaVersion": doDeleteOtaVersion,
-    "DescribeDeviceCommLog": doDescribeDeviceCommLog,
+    "DescribeBatch": doDescribeBatch,
     "ListFirmwares": doListFirmwares,
     "DescribeCategory": doDescribeCategory,
     "RefundStorageService": doRefundStorageService,
     "DeleteProduct": doDeleteProduct,
+    "DescribeBatchs": doDescribeBatchs,
     "ModifyDataForwardStatus": doModifyDataForwardStatus,
     "DescribeFirmwareTask": doDescribeFirmwareTask,
     "ResetCloudStorage": doResetCloudStorage,
@@ -8343,7 +8395,7 @@ ACTION_MAP = {
     "ModifyForwardRule": doModifyForwardRule,
     "CancelAIModelApplication": doCancelAIModelApplication,
     "DescribeCloudStorage": doDescribeCloudStorage,
-    "DescribeBatchs": doDescribeBatchs,
+    "DescribeDeviceCommLog": doDescribeDeviceCommLog,
     "CreateIotModel": doCreateIotModel,
     "DescribeDeviceActionHistory": doDescribeDeviceActionHistory,
     "DescribeIotModel": doDescribeIotModel,
@@ -8376,6 +8428,7 @@ ACTION_MAP = {
     "DeleteCloudStorageEvent": doDeleteCloudStorageEvent,
     "DisableDevice": doDisableDevice,
     "RunTestOtaVersion": doRunTestOtaVersion,
+    "DescribeP2PInfo": doDescribeP2PInfo,
     "CreateIotDataType": doCreateIotDataType,
     "CreateAnonymousAccessToken": doCreateAnonymousAccessToken,
     "DescribeCloudStorageOrder": doDescribeCloudStorageOrder,

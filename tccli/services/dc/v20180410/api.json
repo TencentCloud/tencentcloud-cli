@@ -127,7 +127,7 @@
       "status": "online"
     },
     "ModifyDirectConnectTunnelExtra": {
-      "document": "本接口（ModifyDirectConnectTunnelExtra）用于修改专用通道扩展信息",
+      "document": "修改专用通道扩展信息。",
       "input": "ModifyDirectConnectTunnelExtraRequest",
       "name": "修改专用通道扩展信息",
       "output": "ModifyDirectConnectTunnelExtraResponse",
@@ -2947,7 +2947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
+          "document": "专用通道ID。",
           "example": "dcx-r3sml04o",
           "member": "string",
           "name": "DirectConnectTunnelId",
@@ -2956,7 +2956,7 @@
         },
         {
           "disabled": false,
-          "document": "专用通道的Vlan",
+          "document": "专用通道的Vlan。",
           "example": "90",
           "member": "int64",
           "name": "Vlan",
@@ -2965,7 +2965,7 @@
         },
         {
           "disabled": false,
-          "document": "用户侧BGP，Asn，AuthKey",
+          "document": "Bgp参数，包括Asn，AuthKey",
           "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
@@ -2974,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "用户侧过滤网段地址",
+          "document": "用户侧过滤网段地址。",
           "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
@@ -2983,7 +2983,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯侧互联IP",
+          "document": "腾讯侧互联IP。",
           "example": "192.168.1.1/29",
           "member": "string",
           "name": "TencentAddress",
@@ -2992,7 +2992,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯侧备用互联IP",
+          "document": "腾讯侧备用互联IP。",
           "example": "192.168.1.1/29",
           "member": "string",
           "name": "TencentBackupAddress",
@@ -3001,7 +3001,7 @@
         },
         {
           "disabled": false,
-          "document": "用户侧互联IP",
+          "document": "用户侧互联IP。",
           "example": "192.168.1.1/29",
           "member": "string",
           "name": "CustomerAddress",
@@ -3010,7 +3010,7 @@
         },
         {
           "disabled": false,
-          "document": "专用通道带宽值",
+          "document": "专用通道带宽值。",
           "example": "100",
           "member": "int64",
           "name": "Bandwidth",
@@ -3019,7 +3019,7 @@
         },
         {
           "disabled": false,
-          "document": "BGP community开关",
+          "document": "BGP community开关。",
           "example": "false",
           "member": "bool",
           "name": "EnableBGPCommunity",
@@ -3028,7 +3028,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启BFD",
+          "document": "是否开启BFD。",
           "example": "1",
           "member": "int64",
           "name": "BfdEnable",
@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启NQA",
+          "document": "是否开启NQA。",
           "example": "1",
           "member": "int64",
           "name": "NqaEnable",
@@ -3046,7 +3046,7 @@
         },
         {
           "disabled": false,
-          "document": "BFD配置信息",
+          "document": "BFD配置信息。",
           "example": "无",
           "member": "BFDInfo",
           "name": "BfdInfo",
@@ -3055,7 +3055,7 @@
         },
         {
           "disabled": false,
-          "document": "NQA配置信息",
+          "document": "NQA配置信息。",
           "example": "无",
           "member": "NQAInfo",
           "name": "NqaInfo",
@@ -3064,7 +3064,7 @@
         },
         {
           "disabled": false,
-          "document": "0：停用IPv6\n1: 启用IPv6",
+          "document": "IPV6使能。0：停用IPv6；1: 启用IPv6。",
           "example": "1",
           "member": "int64",
           "name": "IPv6Enable",
@@ -3073,7 +3073,7 @@
         },
         {
           "disabled": false,
-          "document": "去往用户侧的路由信息",
+          "document": "去往用户侧的路由信息。",
           "example": "无",
           "member": "RouteFilterPrefix",
           "name": "CustomerIDCRoutes",
@@ -3082,12 +3082,39 @@
         },
         {
           "disabled": false,
-          "document": "是否开启巨帧\n1：开启\n0：不开启",
+          "document": "是否开启巨帧。1：开启；0：不开启。",
           "example": "1",
           "member": "int64",
           "name": "JumboEnable",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯侧互联IPv6。",
+          "example": "20::1/64",
+          "member": "string",
+          "name": "TencentIPv6Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯侧备用互联IPv6。",
+          "example": "20::2/64",
+          "member": "string",
+          "name": "TencentBackupIPv6Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户侧互联IPv6。",
+          "example": "20::3/64",
+          "member": "string",
+          "name": "CustomerIPv6Address",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

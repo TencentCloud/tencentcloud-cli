@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "ScaledTpsEnabled": false,
         "InstanceType": "abc",
         "InstanceId": "abc",
         "InstanceName": "abc",

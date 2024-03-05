@@ -3,14 +3,14 @@
     "CreateApmInstance": {
       "document": "业务购买APM实例，调用该接口创建",
       "input": "CreateApmInstanceRequest",
-      "name": "创建Apm实例",
+      "name": "创建APM实例",
       "output": "CreateApmInstanceResponse",
       "status": "online"
     },
     "DescribeApmAgent": {
-      "document": "获取Apm Agent信息",
+      "document": "获取APM Agent信息",
       "input": "DescribeApmAgentRequest",
-      "name": "获取Apm Agent信息",
+      "name": "获取APM Agent信息",
       "output": "DescribeApmAgentResponse",
       "status": "online"
     },
@@ -745,7 +745,7 @@
           "example": "无",
           "member": "ApmAgentInfo",
           "name": "ApmAgent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

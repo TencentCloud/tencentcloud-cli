@@ -7908,6 +7908,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7918,12 +7919,13 @@
           "example": "无",
           "member": "string",
           "name": "Option",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "FillApproverInfo": {
       "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业微信自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填，ApproverSource设置为空",
@@ -10763,6 +10765,7 @@
           "member": "string",
           "name": "SealId",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10773,6 +10776,7 @@
           "member": "string",
           "name": "SealType",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10783,11 +10787,12 @@
           "member": "string",
           "name": "SealName",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "SignQrCode": {
       "document": "签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。",
@@ -11276,7 +11281,7 @@
         {
           "disabled": false,
           "document": "模板ID，模板的唯一标识",
-          "example": "无",
+          "example": "yDSLKUUckpoqt3vzUP7DfuSBwaJfz7M1",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -11286,8 +11291,8 @@
         },
         {
           "disabled": false,
-          "document": "模板名",
-          "example": "无",
+          "document": "模板的名字",
+          "example": "西红柿采购模板",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -11297,8 +11302,41 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息",
+          "document": "此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。\n\n[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)\n\n",
           "example": "无",
+          "member": "Recipient",
+          "name": "Recipients",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板的填充控件列表\n\n[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此模板中的签署控件列表\n\n[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息",
+          "example": "2023年西红柿采购模板",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -11308,7 +11346,7 @@
         },
         {
           "disabled": false,
-          "document": "模板关联的资源ID列表",
+          "document": "此模板的资源ID",
           "example": "无",
           "member": "string",
           "name": "DocumentResourceIds",
@@ -11330,7 +11368,7 @@
         },
         {
           "disabled": false,
-          "document": "附件关联的资源ID",
+          "document": "此模板里边附件的资源ID",
           "example": "无",
           "member": "string",
           "name": "AttachmentResourceIds",
@@ -11341,8 +11379,8 @@
         },
         {
           "disabled": false,
-          "document": "签署顺序\n无序 -1\n有序为序列数字 0,1,2",
-          "example": "无",
+          "document": "签署人参与签署的顺序，可以分为以下两种方式：\n\n<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝\n<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝",
+          "example": "1",
           "member": "int64",
           "name": "SignOrder",
           "output_required": true,
@@ -11352,40 +11390,7 @@
         },
         {
           "disabled": false,
-          "document": "模板中的签署参与方列表",
-          "example": "无",
-          "member": "Recipient",
-          "name": "Recipients",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模板的填充控件列表",
-          "example": "无",
-          "member": "Component",
-          "name": "Components",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模板中的签署控件列表",
-          "example": "无",
-          "member": "Component",
-          "name": "SignComponents",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模板状态\n-1:不可用\n0:草稿态\n1:正式态，可以正常使用",
+          "document": "此模板的状态可以分为以下几种：\n\n<b>-1</b>：不可用状态。\n<b>0</b>：草稿态，即模板正在编辑或未发布状态。\n<b>1</b>：正式态，只有正式态的模板才可以发起合同。",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -11396,8 +11401,8 @@
         },
         {
           "disabled": false,
-          "document": "模板的创建者信息，电子签系统用户ID",
-          "example": "无",
+          "document": "模板的创建者信息，用户的名字\n\n注： `是创建者的名字，而非创建者的用户ID`",
+          "example": "张三",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -11418,7 +11423,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方参与信息Promoter",
+          "document": "此模板创建方角色信息。\n\n[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)\n",
           "example": "无",
           "member": "Recipient",
           "name": "Promoter",
@@ -11429,7 +11434,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型：\n1  静默签,\n3  普通模板",
+          "document": "模板类型可以分为以下两种：\n\n<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。\n<b>3</b>：普通模板，即签署人需要手动进行签署操作。",
           "example": "无",
           "member": "int64",
           "name": "TemplateType",
@@ -11440,7 +11445,7 @@
         },
         {
           "disabled": false,
-          "document": "模板可用状态：\n1 启用（默认）\n2 停用",
+          "document": "模板可用状态可以分为以下两种：\n\n<b>1</b>：（默认）启用状态，即模板可以正常使用。\n<b>2</b>：停用状态，即模板暂时无法使用。\n\n可到控制台启停模板",
           "example": "无",
           "member": "int64",
           "name": "Available",
@@ -11462,8 +11467,19 @@
         },
         {
           "disabled": false,
-          "document": "模板预览链接，有效时间5分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板创建人用户ID",
           "example": "无",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://embed.beta.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDSxNUUckptbbq64UEly7FaCkhsBlSLj&codeType=QUICK&businessType=TEMPLATE&businessId=yDSLVUUckpo3pub6UE5dPdv8pkDsrbEn&channel=PROXYCHANNEL",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": true,
@@ -11473,8 +11489,8 @@
         },
         {
           "disabled": false,
-          "document": "模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240205005",
           "member": "string",
           "name": "TemplateVersion",
           "output_required": true,
@@ -11484,7 +11500,7 @@
         },
         {
           "disabled": false,
-          "document": "模板是否已发布：\ntrue-已发布\nfalse-未发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板是否已发布可以分为以下两种状态：\n\n<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。\n<b>false</b>：未发布状态，表示该模板还未发布，无法使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "Published",
@@ -11495,7 +11511,7 @@
         },
         {
           "disabled": false,
-          "document": "分享来源的模板ID。用在集团账号子企业模板里\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ShareTemplateId",
@@ -11506,7 +11522,7 @@
         },
         {
           "disabled": false,
-          "document": "模板内部指定的印章列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此模板配置的预填印章列表（包括自动签署指定的印章）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SealInfo",
           "name": "TemplateSeals",

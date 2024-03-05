@@ -1666,7 +1666,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -1862,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",
@@ -2054,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆",
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
           "example": "MC",
           "member": "string",
           "name": "AccessRegion",

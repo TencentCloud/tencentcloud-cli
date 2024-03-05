@@ -528,6 +528,14 @@
         "title": "查询产品数据模板"
       }
     ],
+    "DescribeP2PInfo": [
+      {
+        "document": "拉取设备p2p信息",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeP2PInfo\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"P2PInfo\": \"XP2Ptest==%2.4.19\",\n        \"ReportTime\": 1708571992,\n        \"RequestId\": \"f5603714-0db6-4a4e-85a9-bb884a83a724\"\n    }\n}",
+        "title": "拉取设备p2p信息"
+      }
+    ],
     "DescribePackageConsumeTask": [
       {
         "document": "",

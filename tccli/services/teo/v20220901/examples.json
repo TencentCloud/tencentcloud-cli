@@ -82,6 +82,14 @@
         "title": "创建应用代理规则"
       }
     ],
+    "CreateCLSIndex": [
+      {
+        "document": "针对指定 zone-id 下的 task-id，根据实时日志投递任务中配置的日志字段列表，在对应腾讯云 CLS 日志主题中创建键值索引。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSIndex\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m19xw\",\n    \"TaskId\": \"26580056-1187-43ed-b2c7-ecdb5bae0b46\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建 CLS 索引"
+      }
+    ],
     "CreateConfigGroupVersion": [
       {
         "document": "在站点 ID 为 zone-m2kplohsdc4b 的站点下配置组 ID 为 cg-2p9unsmt54uw 的配置组下创建一个新版本。",
@@ -172,6 +180,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePurgeTask\n<公共请求参数>\n\n{\n    \"Targets\": [\n        \"http://www.example.com/test/\"\n    ],\n    \"Type\": \"purge_prefix\",\n    \"Method\": \"delete\",\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"20ga521cpwck\",\n        \"FailedList\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "目录刷新 — 直接删除对应目录下的资源"
+      }
+    ],
+    "CreateRealtimeLogDeliveryTask": [
+      {
+        "document": "创建目的地为腾讯云 CLS 的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的站点加速日志，包含字段有 RequestID、ClientIP、RequestTime 以及从 Accept-Language 请求头中提取的字段值，配置采样比例为 60.5%。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRealtimeLogDeliveryTask\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxx\",\n    \"TaskName\": \"test_log_task\",\n    \"TaskType\": \"cls\",\n    \"EntityList\": [\n        \"domain.example.com\"\n    ],\n    \"LogType\": \"domain\",\n    \"Area\": \"mainland\",\n    \"Fields\": [\n        \"RequestID\",\n        \"ClientIP\",\n        \"RequestTime\"\n    ],\n    \"CustomFields\": [\n        {\n            \"Name\": \"ReqHeader\",\n            \"Value\": \"Accept-Language\",\n            \"Enabled\": true\n        }\n    ],\n    \"Sample\": 605,\n    \"CLS\": {\n        \"LogSetId\": \"1a6efff1-0e40-4d37-a4ed-02c92513406b\",\n        \"TopicId\": \"0b3a07c0-5cf6-4017-8a75-cd4459aea588\",\n        \"LogSetRegion\": \"ap-guangzhou\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"26580056-1187-43ed-b2c7-ecdb5bae0b46\",\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建目的地为腾讯云 CLS 的日志投递任务"
+      },
+      {
+        "document": "创建目的地为自定义 HTTP 服务的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的、请求最终安全处置方式为拦截或挑战的站点加速日志，包含字段有 RequestID、ClientIP、RequestTime，不开启日志采样，开启日志投递压缩，并且在投递日志时携带自定义请求头 Vendor，值固定为 EdgeOne。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRealtimeLogDeliveryTask\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxx\",\n    \"TaskName\": \"test_log_task\",\n    \"TaskType\": \"custom_endpoint\",\n    \"EntityList\": [\n        \"domain.example.com\"\n    ],\n    \"LogType\": \"domain\",\n    \"Area\": \"mainland\",\n    \"Fields\": [\n        \"RequestID\",\n        \"ClientIP\",\n        \"RequestTime\"\n    ],\n    \"Sample\": 1000,\n    \"DeliveryConditions\": [\n        {\n            \"Conditions\": [\n                {\n                    \"Key\": \"SecurityAction\",\n                    \"Operator\": \"equal\",\n                    \"Value\": [\n                        \"Deny\",\n                        \"JSChallenge\",\n                        \"ManagedChallenge\"\n                    ]\n                }\n            ]\n        }\n    ],\n    \"CustomEndpoint\": {\n        \"Url\": \"http://custom_endpoint/access_log/post\",\n        \"CompressType\": \"gzip\",\n        \"Headers\": [\n            {\n                \"Name\": \"Vendor\",\n                \"Value\": \"EdgeOne\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"26580056-1187-43ed-b2c7-ecdb5bae0b46\",\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建目的地为自定义 HTTP 服务的日志投递任务"
       }
     ],
     "CreateRule": [
@@ -302,6 +324,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kblak89bkx1\",\n    \"GroupId\": \"origin-057c4d82-383c-11ee-8888-525400682e90\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5453af19-f084-4038-915c-88d9c4fe9c4e\"\n    }\n}",
         "title": "删除源站组"
+      }
+    ],
+    "DeleteRealtimeLogDeliveryTask": [
+      {
+        "document": "删除指定 task-id 的实时日志投递任务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRealtimeLogDeliveryTask\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2qtwuwmeaaae\",\n    \"TaskId\": \"17819248-77b0-4e1a-a979-d84b5a9b300p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "删除实时日志投递任务"
       }
     ],
     "DeleteRules": [
@@ -540,6 +570,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurgeTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-wz8m9mgx\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Limit\": 1,\n    \"Offset\": 7\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"purge_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
         "title": "查询清除缓存历史记录"
+      }
+    ],
+    "DescribeRealtimeLogDeliveryTasks": [
+      {
+        "document": "查询指定 zone-id 下的所有实时日志投递任务信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealtimeLogDeliveryTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2o7b38ba1hvr\",\n    \"Offset\": 0,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RealtimeLogDeliveryTasks\": [\n            {\n                \"TaskId\": \"57f6ebaa-f952-4ebf-8105-8071d1c59dde\",\n                \"TaskName\": \"test_log_task\",\n                \"DeliveryStatus\": \"enabled\",\n                \"TaskType\": \"cls\",\n                \"EntityList\": [\n                    \"domain.example.com\"\n                ],\n                \"LogType\": \"domain\",\n                \"Area\": \"overseas\",\n                \"Fields\": [\n                    \"RequestID\",\n                    \"ClientIP\",\n                    \"ClientRegion\"\n                ],\n                \"CustomFields\": [],\n                \"DeliveryConditions\": [],\n                \"Sample\": 1000,\n                \"CLS\": {\n                    \"LogSetId\": \"288f187c-c3ef-4479-a086-b9465a1243cb\",\n                    \"LogSetRegion\": \"ap-guangzhou\",\n                    \"TopicId\": \"0e23008b-c0ed-4d98-a77c-bdc65dfe3731\"\n                },\n                \"CustomEndpoint\": null,\n                \"S3\": null,\n                \"CreateTime\": \"2023-12-22T15:27:53+00:00\",\n                \"UpdateTime\": \"2023-12-22T15:30:07+00:00\"\n            }\n        ],\n        \"RequestId\": \"f025c1f0-cb83-41b1-bb7d-565af7e28479\"\n    }\n}",
+        "title": "查询某个站点下的所有实时日志投递任务信息"
+      },
+      {
+        "document": "查询指定加速域名对应的实时日志投递任务信息。根据输出返回结果中的 TotalCount 为 0 可以判断此加速域名暂未被添加到任何实时日志投递任务中。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealtimeLogDeliveryTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2o7b38ba1hvr\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"entity-list\",\n            \"Values\": [\n                \"domain.example.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RealtimeLogDeliveryTasks\": [],\n        \"RequestId\": \"f025c1f0-cb83-41b1-bb7d-565af7e28479\"\n    }\n}",
+        "title": "根据加速域名查询对应实时日志投递任务信息"
       }
     ],
     "DescribeRules": [
@@ -834,6 +878,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2nrle17s0v0r\",\n    \"GroupId\": \"origin-afbce0e9-6e8a-11ee-8944-52540084caf1\",\n    \"Records\": [\n        {\n            \"Record\": \"2.2.2.2\",\n            \"Type\": \"IP_DOMAIN\"\n        },\n        {\n            \"Record\": \"3.3.3.3\",\n            \"Type\": \"IP_DOMAIN\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"39f96a44-9a52-4a9f-8b76-4ccc9e496f40\"\n    }\n}",
         "title": "修改源站组记录"
+      }
+    ],
+    "ModifyRealtimeLogDeliveryTask": [
+      {
+        "document": "修改某个已经创建成功的实时日志投递任务配置，关闭其日志采样功能。修改前，日志采样比例为 60.5%；修改后，不再进行日志采样，将投递 100% 数量的日志至目的地。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRealtimeLogDeliveryTask\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpayol\",\n    \"TaskId\": \"17819248-77b0-4e1a-a979-d84b5a9b300p\",\n    \"Sample\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "关闭日志采样功能"
+      },
+      {
+        "document": "修改某个已经创建成功的实时日志投递任务配置，为其追加需要投递日志的加速域名。修改前，仅投递 domain1.example.com 的站点加速日志；修改后，将投递 domain1.example.com、domain2.example.com、domain3.example.com 的站点加速日志。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRealtimeLogDeliveryTask\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpayol\",\n    \"TaskId\": \"17819248-77b0-4e1a-a979-d84b5a9b300p\",\n    \"EntityList\": [\n        \"domain1.example.com\",\n        \"domain2.example.com\",\n        \"domain3.example.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "追加需要投递日志的加速域名"
       }
     ],
     "ModifyRule": [

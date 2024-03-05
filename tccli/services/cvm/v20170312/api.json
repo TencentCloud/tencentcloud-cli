@@ -1523,7 +1523,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。",
-          "example": "比如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
+          "example": "例如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
           "member": "string",
           "name": "HpcClusterBusinessId",
           "required": false,
@@ -3016,7 +3016,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t",
-          "example": "比如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
+          "example": "例如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
           "member": "string",
           "name": "HpcClusterBusinessId",
           "required": false,

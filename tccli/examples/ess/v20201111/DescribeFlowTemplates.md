@@ -31,6 +31,7 @@ Output:
                 "Components": [],
                 "CreatedOn": 1693967458,
                 "Creator": "测试人",
+                "CreatorId": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
                 "Description": "",
                 "DocumentResourceIds": [
                     "yDwJ0UUckpk2079mUxgm9jJ8EZp3aAc0"

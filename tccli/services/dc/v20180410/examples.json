@@ -206,7 +206,7 @@
     ],
     "ModifyDirectConnectTunnelExtra": [
       {
-        "document": "",
+        "document": "修改专用通道扩展信息。",
         "input": "https://dc.tencentcloudapi.com/?Action=ModifyDirectConnectTunnelExtra\n&DirectConnectTunnelId=dcx-r3sml04o\n&Vlan=90\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ae32da8-db96-400f-908e-0de2c89e96ea\"\n    }\n}",
         "title": "修改专用通道扩展信息"

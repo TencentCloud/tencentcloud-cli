@@ -462,6 +462,13 @@
       "output": "DescribeModelDefinitionResponse",
       "status": "online"
     },
+    "DescribeP2PInfo": {
+      "document": "拉取设备p2p信息",
+      "input": "DescribeP2PInfoRequest",
+      "name": "拉取设备p2p信息",
+      "output": "DescribeP2PInfoResponse",
+      "status": "online"
+    },
     "DescribePackageConsumeTask": {
       "document": "查询套餐消耗记录详情",
       "input": "DescribePackageConsumeTaskRequest",
@@ -6373,6 +6380,62 @@
           "name": "Model",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeP2PInfoRequest": {
+      "document": "DescribeP2PInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeP2PInfoResponse": {
+      "document": "DescribeP2PInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "xp2pinfo信息",
+          "example": "XP2Ptest==%2.4.29",
+          "member": "string",
+          "name": "P2PInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上报时间",
+          "example": "1708571992",
+          "member": "int64",
+          "name": "ReportTime",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
