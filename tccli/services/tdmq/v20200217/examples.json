@@ -460,6 +460,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMsg": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsg\n&EnvironmentId=default\n&TopicName=msg_dev\n&MsgId=16836:8:-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Properties\": \"{\\\"publish-time\\\": \\\"1597747661679\\\", \\\"X-Pulsar-num-batch-message\\\": \\\"1\\\", \\\"MESSAGE_ID\\\": \\\"16836:8:-1\\\", \\\"X-Pulsar-producer-name\\\": \\\"fisrtProducer\\\", \\\"bookies-address\\\": \\\"9.139.220.16:3181#9.139.220.8:3181\\\"}\",\n        \"Body\": \"i just a10 testing!\",\n        \"BatchId\": \"1\",\n        \"ProduceTime\": \"2020-08-18 18:47:41\",\n        \"MsgId\": \"16836:8:-1\",\n        \"ProducerName\": \"fisrtProducer\",\n        \"RequestId\": \"msgs\"\n    }\n}",
+        "title": "获取消息详情"
+      }
+    ],
     "DescribeMsgTrace": [
       {
         "document": "",

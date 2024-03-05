@@ -17,133 +17,91 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "LoadBalancerType": "abc",
+                "LoadBalancerId": "lb-9vpm****",
+                "LoadBalancerName": "lb-test-****-1227",
                 "Forward": 1,
-                "Domain": "abc",
+                "Domain": "",
+                "LoadBalancerDomain": "",
                 "LoadBalancerVips": [
-                    "abc"
+                    "119.***.***.51"
                 ],
+                "AddressIPv6": null,
+                "AddressIPVersion": "ipv4",
+                "IPv6Mode": null,
+                "LoadBalancerType": "OPEN",
                 "Status": 1,
-                "CreateTime": "abc",
-                "StatusTime": "abc",
-                "ProjectId": 1,
-                "VpcId": "abc",
-                "OpenBgp": 1,
-                "Snat": true,
-                "Isolation": 1,
-                "Log": "abc",
-                "SubnetId": "abc",
+                "CreateTime": "2023-12-27 15:53:46",
+                "StatusTime": "2024-01-22 19:58:03",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "VpcId": "vpc-1y****83",
+                "NumericalVpcId": 1111113,
+                "TargetRegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "VpcId": "vpc-1y****83"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key-****",
+                        "TagValue": "value-****"
                     }
                 ],
-                "SecureGroups": [
-                    "abc"
-                ],
-                "TargetRegionInfo": {
-                    "Region": "abc",
-                    "VpcId": "abc"
-                },
-                "AnycastZone": "abc",
-                "AddressIPVersion": "abc",
-                "NumericalVpcId": 1,
-                "VipIsp": "abc",
                 "MasterZone": {
-                    "ZoneId": 1,
-                    "Zone": "abc",
-                    "ZoneName": "abc",
-                    "ZoneRegion": "abc",
-                    "LocalZone": true,
-                    "EdgeZone": true
+                    "ZoneId": 100003,
+                    "Zone": "ap-guangzhou-3",
+                    "ZoneName": "广州三区",
+                    "ZoneRegion": "ap-guangzhou",
+                    "LocalZone": false,
+                    "EdgeZone": false
                 },
-                "BackupZoneSet": [
-                    {
-                        "ZoneId": 1,
-                        "Zone": "abc",
-                        "ZoneName": "abc",
-                        "ZoneRegion": "abc",
-                        "LocalZone": true,
-                        "EdgeZone": true
-                    }
-                ],
-                "IsolatedTime": "abc",
-                "ExpireTime": "abc",
-                "ChargeType": "abc",
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2024-01-27 15:53:46",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "NetworkAttributes": {
-                    "InternetChargeType": "abc",
-                    "InternetMaxBandwidthOut": 0,
-                    "BandwidthpkgSubType": "abc"
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 5,
+                    "BandwidthpkgSubType": "BGP"
                 },
-                "PrepaidAttributes": {
-                    "RenewFlag": "abc",
-                    "Period": 0
-                },
-                "LogSetId": "abc",
-                "LogTopicId": "abc",
-                "AddressIPv6": "abc",
-                "ExtraInfo": {
-                    "ZhiTong": true,
-                    "TgwGroupName": "abc"
-                },
-                "IsDDos": true,
-                "ConfigId": "abc",
-                "LoadBalancerPassToTarget": true,
+                "PrepaidAttributes": null,
+                "ExtraInfo": null,
+                "LogSetId": "",
+                "LogTopicId": "",
+                "LoadBalancerPassToTarget": false,
+                "IsDDos": false,
+                "ConfigId": "",
                 "ExclusiveCluster": {
-                    "L4Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "L7Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "ClassicalCluster": {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "Zone": "abc"
-                    }
+                    "L4Clusters": null,
+                    "L7Clusters": null,
+                    "ClassicalCluster": null
                 },
-                "IPv6Mode": "abc",
-                "SnatPro": true,
-                "SnatIps": [
-                    {
-                        "SubnetId": "abc",
-                        "Ip": "abc"
-                    }
-                ],
-                "SlaType": "abc",
-                "IsBlock": true,
-                "IsBlockTime": "abc",
-                "LocalBgp": true,
-                "ClusterTag": "abc",
-                "MixIpTarget": true,
-                "Zones": [
-                    "abc"
-                ],
-                "NfvInfo": "abc",
-                "HealthLogSetId": "abc",
-                "HealthLogTopicId": "abc",
-                "ClusterIds": [
-                    "abc"
-                ],
+                "SnatPro": false,
+                "SnatIps": [],
+                "IsBlock": false,
+                "IsBlockTime": "",
+                "SlaType": "",
+                "ClusterTag": null,
+                "LocalBgp": false,
+                "MixIpTarget": false,
+                "Zones": null,
+                "NfvInfo": "",
+                "HealthLogSetId": "",
+                "HealthLogTopicId": "",
+                "ClusterIds": null,
                 "AttributeFlags": [
-                    "abc"
+                    "SharedLimitFlag"
                 ],
-                "LoadBalancerDomain": "abc",
-                "Egress": "abc"
+                "VipIsp": "BGP",
+                "Egress": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
     }
 }
 ```
@@ -166,133 +124,91 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "LoadBalancerType": "abc",
+                "LoadBalancerId": "lb-9vpm****",
+                "LoadBalancerName": "test_LB_****",
                 "Forward": 1,
-                "Domain": "abc",
+                "Domain": "",
+                "LoadBalancerDomain": "",
                 "LoadBalancerVips": [
-                    "abc"
+                    "119.***.***.51"
                 ],
+                "AddressIPv6": null,
+                "AddressIPVersion": "ipv4",
+                "IPv6Mode": null,
+                "LoadBalancerType": "OPEN",
                 "Status": 1,
-                "CreateTime": "abc",
-                "StatusTime": "abc",
-                "ProjectId": 1,
-                "VpcId": "abc",
-                "OpenBgp": 1,
-                "Snat": true,
-                "Isolation": 1,
-                "Log": "abc",
-                "SubnetId": "abc",
+                "CreateTime": "2023-12-27 15:53:46",
+                "StatusTime": "2024-01-22 19:58:03",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "VpcId": "vpc-1y****83",
+                "NumericalVpcId": 1111113,
+                "TargetRegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "VpcId": "vpc-1y****83"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key-****",
+                        "TagValue": "value-****"
                     }
                 ],
-                "SecureGroups": [
-                    "abc"
-                ],
-                "TargetRegionInfo": {
-                    "Region": "abc",
-                    "VpcId": "abc"
-                },
-                "AnycastZone": "abc",
-                "AddressIPVersion": "abc",
-                "NumericalVpcId": 1,
-                "VipIsp": "abc",
                 "MasterZone": {
-                    "ZoneId": 1,
-                    "Zone": "abc",
-                    "ZoneName": "abc",
-                    "ZoneRegion": "abc",
-                    "LocalZone": true,
-                    "EdgeZone": true
+                    "ZoneId": 100003,
+                    "Zone": "ap-guangzhou-3",
+                    "ZoneName": "广州三区",
+                    "ZoneRegion": "ap-guangzhou",
+                    "LocalZone": false,
+                    "EdgeZone": false
                 },
-                "BackupZoneSet": [
-                    {
-                        "ZoneId": 1,
-                        "Zone": "abc",
-                        "ZoneName": "abc",
-                        "ZoneRegion": "abc",
-                        "LocalZone": true,
-                        "EdgeZone": true
-                    }
-                ],
-                "IsolatedTime": "abc",
-                "ExpireTime": "abc",
-                "ChargeType": "abc",
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2024-01-27 15:53:46",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "NetworkAttributes": {
-                    "InternetChargeType": "abc",
-                    "InternetMaxBandwidthOut": 0,
-                    "BandwidthpkgSubType": "abc"
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 5,
+                    "BandwidthpkgSubType": "BGP"
                 },
-                "PrepaidAttributes": {
-                    "RenewFlag": "abc",
-                    "Period": 0
-                },
-                "LogSetId": "abc",
-                "LogTopicId": "abc",
-                "AddressIPv6": "abc",
-                "ExtraInfo": {
-                    "ZhiTong": true,
-                    "TgwGroupName": "abc"
-                },
-                "IsDDos": true,
-                "ConfigId": "abc",
-                "LoadBalancerPassToTarget": true,
+                "PrepaidAttributes": null,
+                "ExtraInfo": null,
+                "LogSetId": "",
+                "LogTopicId": "",
+                "LoadBalancerPassToTarget": false,
+                "IsDDos": false,
+                "ConfigId": "",
                 "ExclusiveCluster": {
-                    "L4Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "L7Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "ClassicalCluster": {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "Zone": "abc"
-                    }
+                    "L4Clusters": null,
+                    "L7Clusters": null,
+                    "ClassicalCluster": null
                 },
-                "IPv6Mode": "abc",
-                "SnatPro": true,
-                "SnatIps": [
-                    {
-                        "SubnetId": "abc",
-                        "Ip": "abc"
-                    }
-                ],
-                "SlaType": "abc",
-                "IsBlock": true,
-                "IsBlockTime": "abc",
-                "LocalBgp": true,
-                "ClusterTag": "abc",
-                "MixIpTarget": true,
-                "Zones": [
-                    "abc"
-                ],
-                "NfvInfo": "abc",
-                "HealthLogSetId": "abc",
-                "HealthLogTopicId": "abc",
-                "ClusterIds": [
-                    "abc"
-                ],
+                "SnatPro": false,
+                "SnatIps": [],
+                "IsBlock": false,
+                "IsBlockTime": "",
+                "SlaType": "",
+                "ClusterTag": null,
+                "LocalBgp": false,
+                "MixIpTarget": false,
+                "Zones": null,
+                "NfvInfo": "",
+                "HealthLogSetId": "",
+                "HealthLogTopicId": "",
+                "ClusterIds": null,
                 "AttributeFlags": [
-                    "abc"
+                    "SharedLimitFlag"
                 ],
-                "LoadBalancerDomain": "abc",
-                "Egress": "abc"
+                "VipIsp": "BGP",
+                "Egress": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
     }
 }
 ```
@@ -315,133 +231,91 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "LoadBalancerType": "abc",
+                "LoadBalancerId": "lb-rbw5****",
+                "LoadBalancerName": "test_LB_****",
                 "Forward": 1,
-                "Domain": "abc",
+                "Domain": "",
+                "LoadBalancerDomain": "",
                 "LoadBalancerVips": [
-                    "abc"
+                    "119.***.***.51"
                 ],
+                "AddressIPv6": null,
+                "AddressIPVersion": "ipv4",
+                "IPv6Mode": null,
+                "LoadBalancerType": "OPEN",
                 "Status": 1,
-                "CreateTime": "abc",
-                "StatusTime": "abc",
-                "ProjectId": 1,
-                "VpcId": "abc",
-                "OpenBgp": 1,
-                "Snat": true,
-                "Isolation": 1,
-                "Log": "abc",
-                "SubnetId": "abc",
+                "CreateTime": "2023-12-27 15:53:46",
+                "StatusTime": "2024-01-22 19:58:03",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "VpcId": "vpc-1y****83",
+                "NumericalVpcId": 1111113,
+                "TargetRegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "VpcId": "vpc-1y****83"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key-****",
+                        "TagValue": "value-****"
                     }
                 ],
-                "SecureGroups": [
-                    "abc"
-                ],
-                "TargetRegionInfo": {
-                    "Region": "abc",
-                    "VpcId": "abc"
-                },
-                "AnycastZone": "abc",
-                "AddressIPVersion": "abc",
-                "NumericalVpcId": 1,
-                "VipIsp": "abc",
                 "MasterZone": {
-                    "ZoneId": 1,
-                    "Zone": "abc",
-                    "ZoneName": "abc",
-                    "ZoneRegion": "abc",
-                    "LocalZone": true,
-                    "EdgeZone": true
+                    "ZoneId": 100003,
+                    "Zone": "ap-guangzhou-3",
+                    "ZoneName": "广州三区",
+                    "ZoneRegion": "ap-guangzhou",
+                    "LocalZone": false,
+                    "EdgeZone": false
                 },
-                "BackupZoneSet": [
-                    {
-                        "ZoneId": 1,
-                        "Zone": "abc",
-                        "ZoneName": "abc",
-                        "ZoneRegion": "abc",
-                        "LocalZone": true,
-                        "EdgeZone": true
-                    }
-                ],
-                "IsolatedTime": "abc",
-                "ExpireTime": "abc",
-                "ChargeType": "abc",
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2024-01-27 15:53:46",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "NetworkAttributes": {
-                    "InternetChargeType": "abc",
-                    "InternetMaxBandwidthOut": 0,
-                    "BandwidthpkgSubType": "abc"
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 5,
+                    "BandwidthpkgSubType": "BGP"
                 },
-                "PrepaidAttributes": {
-                    "RenewFlag": "abc",
-                    "Period": 0
-                },
-                "LogSetId": "abc",
-                "LogTopicId": "abc",
-                "AddressIPv6": "abc",
-                "ExtraInfo": {
-                    "ZhiTong": true,
-                    "TgwGroupName": "abc"
-                },
-                "IsDDos": true,
-                "ConfigId": "abc",
-                "LoadBalancerPassToTarget": true,
+                "PrepaidAttributes": null,
+                "ExtraInfo": null,
+                "LogSetId": "",
+                "LogTopicId": "",
+                "LoadBalancerPassToTarget": false,
+                "IsDDos": false,
+                "ConfigId": "",
                 "ExclusiveCluster": {
-                    "L4Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "L7Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "ClassicalCluster": {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "Zone": "abc"
-                    }
+                    "L4Clusters": null,
+                    "L7Clusters": null,
+                    "ClassicalCluster": null
                 },
-                "IPv6Mode": "abc",
-                "SnatPro": true,
-                "SnatIps": [
-                    {
-                        "SubnetId": "abc",
-                        "Ip": "abc"
-                    }
-                ],
-                "SlaType": "abc",
-                "IsBlock": true,
-                "IsBlockTime": "abc",
-                "LocalBgp": true,
-                "ClusterTag": "abc",
-                "MixIpTarget": true,
-                "Zones": [
-                    "abc"
-                ],
-                "NfvInfo": "abc",
-                "HealthLogSetId": "abc",
-                "HealthLogTopicId": "abc",
-                "ClusterIds": [
-                    "abc"
-                ],
+                "SnatPro": false,
+                "SnatIps": [],
+                "IsBlock": false,
+                "IsBlockTime": "",
+                "SlaType": "",
+                "ClusterTag": null,
+                "LocalBgp": false,
+                "MixIpTarget": false,
+                "Zones": null,
+                "NfvInfo": "",
+                "HealthLogSetId": "",
+                "HealthLogTopicId": "",
+                "ClusterIds": null,
                 "AttributeFlags": [
-                    "abc"
+                    "SharedLimitFlag"
                 ],
-                "LoadBalancerDomain": "abc",
-                "Egress": "abc"
+                "VipIsp": "BGP",
+                "Egress": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
     }
 }
 ```
@@ -456,7 +330,7 @@ Input:
 tccli clb DescribeLoadBalancers --cli-unfold-argument  \
     --ProjectId 0 \
     --LoadBalancerType OPEN \
-    --LoadBalancerVips XX.XX.XX.XX \
+    --LoadBalancerVips 119.***.***.51 \
     --LoadBalancerName test_LB
 ```
 
@@ -467,133 +341,91 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "LoadBalancerType": "abc",
+                "LoadBalancerId": "lb-rbw5****",
+                "LoadBalancerName": "test_LB_****",
                 "Forward": 1,
-                "Domain": "abc",
+                "Domain": "",
+                "LoadBalancerDomain": "",
                 "LoadBalancerVips": [
-                    "abc"
+                    "119.***.***.51"
                 ],
+                "AddressIPv6": null,
+                "AddressIPVersion": "ipv4",
+                "IPv6Mode": null,
+                "LoadBalancerType": "OPEN",
                 "Status": 1,
-                "CreateTime": "abc",
-                "StatusTime": "abc",
-                "ProjectId": 1,
-                "VpcId": "abc",
-                "OpenBgp": 1,
-                "Snat": true,
-                "Isolation": 1,
-                "Log": "abc",
-                "SubnetId": "abc",
+                "CreateTime": "2023-12-27 15:53:46",
+                "StatusTime": "2024-01-22 19:58:03",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "VpcId": "vpc-1y****83",
+                "NumericalVpcId": 1111113,
+                "TargetRegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "VpcId": "vpc-1y****83"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key-****",
+                        "TagValue": "value-****"
                     }
                 ],
-                "SecureGroups": [
-                    "abc"
-                ],
-                "TargetRegionInfo": {
-                    "Region": "abc",
-                    "VpcId": "abc"
-                },
-                "AnycastZone": "abc",
-                "AddressIPVersion": "abc",
-                "NumericalVpcId": 1,
-                "VipIsp": "abc",
                 "MasterZone": {
-                    "ZoneId": 1,
-                    "Zone": "abc",
-                    "ZoneName": "abc",
-                    "ZoneRegion": "abc",
-                    "LocalZone": true,
-                    "EdgeZone": true
+                    "ZoneId": 100003,
+                    "Zone": "ap-guangzhou-3",
+                    "ZoneName": "广州三区",
+                    "ZoneRegion": "ap-guangzhou",
+                    "LocalZone": false,
+                    "EdgeZone": false
                 },
-                "BackupZoneSet": [
-                    {
-                        "ZoneId": 1,
-                        "Zone": "abc",
-                        "ZoneName": "abc",
-                        "ZoneRegion": "abc",
-                        "LocalZone": true,
-                        "EdgeZone": true
-                    }
-                ],
-                "IsolatedTime": "abc",
-                "ExpireTime": "abc",
-                "ChargeType": "abc",
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2024-01-27 15:53:46",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "NetworkAttributes": {
-                    "InternetChargeType": "abc",
-                    "InternetMaxBandwidthOut": 0,
-                    "BandwidthpkgSubType": "abc"
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 5,
+                    "BandwidthpkgSubType": "BGP"
                 },
-                "PrepaidAttributes": {
-                    "RenewFlag": "abc",
-                    "Period": 0
-                },
-                "LogSetId": "abc",
-                "LogTopicId": "abc",
-                "AddressIPv6": "abc",
-                "ExtraInfo": {
-                    "ZhiTong": true,
-                    "TgwGroupName": "abc"
-                },
-                "IsDDos": true,
-                "ConfigId": "abc",
-                "LoadBalancerPassToTarget": true,
+                "PrepaidAttributes": null,
+                "ExtraInfo": null,
+                "LogSetId": "",
+                "LogTopicId": "",
+                "LoadBalancerPassToTarget": false,
+                "IsDDos": false,
+                "ConfigId": "",
                 "ExclusiveCluster": {
-                    "L4Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "L7Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "ClassicalCluster": {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "Zone": "abc"
-                    }
+                    "L4Clusters": null,
+                    "L7Clusters": null,
+                    "ClassicalCluster": null
                 },
-                "IPv6Mode": "abc",
-                "SnatPro": true,
-                "SnatIps": [
-                    {
-                        "SubnetId": "abc",
-                        "Ip": "abc"
-                    }
-                ],
-                "SlaType": "abc",
-                "IsBlock": true,
-                "IsBlockTime": "abc",
-                "LocalBgp": true,
-                "ClusterTag": "abc",
-                "MixIpTarget": true,
-                "Zones": [
-                    "abc"
-                ],
-                "NfvInfo": "abc",
-                "HealthLogSetId": "abc",
-                "HealthLogTopicId": "abc",
-                "ClusterIds": [
-                    "abc"
-                ],
+                "SnatPro": false,
+                "SnatIps": [],
+                "IsBlock": false,
+                "IsBlockTime": "",
+                "SlaType": "",
+                "ClusterTag": null,
+                "LocalBgp": false,
+                "MixIpTarget": false,
+                "Zones": null,
+                "NfvInfo": "",
+                "HealthLogSetId": "",
+                "HealthLogTopicId": "",
+                "ClusterIds": null,
                 "AttributeFlags": [
-                    "abc"
+                    "SharedLimitFlag"
                 ],
-                "LoadBalancerDomain": "abc",
-                "Egress": "abc"
+                "VipIsp": "BGP",
+                "Egress": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
     }
 }
 ```
@@ -620,133 +452,91 @@ Output:
         "TotalCount": 1,
         "LoadBalancerSet": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
-                "LoadBalancerType": "abc",
+                "LoadBalancerId": "lb-rbw5****",
+                "LoadBalancerName": "test_LB_****",
                 "Forward": 1,
-                "Domain": "abc",
+                "Domain": "",
+                "LoadBalancerDomain": "",
                 "LoadBalancerVips": [
-                    "abc"
+                    "119.***.***.51"
                 ],
+                "AddressIPv6": null,
+                "AddressIPVersion": "ipv4",
+                "IPv6Mode": null,
+                "LoadBalancerType": "OPEN",
                 "Status": 1,
-                "CreateTime": "abc",
-                "StatusTime": "abc",
-                "ProjectId": 1,
-                "VpcId": "abc",
-                "OpenBgp": 1,
-                "Snat": true,
-                "Isolation": 1,
-                "Log": "abc",
-                "SubnetId": "abc",
+                "CreateTime": "2023-12-27 15:53:46",
+                "StatusTime": "2024-01-22 19:58:03",
+                "ProjectId": 0,
+                "OpenBgp": 0,
+                "Snat": false,
+                "Isolation": 0,
+                "Log": "",
+                "AnycastZone": "",
+                "VpcId": "vpc-1y****83",
+                "NumericalVpcId": 1111113,
+                "TargetRegionInfo": {
+                    "Region": "ap-guangzhou",
+                    "VpcId": "vpc-1y****83"
+                },
+                "SubnetId": "",
+                "SecureGroups": [],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key-****",
+                        "TagValue": "value-****"
                     }
                 ],
-                "SecureGroups": [
-                    "abc"
-                ],
-                "TargetRegionInfo": {
-                    "Region": "abc",
-                    "VpcId": "abc"
-                },
-                "AnycastZone": "abc",
-                "AddressIPVersion": "abc",
-                "NumericalVpcId": 1,
-                "VipIsp": "abc",
                 "MasterZone": {
-                    "ZoneId": 1,
-                    "Zone": "abc",
-                    "ZoneName": "abc",
-                    "ZoneRegion": "abc",
-                    "LocalZone": true,
-                    "EdgeZone": true
+                    "ZoneId": 100003,
+                    "Zone": "ap-guangzhou-3",
+                    "ZoneName": "广州三区",
+                    "ZoneRegion": "ap-guangzhou",
+                    "LocalZone": false,
+                    "EdgeZone": false
                 },
-                "BackupZoneSet": [
-                    {
-                        "ZoneId": 1,
-                        "Zone": "abc",
-                        "ZoneName": "abc",
-                        "ZoneRegion": "abc",
-                        "LocalZone": true,
-                        "EdgeZone": true
-                    }
-                ],
-                "IsolatedTime": "abc",
-                "ExpireTime": "abc",
-                "ChargeType": "abc",
+                "BackupZoneSet": null,
+                "IsolatedTime": null,
+                "ExpireTime": "2024-01-27 15:53:46",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "NetworkAttributes": {
-                    "InternetChargeType": "abc",
-                    "InternetMaxBandwidthOut": 0,
-                    "BandwidthpkgSubType": "abc"
+                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                    "InternetMaxBandwidthOut": 5,
+                    "BandwidthpkgSubType": "BGP"
                 },
-                "PrepaidAttributes": {
-                    "RenewFlag": "abc",
-                    "Period": 0
-                },
-                "LogSetId": "abc",
-                "LogTopicId": "abc",
-                "AddressIPv6": "abc",
-                "ExtraInfo": {
-                    "ZhiTong": true,
-                    "TgwGroupName": "abc"
-                },
-                "IsDDos": true,
-                "ConfigId": "abc",
-                "LoadBalancerPassToTarget": true,
+                "PrepaidAttributes": null,
+                "ExtraInfo": null,
+                "LogSetId": "",
+                "LogTopicId": "",
+                "LoadBalancerPassToTarget": false,
+                "IsDDos": false,
+                "ConfigId": "",
                 "ExclusiveCluster": {
-                    "L4Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "L7Clusters": [
-                        {
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "Zone": "abc"
-                        }
-                    ],
-                    "ClassicalCluster": {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "Zone": "abc"
-                    }
+                    "L4Clusters": null,
+                    "L7Clusters": null,
+                    "ClassicalCluster": null
                 },
-                "IPv6Mode": "abc",
-                "SnatPro": true,
-                "SnatIps": [
-                    {
-                        "SubnetId": "abc",
-                        "Ip": "abc"
-                    }
-                ],
-                "SlaType": "abc",
-                "IsBlock": true,
-                "IsBlockTime": "abc",
-                "LocalBgp": true,
-                "ClusterTag": "abc",
-                "MixIpTarget": true,
-                "Zones": [
-                    "abc"
-                ],
-                "NfvInfo": "abc",
-                "HealthLogSetId": "abc",
-                "HealthLogTopicId": "abc",
-                "ClusterIds": [
-                    "abc"
-                ],
+                "SnatPro": false,
+                "SnatIps": [],
+                "IsBlock": false,
+                "IsBlockTime": "",
+                "SlaType": "",
+                "ClusterTag": null,
+                "LocalBgp": false,
+                "MixIpTarget": false,
+                "Zones": null,
+                "NfvInfo": "",
+                "HealthLogSetId": "",
+                "HealthLogTopicId": "",
+                "ClusterIds": null,
                 "AttributeFlags": [
-                    "abc"
+                    "SharedLimitFlag"
                 ],
-                "LoadBalancerDomain": "abc",
-                "Egress": "abc"
+                "VipIsp": "BGP",
+                "Egress": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
     }
 }
 ```

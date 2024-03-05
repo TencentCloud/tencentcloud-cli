@@ -1,3 +1,194 @@
+# Release 3.0.949.1
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 60 次发布
+
+发布时间：2024-03-06 01:36:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchRegisterTargets](http://document.tencentcloudapi.woa.com/document/product/214/38303)
+
+	* 新增出参：Message
+
+* [CreateClsLogSet](http://document.tencentcloudapi.woa.com/document/product/214/46803)
+
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/214/30694#Cluster)
+
+	* 新增成员：IPVersion
+
+* [ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#ExtraInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ZhiTong, TgwGroupName
+
+* [Listener](http://document.tencentcloudapi.woa.com/document/product/214/30694#Listener)
+
+	* 新增成员：RescheduleInterval
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#LoadBalancer)
+
+* [RsWeightRule](http://document.tencentcloudapi.woa.com/document/product/214/30694#RsWeightRule)
+
+* [RuleOutput](http://document.tencentcloudapi.woa.com/document/product/214/30694#RuleOutput)
+
+	* <font color="#dd0000">**修改成员**：</font>LocationId, SessionExpireTime, HealthCheck, Certificate, Scheduler
+
+* [TargetGroupInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Protocol, ScheduleAlgorithm, HealthCheck, AutoUpdateWeight, AllDeadToAlive, JumboFrame
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/214/30694#ZoneInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ZoneId, Zone, ZoneName, ZoneRegion, LocalZone, EdgeZone
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 4 次发布
+
+发布时间：2024-03-06 02:23:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDirectConnectTunnelExtra](http://document.tencentcloudapi.woa.com/document/product/216/49100)
+
+	* 新增入参：TencentIPv6Address, TencentBackupIPv6Address, CustomerIPv6Address
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 68 次发布
+
+发布时间：2024-03-06 02:38:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#TemplateInfo)
+
+	* 新增成员：CreatorId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 24 次发布
+
+发布时间：2024-03-06 02:52:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeP2PInfo](http://document.tencentcloudapi.woa.com/document/product/1131/83389)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 93 次发布
+
+发布时间：2024-03-06 03:39:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMsg](http://document.tencentcloudapi.woa.com/document/product/1179/83390)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 30 次发布
+
+发布时间：2024-03-06 03:41:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCLSIndex](http://document.tencentcloudapi.woa.com/document/product/1738/83395)
+* [CreateRealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/83394)
+* [DeleteRealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/83393)
+* [DescribeRealtimeLogDeliveryTasks](http://document.tencentcloudapi.woa.com/document/product/1738/83392)
+* [ModifyRealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/83391)
+
+新增数据结构：
+
+* [CLSTopic](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CLSTopic)
+* [CustomEndpoint](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CustomEndpoint)
+* [CustomField](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CustomField)
+* [DeliveryCondition](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DeliveryCondition)
+* [RealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RealtimeLogDeliveryTask)
+* [S3](http://document.tencentcloudapi.woa.com/document/product/1738/81211#S3)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 10 次发布
+
+发布时间：2024-03-06 03:45:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81895)
+
+	* 新增出参：ScaledTpsEnabled, RenewFlag, ExpiryTime, RoleNumLimit, AclEnabled, TopicNumLowerLimit, TopicNumUpperLimit
+
+
+修改数据结构：
+
+* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint)
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Status, PayMode, EndpointUrl, VpcId, SubnetId, Bandwidth, IpRules
+
+
+
+
 # Release 3.0.948.1
 
 ## 云联络中心(ccc) 版本：2020-02-10
