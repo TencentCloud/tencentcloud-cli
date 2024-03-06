@@ -360,7 +360,7 @@
     ],
     "DeleteMachine": [
       {
-        "document": "本接口（DeleteMachine）用于卸载云镜客户端。",
+        "document": "本接口（DeleteMachine）用于卸载主机安全客户端。",
         "input": "https://cwp.tencentcloudapi.com/?Action=DeleteMachine\n&Uuid=354f4ac3-8546-4516-8c8a-69e3ab73aa8a\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "卸载客户端"
@@ -1784,7 +1784,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogKafkaDeliverInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AccessAddr\": \"100.119.167.50:6281\",\n        \"AccessType\": 2,\n        \"Az\": \"广州三区\",\n        \"BandWidth\": 0,\n        \"DeliverStatus\": 1,\n        \"DeliverTypeDetails\": [\n            {\n                \"SecurityType\": 1,\n                \"LogType\": [\n                    1,\n                    2,\n                    3,\n                    4,\n                    5,\n                    6,\n                    7\n                ],\n                \"TopicId\": \"topic-p9d8q5tm\",\n                \"TopicName\": \"test\",\n                \"Switch\": 1,\n                \"Status\": 0,\n                \"ErrInfo\": \" \"\n            }\n        ],\n        \"DiskSize\": 0,\n        \"InsVersion\": \"0.10.2.1\",\n        \"KafkaEnvName\": \"云镜测试环境\",\n        \"KafkaId\": \"ckafka-ce80kte5\",\n        \"RequestId\": \"33e0611b-d363-4727-a7d6-ca405225bd52\",\n        \"SubnetId\": \"-\",\n        \"Username\": \"yunjing2\",\n        \"VpcId\": \"-\",\n        \"Zone\": \"广州\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KafkaEnvName\": \"abc\",\n        \"KafkaId\": \"abc\",\n        \"Zone\": \"abc\",\n        \"Az\": \"abc\",\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\",\n        \"AccessType\": 1,\n        \"AccessAddr\": \"abc\",\n        \"DeliverStatus\": 1,\n        \"InsVersion\": \"abc\",\n        \"BandWidth\": 0,\n        \"DiskSize\": 0,\n        \"Username\": \"abc\",\n        \"DeliverTypeDetails\": [\n            {\n                \"SecurityType\": 1,\n                \"LogType\": [\n                    0\n                ],\n                \"TopicId\": \"abc\",\n                \"TopicName\": \"abc\",\n                \"Switch\": 1,\n                \"Status\": 1,\n                \"ErrInfo\": \"abc\",\n                \"StatusTime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取kafka投递信息"
       }
     ],
@@ -3705,7 +3705,7 @@
     "ModifyLogKafkaAccess": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaAccess\n<公共请求参数>\n\n{\n    \"Username\": \"a\",\n    \"VpcId\": \"1.1.1.1\",\n    \"Zone\": \"广州\",\n    \"KafkaId\": \"aa\",\n    \"InsVersion\": \"1.1.1\",\n    \"AccessType\": \"1\",\n    \"KafkaEnvName\": \"云镜测试环境\",\n    \"BandWidth\": \"300\",\n    \"AccessAddr\": \"1.1.1.1\",\n    \"Pwd\": \"b\",\n    \"DiskSize\": \"400\",\n    \"SubnetId\": \"1.1.1.1\",\n    \"DeliverTypeDetails\": [\n        {\n            \"Status\": \"0\",\n            \"TopicId\": \"xx\",\n            \"SecurityType\": \"1\",\n            \"LogType\": [\n                \"1\"\n            ],\n            \"Switch\": \"0\",\n            \"StatusTime\": \"11\",\n            \"TopicName\": \"xx\",\n            \"ErrInfo\": \"x\"\n        }\n    ],\n    \"Az\": \"广州三区\",\n    \"DeliverStatus\": \"1\",\n    \"HasPwd\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaAccess\n<公共请求参数>\n\n{\n    \"Username\": \"a\",\n    \"VpcId\": \"1.1.1.1\",\n    \"Zone\": \"广州\",\n    \"KafkaId\": \"aa\",\n    \"InsVersion\": \"1.1.1\",\n    \"AccessType\": \"1\",\n    \"KafkaEnvName\": \"主机安全测试环境\",\n    \"BandWidth\": \"300\",\n    \"AccessAddr\": \"1.1.1.1\",\n    \"Pwd\": \"b\",\n    \"DiskSize\": \"400\",\n    \"SubnetId\": \"1.1.1.1\",\n    \"DeliverTypeDetails\": [\n        {\n            \"Status\": \"0\",\n            \"TopicId\": \"11\",\n            \"SecurityType\": \"1\",\n            \"LogType\": [\n                \"1\"\n            ],\n            \"Switch\": \"0\",\n            \"StatusTime\": \"11\",\n            \"TopicName\": \"11\",\n            \"ErrInfo\": \"1\"\n        }\n    ],\n    \"Az\": \"广州三区\",\n    \"DeliverStatus\": \"1\",\n    \"HasPwd\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee0ea18-d002-4af0-bee3-7f6efd19e357\"\n    }\n}",
         "title": "示例"
       }
@@ -3721,8 +3721,8 @@
     "ModifyLogKafkaState": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaState\n<公共请求参数>\n\n{\n    \"KafkaEnvName\": \"云镜测试环境\",\n    \"KafkaId\": \"ckafka-ce80kte5\",\n    \"AccessType\": 1,\n    \"AccessAddr\": \"127.0.0.1:80\",\n    \"Username\": \"xx\",\n    \"Zone\": \"广州\",\n    \"Az\": \"广州三区\",\n    \"VpcId\": \"-\",\n    \"SubnetId\": \"-\",\n    \"DeliverStatus\": 1,\n    \"InsVersion\": \"0.10.2.1\",\n    \"BandWidth\": 1200,\n    \"DiskSize\": 2500\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaState\n<公共请求参数>\n\n{\n    \"KafkaEnvName\": \"主机安全测试环境\",\n    \"KafkaId\": \"ckafka-ce80kte5\",\n    \"AccessType\": 1,\n    \"AccessAddr\": \"127.0.0.1:80\",\n    \"Username\": \"12\",\n    \"Zone\": \"广州\",\n    \"Az\": \"广州三区\",\n    \"VpcId\": \"-\",\n    \"SubnetId\": \"-\",\n    \"DeliverStatus\": 1,\n    \"InsVersion\": \"0.10.2.1\",\n    \"BandWidth\": 1200,\n    \"DiskSize\": 2500\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"absc\"\n    }\n}",
         "title": "修改日志投递状态信息"
       }
     ],

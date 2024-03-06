@@ -1,4 +1,4 @@
-**Example 1: 获取仪表盘**
+**Example 1: 示例一**
 
 获取仪表盘
 
@@ -38,6 +38,54 @@ Output:
         ],
         "RequestId": "56c8e3f5-2b05-419d-acd0-8d2062df093f",
         "TotalCount": 1
+    }
+}
+```
+
+**Example 2: 示例二**
+
+获取仪表盘
+
+Input: 
+
+```
+tccli cls DescribeDashboards --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 20 \
+    --Filters.0.Key tag:bowww-tag-key \
+    --Filters.0.Values bowww-tag-value
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "DashboardInfos": [
+            {
+                "DashboardId": "dashboard-47bf0f13-279c-461f-bb78-5b60229177ea",
+                "DashboardName": "API-TEST2",
+                "Data": "",
+                "CreateTime": "2023-07-05 20:46:25",
+                "UpdateTime": "2023-08-25 11:18:18",
+                "DashboardRegion": "",
+                "DashboardTopicInfos": [],
+                "AssumerUin": 0,
+                "RoleName": "",
+                "AssumerName": "",
+                "Tags": [
+                    {
+                        "Key": "bowww-tag-key",
+                        "Value": "bowww-tag-value"
+                    },
+                    {
+                        "Key": "bowww-tag-key1",
+                        "Value": "bowww-tag-value1"
+                    }
+                ]
+            }
+        ],
+        "RequestId": "6bf3355c-3c88-4566-89c8-76c3ca37bae9"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 卸载客户端**
 
-本接口（DeleteMachine）用于卸载云镜客户端。
+本接口（DeleteMachine）用于卸载主机安全客户端。
 
 Input: 
 

@@ -406,6 +406,13 @@
       "output": "DescribePersonCertificateResponse",
       "status": "online"
     },
+    "DescribeSignFaceVideo": {
+      "document": "该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。\n\n1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取人脸图片。\n2. 该接口**不支持小程序端**的签署人脸图片获取。\n3. 请在**签署完成后的三天内**获取人脸图片，**过期后将无法获取**。\n\n**注意：该接口需要开通白名单，请联系客户经理开通后使用。**",
+      "input": "DescribeSignFaceVideoRequest",
+      "name": "查询签署认证人脸视频",
+      "output": "DescribeSignFaceVideoResponse",
+      "status": "online"
+    },
     "DescribeThirdPartyAuthCode": {
       "document": "通过AuthCode查询个人用户是否实名\n\n\n注意: \n<ul>\n<li>此接口为合作引流场景使用，使用`有白名单限制`，使用前请联系对接的客户经理沟通。</li>\n<li>`AuthCode 只能使用一次`，查询一次再次查询会返回错误</li>\n</ul>",
       "input": "DescribeThirdPartyAuthCodeRequest",
@@ -7386,6 +7393,90 @@
       ],
       "type": "object"
     },
+    "DescribeSignFaceVideoRequest": {
+      "document": "DescribeSignFaceVideo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。",
+          "example": "yDCNsUUckpvqwg3kUyIemOrwQm9ltij5",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署参与人在本流程中的编号ID(每个流程不同)，可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。",
+          "example": "yDxjNUUgydjfeklxUuO4zjEBgCqAHMKu",
+          "member": "string",
+          "name": "SignId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSignFaceVideoResponse": {
+      "document": "DescribeSignFaceVideo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "核身视频结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectInfoVideoData",
+          "name": "VideoData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionQuestionResult",
+          "name": "IntentionQuestionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionActionResult",
+          "name": "IntentionActionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeThirdPartyAuthCodeRequest": {
       "document": "DescribeThirdPartyAuthCode请求参数结构体",
       "members": [
@@ -7534,6 +7625,22 @@
         }
       ],
       "type": "object"
+    },
+    "DetectInfoVideoData": {
+      "document": "视频认证结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活体视频的base64编码，mp4格式\n\n注:`需进行base64解码获取活体视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LiveNessVideo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DisableUserAutoSignRequest": {
       "document": "DisableUserAutoSign请求参数结构体",
@@ -8658,6 +8765,15 @@
           "name": "Deadline",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频核身意图配置，可指定问答模式或者点头模式的语音文本。\n\n注:\n `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`",
+          "example": "无",
+          "member": "Intention",
+          "name": "Intention",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -9422,6 +9538,146 @@
           "name": "OrderNo",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Intention": {
+      "document": "视频核身意图配置，可指定问答模式或者点头模式的语音文本。\n\n注: `视频认证为白名单功能，使用前请联系对接的客户经理沟通。`",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频认证类型，支持以下类型\n<ul><li>1 : 问答模式</li>\n<li>2 : 点头模式</li></ul>\n\n注: `视频认证为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "example": "1",
+          "member": "int64",
+          "name": "IntentionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
+          "example": "无",
+          "member": "IntentionQuestion",
+          "name": "IntentionQuestions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+          "example": "无",
+          "member": "IntentionAction",
+          "name": "IntentionActions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "IntentionAction": {
+      "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "点头确认模式下，系统语音播报使用的问题文本，问题最大长度为150个字符。",
+          "example": "请问您本次业务是本人自愿办理吗？如是，请点头确认。",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "IntentionActionResult": {
+      "document": "意愿核身点头确认模式结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "意愿核身结果详细数据，与每段点头确认过程一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionActionResultDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IntentionActionResultDetail": {
+      "document": "意愿核身点头确认模式结果详细数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Video",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IntentionQuestion": {
+      "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。",
+          "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
+          "member": "string",
+          "name": "Question",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表，传入后可自动判断用户回答文本是否在标准文本列表中。",
+          "example": "“同意”，“我同意”，“确认”，“我确认”",
+          "member": "string",
+          "name": "Answers",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "IntentionQuestionResult": {
+      "document": "意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n\n注：`需进行base64解码获取视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Video",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 和答案匹配结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultCode",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsrResult",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

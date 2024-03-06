@@ -224,3 +224,40 @@ Output:
 }
 ```
 
+**Example 8: 创建个人用户H5签署链接，使用视频认证方式**
+
+发起流程后，给其中的C端签署人创建签署链接，并且使用视频认证方式
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowApproverInfos.0.ApproverType 1 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --FlowApproverInfos.0.ApproverSignTypes 1 \
+    --FlowApproverInfos.0.Intention.IntentionType 1 \
+    --FlowApproverInfos.0.Intention.IntentionQuestions.0.Question 请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。 \
+    --FlowApproverInfos.0.Intention.IntentionQuestions.0.Answers 同意 我同意 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverMobile": "13200000000",
+                "ApproverName": "典子谦",
+                "ApproverType": 1,
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
+            }
+        ],
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+

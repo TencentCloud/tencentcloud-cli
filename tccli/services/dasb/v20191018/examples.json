@@ -354,6 +354,14 @@
         "title": "修改资产组"
       }
     ],
+    "ModifyOAuthSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOAuthSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AuthMethod\": \"okta\",\n    \"ClientId\": \"client-id\",\n    \"ClientSecret\": \"client-secret\",\n    \"CodeUrl\": \"https://some-url/oauth2/v1/authorize\",\n    \"TokenUrl\": \"https://some-url/oauth2/v1/token\",\n    \"UserInfoUrl\": \"https://some-url/oauth2/v1/userinfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置Okta认证配置"
+      }
+    ],
     "ModifyResource": [
       {
         "document": "已购买资源变配",

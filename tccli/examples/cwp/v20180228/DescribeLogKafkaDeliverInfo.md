@@ -11,39 +11,34 @@ Output:
 ```
 {
     "Response": {
-        "AccessAddr": "100.119.167.50:6281",
-        "AccessType": 2,
-        "Az": "广州三区",
-        "BandWidth": 0,
+        "KafkaEnvName": "abc",
+        "KafkaId": "abc",
+        "Zone": "abc",
+        "Az": "abc",
+        "VpcId": "abc",
+        "SubnetId": "abc",
+        "AccessType": 1,
+        "AccessAddr": "abc",
         "DeliverStatus": 1,
+        "InsVersion": "abc",
+        "BandWidth": 0,
+        "DiskSize": 0,
+        "Username": "abc",
         "DeliverTypeDetails": [
             {
                 "SecurityType": 1,
                 "LogType": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7
+                    0
                 ],
-                "TopicId": "topic-p9d8q5tm",
-                "TopicName": "test",
+                "TopicId": "abc",
+                "TopicName": "abc",
                 "Switch": 1,
-                "Status": 0,
-                "ErrInfo": " "
+                "Status": 1,
+                "ErrInfo": "abc",
+                "StatusTime": 0
             }
         ],
-        "DiskSize": 0,
-        "InsVersion": "0.10.2.1",
-        "KafkaEnvName": "云镜测试环境",
-        "KafkaId": "ckafka-ce80kte5",
-        "RequestId": "33e0611b-d363-4727-a7d6-ca405225bd52",
-        "SubnetId": "-",
-        "Username": "yunjing2",
-        "VpcId": "-",
-        "Zone": "广州"
+        "RequestId": "abc"
     }
 }
 ```

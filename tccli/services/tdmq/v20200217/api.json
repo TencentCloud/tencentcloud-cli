@@ -3855,8 +3855,8 @@
         },
         {
           "disabled": false,
-          "document": "主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。",
-          "example": "Default",
+          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。",
+          "example": "Normal",
           "member": "string",
           "name": "Type",
           "required": true,

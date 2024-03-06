@@ -26854,10 +26854,10 @@
         {
           "disabled": false,
           "document": "实例环境",
-          "example": "云镜测试环境",
+          "example": "主机安全测试环境",
           "member": "string",
           "name": "KafkaEnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26867,7 +26867,7 @@
           "example": "ckafka-ce80kte5",
           "member": "string",
           "name": "KafkaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26877,7 +26877,7 @@
           "example": "广州",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26887,7 +26887,7 @@
           "example": "广州三区",
           "member": "string",
           "name": "Az",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26897,7 +26897,7 @@
           "example": "xx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26907,7 +26907,7 @@
           "example": "xx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26917,7 +26917,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AccessType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26927,7 +26927,7 @@
           "example": "192.168.1.1:80",
           "member": "string",
           "name": "AccessAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26937,7 +26937,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DeliverStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26947,7 +26947,7 @@
           "example": "0.10.2.1",
           "member": "string",
           "name": "InsVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26957,7 +26957,7 @@
           "example": "1200",
           "member": "int64",
           "name": "BandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26967,7 +26967,7 @@
           "example": "2500",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26977,7 +26977,7 @@
           "example": "xx",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26987,7 +26987,7 @@
           "example": "无",
           "member": "DeliverTypeDetails",
           "name": "DeliverTypeDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -47298,8 +47298,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称 如 云镜测试环境",
-          "example": "云镜测试环境",
+          "document": "实例名称 如 主机安全测试环境",
+          "example": "主机安全测试环境",
           "member": "string",
           "name": "KafkaEnvName",
           "required": true,
@@ -47523,8 +47523,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称 如 云镜测试环境",
-          "example": "云镜测试环境",
+          "document": "实例名称 如 主机安全测试环境",
+          "example": "主机安全测试环境",
           "member": "string",
           "name": "KafkaEnvName",
           "required": true,

@@ -15,31 +15,32 @@ Output:
 {
     "Response": {
         "Stats": {
-            "SensitiveDbCnt": 3,
+            "DataAssetType": 0,
+            "TotalDbCnt": 0,
+            "TotalTableCnt": 0,
+            "SensitiveCategoryCnt": 0,
+            "SensitiveFieldCnt": 0,
             "SensitiveLevel": [
                 {
-                    "LevelCnt": 10,
-                    "LevelRiskName": "S2",
-                    "LevelRiskScore": 10,
-                    "LevelId": 1
+                    "LevelId": 0,
+                    "LevelCnt": 0,
+                    "LevelRiskName": "abc",
+                    "LevelRiskScore": 0
                 }
             ],
+            "SensitiveDbCnt": 0,
+            "SensitiveTableCnt": 0,
+            "TotalFieldCnt": 0,
             "CategoryDistributed": [
                 {
-                    "Count": 1,
                     "CategoryId": 0,
-                    "CategoryName": "xx"
+                    "CategoryName": "abc",
+                    "Count": 1,
+                    "CategoryFullPath": "abc"
                 }
-            ],
-            "TotalFieldCnt": 50,
-            "SensitiveCategoryCnt": 6,
-            "TotalTableCnt": 20,
-            "TotalDbCnt": 5,
-            "SensitiveFieldCnt": 20,
-            "SensitiveTableCnt": 10,
-            "DataAssetType": 0
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

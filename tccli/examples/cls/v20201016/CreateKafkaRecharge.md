@@ -14,14 +14,13 @@ tccli cls CreateKafkaRecharge --cli-unfold-argument  \
     --UserKafkaTopics topic-1212123123,topic-sadf5r32f3ww \
     --ConsumerGroupName consumer-group-name \
     --Offset -1 \
-    --LogRechargeRule.RechargeType json_log \
-    --LogRechargeRule.TimeKey abc \
-    --LogRechargeRule.TimeFormat abc \
-    --LogRechargeRule.LogRegex abc \
-    --LogRechargeRule.UnMatchLogSwitch True \
-    --LogRechargeRule.UnMatchLogKey abc \
+    --LogRechargeRule.DefaultTimeSrc 0 \
     --LogRechargeRule.DefaultTimeSwitch True \
     --LogRechargeRule.EncodingFormat 0 \
+    --LogRechargeRule.RechargeType minimalist_log \
+    --LogRechargeRule.UnMatchLogKey LogParseFailure \
+    --LogRechargeRule.UnMatchLogSwitch True \
+    --LogRechargeRule.UnMatchLogTimeSrc 0 \
     --Protocol.Protocol plaintext
 ```
 

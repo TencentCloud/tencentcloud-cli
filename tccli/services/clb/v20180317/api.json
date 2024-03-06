@@ -1487,7 +1487,7 @@
         {
           "disabled": false,
           "document": "客户端证书的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "4Ih****6",
           "member": "string",
           "name": "CertCaId",
           "output_required": true,

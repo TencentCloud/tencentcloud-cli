@@ -71,9 +71,9 @@
       "status": "online"
     },
     "CreateConsumer": {
-      "document": "本接口用于创建投递任务",
+      "document": "本接口用于创建投递CKafka任务",
       "input": "CreateConsumerRequest",
-      "name": "创建投递任务",
+      "name": "创建投递Ckafka任务",
       "output": "CreateConsumerResponse",
       "status": "online"
     },
@@ -386,7 +386,7 @@
       "status": "online"
     },
     "DescribeLogContext": {
-      "document": "本接口用于搜索日志上下文附近的内容\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
+      "document": "本接口用于搜索日志上下文附近的内容，详情参考[上下文检索](https://cloud.tencent.com/document/product/614/53248)。\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
       "input": "DescribeLogContextRequest",
       "name": "上下文检索",
       "output": "DescribeLogContextResponse",
@@ -512,9 +512,9 @@
       "status": "online"
     },
     "ModifyConsumer": {
-      "document": "本接口用于修改投递任务",
+      "document": "本接口用于修改投递Ckafka任务",
       "input": "ModifyConsumerRequest",
-      "name": "修改投递任务",
+      "name": "修改投递Ckafka任务",
       "output": "ModifyConsumerResponse",
       "status": "online"
     },
@@ -700,7 +700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键。支持以下key：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "k",
           "member": "string",
           "name": "Key",
@@ -711,7 +711,7 @@
         },
         {
           "disabled": false,
-          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值。\n键对应值如下：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v",
           "member": "string",
           "name": "Value",
@@ -1556,7 +1556,7 @@
         },
         {
           "disabled": false,
-          "document": "多维分析配置。\n\n当Analysis的Type字段为query（自定义）时，支持\n{\n\"Key\": \"SyntaxRule\",  // 语法规则\n\"Value\": \"1\"  //0：Lucene语法 ，1： CQL语法\n}\n\n\n\n当Analysis的Type字段为field（top5）时,  支持\n {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法（Lucene）\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}       \n\n当Analysis的Type字段为original（原始日志）时,  支持\n{\n    \"Key\": \"Fields\",\n    \"Value\": \"__SOURCE__,__HOSTNAME__,__TIMESTAMP__,__PKG_LOGID__,__TAG__.pod_ip\"\n}, {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //  //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"Format\", //显示形式。1：每条日志一行，2：每条日志每个字段一行\n    \"Value\": \"2\"\n},\n{\n    \"Key\": \"Limit\", //最大日志条数\n    \"Value\": \"5\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多维分析配置。\n\n当Analysis的Type字段为query（自定义）时，支持\n{\n\"Key\": \"SyntaxRule\",  // 语法规则\n\"Value\": \"1\"  //0：Lucene语法 ，1： CQL语法\n}\n\n当Analysis的Type字段为field（top5）时,  支持\n {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法（Lucene）\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}       \n\n当Analysis的Type字段为original（原始日志）时,  支持\n{\n    \"Key\": \"Fields\",\n    \"Value\": \"__SOURCE__,__HOSTNAME__,__TIMESTAMP__,__PKG_LOGID__,__TAG__.pod_ip\"\n}, {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //  //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"Format\", //显示形式。1：每条日志一行，2：每条日志每个字段一行\n    \"Value\": \"2\"\n},\n{\n    \"Key\": \"Limit\", //最大日志条数\n    \"Value\": \"5\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmAnalysisConfig",
           "name": "ConfigInfo",
@@ -1861,6 +1861,51 @@
       ],
       "type": "object"
     },
+    "CollectConfig": {
+      "document": "采集配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定采集类型的采集配置名称信息。\n<li>当CollectInfo中Type为0：表示元数据配置，name为元数据名称。\n目前支持\"container_id\"，\"container_name\"，\"image_name\"，\"namespace\"，\"pod_uid\"，\"pod_name\"，\"pod_ip\"。\n</li>\n<li>当CollectInfo中Type为1：指定pod label，name为指定pod label名称。</li>",
+          "example": "pod_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CollectInfo": {
+      "document": "采集配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集类型，必填字段。\n<li>0：元数据配置。</li>\n<li>1：指定Pod Label。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定采集类型的采集配置信息。\n<li>当Type为0时，CollectConfigs不允许为空。</li>\n<li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CollectConfig",
+          "name": "CollectConfigs",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Column": {
       "document": "日志分析的列属性",
       "members": [
@@ -2098,6 +2143,16 @@
         },
         {
           "disabled": false,
+          "document": "采集相关配置信息。详情见 CollectInfo复杂类型配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CollectInfo",
+          "name": "CollectInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
           "member": "string",
@@ -2240,10 +2295,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否投递 TAG 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否投递 TAG 信息。\n当EnableTag为true时，表示投递TAG元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableTag",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -2254,26 +2310,40 @@
           "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
           "member": "string",
           "name": "MetaFields",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段。\nTagJsonNotTiled用于标识tag信息是否json平铺。\n\nTagJsonNotTiled为true时不平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n不平铺：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n\nTagJsonNotTiled为false时平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n平铺：`{\"__TAG__.fieldA\":200,\"__TAG__.fieldB\":\"text\"}`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "TagJsonNotTiled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TimestampAccuracy",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递Json格式。\nJsonType为0：和原始日志一致，不转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n\nJsonType为1：转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\",\"b\":\"{\\\"b1\\\":\\\"b1b1\\\", \\\"c1\\\":\\\"c1c1\\\"}\"}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "JsonType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3397,7 +3467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息，默认为 true",
+          "document": "是否投递日志的元数据信息，默认为 true。\n当NeedContent为true时：字段Content有效。\n当NeedContent为false时：字段Content无效。",
           "example": "false",
           "member": "bool",
           "name": "NeedContent",
@@ -3424,7 +3494,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "document": "投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -3478,7 +3548,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶。\n存储桶命名规范：https://cloud.tencent.com/document/product/436/13312",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
           "example": "examplebucket-1-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -3487,7 +3557,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶所在地域。地域和访问域名：https://cloud.tencent.com/document/product/436/6224",
+          "document": "COS存储桶所在地域，详见产品支持的[地域列表](https://cloud.tencent.com/document/product/436/6224)。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -3560,7 +3630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型. 1: 指定主题；2:动态创建",
+          "document": "任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。",
           "example": "1",
           "member": "int64",
           "name": "FuncType",
@@ -3596,12 +3666,21 @@
         },
         {
           "disabled": false,
-          "document": "加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务",
+          "document": "加工类型。\n1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。",
           "example": "1",
           "member": "int64",
           "name": "TaskType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。",
+          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "member": "DataTransformResouceInfo",
+          "name": "DstResources",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3611,15 +3690,6 @@
           "name": "EnableFlag",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写",
-          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
-          "member": "DataTransformResouceInfo",
-          "name": "DstResources",
-          "required": false,
-          "type": "list"
         },
         {
           "disabled": false,
@@ -4547,7 +4617,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600天。取值为3640时代表永久保存",
+          "document": "生命周期，单位天，标准存储取值范围1\\~3600，低频存储取值范围7\\~3600天。取值为3640时代表永久保存。\n不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -4565,7 +4635,7 @@
         },
         {
           "disabled": false,
-          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
+          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效。",
           "example": "7",
           "member": "uint64",
           "name": "HotPeriod",
@@ -4574,7 +4644,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关； false: 关闭 true： 开启",
+          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -6074,7 +6144,7 @@
         },
         {
           "disabled": false,
-          "document": "<br><li>dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否</li>\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否</li>\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li>dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否</li>\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否</li>\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。使用请参考示例二。\n\n类型：String\n\n必选：否</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6431,7 +6501,7 @@
         {
           "disabled": false,
           "document": "日志主题 ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "6bf3355c-3c88-4566-89c8-76c3ca37bae9",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -6495,7 +6565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kafka消费用户名",
+          "document": "kafka用户名。",
           "example": "test",
           "member": "string",
           "name": "UserName",
@@ -6510,11 +6580,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "kafka消费用户名",
+          "document": "如果返回不为空，代表用户名UserName已经创建成功。",
           "example": "test",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6550,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包序号",
+          "document": "日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。",
           "example": "528C1318606EFEB8-1A7",
           "member": "string",
           "name": "PkgId",
@@ -6559,7 +6629,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包内一条日志的序号",
+          "document": "日志包内一条日志的序号。\nSearchLog接口返回信息中Results结构中的PkgLogId。",
           "example": "65536",
           "member": "int64",
           "name": "PkgLogId",
@@ -6568,7 +6638,7 @@
         },
         {
           "disabled": false,
-          "document": "上文日志条数,  默认值10",
+          "document": "前${PrevLogs}条日志，默认值10。",
           "example": "10",
           "member": "int64",
           "name": "PrevLogs",
@@ -6577,7 +6647,7 @@
         },
         {
           "disabled": false,
-          "document": "下文日志条数,  默认值10",
+          "document": "后${NextLogs}条日志，默认值10。",
           "example": "10",
           "member": "int64",
           "name": "NextLogs",
@@ -6602,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "上文日志是否已经返回",
+          "document": "上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。",
           "example": "true",
           "member": "bool",
           "name": "PrevOver",
@@ -6612,7 +6682,7 @@
         },
         {
           "disabled": false,
-          "document": "下文日志是否已经返回",
+          "document": "下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。",
           "example": "true",
           "member": "bool",
           "name": "NextOver",
@@ -6912,7 +6982,7 @@
         {
           "disabled": false,
           "document": "机器状态信息组",
-          "example": "0 ",
+          "example": "无",
           "member": "MachineInfo",
           "name": "Machines",
           "output_required": true,
@@ -6921,7 +6991,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组是否开启自动升级功能",
+          "document": "机器组是否开启自动升级功能。 0：未开启自动升级；1：开启了自动升级。",
           "example": "0",
           "member": "int64",
           "name": "AutoUpdate",
@@ -7056,7 +7126,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
+          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤，0日志主题 1指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1：运行；2：停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7507,7 +7577,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出路径",
+          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
           "example": "\"\"",
           "member": "string",
           "name": "CosPath",
@@ -7543,7 +7613,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间字段的key名字，time_key和time_format必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间字段的key名字，TikeKey和TimeFormat必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "TimeKey",
@@ -7565,7 +7635,7 @@
         },
         {
           "disabled": false,
-          "document": "分隔符类型日志的分隔符，只有log_type为delimiter_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分隔符类型日志的分隔符，只有LogType为delimiter_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": ",",
           "member": "string",
           "name": "Delimiter",
@@ -7576,7 +7646,7 @@
         },
         {
           "disabled": false,
-          "document": "整条日志匹配规则，只有log_type为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "整条日志匹配规则，只有LogType为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
           "name": "LogRegex",
@@ -7587,7 +7657,7 @@
         },
         {
           "disabled": false,
-          "document": "行首匹配规则，只有log_type为multiline_log或fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "行首匹配规则，只有LogType为multiline_log或fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\\w",
           "member": "string",
           "name": "BeginRegex",
@@ -7598,7 +7668,7 @@
         },
         {
           "disabled": false,
-          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Keys",
@@ -7642,7 +7712,7 @@
         },
         {
           "disabled": false,
-          "document": "增量采集模式下的回溯数据量，默认-1（全量采集）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "Backtracking",
@@ -7936,7 +8006,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效",
+          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；\n为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；\n两种返回方式在编码格式上有少量区别，建议使用true。\n示例值：false",
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
@@ -8001,7 +8071,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情统计分析结果。当Query字段有SQL语句时，返回sql统计结果，否则可能返回null。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
@@ -8011,7 +8081,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情统计分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情统计分析结果；UseNewAnalysis为true有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
           "name": "AnalysisRecords",
@@ -8196,7 +8266,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消费格式 0:全文；1:json",
+          "document": "消费数据格式。 0：原始内容；1：JSON。",
           "example": "1",
           "member": "int64",
           "name": "Format",
@@ -8229,7 +8299,7 @@
         },
         {
           "disabled": false,
-          "document": "tag数据处理方式：\n1:不平铺（默认值）\n2:平铺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tag数据处理方式：1:不平铺（默认值）；2:平铺。\n\n不平铺示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n不平铺：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n\n平铺示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n平铺：`{\"__TAG__.fieldA\":200,\"__TAG__.fieldB\":\"text\"}`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TagTransaction",
@@ -8240,7 +8310,7 @@
         },
         {
           "disabled": false,
-          "document": "消费数据Json格式：\n1：不转义（默认格式）\n2：转义",
+          "document": "消费数据Json格式：\n1：不转义（默认格式）\n2：转义\n\n投递Json格式。\nJsonType为1：和原始日志一致，不转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n\nJsonType为2：转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\",\"b\":\"{\\\"b1\\\":\\\"b1b1\\\", \\\"c1\\\":\\\"c1c1\\\"}\"}`",
           "example": "1",
           "member": "int64",
           "name": "JsonType",
@@ -8308,7 +8378,7 @@
         {
           "disabled": false,
           "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxxxxxx",
+          "example": "86076b49-1234-4321-ab09-a5d7e7972825",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -8318,7 +8388,7 @@
         {
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "957f4aed-1234-4321-b98b-c3c806f9e71b",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -8358,7 +8428,7 @@
         {
           "disabled": false,
           "document": "服务地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test.cls.tencentyun.com:9095",
+          "example": "kafkaconsumer-ap-chongqing.aaa.com:1234",
           "member": "string",
           "name": "ServerAddr",
           "output_required": true,
@@ -8388,7 +8458,7 @@
         {
           "disabled": false,
           "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "topic1,topic2\t",
+          "example": "1256238147-f3061593-cd5b-4321-1234-3ba507d43301",
           "member": "string",
           "name": "UserKafkaTopics",
           "output_required": true,
@@ -8407,7 +8477,7 @@
         },
         {
           "disabled": false,
-          "document": "状态   status 1: 运行中, 2: 暂停 ...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态 ，1：运行中；2：暂停。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8625,7 +8695,7 @@
           "example": "1619162953000",
           "member": "int64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8635,7 +8705,7 @@
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8645,7 +8715,7 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8655,7 +8725,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8665,7 +8735,7 @@
           "example": "/test/access.log",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8675,7 +8745,7 @@
           "example": "0",
           "member": "string",
           "name": "PkgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8685,17 +8755,17 @@
           "example": "0",
           "member": "string",
           "name": "PkgLogId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"content\":\"test\"}",
+          "example": "{\\\"content\\\":\\\"test\\\"}",
           "member": "string",
           "name": "LogJson",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8705,17 +8775,17 @@
           "example": "hostName-1",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"content\":\"test\"}",
+          "example": "{\\\"content\\\":\\\"test\\\"}",
           "member": "string",
           "name": "RawLog",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8725,7 +8795,7 @@
           "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
           "member": "string",
           "name": "IndexStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9215,7 +9285,7 @@
         },
         {
           "disabled": false,
-          "document": "机器升级功能状态。",
+          "document": "机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。",
           "example": "0",
           "member": "int64",
           "name": "UpdateStatus",
@@ -9225,7 +9295,7 @@
         },
         {
           "disabled": false,
-          "document": "机器升级结果标识。",
+          "document": "机器升级结果标识。\n0：成功；1200：升级成功；其他值表示异常。",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
@@ -9235,7 +9305,7 @@
         },
         {
           "disabled": false,
-          "document": "机器升级结果信息。",
+          "document": "机器升级结果信息。\n“ok”：成功；“update success”：升级成功；其他值为失败原因。",
           "example": "OK",
           "member": "string",
           "name": "ErrMsg",
@@ -10008,7 +10078,7 @@
         },
         {
           "disabled": false,
-          "document": "是否投递日志的元数据信息，默认为 false",
+          "document": "是否投递日志的元数据信息，默认为 true。\n当NeedContent为true时：字段Content有效。\n当NeedContent为false时：字段Content无效。",
           "example": "false",
           "member": "bool",
           "name": "NeedContent",
@@ -10035,7 +10105,7 @@
         },
         {
           "disabled": false,
-          "document": "投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]",
+          "document": "投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]",
           "example": "0",
           "member": "int64",
           "name": "Compression",
@@ -10854,7 +10924,7 @@
         },
         {
           "disabled": false,
-          "document": "该日志主题是否开始采集",
+          "document": "主题是否开启采集，true：开启采集；false：关闭采集。\n控制台目前不支持修改此参数。",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -10908,7 +10978,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关； false: 关闭 true: 开启",
+          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -11353,7 +11423,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接。。\nKafkaType为1时有效。",
+          "document": "ServerAddr是否为加密连接。\nKafkaType为1时有效。",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -12086,7 +12156,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶。\n存储桶命名规范：https://cloud.tencent.com/document/product/436/13312",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
           "example": "examplebucket-1-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -12095,7 +12165,7 @@
         },
         {
           "disabled": false,
-          "document": "存储桶所在地域。\n地域和访问域名：https://cloud.tencent.com/document/product/436/6224",
+          "document": "COS存储桶所在地域，详见产品支持的[地域列表](https://cloud.tencent.com/document/product/436/6224)。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -12902,18 +12972,16 @@
           "member": "string",
           "name": "TopicId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "日志主题id 所在的地域id\n地域ID - 访问链接查看详情：https://iwiki.woa.com/pages/viewpage.action?pageId=780556968#id-地域码表-一.region大区（标准地域）",
+          "document": "日志主题id所在的地域id。\n\nid,地域,简称信息如下：\n- 1,   广州,ap-guangzhou\n- 4,   上海,ap-shanghai\n- 5,   中国香港,ap-hongkong\n- 6,   多伦多,na-toronto\n- 7,   上海金融,ap-shanghai-fsi\n- 8,   北京,ap-beijing\n- 9,   新加坡,ap-singapore\n- 11,  深圳金融,ap-shenzhen-fsi\n- 15,  硅谷,na-siliconvalley\n- 16,  成都,ap-chengdu\n- 17,  法兰克福,eu-frankfurt\n- 18,  首尔,ap-seoul\n- 19,  重庆,ap-chongqing\n- 21,  孟买,ap-mumbai\n- 22,  弗吉尼亚,na-ashburn\n- 23,  曼谷,ap-bangkok\n- 25,  东京,ap-tokyo\n- 33,  南京,ap-nanjing\n- 46,  北京金融,ap-beijing-fsi\n- 72,  雅加达,ap-jakarta\n- 74,  圣保罗,sa-saopaulo",
           "example": "19",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12993,7 +13061,7 @@
         },
         {
           "disabled": false,
-          "document": "主题是否开启采集",
+          "document": "主题是否开启采集，true：开启采集；false：关闭采集。\n创建日志主题时默认开启，可通过SDK调用ModifyTopic修改此字段。\n控制台目前不支持修改此参数。",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -13093,7 +13161,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。\n- false: 关闭\n- true: 开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",

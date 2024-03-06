@@ -50,9 +50,9 @@
       "status": "online"
     },
     "ModifyApmInstance": {
-      "document": "修改Apm实例接口",
+      "document": "修改APM实例接口",
       "input": "ModifyApmInstanceRequest",
-      "name": "修改Apm实例",
+      "name": "修改APM实例",
       "output": "ModifyApmInstanceResponse",
       "status": "online"
     },

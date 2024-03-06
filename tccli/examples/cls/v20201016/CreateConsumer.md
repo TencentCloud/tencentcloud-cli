@@ -1,6 +1,6 @@
-**Example 1: 创建投递任务**
+**Example 1: 创建投递Ckafka任务**
 
-
+CLS 日志投递Ckafka之后，您可以对日志进行实时计算后入库。
 
 Input: 
 

@@ -516,7 +516,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，可用规格如下：\nexperiment_500,\nbasic_1k,\nbasic_2k,\nbasic_4k,\nbasic_6k",
+          "document": "商品规格，可用规格如下：\nexperiment_500,\nbasic_1k,\nbasic_2k,\nbasic_4k,\nbasic_6k,\npro_4k,\npro_6k,\npro_1w,\npro_2w,\npro_3w,\npro_4w,\npro_5w,\nplatinum_6k,\nplatinum_1w,\nplatinum_2w,\nplatinum_4w,\nplatinum_10w,\nplatinum_15w,\nplatinum_20w,\nplatinum_40w,\nplatinum_60w,\nplatinum_100w",
           "example": "无",
           "member": "string",
           "name": "SkuCode",
@@ -561,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽",
+          "document": "公网带宽（单位：兆）",
           "example": "无",
           "member": "int64",
           "name": "Bandwidth",
@@ -579,10 +579,46 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长，小时为单位",
+          "document": "消息保留时长（单位：小时）",
           "example": "无",
           "member": "int64",
           "name": "MessageRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式（0: 后付费；1: 预付费）",
+          "example": "无",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长（单位：月）",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大可创建主题数",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxTopicNum",
           "required": false,
           "type": "int"
         }
@@ -598,6 +634,7 @@
           "example": "rmq-xxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1038,6 +1075,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长",
+          "example": "72",
+          "member": "int64",
+          "name": "MsgTTL",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1051,6 +1097,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1060,6 +1107,7 @@
           "example": "无",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3020,11 +3068,20 @@
         },
         {
           "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "查询起始位置",
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -3033,17 +3090,8 @@
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3101,11 +3149,20 @@
         },
         {
           "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "查询起始位置",
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -3114,17 +3171,8 @@
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
           "required": false,
-          "type": "list"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3138,6 +3186,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3147,6 +3196,7 @@
           "example": "无",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3156,6 +3206,7 @@
           "example": "无",
           "member": "string",
           "name": "TopicType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3165,6 +3216,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3174,6 +3226,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreatedTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3183,6 +3236,7 @@
           "example": "无",
           "member": "int64",
           "name": "LastUpdateTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3192,6 +3246,7 @@
           "example": "无",
           "member": "int64",
           "name": "SubscriptionCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3201,7 +3256,18 @@
           "example": "无",
           "member": "SubscriptionData",
           "name": "SubscriptionData",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长",
+          "example": "72",
+          "member": "int64",
+          "name": "MsgTTL",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4329,6 +4395,15 @@
           "name": "ScaledTpsEnabled",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "最大可创建主题数",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxTopicNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4983,7 +5058,7 @@
           "example": "rmq-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4993,7 +5068,7 @@
           "example": "test",
           "member": "string",
           "name": "Topic",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5003,7 +5078,7 @@
           "example": "无",
           "member": "string",
           "name": "TopicType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5013,7 +5088,7 @@
           "example": "无",
           "member": "int64",
           "name": "TopicQueueNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5023,7 +5098,7 @@
           "example": "无",
           "member": "string",
           "name": "ConsumerGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5033,7 +5108,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsOnline",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5043,7 +5118,7 @@
           "example": "无",
           "member": "string",
           "name": "ConsumeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5053,7 +5128,7 @@
           "example": "无",
           "member": "string",
           "name": "SubString",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5063,7 +5138,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpressionType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5073,7 +5148,7 @@
           "example": "无",
           "member": "int64",
           "name": "Consistency",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5083,7 +5158,7 @@
           "example": "无",
           "member": "int64",
           "name": "ConsumerLag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5093,7 +5168,7 @@
           "example": "无",
           "member": "int64",
           "name": "LastUpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5103,7 +5178,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxRetryTimes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5113,8 +5188,18 @@
           "example": "无",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
-          "required": false,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费模式: \nBROADCASTING 广播模式;\nCLUSTERING 集群模式;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLUSTERING",
+          "member": "string",
+          "name": "MessageModel",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5179,6 +5264,7 @@
           "example": "rmq-xxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5189,6 +5275,7 @@
           "example": "test",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5199,6 +5286,7 @@
           "example": "无",
           "member": "string",
           "name": "TopicType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5209,6 +5297,7 @@
           "example": "3",
           "member": "int64",
           "name": "QueueNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5219,8 +5308,64 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIdV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FullNamespaceV4",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "72",
+          "member": "int64",
+          "name": "MsgTTL",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

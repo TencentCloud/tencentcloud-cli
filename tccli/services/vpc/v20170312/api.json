@@ -3696,7 +3696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。形如：vpc-xxx。",
           "example": "vpc-8xpno8ee",
           "member": "string",
           "name": "VpcId",
@@ -3705,7 +3705,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关ID。",
+          "document": "NAT网关ID。形如：nat-xxx",
           "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
@@ -3714,7 +3714,7 @@
         },
         {
           "disabled": false,
-          "document": "专线网关ID。",
+          "document": "专线网关ID。形如：dcg-xxx",
           "example": "dcg-fxa6gh5t",
           "member": "string",
           "name": "DirectConnectGatewayId",
@@ -17390,8 +17390,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线网关ID。",
-          "example": "vpc-xxx",
+          "document": "VPC实例ID。形如：vpc-xxx。",
+          "example": "vpc-8xpno8ee",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -17399,8 +17399,8 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关ID。",
-          "example": "nat-xxx",
+          "document": "NAT网关ID。形如：nat-xxx",
+          "example": "nat-ig8xpno8",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -17408,8 +17408,8 @@
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
-          "example": "dcg-xxx",
+          "document": "专线网关ID。形如：dcg-xxx",
+          "example": "dcg-fxa6gh5t",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -22025,7 +22025,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。",
+          "document": "VPC实例ID。形如：vpc-f49l6u0z。",
           "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "VpcId",

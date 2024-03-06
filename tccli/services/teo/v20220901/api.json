@@ -6636,7 +6636,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name<br>   按照【<strong>站点名称</strong>】进行过滤。<br>   类型：String<br>   必选：是</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-name：按照站点名称进行过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6673,7 +6673,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6683,7 +6683,7 @@
           "example": "无",
           "member": "Identification",
           "name": "Identifications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

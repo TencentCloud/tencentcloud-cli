@@ -1962,7 +1962,7 @@
     ],
     "DisassociateDirectConnectGatewayNatGateway": [
       {
-        "document": "",
+        "document": "解绑专线网关与公网NAT网关",
         "input": "https://vpc.tencentcloudapi.com/?Action=DisassociateDirectConnectGatewayNatGateway\n&VpcId=\"vpc-8xpno8ee\"\n&DirectConnectGatewayId=\"dcg-fxa6gh5t\"\n&NatGatewayId=\"nat-ig8xpno8\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "专线网关解绑NAT网关"

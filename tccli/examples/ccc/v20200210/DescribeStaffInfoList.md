@@ -26,6 +26,7 @@ Output:
                 "Phone": "008617636049517",
                 "Nick": "测试3",
                 "StaffNumber": "125",
+                "RoleId": 1,
                 "SkillGroupList": [
                     {
                         "SkillGroupId": 53,

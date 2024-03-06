@@ -7121,7 +7121,7 @@
         },
         {
           "disabled": false,
-          "document": "证件图片",
+          "document": "证件中的人像图片base64",
           "example": "无",
           "member": "string",
           "name": "Image",
