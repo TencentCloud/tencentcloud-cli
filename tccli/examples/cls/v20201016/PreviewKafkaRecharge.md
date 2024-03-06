@@ -11,7 +11,7 @@ tccli cls PreviewKafkaRecharge --cli-unfold-argument  \
     --ServerAddr test.cls.tencentyun.com:9095 \
     --IsEncryptionAddr False \
     --UserKafkaTopics topic1,topic2 \
-    --Offset 0 \
+    --Offset -1 \
     --LogRechargeRule.RechargeType json_log \
     --LogRechargeRule.TimeKey abc \
     --LogRechargeRule.TimeFormat abc \

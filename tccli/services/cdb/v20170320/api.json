@@ -9549,6 +9549,15 @@
           "name": "WithExpandCPU",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CDC集群ID",
+          "example": "[\"cdc-test\"]",
+          "member": "string",
+          "name": "CdcIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10448,6 +10457,15 @@
           "name": "InstType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "dbn-j57njp5s",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10461,7 +10479,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10471,7 +10489,7 @@
           "example": "无",
           "member": "ErrlogItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13037,6 +13055,32 @@
       ],
       "type": "object"
     },
+    "InstClusterExtInfo": {
+      "document": "实例集群类型扩展信息，InstClusterExtInfo:{\"ExtType\":\"cdc\", \"ExtId\":\"cluster_cdctest\"}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例扩展集群类型：cdc、cage\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc/cage",
+          "member": "string",
+          "name": "ExtType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster_cdc_test",
+          "member": "string",
+          "name": "ExtId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstEventInfo": {
       "document": "实例事件信息",
       "members": [
@@ -13793,6 +13837,16 @@
           "name": "ExpandCpu",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例扩展集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstClusterExtInfo",
+          "name": "InstClusterExtInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

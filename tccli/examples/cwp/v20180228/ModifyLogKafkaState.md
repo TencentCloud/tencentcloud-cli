@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp ModifyLogKafkaState --cli-unfold-argument  \
-    --KafkaEnvName 云镜测试环境 \
+    --KafkaEnvName 主机安全测试环境 \
     --KafkaId ckafka-ce80kte5 \
     --AccessType 1 \
     --AccessAddr 127.0.0.1:80 \
-    --Username xx \
+    --Username 12 \
     --Zone 广州 \
     --Az 广州三区 \
     --VpcId - \
@@ -25,7 +25,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "absc"
     }
 }
 ```

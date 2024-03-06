@@ -322,6 +322,13 @@
       "output": "ModifyDeviceGroupResponse",
       "status": "online"
     },
+    "ModifyOAuthSetting": {
+      "document": "设置OAuth认证参数",
+      "input": "ModifyOAuthSettingRequest",
+      "name": "设置OAuth认证参数",
+      "output": "ModifyOAuthSettingResponse",
+      "status": "online"
+    },
     "ModifyResource": {
       "document": "资源变配",
       "input": "ModifyResourceRequest",
@@ -5252,6 +5259,96 @@
       ],
       "type": "object"
     },
+    "ModifyOAuthSettingRequest": {
+      "document": "ModifyOAuthSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启OAuth认证，false-不开启，true-开启。",
+          "example": "无",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证方式。",
+          "example": "okta",
+          "member": "string",
+          "name": "AuthMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证客户端Id",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证客户端密钥",
+          "example": "无",
+          "member": "string",
+          "name": "ClientSecret",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth认证授权码URL",
+          "example": "无",
+          "member": "string",
+          "name": "CodeUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth令牌URL",
+          "example": "无",
+          "member": "string",
+          "name": "TokenUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth用户信息URL",
+          "example": "无",
+          "member": "string",
+          "name": "UserInfoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用Okta认证时指定范围。为空时默认使用 openid、profile、email。",
+          "example": "无",
+          "member": "string",
+          "name": "Scopes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOAuthSettingResponse": {
+      "document": "ModifyOAuthSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyResourceRequest": {
       "document": "ModifyResource请求参数结构体",
       "members": [
@@ -5503,6 +5600,82 @@
         }
       ],
       "type": "object"
+    },
+    "OAuthSetting": {
+      "document": "OAuth认证配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启OAuth认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OAuth认证客户端Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth认证授权码URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CodeUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth令牌URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TokenUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取OAuth用户信息URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserInfoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用Okta认证时指定范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scopes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OperationEvent": {
       "document": "操作日志",
@@ -7273,7 +7446,7 @@
           "example": "{}",
           "member": "AuthModeSetting",
           "name": "AuthMode",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7283,7 +7456,7 @@
           "example": "{}",
           "member": "PasswordSetting",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7293,7 +7466,7 @@
           "example": "{}",
           "member": "LoginSetting",
           "name": "Login",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7303,9 +7476,19 @@
           "example": "无",
           "member": "LDAPSetting",
           "name": "LDAP",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OAuth配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OAuthSetting",
+          "name": "OAuth",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

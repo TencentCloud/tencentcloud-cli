@@ -1,3 +1,283 @@
+# Release 3.0.950.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 47 次发布
+
+发布时间：2024-03-07 01:10:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StaffInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffInfo)
+
+	* 新增成员：RoleId
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 90 次发布
+
+发布时间：2024-03-07 01:10:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
+
+	* 新增入参：CdcIds
+
+* [DescribeErrorLogData](http://document.tencentcloudapi.woa.com/document/product/236/43041)
+
+	* 新增入参：OpResourceId
+
+
+新增数据结构：
+
+* [InstClusterExtInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstClusterExtInfo)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：InstClusterExtInfo
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 55 次发布
+
+发布时间：2024-03-07 01:12:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CollectConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#CollectConfig)
+* [CollectInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CollectInfo)
+
+修改数据结构：
+
+* [ConfigExtraInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConfigExtraInfo)
+
+	* 新增成员：CollectInfos
+
+* [ConsumerContent](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConsumerContent)
+
+	* 新增成员：JsonType
+
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>RawLog, IndexStatus
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 25 次发布
+
+发布时间：2024-03-07 01:15:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyOAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1492/83396)
+
+新增数据结构：
+
+* [OAuthSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#OAuthSetting)
+
+修改数据结构：
+
+* [SecuritySetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SecuritySetting)
+
+	* 新增成员：OAuth
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 69 次发布
+
+发布时间：2024-03-07 01:19:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSignFaceVideo](http://document.tencentcloudapi.woa.com/document/product/1668/83397)
+
+新增数据结构：
+
+* [DetectInfoVideoData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#DetectInfoVideoData)
+* [Intention](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Intention)
+* [IntentionAction](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntentionAction)
+* [IntentionActionResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntentionActionResult)
+* [IntentionActionResultDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntentionActionResultDetail)
+* [IntentionQuestion](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntentionQuestion)
+* [IntentionQuestionResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntentionQuestionResult)
+
+修改数据结构：
+
+* [FlowCreateApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowCreateApprover)
+
+	* 新增成员：Intention
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 126 次发布
+
+发布时间：2024-03-07 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelDescribeSignFaceVideo](http://document.tencentcloudapi.woa.com/document/product/1595/83398)
+
+新增数据结构：
+
+* [DetectInfoVideoData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DetectInfoVideoData)
+* [Intention](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Intention)
+* [IntentionAction](http://document.tencentcloudapi.woa.com/document/product/1595/75258#IntentionAction)
+* [IntentionActionResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#IntentionActionResult)
+* [IntentionActionResultDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#IntentionActionResultDetail)
+* [IntentionQuestion](http://document.tencentcloudapi.woa.com/document/product/1595/75258#IntentionQuestion)
+* [IntentionQuestionResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#IntentionQuestionResult)
+
+修改数据结构：
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：Intention
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 11 次发布
+
+发布时间：2024-03-07 01:30:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)
+
+	* 新增入参：PayMode, RenewFlag, TimeSpan, MaxTopicNum
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81932)
+
+	* 新增入参：MsgTTL
+
+* [DescribeTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81930)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+	* 新增出参：MsgTTL
+
+* [DescribeTopicList](http://document.tencentcloudapi.woa.com/document/product/1739/81436)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81894)
+
+	* 新增入参：MaxTopicNum
+
+
+修改数据结构：
+
+* [SubscriptionData](http://document.tencentcloudapi.woa.com/document/product/1739/81437#SubscriptionData)
+
+	* 新增成员：MessageModel
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, Topic, TopicType, TopicQueueNum, ConsumerGroup, IsOnline, ConsumeType, SubString, ExpressionType, Consistency, ConsumerLag, LastUpdateTime, MaxRetryTimes, ConsumeMessageOrderly
+
+* [TopicItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#TopicItem)
+
+	* 新增成员：ClusterIdV4, NamespaceV4, TopicV4, FullNamespaceV4, MsgTTL
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 53 次发布
+
+发布时间：2024-03-07 01:31:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongUpstreamInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamInfo)
+
+	* 新增成员：ScfCamAuthEnable
+
+* [UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig)
+
+	* 新增成员：IgnoreZeroWeightNodes
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 128 次发布
+
+发布时间：2024-03-07 01:32:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckRole](http://document.tencentcloudapi.woa.com/document/product/215/83399)
+
+修改接口：
+
+* [ModifyVpcAttribute](http://document.tencentcloudapi.woa.com/document/product/215/15773)
+
+	* 新增入参：EnableMultiCcn
+
+
+
+
 # Release 3.0.949.1
 
 ## 负载均衡(clb) 版本：2018-03-17

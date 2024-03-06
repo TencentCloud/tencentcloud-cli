@@ -19,6 +19,29 @@ Output:
         "Configs": [
             {
                 "AdvancedConfig": "{\"ClsAgentFileTimeout\":3600}",
+                "CollectInfos": [
+                    {
+                        "CollectConfigs": [
+                            {
+                                "Name": "container_name"
+                            },
+                            {
+                                "Name": "namespace"
+                            },
+                            {
+                                "Name": "pod_name"
+                            },
+                            {
+                                "Name": "pod_ip"
+                            }
+                        ],
+                        "Type": 0
+                    },
+                    {
+                        "CollectConfigs": [],
+                        "Type": 1
+                    }
+                ],
                 "ConfigExtraId": "26ea1681-dfef-4429-a84f-3450d5d46796",
                 "ConfigFlag": "label_k8s",
                 "ContainerFile": {

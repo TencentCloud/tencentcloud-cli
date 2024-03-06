@@ -4297,7 +4297,7 @@
         },
         {
           "disabled": false,
-          "document": "页码,默认第一页",
+          "document": "页码,默认大小1",
           "example": "无",
           "member": "uint64",
           "name": "PageIndex",
@@ -4616,7 +4616,7 @@
         },
         {
           "disabled": false,
-          "document": "页码,默认第一页",
+          "document": "页码,默认第一页，默认大小1",
           "example": "1",
           "member": "int64",
           "name": "PageIndex",
