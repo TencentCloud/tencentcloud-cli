@@ -1,3 +1,266 @@
+# Release 3.0.951.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 27 次发布
+
+发布时间：2024-03-08 01:09:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [EmptyDirVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EmptyDirVolumeSource)
+
+修改数据结构：
+
+* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
+
+	* 新增成员：SubPath
+
+* [VolumeRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeRaw)
+
+	* 新增成员：EmptyDir
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 12 次发布
+
+发布时间：2024-03-08 01:10:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：IsWhiteSGs, BindSGs
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 71 次发布
+
+发布时间：2024-03-08 01:12:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateKeyPair](http://document.tencentcloudapi.woa.com/document/product/213/15702)
+
+	* <font color="#dd0000">**修改出参**：</font>KeyPair
+
+
+修改数据结构：
+
+* [KeyPair](http://document.tencentcloudapi.woa.com/document/product/213/15753#KeyPair)
+
+	* <font color="#dd0000">**修改成员**：</font>KeyId, KeyName, ProjectId, Description, PublicKey, PrivateKey, AssociatedInstanceIds, CreatedTime, Tags
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 13 次发布
+
+发布时间：2024-03-08 01:16:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Options](http://document.tencentcloudapi.woa.com/document/product/571/78340#Options)
+
+	* 新增成员：FilterBeginCommit, FilterCheckpoint
+
+* [TopicRule](http://document.tencentcloudapi.woa.com/document/product/571/78340#TopicRule)
+
+	* 新增成员：Columns
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 7 次发布
+
+发布时间：2024-03-08 01:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFileSystem](http://document.tencentcloudapi.woa.com/document/product/1716/81453)
+
+	* 新增入参：SecurityGroupId
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 48 次发布
+
+发布时间：2024-03-08 01:20:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview)
+
+	* 新增成员：ExpiredCount
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 37 次发布
+
+发布时间：2024-03-08 01:20:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBAccount)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxUserConnections
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 47 次发布
+
+发布时间：2024-03-08 01:22:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJob](http://document.tencentcloudapi.woa.com/document/product/849/52009)
+
+	* 新增入参：Description
+
+* [ModifyJob](http://document.tencentcloudapi.woa.com/document/product/849/74960)
+
+	* 新增入参：Description
+
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：Description
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 33 次发布
+
+发布时间：2024-03-08 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：DrReadableInfo
+
+* [ModifyCloseWanIp](http://document.tencentcloudapi.woa.com/document/product/238/82645)
+
+	* 新增入参：RoGroupId
+
+* [ModifyDBInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/238/52347)
+
+	* 新增入参：DRNetwork
+
+* [ModifyOpenWanIp](http://document.tencentcloudapi.woa.com/document/product/238/82644)
+
+	* 新增入参：RoGroupId
+
+
+新增数据结构：
+
+* [DrReadableInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#DrReadableInfo)
+
+修改数据结构：
+
+* [ReadOnlyGroup](http://document.tencentcloudapi.woa.com/document/product/238/19976#ReadOnlyGroup)
+
+	* 新增成员：DnsPodDomain, TgwWanVPort
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 94 次发布
+
+发布时间：2024-03-08 01:26:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQPublicAccessMonitorData](http://document.tencentcloudapi.woa.com/document/product/1179/83400)
+
+修改接口：
+
+* [DescribeRocketMQMsg](http://document.tencentcloudapi.woa.com/document/product/1179/77775)
+
+	* 新增入参：QueryDeadLetterMessage, Offset, Limit, FilterTrackGroup
+
+	* 新增出参：MessageTracksCount
+
+
+新增数据结构：
+
+* [RocketMQDataPoint](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQDataPoint)
+
+
+
 # Release 3.0.950.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

@@ -639,6 +639,15 @@
           "name": "GooseFSxBuildElements",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "客户端集群所属的安全组",
+          "example": "sg-k3j3utox",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

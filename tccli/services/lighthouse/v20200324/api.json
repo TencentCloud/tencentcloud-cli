@@ -8108,7 +8108,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8118,7 +8118,7 @@
           "example": "7",
           "member": "int64",
           "name": "RunningCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8128,7 +8128,7 @@
           "example": "2",
           "member": "int64",
           "name": "ShutdownCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8138,7 +8138,17 @@
           "example": "0",
           "member": "int64",
           "name": "ExpiringCount",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已到期实例数量。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpiredCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

@@ -185,6 +185,8 @@ Output:
                     "ConflictHandleType": "Cover",
                     "DdlOptions": null,
                     "DealOfExistSameTable": "ExecuteAfterIgnore",
+                    "FilterBeginCommit": false,
+                    "FilterCheckpoint": false,
                     "InitType": "Full",
                     "KafkaOption": {
                         "DDLTopicName": "",

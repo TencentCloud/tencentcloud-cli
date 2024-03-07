@@ -2729,6 +2729,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "subpath子路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5897,6 +5908,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmptyDirVolumeSource": {
+      "document": "EmptyDir数据卷",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储介质\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Memory, 空",
+          "member": "string",
+          "name": "Medium",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储介质上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2Gi",
+          "member": "string",
+          "name": "SizeLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9818,6 +9857,17 @@
           "example": "无",
           "member": "NFSVolumeSource",
           "name": "NFS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "临时目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EmptyDirVolumeSource",
+          "name": "EmptyDir",
           "output_required": false,
           "required": false,
           "type": "object",

@@ -2741,10 +2741,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "区域类型，取值[\noversea(海外)\nchina(国内)\ncustomized(自定义地区)\n]",
+          "document": "区域类型，取值[\noversea(境外)\nchina(国内)\ncustomized(自定义地区)\n]",
           "example": "oversea",
           "member": "string",
           "name": "RegionType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2755,6 +2756,7 @@
           "example": "drop",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2765,6 +2767,7 @@
           "example": "0",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2775,6 +2778,7 @@
           "example": "100025",
           "member": "int64",
           "name": "AreaList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4531,7 +4535,7 @@
         {
           "disabled": false,
           "document": "IP列表",
-          "example": "[{\"ip\":\"1.1.1.1\\r\\n\", \"Mask\":0]",
+          "example": "[{\"ip\":\"1.1.1.1\",\"Mask\":0}]",
           "member": "IpSegment",
           "name": "IpList",
           "required": true,
@@ -5909,7 +5913,7 @@
         {
           "disabled": false,
           "document": "资源的IP",
-          "example": "3.3.3.3",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -5987,7 +5991,7 @@
         },
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "example": "bgp",
           "member": "string",
           "name": "Business",
@@ -6475,7 +6479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "example": "bgp",
           "member": "string",
           "name": "Business",
@@ -6548,17 +6552,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "大禹子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
+          "document": "DDoS防护子产品代号（bgpip表示高防IP；bgp表示独享包；bgp-multip表示共享包；net表示高防IP专业版；basic表示DDoS基础防护）",
           "example": "bgp",
           "member": "string",
           "name": "Business",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6568,7 +6572,7 @@
           "example": "3.3.3.3",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6578,7 +6582,7 @@
           "example": "3600",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6588,7 +6592,7 @@
           "example": "2018-08-27 15:05:10",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6598,7 +6602,7 @@
           "example": "2018-08-27 16:05:10",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6608,7 +6612,7 @@
           "example": "[1234]",
           "member": "uint64",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6618,7 +6622,7 @@
           "example": "bgp-00000010",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6628,7 +6632,7 @@
           "example": "bps",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9347,10 +9351,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则在中间状态态不可修改，只可在（0， 2， 8）状态可编辑。\n规则状态，0: 正常运行中, 1: 配置规则中(配置生效中), 2: 配置规则失败（配置生效失败）, 3: 删除规则中(删除生效中), 5: 删除规则失败(删除失败), 6: 等待添加规则, 7: 等待删除规则, 8: 等待上传证书, 9: 规则对应的资源不存在，被隔离, 10:等待修改规则, 11:配置修改中",
+          "document": "规则在中间状态不可修改，只可在（0， 2， 8）状态可编辑。\n规则状态，0: 正常运行中, 1: 配置规则中(配置生效中), 2: 配置规则失败（配置生效失败）, 3: 删除规则中(删除生效中), 5: 删除规则失败(删除失败), 6: 等待添加规则, 7: 等待删除规则, 8: 等待上传证书, 9: 规则对应的资源不存在，被隔离, 10:等待修改规则, 11:配置修改中",
           "example": "8",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9361,6 +9366,7 @@
           "example": "www.xxx.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9371,6 +9377,7 @@
           "example": "https",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9381,6 +9388,7 @@
           "example": "bgpip-000001eo",
           "member": "string",
           "name": "InsId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9391,6 +9399,7 @@
           "example": "251008915",
           "member": "string",
           "name": "AppId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9401,6 +9410,7 @@
           "example": "443",
           "member": "string",
           "name": "VirtualPort",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9411,6 +9421,7 @@
           "example": "kneSCNrZ",
           "member": "string",
           "name": "SSLId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

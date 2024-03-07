@@ -31,6 +31,14 @@ Output:
             "CertificateAttribution": "self",
             "Encryption": "disable",
             "QuoteUin": ""
+        },
+        "DrReadableInfo": {
+            "SlaveStatus": "enable",
+            "ReadableStatus": "enable",
+            "Vip": "127.0.0.1",
+            "VPort": 1433,
+            "UniqVpcId": "vpc-h8a9j18",
+            "UniqSubnetId": "sub-jia891k9"
         }
     }
 }

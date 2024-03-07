@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CreateBaseBackup": {
-      "document": "本接口（CreateBaseBackup）用于创建实例的全量备份。",
+      "document": "本接口（CreateBaseBackup）用于创建实例的数据备份。",
       "input": "CreateBaseBackupRequest",
-      "name": "创建实例基础备份",
+      "name": "创建实例数据备份",
       "output": "CreateBaseBackupResponse",
       "status": "online"
     },
@@ -92,9 +92,9 @@
       "status": "online"
     },
     "DeleteBaseBackup": {
-      "document": "本接口（DeleteBaseBackup）用于删除实例指定全量备份。",
+      "document": "本接口（DeleteBaseBackup）用于删除实例指定数据备份。",
       "input": "DeleteBaseBackupRequest",
-      "name": "删除实例基础备份",
+      "name": "删除实例数据备份",
       "output": "DeleteBaseBackupResponse",
       "status": "online"
     },
@@ -190,9 +190,9 @@
       "status": "online"
     },
     "DescribeBaseBackups": {
-      "document": "本接口（DescribeBaseBackups）用于查询基础备份列表。",
+      "document": "本接口（DescribeBaseBackups）用于查询数据备份列表。",
       "input": "DescribeBaseBackupsRequest",
-      "name": "查询基础备份列表",
+      "name": "查询数据备份列表",
       "output": "DescribeBaseBackupsResponse",
       "status": "online"
     },
@@ -435,9 +435,9 @@
       "status": "online"
     },
     "ModifyAccountRemark": {
-      "document": "本接口（ModifyAccountRemark）用于修改帐号备注。",
+      "document": "本接口（ModifyAccountRemark）用于修改账号备注。",
       "input": "ModifyAccountRemarkRequest",
-      "name": "修改帐号备注",
+      "name": "修改账号备注",
       "output": "ModifyAccountRemarkResponse",
       "status": "online"
     },
@@ -456,9 +456,9 @@
       "status": "online"
     },
     "ModifyBaseBackupExpireTime": {
-      "document": "本接口（ModifyBaseBackupExpireTime）用于修改实例指定全量备份的过期时间。",
+      "document": "本接口（ModifyBaseBackupExpireTime）用于修改实例指定数据备份的过期时间。",
       "input": "ModifyBaseBackupExpireTimeRequest",
-      "name": "修改基础备份过期时间",
+      "name": "修改数据备份过期时间",
       "output": "ModifyBaseBackupExpireTimeResponse",
       "status": "online"
     },
@@ -946,17 +946,17 @@
           "example": "[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]",
           "member": "string",
           "name": "BackupPeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础备份保留时长",
+          "document": "数据备份保留时长",
           "example": "3",
           "member": "uint64",
           "name": "BaseBackupRetentionPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -966,7 +966,7 @@
           "example": "01:00:00",
           "member": "string",
           "name": "MinBackupStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -976,7 +976,7 @@
           "example": "02:00:00",
           "member": "string",
           "name": "MaxBackupStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -992,7 +992,7 @@
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1002,7 +1002,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1012,47 +1012,47 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "手动创建的实例基础备份数量。",
+          "document": "手动创建的实例数据备份数量。",
           "example": "0",
           "member": "uint64",
           "name": "ManualBaseBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "手动创建的实例基础备份大小。",
+          "document": "手动创建的实例数据备份大小。",
           "example": "0",
           "member": "uint64",
           "name": "ManualBaseBackupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动创建的实例基础备份数量。",
+          "document": "自动创建的实例数据备份数量。",
           "example": "0",
           "member": "uint64",
           "name": "AutoBaseBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动创建的实例基础备份大小。",
+          "document": "自动创建的实例数据备份大小。",
           "example": "0",
           "member": "uint64",
           "name": "AutoBaseBackupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1062,7 +1062,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1072,7 +1072,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalBackupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1080,7 +1080,7 @@
       "usage": "out"
     },
     "BaseBackup": {
-      "document": "数据库基础备份信息",
+      "document": "数据库数据备份信息",
       "members": [
         {
           "disabled": false,
@@ -1571,10 +1571,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "基础备份集ID",
+          "document": "数据备份集ID",
           "example": "443c810b-53c6-5d8c-b6d2-1abbe5794529",
           "member": "string",
           "name": "BaseBackupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3454,7 +3455,7 @@
         },
         {
           "disabled": false,
-          "document": "基础备份ID。",
+          "document": "数据备份ID。",
           "example": "4c144959-aca8-5266-bb96-7fb7aa2ca409",
           "member": "string",
           "name": "BaseBackupId",
@@ -3800,15 +3801,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "帐号列表详细信息。",
+          "document": "账号列表详细信息。",
           "example": "无",
           "member": "AccountInfo",
           "name": "Details",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4303,19 +4306,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的基础备份数量。",
+          "document": "查询到的数据备份数量。",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础备份详细信息列表。",
+          "document": "数据备份详细信息列表。",
           "example": "无",
           "member": "BaseBackup",
           "name": "BaseBackupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7222,7 +7227,7 @@
         },
         {
           "disabled": false,
-          "document": "基础备份ID。",
+          "document": "数据备份ID。",
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
           "member": "string",
           "name": "BaseBackupId",
@@ -8353,7 +8358,7 @@
           "example": "0",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8363,7 +8368,7 @@
           "example": "wal_level",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8373,7 +8378,7 @@
           "example": "integer",
           "member": "string",
           "name": "ParamValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8383,7 +8388,7 @@
           "example": "ms",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8393,7 +8398,7 @@
           "example": "replica",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8403,7 +8408,7 @@
           "example": "replica",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8413,7 +8418,7 @@
           "example": "0",
           "member": "float",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8423,7 +8428,7 @@
           "example": "[replica,logical]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8433,7 +8438,7 @@
           "example": "1000",
           "member": "float",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8443,7 +8448,7 @@
           "example": "此参数决定记录到日志的信息，不允许设置为minimal",
           "member": "string",
           "name": "ParamDescriptionCH",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8453,7 +8458,7 @@
           "example": "Set the level of information written to the WAL.",
           "member": "string",
           "name": "ParamDescriptionEN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8463,7 +8468,7 @@
           "example": "false",
           "member": "bool",
           "name": "NeedReboot",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8473,7 +8478,7 @@
           "example": "WAL",
           "member": "string",
           "name": "ClassificationCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8483,7 +8488,7 @@
           "example": "Write-Ahead Log",
           "member": "string",
           "name": "ClassificationEN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8493,7 +8498,7 @@
           "example": "false",
           "member": "bool",
           "name": "SpecRelated",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8503,7 +8508,7 @@
           "example": "false",
           "member": "bool",
           "name": "Advanced",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8513,37 +8518,37 @@
           "example": "2021-08-01 02:03:04",
           "member": "string",
           "name": "LastModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "StandbyRelated",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "参数版本关联信息，存储具体内核版本下的具体参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数版本关联信息，内容为相应内核版本下的参数详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamVersionRelation",
           "name": "VersionRelationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "参数规格关联信息，存储具体规格下具体的参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数规格关联信息，内容为相应规格下的参数详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamSpecRelation",
           "name": "SpecRelationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8551,7 +8556,7 @@
       "usage": "out"
     },
     "ParamSpecRelation": {
-      "document": "描述各规格下的参数信息",
+      "document": "各规格下的参数信息",
       "members": [
         {
           "disabled": false,
@@ -8559,7 +8564,7 @@
           "example": "wal_level",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8569,7 +8574,7 @@
           "example": "2G",
           "member": "string",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8579,7 +8584,7 @@
           "example": "1",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8589,7 +8594,7 @@
           "example": "s",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8599,7 +8604,7 @@
           "example": "20000",
           "member": "float",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8609,7 +8614,7 @@
           "example": "0",
           "member": "float",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8619,7 +8624,7 @@
           "example": "[on;off]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8627,7 +8632,7 @@
       "usage": "out"
     },
     "ParamVersionRelation": {
-      "document": "描述各版本下的参数信息",
+      "document": "各版本下的参数信息",
       "members": [
         {
           "disabled": false,
@@ -8635,7 +8640,7 @@
           "example": "wal_level",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8645,7 +8650,7 @@
           "example": "v14.1_r1.2",
           "member": "string",
           "name": "DBKernelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8655,7 +8660,7 @@
           "example": "1",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8665,7 +8670,7 @@
           "example": "s",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8675,7 +8680,7 @@
           "example": "20000",
           "member": "float",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8685,7 +8690,7 @@
           "example": "0",
           "member": "float",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -8695,7 +8700,7 @@
           "example": "[on;off]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

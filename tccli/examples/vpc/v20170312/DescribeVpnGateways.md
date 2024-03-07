@@ -1,114 +1,92 @@
 **Example 1: 查询VPN网关**
 
-
+本接口（DescribeVpnGateways）用于查询VPN网关列表。
 
 Input: 
 
 ```
 tccli vpc DescribeVpnGateways --cli-unfold-argument  \
-    --Version 2017-03-12 \
+    --VpnGatewayIds vpngw-xxxxx \
     --Offset 0 \
-    --Limit 2 \
-    --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2 ap-guangzhou-3
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "VpnGatewaySet": [
             {
-                "VpcId": "vpc-ah9e9qu9",
-                "VpnGatewayId": "vpngw-5aluhh9t",
-                "VpnGatewayName": "joantest",
-                "Type": "IPSEC",
-                "State": "DELETING",
-                "PublicIpAddress": "",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "InstanceChargeType": "PREPAID",
-                "InternetMaxBandwidthOut": 0,
-                "CreatedTime": "2015-08-20 19:39:01",
-                "ExpiredTime": "0000-00-00 00:00:00",
+                "VpnGatewayId": "vpngw-xxxx",
+                "VpcId": "vpc-xxxx",
+                "VpnGatewayName": "vpn_name",
+                "Type": "CCN",
+                "State": "AVAILABLE",
+                "PublicIpAddress": "142.133.53.16",
+                "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
+                "InstanceChargeType": "POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 10,
+                "CreatedTime": "2020-09-22 00:00:00",
+                "ExpiredTime": "2020-09-22 00:00:00",
                 "IsAddressBlocked": false,
                 "NewPurchasePlan": "",
                 "RestrictState": "NORMAL",
-                "Zone": "ap-guangzhou-2",
+                "Zone": "ap-beijing-1",
                 "VpnGatewayQuotaSet": [
                     {
                         "Bandwidth": 5,
                         "Cname": "微小型",
-                        "Name": "mini"
+                        "Name": "cdmini"
                     },
                     {
                         "Bandwidth": 20,
                         "Cname": "中型",
-                        "Name": "middle"
-                    },
-                    {
-                        "Bandwidth": 100,
-                        "Cname": "超大型",
-                        "Name": "superLarge"
-                    },
-                    {
-                        "Bandwidth": 10,
-                        "Cname": "小型",
-                        "Name": "small"
+                        "Name": "cdmiddle"
                     },
                     {
                         "Bandwidth": 50,
                         "Cname": "大型",
-                        "Name": "large"
-                    }
-                ]
-            },
-            {
-                "VpcId": "vpc-5rkcp0wb",
-                "VpnGatewayId": "vpngw-97yhzme3",
-                "VpnGatewayName": "leohli-simulate3",
-                "Type": "IPSEC",
-                "State": "AVAILABLE",
-                "PublicIpAddress": "",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "InstanceChargeType": "PREPAID",
-                "InternetMaxBandwidthOut": 10,
-                "CreatedTime": "2017-07-03 14:39:16",
-                "ExpiredTime": "2018-05-31 13:03:47",
-                "IsAddressBlocked": false,
-                "NewPurchasePlan": "PREPAID_TO_POSTPAID",
-                "RestrictState": "PROTECTIVELY_ISOLATED",
-                "Zone": "ap-guangzhou-3",
-                "VpnGatewayQuotaSet": [
-                    {
-                        "Bandwidth": 5,
-                        "Cname": "微小型",
-                        "Name": "mini"
-                    },
-                    {
-                        "Bandwidth": 20,
-                        "Cname": "中型",
-                        "Name": "middle"
-                    },
-                    {
-                        "Bandwidth": 100,
-                        "Cname": "超大型",
-                        "Name": "superLarge"
+                        "Name": "cdlarge"
                     },
                     {
                         "Bandwidth": 10,
                         "Cname": "小型",
-                        "Name": "small"
+                        "Name": "cdsmall"
                     },
                     {
-                        "Bandwidth": 50,
-                        "Cname": "大型",
-                        "Name": "large"
+                        "Bandwidth": 100,
+                        "Cname": "超大型",
+                        "Name": "cdsuperLarge"
+                    },
+                    {
+                        "Bandwidth": 1000,
+                        "Cname": "超大型4",
+                        "Name": "cdsuperLarge4"
+                    },
+                    {
+                        "Bandwidth": 200,
+                        "Cname": "超大型2",
+                        "Name": "cdsuperLarge2"
+                    },
+                    {
+                        "Bandwidth": 500,
+                        "Cname": "超大型3",
+                        "Name": "cdsuperLarge3"
+                    },
+                    {
+                        "Bandwidth": 3000,
+                        "Cname": "超大型5",
+                        "Name": "cdsuperLarge5"
                     }
-                ]
+                ],
+                "Version": "abc",
+                "NetworkInstanceId": "abc",
+                "CdcId": "abc",
+                "MaxConnection": 5
             }
         ],
-        "RequestId": "feb949ef-8eb8-4eda-ba73-4fc5705bf8f5"
+        "RequestId": "dc43b486-80aa-4cf0-9f8a-4b95e9092685"
     }
 }
 ```

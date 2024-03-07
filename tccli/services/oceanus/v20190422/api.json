@@ -1972,6 +1972,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "作业描述",
+          "example": "description of job",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5304,6 +5313,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5517,6 +5536,15 @@
           "example": "space-1237",
           "member": "string",
           "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业描述",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
