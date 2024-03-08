@@ -146,3 +146,38 @@ Output:
 }
 ```
 
+**Example 5: 发起解除协议（替换原流程中本企业的参与人并指定其为自动签署）**
+
+1. 更换原合同中本方企业的参与人
+2. 给该企业参与人指定未自动签署(ApproverType 设置为 ENTERPRISESERVER)
+
+Input: 
+
+```
+tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
+    --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --NeedRelievedFlowId yDR1AUUgygjazuesUuO4zjESPW4PkfNi \
+    --ReleasedApprovers.0.Mobile 13200000000 \
+    --ReleasedApprovers.0.Name 典子谦 \
+    --ReleasedApprovers.0.ApproverNumber 2 \
+    --ReleasedApprovers.0.ApproverType ENTERPRISESERVER \
+    --ReleasedApprovers.0.OrganizationName 典子谦示例企业 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方以作赔偿 \
+    --ReliveInfo.OriginalOtherSettlement 无 \
+    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.Reason 因为业务调整, 结束合作。 \
+    --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+        "RequestId": "s312334445587989"
+    }
+}
+```
+

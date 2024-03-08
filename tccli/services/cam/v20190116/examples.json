@@ -331,8 +331,8 @@
     "GetCustomMFATokenInfo": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetCustomMFATokenInfo\r\n&MFAToken=abc123\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 12345678,\n        \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetCustomMFATokenInfo\n&MFAToken=mfa_idc-100033287777-d70986da-24c7-1d5f-b6bd-0d2f94a571d0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 100033287777,\n        \"RequestId\": \"f8914327-5a9f-4016-8b2e-00f8b8901121\"\n    }\n}",
         "title": "获取自定义多因子Token关联信息"
       }
     ],
@@ -474,7 +474,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListCollaborators\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"Data\": [\n            {\n                \"Uin\": 10000000001,\n                \"Name\": \"test\",\n                \"Uid\": 1000001,\n                \"Remark\": \"\",\n                \"ConsoleLogin\": 0,\n                \"PhoneNum\": \"16166666661\",\n                \"CountryCode\": \"86\",\n                \"Email\": \" \",\n                \"CreateTime\": \"2021-11-11 19:38:01\"\n            }\n        ],\n        \"RequestId\": \"93ea219e-7dbe-4b76-ad63-baef14b31a3a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ConsoleLogin\": 1,\n                \"CountryCode\": \"86\",\n                \"CreateTime\": \"2022-03-06 14:54:06\",\n                \"Email\": \"123456@qq.com\",\n                \"Name\": \"test\",\n                \"NickName\": \"test\",\n                \"PhoneNum\": \"12222222222\",\n                \"Remark\": \"test\",\n                \"Uid\": 18368010,\n                \"Uin\": 100021154441\n            }\n        ],\n        \"RequestId\": \"25350c03-ca94-45b1-b082-f845dfc7c39b\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "获取协作者列表"
       }
     ],

@@ -10687,7 +10687,7 @@
         },
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>不填保持原有值。",
+          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
           "example": "custom",
           "member": "string",
           "name": "OriginType",

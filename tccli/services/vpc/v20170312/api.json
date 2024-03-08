@@ -2398,7 +2398,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。",
+          "document": "带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -3268,7 +3268,7 @@
         },
         {
           "disabled": false,
-          "document": "网络计费模式。IPV6当前对标准账户类型支持\"TRAFFIC_POSTPAID_BY_HOUR\"，对传统账户类型支持\"BANDWIDTH_PACKAGE\"。默认网络计费模式是\"TRAFFIC_POSTPAID_BY_HOUR\"。",
+          "document": "网络计费模式。IPV6当前支持\"TRAFFIC_POSTPAID_BY_HOUR\"，\"BANDWIDTH_PACKAGE\"。默认网络计费模式是\"TRAFFIC_POSTPAID_BY_HOUR\"。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -3296,6 +3296,7 @@
           "example": "eip-68dqs5ri",
           "member": "string",
           "name": "AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3305,6 +3306,7 @@
           "example": "194395704",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5885,7 +5887,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>\n<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>\n",
+          "document": "带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>\n<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>\n",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -5912,8 +5914,8 @@
         },
         {
           "disabled": false,
-          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。",
-          "example": "1",
+          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。",
+          "example": "300",
           "member": "int64",
           "name": "InternetMaxBandwidth",
           "required": false,
@@ -12780,7 +12782,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12817,6 +12819,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12826,6 +12829,7 @@
           "example": "无",
           "member": "Address",
           "name": "AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14836,7 +14840,7 @@
         {
           "disabled": false,
           "document": "开始时间。不传默认为当前时间往前推30天",
-          "example": "无",
+          "example": "2024-02-04 18:04:03",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -14845,7 +14849,7 @@
         {
           "disabled": false,
           "document": "结束时间。不传默认为当前时间",
-          "example": "无",
+          "example": "2024-02-05 17:04:03",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -14853,8 +14857,8 @@
         },
         {
           "disabled": false,
-          "document": "分页参数",
-          "example": "无",
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -14862,8 +14866,8 @@
         },
         {
           "disabled": false,
-          "document": "分页参数",
-          "example": "无",
+          "document": "返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -14881,6 +14885,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14890,6 +14895,7 @@
           "example": "无",
           "member": "UsedDetail",
           "name": "UsedDetailSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16406,7 +16412,7 @@
         {
           "disabled": false,
           "document": "VPN网关实例ID。形如：vpngw-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpnGatewayIds和Filters。",
-          "example": "",
+          "example": "vpngw-5aluhh9t",
           "member": "string",
           "name": "VpnGatewayIds",
           "required": false,
@@ -16414,8 +16420,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>\n<li>public-ip-address- String - （过滤条件）公网IP。</li>\n<li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>",
-          "example": "",
+          "document": "过滤条件，参数不支持同时指定VpnGatewayIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>\n<li>public-ip-address- String - （过滤条件）公网IP。</li>\n<li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>\n<li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>",
+          "example": "[{\"Name\":\"vpn-gateway-id\",\"Values\":[\"vpngw-5aluhh9t\"]}]",
           "member": "FilterObject",
           "name": "Filters",
           "required": false,
@@ -16423,8 +16429,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
-          "example": "",
+          "document": "偏移量，默认值为0。",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -16432,8 +16438,8 @@
         },
         {
           "disabled": false,
-          "document": "请求对象个数",
-          "example": "",
+          "document": "请求对象个数，默认值为20。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -16448,18 +16454,20 @@
         {
           "disabled": false,
           "document": "符合条件的实例数量。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "VPN网关实例详细信息列表。",
-          "example": "",
+          "example": "{     \"Response\":{         \"RequestId\":\"0ecd78bf-424b-40aa-a7ae-e6f46e37e18a\",         \"TotalCount\":1,         \"VpnGatewaySet\":[             {                 \"CdcId\":\"\",                 \"CreatedTime\":\"2021-04-13 15:46:59\",                 \"ExpiredTime\":\"2021-04-13 15:48:12\",                 \"InstanceChargeType\":\"POSTPAID_BY_HOUR\",                 \"InternetMaxBandwidthOut\":50,                 \"IsAddressBlocked\":false,                 \"MaxConnection\":5,                 \"NetworkInstanceId\":\"ccn-ahqm6naj\",                 \"NewPurchasePlan\":\"\",                 \"PublicIpAddress\":\"119.39.127.133\",                 \"RenewFlag\":\"NOTIFY_AND_AUTO_RENEW\",                 \"RestrictState\":\"NORMAL\",                 \"State\":\"AVAILABLE\",                 \"Type\":\"CCN\",                 \"Version\":\"ver3.0\",                 \"VpcId\":\"vpc-qt9e5cmf\",                 \"VpnGatewayId\":\"vpngw-1sqqim9l\",                 \"VpnGatewayName\":\"vpn-cnn-test\",                 \"VpnGatewayQuotaSet\":[                     {                         \"Bandwidth\":5,                         \"Cname\":\"微小型\",                         \"Name\":\"cdmini\"                     },                     {                         \"Bandwidth\":10,                         \"Cname\":\"小型\",                         \"Name\":\"cdsmall\"                     },                     {                         \"Bandwidth\":100,                         \"Cname\":\"超大型\",                         \"Name\":\"cdsuperLarge\"                     },                     {                         \"Bandwidth\":20,                         \"Cname\":\"中型\",                         \"Name\":\"cdmiddle\"                     },                     {                         \"Bandwidth\":200,                         \"Cname\":\"超大型2\",                         \"Name\":\"cdsuperLarge2\"                     },                     {                         \"Bandwidth\":50,                         \"Cname\":\"大型\",                         \"Name\":\"cdlarge\"                     },                     {                         \"Bandwidth\":1000,                         \"Cname\":\"超大型4\",                         \"Name\":\"cdsuperLarge4\"                     },                     {                         \"Bandwidth\":500,                         \"Cname\":\"超大型3\",                         \"Name\":\"cdsuperLarge3\"                     },                     {                         \"Bandwidth\":3000,                         \"Cname\":\"超大型5\",                         \"Name\":\"cdsuperLarge5\"                     }                 ],                 \"Zone\":\"ap-guangzhou-3\"             }         ]     } }",
           "member": "VpnGateway",
           "name": "VpnGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20197,7 +20205,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的 EIP 名称。长度上限为20个字符。",
+          "document": "修改后的 EIP 名称。长度上限为128个字符。",
           "example": "test_eip",
           "member": "string",
           "name": "AddressName",
@@ -20242,7 +20250,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP调整目标计费模式，只支持\"BANDWIDTH_PREPAID_BY_MONTH\"和\"TRAFFIC_POSTPAID_BY_HOUR\"",
+          "document": "弹性公网IP调整目标计费模式，支持 \"BANDWIDTH_PREPAID_BY_MONTH\"、\"TRAFFIC_POSTPAID_BY_HOUR\"、\"BANDWIDTH_POSTPAID_BY_HOUR\"",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -25800,7 +25808,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EIP 的 IP 地址,示例：101.35.139.183",
+          "document": "普通公网IP 的 IP 地址,示例：101.35.139.183",
           "example": "[\"101.35.139.183\"]",
           "member": "string",
           "name": "AddressIps",

@@ -985,7 +985,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建为只读账号，0：否， 1：该账号的sql请求优先选择备机执行，备机不可用时选择主机执行，2：优先选择备机执行，备机不可用时操作失败。",
+          "document": "是否创建为只读账号，0：否:； 1：只读账号，该账号的sql请求优先选择备机执行，备机延迟时选择主机执行；2：只读账号，优先选择备机执行，备机延迟时操作报错；3：只读账号，优先选择备机执行，忽略备机延迟只读备机；",
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",
@@ -995,7 +995,7 @@
         {
           "disabled": false,
           "document": "账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符",
-          "example": "测试帐号",
+          "example": "测试账号",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1040,7 +1040,7 @@
           "example": "tdsql-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1050,7 +1050,7 @@
           "example": "testuser1",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1060,7 +1060,7 @@
           "example": "172.17.%",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1070,7 +1070,7 @@
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1856,7 +1856,7 @@
           "example": "无",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1866,7 +1866,7 @@
           "example": "无",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1876,7 +1876,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1886,7 +1886,7 @@
           "example": "无",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1896,7 +1896,7 @@
           "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1906,17 +1906,17 @@
           "example": "无",
           "member": "int64",
           "name": "ReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段对只读帐号有意义，表示选择主备延迟小于该值的备机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段对只读账号有意义，表示选择主备延迟小于该值的备机\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "DelayThresh",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1926,7 +1926,7 @@
           "example": "无",
           "member": "int64",
           "name": "SlaveConst",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1936,7 +1936,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxUserConnections",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7777,7 +7777,7 @@
           "example": "无",
           "member": "string",
           "name": "CheckSum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7787,7 +7787,7 @@
           "example": "无",
           "member": "string",
           "name": "Db",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7797,7 +7797,7 @@
           "example": "无",
           "member": "string",
           "name": "FingerPrint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7807,7 +7807,7 @@
           "example": "无",
           "member": "string",
           "name": "LockTimeAvg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7817,7 +7817,7 @@
           "example": "无",
           "member": "string",
           "name": "LockTimeMax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7827,7 +7827,7 @@
           "example": "无",
           "member": "string",
           "name": "LockTimeMin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7837,7 +7837,7 @@
           "example": "无",
           "member": "string",
           "name": "LockTimeSum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7847,7 +7847,7 @@
           "example": "无",
           "member": "string",
           "name": "QueryCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7857,7 +7857,7 @@
           "example": "无",
           "member": "string",
           "name": "QueryTimeAvg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7867,7 +7867,7 @@
           "example": "无",
           "member": "string",
           "name": "QueryTimeMax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7877,7 +7877,7 @@
           "example": "无",
           "member": "string",
           "name": "QueryTimeMin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7887,7 +7887,7 @@
           "example": "无",
           "member": "string",
           "name": "QueryTimeSum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7897,7 +7897,7 @@
           "example": "无",
           "member": "string",
           "name": "RowsExaminedSum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7907,7 +7907,7 @@
           "example": "无",
           "member": "string",
           "name": "RowsSentSum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7917,7 +7917,7 @@
           "example": "无",
           "member": "string",
           "name": "TsMax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7927,17 +7927,17 @@
           "example": "无",
           "member": "string",
           "name": "TsMin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "帐号",
+          "document": "账号",
           "example": "无",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7947,7 +7947,7 @@
           "example": "无",
           "member": "string",
           "name": "ExampleSql",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7957,7 +7957,7 @@
           "example": "%",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

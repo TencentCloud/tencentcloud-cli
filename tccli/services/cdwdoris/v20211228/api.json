@@ -2153,6 +2153,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户是否可以绑定安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsWhiteSGs",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已绑定的安全组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-dasda\"]",
+          "member": "string",
+          "name": "BindSGs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

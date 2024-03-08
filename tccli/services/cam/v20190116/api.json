@@ -885,50 +885,50 @@
         {
           "disabled": false,
           "document": "实体ID",
-          "example": "",
+          "example": "1000001",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实体名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "TestPolicyName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实体Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "3449203261",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "关联类型。1 用户关联 ； 2 用户组关联",
-          "example": "",
+          "document": "关联类型。1 用户关联 ； 2 用户组关联 3 角色关联",
+          "example": "1",
           "member": "uint64",
           "name": "RelatedType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略关联时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2021-11-11 19:38:01",
           "member": "string",
           "name": "AttachmentTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1634,8 +1634,8 @@
         },
         {
           "disabled": false,
-          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
-          "example": "{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}",
+          "document": "策略文档",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"cvm:Describe*\",\"resource\":\"*\"}]}",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
@@ -1662,6 +1662,7 @@
           "example": "12378",
           "member": "uint64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3188,8 +3189,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义多因子验证Token",
-          "example": "",
+          "document": "自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。",
+          "example": "mfa_idc-100033287777-d70986da-24c7-1d5f-b6bd-0d2f94a571d0",
           "member": "string",
           "name": "MFAToken",
           "required": true,
@@ -3204,9 +3205,10 @@
         {
           "disabled": false,
           "document": "自定义多因子验证Token对应的帐号Id",
-          "example": "",
+          "example": "100033287777",
           "member": "uint64",
           "name": "Uin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4564,7 +4566,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4574,7 +4576,7 @@
           "example": "无",
           "member": "SubAccountInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4800,7 +4802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子用户 UID",
+          "document": "子用户 UID，入参Uid和SubUin二选一",
           "example": "1001408",
           "member": "uint64",
           "name": "Uid",
@@ -4827,7 +4829,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号UIN",
+          "document": "子账号UIN，入参Uid和SubUin二选一",
           "example": "10000001",
           "member": "uint64",
           "name": "SubUin",
@@ -4846,7 +4848,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4856,7 +4858,7 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "GroupInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5438,30 +5440,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "手机",
-          "example": "",
+          "document": "是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置",
+          "example": "1",
           "member": "uint64",
           "name": "Phone",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "软token",
-          "example": "",
+          "document": "是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置",
+          "example": "0",
           "member": "uint64",
           "name": "Stoken",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "微信",
-          "example": "",
+          "document": "是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置",
+          "example": "0",
           "member": "uint64",
           "name": "Wechat",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6688,8 +6693,8 @@
         },
         {
           "disabled": false,
-          "document": "策略文档，示例：{\"version\":\"2.0\",\"statement\":[{\"action\":\"name/sts:AssumeRole\",\"effect\":\"allow\",\"principal\":{\"service\":[\"cloudaudit.cloud.tencent.com\",\"cls.cloud.tencent.com\"]}}]}，principal用于指定角色的授权对象。获取该参数可参阅 获取角色详情（https://cloud.tencent.com/document/product/598/36221） 输出参数RoleInfo",
-          "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%5B%22name%2Fcos%3A%2A%22%5D%2C%22resource%22%3A%5B%22%2A%22%5D%7D%5D%7D",
+          "document": "策略文档",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"cvm:Describe*\",\"resource\":\"*\"}]}",
           "member": "string",
           "name": "PolicyDocument",
           "required": false,

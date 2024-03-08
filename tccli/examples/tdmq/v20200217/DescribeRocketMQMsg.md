@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQMsg --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ClusterId xx \
-    --TopicName xx \
-    --PulsarMsgId xx \
-    --MsgId xx \
+    --EnvironmentId e1 \
+    --ClusterId c1 \
+    --TopicName t1 \
+    --PulsarMsgId p1 \
+    --MsgId m1 \
     --QueryDlqMsg False
 ```
 
@@ -18,13 +18,13 @@ Output:
 ```
 {
     "Response": {
-        "Body": "xx",
-        "MsgId": "xx",
-        "ProduceTime": "xx",
-        "RequestId": "xx",
-        "Properties": "xx",
-        "ProducerAddr": "xx",
-        "ShowTopicName": "xx",
+        "Body": "b",
+        "MsgId": "m",
+        "ProduceTime": "p",
+        "RequestId": "r",
+        "Properties": "p",
+        "ProducerAddr": "p",
+        "ShowTopicName": "s",
         "MessageTracks": []
     }
 }

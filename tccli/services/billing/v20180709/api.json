@@ -28,6 +28,69 @@
       "output": "DescribeAccountBalanceResponse",
       "status": "online"
     },
+    "DescribeAllocateConditions": {
+      "document": "查询资源目录筛选条件",
+      "input": "DescribeAllocateConditionsRequest",
+      "name": "查询资源目录筛选条件",
+      "output": "DescribeAllocateConditionsResponse",
+      "status": "online"
+    },
+    "DescribeAllocationBillConditions": {
+      "document": "查询分账账单筛选条件",
+      "input": "DescribeAllocationBillConditionsRequest",
+      "name": "查询分账账单筛选条件",
+      "output": "DescribeAllocationBillConditionsResponse",
+      "status": "online"
+    },
+    "DescribeAllocationBillDetail": {
+      "document": "查询分账账单明细",
+      "input": "DescribeAllocationBillDetailRequest",
+      "name": "查询分账账单明细",
+      "output": "DescribeAllocationBillDetailResponse",
+      "status": "online"
+    },
+    "DescribeAllocationMonthOverview": {
+      "document": "查询分账账单月概览",
+      "input": "DescribeAllocationMonthOverviewRequest",
+      "name": "查询分账账单月概览",
+      "output": "DescribeAllocationMonthOverviewResponse",
+      "status": "online"
+    },
+    "DescribeAllocationOverview": {
+      "document": "查询分账账单日概览",
+      "input": "DescribeAllocationOverviewRequest",
+      "name": "查询分账账单日概览",
+      "output": "DescribeAllocationOverviewResponse",
+      "status": "online"
+    },
+    "DescribeAllocationSummaryByBusiness": {
+      "document": "查询分账账单按产品汇总",
+      "input": "DescribeAllocationSummaryByBusinessRequest",
+      "name": "查询分账账单按产品汇总",
+      "output": "DescribeAllocationSummaryByBusinessResponse",
+      "status": "online"
+    },
+    "DescribeAllocationSummaryByItem": {
+      "document": "查询分账账单按组件汇总",
+      "input": "DescribeAllocationSummaryByItemRequest",
+      "name": "查询分账账单按组件汇总",
+      "output": "DescribeAllocationSummaryByItemResponse",
+      "status": "online"
+    },
+    "DescribeAllocationSummaryByResource": {
+      "document": "查询分账账单按资源汇总",
+      "input": "DescribeAllocationSummaryByResourceRequest",
+      "name": "查询分账账单按资源汇总",
+      "output": "DescribeAllocationSummaryByResourceResponse",
+      "status": "online"
+    },
+    "DescribeAllocationTrendByMonth": {
+      "document": "查询分账账单费用趋势",
+      "input": "DescribeAllocationTrendByMonthRequest",
+      "name": "查询分账账单费用趋势",
+      "output": "DescribeAllocationTrendByMonthResponse",
+      "status": "online"
+    },
     "DescribeBillDetail": {
       "document": "获取账单明细数据。\n注意事项：\n1.在请求接口时，由于网络不稳定或其它异常，可能会导致请求失败。如果您遇到这种情况，我们建议您在接口请求失败时，手动发起重试操作，这样可以更好地确保您的接口请求能够成功执行。\n2.对于账单明细数据量级很大（例如每月账单明细量级超过20w）的客户，通过 API 调用账单数据效率较低，建议您开通账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)",
       "input": "DescribeBillDetailRequest",
@@ -187,6 +250,13 @@
       "input": "DescribeDosageDetailListRequest",
       "name": "获取计量标准接入类产品用量明细",
       "output": "DescribeDosageDetailListResponse",
+      "status": "online"
+    },
+    "DescribeGatherResource": {
+      "document": "查询分账账单资源归集汇总",
+      "input": "DescribeGatherResourceRequest",
+      "name": "查询分账账单资源归集汇总",
+      "output": "DescribeGatherResourceResponse",
       "status": "online"
     },
     "DescribeSavingPlanCoverage": {
@@ -355,6 +425,2696 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationAverageData": {
+      "document": "分账账单趋势图平均值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始月份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05",
+          "member": "string",
+          "name": "BeginMonth",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束月份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10",
+          "member": "string",
+          "name": "EndMonth",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(折后总额)平均值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "104464.66",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationBillTrendDetail": {
+      "document": "分账趋势图详情数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单月份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10",
+          "member": "string",
+          "name": "Month",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单月份展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022年10月",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "26496.75",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationDetail": {
+      "document": "分账账单明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN：实际使用资源的账号 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称：资源所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区：资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：明细交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单 ID：包年包月计费模式下订购的订单号\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易 ID：结算扣费单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扣费时间：结算扣费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始使用时间：产品服务开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeBeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束使用时间：产品服务结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型：用户购买的产品或服务对应的组件大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件刊例价：组件的官网原始单价（如客户享受一口价/合同价则默认不展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SinglePrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件价格单位：组件价格的单位，单位构成：元/用量单位/时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SinglePriceUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件用量：该组件实际结算用量，组件用量=组件原始用量-抵扣用量（含资源包）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件用量单位：组件用量对应的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedAmountUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用时长：资源使用的时长，组件用量=组件原始使用时长-抵扣时长（含资源包）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时长单位：资源使用时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReserveDetail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项用量/时长占比：分拆项用量（时长）占比，分拆项用量（时长）/ 拆分前合计用量（时长）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitRatio",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RITimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RICost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SPCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "折扣率：本资源享受的折扣率（如客户享受一口价/合同价则默认不展示，退费场景也默认不展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Discount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率=优惠后总价/原价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BlendedDiscount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出(元)：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出(元)：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分成账户支出(元)：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账标签：资源绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际：资源所属区域类型（国内、国际）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称：用户购买的产品或服务，所包含的具体组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联单据ID：和本笔交易关联单据ID，如退费订单对应的原新购订单等",
+          "example": "{ \"PrepayPurchase\":\"20230707400000439953321\", \"PrepayRenew\":\"20230707400000440668101,20230707400000440730331,20230707400000440886501\" }\t",
+          "member": "string",
+          "name": "AssociatedOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"操作系统\"：\"linux\"，\"连续使用时长T\"：\"第三阶梯\"，\"平台\"：\"云平\"]",
+          "member": "string",
+          "name": "PriceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算规则说明：特殊交易类型计费结算的详细计算说明，如退费及变配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"退款：686.51元，现金券： 0元,代金券/折扣券不退（订单号20230707400000439953321\"",
+          "member": "string",
+          "name": "Formula",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费规则：各产品详细的计费规则官网说明链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://buy.cloud.tencent.com/price/cvm",
+          "member": "string",
+          "name": "FormulaUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始用量/时长：组件被资源包抵扣前的原始用量\n（目前仅实时音视频、弹性微服务、云呼叫中心及专属可用区产品支持该信息外显，其他产品尚在接入中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RealTotalMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣用量/时长（含资源包）：组件被资源包抵扣的用量\n（目前仅实时音视频、弹性微服务、云呼叫中心及专属可用区产品支持该信息外显，其他产品尚在接入中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "DeductedMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置描述：资源配置规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AllocationType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationMonthOverviewDetail": {
+      "document": "分账账单月概览金额明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归集费用(现金)：基于归集规则直接归集到分账单元的现金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "GatherVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "GatherRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%",
+          "example": "无",
+          "member": "string",
+          "name": "Ratio",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Trend",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环比箭头\nupward -上升\ndownward - 下降\nnone - 平稳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrendType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationOverviewDetail": {
+      "document": "分账概览明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(现金)：基于归集规则直接归集到分账单元的现金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "GatherVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "GatherRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%",
+          "example": "无",
+          "member": "string",
+          "name": "Ratio",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Trend",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环比箭头\nupward -上升\ndownward - 下降\nnone - 平稳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrendType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationOverviewNode": {
+      "document": "分账账单月概览详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9096-asd",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元包含规则标志\n0 - 不存在规则\n1 - 同时存在归集规则和公摊规则\n2 - 仅存在归集规则\n3 - 仅存在公摊规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Symbol",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子单元月概览详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewNode",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单月概览金额明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationMonthOverviewDetail",
+          "name": "Detail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationOverviewTotal": {
+      "document": "分账账单概览金额汇总",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总费用：现金费用合计+分成金费用合计+赠送金费用合计+优惠券费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25941.65000000",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "现金： 现金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "25801.94000000",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送金：赠送金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠券：优惠券费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "139.71000000",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分成金：分成金费用合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationRule": {
+      "document": "当前资源命中公摊规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分摊规则1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AllocationStat": {
+      "document": "分账账单趋势图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "费用平均信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "AllocationAverageData",
+          "name": "Average",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationSummaryByBusiness": {
+      "document": "分账账单按产品汇总明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(现金)：基于归集规则直接归集到分账单元的现金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "GatherVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "GatherTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalVoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalIncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)",
+          "example": "无",
+          "member": "string",
+          "name": "TotalTransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "GatherRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价",
+          "example": "无",
+          "member": "string",
+          "name": "AllocateRealCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%",
+          "example": "无",
+          "member": "string",
+          "name": "Ratio",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Trend",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环比箭头\nupward -上升\ndownward - 下降\nnone - 平稳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrendType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额",
+          "example": "无",
+          "member": "string",
+          "name": "RICost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率",
+          "example": "无",
+          "member": "string",
+          "name": "SPCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出(元)：通过现金账户支付的金额",
+          "example": "无",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出(元)：使用赠送金支付的金额",
+          "example": "无",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分成账户支出(元)：通过分成金账户支付的金额",
+          "example": "无",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率",
+          "example": "无",
+          "member": "string",
+          "name": "AllocationRealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationSummaryByItem": {
+      "document": "分账账单按组件汇总明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN：实际使用资源的账号 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：明细交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称：资源所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区：资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账标签：资源绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AllocationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiTimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出(元)：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出(元)：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分成账户支出(元)：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称：用户购买的产品或服务，所包含的具体组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ItemCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型：用户购买的产品或服务对应的组件大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始使用时间：产品服务开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeBeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束使用时间：产品服务结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SPCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际：资源所属区域类型（国内、国际）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件刊例价：组件的官网原始单价（如客户享受一口价/合同价则默认不展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SinglePrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件单价：组件的折后单价，组件单价 = 刊例价 * 折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContractPrice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件价格单位：组件价格的单位，单位构成：元/用量单位/时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SinglePriceUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件用量：该组件实际结算用量，组件用量=组件原始用量-抵扣用量（含资源包）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件用量单位：组件用量对应的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UsedAmountUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用时长：资源使用的时长，组件用量=组件原始使用时长-抵扣时长（含资源包）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时长单位：资源使用时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReserveDetail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始用量/时长：组件被资源包抵扣前的原始用量\n（目前仅实时音视频、弹性微服务、云呼叫中心及专属可用区产品支持该信息外显，其他产品尚在接入中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "RealTotalMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣用量/时长（含资源包）：组件被资源包抵扣的用量\n（目前仅实时音视频、弹性微服务、云呼叫中心及专属可用区产品支持该信息外显，其他产品尚在接入中）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "DeductedMeasure",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "折扣率：本资源享受的折扣率（如客户享受一口价/合同价则默认不展示，退费场景也默认不展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "Discount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "混合折扣率：综合各类折扣抵扣信息后的最终折扣率，混合折扣率=优惠后总价/原价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.00000000",
+          "member": "string",
+          "name": "BlendedDiscount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价格属性：该组件除单价、时长外的其他影响折扣定价的属性信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"操作系统\"：\"linux\"，\"连续使用时长T\"：\"第三阶梯\"，\"平台\"：\"云平\"]",
+          "member": "string",
+          "name": "PriceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算规则说明：特殊交易类型计费结算的详细计算说明，如退费及变配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"退款：686.51元，现金券： 0元,代金券/折扣券不退（订单号20230707400000439953321\"",
+          "member": "string",
+          "name": "Formula",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费规则：各产品详细的计费规则官网说明链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://buy.cloud.tencent.com/price/cvm",
+          "member": "string",
+          "name": "FormulaUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置描述：资源配置规格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationSummaryByResource": {
+      "document": "分账账单按资源汇总明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BillDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN：实际使用资源的账号 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：明细交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称：资源所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区：资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账标签：资源绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊 \n1 - 归集 \n-1 -  未分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AllocationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiTimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出(元)：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出(元)：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分成账户支出(元)：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始使用时间：产品服务开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeBeginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束使用时间：产品服务结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FeeEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SPCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际：资源所属区域类型（国内、国际）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentConfig",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationTreeNode": {
+      "document": "当前归属单元信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bbb",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "财务部",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -945,6 +3705,123 @@
         }
       ],
       "usage": "out"
+    },
+    "BillActionType": {
+      "document": "交易类型筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prepay_purchase",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：明细交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "包年包月新购",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BillBusiness": {
+      "document": "产品筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品编码\n",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品",
+          "example": "云服务器CVM",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillBusinessLink": {
+      "document": "产品级联筛选值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子产品",
+          "example": "无",
+          "member": "BillProductLink",
+          "name": "Children",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BillComponent": {
+      "document": "组件类型筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型：用户购买的产品或服务对应的组件大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zzz",
+          "member": "string",
+          "name": "ComponentCodeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BillDays": {
+      "document": "日期筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期：结算日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "BillDay",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BillDetail": {
       "document": "账单明细数据对象",
@@ -2046,6 +4923,213 @@
       ],
       "usage": "out"
     },
+    "BillInstanceType": {
+      "document": "实例类型筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型编码",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”",
+          "example": "预留实例",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillItem": {
+      "document": "组件名称筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称编码",
+          "example": "sv_edgeone_cdn_traffic_data",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件名称：用户购买的产品或服务，所包含的具体组件",
+          "example": "内容加速-数据-流量",
+          "member": "string",
+          "name": "ItemCodeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillOperateUin": {
+      "document": "操作者 UIN筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）",
+          "example": "9096",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillOwnerUin": {
+      "document": "使用者 UIN筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "使用者 UIN：实际使用资源的账号 ID",
+          "example": "9096",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillPayMode": {
+      "document": "计费模式筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费模式编码",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费",
+          "example": "按量计费",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillProduct": {
+      "document": "子产品筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_cdn_ov",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "中国境外CDN",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BillProductLink": {
+      "document": "分账条件子产品筛选",
+      "members": [],
+      "usage": "out"
+    },
+    "BillProject": {
+      "document": "项目筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BillRegion": {
+      "document": "地域筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名称：资源所属地域",
+          "example": "华南地区（广州）",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BillResourceSummary": {
       "document": "账单资源汇总数据对象",
       "members": [
@@ -2442,6 +5526,34 @@
       ],
       "usage": "out"
     },
+    "BillTag": {
+      "document": "标签筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "aaa",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "aaa",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BillTagInfo": {
       "document": "账单 Tag 信息",
       "members": [
@@ -2583,6 +5695,34 @@
         }
       ],
       "usage": "out"
+    },
+    "BillZoneId": {
+      "document": "可用区筛选列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区：资源所属可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "上海",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BusinessSummaryInfo": {
       "document": "产品汇总信息",
@@ -4628,6 +7768,1573 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocateConditionsRequest": {
+      "document": "DescribeAllocateConditions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocateConditionsResponse": {
+      "document": "DescribeAllocateConditions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillBusinessLink",
+          "name": "Business",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillProduct",
+          "name": "Product",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillItem",
+          "name": "Item",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillRegion",
+          "name": "Region",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillInstanceType",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillPayMode",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillProject",
+          "name": "Project",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN 筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillOwnerUin",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN 筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillOperateUin",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillActionType",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationBillConditionsRequest": {
+      "document": "DescribeAllocationBillConditions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "2022-10",
+          "member": "string",
+          "name": "BillDates",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用者UIN",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作者UIN",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码",
+          "example": "prepay_renew",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_cvm_c4",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域ID",
+          "example": "0",
+          "member": "string",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "0",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "tagKey:tagValue",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码",
+          "example": "virtual_v_cvm_compute",
+          "member": "string",
+          "name": "ComponentCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码",
+          "example": "virtual_v_cvm_compute_c4",
+          "member": "string",
+          "name": "ItemCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索条件",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型",
+          "example": "0",
+          "member": "int64",
+          "name": "AllocationType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationBillConditionsResponse": {
+      "document": "DescribeAllocationBillConditions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillBusiness",
+          "name": "Business",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillProduct",
+          "name": "Product",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillItem",
+          "name": "Item",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillRegion",
+          "name": "Region",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillInstanceType",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillPayMode",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillProject",
+          "name": "Project",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN 筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillOwnerUin",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN 筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillOperateUin",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillDays",
+          "name": "BillDay",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillActionType",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillComponent",
+          "name": "Component",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BillZoneId",
+          "name": "Zone",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元筛选列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationTreeNode",
+          "name": "AllocationTreeNode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationBillDetailRequest": {
+      "document": "DescribeAllocationBillDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码，用作筛选",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码，用作筛选",
+          "example": "prepay_renew",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码，用作筛选",
+          "example": "sp_cvm_c4",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域ID，用作筛选",
+          "example": "0",
+          "member": "string",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID，用作筛选",
+          "example": "0",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码，用作筛选",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签，用作筛选",
+          "example": "tagKey:tagValue",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码，用作筛选",
+          "example": "virtual_v_cvm_compute",
+          "member": "string",
+          "name": "ComponentCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码，用作筛选",
+          "example": "无",
+          "member": "string",
+          "name": "ItemCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID，用作筛选",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationBillDetailResponse": {
+      "document": "DescribeAllocationBillDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单明细",
+          "example": "无",
+          "member": "AllocationDetail",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationMonthOverviewRequest": {
+      "document": "DescribeAllocationMonthOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationMonthOverviewResponse": {
+      "document": "DescribeAllocationMonthOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账账单月概览详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewNode",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationOverviewRequest": {
+      "document": "DescribeAllocationOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "example": "month",
+          "member": "string",
+          "name": "PeriodType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下： \nGatherCashPayAmount - 归集费用(现金)\nGatherVoucherPayAmount- 归集费用(优惠券)\nGatherIncentivePayAmount -  归集费用(赠送金)\nGatherTransferPayAmount - 归集费用(分成金)\nAllocateCashPayAmount - 分摊费用(现金)\nAllocateVoucherPayAmount - 分摊费用(优惠券)\nAllocateIncentivePayAmount - 分摊费用(赠送金)\nAllocateTransferPayAmount - 分摊费用(分成金)\nTotalCashPayAmount - 合计费用(现金)\nTotalVoucherPayAmount - 合计费用(优惠券)\nTotalIncentivePayAmount - 合计费用(赠送金)\nTotalTransferPayAmount - 合计费用(分成金)\nGatherRealCost - 归集费用(折后总额)\nAllocateRealCost - 分摊费用(折后总额)\nRealTotalCost - 合计费用(折后总额)\nRatio  - 占比(折后总额)",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日期，用作筛选",
+          "example": "2022-10",
+          "member": "string",
+          "name": "BillDates",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationOverviewResponse": {
+      "document": "DescribeAllocationOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账概览明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewDetail",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByBusinessRequest": {
+      "document": "DescribeAllocationSummaryByBusiness请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "example": "month",
+          "member": "string",
+          "name": "PeriodType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选\n",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下：\nGatherCashPayAmount - 归集费用(现金)\nGatherVoucherPayAmount- 归集费用(优惠券)\nGatherIncentivePayAmount - 归集费用(赠送金)\nGatherTransferPayAmount - 归集费用(分成金)\nAllocateCashPayAmount - 分摊费用(现金)\nAllocateVoucherPayAmount - 分摊费用(优惠券)\nAllocateIncentivePayAmount - 分摊费用(赠送金)\nAllocateTransferPayAmount - 分摊费用(分成金)\nTotalCashPayAmount - 合计费用(现金)\nTotalVoucherPayAmount - 合计费用(优惠券)\nTotalIncentivePayAmount - 合计费用(赠送金)\nTotalTransferPayAmount - 合计费用(分成金)\nGatherRealCost - 归集费用(折后总额)\nAllocateRealCost - 分摊费用(折后总额)\nRealTotalCost - 合计费用(折后总额)\nBusinessCode - 产品代码\nRatio - 占比(折后总额)\nTrend - 环比(折后总额)",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日期，用作筛选，PeriodType=day时可传\n",
+          "example": "2022-10",
+          "member": "string",
+          "name": "BillDates",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "模糊搜索条件",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByBusinessResponse": {
+      "document": "DescribeAllocationSummaryByBusiness返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单按产品汇总明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationSummaryByBusiness",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByItemRequest": {
+      "document": "DescribeAllocationSummaryByItem请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000\n",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "example": "month",
+          "member": "string",
+          "name": "PeriodType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选\n",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日期，用作筛选\n",
+          "example": "xxx",
+          "member": "string",
+          "name": "BillDates",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选\n",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用者UIN，用作筛选\n",
+          "example": "sp_cvm_c4",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作者UIN，用作筛选\n",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码，用作筛选\n",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码，用作筛选\n",
+          "example": "prepay_renew",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码，用作筛选\n",
+          "example": "sp_cvm_c4",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域ID，用作筛选\n",
+          "example": "0",
+          "member": "string",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID，用作筛选\n",
+          "example": "0",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码，用作筛选\n",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签，用作筛选\n",
+          "example": "tagKey:tagValue",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码，用作筛选",
+          "example": "virtual_v_cvm_compute",
+          "member": "string",
+          "name": "ComponentCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码，用作筛选",
+          "example": "virtual_v_cvm_compute_c4",
+          "member": "string",
+          "name": "ItemCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称\n",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID，用作筛选\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型，枚举值如下：\n0 - 分摊\n1 - 归集\n-1 - 未分配",
+          "example": "0",
+          "member": "int64",
+          "name": "AllocationType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByItemResponse": {
+      "document": "DescribeAllocationSummaryByItem返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单按组件汇总明细\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationSummaryByItem",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByResourceRequest": {
+      "document": "DescribeAllocationSummaryByResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000\n",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月\n",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计周期，枚举值如下\nmonth - 月\nday - 日",
+          "example": "month",
+          "member": "string",
+          "name": "PeriodType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下：\nRiTimeSpan - 预留实例抵扣时长\nExtendPayAmount1 - 预留实例抵扣组件原价\nRealCost - 折后总价\nCashPayAmount - 现金金额\nVoucherPayAmount - 代金券金额\nIncentivePayAmount - 赠送金金额\nTransferPayAmount -分成金金额\nCost - 组件原价",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日期，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "BillDates",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码，用作筛选",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码，用作筛选",
+          "example": "prepay_purchase",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码，用作筛选",
+          "example": "sp_cdn_ov",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域ID，用作筛选",
+          "example": "0",
+          "member": "string",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID，用作筛选",
+          "example": "0",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码，用作筛选",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签，用作筛选",
+          "example": "tagKey:tagValue",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID，用作筛选",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型，枚举值如下：\n0 - 分摊 \n1 - 归集 \n-1 -  未分配",
+          "example": "0",
+          "member": "int64",
+          "name": "AllocationType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationSummaryByResourceResponse": {
+      "document": "DescribeAllocationSummaryByResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单概览金额汇总\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationOverviewTotal",
+          "name": "Total",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账账单按资源汇总明细\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationSummaryByResource",
+          "name": "Detail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationTrendByMonthRequest": {
+      "document": "DescribeAllocationTrendByMonth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationTrendByMonthResponse": {
+      "document": "DescribeAllocationTrendByMonth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当月费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationBillTrendDetail",
+          "name": "Current",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "之前月份费用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationBillTrendDetail",
+          "name": "Previous",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用统计信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AllocationStat",
+          "name": "Stat",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7320,6 +12027,225 @@
       ],
       "type": "object"
     },
+    "DescribeGatherResourceRequest": {
+      "document": "DescribeGatherResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账单月份，格式为2024-02，不传默认当前月",
+          "example": "2024-02",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识，用作筛选",
+          "example": "xxx",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源目录类别，枚举值如下：\nall - 全部 \nnone - 未归集",
+          "example": "all",
+          "member": "string",
+          "name": "GatherType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，枚举值如下：\nrealCost  - 折后总价\ncashPayAmount - 现金金额\nvoucherPayAmount - 代金券金额\nincentivePayAmount  - 赠送金金额\ntransferPayAmount -分成金金额",
+          "example": "realCost",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，枚举值如下：\nasc - 升序\ndesc - 降序",
+          "example": "asc",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，用作筛选",
+          "example": "p_cvm",
+          "member": "string",
+          "name": "BusinessCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码，用作筛选",
+          "example": "sp_cvm_c4",
+          "member": "string",
+          "name": "ProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码，用作筛选",
+          "example": "virtual_v_cvm_compute_c4",
+          "member": "string",
+          "name": "ItemCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域ID，用作筛选",
+          "example": "4",
+          "member": "uint64",
+          "name": "RegionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码，用作筛选",
+          "example": "ri",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码，用作筛选",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用者UIN，用作筛选",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称",
+          "example": "默认项目",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签，用作筛选",
+          "example": "tagkey:tagValue",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID，用作筛选",
+          "example": "0",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码，用作筛选",
+          "example": "按量计费小时结",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatherResourceResponse": {
+      "document": "DescribeGatherResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源归集汇总\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "GatherResourceSummary",
+          "name": "GatherResourceSummary",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-11-14 00:00:00",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSavingPlanCoverageRequest": {
       "document": "DescribeSavingPlanCoverage请求参数结构体",
       "members": [
@@ -8379,6 +13305,392 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GatherResourceSummary": {
+      "document": "资源归集汇总",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者 UIN：实际使用资源的账号 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "909619400",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称：用户在控制台为资源设置的名称，如未设置默认为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源命中公摊规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源命中公摊规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称：用户所采购的各类云产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "BusinessCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名称：用户购买的产品或服务，所包含的具体组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "ItemCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域名称：资源所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分账标签：资源绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "BillTag",
+          "name": "Tag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "RealTotalCost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "现金账户支出(元)：通过现金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "CashPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "VoucherPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赠送账户支出(元)：使用赠送金支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "IncentivePayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分成账户支出(元)：通过分成金账户支付的金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "string",
+          "name": "TransferPayAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "int64",
+          "name": "AllocationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前归属单元信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "AllocationTreeNode",
+          "name": "BelongTreeNodeUniqKey",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前资源命中公摊规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "AllocationRule",
+          "name": "BelongRule",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其它归属单元信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "AllocationTreeNode",
+          "name": "OtherTreeNodeUniqKeys",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他命中规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XX",
+          "member": "AllocationRule",
+          "name": "OtherRules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称：用户采购的具体产品细分类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式：资源的计费模式，区分为包年包月和按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "PayModeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postpay_deduct_h",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型：明细交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "按量计费小时结",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分拆项名称：涉及分拆产品的分拆后的分拆项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SplitItemName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

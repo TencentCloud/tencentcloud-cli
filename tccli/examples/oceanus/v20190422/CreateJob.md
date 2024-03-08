@@ -10,7 +10,8 @@ tccli oceanus CreateJob --cli-unfold-argument  \
     --JobType 1 \
     --ClusterType 2 \
     --ClusterId cluster-5c42n3a5 \
-    --WorkSpaceId space-53rqk422
+    --WorkSpaceId space-53rqk422 \
+    --Description some description
 ```
 
 Output: 

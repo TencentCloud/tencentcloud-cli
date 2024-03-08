@@ -17,8 +17,8 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalPrice": "120.00",
-                "DiscountPrice": "1.20"
+                "OriginalPrice": 120.0,
+                "DiscountPrice": 1.2
             }
         },
         "RequestId": "e2e81b08-d747-455e-b27a-aecc5acafdba"
@@ -47,7 +47,7 @@ Output:
             "InstancePrice": {},
             "BandwidthPrice": {}
         },
-        "RequestId": "abc"
+        "RequestId": "e2e81b08-d747-455e-b27a-aecc5acafdba"
     }
 }
 ```

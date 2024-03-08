@@ -67,7 +67,7 @@
     "CreateKeyPair": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeyPair\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"KeyName\": \"Tencent\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKeyPair\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"KeyName\": \"Tencent\"\n}",
         "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"skey-mv9yzyjj\",\n            \"KeyName\": \"Tencent\",\n            \"ProjectId\": 0,\n            \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n            \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIICXgIBAAKBgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZK\\nAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/X\\nUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCwIDAQAB\\nAoGBAJEvSu5SaCD02hs0F2C4Aln2E2/qjMoDEa7spcEVfUhdaNX8ZLvk5pUvnikm\\nwfSb7a71QUIcFu66zKxBK4kVcirBRCR8nTAQbQ6AhXQYP+y6ihZ9Z/g6BBEeqCpV\\nuGPmKnhdxdJ8Al2huEZKJFUQhKM8XdP7dqn6yFDm0L2sTK6RAkEA9IbhP4/2CVSC\\n6d8j5nj3ejPx25R3wc4G+st1tZn1O/TRqUknbVEvsxZC63bRjHiw086QIWr61L8f\\nqQBLZ58DMwJBANmRv3aHVxv5sMlV0F3hD5ZgWEDIIjxD7oiBzU1rqvF6OpTQc1cF\\nrnwxAXDtYYJ75B8qQEL1ph/zIE5YW0hlfckCQQCyVTwpUyCopU3kqqxQBaDXKtMU\\nxS6h1VQZzBDIpMPJOj8+Ku/qNe+HuJCNkVY6EDtF/bv340GTrt+0LVbQ95MpAkEA\\nxcvwUdTXB9LnuxKuHTsoDaFHepW4MivcJvRC7njM7z4dFf+wbFP4/mUbF0xoUtVJ\\nXl/uDjH/tpo1K6S+UEIcqQJAfLQywCQdZ/qOJn0PwxiOhwniikSnZuZPNSw8T+kg\\n/oxijESOLAJBnt3S/g+D530Enjitvfc9mEB7mh0VmwWvPg==\\n-----END RSA PRIVATE KEY-----\\n\"\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建密钥对"
       }
@@ -340,7 +340,7 @@
       {
         "document": "本示例用于用户查询密钥对列表",
         "input": "https://cvm.tencentcloudapi.com/?Action=DescribeKeyPairs\n&Filters.0.Name=key-name\n&Filters.0.Values.0=Tencent\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"skey-mv9yzyjj\",\n                \"KeyName\": \"Tencent\",\n                \"Description\": \"\",\n                \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2016-12-02T00:22:40Z\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"KeyPairSet\": [\n            {\n                \"KeyId\": \"skey-mv9yzyjj\",\n                \"ProjectId\": 0,\n                \"KeyName\": \"Tencent\",\n                \"Description\": \"\",\n                \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0Yw2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",\n                \"AssociatedInstanceIds\": [],\n                \"CreatedTime\": \"2016-12-02T00:22:40Z\"\n            }\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查询密钥对列表"
       }
     ],
@@ -497,21 +497,21 @@
     "InquiryPriceRenewInstances": [
       {
         "document": "续费实例询价",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": \"120.00\",\n                \"DiscountPrice\": \"1.20\"\n            }\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-2zvpghhc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 120.0,\n                \"DiscountPrice\": 1.2\n            }\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
         "title": "续费实例询价"
       },
       {
         "document": "查询单个实例费用信息",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-xlsl6f2h\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {},\n            \"BandwidthPrice\": {}\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-xlsl6f2h\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {},\n            \"BandwidthPrice\": {}\n        },\n        \"RequestId\": \"e2e81b08-d747-455e-b27a-aecc5acafdba\"\n    }\n}",
         "title": "查询单个实例费用信息"
       }
     ],
     "InquiryPriceResetInstance": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResetInstance\r\n&InstanceId=ins-fd8spnmq\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResetInstance\n&InstanceId=ins-fd8spnmq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.66,\n                \"ChargeUnit\": \"HOUR\",\n                \"UnitPriceDiscount\": 0.66,\n                \"Discount\": 100\n            }\n        },\n        \"RequestId\": \"56d68b92-7004-4716-b3bf-3c2c231035c9\"\n    }\n}",
         "title": "按量付费实例调整配置询价"
       }
@@ -519,7 +519,7 @@
     "InquiryPriceResetInstancesInternetMaxBandwidth": [
       {
         "document": "对实例ins-fd8spnmq调整带宽为20Mbps进行询价",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResetInstancesInternetMaxBandwidth\r\n&InstanceIds.0=ins-fd8spnmq\r\n&InternetAccessible.InternetMaxBandwidthOut=20\r\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceResetInstancesInternetMaxBandwidth\n&InstanceIds.0=ins-fd8spnmq\n&InternetAccessible.InternetMaxBandwidthOut=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\"\n            }\n        },\n        \"RequestId\": \"700864b9-85da-4cb9-bc80-d99eaf9fa047\"\n    }\n}",
         "title": "按量付费实例调整带宽上限询价"
       }
@@ -528,7 +528,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-xmf2ac34\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"abc\",\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"Discount\": 0,\n                \"UnitPriceDiscount\": 0,\n                \"UnitPriceSecondStep\": 0,\n                \"UnitPriceDiscountSecondStep\": 0,\n                \"UnitPriceThirdStep\": 0,\n                \"UnitPriceDiscountThirdStep\": 0,\n                \"OriginalPriceThreeYear\": 0,\n                \"DiscountPriceThreeYear\": 0,\n                \"DiscountThreeYear\": 0,\n                \"OriginalPriceFiveYear\": 0,\n                \"DiscountPriceFiveYear\": 0,\n                \"DiscountFiveYear\": 0,\n                \"OriginalPriceOneYear\": 0,\n                \"DiscountPriceOneYear\": 0,\n                \"DiscountOneYear\": 0\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"abc\",\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"Discount\": 0,\n                \"UnitPriceDiscount\": 0,\n                \"UnitPriceSecondStep\": 0,\n                \"UnitPriceDiscountSecondStep\": 0,\n                \"UnitPriceThirdStep\": 0,\n                \"UnitPriceDiscountThirdStep\": 0,\n                \"OriginalPriceThreeYear\": 0,\n                \"DiscountPriceThreeYear\": 0,\n                \"DiscountThreeYear\": 0,\n                \"OriginalPriceFiveYear\": 0,\n                \"DiscountPriceFiveYear\": 0,\n                \"DiscountFiveYear\": 0,\n                \"OriginalPriceOneYear\": 0,\n                \"DiscountPriceOneYear\": 0,\n                \"DiscountOneYear\": 0\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 100.45,\n                \"DiscountPrice\": 56.31\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "包年包月实例调整配置询价"
       }
     ],

@@ -9,7 +9,7 @@ tccli teo CreateAccelerationDomain --cli-unfold-argument  \
     --ZoneId zone-225qgrnvbi9w \
     --DomainName qq.com \
     --OriginInfo.OriginType AWS_S3 \
-    --OriginInfo.Origin https://test.s3.ap-east-1.amazonaws.com \
+    --OriginInfo.Origin test.s3.ap-east-1.amazonaws.com \
     --OriginInfo.PrivateAccess on \
     --OriginInfo.PrivateParameters.0.Name AccessKeyId \
     --OriginInfo.PrivateParameters.0.Value AKIDdDva7VjFk7LQJ0X5WnbKE7mQTest \

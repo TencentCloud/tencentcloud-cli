@@ -33,7 +33,7 @@
     "CreateJob": [
       {
         "document": "创建作业",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJob\n<公共请求参数>\n\n{\n    \"Name\": \"create_job_test\",\n    \"JobType\": 1,\n    \"ClusterType\": 2,\n    \"ClusterId\": \"cluster-5c42n3a5\",\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJob\n<公共请求参数>\n\n{\n    \"Name\": \"create_job_test\",\n    \"JobType\": 1,\n    \"ClusterType\": 2,\n    \"ClusterId\": \"cluster-5c42n3a5\",\n    \"WorkSpaceId\": \"space-53rqk422\",\n    \"Description\": \"some description\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"cql-e92rhppb\",\n        \"RequestId\": \"9159e720-d61c-459f-862b-d630de3209dd\"\n    }\n}",
         "title": "创建作业"
       }

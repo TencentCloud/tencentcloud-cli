@@ -1,3 +1,297 @@
+# Release 3.0.1071.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 57 次发布
+
+发布时间：2024-03-08 11:57:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAllocateConditions](https://cloud.tencent.com/document/api/555/104186)
+* [DescribeAllocationBillConditions](https://cloud.tencent.com/document/api/555/104185)
+* [DescribeAllocationBillDetail](https://cloud.tencent.com/document/api/555/104184)
+* [DescribeAllocationMonthOverview](https://cloud.tencent.com/document/api/555/104183)
+* [DescribeAllocationOverview](https://cloud.tencent.com/document/api/555/104182)
+* [DescribeAllocationSummaryByBusiness](https://cloud.tencent.com/document/api/555/104181)
+* [DescribeAllocationSummaryByItem](https://cloud.tencent.com/document/api/555/104180)
+* [DescribeAllocationSummaryByResource](https://cloud.tencent.com/document/api/555/104179)
+* [DescribeAllocationTrendByMonth](https://cloud.tencent.com/document/api/555/104178)
+* [DescribeGatherResource](https://cloud.tencent.com/document/api/555/104177)
+
+新增数据结构：
+
+* [AllocationAverageData](https://cloud.tencent.com/document/api/555/19183#AllocationAverageData)
+* [AllocationBillTrendDetail](https://cloud.tencent.com/document/api/555/19183#AllocationBillTrendDetail)
+* [AllocationDetail](https://cloud.tencent.com/document/api/555/19183#AllocationDetail)
+* [AllocationMonthOverviewDetail](https://cloud.tencent.com/document/api/555/19183#AllocationMonthOverviewDetail)
+* [AllocationOverviewDetail](https://cloud.tencent.com/document/api/555/19183#AllocationOverviewDetail)
+* [AllocationOverviewNode](https://cloud.tencent.com/document/api/555/19183#AllocationOverviewNode)
+* [AllocationOverviewTotal](https://cloud.tencent.com/document/api/555/19183#AllocationOverviewTotal)
+* [AllocationRule](https://cloud.tencent.com/document/api/555/19183#AllocationRule)
+* [AllocationStat](https://cloud.tencent.com/document/api/555/19183#AllocationStat)
+* [AllocationSummaryByBusiness](https://cloud.tencent.com/document/api/555/19183#AllocationSummaryByBusiness)
+* [AllocationSummaryByItem](https://cloud.tencent.com/document/api/555/19183#AllocationSummaryByItem)
+* [AllocationSummaryByResource](https://cloud.tencent.com/document/api/555/19183#AllocationSummaryByResource)
+* [AllocationTreeNode](https://cloud.tencent.com/document/api/555/19183#AllocationTreeNode)
+* [BillActionType](https://cloud.tencent.com/document/api/555/19183#BillActionType)
+* [BillBusiness](https://cloud.tencent.com/document/api/555/19183#BillBusiness)
+* [BillBusinessLink](https://cloud.tencent.com/document/api/555/19183#BillBusinessLink)
+* [BillComponent](https://cloud.tencent.com/document/api/555/19183#BillComponent)
+* [BillDays](https://cloud.tencent.com/document/api/555/19183#BillDays)
+* [BillInstanceType](https://cloud.tencent.com/document/api/555/19183#BillInstanceType)
+* [BillItem](https://cloud.tencent.com/document/api/555/19183#BillItem)
+* [BillOperateUin](https://cloud.tencent.com/document/api/555/19183#BillOperateUin)
+* [BillOwnerUin](https://cloud.tencent.com/document/api/555/19183#BillOwnerUin)
+* [BillPayMode](https://cloud.tencent.com/document/api/555/19183#BillPayMode)
+* [BillProduct](https://cloud.tencent.com/document/api/555/19183#BillProduct)
+* [BillProductLink](https://cloud.tencent.com/document/api/555/19183#BillProductLink)
+* [BillProject](https://cloud.tencent.com/document/api/555/19183#BillProject)
+* [BillRegion](https://cloud.tencent.com/document/api/555/19183#BillRegion)
+* [BillTag](https://cloud.tencent.com/document/api/555/19183#BillTag)
+* [BillZoneId](https://cloud.tencent.com/document/api/555/19183#BillZoneId)
+* [GatherResourceSummary](https://cloud.tencent.com/document/api/555/19183#GatherResourceSummary)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 8 次发布
+
+发布时间：2024-03-08 01:10:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](https://cloud.tencent.com/document/api/1387/102385#InstanceInfo)
+
+	* 新增成员：IsWhiteSGs, BindSGs
+
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 125 次发布
+
+发布时间：2024-03-08 01:12:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateKeyPair](https://cloud.tencent.com/document/api/213/15702)
+
+	* <font color="#dd0000">**修改出参**：</font>KeyPair
+
+
+修改数据结构：
+
+* [KeyPair](https://cloud.tencent.com/document/api/213/15753#KeyPair)
+
+	* <font color="#dd0000">**修改成员**：</font>KeyId, KeyName, ProjectId, Description, PublicKey, PrivateKey, AssociatedInstanceIds, CreatedTime, Tags
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 24 次发布
+
+发布时间：2024-03-08 01:15:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Options](https://cloud.tencent.com/document/api/571/82108#Options)
+
+	* 新增成员：FilterBeginCommit, FilterCheckpoint
+
+* [TopicRule](https://cloud.tencent.com/document/api/571/82108#TopicRule)
+
+	* 新增成员：Columns
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 8 次发布
+
+发布时间：2024-03-08 01:16:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFileSystem](https://cloud.tencent.com/document/api/1424/95792)
+
+	* 新增入参：SecurityGroupId
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 60 次发布
+
+发布时间：2024-03-08 01:19:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBAccount](https://cloud.tencent.com/document/api/237/16191#DBAccount)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxUserConnections
+
+
+
+
+## 医疗报告结构化(mrs) 版本：2020-09-10
+
+### 第 24 次发布
+
+发布时间：2024-03-08 09:57:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TurnPDFToObject](https://cloud.tencent.com/document/api/1314/97928)
+
+	* 新增入参：TextBasedPdfFlag
+
+* [TurnPDFToObjectAsync](https://cloud.tencent.com/document/api/1314/101007)
+
+	* 新增入参：TextBasedPdfFlag
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 54 次发布
+
+发布时间：2024-03-08 01:20:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJob](https://cloud.tencent.com/document/api/849/52009)
+
+	* 新增入参：Description
+
+* [ModifyJob](https://cloud.tencent.com/document/api/849/75553)
+
+	* 新增入参：Description
+
+
+修改数据结构：
+
+* [JobV1](https://cloud.tencent.com/document/api/849/52010#JobV1)
+
+	* 新增成员：Description
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 57 次发布
+
+发布时间：2024-03-08 01:22:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](https://cloud.tencent.com/document/api/238/90299)
+
+	* 新增出参：DrReadableInfo
+
+* [ModifyCloseWanIp](https://cloud.tencent.com/document/api/238/101718)
+
+	* 新增入参：RoGroupId
+
+* [ModifyDBInstanceNetwork](https://cloud.tencent.com/document/api/238/52347)
+
+	* 新增入参：DRNetwork
+
+* [ModifyOpenWanIp](https://cloud.tencent.com/document/api/238/101717)
+
+	* 新增入参：RoGroupId
+
+
+新增数据结构：
+
+* [DrReadableInfo](https://cloud.tencent.com/document/api/238/19976#DrReadableInfo)
+
+修改数据结构：
+
+* [ReadOnlyGroup](https://cloud.tencent.com/document/api/238/19976#ReadOnlyGroup)
+
+	* 新增成员：DnsPodDomain, TgwWanVPort
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 104 次发布
+
+发布时间：2024-03-08 01:24:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQPublicAccessMonitorData](https://cloud.tencent.com/document/api/1179/104161)
+
+修改接口：
+
+* [DescribeRocketMQMsg](https://cloud.tencent.com/document/api/1179/91055)
+
+	* 新增入参：QueryDeadLetterMessage, Offset, Limit, FilterTrackGroup
+
+	* 新增出参：MessageTracksCount
+
+
+新增数据结构：
+
+* [RocketMQDataPoint](https://cloud.tencent.com/document/api/1179/46089#RocketMQDataPoint)
+
+
+
 # Release 3.0.1070.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

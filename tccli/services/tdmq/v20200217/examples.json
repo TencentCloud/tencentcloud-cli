@@ -645,8 +645,8 @@
     "DescribeRocketMQMsg": [
       {
         "document": "demo",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMsg\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"PulsarMsgId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"QueryDlqMsg\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"Body\": \"xx\",\n        \"MsgId\": \"xx\",\n        \"ProduceTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"Properties\": \"xx\",\n        \"ProducerAddr\": \"xx\",\n        \"ShowTopicName\": \"xx\",\n        \"MessageTracks\": []\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMsg\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"e1\",\n    \"ClusterId\": \"c1\",\n    \"TopicName\": \"t1\",\n    \"PulsarMsgId\": \"p1\",\n    \"MsgId\": \"m1\",\n    \"QueryDlqMsg\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Body\": \"b\",\n        \"MsgId\": \"m\",\n        \"ProduceTime\": \"p\",\n        \"RequestId\": \"r\",\n        \"Properties\": \"p\",\n        \"ProducerAddr\": \"p\",\n        \"ShowTopicName\": \"s\",\n        \"MessageTracks\": []\n    }\n}",
         "title": "示例"
       }
     ],
@@ -664,6 +664,14 @@
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeRocketMQNamespaces\n&ClusterId=rocketmq-rd3545bkkj49\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"Remark\": \"xx\",\n                \"PublicEndpoint\": \"xx\",\n                \"RetentionTime\": 1,\n                \"VpcEndpoint\": \"xx\",\n                \"Ttl\": 1,\n                \"NamespaceId\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "获取用户命名空间列表"
+      }
+    ],
+    "DescribeRocketMQPublicAccessMonitorData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQPublicAccessMonitorData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Period\": 0,\n    \"MetricName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricName\": \"abc\",\n        \"Period\": 0,\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\",\n        \"DataPoints\": [\n            {\n                \"Timestamps\": [\n                    0\n                ],\n                \"Values\": [\n                    0\n                ]\n            }\n        ],\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "正常响应"
       }
     ],
     "DescribeRocketMQPublicAccessPoint": [

@@ -567,6 +567,13 @@
       "output": "DescribeRocketMQNamespacesResponse",
       "status": "online"
     },
+    "DescribeRocketMQPublicAccessMonitorData": {
+      "document": "从腾讯云可观测平台拉取公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。",
+      "input": "DescribeRocketMQPublicAccessMonitorDataRequest",
+      "name": "拉取公网指标监控数据",
+      "output": "DescribeRocketMQPublicAccessMonitorDataResponse",
+      "status": "online"
+    },
     "DescribeRocketMQPublicAccessPoint": {
       "document": "接口用于查询RocketMQ实例的公网接入信息",
       "input": "DescribeRocketMQPublicAccessPointRequest",
@@ -8569,13 +8576,49 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "查询死信时该值为true，只对Rocketmq有效",
           "example": "false",
           "member": "bool",
           "name": "QueryDlqMsg",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询死信时该值为true，只对Rocketmq有效",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDeadLetterMessage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据消费组名称过滤消费详情",
+          "example": "test_group",
+          "member": "string",
+          "name": "FilterTrackGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8589,6 +8632,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Body",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8598,6 +8642,7 @@
           "example": "{\"xxx\":\"aaa\"}",
           "member": "string",
           "name": "Properties",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8607,6 +8652,7 @@
           "example": " 2021-11-23 21:21:26",
           "member": "string",
           "name": "ProduceTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8616,6 +8662,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MsgId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8625,15 +8672,17 @@
           "example": "xxx",
           "member": "string",
           "name": "ProducerAddr",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消费组消费情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费组消费情况列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "RocketMQMessageTrack",
           "name": "MessageTracks",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8643,8 +8692,19 @@
           "example": "topic",
           "member": "string",
           "name": "ShowTopicName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组消费情况列表总数",
+          "example": "100",
+          "member": "int64",
+          "name": "MessageTracksCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8811,6 +8871,129 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQPublicAccessMonitorDataRequest": {
+      "document": "DescribeRocketMQPublicAccessMonitorData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专享集群ID",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，仅支持单指标拉取。目前仅支持：ClientIntraffic; ClientOuttraffic",
+          "example": "ClientOuttraffic",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2018-09-22T19:51:23+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，默认为当前时间",
+          "example": "2018-09-22T20:51:23+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQPublicAccessMonitorDataResponse": {
+      "document": "DescribeRocketMQPublicAccessMonitorData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClientOuttraffic",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，如2018-09-22T19:51:23+08:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-22T19:51:23+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-22T20:51:23+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据点数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"Timestamps\": [             1535079000,             1535079300,             1535079600,             1535079900,             1535080200,             1535080500         ],         \"Values\": [             2.566,             2.283,             6.316,             2.816,             2.7,             2.35         ]     } ]",
+          "member": "RocketMQDataPoint",
+          "name": "DataPoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "succ",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -15344,6 +15527,32 @@
       ],
       "usage": "out"
     },
+    "RocketMQDataPoint": {
+      "document": "监控数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控数据点位置，比如一天按分钟划分有1440个点，每个点的序号是0 - 1439之间的一个数，当某个序号不在该数组中，说明掉点了\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQGroup": {
       "document": "RocketMQ消费组信息",
       "members": [
@@ -15747,7 +15956,7 @@
         },
         {
           "disabled": false,
-          "document": "消费状态",
+          "document": "消费状态,\nCONSUMED: 已消费\nCONSUMED_BUT_FILTERED: 已过滤\nNOT_CONSUME: 未消费\nENTER_RETRY: 进入重试队列\nENTER_DLQ: 进入死信队列\nUNKNOWN: 查询不到消费状态",
           "example": "CONSUMED",
           "member": "string",
           "name": "ConsumeStatus",

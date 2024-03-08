@@ -34,10 +34,10 @@
     ],
     "CreateBaseBackup": [
       {
-        "document": "手动创建实例基础备份。",
+        "document": "手动创建实例数据备份。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBaseBackup\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-dzg9p3kb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"BaseBackupId\": \"443c810b-53c6-5d8c-b6d2-1abbe5794529\"\n    }\n}",
-        "title": "创建实例基础备份"
+        "title": "创建实例数据备份"
       }
     ],
     "CreateDBInstanceNetworkAccess": [
@@ -121,7 +121,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaseBackup\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e468f289-2313-4117-a5f0-f406faaefa24\"\n    }\n}",
-        "title": "删除实例基础备份"
+        "title": "删除实例数据备份"
       }
     ],
     "DeleteDBInstanceNetworkAccess": [
@@ -236,10 +236,10 @@
     ],
     "DescribeBaseBackups": [
       {
-        "document": "查询最新一条备份集记录",
+        "document": "查询最新一条数据备份集记录",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaseBackups\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"OrderBy\": \"FinishTime\",\n    \"OrderByType\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"BaseBackupSet\": [\n            {\n                \"BackupMethod\": \"physical\",\n                \"BackupMode\": \"manual\",\n                \"DBInstanceId\": \"postgres-9n26zs6n\",\n                \"ExpireTime\": \"2023-02-18 23:59:59\",\n                \"FinishTime\": \"2023-02-15 19:09:36\",\n                \"Id\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n                \"Name\": \"manual-20230215190924.tar.gz\",\n                \"Size\": 39845888,\n                \"StartTime\": \"2023-02-15 19:09:24\",\n                \"State\": \"finished\"\n            }\n        ],\n        \"RequestId\": \"3f164712-8746-464f-a490-3084a470000e\",\n        \"TotalCount\": 10\n    }\n}",
-        "title": "查询基础备份列表"
+        "title": "查询数据备份列表"
       }
     ],
     "DescribeClasses": [
@@ -570,10 +570,10 @@
     ],
     "ModifyBaseBackupExpireTime": [
       {
-        "document": "修改实例postgres-9n26zs6n下基础备份集88d3a71e-b822-5728-9d41-d8cfc0d0556e的过期时间为“2023-02-18 23:59:59”。",
+        "document": "修改实例postgres-9n26zs6n下数据备份集88d3a71e-b822-5728-9d41-d8cfc0d0556e的过期时间为“2023-02-18 23:59:59”。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaseBackupExpireTime\n<公共请求参数>\n\n{\n    \"BaseBackupId\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",\n    \"DBInstanceId\": \"postgres-9n26zs6n\",\n    \"NewExpireTime\": \"2023-02-18 23:59:59\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be3bafde-f34e-4fda-9f40-04c5515e2148\"\n    }\n}",
-        "title": "修改基础备份过期时间"
+        "title": "修改数据备份过期时间"
       }
     ],
     "ModifyDBInstanceChargeType": [
