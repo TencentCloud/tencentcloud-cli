@@ -4134,6 +4134,15 @@
           "name": "LoadBalancerIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否保留VIP。",
+          "example": "True",
+          "member": "bool",
+          "name": "ReserveIP",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

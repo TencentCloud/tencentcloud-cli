@@ -1,242 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 应用管理平台(camp) 版本：2022-09-20
-
-### 第 27 次发布
-
-发布时间：2024-03-08 01:09:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [EmptyDirVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EmptyDirVolumeSource)
-
-修改数据结构：
-
-* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
-
-	* 新增成员：SubPath
-
-* [VolumeRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeRaw)
-
-	* 新增成员：EmptyDir
-
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 12 次发布
-
-发布时间：2024-03-08 01:10:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
-
-	* 新增成员：IsWhiteSGs, BindSGs
-
-
-
-
-## 云服务器(cvm) 版本：2019-12-12
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 71 次发布
-
-发布时间：2024-03-08 01:12:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateKeyPair](http://document.tencentcloudapi.woa.com/document/product/213/15702)
-
-	* <font color="#dd0000">**修改出参**：</font>KeyPair
-
-
-修改数据结构：
-
-* [KeyPair](http://document.tencentcloudapi.woa.com/document/product/213/15753#KeyPair)
-
-	* <font color="#dd0000">**修改成员**：</font>KeyId, KeyName, ProjectId, Description, PublicKey, PrivateKey, AssociatedInstanceIds, CreatedTime, Tags
-
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 13 次发布
-
-发布时间：2024-03-08 01:16:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Options](http://document.tencentcloudapi.woa.com/document/product/571/78340#Options)
-
-	* 新增成员：FilterBeginCommit, FilterCheckpoint
-
-* [TopicRule](http://document.tencentcloudapi.woa.com/document/product/571/78340#TopicRule)
-
-	* 新增成员：Columns
-
-
-
-
-## 数据传输服务(dts) 版本：2018-03-30
-
-
-
-## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
-
-### 第 7 次发布
-
-发布时间：2024-03-08 01:18:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateFileSystem](http://document.tencentcloudapi.woa.com/document/product/1716/81453)
-
-	* 新增入参：SecurityGroupId
-
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+## 费用中心(billing) 版本：2018-07-09
 
 ### 第 48 次发布
 
-发布时间：2024-03-08 01:20:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstancesOverview](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancesOverview)
-
-	* 新增成员：ExpiredCount
-
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 37 次发布
-
-发布时间：2024-03-08 01:20:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DBAccount](http://document.tencentcloudapi.woa.com/document/product/237/16191#DBAccount)
-
-	* <font color="#dd0000">**修改成员**：</font>MaxUserConnections
-
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 47 次发布
-
-发布时间：2024-03-08 01:22:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateJob](http://document.tencentcloudapi.woa.com/document/product/849/52009)
-
-	* 新增入参：Description
-
-* [ModifyJob](http://document.tencentcloudapi.woa.com/document/product/849/74960)
-
-	* 新增入参：Description
-
-
-修改数据结构：
-
-* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
-
-	* 新增成员：Description
-
-
-
-
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
-
-### 第 33 次发布
-
-发布时间：2024-03-08 01:23:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
-
-	* 新增出参：DrReadableInfo
-
-* [ModifyCloseWanIp](http://document.tencentcloudapi.woa.com/document/product/238/82645)
-
-	* 新增入参：RoGroupId
-
-* [ModifyDBInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/238/52347)
-
-	* 新增入参：DRNetwork
-
-* [ModifyOpenWanIp](http://document.tencentcloudapi.woa.com/document/product/238/82644)
-
-	* 新增入参：RoGroupId
-
-
-新增数据结构：
-
-* [DrReadableInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#DrReadableInfo)
-
-修改数据结构：
-
-* [ReadOnlyGroup](http://document.tencentcloudapi.woa.com/document/product/238/19976#ReadOnlyGroup)
-
-	* 新增成员：DnsPodDomain, TgwWanVPort
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 94 次发布
-
-发布时间：2024-03-08 01:26:05
+发布时间：2024-03-11 01:08:26
 
 本次发布包含了以下内容：
 
@@ -244,20 +12,187 @@
 
 新增接口：
 
-* [DescribeRocketMQPublicAccessMonitorData](http://document.tencentcloudapi.woa.com/document/product/1179/83400)
+* [DescribeAllocateConditions](http://document.tencentcloudapi.woa.com/document/product/555/83411)
+* [DescribeAllocationBillConditions](http://document.tencentcloudapi.woa.com/document/product/555/83410)
+* [DescribeAllocationBillDetail](http://document.tencentcloudapi.woa.com/document/product/555/83409)
+* [DescribeAllocationMonthOverview](http://document.tencentcloudapi.woa.com/document/product/555/83408)
+* [DescribeAllocationOverview](http://document.tencentcloudapi.woa.com/document/product/555/83407)
+* [DescribeAllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/83406)
+* [DescribeAllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/83405)
+* [DescribeAllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/83404)
+* [DescribeAllocationTrendByMonth](http://document.tencentcloudapi.woa.com/document/product/555/83403)
+* [DescribeGatherResource](http://document.tencentcloudapi.woa.com/document/product/555/83402)
+
+新增数据结构：
+
+* [AllocationAverageData](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationAverageData)
+* [AllocationBillTrendDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationBillTrendDetail)
+* [AllocationDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationDetail)
+* [AllocationMonthOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationMonthOverviewDetail)
+* [AllocationOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewDetail)
+* [AllocationOverviewNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewNode)
+* [AllocationOverviewTotal](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewTotal)
+* [AllocationRule](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationRule)
+* [AllocationStat](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationStat)
+* [AllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByBusiness)
+* [AllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByItem)
+* [AllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByResource)
+* [AllocationTreeNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationTreeNode)
+* [BillActionType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillActionType)
+* [BillBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusiness)
+* [BillBusinessLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusinessLink)
+* [BillComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillComponent)
+* [BillDays](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDays)
+* [BillInstanceType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillInstanceType)
+* [BillItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillItem)
+* [BillOperateUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOperateUin)
+* [BillOwnerUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOwnerUin)
+* [BillPayMode](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillPayMode)
+* [BillProduct](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProduct)
+* [BillProductLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProductLink)
+* [BillProject](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProject)
+* [BillRegion](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillRegion)
+* [BillTag](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillTag)
+* [BillZoneId](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillZoneId)
+* [GatherResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#GatherResourceSummary)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 61 次发布
+
+发布时间：2024-03-11 01:11:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改接口：
 
-* [DescribeRocketMQMsg](http://document.tencentcloudapi.woa.com/document/product/1179/77775)
+* [DeleteLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30689)
 
-	* 新增入参：QueryDeadLetterMessage, Offset, Limit, FilterTrackGroup
+	* 新增入参：ReserveIP
 
-	* 新增出参：MessageTracksCount
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 70 次发布
+
+发布时间：2024-03-11 01:16:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [UserFlowType](http://document.tencentcloudapi.woa.com/document/product/1668/79360#UserFlowType)
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#TemplateInfo)
+
+	* 新增成员：UserFlowType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 127 次发布
+
+发布时间：2024-03-11 01:17:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 49 次发布
+
+发布时间：2024-03-11 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：InitCommand
 
 
 新增数据结构：
 
-* [RocketMQDataPoint](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQDataPoint)
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Command)
+
+修改数据结构：
+
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
+
+	* 新增成员：InitInvocationId
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：InitInvocationId
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 34 次发布
+
+发布时间：2024-03-11 01:23:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDReadable](http://document.tencentcloudapi.woa.com/document/product/238/83412)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 95 次发布
+
+发布时间：2024-03-11 01:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRocketMQMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/81794)
+
+	* 新增入参：QueryDeadLetterMessage
+
 
 
 
@@ -6153,6 +6088,60 @@
 
 ## 费用中心(billing) 版本：2018-07-09
 
+### 第 48 次发布
+
+发布时间：2024-03-11 01:08:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAllocateConditions](http://document.tencentcloudapi.woa.com/document/product/555/83411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationBillConditions](http://document.tencentcloudapi.woa.com/document/product/555/83410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationBillDetail](http://document.tencentcloudapi.woa.com/document/product/555/83409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationMonthOverview](http://document.tencentcloudapi.woa.com/document/product/555/83408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationOverview](http://document.tencentcloudapi.woa.com/document/product/555/83407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/83406)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/83405)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/83404)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAllocationTrendByMonth](http://document.tencentcloudapi.woa.com/document/product/555/83403)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeGatherResource](http://document.tencentcloudapi.woa.com/document/product/555/83402)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AllocationAverageData](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationAverageData)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationAverageData](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationAverageData))
+* [[AllocationBillTrendDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationBillTrendDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationBillTrendDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationBillTrendDetail))
+* [[AllocationDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationDetail))
+* [[AllocationMonthOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationMonthOverviewDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationMonthOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationMonthOverviewDetail))
+* [[AllocationOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewDetail)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewDetail))
+* [[AllocationOverviewNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewNode)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationOverviewNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewNode))
+* [[AllocationOverviewTotal](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewTotal)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationOverviewTotal](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationOverviewTotal))
+* [[AllocationRule](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationRule)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationRule](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationRule))
+* [[AllocationStat](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationStat)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationStat](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationStat))
+* [[AllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByBusiness)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByBusiness))
+* [[AllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByItem)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByItem))
+* [[AllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByResource)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByResource))
+* [[AllocationTreeNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationTreeNode)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[AllocationTreeNode](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationTreeNode))
+* [[BillActionType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillActionType)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillActionType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillActionType))
+* [[BillBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusiness)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillBusiness](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusiness))
+* [[BillBusinessLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusinessLink)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillBusinessLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillBusinessLink))
+* [[BillComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillComponent)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillComponent](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillComponent))
+* [[BillDays](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDays)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillDays](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDays))
+* [[BillInstanceType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillInstanceType)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillInstanceType](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillInstanceType))
+* [[BillItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillItem)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillItem))
+* [[BillOperateUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOperateUin)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillOperateUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOperateUin))
+* [[BillOwnerUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOwnerUin)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillOwnerUin](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillOwnerUin))
+* [[BillPayMode](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillPayMode)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillPayMode](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillPayMode))
+* [[BillProduct](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProduct)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillProduct](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProduct))
+* [[BillProductLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProductLink)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillProductLink](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProductLink))
+* [[BillProject](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProject)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillProject](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillProject))
+* [[BillRegion](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillRegion)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillRegion](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillRegion))
+* [[BillTag](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillTag)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillTag](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillTag))
+* [[BillZoneId](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillZoneId)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BillZoneId](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillZoneId))
+* [[GatherResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#GatherResourceSummary)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[GatherResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#GatherResourceSummary))
+
 ### 第 47 次发布
 
 发布时间：2024-02-28 01:08:16
@@ -8591,7 +8580,7 @@
 
 新增数据结构：
 
-* [[EmptyDirVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EmptyDirVolumeSource)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[EmptyDirVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EmptyDirVolumeSource))
+* [EmptyDirVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#EmptyDirVolumeSource)
 
 修改数据结构：
 
@@ -19575,6 +19564,21 @@
 
 
 ## 负载均衡(clb) 版本：2018-03-17
+
+### 第 61 次发布
+
+发布时间：2024-03-11 01:11:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30689)
+
+	* 新增入参：ReserveIP
+
 
 ### 第 60 次发布
 
@@ -41712,6 +41716,29 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 70 次发布
+
+发布时间：2024-03-11 01:16:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[UserFlowType](http://document.tencentcloudapi.woa.com/document/product/1668/79360#UserFlowType)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[UserFlowType](http://document.tencentcloudapi.woa.com/document/product/1668/79360#UserFlowType))
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#TemplateInfo)
+
+	* 新增成员：UserFlowType
+
+
 ### 第 69 次发布
 
 发布时间：2024-03-07 01:19:12
@@ -43345,6 +43372,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 127 次发布
+
+发布时间：2024-03-11 01:17:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
 
 ### 第 126 次发布
 
@@ -53784,6 +53826,36 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 49 次发布
+
+发布时间：2024-03-11 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：InitCommand
+
+
+新增数据结构：
+
+* [[Command](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Command)](http://document.tencentcloudapi.woa.com/document/product/1207/47576#[Command](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Command))
+
+修改数据结构：
+
+* [AccountInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#AccountInstance)
+
+	* 新增成员：InitInvocationId
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：InitInvocationId
+
 
 ### 第 48 次发布
 
@@ -71028,6 +71100,18 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 34 次发布
+
+发布时间：2024-03-11 01:23:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyDReadable](http://document.tencentcloudapi.woa.com/document/product/238/83412)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 33 次发布
 
 发布时间：2024-03-08 01:23:43
@@ -71057,7 +71141,7 @@
 
 新增数据结构：
 
-* [[DrReadableInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#DrReadableInfo)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[DrReadableInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#DrReadableInfo))
+* [DrReadableInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#DrReadableInfo)
 
 修改数据结构：
 
@@ -78663,6 +78747,21 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 95 次发布
+
+发布时间：2024-03-11 01:25:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRocketMQMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/81794)
+
+	* 新增入参：QueryDeadLetterMessage
+
+
 ### 第 94 次发布
 
 发布时间：2024-03-08 01:26:05
@@ -78673,7 +78772,7 @@
 
 新增接口：
 
-* [[DescribeRocketMQPublicAccessMonitorData](http://document.tencentcloudapi.woa.com/document/product/1179/83400)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRocketMQPublicAccessMonitorData](http://document.tencentcloudapi.woa.com/document/product/1179/83400)
 
 修改接口：
 
@@ -78686,7 +78785,7 @@
 
 新增数据结构：
 
-* [[RocketMQDataPoint](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQDataPoint)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[RocketMQDataPoint](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQDataPoint))
+* [RocketMQDataPoint](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQDataPoint)
 
 ### 第 93 次发布
 
