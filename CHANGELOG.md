@@ -1,3 +1,63 @@
+# Release 3.0.953.1
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 4 次发布
+
+发布时间：2024-03-12 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDedicatedClusterCbsStatistics](http://document.tencentcloudapi.woa.com/document/product/1676/83413)
+
+新增数据结构：
+
+* [SetInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#SetInfo)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 38 次发布
+
+发布时间：2024-03-12 01:22:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Account](http://document.tencentcloudapi.woa.com/document/product/239/20022#Account)
+
+	* 新增成员：CreateTime
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 54 次发布
+
+发布时间：2024-03-12 01:27:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GovernanceInstanceUpdate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceInstanceUpdate)
+
+	* <font color="#dd0000">**修改成员**：</font>Id
+
+
+
+
 # Release 3.0.952.1
 
 ## 费用中心(billing) 版本：2018-07-09

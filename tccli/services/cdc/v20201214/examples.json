@@ -40,6 +40,14 @@
         "title": "删除站点"
       }
     ],
+    "DescribeDedicatedClusterCbsStatistics": [
+      {
+        "document": "查询本地专用集群云硬盘信息",
+        "input": "https://cdc.tencentcloudapi.com/?Action=DescribeDedicatedClusterHostStatistics\n&DedicatedClusterId=cluster-gbo27yc4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SetList\": [\n            {\n                \"SetId\": \"set-xxxxxxxxx\",\n                \"SetName\": \"set1\",\n                \"SetType\": \"ssd\",\n                \"SetSize\": 40,\n                \"SetStatus\": \"RUNNING\",\n                \"CreateTime\": \"2023-01-01 12:00:00\",\n                \"ReadTraffic\": {\n                    \"Timestamps\": [\n                        0\n                    ],\n                    \"Values\": [\n                        0\n                    ]\n                },\n                \"WriteTraffic\": {\n                    \"Timestamps\": [\n                        0\n                    ],\n                    \"Values\": [\n                        0\n                    ]\n                },\n                \"ReadIO\": {\n                    \"Timestamps\": [\n                        0\n                    ],\n                    \"Values\": [\n                        0\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询本地专用集群云硬盘信息"
+      }
+    ],
     "DescribeDedicatedClusterCosCapacity": [
       {
         "document": "查询专用集群内cos的容量信息",

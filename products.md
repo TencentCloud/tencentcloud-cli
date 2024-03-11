@@ -45,7 +45,7 @@
 | ccc | [云联络中心](http://document.tencentcloudapi.woa.com/document/product/679) | 2024-03-07 01:10:04 |
 | cdata | [企业罗盘](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-06 01:23:36 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | 2024-03-07 01:10:16 |
-| cdc | [本地专用集群](http://document.tencentcloudapi.woa.com/document/product/1346) | 2024-03-06 01:27:45 |
+| cdc | [本地专用集群](http://document.tencentcloudapi.woa.com/document/product/1346) | 2024-03-12 01:10:32 |
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2024-03-06 01:27:54 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | 2024-03-06 01:30:10 |
 | cdwch | [云数据仓库 ClickHouse](http://document.tencentcloudapi.woa.com/document/product/1299) | 2024-03-06 01:30:14 |
@@ -60,7 +60,7 @@
 | ciam | [账号风控平台](http://document.tencentcloudapi.woa.com/document/product/1441) | 2024-03-06 01:34:01 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2024-03-06 01:34:12 |
 | ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | 2024-03-06 01:34:23 |
-| clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2024-03-11 01:11:47 |
+| clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2024-03-12 01:11:51 |
 | cloudaudit | [操作审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2024-03-06 01:39:12 |
 | clouddc | [磐石](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-06 01:39:23 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2024-03-06 01:39:35 |
@@ -104,7 +104,7 @@
 | ep | [企业画像](http://document.tencentcloudapi.woa.com/document/product/1061) | 2024-03-06 02:37:24 |
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-06 02:37:25 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-03-06 02:37:35 |
-| ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-03-11 01:16:48 |
+| ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-03-12 01:16:55 |
 | essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-03-11 01:17:03 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2024-03-06 02:39:47 |
 | faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2024-03-06 02:39:50 |
@@ -185,7 +185,7 @@
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | 2024-03-06 03:20:52 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | 2024-03-06 03:21:11 |
 | rce | [全栈式风控引擎](http://document.tencentcloudapi.woa.com/document/product/1343) | 2024-03-11 01:22:24 |
-| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2024-03-06 03:21:38 |
+| redis | [云数据库Redis](http://document.tencentcloudapi.woa.com/document/product/239) | 2024-03-12 01:22:29 |
 | region | [地域管理系统](http://document.tencentcloudapi.woa.com/document/product/1596) | 2024-03-06 03:23:37 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2023-12-25 01:56:15 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
@@ -253,8 +253,8 @@
 | trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | 2024-03-07 01:30:58 |
 | trp | [T-Sec-安心平台(RP)](http://document.tencentcloudapi.woa.com/document/product/1458) | 2023-09-21 03:34:26 |
 | trro | [远程实时操控](http://document.tencentcloudapi.woa.com/document/product/1584) | 2024-03-06 03:46:15 |
-| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2024-03-11 01:26:58 |
-| tse | [微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2024-03-07 01:31:25 |
+| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2024-03-12 01:26:57 |
+| tse | [微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2024-03-12 01:27:05 |
 | tsf | [微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2024-03-06 03:48:42 |
 | tsw | [微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2024-03-06 03:55:06 |
 | tts | [语音合成](http://document.tencentcloudapi.woa.com/document/product/1073) | 2024-03-06 03:55:08 |

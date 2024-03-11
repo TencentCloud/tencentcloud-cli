@@ -7261,8 +7261,7 @@
           "member": "string",
           "name": "Service",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7271,18 +7270,7 @@
           "member": "string",
           "name": "Namespace",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "治理中心服务实例id。",
-          "example": "0662cc4b73fae0a4b911363f25a51e3434de0d8c343",
-          "member": "string",
-          "name": "Id",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7291,8 +7279,7 @@
           "member": "uint64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7301,8 +7288,7 @@
           "member": "bool",
           "name": "Healthy",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -7311,8 +7297,7 @@
           "member": "bool",
           "name": "Isolate",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -7321,8 +7306,7 @@
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7331,8 +7315,7 @@
           "member": "uint64",
           "name": "Port",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7341,8 +7324,7 @@
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7351,8 +7333,7 @@
           "member": "string",
           "name": "InstanceVersion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7361,8 +7342,7 @@
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -7371,8 +7351,16 @@
           "member": "uint64",
           "name": "Ttl",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "治理中心服务实例id。",
+          "example": "0662cc4b73fae0a4b911363f25a51e3434de0d8c343",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7381,8 +7369,7 @@
           "member": "Metadata",
           "name": "Metadatas",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

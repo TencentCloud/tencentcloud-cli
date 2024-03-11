@@ -9683,7 +9683,7 @@
         },
         {
           "disabled": false,
-          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。",
+          "document": "域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和Certificate 同时传入。",
           "example": "无",
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
