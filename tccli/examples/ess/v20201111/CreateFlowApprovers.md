@@ -200,3 +200,29 @@ Output:
 }
 ```
 
+**Example 7: B2C签署，通过姓名和证件类型、证件号码补充已实名个人用户**
+
+通过姓名和证件类型、证件号码补充已实名个人用户
+
+Input: 
+
+```
+tccli ess CreateFlowApprovers --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm \
+    --FillApproverType 1 \
+    --Approvers.0.RecipientId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverIdCardType ID_CARD \
+    --Approvers.0.ApproverIdCardNumber 620000198802020000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1234345677xxxx"
+    }
+}
+```
+

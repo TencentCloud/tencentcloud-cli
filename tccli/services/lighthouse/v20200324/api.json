@@ -1615,6 +1615,48 @@
       ],
       "usage": "out"
     },
+    "Command": {
+      "document": "用户执行TAT命令的数据结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Base64编码后的命令内容，长度不可超过64KB。",
+          "example": "bHM=",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
+          "example": "60",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "命令执行路径，对于 SHELL 命令默认为 /root，对于 POWERSHELL 命令默认为 C:\\Program Files\\qcloud\\tat_agent\\workdir。",
+          "example": "/root",
+          "member": "string",
+          "name": "WorkingDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在 Lighthouse 实例中执行命令的用户名称。\n默认情况下，在 Linux 实例中以 root 用户执行命令；在Windows 实例中以 System 用户执行命令。",
+          "example": "root",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ContainerEnv": {
       "document": "容器环境变量",
       "members": [
@@ -2160,6 +2202,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "创建实例后自动执行的命令。",
+          "example": "无",
+          "member": "Command",
+          "name": "InitCommand",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6989,6 +7040,16 @@
           "member": "string",
           "name": "InstanceRestrictState",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建实例后自动执行TAT命令的调用ID。",
+          "example": "inv-adtgj412l",
+          "member": "string",
+          "name": "InitInvocationId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

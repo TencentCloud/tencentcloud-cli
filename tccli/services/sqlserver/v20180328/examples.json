@@ -918,6 +918,14 @@
         "title": "修改数据库备注"
       }
     ],
+    "ModifyDReadable": [
+      {
+        "document": "开通或者关闭备机只读功能",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDReadable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\",\n    \"Type\": \"enable\",\n    \"VpcId\": \"vpc-jh8ah7\",\n    \"SubnetId\": \"sub-i90aoa\",\n    \"Vip\": \"127.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fed8472-f117-11ec-be47-525400853186\",\n        \"FlowId\": 1012152\n    }\n}",
+        "title": "开通或者关闭备机只读功能"
+      }
+    ],
     "ModifyDatabaseCDC": [
       {
         "document": "",

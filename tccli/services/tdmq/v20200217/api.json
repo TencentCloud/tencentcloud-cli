@@ -8764,13 +8764,22 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "查询死信时该值为true",
           "example": "false",
           "member": "bool",
           "name": "QueryDLQMsg",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询死信时该值为true",
+          "example": "false",
+          "member": "string",
+          "name": "QueryDeadLetterMessage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -777,6 +777,13 @@
       "output": "ModifyDBRemarkResponse",
       "status": "online"
     },
+    "ModifyDReadable": {
+      "document": "本接口（ModifyDReadable）用于开通或者关闭备机只读",
+      "input": "ModifyDReadableRequest",
+      "name": "开通\\关闭备机只读",
+      "output": "ModifyDReadableResponse",
+      "status": "online"
+    },
     "ModifyDatabaseCDC": {
       "document": "本接口(ModifyDatabaseCDC)用于开启、关闭数据库数据变更捕获(CDC)",
       "input": "ModifyDatabaseCDCRequest",
@@ -13716,6 +13723,79 @@
     "ModifyDBRemarkResponse": {
       "document": "ModifyDBRemark返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDReadableRequest": {
+      "document": "ModifyDReadable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型。enable-开启备机只读，disable-关闭备机只读",
+          "example": "disable",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备机网络ID，不填默认和主实例保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备机网络子网ID，不填默认和主实例保持一致",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的备机只读vip，不填自动分配",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDReadableResponse": {
+      "document": "ModifyDReadable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "198081",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

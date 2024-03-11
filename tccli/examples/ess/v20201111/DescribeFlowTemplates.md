@@ -234,7 +234,12 @@ Output:
                 "TemplateName": "e2eTest-启停用模板_88433",
                 "TemplateSeals": [],
                 "TemplateType": 3,
-                "TemplateVersion": "20230906002"
+                "TemplateVersion": "20230906002",
+                "UserFlowType": {
+                    "Description": "",
+                    "Name": "未分类",
+                    "UserFlowTypeId": ""
+                }
             }
         ],
         "TotalCount": 1

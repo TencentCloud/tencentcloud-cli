@@ -71,7 +71,7 @@
       "status": "online"
     },
     "ChannelCreateFlowApprovers": {
-      "document": "适用场景：\n当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口动态补充签署人。同一签署人只允许补充一人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n1. 本企业（发起方企业）企业签署人仅支持通过企业名称+姓名+手机号进行补充。\n2. 个人签署人仅支持通过姓名+手机号进行补充。",
+      "document": "适用场景：\n当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口动态补充签署人。同一签署人只允许补充一人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n1. 本企业（发起方企业）企业签署人仅支持通过企业名称+姓名+手机号进行补充。\n2. 个人签署人支持通过姓名+手机号进行补充，补充动态签署人时：若个人用户已完成实名，则可通过姓名+证件号码进行补充。",
       "input": "ChannelCreateFlowApproversRequest",
       "name": "补充签署流程签署人信息",
       "output": "ChannelCreateFlowApproversResponse",
@@ -7597,7 +7597,7 @@
       "usage": "out"
     },
     "FillApproverInfo": {
-      "document": "指定补充签署人信息\n- RecipientId 必须指定",
+      "document": "指定补充签署人信息\n- RecipientId 必须指定\n- 补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充",
       "members": [
         {
           "disabled": false,
@@ -7661,6 +7661,24 @@
           "name": "NotChannelOrganization",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 居民身份证</li>\n<li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "ApproverIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverIdCardNumber",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

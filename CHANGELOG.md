@@ -1,3 +1,131 @@
+# Release 3.0.1072.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 154 次发布
+
+发布时间：2024-03-11 01:15:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FillApproverInfo](https://cloud.tencent.com/document/api/1323/70369#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
+
+### 第 153 次发布
+
+发布时间：2024-03-08 19:37:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [UserFlowType](https://cloud.tencent.com/document/api/1323/70369#UserFlowType)
+
+修改数据结构：
+
+* [TemplateInfo](https://cloud.tencent.com/document/api/1323/70369#TemplateInfo)
+
+	* 新增成员：UserFlowType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 156 次发布
+
+发布时间：2024-03-11 01:15:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FillApproverInfo](https://cloud.tencent.com/document/api/1420/61525#FillApproverInfo)
+
+	* 新增成员：ApproverIdCardType, ApproverIdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 59 次发布
+
+发布时间：2024-03-11 01:18:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](https://cloud.tencent.com/document/api/1207/69573)
+
+	* 新增入参：InitCommand
+
+
+新增数据结构：
+
+* [Command](https://cloud.tencent.com/document/api/1207/47576#Command)
+
+修改数据结构：
+
+* [Instance](https://cloud.tencent.com/document/api/1207/47576#Instance)
+
+	* 新增成员：InitInvocationId
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 58 次发布
+
+发布时间：2024-03-11 01:21:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDReadable](https://cloud.tencent.com/document/api/238/104234)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 105 次发布
+
+发布时间：2024-03-11 01:24:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRocketMQMsgTrace](https://cloud.tencent.com/document/api/1179/97760)
+
+	* 新增入参：QueryDeadLetterMessage
+
+
+
+
 # Release 3.0.1071.1
 
 ## 费用中心(billing) 版本：2018-07-09
