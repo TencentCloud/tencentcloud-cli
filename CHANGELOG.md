@@ -1,3 +1,105 @@
+# Release 3.0.1073.1
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 9 次发布
+
+发布时间：2024-03-12 01:14:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDedicatedClusterCbsStatistics](https://cloud.tencent.com/document/api/1346/104267)
+
+新增数据结构：
+
+* [SetInfo](https://cloud.tencent.com/document/api/1346/73770#SetInfo)
+
+
+
+## 数据安全治理中心(dsgc) 版本：2019-07-23
+
+### 第 8 次发布
+
+发布时间：2024-03-12 01:27:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDSPASupportedMetas](https://cloud.tencent.com/document/api/1087/97175)
+
+	* 新增出参：MaxDBInstanceLimit
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+### 第 6 次发布
+
+发布时间：2024-03-11 15:09:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClientConnections](https://cloud.tencent.com/document/api/240/37233)
+
+	* 新增出参：TotalCount
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 72 次发布
+
+发布时间：2024-03-12 01:45:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Account](https://cloud.tencent.com/document/api/239/20022#Account)
+
+	* 新增成员：CreateTime
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 60 次发布
+
+发布时间：2024-03-12 01:59:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GovernanceInstanceUpdate](https://cloud.tencent.com/document/api/1364/54942#GovernanceInstanceUpdate)
+
+	* <font color="#dd0000">**修改成员**：</font>Id
+
+
+
+
 # Release 3.0.1072.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

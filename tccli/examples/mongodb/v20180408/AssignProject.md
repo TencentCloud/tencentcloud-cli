@@ -1,12 +1,12 @@
 **Example 1: 指定云数据库实例的所属项目**
 
-
+调整实例的所属项目
 
 Input: 
 
 ```
 tccli mongodb AssignProject --cli-unfold-argument  \
-    --InstanceIds cmgo-eqmoa5sf \
+    --InstanceIds cmgo-eqmo**** \
     --ProjectId 12
 ```
 
