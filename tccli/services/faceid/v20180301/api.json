@@ -8548,6 +8548,15 @@
           "name": "DisableCheckOcrWarnings",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "认证的安全等级：\n1：静默活体； \n2：动作活体；\n3：光线活体；\n4：动作+光线活体； \n默认值为3。",
+          "example": "3",
+          "member": "int64",
+          "name": "SecurityLevel",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

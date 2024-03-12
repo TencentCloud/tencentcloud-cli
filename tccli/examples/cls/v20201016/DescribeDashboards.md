@@ -1,4 +1,4 @@
-**Example 1: 示例一**
+**Example 1: 通过dashboardId获取仪表盘**
 
 获取仪表盘
 
@@ -42,9 +42,9 @@ Output:
 }
 ```
 
-**Example 2: 示例二**
+**Example 2: 通过tag:key获取仪表盘**
 
-获取仪表盘
+通过tag:key获取仪表盘
 
 Input: 
 

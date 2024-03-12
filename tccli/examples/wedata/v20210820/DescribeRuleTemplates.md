@@ -1,4 +1,4 @@
-**Example 1: 查询规则模版列表**
+**Example 1: 查询规则模板列表**
 
 
 
@@ -16,22 +16,45 @@ Output:
     "Response": {
         "Data": [
             {
+                "RuleTemplateId": 1,
+                "Name": "abc",
+                "Description": "abc",
+                "Type": 1,
+                "SourceObjectType": 1,
+                "SourceObjectDataType": 1,
+                "SourceContent": "abc",
                 "SourceEngineTypes": [
                     1
                 ],
                 "QualityDim": 1,
-                "SourceObjectDataType": 1,
-                "SourceContent": "xx",
-                "CitationCount": 1,
-                "RuleTemplateId": 1,
                 "CompareType": 1,
-                "Name": "xx",
-                "Type": 1,
-                "SourceObjectType": 1,
-                "Description": "xx"
+                "CitationCount": 1,
+                "UserId": 1,
+                "UserName": "abc",
+                "UpdateTime": "abc",
+                "WhereFlag": true,
+                "MultiSourceFlag": true,
+                "SqlExpression": "abc",
+                "SubQualityDim": 1,
+                "ResolvedSqlExpression": {
+                    "TableExpressions": [
+                        {
+                            "TableExpression": "abc",
+                            "ColumnExpression": [
+                                "abc"
+                            ]
+                        }
+                    ],
+                    "ParamExpressions": [
+                        "abc"
+                    ]
+                },
+                "DatasourceTypes": [
+                    0
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

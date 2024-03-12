@@ -41,6 +41,10 @@ Output:
             "CanAuth": 1,
             "Data": null
         },
+        "U2FToken": {
+            "CanAuth": 1,
+            "Data": {}
+        },
         "Mail": {
             "CanAuth": 1
         },

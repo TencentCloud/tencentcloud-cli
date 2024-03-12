@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ess CreateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId y**********************************N \
-    --Employees.0.WeworkOpenId f****f
+    --Operator.UserId yDwf3UUckps8dvypUEfH3DjwIpMfa0uw \
+    --Employees.0.WeworkOpenId woed0SCQAAAtPx1SMU17ThB-QC7F
 ```
 
 Output: 
@@ -21,12 +21,12 @@ Output:
                     "DisplayName": "",
                     "Mobile": "",
                     "Note": "",
-                    "UserId": "yDRGJ******wG5veA",
-                    "WeworkOpenId": "f****f"
+                    "UserId": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
+                    "WeworkOpenId": "woed0SCQAAAtPx1SMU17ThB-QC7F"
                 }
             ]
         },
-        "RequestId": "s166*************073"
+        "RequestId": "s1695125479063466836"
     }
 }
 ```
@@ -39,10 +39,9 @@ Input:
 
 ```
 tccli ess CreateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId y**********************************N \
+    --Operator.UserId yyDxVwUyKQWho8CUuO4zjEyQOAgwvr4ZyN \
     --Employees.0.DisplayName 张三 \
-    --Employees.0.Mobile 13545***901 \
-    --Employees.0.OpenId open123
+    --Employees.0.Mobile 18560000000
 ```
 
 Output: 
@@ -54,13 +53,13 @@ Output:
             "SuccessEmployeeData": [
                 {
                     "DisplayName": "张三",
-                    "Mobile": "13545***901",
+                    "Mobile": "18560000000",
                     "Note": "",
-                    "UserId": "*******"
+                    "UserId": "yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWw"
                 }
             ]
         },
-        "RequestId": "s166*************073"
+        "RequestId": "s1695125479063466836"
     }
 }
 ```
@@ -73,9 +72,9 @@ Input:
 
 ```
 tccli ess CreateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId y**********************************N \
+    --Operator.UserId yyDxVwUyKQWho8CUuO4zjEyQOAgwvr4ZyN \
     --Employees.0.DisplayName 张三（广东） \
-    --Employees.0.Mobile 1***********7 \
+    --Employees.0.Mobile 18560000000 \
     --Employees.0.OpenId open123
 ```
 
@@ -87,14 +86,14 @@ Output:
             "FailedEmployeeData": [
                 {
                     "DisplayName": "张三（广东）",
-                    "Mobile": "1***********7",
+                    "Mobile": "18560000000",
                     "Reason": "参数错误,姓名不符合规范,请修改后重试",
                     "WeworkOpenId": ""
                 }
             ],
             "SuccessEmployeeData": []
         },
-        "RequestId": "s166*************073"
+        "RequestId": "s1695125479063466836"
     }
 }
 ```

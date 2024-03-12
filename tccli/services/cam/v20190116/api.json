@@ -6228,6 +6228,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "U2FToken",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6241,6 +6252,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Phone",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6251,6 +6263,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Token",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6261,6 +6274,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Stoken",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6271,6 +6285,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Wechat",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6281,6 +6296,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Custom",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6291,9 +6307,21 @@
           "example": "0",
           "member": "uint64",
           "name": "Mail",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "U2FToken",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

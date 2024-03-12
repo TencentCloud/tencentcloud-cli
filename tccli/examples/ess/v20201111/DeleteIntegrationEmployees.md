@@ -7,8 +7,8 @@ Input:
 
 ```
 tccli ess DeleteIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId y**********************************N \
-    --Employees.0.OpenId open123
+    --Operator.UserId yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C \
+    --Employees.0.OpenId n9527
 ```
 
 Output: 
@@ -21,11 +21,11 @@ Output:
                 {
                     "DisplayName": "张三",
                     "Mobile": "13500000000",
-                    "UserId": "yDRt******************BKpnZs"
+                    "UserId": "yDCNCUUckpv0ox66UC7yFOvFzax82lgp"
                 }
             ]
         },
-        "RequestId": "ee79xxxx-xxxx-xxxx-xxxx-xxxx69233c6c"
+        "RequestId": "ee7969233c6c"
     }
 }
 ```

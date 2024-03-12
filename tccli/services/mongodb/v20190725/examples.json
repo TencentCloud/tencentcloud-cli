@@ -292,6 +292,14 @@
         "title": "为当前实例设置账号权限"
       }
     ],
+    "SetInstanceMaintenance": [
+      {
+        "document": "修改实例维护时间窗口",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetInstanceMaintenance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\",\n    \"MaintenanceEnd\": \"21:00\",\n    \"MaintenanceStart\": \"20:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
+        "title": "修改实例维护时间窗口"
+      }
+    ],
     "TerminateDBInstances": [
       {
         "document": "",

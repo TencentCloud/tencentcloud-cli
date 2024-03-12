@@ -28,6 +28,13 @@
       "output": "CheckUinFollowerResponse",
       "status": "online"
     },
+    "CheckUinShowAddFansEntrance": {
+      "document": "检查用户是否展示加粉入口",
+      "input": "CheckUinShowAddFansEntranceRequest",
+      "name": "检查用户是否展示加粉入口",
+      "output": "CheckUinShowAddFansEntranceResponse",
+      "status": "online"
+    },
     "CheckUserOrgInfo": {
       "document": "检查腾讯云用户是否已经成为私域用户",
       "input": "CheckUserOrgInfoRequest",
@@ -595,6 +602,62 @@
           "member": "bool",
           "name": "Result",
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUinShowAddFansEntranceRequest": {
+      "document": "CheckUinShowAddFansEntrance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Uin",
+          "example": "无",
+          "member": "string",
+          "name": "AccountId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "微信身份ID，企微自建应用拉去客户详情页有返回",
+          "example": "无",
+          "member": "string",
+          "name": "UnionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckUinShowAddFansEntranceResponse": {
+      "document": "CheckUinShowAddFansEntrance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结果",
+          "example": "无",
+          "member": "bool",
+          "name": "CheckResult",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验信息",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

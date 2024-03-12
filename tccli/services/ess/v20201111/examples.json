@@ -593,20 +593,20 @@
     "CreateIntegrationEmployees": [
       {
         "document": "创建企微企业员工，只需传入WeworkOpenId参数即可。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"WeworkOpenId\": \"f****f\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"\",\n                    \"Mobile\": \"\",\n                    \"Note\": \"\",\n                    \"UserId\": \"yDRGJ******wG5veA\",\n                    \"WeworkOpenId\": \"f****f\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"Employees\": [\n        {\n            \"WeworkOpenId\": \"woed0SCQAAAtPx1SMU17ThB-QC7F\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"\",\n                    \"Mobile\": \"\",\n                    \"Note\": \"\",\n                    \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\",\n                    \"WeworkOpenId\": \"woed0SCQAAAtPx1SMU17ThB-QC7F\"\n                }\n            ]\n        },\n        \"RequestId\": \"s1695125479063466836\"\n    }\n}",
         "title": "创建员工-企微员工"
       },
       {
         "document": "创建非企微企业的员工，传入必填参数即可。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"13545***901\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13545***901\",\n                    \"Note\": \"\",\n                    \"UserId\": \"*******\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yyDxVwUyKQWho8CUuO4zjEyQOAgwvr4ZyN\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"18560000000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"18560000000\",\n                    \"Note\": \"\",\n                    \"UserId\": \"yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWw\"\n                }\n            ]\n        },\n        \"RequestId\": \"s1695125479063466836\"\n    }\n}",
         "title": "创建员工-非企微员工"
       },
       {
         "document": "调用此接口时，需要按照入参描述进行相应的设置，以确保参数的合法性。如果参数设置不正确，会返回创建失败结果及原因。",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三（广东）\",\n            \"Mobile\": \"1***********7\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三（广东）\",\n                    \"Mobile\": \"1***********7\",\n                    \"Reason\": \"参数错误,姓名不符合规范,请修改后重试\",\n                    \"WeworkOpenId\": \"\"\n                }\n            ],\n            \"SuccessEmployeeData\": []\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yyDxVwUyKQWho8CUuO4zjEyQOAgwvr4ZyN\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三（广东）\",\n            \"Mobile\": \"18560000000\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三（广东）\",\n                    \"Mobile\": \"18560000000\",\n                    \"Reason\": \"参数错误,姓名不符合规范,请修改后重试\",\n                    \"WeworkOpenId\": \"\"\n                }\n            ],\n            \"SuccessEmployeeData\": []\n        },\n        \"RequestId\": \"s1695125479063466836\"\n    }\n}",
         "title": "错误示例-入参不合法"
       },
       {
@@ -983,8 +983,8 @@
     "DeleteIntegrationEmployees": [
       {
         "document": "删除员工，不设置交接人，员工将被直接移除。\n",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13500000000\",\n                    \"UserId\": \"yDRt******************BKpnZs\"\n                }\n            ]\n        },\n        \"RequestId\": \"ee79xxxx-xxxx-xxxx-xxxx-xxxx69233c6c\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"n9527\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13500000000\",\n                    \"UserId\": \"yDCNCUUckpv0ox66UC7yFOvFzax82lgp\"\n                }\n            ]\n        },\n        \"RequestId\": \"ee7969233c6c\"\n    }\n}",
         "title": "删除员工"
       },
       {

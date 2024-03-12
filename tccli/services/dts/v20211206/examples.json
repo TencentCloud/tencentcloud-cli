@@ -104,7 +104,7 @@
     ],
     "CreateSubscribeCheckJob": [
       {
-        "document": "启动一个订阅任务的校验。任务必须已经成功掉用ConfigureSubscribe接口配置了所有的必要信息才能启动校验。",
+        "document": "启动一个订阅任务的校验。任务必须已经成功调用ConfigureSubscribe接口配置了所有的必要信息才能启动校验。",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubscribeCheckJob\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-l4d3a7izai\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"77501ba0-f097-11ed-ac7d-b1056735c0c8\"\n    }\n}",
         "title": "启动一个订阅任务的校验"
