@@ -1,3 +1,312 @@
+# Release 3.0.955.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 57 次发布
+
+发布时间：2024-03-14 01:12:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaUser
+
+
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 5 次发布
+
+发布时间：2024-03-14 01:13:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings)
+
+	* 新增成员：EncryptedWord
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 36 次发布
+
+发布时间：2024-03-14 01:15:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRecordLineCategoryList](http://document.tencentcloudapi.woa.com/document/product/1427/83418)
+
+修改接口：
+
+* [CreateRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56180)
+
+	* 新增入参：DnssecConflictMode
+
+* [ModifyRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56157)
+
+	* 新增入参：DnssecConflictMode
+
+
+新增数据结构：
+
+* [LineItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#LineItem)
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 14 次发布
+
+发布时间：2024-03-14 01:15:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMigrateObject](http://document.tencentcloudapi.woa.com/document/product/571/83419)
+
+修改数据结构：
+
+* [DBInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBInfo)
+
+	* 新增成员：SetId
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 41 次发布
+
+发布时间：2024-03-14 01:16:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHiveQueries](http://document.tencentcloudapi.woa.com/document/product/589/81024)
+
+	* 新增入参：State, EndTimeGte, EndTimeLte
+
+* [DescribeImpalaQueries](http://document.tencentcloudapi.woa.com/document/product/589/81023)
+
+	* 新增入参：State, EndTimeGte, EndTimeLte
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 52 次发布
+
+发布时间：2024-03-14 01:16:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckMigrateIndexMetaData](http://document.tencentcloudapi.woa.com/document/product/845/83430)
+* [CreateCosMigrateToServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/83429)
+* [CreateServerlessSpaceV2](http://document.tencentcloudapi.woa.com/document/product/845/83428)
+* [DeleteServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/83427)
+* [DeleteServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/83426)
+* [DescribeServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/83425)
+* [DescribeUserCosSnapshotList](http://document.tencentcloudapi.woa.com/document/product/845/83424)
+* [GetTaskFlow](http://document.tencentcloudapi.woa.com/document/product/845/83421)
+* [UpdateNodesStatus](http://document.tencentcloudapi.woa.com/document/product/845/83420)
+* [UpdateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/83423)
+* [UpdateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/83422)
+
+新增数据结构：
+
+* [CommonIndexInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#CommonIndexInfo)
+* [CosSnapShotInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#CosSnapShotInfo)
+* [DataStreamInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#DataStreamInfo)
+* [KibanaPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#KibanaPublicAcl)
+* [ServerlessSpaceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpaceUser)
+* [TaskFlow](http://document.tencentcloudapi.woa.com/document/product/845/30634#TaskFlow)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 51 次发布
+
+发布时间：2024-03-14 01:17:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：SkipPrivacyPolicy
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 29 次发布
+
+发布时间：2024-03-14 01:19:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1081/34988#InstanceDetail)
+
+	* 新增成员：UpDownTPS, UpDownCurrentTPS, ForwardTPS, ForwardCurrentTPS, CellNum, BillingTag, EverydayFreeMessageCount, MaxDeviceOnlineCount
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 51 次发布
+
+发布时间：2024-03-14 01:20:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePullTransformPushInfo](http://document.tencentcloudapi.woa.com/document/product/267/83431)
+
+新增数据结构：
+
+* [TaskDurationInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TaskDurationInfo)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 72 次发布
+
+发布时间：2024-03-14 01:21:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlarmShields](http://document.tencentcloudapi.woa.com/document/product/248/83432)
+
+新增数据结构：
+
+* [Shield](http://document.tencentcloudapi.woa.com/document/product/248/30354#Shield)
+* [ShieldMetric](http://document.tencentcloudapi.woa.com/document/product/248/30354#ShieldMetric)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 45 次发布
+
+发布时间：2024-03-14 01:23:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：DiskSize
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：DiskSize
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：DiskSize
+
+
+修改数据结构：
+
+* [ImageConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#ImageConfig)
+
+	* 新增成员：CommandList, ArgsList
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 52 次发布
+
+发布时间：2024-03-14 01:27:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBuildInImages](http://document.tencentcloudapi.woa.com/document/product/851/83433)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 36 次发布
+
+发布时间：2024-03-14 01:29:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TableLineageInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableLineageInfo)
+
+	* 新增成员：DatasourceName, DatabaseName, DatabaseId
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：IsPartitionTable, PartitionColumns, PartitionExpireDays
+
+
+
+
 # Release 3.0.954.1
 
 ## 账号中心(account) 版本：2018-12-25

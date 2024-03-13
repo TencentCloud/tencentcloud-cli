@@ -155,7 +155,7 @@
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。\n支持以下场景\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号</td>\n<td>发送短信通知员工（短信中带有认证加入企业的链接）</td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，需<font color=\"red\">确保该企微员工在应用的可见范围内</font></td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号，<font color=\"red\">此场景不支持企微</font></td>\n<td>生成认证加入企业的H5链接，贵方可以通过自己的渠道触达到此员工</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- <b>若通过手机号发现员工已经创建，则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
+      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。创建的员工初始化为未实名，如下图所示。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2bdcc0d91ac3146b5e8c28811a78ffe9.png)\n\n支持以下场景\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号</td>\n<td>发送短信通知员工（短信中带有认证加入企业的链接）   ![image]() </td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，需<font color=\"red\">确保该企微员工在应用的可见范围内</font></td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号，<font color=\"red\">此场景不支持企微</font></td>\n<td>生成认证加入企业的H5链接，贵方可以通过自己的渠道触达到此员工</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n-  <b> 新增员工的手机号、OpenId不能与已加入员工重复</b>， 不管已加入员工的手机号、OpenId是否已经实名\n- <b>若通过手机号发现员工已经创建且信息一致（名字，openId等），则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。\n\n\n\n短信的样式\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b6ad1b79e0adaaa41d282456c72a1ee6.png)",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -281,7 +281,7 @@
       "status": "online"
     },
     "DeleteIntegrationEmployees": {
-      "document": "该接口（DeleteIntegrationEmployees）用于离职本企业员工，同时可选择是否进行离职交接。\n\n- 如果不设置交接人的ReceiveUserId或ReceiveOpenId，则该员工将被直接移除而不进行交接操作。\n- 如果设置了ReceiveUserId或ReceiveOpenId，该员工未处理的合同将会被系统交接给设置的交接人，然后再对该员工进行离职操作。\n\n未处理的合同包括以下内容：\n\n- 待签署的合同（包括顺序签署还没有轮到的合同，此类合同某些情况可能不会出现在用户的列表中）。\n- 待填写的合同。\n- 待解除的合同等。\n\n注：\n1. <font color=\"red\">超管或法人身份的员工不能被离职</font>， 需要在控制台或小程序更换法人和超管后进行离职删除。\n2. <font color=\"red\">员工存在待处理合同时必须交接</font>后才能离职无人交接时不能被离职删除。`",
+      "document": "该接口（DeleteIntegrationEmployees）用于离职本企业员工，同时可选择是否进行离职交接。\n\n\n- 如果该员工没有未处理的合同，可不设置交接人的ReceiveUserId或ReceiveOpenId进行离职操作。\n- 如果该员工有未处理的合同，需要设置ReceiveUserId或ReceiveOpenId表示交接的负责人，交接后员工会进行离职操作。\n\n未处理的合同包括以下：\n\n- 待签署的合同（包括顺序签署还没有轮到的合同，此类合同某些情况可能不会出现在用户的列表中）。\n- 待填写的合同。\n- 待解除的合同等。\n\n注：\n1. <font color=\"red\">超管或法人身份的员工不能被离职</font>， 需要在控制台或小程序更换法人和超管后进行离职删除。\n2. <font color=\"red\">员工存在待处理合同时必须交接</font>后才能离职无人交接时不能被离职删除。\n3. 未实名的员工可以直接离职，不用交接合同",
       "input": "DeleteIntegrationEmployeesRequest",
       "name": "离职企业员工",
       "output": "DeleteIntegrationEmployeesResponse",
@@ -498,7 +498,7 @@
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "此接口（UpdateIntegrationEmployees）用于修改未实名企业员工信息(姓名，手机号，邮件、部门)。\n修改手机号的时候,支持以下场景进行提醒通知\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td>入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>不需要传递 InvitationNotifyType</td>\n<td>短信</td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，不支持企微</td>\n<td>生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
+      "document": "此接口（UpdateIntegrationEmployees）<font color=\"red\"><b>用于修改未实名企业员工信息(姓名，手机号，邮件、部门)</b></font>。\n如果企业员工已经实名， 姓名，手机号，邮件等需要企业员工到小程序或者控制台自己修改， 部门则需要超管到控制台分配\n\n修改手机号的时候,支持以下场景进行提醒通知\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号</td>\n<td>发送短信通知员工（短信中带有认证加入企业的链接）</td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，需<font color=\"red\">确保该企微员工在应用的可见范围内</font></td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号，<font color=\"red\">此场景不支持企微</font></td>\n<td>生成认证加入企业的H5链接，贵方可以通过自己的渠道触达到此员工</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- <b>若通过手机号发现员工已经创建，则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
       "input": "UpdateIntegrationEmployeesRequest",
       "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
@@ -3838,7 +3838,7 @@
         },
         {
           "disabled": false,
-          "document": "待创建员工的信息最多不超过20个。\n\n**1. 在创建企业微信员工的场景下** :  只需传入下面的参数，其他信息不支持设置。\n<table> <thead> <tr> <th>参数</th> <th>是否必填</th> <th>含义</th> </tr> </thead> <tbody> <tr> <td>WeworkOpenId</td> <td>是</td> <td>企业微信用户账号ID</td> </tr> </tbody> </table>\n\n**2. 在其他场景下** :   只需传入下面的参数，其他信息不支持设置。\n<table> <thead> <tr> <th>参数</th> <th>是否必填</th> <th>含义</th> </tr> </thead> <tbody> <tr> <td>DisplayName</td> <td>是</td> <td>用户的真实名字</td> </tr> <tr> <td>Mobile</td> <td>是</td> <td>用户手机号码</td> </tr> <tr> <td>OpenId</td> <td>否</td> <td>用户的自定义ID</td> </tr> <tr> <td>Email</td> <td>否</td> <td>用户的邮箱</td> </tr> <tr> <td>Department.DepartmentId</td> <td>否</td> <td>用户加入后的部门ID</td> </tr> </tbody> </table>",
+          "document": "待创建员工的信息最多不超过20个。\n\n**1. 在创建企业微信员工的场景下** :  只需传入下面的参数，其他信息不支持设置。\n<table> <thead> <tr> <th>参数</th> <th>是否必填</th> <th>含义</th> </tr> </thead> <tbody> <tr> <td>WeworkOpenId</td> <td>是</td> <td>企业微信用户账号ID</td> </tr> </tbody> </table>\n\n**2. 在其他场景下** :   只需传入下面的参数，其他信息不支持设置。\n<table> <thead> <tr> <th>参数</th> <th>是否必填</th> <th>含义</th> </tr> </thead> <tbody> <tr> <td>DisplayName</td> <td>是</td> <td>用户的真实名字</td> </tr> <tr> <td>Mobile</td> <td>是</td> <td>用户手机号码</td> </tr> <tr> <td>OpenId</td> <td>否</td> <td>用户的自定义ID</td> </tr> <tr> <td>Email</td> <td>否</td> <td>用户的邮箱</td> </tr> <tr> <td>Department.DepartmentId</td> <td>否</td> <td>用户加入后的部门ID</td> </tr> </tbody> </table>\n\n\n注: `每个手机号每天最多使用3次`",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -12002,7 +12002,7 @@
         },
         {
           "disabled": false,
-          "document": "员工信息，不超过100个。\n根据UserId或OpenId更新员工，必填一个，优先UserId。\n可更新Mobile、DisplayName、Email和Department.DepartmentId字段，其他字段暂不支持",
+          "document": "需要更新的员工信息，最多不超过100个。根据UserId或OpenId更新员工信息，必须填写其中一个，优先使用UserId。\n\n可更新以下字段，其他字段暂不支持\n<table> <thead> <tr> <th>参数</th> <th>含义</th> </tr> </thead> <tbody> <tr> <td>DisplayName</td> <td>用户的真实名字</td> </tr> <tr> <td>Mobile</td> <td>用户手机号码</td> </tr> <tr> <td>Email</td> <td>用户的邮箱</td> </tr> <tr> <td>Department.DepartmentId</td> <td>用户进入后的部门ID</td> </tr> </tbody> </table>",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -12020,7 +12020,7 @@
         },
         {
           "disabled": false,
-          "document": "员工邀请方式\n如果是来自H5的，参数需要传递H5\n短信或者企微 请传递SMS，或者不传递",
+          "document": "员工邀请方式可通过以下方式进行设置：\n\n**H5**：会生成H5的链接，点击链接进入H5的认证加入企业的逻辑。\n**SMS（默认）**：会通过短信或企业微信消息进行邀请。如果非企业微信场景，则是企业微信消息。其他场景则是短信通知，短信中包含链接，点击后进入微信小程序进行认证加入企业的逻辑。",
           "example": "无",
           "member": "string",
           "name": "InvitationNotifyType",
@@ -12029,7 +12029,7 @@
         },
         {
           "disabled": false,
-          "document": "回跳地址，\n在认证成功之后，进行回跳，请保证回跳地址的可用性。\n使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置。",
+          "document": "回跳地址，为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。\n\n注：`只有在员工邀请方式（InvitationNotifyType参数）为H5场景下才生效， 其他方式下设置无效。`",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",

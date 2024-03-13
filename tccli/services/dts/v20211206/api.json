@@ -147,6 +147,13 @@
       "output": "DescribeMigrateDBInstancesResponse",
       "status": "online"
     },
+    "DescribeMigrateObject": {
+      "document": "配置迁移任务时，查询可迁移的对象。支持查询三类对象：库、表和视图。必须先查库，再查表和视图。",
+      "input": "DescribeMigrateObjectRequest",
+      "name": "查看迁移库表",
+      "output": "DescribeMigrateObjectResponse",
+      "status": "online"
+    },
     "DescribeMigrationCheckJob": {
       "document": "本接口用于创建校验后,获取校验的结果. 能查询到当前校验的状态和进度. \n若通过校验, 则可调用'StartMigrateJob' 开始迁移.\n若未通过校验, 则能查询到校验失败的原因. 请按照报错, 通过'ModifyMigrationJob'修改迁移配置或是调整源/目标实例的相关参数.",
       "input": "DescribeMigrationCheckJobRequest",
@@ -2392,7 +2399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示节点角色，针对分布式数据库，如mongodb中的mongos节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mongos",
           "member": "string",
           "name": "Role",
@@ -2606,6 +2613,17 @@
           "member": "string",
           "name": "TmpToken",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tdsql分片id。tdsql set节点必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "set_1693279393_1",
+          "member": "string",
+          "name": "SetId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3685,6 +3703,126 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrateObjectRequest": {
+      "document": "DescribeMigrateObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移实例id",
+          "example": "dts-mcl8vzmy",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的对象路径。如果查询的对象是库则传空数组。如果查询的是表或视图，数组元素为其所在的库名。",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectPath",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "迁移的对象类型，目前支持3种 database、table、view",
+          "example": "table",
+          "member": "string",
+          "name": "ObjectType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用启用分页，是则传enabled。不分页则不传",
+          "example": "enabled",
+          "member": "string",
+          "name": "Pagination",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果选择分页，每页多少张表。不选分页，则不传。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "如果选择分页，从第几个对象开始分。不选分页，则不传。",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据名字过滤object，支持模糊匹配",
+          "example": "test",
+          "member": "string",
+          "name": "ObjectFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "root:dbName：如果查询的是库，路径为root；如果查询的是表或视图，路径为root:dbName;此字段已废弃，传空即可",
+          "example": "root:dbName",
+          "member": "string",
+          "name": "CurrentPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrateObjectResponse": {
+      "document": "DescribeMigrateObject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否是页节点，也就是是否还能继续往下层查询。例如：空库就是叶节点，就不能继续往下查询对象了。叶节点为1，非叶节点为0",
+          "example": "1",
+          "member": "int64",
+          "name": "IsLeaf",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有符合条件的对象数目",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象名",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5593,7 +5731,7 @@
         },
         {
           "disabled": false,
-          "document": "tdsql mysql版的节点类型，枚举值为proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proxy",
           "member": "string",
           "name": "Role",

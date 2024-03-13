@@ -1423,6 +1423,15 @@
           "name": "PrivilegeEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "函数tmp目录大小",
+          "example": "512",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3570,6 +3579,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "函数tmp目录大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "512",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4052,6 +4071,28 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CommandList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ArgsList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -7551,6 +7592,15 @@
           "name": "PrivilegeEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义函数tmp目录大小",
+          "example": "512",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

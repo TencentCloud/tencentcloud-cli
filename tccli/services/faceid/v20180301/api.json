@@ -8557,6 +8557,15 @@
           "name": "SecurityLevel",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过协议页面，默认false。当SkipPrivacyPolicy为false时，将展示协议页面，需要勾选隐私协议；当SkipPrivacyPolicy为true时，将跳过协议页面，直接进入活体流程，无需勾选隐私协议页面。",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipPrivacyPolicy",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
