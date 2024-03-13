@@ -1,3 +1,44 @@
+# Release 3.0.1075.1
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 53 次发布
+
+发布时间：2024-03-13 16:49:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateServerlessInstance](https://cloud.tencent.com/document/api/845/104318)
+* [CreateServerlessSpaceV2](https://cloud.tencent.com/document/api/845/104317)
+* [DeleteServerlessInstance](https://cloud.tencent.com/document/api/845/104316)
+* [DeleteServerlessSpaceUser](https://cloud.tencent.com/document/api/845/104315)
+* [DescribeServerlessSpaceUser](https://cloud.tencent.com/document/api/845/104314)
+* [DescribeServerlessSpaces](https://cloud.tencent.com/document/api/845/104313)
+* [UpdateServerlessInstance](https://cloud.tencent.com/document/api/845/104312)
+* [UpdateServerlessSpace](https://cloud.tencent.com/document/api/845/104311)
+
+新增数据结构：
+
+* [DiData](https://cloud.tencent.com/document/api/845/30634#DiData)
+* [DiDataSinkServerless](https://cloud.tencent.com/document/api/845/30634#DiDataSinkServerless)
+* [DiDataSourceCvm](https://cloud.tencent.com/document/api/845/30634#DiDataSourceCvm)
+* [DiDataSourceCvmInstance](https://cloud.tencent.com/document/api/845/30634#DiDataSourceCvmInstance)
+* [DiDataSourceTke](https://cloud.tencent.com/document/api/845/30634#DiDataSourceTke)
+* [DiSourceCvm](https://cloud.tencent.com/document/api/845/30634#DiSourceCvm)
+* [DiSourceTke](https://cloud.tencent.com/document/api/845/30634#DiSourceTke)
+* [DiSourceTkePodLabel](https://cloud.tencent.com/document/api/845/30634#DiSourceTkePodLabel)
+* [KibanaPublicAcl](https://cloud.tencent.com/document/api/845/30634#KibanaPublicAcl)
+* [ServerlessDi](https://cloud.tencent.com/document/api/845/30634#ServerlessDi)
+* [ServerlessSpace](https://cloud.tencent.com/document/api/845/30634#ServerlessSpace)
+* [ServerlessSpaceUser](https://cloud.tencent.com/document/api/845/30634#ServerlessSpaceUser)
+* [VpcInfo](https://cloud.tencent.com/document/api/845/30634#VpcInfo)
+
+
+
 # Release 3.0.1074.1
 
 ## 访问管理(cam) 版本：2019-01-16

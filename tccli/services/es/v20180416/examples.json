@@ -24,6 +24,22 @@
         "title": "创建Logstash实例"
       }
     ],
+    "CreateServerlessInstance": [
+      {
+        "document": "创建serverless实例",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"SubnetId\": \"abc\",\n    \"IndexName\": \"abc\",\n    \"IndexMetaJson\": \"{}\",\n    \"SpaceId\": \"abc\",\n    \"Username\": \"abc\",\n    \"Password\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"DealName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建serverless实例"
+      }
+    ],
+    "CreateServerlessSpaceV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessSpaceV2\n<公共请求参数>\n\n{\n    \"SpaceName\": \"abc\",\n    \"VpcInfo\": [\n        {\n            \"VpcId\": \"abc\",\n            \"SubnetId\": \"abc\",\n            \"VpcUid\": 1,\n            \"SubnetUid\": 1,\n            \"AvailableIpAddressCount\": 0\n        }\n    ],\n    \"Zone\": \"abc\",\n    \"KibanaWhiteIpList\": [\n        \"abc\"\n    ],\n    \"ZoneId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteIndex": [
       {
         "document": "删除自治索引",
@@ -54,6 +70,22 @@
         "input": "https://es.tencentcloudapi.com/?Action=DeleteLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&PipelineIds.0=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6eb5c3b2-0bba-4f73-bafb-bd21esxxxxxx\"\n    }\n}",
         "title": "删除Logstash管道"
+      }
+    ],
+    "DeleteServerlessInstance": [
+      {
+        "document": "删除Serverless实例",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除Serverless实例"
+      }
+    ],
+    "DeleteServerlessSpaceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessSpaceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"abc\",\n    \"Username\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeDiagnose": [
@@ -142,6 +174,22 @@
         "input": "https://es.tencentcloudapi.com/?Action=DescribeLogstashPipelines\n&InstanceId=ls-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LogstashPipelineList\": [\n            {\n                \"PipelineId\": \"g4cqkhhr_1\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xx\",\n                \"Status\": -2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            },\n            {\n                \"PipelineId\": \"g4cqkhhr_2\",\n                \"PipelineDesc\": \"1111\",\n                \"Config\": \"xxx\",\n                \"Status\": 2,\n                \"Workers\": 11,\n                \"BatchSize\": 1111,\n                \"BatchDelay\": 111,\n                \"QueueType\": \"memory\",\n                \"QueueMaxBytes\": \"1111MB\",\n                \"QueueCheckPointWrites\": 1111\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取Logstash实例管道列表"
+      }
+    ],
+    "DescribeServerlessSpaceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessSpaceUser\n<公共请求参数>\n\n{\n    \"SpaceId\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"UserNames\": [\n        \"abc\"\n    ],\n    \"UserTypes\": [\n        0\n    ],\n    \"PrivilegeTypes\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ServerlessSpaceUsers\": [\n            {\n                \"Username\": \"abc\",\n                \"Password\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Status\": 0,\n                \"IndicesScope\": [\n                    \"abc\"\n                ],\n                \"PrivilegeType\": 0\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeServerlessSpaces": [
+      {
+        "document": "获取Serverless索引空间列表",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessSpaces\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ServerlessSpaces\": [\n            {\n                \"SpaceId\": \"abc\",\n                \"SpaceName\": \"abc\",\n                \"Status\": 0,\n                \"CreateTime\": \"abc\",\n                \"IndexCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取Serverless索引空间列表"
       }
     ],
     "DescribeViews": [
@@ -348,6 +396,22 @@
         "input": "https://es.tencentcloudapi.com/?Action=UpdateRequestTargetNodeTypes\n&InstanceId=es-xxxxxx\n&TargetNodeTypes.0=hot\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8fd57721-808b-4f21-8f6b-51bca79ff1xx\"\n    }\n}",
         "title": "更新接收客户端请求的节点类型"
+      }
+    ],
+    "UpdateServerlessInstance": [
+      {
+        "document": "更新索引元数据---- 添加ResourceInUse.IsolatedStatus错误码",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServerlessInstance\n<公共请求参数>\n\n{\n    \"UpdateMetaJson\": \"{}\",\n    \"InstanceId\": \"index-asdasd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "更新索引元数据"
+      }
+    ],
+    "UpdateServerlessSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServerlessSpace\n<公共请求参数>\n\n{\n    \"SpaceName\": \"242faff\",\n    \"SpaceId\": \"space-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
+        "title": "更新Serverless索引空间名"
       }
     ],
     "UpgradeInstance": [

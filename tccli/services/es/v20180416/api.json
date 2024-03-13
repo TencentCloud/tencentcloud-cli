@@ -21,6 +21,20 @@
       "output": "CreateLogstashInstanceResponse",
       "status": "online"
     },
+    "CreateServerlessInstance": {
+      "document": "创建Serverless索引",
+      "input": "CreateServerlessInstanceRequest",
+      "name": "创建Serverless索引",
+      "output": "CreateServerlessInstanceResponse",
+      "status": "online"
+    },
+    "CreateServerlessSpaceV2": {
+      "document": "创建Serverless索引空间",
+      "input": "CreateServerlessSpaceV2Request",
+      "name": "创建Serverless索引项目空间(new)",
+      "output": "CreateServerlessSpaceV2Response",
+      "status": "online"
+    },
     "DeleteIndex": {
       "document": "删除索引",
       "input": "DeleteIndexRequest",
@@ -47,6 +61,20 @@
       "input": "DeleteLogstashPipelinesRequest",
       "name": "删除Logstash管道",
       "output": "DeleteLogstashPipelinesResponse",
+      "status": "online"
+    },
+    "DeleteServerlessInstance": {
+      "document": "删除Serverless索引",
+      "input": "DeleteServerlessInstanceRequest",
+      "name": "删除Serverless索引",
+      "output": "DeleteServerlessInstanceResponse",
+      "status": "online"
+    },
+    "DeleteServerlessSpaceUser": {
+      "document": "删除Serverless空间子用户",
+      "input": "DeleteServerlessSpaceUserRequest",
+      "name": "删除Serverless空间子用户",
+      "output": "DeleteServerlessSpaceUserResponse",
       "status": "online"
     },
     "DescribeDiagnose": {
@@ -124,6 +152,20 @@
       "input": "DescribeLogstashPipelinesRequest",
       "name": "获取Logstash实例管道列表",
       "output": "DescribeLogstashPipelinesResponse",
+      "status": "online"
+    },
+    "DescribeServerlessSpaceUser": {
+      "document": "查看Serverless空间子用户",
+      "input": "DescribeServerlessSpaceUserRequest",
+      "name": "查看Serverless空间子用户",
+      "output": "DescribeServerlessSpaceUserResponse",
+      "status": "online"
+    },
+    "DescribeServerlessSpaces": {
+      "document": "获取Serverless索引空间列表",
+      "input": "DescribeServerlessSpacesRequest",
+      "name": "获取Serverless索引空间列表",
+      "output": "DescribeServerlessSpacesResponse",
       "status": "online"
     },
     "DescribeViews": {
@@ -278,6 +320,20 @@
       "input": "UpdateRequestTargetNodeTypesRequest",
       "name": "更新接收客户端请求的节点类型",
       "output": "UpdateRequestTargetNodeTypesResponse",
+      "status": "online"
+    },
+    "UpdateServerlessInstance": {
+      "document": "更新Serverless索引",
+      "input": "UpdateServerlessInstanceRequest",
+      "name": "更新Serverless索引",
+      "output": "UpdateServerlessInstanceResponse",
+      "status": "online"
+    },
+    "UpdateServerlessSpace": {
+      "document": "更新Serverless索引空间",
+      "input": "UpdateServerlessSpaceRequest",
+      "name": "更新Serverless索引空间",
+      "output": "UpdateServerlessSpaceResponse",
       "status": "online"
     },
     "UpgradeInstance": {
@@ -1225,6 +1281,225 @@
       ],
       "type": "object"
     },
+    "CreateServerlessInstanceRequest": {
+      "document": "CreateServerlessInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引名，需以-AppId结尾",
+          "example": "test-12345678",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的索引元数据JSON，如mappings、settings",
+          "example": "{}",
+          "member": "string",
+          "name": "IndexMetaJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建索引的空间ID",
+          "example": "space-xxxxxxxx",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建索引的用户名",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建索引的密码",
+          "example": "test",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建数据接入",
+          "example": "无",
+          "member": "ServerlessDi",
+          "name": "ServerlessDi",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自行添加白名单ip",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoGetIp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "kibana公网白名单",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaWhiteIpList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessInstanceResponse": {
+      "document": "CreateServerlessInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "index-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessSpaceV2Request": {
+      "document": "CreateServerlessSpaceV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "索引空间名",
+          "example": "test",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间名称",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单列表",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaWhiteIpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "无",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerlessSpaceV2Response": {
+      "document": "CreateServerlessSpaceV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间ID",
+          "example": "space-xxxxxxxx",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIndexRequest": {
       "document": "DeleteIndex请求参数结构体",
       "members": [
@@ -1377,6 +1652,69 @@
     },
     "DeleteLogstashPipelinesResponse": {
       "document": "DeleteLogstashPipelines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessInstanceRequest": {
+      "document": "DeleteServerlessInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "serverless实例ID",
+          "example": "index-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessInstanceResponse": {
+      "document": "DeleteServerlessInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessSpaceUserRequest": {
+      "document": "DeleteServerlessSpaceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间的ID",
+          "example": "space-xxxxxxxx",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建索引的用户名",
+          "example": "test",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServerlessSpaceUserResponse": {
+      "document": "DeleteServerlessSpaceUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2519,6 +2857,199 @@
       ],
       "type": "object"
     },
+    "DescribeServerlessSpaceUserRequest": {
+      "document": "DescribeServerlessSpaceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间的ID",
+          "example": "space-xxxxxxxx",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "游标",
+          "example": "test",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页条数",
+          "example": "test",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户名列表过滤",
+          "example": "无",
+          "member": "string",
+          "name": "UserNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户类型",
+          "example": "无",
+          "member": "int64",
+          "name": "UserTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型",
+          "example": "无",
+          "member": "int64",
+          "name": "PrivilegeTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessSpaceUserResponse": {
+      "document": "DescribeServerlessSpaceUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户数组",
+          "example": "无",
+          "member": "ServerlessSpaceUser",
+          "name": "ServerlessSpaceUsers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessSpacesRequest": {
+      "document": "DescribeServerlessSpaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤的空间ID",
+          "example": "[space-xxxxxxx]",
+          "member": "string",
+          "name": "SpaceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤的空间名",
+          "example": "[test]",
+          "member": "string",
+          "name": "SpaceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序，支持升序asc、降序desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持空间创建时间SpaceCreateTime",
+          "example": "SpaceCreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpcId信息数组",
+          "example": "无",
+          "member": "string",
+          "name": "VpcIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页起始",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServerlessSpacesResponse": {
+      "document": "DescribeServerlessSpaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Serverless空间信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerlessSpace",
+          "name": "ServerlessSpaces",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeViewsRequest": {
       "document": "DescribeViews请求参数结构体",
       "members": [
@@ -2575,6 +3106,491 @@
         }
       ],
       "type": "object"
+    },
+    "DiData": {
+      "document": "数据接入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据接入id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sdi-xxxx",
+          "member": "string",
+          "name": "DiId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据接入创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据接入状态，0处理中，1正常，-2删除中，-3已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm数据源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSourceCvm",
+          "name": "DiDataSourceCvm",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke数据源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSourceTke",
+          "name": "DiDataSourceTke",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "serverless目的端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSinkServerless",
+          "name": "DiDataSinkServerless",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据接入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm_collector",
+          "member": "string",
+          "name": "DiDataSourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiDataSinkServerless": {
+      "document": "数据接入serverless目的端信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "serverless实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "index-xxxx",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiDataSourceCvm": {
+      "document": "数据接入cvm数据源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[/test, /tmp]",
+          "member": "string",
+          "name": "LogPaths",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSourceCvmInstance",
+          "name": "CvmInstances",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "coll-xxxxxxxx",
+          "member": "string",
+          "name": "CollectorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiDataSourceCvmInstance": {
+      "document": "数据接入cvm实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiDataSourceTke": {
+      "document": "数据接入tke数据源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "TkeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "coll-xxxxxxxx",
+          "member": "string",
+          "name": "CollectorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectorName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "filebeat",
+          "member": "string",
+          "name": "CollectorType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.14.0",
+          "member": "string",
+          "name": "CollectorVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncludeNamespaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke不包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeNamespaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke pod标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodLabelKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke pod标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodLabelValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke采集器beat配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TKE 日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiSourceCvm": {
+      "document": "数据接入cvm数据源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源所属vpc id，创建后不允许修改",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm列表",
+          "example": "[ins-xxxx, ins-xxxx]",
+          "member": "string",
+          "name": "CvmIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集路径列表，支持通配符",
+          "example": "[/test, /tmp]",
+          "member": "string",
+          "name": "LogPaths",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "DiSourceTke": {
+      "document": "数据接入tke数据源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源所属vpc id，创建后不允许修改",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke实例id，创建后不允许修改",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "TkeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke包含的命名空间",
+          "example": "[\"default\"]",
+          "member": "string",
+          "name": "IncludeNamespaces",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "tke不包含的命名空间",
+          "example": "[\"default\"]",
+          "member": "string",
+          "name": "ExcludeNamespaces",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "tke容器名称",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke日志内容过滤",
+          "example": "无",
+          "member": "string",
+          "name": "LogFilters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke beats配置项",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke pod标签",
+          "example": "无",
+          "member": "DiSourceTkePodLabel",
+          "name": "PodLabel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tke 日志采集路径",
+          "example": "无",
+          "member": "string",
+          "name": "InputPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DiSourceTkePodLabel": {
+      "document": "tke pod标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DiagnoseInstanceRequest": {
       "document": "DiagnoseInstance请求参数结构体",
@@ -4603,6 +5619,22 @@
       ],
       "usage": "out"
     },
+    "KibanaPublicAcl": {
+      "document": "kibana公网域名白名单参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kibana访问白名单",
+          "example": "[\"123.1.2.4\"]",
+          "member": "string",
+          "name": "WhiteIpList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KibanaView": {
       "document": "Kibana视图数据",
       "members": [
@@ -6417,6 +7449,287 @@
       ],
       "type": "object"
     },
+    "ServerlessDi": {
+      "document": "创建serverless索引时创建数据接入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据链路采集源类型，如cvm_collector、tke_collector",
+          "example": "cvm_collector",
+          "member": "string",
+          "name": "DiSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm数据源",
+          "example": "无",
+          "member": "DiSourceCvm",
+          "name": "DiSourceCvm",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "tke数据源",
+          "example": "无",
+          "member": "DiSourceTke",
+          "name": "DiSourceTke",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ServerlessSpace": {
+      "document": "Serverless索引空间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Serverless索引空间ID",
+          "example": "space-xxxx",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Serverless索引空间名",
+          "example": "test",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Serverless索引空间状态，0正常，-1已删除",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建日期",
+          "example": "2022-01-01 11:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空间内索引数量",
+          "example": "0",
+          "member": "int64",
+          "name": "IndexCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kibana公网uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kibana内网url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaPrivateUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndexAccessUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EsAcl",
+          "name": "KibanaPublicAcl",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间检索分析域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaEmbedUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据联路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiData",
+          "name": "DiDataList",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kibana公网开关，0关闭，1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EnableKibanaPublicAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kibana内网开关，0关闭，1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EnableKibanaPrivateAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间所属appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10004222",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServerlessSpaceUser": {
+      "document": "ServerlessSpaceUser",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有权限的索引数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndicesScope",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PrivilegeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SettingDetail": {
       "document": "智能运维集群配置详情",
       "members": [
@@ -7559,6 +8872,141 @@
       ],
       "type": "object"
     },
+    "UpdateServerlessInstanceRequest": {
+      "document": "UpdateServerlessInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Serveless实例ID",
+          "example": "index-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新的索引元数据JSON，如mappings、settings",
+          "example": "{}",
+          "member": "string",
+          "name": "UpdateMetaJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例访问密码",
+          "example": "123456",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启kibana内网访问，如OPEN、CLOSE",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPrivateAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启kibana外网访问，如OPEN、CLOSE",
+          "example": "OPEN",
+          "member": "string",
+          "name": "KibanaPublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制列表",
+          "example": "无",
+          "member": "KibanaPublicAcl",
+          "name": "KibanaPublicAcl",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServerlessInstanceResponse": {
+      "document": "UpdateServerlessInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServerlessSpaceRequest": {
+      "document": "UpdateServerlessSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Serveless索引空间ID",
+          "example": "space-abcdefgh",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Serveless索引空间名",
+          "example": "{}",
+          "member": "string",
+          "name": "SpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kibana内网开关",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaPrivateAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kibana公网开关",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaPublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kibana公网白名单",
+          "example": "无",
+          "member": "EsAcl",
+          "name": "KibanaPublicAcl",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServerlessSpaceResponse": {
+      "document": "UpdateServerlessSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpgradeInstanceRequest": {
       "document": "UpgradeInstance请求参数结构体",
       "members": [
@@ -7730,6 +9178,67 @@
         }
       ],
       "type": "object"
+    },
+    "VpcInfo": {
+      "document": "vpc信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpcId信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SubnetId信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-fafafag",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VpcUid信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8808090",
+          "member": "uint64",
+          "name": "VpcUid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SubnetUid 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8808090",
+          "member": "uint64",
+          "name": "SubnetUid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用ip数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AvailableIpAddressCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WebNodeTypeInfo": {
       "document": "可视化节点配置",
