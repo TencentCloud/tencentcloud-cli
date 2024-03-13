@@ -19109,6 +19109,15 @@
           "name": "EnableCommonElectronic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许查验当日发票，默认值为false。\n\n请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTodayInvoice",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

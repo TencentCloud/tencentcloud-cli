@@ -15,27 +15,35 @@ Output:
 ```
 {
     "Response": {
-        "Total": 3,
-        "RequestId": "xx",
         "TaskSet": [
             {
-                "Status": 1,
-                "Name": "xx",
-                "Parameters": "{}",
-                "Interval": 30,
-                "TaskId": "task-xx",
-                "TaskType": 1,
+                "Name": "abc",
+                "TaskId": "abc",
+                "TaskType": 0,
                 "Nodes": [
-                    "10001"
+                    "abc"
                 ],
+                "NodeIpType": 0,
+                "Interval": 0,
+                "Parameters": "abc",
+                "Status": 0,
+                "TargetAddress": "abc",
+                "PayMode": 0,
+                "OrderState": 0,
+                "TaskCategory": 0,
+                "CreatedAt": "abc",
+                "Cron": "abc",
+                "CronState": 0,
                 "TagInfoList": [
                     {
-                        "Key": "tag_key1",
-                        "Value": "tag_value1"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ]
             }
-        ]
+        ],
+        "Total": 0,
+        "RequestId": "abc"
     }
 }
 ```

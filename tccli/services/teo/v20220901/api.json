@@ -427,6 +427,13 @@
       "output": "DescribeRulesSettingResponse",
       "status": "online"
     },
+    "DescribeSecurityIPGroupInfo": {
+      "document": "查询 IP 组的配置信息，包括 IP 组名称、 IP 组内容、 IP 组归属站点。",
+      "input": "DescribeSecurityIPGroupInfoRequest",
+      "name": "查询 IP 组配置信息",
+      "output": "DescribeSecurityIPGroupInfoResponse",
+      "status": "online"
+    },
     "DescribeSecurityTemplateBindings": {
       "document": "查询指定策略模板的绑定关系列表。",
       "input": "DescribeSecurityTemplateBindingsRequest",
@@ -7439,6 +7446,71 @@
           "member": "RulesSettingAction",
           "name": "Actions",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupInfoRequest": {
+      "document": "DescribeSecurityIPGroupInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点的 ID ，用于指定查询的站点范围。",
+          "example": "[\"zone-21xfqlh4qjee\"]",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单次返回的最大条目数。默认值为 20 ，最大查询条目为 1000 。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的起始条目偏移量。默认值为 0 。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupInfoResponse": {
+      "document": "DescribeSecurityIPGroupInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的满足条件的 IP 组数量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 组的详细配置信息。包含每个 IP 组的 ID 、名称和 IP /网段列表信息。",
+          "example": "[{\"GroupId\":123,\"Name\":\"group1\",\"Content\":[\"1.1.1.1\",\"1.1.2.0/24\"]}]",
+          "member": "IPGroup",
+          "name": "IPGroups",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

@@ -602,6 +602,14 @@
         "title": "DescribeRulesSetting"
       }
     ],
+    "DescribeSecurityIPGroupInfo": [
+      {
+        "document": "查询指定站点的 IP 分组配置信息，并按每页 10 条返回第 1 页内容。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityIPGroupInfo\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"IPGroups\": [\n            {\n                \"GroupId\": 123,\n                \"Name\": \"ExampleIpGroup\",\n                \"Content\": [\n                    \"123.123.123.0\",\n                    \"23.23.23.0/24\"\n                ]\n            }\n        ],\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
+        "title": "查询 IP 分组的配置信息"
+      }
+    ],
     "DescribeSecurityTemplateBindings": [
       {
         "document": "此方法会输出策略模板的全部绑定关系，包括：\n1）已经生效的绑定关系，标注的 “Status” 为 “online”；\n2）正在绑定的绑定关系，标注的 “Status” 为 “pending”。\n注意：一个域名可能在绑定关系列表中，出现多次，同时标记为多个状态。\n\n例如：查询 example.com 站点（zone ID 为 zone-fdsjjkfsda）下，策略模板 \"生产环境策略\" （SecurityTemplate ID 为 temp-fjsoelx）的绑定关系，可以参考以下示例进行查询。\n\n\n注意：输出示例中包含正在绑定 和绑定失败的绑定关系，策略模板已对该二域名生效。其中，abc.example.com 已绑定至入参指定的策略模板，策略正常生效，因此该绑定关系展示为 online 状态；xyz.example.com 正在被重新绑定至其他策略模板，但是尚未完成绑定，当前策略模板仍然生效，因此同时出现在已经生效和正在绑定的绑定关系列表中。\n",

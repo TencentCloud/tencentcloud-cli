@@ -891,7 +891,7 @@
           "example": "[]",
           "member": "ProbeTask",
           "name": "TaskSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -901,7 +901,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

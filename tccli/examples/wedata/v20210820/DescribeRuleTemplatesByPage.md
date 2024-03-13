@@ -1,4 +1,4 @@
-**Example 1: 规则模版列表**
+**Example 1: 规则模板列表**
 
 
 
@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli wedata DescribeRuleTemplatesByPage --cli-unfold-argument  \
-    --OrderFields.0.Name xxx \
-    --OrderFields.0.Direction xxxx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --ProjectId 1 \
+    --OrderFields.0.Name abc \
+    --OrderFields.0.Direction abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
     --PageNumber 1 \
-    --PageSize 10
+    --PageSize 1 \
+    --ProjectId abc
 ```
 
 Output: 
@@ -23,23 +23,46 @@ Output:
             "TotalCount": 1,
             "Items": [
                 {
+                    "RuleTemplateId": 1,
+                    "Name": "abc",
+                    "Description": "abc",
+                    "Type": 1,
+                    "SourceObjectType": 1,
+                    "SourceObjectDataType": 1,
+                    "SourceContent": "abc",
                     "SourceEngineTypes": [
                         1
                     ],
                     "QualityDim": 1,
-                    "SourceObjectDataType": 1,
-                    "SourceContent": "xx",
-                    "CitationCount": 1,
-                    "RuleTemplateId": 1,
                     "CompareType": 1,
-                    "Name": "xx",
-                    "Type": 1,
-                    "SourceObjectType": 1,
-                    "Description": "xx"
+                    "CitationCount": 1,
+                    "UserId": 1,
+                    "UserName": "abc",
+                    "UpdateTime": "abc",
+                    "WhereFlag": true,
+                    "MultiSourceFlag": true,
+                    "SqlExpression": "abc",
+                    "SubQualityDim": 1,
+                    "ResolvedSqlExpression": {
+                        "TableExpressions": [
+                            {
+                                "TableExpression": "abc",
+                                "ColumnExpression": [
+                                    "abc"
+                                ]
+                            }
+                        ],
+                        "ParamExpressions": [
+                            "abc"
+                        ]
+                    },
+                    "DatasourceTypes": [
+                        0
+                    ]
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

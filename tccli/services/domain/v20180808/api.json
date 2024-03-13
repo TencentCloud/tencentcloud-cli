@@ -1769,6 +1769,15 @@
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户指定上架时间筛选",
+          "example": "2023-01-01",
+          "member": "string",
+          "name": "UpTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

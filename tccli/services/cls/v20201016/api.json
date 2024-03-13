@@ -381,7 +381,7 @@
     "DescribeKafkaUser": {
       "document": "本接口用于获取kafka用户信息",
       "input": "DescribeKafkaUserRequest",
-      "name": "获取kafka用户信息",
+      "name": "获取kafka用户信息。作用是获取UserName在kafka示例中的信息，目前只返回了UserName字段信息，该接口可以理解",
       "output": "DescribeKafkaUserResponse",
       "status": "online"
     },
@@ -3169,7 +3169,7 @@
         {
           "disabled": false,
           "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
-          "example": "table-xxx1",
+          "example": "configname",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3178,7 +3178,7 @@
         {
           "disabled": false,
           "document": "日志主题id",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "3269961d-52e0-407b-9dcd-34bd830c6f19",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -3223,7 +3223,7 @@
         {
           "disabled": false,
           "document": "日志集name",
-          "example": "xxxxx",
+          "example": "name1",
           "member": "string",
           "name": "LogsetName",
           "required": true,
@@ -3232,7 +3232,7 @@
         {
           "disabled": false,
           "document": "日志主题名称",
-          "example": "xxxxx",
+          "example": "name2",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3313,9 +3313,18 @@
         {
           "disabled": false,
           "document": "绑定的机器组id列表",
-          "example": "[\"11\",\"22\"]",
+          "example": "[\"59b6014b-6507-44c2-9d4f-a5bee6df9ab5\",\"0af7e6bb-fc91-4ee8-ad24-1129e9c91c6c\"]",
           "member": "string",
           "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集相关配置信息。详情见CollectInfo复杂类型配置。",
+          "example": "无",
+          "member": "CollectInfo",
+          "name": "CollectInfos",
           "required": false,
           "type": "list"
         },
@@ -3549,7 +3558,7 @@
         {
           "disabled": false,
           "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
-          "example": "examplebucket-1-1250000000",
+          "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -4644,7 +4653,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
+          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -6144,7 +6153,7 @@
         },
         {
           "disabled": false,
-          "document": "<br><li>dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否</li>\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否</li>\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。使用请参考示例二。\n\n类型：String\n\n必选：否</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- dashboardId 按照【仪表盘id】进行过滤，类型：String， 必选：否。\n- dashboardName 按照【仪表盘名字】进行模糊搜索过滤，类型：String，必选：否。\n- dashboardRegion 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性，类型：String，必选：否。\n- tagKey 按照【标签键】进行过滤，类型：String，必选：否。\n- tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，类型：String，必选：否，使用请参考[示例2](https://cloud.tencent.com/document/api/614/95636#4.-.E7.A4.BA.E4.BE.8B)。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6566,7 +6575,7 @@
         {
           "disabled": false,
           "document": "kafka用户名。",
-          "example": "test",
+          "example": "ANONYMOUS",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -6581,7 +6590,7 @@
         {
           "disabled": false,
           "document": "如果返回不为空，代表用户名UserName已经创建成功。",
-          "example": "test",
+          "example": "ANONYMOUS",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -7126,7 +7135,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤，0日志主题 1指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1：运行；2：停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
+          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤，0：日志主题；1：指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1：运行；2：停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7679,7 +7688,7 @@
         },
         {
           "disabled": false,
-          "document": "需要过滤日志的key，及其对应的regex\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。\n 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyRegexInfo",
           "name": "FilterKeyRegex",
@@ -7952,7 +7961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的执行详情的起始时间，Unix时间戳，单位ms",
+          "document": "要查询的执行详情的起始时间，Unix时间戳，单位ms。",
           "example": "1702569600000",
           "member": "int64",
           "name": "From",
@@ -7961,7 +7970,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的执行详情的结束时间，Unix时间戳，单位ms",
+          "document": "要查询的执行详情的结束时间，Unix时间戳，单位ms。",
           "example": "1702655999999",
           "member": "int64",
           "name": "To",
@@ -7988,7 +7997,7 @@
         },
         {
           "disabled": false,
-          "document": "加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情",
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
           "example": "context",
           "member": "string",
           "name": "Context",
@@ -7997,7 +8006,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
           "example": "asc",
           "member": "string",
           "name": "Sort",
@@ -8006,7 +8015,7 @@
         },
         {
           "disabled": false,
-          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；\n为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；\n两种返回方式在编码格式上有少量区别，建议使用true。\n示例值：false",
+          "document": "true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；\nfalse：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；\n两种返回方式在编码格式上有少量区别，建议使用true。",
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
@@ -8061,7 +8070,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情查询结果。\n\n当Query字段无SQL语句时，返回查询结果。\n当Query字段有SQL语句时，可能返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情查询结果。\n当Query字段无SQL语句时，返回查询结果。\n当Query字段有SQL语句时，可能返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
@@ -13141,7 +13150,7 @@
         },
         {
           "disabled": false,
-          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\nHotPeriod=0为没有开启日志沉降。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "HotPeriod",

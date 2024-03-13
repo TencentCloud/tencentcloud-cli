@@ -6266,6 +6266,15 @@
           "name": "AuthorizedOrganizationName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否给平台应用授权:\n- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）\n- false: 否（默认）\n 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通\n",
+          "example": "无",
+          "member": "bool",
+          "name": "PlatformAppAuthorization",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

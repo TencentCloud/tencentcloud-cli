@@ -3805,7 +3805,7 @@
         },
         {
           "disabled": false,
-          "document": "按照某字断排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。",
+          "document": "按照某字段排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。",
           "example": "\"AllConn\"",
           "member": "string",
           "name": "SortBy",
@@ -3833,6 +3833,7 @@
           "example": "无",
           "member": "ProcessStatistic",
           "name": "ProcessStatistics",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cls DescribeKafkaUser --cli-unfold-argument  \
-    --UserName test
+    --UserName ANONYMOUS
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "UserName": "test",
+        "UserName": "ANONYMOUS",
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }

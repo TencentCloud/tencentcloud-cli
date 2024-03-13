@@ -4086,11 +4086,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "坐席邮箱地址",
+          "document": "座席邮箱地址",
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "StaffEmail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4100,7 +4100,7 @@
           "example": "err",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4110,7 +4110,7 @@
           "example": "some error ",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4126,7 +4126,7 @@
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4136,7 +4136,7 @@
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "FullExtensionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4146,7 +4146,7 @@
           "example": "1001",
           "member": "string",
           "name": "ExtensionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4156,7 +4156,7 @@
           "example": "1000,1001",
           "member": "string",
           "name": "SkillGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4166,7 +4166,7 @@
           "example": "分机1",
           "member": "string",
           "name": "ExtensionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4176,7 +4176,7 @@
           "example": "1617184839",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4186,7 +4186,7 @@
           "example": "1617184839",
           "member": "int64",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4196,7 +4196,7 @@
           "example": "100",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4206,27 +4206,27 @@
           "example": "true",
           "member": "bool",
           "name": "Register",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定坐席邮箱",
+          "document": "绑定座席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "Relation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定坐席名称",
-          "example": "坐席1",
+          "document": "绑定座席名称",
+          "example": "座席1",
           "member": "string",
           "name": "RelationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4304,7 +4304,7 @@
           "example": "12933",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4314,17 +4314,17 @@
           "example": "199",
           "member": "int64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束状态\n0 异常结束\n1 正常结束\n3 无坐席在线\n17 坐席放弃接听\n100 黑名单\n101 坐席手动转接\n102 IVR阶段放弃\n108 用户超时自动结束",
+          "document": "结束状态\n0 异常结束\n1 正常结束\n3 无座席在线\n17 座席放弃接听\n100 黑名单\n101 座席手动转接\n102 IVR阶段放弃\n108 用户超时自动结束",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4334,7 +4334,7 @@
           "example": "访客_e8d6",
           "member": "string",
           "name": "Nickname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4344,7 +4344,7 @@
           "example": "2",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4354,7 +4354,7 @@
           "example": "foo@tencent.com",
           "member": "string",
           "name": "StaffId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4364,7 +4364,7 @@
           "example": "1632814604",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4374,7 +4374,7 @@
           "example": "87fa1d7a-4194-4f2a-83dc-d7c293411720",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4384,7 +4384,7 @@
           "example": "1154",
           "member": "string",
           "name": "SkillGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4394,7 +4394,7 @@
           "example": "foo",
           "member": "string",
           "name": "SkillGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4404,7 +4404,7 @@
           "example": "{\"Id\":1,\"Label\":\"满意\"}",
           "member": "IMSatisfaction",
           "name": "Satisfaction",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4723,7 +4723,7 @@
           "example": "d62a280a-b7dc-4a05-8295-eba7b61c2490",
           "member": "string",
           "name": "SessionID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4733,7 +4733,7 @@
           "example": "0",
           "member": "string",
           "name": "RoomID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4743,7 +4743,7 @@
           "example": "00861010101033",
           "member": "string",
           "name": "Caller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4753,7 +4753,7 @@
           "example": "00861010101031",
           "member": "string",
           "name": "Callee",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4763,7 +4763,7 @@
           "example": "1617184839",
           "member": "int64",
           "name": "StartTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4773,7 +4773,7 @@
           "example": "1617184839",
           "member": "int64",
           "name": "RingTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4783,37 +4783,37 @@
           "example": "1617184839",
           "member": "int64",
           "name": "AcceptTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "StaffEmail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席工号",
+          "document": "座席工号",
           "example": "007",
           "member": "string",
           "name": "StaffNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "会话状态\nringing 振铃中\nseatJoining  等待坐席接听\ninProgress 进行中\nfinished 已完成",
+          "document": "会话状态\nringing 振铃中\nseatJoining  等待座席接听\ninProgress 进行中\nfinished 已完成",
           "example": "finished",
           "member": "string",
           "name": "SessionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4823,7 +4823,7 @@
           "example": "0",
           "member": "int64",
           "name": "Direction",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4833,7 +4833,7 @@
           "example": "00861010101031",
           "member": "string",
           "name": "OutBoundCaller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4843,7 +4843,7 @@
           "example": "00861010101032",
           "member": "string",
           "name": "OutBoundCallee",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4853,7 +4853,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCaller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4863,7 +4863,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCallee",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4879,7 +4879,7 @@
           "example": "1",
           "member": "string",
           "name": "SessionID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4889,7 +4889,7 @@
           "example": "1",
           "member": "string",
           "name": "RoomID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4899,7 +4899,7 @@
           "example": "13712345678",
           "member": "string",
           "name": "Caller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4909,7 +4909,7 @@
           "example": "13712345678",
           "member": "string",
           "name": "Callee",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4919,7 +4919,7 @@
           "example": "1617184839",
           "member": "string",
           "name": "StartTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4929,37 +4929,37 @@
           "example": "1617184839",
           "member": "string",
           "name": "AcceptTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "StaffEmail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席工号",
+          "document": "座席工号",
           "example": "1",
           "member": "string",
           "name": "StaffNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席状态 inProgress 进行中",
+          "document": "座席状态 inProgress 进行中",
           "example": "inProgress",
           "member": "string",
           "name": "SessionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4969,7 +4969,7 @@
           "example": "0",
           "member": "int64",
           "name": "Direction",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4979,7 +4979,7 @@
           "example": "1617184839",
           "member": "int64",
           "name": "RingTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4989,7 +4989,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCaller",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4999,7 +4999,7 @@
           "example": "008613XXXX5678",
           "member": "string",
           "name": "ProtectedCallee",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5265,7 +5265,7 @@
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5275,27 +5275,27 @@
           "example": "Test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席购买数（还在有效期内）",
+          "document": "座席购买数（还在有效期内）",
           "example": "10",
           "member": "int64",
           "name": "StaffBuyNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席购买列表 （还在有效期内）",
+          "document": "座席购买列表 （还在有效期内）",
           "example": "[]",
           "member": "StaffBuyInfo",
           "name": "StaffBuyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5305,7 +5305,7 @@
           "example": "[]",
           "member": "PhoneNumBuyInfo",
           "name": "PhoneNumBuyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5315,7 +5315,7 @@
           "example": "10",
           "member": "int64",
           "name": "SipBuyNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5323,11 +5323,11 @@
       "usage": "out"
     },
     "SeatUserInfo": {
-      "document": "坐席用户信息",
+      "document": "座席用户信息",
       "members": [
         {
           "disabled": false,
-          "document": "坐席名称",
+          "document": "座席名称",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -5338,7 +5338,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
@@ -5360,7 +5360,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席电话号码（带0086前缀）",
+          "document": "座席电话号码（带0086前缀）",
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
@@ -5371,7 +5371,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席昵称",
+          "document": "座席昵称",
           "example": "三三",
           "member": "string",
           "name": "Nick",
@@ -5393,7 +5393,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席关联的技能组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "SkillGroupNameList",
@@ -5421,21 +5421,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "坐席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "坐席电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席电话\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5445,7 +5445,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "RingTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5455,7 +5455,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "AcceptTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5465,17 +5465,17 @@
           "example": "1611631891",
           "member": "int64",
           "name": "EndedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "录音 ID，能够索引到坐席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音 ID，能够索引到座席侧的录音\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1611631881",
           "member": "string",
           "name": "RecordId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5485,17 +5485,17 @@
           "example": "staffSeat",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "转接来源坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接来源座席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bar@tencent.com",
           "member": "string",
           "name": "TransferFrom",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5505,17 +5505,17 @@
           "example": "staffSeat",
           "member": "string",
           "name": "TransferFromType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "转接去向坐席信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转接去向座席信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "san@tencent.com",
           "member": "string",
           "name": "TransferTo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5525,7 +5525,7 @@
           "example": "staffSeat",
           "member": "string",
           "name": "TransferToType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5535,7 +5535,7 @@
           "example": "1101",
           "member": "int64",
           "name": "SkillGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5545,7 +5545,7 @@
           "example": "ok unconnected seatGiveUp seatForward outboundForward ivrGiveUp ",
           "member": "string",
           "name": "EndStatusString",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5555,7 +5555,7 @@
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "RecordURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5565,7 +5565,7 @@
           "example": "0",
           "member": "int64",
           "name": "Sequence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5575,7 +5575,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5585,7 +5585,7 @@
           "example": "tel",
           "member": "string",
           "name": "SkillGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5595,7 +5595,7 @@
           "example": "https://xxxxxxx",
           "member": "string",
           "name": "CustomRecordURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5611,7 +5611,7 @@
           "example": "1400000000",
           "member": "int64",
           "name": "SkillGroupId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5621,7 +5621,7 @@
           "example": "Test",
           "member": "string",
           "name": "SkillGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5631,7 +5631,7 @@
           "example": "IM",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5641,17 +5641,17 @@
           "example": "fifo",
           "member": "string",
           "name": "RoutePolicy",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "会话分配是否优先上次服务坐席\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "会话分配是否优先上次服务座席\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "UsingLastSeat",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5661,7 +5661,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5671,7 +5671,7 @@
           "example": "1611631881",
           "member": "int64",
           "name": "LastModifyTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5681,7 +5681,7 @@
           "example": "1",
           "member": "int64",
           "name": "SkillGroupType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5735,15 +5735,15 @@
       "usage": "out"
     },
     "StaffBuyInfo": {
-      "document": "坐席购买信息",
+      "document": "座席购买信息",
       "members": [
         {
           "disabled": false,
-          "document": "购买坐席数量",
+          "document": "购买座席数量",
           "example": "10",
           "member": "int64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5753,7 +5753,7 @@
           "example": "163000000",
           "member": "int64",
           "name": "BuyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5763,7 +5763,7 @@
           "example": "164000000",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5773,7 +5773,7 @@
           "example": "12",
           "member": "int64",
           "name": "SipNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5781,11 +5781,11 @@
       "usage": "out"
     },
     "StaffInfo": {
-      "document": "带有技能组优先级的坐席信息",
+      "document": "带有技能组优先级的座席信息",
       "members": [
         {
           "disabled": false,
-          "document": "坐席名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaowang",
           "member": "string",
           "name": "Name",
@@ -5795,7 +5795,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "10982291@qq.com",
           "member": "string",
           "name": "Mail",
@@ -5805,7 +5805,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "18092226822",
           "member": "string",
           "name": "Phone",
@@ -5815,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席昵称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xiaohong",
           "member": "string",
           "name": "Nick",
@@ -5825,7 +5825,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席工号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "座席工号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "string",
           "name": "StaffNumber",
@@ -5891,7 +5891,7 @@
       "usage": "in"
     },
     "StaffStatusExtra": {
-      "document": "坐席状态补充信息",
+      "document": "座席状态补充信息",
       "members": [
         {
           "disabled": false,
@@ -5899,7 +5899,7 @@
           "example": "tel",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5909,7 +5909,7 @@
           "example": "in",
           "member": "string",
           "name": "Direct",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5917,35 +5917,35 @@
       "usage": "out"
     },
     "StaffStatusMetrics": {
-      "document": "坐席状态相关信息",
+      "document": "座席状态相关信息",
       "members": [
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "xxx@xxx.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
+          "document": "座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
           "example": "free",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "坐席状态补充信息",
+          "document": "座席状态补充信息",
           "example": "无",
           "member": "StaffStatusExtra",
           "name": "StatusExtra",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5955,7 +5955,7 @@
           "example": "0",
           "member": "int64",
           "name": "OnlineDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5965,7 +5965,7 @@
           "example": "0",
           "member": "int64",
           "name": "FreeDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5975,7 +5975,7 @@
           "example": "0",
           "member": "int64",
           "name": "BusyDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5985,7 +5985,7 @@
           "example": "0",
           "member": "int64",
           "name": "NotReadyDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5995,7 +5995,7 @@
           "example": "0",
           "member": "int64",
           "name": "RestDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6005,7 +6005,7 @@
           "example": "0",
           "member": "int64",
           "name": "AfterCallWorkDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6015,7 +6015,7 @@
           "example": "会议",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6025,7 +6025,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReserveRest",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6035,7 +6035,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReserveNotReady",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6045,7 +6045,7 @@
           "example": "0",
           "member": "int64",
           "name": "UseMobileAccept",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6055,7 +6055,7 @@
           "example": "false",
           "member": "bool",
           "name": "UseMobileCallOut",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6065,7 +6065,7 @@
           "example": "1679300000",
           "member": "int64",
           "name": "LastOnlineTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6075,7 +6075,7 @@
           "example": "1679300000",
           "member": "int64",
           "name": "LastStatusTimestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6193,7 +6193,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席信息",
+          "document": "座席信息",
           "example": "0",
           "member": "SeatUserInfo",
           "name": "SeatUser",
@@ -6203,7 +6203,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -6283,7 +6283,7 @@
         },
         {
           "disabled": false,
-          "document": "挂机方 seat 坐席 user 用户 system 系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂机方 seat 座席 user 用户 system 系统\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "user",
           "member": "string",
           "name": "HungUpSide",
@@ -6313,7 +6313,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",

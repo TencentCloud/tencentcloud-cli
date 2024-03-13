@@ -11302,7 +11302,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "偏移量，默认为0，最大为9999。",
           "example": "0",
           "member": "int64",
           "name": "Offset",

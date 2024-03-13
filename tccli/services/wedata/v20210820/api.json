@@ -330,9 +330,9 @@
       "status": "online"
     },
     "CreateRuleTemplate": {
-      "document": "创建规则模版",
+      "document": "创建规则模板",
       "input": "CreateRuleTemplateRequest",
-      "name": "创建规则模版",
+      "name": "创建规则模板",
       "output": "CreateRuleTemplateResponse",
       "status": "online"
     },
@@ -491,9 +491,9 @@
       "status": "online"
     },
     "DeleteRuleTemplate": {
-      "document": "删除规则模版",
+      "document": "删除规则模板",
       "input": "DeleteRuleTemplateRequest",
-      "name": "删除规则模版",
+      "name": "删除规则模板",
       "output": "DeleteRuleTemplateResponse",
       "status": "online"
     },
@@ -1352,16 +1352,16 @@
       "status": "online"
     },
     "DescribeRuleTemplates": {
-      "document": "查询规则模版列表",
+      "document": "查询规则模板列表",
       "input": "DescribeRuleTemplatesRequest",
-      "name": "查询规则模版列表",
+      "name": "查询规则模板列表",
       "output": "DescribeRuleTemplatesResponse",
       "status": "online"
     },
     "DescribeRuleTemplatesByPage": {
-      "document": "过滤条件】 {模版名称Name,支持模糊匹配} {模版类型type，1.系统模版 2.自定义模版} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}",
+      "document": "【过滤条件】 {模板名称Name,支持模糊匹配} {模板类型type，1.系统模板 2.自定义模板} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}",
       "input": "DescribeRuleTemplatesByPageRequest",
-      "name": "规则模版查询接口",
+      "name": "规则模板查询接口",
       "output": "DescribeRuleTemplatesByPageResponse",
       "status": "online"
     },
@@ -8387,7 +8387,7 @@
         },
         {
           "disabled": false,
-          "document": "比较操作类型\n<  <=  ==  =>  > !=\nIRLCRO:在区间内(左闭右开)\nIRLORC:在区间内(左开右闭)\nIRLCRC:在区间内(左闭右闭)\nIRLORO:在区间内(左开右开)\nNRLCRO:不在区间内(左闭右开)\nNRLORC:不在区间内(左开右闭)\nNRLCRC:不在在区间内(左闭右闭)\nNRLORO:不在在区间内(左开右开)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "比较操作类型\n<  <=  ==  =>  > !=\nIRLCRO:在区间内(左闭右开)\nIRLORC:在区间内(左开右闭)\nIRLCRC:在区间内(左闭右闭)\nIRLORO:在区间内(左开右开)\nNRLCRO:不在区间内(左闭右开)\nNRLORC:不在区间内(左开右闭)\nNRLCRC:不在区间内(左闭右闭)\nNRLORO:不在区间内(左开右开)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "<",
           "member": "string",
           "name": "Operator",
@@ -10303,7 +10303,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版类型  1.系统模版   2.自定义模版",
+          "document": "模板类型  1.系统模板   2.自定义模板",
           "example": "123456",
           "member": "uint64",
           "name": "Type",
@@ -10312,7 +10312,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名称",
+          "document": "模板名称",
           "example": "123456",
           "member": "string",
           "name": "Name",
@@ -10403,7 +10403,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12664,7 +12664,7 @@
         },
         {
           "disabled": false,
-          "document": "模版Id列表",
+          "document": "模板Id列表",
           "example": "无",
           "member": "uint64",
           "name": "Ids",
@@ -12683,7 +12683,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22508,7 +22508,7 @@
           "example": "无",
           "member": "RuleTemplatePage",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -22526,7 +22526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版类型 1.系统模版 2.自定义模版",
+          "document": "模板类型 1.系统模板 2.自定义模板",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -22568,11 +22568,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则模版列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RuleTemplate",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30560,7 +30560,7 @@
           "member": "string",
           "name": "TaskId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30571,7 +30571,7 @@
           "member": "string",
           "name": "CurRunDate",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30582,7 +30582,7 @@
           "member": "int64",
           "name": "LifeRound",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30593,7 +30593,7 @@
           "member": "string",
           "name": "RunType",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30604,7 +30604,7 @@
           "member": "int64",
           "name": "Tries",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -30615,7 +30615,7 @@
           "member": "InstanceLifeDetailDto",
           "name": "InstanceLifeDetailDtoList",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -30626,7 +30626,7 @@
           "member": "string",
           "name": "RunnerState",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30637,7 +30637,7 @@
           "member": "string",
           "name": "ErrorDesc",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30648,7 +30648,7 @@
           "member": "string",
           "name": "ErrorCodeLevel",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30659,8 +30659,19 @@
           "member": "InstanceLogInfo",
           "name": "InstanceLogListOpsDto",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -30676,7 +30687,7 @@
           "member": "string",
           "name": "State",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30687,7 +30698,29 @@
           "member": "string",
           "name": "StartTime",
           "output_required": false,
-          "required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例生命周期阶段状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DetailState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该状态结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

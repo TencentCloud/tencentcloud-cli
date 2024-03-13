@@ -1,3 +1,276 @@
+# Release 3.0.1074.1
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 57 次发布
+
+发布时间：2024-03-12 19:49:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoginActionFlag](https://cloud.tencent.com/document/api/598/33167#LoginActionFlag)
+
+	* 新增成员：U2FToken
+
+* [LoginActionFlagIntl](https://cloud.tencent.com/document/api/598/33167#LoginActionFlagIntl)
+
+	* 新增成员：U2FToken
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 62 次发布
+
+发布时间：2024-03-13 01:09:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SdkAppIdBuyInfo](https://cloud.tencent.com/document/api/679/47715#SdkAppIdBuyInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>SipBuyNum
+
+* [ServeParticipant](https://cloud.tencent.com/document/api/679/47715#ServeParticipant)
+
+	* <font color="#dd0000">**修改成员**：</font>TransferFromType
+
+* [SkillGroupInfoItem](https://cloud.tencent.com/document/api/679/47715#SkillGroupInfoItem)
+
+	* <font color="#dd0000">**修改成员**：</font>SkillGroupId, SkillGroupName, Type, RoutePolicy, UsingLastSeat, MaxConcurrency, LastModifyTimestamp, SkillGroupType
+
+* [StaffBuyInfo](https://cloud.tencent.com/document/api/679/47715#StaffBuyInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>SipNum
+
+* [StaffStatusMetrics](https://cloud.tencent.com/document/api/679/47715#StaffStatusMetrics)
+
+	* <font color="#dd0000">**修改成员**：</font>LastOnlineTimestamp, LastStatusTimestamp
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 84 次发布
+
+发布时间：2024-03-13 01:11:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConfigExtra](https://cloud.tencent.com/document/api/614/71166)
+
+	* 新增入参：CollectInfos
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+### 第 15 次发布
+
+发布时间：2024-03-12 19:50:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SlowLogTopSqlItem](https://cloud.tencent.com/document/api/1130/39561#SlowLogTopSqlItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Md5
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 32 次发布
+
+发布时间：2024-03-13 01:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePreDomainList](https://cloud.tencent.com/document/api/242/103889)
+
+	* 新增入参：UpTime
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 157 次发布
+
+发布时间：2024-03-13 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePartnerAutoSignAuthUrl](https://cloud.tencent.com/document/api/1420/102515)
+
+	* 新增入参：PlatformAppAuthorization
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 36 次发布
+
+发布时间：2024-03-13 01:19:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SetInstanceMaintenance](https://cloud.tencent.com/document/api/240/104304)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 131 次发布
+
+发布时间：2024-03-13 01:20:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [VatInvoiceVerifyNew](https://cloud.tencent.com/document/api/866/73674)
+
+	* 新增入参：EnableTodayInvoice
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 76 次发布
+
+发布时间：2024-03-13 01:24:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSecurityIPGroupInfo](https://cloud.tencent.com/document/api/1552/104305)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 52 次发布
+
+发布时间：2024-03-13 01:25:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePresignedNotebookUrl](https://cloud.tencent.com/document/api/851/104306)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 168 次发布
+
+发布时间：2024-03-13 01:25:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetClusterLevelPrice](https://cloud.tencent.com/document/api/457/72004)
+
+	* 新增出参：Policy
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 78 次发布
+
+发布时间：2024-03-13 01:28:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceLifeCycleOpsDto](https://cloud.tencent.com/document/api/1267/76336#InstanceLifeCycleOpsDto)
+
+	* 新增成员：InstanceState
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, LifeRound, RunType, Tries, InstanceLifeDetailDtoList, RunnerState, ErrorDesc, ErrorCodeLevel, InstanceLogListOpsDto
+
+* [InstanceLifeDetailDto](https://cloud.tencent.com/document/api/1267/76336#InstanceLifeDetailDto)
+
+	* 新增成员：DetailState, EndTime
+
+	* <font color="#dd0000">**修改成员**：</font>State, StartTime
+
+
+
+
 # Release 3.0.1073.1
 
 ## 本地专用集群(cdc) 版本：2020-12-14

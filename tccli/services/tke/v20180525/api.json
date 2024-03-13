@@ -16011,7 +16011,7 @@
           "example": "8",
           "member": "uint64",
           "name": "Cost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16021,8 +16021,18 @@
           "example": "8",
           "member": "uint64",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的折扣，100表示100%不打折",
+          "example": "90",
+          "member": "float",
+          "name": "Policy",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {

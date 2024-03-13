@@ -1,12 +1,12 @@
-**Example 1: 删除规则模版**
+**Example 1: 删除规则模板**
 
-删除规则模版
+删除规则模板
 
 Input: 
 
 ```
 tccli wedata DeleteRuleTemplate --cli-unfold-argument  \
-    --ProjectId 1 \
+    --ProjectId abc \
     --Ids 1
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

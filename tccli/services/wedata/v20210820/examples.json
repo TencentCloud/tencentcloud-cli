@@ -438,10 +438,10 @@
     ],
     "CreateRuleTemplate": [
       {
-        "document": "创建规则模版",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"ProjectId\": 1,\n    \"MultiSourceFlag\": true,\n    \"SqlExpression\": \"xx\",\n    \"Description\": \"xx\",\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"QualityDim\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建规则模版"
+        "document": "创建规则模板",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRuleTemplate\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Name\": \"abc\",\n    \"QualityDim\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"abc\",\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"MultiSourceFlag\": true,\n    \"SqlExpression\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"WhereFlag\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建规则模板"
       }
     ],
     "CreateTask": [
@@ -634,10 +634,10 @@
     ],
     "DeleteRuleTemplate": [
       {
-        "document": "删除规则模版",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRuleTemplate\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Ids\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除规则模版"
+        "document": "删除规则模板",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRuleTemplate\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"Ids\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除规则模板"
       }
     ],
     "DeleteTaskAlarmRegular": [
@@ -1704,16 +1704,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplates\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"SourceObjectType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"SourceEngineTypes\": [\n                    1\n                ],\n                \"QualityDim\": 1,\n                \"SourceObjectDataType\": 1,\n                \"SourceContent\": \"xx\",\n                \"CitationCount\": 1,\n                \"RuleTemplateId\": 1,\n                \"CompareType\": 1,\n                \"Name\": \"xx\",\n                \"Type\": 1,\n                \"SourceObjectType\": 1,\n                \"Description\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询规则模版列表"
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RuleTemplateId\": 1,\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"Type\": 1,\n                \"SourceObjectType\": 1,\n                \"SourceObjectDataType\": 1,\n                \"SourceContent\": \"abc\",\n                \"SourceEngineTypes\": [\n                    1\n                ],\n                \"QualityDim\": 1,\n                \"CompareType\": 1,\n                \"CitationCount\": 1,\n                \"UserId\": 1,\n                \"UserName\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"WhereFlag\": true,\n                \"MultiSourceFlag\": true,\n                \"SqlExpression\": \"abc\",\n                \"SubQualityDim\": 1,\n                \"ResolvedSqlExpression\": {\n                    \"TableExpressions\": [\n                        {\n                            \"TableExpression\": \"abc\",\n                            \"ColumnExpression\": [\n                                \"abc\"\n                            ]\n                        }\n                    ],\n                    \"ParamExpressions\": [\n                        \"abc\"\n                    ]\n                },\n                \"DatasourceTypes\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询规则模板列表"
       }
     ],
     "DescribeRuleTemplatesByPage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplatesByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Name\": \"xxx\",\n            \"Direction\": \"xxxx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"SourceEngineTypes\": [\n                        1\n                    ],\n                    \"QualityDim\": 1,\n                    \"SourceObjectDataType\": 1,\n                    \"SourceContent\": \"xx\",\n                    \"CitationCount\": 1,\n                    \"RuleTemplateId\": 1,\n                    \"CompareType\": 1,\n                    \"Name\": \"xx\",\n                    \"Type\": 1,\n                    \"SourceObjectType\": 1,\n                    \"Description\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "规则模版列表"
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplatesByPage\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Name\": \"abc\",\n            \"Direction\": \"abc\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"RuleTemplateId\": 1,\n                    \"Name\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"Type\": 1,\n                    \"SourceObjectType\": 1,\n                    \"SourceObjectDataType\": 1,\n                    \"SourceContent\": \"abc\",\n                    \"SourceEngineTypes\": [\n                        1\n                    ],\n                    \"QualityDim\": 1,\n                    \"CompareType\": 1,\n                    \"CitationCount\": 1,\n                    \"UserId\": 1,\n                    \"UserName\": \"abc\",\n                    \"UpdateTime\": \"abc\",\n                    \"WhereFlag\": true,\n                    \"MultiSourceFlag\": true,\n                    \"SqlExpression\": \"abc\",\n                    \"SubQualityDim\": 1,\n                    \"ResolvedSqlExpression\": {\n                        \"TableExpressions\": [\n                            {\n                                \"TableExpression\": \"abc\",\n                                \"ColumnExpression\": [\n                                    \"abc\"\n                                ]\n                            }\n                        ],\n                        \"ParamExpressions\": [\n                            \"abc\"\n                        ]\n                    },\n                    \"DatasourceTypes\": [\n                        0\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "规则模板列表"
       }
     ],
     "DescribeRules": [
@@ -2096,18 +2096,18 @@
     ],
     "DescribeTemplateDimCount": [
       {
-        "document": "查询规则模版维度分布情况",
+        "document": "查询规则模板维度分布情况",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateDimCount\n<公共请求参数>\n\n{\n    \"Type\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DimType\": 1,\n                \"Count\": 1,\n                \"QualityDim\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询规则模版维度分布情况"
+        "title": "查询规则模板维度分布情况"
       }
     ],
     "DescribeTemplateHistory": [
       {
-        "document": "查询规则模版操作记录",
+        "document": "查询规则模板操作记录",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateHistory\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"ProjectId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UserName\": \"abc\",\n                    \"AlterContent\": \"abc\",\n                    \"AlterType\": 1,\n                    \"UserId\": 1,\n                    \"Version\": 1,\n                    \"TemplateId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询规则模版操作记录"
+        "title": "查询规则模板操作记录"
       }
     ],
     "DescribeThirdTaskRunLog": [
@@ -2490,10 +2490,10 @@
     ],
     "ModifyRuleTemplate": [
       {
-        "document": "编辑规则模版",
+        "document": "编辑规则模板",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"abc\",\n    \"SqlExpression\": \"abc\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "编辑规则模版"
+        "title": "编辑规则模板"
       }
     ],
     "ModifyTaskAlarmRegular": [
