@@ -1,3 +1,204 @@
+# Release 3.0.1076.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 85 次发布
+
+发布时间：2024-03-14 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaUser
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 30 次发布
+
+发布时间：2024-03-14 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRecordLineCategoryList](https://cloud.tencent.com/document/api/1427/104320)
+
+修改接口：
+
+* [CreateRecord](https://cloud.tencent.com/document/api/1427/56180)
+
+	* 新增入参：DnssecConflictMode
+
+* [ModifyRecord](https://cloud.tencent.com/document/api/1427/56157)
+
+	* 新增入参：DnssecConflictMode
+
+
+新增数据结构：
+
+* [LineItem](https://cloud.tencent.com/document/api/1427/56185#LineItem)
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 25 次发布
+
+发布时间：2024-03-14 01:15:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBInfo](https://cloud.tencent.com/document/api/571/82108#DBInfo)
+
+	* 新增成员：SetId
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 61 次发布
+
+发布时间：2024-03-14 01:15:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHiveQueries](https://cloud.tencent.com/document/api/589/94487)
+
+	* 新增入参：State, EndTimeGte, EndTimeLte
+
+* [DescribeImpalaQueries](https://cloud.tencent.com/document/api/589/94486)
+
+	* 新增入参：State, EndTimeGte, EndTimeLte
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 54 次发布
+
+发布时间：2024-03-14 01:15:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckMigrateIndexMetaData](https://cloud.tencent.com/document/api/845/104323)
+* [CreateCosMigrateToServerlessInstance](https://cloud.tencent.com/document/api/845/104322)
+* [DescribeUserCosSnapshotList](https://cloud.tencent.com/document/api/845/104321)
+
+新增数据结构：
+
+* [CommonIndexInfo](https://cloud.tencent.com/document/api/845/30634#CommonIndexInfo)
+* [CosSnapShotInfo](https://cloud.tencent.com/document/api/845/30634#CosSnapShotInfo)
+* [DataStreamInfo](https://cloud.tencent.com/document/api/845/30634#DataStreamInfo)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 57 次发布
+
+发布时间：2024-03-14 01:17:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceDetail](https://cloud.tencent.com/document/api/1081/34988#InstanceDetail)
+
+	* 新增成员：UpDownTPS, UpDownCurrentTPS, ForwardTPS, ForwardCurrentTPS, CellNum, BillingTag, EverydayFreeMessageCount, MaxDeviceOnlineCount
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 118 次发布
+
+发布时间：2024-03-14 01:19:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePullTransformPushInfo](https://cloud.tencent.com/document/api/267/104324)
+
+新增数据结构：
+
+* [TaskDurationInfo](https://cloud.tencent.com/document/api/267/20474#TaskDurationInfo)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 53 次发布
+
+发布时间：2024-03-14 01:25:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBuildInImages](https://cloud.tencent.com/document/api/851/104325)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 79 次发布
+
+发布时间：2024-03-14 01:29:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TableLineageInfo](https://cloud.tencent.com/document/api/1267/76336#TableLineageInfo)
+
+	* 新增成员：DatasourceName, DatabaseName, DatabaseId
+
+* [TableMeta](https://cloud.tencent.com/document/api/1267/76336#TableMeta)
+
+	* 新增成员：IsPartitionTable, PartitionColumns, PartitionExpireDays
+
+
+
+
 # Release 3.0.1075.1
 
 ## Elasticsearch Service(es) 版本：2018-04-16

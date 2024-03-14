@@ -3128,6 +3128,33 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行状态,ERROR等",
+          "example": "[\"FINISHED\",\"ERROR\"]",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间大于的时间点",
+          "example": "1621570097",
+          "member": "uint64",
+          "name": "EndTimeGte",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间小于时间点",
+          "example": "1621570097",
+          "member": "uint64",
+          "name": "EndTimeLte",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3210,6 +3237,33 @@
           "member": "int64",
           "name": "Limit",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION",
+          "example": "[\"RUNNING\",\"COMPILED\"]",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间大于的时间点",
+          "example": "1686101465",
+          "member": "uint64",
+          "name": "EndTimeGte",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间小于的时间点",
+          "example": "1686101465",
+          "member": "uint64",
+          "name": "EndTimeLte",
+          "required": false,
           "type": "int"
         }
       ],

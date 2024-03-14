@@ -1,6 +1,6 @@
 **Example 1: 审核失败证书重新提交申请**
 
-
+审核失败证书重新提交申请
 
 Input: 
 
@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "CertificateId": "xx",
-        "RequestId": "xx"
+        "CertificateId": "xxa",
+        "RequestId": "xxa"
     }
 }
 ```

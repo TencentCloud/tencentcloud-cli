@@ -273,6 +273,13 @@
       "output": "DescribeRecordGroupListResponse",
       "status": "online"
     },
+    "DescribeRecordLineCategoryList": {
+      "document": "按分类返回线路列表",
+      "input": "DescribeRecordLineCategoryListRequest",
+      "name": "按分类返回线路列表",
+      "output": "DescribeRecordLineCategoryListResponse",
+      "status": "online"
+    },
     "DescribeRecordLineList": {
       "document": "获取等级允许的线路",
       "input": "DescribeRecordLineListRequest",
@@ -1904,6 +1911,15 @@
           "example": "官网主页",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启DNSSEC时，强制添加CNAME/URL记录",
+          "example": "force",
+          "member": "string",
+          "name": "DnssecConflictMode",
           "required": false,
           "type": "string"
         }
@@ -3919,6 +3935,52 @@
           "example": "无",
           "member": "RecordGroupInfo",
           "name": "GroupList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordLineCategoryListRequest": {
+      "document": "DescribeRecordLineCategoryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询线路列表的域名。",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询线路列表的域名 ID。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
+          "example": "123",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordLineCategoryListResponse": {
+      "document": "DescribeRecordLineCategoryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按分类返回的线路列表。",
+          "example": "无",
+          "member": "LineItem",
+          "name": "LineList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5992,6 +6054,72 @@
       ],
       "usage": "out"
     },
+    "LineItem": {
+      "document": "域名解析记录线路信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析线路名称。",
+          "example": "电信",
+          "member": "string",
+          "name": "LineName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析线路 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10=0",
+          "member": "string",
+          "name": "LineId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前线路在当前域名下是否可用。",
+          "example": "true",
+          "member": "bool",
+          "name": "Useful",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前线路最低套餐等级要求。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DP_Free",
+          "member": "string",
+          "name": "Grade",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前线路分类下的子线路列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineItem",
+          "name": "SubGroup",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路分组内包含的线路。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Lines",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LockInfo": {
       "document": "域名锁定信息",
       "members": [
@@ -6924,6 +7052,15 @@
           "example": "这是备注",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启DNSSEC时，强制将其它记录修改为CNAME/URL记录",
+          "example": "force",
+          "member": "string",
+          "name": "DnssecConflictMode",
           "required": false,
           "type": "string"
         }

@@ -358,9 +358,9 @@
     ],
     "ModifyCertificateResubmit": [
       {
-        "document": "",
+        "document": "审核失败证书重新提交申请",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCertificateResubmit\n<公共请求参数>\n\n{\n    \"CertificateId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"xxa\",\n        \"RequestId\": \"xxa\"\n    }\n}",
         "title": "审核失败证书重新提交申请"
       }
     ],

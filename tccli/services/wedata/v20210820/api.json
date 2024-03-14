@@ -47372,6 +47372,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "datasourceName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "datasourceName",
+          "member": "string",
+          "name": "DatasourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DatabaseName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DatabaseName",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DatabaseId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DatabaseId",
+          "member": "string",
+          "name": "DatabaseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -47877,6 +47910,36 @@
           "name": "Location",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "判断是否是分区表1 是 0否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsPartitionTable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区字段 key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PartitionColumns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期-分区保留天数【分区保留策略时有效】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PartitionExpireDays",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

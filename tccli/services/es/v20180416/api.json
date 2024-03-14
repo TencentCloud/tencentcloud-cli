@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CheckMigrateIndexMetaData": {
+      "document": "检查cos迁移索引元数据",
+      "input": "CheckMigrateIndexMetaDataRequest",
+      "name": "检查cos迁移索引元数据",
+      "output": "CheckMigrateIndexMetaDataResponse",
+      "status": "online"
+    },
+    "CreateCosMigrateToServerlessInstance": {
+      "document": "cos迁移流程",
+      "input": "CreateCosMigrateToServerlessInstanceRequest",
+      "name": "cos迁移流程",
+      "output": "CreateCosMigrateToServerlessInstanceResponse",
+      "status": "online"
+    },
     "CreateIndex": {
       "document": "创建索引",
       "input": "CreateIndexRequest",
@@ -166,6 +180,13 @@
       "input": "DescribeServerlessSpacesRequest",
       "name": "获取Serverless索引空间列表",
       "output": "DescribeServerlessSpacesResponse",
+      "status": "online"
+    },
+    "DescribeUserCosSnapshotList": {
+      "document": "查询快照信息接口",
+      "input": "DescribeUserCosSnapshotListRequest",
+      "name": "查询快照信息接口",
+      "output": "DescribeUserCosSnapshotListResponse",
       "status": "online"
     },
     "DescribeViews": {
@@ -414,6 +435,117 @@
       ],
       "usage": "out"
     },
+    "CheckMigrateIndexMetaDataRequest": {
+      "document": "CheckMigrateIndexMetaData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引 id",
+          "example": "1",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照名",
+          "example": "1",
+          "member": "string",
+          "name": "Snapshot",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Cos桶名",
+          "example": "1",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BasePath路径",
+          "example": "1",
+          "member": "string",
+          "name": "BasePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云上集群名",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "普通索引名列表",
+          "example": "1",
+          "member": "string",
+          "name": "CommonIndexArr",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自治索引名列表",
+          "example": "1",
+          "member": "string",
+          "name": "DataStreamArr",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMigrateIndexMetaDataResponse": {
+      "document": "CheckMigrateIndexMetaData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "不存在于目标索引时间字段相同的字段",
+          "example": "1",
+          "member": "string",
+          "name": "MappingTimeFieldCheckFailedIndexArr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "@timestamp不为date类型，与目标索引时间字段冲突",
+          "example": "1",
+          "member": "string",
+          "name": "MappingTimeTypeCheckFailedIndexArr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引的创建时间不在 serverless的存储周期内",
+          "example": "1",
+          "member": "string",
+          "name": "SettingCheckFailedIndexArr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ClusterView": {
       "document": "集群维度视图数据",
       "members": [
@@ -640,6 +772,34 @@
       ],
       "usage": "out"
     },
+    "CommonIndexInfo": {
+      "document": "普通索引信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "普通索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsShardComplete",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CosBackup": {
       "document": "ES cos自动备份信息",
       "members": [
@@ -665,6 +825,173 @@
         }
       ],
       "usage": "both"
+    },
+    "CosSnapShotInfo": {
+      "document": "无",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos 桶名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "base path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BasePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SnapshotName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通索引信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "CommonIndexInfo",
+          "name": "CommonIndexArr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自治索引信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "DataStreamInfo",
+          "name": "DataStreamArr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCosMigrateToServerlessInstanceRequest": {
+      "document": "CreateCosMigrateToServerlessInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照名",
+          "example": "1",
+          "member": "string",
+          "name": "Snapshot",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引 id",
+          "example": "1",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos 桶名",
+          "example": "1",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BasePath 路径",
+          "example": "1",
+          "member": "string",
+          "name": "BasePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云上集群 id",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待迁移普通索引名列表",
+          "example": "1",
+          "member": "string",
+          "name": "CommonIndexArr",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待迁移自治索引名列表",
+          "example": "1",
+          "member": "string",
+          "name": "DataStreamArr",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosMigrateToServerlessInstanceResponse": {
+      "document": "CreateCosMigrateToServerlessInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移 taskid",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateIndexRequest": {
       "document": "CreateIndex请求参数结构体",
@@ -1499,6 +1826,34 @@
         }
       ],
       "type": "object"
+    },
+    "DataStreamInfo": {
+      "document": "自治索引信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治索引名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DataStreamName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsShardComplete",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteIndexRequest": {
       "document": "DeleteIndex请求参数结构体",
@@ -3040,6 +3395,71 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserCosSnapshotListRequest": {
+      "document": "DescribeUserCosSnapshotList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶名",
+          "example": "1",
+          "member": "string",
+          "name": "CosBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "bucket 桶下的备份路径",
+          "example": "1",
+          "member": "string",
+          "name": "BasePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云上集群迁移集群名",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserCosSnapshotListResponse": {
+      "document": "DescribeUserCosSnapshotList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos 快照信息列表",
+          "example": "1",
+          "member": "CosSnapShotInfo",
+          "name": "CosSnapshotInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos 快照数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

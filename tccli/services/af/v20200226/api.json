@@ -935,7 +935,7 @@
         {
           "disabled": false,
           "document": "电话号码(五选二)",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -943,8 +943,8 @@
         },
         {
           "disabled": false,
-          "document": "Id(五选二)",
-          "example": "",
+          "document": "Id(五选二) ",
+          "example": "无",
           "member": "string",
           "name": "IdNumber",
           "required": false,
@@ -953,7 +953,7 @@
         {
           "disabled": false,
           "document": "银行卡号(五选二)",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "BankCardNumber",
           "required": false,
@@ -962,7 +962,7 @@
         {
           "disabled": false,
           "document": "用户请求来源 IP(五选二)",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UserIp",
           "required": false,
@@ -970,8 +970,8 @@
         },
         {
           "disabled": false,
-          "document": "国际移动设备识别码(五选二)",
-          "example": "",
+          "document": "国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)",
+          "example": "无",
           "member": "string",
           "name": "Imei",
           "required": false,
@@ -979,8 +979,8 @@
         },
         {
           "disabled": false,
-          "document": "ios 系统广告标示符(五选二)",
-          "example": "",
+          "document": "ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)",
+          "example": "无",
           "member": "string",
           "name": "Idfa",
           "required": false,
@@ -989,7 +989,7 @@
         {
           "disabled": false,
           "document": "业务场景 ID，需要找技术对接",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Scene",
           "required": false,
@@ -998,7 +998,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1007,7 +1007,7 @@
         {
           "disabled": false,
           "document": "用户邮箱地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EmailAddress",
           "required": false,
@@ -1016,7 +1016,7 @@
         {
           "disabled": false,
           "document": "用户住址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -1025,7 +1025,7 @@
         {
           "disabled": false,
           "document": "MAC 地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Mac",
           "required": false,
@@ -1034,7 +1034,7 @@
         {
           "disabled": false,
           "document": "国际移动用户识别码",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Imsi",
           "required": false,
@@ -1043,7 +1043,7 @@
         {
           "disabled": false,
           "document": "关联的腾讯帐号 QQ：1；\n开放帐号微信： 2；",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AccountType",
           "required": false,
@@ -1052,7 +1052,7 @@
         {
           "disabled": false,
           "document": "可选的 QQ 或微信 openid",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Uid",
           "required": false,
@@ -1061,7 +1061,7 @@
         {
           "disabled": false,
           "document": "qq 或微信分配给网站或应用的 appid，用来\n唯一标识网站或应用",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AppIdU",
           "required": false,
@@ -1070,7 +1070,7 @@
         {
           "disabled": false,
           "document": "WIFI MAC",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "WifiMac",
           "required": false,
@@ -1079,7 +1079,7 @@
         {
           "disabled": false,
           "document": "WIFI 服务集标识",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "WifiSSID",
           "required": false,
@@ -1088,7 +1088,7 @@
         {
           "disabled": false,
           "document": "WIFI-BSSID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "WifiBSSID",
           "required": false,
@@ -1097,7 +1097,7 @@
         {
           "disabled": false,
           "document": "业务 ID，在多个业务中使用此服务，通过此\nID 区分统计数据",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "BusinessId",
           "required": false,
@@ -1106,7 +1106,7 @@
         {
           "disabled": false,
           "document": "Id加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IdCryptoType",
           "required": false,
@@ -1115,7 +1115,7 @@
         {
           "disabled": false,
           "document": "手机号加密类型\n0：不加密（默认值）\n1：md5, 2：sha256\n3：SM3",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneCryptoType",
           "required": false,
@@ -1123,8 +1123,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名加密类型\n0：不加密（默认值）\n1：md5\n2：sha256\n3：SM3",
-          "example": "",
+          "document": "姓名加密类型\n0：不加密（默认值）\n1：md5",
+          "example": "无",
           "member": "string",
           "name": "NameCryptoType",
           "required": false,
@@ -1139,45 +1139,50 @@
         {
           "disabled": false,
           "document": "表示该条记录能否查到：1为能查到，-1为查不到",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Found",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表示该条Id能否查到：1为能查到，-1为查不到",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "IdFound",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0~100;值越高 欺诈可能性越大",
-          "example": "",
+          "document": "0~100;值越高 欺诈可能性越大（注：该字段真实类型为有符号整型）",
+          "example": "无",
           "member": "uint64",
           "name": "RiskScore",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "扩展字段，对风险类型的说明",
-          "example": "",
+          "example": "无",
           "member": "RiskDetail",
           "name": "RiskInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "业务侧错误码。成功时返回Success，错误时返回具体业务错误原因。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CodeDesc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

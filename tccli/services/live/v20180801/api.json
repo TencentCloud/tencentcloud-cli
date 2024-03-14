@@ -763,6 +763,13 @@
       "output": "DescribePullStreamConfigsResponse",
       "status": "online"
     },
+    "DescribePullTransformPushInfo": {
+      "document": "查询拉流转推任务的时长信息。",
+      "input": "DescribePullTransformPushInfoRequest",
+      "name": "查询拉流转推任务的时长信息",
+      "output": "DescribePullTransformPushInfoResponse",
+      "status": "online"
+    },
     "DescribePushBandwidthAndFluxList": {
       "document": "直播推流带宽和流量数据查询。\n推流计费会先取全球推流用量和全球播放用量进行比较，满足计费条件后再按各地区用量出账。详情参见[计费文档](https://cloud.tencent.com/document/product/267/34175)。",
       "input": "DescribePushBandwidthAndFluxListRequest",
@@ -9287,6 +9294,71 @@
       ],
       "type": "object"
     },
+    "DescribePullTransformPushInfoRequest": {
+      "document": "DescribePullTransformPushInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "example": "2021-05-21T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见IOS日期格式说明文档: https://cloud.tencent.com/document/product/266/11732#I\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。\n支持最近三年的查询，查询开始和结束时间跨度不支持超过31天。",
+          "example": "2021-05-21T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。",
+          "example": "Mainland",
+          "member": "string",
+          "name": "MainlandOrOversea",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePullTransformPushInfoResponse": {
+      "document": "DescribePullTransformPushInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时长统计数据列表",
+          "example": "无",
+          "member": "TaskDurationInfo",
+          "name": "DataInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拉流转推得总时长",
+          "example": "1000",
+          "member": "uint64",
+          "name": "TotalDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePushBandwidthAndFluxListRequest": {
       "document": "DescribePushBandwidthAndFluxList请求参数结构体",
       "members": [
@@ -16238,6 +16310,32 @@
         }
       ],
       "type": "object"
+    },
+    "TaskDurationInfo": {
+      "document": "拉流转推任务的时长分布信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "拉流转推任务的时间点",
+          "example": "2021-05-21 00:00:00",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拉流转推任务的时长，单位为分钟",
+          "example": "5",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TaskStatusInfo": {
       "document": "直播拉流任务状态信息。",

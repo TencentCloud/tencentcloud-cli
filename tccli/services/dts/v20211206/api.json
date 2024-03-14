@@ -2383,7 +2383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "表示节点角色，针对分布式数据库，如mongodb中的mongos节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mongos",
           "member": "string",
           "name": "Role",
@@ -2597,6 +2597,17 @@
           "member": "string",
           "name": "TmpToken",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tdsql分片id。tdsql set节点必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "set_1693279393_1",
+          "member": "string",
+          "name": "SetId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5548,7 +5559,7 @@
         },
         {
           "disabled": false,
-          "document": "tdsql mysql版的节点类型，枚举值为proxy、set\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proxy",
           "member": "string",
           "name": "Role",
