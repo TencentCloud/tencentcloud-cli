@@ -74,9 +74,7 @@ class BasicConfigure(BasicCommand):
                 # as has been changed to autoscaling only in python sdk & cli
                 if mod == 'autoscaling':
                     conf_data[mod]["endpoint"] = "as.tencentcloudapi.com"
-                versions = self._cli_data.get_service_all_version_actions(mod).keys()
-                version = sorted(versions)[-1]
-                conf_data[mod]["version"] = version
+                conf_data[mod]["version"] = self._cli_data.get_available_services()[mod][0]
         for k in extra.keys():
             try:
                 ks = k.split(".")

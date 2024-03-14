@@ -4,6 +4,7 @@ import os
 import six
 import copy
 import json
+import sys
 from tccli.utils import Utils
 from tccli import __version__
 from tccli.services import SERVICE_VERSIONS
@@ -177,7 +178,17 @@ class Loader(object):
         return SERVICE_VERSIONS
 
     def get_service_default_version(self, service):
-        return self.get_available_services()[service][0]
+        args = sys.argv[1:]
+        profile = os.environ.get("TCCLI_PROFILE", "default")
+        if "--profile" in args:
+            location = args.index("--profile") + 1
+            if location < len(args):
+                profile = args[location]
+        conf_path = os.path.join(os.path.expanduser("~"), ".tccli")
+        conf = {}
+        if Utils.file_existed(conf_path, profile+".configure")[0]:
+            conf = Utils.load_json_msg(os.path.join(conf_path, profile+".configure"))
+        return conf.get(service, {}).get("version", self.get_available_services()[service][0])
 
     def get_service_model(self, service, version):
         services_path = self.get_services_path()
