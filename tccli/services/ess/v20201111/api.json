@@ -476,6 +476,13 @@
       "output": "ModifyIntegrationRoleResponse",
       "status": "online"
     },
+    "RenewAutoSignLicense": {
+      "document": "给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
+      "input": "RenewAutoSignLicenseRequest",
+      "name": "续期医疗自动签许可",
+      "output": "RenewAutoSignLicenseResponse",
+      "status": "online"
+    },
     "StartFlow": {
       "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于开始整个合同流程,  推进流程进入到签署环节。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：\n1.<font color=\"red\">合同发起后就会扣减合同的额度</font>, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n2.<font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>功能\n\n3.<font color=\"red\">在发起签署流程之前，建议等待 [PDF合成完成的回调](https://qian.tencent.com/developers/company/callback_types_file_resources)</font>，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
       "input": "StartFlowRequest",
@@ -6271,7 +6278,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>**FLOW ** : 如需下载合同文件请选择此项</li>\n<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>\n<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>\n<li>**SEAL  **: 如需下载印章图片请选择此项</li>\n</ul>",
+          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>**FLOW ** : <font color=\"red\">如需下载合同文件请选择此项</font></li>\n<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>\n<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>\n<li>**SEAL  **: 如需下载印章图片请选择此项</li>\n</ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
@@ -11004,6 +11011,70 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewAutoSignLicenseRequest": {
+      "document": "RenewAutoSignLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要续期自动签的个人的信息，如姓名，证件信息等。",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewAutoSignLicenseResponse": {
+      "document": "RenewAutoSignLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "续期成功后新的自动签许可到期时间。当且仅当已通过许可开通自动签时有值。\n\n值为unix时间戳,单位为秒。",
+          "example": "1715948179",
+          "member": "int64",
+          "name": "LicenseTo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReviewerInfo": {
       "document": "关注方信息",

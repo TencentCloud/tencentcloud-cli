@@ -1,3 +1,194 @@
+# Release 3.0.1077.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 86 次发布
+
+发布时间：2024-03-15 01:10:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateKafkaRecharge](https://cloud.tencent.com/document/api/614/94448)
+
+	* <font color="#dd0000">**修改入参**：</font>LogRechargeRule
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 81 次发布
+
+发布时间：2024-03-15 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](https://cloud.tencent.com/document/api/1003/48088)
+
+	* 新增入参：UpgradeProxy
+
+* [UpgradeInstance](https://cloud.tencent.com/document/api/1003/48077)
+
+	* 新增入参：UpgradeProxy
+
+
+新增数据结构：
+
+* [UpgradeProxy](https://cloud.tencent.com/document/api/1003/48097#UpgradeProxy)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 62 次发布
+
+发布时间：2024-03-15 01:14:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStopServiceOrMonitor](https://cloud.tencent.com/document/api/589/90011)
+
+	* 新增入参：StopParams
+
+
+新增数据结构：
+
+* [Arg](https://cloud.tencent.com/document/api/589/33981#Arg)
+* [StopParams](https://cloud.tencent.com/document/api/589/33981#StopParams)
+
+修改数据结构：
+
+* [StrategyConfig](https://cloud.tencent.com/document/api/589/33981#StrategyConfig)
+
+	* 新增成员：Args
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 155 次发布
+
+发布时间：2024-03-15 01:14:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RenewAutoSignLicense](https://cloud.tencent.com/document/api/1323/104346)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 158 次发布
+
+发布时间：2024-03-15 01:15:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelRenewAutoSignLicense](https://cloud.tencent.com/document/api/1420/104347)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 实时互动-教育版(lcic) 版本：2022-08-17
+
+### 第 53 次发布
+
+发布时间：2024-03-15 01:17:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoom](https://cloud.tencent.com/document/api/1639/80942)
+
+	* 新增入参：RecordScene, RecordLang
+
+* [DescribeRoom](https://cloud.tencent.com/document/api/1639/80941)
+
+	* 新增出参：RecordScene, RecordLang
+
+* [ModifyRoom](https://cloud.tencent.com/document/api/1639/86030)
+
+	* 新增入参：RecordScene, RecordLang
+
+
+修改数据结构：
+
+* [RoomInfo](https://cloud.tencent.com/document/api/1639/81423#RoomInfo)
+
+	* 新增成员：RecordScene, RecordLang
+
+* [RoomItem](https://cloud.tencent.com/document/api/1639/81423#RoomItem)
+
+	* 新增成员：RecordScene, RecordLang
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 59 次发布
+
+发布时间：2024-03-15 01:20:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCollationTimeZone](https://cloud.tencent.com/document/api/238/101735)
+
+	* 新增入参：DBVersion
+
+
+
+
+## T-Sec-安心平台(RP)(trp) 版本：2021-05-15
+
+### 第 33 次发布
+
+发布时间：2024-03-15 01:24:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Quota](https://cloud.tencent.com/document/api/1458/75030#Quota)
+
+	* 新增成员：AigcTextQuota, AigcImageQuota
+
+
+
+
 # Release 3.0.1076.1
 
 ## 日志服务(cls) 版本：2020-10-16

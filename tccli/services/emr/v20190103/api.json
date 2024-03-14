@@ -568,6 +568,34 @@
       ],
       "usage": "out"
     },
+    "Arg": {
+      "document": "通用的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AutoScaleRecord": {
       "document": "弹性扩缩容记录",
       "members": [
@@ -10215,6 +10243,15 @@
           "name": "StrategyConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "暂停服务时用的参数",
+          "example": "无",
+          "member": "StopParams",
+          "name": "StopParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10277,6 +10314,30 @@
       ],
       "usage": "both"
     },
+    "StopParams": {
+      "document": "停止服务时的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全模式：safe\n默认模式：default",
+          "example": "default",
+          "member": "string",
+          "name": "StopPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线程数",
+          "example": "12",
+          "member": "int64",
+          "name": "ThreadCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "StrategyConfig": {
       "document": "重启/停止/启动服务/监控的配置",
       "members": [
@@ -10322,6 +10383,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指令需要指定的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Arg",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

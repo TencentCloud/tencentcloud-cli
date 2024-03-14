@@ -5885,6 +5885,28 @@
         },
         {
           "disabled": false,
+          "document": "AI文字数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "AigcTextQuota",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI图片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "AigcImageQuota",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",

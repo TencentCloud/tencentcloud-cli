@@ -5311,7 +5311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的 IP 列表",
+          "document": "需要查询的 IP 列表，单次可支持1-20个IP查询。",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Ips",

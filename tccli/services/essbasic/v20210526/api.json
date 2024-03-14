@@ -225,7 +225,7 @@
       "status": "online"
     },
     "ChannelDescribeBillUsageDetail": {
-      "document": "通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。",
+      "document": "通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。可以支持单个子客和整个应用下所有子客的查询。\n<ul>\n<li>对于单个子客企业的查询，通过指定子客的唯一标识(Agent.ProxyOrganizationOpenId)来查询该子客消耗详情</li>\n<li>对于整个应用下所有企业的查询，不需要指定子客的唯一标识，只需要传入渠道应用标识(Agent.AppId)直接查询整个应用下所有子客企业消耗详情</li>\n</ul>",
       "input": "ChannelDescribeBillUsageDetailRequest",
       "name": "查询渠道计费消耗情况",
       "output": "ChannelDescribeBillUsageDetailResponse",
@@ -292,6 +292,13 @@
       "input": "ChannelModifyRoleRequest",
       "name": "更新角色",
       "output": "ChannelModifyRoleResponse",
+      "status": "online"
+    },
+    "ChannelRenewAutoSignLicense": {
+      "document": "给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
+      "input": "ChannelRenewAutoSignLicenseRequest",
+      "name": "续期医疗自动签许可",
+      "output": "ChannelRenewAutoSignLicenseResponse",
       "status": "online"
     },
     "ChannelUpdateSealStatus": {
@@ -3922,7 +3929,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n第三方平台子客企业必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4879,6 +4886,70 @@
         }
       ],
       "usage": "both"
+    },
+    "ChannelRenewAutoSignLicenseRequest": {
+      "document": "ChannelRenewAutoSignLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "SceneKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询状态的用户信息, 包括名字,身份证等",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelRenewAutoSignLicenseResponse": {
+      "document": "ChannelRenewAutoSignLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "续期成功后自动签许可到期时间。当且仅当已通过许可开通自动签时有值。\n\n值为unix时间戳,单位为秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseTo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ChannelRole": {
       "document": "角色信息",

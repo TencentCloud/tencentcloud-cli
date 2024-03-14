@@ -2202,7 +2202,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集的日志类型。\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "json_log",
           "member": "string",
           "name": "LogType",
@@ -2262,8 +2262,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "output_required": true,
@@ -2272,8 +2272,8 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`\n\n控制台默认占位值：`{\\\"ClsAgentDefault\\\":0}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
           "output_required": true,
@@ -3387,7 +3387,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "document": "采集的日志类型，默认为minimalist_log。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。",
           "example": "delimiter_log",
           "member": "string",
           "name": "LogType",
@@ -3414,8 +3414,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义采集规则，Json格式序列化的字符串",
-          "example": "无",
+          "document": "用户自定义采集规则，Json格式序列化的字符串。当LogType为user_define_log时，必填。",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -3423,8 +3423,8 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
-          "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`\n\n控制台默认占位值：`{\\\"ClsAgentDefault\\\":0}`",
+          "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
           "required": false,
@@ -4012,6 +4012,15 @@
         },
         {
           "disabled": false,
+          "document": "日志导入规则。",
+          "example": "无",
+          "member": "LogRechargeRuleInfo",
+          "name": "LogRechargeRule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
           "example": "无",
           "member": "string",
@@ -4054,15 +4063,6 @@
           "name": "ConsumerGroupName",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志导入规则。\n必填字段。",
-          "example": "无",
-          "member": "LogRechargeRuleInfo",
-          "name": "LogRechargeRule",
-          "required": false,
-          "type": "object"
         }
       ],
       "type": "object"
@@ -8727,7 +8727,7 @@
         {
           "disabled": false,
           "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\\\"content\\\":\\\"test\\\"}",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
           "member": "string",
           "name": "LogJson",
           "output_required": true,
@@ -8747,7 +8747,7 @@
         {
           "disabled": false,
           "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\\\"content\\\":\\\"test\\\"}",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
           "member": "string",
           "name": "RawLog",
           "output_required": true,
@@ -9926,8 +9926,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集规则配置ID",
-          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "document": "采集规则配置ID，通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)返回信息获取。",
+          "example": "a2c6342c-270a-4468-86cf-92625e466401",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -9953,7 +9953,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "document": "采集的日志类型。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。\n\n",
           "example": "delimiter_log",
           "member": "string",
           "name": "LogType",
@@ -9989,8 +9989,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义解析字符串，Json格式序列化的字符串",
-          "example": "无",
+          "document": "用户自定义解析字符串，Json格式序列化的字符串。",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -9998,8 +9998,8 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
-          "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`",
+          "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
           "required": false,

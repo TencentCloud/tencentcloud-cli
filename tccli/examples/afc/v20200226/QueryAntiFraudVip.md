@@ -19,8 +19,7 @@ tccli afc QueryAntiFraudVip --cli-unfold-argument  \
     --Uid 00000000000000000000000033121475%0D%0A \
     --Mac 00-01-6C-06-A6-29%0D%0A \
     --WifiSSID test%02wifi%0D%0A \
-    --WifiBSSID 00-04-C3-A1-2B-22 \
-    --Signature v22CnESj7Mg3tvG3yMkwqwiCdj8%3D
+    --WifiBSSID 00-04-C3-A1-2B-22
 ```
 
 Output: 

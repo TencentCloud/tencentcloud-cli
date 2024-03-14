@@ -1739,6 +1739,24 @@
           "name": "RecordBackground",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
+          "example": "default",
+          "member": "string",
+          "name": "RecordScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "example": "en",
+          "member": "string",
+          "name": "RecordLang",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3336,6 +3354,26 @@
           "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
           "member": "string",
           "name": "RTMPStreamingURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
+          "example": "default",
+          "member": "string",
+          "name": "RecordScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "example": "en",
+          "member": "string",
+          "name": "RecordLang",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5440,6 +5478,24 @@
           "name": "EnableAutoStart",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
+          "example": "default",
+          "member": "string",
+          "name": "RecordScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "example": "en",
+          "member": "string",
+          "name": "RecordLang",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5935,6 +5991,24 @@
           "name": "RecordBackground",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
+          "example": "default",
+          "member": "string",
+          "name": "RecordScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
+          "example": "en",
+          "member": "string",
+          "name": "RecordLang",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6158,6 +6232,26 @@
           "example": "https://picture.com?picid=123456",
           "member": "string",
           "name": "RecordBackground",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "RecordScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "en",
+          "member": "string",
+          "name": "RecordLang",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

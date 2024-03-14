@@ -1330,6 +1330,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "proxy同步升级",
+          "example": "无",
+          "member": "UpgradeProxy",
+          "name": "UpgradeProxy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -16303,22 +16312,20 @@
         {
           "disabled": false,
           "document": "proxy节点可用区",
-          "example": "无",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ProxyNodeZone",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "proxy节点数量",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ProxyNodeCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -18475,6 +18482,15 @@
           "name": "UpgradeMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "proxy同步升级",
+          "example": "无",
+          "member": "UpgradeProxy",
+          "name": "UpgradeProxy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18520,6 +18536,48 @@
         }
       ],
       "type": "object"
+    },
+    "UpgradeProxy": {
+      "document": "添加实例或者变配实例时同步升级proxy.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "memory",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代理节点信息",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "重新负载均衡",
+          "example": "auto",
+          "member": "string",
+          "name": "ReloadBalance",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "UpgradeProxyRequest": {
       "document": "UpgradeProxy请求参数结构体",

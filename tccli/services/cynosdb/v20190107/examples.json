@@ -19,7 +19,7 @@
     "AddInstances": [
       {
         "document": "新增只读实例",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": \"1\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": \"1\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\",\n    \"UpgradeProxy\": {\n        \"Cpu\": 4,\n        \"Mem\": 8000,\n        \"ReloadBalance\": \"auto\",\n        \"ProxyZones\": [\n            {\n                \"ProxyNodeZone\": \"ap-guangzhou-3\",\n                \"ProxyNodeCount\": 1\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ResourceIds\": [\n            \"abc\"\n        ],\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "新增实例"
       }
@@ -1067,7 +1067,7 @@
     "UpgradeInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-n7ocdslw\",\n    \"UpgradeType\": \"upgradeImmediate\",\n    \"Cpu\": \"2\",\n    \"Memory\": \"4\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-n7ocdslw\",\n    \"UpgradeType\": \"upgradeImmediate\",\n    \"Cpu\": \"2\",\n    \"Memory\": \"4\",\n    \"UpgradeProxy\": {\n        \"Cpu\": 4,\n        \"Mem\": 8000,\n        \"ReloadBalance\": \"auto\",\n        \"ProxyZones\": [\n            {\n                \"ProxyNodeZone\": \"ap-guangzhou-3\",\n                \"ProxyNodeCount\": 1\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "实例变配"
       }

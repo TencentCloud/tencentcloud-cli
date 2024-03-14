@@ -7117,6 +7117,15 @@
           "name": "MachineType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例版本号",
+          "example": "2008R2",
+          "member": "string",
+          "name": "DBVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
