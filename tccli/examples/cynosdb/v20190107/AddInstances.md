@@ -11,7 +11,12 @@ tccli cynosdb AddInstances --cli-unfold-argument  \
     --ClusterId cynosdbmysql-6gtlgm5l \
     --Memory 4 \
     --SubnetId subnet-1tmw9t4o \
-    --Cpu 2
+    --Cpu 2 \
+    --UpgradeProxy.Cpu 4 \
+    --UpgradeProxy.Mem 8000 \
+    --UpgradeProxy.ReloadBalance auto \
+    --UpgradeProxy.ProxyZones.0.ProxyNodeZone ap-guangzhou-3 \
+    --UpgradeProxy.ProxyZones.0.ProxyNodeCount 1
 ```
 
 Output: 

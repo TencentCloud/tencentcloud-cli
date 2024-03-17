@@ -8,6 +8,14 @@
         "title": "检查cos迁移索引元数据"
       }
     ],
+    "CheckOperation": [
+      {
+        "document": "检查操作",
+        "input": "https://es.tencentcloudapi.com/?Action=CheckOperation\r\n&InstanceId=es-xxxxxx\r\n&OpType=restart\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CheckSucc\": true,\n        \"NeedForceResult\": false,\n        \"ReasonType\": 0,\n        \"RequestId\": \"22bcf772-63da-4bc3-b409-18a662fcedd4\"\n    }\n}",
+        "title": "检查操作"
+      }
+    ],
     "CreateCosMigrateToServerlessInstance": [
       {
         "document": "",

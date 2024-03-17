@@ -49,6 +49,13 @@
       "output": "CreateCompareTaskResponse",
       "status": "online"
     },
+    "CreateConnectTestJob": {
+      "document": "用于检测源或者目标连接性问题",
+      "input": "CreateConnectTestJobRequest",
+      "name": "连通性测试",
+      "output": "CreateConnectTestJobResponse",
+      "status": "online"
+    },
     "CreateConsumerGroup": {
       "document": "为订阅实例创建消费者组",
       "input": "CreateConsumerGroupRequest",
@@ -131,6 +138,13 @@
       "input": "DescribeCompareTasksRequest",
       "name": "查询一致性校验任务列表",
       "output": "DescribeCompareTasksResponse",
+      "status": "online"
+    },
+    "DescribeConnectTestResult": {
+      "document": "用于查询连通性检查任务结果，需要配合CreateConnectTestJob接口的返回值使用。",
+      "input": "DescribeConnectTestResultRequest",
+      "name": "查询连通性检查任务结果",
+      "output": "DescribeConnectTestResultResponse",
       "status": "online"
     },
     "DescribeConsumerGroups": {
@@ -1651,6 +1665,365 @@
       ],
       "usage": "both"
     },
+    "ConnEndpoint": {
+      "document": "数据迁移中描述源端或目的端的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)、noProxy(非代理模式，内部使用)等，注意具体可选值依赖当前链路",
+          "example": "cdb",
+          "member": "string",
+          "name": "AccessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others",
+          "example": "aliyun",
+          "member": "string",
+          "name": "Supplier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域英文名，如：ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tdsql mysql版的节点类型，枚举值为proxy、set",
+          "example": "proxy",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql",
+          "example": "mariadb",
+          "member": "string",
+          "name": "DbKernel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库实例ID，格式如：cdb-powiqx8q",
+          "example": "cdb-wew23ed",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例的IP地址，接入类型为非cdb时此项必填",
+          "example": "192.168.1.12",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例端口，接入类型为非cdb时此项必填",
+          "example": "3306",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，对于访问需要用户名密码认证的实例必填",
+          "example": "user",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，对于访问需要用户名密码认证的实例必填",
+          "example": "1234",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名，数据库为cdwpg时，需要提供",
+          "example": "postgress",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto",
+          "example": "vpc-23rwfdg",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz",
+          "example": "subnet-tke9sfg",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段",
+          "example": "ins-9emwf2d",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb",
+          "example": "dcg-9sdfksk",
+          "member": "string",
+          "name": "UniqDcgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q",
+          "example": "vpngw-3dsfwf2",
+          "member": "string",
+          "name": "UniqVpnGwId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc",
+          "example": "ccn-afp6kltc",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6",
+          "example": "5.6",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所属账号，如果为跨账号实例此项必填",
+          "example": "700000123456",
+          "member": "string",
+          "name": "Account",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)",
+          "example": "other",
+          "member": "string",
+          "name": "AccountMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨账号同步时的角色，只允许[a-zA-Z0-9\\-\\_]+，如果为跨账号实例此项必填",
+          "example": "dts test_role",
+          "member": "string",
+          "name": "AccountRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部角色id",
+          "example": "roleId",
+          "member": "string",
+          "name": "RoleExternalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥Id，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，如果为跨账号实例此项必填",
+          "example": "AKID5XXXXX",
+          "member": "string",
+          "name": "TmpSecretId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥Key，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，，如果为跨账号实例此项必填",
+          "example": "2qZDXXXXX",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "临时Token，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，，如果为跨账号实例此项必填",
+          "example": "JOqqCXXXXX",
+          "member": "string",
+          "name": "TmpToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted",
+          "example": "UnEncrypted",
+          "member": "string",
+          "name": "EncryptConn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；",
+          "example": "TencentVPC",
+          "member": "string",
+          "name": "DatabaseNetEnv",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库为跨账号云联网下的实例时、表示云联网所属主账号",
+          "example": "700000123456",
+          "member": "string",
+          "name": "CcnOwnerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为业务添加的额外信息。参数名作key，参数值作value。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "ExtraAttr",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ConnTestItem": {
+      "document": "连通性测试检查项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验项，可能的值为Telnet,Connect等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Telnet",
+          "member": "string",
+          "name": "TestName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码，其中-2表示未开始，-1表示测试未通过，0表示通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConnectTestResult": {
+      "document": "连通性测试结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连通性测试任务执行状态，running(运行中)、finished(已完成)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验项是否全通过,0否，1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPass",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代理IP，用户的防火墙需要允许该IP连接实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.2.3.4",
+          "member": "string",
+          "name": "SNatIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连通性测试检查项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConnTestItem",
+          "name": "TestItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ConsistencyOption": {
       "document": "数据一致性校验选项， 默认为不开启一致性校验",
       "members": [
@@ -1811,6 +2184,70 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectTestJobRequest": {
+      "document": "CreateConnectTestJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库类型，如：sqlserver,mysql,redis,mongodb,postgresql,mariadb,percona,tdsqlpercona,tdsqlmysql 等",
+          "example": "mysql",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源端或目标端，src, dst",
+          "example": "src",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例连接信息",
+          "example": "无",
+          "member": "ConnEndpoint",
+          "name": "Endpoints",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "dts-s1symgq1",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectTestJobResponse": {
+      "document": "CreateConnectTestJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连通性测试任务的Id，后续使用这些ID查询结果",
+          "example": "[1234]",
+          "member": "int64",
+          "name": "TaskIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3510,6 +3947,53 @@
           "name": "Items",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectTestResultRequest": {
+      "document": "DescribeConnectTestResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连通性检查任务Id,填写CreateConnectTestJob接口返回值中TaskIds字段",
+          "example": "[1234]",
+          "member": "int64",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectTestResultResponse": {
+      "document": "DescribeConnectTestResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连通性检查结果详情",
+          "example": "无",
+          "member": "ConnectTestResult",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

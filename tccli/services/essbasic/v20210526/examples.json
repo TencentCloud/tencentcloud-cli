@@ -612,6 +612,14 @@
         "title": "更新角色（带权限树参数）"
       }
     ],
+    "ChannelRenewAutoSignLicense": [
+      {
+        "document": "给医疗个人自动签许可续期，续期成功返回追加一年后的有效期。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelRenewAutoSignLicense\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"典子谦\",\n        \"IdCardType\": \"ID_CARD\",\n        \"IdCardNumber\": \"620000198802020000\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LicenseTo\": 1715948179,\n        \"RequestId\": \"5beb5fxxxxx-a97c85196a3e\"\n    }\n}",
+        "title": "续期医疗个人自动签许可"
+      }
+    ],
     "ChannelUpdateSealStatus": [
       {
         "document": "1.指定AppId为yDwfwUUgygormhg1UuS2eARxjMT0mxAw\n2.指定子客企业的OpenId为org_dianziqian\n3.指定要操作的印章Id为yDRTZxxxxxJNR\n4.指定设置印章状态为DISABLE",

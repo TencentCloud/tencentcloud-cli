@@ -272,6 +272,14 @@
         "title": "检查辅助CIDR冲突"
       }
     ],
+    "CheckBandwidthPackage": [
+      {
+        "document": "demo。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckBandwidthPackage\n<公共请求参数>\n\n{\n    \"BandwidthPackageId\": \"bwp-kgwg07zi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsBandwidthpkg\": false,\n        \"ExcludeZoneList\": [],\n        \"RequestId\": \"628d93f7-c26a-4909-a79d-45019c96a34f\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "CheckDefaultSubnet": [
       {
         "document": "预判是否可建默认子网",

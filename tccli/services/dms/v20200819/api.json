@@ -1,18 +1,18 @@
 {
   "actions": {
     "SendEmail": {
-      "document": "发送普通邮件",
+      "document": "下架\n\n发送普通邮件",
       "input": "SendEmailRequest",
       "name": "发送普通邮件",
       "output": "SendEmailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SendTemplatedEmail": {
-      "document": "发送模板邮件",
+      "document": "下架\n\n发送模板邮件",
       "input": "SendTemplatedEmailRequest",
       "name": "发送模板邮件",
       "output": "SendTemplatedEmailResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -10811,7 +10811,7 @@
         },
         {
           "disabled": false,
-          "document": "数量，最大值为100",
+          "document": "数量，最大值为300",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -19911,7 +19911,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费时间长度，AutoRenewFlag为1的时候才可以设置，需要符合业务在接入单配置的手动续费周期规范，计入单查看：https://xy.tcb.woa.com/xy/app/prod/access/finishlist",
+          "document": "自动续费时间长度，AutoRenewFlag为1的时候才可以设置，需要符合业务在接入单配置的手动续费周期规范，若产品不支持按年续费，需将年转化成月传入，否则影响自动续费，计入单查看：https://xy.tcb.woa.com/xy/app/prod/access/finishlist",
           "example": "2",
           "member": "uint64",
           "name": "AutoRenewTimeSpan",
@@ -19920,7 +19920,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费时常单位，年：y，月：m，AutoRenewFlag为1的时候才可以设置,需要符合业务在接入单配置的手动续费周期规范，计入单查看：https://xy.tcb.woa.com/xy/app/prod/access/finishlist",
+          "document": "自动续费时常单位，年：y，月：m，AutoRenewFlag为1的时候才可以设置,需要符合业务在接入单配置的手动续费周期规范，若产品不支持按年续费，需将年转化成月传入，否则影响自动续费，计入单查看：https://xy.tcb.woa.com/xy/app/prod/access/finishlist",
           "example": "m",
           "member": "string",
           "name": "AutoRenewTimeUnit",

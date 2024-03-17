@@ -1,4 +1,4 @@
-**Example 1: 查询治理中心服务实例**
+**Example 1: 查询服务实例**
 
 
 
@@ -6,50 +6,53 @@ Input:
 
 ```
 tccli tse DescribeGovernanceInstances --cli-unfold-argument  \
-    --Protocol xx \
-    --Service xx \
-    --InstanceId xx \
-    --Isolate True \
-    --Namespace xx \
-    --Host xx \
+    --Service abc \
+    --Namespace abc \
+    --Host abc \
+    --InstanceVersion abc \
+    --Protocol abc \
     --HealthStatus True \
+    --Isolate True \
+    --Metadatas.0.Key abc \
+    --Metadatas.0.Value abc \
     --Offset 1 \
-    --InstanceVersion xx \
     --Limit 1 \
-    --Metadatas.0.Value xx \
-    --Metadatas.0.Key xx
+    --InstanceId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Content": [
             {
-                "Protocol": "xx",
-                "Weight": 1,
-                "Service": "xx",
-                "EnableHealthCheck": true,
-                "Isolate": true,
-                "Ttl": 1,
-                "Namespace": "xx",
-                "Id": "xx",
-                "Healthy": true,
-                "Host": "xx",
-                "Version": "xx",
-                "ModifyTime": "xx",
+                "Id": "abc",
+                "Service": "abc",
+                "Namespace": "abc",
+                "Host": "abc",
                 "Port": 1,
-                "CreateTime": "xx",
+                "Protocol": "abc",
+                "Version": "abc",
+                "Weight": 1,
+                "EnableHealthCheck": true,
+                "Healthy": true,
+                "Isolate": true,
+                "CreateTime": "abc",
+                "ModifyTime": "abc",
                 "Metadatas": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Value": "abc"
                     }
-                ]
+                ],
+                "Ttl": 1,
+                "InstanceVersion": "abc",
+                "HealthStatus": "abc",
+                "Comment": "abc"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

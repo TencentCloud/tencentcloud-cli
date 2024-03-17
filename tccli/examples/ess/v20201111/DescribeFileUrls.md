@@ -31,36 +31,7 @@ Output:
 }
 ```
 
-**Example 2: 获取下载文件链接 --- 单个文件**
-
-下载单个合同文件
-
-Input: 
-
-```
-tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.UserId yDRtRUUgxxxxxx4zjEyckqC592v \
-    --BusinessType FLOW \
-    --BusinessIds yDR0dUUgxxxxxxjEvWe1SbE7r
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FileUrls": [
-            {
-                "Option": "[\"595.00,841.00\",\"-1\"]",
-                "Url": "https://file.test.ess.tencent.cn/file/FLOW/yDR0dUxxxxxxxxWe1SbE7r/0/0.PDF?hkey=c80b3f1357821exxxxxxxxxxx2ad82345c777"
-            }
-        ],
-        "RequestId": "1e1da50xxxxxx5d570ab151c9",
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 3: 获取下载文件链接 --- 多个文件**
+**Example 2: 获取下载文件链接 --- 多个文件**
 
 下载多个合同文件
 
@@ -105,7 +76,7 @@ Output:
 }
 ```
 
-**Example 4: 查询的文件没有权限**
+**Example 3: 查询的文件没有权限**
 
 
 
@@ -131,6 +102,35 @@ Output:
             "Message": "资源不存在或无权限"
         },
         "RequestId": "s166*******3046"
+    }
+}
+```
+
+**Example 4: 获取下载文件链接 --- 单个合同**
+
+下载单个合同文件
+
+Input: 
+
+```
+tccli ess DescribeFileUrls --cli-unfold-argument  \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --BusinessType FLOW \
+    --BusinessIds yDwFkUUckpstzjhfUugNAWf1KibXqS26
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FileUrls": [
+            {
+                "Option": "[\"595.00,841.00\",\"-1\"]",
+                "Url": "https://file.test.ess.tencent.cn/file/FLOW/yDR0dUxxxxxxxxWe1SbE7r/0/0.PDF?hkey=c80b3f1357821exxxxxxxxxxx2ad82345c777"
+            }
+        ],
+        "RequestId": "1e1da50xxxxxx5d570ab151c9",
+        "TotalCount": 1
     }
 }
 ```

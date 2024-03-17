@@ -1,3 +1,142 @@
+# Release 3.0.956.1
+
+## 邮件发送服务(dms) 版本：2020-08-19
+
+### 第 2 次发布
+
+发布时间：2024-03-18 01:14:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* SendEmail
+* SendTemplatedEmail
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 15 次发布
+
+发布时间：2024-03-18 01:14:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConnectTestJob](http://document.tencentcloudapi.woa.com/document/product/571/83465)
+* [DescribeConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/83464)
+
+新增数据结构：
+
+* [ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)
+* [ConnTestItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnTestItem)
+* [ConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnectTestResult)
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 52 次发布
+
+发布时间：2024-03-18 01:18:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveTranscodeRule](http://document.tencentcloudapi.woa.com/document/product/267/32647)
+
+	* <font color="#dd0000">**删除入参**：</font>StreamName
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 24 次发布
+
+发布时间：2024-03-18 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceNetworkAddress](http://document.tencentcloudapi.woa.com/document/product/240/71918)
+
+	* 新增出参：FlowId
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 56 次发布
+
+发布时间：2024-03-18 01:25:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83474)
+* [CreateGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83479)
+* [CreateGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83473)
+* [DeleteGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83472)
+* [DeleteGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83478)
+* [DeleteGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83471)
+* [DescribeGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83470)
+* [DescribeGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83477)
+* [DescribeGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83469)
+* [ModifyGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83468)
+* [ModifyGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83476)
+* [ModifyGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83467)
+
+新增数据结构：
+
+* [GovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceAlias)
+* [GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace)
+* [GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput)
+* [GovernanceService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceService)
+* [GovernanceServiceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceServiceInput)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 129 次发布
+
+发布时间：2024-03-18 01:26:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/83480)
+
+
+
 # Release 3.0.955.1
 
 ## 日志服务(cls) 版本：2020-10-16
