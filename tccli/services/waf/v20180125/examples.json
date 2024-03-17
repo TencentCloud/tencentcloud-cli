@@ -684,14 +684,6 @@
         "title": "描述WAF自动封禁模块详情"
       }
     ],
-    "DescribeWafInfo": [
-      {
-        "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DescribeWafInfo\r\n&Params.0.AppId=251006578\r\n&Params.0.LoadBalancerId=lb-A8VF445\r\n&<公共请求参数>\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HostList\": [\n            {\n                \"LoadBalancer\": {\n                    \"LoadBalancerId\": \"A8VF445\",\n                    \"LoadBalancerName\": \"waftt_test\",\n                    \"ListenerId\": \"8rI9f73\",\n                    \"ListenerName\": \"test_listener44_name\",\n                    \"Vip\": \"203.195.240.4\",\n                    \"Vport\": 80,\n                    \"Region\": \"gz\",\n                    \"Zone\": \"广州4区\",\n                    \"Protocol\": \"http\"\n                },\n                \"Domain\": \"lsd.qcloudwaf.com\",\n                \"DomainId\": \"waf-MyBQKIZe\",\n                \"Status\": 1,\n                \"FlowMode\": 0\n            }\n        ],\n        \"RequestId\": \"4bcd4d73-f743-466f-a905-205bdd509bec\"\n    }\n}",
-        "title": "获取负载均衡绑定的WAF信息"
-      }
-    ],
     "DescribeWafThreatenIntelligence": [
       {
         "document": "描述WAF威胁情报封禁模块详情",

@@ -2300,7 +2300,7 @@
         {
           "disabled": false,
           "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"__SOURCE__\", \"__FILENAME__\", \"__TIMESTAMP__\"}",
+          "example": "[\"\\_\\_SOURCE\\_\\_\", \"\\_\\_FILENAME\\_\\_\", \"\\_\\_TIMESTAMP\\_\\_\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,
@@ -8254,7 +8254,7 @@
         {
           "disabled": false,
           "document": "元数据信息列表, 可选值为：\\_\\_SOURCE\\_\\_、\\_\\_FILENAME\\_\\_\n、\\_\\_TIMESTAMP\\_\\_、\\_\\_HOSTNAME\\_\\_、\\_\\_PKGID\\_\\_\nFormat为0时，此字段不需要赋值",
-          "example": "[\"__HOSTNAME__\"]",
+          "example": "[\"\\_\\_HOSTNAME\\_\\_\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,

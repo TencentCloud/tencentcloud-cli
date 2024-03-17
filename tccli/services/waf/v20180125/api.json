@@ -553,13 +553,6 @@
       "output": "DescribeWafAutoDenyStatusResponse",
       "status": "online"
     },
-    "DescribeWafInfo": {
-      "document": "获取负载均衡绑定的WAF信息，可以根据租户负载均衡实例ID、负载均衡监听器ID、负载均衡的域名信息来查询对应绑定的 Waf的状态信息。\n查询的范围：负载均衡实例ID、负载均衡实例ID+监听器ID、负载均衡实例ID+监听器ID+域名。\n可能的错误码：ResourceNotFound（没有找到对应的资源）、UnsupportedRegion（目前clb-waf只支持北京、广州、上海、成都、重庆、香港地域）。\n",
-      "input": "DescribeWafInfoRequest",
-      "name": "获取负载均衡绑定的WAF信息",
-      "output": "DescribeWafInfoResponse",
-      "status": "online"
-    },
     "DescribeWafThreatenIntelligence": {
       "document": "描述WAF威胁情报封禁模块配置详情",
       "input": "DescribeWafThreatenIntelligenceRequest",
@@ -3418,98 +3411,6 @@
         }
       ],
       "usage": "out"
-    },
-    "ClbHostResult": {
-      "document": "CLB查询对应绑定的WAF状态的结果参数",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WAF绑定的监听器实例",
-          "example": "",
-          "member": "LoadBalancer",
-          "name": "LoadBalancer",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "WAF绑定的域名",
-          "example": "",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "WAF绑定的实例ID",
-          "example": "",
-          "member": "string",
-          "name": "DomainId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否有绑定WAF，1：绑定了WAF，0：没有绑定WAF",
-          "example": "",
-          "member": "uint64",
-          "name": "Status",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "绑定了WAF的情况下，WAF流量模式，1：清洗模式，0：镜像模式（默认）",
-          "example": "",
-          "member": "uint64",
-          "name": "FlowMode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ClbHostsParams": {
-      "document": "CLB回调WAF接口（获取、删除）的参数",
-      "members": [
-        {
-          "disabled": false,
-          "document": "负载均衡实例ID，如果不传次参数则默认认为操作的是整个AppId的监听器，如果此参数不为空则认为操作的是对应负载均衡实例。",
-          "example": "",
-          "member": "string",
-          "name": "LoadBalancerId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "负载均衡监听器ID，，如果不传次参数则默认认为操作的是整个负载均衡实例，如果此参数不为空则认为操作的是对应负载均衡监听器。",
-          "example": "",
-          "member": "string",
-          "name": "ListenerId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "WAF实例ID，，如果不传次参数则默认认为操作的是整个负载均衡监听器实例，如果此参数不为空则认为操作的是对应负载均衡监听器的某一个具体的域名。",
-          "example": "",
-          "member": "string",
-          "name": "DomainId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "ClbObject": {
       "document": "Clb类型防护对象",
@@ -9306,51 +9207,6 @@
           "member": "AutoDenyDetail",
           "name": "WafAutoDenyDetails",
           "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWafInfoRequest": {
-      "document": "DescribeWafInfo请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "CLB回调WAF接口（获取、删除）的参数",
-          "example": "",
-          "member": "ClbHostsParams",
-          "name": "Params",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWafInfoResponse": {
-      "document": "DescribeWafInfo返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回的WAF信息数组的长度，为0则表示没有查询到对应的信息",
-          "example": "",
-          "member": "uint64",
-          "name": "Total",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "对应的WAF信息的数组。",
-          "example": "",
-          "member": "ClbHostResult",
-          "name": "HostList",
-          "type": "list",
           "value_allowed_null": false
         },
         {

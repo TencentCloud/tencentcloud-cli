@@ -88,6 +88,22 @@
         "title": "创建云原生网关限流插件(服务)"
       }
     ],
+    "CreateConfigFile": [
+      {
+        "document": "新增配置文件",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFile\": {\n        \"Name\": \"config-file-test-1\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"Content\": \"test for CreateConfigFile\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新增配置文件"
+      }
+    ],
+    "CreateConfigFileGroup": [
+      {
+        "document": "新增配置文件组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigFileGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFileGroup\": {\n        \"Id\": 1,\n        \"Name\": \"abc\",\n        \"Namespace\": \"abc\",\n        \"Comment\": \"abc\",\n        \"CreateTime\": \"abc\",\n        \"CreateBy\": \"abc\",\n        \"ModifyTime\": \"abc\",\n        \"ModifyBy\": \"abc\",\n        \"FileCount\": 1,\n        \"UserIds\": [\n            \"abc\"\n        ],\n        \"GroupIds\": [\n            \"abc\"\n        ],\n        \"RemoveUserIds\": [\n            \"abc\"\n        ],\n        \"RemoveGroupIds\": [\n            \"abc\"\n        ],\n        \"Editable\": true,\n        \"Owner\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"jayhjxu-test-1024\",\n        \"Result\": true\n    }\n}",
+        "title": "新增配置文件组"
+      }
+    ],
     "CreateEngine": [
       {
         "document": "创建引擎实例",
@@ -96,12 +112,36 @@
         "title": "创建引擎实例"
       }
     ],
+    "CreateGovernanceAlias": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceAlias\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Alias\": \"abc\",\n    \"AliasNamespace\": \"abc\",\n    \"Service\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Comment\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建治理中心服务别名"
+      }
+    ],
     "CreateGovernanceInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建治理中心服务实例"
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceInstances\": [\n        {\n            \"Service\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Isolate\": true,\n            \"Host\": \"abc\",\n            \"Port\": 1,\n            \"Protocol\": \"abc\",\n            \"InstanceVersion\": \"abc\",\n            \"EnableHealthCheck\": true,\n            \"Ttl\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建服务实例"
+      }
+    ],
+    "CreateGovernanceNamespaces": [
+      {
+        "document": "创建治理中心命名空间",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceNamespaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceNamespaces\": [\n        {\n            \"Name\": \"abc\",\n            \"Comment\": \"abc\",\n            \"UserIds\": [\n                \"abc\"\n            ],\n            \"GroupIds\": [\n                \"abc\"\n            ],\n            \"RemoveUserIds\": [\n                \"abc\"\n            ],\n            \"RemoveGroupIds\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建治理中心命名空间"
+      }
+    ],
+    "CreateGovernanceServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGovernanceServices\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceServices\": [\n        {\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Comment\": \"abc\",\n            \"Metadatas\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"Department\": \"abc\",\n            \"Business\": \"abc\",\n            \"UserIds\": [\n                \"abc\"\n            ],\n            \"GroupIds\": [\n                \"abc\"\n            ],\n            \"RemoveUserIds\": [\n                \"abc\"\n            ],\n            \"RemoveGroupIds\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建治理中心服务"
       }
     ],
     "CreateNativeGatewayServerGroup": [
@@ -110,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"NodeConfig\": {\n        \"Specification\": \"abc\",\n        \"Number\": 0\n    },\n    \"SubnetId\": \"abc\",\n    \"Description\": \"abc\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建云原生网关引擎分组"
+      }
+    ],
+    "CreateOrUpdateConfigFileAndRelease": [
+      {
+        "document": "创建或更新配置并发布",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrUpdateConfigFileAndRelease\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFilePublishInfo\": {\n        \"ReleaseName\": \"abc\",\n        \"Namespace\": \"abc\",\n        \"Group\": \"abc\",\n        \"FileName\": \"abc\",\n        \"Content\": \"abc\",\n        \"Comment\": \"abc\",\n        \"Format\": \"abc\",\n        \"CreateBy\": \"abc\",\n        \"ModifyBy\": \"abc\",\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建或更新配置并发布"
       }
     ],
     "CreateWafDomains": [
@@ -192,6 +240,30 @@
         "title": "删除云原生网关限流插件(服务)"
       }
     ],
+    "DeleteConfigFileGroup": [
+      {
+        "document": "删除配置文件分组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFileGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"janice-test\",\n    \"Namespace\": \"namespace_1\",\n    \"Group\": \"group_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"63d46143-c731-4aff-b0c9-edce7401db32\"\n    }\n}",
+        "title": "删除配置文件分组"
+      }
+    ],
+    "DeleteConfigFileReleases": [
+      {
+        "document": "删除配置发布",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFileReleases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFileReleases\": [\n        {\n            \"Namespace\": \"abc\",\n            \"Group\": \"abc\",\n            \"FileName\": \"abc\",\n            \"ReleaseVersion\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除配置发布"
+      }
+    ],
+    "DeleteConfigFiles": [
+      {
+        "document": "删除配置文件",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"Namespace\": \"Polaris\",\n    \"Group\": \"group-test-jayhjxu\",\n    \"Name\": \"config-file-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除配置文件"
+      }
+    ],
     "DeleteEngine": [
       {
         "document": "",
@@ -200,12 +272,44 @@
         "title": "删除引擎实例"
       }
     ],
+    "DeleteGovernanceAliases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceAliases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceAliases\": [\n        {\n            \"Alias\": \"abc\",\n            \"AliasNamespace\": \"abc\",\n            \"Service\": \"abc\",\n            \"Namespace\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除治理中心服务别名"
+      }
+    ],
     "DeleteGovernanceInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"Id\": \"xx\",\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1,\n            \"Metadatas\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除治理中心服务实例"
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceInstances\": [\n        {\n            \"Service\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Host\": \"abc\",\n            \"Port\": 1,\n            \"Id\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除服务实例"
+      }
+    ],
+    "DeleteGovernanceInstancesByHost": [
+      {
+        "document": "根据HOST删除治理中心某个服务下的实例",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceInstancesByHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceInstances\": [\n        {\n            \"Service\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Host\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据HOST删除治理中心某个服务下的实例"
+      }
+    ],
+    "DeleteGovernanceNamespaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceNamespaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceNamespaces\": [\n        {\n            \"Name\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除治理中心命名空间"
+      }
+    ],
+    "DeleteGovernanceServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGovernanceServices\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceServices\": [\n        {\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除治理中心服务"
       }
     ],
     "DeleteNativeGatewayServerGroup": [
@@ -222,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWafDomains\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Domains\": [\n        \"example.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除 WAF 防护域名"
+      }
+    ],
+    "DescribeAllConfigFileTemplates": [
+      {
+        "document": "查询所有模板列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllConfigFileTemplates\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFileTemplates\": [\n            {\n                \"Id\": 0,\n                \"Name\": \"spring-cloud-gateway-braining\",\n                \"Content\": \"{\\n    \\\"rules\\\":[\\n        {\\n            \\\"conditions\\\":[\\n                {\\n                    \\\"key\\\":\\\"${http.query.uid}\\\",\\n                    \\\"values\\\":[\\\"10000\\\"],\\n                    \\\"operation\\\":\\\"EQUALS\\\"\\n                }\\n            ],\\n            \\\"labels\\\":[\\n                {\\n                    \\\"key\\\":\\\"env\\\",\\n                    \\\"value\\\":\\\"green\\\"\\n                }\\n            ]\\n        }\\n    ]\\n}\",\n                \"Format\": \"json\",\n                \"Comment\": \"Spring Cloud Gateway  染色规则\",\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            }\n        ],\n        \"RequestId\": \"jayhjxu-test-DescribeAllConfigFileTemplates--ssss\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询所有模板列表"
       }
     ],
     "DescribeAutoScalerResourceStrategies": [
@@ -344,12 +456,122 @@
         "title": "测试获取云原生API网关实例列表"
       }
     ],
+    "DescribeConfigFile": [
+      {
+        "document": "查询单个配置文件详细",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Group\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFile\": {\n            \"Id\": 1,\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Group\": \"abc\",\n            \"Content\": \"abc\",\n            \"Format\": \"abc\",\n            \"Comment\": \"abc\",\n            \"Status\": \"abc\",\n            \"Tags\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"CreateTime\": \"abc\",\n            \"CreateBy\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"ModifyBy\": \"abc\",\n            \"ReleaseTime\": \"abc\",\n            \"ReleaseBy\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询单个配置文件详细"
+      }
+    ],
+    "DescribeConfigFileGroups": [
+      {
+        "document": "根据条件查询配置文件组列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"janice-test\",\n    \"Limit\": 1,\n    \"Namespace\": \"namespace_test\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 125,\n        \"ConfigFileGroups\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"configFileGroupName\",\n                \"Namespace\": \"namespace1\",\n                \"Comment\": \"test config\",\n                \"CreateTime\": \"2023-03-08 00:00:00\",\n                \"CreateBy\": \"jayhjxu\",\n                \"ModifyTime\": \"2023-03-08 12:00:00\",\n                \"ModifyBy\": \"jayhjxu\",\n                \"FileCount\": 1,\n                \"UserIds\": [\n                    \"user_1\"\n                ],\n                \"GroupIds\": [\n                    \"group_1\"\n                ],\n                \"RemoveUserIds\": [\n                    \"user_2\"\n                ],\n                \"RemoveGroupIds\": [\n                    \"group_2\"\n                ],\n                \"Editable\": true,\n                \"Owner\": \"jayhjxu\"\n            }\n        ],\n        \"RequestId\": \"63d46143-c731-4aff-b0c9-edce7401db32\"\n    }\n}",
+        "title": "查询配置文件组列表"
+      }
+    ],
+    "DescribeConfigFileRelease": [
+      {
+        "document": "查询配置文件发布详情",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileRelease\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"Namespace\": \"Polaris\",\n    \"Group\": \"group-test-jayhjxu\",\n    \"Name\": \"config-file-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFileRelease\": {\n            \"Id\": 1,\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Group\": \"abc\",\n            \"FileName\": \"abc\",\n            \"Content\": \"abc\",\n            \"Comment\": \"abc\",\n            \"Md5\": \"abc\",\n            \"Version\": 1,\n            \"CreateTime\": \"abc\",\n            \"CreateBy\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"ModifyBy\": \"abc\",\n            \"ReleaseDescription\": \"abc\",\n            \"Active\": true,\n            \"Format\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询配置文件发布详情"
+      }
+    ],
+    "DescribeConfigFileReleaseHistories": [
+      {
+        "document": "指定EndId用于优化分页-指定EndId用于优化分页",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileReleaseHistories\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Group\": \"abc\",\n    \"Name\": \"abc\",\n    \"EndId\": 3,\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFileReleaseHistories\": [\n            {\n                \"Id\": 2,\n                \"Name\": \"ConfigFileReleases test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"FileName\": \"\",\n                \"Content\": \"test for CreateConfigFile\",\n                \"Format\": \"text\",\n                \"Comment\": \"test for 1\",\n                \"Md5\": \"4df12e4b1cd8d029a5a233596869fc66\",\n                \"Type\": \"normal\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            }\n        ],\n        \"RequestId\": \"jayhjxu-test-DescribeConfigFileRelease--ssss\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "指定EndId用于优化分页-指定EndId用于优化分页"
+      },
+      {
+        "document": "查询配置文件发布历史记录-不指定EndId",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileReleaseHistories\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"Polaris\",\n    \"Group\": \"group-test-jayhjxu\",\n    \"Name\": \"config-file-test\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFileReleaseHistories\": [\n            {\n                \"Id\": 5,\n                \"Name\": \"config-file-test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"FileName\": \"\",\n                \"Content\": \"test for ModifyConfigFiles\",\n                \"Format\": \"text\",\n                \"Comment\": \"\",\n                \"Md5\": \"9dafe0dd6604b83bb2a40cae654872fa\",\n                \"Type\": \"normal\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            },\n            {\n                \"Id\": 4,\n                \"Name\": \"ConfigFileReleases test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"FileName\": \"\",\n                \"Content\": \"test for CreateConfigFile\",\n                \"Format\": \"text\",\n                \"Comment\": \"test for 1\",\n                \"Md5\": \"4df12e4b1cd8d029a5a233596869fc66\",\n                \"Type\": \"normal\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            },\n            {\n                \"Id\": 3,\n                \"Name\": \"ConfigFileReleases test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"FileName\": \"\",\n                \"Content\": \"\",\n                \"Format\": \"text\",\n                \"Comment\": \"\",\n                \"Md5\": \"\",\n                \"Type\": \"delete\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            },\n            {\n                \"Id\": 2,\n                \"Name\": \"ConfigFileReleases test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"FileName\": \"\",\n                \"Content\": \"test for CreateConfigFile\",\n                \"Format\": \"text\",\n                \"Comment\": \"test for 1\",\n                \"Md5\": \"4df12e4b1cd8d029a5a233596869fc66\",\n                \"Type\": \"normal\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\"\n            }\n        ],\n        \"RequestId\": \"jayhjxu-test-DescribeConfigFileRelease--ssss\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "查询配置文件发布历史记录-不指定EndId"
+      }
+    ],
+    "DescribeConfigFileReleaseVersions": [
+      {
+        "document": "获取配置版本列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileReleaseVersions\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Group\": \"abc\",\n    \"FileName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseVersions\": [\n            {\n                \"Name\": \"abc\",\n                \"Active\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取配置版本列表"
+      }
+    ],
+    "DescribeConfigFileReleases": [
+      {
+        "document": "获取版本发布列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFileReleases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Group\": \"abc\",\n    \"FileName\": \"abc\",\n    \"OnlyUse\": true,\n    \"ReleaseName\": \"abc\",\n    \"OrderField\": \"abc\",\n    \"OrderDesc\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Releases\": [\n            {\n                \"Id\": 1,\n                \"Name\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Group\": \"abc\",\n                \"FileName\": \"abc\",\n                \"Content\": \"abc\",\n                \"Comment\": \"abc\",\n                \"Md5\": \"abc\",\n                \"Version\": 1,\n                \"CreateTime\": \"abc\",\n                \"CreateBy\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"ModifyBy\": \"abc\",\n                \"ReleaseDescription\": \"abc\",\n                \"Active\": true,\n                \"Format\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取版本发布列表"
+      }
+    ],
+    "DescribeConfigFiles": [
+      {
+        "document": "根据命名空间、组名与文件名查询",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-d734da06\",\n    \"Namespace\": \"Polaris\",\n    \"Group\": \"group-test-jayhjxu\",\n    \"Name\": \"config-file-test\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFiles\": [\n            {\n                \"Id\": 4,\n                \"Name\": \"config-file-test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"Content\": \"test for ModifyConfigFiles\",\n                \"Format\": \"text\",\n                \"Comment\": \"ModifyConfigFiles comment after modified\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\",\n                \"ReleaseTime\": \"\",\n                \"ReleaseBy\": \"\"\n            }\n        ],\n        \"RequestId\": \"jayhjxu-DescribeConfigFiles-test-1024\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询配置文件列表"
+      }
+    ],
+    "DescribeConfigFilesByGroup": [
+      {
+        "document": "根据 group 与 namespace 查询 配置文件",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigFilesByGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"Namespace\": \"Polaris\",\n    \"Group\": \"group-test-jayhjxu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigFiles\": [\n            {\n                \"Id\": 6,\n                \"Name\": \"test-for_create_file\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"Content\": \"\",\n                \"Format\": \"text\",\n                \"Comment\": \"dsgasdgas\",\n                \"Status\": \"to-be-released\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"key2\",\n                        \"Value\": \"value1\"\n                    },\n                    {\n                        \"Key\": \"key1\",\n                        \"Value\": \"value2\"\n                    }\n                ],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\",\n                \"ReleaseTime\": \"\",\n                \"ReleaseBy\": \"\"\n            },\n            {\n                \"Id\": 4,\n                \"Name\": \"config-file-test\",\n                \"Namespace\": \"Polaris\",\n                \"Group\": \"group-test-jayhjxu\",\n                \"Content\": \"test for ModifyConfigFiles\",\n                \"Format\": \"text\",\n                \"Comment\": \"ModifyConfigFiles comment after modified\",\n                \"Status\": \"success\",\n                \"Tags\": [],\n                \"CreateTime\": \"\",\n                \"CreateBy\": \"\",\n                \"ModifyTime\": \"\",\n                \"ModifyBy\": \"\",\n                \"ReleaseTime\": \"\",\n                \"ReleaseBy\": \"\"\n            }\n        ],\n        \"RequestId\": \"jayhjxu-test-DescribeConfigFilesByGroup--ssss\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "DescribeConfigFilesByGroup 示例"
+      }
+    ],
+    "DescribeGovernanceAliases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceAliases\n<公共请求参数>\n\n{\n    \"Service\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Alias\": \"abc\",\n    \"AliasNamespace\": \"abc\",\n    \"Comment\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Alias\": \"abc\",\n                \"AliasNamespace\": \"abc\",\n                \"Service\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Comment\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"Id\": \"abc\",\n                \"Editable\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询治理中心服务别名"
+      }
+    ],
     "DescribeGovernanceInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceInstances\n<公共请求参数>\n\n{\n    \"Protocol\": \"xx\",\n    \"Service\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"Isolate\": true,\n    \"Namespace\": \"xx\",\n    \"Host\": \"xx\",\n    \"HealthStatus\": true,\n    \"Offset\": 1,\n    \"InstanceVersion\": \"xx\",\n    \"Limit\": 1,\n    \"Metadatas\": [\n        {\n            \"Value\": \"xx\",\n            \"Key\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Protocol\": \"xx\",\n                \"Weight\": 1,\n                \"Service\": \"xx\",\n                \"EnableHealthCheck\": true,\n                \"Isolate\": true,\n                \"Ttl\": 1,\n                \"Namespace\": \"xx\",\n                \"Id\": \"xx\",\n                \"Healthy\": true,\n                \"Host\": \"xx\",\n                \"Version\": \"xx\",\n                \"ModifyTime\": \"xx\",\n                \"Port\": 1,\n                \"CreateTime\": \"xx\",\n                \"Metadatas\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询治理中心服务实例"
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceInstances\n<公共请求参数>\n\n{\n    \"Service\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Host\": \"abc\",\n    \"InstanceVersion\": \"abc\",\n    \"Protocol\": \"abc\",\n    \"HealthStatus\": true,\n    \"Isolate\": true,\n    \"Metadatas\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Id\": \"abc\",\n                \"Service\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Host\": \"abc\",\n                \"Port\": 1,\n                \"Protocol\": \"abc\",\n                \"Version\": \"abc\",\n                \"Weight\": 1,\n                \"EnableHealthCheck\": true,\n                \"Healthy\": true,\n                \"Isolate\": true,\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"Metadatas\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Ttl\": 1,\n                \"InstanceVersion\": \"abc\",\n                \"HealthStatus\": \"abc\",\n                \"Comment\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询服务实例"
+      }
+    ],
+    "DescribeGovernanceNamespaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceNamespaces\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Name\": \"abc\",\n                \"Comment\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"TotalServiceCount\": 0,\n                \"TotalHealthInstanceCount\": 0,\n                \"TotalInstanceCount\": 0,\n                \"Id\": \"abc\",\n                \"Editable\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询治理中心命名空间列表"
+      }
+    ],
+    "DescribeGovernanceServiceContractVersions": [
+      {
+        "document": "查询服务下契约版本列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceServiceContractVersions\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Service\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GovernanceServiceContractVersions\": [\n            {\n                \"Version\": \"abc\",\n                \"Name\": \"abc\",\n                \"Key\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询服务下契约版本列表"
+      }
+    ],
+    "DescribeGovernanceServiceContracts": [
+      {
+        "document": "查询服务契约定义列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceServiceContracts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Service\": \"abc\",\n    \"Name\": \"abc\",\n    \"ContractVersion\": \"abc\",\n    \"Protocol\": \"abc\",\n    \"Brief\": true,\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Size\": 0,\n        \"ServiceContracts\": [\n            {\n                \"Name\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"ID\": \"abc\",\n                \"Service\": \"abc\",\n                \"Version\": \"abc\",\n                \"Revision\": \"abc\",\n                \"Content\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"Interfaces\": [\n                    {\n                        \"ID\": \"abc\",\n                        \"Method\": \"abc\",\n                        \"Path\": \"abc\",\n                        \"Content\": \"abc\",\n                        \"Source\": \"abc\",\n                        \"Revision\": \"abc\",\n                        \"CreateTime\": \"abc\",\n                        \"ModifyTime\": \"abc\",\n                        \"Name\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询服务契约定义列表"
+      }
+    ],
+    "DescribeGovernanceServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGovernanceServices\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Name\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Metadatas\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Comment\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"Department\": \"abc\",\n                \"Business\": \"abc\",\n                \"HealthyInstanceCount\": 1,\n                \"TotalInstanceCount\": 1,\n                \"Id\": \"abc\",\n                \"Editable\": true,\n                \"UserIds\": [\n                    \"abc\"\n                ],\n                \"GroupIds\": [\n                    \"abc\"\n                ],\n                \"RemoveUserIds\": [\n                    \"abc\"\n                ],\n                \"RemoveGroupIds\": [\n                    \"abc\"\n                ],\n                \"ExportTo\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询治理中心服务列表"
       }
     ],
     "DescribeNacosReplicas": [
@@ -512,6 +734,22 @@
         "title": "修改云原生网关限流插件(服务)"
       }
     ],
+    "ModifyConfigFileGroup": [
+      {
+        "document": "批量修改配置文件组",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigFileGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFileGroup\": {\n        \"Name\": \"abc\",\n        \"Namespace\": \"abc\",\n        \"Comment\": \"abc\",\n        \"FileCount\": 1,\n        \"UserIds\": [\n            \"abc\"\n        ],\n        \"GroupIds\": [\n            \"abc\"\n        ],\n        \"RemoveUserIds\": [\n            \"abc\"\n        ],\n        \"RemoveGroupIds\": [\n            \"abc\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"63d46143-c731-4aff-b0c9-edce7401db32\"\n    }\n}",
+        "title": "修改配置文件组详情"
+      }
+    ],
+    "ModifyConfigFiles": [
+      {
+        "document": "修改配置文件",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigFile\": {\n        \"Id\": 1,\n        \"Name\": \"abc\",\n        \"Namespace\": \"abc\",\n        \"Group\": \"abc\",\n        \"Content\": \"abc\",\n        \"Format\": \"abc\",\n        \"Comment\": \"abc\",\n        \"Status\": \"abc\",\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"CreateTime\": \"abc\",\n        \"CreateBy\": \"abc\",\n        \"ModifyTime\": \"abc\",\n        \"ModifyBy\": \"abc\",\n        \"ReleaseTime\": \"abc\",\n        \"ReleaseBy\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改配置文件"
+      }
+    ],
     "ModifyConsoleNetwork": [
       {
         "document": "修改云原生API网关实例Konga网络配置",
@@ -520,12 +758,36 @@
         "title": "修改云原生API网关实例Konga网络配置"
       }
     ],
+    "ModifyGovernanceAlias": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceAlias\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Alias\": \"abc\",\n    \"AliasNamespace\": \"abc\",\n    \"Service\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Comment\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改治理中心服务别名"
+      }
+    ],
     "ModifyGovernanceInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"GovernanceInstances\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Service\": \"xx\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Namespace\": \"xx\",\n            \"Isolate\": true,\n            \"Id\": \"xx\",\n            \"EnableHealthCheck\": true,\n            \"Host\": \"xx\",\n            \"Ttl\": 1,\n            \"InstanceVersion\": \"xx\",\n            \"Port\": 1,\n            \"Metadatas\": [\n                {\n                    \"Value\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceInstances\": [\n        {\n            \"Service\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Weight\": 1,\n            \"Healthy\": true,\n            \"Isolate\": true,\n            \"Host\": \"abc\",\n            \"Port\": 1,\n            \"Protocol\": \"abc\",\n            \"InstanceVersion\": \"abc\",\n            \"EnableHealthCheck\": true,\n            \"Ttl\": 1,\n            \"Id\": \"abc\",\n            \"Metadatas\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改治理中心服务实例"
+      }
+    ],
+    "ModifyGovernanceNamespaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceNamespaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceNamespaces\": [\n        {\n            \"Name\": \"abc\",\n            \"Comment\": \"abc\",\n            \"UserIds\": [\n                \"abc\"\n            ],\n            \"GroupIds\": [\n                \"abc\"\n            ],\n            \"RemoveUserIds\": [\n                \"abc\"\n            ],\n            \"RemoveGroupIds\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改治理中心命名空间"
+      }
+    ],
+    "ModifyGovernanceServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernanceServices\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"GovernanceServices\": [\n        {\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Comment\": \"abc\",\n            \"Metadatas\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"Department\": \"abc\",\n            \"Business\": \"abc\",\n            \"UserIds\": [\n                \"abc\"\n            ],\n            \"GroupIds\": [\n                \"abc\"\n            ],\n            \"RemoveUserIds\": [\n                \"abc\"\n            ],\n            \"RemoveGroupIds\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改治理中心服务"
       }
     ],
     "ModifyNativeGatewayServerGroup": [
@@ -566,6 +828,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "开启 WAF 防护"
+      }
+    ],
+    "PublishConfigFiles": [
+      {
+        "document": "发布配置文件",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFileReleases\": {\n        \"Name\": \"ConfigFileReleases test\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"FileName\": \"config-file-test\",\n        \"Content\": \"I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. \",\n        \"Comment\": \"test for 1\",\n        \"Version\": 12\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发布配置文件"
+      }
+    ],
+    "RollbackConfigFileReleases": [
+      {
+        "document": "回滚配置",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackConfigFileReleases\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"RollbackConfigFileReleases\": [\n        {\n            \"Id\": 1,\n            \"Name\": \"abc\",\n            \"Namespace\": \"abc\",\n            \"Group\": \"abc\",\n            \"FileName\": \"abc\",\n            \"Content\": \"abc\",\n            \"Comment\": \"abc\",\n            \"Md5\": \"abc\",\n            \"Version\": 1,\n            \"CreateTime\": \"abc\",\n            \"CreateBy\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"ModifyBy\": \"abc\",\n            \"ReleaseDescription\": \"abc\",\n            \"Active\": true,\n            \"Format\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "回滚配置"
       }
     ],
     "UnbindAutoScalerResourceStrategyFromGroups": [

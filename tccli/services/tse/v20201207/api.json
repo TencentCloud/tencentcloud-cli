@@ -77,6 +77,20 @@
       "output": "CreateCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
+    "CreateConfigFile": {
+      "document": "创建配置文件",
+      "input": "CreateConfigFileRequest",
+      "name": "创建配置文件",
+      "output": "CreateConfigFileResponse",
+      "status": "online"
+    },
+    "CreateConfigFileGroup": {
+      "document": "创建服务治理中心配置文件组",
+      "input": "CreateConfigFileGroupRequest",
+      "name": "创建配置文件组",
+      "output": "CreateConfigFileGroupResponse",
+      "status": "online"
+    },
     "CreateEngine": {
       "document": "创建引擎实例",
       "input": "CreateEngineRequest",
@@ -84,11 +98,32 @@
       "output": "CreateEngineResponse",
       "status": "online"
     },
+    "CreateGovernanceAlias": {
+      "document": "创建治理中心服务别名",
+      "input": "CreateGovernanceAliasRequest",
+      "name": "创建服务别名",
+      "output": "CreateGovernanceAliasResponse",
+      "status": "online"
+    },
     "CreateGovernanceInstances": {
-      "document": "创建治理中心服务实例",
+      "document": "创建服务实例",
       "input": "CreateGovernanceInstancesRequest",
-      "name": "创建治理中心服务实例",
+      "name": "创建服务实例",
       "output": "CreateGovernanceInstancesResponse",
+      "status": "online"
+    },
+    "CreateGovernanceNamespaces": {
+      "document": "创建治理中心命名空间",
+      "input": "CreateGovernanceNamespacesRequest",
+      "name": "创建命名空间",
+      "output": "CreateGovernanceNamespacesResponse",
+      "status": "online"
+    },
+    "CreateGovernanceServices": {
+      "document": "创建治理中心服务",
+      "input": "CreateGovernanceServicesRequest",
+      "name": "创建服务",
+      "output": "CreateGovernanceServicesResponse",
       "status": "online"
     },
     "CreateNativeGatewayServerGroup": {
@@ -96,6 +131,13 @@
       "input": "CreateNativeGatewayServerGroupRequest",
       "name": "创建云原生网关引擎分组",
       "output": "CreateNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "CreateOrUpdateConfigFileAndRelease": {
+      "document": "创建或更新配置文件并发布配置",
+      "input": "CreateOrUpdateConfigFileAndReleaseRequest",
+      "name": "创建或更新配置文件并发布配置",
+      "output": "CreateOrUpdateConfigFileAndReleaseResponse",
       "status": "online"
     },
     "CreateWafDomains": {
@@ -168,6 +210,27 @@
       "output": "DeleteCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
+    "DeleteConfigFileGroup": {
+      "document": "删除配置文件分组",
+      "input": "DeleteConfigFileGroupRequest",
+      "name": "批量删除配置文件组列表",
+      "output": "DeleteConfigFileGroupResponse",
+      "status": "online"
+    },
+    "DeleteConfigFileReleases": {
+      "document": "删除配置发布",
+      "input": "DeleteConfigFileReleasesRequest",
+      "name": "删除配置发布",
+      "output": "DeleteConfigFileReleasesResponse",
+      "status": "online"
+    },
+    "DeleteConfigFiles": {
+      "document": "删除配置文件",
+      "input": "DeleteConfigFilesRequest",
+      "name": "删除配置文件",
+      "output": "DeleteConfigFilesResponse",
+      "status": "online"
+    },
     "DeleteEngine": {
       "document": "删除引擎实例",
       "input": "DeleteEngineRequest",
@@ -175,11 +238,39 @@
       "output": "DeleteEngineResponse",
       "status": "online"
     },
+    "DeleteGovernanceAliases": {
+      "document": "删除治理中心服务别名",
+      "input": "DeleteGovernanceAliasesRequest",
+      "name": "删除服务别名",
+      "output": "DeleteGovernanceAliasesResponse",
+      "status": "online"
+    },
     "DeleteGovernanceInstances": {
-      "document": "删除治理中心服务实例",
+      "document": "删除服务实例",
       "input": "DeleteGovernanceInstancesRequest",
-      "name": "删除治理中心服务实例",
+      "name": "删除服务实例",
       "output": "DeleteGovernanceInstancesResponse",
+      "status": "online"
+    },
+    "DeleteGovernanceInstancesByHost": {
+      "document": "删除治理中心服务实例",
+      "input": "DeleteGovernanceInstancesByHostRequest",
+      "name": "根据HOST删除服务实例",
+      "output": "DeleteGovernanceInstancesByHostResponse",
+      "status": "online"
+    },
+    "DeleteGovernanceNamespaces": {
+      "document": "删除治理中心命名空间",
+      "input": "DeleteGovernanceNamespacesRequest",
+      "name": "删除命名空间",
+      "output": "DeleteGovernanceNamespacesResponse",
+      "status": "online"
+    },
+    "DeleteGovernanceServices": {
+      "document": "删除治理中心服务",
+      "input": "DeleteGovernanceServicesRequest",
+      "name": "删除服务",
+      "output": "DeleteGovernanceServicesResponse",
       "status": "online"
     },
     "DeleteNativeGatewayServerGroup": {
@@ -194,6 +285,13 @@
       "input": "DeleteWafDomainsRequest",
       "name": "删除 WAF 防护域名",
       "output": "DeleteWafDomainsResponse",
+      "status": "online"
+    },
+    "DescribeAllConfigFileTemplates": {
+      "document": "获取全量配置文件模板列表",
+      "input": "DescribeAllConfigFileTemplatesRequest",
+      "name": "获取全量配置文件模板列表",
+      "output": "DescribeAllConfigFileTemplatesResponse",
       "status": "online"
     },
     "DescribeAutoScalerResourceStrategies": {
@@ -301,11 +399,102 @@
       "output": "DescribeCloudNativeAPIGatewaysResponse",
       "status": "online"
     },
+    "DescribeConfigFile": {
+      "document": "根据命名空间、组、名字查找配置文件",
+      "input": "DescribeConfigFileRequest",
+      "name": "查询配置文件",
+      "output": "DescribeConfigFileResponse",
+      "status": "online"
+    },
+    "DescribeConfigFileGroups": {
+      "document": "根据条件分页查询配置文件组",
+      "input": "DescribeConfigFileGroupsRequest",
+      "name": "查询配置文件组",
+      "output": "DescribeConfigFileGroupsResponse",
+      "status": "online"
+    },
+    "DescribeConfigFileRelease": {
+      "document": "获取配置文件发布",
+      "input": "DescribeConfigFileReleaseRequest",
+      "name": "获取配置文件发布",
+      "output": "DescribeConfigFileReleaseResponse",
+      "status": "online"
+    },
+    "DescribeConfigFileReleaseHistories": {
+      "document": "获取配置文件发布历史列表",
+      "input": "DescribeConfigFileReleaseHistoriesRequest",
+      "name": "获取配置文件发布历史列表",
+      "output": "DescribeConfigFileReleaseHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeConfigFileReleaseVersions": {
+      "document": "查询某个配置所有版本信息",
+      "input": "DescribeConfigFileReleaseVersionsRequest",
+      "name": "查询某个配置所有版本信息",
+      "output": "DescribeConfigFileReleaseVersionsResponse",
+      "status": "online"
+    },
+    "DescribeConfigFileReleases": {
+      "document": "查询配置版本列表",
+      "input": "DescribeConfigFileReleasesRequest",
+      "name": "查询配置版本列表",
+      "output": "DescribeConfigFileReleasesResponse",
+      "status": "online"
+    },
+    "DescribeConfigFiles": {
+      "document": "根据命名空间、组名、名称、标签查询配置文件列表",
+      "input": "DescribeConfigFilesRequest",
+      "name": "查询配置文件列表",
+      "output": "DescribeConfigFilesResponse",
+      "status": "online"
+    },
+    "DescribeConfigFilesByGroup": {
+      "document": "根据group查询配置文件列表",
+      "input": "DescribeConfigFilesByGroupRequest",
+      "name": "根据group查询配置文件列表",
+      "output": "DescribeConfigFilesByGroupResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceAliases": {
+      "document": "查询治理中心服务别名列表",
+      "input": "DescribeGovernanceAliasesRequest",
+      "name": "查询服务别名列表",
+      "output": "DescribeGovernanceAliasesResponse",
+      "status": "online"
+    },
     "DescribeGovernanceInstances": {
-      "document": "查询治理中心服务实例",
+      "document": "查询服务实例",
       "input": "DescribeGovernanceInstancesRequest",
-      "name": "查询治理中心服务实例",
+      "name": "查询服务实例",
       "output": "DescribeGovernanceInstancesResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceNamespaces": {
+      "document": "查询服务治理中心命名空间列表",
+      "input": "DescribeGovernanceNamespacesRequest",
+      "name": "查询命名空间列表",
+      "output": "DescribeGovernanceNamespacesResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceServiceContractVersions": {
+      "document": "查询服务下契约版本列表",
+      "input": "DescribeGovernanceServiceContractVersionsRequest",
+      "name": "查询服务下契约版本列表",
+      "output": "DescribeGovernanceServiceContractVersionsResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceServiceContracts": {
+      "document": "查询服务契约定义列表",
+      "input": "DescribeGovernanceServiceContractsRequest",
+      "name": "查询服务契约定义列表",
+      "output": "DescribeGovernanceServiceContractsResponse",
+      "status": "online"
+    },
+    "DescribeGovernanceServices": {
+      "document": "查询治理中心服务列表",
+      "input": "DescribeGovernanceServicesRequest",
+      "name": "查询服务列表",
+      "output": "DescribeGovernanceServicesResponse",
       "status": "online"
     },
     "DescribeNacosReplicas": {
@@ -448,6 +637,20 @@
       "output": "ModifyCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
+    "ModifyConfigFileGroup": {
+      "document": "批量修改配置文件组",
+      "input": "ModifyConfigFileGroupRequest",
+      "name": "批量修改配置文件组",
+      "output": "ModifyConfigFileGroupResponse",
+      "status": "online"
+    },
+    "ModifyConfigFiles": {
+      "document": "修改配置文件",
+      "input": "ModifyConfigFilesRequest",
+      "name": "修改配置文件",
+      "output": "ModifyConfigFilesResponse",
+      "status": "online"
+    },
     "ModifyConsoleNetwork": {
       "document": "修改网关实例Konga网络配置",
       "input": "ModifyConsoleNetworkRequest",
@@ -455,11 +658,32 @@
       "output": "ModifyConsoleNetworkResponse",
       "status": "online"
     },
+    "ModifyGovernanceAlias": {
+      "document": "修改治理中心服务别名",
+      "input": "ModifyGovernanceAliasRequest",
+      "name": "修改服务别名",
+      "output": "ModifyGovernanceAliasResponse",
+      "status": "online"
+    },
     "ModifyGovernanceInstances": {
       "document": "修改治理中心服务实例",
       "input": "ModifyGovernanceInstancesRequest",
-      "name": "修改治理中心服务实例",
+      "name": "修改服务实例",
       "output": "ModifyGovernanceInstancesResponse",
+      "status": "online"
+    },
+    "ModifyGovernanceNamespaces": {
+      "document": "修改治理中心命名空间",
+      "input": "ModifyGovernanceNamespacesRequest",
+      "name": "修改命名空间",
+      "output": "ModifyGovernanceNamespacesResponse",
+      "status": "online"
+    },
+    "ModifyGovernanceServices": {
+      "document": "修改治理中心服务",
+      "input": "ModifyGovernanceServicesRequest",
+      "name": "修改服务",
+      "output": "ModifyGovernanceServicesResponse",
       "status": "online"
     },
     "ModifyNativeGatewayServerGroup": {
@@ -495,6 +719,20 @@
       "input": "OpenWafProtectionRequest",
       "name": "开启 WAF 防护",
       "output": "OpenWafProtectionResponse",
+      "status": "online"
+    },
+    "PublishConfigFiles": {
+      "document": "发布配置文件",
+      "input": "PublishConfigFilesRequest",
+      "name": "发布配置文件",
+      "output": "PublishConfigFilesResponse",
+      "status": "online"
+    },
+    "RollbackConfigFileReleases": {
+      "document": "回滚配置发布",
+      "input": "RollbackConfigFileReleasesRequest",
+      "name": "回滚配置发布",
+      "output": "RollbackConfigFileReleasesResponse",
       "status": "online"
     },
     "UnbindAutoScalerResourceStrategyFromGroups": {
@@ -2040,6 +2278,1043 @@
       ],
       "usage": "both"
     },
+    "ConfigFile": {
+      "document": "配置文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigFileTag",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFileGroup": {
+      "document": "配置文件组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "janice-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-07 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-07 00:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FileCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联用户，link_users\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组id，link_groups\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "remove_link_users\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "remove_link_groups\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveGroupIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归属者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Owner",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Department",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Business",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigFileGroupTag",
+          "name": "ConfigFileGroupTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFileGroupTag": {
+      "document": "配置文件标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key-value 键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "key-value 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFilePublishInfo": {
+      "document": "发布详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布名称",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布组",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "格式",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改者",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "ConfigFileTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ConfigFileRelease": {
+      "document": "配置文件发布",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件发布id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布Md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Md5",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Active",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFileReleaseDeletion": {
+      "document": "配置发布删除",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFileReleaseHistory": {
+      "document": "配置文件发布历史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件发布历史记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史Md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Md5",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史标签组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigFileTag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原因，用于失败时原因展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigFileTag": {
+      "document": "配置文件标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key-value 键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "key-value 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigFileTemplate": {
+      "document": "配置文件模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateBy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyBy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAutoScalerResourceStrategyRequest": {
       "document": "CreateAutoScalerResourceStrategy请求参数结构体",
       "members": [
@@ -2884,6 +4159,98 @@
       ],
       "type": "object"
     },
+    "CreateConfigFileGroupRequest": {
+      "document": "CreateConfigFileGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例 id",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组实体",
+          "example": "无",
+          "member": "ConfigFileGroup",
+          "name": "ConfigFileGroup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigFileGroupResponse": {
+      "document": "CreateConfigFileGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigFileRequest": {
+      "document": "CreateConfigFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE 实例id",
+          "example": "janice-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表详情",
+          "example": "无",
+          "member": "ConfigFile",
+          "name": "ConfigFile",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigFileResponse": {
+      "document": "CreateConfigFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否创建成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEngineRequest": {
       "document": "CreateEngine请求参数结构体",
       "members": [
@@ -3072,6 +4439,88 @@
       ],
       "usage": "out"
     },
+    "CreateGovernanceAliasRequest": {
+      "document": "CreateGovernanceAlias请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名",
+          "example": "TestSvcAlias",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名命名空间",
+          "example": "Production",
+          "member": "string",
+          "name": "AliasNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的服务名",
+          "example": "TestSvc",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名描述",
+          "example": "comment",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceAliasResponse": {
+      "document": "CreateGovernanceAlias返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGovernanceInstancesRequest": {
       "document": "CreateGovernanceInstances请求参数结构体",
       "members": [
@@ -3105,7 +4554,99 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceNamespacesRequest": {
+      "document": "CreateGovernanceNamespaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间信息。",
+          "example": "无",
+          "member": "GovernanceNamespaceInput",
+          "name": "GovernanceNamespaces",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceNamespacesResponse": {
+      "document": "CreateGovernanceNamespaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceServicesRequest": {
+      "document": "CreateGovernanceServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例 id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务信息。",
+          "example": "无",
+          "member": "GovernanceServiceInput",
+          "name": "GovernanceServices",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGovernanceServicesResponse": {
+      "document": "CreateGovernanceServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3198,6 +4739,52 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrUpdateConfigFileAndReleaseRequest": {
+      "document": "CreateOrUpdateConfigFileAndRelease请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-0e02e26d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表详情\t",
+          "example": "无",
+          "member": "ConfigFilePublishInfo",
+          "name": "ConfigFilePublishInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrUpdateConfigFileAndReleaseResponse": {
+      "document": "CreateOrUpdateConfigFileAndRelease返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3677,6 +5264,171 @@
       ],
       "type": "object"
     },
+    "DeleteConfigFileGroupRequest": {
+      "document": "DeleteConfigFileGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例 id。\t",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigFileGroupResponse": {
+      "document": "DeleteConfigFileGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigFileReleasesRequest": {
+      "document": "DeleteConfigFileReleases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-0e02e26d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除配置发布详情",
+          "example": "无",
+          "member": "ConfigFileReleaseDeletion",
+          "name": "ConfigFileReleases",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigFileReleasesResponse": {
+      "document": "DeleteConfigFileReleases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除配置发布结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigFilesRequest": {
+      "document": "DeleteConfigFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置分组名称",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConfigFilesResponse": {
+      "document": "DeleteConfigFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEngineRequest": {
       "document": "DeleteEngine请求参数结构体",
       "members": [
@@ -3695,6 +5447,98 @@
     "DeleteEngineResponse": {
       "document": "DeleteEngine返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceAliasesRequest": {
+      "document": "DeleteGovernanceAliases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名列表",
+          "example": "无",
+          "member": "GovernanceAlias",
+          "name": "GovernanceAliases",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceAliasesResponse": {
+      "document": "DeleteGovernanceAliases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceInstancesByHostRequest": {
+      "document": "DeleteGovernanceInstancesByHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的服务实例信息。",
+          "example": "无",
+          "member": "GovernanceInstanceUpdate",
+          "name": "GovernanceInstances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceInstancesByHostResponse": {
+      "document": "DeleteGovernanceInstancesByHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3737,7 +5581,99 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceNamespacesRequest": {
+      "document": "DeleteGovernanceNamespaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例 id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间信息。",
+          "example": "无",
+          "member": "GovernanceNamespaceInput",
+          "name": "GovernanceNamespaces",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceNamespacesResponse": {
+      "document": "DeleteGovernanceNamespaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceServicesRequest": {
+      "document": "DeleteGovernanceServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务信息。",
+          "example": "无",
+          "member": "GovernanceServiceInput",
+          "name": "GovernanceServices",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGovernanceServicesResponse": {
+      "document": "DeleteGovernanceServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除服务结果。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3868,6 +5804,51 @@
     "DeleteWafDomainsResponse": {
       "document": "DeleteWafDomains返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllConfigFileTemplatesRequest": {
+      "document": "DescribeAllConfigFileTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllConfigFileTemplatesResponse": {
+      "document": "DescribeAllConfigFileTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件模板列表",
+          "example": "无",
+          "member": "ConfigFileTemplate",
+          "name": "ConfigFileTemplates",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5016,6 +6997,712 @@
       ],
       "type": "object"
     },
+    "DescribeConfigFileGroupsRequest": {
+      "document": "DescribeConfigFileGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据命名空间过滤",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据配置文件组名过滤",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据配置文件组名过滤",
+          "example": "filename",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。\t",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。\t",
+          "example": "5",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileGroupsResponse": {
+      "document": "DescribeConfigFileGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数量",
+          "example": "125",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组列表",
+          "example": "无",
+          "member": "ConfigFileGroup",
+          "name": "ConfigFileGroups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseHistoriesRequest": {
+      "document": "DescribeConfigFileReleaseHistories请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。\t",
+          "example": "50",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseHistoriesResponse": {
+      "document": "DescribeConfigFileReleaseHistories返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总数量",
+          "example": "125",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布历史列表",
+          "example": "无",
+          "member": "ConfigFileReleaseHistory",
+          "name": "ConfigFileReleaseHistories",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseRequest": {
+      "document": "DescribeConfigFileRelease请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置分组名称",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布名称",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseResponse": {
+      "document": "DescribeConfigFileRelease返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件发布详情",
+          "example": "无",
+          "member": "ConfigFileRelease",
+          "name": "ConfigFileRelease",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseVersionsRequest": {
+      "document": "DescribeConfigFileReleaseVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-0e02e26d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置分组",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleaseVersionsResponse": {
+      "document": "DescribeConfigFileReleaseVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本信息",
+          "example": "无",
+          "member": "ReleaseVersion",
+          "name": "ReleaseVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleasesRequest": {
+      "document": "DescribeConfigFileReleases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-0e02e26d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置分组",
+          "example": "无",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只保护处于使用状态",
+          "example": "无",
+          "member": "bool",
+          "name": "OnlyUse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发布名称",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，mtime/version/name\n，默认version",
+          "example": "无",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序，asc/desc，默认 desc",
+          "example": "无",
+          "member": "string",
+          "name": "OrderDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileReleasesResponse": {
+      "document": "DescribeConfigFileReleases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "108",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布列表",
+          "example": "无",
+          "member": "ConfigFileRelease",
+          "name": "Releases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileRequest": {
+      "document": "DescribeConfigFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-02fa5c12",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFileResponse": {
+      "document": "DescribeConfigFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigFile",
+          "name": "ConfigFile",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFilesByGroupRequest": {
+      "document": "DescribeConfigFilesByGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组名",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。\t",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFilesByGroupResponse": {
+      "document": "DescribeConfigFilesByGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表",
+          "example": "无",
+          "member": "ConfigFile",
+          "name": "ConfigFiles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFilesRequest": {
+      "document": "DescribeConfigFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间名称",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-d734da06",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组名",
+          "example": "group",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "ConfigFileTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。\t",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。\t",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigFilesResponse": {
+      "document": "DescribeConfigFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页总数量",
+          "example": "125",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表",
+          "example": "无",
+          "member": "ConfigFile",
+          "name": "ConfigFiles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGatewayInstancePortResult": {
       "document": "获取云原生API网关实例协议端口列表响应结果",
       "members": [
@@ -5041,6 +7728,116 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeGovernanceAliasesRequest": {
+      "document": "DescribeGovernanceAliases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Service",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的命名空间名。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名。",
+          "example": "192.168.1.1,10.10.10.1",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名命名空间。",
+          "example": "v1",
+          "member": "string",
+          "name": "AliasNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名描述。",
+          "example": "grpc",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceAliasesResponse": {
+      "document": "DescribeGovernanceAliases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务别名总数量。",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务别名列表。",
+          "example": "无",
+          "member": "GovernanceAlias",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeGovernanceInstancesRequest": {
       "document": "DescribeGovernanceInstances请求参数结构体",
@@ -5156,7 +7953,7 @@
           "example": "15",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5166,7 +7963,393 @@
           "example": "无",
           "member": "GovernanceInstance",
           "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceNamespacesRequest": {
+      "document": "DescribeGovernanceNamespaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据命名空间名称过滤。",
+          "example": "Development",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceNamespacesResponse": {
+      "document": "DescribeGovernanceNamespaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数量。",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治理中心命名空间实例列表。",
+          "example": "无",
+          "member": "GovernanceNamespace",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServiceContractVersionsRequest": {
+      "document": "DescribeGovernanceServiceContractVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎实例ID",
+          "example": "ins-123456",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "无",
+          "member": "string",
+          "name": "Service",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServiceContractVersionsResponse": {
+      "document": "DescribeGovernanceServiceContractVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务契约版本列表",
+          "example": "无",
+          "member": "GovernanceServiceContractVersion",
+          "name": "GovernanceServiceContractVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServiceContractsRequest": {
+      "document": "DescribeGovernanceServiceContracts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "北极星引擎实例ID",
+          "example": "ins-123456",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "service",
+          "member": "string",
+          "name": "Service",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "契约名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "契约版本",
+          "example": "v1.0.0",
+          "member": "string",
+          "name": "ContractVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "契约协议",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只展示基本信息",
+          "example": "true",
+          "member": "bool",
+          "name": "Brief",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServiceContractsResponse": {
+      "document": "DescribeGovernanceServiceContracts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "契约定义列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceServiceContract",
+          "name": "ServiceContracts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServicesRequest": {
+      "document": "DescribeGovernanceServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按照服务名过滤，精确匹配。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照命名空间过滤，精确匹配。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用元数据过滤，目前只支持一组元组数，若传了多条，只会使用第一条元数据过滤。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "tse 实例 id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务所属部门。",
+          "example": "市场部",
+          "member": "string",
+          "name": "Department",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务所属业务。",
+          "example": "采购业务",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务中实例的ip，用来过滤服务。",
+          "example": "10.10.6.2",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只查询存在健康实例的服务",
+          "example": "true",
+          "member": "bool",
+          "name": "OnlyExistHealthyInstance",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGovernanceServicesResponse": {
+      "document": "DescribeGovernanceServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务数总量。",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务信息详情。",
+          "example": "无",
+          "member": "GovernanceService",
+          "name": "Content",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6592,6 +9775,111 @@
       ],
       "usage": "out"
     },
+    "GovernanceAlias": {
+      "document": "服务别名结构信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务别名",
+          "example": "TestSvcAlias",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务别名命名空间",
+          "example": "Production",
+          "member": "string",
+          "name": "AliasNamespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务别名指向的服务名",
+          "example": "TestSvc",
+          "member": "string",
+          "name": "Service",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务别名指向的服务命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务别名的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "comment",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务别名创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-12 12:14:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务别名修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-12 12:14:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务别名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该服务别名是否可以编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "GovernanceInstance": {
       "document": "治理中心实例信息。",
       "members": [
@@ -6601,7 +9889,7 @@
           "example": "5d8e809b8dd6a8a57ff2f81cab40fc57ad4e8b55d",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6611,7 +9899,7 @@
           "example": "Producer",
           "member": "string",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6621,7 +9909,7 @@
           "example": "Development",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6631,7 +9919,7 @@
           "example": "192.168.1.1",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6641,7 +9929,7 @@
           "example": "8080",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6651,7 +9939,7 @@
           "example": "grpc",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6661,7 +9949,7 @@
           "example": "v1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6671,7 +9959,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6681,7 +9969,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableHealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6691,7 +9979,7 @@
           "example": "true",
           "member": "bool",
           "name": "Healthy",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6701,7 +9989,7 @@
           "example": "true",
           "member": "bool",
           "name": "Isolate",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6711,7 +9999,7 @@
           "example": "2021-08-11 18:49:51",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6721,7 +10009,7 @@
           "example": "2021-08-11 18:49:51",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6731,7 +10019,7 @@
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6741,8 +10029,38 @@
           "example": "5",
           "member": "uint64",
           "name": "Ttl",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HealthStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6981,6 +10299,761 @@
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GovernanceInterfaceDescription": {
+      "document": "服务契约接口定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "契约接口ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "方法名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径/接口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GovernanceNamespace": {
+      "document": "治理中心命名空间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Development",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "开发环境",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-11 04:07:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-08-11 06:09:38",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间下总服务数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间下总健康实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalHealthInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间下总实例数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以操作此命名空间的用户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以操作此命名空间的用户组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除可以操作此命名空间的用户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除可以操作此命名空间的用户组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GovernanceNamespaceInput": {
+      "document": "治理中心命名空间输入参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间名。",
+          "example": "Development",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息。",
+          "example": "开发环境",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增的可以操作此命名空间的用户ID列表",
+          "example": "[1,2,3,4]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新增的可以操作此命名空间的用户组ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "移除可以操作此命名空间的用户ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "移除可以操作此命名空间的用户组ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "RemoveGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GovernanceService": {
+      "document": "治理中心服务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据信息数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务所属部门。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Department",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务所属业务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Business",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康服务实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthyInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以编辑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以编辑该资源的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可以编辑该资源的用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除可以编辑该资源的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除可以编辑该资源的用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoveGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该服务对哪些命名空间可见\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[Namespace-1, Namespace-2]",
+          "member": "string",
+          "name": "ExportTo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该服务信息摘要签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GovernanceServiceContract": {
+      "document": "服务契约定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "契约名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属服务命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "契约ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Service",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Revision",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外内容描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "契约接口列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GovernanceInterfaceDescription",
+          "name": "Interfaces",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GovernanceServiceContractVersion": {
+      "document": "服务契约版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "契约版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "契约名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GovernanceServiceInput": {
+      "document": "治理中心服务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名。",
+          "example": "Producer",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务所属命名空间。",
+          "example": "Development",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务描述信息。",
+          "example": "生产者服务。",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务元数据。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务所属部门。",
+          "example": "市场部",
+          "member": "string",
+          "name": "Department",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务所属业务。",
+          "example": "采购业务",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被添加进来可以操作此命名空间的用户ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被添加进来可以操作此命名空间的用户组ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "从操作此命名空间的用户组ID列表被移除的ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "从可以操作此命名空间的用户组ID列表中被移除的ID列表",
+          "example": "[1,2,3]",
+          "member": "string",
+          "name": "RemoveGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "该服务对哪些命名空间可见",
+          "example": "[Namespace-1,Namespace-2]",
+          "member": "string",
+          "name": "ExportTo",
           "required": false,
           "type": "list"
         }
@@ -9001,6 +13074,98 @@
       ],
       "type": "object"
     },
+    "ModifyConfigFileGroupRequest": {
+      "document": "ModifyConfigFileGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件组",
+          "example": "无",
+          "member": "ConfigFileGroup",
+          "name": "ConfigFileGroup",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigFileGroupResponse": {
+      "document": "ModifyConfigFileGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigFilesRequest": {
+      "document": "ModifyConfigFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ins-df344df5\t",
+          "example": "ins-123456",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表",
+          "example": "无",
+          "member": "ConfigFile",
+          "name": "ConfigFile",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConfigFilesResponse": {
+      "document": "ModifyConfigFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyConsoleNetworkRequest": {
       "document": "ModifyConsoleNetwork请求参数结构体",
       "members": [
@@ -9055,6 +13220,88 @@
       ],
       "type": "object"
     },
+    "ModifyGovernanceAliasRequest": {
+      "document": "ModifyGovernanceAlias请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名",
+          "example": "TestSvcAlias",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名命名空间",
+          "example": "Production",
+          "member": "string",
+          "name": "AliasNamespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的服务名",
+          "example": "TestSvc",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名所指向的命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务别名描述",
+          "example": "comment",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceAliasResponse": {
+      "document": "ModifyGovernanceAlias返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyGovernanceInstancesRequest": {
       "document": "ModifyGovernanceInstances请求参数结构体",
       "members": [
@@ -9088,7 +13335,99 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceNamespacesRequest": {
+      "document": "ModifyGovernanceNamespaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse实例id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间信息。",
+          "example": "无",
+          "member": "GovernanceNamespaceInput",
+          "name": "GovernanceNamespaces",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceNamespacesResponse": {
+      "document": "ModifyGovernanceNamespaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceServicesRequest": {
+      "document": "ModifyGovernanceServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tse 实例 id。",
+          "example": "ins-df344df5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务信息。",
+          "example": "无",
+          "member": "GovernanceServiceInput",
+          "name": "GovernanceServices",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGovernanceServicesResponse": {
+      "document": "ModifyGovernanceServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9754,6 +14093,52 @@
       ],
       "usage": "out"
     },
+    "PublishConfigFilesRequest": {
+      "document": "PublishConfigFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-df344df5\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件发布",
+          "example": "无",
+          "member": "ConfigFileRelease",
+          "name": "ConfigFileReleases",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishConfigFilesResponse": {
+      "document": "PublishConfigFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件发布是否成功",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QpsThreshold": {
       "document": "云原生网关限流插件Qps阈值",
       "members": [
@@ -9818,6 +14203,80 @@
         }
       ],
       "usage": "both"
+    },
+    "ReleaseVersion": {
+      "document": "配置发布版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Active",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RollbackConfigFileReleasesRequest": {
+      "document": "RollbackConfigFileReleases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例id",
+          "example": "ins-0e02e26d",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回滚发布",
+          "example": "无",
+          "member": "ConfigFileRelease",
+          "name": "RollbackConfigFileReleases",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackConfigFileReleasesResponse": {
+      "document": "RollbackConfigFileReleases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回滚结果",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RouteWafStatus": {
       "document": "路由 WAF 状态",

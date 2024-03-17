@@ -3872,15 +3872,6 @@
         },
         {
           "disabled": false,
-          "document": "流名称。如果只绑定域名或路径，则此处填空。",
-          "example": "stream",
-          "member": "string",
-          "name": "StreamName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "指定已有的模板Id。",
           "example": "1000",
           "member": "int64",

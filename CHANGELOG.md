@@ -1,3 +1,145 @@
+# Release 3.0.1078.1
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 119 次发布
+
+发布时间：2024-03-18 01:17:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveTranscodeRule](https://cloud.tencent.com/document/api/267/32647)
+
+	* <font color="#dd0000">**删除入参**：</font>StreamName
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 37 次发布
+
+发布时间：2024-03-18 01:18:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceNetworkAddress](https://cloud.tencent.com/document/api/240/71918)
+
+	* 新增出参：FlowId
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 61 次发布
+
+发布时间：2024-03-15 14:54:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConfigFile](https://cloud.tencent.com/document/api/1364/104363)
+* [CreateConfigFileGroup](https://cloud.tencent.com/document/api/1364/104368)
+* [CreateGovernanceAlias](https://cloud.tencent.com/document/api/1364/104385)
+* [CreateGovernanceNamespaces](https://cloud.tencent.com/document/api/1364/104408)
+* [CreateGovernanceServices](https://cloud.tencent.com/document/api/1364/104384)
+* [CreateOrUpdateConfigFileAndRelease](https://cloud.tencent.com/document/api/1364/104362)
+* [DeleteConfigFileGroup](https://cloud.tencent.com/document/api/1364/104367)
+* [DeleteConfigFileReleases](https://cloud.tencent.com/document/api/1364/104361)
+* [DeleteConfigFiles](https://cloud.tencent.com/document/api/1364/104360)
+* [DeleteGovernanceAliases](https://cloud.tencent.com/document/api/1364/104383)
+* [DeleteGovernanceInstancesByHost](https://cloud.tencent.com/document/api/1364/104400)
+* [DeleteGovernanceNamespaces](https://cloud.tencent.com/document/api/1364/104407)
+* [DeleteGovernanceServices](https://cloud.tencent.com/document/api/1364/104382)
+* [DescribeAllConfigFileTemplates](https://cloud.tencent.com/document/api/1364/104348)
+* [DescribeConfigFile](https://cloud.tencent.com/document/api/1364/104359)
+* [DescribeConfigFileGroups](https://cloud.tencent.com/document/api/1364/104366)
+* [DescribeConfigFileRelease](https://cloud.tencent.com/document/api/1364/104358)
+* [DescribeConfigFileReleaseHistories](https://cloud.tencent.com/document/api/1364/104357)
+* [DescribeConfigFileReleaseVersions](https://cloud.tencent.com/document/api/1364/104356)
+* [DescribeConfigFileReleases](https://cloud.tencent.com/document/api/1364/104355)
+* [DescribeConfigFiles](https://cloud.tencent.com/document/api/1364/104354)
+* [DescribeConfigFilesByGroup](https://cloud.tencent.com/document/api/1364/104353)
+* [DescribeGovernanceAliases](https://cloud.tencent.com/document/api/1364/104381)
+* [DescribeGovernanceNamespaces](https://cloud.tencent.com/document/api/1364/104406)
+* [DescribeGovernanceServiceContractVersions](https://cloud.tencent.com/document/api/1364/104403)
+* [DescribeGovernanceServiceContracts](https://cloud.tencent.com/document/api/1364/104402)
+* [DescribeGovernanceServices](https://cloud.tencent.com/document/api/1364/104380)
+* [ModifyConfigFileGroup](https://cloud.tencent.com/document/api/1364/104365)
+* [ModifyConfigFiles](https://cloud.tencent.com/document/api/1364/104352)
+* [ModifyGovernanceAlias](https://cloud.tencent.com/document/api/1364/104379)
+* [ModifyGovernanceNamespaces](https://cloud.tencent.com/document/api/1364/104405)
+* [ModifyGovernanceServices](https://cloud.tencent.com/document/api/1364/104378)
+* [PublishConfigFiles](https://cloud.tencent.com/document/api/1364/104351)
+* [RollbackConfigFileReleases](https://cloud.tencent.com/document/api/1364/104350)
+
+新增数据结构：
+
+* [ConfigFile](https://cloud.tencent.com/document/api/1364/54942#ConfigFile)
+* [ConfigFileGroup](https://cloud.tencent.com/document/api/1364/54942#ConfigFileGroup)
+* [ConfigFileGroupTag](https://cloud.tencent.com/document/api/1364/54942#ConfigFileGroupTag)
+* [ConfigFilePublishInfo](https://cloud.tencent.com/document/api/1364/54942#ConfigFilePublishInfo)
+* [ConfigFileRelease](https://cloud.tencent.com/document/api/1364/54942#ConfigFileRelease)
+* [ConfigFileReleaseDeletion](https://cloud.tencent.com/document/api/1364/54942#ConfigFileReleaseDeletion)
+* [ConfigFileReleaseHistory](https://cloud.tencent.com/document/api/1364/54942#ConfigFileReleaseHistory)
+* [ConfigFileTag](https://cloud.tencent.com/document/api/1364/54942#ConfigFileTag)
+* [ConfigFileTemplate](https://cloud.tencent.com/document/api/1364/54942#ConfigFileTemplate)
+* [GovernanceAlias](https://cloud.tencent.com/document/api/1364/54942#GovernanceAlias)
+* [GovernanceInterfaceDescription](https://cloud.tencent.com/document/api/1364/54942#GovernanceInterfaceDescription)
+* [GovernanceNamespace](https://cloud.tencent.com/document/api/1364/54942#GovernanceNamespace)
+* [GovernanceNamespaceInput](https://cloud.tencent.com/document/api/1364/54942#GovernanceNamespaceInput)
+* [GovernanceService](https://cloud.tencent.com/document/api/1364/54942#GovernanceService)
+* [GovernanceServiceContract](https://cloud.tencent.com/document/api/1364/54942#GovernanceServiceContract)
+* [GovernanceServiceContractVersion](https://cloud.tencent.com/document/api/1364/54942#GovernanceServiceContractVersion)
+* [GovernanceServiceInput](https://cloud.tencent.com/document/api/1364/54942#GovernanceServiceInput)
+* [ReleaseVersion](https://cloud.tencent.com/document/api/1364/54942#ReleaseVersion)
+
+修改数据结构：
+
+* [GovernanceInstance](https://cloud.tencent.com/document/api/1364/54942#GovernanceInstance)
+
+	* 新增成员：InstanceVersion, HealthStatus, Comment
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 81 次发布
+
+发布时间：2024-03-18 01:26:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeWafInfo
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ClbHostResult
+* ClbHostsParams
+
+
+
 # Release 3.0.1077.1
 
 ## 日志服务(cls) 版本：2020-10-16

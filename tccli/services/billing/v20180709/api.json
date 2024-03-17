@@ -9524,7 +9524,7 @@
         },
         {
           "disabled": false,
-          "document": "数量，最大值为100",
+          "document": "数量，最大值为300",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
