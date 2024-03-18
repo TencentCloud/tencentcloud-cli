@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CancelFlow": {
-      "document": "用于撤销合同流程<br/>\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n1. 如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。\n\n2. 有对应合同撤销权限的人:  <font color='red'>合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人</font>\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f9f07fea6a70766cd286e0d58682ee2.png)\n\n3. <font color='red'>撤销合同会返还合同额度</font>\n\n4.  撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员",
+      "document": "用于撤销合同流程<br/>\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n1. 如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。\n\n2. 有对应合同撤销权限的人:  <font color='red'>合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人</font>\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f9f07fea6a70766cd286e0d58682ee2.png)\n\n3. <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n\n4.  撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员",
       "input": "CancelFlowRequest",
       "name": "撤销单个合同流程",
       "output": "CancelFlowResponse",
@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateBatchCancelFlowUrl": {
-      "document": "指定需要批量撤回的签署流程Id，以获取批量撤销链接。\n客户需指定要撤回的签署流程Id，最多可指定100个，超过100则不处理。\n接口调用成功后，将返回批量撤回合同的链接。通过点击链接，可跳转至电子签小程序完成批量撤回操作。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注：\n1. 如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。\n\n2. 有对应合同撤销权限的人:  <font color='red'>合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人</font>\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f9f07fea6a70766cd286e0d58682ee2.png)\n\n3. <font color='red'>撤销合同会返还合同额度</font>",
+      "document": "指定需要批量撤回的签署流程Id，以获取批量撤销链接。\n客户需指定要撤回的签署流程Id，最多可指定100个，超过100则不处理。\n接口调用成功后，将返回批量撤回合同的链接。通过点击链接，可跳转至电子签小程序完成批量撤回操作。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销签署流程任务结果](https://qian.tencent.com/developers/companyApis/operateFlows/CreateBatchCancelFlowUrl)\n\n\n注：\n1. 如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。\n\n2. 有对应合同撤销权限的人:  <font color='red'>合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人</font>\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f9f07fea6a70766cd286e0d58682ee2.png)\n\n3. <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>",
       "input": "CreateBatchCancelFlowUrlRequest",
       "name": "获取批量撤销签署流程腾讯电子签小程序链接",
       "output": "CreateBatchCancelFlowUrlResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateFlowByFiles": {
-      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n-  合同**发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n-  合同**发起后就会扣减合同的额度**, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse",
@@ -484,7 +484,7 @@
       "status": "online"
     },
     "StartFlow": {
-      "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于开始整个合同流程,  推进流程进入到签署环节。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：\n1.<font color=\"red\">合同发起后就会扣减合同的额度</font>, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n2.<font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>功能\n\n3.<font color=\"red\">在发起签署流程之前，建议等待 [PDF合成完成的回调](https://qian.tencent.com/developers/company/callback_types_file_resources)</font>，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
+      "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于开始整个合同流程,  推进流程进入到签署环节。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：\n1.<font color=\"red\">合同发起后就会扣减合同的额度</font>, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n2.<font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>功能\n\n3.<font color=\"red\">在发起签署流程之前，建议等待 [PDF合成完成的回调](https://qian.tencent.com/developers/company/callback_types_file_resources)</font>，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
       "input": "StartFlowRequest",
       "name": "模板发起合同-发起签署流程",
       "output": "StartFlowResponse",
@@ -677,7 +677,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "xxx",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -1967,6 +1967,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "批量撤销任务编号，为32位字符串，可用于[查询批量撤销签署流程任务结果](https://qian.tencent.com/developers/companyApis/operateFlows/CreateBatchCancelFlowUrl) 或关联[批量撤销任务结果回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2134,7 +2144,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -4368,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -4681,7 +4691,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -4971,7 +4981,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -8083,7 +8093,7 @@
         {
           "disabled": false,
           "document": "补充企业签署人员工手机号",
-          "example": "188xxxxxxxx",
+          "example": "18800000000",
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
@@ -8109,7 +8119,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
           "example": "无",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -8595,7 +8605,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -9582,7 +9592,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
+          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。\n\n注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -9591,7 +9601,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。\n\n注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`",
           "example": "无",
           "member": "IntentionAction",
           "name": "IntentionActions",
@@ -10111,7 +10121,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -11473,7 +11483,7 @@
       "type": "object"
     },
     "SuccessCreateStaffData": {
-      "document": "创建员工成功返回的信息\n支持saas/企微/H5端进行加入。",
+      "document": "创建/修改员工成功返回的信息\n现在支持saas/企微/H5端进行加入。",
       "members": [
         {
           "disabled": false,
@@ -11527,7 +11537,7 @@
         },
         {
           "disabled": false,
-          "document": "H5端员工加入\\实名链接\n\n只有入参 InvitationNotifyType = H5的时候才会进行返回。",
+          "document": "员工邀请返回链接 根据入参的 InvitationNotifyType 和 Endpoint 返回链接 <table><tbody><tr><td>链接类型</td><td>有效期</td><td>示例</td></tr><tr><td>HTTP_SHORT_URL（短链）</td><td>一天</td><td>https://test.essurl.cn/fvG7UBEd0F</td></tr><tr><td>HTTP（长链）</td><td>一天</td><td>https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?where=mini&from=MSG&to=USER_VERIFY&verifyToken=yDCVbUUckpwocmfpUySko7IS83LTV0u0&expireTime=1710840183</td></tr><tr><td>H5</td><td>30 天</td><td>https://quick.test.qian.tencent.cn/guide?Code=yDCVbUUckpwtvxqoUbTw4VBBjLbfAtW7&CodeType=QUICK&shortKey=yDCVbUY7lhqV7mZlCL2d</td></tr><tr><td>APP</td><td>一天</td><td>/pages/guide/index?to=USER_VERIFY&verifyToken=yDCVbUUckpwocm96UySko7ISvEIZH7Yz&expireTime=1710840455 </td></tr></tbody></table>",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -12300,7 +12310,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "610*************1X",
           "member": "string",
           "name": "IdCardNumber",

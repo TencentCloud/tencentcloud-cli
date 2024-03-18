@@ -26,7 +26,8 @@ Output:
             "合同流程Id:yDmFdUUckpsvi8mpUEn0aFR1tWzReolk,无法撤回，错误信息：合同当前状态不支持撤销",
             ""
         ],
-        "RequestId": "s1698669052286290493"
+        "RequestId": "s1698669052286290493",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }
 ```
@@ -53,7 +54,8 @@ Output:
 {
     "Response": {
         "FailMessages": [],
-        "RequestId": "s1698667230378832497"
+        "RequestId": "s1698667230378832497",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }
 ```
@@ -80,7 +82,8 @@ Output:
 {
     "Response": {
         "FailMessages": [],
-        "RequestId": "s1698667230378832487"
+        "RequestId": "s1698667230378832487",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }
 ```
@@ -107,7 +110,8 @@ Output:
 {
     "Response": {
         "FailMessages": [],
-        "RequestId": "s1698667230378832486"
+        "RequestId": "s1698667230378832486",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }
 ```

@@ -1,14 +1,14 @@
 {
   "actions": {
     "ChannelBatchCancelFlows": {
-      "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
+      "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>",
       "input": "ChannelBatchCancelFlowsRequest",
       "name": "批量撤销合同流程",
       "output": "ChannelBatchCancelFlowsResponse",
       "status": "online"
     },
     "ChannelCancelFlow": {
-      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
+      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>",
       "input": "ChannelCancelFlowRequest",
       "name": "撤销合同流程",
       "output": "ChannelCancelFlowResponse",
@@ -29,7 +29,7 @@
       "status": "online"
     },
     "ChannelCreateBatchCancelFlowUrl": {
-      "document": "通过合同编号生成批量撤销合同的链接，单次最多支持撤销100份合同,   返回的链接需要有此权限的人<font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>在<font color='red'>**手机端**</font>打开,  跳转到腾讯电子签小程序输入撤销原因来进行撤销合同\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
+      "document": "通过合同编号生成批量撤销合同的链接，单次最多支持撤销100份合同,   返回的链接需要有此权限的人<font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>在<font color='red'>**手机端**</font>打开,  跳转到腾讯电子签小程序输入撤销原因来进行撤销合同\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n注:\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
       "name": "获取批量撤销合同流程的腾讯电子签小程序链接",
       "output": "ChannelCreateBatchCancelFlowUrlResponse",
@@ -78,21 +78,21 @@
       "status": "online"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。\n\n适用场景：适用非制式的合同文件签署，开发者有每个签署流程的PDF，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。整体的逻辑如下图</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bf86248a2c163228c4e894cf5926af69/ChannelCreateFlowByFiles.png)\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
+      "document": "接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。\n\n适用场景：适用非制式的合同文件签署，开发者有每个签署流程的PDF，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。整体的逻辑如下图</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bf86248a2c163228c4e894cf5926af69/ChannelCreateFlowByFiles.png)\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度）`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
       "input": "ChannelCreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse",
       "status": "online"
     },
     "ChannelCreateFlowGroupByFiles": {
-      "document": "接口（ChannelCreateFlowGroupByFiles）用于使用 PDF 文件创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
+      "document": "接口（ChannelCreateFlowGroupByFiles）用于使用 PDF 文件创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
       "input": "ChannelCreateFlowGroupByFilesRequest",
       "name": "通过多文件创建合同组签署流程",
       "output": "ChannelCreateFlowGroupByFilesResponse",
       "status": "online"
     },
     "ChannelCreateFlowGroupByTemplates": {
-      "document": "接口（ChannelCreateFlowGroupByTemplates）用于通过多模板创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
+      "document": "接口（ChannelCreateFlowGroupByTemplates）用于通过多模板创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度），合同组中每个合同会扣减一个合同额度`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
       "input": "ChannelCreateFlowGroupByTemplatesRequest",
       "name": "通过多模板创建合同组签署流程",
       "output": "ChannelCreateFlowGroupByTemplatesResponse",
@@ -351,7 +351,7 @@
       "status": "online"
     },
     "CreateFlowsByTemplates": {
-      "document": "接口（CreateFlowsByTemplates）用于使用模板批量创建签署流程。当前可批量发起合同（签署流程）数量为1-20个。\n如若在模板中配置了动态表格, 上传的附件必须为A4大小 \n合同发起人必须在电子签已经进行实名。\n\n### 一. 整体的逻辑如下\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e193519d4383fa74782a9e19147ef01a/CreateFlowsByTemplates.png)\n\n###  二. 可以作为发起方和签署方的角色列表\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n### 三. 填充模板中定义的填写控件\n模板中配置的<font color=\"red\">发起人填充控件</font>可以通过本接口的**FormFields数组**字段填充\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/37457e0e450fc221effddfcb8b1bad55.png)\n填充的传参示例如下\n\n```\n    request.FormFields = [{\n            \"ComponentName\": \"项目的名字\",\n            \"ComponentValue\": \"休闲山庄\"\n        }, {\n            \"ComponentName\": \"项目的地址\",\n            \"ComponentValue\": \"凤凰山北侧\",\n        }, {\n            \"ComponentName\": \"范围\",\n            \"ComponentValue\": \"凤凰山至107国道\",\n        }, {\n            \"ComponentName\": \"面积\",\n            \"ComponentValue\": \"100亩\",\n        }, {\n            \"ComponentName\": \"基本情况\",\n            \"ComponentValue\": \"完好\",\n        }, , {\n            \"ComponentName\": \"用途\",\n            \"ComponentValue\": \"经营农家乐\",\n        }\n    ]\n```\n合成后合同样子示例\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/140a2fb771ac66a185d0a000d37485f6.png)\n\n\n\n### 四. 注意 \n1. 发起合同时候,  作为<font color=\"red\">发起方的第三方子企业A员工的企业和员工必须经过实名</font>, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名\n\n2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明\n\n3. <font color=\"red\">调用接口发起合同成功就会扣减合同的额度</font>, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n4. <font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>\n\n5.  <font color=\"red\">在下一步创建签署链接前，建议等待DocumentFill </font> <a href=\"https://qian.tencent.com/developers/partner/callback_types_file_resources\">PDF合成完成的回调</a>或者睡眠几秒，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
+      "document": "接口（CreateFlowsByTemplates）用于使用模板批量创建签署流程。当前可批量发起合同（签署流程）数量为1-20个。\n如若在模板中配置了动态表格, 上传的附件必须为A4大小 \n合同发起人必须在电子签已经进行实名。\n\n### 一. 整体的逻辑如下\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e193519d4383fa74782a9e19147ef01a/CreateFlowsByTemplates.png)\n\n###  二. 可以作为发起方和签署方的角色列表\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n### 三. 填充模板中定义的填写控件\n模板中配置的<font color=\"red\">发起人填充控件</font>可以通过本接口的**FormFields数组**字段填充\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/37457e0e450fc221effddfcb8b1bad55.png)\n填充的传参示例如下\n\n```\n    request.FormFields = [{\n            \"ComponentName\": \"项目的名字\",\n            \"ComponentValue\": \"休闲山庄\"\n        }, {\n            \"ComponentName\": \"项目的地址\",\n            \"ComponentValue\": \"凤凰山北侧\",\n        }, {\n            \"ComponentName\": \"范围\",\n            \"ComponentValue\": \"凤凰山至107国道\",\n        }, {\n            \"ComponentName\": \"面积\",\n            \"ComponentValue\": \"100亩\",\n        }, {\n            \"ComponentName\": \"基本情况\",\n            \"ComponentValue\": \"完好\",\n        }, , {\n            \"ComponentName\": \"用途\",\n            \"ComponentValue\": \"经营农家乐\",\n        }\n    ]\n```\n合成后合同样子示例\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/140a2fb771ac66a185d0a000d37485f6.png)\n\n\n\n### 四. 注意 \n1. 发起合同时候,  作为<font color=\"red\">发起方的第三方子企业A员工的企业和员工必须经过实名</font>, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名\n\n2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明\n\n3. <font color=\"red\">调用接口发起合同成功就会扣减合同的额度</font>, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n4. <font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>\n\n5.  <font color=\"red\">在下一步创建签署链接前，建议等待DocumentFill </font> <a href=\"https://qian.tencent.com/developers/partner/callback_types_file_resources\">PDF合成完成的回调</a>或者睡眠几秒，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
       "input": "CreateFlowsByTemplatesRequest",
       "name": "用模板创建签署流程",
       "output": "CreateFlowsByTemplatesResponse",
@@ -1128,6 +1128,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "批量撤销任务编号，为32位字符串，可用于[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask) 或关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)\n",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1481,6 +1491,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "批量撤销任务编号，为32位字符串，可用于[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask) 或关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1639,7 +1659,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -3012,7 +3032,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -5256,7 +5276,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。\n</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -6606,7 +6626,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -7753,7 +7773,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
           "example": "无",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -8020,7 +8040,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -8937,7 +8957,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。",
+          "document": "意愿核身语音问答模式（即语音播报+语音回答）使用的文案，包括：系统语音播报的文本、需要核验的标准文本。当前仅支持1轮问答。\n\n注：`选择问答模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可语音回复“同意”或“不同意”。`",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -8946,7 +8966,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。",
+          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。当前仅支持一个提示文本。\n\n注：`选择点头模式时，此字段可不传，不传则使用默认语音文本：请问，您是否同意签署本协议？可点头同意。`",
           "example": "无",
           "member": "IntentionAction",
           "name": "IntentionActions",
@@ -9222,8 +9242,8 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
-          "example": "无",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "example": "620000198802020000",
           "member": "string",
           "name": "ApproverIdCardNumber",
           "required": false,
@@ -10319,7 +10339,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。</br>\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo\" target=\"_blank\">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。",
+          "document": "签署人在原合同签署人列表中的顺序序号(从0开始，按顺序依次递增)。\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo\" target=\"_blank\">DescribeFlowDetailInfo</a>接口查看原流程中的签署人列表。",
           "example": "0",
           "member": "uint64",
           "name": "ApproverNumber",
@@ -10355,7 +10375,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。\n</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -10382,7 +10402,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#agent\" target=\"_blank\">Agent结构体</a>。</br>\n当为子客企业指定经办人时，此OrganizationOpenId必传。",
+          "document": "第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#agent\" target=\"_blank\">Agent结构体</a>。\n当为子客企业指定经办人时，此OrganizationOpenId必传。",
           "example": "org_dianziqian",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -10391,7 +10411,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。</br>\n当签署方为同一第三方平台下的员工时，此OpenId必传。",
+          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。\n当签署方为同一第三方平台下的员工时，此OpenId必传。",
           "example": "n9527",
           "member": "string",
           "name": "OpenId",
@@ -10409,7 +10429,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。</br>\n如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。",
+          "document": "参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。\n如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。",
           "example": "供应商",
           "member": "string",
           "name": "ApproverSignRole",
@@ -11558,8 +11578,8 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
-          "example": "610*************1X",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
           "required": true,

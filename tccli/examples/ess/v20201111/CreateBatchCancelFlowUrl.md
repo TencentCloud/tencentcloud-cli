@@ -22,7 +22,8 @@ Output:
             ""
         ],
         "RequestId": "s1690449958963022285",
-        "UrlExpireOn": "2023-07-28 17:25:59"
+        "UrlExpireOn": "2023-07-28 17:25:59",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }
 ```
@@ -50,6 +51,7 @@ Output:
             "合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同"
         ],
         "UrlExpireOn": "",
+        "TaskId": "",
         "RequestId": "s1690449958963022285"
     }
 }
@@ -78,7 +80,8 @@ Output:
             ""
         ],
         "RequestId": "s1690449958963022285",
-        "UrlExpireOn": "2023-07-28 17:25:59"
+        "UrlExpireOn": "2023-07-28 17:25:59",
+        "TaskId": "yDCVWUUckpwk4b05UyEZnO0xOn3snWWY"
     }
 }
 ```

@@ -1,3 +1,70 @@
+# Release 3.0.1079.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 156 次发布
+
+发布时间：2024-03-19 01:14:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchCancelFlowUrl](https://cloud.tencent.com/document/api/1323/78262)
+
+	* 新增出参：TaskId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 159 次发布
+
+发布时间：2024-03-19 01:15:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelBatchCancelFlows](https://cloud.tencent.com/document/api/1420/80391)
+
+	* 新增出参：TaskId
+
+* [ChannelCreateBatchCancelFlowUrl](https://cloud.tencent.com/document/api/1420/78264)
+
+	* 新增出参：TaskId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 120 次发布
+
+发布时间：2024-03-19 01:18:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveTranscodeRule](https://cloud.tencent.com/document/api/267/32647)
+
+	* 新增入参：StreamName
+
+
+
+
 # Release 3.0.1078.1
 
 ## 云直播CSS(live) 版本：2018-08-01

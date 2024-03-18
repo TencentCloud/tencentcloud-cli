@@ -72,19 +72,19 @@
       {
         "document": "指定需要批量撤回三个签署流程Id，获取批量撤销链接\n接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowIds\": [\n        \"yDwhIUUck********Ekio7sxsMq\",\n        \"yDwhIUUckp*******UuaXC88Rgc\",\n        \"yDwhIUUckp*******7sySp2O5D38\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1\",\n        \"FailMessages\": [\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"RequestId\": \"s1690449958963022285\",\n        \"UrlExpireOn\": \"2023-07-28 17:25:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1\",\n        \"FailMessages\": [\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"RequestId\": \"s1690449958963022285\",\n        \"UrlExpireOn\": \"2023-07-28 17:25:59\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn4snWWY\"\n    }\n}",
         "title": "获取批量撤销签署流程链接"
       },
       {
         "document": "获取批量撤销签署流程链接失败",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowIds\": [\n        \"yDwhIUUck********Ekio7sxsMq\",\n        \"yDwhIUUckp*******UuaXC88Rgc\",\n        \"yDwhIUUckp*******7sySp2O5D39\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"\",\n        \"FailMessages\": [\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\"\n        ],\n        \"UrlExpireOn\": \"\",\n        \"RequestId\": \"s1690449958963022285\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"\",\n        \"FailMessages\": [\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\"\n        ],\n        \"UrlExpireOn\": \"\",\n        \"TaskId\": \"\",\n        \"RequestId\": \"s1690449958963022285\"\n    }\n}",
         "title": "获取批量撤销签署流程链接失败"
       },
       {
         "document": "获取批量撤销签署流程链接部分成功",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"1956103********520fde6a\"\n    },\n    \"FlowIds\": [\n        \"yDwhIUUck********Ekio7sxsMq\",\n        \"yDwhIUUckp*******UuaXC88Rgc\",\n        \"yDwhIUUckp*******7sySp2O5D38\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1\",\n        \"FailMessages\": [\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"\",\n            \"\"\n        ],\n        \"RequestId\": \"s1690449958963022285\",\n        \"UrlExpireOn\": \"2023-07-28 17:25:59\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1\",\n        \"FailMessages\": [\n            \"合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同\",\n            \"\",\n            \"\"\n        ],\n        \"RequestId\": \"s1690449958963022285\",\n        \"UrlExpireOn\": \"2023-07-28 17:25:59\",\n        \"TaskId\": \"yDCVWUUckpwk4b05UyEZnO0xOn3snWWY\"\n    }\n}",
         "title": "获取批量撤销签署流程链接部分成功"
       }
     ],

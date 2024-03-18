@@ -179,7 +179,7 @@
     "CreateLiveTranscodeRule": [
       {
         "document": "CreateLiveTranscodeRule 默认示例。",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\n&DomainName=5000.liveplay.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\n&DomainName=5000.liveplay.myqcloud.com\n&AppName=live\n&StreamName=\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }

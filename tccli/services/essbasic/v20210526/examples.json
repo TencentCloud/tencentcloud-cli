@@ -4,25 +4,25 @@
       {
         "document": "撤销4个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同</br>\n其中合同yDmFdUUckpsvi8mpUEn0aFR1tWzReolk 已经签署完成，无法撤销。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDmFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDmFdUUckpsvi8mpUEn0aFR1tWzReolk\",\n        \"yDmFmUUckpst10i3UubBAat8PSOt2iJc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [\n            \"\",\n            \"\",\n            \"合同流程Id:yDmFdUUckpsvi8mpUEn0aFR1tWzReolk,无法撤回，错误信息：合同当前状态不支持撤销\",\n            \"\"\n        ],\n        \"RequestId\": \"s1698669052286290493\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [\n            \"\",\n            \"\",\n            \"合同流程Id:yDmFdUUckpsvi8mpUEn0aFR1tWzReolk,无法撤回，错误信息：合同当前状态不支持撤销\",\n            \"\"\n        ],\n        \"RequestId\": \"s1698669052286290493\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn4snWWY\"\n    }\n}",
         "title": "撤销合同部分成功"
       },
       {
         "document": "撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDmFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDmFdUUckpsvi8mpUEn0aFR1tWzReolk\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832497\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832497\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn4snWWY\"\n    }\n}",
         "title": "自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同"
       },
       {
         "document": "撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为1) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方以\"合同内容错误，需要修正\"的理由撤销当前合同",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDwFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDwFdUUckpsvi8mpUEn0aFR1tWzReolk\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832487\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832487\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn4snWWY\"\n    }\n}",
         "title": "自定义撤销理由，使用只保留身份信息的方式撤销合同"
       },
       {
         "document": "撤销3个合同，并且自定义撤销理由，使用默认格式(CancelMessageFormat 设置为3) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 3,\n    \"FlowIds\": [\n        \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n        \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n        \"yDwFdUUckpsvi8mpUEn0aFR1tWzReoTk\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832486\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832486\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn4snWWY\"\n    }\n}",
         "title": "自定义撤销理由，保留身份信息+企业名称+经办人名称撤销合同"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "document": "获取两个合同撤销的腾讯电子签小程序链接",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchCancelFlowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_diziqain\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"FlowIds\": [\n        \"yDSLKUUckpoqyl0rUyC8ScPwfefxADo9\",\n        \"yDSLKUUckpoq79wpUw8Md4qaPVed40LQ\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDSLKUUc*a7KQNiW2&userId=yDwJ5UUckpk*DyBpuGTgVEGzo&expireOn=1699013729&login=1&verify=1\",\n        \"FailMessages\": [\n            \"\",\n            \"\"\n        ],\n        \"UrlExpireOn\": \"2023-11-03 20:15:29\",\n        \"RequestId\": \"549a7dce-5d89-4797-85c1-d8b2794fcc73\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchCancelFlowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDSLKUUc*a7KQNiW2&userId=yDwJ5UUckpk*DyBpuGTgVEGzo&expireOn=1699013729&login=1&verify=1\",\n        \"FailMessages\": [\n            \"\",\n            \"\"\n        ],\n        \"UrlExpireOn\": \"2023-11-03 20:15:29\",\n        \"TaskId\": \"yDCVWUUckpwk3b05UyEZnO0xOn3snWWY\",\n        \"RequestId\": \"549a7dce-5d89-4797-85c1-d8b2794fcc73\"\n    }\n}",
         "title": "获取两个合同撤销的腾讯电子签小程序链接"
       }
     ],
