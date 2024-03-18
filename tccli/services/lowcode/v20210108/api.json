@@ -553,6 +553,15 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DB实例类型",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbInstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -920,6 +929,16 @@
           "name": "RelationFieldList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "db实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbInstanceType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1476,6 +1495,15 @@
           "name": "QueryDataSourceRelationList",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "db实例类型",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbInstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1489,6 +1517,7 @@
           "example": "无",
           "member": "DataSourceDetailItems",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

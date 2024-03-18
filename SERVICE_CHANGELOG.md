@@ -1,73 +1,79 @@
 # 本版本更新包含以下内容：
 
-## 邮件发送服务(dms) 版本：2020-08-19
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 2 次发布
+### 第 72 次发布
 
-发布时间：2024-03-18 01:14:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* SendEmail
-* SendTemplatedEmail
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 15 次发布
-
-发布时间：2024-03-18 01:14:47
+发布时间：2024-03-19 01:15:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateConnectTestJob](http://document.tencentcloudapi.woa.com/document/product/571/83465)
-* [DescribeConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/83464)
+* [CreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79340)
 
-新增数据结构：
-
-* [ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)
-* [ConnTestItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnTestItem)
-* [ConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnectTestResult)
+	* 新增出参：TaskId
 
 
 
-## 数据传输服务(dts) 版本：2018-03-30
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 130 次发布
+
+发布时间：2024-03-19 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelBatchCancelFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75964)
+
+	* 新增出参：TaskId
+
+* [ChannelCreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75575)
+
+	* 新增出参：TaskId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 云直播CSS(live) 版本：2018-08-01
 
-### 第 52 次发布
+### 第 53 次发布
 
-发布时间：2024-03-18 01:18:51
+发布时间：2024-03-19 01:19:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [DropLiveBackupStream](http://document.tencentcloudapi.woa.com/document/product/267/83481)
 
 修改接口：
 
 * [CreateLiveTranscodeRule](http://document.tencentcloudapi.woa.com/document/product/267/32647)
 
-	* <font color="#dd0000">**删除入参**：</font>StreamName
+	* 新增入参：StreamName
 
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+## 云开发低码(lowcode) 版本：2021-01-08
 
-### 第 24 次发布
+### 第 9 次发布
 
-发布时间：2024-03-18 01:19:28
+发布时间：2024-03-19 01:19:22
 
 本次发布包含了以下内容：
 
@@ -75,65 +81,21 @@
 
 修改接口：
 
-* [ModifyDBInstanceNetworkAddress](http://document.tencentcloudapi.woa.com/document/product/240/71918)
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
 
-	* 新增出参：FlowId
+	* 新增入参：DbInstanceType
 
+* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
 
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
+	* 新增入参：DbInstanceType
 
 
-## 微服务引擎(tse) 版本：2020-12-07
+修改数据结构：
 
-### 第 56 次发布
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
 
-发布时间：2024-03-18 01:25:27
+	* 新增成员：DbInstanceType
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83474)
-* [CreateGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83479)
-* [CreateGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83473)
-* [DeleteGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83472)
-* [DeleteGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83478)
-* [DeleteGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83471)
-* [DescribeGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83470)
-* [DescribeGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83477)
-* [DescribeGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83469)
-* [ModifyGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83468)
-* [ModifyGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83476)
-* [ModifyGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83467)
-
-新增数据结构：
-
-* [GovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceAlias)
-* [GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace)
-* [GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput)
-* [GovernanceService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceService)
-* [GovernanceServiceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceServiceInput)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 129 次发布
-
-发布时间：2024-03-18 01:26:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/83480)
 
 
 
@@ -37770,14 +37732,14 @@
 
 新增接口：
 
-* [[CreateConnectTestJob](http://document.tencentcloudapi.woa.com/document/product/571/83465)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/83464)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateConnectTestJob](http://document.tencentcloudapi.woa.com/document/product/571/83465)
+* [DescribeConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/83464)
 
 新增数据结构：
 
-* [[ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint))
-* [[ConnTestItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnTestItem)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[ConnTestItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnTestItem))
-* [[ConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnectTestResult)](http://document.tencentcloudapi.woa.com/document/product/571/78340#[ConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnectTestResult))
+* [ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)
+* [ConnTestItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnTestItem)
+* [ConnectTestResult](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnectTestResult)
 
 ### 第 14 次发布
 
@@ -42019,6 +41981,21 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 72 次发布
+
+发布时间：2024-03-19 01:15:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79340)
+
+	* 新增出参：TaskId
+
+
 ### 第 71 次发布
 
 发布时间：2024-03-15 01:16:02
@@ -43687,6 +43664,25 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 130 次发布
+
+发布时间：2024-03-19 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelBatchCancelFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75964)
+
+	* 新增出参：TaskId
+
+* [ChannelCreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75575)
+
+	* 新增出参：TaskId
+
 
 ### 第 129 次发布
 
@@ -55264,6 +55260,25 @@
 
 ## 云直播CSS(live) 版本：2018-08-01
 
+### 第 53 次发布
+
+发布时间：2024-03-19 01:19:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DropLiveBackupStream](http://document.tencentcloudapi.woa.com/document/product/267/83481)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateLiveTranscodeRule](http://document.tencentcloudapi.woa.com/document/product/267/32647)
+
+	* 新增入参：StreamName
+
+
 ### 第 52 次发布
 
 发布时间：2024-03-18 01:18:51
@@ -56482,6 +56497,32 @@
 
 
 ## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 9 次发布
+
+发布时间：2024-03-19 01:19:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
+
+	* 新增入参：DbInstanceType
+
+* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
+
+	* 新增入参：DbInstanceType
+
+
+修改数据结构：
+
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
+
+	* 新增成员：DbInstanceType
+
 
 ### 第 8 次发布
 
@@ -89534,26 +89575,26 @@
 
 新增接口：
 
-* [[CreateGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83474)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83479)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83473)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83472)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83478)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83471)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83470)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83477)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83469)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83468)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83476)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83467)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83474)
+* [CreateGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83479)
+* [CreateGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83473)
+* [DeleteGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83472)
+* [DeleteGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83478)
+* [DeleteGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83471)
+* [DescribeGovernanceAliases](http://document.tencentcloudapi.woa.com/document/product/1364/83470)
+* [DescribeGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83477)
+* [DescribeGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83469)
+* [ModifyGovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/83468)
+* [ModifyGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83476)
+* [ModifyGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83467)
 
 新增数据结构：
 
-* [[GovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceAlias)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceAlias))
-* [[GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace))
-* [[GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput))
-* [[GovernanceService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceService)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GovernanceService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceService))
-* [[GovernanceServiceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceServiceInput)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[GovernanceServiceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceServiceInput))
+* [GovernanceAlias](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceAlias)
+* [GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace)
+* [GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput)
+* [GovernanceService](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceService)
+* [GovernanceServiceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceServiceInput)
 
 ### 第 55 次发布
 
@@ -94988,7 +95029,7 @@
 
 新增接口：
 
-* [[CheckBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/83480)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/83480)
 
 ### 第 128 次发布
 

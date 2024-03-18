@@ -1,3 +1,104 @@
+# Release 3.0.957.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 72 次发布
+
+发布时间：2024-03-19 01:15:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79340)
+
+	* 新增出参：TaskId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 130 次发布
+
+发布时间：2024-03-19 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelBatchCancelFlows](http://document.tencentcloudapi.woa.com/document/product/1595/75964)
+
+	* 新增出参：TaskId
+
+* [ChannelCreateBatchCancelFlowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75575)
+
+	* 新增出参：TaskId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 53 次发布
+
+发布时间：2024-03-19 01:19:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DropLiveBackupStream](http://document.tencentcloudapi.woa.com/document/product/267/83481)
+
+修改接口：
+
+* [CreateLiveTranscodeRule](http://document.tencentcloudapi.woa.com/document/product/267/32647)
+
+	* 新增入参：StreamName
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 9 次发布
+
+发布时间：2024-03-19 01:19:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
+
+	* 新增入参：DbInstanceType
+
+* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
+
+	* 新增入参：DbInstanceType
+
+
+修改数据结构：
+
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
+
+	* 新增成员：DbInstanceType
+
+
+
+
 # Release 3.0.956.1
 
 ## 邮件发送服务(dms) 版本：2020-08-19

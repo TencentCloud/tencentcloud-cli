@@ -882,6 +882,13 @@
       "output": "DescribeVisitTopSumInfoListResponse",
       "status": "online"
     },
+    "DropLiveBackupStream": {
+      "document": "指定断开主备流中的某一路流。\n注：对已经不活跃的流，调用该断流接口时，接口返回成功。",
+      "input": "DropLiveBackupStreamRequest",
+      "name": "断开直播主备推流",
+      "output": "DropLiveBackupStreamResponse",
+      "status": "online"
+    },
     "DropLiveStream": {
       "document": "断开推流连接，但可以重新推流。\n注：对已经不活跃的流，调用该断流接口时，接口返回成功。",
       "input": "DropLiveStreamRequest",
@@ -3958,6 +3965,15 @@
           "example": "live",
           "member": "string",
           "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。已废弃该字段，请传入空字符串。",
+          "example": "stream",
+          "member": "string",
+          "name": "StreamName",
           "required": true,
           "type": "string"
         },
@@ -11191,6 +11207,60 @@
         }
       ],
       "usage": "out"
+    },
+    "DropLiveBackupStreamRequest": {
+      "document": "DropLiveBackupStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定断开的推流Sequence。",
+          "example": "2210463907505478124",
+          "member": "string",
+          "name": "UpstreamSequence",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DropLiveBackupStreamResponse": {
+      "document": "DropLiveBackupStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DropLiveStreamRequest": {
       "document": "DropLiveStream请求参数结构体",

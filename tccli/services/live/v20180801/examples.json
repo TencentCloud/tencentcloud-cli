@@ -187,7 +187,7 @@
     "CreateLiveTranscodeRule": [
       {
         "document": "CreateLiveTranscodeRule 默认示例。",
-        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\n&DomainName=5000.liveplay.myqcloud.com\n&AppName=live\n&StreamName=stream1\n&TemplateId=1000\n&<公共请求参数>",
+        "input": "https://live.tencentcloudapi.com/?Action=CreateLiveTranscodeRule\n&DomainName=5000.liveplay.myqcloud.com\n&AppName=live\n&StreamName=\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1029,6 +1029,14 @@
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeVisitTopSumInfoList\n&StartTime=2019-03-01 00:00:00\n&EndTime=2019-03-01 04:00:00\n&PageSize=2\n&PageNum=2\n&TopIndex=StreamId\n&OrderParam=TotalFlux\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"AvgFluxPerSecond\": 4.773,\n                \"Name\": \"CSZFMPP360\",\n                \"TotalRequest\": 36590,\n                \"TotalFlux\": 69023.772\n            },\n            {\n                \"AvgFluxPerSecond\": 4.634,\n                \"Name\": \"CSNXMPP360\",\n                \"TotalRequest\": 88629,\n                \"TotalFlux\": 67009.417\n            }\n        ],\n        \"OrderParam\": \"TotalFlux\",\n        \"PageNum\": 2,\n        \"PageSize\": 2,\n        \"RequestId\": \"k54e3deb-f318-4147-8a68-3c959642f9ec\",\n        \"TopIndex\": \"StreamId\",\n        \"TotalNum\": 1000,\n        \"TotalPage\": 500\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DropLiveBackupStream": [
+      {
+        "document": "断开指定Sequence上行流",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DropLiveBackupStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\",\n    \"UpstreamSequence\": \"2210463907505478124\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],
