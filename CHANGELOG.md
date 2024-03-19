@@ -1,3 +1,146 @@
+# Release 3.0.958.1
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 62 次发布
+
+发布时间：2024-03-20 01:11:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)
+
+	* 新增入参：RoleName, AllowOperate, LinkInfo
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 54 次发布
+
+发布时间：2024-03-20 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/83422)
+
+	* 新增入参：VpcActionMode, VpcInfo
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 73 次发布
+
+发布时间：2024-03-20 01:17:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCancelFlowsTask](http://document.tencentcloudapi.woa.com/document/product/1668/83482)
+
+修改接口：
+
+* [CreateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79333)
+
+	* 新增入参：Endpoint
+
+* [UpdateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79328)
+
+	* 新增入参：Endpoint
+
+
+新增数据结构：
+
+* [CancelFailureFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CancelFailureFlow)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 131 次发布
+
+发布时间：2024-03-20 01:17:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCancelFlowsTask](http://document.tencentcloudapi.woa.com/document/product/1595/83483)
+
+新增数据结构：
+
+* [CancelFailureFlow](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CancelFailureFlow)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 73 次发布
+
+发布时间：2024-03-20 01:21:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlarmSmsQuota](http://document.tencentcloudapi.woa.com/document/product/248/83485)
+* [DescribeMonitorResourceInfo](http://document.tencentcloudapi.woa.com/document/product/248/83487)
+* [DescribePhoneAlarmFlowTotalCount](http://document.tencentcloudapi.woa.com/document/product/248/83484)
+
+新增数据结构：
+
+* [DescribeAlarmSmsQuotaQuota](http://document.tencentcloudapi.woa.com/document/product/248/30354#DescribeAlarmSmsQuotaQuota)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 130 次发布
+
+发布时间：2024-03-20 01:28:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/76926)
+
+	* 新增入参：NetType
+
+
+修改数据结构：
+
+* [TrafficPackage](http://document.tencentcloudapi.woa.com/document/product/215/15824#TrafficPackage)
+
+	* 新增成员：NetType
+
+
+
+
 # Release 3.0.957.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

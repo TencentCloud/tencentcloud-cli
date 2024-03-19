@@ -10712,6 +10712,15 @@
           "name": "TrafficPackageCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "流量包类型，“BGP”默认查询共享流量包的可用地域信息；\n查询优选流量包可用地域需要指定“HQR_BGP”",
+          "example": "BGP",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10725,7 +10734,7 @@
           "example": "无",
           "member": "string",
           "name": "TrafficPackageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -41280,7 +41289,7 @@
           "example": "tfp-yj123h6i",
           "member": "string",
           "name": "TrafficPackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41290,7 +41299,7 @@
           "example": "未命名",
           "member": "string",
           "name": "TrafficPackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41300,7 +41309,7 @@
           "example": "10.0",
           "member": "float",
           "name": "TotalAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -41310,7 +41319,7 @@
           "example": "10.0",
           "member": "float",
           "name": "RemainingAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -41320,7 +41329,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41330,7 +41339,7 @@
           "example": "2022-08-31T11:42:37Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41340,7 +41349,7 @@
           "example": "2022-09-30T11:42:36Z",
           "member": "datetime_iso",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41350,7 +41359,7 @@
           "example": "0.0",
           "member": "float",
           "name": "UsedAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -41360,7 +41369,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -41370,9 +41379,19 @@
           "example": "FULL_TIME",
           "member": "string",
           "name": "DeductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BGP",
+          "member": "string",
+          "name": "NetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

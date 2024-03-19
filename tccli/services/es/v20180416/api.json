@@ -12587,6 +12587,24 @@
           "name": "KibanaPublicAcl",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "VPC相关操作",
+          "example": "无",
+          "member": "string",
+          "name": "VpcActionMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

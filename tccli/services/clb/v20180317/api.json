@@ -9941,6 +9941,33 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务角色名，服务角色设置时必填。",
+          "example": "x",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许服务角色操作负载均衡。",
+          "example": "false",
+          "member": "bool",
+          "name": "AllowOperate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "链接到服务角色所需信息",
+          "example": "x",
+          "member": "string",
+          "name": "LinkInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -385,6 +385,13 @@
       "output": "DescribeAlarmShieldsResponse",
       "status": "online"
     },
+    "DescribeAlarmSmsQuota": {
+      "document": "获取告警短信配额",
+      "input": "DescribeAlarmSmsQuotaRequest",
+      "name": "获取告警短信配额",
+      "output": "DescribeAlarmSmsQuotaResponse",
+      "status": "online"
+    },
     "DescribeAlertRules": {
       "document": "Prometheus 报警规则查询接口",
       "input": "DescribeAlertRulesRequest",
@@ -504,11 +511,25 @@
       "output": "DescribeInstalledPluginsResponse",
       "status": "online"
     },
+    "DescribeMonitorResourceInfo": {
+      "document": "获取资源消耗页概览",
+      "input": "DescribeMonitorResourceInfoRequest",
+      "name": "资源消耗页概览接口",
+      "output": "DescribeMonitorResourceInfoResponse",
+      "status": "online"
+    },
     "DescribeMonitorTypes": {
       "document": "腾讯云可观测平台支持多种类型的监控，此接口列出支持的所有类型",
       "input": "DescribeMonitorTypesRequest",
       "name": "查询监控类型",
       "output": "DescribeMonitorTypesResponse",
+      "status": "online"
+    },
+    "DescribePhoneAlarmFlowTotalCount": {
+      "document": "查询周期内电话流水总数",
+      "input": "DescribePhoneAlarmFlowTotalCountRequest",
+      "name": "查询周期内电话流水总数",
+      "output": "DescribePhoneAlarmFlowTotalCountResponse",
       "status": "online"
     },
     "DescribePluginOverviews": {
@@ -6946,6 +6967,116 @@
       ],
       "type": "object"
     },
+    "DescribeAlarmSmsQuotaQuota": {
+      "document": "DescribeAlarmSmsQuota接口的配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额类型",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费配额剩余量",
+          "example": "",
+          "member": "int64",
+          "name": "FreeLeft",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费配额剩余量",
+          "example": "",
+          "member": "int64",
+          "name": "PurchaseLeft",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用量",
+          "example": "",
+          "member": "int64",
+          "name": "Used",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAlarmSmsQuotaRequest": {
+      "document": "DescribeAlarmSmsQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmSmsQuotaResponse": {
+      "document": "DescribeAlarmSmsQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额总数",
+          "example": "",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总使用量",
+          "example": "",
+          "member": "int64",
+          "name": "Used",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "短信配额信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "DescribeAlarmSmsQuotaQuota",
+          "name": "QuotaList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlertRulesRequest": {
       "document": "DescribeAlertRules请求参数结构体",
       "members": [
@@ -8608,6 +8739,63 @@
       ],
       "type": "object"
     },
+    "DescribeMonitorResourceInfoRequest": {
+      "document": "DescribeMonitorResourceInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMonitorResourceInfoResponse": {
+      "document": "DescribeMonitorResourceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电话告警数量",
+          "example": "100",
+          "member": "int64",
+          "name": "PhoneAlarmNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级指标数量",
+          "example": "100",
+          "member": "int64",
+          "name": "AdvancedMetricNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API调用量",
+          "example": "100",
+          "member": "int64",
+          "name": "APIUsageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警短信数量",
+          "example": "100",
+          "member": "int64",
+          "name": "AlarmSMSNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMonitorTypesRequest": {
       "document": "DescribeMonitorTypes请求参数结构体",
       "members": [
@@ -8642,6 +8830,52 @@
           "member": "MonitorTypeInfo",
           "name": "MonitorTypeInfos",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePhoneAlarmFlowTotalCountRequest": {
+      "document": "DescribePhoneAlarmFlowTotalCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认monitor",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "unix时间戳，单位：s",
+          "example": "1659893700",
+          "member": "int64",
+          "name": "QueryTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePhoneAlarmFlowTotalCountResponse": {
+      "document": "DescribePhoneAlarmFlowTotalCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电话流水总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -18234,7 +18468,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18244,7 +18478,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18254,7 +18488,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18264,7 +18498,7 @@
           "example": "广州",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18274,7 +18508,7 @@
           "example": "gz",
           "member": "string",
           "name": "RegionShortName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18284,7 +18518,7 @@
           "example": "华南地区",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18294,7 +18528,7 @@
           "example": "3",
           "member": "int64",
           "name": "RegionPayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

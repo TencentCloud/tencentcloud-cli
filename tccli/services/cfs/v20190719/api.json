@@ -476,25 +476,25 @@
       "usage": "out"
     },
     "AvailableProtoStatus": {
-      "document": "版本控制-协议详情\n",
+      "document": "版本控制-协议详情",
       "members": [
         {
           "disabled": false,
           "document": "售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SaleStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议类型。可选值有 NFS、CIFS",
-          "example": "",
+          "document": "协议类型。可选值有 NFS、CIFS、TURBO",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

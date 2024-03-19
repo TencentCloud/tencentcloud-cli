@@ -842,6 +842,14 @@
         "title": "查询批量企业认证"
       }
     ],
+    "DescribeCancelFlowsTask": [
+      {
+        "document": "查询批量撤销任务结果",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRS4UUgygqdcj8xUuO4zjEwOT7IN8Ec\"\n    },\n    \"TaskId\": \"yDCVWUUckpwkjgiuUWGW8cRAzd84BVQa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailureFlows\": [\n            {\n                \"FlowId\": \"yDCNGUUckpvjdelbUuyImI9pY8I5Mep9\",\n                \"Reason\": \"合同当前状态不支持撤销\"\n            },\n            {\n                \"FlowId\": \"yDw9jUUgyg34g2mdUxawbT61HrwMQ3gF\",\n                \"Reason\": \"合同信息不存在或非本企业发起的合同\"\n            }\n        ],\n        \"RequestId\": \"49f10eec-73af-4f1b-bc99-d36e9a60e631\",\n        \"SuccessFlowIds\": [\n            \"yDCN0UUckpvhnc6uUuyImI98ydIEe4bX\"\n        ],\n        \"TaskId\": \"yDCVWUUckpwkjgiuUWGW7cRAzd93BVQa\",\n        \"TaskStatus\": \"END\"\n    }\n}",
+        "title": "查询批量撤销任务结果"
+      }
+    ],
     "DescribeChannelFlowEvidenceReport": [
       {
         "document": "获取全部签署完成的合同的公证处核验报告，返回报告 URL",
