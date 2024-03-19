@@ -7882,7 +7882,7 @@
           "example": "无",
           "member": "string",
           "name": "TrafficPackageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -27807,7 +27807,7 @@
           "example": "tfp-yj123h6i",
           "member": "string",
           "name": "TrafficPackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27817,7 +27817,7 @@
           "example": "未命名",
           "member": "string",
           "name": "TrafficPackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -27827,7 +27827,7 @@
           "example": "10.0",
           "member": "float",
           "name": "TotalAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -27837,7 +27837,7 @@
           "example": "10.0",
           "member": "float",
           "name": "RemainingAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -27847,7 +27847,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27857,7 +27857,7 @@
           "example": "2022-08-31T11:42:37Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27867,7 +27867,7 @@
           "example": "2022-09-30T11:42:36Z",
           "member": "datetime_iso",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27877,7 +27877,7 @@
           "example": "0.0",
           "member": "float",
           "name": "UsedAmount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -27887,7 +27887,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -27897,7 +27897,7 @@
           "example": "FULL_TIME",
           "member": "string",
           "name": "DeductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

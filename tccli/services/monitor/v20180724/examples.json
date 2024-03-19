@@ -468,6 +468,14 @@
         "title": "查询告警策略详情"
       }
     ],
+    "DescribeAlarmSmsQuota": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribeAlarmSmsQuota\r\n&Module=monitor\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"QuotaList\": [\n            {\n                \"FreeLeft\": 1000,\n                \"Name\": \"基础告警\",\n                \"PurchaseLeft\": 0,\n                \"Type\": \"basic\",\n                \"Used\": 0\n            },\n            {\n                \"FreeLeft\": 1000,\n                \"Name\": \"云拨测告警\",\n                \"PurchaseLeft\": 0,\n                \"Type\": \"cloud_test\",\n                \"Used\": 0\n            },\n            {\n                \"FreeLeft\": 1000,\n                \"Name\": \"自定义监控告警\",\n                \"PurchaseLeft\": 0,\n                \"Type\": \"custom\",\n                \"Used\": 0\n            },\n            {\n                \"FreeLeft\": 1000,\n                \"Name\": \"自定义消息\",\n                \"PurchaseLeft\": 0,\n                \"Type\": \"custom_msg\",\n                \"Used\": 0\n            }\n        ],\n        \"RequestId\": \"4f0be406-3993-4249-8b3f-373c8d8a76d7\",\n        \"Total\": 1000,\n        \"Used\": 0\n    }\n}",
+        "title": "获取告警短信配额"
+      }
+    ],
     "DescribeAlertRules": [
       {
         "document": "",
@@ -610,12 +618,34 @@
         "title": "列出已安装的插件"
       }
     ],
+    "DescribeMonitorResourceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorResourceInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"APIUsageNumber\": 1200,\n        \"AdvancedMetricNumber\": 75520,\n        \"AlarmSMSNumber\": 132,\n        \"PhoneAlarmNumber\": 10,\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "资源消耗页概览接口"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorResourceInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"APIUsageNumber\": 1200,\n        \"AdvancedMetricNumber\": 75520,\n        \"AlarmSMSNumber\": 132,\n        \"PhoneAlarmNumber\": 10,\n        \"RequestId\": \"f3cc8fe7-5965-4cb9-ae64-15b6031c0454\"\n    }\n}",
+        "title": "示例2"
+      }
+    ],
     "DescribeMonitorTypes": [
       {
         "document": "查询所有监控类型",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"MonitorTypeInfos\": [\n            {\n                \"Id\": \"1002\",\n                \"Name\": \"MT_QCE\",\n                \"SortId\": 1\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "查询所有监控类型"
+      }
+    ],
+    "DescribePhoneAlarmFlowTotalCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneAlarmFlowTotalCount\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"QueryTime\": 1659893700\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 10,\n        \"RequestId\": \"59464af9-4da8-49de-a692-49d2371f0b38\"\n    }\n}",
+        "title": "查询周期内电话流水总数"
       }
     ],
     "DescribePluginOverviews": [
@@ -702,7 +732,7 @@
       {
         "document": "拉取agent信息",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusClusterAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Agents\": [\n            {\n                \"ClusterType\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Status\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Region\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"FailedReason\": \"abc\",\n                \"Name\": \"abc\"\n            }\n        ],\n        \"Total\": 1,\n        \"IsFirstBind\": true,\n        \"ImageNeedUpdate\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Agents\": [\n            {\n                \"ClusterType\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Status\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ExternalLabels\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Region\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"FailedReason\": \"abc\",\n                \"Name\": \"abc\",\n                \"EnableExternal\": true,\n                \"DesiredAgentNum\": 0,\n                \"ReadyAgentNum\": 0\n            }\n        ],\n        \"Total\": 1,\n        \"IsFirstBind\": true,\n        \"ImageNeedUpdate\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "拉取agent信息"
       }
     ],

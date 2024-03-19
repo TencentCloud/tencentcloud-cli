@@ -19515,30 +19515,40 @@
         {
           "disabled": false,
           "document": "TKE共享网卡非固定IP模式可支持的Pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "27",
           "member": "int64",
           "name": "TKERouteENINonStaticIP",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "TKE共享网卡固定IP模式可支持的Pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "27",
           "member": "int64",
           "name": "TKERouteENIStaticIP",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "TKE独立网卡模式可支持的Pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "TKEDirectENI",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TKE中继网卡模式可支持的Pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TKESubENI",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

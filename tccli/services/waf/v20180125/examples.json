@@ -57,7 +57,7 @@
     "AddSpartaProtection": [
       {
         "document": "重复添加的场景",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"InstanceID\": \"waf-9dasfds6gsd\",\n    \"IsKeepAlive\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"域名已经存在，请勿重复添加\"\n        },\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
         "title": "重复添加的场景"
       },
@@ -75,7 +75,7 @@
       },
       {
         "document": "添加SAAS-WAF防护域名",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test1.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test1.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"InstanceID\": \"waf-7dasgds2nfsafg\",\n    \"IsKeepAlive\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
         "title": "添加SAAS-WAF防护域名"
       }
@@ -1007,7 +1007,7 @@
     "ModifySpartaProtection": [
       {
         "document": "修改SAASWAF域名",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LoadBalance\": \"0\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LoadBalance\": \"0\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"DomainId\": \"womdaswadfgsdgd\",\n    \"InstanceID\": \"waf-9dja7dasggdsgs\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
         "title": "修改域名配置"
       },

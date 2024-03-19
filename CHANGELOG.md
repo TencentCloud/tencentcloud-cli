@@ -1,3 +1,165 @@
+# Release 3.0.1080.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 157 次发布
+
+发布时间：2024-03-19 11:18:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCancelFlowsTask](https://cloud.tencent.com/document/api/1323/104494)
+
+修改接口：
+
+* [CreateIntegrationEmployees](https://cloud.tencent.com/document/api/1323/81117)
+
+	* 新增入参：Endpoint
+
+* [UpdateIntegrationEmployees](https://cloud.tencent.com/document/api/1323/89457)
+
+	* 新增入参：Endpoint
+
+
+新增数据结构：
+
+* [CancelFailureFlow](https://cloud.tencent.com/document/api/1323/70369#CancelFailureFlow)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 160 次发布
+
+发布时间：2024-03-20 01:16:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCancelFlowsTask](https://cloud.tencent.com/document/api/1420/104511)
+
+新增数据结构：
+
+* [CancelFailureFlow](https://cloud.tencent.com/document/api/1420/61525#CancelFailureFlow)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 108 次发布
+
+发布时间：2024-03-20 01:20:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlarmSmsQuota](https://cloud.tencent.com/document/api/248/104513)
+* [DescribeMonitorResourceInfo](https://cloud.tencent.com/document/api/248/104515)
+* [DescribePhoneAlarmFlowTotalCount](https://cloud.tencent.com/document/api/248/104512)
+
+新增数据结构：
+
+* [DescribeAlarmSmsQuotaQuota](https://cloud.tencent.com/document/api/248/30354#DescribeAlarmSmsQuotaQuota)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 169 次发布
+
+发布时间：2024-03-20 01:27:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PodLimitsByType](https://cloud.tencent.com/document/api/457/31866#PodLimitsByType)
+
+	* 新增成员：TKESubENI
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 82 次发布
+
+发布时间：2024-03-20 01:31:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpartaProtection](https://cloud.tencent.com/document/api/627/72689)
+
+	* 新增入参：ProxyBuffer
+
+	* <font color="#dd0000">**修改入参**：</font>Ports, IsKeepAlive, InstanceID
+
+* [DescribeAttackOverview](https://cloud.tencent.com/document/api/627/87744)
+
+	* 新增出参：ApiRiskEventCircleCount
+
+* [DescribeIpAccessControl](https://cloud.tencent.com/document/api/627/72645)
+
+	* 新增入参：RuleId
+
+	* 新增出参：UsedTotal
+
+* [ModifyAccessPeriod](https://cloud.tencent.com/document/api/627/59005)
+
+	* <font color="#dd0000">**修改入参**：</font>TopicId
+
+* [ModifySpartaProtection](https://cloud.tencent.com/document/api/627/94309)
+
+	* 新增入参：ProxyBuffer
+
+	* <font color="#dd0000">**修改入参**：</font>DomainId, InstanceID
+
+
+修改数据结构：
+
+* [BatchIpAccessControlItem](https://cloud.tencent.com/document/api/627/53609#BatchIpAccessControlItem)
+
+	* 新增成员：RuleId, IpList
+
+* [DomainInfo](https://cloud.tencent.com/document/api/627/53609#DomainInfo)
+
+	* 新增成员：AccessStatus
+
+* [DomainsPartInfo](https://cloud.tencent.com/document/api/627/53609#DomainsPartInfo)
+
+	* 新增成员：ProxyBuffer
+
+* [IpAccessControlItem](https://cloud.tencent.com/document/api/627/53609#IpAccessControlItem)
+
+	* 新增成员：RuleId, IpList
+
+
+
+
 # Release 3.0.1079.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

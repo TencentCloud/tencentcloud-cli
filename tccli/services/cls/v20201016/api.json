@@ -8342,7 +8342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka数据订阅配置的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "86076b49-1234-4321-ab09-a5d7e7972825",
           "member": "string",
           "name": "Id",

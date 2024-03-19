@@ -11,6 +11,8 @@ tccli waf AddSpartaProtection --cli-unfold-argument  \
     --Edition clb-waf \
     --UpstreamType 0 \
     --CertType 0 \
+    --InstanceID waf-9dasfds6gsd \
+    --IsKeepAlive 1 \
     --Ports.0.NginxServerId 0 \
     --Ports.0.Protocol http \
     --Ports.0.Port 80 \
@@ -134,6 +136,8 @@ tccli waf AddSpartaProtection --cli-unfold-argument  \
     --Edition clb-waf \
     --UpstreamType 0 \
     --CertType 0 \
+    --InstanceID waf-7dasgds2nfsafg \
+    --IsKeepAlive 1 \
     --Ports.0.NginxServerId 0 \
     --Ports.0.Protocol http \
     --Ports.0.Port 80 \

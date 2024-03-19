@@ -30,7 +30,10 @@ Output:
                 "Region": "abc",
                 "VpcId": "abc",
                 "FailedReason": "abc",
-                "Name": "abc"
+                "Name": "abc",
+                "EnableExternal": true,
+                "DesiredAgentNum": 0,
+                "ReadyAgentNum": 0
             }
         ],
         "Total": 1,
