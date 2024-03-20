@@ -10459,6 +10459,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10469,16 +10470,18 @@
           "example": "blacklist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单列表\n支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段\n最多可填充 50 个白名单或 50 个黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 200 个白名单或 200 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Filters",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -10489,6 +10492,7 @@
           "example": "null",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -10499,6 +10503,7 @@
           "example": "514",
           "member": "int64",
           "name": "ReturnCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10512,19 +10517,21 @@
         {
           "disabled": false,
           "document": "IP 黑白名单类型\nwhitelist：白名单\nblacklist：黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单列表\n支持 X.X.X.X 形式 IP，或 /8、 /16、/24 形式网段\n最多可填充 50 个白名单或 50 个黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 200 个白名单或 500 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Filters",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -10532,9 +10539,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10542,9 +10550,10 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true

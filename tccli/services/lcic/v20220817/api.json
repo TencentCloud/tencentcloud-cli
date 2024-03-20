@@ -561,7 +561,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "3571863",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
@@ -571,7 +571,7 @@
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -581,7 +581,7 @@
         {
           "disabled": false,
           "document": "应用状态 1正常 2停用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "State",
           "output_required": true,
@@ -591,7 +591,7 @@
         {
           "disabled": false,
           "document": "1试用 2轻量版 3标准版 4旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "AppVersion",
           "output_required": true,
@@ -601,7 +601,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-01-19 15:58:21",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -611,7 +611,7 @@
         {
           "disabled": false,
           "document": "回调\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://callback.qcloud.com",
           "member": "string",
           "name": "Callback",
           "output_required": true,
@@ -621,7 +621,7 @@
         {
           "disabled": false,
           "document": "回调Key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nflhhtF0",
           "member": "string",
           "name": "CallbackKey",
           "output_required": true,
@@ -1742,15 +1742,15 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
-          "example": "default",
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
           "example": "en",
           "member": "string",
@@ -2182,7 +2182,7 @@
         {
           "disabled": false,
           "document": "SDK 对应的AppId ",
-          "example": "无",
+          "example": "14567770",
           "member": "string",
           "name": "SdkAppId",
           "output_required": true,
@@ -5481,15 +5481,15 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
-          "example": "default",
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
           "example": "en",
           "member": "string",
@@ -5994,15 +5994,15 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
-          "example": "default",
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
           "example": "en",
           "member": "string",
@@ -6238,8 +6238,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqioiu\"}",
           "member": "string",
           "name": "RecordScene",
           "output_required": false,
@@ -6248,13 +6248,13 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制自定义语言，仅recordlayout=9的时候此参数有效",
           "example": "en",
           "member": "string",
           "name": "RecordLang",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6265,7 +6265,7 @@
         {
           "disabled": false,
           "document": "场景名称",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "Scene",
           "output_required": true,
@@ -6275,7 +6275,7 @@
         {
           "disabled": false,
           "document": "logo地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://tcic-test-1257307760.file.myqcloud.com/customcontent/3571863/default_1709023088_default_1705651176_default.png",
           "member": "string",
           "name": "LogoUrl",
           "output_required": true,
@@ -6285,7 +6285,7 @@
         {
           "disabled": false,
           "document": "主页地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://de-class.qcloudtiw.com/login.html",
           "member": "string",
           "name": "HomeUrl",
           "output_required": true,
@@ -6295,7 +6295,7 @@
         {
           "disabled": false,
           "document": "自定义的js\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://1257307760.file.myqcloud.com/customcontent/2540731/test_1617001147_custom_new.js",
           "member": "string",
           "name": "JSUrl",
           "output_required": true,
@@ -6305,7 +6305,7 @@
         {
           "disabled": false,
           "document": "自定义的css\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://1257307760.file.myqcloud.com/customcontent/2261473/test_1611219710_custom.css",
           "member": "string",
           "name": "CSSUrl",
           "output_required": true,

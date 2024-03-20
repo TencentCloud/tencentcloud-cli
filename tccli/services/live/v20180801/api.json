@@ -5461,6 +5461,7 @@
           "example": "无",
           "member": "BackupStreamGroupInfo",
           "name": "StreamInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8452,7 +8453,35 @@
     },
     "DescribeLiveWatermarksRequest": {
       "document": "DescribeLiveWatermarks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页的索引参数，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的大小参数，默认值500",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeLiveWatermarksResponse": {
@@ -8461,18 +8490,20 @@
         {
           "disabled": false,
           "document": "水印总个数。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印信息列表。",
-          "example": "",
+          "example": "水印信息列表",
           "member": "WatermarkInfo",
           "name": "WatermarkList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

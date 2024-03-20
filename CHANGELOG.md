@@ -1,3 +1,105 @@
+# Release 3.0.1081.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 54 次发布
+
+发布时间：2024-03-21 01:09:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDisksRenewFlag](https://cloud.tencent.com/document/api/362/15668)
+
+	* 新增入参：AutoRenewPeriod
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 82 次发布
+
+发布时间：2024-03-21 01:14:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineInfo](https://cloud.tencent.com/document/api/1342/53778#DataEngineInfo)
+
+	* 新增成员：EngineNetworkId
+
+
+
+
+## 实时互动-教育版(lcic) 版本：2022-08-17
+
+### 第 54 次发布
+
+发布时间：2024-03-21 01:19:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRoom](https://cloud.tencent.com/document/api/1639/80942)
+
+* [ModifyRoom](https://cloud.tencent.com/document/api/1639/86030)
+
+
+修改数据结构：
+
+* [RoomInfo](https://cloud.tencent.com/document/api/1639/81423#RoomInfo)
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 121 次发布
+
+发布时间：2024-03-21 01:19:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLiveWatermarks](https://cloud.tencent.com/document/api/267/30152)
+
+	* 新增入参：Name, PageNo, PageSize
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 62 次发布
+
+发布时间：2024-03-21 01:28:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceServiceContracts](https://cloud.tencent.com/document/api/1364/104402)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+
+
+
 # Release 3.0.1080.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
