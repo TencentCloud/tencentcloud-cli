@@ -16,6 +16,8 @@ Output:
         "RequestId": "4b3d1d04-6f79-4f56-a8e7-46de97de1713",
         "StreamInfoList": [
             {
+                "OptimalEnable": 0,
+                "HostGroupName": "",
                 "StreamName": "stream1",
                 "BackupList": [
                     {

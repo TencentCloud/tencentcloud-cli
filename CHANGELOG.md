@@ -1,3 +1,81 @@
+# Release 3.0.959.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 31 次发布
+
+发布时间：2024-03-21 01:10:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDisksRenewFlag](http://document.tencentcloudapi.woa.com/document/product/362/15668)
+
+	* 新增入参：AutoRenewPeriod
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 90 次发布
+
+发布时间：2024-03-21 01:15:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：EngineNetworkId
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 54 次发布
+
+发布时间：2024-03-21 01:21:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLiveWatermarks](http://document.tencentcloudapi.woa.com/document/product/267/30152)
+
+	* 新增入参：Name, PageNo, PageSize
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 57 次发布
+
+发布时间：2024-03-21 01:28:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceServiceContracts](http://document.tencentcloudapi.woa.com/document/product/1364/83462)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+
+
+
 # Release 3.0.958.1
 
 ## 负载均衡(clb) 版本：2018-03-17
