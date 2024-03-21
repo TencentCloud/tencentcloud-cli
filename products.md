@@ -2,7 +2,7 @@
 |-|-|-|
 | aa | [活动防刷](http://document.tencentcloudapi.woa.com/document/product/1189) | 2024-03-20 01:07:00 |
 | aai | [智能语音](http://document.tencentcloudapi.woa.com/document/product/441) | 2024-03-20 01:07:01 |
-| account | [账号中心](http://document.tencentcloudapi.woa.com/document/product/378) | 2024-03-20 01:07:02 |
+| account | [账号中心](http://document.tencentcloudapi.woa.com/document/product/378) | 2024-03-22 01:07:28 |
 | acp | [应用合规平台](http://document.tencentcloudapi.woa.com/document/product/1553) | 2024-03-20 01:07:06 |
 | advisor | [云顾问](http://document.tencentcloudapi.woa.com/document/product/1264) | 2024-03-20 01:07:07 |
 | af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | 2024-03-20 01:07:09 |
@@ -14,7 +14,7 @@
 | antiddos | [T-Sec-DDoS防护(Anti-DDoS)](http://document.tencentcloudapi.woa.com/document/product/297) | 2024-03-20 01:07:14 |
 | apcas | [汽车精准获客服务](http://document.tencentcloudapi.woa.com/document/product/1244) | 2024-03-20 01:07:26 |
 | ape | [正版图库直通车](http://document.tencentcloudapi.woa.com/document/product/1181) | 2024-03-20 01:07:27 |
-| api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | 2024-03-20 01:07:29 |
+| api | [云 API](http://document.tencentcloudapi.woa.com/document/product/1278) | 2024-03-22 01:07:57 |
 | apigateway | [API 网关](http://document.tencentcloudapi.woa.com/document/product/628) | 2024-03-20 01:07:30 |
 | apm | [应用性能监控](http://document.tencentcloudapi.woa.com/document/product/1463) | 2024-03-20 01:07:43 |
 | as | [弹性伸缩](http://document.tencentcloudapi.woa.com/document/product/377) | 2024-03-20 01:07:45 |
@@ -60,7 +60,7 @@
 | ciam | [账号风控平台](http://document.tencentcloudapi.woa.com/document/product/1441) | 2024-03-20 01:11:29 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2024-03-20 01:11:32 |
 | ckafka | [消息队列 CKafka 版](http://document.tencentcloudapi.woa.com/document/product/597) | 2024-03-20 01:11:35 |
-| clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2024-03-20 01:11:48 |
+| clb | [负载均衡](http://document.tencentcloudapi.woa.com/document/product/214) | 2024-03-22 01:12:32 |
 | cloudaudit | [操作审计](http://document.tencentcloudapi.woa.com/document/product/629) | 2024-03-20 01:12:03 |
 | clouddc | [磐石](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:12:06 |
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | 2024-03-20 01:12:09 |
@@ -76,7 +76,7 @@
 | csip | [云安全一体化平台](http://document.tencentcloudapi.woa.com/document/product/664) | 2024-03-20 01:12:43 |
 | csxg | [5G入云服务](http://document.tencentcloudapi.woa.com/document/product/1687) | 2024-03-20 01:12:49 |
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | 2024-03-20 01:13:02 |
-| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2024-03-20 01:13:05 |
+| cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | 2024-03-22 01:13:54 |
 | cxm | [cxm](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:14:00 |
 | cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | 2024-03-20 01:14:03 |
 | dasb | [T-Sec-堡垒机（BH）](http://document.tencentcloudapi.woa.com/document/product/1025) | 2024-03-20 01:14:21 |
@@ -100,14 +100,14 @@
 | ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | 2024-03-20 01:16:11 |
 | eiam | [数字身份管控平台（员工版）](http://document.tencentcloudapi.woa.com/document/product/1442) | 2024-03-20 01:16:30 |
 | eis | [数据连接器](http://document.tencentcloudapi.woa.com/document/product/1270) | 2023-08-10 01:23:55 |
-| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2024-03-20 01:16:36 |
+| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2024-03-22 01:17:49 |
 | ep | [企业画像](http://document.tencentcloudapi.woa.com/document/product/1061) | 2024-03-20 01:16:43 |
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:16:44 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-03-20 01:16:47 |
-| ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-03-20 01:17:00 |
+| ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-03-22 01:18:14 |
 | essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-03-20 01:17:16 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2024-03-20 01:17:30 |
-| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2024-03-20 01:17:31 |
+| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | 2024-03-22 01:18:41 |
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | 2024-03-20 01:17:39 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | 2024-03-20 01:17:39 |
 | ft | [人像变换](http://document.tencentcloudapi.woa.com/document/product/1202) | 2024-03-20 01:17:41 |
@@ -119,7 +119,7 @@
 | gpm | [游戏玩家匹配](http://document.tencentcloudapi.woa.com/document/product/1294) | 2022-07-11 06:02:36 |
 | gs | [云游戏](http://document.tencentcloudapi.woa.com/document/product/1162) | 2024-03-20 01:18:01 |
 | gse | [游戏服务器伸缩](http://document.tencentcloudapi.woa.com/document/product/1165) | 2022-07-11 06:04:20 |
-| hai | [高性能应用服务](http://document.tencentcloudapi.woa.com/document/product/1721) | 2024-03-20 01:18:03 |
+| hai | [高性能应用服务](http://document.tencentcloudapi.woa.com/document/product/1721) | 2024-03-22 01:19:14 |
 | hasim | [高可用物联网卡](http://document.tencentcloudapi.woa.com/document/product/1482) | 2024-03-20 01:18:04 |
 | hcdn | [混合分发加速](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:18:07 |
 | hcm | [数学作业批改](http://document.tencentcloudapi.woa.com/document/product/1004) | 2024-03-20 01:18:08 |
@@ -208,7 +208,7 @@
 | subcontract | [采购供应商管理](http://document.tencentcloudapi.woa.com/document/product/1472) | 2024-03-20 01:24:14 |
 | svp | [节省计划](http://document.tencentcloudapi.woa.com/document/product/1761) | 2024-03-20 01:24:14 |
 | taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | 2024-03-21 01:25:23 |
-| tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2024-03-20 01:24:16 |
+| tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | 2024-03-22 01:26:18 |
 | tan | [碳引擎](http://document.tencentcloudapi.woa.com/document/product/1498) | 2024-03-20 01:24:22 |
 | taop | [腾讯觅影开放实验平台](http://document.tencentcloudapi.woa.com/document/product/1353) | 2024-03-20 01:24:22 |
 | tat | [自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | 2024-03-20 01:24:24 |
@@ -233,7 +233,7 @@
 | tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2024-03-20 01:25:46 |
 | tds | [设备安全](http://document.tencentcloudapi.woa.com/document/product/1628) | 2024-03-20 01:26:04 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2024-03-20 01:26:06 |
-| teo | [边缘安全加速平台](http://document.tencentcloudapi.woa.com/document/product/1552) | 2024-03-21 01:27:28 |
+| teo | [边缘安全加速平台](http://document.tencentcloudapi.woa.com/document/product/1552) | 2024-03-22 01:28:29 |
 | thpc | [高性能计算平台](http://document.tencentcloudapi.woa.com/document/product/1527) | 2024-03-20 01:27:07 |
 | tia | [智能钛机器学习](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:27:10 |
 | tic | [资源编排 TIC](http://document.tencentcloudapi.woa.com/document/product/1213) | 2024-03-20 01:27:11 |
@@ -253,7 +253,7 @@
 | trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | 2024-03-20 01:27:42 |
 | trp | [T-Sec-安心平台(RP)](http://document.tencentcloudapi.woa.com/document/product/1458) | 2023-09-21 03:34:26 |
 | trro | [远程实时操控](http://document.tencentcloudapi.woa.com/document/product/1584) | 2024-03-20 01:27:48 |
-| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2024-03-20 01:27:51 |
+| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2024-03-22 01:29:32 |
 | tse | [微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2024-03-21 01:28:40 |
 | tsf | [微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2024-03-20 01:28:14 |
 | tsw | [微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2024-03-20 01:28:40 |
@@ -266,7 +266,7 @@
 | vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2024-03-20 01:28:49 |
 | vpcdefensor | [网络守护神](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-03-20 01:29:50 |
 | vrs | [声音复刻](http://document.tencentcloudapi.woa.com/document/product/1283) | 2024-03-20 01:29:50 |
-| waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2023-08-28 01:28:20 |
+| waf | [Web 应用防火墙](http://document.tencentcloudapi.woa.com/document/product/627) | 2024-03-21 17:03:25 |
 | wav | [企业微信汽车行业版](http://document.tencentcloudapi.woa.com/document/product/1318) | 2024-03-20 01:29:52 |
 | wedata | [数据开发治理平台 WeData](http://document.tencentcloudapi.woa.com/document/product/1267) | 2024-03-20 01:29:57 |
 | weilingwith | [微瓴同业开放平台](http://document.tencentcloudapi.woa.com/document/product/1693) | 2024-03-20 01:30:39 |

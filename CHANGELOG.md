@@ -1,3 +1,157 @@
+# Release 3.0.960.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 13 次发布
+
+发布时间：2024-03-22 01:07:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchCheckWhitelist](http://document.tencentcloudapi.woa.com/document/product/1594/77153)
+
+	* 新增入参：WhitelistKeyList, WhitelistUinList, DefaultWhitelistUinFlag
+
+	* 新增出参：MatchedWhitelist
+
+
+新增数据结构：
+
+* [Whitelist](http://document.tencentcloudapi.woa.com/document/product/1594/75172#Whitelist)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 63 次发布
+
+发布时间：2024-03-22 01:12:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLoadBalancerCount](http://document.tencentcloudapi.woa.com/document/product/214/83545)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 72 次发布
+
+发布时间：2024-03-22 01:13:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceStatistics](http://document.tencentcloudapi.woa.com/document/product/213/83546)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 84 次发布
+
+发布时间：2024-03-22 01:13:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBanStatus](http://document.tencentcloudapi.woa.com/document/product/296/60944)
+
+	* 新增出参：OpenSmartMode
+
+* [ModifyBanStatus](http://document.tencentcloudapi.woa.com/document/product/296/60942)
+
+	* 新增入参：OpenSmartMode
+
+
+修改数据结构：
+
+* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
+
+	* 新增成员：AttackStatusDesc, BanExpiredTime
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 43 次发布
+
+发布时间：2024-03-22 01:17:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAutoScaleSpecs](http://document.tencentcloudapi.woa.com/document/product/589/83547)
+
+新增数据结构：
+
+* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 7 次发布
+
+发布时间：2024-03-22 01:19:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance)
+
+	* 新增成员：OSType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 42 次发布
+
+发布时间：2024-03-22 01:29:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83551)
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+* [StopWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83549)
+
+新增数据结构：
+
+* [WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams)
+
+
+
 # Release 3.0.959.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

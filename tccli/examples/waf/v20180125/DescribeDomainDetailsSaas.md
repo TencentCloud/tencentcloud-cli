@@ -1,6 +1,6 @@
-**Example 1: 查询单个saas域名详情**
+**Example 1: 查询单个saaswaf域名详情**
 
-查询单个saas域名详情
+查询单个saaswaf域名详情
 
 Input: 
 
@@ -17,9 +17,17 @@ Output:
     "Response": {
         "RequestId": "b4f13899-561b-46a0-a045-6ba6b72c38f2",
         "DomainsPartInfo": {
+            "Domain": "",
+            "DomainId": "",
+            "InstanceId": "",
+            "Edition": "",
+            "InstanceName": "",
+            "Cert": "",
             "CertType": 0,
             "Cls": 0,
+            "CreateTime": "",
             "Cname": "",
+            "Engine": 0,
             "SniType": 0,
             "SniHost": "",
             "ProxySendTimeout": 0,
@@ -45,7 +53,14 @@ Output:
             "CipherTemplate": 0,
             "SrcList": [],
             "Ports": [],
-            "ActiveCheck": 1
+            "ActiveCheck": 1,
+            "Weights": [
+                "10,10,10"
+            ],
+            "IpHeaders": [
+                "abc"
+            ],
+            "XFFReset": 0
         }
     }
 }

@@ -462,6 +462,14 @@
         "title": "按照端口、协议及监听器ID查询监听器"
       }
     ],
+    "DescribeLoadBalancerCount": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerCount\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"RequestId\": \"0dc33bce-5fe5-4ce0-9734-d8212c258d36\"\n    }\n}",
+        "title": "查询一个账户在一个地域的负载均衡实例总数"
+      }
+    ],
     "DescribeLoadBalancerListByCertId": [
       {
         "document": "",

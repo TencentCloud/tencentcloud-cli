@@ -224,6 +224,13 @@
       "output": "DescribeInstanceInternetBandwidthConfigsResponse",
       "status": "online"
     },
+    "DescribeInstanceStatistics": {
+      "document": "本接口 (DescribeInstanceStatistics) 用于查询各个地域资源概览。",
+      "input": "DescribeInstanceStatisticsRequest",
+      "name": "DescribeInstanceStatistics",
+      "output": "DescribeInstanceStatisticsResponse",
+      "status": "online"
+    },
     "DescribeInstanceTypeConfigs": {
       "document": "本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。\n\n* 可以根据`zone`、`instance-family`、`instance-type`来查询实例机型配置。过滤条件详见过滤器[`Filter`](https://cloud.tencent.com/document/api/213/15753#Filter)。\n* 如果参数为空，返回指定地域的所有实例机型配置。",
       "input": "DescribeInstanceTypeConfigsRequest",
@@ -3427,6 +3434,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatisticsRequest": {
+      "document": "DescribeInstanceStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可扩展的过滤条件",
+          "example": "",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStatisticsResponse": {
+      "document": "DescribeInstanceStatistics返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -19,7 +19,9 @@ tccli waf ModifySpartaProtection --cli-unfold-argument  \
     --IsCdn 0 \
     --IsWebsocket 0 \
     --IsGray 0 \
-    --IsHttp2 0
+    --IsHttp2 0 \
+    --DomainId womdaswadfgsdgd \
+    --InstanceID waf-9dja7dasggdsgs
 ```
 
 Output: 

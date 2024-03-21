@@ -268,6 +268,14 @@
         "title": "查询实例带宽配置"
       }
     ],
+    "DescribeInstanceStatistics": [
+      {
+        "document": "查询所有地域的实例概览，包括实例总数，已过期包年包月实例总数，新创建实例总数。",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceStatistics\r\n&<公共请求参数>",
+        "output": "{\r\n    \"code\": 0,\r\n    \"data\": {\r\n        \"Response\": {\r\n            \"InstanceStatisticsSet\": [\r\n                {\r\n                    \"ExpiredInstanceCount\": 2,\r\n                    \"NewInstanceCount\": 0,\r\n                    \"Region\": \"ap-guangzhou\",\r\n                    \"TotalCount\": 131\r\n                },\r\n                \"\",\r\n                \"此处省略部分地域详情\",\r\n                \"\",\r\n                {\r\n                    \"ExpiredInstanceCount\": 0,\r\n                    \"NewInstanceCount\": 1,\r\n                    \"Region\": \"ap-shenzhen-fsi\",\r\n                    \"TotalCount\": 6\r\n                }\r\n            ],\r\n            \"RequestId\": \"3385dcf2-e1f0-4ed8-a924-c296721ab65f\"\r\n        }\r\n    }\r\n}",
+        "title": "查询用户所有地域实例概览。"
+      }
+    ],
     "DescribeInstanceTypeConfigs": [
       {
         "document": "查询广州二区中实例机型系列为I1的机型列表",

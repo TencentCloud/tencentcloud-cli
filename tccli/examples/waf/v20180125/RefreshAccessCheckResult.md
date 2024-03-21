@@ -12,7 +12,9 @@ tccli waf RefreshAccessCheckResult --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "RequestId": "9ee8be5b-6caa-4c39-ab70-890e0e673515"
+    }
 }
 ```
 

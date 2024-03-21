@@ -1,12 +1,12 @@
 **Example 1: 创建项目**
 
-
+创建项目
 
 Input: 
 
 ```
 tccli tag AddProject --cli-unfold-argument  \
-    --ProjectName tp2
+    --ProjectName 测试项目
 ```
 
 Output: 
@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "IsNew": 1,
-        "ProjectId": 1024690,
-        "RequestId": "caf5c6ba-b21b-4769-b0bb-0b3090e0c282"
+        "ProjectId": 1001,
+        "RequestId": "7f831036-30b5-4972-a729-e6851a15d345"
     }
 }
 ```

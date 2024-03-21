@@ -299,12 +299,50 @@
     },
     "BatchCheckWhitelistRequest": {
       "document": "BatchCheckWhitelist请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单KEY列表",
+          "example": "[\"aa\", \"b\"]",
+          "member": "string",
+          "name": "WhitelistKeyList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "白名单UIN列表。为空或不传时根据DefaultWhitelistUinFlag参数取当前用户信息",
+          "example": "[\"1111\", \"2222\"]",
+          "member": "string",
+          "name": "WhitelistUinList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认白名单UIN标志，用来在WhitelistUinList参数为空时标记检查当前用户的哪个字段信息。（1:OwnerUin; 2:AppId）缺省值：1。WhitelistUinList参数不为空时无效",
+          "example": "1",
+          "member": "uint64",
+          "name": "DefaultWhitelistUinFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "BatchCheckWhitelistResponse": {
       "document": "BatchCheckWhitelist返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "匹配的白名单列表",
+          "example": "无",
+          "member": "Whitelist",
+          "name": "MatchedWhitelist",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2818,6 +2856,32 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Whitelist": {
+      "document": "白名单数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单KEY",
+          "example": "testKey",
+          "member": "string",
+          "name": "WhitelistKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单账号列表",
+          "example": "[\"1212\", \"2323\"]",
+          "member": "string",
+          "name": "WhitelistUinList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
