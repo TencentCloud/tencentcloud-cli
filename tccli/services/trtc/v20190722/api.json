@@ -196,6 +196,13 @@
       "output": "DescribeUserInfoResponse",
       "status": "online"
     },
+    "DescribeWebRecord": {
+      "document": "查询页面录制任务",
+      "input": "DescribeWebRecordRequest",
+      "name": "查询页面录制",
+      "output": "DescribeWebRecordResponse",
+      "status": "online"
+    },
     "DismissRoom": {
       "document": "接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。",
       "input": "DismissRoomRequest",
@@ -266,6 +273,13 @@
       "output": "StartStreamIngestResponse",
       "status": "online"
     },
+    "StartWebRecord": {
+      "document": "通过此接口可以发起 WEB 页面录制任务，在接口参数中指定录制 URL，录制分辨率，录制结果存储等参数。\n因为参数或API逻辑问题会立即返回结果。而因为页面问题，如页面无法访问，会在回调中返回结果，请关注。",
+      "input": "StartWebRecordRequest",
+      "name": "开始页面录制",
+      "output": "StartWebRecordResponse",
+      "status": "online"
+    },
     "StopMCUMixTranscode": {
       "document": "接口说明：结束云端混流",
       "input": "StopMCUMixTranscodeRequest",
@@ -292,6 +306,13 @@
       "input": "StopStreamIngestRequest",
       "name": "停止输入在线媒体流",
       "output": "StopStreamIngestResponse",
+      "status": "online"
+    },
+    "StopWebRecord": {
+      "document": "停止页面录制任务",
+      "input": "StopWebRecordRequest",
+      "name": "停止页面录制",
+      "output": "StopWebRecordResponse",
       "status": "online"
     },
     "UpdatePublishCdnStream": {
@@ -2579,6 +2600,43 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebRecordRequest": {
+      "document": "DescribeWebRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始页面录制时返回的任务id",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebRecordResponse": {
+      "document": "DescribeWebRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1: 正在录制中\n2: 任务不存在",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5435,6 +5493,88 @@
       ],
       "type": "object"
     },
+    "StartWebRecordRequest": {
+      "document": "StartWebRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要录制的网页URL\n",
+          "example": "https://web-record-xxxx.cos.ap-xxx.xxx.com/test/xxx.mp4",
+          "member": "string",
+          "name": "RecordUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)\n",
+          "example": "36000",
+          "member": "uint64",
+          "name": "MaxDurationLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD",
+          "example": "无",
+          "member": "StorageParams",
+          "name": "StorageParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "页面录制视频参数",
+          "example": "无",
+          "member": "WebRecordVideoParams",
+          "name": "WebRecordVideoParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的SdkAppId",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当对重复任务敏感时，请关注此值： 为了避免任务在短时间内重复发起，导致任务重复\n传入录制RecordId来标识此次任务， 小于32字节，若携带RecordId发起两次以上的开始录制请求，任务只会启动一个，第二个报错FailedOperation.TaskExist。注意StartWebRecord调用失败时而非FailedOperation.TaskExist错误，请更换RecordId重新发起。",
+          "example": "record_task_abc_1",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartWebRecordResponse": {
+      "document": "StartWebRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制任务的唯一Id",
+          "example": "Vfn+FlMTUh1hL0a6kfBUPUsd9FmPLyznAsbd+QFsasqLg5UulUlA9JhYTw15YEYMCxXlfQwtl5cNmrbJqFubDTUp3OGPsU.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopMCUMixTranscodeByStrRoomIdRequest": {
       "document": "StopMCUMixTranscodeByStrRoomId请求参数结构体",
       "members": [
@@ -5579,6 +5719,33 @@
     },
     "StopStreamIngestResponse": {
       "document": "StopStreamIngest返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWebRecordRequest": {
+      "document": "StopWebRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要停止的任务Id",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWebRecordResponse": {
+      "document": "StopWebRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5856,7 +6023,7 @@
         },
         {
           "disabled": false,
-          "document": "仅支持API录制上传vod，该参数表示用户可以自定义录制文件名前缀，【限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符】。前缀与自动生成的录制文件名之间用__UserDefine_u_分开。",
+          "document": "仅支持API录制上传vod，该参数表示用户可以自定义录制文件名前缀，【限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符】。前缀与自动生成的录制文件名之间用`__UserDefine_u_` 分开。",
           "example": "xxx",
           "member": "string",
           "name": "UserDefineRecordId",
@@ -6587,6 +6754,39 @@
           "example": "Tencent",
           "member": "string",
           "name": "Font",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WebRecordVideoParams": {
+      "document": "页面录制视频参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制画面宽度，默认为1280，取值范围[0, 1920]",
+          "example": "1280",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制画面高度，默认为720，取值范围[0, 1080]",
+          "example": "720",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定输出格式，可选hls,mp4\n",
+          "example": "mp4",
+          "member": "string",
+          "name": "Format",
           "required": false,
           "type": "string"
         }

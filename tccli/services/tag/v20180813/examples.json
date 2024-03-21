@@ -2,9 +2,9 @@
   "actions": {
     "AddProject": [
       {
-        "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=AddProject\r\n&ProjectName=tp2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IsNew\": 1,\n        \"ProjectId\": 1024690,\n        \"RequestId\": \"caf5c6ba-b21b-4769-b0bb-0b3090e0c282\"\n    }\n}",
+        "document": "创建项目",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddProject\n<公共请求参数>\n\n{\n    \"ProjectName\": \"测试项目\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsNew\": 1,\n        \"ProjectId\": 1001,\n        \"RequestId\": \"7f831036-30b5-4972-a729-e6851a15d345\"\n    }\n}",
         "title": "创建项目"
       }
     ],
@@ -67,7 +67,7 @@
     "DescribeProjects": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"500\",\n    \"AllList\": \"0\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": 500,\n    \"AllList\": 0,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Projects\": [\n            {\n                \"ProjectId\": 1000101,\n                \"ProjectName\": \"test1\",\n                \"CreatorUin\": 100000012345,\n                \"ProjectInfo\": \"\",\n                \"CreateTime\": \"2021-10-13 11:03:30\"\n            }\n        ],\n        \"RequestId\": \"d75bbc07-f5bd-4020-b4bd-f877e9ccd1db\"\n    }\n}",
         "title": "获取项目列表"
       }
@@ -246,9 +246,9 @@
     ],
     "UpdateProject": [
       {
-        "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=UpdateProject\r\n&ProjectId=1024690\r\n&ProjectName=test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f26b281e-0cbc-40ab-a38b-e9e62ef6fd24\"\n    }\n}",
+        "document": "修改项目名称",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1001,\n    \"ProjectName\": \"项目名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"87ccfc15-4c5a-4f0a-b5f1-eae50aad9e9a\"\n    }\n}",
         "title": "修改项目名称"
       }
     ],

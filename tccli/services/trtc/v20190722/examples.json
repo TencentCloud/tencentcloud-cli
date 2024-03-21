@@ -224,6 +224,14 @@
         "title": "查询用户列表与通话指标"
       }
     ],
+    "DescribeWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询页面录制状态"
+      }
+    ],
     "DismissRoom": [
       {
         "document": "解散房间1234。",
@@ -328,6 +336,14 @@
         "title": "启动输入在线媒体流"
       }
     ],
+    "StartWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://web-record-xxxxx.cos.ap-xxx.myqcloud.com/xxxx/xxx.mp4\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Bucket\": \"webrecord-1234589\",\n            \"Region\": \"ap-chengdu\",\n            \"AccessKey\": \"AKxxxxxx\",\n            \"SecretKey\": \"Idxxxxxx\",\n            \"FileNamePrefix\": [\n                \"record\",\n                \"video\"\n            ]\n        }\n    },\n    \"MaxDurationLimit\": 3600,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启动一个页面录制任务"
+      }
+    ],
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
@@ -358,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "停止输入在线媒体流"
+      }
+    ],
+    "StopWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "停止页面录制任务"
       }
     ],
     "UpdatePublishCdnStream": [

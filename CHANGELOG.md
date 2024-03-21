@@ -1,3 +1,76 @@
+# Release 3.0.1082.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 109 次发布
+
+发布时间：2024-03-22 01:11:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBanStatus](https://cloud.tencent.com/document/api/296/60944)
+
+	* 新增出参：OpenSmartMode
+
+* [ModifyBanStatus](https://cloud.tencent.com/document/api/296/60942)
+
+	* 新增入参：OpenSmartMode
+
+
+修改数据结构：
+
+* [BruteAttackInfo](https://cloud.tencent.com/document/api/296/19867#BruteAttackInfo)
+
+	* 新增成员：AttackStatusDesc, BanExpiredTime
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 7 次发布
+
+发布时间：2024-03-22 01:16:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](https://cloud.tencent.com/document/api/1721/101518#Instance)
+
+	* 新增成员：OSType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 67 次发布
+
+发布时间：2024-03-22 01:25:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeWebRecord](https://cloud.tencent.com/document/api/647/104542)
+* [StartWebRecord](https://cloud.tencent.com/document/api/647/104541)
+* [StopWebRecord](https://cloud.tencent.com/document/api/647/104540)
+
+新增数据结构：
+
+* [WebRecordVideoParams](https://cloud.tencent.com/document/api/647/44055#WebRecordVideoParams)
+
+
+
 # Release 3.0.1081.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

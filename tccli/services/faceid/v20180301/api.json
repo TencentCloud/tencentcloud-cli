@@ -1145,7 +1145,7 @@
         },
         {
           "disabled": false,
-          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
+          "document": "身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
           "example": "无",
           "member": "string",
           "name": "IdCard",
@@ -1154,7 +1154,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。",
+          "document": "姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。\n最长长度32位。中文请使用UTF-8编码。",
           "example": "无",
           "member": "string",
           "name": "Name",

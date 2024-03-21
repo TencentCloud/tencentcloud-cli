@@ -693,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "通知签署方经办人的方式,  有以下途径:\n<ul><li>  **sms**  :  (默认)短信</li>\n<li>   **none**   : 不通知</li></ul>",
+          "document": "通知签署方经办人的方式,  有以下途径:\n<ul><li>  **sms**  :  (默认)短信</li>\n<li>   **none**   : 不通知</li></ul>\n```\n注意：\n如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信\n```",
           "example": "sms",
           "member": "string",
           "name": "NotifyType",

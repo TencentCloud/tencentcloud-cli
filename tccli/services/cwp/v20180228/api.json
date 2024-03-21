@@ -12774,7 +12774,7 @@
         },
         {
           "disabled": false,
-          "document": "阻断状态：1-阻断成功；非1-阻断失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 -不阻断(客户端版本不支持)\n1 -已阻断\n2 -阻断失败(程序异常)\n3 -不阻断(内网不阻断)\n4 -可用区不支持阻断\n10-阻断中\n81-不阻断(未开启阻断)\n82-不阻断(非专业版)\n83-不阻断(已加白名单)\n86-不阻断(系统白名单)\n87-不阻断(客户端离线)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "BanStatus",
@@ -12910,6 +12910,26 @@
           "name": "DataFrom",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "破解状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AttackStatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阻断过期时间（仅阻断中事件有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BanExpiredTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -21102,6 +21122,16 @@
           "member": "bool",
           "name": "ShowTips",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启智能过白模式",
+          "example": "无",
+          "member": "bool",
+          "name": "OpenSmartMode",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -46403,12 +46433,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "阻断状态 0:关闭 1:开启",
+          "document": "阻断开关状态: 0 -- 关闭 1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启智能过白模式",
+          "example": "无",
+          "member": "bool",
+          "name": "OpenSmartMode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

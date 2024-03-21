@@ -1966,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定或解绑的策略模板 ID 。",
+          "document": "指定绑定或解绑的策略模板 ID 或站点全局策略\n- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。\n- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。\n\n注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。",
           "example": "temp-wj86oi2",
           "member": "string",
           "name": "TemplateId",
@@ -11552,7 +11552,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。",
+          "document": "子域名/应用名。\n\n注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。",
           "example": "a.test.com",
           "member": "string",
           "name": "Entity",
@@ -11561,8 +11561,8 @@
         },
         {
           "disabled": false,
-          "document": "模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。",
-          "example": "1",
+          "document": "指定模板策略 ID，或指定站点全局策略。\n- 如需配置策略模板，请指定策略模板 ID。\n- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值\n\n注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。",
+          "example": "temp-wj86oi2",
           "member": "string",
           "name": "TemplateId",
           "required": false,
