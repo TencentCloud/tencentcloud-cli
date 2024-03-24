@@ -44,6 +44,7 @@ tccli ess CreatePrepareFlow --cli-unfold-argument  \
     --Approvers.0.Required True \
     --Approvers.0.ApproverOption.NoRefuse True \
     --Approvers.0.ApproverOption.NoTransfer True \
+    --Approvers.0.ApproverOption.CanEditApprover True \
     --Approvers.0.ApproverVerifyTypes 1 2 \
     --Approvers.0.ApproverSignTypes 1 2 \
     --Approvers.0.Components.0.ComponentPosX 160 \
@@ -139,6 +140,7 @@ tccli ess CreatePrepareFlow --cli-unfold-argument  \
     --Approvers.0.Required True \
     --Approvers.0.ApproverOption.NoRefuse True \
     --Approvers.0.ApproverOption.NoTransfer True \
+    --Approvers.0.ApproverOption.CanEditApprover True \
     --Approvers.0.ApproverVerifyTypes 1 2 \
     --Approvers.0.ApproverSignTypes 1 2 \
     --Approvers.0.Components.0.ComponentPosX 160 \
@@ -237,6 +239,7 @@ tccli ess CreatePrepareFlow --cli-unfold-argument  \
     --Approvers.0.RecipientId yDwXXxxxxxxxxxxxxxxOZbdgN6 \
     --Approvers.0.ApproverOption.NoRefuse True \
     --Approvers.0.ApproverOption.NoTransfer True \
+    --Approvers.0.ApproverOption.CanEditApprover True \
     --Approvers.0.ApproverVerifyTypes 1 2 \
     --Approvers.0.ApproverSignTypes 1 2 \
     --Approvers.0.IsFullText True \
@@ -295,6 +298,7 @@ tccli ess CreatePrepareFlow --cli-unfold-argument  \
     --Approvers.0.RecipientId yDwXXxxxxxxxxxxxxxxOZbdgN6 \
     --Approvers.0.ApproverOption.NoRefuse True \
     --Approvers.0.ApproverOption.NoTransfer True \
+    --Approvers.0.ApproverOption.CanEditApprover True \
     --Approvers.0.ApproverVerifyTypes 1 2 \
     --Approvers.0.ApproverSignTypes 1 2 \
     --Approvers.0.IsFullText True \

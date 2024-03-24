@@ -18668,6 +18668,26 @@
         },
         {
           "disabled": false,
+          "document": "资源维度自动续费时长单位，年：y，月：m，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关\n注意：此字段可能返回 null，表示取不到有效值。\n示例值：m\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "AutoRenewTimeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源维度自动续费时间长度，不返回即默认产品配置的，用户曾经设置过自动续费周期就会返回，和自动续费标记无关\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AutoRenewTimeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "多维度包的容量信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MeasureAccountDosageCapacity",

@@ -116,7 +116,7 @@
       {
         "document": "计费查询子客信用",
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCreditQuota\n<公共请求参数>\n\n{\n    \"ClientUin\": 123,\n    \"ComponentName\": \"qcost\",\n    \"QueryMode\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 100,\n        \"RemainingCredit\": 100,\n        \"RemainingVoucher\": 0,\n        \"Force\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 100,\n        \"RemainingCredit\": 100,\n        \"RemainingVoucher\": 0,\n        \"PrepayFrozen\": 0,\n        \"PostpayFrozen\": 0,\n        \"Force\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询子客信用"
       }
     ],

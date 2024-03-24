@@ -1,3 +1,145 @@
+# Release 3.0.961.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 49 次发布
+
+发布时间：2024-03-25 01:08:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：AutoRenewTimeUnit, AutoRenewTimeSpan
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 85 次发布
+
+发布时间：2024-03-25 01:13:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetMachineBaseInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#AssetMachineBaseInfo)
+
+	* 新增成员：CpuLoadNum
+
+	* <font color="#dd0000">**修改成员**：</font>Quuid, Uuid, MachineIp, MachineName, OsInfo, Cpu, MemSize, MemLoad, DiskSize, DiskLoad, PartitionCount, MachineWanIp, ProjectId, CpuSize, CpuLoad, Tag, UpdateTime, IsNew, FirstTime, MachineExtraInfo
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 74 次发布
+
+发布时间：2024-03-25 01:17:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CreateResultPageConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateResultPageConfig)
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
+
+	* 新增成员：CanEditApprover
+
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateFlowOption)
+
+	* 新增成员：ForbidAddApprover, ForbidEditFlowProperties, HideComponentTypes, ShowComponentTypes, ResultPageConfig
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 52 次发布
+
+发布时间：2024-03-25 01:17:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：MouthOpenRecognition
+
+* [OCRResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#OCRResult)
+
+	* 新增成员：CardCutImageBase64, CardBackCutImageBase64
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：IdCardCutReturn, ThemeColor
+
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 23 次发布
+
+发布时间：2024-03-25 01:17:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：TLSSupportVersion, TLSCiphers
+
+* [ProxyGroupDetail](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyGroupDetail)
+
+	* 新增成员：IsSupportTLSChoice
+
+* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyInfo)
+
+	* 新增成员：IsSupportTLSChoice
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 11 次发布
+
+发布时间：2024-03-25 01:18:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
+
+	* 新增出参：PrepayFrozen, PostpayFrozen
+
+
+
+
 # Release 3.0.960.1
 
 ## 账号中心(account) 版本：2018-12-25

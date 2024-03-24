@@ -1,71 +1,131 @@
 # 本版本更新包含以下内容：
 
-## 账号中心(account) 版本：2018-12-25
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 13 次发布
+### 第 49 次发布
 
-发布时间：2024-03-22 01:07:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [BatchCheckWhitelist](http://document.tencentcloudapi.woa.com/document/product/1594/77153)
-
-	* 新增入参：WhitelistKeyList, WhitelistUinList, DefaultWhitelistUinFlag
-
-	* 新增出参：MatchedWhitelist
-
-
-新增数据结构：
-
-* [Whitelist](http://document.tencentcloudapi.woa.com/document/product/1594/75172#Whitelist)
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 63 次发布
-
-发布时间：2024-03-22 01:12:32
+发布时间：2024-03-25 01:08:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeLoadBalancerCount](http://document.tencentcloudapi.woa.com/document/product/214/83545)
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
 
+	* 新增成员：AutoRenewTimeUnit, AutoRenewTimeSpan
 
-
-## 云服务器(cvm) 版本：2019-12-12
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 72 次发布
-
-发布时间：2024-03-22 01:13:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstanceStatistics](http://document.tencentcloudapi.woa.com/document/product/213/83546)
 
 
 
 ## 主机安全(cwp) 版本：2018-02-28
 
-### 第 84 次发布
+### 第 85 次发布
 
-发布时间：2024-03-22 01:13:54
+发布时间：2024-03-25 01:13:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetMachineBaseInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#AssetMachineBaseInfo)
+
+	* 新增成员：CpuLoadNum
+
+	* <font color="#dd0000">**修改成员**：</font>Quuid, Uuid, MachineIp, MachineName, OsInfo, Cpu, MemSize, MemLoad, DiskSize, DiskLoad, PartitionCount, MachineWanIp, ProjectId, CpuSize, CpuLoad, Tag, UpdateTime, IsNew, FirstTime, MachineExtraInfo
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 74 次发布
+
+发布时间：2024-03-25 01:17:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CreateResultPageConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateResultPageConfig)
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
+
+	* 新增成员：CanEditApprover
+
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateFlowOption)
+
+	* 新增成员：ForbidAddApprover, ForbidEditFlowProperties, HideComponentTypes, ShowComponentTypes, ResultPageConfig
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 52 次发布
+
+发布时间：2024-03-25 01:17:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：MouthOpenRecognition
+
+* [OCRResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#OCRResult)
+
+	* 新增成员：CardCutImageBase64, CardBackCutImageBase64
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：IdCardCutReturn, ThemeColor
+
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 23 次发布
+
+发布时间：2024-03-25 01:17:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：TLSSupportVersion, TLSCiphers
+
+* [ProxyGroupDetail](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyGroupDetail)
+
+	* 新增成员：IsSupportTLSChoice
+
+* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyInfo)
+
+	* 新增成员：IsSupportTLSChoice
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 11 次发布
+
+发布时间：2024-03-25 01:18:44
 
 本次发布包含了以下内容：
 
@@ -73,82 +133,10 @@
 
 修改接口：
 
-* [DescribeBanStatus](http://document.tencentcloudapi.woa.com/document/product/296/60944)
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
 
-	* 新增出参：OpenSmartMode
+	* 新增出参：PrepayFrozen, PostpayFrozen
 
-* [ModifyBanStatus](http://document.tencentcloudapi.woa.com/document/product/296/60942)
-
-	* 新增入参：OpenSmartMode
-
-
-修改数据结构：
-
-* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
-
-	* 新增成员：AttackStatusDesc, BanExpiredTime
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 43 次发布
-
-发布时间：2024-03-22 01:17:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAutoScaleSpecs](http://document.tencentcloudapi.woa.com/document/product/589/83547)
-
-新增数据结构：
-
-* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 7 次发布
-
-发布时间：2024-03-22 01:19:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance)
-
-	* 新增成员：OSType
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 42 次发布
-
-发布时间：2024-03-22 01:29:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83551)
-* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
-* [StopWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83549)
-
-新增数据结构：
-
-* [WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams)
 
 
 
@@ -285,7 +273,7 @@
 
 新增数据结构：
 
-* [[Whitelist](http://document.tencentcloudapi.woa.com/document/product/1594/75172#Whitelist)](http://document.tencentcloudapi.woa.com/document/product/1594/75172#[Whitelist](http://document.tencentcloudapi.woa.com/document/product/1594/75172#Whitelist))
+* [Whitelist](http://document.tencentcloudapi.woa.com/document/product/1594/75172#Whitelist)
 
 ### 第 12 次发布
 
@@ -6079,6 +6067,21 @@
 
 
 ## 费用中心(billing) 版本：2018-07-09
+
+### 第 49 次发布
+
+发布时间：2024-03-25 01:08:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：AutoRenewTimeUnit, AutoRenewTimeSpan
+
 
 ### 第 48 次发布
 
@@ -19648,7 +19651,7 @@
 
 新增接口：
 
-* [[DescribeLoadBalancerCount](http://document.tencentcloudapi.woa.com/document/product/214/83545)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeLoadBalancerCount](http://document.tencentcloudapi.woa.com/document/product/214/83545)
 
 ### 第 62 次发布
 
@@ -26226,7 +26229,7 @@
 
 新增接口：
 
-* [[DescribeInstanceStatistics](http://document.tencentcloudapi.woa.com/document/product/213/83546)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstanceStatistics](http://document.tencentcloudapi.woa.com/document/product/213/83546)
 
 ### 第 71 次发布
 
@@ -27631,6 +27634,23 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 85 次发布
+
+发布时间：2024-03-25 01:13:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetMachineBaseInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#AssetMachineBaseInfo)
+
+	* 新增成员：CpuLoadNum
+
+	* <font color="#dd0000">**修改成员**：</font>Quuid, Uuid, MachineIp, MachineName, OsInfo, Cpu, MemSize, MemLoad, DiskSize, DiskLoad, PartitionCount, MachineWanIp, ProjectId, CpuSize, CpuLoad, Tag, UpdateTime, IsNew, FirstTime, MachineExtraInfo
+
 
 ### 第 84 次发布
 
@@ -39947,11 +39967,11 @@
 
 新增接口：
 
-* [[DescribeAutoScaleSpecs](http://document.tencentcloudapi.woa.com/document/product/589/83547)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAutoScaleSpecs](http://document.tencentcloudapi.woa.com/document/product/589/83547)
 
 新增数据结构：
 
-* [[AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec))
+* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
 
 ### 第 42 次发布
 
@@ -42180,6 +42200,29 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 74 次发布
+
+发布时间：2024-03-25 01:17:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[CreateResultPageConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateResultPageConfig)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[CreateResultPageConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateResultPageConfig))
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
+
+	* 新增成员：CanEditApprover
+
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#CreateFlowOption)
+
+	* 新增成员：ForbidAddApprover, ForbidEditFlowProperties, HideComponentTypes, ShowComponentTypes, ResultPageConfig
+
 
 ### 第 73 次发布
 
@@ -46571,6 +46614,29 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 52 次发布
+
+发布时间：2024-03-25 01:17:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：MouthOpenRecognition
+
+* [OCRResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#OCRResult)
+
+	* 新增成员：CardCutImageBase64, CardBackCutImageBase64
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：IdCardCutReturn, ThemeColor
+
+
 ### 第 51 次发布
 
 发布时间：2024-03-14 01:17:41
@@ -47694,6 +47760,29 @@
 
 
 ## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 23 次发布
+
+发布时间：2024-03-25 01:17:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HTTPSListener](http://document.tencentcloudapi.woa.com/document/product/608/37023#HTTPSListener)
+
+	* 新增成员：TLSSupportVersion, TLSCiphers
+
+* [ProxyGroupDetail](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyGroupDetail)
+
+	* 新增成员：IsSupportTLSChoice
+
+* [ProxyInfo](http://document.tencentcloudapi.woa.com/document/product/608/37023#ProxyInfo)
+
+	* 新增成员：IsSupportTLSChoice
+
 
 ### 第 22 次发布
 
@@ -50533,6 +50622,21 @@
 
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 11 次发布
+
+发布时间：2024-03-25 01:18:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
+
+	* 新增出参：PrepayFrozen, PostpayFrozen
+
 
 ### 第 10 次发布
 
@@ -88972,13 +89076,13 @@
 
 新增接口：
 
-* [[DescribeWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83551)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StopWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83549)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83551)
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+* [StopWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83549)
 
 新增数据结构：
 
-* [[WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams))
+* [WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams)
 
 ### 第 41 次发布
 

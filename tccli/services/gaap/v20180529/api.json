@@ -7268,7 +7268,7 @@
           "example": "listener-xxxx",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7278,7 +7278,7 @@
           "example": "test",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7288,7 +7288,7 @@
           "example": "443",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7298,7 +7298,7 @@
           "example": "HTTPS",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7308,7 +7308,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ListenerStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7318,7 +7318,7 @@
           "example": "cert-xxxx",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7328,7 +7328,7 @@
           "example": "HTTPS",
           "member": "string",
           "name": "ForwardProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7338,7 +7338,7 @@
           "example": "1661788772",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7348,7 +7348,7 @@
           "example": "testcert",
           "member": "string",
           "name": "CertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7358,7 +7358,7 @@
           "example": "cert-xxxx",
           "member": "string",
           "name": "ClientCertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7368,7 +7368,7 @@
           "example": "0",
           "member": "int64",
           "name": "AuthType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7378,7 +7378,7 @@
           "example": "testcert",
           "member": "string",
           "name": "ClientCertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7388,7 +7388,7 @@
           "example": "null",
           "member": "CertificateAliasInfo",
           "name": "PolyClientCertificateAliasInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7398,7 +7398,7 @@
           "example": "1",
           "member": "int64",
           "name": "Http3Supported",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7408,7 +7408,7 @@
           "example": "link-bjkpdum1",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7418,7 +7418,27 @@
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的TLS版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['TLSv1.0', 'TLSv1.1']",
+          "member": "string",
+          "name": "TLSSupportVersion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的TLS密码套件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GAAP_TLS_CIPHERS_WIDE",
+          "member": "string",
+          "name": "TLSCiphers",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9229,7 +9249,7 @@
           "example": "1234",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9239,7 +9259,7 @@
           "example": "1000",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9249,7 +9269,7 @@
           "example": "1",
           "member": "int64",
           "name": "ProxyNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9259,7 +9279,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9269,7 +9289,7 @@
           "example": "100100",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9279,7 +9299,7 @@
           "example": "100100",
           "member": "string",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9289,7 +9309,7 @@
           "example": "Test",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9299,7 +9319,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "DnsDefaultIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9309,7 +9329,7 @@
           "example": "link-test.gaapqcloud.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9319,7 +9339,7 @@
           "example": "EastChina",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9329,7 +9349,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsOldGroup",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9339,7 +9359,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9349,7 +9369,7 @@
           "example": "[]",
           "member": "TagPair",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9359,7 +9379,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9369,7 +9389,7 @@
           "example": "\"1.0\"",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9379,7 +9399,7 @@
           "example": "1",
           "member": "int64",
           "name": "ClientIPMethod",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9389,7 +9409,7 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPAddressVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9399,7 +9419,7 @@
           "example": "Thunder",
           "member": "string",
           "name": "PackageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9409,7 +9429,7 @@
           "example": "0",
           "member": "int64",
           "name": "Http3Supported",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9419,7 +9439,17 @@
           "example": "0",
           "member": "int64",
           "name": "FeatureBitmap",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持设置TSL设置\n0表示不支持；\n1表示支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsSupportTLSChoice",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9927,6 +9957,16 @@
           "example": "0",
           "member": "int64",
           "name": "IsAutoScaleProxy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许设置TLS配置\n0表示不支持；\n1表示支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsSupportTLSChoice",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

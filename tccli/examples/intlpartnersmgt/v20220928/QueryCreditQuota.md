@@ -18,6 +18,8 @@ Output:
         "TotalCredit": 100,
         "RemainingCredit": 100,
         "RemainingVoucher": 0,
+        "PrepayFrozen": 0,
+        "PostpayFrozen": 0,
         "Force": 0,
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
