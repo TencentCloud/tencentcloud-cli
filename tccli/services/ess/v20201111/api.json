@@ -897,6 +897,15 @@
         },
         {
           "disabled": false,
+          "document": "允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEditApprover",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li>\n</ul>",
           "example": "无",
           "member": "int64",
@@ -3347,6 +3356,51 @@
           "name": "CustomCreateFlowDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”\n",
+          "example": "无",
+          "member": "string",
+          "name": "ForbidAddApprover",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "  禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板\n",
+          "example": "无",
+          "member": "string",
+          "name": "ForbidEditFlowProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "HideComponentTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "ShowComponentTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "发起流程的可嵌入页面结果页配置",
+          "example": "无",
+          "member": "CreateResultPageConfig",
+          "name": "ResultPageConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -4974,6 +5028,39 @@
         }
       ],
       "type": "object"
+    },
+    "CreateResultPageConfig": {
+      "document": "发起流程的可嵌入页面操作结果页配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<ul>\n  <li>0 : 发起审批成功页面（通过接口<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/\" target=\"_blank\">创建发起流程web页面</a>发起时设置了NeedCreateReview参数为true）</li>\n</ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结果页标题，不超过50字",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结果页描述，不超过200字",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CreateSchemeUrlRequest": {
       "document": "CreateSchemeUrl请求参数结构体",

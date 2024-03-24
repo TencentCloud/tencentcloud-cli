@@ -5662,7 +5662,7 @@
           "example": "x x",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5672,7 +5672,7 @@
           "example": "xx",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5682,7 +5682,7 @@
           "example": "xx",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5692,7 +5692,7 @@
           "example": "xx",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5702,7 +5702,7 @@
           "example": "xx",
           "member": "string",
           "name": "OsInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5712,7 +5712,7 @@
           "example": "xx",
           "member": "string",
           "name": "Cpu",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5722,7 +5722,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MemSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5732,7 +5732,7 @@
           "example": "xx",
           "member": "string",
           "name": "MemLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5742,7 +5742,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DiskSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5752,7 +5752,7 @@
           "example": "xx",
           "member": "string",
           "name": "DiskLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5762,7 +5762,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PartitionCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5772,7 +5772,7 @@
           "example": "xx",
           "member": "string",
           "name": "MachineWanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5782,7 +5782,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5792,7 +5792,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CpuSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5802,7 +5802,7 @@
           "example": "xx",
           "member": "string",
           "name": "CpuLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5812,7 +5812,7 @@
           "example": "[]",
           "member": "MachineTag",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5822,7 +5822,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5832,7 +5832,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsNew",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5842,7 +5842,7 @@
           "example": "2022-07-15 11:27:01",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5852,8 +5852,18 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu负载读数（仅linux系统有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CpuLoadNum",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
