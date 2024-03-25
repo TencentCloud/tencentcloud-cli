@@ -210,6 +210,13 @@
       "output": "DescribeLogstashPipelinesResponse",
       "status": "online"
     },
+    "DescribeSecurityGroupBindEs": {
+      "document": "查询安全组绑定的es集群信息",
+      "input": "DescribeSecurityGroupBindEsRequest",
+      "name": "查询安全组绑定的es集群信息",
+      "output": "DescribeSecurityGroupBindEsResponse",
+      "status": "online"
+    },
     "DescribeServerlessDi": {
       "document": "查询serverless数据接入",
       "input": "DescribeServerlessDiRequest",
@@ -355,6 +362,13 @@
       "input": "SearchServerlessInstanceRequest",
       "name": "Severless通用搜索接口",
       "output": "SearchServerlessInstanceResponse",
+      "status": "online"
+    },
+    "SmartAdvisorManage": {
+      "document": "ES 云顾问管理接口",
+      "input": "SmartAdvisorManageRequest",
+      "name": "ES 云顾问管理接口",
+      "output": "SmartAdvisorManageResponse",
       "status": "online"
     },
     "StartLogstashPipelines": {
@@ -1601,7 +1615,7 @@
           "example": "{\"settings\": {\"index.number_of_shards\": 1},\"mappings\": {\"properties\": {\"field1\": {\"type\": \"text\"}}}}",
           "member": "string",
           "name": "IndexMetaJson",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -4157,6 +4171,53 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityGroupBindEsRequest": {
+      "document": "DescribeSecurityGroupBindEs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组id",
+          "example": "sg-xxxx",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupBindEsResponse": {
+      "document": "DescribeSecurityGroupBindEs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组id",
+          "example": "sg-xxxx",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组绑定的es集群相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EsBindSecurityGroupInfo",
+          "name": "EsBindSecurityGroupInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServerlessDiRequest": {
       "document": "DescribeServerlessDi请求参数结构体",
       "members": [
@@ -6037,6 +6098,62 @@
         }
       ],
       "usage": "both"
+    },
+    "EsBindSecurityGroupInfo": {
+      "document": "根据安全组id查询出来的es集群相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es集群的实例id，字符串格式",
+          "example": "es-3p7lkxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es集群名称",
+          "example": "es集群名称",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es集群所属的vpcId信息",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es集群统一接入ip",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "EsVip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es集群统一接入端口",
+          "example": "9200",
+          "member": "uint64",
+          "name": "EsPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EsConfigSetInfo": {
       "document": "配置组信息",
@@ -9454,6 +9571,34 @@
       ],
       "usage": "out"
     },
+    "OutboundPublicAcl": {
+      "document": "节点出站访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "允许节点出站访问的节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许节点出站访问的白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteHostList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PodLabel": {
       "document": "Pod标签",
       "members": [
@@ -9690,6 +9835,15 @@
           "name": "IsOffline",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11207,6 +11361,61 @@
       ],
       "usage": "out"
     },
+    "SmartAdvisorManageRequest": {
+      "document": "SmartAdvisorManage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es实例名称",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云顾问调用指标名称",
+          "example": "search.max_buckets",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云顾问调用接口类别",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartAdvisorManageResponse": {
+      "document": "SmartAdvisorManage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"65536\"",
+          "member": "string",
+          "name": "StrategyResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SourceInfo": {
       "document": "SourceInfo",
       "members": [
@@ -12081,6 +12290,33 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点出站访问详细信息\n",
+          "example": "无",
+          "member": "OutboundPublicAcl",
+          "name": "OutboundPublicAcls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点出站访问操作\nOPEN 开启\nCLOSE 关闭",
+          "example": "无",
+          "member": "string",
+          "name": "OutboundPublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架参数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12740,6 +12976,15 @@
           "name": "SkipCheckForceRestart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架参数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

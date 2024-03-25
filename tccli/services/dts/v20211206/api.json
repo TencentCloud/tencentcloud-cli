@@ -1927,7 +1927,7 @@
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
           "required": false,
-          "type": "object"
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -259,3 +259,101 @@ Output:
 }
 ```
 
+**Example 5: 创建一个有两份子合同的合同组签署流程（B2B、B2C），指定每个子合同第一方为动态签署方**
+
+1. 子合同1为B2C合同，Approvers中包含两个ApproverInfo元素，C端签署人ApproverType为1，企业签署人ApproverType为0
+
+2. 子合同1使用模板yDwXhUUckp7fs563UyNzLyWRHKWco8JV发起B端自动签署合同。需要确保在创建模板时，模板中已经指定了本企业的印章控件，否则合同发起将会失败。
+
+3. 子合同2为B2B合同，Approvers中包含两个ApproverInfo元素，企业签署人ApproverType为0。
+
+4.两份字合同指定一份为动态签署方（即不指定具体签署人，FillType=1），可在发起后再进行补充。
+
+Input: 
+
+```
+tccli ess CreateFlowGroupByTemplates --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowGroupName 示例合同组-有2份子合同 \
+    --FlowGroupInfos.0.TemplateId yDwXhUUckp7fs563UyNzLyWRHKWco8JV \
+    --FlowGroupInfos.0.FlowName 子合同1-B2C \
+    --FlowGroupInfos.0.Components.0.ComponentName 单行文本 \
+    --FlowGroupInfos.0.Components.0.ComponentValue 单行文本测试 \
+    --FlowGroupInfos.0.Components.0.ComponentType TEXT \
+    --FlowGroupInfos.0.Components.0.FileIndex 0 \
+    --FlowGroupInfos.0.Components.0.ComponentHeight 0 \
+    --FlowGroupInfos.0.Components.0.ComponentWidth 0 \
+    --FlowGroupInfos.0.Components.0.ComponentPage 0 \
+    --FlowGroupInfos.0.Components.0.ComponentPosX 0 \
+    --FlowGroupInfos.0.Components.0.ComponentPosY 0 \
+    --FlowGroupInfos.0.FlowDescription 子合同1 \
+    --FlowGroupInfos.0.FlowType 示例合同 \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.0.ApproverRoleName 甲方 \
+    --FlowGroupInfos.0.Approvers.0.ApproverOption.FillType 1 \
+    --FlowGroupInfos.0.Approvers.1.ApproverName 张三 \
+    --FlowGroupInfos.0.Approvers.1.ApproverType 1 \
+    --FlowGroupInfos.0.Approvers.1.ApproverMobile 18888888888 \
+    --FlowGroupInfos.0.Approvers.1.ApproverRoleName 乙方 \
+    --FlowGroupInfos.0.Unordered True \
+    --FlowGroupInfos.1.TemplateId yDwJ5UUckpk84g04UyPWcjIEMPGLGe3z \
+    --FlowGroupInfos.1.FlowName 子合同2 \
+    --FlowGroupInfos.1.FlowDescription 子合同2-B2B \
+    --FlowGroupInfos.1.FlowType 示例合同 \
+    --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.1.Approvers.0.ApproverRoleName 甲方 \
+    --FlowGroupInfos.1.Approvers.0.ApproverOption.FillType 1 \
+    --FlowGroupInfos.1.Approvers.1.ApproverName 李四 \
+    --FlowGroupInfos.1.Approvers.1.ApproverType 0 \
+    --FlowGroupInfos.1.Approvers.1.ApproverMobile 15100000000 \
+    --FlowGroupInfos.1.Approvers.1.OrganizationName 李四示例企业 \
+    --FlowGroupInfos.1.Approvers.1.ApproverRoleName 乙方 \
+    --FlowGroupInfos.1.Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "甲方",
+                        "RecipientId": "yDCVHUUckpwbqoyiUx2jLf4wRXKt9ZGp",
+                        "SignId": "yDCVHUUckpwbquhsUuyXGHSSbBKWsTXF"
+                    },
+                    {
+                        "ApproverRoleName": "乙方",
+                        "RecipientId": "yDCVHUUckpwbqoyeUx2jLf48NQhgRXND",
+                        "SignId": "yDCVHUUckpwbquh8UuyXGHSyoakAk3Fo"
+                    }
+                ],
+                "FlowId": "yDCVHUUckpwbquh1UuyXGHSwzvgoRD2j"
+            },
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "甲方",
+                        "RecipientId": "yDCVHUUckpwbqoyiUx2jLf4wRXKt9ZGp",
+                        "SignId": "yDCVHUUckpwbquhjUuyXGHS1fHzeMsOc"
+                    },
+                    {
+                        "ApproverRoleName": "乙方",
+                        "RecipientId": "yDCVHUUckpwbqoyeUx2jLf48NQhgRXND",
+                        "SignId": "yDCVHUUckpwbquhhUuyXGHSuZutTpZ47"
+                    }
+                ],
+                "FlowId": "yDCVHUUckpwbquhqUuyXGHSvjmlRJtKP"
+            }
+        ],
+        "FlowGroupId": "yDCVHUUckpwbquh3UuyXGHSkeqSxHjw8",
+        "FlowIds": [
+            "yDCVHUUckpwbquh1UuyXGHSwzvgoRD2j",
+            "yDCVHUUckpwbquhqUuyXGHSvjmlRJtKP"
+        ],
+        "RequestId": "s1711350937322945880"
+    }
+}
+```
+

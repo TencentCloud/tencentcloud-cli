@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli live CreateLiveTimeShiftTemplate --cli-unfold-argument  \
-    --Description xx \
-    --TranscodeTemplateIds 0 \
-    --RemoveWatermark True \
-    --TemplateName xx \
-    --ItemDuration 1 \
+    --TemplateName abc \
+    --Description abc \
+    --Area abc \
     --Duration 1 \
-    --Area xx
+    --ItemDuration 1 \
+    --RemoveWatermark True \
+    --TranscodeTemplateIds 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TemplateId": 1000,
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "TemplateId": 0,
+        "RequestId": "abc"
     }
 }
 ```

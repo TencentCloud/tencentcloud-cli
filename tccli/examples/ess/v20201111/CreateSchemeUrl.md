@@ -117,7 +117,7 @@ Output:
 **Example 5: 获取动态签署人补充链接（短链）**
 
 获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充
-注：`获取动态签署人补充链接需指定PathType值为，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
+注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
 
 Input: 
 
@@ -126,8 +126,6 @@ tccli ess CreateSchemeUrl --cli-unfold-argument  \
     --FlowId yDwq7UU*Uu1vFD6uHSIyKQPf \
     --RecipientId yDw7aUUckpkxxmljUE0xkKk1DlvwRdfK \
     --PathType 3 \
-    --Name 典子谦 \
-    --Mobile 13200000000 \
     --EndPoint HTTP_SHORT_URL \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj
 ```
@@ -199,6 +197,36 @@ Output:
             "Message": "APP类型不支持跳转到电子签主页或合同列表页"
         },
         "RequestId": "s1693830251815551087"
+    }
+}
+```
+
+**Example 8: 获取合同组动态签署人的领取链接以及二维码**
+
+获取动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充
+注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
+
+Input: 
+
+```
+tccli ess CreateSchemeUrl --cli-unfold-argument  \
+    --FlowGroupId yDwq7UUckpknjh4hUu1vFD6uHSIyKQPf \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.FlowId yDCVHUUckpwbquk8UuyXGHS86DkTCzfY \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.RecipientId yDCVHUUckpwbqoyiUx2jLf4wRXKt9ZGp \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.FlowId yDCVHUUckpwbquk2UuyXGHSuTPHxyR6u \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.RecipientId yDCVHUUckpwbqoyeUx2jLf48NQhgRXND \
+    --PathType 1 \
+    --EndPoint HTTP_SHORT_URL \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1711335464242636975",
+        "SchemeQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6******0a251eda6ea8b",
+        "SchemeUrl": "https://test.essurl.cn/yG*****us"
     }
 }
 ```

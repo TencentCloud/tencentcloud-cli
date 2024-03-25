@@ -1,3 +1,254 @@
+# Release 3.0.962.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 91 次发布
+
+发布时间：2024-03-26 01:10:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/50424)
+
+	* 新增入参：PayType, Period
+
+
+新增数据结构：
+
+* [TaskAttachInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskAttachInfo)
+
+修改数据结构：
+
+* [TaskDetail](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskDetail)
+
+	* 新增成员：TaskAttachInfo
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 79 次发布
+
+发布时间：2024-03-26 01:11:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/597/77342)
+
+	* <font color="#dd0000">**修改入参**：</font>IsApplied
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 16 次发布
+
+发布时间：2024-03-26 01:16:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)
+
+	* <font color="#dd0000">**修改成员**：</font>ExtraAttr
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 55 次发布
+
+发布时间：2024-03-26 01:17:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSecurityGroupBindEs](http://document.tencentcloudapi.woa.com/document/product/845/83553)
+* [SmartAdvisorManage](http://document.tencentcloudapi.woa.com/document/product/845/83552)
+
+修改接口：
+
+* [CreateIndex](http://document.tencentcloudapi.woa.com/document/product/845/74384)
+
+	* <font color="#dd0000">**修改入参**：</font>IndexMetaJson
+
+* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/845/48473)
+
+	* 新增入参：CvmDelayOnlineTime
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：OutboundPublicAcls, OutboundPublicAccess, CvmDelayOnlineTime
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：CvmDelayOnlineTime
+
+
+新增数据结构：
+
+* [EsBindSecurityGroupInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsBindSecurityGroupInfo)
+* [OutboundPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#OutboundPublicAcl)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 75 次发布
+
+发布时间：2024-03-26 01:17:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增入参：FlowGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>FlowId
+
+* [CreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/81092)
+
+	* 新增出参：Approvers
+
+* [CreateFlowGroupByTemplates](http://document.tencentcloudapi.woa.com/document/product/1668/81091)
+
+	* 新增出参：Approvers
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：FlowGroupUrlInfo
+
+
+新增数据结构：
+
+* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApproverInfo)
+* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApprovers)
+* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupUrlInfo)
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ApproverName, ApproverMobile
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：FlowId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 132 次发布
+
+发布时间：2024-03-26 01:17:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/82321)
+
+	* 新增入参：FlowGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>FlowId
+
+* [ChannelCreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75963)
+
+	* 新增出参：Approvers
+
+* [ChannelCreateFlowGroupByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/81093)
+
+	* 新增出参：Approvers
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：FlowGroupUrlInfo
+
+
+新增数据结构：
+
+* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApproverInfo)
+* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApprovers)
+* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupUrlInfo)
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillApproverInfo)
+
+	* 新增成员：FlowId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 53 次发布
+
+发布时间：2024-03-26 01:17:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetFaceIdRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1007/83555)
+* [GetFaceidRiskInfoToken](http://document.tencentcloudapi.woa.com/document/product/1007/83554)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 37 次发布
+
+发布时间：2024-03-26 01:30:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77719)
+
+	* 新增入参：ExecutionTTL, ScriptChange, InChargeIds
+
+
+
+
 # Release 3.0.961.1
 
 ## 费用中心(billing) 版本：2018-07-09

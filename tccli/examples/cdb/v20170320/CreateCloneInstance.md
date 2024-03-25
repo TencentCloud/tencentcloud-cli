@@ -1,17 +1,17 @@
 **Example 1: 克隆实例并回档到指定时间**
 
-
+克隆实例并回档到指定时间
 
 Input: 
 
 ```
 tccli cdb CreateCloneInstance --cli-unfold-argument  \
-    --InstanceId cdb-9303wd4x \
-    --SpecifiedRollbackTime 2020-08-0116:27:43 \
     --UniqVpcId vpc-594gwq4l \
+    --InstanceId cdb-9303wd4x \
+    --Volume 50 \
     --UniqSubnetId subnet-dz5pj862 \
-    --Memory 1000 \
-    --Volume 50
+    --SpecifiedRollbackTime 2020-08-0116:27:43 \
+    --Memory 1000
 ```
 
 Output: 
