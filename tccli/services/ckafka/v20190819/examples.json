@@ -429,7 +429,7 @@
     "DescribeGroupInfo": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupInfo\r\n&InstanceId=xxxx\r\n&GroupList.0=xx\r\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeGroupInfo\n&InstanceId=ckafka-ivn43n20\n&GroupList.0=groupName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"ErrorCode\": \"0\",\n                \"State\": \"Stable\",\n                \"ProtocolType\": \"consumer\",\n                \"Protocol\": \"range\",\n                \"Members\": [\n                    {\n                        \"MemberId\": \"consumer-1-/10.53.88.65-2018-08-10 10:17:19:639-88206ef1-9248-43a0-9ff4-e22c3ab21e92\",\n                        \"ClientId\": \"consumer-1\",\n                        \"ClientHost\": \"/10.53.88.65\",\n                        \"Assignment\": {\n                            \"Version\": 0,\n                            \"Topics\": [\n                                {\n                                    \"Topic\": \"test\",\n                                    \"Partitions\": [\n                                        0\n                                    ]\n                                }\n                            ]\n                        }\n                    }\n                ],\n                \"Group\": \"perf-consumer-97910\"\n            }\n        ],\n        \"RequestId\": \"8e9b234e-0c3e-4340-9733-adbd05879b10\"\n    }\n}",
         "title": "获取消费分组信息"
       }
@@ -604,7 +604,7 @@
     ],
     "ModifyAclRule": [
       {
-        "document": "",
+        "document": "修改ACL规则示范",
         "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyAclRule\n&InstanceId=xxx\n&RuleName=xxx\n&IsApplied=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": 1,\n        \"RequestId\": \"72b987c9-8842-47ac-9ad6-fa2bde3e936d\"\n    }\n}",
         "title": "修改ACL规则示范"

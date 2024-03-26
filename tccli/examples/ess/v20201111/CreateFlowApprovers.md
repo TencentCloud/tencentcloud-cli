@@ -226,3 +226,37 @@ Output:
 }
 ```
 
+**Example 8: B2C签署，补充合同组动态签署人信息**
+
+在B2C签署中，双方签署方未指定具体签署人时，需要进行补充。
+注:
+`1.补充动态签署人时FillApproverType传值为1 `
+`2.补充合同组动态签署人每个签署方都需指定FlowId`
+
+Input: 
+
+```
+tccli ess CreateFlowApprovers --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowGroupId yDCVMUUckpwytlc2UE1RW1FSgWksaiI3 \
+    --FillApproverType 1 \
+    --Approvers.0.RecipientId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.0.FlowId yDCVMUUckpwytlcrUE1RW1Fvnl52FPBB \
+    --Approvers.1.RecipientId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.FlowId yDCVMUUckpwytlc5UE1RW1FwLn7Hcn01
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1234345677xxxx"
+    }
+}
+```
+

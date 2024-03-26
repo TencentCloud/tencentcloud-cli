@@ -36623,7 +36623,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "责任人",
           "example": "无",
           "member": "string",
@@ -36684,6 +36684,33 @@
           "name": "DependencyConfigDTOs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "执行耗时",
+          "example": "无",
+          "member": "int64",
+          "name": "ExecutionTTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "脚本是否改变",
+          "example": "无",
+          "member": "bool",
+          "name": "ScriptChange",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "责任人id",
+          "example": "102341324 ",
+          "member": "string",
+          "name": "InChargeIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -36697,7 +36724,7 @@
           "example": "无",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

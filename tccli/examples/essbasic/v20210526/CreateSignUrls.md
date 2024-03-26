@@ -316,3 +316,55 @@ Output:
 }
 ```
 
+**Example 7: 获取合同组动态签署人补充链接**
+
+获取动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充
+注： 
+`1.参数GenerateType需传值为RECIPIENT` 
+`2.需指定对应的合同组FlowGroupUrlInfo签署方角色编号（即RecipientId）` 
+
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --FlowGroupId yDCVAUUckpwa592pUxoLjOlRVS9Zgusf \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.FlowId yDCVAUUckpwa59rcUxoLjOlEctyesTzj \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.RecipientId yDCVAUUckpwa59riUxoLjOluu9cf6B3s \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.FlowId yDCVAUUckpwa592dUxoLjOl8StWKvg9K \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.RecipientId yDCVAUUckpwa59r6UxoLjOlCC6ZHk7rL \
+    --GenerateType RECIPIENT \
+    --Agent.ProxyOrganizationOpenId 1000***8062 \
+    --Agent.ProxyOperator.OpenId yDR3L****eTdCt5TVx \
+    --Agent.AppId 125***319 \
+    --Endpoint 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorMessages": [],
+        "RequestId": "s1696937862717144539",
+        "SignUrlInfos": [
+            {
+                "ApproverType": "",
+                "CustomUserId": "",
+                "Deadline": 0,
+                "FlowGroupId": "",
+                "FlowId": "yDwhGUUfe5g******CX8ZwTiSg8gISocy",
+                "IdCardNumber": "",
+                "Mobile": "",
+                "Name": "",
+                "OpenId": "",
+                "OrganizationName": "",
+                "SignId": "",
+                "SignOrder": 0,
+                "SignQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06dcbe2797f**************69ee4e24cd976dd8376dbd41c6ff227c803c4c561c",
+                "SignUrl": "https://test.essurl.cn/gGI***nZC"
+            }
+        ]
+    }
+}
+```
+

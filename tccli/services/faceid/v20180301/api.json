@@ -119,11 +119,25 @@
       "output": "GetFaceIdResultResponse",
       "status": "online"
     },
+    "GetFaceIdRiskInfo": {
+      "document": "完成验证后，用FaceIdToken调用本接口获取设备风险相关信息，FaceIdToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
+      "input": "GetFaceIdRiskInfoRequest",
+      "name": "获取SDK设备风险信息",
+      "output": "GetFaceIdRiskInfoResponse",
+      "status": "online"
+    },
     "GetFaceIdToken": {
       "document": "每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取验证结果信息，该token仅能核身一次。",
       "input": "GetFaceIdTokenRequest",
       "name": "获取SDKToken",
       "output": "GetFaceIdTokenResponse",
+      "status": "online"
+    },
+    "GetFaceidRiskInfoToken": {
+      "document": "每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取风险结果信息，该Token仅能核身一次。",
+      "input": "GetFaceidRiskInfoTokenRequest",
+      "name": "获取风险信息Token",
+      "output": "GetFaceidRiskInfoTokenResponse",
       "status": "online"
     },
     "GetLiveCode": {
@@ -2781,6 +2795,93 @@
       ],
       "type": "object"
     },
+    "GetFaceIdRiskInfoRequest": {
+      "document": "GetFaceIdRiskInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。",
+          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceIdRiskInfoResponse": {
+      "document": "GetFaceIdRiskInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述当前请求所在设备的风险标签，详情如下： 01-设备疑似被Root/设备疑似越狱 02-设备疑似被注入 03-设备疑似为模拟器 04-设备疑似存在风险操作 05-摄像头疑似被劫持 06-疑似黑产设备\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01_03",
+          "member": "string",
+          "name": "DeviceInfoTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeviceInfoLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备id标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CameraInfoLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述当前请求所在设备的相机指纹风险标签，详情如下： 01-设备疑似被Root/设备疑似越狱 02-设备疑似被注入 03-设备疑似为模拟器 04-设备疑似存在风险操作 05-摄像头疑似被劫持 06-疑似黑产设备，空表示没有相机指纹风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01_03",
+          "member": "string",
+          "name": "CameraInfoTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取token时透传的信息\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetFaceIdTokenRequest": {
       "document": "GetFaceIdToken请求参数结构体",
       "members": [
@@ -2868,6 +2969,52 @@
           "example": "asdasdadasdasd",
           "member": "string",
           "name": "FaceIdToken",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceidRiskInfoTokenRequest": {
+      "document": "GetFaceidRiskInfoToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SDK中生成的Meta字符串",
+          "example": "1",
+          "member": "string",
+          "name": "Meta",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "透传参数 1000长度字符串",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFaceidRiskInfoTokenResponse": {
+      "document": "GetFaceidRiskInfoToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效期 10分钟。只能完成1次核身。",
+          "example": "9C6677E5-053C-425C-B5C3-D378427DFE28",
+          "member": "string",
+          "name": "FaceIdToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -171,8 +171,8 @@
     "CreateLiveTimeShiftTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"Description\": \"xx\",\n    \"TranscodeTemplateIds\": [\n        0\n    ],\n    \"RemoveWatermark\": true,\n    \"TemplateName\": \"xx\",\n    \"ItemDuration\": 1,\n    \"Duration\": 1,\n    \"Area\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TemplateId\": 1000,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"abc\",\n    \"Description\": \"abc\",\n    \"Area\": \"abc\",\n    \"Duration\": 1,\n    \"ItemDuration\": 1,\n    \"RemoveWatermark\": true,\n    \"TranscodeTemplateIds\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

@@ -5018,6 +5018,24 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费",
+          "example": "无",
+          "member": "string",
+          "name": "PayType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5031,7 +5049,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19069,108 +19087,144 @@
       ],
       "usage": "out"
     },
+    "TaskAttachInfo": {
+      "document": "任务列表中的部分任务支持特定的附加信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级任务：\n”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”FastUpgradeStatus“",
+          "member": "string",
+          "name": "AttachKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级任务：\n”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”1“",
+          "member": "string",
+          "name": "AttachValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TaskDetail": {
       "document": "实例任务详情",
       "members": [
         {
           "disabled": false,
           "document": "错误码。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务 ID。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务进度。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务状态，可能的值包括：\n\"UNDEFINED\" - 未定义；\n\"INITIAL\" - 初始化；\n\"RUNNING\" - 运行中；\n\"SUCCEED\" - 执行成功；\n\"FAILED\" - 执行失败；\n\"KILLED\" - 已终止；\n\"REMOVED\" - 已删除；\n\"PAUSED\" - 已暂停。\n\"WAITING\" - 等待中（可撤销）",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务类型，可能的值包括：\n\"ROLLBACK\" - 数据库回档；\n\"SQL OPERATION\" - SQL操作；\n\"IMPORT DATA\" - 数据导入；\n\"MODIFY PARAM\" - 参数设置；\n\"INITIAL\" - 初始化云数据库实例；\n\"REBOOT\" - 重启云数据库实例；\n\"OPEN GTID\" - 开启云数据库实例GTID；\n\"UPGRADE RO\" - 只读实例升级；\n\"BATCH ROLLBACK\" - 数据库批量回档；\n\"UPGRADE MASTER\" - 主实例升级；\n\"DROP TABLES\" - 删除云数据库库表；\n\"SWITCH DR TO MASTER\" - 灾备实例提升为主。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务开始时间。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例任务结束时间。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务关联的实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "异步任务的请求 ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的附加信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskAttachInfo",
+          "name": "TaskAttachInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

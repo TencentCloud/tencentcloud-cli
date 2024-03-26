@@ -491,9 +491,9 @@
       "status": "online"
     },
     "ModifyAclRule": {
-      "document": "修改\bAC策略，目前只支持预设规则的是否应用到新增topic这一项的修改",
+      "document": "修改ACL策略，目前只支持预设规则的是否应用到新增topic这一项的修改",
       "input": "ModifyAclRuleRequest",
-      "name": "修改Acl策略",
+      "name": "修改Acl预设规则",
       "output": "ModifyAclRuleResponse",
       "status": "online"
     },
@@ -7409,7 +7409,7 @@
         {
           "disabled": false,
           "document": "（过滤条件）按照实例 ID 过滤。",
-          "example": "",
+          "example": "ckafka-resource",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7418,7 +7418,7 @@
         {
           "disabled": false,
           "document": "Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "GroupList",
           "required": true,
@@ -7433,9 +7433,10 @@
         {
           "disabled": false,
           "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "GroupInfoResponse",
           "name": "Result",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10068,60 +10069,60 @@
         {
           "disabled": false,
           "document": "错误码，正常为0",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "group 状态描述（常见的为 Empty、Stable、Dead 三种状态）：\nDead：消费分组不存在\nEmpty：消费分组，当前没有任何消费者订阅\nPreparingRebalance：消费分组处于 rebalance 状态\nCompletingRebalance：消费分组处于 rebalance 状态\nStable：消费分组中各个消费者已经加入，处于稳定状态",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费分组选择的协议类型正常的消费者一般为 consumer 但有些系统采用了自己的协议如 kafka-connect 用的就是 connect。只有标准的 consumer 协议，本接口才知道具体的分配方式的格式，才能解析到具体的 partition 的分配情况",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ProtocolType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费者 partition 分配算法常见的有如下几种(Kafka 消费者 SDK 默认的选择项为 range)：range、 roundrobin、 sticky",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仅当 state 为 Stable 且 protocol_type 为 consumer 时， 该数组才包含信息",
-          "example": "",
+          "example": "无",
           "member": "GroupInfoMember",
           "name": "Members",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Kafka 消费分组",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Group",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12476,11 +12477,11 @@
         },
         {
           "disabled": false,
-          "document": "是否应用到新增的Topic",
+          "document": "修改预设规则时传入,是否应用到新增的Topic",
           "example": "1",
           "member": "int64",
           "name": "IsApplied",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
@@ -12495,7 +12496,7 @@
           "example": "1",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

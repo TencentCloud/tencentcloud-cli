@@ -166,12 +166,28 @@
         "title": "获取结果成功时"
       }
     ],
+    "GetFaceIdRiskInfo": [
+      {
+        "document": "获取结果成功",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdRiskInfo\n<公共请求参数>\n\n{\n    \"FaceIdToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CameraInfoLevel\": null,\n        \"CameraInfoTag\": null,\n        \"DeviceInfoLevel\": 1,\n        \"DeviceInfoTag\": null,\n        \"Extra\": null,\n        \"OpenId\": \"9B0104204DAB86054F6C9E38\",\n        \"RequestId\": \"dbabb231-4adc-4e88-b763-b3dfd9476923\"\n    }\n}",
+        "title": "获取结果成功"
+      }
+    ],
     "GetFaceIdToken": [
       {
         "document": "获取 SDK 核验 token",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"xxxxxxxxxxxxxxxxx\",\n    \"Name\": \"xxxxxxxxxxxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"asdasdadasdasd\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
         "title": "获取token成功"
+      }
+    ],
+    "GetFaceidRiskInfoToken": [
+      {
+        "document": "获取 SDK 核验 token",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceidRiskInfoToken\n<公共请求参数>\n\n{\n    \"Meta\": \"\",\n    \"Extra\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"224C8901-0D1B-4350-914A-CFD74E54D940\",\n        \"RequestId\": \"63013220-4d82-4e2f-b508-a34286baac26\"\n    }\n}",
+        "title": "获取 SDK 核验 token"
       }
     ],
     "GetLiveCode": [

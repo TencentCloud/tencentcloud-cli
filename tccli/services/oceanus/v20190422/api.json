@@ -1474,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "新建文件夹的父目录ID",
+          "document": "新建文件夹的父目录ID（根目录为\"root\"）",
           "example": "folder-xxxxxxxx",
           "member": "string",
           "name": "ParentId",

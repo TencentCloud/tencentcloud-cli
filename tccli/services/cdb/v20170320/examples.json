@@ -158,8 +158,8 @@
     ],
     "CreateCloneInstance": [
       {
-        "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=CreateCloneInstance\n&InstanceId=cdb-9303wd4x\n&SpecifiedRollbackTime=2020-08-0116:27:43\n&UniqVpcId=vpc-594gwq4l\n&UniqSubnetId=subnet-dz5pj862\n&Memory=1000\n&Volume=50\n&<公共请求参数>",
+        "document": "克隆实例并回档到指定时间",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloneInstance\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"vpc-594gwq4l\",\n    \"InstanceId\": \"cdb-9303wd4x\",\n    \"Volume\": \"50\",\n    \"UniqSubnetId\": \"subnet-dz5pj862\",\n    \"SpecifiedRollbackTime\": \"2020-08-0116:27:43\",\n    \"Memory\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "克隆实例并回档到指定时间"
       }

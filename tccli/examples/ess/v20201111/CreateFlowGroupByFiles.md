@@ -337,3 +337,171 @@ Output:
 }
 ```
 
+**Example 4: 创建一个有3份子合同的合同组签署流程（B2B、B2B、B2C），指定每个子合同第一方为动态签署方**
+
+1. 子合同1为B2B合同（Approvers中包含两个ApproverInfo元素）；
+2. 子合同1、2为普通B2B合同（Approvers中包含两个ApproverInfo元素，且ApproverType都是0）；
+3. 子合同3为普通B2C合同（Approvers中包含两个ApproverInfo元素，C端签署人的ApproverType为1）。
+4.三份子合同第一方签署方均指定为动态签署方（即不指定具体签署人，FillType=1），可在发起后再进行补充。
+
+Input: 
+
+```
+tccli ess CreateFlowGroupByFiles --cli-unfold-argument  \
+    --Operator.UserId yDwf2UUckps3me1aUuRbyBJvD8CIgM4K \
+    --FlowGroupName 示例合同组-有3份子合同 \
+    --FlowGroupInfos.0.FileIds yDwgAUUckp1tbkbgUukJIiCyj7014en1 \
+    --FlowGroupInfos.0.FlowName 子合同1-B2B(发起方企业自动签署) \
+    --FlowGroupInfos.0.FlowDescription 子合同1 \
+    --FlowGroupInfos.0.FlowType 示例合同 \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.0.ApproverRoleName 甲方 \
+    --FlowGroupInfos.0.Approvers.0.ApproverOption.FillType 1 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentValue yDxMjUyKQDN7EkUuO4zjEBpGXvHEACSA \
+    --FlowGroupInfos.0.Approvers.1.ApproverName 张三 \
+    --FlowGroupInfos.0.Approvers.1.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.1.OrganizationName 张三示例企业 \
+    --FlowGroupInfos.0.Approvers.1.ApproverMobile 18888888888 \
+    --FlowGroupInfos.0.Approvers.1.ApproverRoleName 乙方 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentPosY 200 \
+    --FlowGroupInfos.0.Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Unordered True \
+    --FlowGroupInfos.1.FileIds yDwgAUUckp1tbkbgUukJIiCyj7014en2 \
+    --FlowGroupInfos.1.FlowName 子合同2-普通B2B \
+    --FlowGroupInfos.1.FlowDescription 子合同2 \
+    --FlowGroupInfos.1.FlowType 示例合同 \
+    --FlowGroupInfos.1.CallbackUrl  \
+    --FlowGroupInfos.1.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.1.Approvers.0.ApproverRoleName 甲方 \
+    --FlowGroupInfos.1.Approvers.0.ApproverOption.FillType 1 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentPosY 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.1.Approvers.0.SignComponents.0.ComponentValue  \
+    --FlowGroupInfos.1.Approvers.1.ApproverType 0 \
+    --FlowGroupInfos.1.Approvers.1.OrganizationName 李四示例企业 \
+    --FlowGroupInfos.1.Approvers.1.ApproverName 李四 \
+    --FlowGroupInfos.1.Approvers.1.ApproverMobile 15100000000 \
+    --FlowGroupInfos.1.Approvers.1.ApproverRoleName 乙方 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentPosY 200 \
+    --FlowGroupInfos.1.Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.1.Unordered True \
+    --FlowGroupInfos.2.FileIds yDwgAUUckp1tbkbgUukJIiCyj7014en3 \
+    --FlowGroupInfos.2.FlowName 子合同3-普通B2C \
+    --FlowGroupInfos.2.Deadline 0 \
+    --FlowGroupInfos.2.FlowDescription 子合同3 \
+    --FlowGroupInfos.2.FlowType 示例合同 \
+    --FlowGroupInfos.2.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.2.Approvers.0.ApproverRoleName 甲方 \
+    --FlowGroupInfos.2.Approvers.0.ApproverOption.FillType 1 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentPosY 100 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.2.Approvers.0.SignComponents.0.ComponentValue  \
+    --FlowGroupInfos.2.Approvers.1.ApproverType 1 \
+    --FlowGroupInfos.2.Approvers.1.ApproverName 典子谦 \
+    --FlowGroupInfos.2.Approvers.1.ApproverMobile 13200000000 \
+    --FlowGroupInfos.2.Approvers.1.ApproverRoleName 乙方 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentRequired True \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentPosX 100 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentPosY 200 \
+    --FlowGroupInfos.2.Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.2.Unordered True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "甲方",
+                        "RecipientId": "yDCVHUUnh3kgwiU90l6PyV6AkMyS0Lgx",
+                        "SignId": "yDCVHUUnh3kgwxU90l6PBcCQi6YAeZWy"
+                    },
+                    {
+                        "ApproverRoleName": "乙方",
+                        "RecipientId": "yDCVHUUckpwbqu80UuyXGHSwrgMinnSy",
+                        "SignId": "yDCVHUUckpwbqu8dUuyXGHSxa5F93K42"
+                    }
+                ],
+                "FlowId": "yDCVHUUnh3kgw9U90l6PzoNCAOlgR7xB"
+            },
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "甲方",
+                        "RecipientId": "yDCVHUUckpwbqu8lUuyXGHS8vq7fLMsd",
+                        "SignId": "yDCVHUUckpwbquh6UuyXGHSqnN3pYpMd"
+                    },
+                    {
+                        "ApproverRoleName": "乙方",
+                        "RecipientId": "yDCVHUUnh3kgweU90l6Pwb6QiWJk1MYw",
+                        "SignId": "yDCVHUUnh3kgw4U90l6PxzLSFtwfT2XS"
+                    }
+                ],
+                "FlowId": "yDCVHUUnh3kgw7U90l6PwAC1pTEPzQFy"
+            },
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "甲方",
+                        "RecipientId": "yDCVHUUckpwbquhfUuyXGHSR8P1F70ug",
+                        "SignId": "yDCVHUUckpwbquhbUuyXGHSRsxjHubmd"
+                    },
+                    {
+                        "ApproverRoleName": "乙方",
+                        "RecipientId": "yDCVHUUckpwbqu8vUuyXGHSBxLkLVZWR",
+                        "SignId": "yDCVHUUckpwbqu8sUuyXGHSw1pO8DoHP"
+                    }
+                ],
+                "FlowId": "yDCVHUUckpwbquhuUuyXGHS8IdZrFis5"
+            }
+        ],
+        "FlowGroupId": "yDCVHUUnh3kgwfU90l6PCbX2FydFwrHu",
+        "FlowIds": [
+            "yDCVHUUnh3kgw9U90l6PzoNCAOlgR7xB",
+            "yDCVHUUnh3kgw7U90l6PwAC1pTEPzQFy",
+            "yDCVHUUckpwbquhuUuyXGHS8IdZrFis5"
+        ],
+        "RequestId": "s1711349304019043831"
+    }
+}
+```
+

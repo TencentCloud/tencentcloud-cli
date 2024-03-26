@@ -2003,21 +2003,21 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
-          "example": "无",
-          "member": "string",
-          "name": "FlowId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "补充企业签署人信息。\n\n- 如果发起方指定的补充签署人是企业签署人，则需要提供企业名称或者企业OpenId；\n\n- 如果不指定，则使用姓名和手机号进行补充。",
           "example": "无",
           "member": "FillApproverInfo",
           "name": "Approvers",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2036,6 +2036,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值",
+          "example": "yDR1AUUgygjazuesUuO4zjESPW4PkfNi",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2355,6 +2364,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "合同组签署方信息。",
+          "example": "无",
+          "member": "FlowGroupApprovers",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2426,6 +2445,16 @@
           "member": "TaskInfo",
           "name": "TaskInfos",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同组签署方信息",
+          "example": "无",
+          "member": "FlowGroupApprovers",
+          "name": "Approvers",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6728,6 +6757,15 @@
           "name": "RecipientIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。",
+          "example": "无",
+          "member": "FlowGroupUrlInfo",
+          "name": "FlowGroupUrlInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7888,6 +7926,15 @@
           "name": "ApproverIdCardNumber",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，补充合同组子合同动态签署人时必传。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8687,6 +8734,56 @@
       ],
       "usage": "in"
     },
+    "FlowGroupApproverInfo": {
+      "document": "合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署节点ID，用于生成动态签署人链接完成领取。注：`生成动态签署人补充链接时必传。`",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowGroupApprovers": {
+      "document": "合同组签署方信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方信息，包含合同ID和角色ID用于定位RecipientId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproverItem",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FlowGroupOptions": {
       "document": "合同组的配置项信息包括：在合同组签署过程中，是否需要对每个子合同进行独立的意愿确认。",
       "members": [
@@ -8707,6 +8804,21 @@
           "name": "OtherApproverSignEach",
           "required": false,
           "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowGroupUrlInfo": {
+      "document": "合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同组子合同和签署方的信息，用于补充动态签署人。\t",
+          "example": "无",
+          "member": "FlowGroupApproverInfo",
+          "name": "FlowGroupApproverInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
