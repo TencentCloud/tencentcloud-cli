@@ -9073,8 +9073,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级 low:低危 high:高危 middle:中危 info:提示 extreme:严重",
+          "example": "high",
           "member": "string",
           "name": "Level",
           "output_required": true,

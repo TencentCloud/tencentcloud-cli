@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata CreateInLongAgent --cli-unfold-argument  \
-    --ExecutorGroupId xx \
+    --ExecutorGroupId abc \
     --AgentType 1 \
-    --ClusterId xx \
-    --ProjectId xx \
-    --AgentName xx \
+    --ClusterId abc \
+    --ProjectId abc \
+    --AgentName abc \
     --TkeRegion ap-beijing
 ```
 
@@ -18,8 +18,8 @@ Output:
 ```
 {
     "Response": {
-        "AgentId": "xx",
-        "RequestId": "xx"
+        "AgentId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

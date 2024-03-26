@@ -15,19 +15,19 @@ Output:
 ```
 {
     "Response": {
-        "TotalTask": 1,
-        "ProdTask": 1,
-        "DevTask": 2,
-        "TotalReadRecords": 1,
-        "TotalWriteRecords": 1,
-        "TotalErrorRecords": 1,
-        "TotalAlarmEvent": 1,
-        "IncreaseReadRecords": 1,
-        "IncreaseWriteRecords": 1,
-        "IncreaseErrorRecords": 1,
-        "IncreaseAlarmEvent": 1,
-        "AlarmEvent": "{\"important\":1,\"ordinary\":0,\"urgent\":0}",
-        "RequestId": "xx"
+        "TotalTask": 0,
+        "ProdTask": 0,
+        "DevTask": 0,
+        "TotalReadRecords": 0,
+        "TotalWriteRecords": 0,
+        "TotalErrorRecords": 0,
+        "TotalAlarmEvent": 0,
+        "IncreaseReadRecords": 0,
+        "IncreaseWriteRecords": 0,
+        "IncreaseErrorRecords": 0,
+        "IncreaseAlarmEvent": 0,
+        "AlarmEvent": "abc",
+        "RequestId": "abc"
     }
 }
 ```

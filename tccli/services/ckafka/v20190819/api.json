@@ -3634,20 +3634,11 @@
         },
         {
           "disabled": false,
-          "document": "实例内网峰值带宽。单位 MB/s。标准版需传入当前实例规格所对应的峰值带宽。注意如果创建的实例为专业版实例，峰值带宽，分区数等参数配置需要满足专业版的计费规格。",
-          "example": "20",
-          "member": "int64",
-          "name": "BandWidth",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -3656,8 +3647,17 @@
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": false,
+          "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例内网峰值带宽。单位 MB/s。标准版需传入当前实例规格所对应的峰值带宽。注意如果创建的实例为专业版实例，峰值带宽，分区数等参数配置需要满足专业版的计费规格。",
+          "example": "20",
+          "member": "int64",
+          "name": "BandWidth",
+          "required": true,
+          "type": "int"
         },
         {
           "disabled": false,

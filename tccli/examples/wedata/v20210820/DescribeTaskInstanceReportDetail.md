@@ -17,37 +17,39 @@ Output:
 {
     "Response": {
         "Summary": {
-            "TotalReadRecords": 2000000,
-            "TotalReadBytes": 89898292,
-            "TotalWriteRecords": 2000000,
-            "TotalWriteBytes": 89898292,
-            "RecordSpeed": 8000,
-            "ByteSpeed": 3.5,
-            "TotalErrorRecords": 0,
-            "TotalErrorBytes": 0,
-            "TotalRunDuration": 308,
-            "BeginRunTime": "2020-05-05 12:00:00",
-            "EndRunTime": "2020-05-05 12:05:08"
+            "TotalReadRecords": 1,
+            "TotalReadBytes": 1,
+            "TotalWriteRecords": 1,
+            "TotalWriteBytes": 1,
+            "RecordSpeed": 1,
+            "ByteSpeed": 0,
+            "TotalErrorRecords": 1,
+            "TotalErrorBytes": 1,
+            "TotalRunDuration": 1,
+            "BeginRunTime": "abc",
+            "EndRunTime": "abc"
         },
         "ReadNode": {
-            "NodeName": "mysql_input_node",
-            "DataSource": "datasource.table",
-            "TotalReadRecords": 2000000,
-            "TotalReadBytes": 89898292,
-            "RecordSpeed": 8000,
-            "ByteSpeed": 3.5,
-            "TotalErrorRecords": 0
+            "NodeName": "abc",
+            "DataSource": "abc",
+            "TotalReadRecords": 1,
+            "TotalReadBytes": 1,
+            "RecordSpeed": 1,
+            "ByteSpeed": 0,
+            "TotalErrorRecords": 1,
+            "WaitWriterTime": 0
         },
         "WriteNode": {
-            "NodeName": "mysql_input_node",
-            "DataSource": "datasource.table",
-            "TotalWriteRecords": 2000000,
-            "TotalWriteBytes": 89898292,
-            "RecordSpeed": 8000,
-            "ByteSpeed": 3.5,
-            "TotalErrorRecords": 0
+            "NodeName": "abc",
+            "DataSource": "abc",
+            "TotalWriteRecords": 1,
+            "TotalWriteBytes": 1,
+            "RecordSpeed": 1,
+            "ByteSpeed": 0,
+            "TotalErrorRecords": 1,
+            "WaitReaderTime": 0
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

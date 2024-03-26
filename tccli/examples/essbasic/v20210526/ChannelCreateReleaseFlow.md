@@ -149,7 +149,7 @@ Output:
 **Example 5: 发起解除协议（替换原流程中本企业的参与人并指定其为自动签署）**
 
 1. 更换原合同中本方企业的参与人
-2. 给该企业参与人指定未自动签署(ApproverType 设置为 ENTERPRISESERVER)
+2. 该企业参与人指定为自动签署(ApproverType 设置为 ENTERPRISESERVER)
 
 Input: 
 

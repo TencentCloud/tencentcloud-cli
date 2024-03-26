@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DeleteIntegrationNode --cli-unfold-argument  \
-    --Id xx \
+    --Id abc \
     --ProjectId 123
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

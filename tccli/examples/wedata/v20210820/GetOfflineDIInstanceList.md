@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli wedata GetOfflineDIInstanceList --cli-unfold-argument  \
-    --ProjectId xx \
     --PageIndex 1 \
-    --SearchCondition.Sort xx \
-    --SearchCondition.Instance.ResourceGroup 1 \
-    --SearchCondition.Instance.ExecutionSpace 1 \
-    --SearchCondition.Instance.ProductName 1 \
-    --SearchCondition.SortCol xx \
-    --SearchCondition.Keyword xx \
-    --PageSize 1
+    --PageSize 1 \
+    --ProjectId abc \
+    --SearchCondition.Keyword abc \
+    --SearchCondition.Sort abc \
+    --SearchCondition.SortCol abc \
+    --SearchCondition.Instance.ExecutionSpace abc \
+    --SearchCondition.Instance.ProductName abc \
+    --SearchCondition.Instance.ResourceGroup abc
 ```
 
 Output: 
@@ -24,26 +24,26 @@ Output:
         "Total": 1,
         "List": [
             {
-                "UpdateTime": "xx",
-                "OwnerUin": "xx",
-                "OperatorUin": "xx",
-                "IssueId": "xx",
-                "CurRunDate": "xx",
-                "CreateUin": "xx",
-                "InlongTaskId": "xx",
-                "InstanceKey": "xx",
-                "ResourceGroup": "xx",
-                "State": "xx",
-                "WorkspaceId": "xx",
-                "StartTime": "xx",
-                "AppId": "xx",
-                "TaskId": "xx",
-                "EndTime": "xx",
-                "CreateTime": "xx",
-                "TaskRunType": 1
+                "CreateUin": "abc",
+                "OperatorUin": "abc",
+                "OwnerUin": "abc",
+                "AppId": "abc",
+                "WorkspaceId": "abc",
+                "TaskId": "abc",
+                "CurRunDate": "abc",
+                "IssueId": "abc",
+                "InlongTaskId": "abc",
+                "ResourceGroup": "abc",
+                "TaskRunType": 1,
+                "State": "abc",
+                "StartTime": "abc",
+                "EndTime": "abc",
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "InstanceKey": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

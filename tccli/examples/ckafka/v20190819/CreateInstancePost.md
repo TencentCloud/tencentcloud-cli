@@ -23,14 +23,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "9432af9d-8c3e-4474-b5eb-0f5298dbb6e5",
         "Result": {
+            "ReturnCode": "abc",
+            "ReturnMessage": "abc",
             "Data": {
-                "FlowId": 0
-            },
-            "ReturnCode": "0",
-            "ReturnMessage": "ok[apply ok]"
-        }
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
+            }
+        },
+        "RequestId": "abc"
     }
 }
 ```

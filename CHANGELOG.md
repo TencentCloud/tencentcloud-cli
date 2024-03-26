@@ -1,3 +1,224 @@
+# Release 3.0.963.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 3 次发布
+
+发布时间：2024-03-27 01:07:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83557)
+* [SubmitTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83556)
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 80 次发布
+
+发布时间：2024-03-27 01:11:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+
+	* <font color="#dd0000">**修改入参**：</font>VpcId, SubnetId
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 91 次发布
+
+发布时间：2024-03-27 01:15:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryTaskCostDetail](http://document.tencentcloudapi.woa.com/document/product/1342/83558)
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 17 次发布
+
+发布时间：2024-03-27 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSubscribeDetail](http://document.tencentcloudapi.woa.com/document/product/571/82912)
+
+	* 新增出参：KafkaVersion
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 44 次发布
+
+发布时间：2024-03-27 01:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
+
+	* 新增成员：SubnetId
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 56 次发布
+
+发布时间：2024-03-27 01:17:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：OutboundPublicAcls, NetConnectScheme
+
+* [NodeView](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeView)
+
+	* 新增成员：CVMStatus
+
+	* <font color="#dd0000">**修改成员**：</font>IsCoordinationNode
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 54 次发布
+
+发布时间：2024-03-27 01:18:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFaceIdToken](http://document.tencentcloudapi.woa.com/document/product/1007/49198)
+
+	* 新增入参：RuleId
+
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 13 次发布
+
+发布时间：2024-03-27 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Target](http://document.tencentcloudapi.woa.com/document/product/651/35327#Target)
+
+	* 新增成员：CreateTime
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 38 次发布
+
+发布时间：2024-03-27 01:31:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchKillIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77621)
+
+	* 新增出参：TaskNames
+
+* [BatchRerunIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77619)
+
+	* 新增出参：TaskNames
+
+* [CreateDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77690)
+
+	* 新增入参：DevelopmentParams
+
+* [DescribeAlarmReceiver](http://document.tencentcloudapi.woa.com/document/product/1607/77595)
+
+	* 新增入参：RecordId
+
+	* <font color="#dd0000">**修改入参**：</font>MessageId
+
+* [ModifyDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77680)
+
+	* 新增入参：DevelopmentParams
+
+
+新增数据结构：
+
+* [QuietPeriod](http://document.tencentcloudapi.woa.com/document/product/1607/77747#QuietPeriod)
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：InQuitePeriods, RecordId
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceInfo)
+
+	* 新增成员：ProductId, DevelopmentId, DevelopmentParams
+
+* [MakePlanTaskOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#MakePlanTaskOpsDto)
+
+	* 新增成员：InstanceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>TaskBaseInfo, InstanceCount, CompletePercent, SuccessPercent
+
+* [TaskAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskAlarmInfo)
+
+	* 新增成员：QuietPeriods
+
+
+
+
 # Release 3.0.962.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

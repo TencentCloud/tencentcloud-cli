@@ -6,21 +6,22 @@ Input:
 
 ```
 tccli wedata DryRunDIOfflineTask --cli-unfold-argument  \
-    --TaskId xx \
-    --ProjectId xx \
-    --ResourceGroup xx
+    --TaskId abc \
+    --ResourceGroup abc \
+    --ProjectId abc \
+    --TaskTypeId 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "CurrentRunDate": "xx",
-        "ProjectId": "xx",
-        "Status": "xx",
-        "TaskId": "xx",
-        "TaskInstanceKey": "xx"
+        "CurrentRunDate": "abc",
+        "ProjectId": "abc",
+        "Status": "abc",
+        "TaskId": "abc",
+        "TaskInstanceKey": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeInLongAgentTaskList --cli-unfold-argument  \
-    --ProjectId xx \
-    --AgentId xx
+    --ProjectId abc \
+    --AgentId abc
 ```
 
 Output: 
@@ -16,12 +16,12 @@ Output:
     "Response": {
         "Items": [
             {
-                "TaskName": "xx",
-                "TaskId": "xx",
-                "TaskStatus": "xx"
+                "TaskName": "abc",
+                "TaskId": "abc",
+                "TaskStatus": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

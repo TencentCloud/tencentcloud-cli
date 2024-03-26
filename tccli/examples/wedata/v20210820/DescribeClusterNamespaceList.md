@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli wedata DescribeClusterNamespaceList --cli-unfold-argument  \
-    --ClusterId xx \
-    --ProjectId xx
+    --ClusterId abc \
+    --ProjectId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "abc",
         "Namespaces": [
             {
-                "Status": "xx",
-                "Name": "xx",
-                "CreatedAt": "xx"
+                "Status": "abc",
+                "Name": "abc",
+                "CreatedAt": "abc"
             }
         ]
     }

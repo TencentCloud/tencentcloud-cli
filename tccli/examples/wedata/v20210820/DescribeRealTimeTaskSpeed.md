@@ -6,62 +6,68 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskSpeed --cli-unfold-argument  \
-    --ProjectId xx \
-    --EndTime 1 \
+    --TaskId abc \
     --StartTime 1 \
-    --TaskId xx \
-    --Granularity 1
+    --EndTime 1 \
+    --Granularity 1 \
+    --ProjectId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BytesSpeedList": [
-            {
-                "Values": [
-                    {
-                        "Speed": 0.0,
-                        "Time": 1
-                    }
-                ],
-                "NodeType": "xx",
-                "NodeName": "xx"
-            }
-        ],
         "RecordsSpeedList": [
             {
+                "NodeType": "abc",
+                "NodeName": "abc",
                 "Values": [
                     {
-                        "Speed": 0.0,
-                        "Time": 1
+                        "Time": 1,
+                        "Speed": 0
                     }
-                ],
-                "NodeType": "xx",
-                "NodeName": "xx"
+                ]
+            }
+        ],
+        "BytesSpeedList": [
+            {
+                "NodeType": "abc",
+                "NodeName": "abc",
+                "Values": [
+                    {
+                        "Time": 1,
+                        "Speed": 0
+                    }
+                ]
             }
         ],
         "Data": {
+            "RecordsSpeedList": [
+                {
+                    "NodeType": "abc",
+                    "NodeName": "abc",
+                    "Values": [
+                        {
+                            "Time": 1,
+                            "Speed": 0
+                        }
+                    ]
+                }
+            ],
             "BytesSpeedList": [
                 {
                     "Values": [
                         {
-                            "Speed": 0.0,
+                            "Speed": 0,
                             "Time": 1
                         }
                     ],
-                    "NodeType": "xx",
-                    "NodeName": "xx"
-                }
-            ],
-            "RecordsSpeedList": [
-                {
-                    "NodeType": "xx",
-                    "NodeName": "xx"
+                    "NodeType": "abc",
+                    "NodeName": "abc"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DeleteOfflineTask --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId abc \
     --VirtualFlag True \
-    --OperatorName xx \
-    --TaskId xx
+    --OperatorName abc \
+    --TaskId abc
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -1,40 +1,27 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
 
-### 第 91 次发布
+### 第 3 次发布
 
-发布时间：2024-03-26 01:10:11
+发布时间：2024-03-27 01:07:32
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/50424)
-
-	* 新增入参：PayType, Period
-
-
-新增数据结构：
-
-* [TaskAttachInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskAttachInfo)
-
-修改数据结构：
-
-* [TaskDetail](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskDetail)
-
-	* 新增成员：TaskAttachInfo
-
+* [QueryTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83557)
+* [SubmitTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83556)
 
 
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
 
-### 第 79 次发布
+### 第 80 次发布
 
-发布时间：2024-03-26 01:11:46
+发布时间：2024-03-27 01:11:46
 
 本次发布包含了以下内容：
 
@@ -42,28 +29,44 @@
 
 修改接口：
 
-* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/597/77342)
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
 
-	* <font color="#dd0000">**修改入参**：</font>IsApplied
-
-
+	* <font color="#dd0000">**修改入参**：</font>VpcId, SubnetId
 
 
-## 数据传输服务(dts) 版本：2021-12-06
 
-### 第 16 次发布
 
-发布时间：2024-03-26 01:16:06
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 91 次发布
+
+发布时间：2024-03-27 01:15:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [ConnEndpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#ConnEndpoint)
+* [QueryTaskCostDetail](http://document.tencentcloudapi.woa.com/document/product/1342/83558)
 
-	* <font color="#dd0000">**修改成员**：</font>ExtraAttr
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 17 次发布
+
+发布时间：2024-03-27 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSubscribeDetail](http://document.tencentcloudapi.woa.com/document/product/571/82912)
+
+	* 新增出参：KafkaVersion
 
 
 
@@ -72,169 +75,55 @@
 
 
 
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 44 次发布
+
+发布时间：2024-03-27 01:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
+
+	* 新增成员：SubnetId
+
+
+
+
 ## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 55 次发布
+### 第 56 次发布
 
-发布时间：2024-03-26 01:17:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeSecurityGroupBindEs](http://document.tencentcloudapi.woa.com/document/product/845/83553)
-* [SmartAdvisorManage](http://document.tencentcloudapi.woa.com/document/product/845/83552)
-
-修改接口：
-
-* [CreateIndex](http://document.tencentcloudapi.woa.com/document/product/845/74384)
-
-	* <font color="#dd0000">**修改入参**：</font>IndexMetaJson
-
-* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/845/48473)
-
-	* 新增入参：CvmDelayOnlineTime
-
-* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
-
-	* 新增入参：OutboundPublicAcls, OutboundPublicAccess, CvmDelayOnlineTime
-
-* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
-
-	* 新增入参：CvmDelayOnlineTime
-
-
-新增数据结构：
-
-* [EsBindSecurityGroupInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsBindSecurityGroupInfo)
-* [OutboundPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#OutboundPublicAcl)
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 75 次发布
-
-发布时间：2024-03-26 01:17:28
+发布时间：2024-03-27 01:17:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
-
-	* 新增入参：FlowGroupId
-
-	* <font color="#dd0000">**修改入参**：</font>FlowId
-
-* [CreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/81092)
-
-	* 新增出参：Approvers
-
-* [CreateFlowGroupByTemplates](http://document.tencentcloudapi.woa.com/document/product/1668/81091)
-
-	* 新增出参：Approvers
-
-* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
-
-	* 新增入参：FlowGroupUrlInfo
-
-
-新增数据结构：
-
-* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApproverInfo)
-* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApprovers)
-* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupUrlInfo)
 
 修改数据结构：
 
-* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>ApproverName, ApproverMobile
+	* 新增成员：OutboundPublicAcls, NetConnectScheme
 
-* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+* [NodeView](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeView)
 
-	* 新增成员：FlowId
+	* 新增成员：CVMStatus
 
+	* <font color="#dd0000">**修改成员**：</font>IsCoordinationNode
 
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 132 次发布
-
-发布时间：2024-03-26 01:17:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelCreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/82321)
-
-	* 新增入参：FlowGroupId
-
-	* <font color="#dd0000">**修改入参**：</font>FlowId
-
-* [ChannelCreateFlowGroupByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75963)
-
-	* 新增出参：Approvers
-
-* [ChannelCreateFlowGroupByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/81093)
-
-	* 新增出参：Approvers
-
-* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
-
-	* 新增入参：FlowGroupUrlInfo
-
-
-新增数据结构：
-
-* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApproverInfo)
-* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApprovers)
-* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupUrlInfo)
-
-修改数据结构：
-
-* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillApproverInfo)
-
-	* 新增成员：FlowId
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 53 次发布
+### 第 54 次发布
 
-发布时间：2024-03-26 01:17:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetFaceIdRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1007/83555)
-* [GetFaceidRiskInfoToken](http://document.tencentcloudapi.woa.com/document/product/1007/83554)
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 37 次发布
-
-发布时间：2024-03-26 01:30:26
+发布时间：2024-03-27 01:18:19
 
 本次发布包含了以下内容：
 
@@ -242,9 +131,90 @@
 
 修改接口：
 
-* [ModifyTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77719)
+* [GetFaceIdToken](http://document.tencentcloudapi.woa.com/document/product/1007/49198)
 
-	* 新增入参：ExecutionTTL, ScriptChange, InChargeIds
+	* 新增入参：RuleId
+
+
+
+
+## 标签(tag) 版本：2018-08-13
+
+### 第 13 次发布
+
+发布时间：2024-03-27 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Target](http://document.tencentcloudapi.woa.com/document/product/651/35327#Target)
+
+	* 新增成员：CreateTime
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 38 次发布
+
+发布时间：2024-03-27 01:31:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchKillIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77621)
+
+	* 新增出参：TaskNames
+
+* [BatchRerunIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77619)
+
+	* 新增出参：TaskNames
+
+* [CreateDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77690)
+
+	* 新增入参：DevelopmentParams
+
+* [DescribeAlarmReceiver](http://document.tencentcloudapi.woa.com/document/product/1607/77595)
+
+	* 新增入参：RecordId
+
+	* <font color="#dd0000">**修改入参**：</font>MessageId
+
+* [ModifyDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77680)
+
+	* 新增入参：DevelopmentParams
+
+
+新增数据结构：
+
+* [QuietPeriod](http://document.tencentcloudapi.woa.com/document/product/1607/77747#QuietPeriod)
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：InQuitePeriods, RecordId
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceInfo)
+
+	* 新增成员：ProductId, DevelopmentId, DevelopmentParams
+
+* [MakePlanTaskOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#MakePlanTaskOpsDto)
+
+	* 新增成员：InstanceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>TaskBaseInfo, InstanceCount, CompletePercent, SuccessPercent
+
+* [TaskAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskAlarmInfo)
+
+	* 新增成员：QuietPeriods
 
 
 
@@ -961,6 +931,19 @@
 
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 3 次发布
+
+发布时间：2024-03-27 01:07:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83557)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SubmitTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83556)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 2 次发布
 
@@ -11820,7 +11803,7 @@
 
 新增数据结构：
 
-* [[TaskAttachInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskAttachInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[TaskAttachInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskAttachInfo))
+* [TaskAttachInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TaskAttachInfo)
 
 修改数据结构：
 
@@ -18028,6 +18011,21 @@
 
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 80 次发布
+
+发布时间：2024-03-27 01:11:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePost](http://document.tencentcloudapi.woa.com/document/product/597/76750)
+
+	* <font color="#dd0000">**修改入参**：</font>VpcId, SubnetId
+
 
 ### 第 79 次发布
 
@@ -34589,6 +34587,18 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 91 次发布
+
+发布时间：2024-03-27 01:15:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryTaskCostDetail](http://document.tencentcloudapi.woa.com/document/product/1342/83558)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 90 次发布
 
 发布时间：2024-03-21 01:15:57
@@ -38061,6 +38071,21 @@
 
 ## 数据传输服务(dts) 版本：2021-12-06
 
+### 第 17 次发布
+
+发布时间：2024-03-27 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSubscribeDetail](http://document.tencentcloudapi.woa.com/document/product/571/82912)
+
+	* 新增出参：KafkaVersion
+
+
 ### 第 16 次发布
 
 发布时间：2024-03-26 01:16:06
@@ -40122,6 +40147,21 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 44 次发布
+
+发布时间：2024-03-27 01:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoScaleSpec](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleSpec)
+
+	* 新增成员：SubnetId
+
+
 ### 第 43 次发布
 
 发布时间：2024-03-22 01:17:49
@@ -41147,6 +41187,27 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 56 次发布
+
+发布时间：2024-03-27 01:17:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：OutboundPublicAcls, NetConnectScheme
+
+* [NodeView](http://document.tencentcloudapi.woa.com/document/product/845/30634#NodeView)
+
+	* 新增成员：CVMStatus
+
+	* <font color="#dd0000">**修改成员**：</font>IsCoordinationNode
+
+
 ### 第 55 次发布
 
 发布时间：2024-03-26 01:17:12
@@ -41157,8 +41218,8 @@
 
 新增接口：
 
-* [[DescribeSecurityGroupBindEs](http://document.tencentcloudapi.woa.com/document/product/845/83553)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SmartAdvisorManage](http://document.tencentcloudapi.woa.com/document/product/845/83552)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeSecurityGroupBindEs](http://document.tencentcloudapi.woa.com/document/product/845/83553)
+* [SmartAdvisorManage](http://document.tencentcloudapi.woa.com/document/product/845/83552)
 
 修改接口：
 
@@ -41181,8 +41242,8 @@
 
 新增数据结构：
 
-* [[EsBindSecurityGroupInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsBindSecurityGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[EsBindSecurityGroupInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsBindSecurityGroupInfo))
-* [[OutboundPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#OutboundPublicAcl)](http://document.tencentcloudapi.woa.com/document/product/845/30634#[OutboundPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#OutboundPublicAcl))
+* [EsBindSecurityGroupInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsBindSecurityGroupInfo)
+* [OutboundPublicAcl](http://document.tencentcloudapi.woa.com/document/product/845/30634#OutboundPublicAcl)
 
 ### 第 54 次发布
 
@@ -42434,9 +42495,9 @@
 
 新增数据结构：
 
-* [[FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApproverInfo)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApproverInfo))
-* [[FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApprovers)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApprovers))
-* [[FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupUrlInfo)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupUrlInfo))
+* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApproverInfo)
+* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupApprovers)
+* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowGroupUrlInfo)
 
 修改数据结构：
 
@@ -44214,9 +44275,9 @@
 
 新增数据结构：
 
-* [[FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApproverInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApproverInfo))
-* [[FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApprovers)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApprovers))
-* [[FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupUrlInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupUrlInfo))
+* [FlowGroupApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApproverInfo)
+* [FlowGroupApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupApprovers)
+* [FlowGroupUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowGroupUrlInfo)
 
 修改数据结构：
 
@@ -46904,6 +46965,21 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 54 次发布
+
+发布时间：2024-03-27 01:18:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFaceIdToken](http://document.tencentcloudapi.woa.com/document/product/1007/49198)
+
+	* 新增入参：RuleId
+
+
 ### 第 53 次发布
 
 发布时间：2024-03-26 01:17:59
@@ -46914,8 +46990,8 @@
 
 新增接口：
 
-* [[GetFaceIdRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1007/83555)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetFaceidRiskInfoToken](http://document.tencentcloudapi.woa.com/document/product/1007/83554)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetFaceIdRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1007/83555)
+* [GetFaceidRiskInfoToken](http://document.tencentcloudapi.woa.com/document/product/1007/83554)
 
 ### 第 52 次发布
 
@@ -75381,6 +75457,21 @@
 
 ## 标签(tag) 版本：2018-08-13
 
+### 第 13 次发布
+
+发布时间：2024-03-27 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Target](http://document.tencentcloudapi.woa.com/document/product/651/35327#Target)
+
+	* 新增成员：CreateTime
+
+
 ### 第 12 次发布
 
 发布时间：2024-01-26 01:20:50
@@ -100920,6 +101011,64 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 38 次发布
+
+发布时间：2024-03-27 01:31:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchKillIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77621)
+
+	* 新增出参：TaskNames
+
+* [BatchRerunIntegrationTaskInstances](http://document.tencentcloudapi.woa.com/document/product/1607/77619)
+
+	* 新增出参：TaskNames
+
+* [CreateDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77690)
+
+	* 新增入参：DevelopmentParams
+
+* [DescribeAlarmReceiver](http://document.tencentcloudapi.woa.com/document/product/1607/77595)
+
+	* 新增入参：RecordId
+
+	* <font color="#dd0000">**修改入参**：</font>MessageId
+
+* [ModifyDataSource](http://document.tencentcloudapi.woa.com/document/product/1607/77680)
+
+	* 新增入参：DevelopmentParams
+
+
+新增数据结构：
+
+* [[QuietPeriod](http://document.tencentcloudapi.woa.com/document/product/1607/77747#QuietPeriod)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[QuietPeriod](http://document.tencentcloudapi.woa.com/document/product/1607/77747#QuietPeriod))
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：InQuitePeriods, RecordId
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceInfo)
+
+	* 新增成员：ProductId, DevelopmentId, DevelopmentParams
+
+* [MakePlanTaskOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#MakePlanTaskOpsDto)
+
+	* 新增成员：InstanceTotalCount
+
+	* <font color="#dd0000">**修改成员**：</font>TaskBaseInfo, InstanceCount, CompletePercent, SuccessPercent
+
+* [TaskAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskAlarmInfo)
+
+	* 新增成员：QuietPeriods
+
 
 ### 第 37 次发布
 
