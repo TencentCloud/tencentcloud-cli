@@ -14219,6 +14219,45 @@
       ],
       "type": "object"
     },
+    "RewriteDataAdvance": {
+      "document": "文件合并高级参数定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启COW表合并\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "entable",
+          "member": "string",
+          "name": "CowRewriteEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件合并策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sort",
+          "member": "string",
+          "name": "RewriteStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sort合并策略的排序规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SortOrder",
+          "name": "SortOrders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RewriteDataInfo": {
       "document": "数据重排布数据治理信息",
       "members": [
@@ -14228,6 +14267,7 @@
           "example": "enable",
           "member": "string",
           "name": "RewriteDataEnable",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14238,6 +14278,7 @@
           "example": "test-engine",
           "member": "string",
           "name": "Engine",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14248,6 +14289,7 @@
           "example": "5",
           "member": "int64",
           "name": "MinInputFiles",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -14258,6 +14300,7 @@
           "example": "1024",
           "member": "int64",
           "name": "TargetFileSizeBytes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -14268,9 +14311,21 @@
           "example": "5",
           "member": "int64",
           "name": "IntervalMin",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件合并高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RewriteDataAdvance",
+          "name": "AdvanceParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14741,6 +14796,45 @@
           "example": "1",
           "member": "string",
           "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SortOrder": {
+      "document": "合并策略sort类型的规则定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sort的数据表列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "Column",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按照升序或者降序进行排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortDirection",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "null值放在开头或者末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULLS FIRST",
+          "member": "string",
+          "name": "NullOrder",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15862,23 +15956,23 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataGovernPolicy",
           "name": "GovernPolicy",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "库数据治理是否关闭，关闭：true，开启：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fasle",
           "member": "string",
           "name": "DbGovernPolicyIsDisable",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18191,6 +18285,39 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启COW表合并\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enable",
+          "member": "string",
+          "name": "CowCompactEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件合并策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "binpack",
+          "member": "string",
+          "name": "CompactStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sort合并策略的规则定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SortOrder",
+          "name": "SortOrders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

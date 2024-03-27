@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DescribeSdkAppid": [
-      {
-        "document": "",
-        "input": "https://im.tencentcloudapi.com/?Action=DescribeSdkAppid\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"271011d9-813d-4ff7-84d8-bfd2b858f388\",\n        \"SdkAppids\": [\n            140044412,\n            1400345476\n        ]\n    }\n}",
-        "title": "描述 appid 对应的 SdkAppid 的示例"
-      }
-    ],
     "UpdateTPNSInfo": [
       {
         "document": "",

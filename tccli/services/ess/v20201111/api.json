@@ -3416,19 +3416,19 @@
           "disabled": false,
           "document": "  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”\n",
           "example": "无",
-          "member": "string",
+          "member": "bool",
           "name": "ForbidAddApprover",
           "required": false,
-          "type": "string"
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "  禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板\n",
           "example": "无",
-          "member": "string",
+          "member": "bool",
           "name": "ForbidEditFlowProperties",
           "required": false,
-          "type": "string"
+          "type": "bool"
         },
         {
           "disabled": false,

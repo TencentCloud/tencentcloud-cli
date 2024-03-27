@@ -96,7 +96,9 @@ Output:
             "LatestVersion": "",
             "ServiceLimit": {
                 "EnableInstanceRpsLimit": false,
-                "InstanceRpsLimit": 500
+                "InstanceRpsLimit": 0,
+                "EnableInstanceReqLimit": false,
+                "InstanceReqLimit": 0
             },
             "ScheduledAction": {
                 "ScheduleStop": false,

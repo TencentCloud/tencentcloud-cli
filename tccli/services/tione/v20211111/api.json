@@ -2422,7 +2422,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启TIONE内网访问外部",
+          "document": "是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。",
           "example": "无",
           "member": "ServiceEIP",
           "name": "ServiceEIP",
@@ -8113,6 +8113,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持数据构建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportDataPipeline",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9679,7 +9690,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启TIONE内网访问外部",
+          "document": "是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。",
           "example": "无",
           "member": "ServiceEIP",
           "name": "ServiceEIP",

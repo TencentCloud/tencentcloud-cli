@@ -1061,8 +1061,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "无",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
           "output_required": true,
@@ -1217,8 +1217,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
           "output_required": true,
@@ -1403,8 +1403,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。\n",
+          "example": "high",
           "member": "string",
           "name": "Level",
           "output_required": true,
@@ -1414,7 +1414,7 @@
         {
           "disabled": false,
           "document": "资产类型",
-          "example": "5",
+          "example": "CVM",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -1733,27 +1733,27 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "AffectAsset",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资产类型",
-          "example": "5",
+          "example": "CVM",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1763,7 +1763,7 @@
           "example": "Nginx",
           "member": "string",
           "name": "Component",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1773,7 +1773,7 @@
           "example": "HTTP",
           "member": "string",
           "name": "Service",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1783,7 +1783,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "RecentTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1793,7 +1793,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1803,7 +1803,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1813,7 +1813,7 @@
           "example": "1",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1823,7 +1823,7 @@
           "example": "1",
           "member": "string",
           "name": "Index",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1833,7 +1833,7 @@
           "example": "x",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1843,7 +1843,7 @@
           "example": "x",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1853,7 +1853,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1863,7 +1863,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1873,7 +1873,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1883,7 +1883,7 @@
           "example": "无",
           "member": "string",
           "name": "PasswordType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1893,7 +1893,7 @@
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1903,7 +1903,7 @@
           "example": "无",
           "member": "string",
           "name": "VULType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1913,7 +1913,7 @@
           "example": "无",
           "member": "string",
           "name": "VULURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1923,7 +1923,7 @@
           "example": "无",
           "member": "string",
           "name": "Fix",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1933,7 +1933,7 @@
           "example": "无",
           "member": "string",
           "name": "Payload",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8222,17 +8222,17 @@
           "example": "1.1.1.1",
           "member": "int64",
           "name": "NoHandleCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8242,7 +8242,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8252,7 +8252,7 @@
           "example": "Nginx",
           "member": "string",
           "name": "Component",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8262,7 +8262,7 @@
           "example": "20",
           "member": "int64",
           "name": "Port",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8272,7 +8272,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "RecentTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8282,7 +8282,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8292,7 +8292,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Suggestion",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8302,7 +8302,7 @@
           "example": "0",
           "member": "string",
           "name": "AffectAssetCount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8312,7 +8312,7 @@
           "example": "1",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8322,7 +8322,7 @@
           "example": "1",
           "member": "string",
           "name": "From",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8332,7 +8332,7 @@
           "example": "1",
           "member": "string",
           "name": "Index",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8342,7 +8342,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8352,7 +8352,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8362,7 +8362,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8372,7 +8372,7 @@
           "example": "无",
           "member": "string",
           "name": "Service",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10080,8 +10080,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "xx",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "RiskLevel",
           "output_required": true,
@@ -10286,8 +10286,8 @@
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
           "output_required": true,
@@ -10672,17 +10672,17 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "AffectAsset",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级",
-          "example": "High",
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10692,7 +10692,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "RecentTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10702,7 +10702,7 @@
           "example": "2022-10-10 00:00:00",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10712,7 +10712,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10722,7 +10722,7 @@
           "example": "1",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10732,7 +10732,7 @@
           "example": "1",
           "member": "string",
           "name": "Index",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10742,7 +10742,7 @@
           "example": "x",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10752,7 +10752,7 @@
           "example": "x",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10762,7 +10762,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10772,7 +10772,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10782,7 +10782,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10792,7 +10792,7 @@
           "example": "无",
           "member": "string",
           "name": "URL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10802,7 +10802,7 @@
           "example": "无",
           "member": "string",
           "name": "URLPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10812,7 +10812,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10822,7 +10822,7 @@
           "example": "无",
           "member": "string",
           "name": "DetectEngine",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10832,7 +10832,7 @@
           "example": "无",
           "member": "string",
           "name": "ResultDescribe",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10842,7 +10842,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10852,7 +10852,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceURLPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
