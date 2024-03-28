@@ -22,7 +22,7 @@ Output:
                 "Type": 1,
                 "SourceObjectType": 1,
                 "SourceObjectDataType": 1,
-                "SourceContent": "abc",
+                "SourceContent": "content",
                 "SourceEngineTypes": [
                     1
                 ],
@@ -30,23 +30,23 @@ Output:
                 "CompareType": 1,
                 "CitationCount": 1,
                 "UserId": 1,
-                "UserName": "abc",
-                "UpdateTime": "abc",
+                "UserName": "zhangsan",
+                "UpdateTime": "2023-10-01",
                 "WhereFlag": true,
                 "MultiSourceFlag": true,
-                "SqlExpression": "abc",
+                "SqlExpression": "sql",
                 "SubQualityDim": 1,
                 "ResolvedSqlExpression": {
                     "TableExpressions": [
                         {
-                            "TableExpression": "abc",
+                            "TableExpression": "expr",
                             "ColumnExpression": [
-                                "abc"
+                                "expr"
                             ]
                         }
                     ],
                     "ParamExpressions": [
-                        "abc"
+                        "expr"
                     ]
                 },
                 "DatasourceTypes": [
@@ -54,7 +54,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

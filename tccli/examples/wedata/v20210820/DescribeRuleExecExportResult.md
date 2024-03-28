@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeRuleExecExportResult --cli-unfold-argument  \
-    --RuleExecId 1 \
-    --ProjectId xx
+    --ProjectId 456789 \
+    --RuleExecId 1
 ```
 
 Output: 
@@ -18,19 +18,24 @@ Output:
             "RuleExecId": 1,
             "ExportTasks": [
                 {
-                    "Status": 1,
-                    "SchedulerCurRunDate": "xx",
-                    "OperatorId": 1,
-                    "FilePath": "xx",
                     "ExportTaskId": 1,
-                    "CreateTime": "xx",
                     "TaskType": 1,
-                    "SchedulerTaskId": "xx",
-                    "OperatorName": "xx"
+                    "OperatorId": 1,
+                    "OperatorName": "zhangsan",
+                    "CreateTime": "2023-10-01",
+                    "Status": 1,
+                    "SchedulerTaskId": "5678979567",
+                    "SchedulerCurRunDate": "2023-10-01",
+                    "FilePath": "abc",
+                    "Expire": 0,
+                    "DatasourceName": "hive-79ugihbj",
+                    "DbTableName": "test",
+                    "RuleName": "规则1",
+                    "RuleExecId": 1
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

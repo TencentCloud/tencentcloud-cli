@@ -6,26 +6,24 @@ Input:
 
 ```
 tccli wedata ModifyRuleGroupSubscription --cli-unfold-argument  \
-    --DatabaseId xx \
-    --Receivers.0.ReceiverUserId 1 \
-    --Receivers.0.ReceiverName xx \
-    --WebHooks.0.HookType feishu \
-    --WebHooks.0.HookAddress http://xxxxxxxxxxxx \
-    --WebHooks.1.HookType feishu \
-    --WebHooks.1.HookAddress http://xxxxxxxxxxxx \
-    --ProjectId xx \
     --RuleGroupId 1 \
-    --SubscribeType 1 7 \
-    --DatasourceId xx \
-    --TableId xx
+    --Receivers.0.ReceiverUserId 1 \
+    --Receivers.0.ReceiverName zhangsan \
+    --SubscribeType 1 \
+    --ProjectId 5667890432 \
+    --DatabaseId r896tygouq24tg79 \
+    --DatasourceId 567890 \
+    --TableId 980yuiheowfcsy8huio23 \
+    --WebHooks.0.HookType 8 \
+    --WebHooks.0.HookAddress www.baidu.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": 123456,
-        "RequestId": "xx"
+        "Data": 1,
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

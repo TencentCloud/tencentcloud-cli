@@ -591,7 +591,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id/16k_zh_large/16k_dialect_large，且ChannelNum=1时可用）；\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
+          "document": "是否开启说话人分离\n0：不开启；\n1：开启（仅支持以下引擎：8k_zh/16k_zh/16k_ms/16k_en/16k_id/16k_zh_large/16k_zh_dialect，且ChannelNum=1时可用）；\n默认值为 0\n\n注意：\n8k双声道电话音频请按 **ChannelNum 识别声道数** 的参数描述使用默认值",
           "example": "0",
           "member": "int64",
           "name": "SpeakerDiarization",
@@ -1998,7 +1998,7 @@
         },
         {
           "disabled": false,
-          "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10个汉字或30个英文字符，权重为[1,10]之间整数，数组长度不大于1000",
+          "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10个汉字或30个英文字符，权重为[1,11]之间整数，数组长度不大于1000",
           "example": "无",
           "member": "HotWord",
           "name": "WordWeights",

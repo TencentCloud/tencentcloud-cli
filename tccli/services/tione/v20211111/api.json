@@ -5159,7 +5159,17 @@
     },
     "DescribeBuildInImagesRequest": {
       "document": "DescribeBuildInImages请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像过滤器",
+          "example": "无",
+          "member": "ImageFIlter",
+          "name": "ImageFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeBuildInImagesResponse": {
@@ -8045,6 +8055,39 @@
       ],
       "usage": "both"
     },
+    "ImageFIlter": {
+      "document": "镜像列表过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段名称",
+          "example": "Attr",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否反选",
+          "example": "无",
+          "member": "bool",
+          "name": "Negative",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "ImageInfo": {
       "document": "镜像描述信息",
       "members": [
@@ -8466,6 +8509,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

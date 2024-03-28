@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli wedata DescribeRuleDataSources --cli-unfold-argument  \
-    --ProjectId xx \
-    --DatasourceId xx
+    --ProjectId 567898765632 \
+    --DatasourceId 45678 \
+    --DsTypes 1
 ```
 
 Output: 
@@ -16,15 +17,17 @@ Output:
     "Response": {
         "Data": [
             {
-                "DatabaseId": "xx",
-                "DatasourceName": "xx",
-                "InstanceId": "xx",
+                "DatasourceName": "hive-78yughbhyg",
+                "DatasourceId": "6789",
+                "DatabaseName": "dbName",
+                "DatabaseId": "89yuhi675tgy",
+                "InstanceId": "y79ugibh2wefsdc",
                 "DatasourceType": 1,
-                "DatasourceId": "xx",
-                "DatabaseName": "xx"
+                "OriginDatabaseName": "dbNmae",
+                "OriginSchemaName": "dbNmae"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

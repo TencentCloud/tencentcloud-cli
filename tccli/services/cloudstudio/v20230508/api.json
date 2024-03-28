@@ -76,7 +76,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间名称",
+          "document": "工作空间名称, 长度限制 2~64",
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
@@ -85,7 +85,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间描述",
+          "document": "工作空间描述, 长度限制 0~255",
           "example": "this is a worksapce",
           "member": "string",
           "name": "Description",
@@ -103,7 +103,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间基础镜像名称, 默认会使用 All In One 镜像",
+          "document": "工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255",
           "example": "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/go-1.20:2023-04-25.0943",
           "member": "string",
           "name": "Image",
@@ -130,7 +130,7 @@
         },
         {
           "disabled": false,
-          "document": "预装插件. 工作空间启动时, 会自动安装这些插件 ",
+          "document": "预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10",
           "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
           "member": "string",
           "name": "Extensions",
@@ -145,6 +145,42 @@
           "name": "Lifecycle",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "1303697168",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户UIN",
+          "example": "100015915015",
+          "member": "string",
+          "name": "Uin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPCID",
+          "example": "vpc-rdfkabjj",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-bx88somq",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

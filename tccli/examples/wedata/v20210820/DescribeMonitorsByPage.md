@@ -15,19 +15,19 @@ Output:
             "TotalCount": 1,
             "Items": [
                 {
-                    "DatabaseId": "xx",
-                    "MonitorStatus": 1,
                     "RuleGroupId": 1,
-                    "CreateUserId": 1,
-                    "CreateUserName": "xx",
+                    "TableId": "9y78ughi79tg79tgy",
                     "DatasourceId": 1,
-                    "TableId": "xx",
+                    "DatabaseId": "789uhi8jb789uib",
                     "MonitorType": 1,
-                    "CreateTime": "xx"
+                    "MonitorStatus": 1,
+                    "CreateUserId": 1,
+                    "CreateUserName": "zhangsan",
+                    "CreateTime": "2023-10-01"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

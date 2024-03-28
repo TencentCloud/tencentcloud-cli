@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeRuleExecDetail --cli-unfold-argument  \
-    --RuleExecId 1 \
-    --ProjectId xx
+    --ProjectId abc \
+    --RuleExecId 1
 ```
 
 Output: 
@@ -15,76 +15,83 @@ Output:
 {
     "Response": {
         "Data": {
-            "DatabaseId": "xx",
-            "DatasourceName": "xx",
-            "InstanceId": "xx",
-            "TableName": "xx",
             "DatasourceId": 1,
-            "DatabaseName": "xx",
+            "DatasourceName": "hive89yuhihutg",
+            "DatabaseId": "89y7hui87by",
+            "DatabaseName": "dbName",
+            "InstanceId": "978uijhbb87",
+            "TableId": "0oi8hejnfc",
+            "TableName": "test",
             "RuleExecResult": {
-                "RuleType": 1,
-                "QualityDim": 1,
-                "RelConditionExpr": "xx",
-                "RuleGroupId": 1,
                 "RuleExecId": 1,
-                "ConditionExpression": "xx",
-                "RuleId": 1,
-                "ExecResultStatus": 1,
-                "TargetDBTableName": "xx",
-                "SourceObjectValue": "xx",
                 "RuleGroupExecId": 1,
-                "SourceObjectDataTypeName": "xx",
-                "TargetObjectDataType": "xx",
-                "RuleName": "xx",
-                "TriggerResult": "xx",
+                "RuleGroupId": 1,
+                "RuleId": 1,
+                "RuleName": "规则1",
+                "RuleType": 1,
+                "SourceObjectDataTypeName": "name",
+                "SourceObjectValue": "value",
+                "ConditionExpression": "exp",
+                "ExecResultStatus": 1,
+                "TriggerResult": "res",
                 "CompareResult": {
                     "Items": [
                         {
-                            "ResultValue": "xx",
                             "FixResult": 1,
-                            "ValueComputeType": 1,
+                            "ResultValue": "value",
                             "Values": [
                                 {
                                     "ValueType": 1,
-                                    "Value": "xx"
+                                    "Value": "10"
                                 }
                             ],
+                            "Operator": ">",
                             "CompareType": 1,
-                            "Operator": "xx"
+                            "ValueComputeType": 1
                         }
-                    ]
+                    ],
+                    "TotalRows": 1,
+                    "PassRows": 1,
+                    "TriggerRows": 1
                 },
-                "TargetObjectValue": "xx",
-                "TemplateName": "xx",
+                "TemplateName": "abc",
+                "QualityDim": 1,
+                "TargetDBTableName": "abc",
+                "TargetObjectValue": "abc",
+                "TargetObjectDataType": "abc",
                 "FieldConfig": {
                     "WhereConfig": [
                         {
-                            "FieldKey": "xx",
-                            "FieldValue": "xx",
-                            "FieldDataType": "xx"
+                            "FieldKey": "name",
+                            "FieldValue": "zhangsan",
+                            "FieldDataType": "string"
                         }
                     ],
                     "TableConfig": [
                         {
-                            "DatabaseId": "xx",
+                            "DatabaseId": "897yuhijjhu8h89u",
+                            "DatabaseName": "name",
+                            "TableId": "abc",
+                            "TableName": "test",
+                            "TableKey": "abc",
                             "FieldConfig": [
                                 {
-                                    "FieldKey": "xx",
-                                    "FieldValue": "xx",
-                                    "FieldDataType": "xx"
+                                    "FieldKey": "id",
+                                    "FieldValue": "1",
+                                    "FieldDataType": "int"
                                 }
-                            ],
-                            "TableName": "xx",
-                            "TableId": "xx",
-                            "DatabaseName": "xx",
-                            "TableKey": "xx"
+                            ]
                         }
                     ]
-                }
+                },
+                "RelConditionExpr": "expr",
+                "StartTime": "abc",
+                "AlarmLevel": 1
             },
-            "TableId": "xx"
+            "TableOwnerUserId": 1,
+            "DatasourceType": 1
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

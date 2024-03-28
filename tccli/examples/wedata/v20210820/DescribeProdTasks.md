@@ -8,8 +8,8 @@ Input:
 tccli wedata DescribeProdTasks --cli-unfold-argument  \
     --ProjectId 1 \
     --PageNumber 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name Keyword \
+    --Filters.0.Values tghb98uj23489ufyh \
+    --Filters.0.Name tableId \
     --PageSize 1
 ```
 
@@ -19,11 +19,12 @@ Output:
     "Response": {
         "Data": [
             {
-                "TaskName": "xx",
-                "TaskId": 1
+                "TaskId": "4567",
+                "TaskName": "上游任务",
+                "WorkflowId": "67yughbj89yu08yh"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

@@ -147,6 +147,13 @@
       "output": "DescribeJobFlowResponse",
       "status": "online"
     },
+    "DescribeRegionAndZoneSaleInfo": {
+      "document": "获取控制台及购买页的地域和可用区",
+      "input": "DescribeRegionAndZoneSaleInfoRequest",
+      "name": "获取控制台及购买页的地域和可用区",
+      "output": "DescribeRegionAndZoneSaleInfoResponse",
+      "status": "online"
+    },
     "DescribeResourceSchedule": {
       "document": "查询YARN资源调度数据信息",
       "input": "DescribeResourceScheduleRequest",
@@ -4002,6 +4009,70 @@
           "member": "JobResult",
           "name": "Details",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionAndZoneSaleInfoRequest": {
+      "document": "DescribeRegionAndZoneSaleInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "取值为consolePage表示控制台，buyPage表示为购买页，购买页不显示集群数量",
+          "example": "consolePage",
+          "member": "string",
+          "name": "PageName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认0为普通集群，1位容器集群",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cdc集群ID",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cdd集群地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DedicatedRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionAndZoneSaleInfoResponse": {
+      "document": "DescribeRegionAndZoneSaleInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "控制台及购买页的地域和可用区",
+          "example": "无",
+          "member": "SaleRegionConfInfo",
+          "name": "SaleConf",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9961,6 +10032,158 @@
         }
       ],
       "type": "object"
+    },
+    "SaleRegionConfInfo": {
+      "document": "控制台及购买页出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区信息",
+          "example": "\"ZoneInfo\":[{\"ApCode\":\"ap-guangzhou-2\",\"EnableSale\":false,\"Name\"",
+          "member": "SaleRegionZoneInfo",
+          "name": "ZoneInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名称",
+          "example": "Guangzhou",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域编号",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域所属地区",
+          "example": "South China",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ap-code",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RegionApCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前地域是否售罄",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSale",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前地域集群数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ClusterNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域权重",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupWeight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示当前地域状态：新开、火爆。支持可扩展",
+          "example": "NEW",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleRegionZoneInfo": {
+      "document": "控制台和购买页可用区信息出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "Guangzhou Zone 6",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "100006",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可用区是否售罄",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSale",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ap-code",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "ApCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示当前地域状态：新开、火爆。支持可扩展",
+          "example": "NEW",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ScaleOutClusterRequest": {
       "document": "ScaleOutCluster请求参数结构体",

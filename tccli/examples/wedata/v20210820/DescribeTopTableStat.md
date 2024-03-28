@@ -16,22 +16,22 @@ Output:
 {
     "Response": {
         "Data": {
-            "PipelineTables": [
-                {
-                    "TableName": "xx",
-                    "Cnt": 1,
-                    "TableId": "xx"
-                }
-            ],
             "AlarmTables": [
                 {
-                    "TableName": "xx",
-                    "Cnt": 1,
-                    "TableId": "xx"
+                    "TableId": "asfert6345690uijn",
+                    "TableName": "test",
+                    "Cnt": 1
+                }
+            ],
+            "PipelineTables": [
+                {
+                    "TableId": "7896tyguhbi79tygui",
+                    "TableName": "test",
+                    "Cnt": 1
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```
