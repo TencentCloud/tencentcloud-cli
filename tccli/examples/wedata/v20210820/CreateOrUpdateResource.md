@@ -12,7 +12,8 @@ tccli wedata CreateOrUpdateResource --cli-unfold-argument  \
     --CosBucketName hannahtest-1257305158 \
     --CosRegion ap-guangzhou \
     --NewFile True \
-    --FilesSize 3167
+    --FilesSize 3167 \
+    --FileMd5 02b8cabb83e2978aa746be7b3dd300df
 ```
 
 Output: 

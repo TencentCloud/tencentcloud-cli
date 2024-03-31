@@ -4652,7 +4652,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "DeviceInfoLevel",
@@ -4672,7 +4672,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CameraInfoLevel",
@@ -8768,6 +8768,15 @@
           "example": "#2d72f1",
           "member": "string",
           "name": "ThemeColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国际化语言，默认为en（英语）。当前支持：\nth：泰语；\nen：英语；",
+          "example": "en",
+          "member": "string",
+          "name": "Language",
           "required": false,
           "type": "string"
         }

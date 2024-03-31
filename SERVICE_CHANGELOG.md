@@ -1,37 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 商业智能分析 BI(bi) 版本：2022-01-05
+## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 11 次发布
+### 第 55 次发布
 
-发布时间：2024-03-29 01:08:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDatasource](http://document.tencentcloudapi.woa.com/document/product/1707/82012)
-
-	* 新增入参：OperationAuthLimit
-
-* [CreateProject](http://document.tencentcloudapi.woa.com/document/product/1707/81996)
-
-	* 新增入参：ManagePlatform
-
-* [ModifyProject](http://document.tencentcloudapi.woa.com/document/product/1707/81992)
-
-	* 新增入参：ManagePlatform
-
-
-
-
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 50 次发布
-
-发布时间：2024-03-29 01:08:45
+发布时间：2024-04-01 01:22:52
 
 本次发布包含了以下内容：
 
@@ -39,261 +12,28 @@
 
 修改数据结构：
 
-* [AllocationDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationDetail)
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
 
-* [AllocationSummaryByItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByItem)
+	* 新增成员：Language
 
-* [AllocationSummaryByResource](http://document.tencentcloudapi.woa.com/document/product/555/19183#AllocationSummaryByResource)
-
-* [ConsumptionBusinessSummaryDataItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ConsumptionBusinessSummaryDataItem)
-
-	* 新增成员：AmountBeforeTax, Tax, RegionName
-
-	* <font color="#dd0000">**修改成员**：</font>CashPayAmount, IncentivePayAmount, VoucherPayAmount, TransferPayAmount
-
-* [ConsumptionProjectSummaryDataItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ConsumptionProjectSummaryDataItem)
-
-	* 新增成员：Tax, AmountBeforeTax
-
-	* <font color="#dd0000">**修改成员**：</font>CashPayAmount, IncentivePayAmount, VoucherPayAmount, TransferPayAmount
-
-* [ConsumptionRegionSummaryDataItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ConsumptionRegionSummaryDataItem)
-
-	* 新增成员：CashPayAmount, VoucherPayAmount, IncentivePayAmount, TransferPayAmount, Tax, AmountBeforeTax
-
-* [ConsumptionResourceSummaryDataItem](http://document.tencentcloudapi.woa.com/document/product/555/19183#ConsumptionResourceSummaryDataItem)
-
-	* 新增成员：Tax, TaxRate, AmountBeforeTax, PayerUin, OwnerUin, OperateUin, ProductCode, ProductCodeName, RegionType, RegionTypeName, Extend1, Extend2, Extend3, Extend4, Extend5, InstanceType, InstanceTypeName, PayTime, ZoneName, ComponentConfig
-
-	* <font color="#dd0000">**修改成员**：</font>RealCost, FeeBeginTime, FeeEndTime, DayDiff, DailyTotalCost, OrderId, VoucherPayAmount, IncentivePayAmount, TransferPayAmount
-
-* [CostComponentSet](http://document.tencentcloudapi.woa.com/document/product/555/19183#CostComponentSet)
-
-	* 新增成员：Tax, TaxRate
-
-* [GatherResourceSummary](http://document.tencentcloudapi.woa.com/document/product/555/19183#GatherResourceSummary)
-
-
-
-
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
-
-### 第 4 次发布
-
-发布时间：2024-03-29 01:12:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateWorkspace](http://document.tencentcloudapi.woa.com/document/product/1640/78593)
-
-	* 新增入参：AppId, Uin, UniqVpcId, SubnetId
-
-
-
-
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 86 次发布
-
-发布时间：2024-03-29 01:13:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DeleteAttackLogs
-* ExportAttackLogs
-
-修改接口：
-
-* [CreateSearchTemplate](http://document.tencentcloudapi.woa.com/document/product/296/55730)
-
-	* 新增出参：Message
-
-* [DescribeBaselineItemInfo](http://document.tencentcloudapi.woa.com/document/product/296/77189)
-
-	* 新增出参：CategoryList
-
-* [ModifyBaselineRule](http://document.tencentcloudapi.woa.com/document/product/296/77173)
-
-	* 新增入参：IdType, ExcludeIds, CategoryIds
-
-
-新增数据结构：
-
-* [BaselineItemsCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemsCategory)
-
-修改数据结构：
-
-* [BaselineCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineCategory)
-
-	* 新增成员：ItemCount
-
-* [Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)
-
-	* 新增成员：CustomItemValues
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 76 次发布
-
-发布时间：2024-03-29 01:14:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 18 次发布
-
-发布时间：2024-03-29 01:17:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#Endpoint)
-
-	* 新增成员：ChildInstanceId, ChildInstanceType
-
-* [EndpointItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#EndpointItem)
-
-	* 新增成员：ChildInstanceId, ChildInstanceType
-
-
-
-
-## 数据传输服务(dts) 版本：2018-03-30
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 45 次发布
-
-发布时间：2024-03-29 01:17:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
-
-新增数据结构：
-
-* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
-* [SaleRegionZoneInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionZoneInfo)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 133 次发布
-
-发布时间：2024-03-29 01:18:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
-
-	* 新增入参：ProxyOperatorMobile
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 54 次发布
-
-发布时间：2024-03-29 01:28:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBuildInImages](http://document.tencentcloudapi.woa.com/document/product/851/83433)
-
-	* 新增入参：ImageFilters
-
-
-新增数据结构：
-
-* [ImageFIlter](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageFIlter)
-
-修改数据结构：
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/851/74915#Instance)
-
-	* 新增成员：ErrCode, ErrMsg
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-### 第 40 次发布
+### 第 41 次发布
 
-发布时间：2024-03-29 01:32:03
+发布时间：2024-04-01 01:35:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [ExportTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExportTaskInfo)
+* [CreateOrUpdateResource](http://document.tencentcloudapi.woa.com/document/product/1607/77546)
 
-	* 新增成员：Expire, DatasourceName, DbTableName, RuleName, RuleExecId
-
-* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
-
-	* 新增成员：TriggerCondition
-
-* [RuleExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResult)
-
-	* <font color="#dd0000">**修改成员**：</font>RuleExecId, RuleGroupExecId, RuleGroupId, RuleId, RuleName, RuleType, SourceObjectDataTypeName, SourceObjectValue, ConditionExpression, ExecResultStatus, TriggerResult, CompareResult, StartTime, AlarmLevel
-
-* [RuleGroupExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecResult)
-
-	* 新增成员：RuleExecResultVOList
+	* 新增入参：FileMd5
 
 
 
@@ -28035,7 +27775,7 @@
 
 新增数据结构：
 
-* [[BaselineItemsCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemsCategory)](http://document.tencentcloudapi.woa.com/document/product/296/19867#[BaselineItemsCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemsCategory))
+* [BaselineItemsCategory](http://document.tencentcloudapi.woa.com/document/product/296/19867#BaselineItemsCategory)
 
 修改数据结构：
 
@@ -30832,7 +30572,7 @@
 
 新增接口：
 
-* [[RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
 
 ### 第 75 次发布
 
@@ -40479,12 +40219,12 @@
 
 新增接口：
 
-* [[DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
 
 新增数据结构：
 
-* [[SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo))
-* [[SaleRegionZoneInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionZoneInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[SaleRegionZoneInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionZoneInfo))
+* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
+* [SaleRegionZoneInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionZoneInfo)
 
 ### 第 44 次发布
 
@@ -47333,6 +47073,21 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 55 次发布
+
+发布时间：2024-04-01 01:22:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：Language
+
 
 ### 第 54 次发布
 
@@ -85167,7 +84922,7 @@
 
 新增数据结构：
 
-* [[ImageFIlter](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageFIlter)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[ImageFIlter](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageFIlter))
+* [ImageFIlter](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageFIlter)
 
 修改数据结构：
 
@@ -101493,6 +101248,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 41 次发布
+
+发布时间：2024-04-01 01:35:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrUpdateResource](http://document.tencentcloudapi.woa.com/document/product/1607/77546)
+
+	* 新增入参：FileMd5
+
 
 ### 第 40 次发布
 

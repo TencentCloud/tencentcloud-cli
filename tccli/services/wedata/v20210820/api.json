@@ -10035,6 +10035,15 @@
           "name": "FilesSize",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "必填项，资源的Md5值（COS中的ETag）",
+          "example": "02b8cabb83e2978aa746be7b3dd300df",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

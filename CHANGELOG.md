@@ -1,3 +1,43 @@
+# Release 3.0.966.1
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 55 次发布
+
+发布时间：2024-04-01 01:22:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：Language
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 41 次发布
+
+发布时间：2024-04-01 01:35:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrUpdateResource](http://document.tencentcloudapi.woa.com/document/product/1607/77546)
+
+	* 新增入参：FileMd5
+
+
+
+
 # Release 3.0.965.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
