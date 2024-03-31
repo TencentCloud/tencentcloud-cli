@@ -6909,7 +6909,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集所属地区：\nap-guangzhou：广州； \nap-singapore：新加坡。",
+          "document": "日志集所属地区：\n<li>ap-guangzhou：广州；</li>\n<li>ap-beijing：北京；</li>\n<li>ap-chengdu：成都；</li>\n<li>ap-chongqing：重庆；</li>\n<li>ap-nanjing：南京；</li>\n<li>ap-shanghai：上海；</li>\n<li>ap-singapore：新加坡。</li>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CLSRegion",
@@ -9230,7 +9230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "document": "日志集所属的地域，取值有： <li>ap-guangzhou：广州；</li> <li>ap-beijing：北京；</li> <li>ap-chengdu：成都；</li> <li>ap-chongqing：重庆；</li> <li>ap-nanjing：南京；</li> <li>ap-shanghai：上海；</li> <li>ap-singapore：新加坡。</li>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CLSRegion",
@@ -9267,7 +9267,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "document": "日志集所属的地域，取值有： <li>ap-guangzhou：广州；</li> <li>ap-beijing：北京；</li> <li>ap-chengdu：成都；</li> <li>ap-chongqing：重庆；</li> <li>ap-nanjing：南京；</li> <li>ap-shanghai：上海；</li> <li>ap-singapore：新加坡。</li>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CLSRegion",
@@ -11689,7 +11689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "document": "日志集所属的地域，取值有： <li>ap-guangzhou：广州；</li> <li>ap-beijing：北京；</li> <li>ap-chengdu：成都；</li> <li>ap-chongqing：重庆；</li> <li>ap-nanjing：南京；</li> <li>ap-shanghai：上海；</li> <li>ap-singapore：新加坡。</li>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CLSRegion",
@@ -13052,7 +13052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CLS 日志集所属的地域，取值有：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "document": "日志集所属的地域，取值有： <li>ap-guangzhou：广州；</li> <li>ap-beijing：北京；</li> <li>ap-chengdu：成都；</li> <li>ap-chongqing：重庆；</li> <li>ap-nanjing：南京；</li> <li>ap-shanghai：上海；</li> <li>ap-singapore：新加坡。</li>",
           "example": "“ap-guangzhou”",
           "member": "string",
           "name": "CLSRegion",
@@ -13145,7 +13145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "document": "日志集所属的地域，取值有： <li>ap-guangzhou：广州；</li> <li>ap-beijing：北京；</li> <li>ap-chengdu：成都；</li> <li>ap-chongqing：重庆；</li> <li>ap-nanjing：南京；</li> <li>ap-shanghai：上海；</li> <li>ap-singapore：新加坡。</li>",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CLSRegion",

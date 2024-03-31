@@ -204,11 +204,11 @@
       "status": "online"
     },
     "DeleteAttackLogs": {
-      "document": "删除网络攻击日志",
+      "document": "ModifyEventAttackStatus 接口替代\n\n删除网络攻击日志",
       "input": "DeleteAttackLogsRequest",
       "name": "删除网络攻击日志",
       "output": "DeleteAttackLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteBanWhiteList": {
       "document": "删除阻断白名单列表",
@@ -2696,11 +2696,11 @@
       "status": "online"
     },
     "ExportAttackLogs": {
-      "document": "导出网络攻击日志",
+      "document": "ExportAttackEvents接口替代\n\n导出网络攻击日志",
       "input": "ExportAttackLogsRequest",
       "name": "导出网络攻击日志",
       "output": "ExportAttackLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExportBaselineEffectHostList": {
       "document": "导出基线影响主机列表",
@@ -9372,7 +9372,7 @@
           "example": "无",
           "member": "int64",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9382,7 +9382,7 @@
           "example": "无",
           "member": "string",
           "name": "CategoryName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9392,9 +9392,19 @@
           "example": "1",
           "member": "int64",
           "name": "ParentCategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子分类下检测项总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ItemCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10559,6 +10569,52 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaselineItemsCategory": {
+      "document": "基线检测项分类树状结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基线检测项父分类id",
+          "example": "无",
+          "member": "int64",
+          "name": "ParentCategoryId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基线检测项父分类名称",
+          "example": "无",
+          "member": "string",
+          "name": "ParentCategoryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基线检测项子分类数目",
+          "example": "无",
+          "member": "int64",
+          "name": "CategoryCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基线检测项子分类列表",
+          "example": "无",
+          "member": "BaselineCategory",
+          "name": "CategoryLists",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14976,8 +15032,18 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -22298,6 +22364,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基线分类列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaselineItemsCategory",
+          "name": "CategoryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -43239,6 +43315,7 @@
           "example": "无",
           "member": "int64",
           "name": "ItemId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -43249,9 +43326,21 @@
           "example": "无",
           "member": "string",
           "name": "ItemName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CustomItemValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -46699,6 +46788,33 @@
           "example": "无",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0:检测项，1:检测项分类",
+          "example": "0",
+          "member": "uint64",
+          "name": "IdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要排除的检测项id",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExcludeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "勾选的检测项分类",
+          "example": "无",
+          "member": "uint64",
+          "name": "CategoryIds",
           "required": false,
           "type": "list"
         }

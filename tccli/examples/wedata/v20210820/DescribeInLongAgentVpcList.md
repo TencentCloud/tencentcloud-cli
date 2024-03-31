@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeInLongAgentVpcList --cli-unfold-argument  \
-    --ProjectId xx
+    --ProjectId abc
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "VpcList": [
-            "xxx"
+            "abc"
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

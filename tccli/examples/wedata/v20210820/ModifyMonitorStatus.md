@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata ModifyMonitorStatus --cli-unfold-argument  \
-    --ProjectId 1 \
-    --MonitorStatus True \
-    --RuleGroupId 1
+    --ProjectId 657890432 \
+    --RuleGroupId 1 \
+    --MonitorStatus True
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

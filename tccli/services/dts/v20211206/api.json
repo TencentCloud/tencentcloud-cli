@@ -4602,6 +4602,16 @@
         },
         {
           "disabled": false,
+          "document": "订阅内置kafka的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.6.0",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdb",
           "member": "string",
@@ -5559,7 +5569,7 @@
         },
         {
           "disabled": false,
-          "document": "tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "proxy",
           "member": "string",
           "name": "Role",
@@ -5842,6 +5852,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynos-ins-xxxx",
+          "member": "string",
+          "name": "ChildInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ro",
+          "member": "string",
+          "name": "ChildInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6023,6 +6055,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cynos-ins-xxxx",
+          "member": "string",
+          "name": "ChildInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ro",
+          "member": "string",
+          "name": "ChildInstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9688,7 +9742,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库信息。注意：如果数据类型为tdsqlmysql，此处Endpoint数组的顺序应该与set顺序对应，第一个分片（shardkey范围起始为0的分片）必须要输入在第一个位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库信息。注意：如果数据库类型为tdsqlmysql，此处Endpoint数组的顺序应满足规则：proxy节点放在set节点之前。如果SrcConnectType选择proxy接入则只需要填写proxy节点即可。如果选择set接入，数组中第一个set节点必须是shardkey范围起始为0的分片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
           "name": "Info",

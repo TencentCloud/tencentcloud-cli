@@ -15,69 +15,74 @@ Output:
             "TotalCount": 1,
             "Items": [
                 {
-                    "RuleType": 1,
-                    "QualityDim": 1,
-                    "RelConditionExpr": "xx",
-                    "RuleGroupId": 1,
                     "RuleExecId": 1,
-                    "ConditionExpression": "xx",
-                    "RuleId": 1,
-                    "ExecResultStatus": 1,
-                    "TargetDBTableName": "xx",
-                    "SourceObjectValue": "xx",
                     "RuleGroupExecId": 1,
-                    "SourceObjectDataTypeName": "xx",
-                    "TargetObjectDataType": "xx",
-                    "RuleName": "xx",
-                    "TriggerResult": "xx",
+                    "RuleGroupId": 1,
+                    "RuleId": 1,
+                    "RuleName": "规则1",
+                    "RuleType": 1,
+                    "SourceObjectDataTypeName": "name",
+                    "SourceObjectValue": "1",
+                    "ConditionExpression": "expr",
+                    "ExecResultStatus": 1,
+                    "TriggerResult": "abc",
                     "CompareResult": {
                         "Items": [
                             {
-                                "ResultValue": "xx",
                                 "FixResult": 1,
-                                "ValueComputeType": 1,
+                                "ResultValue": "1",
                                 "Values": [
                                     {
                                         "ValueType": 1,
-                                        "Value": "xx"
+                                        "Value": "1"
                                     }
                                 ],
+                                "Operator": "zhyangsan",
                                 "CompareType": 1,
-                                "Operator": "xx"
+                                "ValueComputeType": 1
                             }
-                        ]
+                        ],
+                        "TotalRows": 1,
+                        "PassRows": 1,
+                        "TriggerRows": 1
                     },
-                    "TargetObjectValue": "xx",
-                    "TemplateName": "xx",
+                    "TemplateName": "name",
+                    "QualityDim": 1,
+                    "TargetDBTableName": "test",
+                    "TargetObjectValue": "1",
+                    "TargetObjectDataType": "int",
                     "FieldConfig": {
                         "WhereConfig": [
                             {
-                                "FieldKey": "xx",
-                                "FieldValue": "xx",
-                                "FieldDataType": "xx"
+                                "FieldKey": "name",
+                                "FieldValue": "zhangsan",
+                                "FieldDataType": "string"
                             }
                         ],
                         "TableConfig": [
                             {
-                                "DatabaseId": "xx",
+                                "DatabaseId": "abc6578trfgvyn",
+                                "DatabaseName": "test",
+                                "TableId": "89uhon890uoh",
+                                "TableName": "test",
+                                "TableKey": "6789tgy",
                                 "FieldConfig": [
                                     {
-                                        "FieldKey": "xx",
-                                        "FieldValue": "xx",
-                                        "FieldDataType": "xx"
+                                        "FieldKey": "id",
+                                        "FieldValue": "1",
+                                        "FieldDataType": "int"
                                     }
-                                ],
-                                "TableName": "xx",
-                                "TableId": "xx",
-                                "DatabaseName": "xx",
-                                "TableKey": "xx"
+                                ]
                             }
                         ]
-                    }
+                    },
+                    "RelConditionExpr": "expr",
+                    "StartTime": "abc",
+                    "AlarmLevel": 1
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

@@ -2630,7 +2630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1: 正在录制中\n2: 任务不存在",
+          "document": "1: 正在录制中",
           "example": "1",
           "member": "int64",
           "name": "Status",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata BatchMakeUpIntegrationTasks --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId abc \
     --TaskIds 123 1234 \
     --StartTime 2022-04-18 12:00:00 \
     --EndTime 2022-04-18 13:00:00 \
@@ -20,7 +20,7 @@ Output:
         "SuccessCount": 1,
         "FailedCount": 1,
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -8,6 +8,22 @@
         "title": "调用示例"
       }
     ],
+    "QueryTextToImageProJob": [
+      {
+        "document": "成功调用",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTextToImageProJob\n<公共请求参数>\n\n{\n    \"JobId\": \"testJobId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"fae816f9-7fd1-4e39-bf1c-3d43677603de\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://test.jpg\"\n        ]\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
+    "SubmitTextToImageProJob": [
+      {
+        "document": "成功调用",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToImageProJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨天\",\n    \"Style\": \"dongman\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"testJobId\",\n        \"RequestId\": \"aeb78554-0772-4c64-8a84-fa21095cbbd7\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
     "TextToImage": [
       {
         "document": "正常调用场景",

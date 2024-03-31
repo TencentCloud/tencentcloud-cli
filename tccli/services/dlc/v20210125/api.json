@@ -763,6 +763,13 @@
       "output": "QueryResultResponse",
       "status": "online"
     },
+    "QueryTaskCostDetail": {
+      "document": "该接口（QueryTaskCostDetail）用于查询任务消耗明细",
+      "input": "QueryTaskCostDetailRequest",
+      "name": "查询任务消耗明细",
+      "output": "QueryTaskCostDetailResponse",
+      "status": "online"
+    },
     "RenewDataEngine": {
       "document": "续费数据引擎",
       "input": "RenewDataEngineRequest",
@@ -13394,6 +13401,98 @@
       ],
       "type": "object"
     },
+    "QueryTaskCostDetailRequest": {
+      "document": "QueryTaskCostDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻",
+          "example": "2019-01-21 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
+          "example": "2019-01-22 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎名称，用于筛选",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一页的标识",
+          "example": "上一次返回的searchafter值",
+          "member": "string",
+          "name": "SearchAfter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的大小",
+          "example": "10000",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTaskCostDetailResponse": {
+      "document": "QueryTaskCostDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下一页的标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SearchAfter",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RenewDataEngineRequest": {
       "document": "RenewDataEngine请求参数结构体",
       "members": [
@@ -15128,23 +15227,23 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DataGovernPolicy",
           "name": "GovernPolicy",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "库数据治理是否关闭，关闭：true，开启：false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fasle",
           "member": "string",
           "name": "DbGovernPolicyIsDisable",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

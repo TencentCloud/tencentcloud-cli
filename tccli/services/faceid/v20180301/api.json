@@ -2692,7 +2692,7 @@
           "example": "23232323232",
           "member": "string",
           "name": "IdCard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2702,7 +2702,7 @@
           "example": "王五",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2712,7 +2712,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2722,7 +2722,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2732,7 +2732,7 @@
           "example": "97.7",
           "member": "float",
           "name": "Similarity",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2742,7 +2742,7 @@
           "example": "xx",
           "member": "string",
           "name": "VideoBase64",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2752,7 +2752,7 @@
           "example": "xx",
           "member": "string",
           "name": "BestFrameBase64",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2762,17 +2762,17 @@
           "example": "xx",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：\n202、5001：设备疑似被Root\n203、5004：设备疑似被注入\n205：设备疑似被Hook\n206：设备疑似虚拟运行环境\n5007、1005：设备疑似摄像头被劫持\n8000：设备疑似存在异常篡改行为\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5004_202",
+          "example": "01",
           "member": "string",
           "name": "DeviceInfoTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2782,7 +2782,7 @@
           "example": "02",
           "member": "string",
           "name": "RiskInfoTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2825,7 +2825,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "DeviceInfoLevel",
@@ -2845,7 +2845,7 @@
         },
         {
           "disabled": false,
-          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 安全 2 - 低风险 3 - 中风险 4 - 高危 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述当前请求所在设备的相机指纹风险等级，共4级，详情如下： 1 - 低风险 2 - 中风险 3 - 高风险 4 - 攻击 ，-1表示未获取到风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CameraInfoLevel",
@@ -2956,6 +2956,15 @@
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于细分客户使用场景，申请开通服务后，可以在腾讯云慧眼人脸核身控制台（https://console.cloud.tencent.com/faceid） 自助接入里面创建，审核通过后即可调用。如有疑问，请添加腾讯云人脸核身小助手进行咨询。\n示例值：1",
+          "example": "1",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2969,6 +2978,7 @@
           "example": "asdasdadasdasd",
           "member": "string",
           "name": "FaceIdToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

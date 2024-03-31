@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata CheckDuplicateRuleName --cli-unfold-argument  \
-    --ProjectId xx \
-    --RuleId 1 \
-    --Name xx \
-    --RuleGroupId 1
+    --ProjectId 456789007 \
+    --RuleGroupId 1 \
+    --Name 规则1 \
+    --RuleId 1
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

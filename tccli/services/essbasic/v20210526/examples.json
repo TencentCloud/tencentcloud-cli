@@ -394,7 +394,7 @@
         "title": "错误示例-解除协议中更换原合同个人类型的参与人"
       },
       {
-        "document": "1. 更换原合同中本方企业的参与人\n2. 给该企业参与人指定未自动签署(ApproverType 设置为 ENTERPRISESERVER)",
+        "document": "1. 更换原合同中本方企业的参与人\n2. 该企业参与人指定为自动签署(ApproverType 设置为 ENTERPRISESERVER)",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"NeedRelievedFlowId\": \"yDR1AUUgygjazuesUuO4zjESPW4PkfNi\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"ApproverNumber\": 2,\n            \"ApproverType\": \"ENTERPRISESERVER\",\n            \"OrganizationName\": \"典子谦示例企业\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n        \"RequestId\": \"s312334445587989\"\n    }\n}",
         "title": "发起解除协议（替换原流程中本企业的参与人并指定其为自动签署）"

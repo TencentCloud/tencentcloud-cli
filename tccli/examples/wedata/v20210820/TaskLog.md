@@ -19,24 +19,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "LogContentList": [
             {
-                "PkgId": "xx",
-                "Log": "xx",
-                "Time": 1
-            },
-            {
-                "PkgId": "xx",
-                "Log": "xx",
-                "Time": 1
-            },
-            {
-                "PkgId": "xx",
-                "Log": "xx",
-                "Time": 1
+                "Time": 1,
+                "PkgId": "abc",
+                "Log": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

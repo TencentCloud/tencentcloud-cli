@@ -56,6 +56,13 @@
       "output": "CreateCarrierPrivilegeNumberApplicantResponse",
       "status": "online"
     },
+    "CreateCompanyApply": {
+      "document": "创建公司资质申请（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
+      "input": "CreateCompanyApplyRequest",
+      "name": "创建公司资质申请",
+      "output": "CreateCompanyApplyResponse",
+      "status": "online"
+    },
     "CreateExtension": {
       "document": "创建话机账号",
       "input": "CreateExtensionRequest",
@@ -159,6 +166,13 @@
       "input": "DescribeChatMessagesRequest",
       "name": "查询服务的聊天记录",
       "output": "DescribeChatMessagesResponse",
+      "status": "online"
+    },
+    "DescribeCompanyList": {
+      "document": "查询公司资质申请列表",
+      "input": "DescribeCompanyListRequest",
+      "name": "查询公司资质申请列表",
+      "output": "DescribeCompanyListResponse",
       "status": "online"
     },
     "DescribeExtension": {
@@ -285,6 +299,13 @@
       "input": "HangUpCallRequest",
       "name": "挂断电话",
       "output": "HangUpCallResponse",
+      "status": "online"
+    },
+    "ModifyCompanyApply": {
+      "document": "修改公司资质申请，只能修改状态为驳回或待审核的申请单。（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
+      "input": "ModifyCompanyApplyRequest",
+      "name": "修改公司资质申请",
+      "output": "ModifyCompanyApplyResponse",
       "status": "online"
     },
     "ModifyExtension": {
@@ -975,6 +996,271 @@
       ],
       "usage": "out"
     },
+    "CompanyApplyInfo": {
+      "document": "企业资质申请信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请人身份，0-公司法定代表人，1-经办人（受法定代表人委托）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicantType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京XXCC有限责任公司",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "91411111111111111",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "营业执照扫描件(加盖公章)。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg",
+          "member": "string",
+          "name": "BusinessIdPicUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法定代表人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "王某某",
+          "member": "string",
+          "name": "CorporationName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法定代表人身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "610000000000008",
+          "member": "string",
+          "name": "CorporationId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法定代表人身份证正反面扫描件。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "CorporationIdPicUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务经营范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "软件开发等",
+          "member": "string",
+          "name": "BusinessScope",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "AcceptPicUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "NetworkCommitmentPicUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "CorporationHoldingOnIdPicUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "经办人名称，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李某某",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "经办人证件号码，申请人类型为经办人时必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "61011111111111111",
+          "member": "string",
+          "name": "OperatorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "经办人身份证正反面扫描件，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "OperatorIdPicUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "经办人手持身份证照，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "OperatorHoldingOnIdPicUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "委托授权书，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.com/xxxxx.jpg\t",
+          "member": "string",
+          "name": "CommissionPicUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CompanyStateInfo": {
+      "document": "公司资质审核状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请单ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京XX公司",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1653534444",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1653534444",
+          "member": "int64",
+          "name": "CheckTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通过了",
+          "member": "string",
+          "name": "CheckMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核状态，1-待审核，2-审核通过，3-驳回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公司统一社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "546346435646",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAdminURLRequest": {
       "document": "CreateAdminURL请求参数结构体",
       "members": [
@@ -1373,6 +1659,43 @@
           "member": "uint64",
           "name": "ApplicantId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCompanyApplyRequest": {
+      "document": "CreateCompanyApply请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业资质信息",
+          "example": "无",
+          "member": "CompanyApplyInfo",
+          "name": "CompanyInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCompanyApplyResponse": {
+      "document": "CreateCompanyApply返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请单ID",
+          "example": "123",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2486,6 +2809,89 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyListRequest": {
+      "document": "DescribeCompanyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页尺寸，上限 100",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "审核状态，1-待审核，2-审核通过，3-驳回",
+          "example": "无",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "申请ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ApplyID",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCompanyListResponse": {
+      "document": "DescribeCompanyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业资质审核信息",
+          "example": "无",
+          "member": "CompanyStateInfo",
+          "name": "CompanyInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4524,6 +4930,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyCompanyApplyRequest": {
+      "document": "ModifyCompanyApply请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请单ID(只能修改状态为“驳回”或者“待审核”的申请单)",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "企业资质信息",
+          "example": "无",
+          "member": "CompanyApplyInfo",
+          "name": "CompanyInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCompanyApplyResponse": {
+      "document": "ModifyCompanyApply返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyExtensionRequest": {
       "document": "ModifyExtension请求参数结构体",

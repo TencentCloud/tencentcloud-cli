@@ -16,15 +16,15 @@ Output:
 {
     "Response": {
         "Data": {
+            "TotalCnt": 1,
             "DimCntList": [
                 {
                     "Dim": 1,
                     "Cnt": 1
                 }
-            ],
-            "TotalCnt": 1
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

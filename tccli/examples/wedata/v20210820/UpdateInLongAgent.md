@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli wedata UpdateInLongAgent --cli-unfold-argument  \
-    --ProjectId xx \
-    --AgentId xx \
-    --ExecutorGroupId xx \
-    --AgentName xx
+    --AgentName abc \
+    --ExecutorGroupId abc \
+    --AgentId abc \
+    --ProjectId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

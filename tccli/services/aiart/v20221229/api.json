@@ -7,6 +7,20 @@
       "output": "ImageToImageResponse",
       "status": "online"
     },
+    "QueryTextToImageProJob": {
+      "document": "文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "QueryTextToImageProJobRequest",
+      "name": "查询文生图（高级版）任务",
+      "output": "QueryTextToImageProJobResponse",
+      "status": "online"
+    },
+    "SubmitTextToImageProJob": {
+      "document": "文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "SubmitTextToImageProJobRequest",
+      "name": "提交文生图（高级版）任务",
+      "output": "SubmitTextToImageProJobResponse",
+      "status": "online"
+    },
     "TextToImage": {
       "document": "智能文生图接口将根据输入的描述文本，智能生成与之相关的结果图。\n输入：256个字符以内的描述性文本，推荐使用中文。\n输出：对应风格及分辨率的 AI 生成图。\n可支持的风格详见 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249)，请将列表中的“风格编号”传入 Styles 数组，建议选择一种风格。\n\n请求频率限制为1次/秒。",
       "input": "TextToImageRequest",
@@ -222,6 +236,93 @@
       ],
       "usage": "in"
     },
+    "QueryTextToImageProJobRequest": {
+      "document": "QueryTextToImageProJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTextToImageProJobResponse": {
+      "document": "QueryTextToImageProJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态码：\n1：排队中、3：处理中、5：处理失败、7：处理完成。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobStatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobStatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息。\n",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
+          "example": "无",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果 detail 数组，Success 代表成功。\n",
+          "example": "无",
+          "member": "string",
+          "name": "ResultDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResultConfig": {
       "document": "返回结果配置",
       "members": [
@@ -236,6 +337,79 @@
         }
       ],
       "usage": "in"
+    },
+    "SubmitTextToImageProJobRequest": {
+      "document": "SubmitTextToImageProJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本描述。 \n算法将根据输入的文本智能生成与之相关的图像。 \n不能为空，推荐使用中文。最多可传100个 utf-8 字符。",
+          "example": "雨中, 竹林,  小路",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绘画风格。\n请在 [文生图（高级版）风格列表](https://cloud.tencent.com/document/product/1668/104567) 中选择期望的风格，传入风格编号。\n不传默认不指定风格。",
+          "example": "无",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图分辨率。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3），不传默认使用1024:1024。",
+          "example": "无",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "无",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文生图引擎，默认使用engine1。 \n取值：  \nengine1  \nengine2",
+          "example": "无",
+          "member": "string",
+          "name": "Engine",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTextToImageProJobResponse": {
+      "document": "SubmitTextToImageProJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TextToImageRequest": {
       "document": "TextToImage请求参数结构体",

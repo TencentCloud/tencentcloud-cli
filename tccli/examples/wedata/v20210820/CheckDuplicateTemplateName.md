@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata CheckDuplicateTemplateName --cli-unfold-argument  \
-    --ProjectId 1 \
-    --Name xx \
-    --TemplateId 1
+    --TemplateId 1 \
+    --Name 模版名 \
+    --ProjectId 5678987
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

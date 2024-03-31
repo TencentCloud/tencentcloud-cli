@@ -16,12 +16,12 @@ Output:
 ```
 {
     "Response": {
-        "TotalReadRecords": 2000000,
-        "TotalReadBytes": 89898292,
-        "TotalWriteRecords": 2000000,
-        "TotalWriteBytes": 89898292,
-        "TotalErrorRecords": 0,
-        "RequestId": "xx"
+        "TotalReadRecords": 1,
+        "TotalReadBytes": 1,
+        "TotalWriteRecords": 1,
+        "TotalWriteBytes": 1,
+        "TotalErrorRecords": 1,
+        "RequestId": "abc"
     }
 }
 ```

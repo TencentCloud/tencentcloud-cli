@@ -64,6 +64,14 @@
         "title": "申请白名单号码"
       }
     ],
+    "CreateCompanyApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCompanyApply\n<公共请求参数>\n\n{\n    \"CompanyInfo\": {\n        \"ApplicantType\": 1,\n        \"CompanyName\": \"北京XXXXX有限责任公司\",\n        \"BusinessId\": \"977111111111111\",\n        \"BusinessIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CorporationName\": \"王某某\",\n        \"CorporationId\": \"6108888888888888\",\n        \"CorporationIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"BusinessScope\": \"软件开发咨询\",\n        \"AcceptPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"NetworkCommitmentPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CorporationHoldingOnIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"OperatorName\": \"李某某\",\n        \"OperatorId\": \"610000000000000\",\n        \"OperatorIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"OperatorHoldingOnIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CommissionPicUrl\": \"https://xxxx.com/xxxxx.jpg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建公司资质申请示例"
+      }
+    ],
     "CreateExtension": [
       {
         "document": "创建话机账号示例",
@@ -182,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChatMessages\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"d6253538-7c28-477b-998a-919059801899\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48edd236-7ef1-45af-9e12-fc376ba355bf\",\n        \"TotalCount\": 2,\n        \"Messages\": [\n            {\n                \"Timestamp\": 1600007226,\n                \"From\": \"John\",\n                \"Messages\": [\n                    {\n                        \"Type\": \"Text\",\n                        \"Content\": \"Hello, how are you?\"\n                    },\n                    {\n                        \"Type\": \"Image\",\n                        \"Content\": \"https://example.com/image.jpg\"\n                    }\n                ]\n            },\n            {\n                \"Timestamp\": 1400753150,\n                \"From\": \"Alice\",\n                \"Messages\": [\n                    {\n                        \"Type\": \"Text\",\n                        \"Content\": \"Hi there!\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询聊天记录示例"
+      }
+    ],
+    "DescribeCompanyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompanyList\n<公共请求参数>\n\n{\n    \"PageSize\": 12,\n    \"PageNumber\": 0,\n    \"CompanyName\": [],\n    \"State\": [],\n    \"ApplyID\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"CompanyInfo\": [\n            {\n                \"Id\": 1,\n                \"CompanyName\": \"北京XXX公司\",\n                \"CreateTime\": 164434242,\n                \"CheckTime\": 154346666,\n                \"CheckMsg\": \"通过了\",\n                \"State\": 1,\n                \"BusinessId\": \"4324234323\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询公司资质申请列表示例"
       }
     ],
     "DescribeExtension": [
@@ -326,6 +342,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HangUpCall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"SessionId\": \"9dc79b2c-9902-419c-b963-16bee762ae3a\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
         "title": "挂断电话"
+      }
+    ],
+    "ModifyCompanyApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompanyApply\n<公共请求参数>\n\n{\n    \"ApplyId\": 1,\n    \"CompanyInfo\": {\n        \"ApplicantType\": 1,\n        \"CompanyName\": \"北京XXXXX有限责任公司\",\n        \"BusinessId\": \"977111111111111\",\n        \"BusinessIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CorporationName\": \"王某某\",\n        \"CorporationId\": \"6108888888888888\",\n        \"CorporationIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"BusinessScope\": \"软件开发咨询\",\n        \"AcceptPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"NetworkCommitmentPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CorporationHoldingOnIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"OperatorName\": \"李某某\",\n        \"OperatorId\": \"610000000000000\",\n        \"OperatorIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"OperatorHoldingOnIdPicUrl\": \"https://xxxx.com/xxxxx.jpg\",\n        \"CommissionPicUrl\": \"https://xxxx.com/xxxxx.jpg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改公司资质申请示例"
       }
     ],
     "ModifyExtension": [

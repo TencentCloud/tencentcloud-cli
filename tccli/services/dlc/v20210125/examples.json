@@ -878,6 +878,14 @@
         "title": "获取任务结果"
       }
     ],
+    "QueryTaskCostDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTaskCostDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SearchAfter\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询任务消耗明细"
+      }
+    ],
     "RenewDataEngine": [
       {
         "document": "续费数据引擎",

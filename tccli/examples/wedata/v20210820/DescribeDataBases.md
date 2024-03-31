@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli wedata DescribeDataBases --cli-unfold-argument  \
-    --ProjectId xx \
-    --DatasourceId xx
+    --ProjectId 56789087 \
+    --DatasourceId 56789 \
+    --DsTypes 1
 ```
 
 Output: 
@@ -16,14 +17,17 @@ Output:
     "Response": {
         "Data": [
             {
-                "InstanceId": "xx",
-                "DatasourceId": "xx",
-                "DatabaseId": "xx",
-                "DatasourceName": "xx",
-                "DatabaseName": "xx"
+                "DatasourceName": "hive-78yughb",
+                "DatasourceId": "567890",
+                "DatabaseName": "dbName",
+                "DatabaseId": "67tygu897iyugh",
+                "InstanceId": "t67gy967yigu6789y",
+                "DatasourceType": 1,
+                "OriginDatabaseName": "test",
+                "OriginSchemaName": "test"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

@@ -2696,7 +2696,7 @@
           "example": "0",
           "member": "int64",
           "name": "ResultCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2706,7 +2706,7 @@
           "example": "1",
           "member": "int64",
           "name": "RespVer",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2716,17 +2716,17 @@
           "example": "1",
           "member": "int64",
           "name": "UrlType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "[查询结果]url恶意类型大类:{\n    \"1\": \"社工欺诈（仿冒、账号钓鱼、中奖诈骗）\",\n    \"2\": \"信息诈骗（虚假充值、虚假兼职、虚假金融投资、虚假信用卡代办、网络赌博诈骗）\",\n    \"3\": \"虚假销售（男女保健美容减肥产品、电子产品、虚假广告、违法销售）\",\n    \"4\": \"恶意文件（病毒文件，木马文件，恶意apk文件的下载链接以及站点，挂马网站）\",\n    \"5\": \"博彩网站（博彩网站，在线赌博网站）\",\n    \"6\": \"色情网站（涉嫌传播色情内容，提供色情服务的网站）\"\n  }",
+          "document": "[查询结果]url恶意类型大类:{\n    \"1\": \"社工欺诈（仿冒、账号钓鱼、中奖诈骗）\",\n    \"2\": \"信息诈骗（虚假充值、虚假兼职、虚假金融投资、虚假信用卡代办、网络赌博诈骗）\",\n    \"3\": \"虚假销售（男女保健美容减肥产品、电子产品、虚假广告、违法销售）\",\n    \"4\": \"恶意文件（病毒文件，木马文件，恶意apk文件的下载链接以及站点，挂马网站）\",\n    \"5\": \"博彩网站（博彩网站，在线赌博网站）\",\n    \"6\": \"色情网站（涉嫌传播色情内容，提供色情服务的网站）\"，\n    \"7\": \"风险网站（弱类型，传播垃圾信息的网站，如果客户端有阻断，不建议使用这个网站）\"，\n    \"8\": \"违法网站（根据法律法规不能传播的内容，以及侵犯知识产权的类型）\"\n  }",
           "example": "1",
           "member": "int64",
           "name": "EvilClass",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2736,7 +2736,7 @@
           "example": "1",
           "member": "int64",
           "name": "EvilType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2746,7 +2746,7 @@
           "example": "1",
           "member": "int64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2756,7 +2756,7 @@
           "example": "111",
           "member": "int64",
           "name": "DetectTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2766,7 +2766,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Wording",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2776,7 +2776,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "WordingTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2786,7 +2786,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "UrlTypeDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2796,7 +2796,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "EvilClassDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2806,7 +2806,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "EvilTypeDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2816,7 +2816,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "LevelDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

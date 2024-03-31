@@ -1075,13 +1075,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定失败的监听器ID，如为空表示全部绑定成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定失败的监听器ID，如为空表示全部绑定成功。",
           "example": "[]",
           "member": "string",
           "name": "FailListenerIdSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

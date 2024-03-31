@@ -21,27 +21,27 @@ Output:
 ```
 {
     "Response": {
+        "PageIndex": 1,
+        "PageSize": 1,
+        "TotalCount": 1,
+        "TotalPage": 1,
         "Items": [
             {
-                "TaskId": "202205058668000",
-                "InstanceId": "202205058668000",
-                "CurRunDate": "2020-05-05 12:00:00",
-                "IssueDate": "2020-05-05 12:01:00",
-                "TaskState": "2",
-                "TotalReadRecords": 2000000,
-                "TotalReadBytes": 89898292,
-                "TotalWriteRecords": 2000000,
-                "TotalWriteBytes": 89898292,
-                "RecordSpeed": 8000,
-                "ByteSpeed": 3.5,
-                "TotalErrorRecords": 0
+                "TaskId": "abc",
+                "InstanceId": "abc",
+                "CurRunDate": "abc",
+                "IssueDate": "abc",
+                "TaskState": "abc",
+                "TotalReadRecords": 1,
+                "TotalReadBytes": 1,
+                "TotalWriteRecords": 1,
+                "TotalWriteBytes": 1,
+                "RecordSpeed": 1,
+                "ByteSpeed": 0,
+                "TotalErrorRecords": 1
             }
         ],
-        "PageIndex": 1,
-        "PageSize": 10,
-        "TotalCount": 29,
-        "TotalPage": 3,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

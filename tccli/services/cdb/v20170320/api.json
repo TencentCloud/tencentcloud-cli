@@ -974,9 +974,9 @@
       "status": "online"
     },
     "ReleaseIsolatedDBInstances": {
-      "document": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。",
+      "document": "本接口（ReleaseIsolatedDBInstances）用于恢复已隔离云数据库实例。仅用于按量计费实例的解隔离，包年包月实例的解隔离请使用 RenewDBInstance 。",
       "input": "ReleaseIsolatedDBInstancesRequest",
-      "name": "解隔离云数据库实例",
+      "name": "解隔离按量计费云数据库实例",
       "output": "ReleaseIsolatedDBInstancesResponse",
       "status": "online"
     },
@@ -16807,7 +16807,7 @@
           "example": "无",
           "member": "ReleaseResult",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

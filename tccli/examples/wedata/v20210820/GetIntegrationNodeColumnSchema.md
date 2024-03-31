@@ -16,19 +16,21 @@ Output:
     "Response": {
         "Schemas": [
             {
-                "Name": "a",
-                "Value": "int"
-            },
-            {
-                "Name": "b",
-                "Value": "string"
-            },
-            {
-                "Name": "c",
-                "Value": "int"
+                "Id": "abc",
+                "Name": "abc",
+                "Value": "abc",
+                "Type": "abc",
+                "Properties": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "Alias": "abc",
+                "Comment": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

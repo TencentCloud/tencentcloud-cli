@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata CheckTaskNameExist --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskName xx \
+    --ProjectId abc \
+    --TaskName abc \
     --TypeId 27
 ```
 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

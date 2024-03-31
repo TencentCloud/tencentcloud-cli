@@ -854,6 +854,13 @@
       "output": "RollBackClusterResponse",
       "status": "online"
     },
+    "RollbackToNewCluster": {
+      "document": "回档到新集群",
+      "input": "RollbackToNewClusterRequest",
+      "name": "回档到新集群",
+      "output": "RollbackToNewClusterResponse",
+      "status": "online"
+    },
     "SearchClusterDatabases": {
       "document": "本接口(SearchClusterDatabases)搜索集群数据库列表",
       "input": "SearchClusterDatabasesRequest",
@@ -17111,6 +17118,254 @@
         }
       ],
       "usage": "out"
+    },
+    "RollbackToNewClusterRequest": {
+      "document": "RollbackToNewCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回档时，传入源集群ID，用于查找源poolId",
+          "example": "cynosdbmysql-xxxxxxxx",
+          "member": "string",
+          "name": "OriginalClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
+          "example": "MyClusterName",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属VPC网络ID",
+          "example": "vpc-1ptuei0b",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属子网ID",
+          "example": "subnet-1tmw9t4o",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Db类型\n当DbType为MYSQL时可选(默认NORMAL)：\n<li>NORMAL</li>\n<li>SERVERLESS</li>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "1.0",
+          "member": "float",
+          "name": "MinCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "2.0",
+          "member": "float",
+          "name": "MaxCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoPause",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
+          "example": "600",
+          "member": "int64",
+          "name": "AutoPauseDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id数组",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略Id数组",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ClusterParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0-下单并支付 1-下单",
+          "example": "无",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群创建需要绑定的tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
+          "example": "无",
+          "member": "InstanceInitInfo",
+          "name": "InstanceInitInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RollbackId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间点回档，指定时间；快照回档，快照时间",
+          "example": "2021-04-26 18:13:10",
+          "member": "string",
+          "name": "ExpectTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackToNewClusterResponse": {
+      "document": "RollbackToNewCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20190522160000003106844584180998",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20190522112283\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbpg-ins-67rmucgk\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RuleFilters": {
       "document": "审计规则的规则过滤条件",

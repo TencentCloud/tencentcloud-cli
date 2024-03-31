@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeRuleGroupTable --cli-unfold-argument  \
-    --TableId 
+    --TableId 2389yuho80yhu
 ```
 
 Output: 
@@ -14,51 +14,59 @@ Output:
 {
     "Response": {
         "Data": {
+            "TableInfo": {
+                "TableId": "896rtfyoghuibasd",
+                "TableName": "teste",
+                "InstanceId": "5679t8ygihub",
+                "DatasourceId": "6789",
+                "DatasourceName": "hive-uibgj97ug",
+                "DatasourceType": 0,
+                "DatabaseId": "7tyg89i978yuh",
+                "DatabaseName": "dbName",
+                "ProjectId": 0,
+                "UserId": 0
+            },
             "RuleGroups": [
                 {
-                    "CycleTaskId": "xx",
-                    "EndTime": "xx",
-                    "AssociateTaskIds": [
-                        "xx"
-                    ],
-                    "CycleDesc": "xx",
-                    "CycleType": "xx",
-                    "DelayTime": 0,
-                    "StartTime": "xx",
                     "Id": 0,
                     "MonitorType": 0,
-                    "TaskAction": "xx",
-                    "CycleStep": 0
+                    "StartTime": "2023-10-01",
+                    "EndTime": "2023-10-01",
+                    "CycleType": "10",
+                    "CycleStep": 0,
+                    "CycleDesc": "abc",
+                    "TaskAction": "abc",
+                    "DelayTime": 0,
+                    "CycleTaskId": "abc",
+                    "AssociateTaskIds": [
+                        "abc"
+                    ]
                 }
             ],
-            "TableInfo": {
-                "DatabaseId": "xx",
-                "DatasourceName": "xx",
-                "InstanceId": "xx",
-                "TableName": "xx",
-                "UserId": 0,
-                "TableId": "xx",
-                "DatabaseName": "xx",
-                "ProjectId": 0,
-                "DatasourceType": 0,
-                "DatasourceId": "xx"
-            },
             "Subscriptions": [
                 {
+                    "RuleGroupId": 1,
                     "Receivers": [
                         {
                             "ReceiverUserId": 1,
-                            "ReceiverName": "xx"
+                            "ReceiverName": "zhangan"
                         }
                     ],
                     "SubscribeType": [
                         1
                     ],
-                    "RuleGroupId": 1
+                    "WebHooks": [
+                        {
+                            "HookType": "1",
+                            "HookAddress": "zhangsan"
+                        }
+                    ],
+                    "RuleId": 1,
+                    "RuleName": "规则1"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

@@ -1000,6 +1000,14 @@
         "title": "集群回档"
       }
     ],
+    "RollbackToNewCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackToNewCluster\n<公共请求参数>\n\n{\n    \"Zone\": \"abc\",\n    \"UniqVpcId\": \"abc\",\n    \"UniqSubnetId\": \"abc\",\n    \"ClusterName\": \"abc\",\n    \"RollbackId\": 1,\n    \"OriginalClusterId\": \"abc\",\n    \"ExpectTime\": \"abc\",\n    \"AutoVoucher\": 0,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"DbMode\": \"abc\",\n    \"MinCpu\": 0,\n    \"MaxCpu\": 0,\n    \"AutoPause\": \"abc\",\n    \"AutoPauseDelay\": 0,\n    \"SecurityGroupIds\": [\n        \"abc\"\n    ],\n    \"AlarmPolicyIds\": [\n        \"abc\"\n    ],\n    \"ClusterParams\": [\n        {\n            \"ParamName\": \"abc\",\n            \"CurrentValue\": \"abc\",\n            \"OldValue\": \"abc\"\n        }\n    ],\n    \"ParamTemplateId\": 0,\n    \"InstanceInitInfos\": [\n        {\n            \"Cpu\": 0,\n            \"Memory\": 0,\n            \"InstanceType\": \"abc\",\n            \"InstanceCount\": 0,\n            \"MinRoCount\": 0,\n            \"MaxRoCount\": 0,\n            \"MinRoCpu\": 0,\n            \"MaxRoCpu\": 0\n        }\n    ],\n    \"DealMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ResourceIds\": [\n            \"abc\"\n        ],\n        \"ClusterIds\": [\n            \"abc\"\n        ],\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "回档到新集群"
+      }
+    ],
     "SearchClusterDatabases": [
       {
         "document": "",

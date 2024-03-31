@@ -274,6 +274,15 @@
           "name": "Tags",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "无",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

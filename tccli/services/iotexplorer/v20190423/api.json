@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BindCloudStorageUser": {
+      "document": "绑定云存用户",
+      "input": "BindCloudStorageUserRequest",
+      "name": "绑定云存用户",
+      "output": "BindCloudStorageUserResponse",
+      "status": "online"
+    },
     "BindDevices": {
       "document": "批量绑定子设备",
       "input": "BindDevicesRequest",
@@ -56,6 +63,13 @@
       "output": "CreateFenceBindResponse",
       "status": "online"
     },
+    "CreateIotVideoCloudStorage": {
+      "document": "开通云存服务",
+      "input": "CreateIotVideoCloudStorageRequest",
+      "name": "开通video云存服务",
+      "output": "CreateIotVideoCloudStorageResponse",
+      "status": "online"
+    },
     "CreateLoRaFrequency": {
       "document": "创建 LoRa 自定义频点",
       "input": "CreateLoRaFrequencyRequest",
@@ -110,6 +124,13 @@
       "input": "CreateTopicRuleRequest",
       "name": "创建规则",
       "output": "CreateTopicRuleResponse",
+      "status": "online"
+    },
+    "DeleteCloudStorageEvent": {
+      "document": "删除云存事件",
+      "input": "DeleteCloudStorageEventRequest",
+      "name": "删除云存事件",
+      "output": "DeleteCloudStorageEventResponse",
       "status": "online"
     },
     "DeleteDevice": {
@@ -203,6 +224,90 @@
       "output": "DescribeBindedProductsResponse",
       "status": "online"
     },
+    "DescribeCloudStorage": {
+      "document": "获取设备云存服务详情",
+      "input": "DescribeCloudStorageRequest",
+      "name": "获取设备云存服务详情",
+      "output": "DescribeCloudStorageResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageDate": {
+      "document": "获取具有云存的日期",
+      "input": "DescribeCloudStorageDateRequest",
+      "name": "获取具有云存的日期",
+      "output": "DescribeCloudStorageDateResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageEvents": {
+      "document": "拉取云存事件列表",
+      "input": "DescribeCloudStorageEventsRequest",
+      "name": "拉取云存事件列表",
+      "output": "DescribeCloudStorageEventsResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageMultiThumbnail": {
+      "document": "拉取多个云存事件缩略图",
+      "input": "DescribeCloudStorageMultiThumbnailRequest",
+      "name": "拉取多个云存事件缩略图",
+      "output": "DescribeCloudStorageMultiThumbnailResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageOrder": {
+      "document": "查询云存服务详情",
+      "input": "DescribeCloudStorageOrderRequest",
+      "name": "查询云存服务详情",
+      "output": "DescribeCloudStorageOrderResponse",
+      "status": "online"
+    },
+    "DescribeCloudStoragePackageConsumeDetails": {
+      "document": "获取云存套餐包消耗详细记录",
+      "input": "DescribeCloudStoragePackageConsumeDetailsRequest",
+      "name": "获取云存套餐包消耗详细记录",
+      "output": "DescribeCloudStoragePackageConsumeDetailsResponse",
+      "status": "online"
+    },
+    "DescribeCloudStoragePackageConsumeStats": {
+      "document": "获取云存套餐包消耗统计",
+      "input": "DescribeCloudStoragePackageConsumeStatsRequest",
+      "name": "获取云存套餐包消耗统计",
+      "output": "DescribeCloudStoragePackageConsumeStatsResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageStreamData": {
+      "document": "获取设备图片流数据",
+      "input": "DescribeCloudStorageStreamDataRequest",
+      "name": "获取设备图片流数据",
+      "output": "DescribeCloudStorageStreamDataResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageThumbnail": {
+      "document": "拉取云存事件缩略图",
+      "input": "DescribeCloudStorageThumbnailRequest",
+      "name": "拉取云存事件缩略图",
+      "output": "DescribeCloudStorageThumbnailResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageThumbnailList": {
+      "document": "批量拉取云存事件缩略图",
+      "input": "DescribeCloudStorageThumbnailListRequest",
+      "name": "批量拉取云存事件缩略图",
+      "output": "DescribeCloudStorageThumbnailListResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageTime": {
+      "document": "获取某一天云存时间轴",
+      "input": "DescribeCloudStorageTimeRequest",
+      "name": "获取某一天云存时间轴",
+      "output": "DescribeCloudStorageTimeResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageUsers": {
+      "document": "拉取云存用户列表",
+      "input": "DescribeCloudStorageUsersRequest",
+      "name": "拉取云存用户列表",
+      "output": "DescribeCloudStorageUsersResponse",
+      "status": "online"
+    },
     "DescribeDevice": {
       "document": "用于查看某个设备的详细信息",
       "input": "DescribeDeviceRequest",
@@ -243,6 +348,13 @@
       "input": "DescribeDeviceLocationSolveRequest",
       "name": "获取实时位置解析",
       "output": "DescribeDeviceLocationSolveResponse",
+      "status": "online"
+    },
+    "DescribeDevicePackages": {
+      "document": "根据设备信息拉取有效套餐列表",
+      "input": "DescribeDevicePackagesRequest",
+      "name": "拉取有效云存套餐列表",
+      "output": "DescribeDevicePackagesResponse",
       "status": "online"
     },
     "DescribeDevicePositionList": {
@@ -315,6 +427,20 @@
       "output": "DescribeModelDefinitionResponse",
       "status": "online"
     },
+    "DescribePackageConsumeTask": {
+      "document": "查询套餐消耗记录详情",
+      "input": "DescribePackageConsumeTaskRequest",
+      "name": "查询套餐消耗记录详情",
+      "output": "DescribePackageConsumeTaskResponse",
+      "status": "online"
+    },
+    "DescribePackageConsumeTasks": {
+      "document": "查询套餐消耗记录列表",
+      "input": "DescribePackageConsumeTasksRequest",
+      "name": "查询套餐消耗记录列表",
+      "output": "DescribePackageConsumeTasksResponse",
+      "status": "online"
+    },
     "DescribePositionFenceList": {
       "document": "获取围栏列表",
       "input": "DescribePositionFenceListRequest",
@@ -383,6 +509,13 @@
       "input": "GenSingleDeviceSignatureOfPublicRequest",
       "name": "生成单个设备绑定的签名",
       "output": "GenSingleDeviceSignatureOfPublicResponse",
+      "status": "online"
+    },
+    "GenerateSignedVideoURL": {
+      "document": "获取视频防盗链播放URL",
+      "input": "GenerateSignedVideoURLRequest",
+      "name": "获取视频防盗链播放URL",
+      "output": "GenerateSignedVideoURLResponse",
       "status": "online"
     },
     "GetBatchProductionsList": {
@@ -467,6 +600,13 @@
       "input": "GetTopicRuleListRequest",
       "name": "获取规则列表",
       "output": "GetTopicRuleListResponse",
+      "status": "online"
+    },
+    "InheritCloudStorageUser": {
+      "document": "继承云存用户",
+      "input": "InheritCloudStorageUserRequest",
+      "name": "继承云存用户",
+      "output": "InheritCloudStorageUserResponse",
       "status": "online"
     },
     "ListEventHistory": {
@@ -595,6 +735,20 @@
       "output": "ReleaseStudioProductResponse",
       "status": "online"
     },
+    "ResetCloudStorage": {
+      "document": "重置云存服务",
+      "input": "ResetCloudStorageRequest",
+      "name": "重置云存服务",
+      "output": "ResetCloudStorageResponse",
+      "status": "online"
+    },
+    "ResetCloudStorageEvent": {
+      "document": "重置云存事件",
+      "input": "ResetCloudStorageEventRequest",
+      "name": "重置云存事件",
+      "output": "ResetCloudStorageEventResponse",
+      "status": "online"
+    },
     "SearchPositionSpace": {
       "document": "搜索位置空间",
       "input": "SearchPositionSpaceRequest",
@@ -614,6 +768,13 @@
       "input": "SearchTopicRuleRequest",
       "name": "搜索规则",
       "output": "SearchTopicRuleResponse",
+      "status": "online"
+    },
+    "TransferCloudStorage": {
+      "document": "转移云存服务",
+      "input": "TransferCloudStorageRequest",
+      "name": "转移云存服务",
+      "output": "TransferCloudStorageResponse",
       "status": "online"
     },
     "UnbindDevices": {
@@ -820,6 +981,51 @@
         }
       ],
       "usage": "out"
+    },
+    "BindCloudStorageUserRequest": {
+      "document": "BindCloudStorageUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindCloudStorageUserResponse": {
+      "document": "BindCloudStorageUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindDeviceInfo": {
       "document": "BindDeviceInfo",
@@ -1191,6 +1397,128 @@
       ],
       "type": "object"
     },
+    "CloudStorageEvent": {
+      "document": "云存事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件起始时间（Unix 时间戳，秒级",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间（Unix 时间戳，秒级",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件缩略图",
+          "example": "/100008401725/AQTV2839QJ/sp01_328202375/events/123.jpg",
+          "member": "string",
+          "name": "Thumbnail",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "low_power",
+          "member": "string",
+          "name": "EventId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudStorageTimeData": {
+      "document": "云存时间轴接口返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存时间轴信息列表",
+          "example": "无",
+          "member": "CloudStorageTimeInfo",
+          "name": "TimeList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "播放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudStorageTimeInfo": {
+      "document": "云存时间轴信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1642661618",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudStorageUserInfo": {
+      "document": "云存用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ControlDeviceDataRequest": {
       "document": "ControlDeviceData请求参数结构体",
       "members": [
@@ -1520,6 +1848,96 @@
     },
     "CreateFenceBindResponse": {
       "document": "CreateFenceBind返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIotVideoCloudStorageRequest": {
+      "document": "CreateIotVideoCloudStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐ID：\nyc1m3d ： 全时3天存储月套餐。\nyc1m7d ： 全时7天存储月套餐。\nyc1m30d ：全时30天存储月套餐。\nyc1y3d ：全时3天存储年套餐。\nyc1y7d ：全时7天存储年套餐。\nyc1y30d ：全时30天存储年套餐。\nye1m3d ：事件3天存储月套餐。\nye1m7d ：事件7天存储月套餐。\nye1m30d ：事件30天存储月套餐 。\nye1y3d ：事件3天存储年套餐。\nye1y7d ：事件7天存储年套餐。\nye1y30d ：事件30天存储年套餐。\nyc1w7d : 全时7天存储周套餐。\nye1w7d : 事件7天存储周套餐。\nlye1m3d：低功耗事件3天月套餐。\nlye1m7d：低功耗事件7天月套餐。\nlye1m30d：低功耗事件30天月套餐。\nlye1y3d：低功耗事件3天年套餐。\nlye1y7d：低功耗事件7天年套餐。\nlye1y30d：低功耗事件30天年套餐。",
+          "example": "yc1m3d",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Override",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。",
+          "example": "front",
+          "member": "string",
+          "name": "PackageQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单id",
+          "example": "slfie21321",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIotVideoCloudStorageResponse": {
+      "document": "CreateIotVideoCloudStorage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2102,6 +2520,87 @@
       ],
       "type": "object"
     },
+    "DeleteCloudStorageEventRequest": {
+      "document": "DeleteCloudStorageEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件id",
+          "example": "id1_data",
+          "member": "string",
+          "name": "EventId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，unix时间",
+          "example": "32874",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，unix时间",
+          "example": "234ui32",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudStorageEventResponse": {
+      "document": "DeleteCloudStorageEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceRequest": {
       "document": "DeleteDevice请求参数结构体",
       "members": [
@@ -2654,6 +3153,887 @@
       ],
       "type": "object"
     },
+    "DescribeCloudStorageDateRequest": {
+      "document": "DescribeCloudStorageDate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageDateResponse": {
+      "document": "DescribeCloudStorageDate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存日期数组，[\"2021-01-05\",\"2021-01-06\"]",
+          "example": "[\"2021-01-14\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsRequest": {
+      "document": "DescribeCloudStorageEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "QDA1PZLBNB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev01",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
+          "example": "low_voltage",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsResponse": {
+      "document": "DescribeCloudStorageEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存事件列表",
+          "example": "无",
+          "member": "CloudStorageEvent",
+          "name": "Events",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拉取结果是否已经结束",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内部结果数量，并不等同于事件总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频播放URL",
+          "example": "http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageMultiThumbnailRequest": {
+      "document": "DescribeCloudStorageMultiThumbnail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多个缩略图文件名根据 | 分割",
+          "example": "\"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg|/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"",
+          "member": "string",
+          "name": "MultiThumbnail",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageMultiThumbnailResponse": {
+      "document": "DescribeCloudStorageMultiThumbnail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址",
+          "example": "无",
+          "member": "ThumbnailURLInfoList",
+          "name": "ThumbnailURLInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageOrderRequest": {
+      "document": "DescribeCloudStorageOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单id",
+          "example": "\"sdfsdfsd\"",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageOrderResponse": {
+      "document": "DescribeCloudStorageOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存套餐开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfsdf\"",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐状态\n0：等待生效\n1: 已过期\n2:生效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通道id",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStoragePackageConsumeDetailsRequest": {
+      "document": "DescribeCloudStoragePackageConsumeDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始日期",
+          "example": "2021-11-02",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束日期",
+          "example": "2021-11-03",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStoragePackageConsumeDetailsResponse": {
+      "document": "DescribeCloudStoragePackageConsumeDetails返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStoragePackageConsumeStatsRequest": {
+      "document": "DescribeCloudStoragePackageConsumeStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始日期",
+          "example": "2021-11-02",
+          "member": "date",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束日期，开始与结束日期间隔不可超过一年",
+          "example": "2021-11-03",
+          "member": "date",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStoragePackageConsumeStatsResponse": {
+      "document": "DescribeCloudStoragePackageConsumeStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计列表详情",
+          "example": "无",
+          "member": "PackageConsumeStat",
+          "name": "Stats",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageRequest": {
+      "document": "DescribeCloudStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存用户ID",
+          "example": "default",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备不填 NVR设备必填 默认为无\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageResponse": {
+      "document": "DescribeCloudStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存开启状态，1为开启，0为未开启或已过期",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存类型，1为全时云存，2为事件云存",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐过期时间",
+          "example": "1606963491",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存回看时长",
+          "example": "86400",
+          "member": "uint64",
+          "name": "ShiftDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageStreamDataRequest": {
+      "document": "DescribeCloudStorageStreamData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "user",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片流事件开始时间",
+          "example": "1660561529",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageStreamDataResponse": {
+      "document": "DescribeCloudStorageStreamData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片流视频地址",
+          "example": "https://test.cos.ap-guangzhou.myqcloud.com/test.mjpg",
+          "member": "string",
+          "name": "VideoStream",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片流音频地址",
+          "example": "https://test.cos.ap-guangzhou.myqcloud.com/test.aac",
+          "member": "string",
+          "name": "AudioStream",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailListRequest": {
+      "document": "DescribeCloudStorageThumbnailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩略图文件名列表",
+          "example": "[\"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\",\"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"]",
+          "member": "string",
+          "name": "ThumbnailList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailListResponse": {
+      "document": "DescribeCloudStorageThumbnailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址",
+          "example": "无",
+          "member": "ThumbnailURLInfoList",
+          "name": "ThumbnailURLInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailRequest": {
+      "document": "DescribeCloudStorageThumbnail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩略图文件名",
+          "example": "/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg",
+          "member": "string",
+          "name": "Thumbnail",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailResponse": {
+      "document": "DescribeCloudStorageThumbnail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址",
+          "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
+          "member": "string",
+          "name": "ThumbnailURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缩略图访问地址的过期时间",
+          "example": "1690195335",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageTimeRequest": {
+      "document": "DescribeCloudStorageTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "AQTV2839QJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "p2p_32731213_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存日期，例如\"2020-01-05\"",
+          "example": "2021-01-14",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，unix时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，unix时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageTimeResponse": {
+      "document": "DescribeCloudStorageTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接口返回数据",
+          "example": "无",
+          "member": "CloudStorageTimeData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageUsersRequest": {
+      "document": "DescribeCloudStorageUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageUsersResponse": {
+      "document": "DescribeCloudStorageUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "无",
+          "member": "CloudStorageUserInfo",
+          "name": "Users",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceBindGatewayRequest": {
       "document": "DescribeDeviceBindGateway请求参数结构体",
       "members": [
@@ -3054,6 +4434,98 @@
           "name": "Accuracy",
           "required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicePackagesRequest": {
+      "document": "DescribeDevicePackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页拉取偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "sdfdsf",
+          "member": "string",
+          "name": "CSUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道id",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicePackagesResponse": {
+      "document": "DescribeDevicePackages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效云存套餐数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效云存套餐列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PackageInfo",
+          "name": "Packages",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -3881,6 +5353,99 @@
           "name": "Model",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageConsumeTaskRequest": {
+      "document": "DescribePackageConsumeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "12",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageConsumeTaskResponse": {
+      "document": "DescribePackageConsumeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载的url，文件详情是\b套餐包消耗详情",
+          "example": "https://video-cv-test-1256872341.cos.ap-guangzhou.myqcloud.com/4",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageConsumeTasksRequest": {
+      "document": "DescribePackageConsumeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页单页量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，第一页为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageConsumeTasksResponse": {
+      "document": "DescribePackageConsumeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "PackageConsumeTask",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5278,6 +6843,61 @@
       ],
       "type": "object"
     },
+    "GenerateSignedVideoURLRequest": {
+      "document": "GenerateSignedVideoURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频播放原始URL地址",
+          "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "播放链接过期时间",
+          "example": "1619331648",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备不填 NVR设备必填 默认为无\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateSignedVideoURLResponse": {
+      "document": "GenerateSignedVideoURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频防盗链播放URL",
+          "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x",
+          "member": "string",
+          "name": "SignedVideoURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetBatchProductionsListRequest": {
       "document": "GetBatchProductionsList请求参数结构体",
       "members": [
@@ -6138,6 +7758,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InheritCloudStorageUserRequest": {
+      "document": "InheritCloudStorageUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "WYILLHRQ4",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原始用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标用户ID",
+          "example": "user2",
+          "member": "string",
+          "name": "ToUserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InheritCloudStorageUserResponse": {
+      "document": "InheritCloudStorageUser返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7530,6 +9204,204 @@
       ],
       "type": "object"
     },
+    "PackageConsumeStat": {
+      "document": "云存套餐包消耗统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存套餐包id",
+          "example": "yc1m3d ",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐包名称",
+          "example": "全时3天月卡",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Cnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包单价，单位分",
+          "example": "595",
+          "member": "int64",
+          "name": "Price",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗来源，1预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageConsumeTask": {
+      "document": "套餐包消耗任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "121",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创始时间",
+          "example": "2021-11-02 11:11:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，1待处理，2处理中，3已完成",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PackageInfo": {
+      "document": "结构体（PackageInfo）记录了设备拥有的有效套餐信息，包括云存开启状态、云存类型、云存回看时长、云存套餐过期时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存开启状态，0为未开启，2为正在生效，1为已过期\n注：这里只返回状态为0的数据",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存类型，1为全时云存，2为事件云存",
+          "example": "1",
+          "member": "uint64",
+          "name": "CSType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存回看时长",
+          "example": "259200",
+          "member": "uint64",
+          "name": "CSShiftDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐过期时间",
+          "example": "1697870539",
+          "member": "int64",
+          "name": "CSExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690254147",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690254147",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfds\"",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sdfsdf\"",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道id",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gjhghjk",
+          "member": "string",
+          "name": "CSUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PositionFenceInfo": {
       "document": "围栏详细信息(包含创建时间及更新时间)",
       "members": [
@@ -8501,6 +10373,114 @@
       ],
       "type": "object"
     },
+    "ResetCloudStorageEventRequest": {
+      "document": "ResetCloudStorageEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageEventResponse": {
+      "document": "ResetCloudStorageEvent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageRequest": {
+      "document": "ResetCloudStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云存用户Id，为空则为默认云存空间。",
+          "example": "username",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetCloudStorageResponse": {
+      "document": "ResetCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchKeyword": {
       "document": "搜索关键词",
       "members": [
@@ -8738,6 +10718,34 @@
       ],
       "type": "object"
     },
+    "ThumbnailURLInfoList": {
+      "document": "缩略图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
+          "member": "string",
+          "name": "ThumbnailURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩略图访问地址的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690195335",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TopicItem": {
       "document": "Topic信息, 包括Topic名字和权限",
       "members": [
@@ -8911,6 +10919,60 @@
         }
       ],
       "usage": "in"
+    },
+    "TransferCloudStorageRequest": {
+      "document": "TransferCloudStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已开通云存的设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未开通云存的设备名称",
+          "example": "event_36502632_2",
+          "member": "string",
+          "name": "ToDeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未开通云存的设备产品ID",
+          "example": "T6YxxxxS8F",
+          "member": "string",
+          "name": "ToProductId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferCloudStorageResponse": {
+      "document": "TransferCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UnbindDevicesRequest": {
       "document": "UnbindDevices请求参数结构体",

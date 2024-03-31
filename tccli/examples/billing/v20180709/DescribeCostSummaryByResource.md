@@ -16,55 +16,81 @@ Output:
 ```
 {
     "Response": {
+        "Ready": 1,
+        "Total": {
+            "RealTotalCost": "abc"
+        },
         "ConditionValue": {
             "Business": [
                 {
-                    "BusinessCode": "p_cdb",
-                    "BusinessCodeName": "云数据库MySQL"
+                    "BusinessCode": "abc",
+                    "BusinessCodeName": "abc"
                 }
             ],
             "Project": [
                 {
-                    "ProjectId": "1003540",
-                    "ProjectName": "默认项目"
+                    "ProjectId": "abc",
+                    "ProjectName": "abc"
                 }
             ],
             "Region": [
                 {
-                    "RegionId": "1",
-                    "RegionName": "华南地区（广州）"
+                    "RegionId": "abc",
+                    "RegionName": "abc"
                 }
             ],
             "PayMode": [
                 {
-                    "PayMode": "prePay",
-                    "PayModeName": "包年包月"
+                    "PayMode": "abc",
+                    "PayModeName": "abc"
                 }
             ]
         },
-        "Total": {
-            "RealTotalCost": "510.15"
-        },
+        "RecordNum": 1,
         "Data": [
             {
-                "BusinessCode": "billVirtualId",
-                "BusinessCodeName": "月度计费精度差异",
-                "ConsumptionTypeName": "新购",
-                "ResourceId": "billVirtualId",
-                "ResourceName": "扣费精度补偿",
-                "RealTotalCost": "-0.69",
-                "CashPayAmount": "-0.69",
-                "RegionId": "0",
-                "RegionName": "其他",
-                "PayMode": "postPay",
-                "PayModeName": "按量计费",
-                "ProjectId": "0",
-                "ProjectName": "默认项目"
+                "ResourceId": "abc",
+                "ResourceName": "abc",
+                "RealTotalCost": "abc",
+                "CashPayAmount": "abc",
+                "ProjectId": "abc",
+                "ProjectName": "abc",
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "PayMode": "abc",
+                "PayModeName": "abc",
+                "BusinessCode": "abc",
+                "BusinessCodeName": "abc",
+                "ConsumptionTypeName": "abc",
+                "RealCost": "abc",
+                "FeeBeginTime": "abc",
+                "FeeEndTime": "abc",
+                "DayDiff": "abc",
+                "DailyTotalCost": "abc",
+                "OrderId": "abc",
+                "VoucherPayAmount": "abc",
+                "IncentivePayAmount": "abc",
+                "TransferPayAmount": "abc",
+                "PayerUin": "abc",
+                "OwnerUin": "abc",
+                "OperateUin": "abc",
+                "ProductCode": "abc",
+                "ProductCodeName": "abc",
+                "RegionType": "abc",
+                "RegionTypeName": "abc",
+                "Extend1": "abc",
+                "Extend2": "abc",
+                "Extend3": "abc",
+                "Extend4": "abc",
+                "Extend5": "abc",
+                "InstanceType": "abc",
+                "InstanceTypeName": "abc",
+                "PayTime": "abc",
+                "ZoneName": "abc",
+                "ComponentConfig": "abc"
             }
         ],
-        "RecordNum": 29,
-        "Ready": 1,
-        "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata DescribeRuleHistoryByPage --cli-unfold-argument  \
-    --ProjectId 1 \
+    --ProjectId abc \
     --PageNumber 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --PageSize 1
+    --PageSize 1 \
+    --Filters.0.Name tableId \
+    --Filters.0.Values 968tygoiuhb087yefg
 ```
 
 Output: 
@@ -21,15 +21,15 @@ Output:
             "TotalCount": 1,
             "Items": [
                 {
-                    "AlterTime": "xx",
-                    "AlterContent": "xx",
+                    "RuleId": 1,
+                    "AlterTime": "2023-10-01",
+                    "AlterContent": "content",
                     "OperatorUserId": 1,
-                    "OperatorName": "xx",
-                    "RuleId": 1
+                    "OperatorName": ">"
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

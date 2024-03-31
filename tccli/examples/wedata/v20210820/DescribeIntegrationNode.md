@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationNode --cli-unfold-argument  \
-    --ProjectId xx \
-    --Id xx \
-    --TaskType 201
+    --Id abc \
+    --ProjectId abc \
+    --TaskType 1
 ```
 
 Output: 
@@ -16,59 +16,77 @@ Output:
 {
     "Response": {
         "NodeInfo": {
-            "NodeType": "xx",
-            "Description": "xx",
-            "CreatorUin": "xx",
-            "DataSourceType": "xx",
-            "ProjectId": "xx",
-            "OwnerUin": "xx",
-            "ExtConfig": [
+            "Id": "abc",
+            "TaskId": "abc",
+            "Name": "abc",
+            "NodeType": "abc",
+            "DataSourceType": "abc",
+            "Description": "abc",
+            "DatasourceId": "abc",
+            "Config": [
                 {
-                    "Name": "xx",
-                    "Value": "xx"
+                    "Name": "abc",
+                    "Value": "abc"
                 }
             ],
-            "DatasourceId": "xx",
+            "ExtConfig": [
+                {
+                    "Name": "abc",
+                    "Value": "abc"
+                }
+            ],
+            "Schema": [
+                {
+                    "Id": "abc",
+                    "Name": "abc",
+                    "Value": "abc",
+                    "Type": "abc",
+                    "Properties": [
+                        {
+                            "Name": "abc",
+                            "Value": "abc"
+                        }
+                    ],
+                    "Alias": "abc",
+                    "Comment": "abc"
+                }
+            ],
             "NodeMapping": {
-                "SourceId": "xx",
-                "SchemaMappings": [
-                    {
-                        "SinkSchemaId": "xx",
-                        "SourceSchemaId": "xx"
-                    }
-                ],
-                "SinkId": "xx",
+                "SourceId": "abc",
+                "SinkId": "abc",
                 "SourceSchema": [
                     {
-                        "Type": "xx",
-                        "Id": "xx",
-                        "Value": "xx",
-                        "Name": "xx"
+                        "Id": "abc",
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Type": "abc",
+                        "Alias": "abc",
+                        "Properties": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Comment": "abc"
+                    }
+                ],
+                "SchemaMappings": [
+                    {
+                        "SourceSchemaId": "abc",
+                        "SinkSchemaId": "abc"
                     }
                 ]
             },
-            "TaskId": "xx",
-            "AppId": "xx",
-            "Schema": [
-                {
-                    "Type": "xx",
-                    "Id": "xx",
-                    "Value": "xx",
-                    "Name": "xx"
-                }
-            ],
-            "Config": [
-                {
-                    "Name": "xx",
-                    "Value": "xx"
-                }
-            ],
-            "Id": "xx",
-            "OperatorUin": "xx",
-            "Name": "xx"
+            "AppId": "abc",
+            "ProjectId": "abc",
+            "CreatorUin": "abc",
+            "OperatorUin": "abc",
+            "OwnerUin": "abc",
+            "CreateTime": "abc",
+            "UpdateTime": "abc"
         },
-        "SourceCheckFlag": false,
-        "RequestId": "xx"
+        "SourceCheckFlag": true,
+        "RequestId": "abc"
     }
 }
 ```

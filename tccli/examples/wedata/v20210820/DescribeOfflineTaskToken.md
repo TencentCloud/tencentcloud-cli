@@ -11,9 +11,9 @@ Output:
 ```
 {
     "Response": {
-        "Token": "xx",
-        "Data": "xx",
-        "RequestId": "xx"
+        "Token": "abc",
+        "Data": "abc",
+        "RequestId": "abc"
     }
 }
 ```

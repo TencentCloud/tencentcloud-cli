@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeStandardRuleDetailInfoList --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId abc \
     --Type 0
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "StandardRuleDetailList": "xx",
-        "RequestId": "xx"
+        "StandardRuleDetailList": "abc",
+        "RequestId": "abc"
     }
 }
 ```

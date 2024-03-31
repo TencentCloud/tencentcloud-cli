@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata ModifyTaskName --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskName xx \
-    --Notes xx \
-    --TaskId xx
+    --TaskName abc \
+    --TaskId abc \
+    --Notes abc \
+    --ProjectId abc
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

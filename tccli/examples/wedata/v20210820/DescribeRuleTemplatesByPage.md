@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DescribeRuleTemplatesByPage --cli-unfold-argument  \
-    --OrderFields.0.Name abc \
-    --OrderFields.0.Direction abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --OrderFields.0.Name id \
+    --OrderFields.0.Direction asc \
+    --Filters.0.Name tableId \
+    --Filters.0.Values t678yuh987tgui \
     --PageNumber 1 \
     --PageSize 1 \
     --ProjectId abc
@@ -24,12 +24,12 @@ Output:
             "Items": [
                 {
                     "RuleTemplateId": 1,
-                    "Name": "abc",
-                    "Description": "abc",
+                    "Name": "规则1",
+                    "Description": "描述",
                     "Type": 1,
                     "SourceObjectType": 1,
                     "SourceObjectDataType": 1,
-                    "SourceContent": "abc",
+                    "SourceContent": "content",
                     "SourceEngineTypes": [
                         1
                     ],
@@ -37,23 +37,23 @@ Output:
                     "CompareType": 1,
                     "CitationCount": 1,
                     "UserId": 1,
-                    "UserName": "abc",
-                    "UpdateTime": "abc",
+                    "UserName": "zhangsan",
+                    "UpdateTime": "2023-10-01",
                     "WhereFlag": true,
                     "MultiSourceFlag": true,
-                    "SqlExpression": "abc",
+                    "SqlExpression": "sql",
                     "SubQualityDim": 1,
                     "ResolvedSqlExpression": {
                         "TableExpressions": [
                             {
                                 "TableExpression": "abc",
                                 "ColumnExpression": [
-                                    "abc"
+                                    "expr"
                                 ]
                             }
                         ],
                         "ParamExpressions": [
-                            "abc"
+                            "expr"
                         ]
                     },
                     "DatasourceTypes": [
@@ -62,7 +62,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

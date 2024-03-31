@@ -48,6 +48,14 @@
         "title": "创建定时任务"
       }
     ],
+    "CreateEnvironment": [
+      {
+        "document": "创建环境",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建环境"
+      }
+    ],
     "CreateFile": [
       {
         "document": "",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCronJobs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"CronJobIds\": [\n        \"xx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除定时任务"
+      }
+    ],
+    "DeleteEnvironments": [
+      {
+        "document": "删除环境",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironments\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除环境"
       }
     ],
     "DeleteFiles": [
@@ -158,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCronJobs\n<公共请求参数>\n\n{\n    \"ProjectIds\": [\n        \"project-xx\"\n    ],\n    \"CronJobIds\": [\n        \"cron-xx\"\n    ],\n    \"OrderBy\": \"Status\",\n    \"Limit\": 10,\n    \"Ascend\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"CronJobSet\": [\n            {\n                \"CreatedAt\": \"2021-09-27T10:46:26+08:00\",\n                \"UpdatedAt\": \"2021-09-27T10:46:26+08:00\",\n                \"CronJobId\": \"cron-xx\",\n                \"Name\": \"hello\",\n                \"Status\": 2,\n                \"ProjectId\": \"1\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "DescribeCronJobs"
+      }
+    ],
+    "DescribeEnvironments": [
+      {
+        "document": "环境列表查询",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "环境列表查询"
       }
     ],
     "DescribeErrorSummary": [
@@ -318,6 +342,14 @@
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCronJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"CronJobId\": \"xx\",\n    \"CronExpression\": \"*/1 * * * *\",\n    \"FrequencyType\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"NoticeId\": \"xx\",\n    \"Name\": \"xx\",\n    \"ScenarioId\": \"xx\",\n    \"ScenarioName\": \"xx\",\n    \"Note\": \"xx\",\n    \"JobOwner\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "更新定时任务"
+      }
+    ],
+    "UpdateEnvironment": [
+      {
+        "document": "更新环境",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEnvironment\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新环境"
       }
     ],
     "UpdateFileScenarioRelation": [

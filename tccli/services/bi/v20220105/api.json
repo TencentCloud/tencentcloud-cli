@@ -844,6 +844,15 @@
           "name": "VpcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作权限限制",
+          "example": "无",
+          "member": "string",
+          "name": "OperationAuthLimit",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1086,6 +1095,15 @@
           "name": "DefaultPanelType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理平台",
+          "example": "无",
+          "member": "string",
+          "name": "ManagePlatform",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3497,6 +3515,15 @@
           "example": "无",
           "member": "string",
           "name": "PanelScope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目管理平台",
+          "example": "无",
+          "member": "string",
+          "name": "ManagePlatform",
           "required": false,
           "type": "string"
         }

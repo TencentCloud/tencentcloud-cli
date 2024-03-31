@@ -1029,7 +1029,7 @@
           "example": "{\"settings\": {\"index.number_of_shards\": 1},\"mappings\": {\"properties\": {\"field1\": {\"type\": \"text\"}}}}",
           "member": "string",
           "name": "IndexMetaJson",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -5084,7 +5084,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中",
+          "document": "实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -5464,7 +5464,7 @@
         },
         {
           "disabled": false,
-          "document": "ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
@@ -5494,7 +5494,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
@@ -5504,7 +5504,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
@@ -5804,7 +5804,7 @@
         },
         {
           "disabled": false,
-          "document": "Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OPEN",
           "member": "string",
           "name": "KibanaAlteringPublicAccess",
@@ -5848,6 +5848,26 @@
           "example": "http://xxx.com",
           "member": "string",
           "name": "CustomKibanaPrivateUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点出站访问详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutboundPublicAcl",
+          "name": "OutboundPublicAcls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络连接方案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PrivateLink",
+          "member": "string",
+          "name": "NetConnectScheme",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7111,7 +7131,7 @@
           "example": "NodeId",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7121,7 +7141,7 @@
           "example": "NodeIp",
           "member": "string",
           "name": "NodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7131,7 +7151,7 @@
           "example": "Visible",
           "member": "float",
           "name": "Visible",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7141,7 +7161,7 @@
           "example": "Break",
           "member": "float",
           "name": "Break",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7151,7 +7171,7 @@
           "example": "DiskSize",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7161,7 +7181,7 @@
           "example": "DiskUsage",
           "member": "float",
           "name": "DiskUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7171,7 +7191,7 @@
           "example": "MemSize",
           "member": "int64",
           "name": "MemSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7181,7 +7201,7 @@
           "example": "MemUsage",
           "member": "float",
           "name": "MemUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7191,7 +7211,7 @@
           "example": "CpuNum",
           "member": "int64",
           "name": "CpuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7201,7 +7221,7 @@
           "example": "CpuUsage",
           "member": "float",
           "name": "CpuUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7211,7 +7231,7 @@
           "example": "Zone",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7221,7 +7241,7 @@
           "example": "NodeRole",
           "member": "string",
           "name": "NodeRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7231,7 +7251,7 @@
           "example": "NodeHttpIp",
           "member": "string",
           "name": "NodeHttpIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7241,7 +7261,7 @@
           "example": "JvmMemUsage",
           "member": "float",
           "name": "JvmMemUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7251,7 +7271,7 @@
           "example": "ShardNum",
           "member": "int64",
           "name": "ShardNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7261,7 +7281,7 @@
           "example": "DiskIds",
           "member": "string",
           "name": "DiskIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7271,7 +7291,7 @@
           "example": "Hidden",
           "member": "bool",
           "name": "Hidden",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7281,8 +7301,18 @@
           "example": "false",
           "member": "bool",
           "name": "IsCoordinationNode",
-          "required": false,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM运行状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "CVMStatus",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7598,6 +7628,34 @@
       ],
       "usage": "out"
     },
+    "OutboundPublicAcl": {
+      "document": "节点出站访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "允许节点出站访问的节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许节点出站访问的白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteHostList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ProcessDetail": {
       "document": "任务进度详情",
       "members": [
@@ -7808,6 +7866,15 @@
           "name": "IsOffline",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8960,6 +9027,33 @@
           "name": "Protocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点出站访问详细信息\n",
+          "example": "无",
+          "member": "OutboundPublicAcl",
+          "name": "OutboundPublicAcls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点出站访问操作\nOPEN 开启\nCLOSE 关闭",
+          "example": "无",
+          "member": "string",
+          "name": "OutboundPublicAccess",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架参数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9501,6 +9595,15 @@
           "name": "SkipCheckForceRestart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "cvm延迟上架参数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

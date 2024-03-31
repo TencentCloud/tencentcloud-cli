@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata CommitExportTask --cli-unfold-argument  \
+    --ProjectId 67898 \
     --RuleExecId 1 \
-    --ProjectId 1 \
     --ExportType 1 \
-    --QueueName xx \
-    --ExecutorGroupId xx
+    --ExecutorGroupId 56776578 \
+    --QueueName test
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
     }
 }
 ```

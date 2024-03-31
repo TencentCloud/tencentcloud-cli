@@ -132,7 +132,7 @@
       {
         "document": "创建峰值带宽为 20MB/s，硬盘大小 200GB 的专业版实例",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstancePost\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test45\",\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\",\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"BandWidth\": 20,\n    \"DiskSize\": 200,\n    \"Partition\": 400,\n    \"TopicNum\": 200,\n    \"ZoneId\": 450001\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9432af9d-8c3e-4474-b5eb-0f5298dbb6e5\",\n        \"Result\": {\n            \"Data\": {\n                \"FlowId\": 0\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"abc\",\n            \"ReturnMessage\": \"abc\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建专业版实例"
       }
     ],
@@ -176,6 +176,14 @@
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"MultiZoneFlag\": true,\n    \"ZoneIds\": [\n        450001,\n        450002,\n        450003\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
         "title": "创建后付费多可用区专业版实例"
+      }
+    ],
+    "CreatePrometheus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"SubnetId\": \"xx\",\n    \"VpcId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnMessage\": \"xx\",\n            \"ReturnCode\": \"xx\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "打通普罗米修斯监控"
       }
     ],
     "CreateRoute": [
@@ -464,6 +472,14 @@
         "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeInstancesDetail\n&InstanceId=instance-will-s\n&SearchWord=tre\n&Offset=0\n&Limit=10\n&Status.0=0\n&Status.1=1\n&Status.2=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"InstanceList\": [\n                {\n                    \"InstanceId\": \"abc\",\n                    \"InstanceName\": \"abc\",\n                    \"Vip\": \"abc\",\n                    \"Vport\": \"abc\",\n                    \"VipList\": [\n                        {\n                            \"Vip\": \"abc\",\n                            \"Vport\": \"abc\"\n                        }\n                    ],\n                    \"Status\": 0,\n                    \"Bandwidth\": 0,\n                    \"DiskSize\": 0,\n                    \"ZoneId\": 0,\n                    \"VpcId\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"RenewFlag\": 0,\n                    \"Healthy\": 0,\n                    \"HealthyMessage\": \"abc\",\n                    \"CreateTime\": 0,\n                    \"ExpireTime\": 0,\n                    \"IsInternal\": 0,\n                    \"TopicNum\": 0,\n                    \"Tags\": [\n                        {\n                            \"TagKey\": \"abc\",\n                            \"TagValue\": \"abc\"\n                        }\n                    ],\n                    \"Version\": \"abc\",\n                    \"ZoneIds\": [\n                        0\n                    ],\n                    \"Cvm\": 0,\n                    \"InstanceType\": \"abc\",\n                    \"DiskType\": \"abc\",\n                    \"MaxTopicNumber\": 0,\n                    \"MaxPartitionNumber\": 0,\n                    \"RebalanceTime\": \"abc\",\n                    \"PartitionNumber\": 1,\n                    \"PublicNetworkChargeType\": \"abc\",\n                    \"PublicNetwork\": 0,\n                    \"ClusterType\": \"abc\",\n                    \"Features\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取实例列表详情"
+      }
+    ],
+    "DescribePrometheus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Type\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取实例Prometheus信息"
       }
     ],
     "DescribeRegion": [

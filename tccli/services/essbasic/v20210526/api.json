@@ -155,7 +155,7 @@
       "status": "online"
     },
     "ChannelCreateReleaseFlow": {
-      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n解除协议的模板是官方提供，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均变为已解除状态。</li></ul>",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n解除协议的模板是官方提供，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均变为已解除状态。</li>\n<li>非原合同企业参与人发起解除协议时，需要有<code>解除合同的权限</code>。</li>\n</ul>",
       "input": "ChannelCreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "ChannelCreateReleaseFlowResponse",
@@ -662,7 +662,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li>\n</ul>",
+          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
           "example": "无",
           "member": "int64",
           "name": "FillType",
@@ -6002,6 +6002,15 @@
         },
         {
           "disabled": false,
+          "document": "子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`",
+          "example": "18888888888",
+          "member": "string",
+          "name": "ProxyOperatorMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "Web控制台登录后进入的功能模块,  支持的模块包括：\n<ul>\n<li> **空值** :(默认)企业中心模块</li>\n<li> **DOCUMENT** :合同管理模块</li>\n<li> **TEMPLATE** :企业模板管理模块</li>\n<li> **SEAL** :印章管理模块</li>\n<li> **OPERATOR** :组织管理模块</li></ul>\n注意：\n1、如果EndPoint选择\"CHANNEL\"或\"APP\"，该参数仅支持传递\"SEAL\"，进入印章管理模块\n2、该参数**仅在企业和员工激活已经完成，登录控制台场景才生效**。",
           "example": "SEAL",
           "member": "string",
@@ -8295,7 +8304,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方控件类型为 SIGN_SIGNATURE时，可以指定签署方签名方式\n\tHANDWRITE – 手写签名\n\tOCR_ESIGN -- AI智能识别手写签名\n\tESIGN -- 个人印章类型\n\tSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）",
+          "document": "当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：\n\n<ul><li> <b>HANDWRITE</b> :手写签名。</li>\n<li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li>\n<li> <b>ESIGN</b> :个人印章类型。</li>\n<li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li>\n<li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul>\n\n各种签名的样式可以参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)",
           "example": "[\"OCR_ESIGN\"]",
           "member": "string",
           "name": "ComponentLimitType",
@@ -8349,7 +8358,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素</li></ul>\n\n默认为1(人脸认证 ),2(签署密码)\n\n注: \n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明",
+          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素</li></ul>\n\n默认为1(人脸认证 ),2(签署密码),3(运营商三要素)\n\n注: \n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata CheckIntegrationNodeNameExists --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId abc \
     --Id 0 \
-    --TaskId xx \
-    --Name xx
+    --TaskId abc \
+    --Name abc
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

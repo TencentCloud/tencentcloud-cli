@@ -1303,7 +1303,7 @@
         },
         {
           "disabled": false,
-          "document": "转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_adaptiveDynamicStreaming_{definition}.{format}`。",
+          "document": "转自适应码流后，manifest 文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：{inputName}_adaptiveDynamicStreaming_{definition}.{format}。",
           "example": "{inputName}_adaptiveDynamicStreaming_{definition}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -5455,9 +5455,10 @@
         {
           "disabled": false,
           "document": "视频转动图模板 ID。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5465,9 +5466,10 @@
         {
           "disabled": false,
           "document": "动图在视频中的开始时间，单位为秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -5475,9 +5477,10 @@
         {
           "disabled": false,
           "document": "动图在视频中的结束时间，单位为秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
@@ -5485,19 +5488,21 @@
         {
           "disabled": false,
           "document": "转动图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "转动图后文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_animatedGraphic_{definition}.{format}`。",
-          "example": "",
+          "document": "转动图后文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_animatedGraphic_{definition}.{format}`。",
+          "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5920,8 +5925,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>",
-          "example": "libfdk_aac",
+          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>mp3；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
           "output_required": true,
@@ -5970,8 +5975,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>libmp3lame。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>libfdk_aac：更适合 mp4；</li>\n<li>libmp3lame：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>libfdk_aac；</li>\n<li>libmp3lame。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "libmp3lame",
+          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>mp3；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
           "output_required": false,
@@ -14895,16 +14900,18 @@
           "example": "“”",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "类型，可选值：\n<li>HDR10</li>\n<li>HLG</li>\n默认值：HDR10。\n注意：video的编码方式需要为libx265；\n注意：视频编码位深为10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，可选值：\n<li>HDR10</li>\n<li>HLG</li>\n默认值：HDR10。\n注意：video的编码方式需要为h265；\n注意：视频编码位深为10。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "“”",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15029,7 +15036,7 @@
         },
         {
           "disabled": false,
-          "document": "截取雪碧图后，雪碧图图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}_{number}.{format}`。",
+          "document": "截取雪碧图后，雪碧图图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_imageSprite_{definition}_{number}.{format}`。",
           "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
@@ -22992,7 +22999,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。",
+          "document": "采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。\n",
           "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
@@ -23820,9 +23827,10 @@
         {
           "disabled": false,
           "document": "指定时间点截图模板 ID。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -23830,9 +23838,10 @@
         {
           "disabled": false,
           "document": "截图时间点列表，时间点支持 s、% 两种格式：\n<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ExtTimeOffsetSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -23840,9 +23849,10 @@
         {
           "disabled": false,
           "document": "截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "TimeOffsetSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -23850,9 +23860,10 @@
         {
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -23860,19 +23871,21 @@
         {
           "disabled": false,
           "document": "时间点截图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "时间点截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_snapshotByTimeOffset_{definition}_{number}.{format}`。",
-          "example": "",
+          "document": "时间点截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_snapshotByTimeOffset_{definition}_{number}.{format}`。",
+          "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23880,9 +23893,10 @@
         {
           "disabled": false,
           "document": "时间点截图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -24848,6 +24862,7 @@
           "example": "20",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -24858,6 +24873,7 @@
           "example": "null",
           "member": "RawTranscodeParameter",
           "name": "RawParameter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -24868,6 +24884,7 @@
           "example": "null",
           "member": "OverrideTranscodeParameter",
           "name": "OverrideParameter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -24878,6 +24895,7 @@
           "example": "null",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -24888,6 +24906,7 @@
           "example": "null",
           "member": "MosaicInput",
           "name": "MosaicSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -24898,6 +24917,7 @@
           "example": "null",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -24908,6 +24928,7 @@
           "example": "null",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -24918,16 +24939,18 @@
           "example": "null",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "转码后主文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_transcode_{definition}.{format}`。",
+          "document": "转码后主文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_transcode_{definition}.{format}`。\n",
           "example": "null",
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24938,6 +24961,7 @@
           "example": "null",
           "member": "string",
           "name": "SegmentObjectName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -24948,6 +24972,7 @@
           "example": "null",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -24958,6 +24983,7 @@
           "example": "{   \"HeadSet\": [     {       \"Type\": \"URL\",       \"UrlInputInfo\"",
           "member": "HeadTailParameter",
           "name": "HeadTailParameter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -25694,8 +25720,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
-          "example": "libx264",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
           "output_required": true,
@@ -25799,8 +25825,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码</li>\n<li>libx265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "libx264",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
           "output_required": false,
