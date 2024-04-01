@@ -480,6 +480,24 @@
           "name": "CaseSensitive",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启多可用区",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableMultiZones",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "开启多可用区后，用户的所有可用区和子网信息",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "UserMultiZoneInfos",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2173,6 +2191,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为多可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMultiZones",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户可用区和子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserNetworkInfos",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2329,6 +2367,45 @@
       ],
       "type": "object"
     },
+    "NetworkInfo": {
+      "document": "网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前子网可用ip数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "SubnetIpNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NodeInfo": {
       "document": "NodeInfo",
       "members": [
@@ -2350,6 +2427,56 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点角色名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MASTER",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FE",
+          "member": "string",
+          "name": "ComponentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "core",
+          "member": "string",
+          "name": "NodeRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点上次重启的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastRestartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -1,0 +1,1176 @@
+{
+  "actions": {
+    "CreateApp": {
+      "document": "创建只是引擎应用，包括：知识管理应用、知识摘要应用、标签提取应用。",
+      "input": "CreateAppRequest",
+      "name": "创建应用",
+      "output": "CreateAppResponse",
+      "status": "online"
+    },
+    "DescribeApp": {
+      "document": "获取企业下应用详情",
+      "input": "DescribeAppRequest",
+      "name": "获取企业下应用详情",
+      "output": "DescribeAppResponse",
+      "status": "online"
+    },
+    "GetAppKnowledgeCount": {
+      "document": "获取模型列表",
+      "input": "GetAppKnowledgeCountRequest",
+      "name": "获取知识问答个数",
+      "output": "GetAppKnowledgeCountResponse",
+      "status": "online"
+    },
+    "ListApp": {
+      "document": "获取企业下应用列表",
+      "input": "ListAppRequest",
+      "name": "获取企业下应用列表",
+      "output": "ListAppResponse",
+      "status": "online"
+    },
+    "ListAppCategory": {
+      "document": "应用类型列表",
+      "input": "ListAppCategoryRequest",
+      "name": "应用类型列表",
+      "output": "ListAppCategoryResponse",
+      "status": "online"
+    },
+    "ModifyApp": {
+      "document": "修改应用请求结构体",
+      "input": "ModifyAppRequest",
+      "name": "修改应用请求结构体",
+      "output": "ModifyAppResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-11-30",
+    "api_brief": "提供腾讯云大模型知识引擎API能力",
+    "serviceNameCN": "大模型知识引擎",
+    "serviceShortName": "lke"
+  },
+  "objects": {
+    "AppConfig": {
+      "document": "应用配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识问答管理应用配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeQaConfig",
+          "name": "KnowledgeQa",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识摘要应用配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SummaryConfig",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签提取应用配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassifyConfig",
+          "name": "Classify",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AppInfo": {
+      "document": "应用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppTypeDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用头像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用状态，1：未上线，2：运行中，3：停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AppStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppStatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelAliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AppModel": {
+      "document": "应用模型配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上下文指代轮次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ContextLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BaseConfig": {
+      "document": "应用基础配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人头像",
+          "example": "无",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人描述",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClassifyConfig": {
+      "document": "标签提取配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppModel",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassifyLabel",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ClassifyLabel": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAppRequest": {
+      "document": "CreateApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用基础配置",
+          "example": "无",
+          "member": "BaseConfig",
+          "name": "BaseConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAppResponse": {
+      "document": "CreateApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppRequest": {
+      "document": "DescribeApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppResponse": {
+      "document": "DescribeApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "knowledge_qa",
+          "member": "string",
+          "name": "AppType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型说明",
+          "example": "无",
+          "member": "string",
+          "name": "AppTypeDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型说明",
+          "example": "无",
+          "member": "BaseConfig",
+          "name": "BaseConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用配置",
+          "example": "无",
+          "member": "AppConfig",
+          "name": "AppConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像是否在申诉中",
+          "example": "无",
+          "member": "bool",
+          "name": "AvatarInAppeal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色描述是否在申诉中",
+          "example": "无",
+          "member": "bool",
+          "name": "RoleInAppeal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称是否在申诉中",
+          "example": "无",
+          "member": "bool",
+          "name": "NameInAppeal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "欢迎语是否在申诉中",
+          "example": "无",
+          "member": "bool",
+          "name": "GreetingInAppeal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未知问题回复语是否在申诉中",
+          "example": "无",
+          "member": "bool",
+          "name": "BareAnswerInAppeal",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAppKnowledgeCountRequest": {
+      "document": "GetAppKnowledgeCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型：doc-文档；qa-问答对",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAppKnowledgeCountResponse": {
+      "document": "GetAppKnowledgeCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KnowledgeQaConfig": {
+      "document": "知识问答配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "欢迎语，200字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Greeting",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色描述，300字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoleDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppModel",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识搜索配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeQaSearch",
+          "name": "Search",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识管理输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeQaOutput",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeQaOutput": {
+      "document": "应用管理输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出方式 1：流式 2：非流式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通用模型回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseGeneralKnowledge",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未知回复语，300字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BareAnswer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeQaSearch": {
+      "document": "检索配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答-回复灵活度 1：已采纳答案直接回复 2：已采纳润色后回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ReplyFlexibility",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索增强-搜索引擎状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "UseSearchEngine",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否显示搜索引擎检索状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ShowSearchEngine",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识来源，是否选择\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答最大召回数量, 默认2，限制5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "QaTopN",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档最大召回数量, 默认3，限制5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DocTopN",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ListAppCategoryRequest": {
+      "document": "ListAppCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAppCategoryResponse": {
+      "document": "ListAppCategory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListAppCategoryRspOption",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAppCategoryRspOption": {
+      "document": "应用类型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Logo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListAppRequest": {
+      "document": "ListApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，整型",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码，整型",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键词：应用/修改人",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAppResponse": {
+      "document": "ListApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "AppInfo",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppRequest": {
+      "document": "ModifyApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用基础配置",
+          "example": "无",
+          "member": "BaseConfig",
+          "name": "BaseConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用配置",
+          "example": "无",
+          "member": "AppConfig",
+          "name": "AppConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAppResponse": {
+      "document": "ModifyApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用App\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SummaryConfig": {
+      "document": "知识摘要应用配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppModel",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识摘要输出配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SummaryOutput",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SummaryOutput": {
+      "document": "知识摘要输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出方式 1：流式 2：非流式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出要求 1：文本总结 2：自定义要求\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Requirement",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义要求指令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RequireCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,53 @@
+{
+  "actions": {
+    "CreateApp": [
+      {
+        "document": "创建应用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"知识问答\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "创建应用"
+      }
+    ],
+    "DescribeApp": [
+      {
+        "document": "获取企业下应用详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"45454545464646\",\n        \"AppType\": \"knowledge_qa\",\n        \"BaseConfig\": {\n            \"Name\": \"应用\",\n            \"Avatar\": \"头像\",\n            \"Desc\": \"应用描述\"\n        },\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "DescribeApp"
+      }
+    ],
+    "GetAppKnowledgeCount": [
+      {
+        "document": "获取总数使用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppKnowledgeCount\n<公共请求参数>\n\n{\n    \"AppBizId\": \"\",\n    \"Type\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "GetAppKnowledgeCount"
+      }
+    ],
+    "ListApp": [
+      {
+        "document": "获取企业下应用列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"AppType\": \"abc\",\n                \"AppTypeDesc\": \"abc\",\n                \"AppBizId\": \"abc\",\n                \"Name\": \"abc\",\n                \"Avatar\": \"abc\",\n                \"Desc\": \"abc\",\n                \"AppStatus\": 1,\n                \"AppStatusDesc\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Operator\": \"abc\",\n                \"ModelName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ListApp"
+      }
+    ],
+    "ListAppCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppCategory\n<公共请求参数>\n\n{\n    \"LoginUin\": \"abc\",\n    \"LoginSubAccountUin\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"\",\n                \"Value\": \"\",\n                \"Logo\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取应用类型列表"
+      }
+    ],
+    "ModifyApp": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"应用\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"应用描述\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -43,15 +43,6 @@
         },
         {
           "disabled": false,
-          "document": "模型类型，1-默认模型。",
-          "example": "1",
-          "member": "int64",
-          "name": "ModelType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。",
           "example": "1",
           "member": "float",
@@ -74,6 +65,15 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模型类型，1-默认模型。",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelType",
           "required": false,
           "type": "int"
         },
