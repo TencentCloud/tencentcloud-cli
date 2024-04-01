@@ -829,7 +829,7 @@
         },
         {
           "disabled": false,
-          "document": "数据节点",
+          "document": "数据节点\nSpecName从DescribeSpec接口中返回的DataSpec.Name获取",
           "example": "无",
           "member": "NodeSpec",
           "name": "DataSpec",
@@ -837,8 +837,8 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "标签列表",
+          "disabled": true,
+          "document": "标签列表（废弃）",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -883,12 +883,21 @@
         },
         {
           "disabled": false,
-          "document": "ZK节点",
+          "document": "ZK节点\nSpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取",
           "example": "无",
           "member": "NodeSpec",
           "name": "CommonSpec",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagItems",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

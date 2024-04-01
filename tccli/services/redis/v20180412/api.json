@@ -196,6 +196,13 @@
       "output": "DescribeInstanceDealDetailResponse",
       "status": "online"
     },
+    "DescribeInstanceEvents": {
+      "document": "本接口（DescribeInstanceEvents）用于查询 Redis 实例事件信息。",
+      "input": "DescribeInstanceEventsRequest",
+      "name": "查询实例事件信息",
+      "output": "DescribeInstanceEventsResponse",
+      "status": "online"
+    },
     "DescribeInstanceMonitorBigKey": {
       "document": "腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见[查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。",
       "input": "DescribeInstanceMonitorBigKeyRequest",
@@ -523,6 +530,13 @@
       "input": "ModifyInstanceAvailabilityZonesRequest",
       "name": "修改实例可用区",
       "output": "ModifyInstanceAvailabilityZonesResponse",
+      "status": "online"
+    },
+    "ModifyInstanceEvent": {
+      "document": "本接口（ModifyInstanceEvent）用于修改实例的运维事件的执行计划。",
+      "input": "ModifyInstanceEventRequest",
+      "name": "修改实例事件",
+      "output": "ModifyInstanceEventResponse",
       "status": "online"
     },
     "ModifyInstanceParams": {
@@ -3180,6 +3194,116 @@
           "example": "无",
           "member": "TradeDealDetail",
           "name": "DealDetails",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceEventsRequest": {
+      "document": "DescribeInstanceEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置查询事件执行计划的起始日期。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "ExecutionStartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置查询事件执行计划的结束日期。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "ExecutionEndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-asdasdas",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出每页显示事件的数量，默认：10。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件当前状态。\n- Waiting：未到达执行日期或不在维护时间窗内的事件。\n- Running：在维护时间窗内，正在执行维护的事件。\n- Finished：已全部完成维护的事件。\n- Canceled：已取消执行的事件。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型，当前仅支持配置实例迁移、资源腾挪、机房裁撤相关的运维操作。该参数仅支持配置为 **InstanceMigration**。",
+          "example": "InstanceMigration",
+          "member": "string",
+          "name": "EventTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "配置查询事件等级。事件等级根据其影响严重程度和紧急程度进行分级，由重至轻依次为关键、重要、中等、一般。\n- Critical：关键\n- High：重要\n- Middle：中等\n- Low：一般",
+          "example": "Low",
+          "member": "string",
+          "name": "Grades",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceEventsResponse": {
+      "document": "DescribeInstanceEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例事件信息",
+          "example": "RedisInstanceEvent",
+          "member": "RedisInstanceEvent",
+          "name": "RedisInstanceEvents",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8150,6 +8274,88 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceEventRequest": {
+      "document": "ModifyInstanceEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。",
+          "example": "89",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改事件执行的计划开始时间。",
+          "example": "03:10",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改事件计划执行的结束时间。开始时间配置之后，结束时间只能选择在开始时间之后的 30 分钟、1 小时、1.5 小时、2 小时和 3 小时之内。",
+          "example": "04:10",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改事件执行计划的开始日期。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "ExecutionDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改事件的运行状态。该参数当前仅支持设置为 **Canceled**， 即取消执行当前事件。可通过 DescribeInstanceEvents 接口查询当前事件的运行状态与事件级别。\n- 事件级别为Critical（关键）或 High（重要）类事件不支持取消。即严重的事件必须执行，不可取消。\n- 仅运行状态为 Waiting （待执行的事件）的事件，才能执行取消操作。",
+          "example": "Canceled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceEventResponse": {
+      "document": "ModifyInstanceEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件 ID。",
+          "example": "89",
+          "member": "int64",
+          "name": "EventId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceParamsRequest": {
       "document": "ModifyInstanceParams请求参数结构体",
       "members": [
@@ -9312,6 +9518,142 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisInstanceEvent": {
+      "document": "实例事件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "102",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "crs-ewflkgfe",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "redis",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件类型，当前仅支持配置实例迁移、资源腾挪、机房裁撤相关的运维操作。该参数仅支持配置为 **InstanceMigration**。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InstanceMigration",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件等级根据其影响严重程度和紧急程度进行分级，由重至轻依次为关键、重要、中等、一般。\n- Critical：关键\n- High：重要\n- Middle：中等\n- Low：一般\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Critical",
+          "member": "string",
+          "name": "Grade",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件计划执行日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "ExecutionDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件计划执行开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件计划执行结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "04:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运维事件最迟执行的日期，即该事件必须在该日期之前完成，否则可能会对业务产生影响。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "LatestExecutionDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件当前状态。\n- Waiting：未到达执行日期或不在维护时间窗内的事件。\n- Running：在维护时间窗内，正在执行维护的事件。\n- Finished：已全部完成维护的事件。\n- Canceled：已取消执行的事件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Waiting",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件执行任务完成时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-10 09:10:23",
+          "member": "string",
+          "name": "TaskEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件影响信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "迁移完成时会有一次秒级别的闪断",
+          "member": "string",
+          "name": "EffectInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件最初计划执行日期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-09-10",
+          "member": "string",
+          "name": "InitialExecutionDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -121,15 +121,6 @@
         },
         {
           "disabled": false,
-          "document": "音频采样率：\n\n16000：16k",
-          "example": "无",
-          "member": "int64",
-          "name": "SampleRate",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "音色性别:\n\n1-male\n\n2-female",
           "example": "无",
           "member": "int64",
@@ -148,21 +139,30 @@
         },
         {
           "disabled": false,
-          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
-          "example": "无",
-          "member": "string",
-          "name": "Codec",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "音频ID集合",
           "example": "无",
           "member": "string",
           "name": "AudioIdList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率：\n\n16000：16k",
+          "example": "无",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -184,7 +184,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型 0:轻量版复刻\n默认为0",
+          "document": "复刻类型。 0 - 轻量版声音复刻（默认）。",
           "example": "无",
           "member": "int64",
           "name": "TaskType",
@@ -193,7 +193,7 @@
         },
         {
           "disabled": false,
-          "document": "校验音频ID",
+          "document": "校验音频ID。",
           "example": "无",
           "member": "string",
           "name": "VPRAudioId",
@@ -265,7 +265,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -275,7 +275,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -285,17 +285,17 @@
           "example": "无",
           "member": "string",
           "name": "StatusStr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "音色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "VoiceType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -305,7 +305,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -356,21 +356,21 @@
         },
         {
           "disabled": false,
-          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
-          "example": "无",
-          "member": "string",
-          "name": "Codec",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "1:环境检测 2:音质检测",
           "example": "无",
           "member": "int64",
           "name": "TypeId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -559,6 +559,7 @@
           "example": "无",
           "member": "TrainingTexts",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

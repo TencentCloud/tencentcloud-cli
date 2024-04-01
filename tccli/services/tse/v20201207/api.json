@@ -1254,6 +1254,7 @@
           "example": "100",
           "member": "int64",
           "name": "Priority",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1264,6 +1265,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -1274,6 +1276,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayCanaryRuleCondition",
           "name": "ConditionList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1284,6 +1287,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayBalancedService",
           "name": "BalancedServiceList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1294,6 +1298,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ServiceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1304,6 +1309,95 @@
           "example": "xxx",
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则类别\nStandard｜Lane\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Standard",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全链路灰度策略多个条件之间的匹配方式，与AND，或OR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AND",
+          "member": "string",
+          "name": "MatchType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LaneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LaneName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道匹配规则：严格STRICT｜宽松PERMISSIVE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STRICT|PERMISSIVE",
+          "member": "string",
+          "name": "MatchMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泳道标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lane:v1",
+          "member": "string",
+          "name": "LaneTag",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1716,7 +1810,8 @@
           "example": "true",
           "member": "bool",
           "name": "Enabled",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1726,48 +1821,9 @@
           "example": "[{Unit:\"second\",Max:10}]",
           "member": "QpsThreshold",
           "name": "QpsThresholds",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "限流依据\nip service consumer credential path header",
-          "example": "ip",
-          "member": "string",
-          "name": "LimitBy",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "响应策略\nurl请求转发\ntext 响应配置\ndefault 直接返回\n",
-          "example": "url",
-          "member": "string",
-          "name": "ResponseType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否隐藏限流客户端响应头",
-          "example": "true",
-          "member": "bool",
-          "name": "HideClientHeaders",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否开启请求排队",
-          "example": "true",
-          "member": "bool",
-          "name": "IsDelay",
-          "required": true,
-          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -1776,6 +1832,7 @@
           "example": "/demo",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1786,9 +1843,21 @@
           "example": "Host",
           "member": "string",
           "name": "Header",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限流依据\nip service consumer credential path header",
+          "example": "ip",
+          "member": "string",
+          "name": "LimitBy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1796,6 +1865,7 @@
           "example": "无",
           "member": "ExternalRedis",
           "name": "ExternalRedis",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1806,6 +1876,7 @@
           "example": "local",
           "member": "string",
           "name": "Policy",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1816,6 +1887,7 @@
           "example": "无",
           "member": "RateLimitResponse",
           "name": "RateLimitResponse",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1826,9 +1898,32 @@
           "example": "http://127.0.0.1/downgrade",
           "member": "string",
           "name": "RateLimitResponseUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应策略\nurl请求转发\ntext 响应配置\ndefault 直接返回\n",
+          "example": "url",
+          "member": "string",
+          "name": "ResponseType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏限流客户端响应头",
+          "example": "true",
+          "member": "bool",
+          "name": "HideClientHeaders",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1836,9 +1931,43 @@
           "example": "0",
           "member": "int64",
           "name": "LineUpTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启请求排队",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDelay",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础限流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{Unit:\"second\",Max:10}]",
+          "member": "QpsThreshold",
+          "name": "BasicLimitQpsThresholds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数限流的规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[             {                 \"Filters\": [                     {                         \"Key\": \"ip\",                         \"Values\": [                             \"8.8.8.8/24\"                         ]                     }                 ],                 \"LimitBy\": [                     {                         \"Key\": \"ip\",                         \"Value\": \"\"                     },                     {                         \"Key\": \"header\",                         \"Value\": \"host\"                     }                 ],                 \"QpsThresholds\": [                     {                         \"Unit\": \"second\",                         \"Max\": 10000                     }                 ]             }         ]",
+          "member": "LimitRule",
+          "name": "LimitRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5985,6 +6114,15 @@
           "member": "string",
           "name": "ServiceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则类别 Standard｜Lane",
+          "example": "Standard",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
           "type": "string"
         },
         {
@@ -11262,6 +11400,34 @@
       ],
       "usage": "out"
     },
+    "KeyValue": {
+      "document": "Key/Value结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件的Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "header",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件的Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "host",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KongActiveHealthCheck": {
       "document": "Kong网关主动健康检查配置",
       "members": [
@@ -12011,6 +12177,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "target标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12297,6 +12474,45 @@
           "example": "无",
           "member": "KongTarget",
           "name": "Target",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitRule": {
+      "document": "参数限流的规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求匹配条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "  {                         \"Key\": \"ip\",                         \"Values\": [                             \"8.8.8.8/24\"                         ]                     }",
+          "member": "RuleFilter",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数限流依据组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                     {                         \"Key\": \"ip\",                         \"Value\": \"\"                     },                     {                         \"Key\": \"header\",                         \"Value\": \"host\"                     }                 ]",
+          "member": "KeyValue",
+          "name": "LimitBy",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限流阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                     {                         \"Unit\": \"second\",                         \"Max\": 10000                     }                 ]",
+          "member": "QpsThreshold",
+          "name": "QpsThresholds",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -14363,6 +14579,34 @@
         }
       ],
       "usage": "out"
+    },
+    "RuleFilter": {
+      "document": "限流规则的Filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限流条件的Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ip",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限流条件的Values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8.8.8.8/24",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SREInstance": {
       "document": "微服务注册引擎实例",

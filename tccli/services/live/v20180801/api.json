@@ -5552,6 +5552,7 @@
           "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "PeakBandwidthTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5561,6 +5562,7 @@
           "example": "117042.495",
           "member": "float",
           "name": "PeakBandwidth",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5570,6 +5572,7 @@
           "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "P95PeakBandwidthTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5579,6 +5582,7 @@
           "example": "117042.495",
           "member": "float",
           "name": "P95PeakBandwidth",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5588,6 +5592,7 @@
           "example": "12254567.55",
           "member": "float",
           "name": "SumFlux",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5597,6 +5602,7 @@
           "example": "无",
           "member": "BillDataInfo",
           "name": "DataInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15412,6 +15418,16 @@
           "name": "RemoveWatermark",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否存储至cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CosStore",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

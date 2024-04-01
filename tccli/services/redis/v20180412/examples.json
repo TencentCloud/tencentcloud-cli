@@ -230,6 +230,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeInstanceEvents": [
+      {
+        "document": "查询实例事件",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceEvents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-b6wst31p\",\n    \"PageSize\": 20,\n    \"PageNo\": 1,\n    \"ExecutionStartDate\": \"2023-10-04\",\n    \"ExecutionEndDate\": \"2023-10-04\",\n    \"Grades\": [\n        \"Low\"\n    ],\n    \"Status\": [\n        \"Waiting\"\n    ],\n    \"EventTypes\": [\n        \"InstanceMigration\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RedisInstanceEvents\": [\n            {\n                \"EffectInfo\": \"迁移完成时会有一次秒级别的闪断\",\n                \"EndTime\": \"22:00\",\n                \"ExecutionDate\": \"2023-09-18\",\n                \"Grade\": \"Low\",\n                \"ID\": 10,\n                \"InitialExecutionDate\": \"2023-08-19\",\n                \"InstanceId\": \"crs-b6wst31p\",\n                \"InstanceName\": \"benyqhuang8\",\n                \"LatestExecutionDate\": \"2023-09-18\",\n                \"StartTime\": \"21:00\",\n                \"Status\": \"Waiting\",\n                \"TaskEndTime\": \"0000-00-00 00:00:00\",\n                \"Type\": \"InstanceMigration\"\n            }\n        ],\n        \"RequestId\": \"36a33a3d-f9ce-47c1-87d0-84869a37466d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询实例事件"
+      }
+    ],
     "DescribeInstanceMonitorBigKey": [
       {
         "document": "请求示例",
@@ -604,6 +612,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAvailabilityZones\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-rrhr1lm6\",\n    \"SwitchOption\": 1,\n    \"NodeSet\": [\n        {\n            \"NodeId\": 339472,\n            \"NodeType\": 0,\n            \"ZoneId\": 100004\n        },\n        {\n            \"NodeId\": 339473,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        },\n        {\n            \"NodeId\": 339549,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"27c0d6e8-9894-42e0-a03b-814a204437ba\",\n        \"TaskId\": 2031290200\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ModifyInstanceEvent": [
+      {
+        "document": "修改实例事件信息",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceEvent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-b6wst31p\",\n    \"EventId\": 10,\n    \"StartTime\": \"22:00\",\n    \"EndTime\": \"23:01\",\n    \"ExecutionDate\": \"2023-09-18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventId\": 10,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改实例事件信息"
       }
     ],
     "ModifyInstanceParams": [

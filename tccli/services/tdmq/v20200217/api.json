@@ -3976,6 +3976,51 @@
           "name": "TimeSpan",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否用于迁移上云，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportsMigrateToCloud",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePublic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽，在开启公网情况下为必传字段",
+          "example": "1",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网白名单",
+          "example": "无",
+          "member": "PublicAccessRule",
+          "name": "IpRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
