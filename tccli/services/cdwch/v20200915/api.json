@@ -3758,6 +3758,7 @@
           "example": "123",
           "member": "string",
           "name": "FlowId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3767,6 +3768,7 @@
           "example": "cdwch-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3776,6 +3778,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

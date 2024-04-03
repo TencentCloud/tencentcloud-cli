@@ -1,3 +1,24 @@
+# Release 3.0.969.1
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 12 次发布
+
+发布时间：2024-04-04 01:29:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81929)
+
+	* 新增入参：MsgTTL
+
+
+
+
 # Release 3.0.968.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

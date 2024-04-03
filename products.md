@@ -48,7 +48,7 @@
 | cdc | [本地专用集群](http://document.tencentcloudapi.woa.com/document/product/1346) | 2024-03-20 01:10:29 |
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | 2024-03-21 01:10:49 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | 2024-03-20 01:10:47 |
-| cdwch | [云数据仓库 ClickHouse](http://document.tencentcloudapi.woa.com/document/product/1299) | 2024-04-02 01:10:35 |
+| cdwch | [云数据仓库 ClickHouse](http://document.tencentcloudapi.woa.com/document/product/1299) | 2024-04-04 01:10:58 |
 | cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | 2024-04-02 01:10:40 |
 | cdz | [专属可用区](http://document.tencentcloudapi.woa.com/document/product/1629) | 2024-03-20 01:10:56 |
 | cem | [商机生命周期管理平台](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-03-20 01:10:57 |
@@ -103,7 +103,7 @@
 | emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | 2024-03-29 01:17:46 |
 | ep | [企业画像](http://document.tencentcloudapi.woa.com/document/product/1061) | 2024-03-20 01:16:43 |
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:16:44 |
-| es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-04-03 11:19:43 |
+| es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | 2024-04-04 01:17:34 |
 | ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | 2024-04-03 11:19:57 |
 | essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | 2024-04-03 11:20:20 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | 2024-03-20 01:17:30 |
@@ -111,7 +111,7 @@
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | 2024-03-20 01:17:39 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | 2024-03-20 01:17:39 |
 | ft | [人像变换](http://document.tencentcloudapi.woa.com/document/product/1202) | 2024-03-20 01:17:41 |
-| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2024-03-25 01:17:47 |
+| gaap | [全球应用加速](http://document.tencentcloudapi.woa.com/document/product/608) | 2024-04-04 01:18:37 |
 | gas | [游戏应用安全](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:17:54 |
 | gme | [游戏多媒体引擎](http://document.tencentcloudapi.woa.com/document/product/607) | 2024-03-20 01:17:55 |
 | goa | [全球办公访问](http://document.tencentcloudapi.woa.com/document/product/1221) | 2024-03-20 01:17:58 |
@@ -251,7 +251,7 @@
 | tqi | [智能质检](http://document.tencentcloudapi.woa.com/document/product/1569) | 2024-03-20 01:27:40 |
 | tr | [腾讯权益](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:27:41 |
 | trdp | [流量风险决策平台](http://document.tencentcloudapi.woa.com/document/product/1604) | 2024-03-20 01:27:41 |
-| trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | 2024-03-20 01:27:42 |
+| trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | 2024-04-04 01:29:38 |
 | trp | [T-Sec-安心平台(RP)](http://document.tencentcloudapi.woa.com/document/product/1458) | 2023-09-21 03:34:26 |
 | trro | [远程实时操控](http://document.tencentcloudapi.woa.com/document/product/1584) | 2024-03-20 01:27:48 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2024-04-03 11:33:21 |
