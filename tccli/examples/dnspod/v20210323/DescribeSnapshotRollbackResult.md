@@ -1,36 +1,4 @@
-**Example 1: 查询快照回滚结果，进行中**
-
- 
-
-Input: 
-
-```
-tccli dnspod DescribeSnapshotRollbackResult --cli-unfold-argument  \
-    --Domain domain.com \
-    --TaskId 177
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a7723f78-ff6f-43bc-89ee-bc225376276b",
-        "TaskId": 177,
-        "SnapshotId": "A45AXXXX",
-        "Status": "waiting",
-        "Domain": "domain.com",
-        "Progress": 0,
-        "LeftMinutes": 1,
-        "Success": null,
-        "Failed": null,
-        "Total": null,
-        "CosUrl": null,
-        "FailedRecordList": null
-    }
-}
-```
-
-**Example 2: 查询快照回滚结果，已完成**
+**Example 1: 查询快照回滚结果，已完成**
 
  
 
@@ -58,6 +26,38 @@ Output:
         "Total": 63,
         "Domain": "domain.com",
         "FailedRecordList": []
+    }
+}
+```
+
+**Example 2: 查询快照回滚结果，进行中**
+
+ 
+
+Input: 
+
+```
+tccli dnspod DescribeSnapshotRollbackResult --cli-unfold-argument  \
+    --Domain domain.com \
+    --TaskId 177
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a7723f78-ff6f-43bc-89ee-bc225376276b",
+        "TaskId": 177,
+        "SnapshotId": "A45AXXXX",
+        "Status": "waiting",
+        "Domain": "domain.com",
+        "Progress": 0,
+        "LeftMinutes": 1,
+        "Success": null,
+        "Failed": null,
+        "Total": null,
+        "CosUrl": null,
+        "FailedRecordList": null
     }
 }
 ```

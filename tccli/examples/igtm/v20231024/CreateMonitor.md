@@ -1,4 +1,33 @@
-**Example 1: http监控**
+**Example 1: tcp监控**
+
+tcp监控
+
+Input: 
+
+```
+tccli igtm CreateMonitor --cli-unfold-argument  \
+    --MonitorName 监控tcp \
+    --CheckProtocol TCP \
+    --CheckInterval 60 \
+    --Timeout 2 \
+    --FailTimes 0 \
+    --FailRate 50 \
+    --DetectorStyle AUTO \
+    --DetectorGroupIds 1 \
+    --TcpPort 80
+```
+
+Output: 
+```
+{
+    "Response": {
+        "MonitorId": 92,
+        "RequestId": "ea6eaf52-428b-4d1d-b7d7-1712cf508124"
+    }
+}
+```
+
+**Example 2: http监控**
 
 http监控
 
@@ -26,35 +55,6 @@ Output:
     "Response": {
         "MonitorId": 93,
         "RequestId": "506ffb0f-a5d4-4b8e-8ce8-14e512ec731e"
-    }
-}
-```
-
-**Example 2: tcp监控**
-
-tcp监控
-
-Input: 
-
-```
-tccli igtm CreateMonitor --cli-unfold-argument  \
-    --MonitorName 监控tcp \
-    --CheckProtocol TCP \
-    --CheckInterval 60 \
-    --Timeout 2 \
-    --FailTimes 0 \
-    --FailRate 50 \
-    --DetectorStyle AUTO \
-    --DetectorGroupIds 1 \
-    --TcpPort 80
-```
-
-Output: 
-```
-{
-    "Response": {
-        "MonitorId": 92,
-        "RequestId": "ea6eaf52-428b-4d1d-b7d7-1712cf508124"
     }
 }
 ```

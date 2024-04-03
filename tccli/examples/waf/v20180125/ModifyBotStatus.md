@@ -22,31 +22,7 @@ Output:
 }
 ```
 
-**Example 2: 老版本_bot总开关**
-
-
-
-Input: 
-
-```
-tccli waf ModifyBotStatus --cli-unfold-argument  \
-    --Status 0 \
-    --Category bot \
-    --Domain fgsta.qcloudwaf.com \
-    --IsVersionFour true
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": "",
-        "RequestId": "c6ae93c9-f71c-473c-ad9b-ba1b59e47059"
-    }
-}
-```
-
-**Example 3: 新版本_bot总开关**
+**Example 2: 新版本_bot总开关**
 
 
 
@@ -67,6 +43,30 @@ Output:
     "Response": {
         "Data": "",
         "RequestId": "110a2ef2-74ee-4db1-9b96-7da77283653f"
+    }
+}
+```
+
+**Example 3: 老版本_bot总开关**
+
+
+
+Input: 
+
+```
+tccli waf ModifyBotStatus --cli-unfold-argument  \
+    --Status 0 \
+    --Category bot \
+    --Domain fgsta.qcloudwaf.com \
+    --IsVersionFour true
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": "",
+        "RequestId": "c6ae93c9-f71c-473c-ad9b-ba1b59e47059"
     }
 }
 ```

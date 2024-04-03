@@ -27,36 +27,7 @@ Output:
 }
 ```
 
-**Example 2: 通过图片创建电子印章**
-
-1.SealImage传递图片的base64编码, GenerateSource不设置
-2. 通过图片创建电子印章，需要电子签人工审核
-
-Input: 
-
-```
-tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --SealName 人事专用章 \
-    --SealImage iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略) \
-    --SealType PERSONNEL
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SealId": "yDwi8UUckpo5z4k1UyleFeZEcAE49vb6",
-        "ImageUrl": "",
-        "RequestId": "62378bbc-2384-499c-89f6-7835040b24a1"
-    }
-}
-```
-
-**Example 3: 创建一个发票专用章**
+**Example 2: 创建一个发票专用章**
 
 1.设置GenerateSource为SealGenerateSourceSystem
 2.设置SealType为发票专用章INVOICE
@@ -85,6 +56,35 @@ Output:
         "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi",
         "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx",
         "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
+    }
+}
+```
+
+**Example 3: 通过图片创建电子印章**
+
+1.SealImage传递图片的base64编码, GenerateSource不设置
+2. 通过图片创建电子印章，需要电子签人工审核
+
+Input: 
+
+```
+tccli essbasic CreateSealByImage --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --SealName 人事专用章 \
+    --SealImage iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略) \
+    --SealType PERSONNEL
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDwi8UUckpo5z4k1UyleFeZEcAE49vb6",
+        "ImageUrl": "",
+        "RequestId": "62378bbc-2384-499c-89f6-7835040b24a1"
     }
 }
 ```

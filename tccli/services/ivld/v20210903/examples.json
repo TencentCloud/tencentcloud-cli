@@ -98,14 +98,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"CategorySet\": [],\n        \"RequestId\": \"d8461ee7-c4eb-429e-8609-3fa727e5f064\"\n    }\n}",
-        "title": "未创建任何分类，返回空数组"
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [\n            {\n                \"CategoryId\": \"13\",\n                \"L1Category\": \"公众人物\",\n                \"L2Category\": \"知名律师\"\n            }\n        ],\n        \"RequestId\": \"2759b810-ad36-4936-93b4-7b374a878e6a\"\n    }\n}",
+        "title": "描述自定义人物类型"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomCategories\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"CategorySet\": [\n            {\n                \"CategoryId\": \"13\",\n                \"L1Category\": \"公众人物\",\n                \"L2Category\": \"知名律师\"\n            }\n        ],\n        \"RequestId\": \"2759b810-ad36-4936-93b4-7b374a878e6a\"\n    }\n}",
-        "title": "描述自定义人物类型"
+        "output": "{\n    \"Response\": {\n        \"CategorySet\": [],\n        \"RequestId\": \"d8461ee7-c4eb-429e-8609-3fa727e5f064\"\n    }\n}",
+        "title": "未创建任何分类，返回空数组"
       }
     ],
     "DescribeCustomGroup": [
@@ -142,14 +142,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-ly5qgk6j\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 0,\n                \"Duration\": 0,\n                \"FPS\": 0,\n                \"FileSize\": 0,\n                \"Height\": 0,\n                \"MD5\": \"\",\n                \"NumFrames\": 0,\n                \"Width\": 0\n            },\n            \"Name\": \"demo-video.mp4\",\n            \"Progress\": 0,\n            \"Status\": 5\n        },\n        \"RequestId\": \"7f415981-cba6-426d-92df-331f29f3bb16\"\n    }\n}",
-        "title": "导入中(正在进行转码)，此时返回的视频元信息没有意义"
+        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 1420,\n                \"Duration\": 356.024,\n                \"FPS\": 25,\n                \"FileSize\": 63195585,\n                \"Height\": 720,\n                \"MD5\": \"b67489b0f5ca7822c94f4b6102ac7d13\",\n                \"NumFrames\": 8900,\n                \"Width\": 1280\n            },\n            \"Name\": \"demo-video-0\",\n            \"Progress\": 0,\n            \"Status\": 8\n        },\n        \"RequestId\": \"d4c8bf8e-43ba-482a-a257-b6ac7a6296ec\"\n    }\n}",
+        "title": "导入完成，返回媒资视频元信息"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMedia\n<公共请求参数>\n\n{\n    \"MediaId\": \"media-ly5qgk6j\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 1420,\n                \"Duration\": 356.024,\n                \"FPS\": 25,\n                \"FileSize\": 63195585,\n                \"Height\": 720,\n                \"MD5\": \"b67489b0f5ca7822c94f4b6102ac7d13\",\n                \"NumFrames\": 8900,\n                \"Width\": 1280\n            },\n            \"Name\": \"demo-video-0\",\n            \"Progress\": 0,\n            \"Status\": 8\n        },\n        \"RequestId\": \"d4c8bf8e-43ba-482a-a257-b6ac7a6296ec\"\n    }\n}",
-        "title": "导入完成，返回媒资视频元信息"
+        "output": "{\n    \"Response\": {\n        \"MediaInfo\": {\n            \"DownLoadURL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-beijingninzao-6mins.mp4\",\n            \"FailedReason\": \"\",\n            \"MediaId\": \"media-ly5qgk6j\",\n            \"Metadata\": {\n                \"BitRate\": 0,\n                \"Duration\": 0,\n                \"FPS\": 0,\n                \"FileSize\": 0,\n                \"Height\": 0,\n                \"MD5\": \"\",\n                \"NumFrames\": 0,\n                \"Width\": 0\n            },\n            \"Name\": \"demo-video.mp4\",\n            \"Progress\": 0,\n            \"Status\": 5\n        },\n        \"RequestId\": \"7f415981-cba6-426d-92df-331f29f3bb16\"\n    }\n}",
+        "title": "导入中(正在进行转码)，此时返回的视频元信息没有意义"
       }
     ],
     "DescribeMedias": [
@@ -193,15 +193,15 @@
     "ImportMedia": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-news-6mins.mp4\",\n    \"Name\": \"demo-video-0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-a1b2c3d4\",\n        \"RequestId\": \"50f3df82-beae-4f5f-9b47-23e8302f62ae\"\n    }\n}",
-        "title": "发起导入任务成功"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-251202827.cos.ap-guangzhou.myqcloud.com/phye-debug/male.png\",\n    \"Name\": \"male.png\",\n    \"MediaType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-9DfyyCOZ\",\n        \"RequestId\": \"a642b499-9ebd-4601-a57e-a8cf5c2bee49\"\n    }\n}",
         "title": "导入图片"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ivld.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportMedia\n<公共请求参数>\n\n{\n    \"URL\": \"https://ai-media-1256936300.cos.ap-guangzhou.myqcloud.com/ai-media/test/test-news-6mins.mp4\",\n    \"Name\": \"demo-video-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MediaId\": \"media-a1b2c3d4\",\n        \"RequestId\": \"50f3df82-beae-4f5f-9b47-23e8302f62ae\"\n    }\n}",
+        "title": "发起导入任务成功"
       }
     ],
     "ModifyCallback": [

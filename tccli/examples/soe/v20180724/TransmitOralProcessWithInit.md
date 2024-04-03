@@ -1,4 +1,158 @@
-**Example 1: 发音数据传输接口附带初始化过程（常用实践）——英语句子**
+**Example 1: 发音数据传输接口附带初始化过程（常用实践）——中文汉字**
+
+单字评测模式（Evalmode为0，中文）：对汉字“叫”进行评测
+
+Input: 
+
+```
+tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
+    --ScoreCoeff 1.0 \
+    --VoiceEncodeType 1 \
+    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
+    --IsEnd 0 \
+    --ServerType 1 \
+    --VoiceFileType 1 \
+    --SessionId stress_test_956938 \
+    --SeqId 1 \
+    --RefText 叫 \
+    --WorkMode 0 \
+    --EvalMode 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SuggestedScore": 52.00305,
+        "PronAccuracy": 52.00305,
+        "PronFluency": 0.89224815,
+        "PronCompletion": 1,
+        "RequestId": "59a97be8-4***-4***-b***-8458*****826",
+        "RefTextId": 0,
+        "KeyWordHits": [
+            0.0
+        ],
+        "UnKeyWordHits": [
+            0.0
+        ],
+        "Words": [
+            {
+                "KeywordTag": 0,
+                "MemBeginTime": 1060,
+                "MemEndTime": 1980,
+                "PronAccuracy": 52.00305,
+                "PronFluency": 0.89224815,
+                "ReferenceWord": "",
+                "Word": "叫",
+                "MatchTag": 0,
+                "PhoneInfos": [
+                    {
+                        "MemBeginTime": 1060,
+                        "MemEndTime": 1310,
+                        "PronAccuracy": 61.52326,
+                        "DetectedStress": false,
+                        "Phone": "j",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 1310,
+                        "MemEndTime": 1600,
+                        "PronAccuracy": 0.15919228,
+                        "DetectedStress": false,
+                        "Phone": "i4",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    },
+                    {
+                        "MemBeginTime": 1600,
+                        "MemEndTime": 1980,
+                        "PronAccuracy": 73.16487,
+                        "DetectedStress": false,
+                        "Phone": "ao",
+                        "ReferencePhone": "",
+                        "ReferenceLetter": "",
+                        "Stress": false,
+                        "MatchTag": 0
+                    }
+                ]
+            }
+        ],
+        "SessionId": "B3617A2B-3***-4***-B***-7DB*****49B7",
+        "AudioUrl": "https://soe-125*****09.cos.ap-****.myqcloud.com/125*****49/default/20210527/audio/3a0a7c84-c***-4***-a***-a15ea9775a68.mp3",
+        "SentenceInfoSet": [
+            {
+                "SuggestedScore": 0,
+                "PronAccuracy": 52.00305,
+                "PronFluency": 0.89224815,
+                "PronCompletion": 1,
+                "RefTextId": 0,
+                "KeyWordHits": [
+                    0.0
+                ],
+                "UnKeyWordHits": [
+                    0.0
+                ],
+                "Words": [
+                    {
+                        "KeywordTag": 0,
+                        "MemBeginTime": 1060,
+                        "MemEndTime": 1980,
+                        "PronAccuracy": 52.00305,
+                        "PronFluency": 0.89224815,
+                        "ReferenceWord": "",
+                        "Word": "叫",
+                        "MatchTag": 0,
+                        "PhoneInfos": [
+                            {
+                                "MemBeginTime": 1060,
+                                "MemEndTime": 1310,
+                                "PronAccuracy": 61.52326,
+                                "DetectedStress": false,
+                                "Phone": "j",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 1310,
+                                "MemEndTime": 1600,
+                                "PronAccuracy": 0.15919228,
+                                "DetectedStress": false,
+                                "Phone": "i4",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            },
+                            {
+                                "MemBeginTime": 1600,
+                                "MemEndTime": 1980,
+                                "PronAccuracy": 73.16487,
+                                "DetectedStress": false,
+                                "Phone": "ao",
+                                "ReferencePhone": "",
+                                "ReferenceLetter": "",
+                                "Stress": false,
+                                "MatchTag": 0
+                            }
+                        ]
+                    }
+                ],
+                "SentenceId": -1
+            }
+        ],
+        "Status": "Finished"
+    }
+}
+```
+
+**Example 2: 发音数据传输接口附带初始化过程（常用实践）——英语句子**
 
 句子评测模式（Evalmode为1，英语）：对句子“thank you”进行评测
 
@@ -214,160 +368,6 @@ Output:
             }
         ],
         "Status": "Evaluating"
-    }
-}
-```
-
-**Example 2: 发音数据传输接口附带初始化过程（常用实践）——中文汉字**
-
-单字评测模式（Evalmode为0，中文）：对汉字“叫”进行评测
-
-Input: 
-
-```
-tccli soe TransmitOralProcessWithInit --cli-unfold-argument  \
-    --ScoreCoeff 1.0 \
-    --VoiceEncodeType 1 \
-    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
-    --IsEnd 0 \
-    --ServerType 1 \
-    --VoiceFileType 1 \
-    --SessionId stress_test_956938 \
-    --SeqId 1 \
-    --RefText 叫 \
-    --WorkMode 0 \
-    --EvalMode 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SuggestedScore": 52.00305,
-        "PronAccuracy": 52.00305,
-        "PronFluency": 0.89224815,
-        "PronCompletion": 1,
-        "RequestId": "59a97be8-4***-4***-b***-8458*****826",
-        "RefTextId": 0,
-        "KeyWordHits": [
-            0.0
-        ],
-        "UnKeyWordHits": [
-            0.0
-        ],
-        "Words": [
-            {
-                "KeywordTag": 0,
-                "MemBeginTime": 1060,
-                "MemEndTime": 1980,
-                "PronAccuracy": 52.00305,
-                "PronFluency": 0.89224815,
-                "ReferenceWord": "",
-                "Word": "叫",
-                "MatchTag": 0,
-                "PhoneInfos": [
-                    {
-                        "MemBeginTime": 1060,
-                        "MemEndTime": 1310,
-                        "PronAccuracy": 61.52326,
-                        "DetectedStress": false,
-                        "Phone": "j",
-                        "ReferencePhone": "",
-                        "ReferenceLetter": "",
-                        "Stress": false,
-                        "MatchTag": 0
-                    },
-                    {
-                        "MemBeginTime": 1310,
-                        "MemEndTime": 1600,
-                        "PronAccuracy": 0.15919228,
-                        "DetectedStress": false,
-                        "Phone": "i4",
-                        "ReferencePhone": "",
-                        "ReferenceLetter": "",
-                        "Stress": false,
-                        "MatchTag": 0
-                    },
-                    {
-                        "MemBeginTime": 1600,
-                        "MemEndTime": 1980,
-                        "PronAccuracy": 73.16487,
-                        "DetectedStress": false,
-                        "Phone": "ao",
-                        "ReferencePhone": "",
-                        "ReferenceLetter": "",
-                        "Stress": false,
-                        "MatchTag": 0
-                    }
-                ]
-            }
-        ],
-        "SessionId": "B3617A2B-3***-4***-B***-7DB*****49B7",
-        "AudioUrl": "https://soe-125*****09.cos.ap-****.myqcloud.com/125*****49/default/20210527/audio/3a0a7c84-c***-4***-a***-a15ea9775a68.mp3",
-        "SentenceInfoSet": [
-            {
-                "SuggestedScore": 0,
-                "PronAccuracy": 52.00305,
-                "PronFluency": 0.89224815,
-                "PronCompletion": 1,
-                "RefTextId": 0,
-                "KeyWordHits": [
-                    0.0
-                ],
-                "UnKeyWordHits": [
-                    0.0
-                ],
-                "Words": [
-                    {
-                        "KeywordTag": 0,
-                        "MemBeginTime": 1060,
-                        "MemEndTime": 1980,
-                        "PronAccuracy": 52.00305,
-                        "PronFluency": 0.89224815,
-                        "ReferenceWord": "",
-                        "Word": "叫",
-                        "MatchTag": 0,
-                        "PhoneInfos": [
-                            {
-                                "MemBeginTime": 1060,
-                                "MemEndTime": 1310,
-                                "PronAccuracy": 61.52326,
-                                "DetectedStress": false,
-                                "Phone": "j",
-                                "ReferencePhone": "",
-                                "ReferenceLetter": "",
-                                "Stress": false,
-                                "MatchTag": 0
-                            },
-                            {
-                                "MemBeginTime": 1310,
-                                "MemEndTime": 1600,
-                                "PronAccuracy": 0.15919228,
-                                "DetectedStress": false,
-                                "Phone": "i4",
-                                "ReferencePhone": "",
-                                "ReferenceLetter": "",
-                                "Stress": false,
-                                "MatchTag": 0
-                            },
-                            {
-                                "MemBeginTime": 1600,
-                                "MemEndTime": 1980,
-                                "PronAccuracy": 73.16487,
-                                "DetectedStress": false,
-                                "Phone": "ao",
-                                "ReferencePhone": "",
-                                "ReferenceLetter": "",
-                                "Stress": false,
-                                "MatchTag": 0
-                            }
-                        ]
-                    }
-                ],
-                "SentenceId": -1
-            }
-        ],
-        "Status": "Finished"
     }
 }
 ```

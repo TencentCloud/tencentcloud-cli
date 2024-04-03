@@ -1,4 +1,4 @@
-**Example 1: 调用成功示例**
+**Example 1: 调用成功**
 
 
 
@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli tiia CreateImage --cli-unfold-argument  \
-    --GroupId 123 \
-    --EntityId 1 \
-    --PicName 1 \
+    --CustomContent custom \
     --ImageUrl http://www.test.com/a.jpg \
-    --CustomContent test \
-    --Tags {"k": "123"}
+    --EntityId 456 \
+    --GroupId hello \
+    --PicName 456
 ```
 
 Output: 
@@ -35,7 +34,7 @@ Output:
 }
 ```
 
-**Example 2: 调用成功**
+**Example 2: 调用成功示例**
 
 
 
@@ -43,11 +42,12 @@ Input:
 
 ```
 tccli tiia CreateImage --cli-unfold-argument  \
-    --CustomContent custom \
+    --GroupId 123 \
+    --EntityId 1 \
+    --PicName 1 \
     --ImageUrl http://www.test.com/a.jpg \
-    --EntityId 456 \
-    --GroupId hello \
-    --PicName 456
+    --CustomContent test \
+    --Tags {"k": "123"}
 ```
 
 Output: 

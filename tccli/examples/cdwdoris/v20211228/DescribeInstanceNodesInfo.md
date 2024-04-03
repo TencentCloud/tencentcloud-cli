@@ -1,6 +1,6 @@
-**Example 1: 查询节点角色**
+**Example 1: 查询节点信息**
 
-查询节点角色
+
 
 Input: 
 
@@ -25,9 +25,9 @@ Output:
 }
 ```
 
-**Example 2: 查询节点信息**
+**Example 2: 查询节点角色**
 
-
+查询节点角色
 
 Input: 
 

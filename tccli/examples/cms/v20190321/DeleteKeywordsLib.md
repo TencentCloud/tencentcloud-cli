@@ -1,27 +1,4 @@
-**Example 1: 删除词库范例**
-
-
-
-Input: 
-
-```
-tccli cms DeleteKeywordsLib --cli-unfold-argument  \
-    --UserAppID xx \
-    --UserUin xx \
-    --ID xx \
-    --UserSubUin xx
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 删除词库示例**
+**Example 1: 删除词库示例**
 
 
 
@@ -40,6 +17,29 @@ Output:
 {
     "Response": {
         "RequestId": "adddea6d-8abb-45a7-bcfe-8c7f0bb999d8"
+    }
+}
+```
+
+**Example 2: 删除词库范例**
+
+
+
+Input: 
+
+```
+tccli cms DeleteKeywordsLib --cli-unfold-argument  \
+    --UserAppID xx \
+    --UserUin xx \
+    --ID xx \
+    --UserSubUin xx
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
     }
 }
 ```

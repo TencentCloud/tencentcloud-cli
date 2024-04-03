@@ -1,6 +1,6 @@
-**Example 1: 查询七层数据分析类时序流量数据**
+**Example 1: 根据协议查询时序流量数据**
 
-查询七层流量请求数指标的数据
+根据协议筛选条件获取请求数指标的数据
 
 Input: 
 
@@ -11,6 +11,9 @@ tccli teo DescribeTimingL7AnalysisData --cli-unfold-argument  \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l7Flow_request \
+    --Filters.0.Key protocol \
+    --Filters.0.Operator equals \
+    --Filters.0.Value HTTP/1.0 HTTP/1.1 \
     --ZoneIds zone-2o7b38ba1hvr
 ```
 
@@ -102,9 +105,9 @@ Output:
 }
 ```
 
-**Example 3: 根据协议查询时序流量数据**
+**Example 3: 查询七层数据分析类时序流量数据**
 
-根据协议筛选条件获取请求数指标的数据
+查询七层流量请求数指标的数据
 
 Input: 
 
@@ -115,9 +118,6 @@ tccli teo DescribeTimingL7AnalysisData --cli-unfold-argument  \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l7Flow_request \
-    --Filters.0.Key protocol \
-    --Filters.0.Operator equals \
-    --Filters.0.Value HTTP/1.0 HTTP/1.1 \
     --ZoneIds zone-2o7b38ba1hvr
 ```
 

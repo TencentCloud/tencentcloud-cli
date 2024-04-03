@@ -142,16 +142,16 @@
     ],
     "CreateNatFwInstanceWithDomain": [
       {
-        "document": "接入模式示例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-xxx\",\n        \"nat-xxx\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"xxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "创建防火墙实例和接入域名"
-      },
-      {
         "document": "新增模式示例",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 1,\n    \"CrossAZone\": 1,\n    \"NewModeItems\": {\n        \"VpcList\": [\n            \"vpc-xxx\"\n        ],\n        \"Eips\": [\n            \"xx.xx.xx.xx\"\n        ],\n        \"AddCount\": 1\n    },\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
         "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"xxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "CreateNatFwInstanceWithDomain"
+      },
+      {
+        "document": "接入模式示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNatFwInstanceWithDomain\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Width\": 20,\n    \"Mode\": 0,\n    \"CrossAZone\": 1,\n    \"NatGwList\": [\n        \"nat-xxx\",\n        \"nat-xxx\"\n    ],\n    \"Zone\": \"ap-shanghai-4\",\n    \"ZoneBak\": \"ap-shanghai-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CfwInsId\": \"xxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建防火墙实例和接入域名"
       }
     ],
     "CreateSecurityGroupRules": [
@@ -730,16 +730,16 @@
     ],
     "ModifyNatFwSwitch": [
       {
-        "document": "推荐使用场景，针对路由表开启防火墙开关",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"RouteTableIdList\": [\n        \"rtb-9jbsa559\",\n        \"rtb-dba9eo0f\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "开启防火墙路由表开关"
-      },
-      {
         "document": "子网参数场景，当前仅支持单一子网开关",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"SubnetIdList\": [\n        \"subnet-cjxihpy1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "开启防火墙子网开关"
+      },
+      {
+        "document": "推荐使用场景，针对路由表开启防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"RouteTableIdList\": [\n        \"rtb-9jbsa559\",\n        \"rtb-dba9eo0f\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "开启防火墙路由表开关"
       }
     ],
     "ModifyNatFwVpcDnsSwitch": [
@@ -913,15 +913,15 @@
     "SetNatFwEip": [
       {
         "document": "仅支持新增模式的防火墙实例",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwEip\n<公共请求参数>\n\n{\n    \"OperationType\": \"bind\",\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"EipList\": [\n        \"1.2.3.8\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "绑定防火墙实例的弹性公网ip"
-      },
-      {
-        "document": "仅支持新增模式的防火墙实例",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwEip\n<公共请求参数>\n\n{\n    \"OperationType\": \"newAdd\",\n    \"CfwInstance\": \"cfwnat-d2afc817\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "新增防火墙实例的弹性公网ip"
+      },
+      {
+        "document": "仅支持新增模式的防火墙实例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNatFwEip\n<公共请求参数>\n\n{\n    \"OperationType\": \"bind\",\n    \"CfwInstance\": \"cfwnat-d2afc817\",\n    \"EipList\": [\n        \"1.2.3.8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "绑定防火墙实例的弹性公网ip"
       }
     ],
     "StopSecurityGroupRuleDispatch": [

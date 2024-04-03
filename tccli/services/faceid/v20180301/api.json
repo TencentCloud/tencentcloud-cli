@@ -182,6 +182,13 @@
       "output": "GetDetectInfoEnhancedResponse",
       "status": "online"
     },
+    "GetDeviceInfo": {
+      "document": "查询EKYC设备终端信息",
+      "input": "GetDeviceInfoRequest",
+      "name": "查询活体设备信息",
+      "output": "GetDeviceInfoResponse",
+      "status": "online"
+    },
     "GetEidResult": {
       "document": "完成验证后，用EidToken调用本接口获取结果信息，EidToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetEidResultRequest",
@@ -4063,6 +4070,53 @@
           "member": "string",
           "name": "DetectInfo",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceInfoRequest": {
+      "document": "GetDeviceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活体流程中使用的Token",
+          "example": "无",
+          "member": "string",
+          "name": "SdkToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDeviceInfoResponse": {
+      "document": "GetDeviceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回sdk版本号",
+          "example": "v1.95",
+          "member": "string",
+          "name": "SDKVersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回对应端，android/iOS",
+          "example": "Android",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

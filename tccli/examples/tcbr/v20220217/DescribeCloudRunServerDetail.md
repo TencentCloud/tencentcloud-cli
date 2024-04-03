@@ -1,4 +1,28 @@
-**Example 1: DescribeCloudRunServerDetail**
+**Example 1: success**
+
+
+
+Input: 
+
+```
+tccli tcbr DescribeCloudRunServerDetail --cli-unfold-argument  \
+    --ServerName 字符串 \
+    --EnvId 字符串
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BaseInfo": null,
+        "RequestId": "34143393-ede8-43ac-ad78-12a5bfea9663",
+        "ServerConfig": null,
+        "OnlineVersionInfos": null
+    }
+}
+```
+
+**Example 2: DescribeCloudRunServerDetail**
 
 
 
@@ -44,30 +68,6 @@ Output:
             }
         ],
         "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: success**
-
-
-
-Input: 
-
-```
-tccli tcbr DescribeCloudRunServerDetail --cli-unfold-argument  \
-    --ServerName 字符串 \
-    --EnvId 字符串
-```
-
-Output: 
-```
-{
-    "Response": {
-        "BaseInfo": null,
-        "RequestId": "34143393-ede8-43ac-ad78-12a5bfea9663",
-        "ServerConfig": null,
-        "OnlineVersionInfos": null
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: 查询起始到终止时间内统计service_metric指标数据示例**
+**Example 1: 查询1分钟聚合粒度的runtime_metric指标数据示例**
 
-该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内的service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）的指标数据。
+该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的service_gc_full_count（Full GC）的指标数据。
 
 Input: 
 
@@ -8,15 +8,13 @@ Input:
 tccli apm DescribeGeneralMetricData --cli-unfold-argument  \
     --Filters.0.Key service.name \
     --Filters.0.Value tapm-api-ap-beijing \
-    --Filters.1.Key span.kind \
-    --Filters.1.Value client \
-    --ViewName service_metric \
+    --ViewName runtime_metric \
     --InstanceId apm-ylTJfTSbn \
-    --Period 0 \
-    --Metrics service_request_count service_duration service_error_req_rate service_slow_call_count service_error_request_count \
+    --Period 60 \
+    --Metrics service_gc_full_count \
     --StartTime 1652666416 \
     --EndTime 1652667616 \
-    --GroupBy service.name span.kind
+    --GroupBy service.name
 ```
 
 Output: 
@@ -27,91 +25,41 @@ Output:
             {
                 "Tags": [
                     {
-                        "Key": "span.kind",
-                        "Value": "client"
-                    },
-                    {
                         "Key": "service.name",
                         "Value": "java-order-service"
                     }
                 ],
-                "MetricName": "service_request_count",
-                "MetricNameCN": "总请求数",
-                "TimeSerial": null,
-                "DataSerial": [
-                    630381
-                ]
-            },
-            {
-                "Tags": [
-                    {
-                        "Key": "span.kind",
-                        "Value": "client"
-                    },
-                    {
-                        "Key": "service.name",
-                        "Value": "java-order-service"
-                    }
+                "MetricName": "service_gc_full_count",
+                "MetricNameCN": "full GC",
+                "TimeSerial": [
+                    1656428160,
+                    1656428220,
+                    1656428280,
+                    1656428340,
+                    1656428400,
+                    1656428460,
+                    1656428520,
+                    1656428580,
+                    1656428640,
+                    1656428700,
+                    1656428760,
+                    1656428820,
+                    1656428880
                 ],
-                "MetricName": "service_duration",
-                "MetricNameCN": "平均响应时间",
-                "TimeSerial": null,
                 "DataSerial": [
-                    72.44506470564654
-                ]
-            },
-            {
-                "Tags": [
-                    {
-                        "Key": "span.kind",
-                        "Value": "client"
-                    },
-                    {
-                        "Key": "service.name",
-                        "Value": "java-order-service"
-                    }
-                ],
-                "MetricName": "service_error_req_rate",
-                "MetricNameCN": "平均错误率",
-                "TimeSerial": null,
-                "DataSerial": [
-                    1.1464495281425042
-                ]
-            },
-            {
-                "Tags": [
-                    {
-                        "Key": "span.kind",
-                        "Value": "client"
-                    },
-                    {
-                        "Key": "service.name",
-                        "Value": "java-order-service"
-                    }
-                ],
-                "MetricName": "service_slow_call_count",
-                "MetricNameCN": "慢调用",
-                "TimeSerial": null,
-                "DataSerial": [
-                    0
-                ]
-            },
-            {
-                "Tags": [
-                    {
-                        "Key": "span.kind",
-                        "Value": "client"
-                    },
-                    {
-                        "Key": "service.name",
-                        "Value": "java-order-service"
-                    }
-                ],
-                "MetricName": "service_error_request_count",
-                "MetricNameCN": "错误数",
-                "TimeSerial": null,
-                "DataSerial": [
-                    7227
+                    0.016666666666666666,
+                    0,
+                    0.016666666666666666,
+                    0,
+                    0.016666666666666666,
+                    0.016666666666666666,
+                    0,
+                    0.016666666666666666,
+                    0,
+                    0.016666666666666666,
+                    0.016666666666666666,
+                    0,
+                    0.016666666666666666
                 ]
             }
         ],
@@ -372,9 +320,9 @@ Output:
 }
 ```
 
-**Example 3: 查询1分钟聚合粒度的runtime_metric指标数据示例**
+**Example 3: 查询起始到终止时间内统计service_metric指标数据示例**
 
-该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的service_gc_full_count（Full GC）的指标数据。
+该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内的service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）的指标数据。
 
 Input: 
 
@@ -382,13 +330,15 @@ Input:
 tccli apm DescribeGeneralMetricData --cli-unfold-argument  \
     --Filters.0.Key service.name \
     --Filters.0.Value tapm-api-ap-beijing \
-    --ViewName runtime_metric \
+    --Filters.1.Key span.kind \
+    --Filters.1.Value client \
+    --ViewName service_metric \
     --InstanceId apm-ylTJfTSbn \
-    --Period 60 \
-    --Metrics service_gc_full_count \
+    --Period 0 \
+    --Metrics service_request_count service_duration service_error_req_rate service_slow_call_count service_error_request_count \
     --StartTime 1652666416 \
     --EndTime 1652667616 \
-    --GroupBy service.name
+    --GroupBy service.name span.kind
 ```
 
 Output: 
@@ -399,41 +349,91 @@ Output:
             {
                 "Tags": [
                     {
+                        "Key": "span.kind",
+                        "Value": "client"
+                    },
+                    {
                         "Key": "service.name",
                         "Value": "java-order-service"
                     }
                 ],
-                "MetricName": "service_gc_full_count",
-                "MetricNameCN": "full GC",
-                "TimeSerial": [
-                    1656428160,
-                    1656428220,
-                    1656428280,
-                    1656428340,
-                    1656428400,
-                    1656428460,
-                    1656428520,
-                    1656428580,
-                    1656428640,
-                    1656428700,
-                    1656428760,
-                    1656428820,
-                    1656428880
-                ],
+                "MetricName": "service_request_count",
+                "MetricNameCN": "总请求数",
+                "TimeSerial": null,
                 "DataSerial": [
-                    0.016666666666666666,
-                    0,
-                    0.016666666666666666,
-                    0,
-                    0.016666666666666666,
-                    0.016666666666666666,
-                    0,
-                    0.016666666666666666,
-                    0,
-                    0.016666666666666666,
-                    0.016666666666666666,
-                    0,
-                    0.016666666666666666
+                    630381
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "span.kind",
+                        "Value": "client"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "service_duration",
+                "MetricNameCN": "平均响应时间",
+                "TimeSerial": null,
+                "DataSerial": [
+                    72.44506470564654
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "span.kind",
+                        "Value": "client"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "service_error_req_rate",
+                "MetricNameCN": "平均错误率",
+                "TimeSerial": null,
+                "DataSerial": [
+                    1.1464495281425042
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "span.kind",
+                        "Value": "client"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "service_slow_call_count",
+                "MetricNameCN": "慢调用",
+                "TimeSerial": null,
+                "DataSerial": [
+                    0
+                ]
+            },
+            {
+                "Tags": [
+                    {
+                        "Key": "span.kind",
+                        "Value": "client"
+                    },
+                    {
+                        "Key": "service.name",
+                        "Value": "java-order-service"
+                    }
+                ],
+                "MetricName": "service_error_request_count",
+                "MetricNameCN": "错误数",
+                "TimeSerial": null,
+                "DataSerial": [
+                    7227
                 ]
             }
         ],

@@ -1,43 +1,4 @@
-**Example 1: 标签组数据返回试例**
-
-用于策略维护里面的标签组的选择界面显示分类的数据
-
-Input: 
-
-```
-tccli cms DescribeGroupTag --cli-unfold-argument  \
-    --HideStatus True \
-    --TagType xx
-```
-
-Output: 
-```
-{
-    "Response": {
-        "GroupTypeList": [
-            {
-                "GroupClassList": [
-                    {
-                        "LabelGroupList": [
-                            {
-                                "GroupEname": "xx",
-                                "GroupMsg": "xx",
-                                "GroupName": "xx"
-                            }
-                        ],
-                        "GroupClassName": "xx",
-                        "GroupClassEname": "xx"
-                    }
-                ],
-                "TagType": "xx"
-            }
-        ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 正常调用**
+**Example 1: 正常调用**
 
 
 
@@ -108,6 +69,45 @@ Output:
             }
         ],
         "RequestId": "0411564c-0101-4bd0-8db8-6c4e4bd59b78"
+    }
+}
+```
+
+**Example 2: 标签组数据返回试例**
+
+用于策略维护里面的标签组的选择界面显示分类的数据
+
+Input: 
+
+```
+tccli cms DescribeGroupTag --cli-unfold-argument  \
+    --HideStatus True \
+    --TagType xx
+```
+
+Output: 
+```
+{
+    "Response": {
+        "GroupTypeList": [
+            {
+                "GroupClassList": [
+                    {
+                        "LabelGroupList": [
+                            {
+                                "GroupEname": "xx",
+                                "GroupMsg": "xx",
+                                "GroupName": "xx"
+                            }
+                        ],
+                        "GroupClassName": "xx",
+                        "GroupClassEname": "xx"
+                    }
+                ],
+                "TagType": "xx"
+            }
+        ],
+        "RequestId": "xx"
     }
 }
 ```

@@ -1,37 +1,4 @@
-**Example 1: 分级标签查询和返回**
-
-
-
-Input: 
-
-```
-tccli cms DescribeLevelTag --cli-unfold-argument  \
-    --ParentTag xx \
-    --Type xx
-```
-
-Output: 
-```
-{
-    "Response": {
-        "LevelTagList": [
-            {
-                "Code": "xx",
-                "Name": "xx",
-                "Scene": "xx",
-                "TagType": "xx",
-                "Priority": 0,
-                "Cname": "xx",
-                "BackGroundColor": "xx",
-                "FontColor": "xx"
-            }
-        ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: 获取成功示例**
+**Example 1: 获取成功示例**
 
 
 
@@ -130,6 +97,39 @@ Output:
             }
         ],
         "RequestId": "afb5ce6e-b68b-4da2-be4e-cf783ae4a91e"
+    }
+}
+```
+
+**Example 2: 分级标签查询和返回**
+
+
+
+Input: 
+
+```
+tccli cms DescribeLevelTag --cli-unfold-argument  \
+    --ParentTag xx \
+    --Type xx
+```
+
+Output: 
+```
+{
+    "Response": {
+        "LevelTagList": [
+            {
+                "Code": "xx",
+                "Name": "xx",
+                "Scene": "xx",
+                "TagType": "xx",
+                "Priority": 0,
+                "Cname": "xx",
+                "BackGroundColor": "xx",
+                "FontColor": "xx"
+            }
+        ],
+        "RequestId": "xx"
     }
 }
 ```

@@ -1,4 +1,78 @@
-**Example 1: TCCC-查询聚合用量明细**
+**Example 1: 直播-p_live5分钟结果**
+
+直播-p_live5分钟结果
+
+Input: 
+
+```
+tccli billing DescribeMeasureDetailAggregation --cli-unfold-argument  \
+    --ProductCode p_live \
+    --DosageType traffic_live_timeshiftingservice \
+    --DosageVersion 1 \
+    --StartTime 2023-09-21 00:00:00 \
+    --EndTime 2023-09-21 23:59:59 \
+    --DetailName shiftingServiceByMinute \
+    --Attribute.0.Name resourceId \
+    --Attribute.0.Value livetimeshiftp.auto.livepush.tcupload.com \
+    --Attribute.1.Name area \
+    --Attribute.1.Value 中国大陆 \
+    --Attribute.2.Name storageDays \
+    --Attribute.2.Value 1,2 \
+    --Aggregation.Period default \
+    --Aggregation.Field subBillingItemCode area storageDays resourceId \
+    --Aggregation.Function sum
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "DetailList": []
+        },
+        "RequestId": "c381b6b2-10cb-4668-a95e-7d9fb2cd8605"
+    }
+}
+```
+
+**Example 2: 直播-p_live按小时汇聚**
+
+直播-p_live按小时汇聚
+
+Input: 
+
+```
+tccli billing DescribeMeasureDetailAggregation --cli-unfold-argument  \
+    --ProductCode p_live \
+    --DosageType traffic_live_timeshiftingservice \
+    --DosageVersion 1 \
+    --StartTime 2023-09-21 00:00:00 \
+    --EndTime 2023-09-21 23:59:59 \
+    --DetailName shiftingServiceStatHour \
+    --Attribute.0.Name resourceId \
+    --Attribute.0.Value livetimeshiftp.auto.livepush.tcupload.com \
+    --Attribute.1.Name area \
+    --Attribute.1.Value 中国大陆 \
+    --Attribute.2.Name storageDays \
+    --Attribute.2.Value 1,2 \
+    --Aggregation.Period hour \
+    --Aggregation.Field subBillingItemCode area storageDays resourceId \
+    --Aggregation.Function sum
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "DetailList": []
+        },
+        "RequestId": "1d51b1d4-a39a-440b-a0e0-c33413889df0"
+    }
+}
+```
+
+**Example 3: TCCC-查询聚合用量明细**
 
 TCCC-查询聚合用量明细
 
@@ -45,80 +119,6 @@ Output:
             ]
         },
         "RequestId": "7ac44939-63b5-460e-a8b5-f5ee1f9026cc"
-    }
-}
-```
-
-**Example 2: 直播-p_live5分钟结果**
-
-直播-p_live5分钟结果
-
-Input: 
-
-```
-tccli billing DescribeMeasureDetailAggregation --cli-unfold-argument  \
-    --ProductCode p_live \
-    --DosageType traffic_live_timeshiftingservice \
-    --DosageVersion 1 \
-    --StartTime 2023-09-21 00:00:00 \
-    --EndTime 2023-09-21 23:59:59 \
-    --DetailName shiftingServiceByMinute \
-    --Attribute.0.Name resourceId \
-    --Attribute.0.Value livetimeshiftp.auto.livepush.tcupload.com \
-    --Attribute.1.Name area \
-    --Attribute.1.Value 中国大陆 \
-    --Attribute.2.Name storageDays \
-    --Attribute.2.Value 1,2 \
-    --Aggregation.Period default \
-    --Aggregation.Field subBillingItemCode area storageDays resourceId \
-    --Aggregation.Function sum
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "DetailList": []
-        },
-        "RequestId": "c381b6b2-10cb-4668-a95e-7d9fb2cd8605"
-    }
-}
-```
-
-**Example 3: 直播-p_live按小时汇聚**
-
-直播-p_live按小时汇聚
-
-Input: 
-
-```
-tccli billing DescribeMeasureDetailAggregation --cli-unfold-argument  \
-    --ProductCode p_live \
-    --DosageType traffic_live_timeshiftingservice \
-    --DosageVersion 1 \
-    --StartTime 2023-09-21 00:00:00 \
-    --EndTime 2023-09-21 23:59:59 \
-    --DetailName shiftingServiceStatHour \
-    --Attribute.0.Name resourceId \
-    --Attribute.0.Value livetimeshiftp.auto.livepush.tcupload.com \
-    --Attribute.1.Name area \
-    --Attribute.1.Value 中国大陆 \
-    --Attribute.2.Name storageDays \
-    --Attribute.2.Value 1,2 \
-    --Aggregation.Period hour \
-    --Aggregation.Field subBillingItemCode area storageDays resourceId \
-    --Aggregation.Function sum
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "DetailList": []
-        },
-        "RequestId": "1d51b1d4-a39a-440b-a0e0-c33413889df0"
     }
 }
 ```

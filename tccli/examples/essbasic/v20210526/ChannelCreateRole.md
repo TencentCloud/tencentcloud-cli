@@ -1,29 +1,4 @@
-**Example 1: 创建角色（不带权限树参数）**
-
-创建一个自定义角色，并且不带权限信息
-
-Input: 
-
-```
-tccli essbasic ChannelCreateRole --cli-unfold-argument  \
-    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
-    --Agent.ProxyOrganizationOpenId test_org_openid \
-    --Agent.ProxyOperator.OpenId test_openid \
-    --Name xxx角色 \
-    --Description 这是一个自定义角色
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RoleId": "abc8jkkjds***121212",
-        "RequestId": " s19ksdjkkds****ldsjfkdfdf"
-    }
-}
-```
-
-**Example 2: 创建角色（带权限树参数）**
+**Example 1: 创建角色（带权限树参数）**
 
 创建角色并同时设置角色中的权限内容，设置权限树参数 PermissionGroups ，PermissionGroups 展开为树形结构，可以需要的权限节点下将 IsChecked 属性设置为true。
 注意：父权限节点 IsChecked 属性为true，则需要将其下所有子节点的 IsChecked属性同时设置为true，否则校验不通过。
@@ -595,6 +570,31 @@ tccli essbasic ChannelCreateRole --cli-unfold-argument  \
     --PermissionGroups.5.Permissions.0.Name 模板管理 \
     --PermissionGroups.5.Permissions.0.ParentKey  \
     --PermissionGroups.5.Permissions.0.Type 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RoleId": "abc8jkkjds***121212",
+        "RequestId": " s19ksdjkkds****ldsjfkdfdf"
+    }
+}
+```
+
+**Example 2: 创建角色（不带权限树参数）**
+
+创建一个自定义角色，并且不带权限信息
+
+Input: 
+
+```
+tccli essbasic ChannelCreateRole --cli-unfold-argument  \
+    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
+    --Agent.ProxyOrganizationOpenId test_org_openid \
+    --Agent.ProxyOperator.OpenId test_openid \
+    --Name xxx角色 \
+    --Description 这是一个自定义角色
 ```
 
 Output: 

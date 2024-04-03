@@ -697,15 +697,15 @@
       },
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
-        "title": "添加HTTPS协议的CC防护IP黑白名单"
-      },
-      {
-        "document": "",
         "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=delete\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=https\r\n&Domain=test.com\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "删除HTTPS协议的CC防护IP黑白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCIpAllowDeny\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&IpList.0=1.1.1.1\r\n&IpList.1=1.1.1.2\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTPS协议的CC防护IP黑白名单"
       }
     ],
     "ModifyCCLevel": [
@@ -749,15 +749,15 @@
       },
       {
         "document": "",
-        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
-        "title": "添加HTTPS协议的CC防护URL白名单"
-      },
-      {
-        "document": "",
         "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=delete\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=https\r\n&Domain=test.com\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "删除HTTPS协议的CC防护URL白名单"
+      },
+      {
+        "document": "",
+        "input": "https://dayu.tencentcloudapi.com/?Action=ModifyCCUrlAllow\r\n&Business=bgpip\r\n&Id=bgpip-000000xe\r\n&Method=add\r\n&Type=white\r\n&UrlList.0=http://www.123.com/index.html\r\n&UrlList.1=www.456.com/buy.html\r\n&Protocol=https\r\n&Domain=test.com\r\n&RuleId=rule-0000001\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
+        "title": "添加HTTPS协议的CC防护URL白名单"
       }
     ],
     "ModifyDDoSAIStatus": [

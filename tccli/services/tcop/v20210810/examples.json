@@ -2,16 +2,16 @@
   "actions": {
     "CreateFastLiveCourse": [
       {
-        "document": "该API用于为特定老师发布一门直播课",
-        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFastLiveCourse\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"TeacherId\": \"2007051\",\n    \"VisibleScope\": 0,\n    \"Name\": \"moon\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TermId\": \"100187514\",\n        \"LiveUrl\": \"https://ke.qq.com/webcourse/100187514/1001875141#taid=1001875143&lite=1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "发布直播课"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFastLiveCourse\n<公共请求参数>\n\n{\n    \"TeacherId\": \"2007051\",\n    \"Name\": \"moon\",\n    \"VisibleScope\": \"0\",\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\"\n}",
         "output": "{\n    \"Response\": {\n        \"TermId\": \"1000035819\",\n        \"LiveUrl\": \"https://ke.qq.com/webcourse/1016064/1000035819#taid=245942713286912&lite=1\",\n        \"RequestId\": \"e3362314-d89b-4f35-a3b4-e0bd0318d31d\"\n    }\n}",
         "title": "正确返回"
+      },
+      {
+        "document": "该API用于为特定老师发布一门直播课",
+        "input": "POST / HTTP/1.1\nHost: tcop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFastLiveCourse\n<公共请求参数>\n\n{\n    \"IdaasOrgId\": \"tn-c65190017f394836863e83ca429b500c\",\n    \"TeacherId\": \"2007051\",\n    \"VisibleScope\": 0,\n    \"Name\": \"moon\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TermId\": \"100187514\",\n        \"LiveUrl\": \"https://ke.qq.com/webcourse/100187514/1001875141#taid=1001875143&lite=1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "发布直播课"
       }
     ],
     "DescribeFastReplayDownloads": [

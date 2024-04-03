@@ -3550,30 +3550,30 @@
     ],
     "ModifyBaselinePolicy": [
       {
-        "document": "自定义和系统规则添加",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicy\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"DetectTime\": \"03:00:00\",\n        \"PolicyName\": \"策略1111\",\n        \"DetectInterval\": \"1\",\n        \"AssetType\": \"0\",\n        \"IsEnabled\": \"1\",\n        \"PolicyId\": \"1\",\n        \"RuleIds\": [\n            \"4611686018427387909\",\n            \"128\"\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07c4d170-f547-4a44-be2e-7f992d483f26\"\n    }\n}",
-        "title": "自定义和系统规则添加"
-      },
-      {
         "document": "修改策略",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicy\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"DetectTime\": \"02:00:00\",\n        \"PolicyName\": \"test1\",\n        \"DetectInterval\": \"1\",\n        \"AssetType\": \"0\",\n        \"IsEnabled\": \"1\",\n        \"PolicyId\": \"268\",\n        \"RuleIds\": [\n            \"11\"\n        ],\n        \"IsDefault\": \"0\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9549bbb8-915f-4c0c-a03c-5b069d70b4d9\"\n    }\n}",
         "title": "修改策略"
+      },
+      {
+        "document": "自定义和系统规则添加",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicy\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"DetectTime\": \"03:00:00\",\n        \"PolicyName\": \"策略1111\",\n        \"DetectInterval\": \"1\",\n        \"AssetType\": \"0\",\n        \"IsEnabled\": \"1\",\n        \"PolicyId\": \"1\",\n        \"RuleIds\": [\n            \"4611686018427387909\",\n            \"128\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07c4d170-f547-4a44-be2e-7f992d483f26\"\n    }\n}",
+        "title": "自定义和系统规则添加"
       }
     ],
     "ModifyBaselinePolicyState": [
-      {
-        "document": "禁用检测策略",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicyState\n<公共请求参数>\n\n{\n    \"IsEnabled\": \"0\",\n    \"PolicyId\": \"259\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4306e95-f45b-408b-aff0-b3cc16f673e1\"\n    }\n}",
-        "title": "禁用检测策略"
-      },
       {
         "document": "使能策略",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicyState\n<公共请求参数>\n\n{\n    \"IsEnabled\": \"0\",\n    \"PolicyId\": \"259\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca6e6339-34ba-4c0d-90ac-3c4a6ea6d383\"\n    }\n}",
         "title": "使能策略"
+      },
+      {
+        "document": "禁用检测策略",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselinePolicyState\n<公共请求参数>\n\n{\n    \"IsEnabled\": \"0\",\n    \"PolicyId\": \"259\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4306e95-f45b-408b-aff0-b3cc16f673e1\"\n    }\n}",
+        "title": "禁用检测策略"
       }
     ],
     "ModifyBaselineRule": [
@@ -3611,15 +3611,15 @@
     "ModifyBashPolicyStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBashPolicyStatus\n<公共请求参数>\n\n{\n    \"Enable\": \"0\",\n    \"Id\": \"100\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "切换高危命令规则状态"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBashPolicyStatus\n<公共请求参数>\n\n{\n    \"Enable\": \"0\",\n    \"Id\": \"10006\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18db3474-a2a2-4763-9e36-d1379a98194c\"\n    }\n}",
         "title": "设置策略不生效"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBashPolicyStatus\n<公共请求参数>\n\n{\n    \"Enable\": \"0\",\n    \"Id\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "切换高危命令规则状态"
       }
     ],
     "ModifyBruteAttackRules": [

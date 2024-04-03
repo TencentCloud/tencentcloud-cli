@@ -33,33 +33,7 @@ Output:
 }
 ```
 
-**Example 2: 同步调用设备行为，设备不在线。**
-
-当设备不在线或未订阅相关 topic 时，设备返回情况如样例所示。
-
-Input: 
-
-```
-tccli iotexplorer CallDeviceActionSync --cli-unfold-argument  \
-    --DeviceName light1 \
-    --InputParams {"brightness":3} \
-    --ActionId actid \
-    --ProductId TOIDHQ3AOQ
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ClientToken": "",
-        "OutputParams": "",
-        "RequestId": "b2621fc1-d6d9-4929-af0b-3fb0e919658a",
-        "Status": "FailedOperation.ActionUnreachable|动作消息不可达"
-    }
-}
-```
-
-**Example 3: 同步调用设备行为，设备超时**
+**Example 2: 同步调用设备行为，设备超时**
 
 当设备响应时间过长时，设备返回情况如样例所示。
 
@@ -82,6 +56,32 @@ Output:
             "Message": "调用超时"
         },
         "RequestId": "b1de7dcf-5029-4d70-b6b5-d1ad0f785552"
+    }
+}
+```
+
+**Example 3: 同步调用设备行为，设备不在线。**
+
+当设备不在线或未订阅相关 topic 时，设备返回情况如样例所示。
+
+Input: 
+
+```
+tccli iotexplorer CallDeviceActionSync --cli-unfold-argument  \
+    --DeviceName light1 \
+    --InputParams {"brightness":3} \
+    --ActionId actid \
+    --ProductId TOIDHQ3AOQ
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ClientToken": "",
+        "OutputParams": "",
+        "RequestId": "b2621fc1-d6d9-4929-af0b-3fb0e919658a",
+        "Status": "FailedOperation.ActionUnreachable|动作消息不可达"
     }
 }
 ```

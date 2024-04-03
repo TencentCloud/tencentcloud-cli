@@ -1,4 +1,27 @@
-**Example 1: DescribeCloudRunEnvs**
+**Example 1: success**
+
+
+
+Input: 
+
+```
+tccli tcbr DescribeCloudRunEnvs --cli-unfold-argument  \
+    --Channels 字符串 \
+    --EnvId 字符串 \
+    --IsVisible true
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EnvList": [],
+        "RequestId": "bf7eb6ec-1ae5-475c-99aa-81c1bd906152"
+    }
+}
+```
+
+**Example 2: DescribeCloudRunEnvs**
 
 
 
@@ -72,29 +95,6 @@ Output:
             }
         ],
         "RequestId": "75ec26f6-b624-40f1-a3f4-e724843f483e"
-    }
-}
-```
-
-**Example 2: success**
-
-
-
-Input: 
-
-```
-tccli tcbr DescribeCloudRunEnvs --cli-unfold-argument  \
-    --Channels 字符串 \
-    --EnvId 字符串 \
-    --IsVisible true
-```
-
-Output: 
-```
-{
-    "Response": {
-        "EnvList": [],
-        "RequestId": "bf7eb6ec-1ae5-475c-99aa-81c1bd906152"
     }
 }
 ```

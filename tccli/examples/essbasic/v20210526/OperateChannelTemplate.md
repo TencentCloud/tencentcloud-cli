@@ -1,43 +1,4 @@
-**Example 1: 查询模板库中的模板信息**
-
-查询模板库中的模板信息
-
-Input: 
-
-```
-tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --OperateType SELECT \
-    --TemplateId yDSLZUUckpot5i01UydF1AEvOMQiKaBG \
-    --ProxyOrganizationOpenIds  \
-    --AuthTag 
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
-        "TemplateId": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
-        "OperateResult": "all-success",
-        "AuthTag": "all",
-        "ProxyOrganizationOpenIds": [
-            "org_lisi",
-            "org_dianziqian",
-            "org_zhangsan",
-            "org_wangwu",
-            "org_liubo"
-        ],
-        "FailMessageList": [],
-        "RequestId": "75fffd24-3644-44eb-b7da-3849b942d69b"
-    }
-}
-```
-
-**Example 2: 删除部分授权子企业**
+**Example 1: 删除部分授权子企业**
 
 1.ProxyOrganizationOpenIds为要删除的子企业的标识列表
 
@@ -74,7 +35,7 @@ Output:
 }
 ```
 
-**Example 3: 授权部分失败的情况**
+**Example 2: 授权部分失败的情况**
 
 因为org_fffffffffff不存在导致这个企业授权失败(其他的授权成功)
 
@@ -112,6 +73,45 @@ Output:
             }
         ],
         "RequestId": "8b9e9a6b-2730-4971-8c4d-7c12d3905cd7"
+    }
+}
+```
+
+**Example 3: 查询模板库中的模板信息**
+
+查询模板库中的模板信息
+
+Input: 
+
+```
+tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType SELECT \
+    --TemplateId yDSLZUUckpot5i01UydF1AEvOMQiKaBG \
+    --ProxyOrganizationOpenIds  \
+    --AuthTag 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
+        "OperateResult": "all-success",
+        "AuthTag": "all",
+        "ProxyOrganizationOpenIds": [
+            "org_lisi",
+            "org_dianziqian",
+            "org_zhangsan",
+            "org_wangwu",
+            "org_liubo"
+        ],
+        "FailMessageList": [],
+        "RequestId": "75fffd24-3644-44eb-b7da-3849b942d69b"
     }
 }
 ```

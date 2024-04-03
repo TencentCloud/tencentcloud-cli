@@ -27,7 +27,7 @@ Output:
 }
 ```
 
-**Example 2: 添加HTTPS协议的CC防护IP黑白名单**
+**Example 2: 删除HTTPS协议的CC防护IP黑白名单**
 
 
 
@@ -37,12 +37,11 @@ Input:
 tccli dayu ModifyCCIpAllowDeny --cli-unfold-argument  \
     --Business bgpip \
     --Id bgpip-000000xe \
-    --Method add \
+    --Method delete \
     --Type white \
     --IpList 1.1.1.1 1.1.1.2 \
     --Protocol https \
-    --Domain test.com \
-    --RuleId rule-0000001
+    --Domain test.com
 ```
 
 Output: 
@@ -58,7 +57,7 @@ Output:
 }
 ```
 
-**Example 3: 删除HTTPS协议的CC防护IP黑白名单**
+**Example 3: 添加HTTPS协议的CC防护IP黑白名单**
 
 
 
@@ -68,11 +67,12 @@ Input:
 tccli dayu ModifyCCIpAllowDeny --cli-unfold-argument  \
     --Business bgpip \
     --Id bgpip-000000xe \
-    --Method delete \
+    --Method add \
     --Type white \
     --IpList 1.1.1.1 1.1.1.2 \
     --Protocol https \
-    --Domain test.com
+    --Domain test.com \
+    --RuleId rule-0000001
 ```
 
 Output: 

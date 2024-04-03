@@ -690,32 +690,7 @@ Output:
 }
 ```
 
-**Example 2: 失败2**
-
-失败2
-
-Input: 
-
-```
-tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
-    --TaskVersionDTOs.0.TaskId 123 \
-    --ProjectId 123
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "操作失败"
-        },
-        "RequestId": "f8e07ffd-3810-4099-b7bb-2aaeb84e9a48"
-    }
-}
-```
-
-**Example 3: 成功**
+**Example 2: 成功**
 
 成功
 
@@ -1408,16 +1383,16 @@ Output:
 }
 ```
 
-**Example 4: 失败示例0926**
+**Example 3: 失败2**
 
-失败示例0926
+失败2
 
 Input: 
 
 ```
 tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
-    --TaskVersionDTOs.0.TaskInfo.ProjectId 1470547050521227264 \
-    --ProjectId 1470547050521227264
+    --TaskVersionDTOs.0.TaskId 123 \
+    --ProjectId 123
 ```
 
 Output: 
@@ -1426,14 +1401,14 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation",
-            "Message": "任务校验: 任务: null 可能不合法: null"
+            "Message": "操作失败"
         },
-        "RequestId": "7d6b3b60-4fd9-47b1-ba33-68a731417dd9"
+        "RequestId": "f8e07ffd-3810-4099-b7bb-2aaeb84e9a48"
     }
 }
 ```
 
-**Example 5: 脚本不存在**
+**Example 4: 脚本不存在**
 
 脚本不存在
 
@@ -1647,6 +1622,31 @@ Output:
             "Message": "提交任务失败: 20230523111838986, 任务脚本文件复制失败，请查看脚本文件是否存在或者检查datastuido服务是否正常"
         },
         "RequestId": "cbffc50d-3289-47a2-8f4b-1077d4815c61"
+    }
+}
+```
+
+**Example 5: 失败示例0926**
+
+失败示例0926
+
+Input: 
+
+```
+tccli wedata BatchCreateTaskVersionDs --cli-unfold-argument  \
+    --TaskVersionDTOs.0.TaskInfo.ProjectId 1470547050521227264 \
+    --ProjectId 1470547050521227264
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "任务校验: 任务: null 可能不合法: null"
+        },
+        "RequestId": "7d6b3b60-4fd9-47b1-ba33-68a731417dd9"
     }
 }
 ```

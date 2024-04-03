@@ -202,16 +202,16 @@
     ],
     "DescribeAccessWhiteListRules": [
       {
-        "document": "查询用户组列表，未放开全部来源IP且开启自动添加IP",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccessWhiteListRuleSet\": [\n            {\n                \"Source\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Id\": 1,\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AllowAny\": false,\n        \"AllowAuto\": true\n    }\n}",
-        "title": "查询用户组列表，未放开全部来源IP"
-      },
-      {
         "document": "查询用户组列表，放开全部来源IP",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AccessWhiteListRuleSet\": [],\n        \"RequestId\": \"xx\",\n        \"AllowAny\": true,\n        \"AllowAuto\": false\n    }\n}",
         "title": "查询用户组列表，放开全部来源IP"
+      },
+      {
+        "document": "查询用户组列表，未放开全部来源IP且开启自动添加IP",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccessWhiteListRuleSet\": [\n            {\n                \"Source\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Id\": 1,\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AllowAny\": false,\n        \"AllowAuto\": true\n    }\n}",
+        "title": "查询用户组列表，未放开全部来源IP"
       }
     ],
     "DescribeAcls": [

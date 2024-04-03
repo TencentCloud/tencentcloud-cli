@@ -1,50 +1,4 @@
-**Example 1: 获取按产品维度汇总费用明细**
-
-获取按产品维度汇总费用明细
-
-Input: 
-
-```
-tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
-    --Month 2023-04 \
-    --GroupType business
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Ready": 1,
-        "RequestId": "db6f4a8c-c8b3-4d86-836a-b0897e772b22",
-        "SummaryDetail": [
-            {
-                "Business": null,
-                "CashPayAmount": "5661.16",
-                "GroupKey": "p_rav",
-                "GroupValue": "实时音视频",
-                "IncentivePayAmount": "0.00",
-                "RealTotalCost": "5661.16",
-                "TotalCost": "24600.63",
-                "TransferPayAmount": "0.00",
-                "VoucherPayAmount": "0.00"
-            },
-            {
-                "Business": null,
-                "CashPayAmount": "4783.65",
-                "GroupKey": "p_cvm",
-                "GroupValue": "云服务器CVM",
-                "IncentivePayAmount": "0.00",
-                "RealTotalCost": "5069.65",
-                "TotalCost": "13178.28",
-                "TransferPayAmount": "0.00",
-                "VoucherPayAmount": "286.00"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 获取按地域汇总费用明细**
+**Example 1: 获取按地域汇总费用明细**
 
 获取按地域汇总费用明细
 
@@ -144,7 +98,151 @@ Output:
 }
 ```
 
-**Example 3: 获取按标签维度汇总费用明细**
+**Example 2: 获取按项目汇总费用明细**
+
+获取按项目汇总费用明细
+
+Input: 
+
+```
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
+    --Month 2023-04 \
+    --GroupType project
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Ready": 1,
+        "RequestId": "8e0a185f-a64c-4dca-ba23-ba8778d5ef6f",
+        "SummaryDetail": [
+            {
+                "Business": [
+                    {
+                        "BusinessCode": "p_rav",
+                        "BusinessCodeName": "实时音视频",
+                        "CashPayAmount": "5661.16",
+                        "IncentivePayAmount": "0.00",
+                        "RealTotalCost": "5661.16",
+                        "TotalCost": "24600.63",
+                        "TransferPayAmount": "0.00",
+                        "VoucherPayAmount": "0.00"
+                    },
+                    {
+                        "BusinessCode": "p_cdh",
+                        "BusinessCodeName": "专用宿主机CDH",
+                        "CashPayAmount": "4254.20",
+                        "IncentivePayAmount": "0.00",
+                        "RealTotalCost": "4254.20",
+                        "TotalCost": "10919.99",
+                        "TransferPayAmount": "0.00",
+                        "VoucherPayAmount": "0.00"
+                    }
+                ],
+                "CashPayAmount": "9915.36",
+                "GroupKey": "0",
+                "GroupValue": "默认项目",
+                "IncentivePayAmount": "0.00",
+                "RealTotalCost": "9915.36",
+                "TotalCost": "35520.62",
+                "TransferPayAmount": "0.00",
+                "VoucherPayAmount": "0.00"
+            },
+            {
+                "Business": [
+                    {
+                        "BusinessCode": "p_cvm",
+                        "BusinessCodeName": "云服务器CVM",
+                        "CashPayAmount": "689.87",
+                        "IncentivePayAmount": "0.00",
+                        "RealTotalCost": "847.87",
+                        "TotalCost": "1667.57",
+                        "TransferPayAmount": "0.00",
+                        "VoucherPayAmount": "158.00"
+                    },
+                    {
+                        "BusinessCode": "p_eip",
+                        "BusinessCodeName": "公网 IP",
+                        "CashPayAmount": "9.69",
+                        "IncentivePayAmount": "0.01",
+                        "RealTotalCost": "9.71",
+                        "TotalCost": "263.25",
+                        "TransferPayAmount": "0.00",
+                        "VoucherPayAmount": "0.00"
+                    },
+                    {
+                        "BusinessCode": "p_cbs",
+                        "BusinessCodeName": "云硬盘CBS",
+                        "CashPayAmount": "3.15",
+                        "IncentivePayAmount": "0.00",
+                        "RealTotalCost": "3.15",
+                        "TotalCost": "6.83",
+                        "TransferPayAmount": "0.00",
+                        "VoucherPayAmount": "0.00"
+                    }
+                ],
+                "CashPayAmount": "702.71",
+                "GroupKey": "1279809",
+                "GroupValue": "PC端游戏",
+                "IncentivePayAmount": "0.01",
+                "RealTotalCost": "860.72",
+                "TotalCost": "1937.65",
+                "TransferPayAmount": "0.00",
+                "VoucherPayAmount": "158.00"
+            }
+        ]
+    }
+}
+```
+
+**Example 3: 获取按产品维度汇总费用明细**
+
+获取按产品维度汇总费用明细
+
+Input: 
+
+```
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
+    --Month 2023-04 \
+    --GroupType business
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Ready": 1,
+        "RequestId": "db6f4a8c-c8b3-4d86-836a-b0897e772b22",
+        "SummaryDetail": [
+            {
+                "Business": null,
+                "CashPayAmount": "5661.16",
+                "GroupKey": "p_rav",
+                "GroupValue": "实时音视频",
+                "IncentivePayAmount": "0.00",
+                "RealTotalCost": "5661.16",
+                "TotalCost": "24600.63",
+                "TransferPayAmount": "0.00",
+                "VoucherPayAmount": "0.00"
+            },
+            {
+                "Business": null,
+                "CashPayAmount": "4783.65",
+                "GroupKey": "p_cvm",
+                "GroupValue": "云服务器CVM",
+                "IncentivePayAmount": "0.00",
+                "RealTotalCost": "5069.65",
+                "TotalCost": "13178.28",
+                "TransferPayAmount": "0.00",
+                "VoucherPayAmount": "286.00"
+            }
+        ]
+    }
+}
+```
+
+**Example 4: 获取按标签维度汇总费用明细**
 
 获取按标签维度汇总费用明细
 
@@ -363,7 +461,7 @@ Output:
 }
 ```
 
-**Example 4: 获取按计费模式汇总费用明细**
+**Example 5: 获取按计费模式汇总费用明细**
 
 获取按计费模式汇总费用明细
 
@@ -445,104 +543,6 @@ Output:
                 "TotalCost": "4407.04",
                 "TransferPayAmount": "0.00",
                 "VoucherPayAmount": "0.00"
-            }
-        ]
-    }
-}
-```
-
-**Example 5: 获取按项目汇总费用明细**
-
-获取按项目汇总费用明细
-
-Input: 
-
-```
-tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
-    --Month 2023-04 \
-    --GroupType project
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Ready": 1,
-        "RequestId": "8e0a185f-a64c-4dca-ba23-ba8778d5ef6f",
-        "SummaryDetail": [
-            {
-                "Business": [
-                    {
-                        "BusinessCode": "p_rav",
-                        "BusinessCodeName": "实时音视频",
-                        "CashPayAmount": "5661.16",
-                        "IncentivePayAmount": "0.00",
-                        "RealTotalCost": "5661.16",
-                        "TotalCost": "24600.63",
-                        "TransferPayAmount": "0.00",
-                        "VoucherPayAmount": "0.00"
-                    },
-                    {
-                        "BusinessCode": "p_cdh",
-                        "BusinessCodeName": "专用宿主机CDH",
-                        "CashPayAmount": "4254.20",
-                        "IncentivePayAmount": "0.00",
-                        "RealTotalCost": "4254.20",
-                        "TotalCost": "10919.99",
-                        "TransferPayAmount": "0.00",
-                        "VoucherPayAmount": "0.00"
-                    }
-                ],
-                "CashPayAmount": "9915.36",
-                "GroupKey": "0",
-                "GroupValue": "默认项目",
-                "IncentivePayAmount": "0.00",
-                "RealTotalCost": "9915.36",
-                "TotalCost": "35520.62",
-                "TransferPayAmount": "0.00",
-                "VoucherPayAmount": "0.00"
-            },
-            {
-                "Business": [
-                    {
-                        "BusinessCode": "p_cvm",
-                        "BusinessCodeName": "云服务器CVM",
-                        "CashPayAmount": "689.87",
-                        "IncentivePayAmount": "0.00",
-                        "RealTotalCost": "847.87",
-                        "TotalCost": "1667.57",
-                        "TransferPayAmount": "0.00",
-                        "VoucherPayAmount": "158.00"
-                    },
-                    {
-                        "BusinessCode": "p_eip",
-                        "BusinessCodeName": "公网 IP",
-                        "CashPayAmount": "9.69",
-                        "IncentivePayAmount": "0.01",
-                        "RealTotalCost": "9.71",
-                        "TotalCost": "263.25",
-                        "TransferPayAmount": "0.00",
-                        "VoucherPayAmount": "0.00"
-                    },
-                    {
-                        "BusinessCode": "p_cbs",
-                        "BusinessCodeName": "云硬盘CBS",
-                        "CashPayAmount": "3.15",
-                        "IncentivePayAmount": "0.00",
-                        "RealTotalCost": "3.15",
-                        "TotalCost": "6.83",
-                        "TransferPayAmount": "0.00",
-                        "VoucherPayAmount": "0.00"
-                    }
-                ],
-                "CashPayAmount": "702.71",
-                "GroupKey": "1279809",
-                "GroupValue": "PC端游戏",
-                "IncentivePayAmount": "0.01",
-                "RealTotalCost": "860.72",
-                "TotalCost": "1937.65",
-                "TransferPayAmount": "0.00",
-                "VoucherPayAmount": "158.00"
             }
         ]
     }

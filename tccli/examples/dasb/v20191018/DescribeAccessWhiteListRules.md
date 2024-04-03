@@ -1,4 +1,26 @@
-**Example 1: 查询用户组列表，未放开全部来源IP**
+**Example 1: 查询用户组列表，放开全部来源IP**
+
+查询用户组列表，放开全部来源IP
+
+Input: 
+
+```
+tccli dasb DescribeAccessWhiteListRules --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "AccessWhiteListRuleSet": [],
+        "RequestId": "xx",
+        "AllowAny": true,
+        "AllowAuto": false
+    }
+}
+```
+
+**Example 2: 查询用户组列表，未放开全部来源IP**
 
 查询用户组列表，未放开全部来源IP且开启自动添加IP
 
@@ -23,28 +45,6 @@ Output:
         "RequestId": "xx",
         "AllowAny": false,
         "AllowAuto": true
-    }
-}
-```
-
-**Example 2: 查询用户组列表，放开全部来源IP**
-
-查询用户组列表，放开全部来源IP
-
-Input: 
-
-```
-tccli dasb DescribeAccessWhiteListRules --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "AccessWhiteListRuleSet": [],
-        "RequestId": "xx",
-        "AllowAny": true,
-        "AllowAuto": false
     }
 }
 ```

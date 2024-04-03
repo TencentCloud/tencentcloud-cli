@@ -537,6 +537,34 @@
       ],
       "usage": "both"
     },
+    "AutoBatchSelectorDetail": {
+      "document": "自动分批更新详细配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群标签选择\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "ClusterLabelSelector",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要升级的Pod数量或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90%",
+          "member": "string",
+          "name": "PodNumToUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AutoBatchUpdate": {
       "document": "自动分批更新策略",
       "members": [
@@ -574,6 +602,7 @@
           "example": "无",
           "member": "Label",
           "name": "ClusterLabelSelector",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -584,6 +613,7 @@
           "example": "90%",
           "member": "string",
           "name": "PodNumToUpdate",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -594,7 +624,8 @@
           "example": "600",
           "member": "uint64",
           "name": "BatchInterval",
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6266,6 +6297,40 @@
       ],
       "usage": "both"
     },
+    "FeatureAffinity": {
+      "document": "特征亲和性结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多组亲和性特征集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"featuresID\": [\"plan-1\", \"plan-2\"], \"matchExpressions\": {}]",
+          "member": "FeatureTerm",
+          "name": "FeatureTerms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FeatureTerm": {
+      "document": "单一的特征亲和性数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多个特征id集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"plan-1\",\"plan-2\"]",
+          "member": "string",
+          "name": "FeaturesID",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FilePath": {
       "document": "文件路径",
       "members": [
@@ -7886,6 +7951,84 @@
       ],
       "usage": "both"
     },
+    "NewAutoBatchUpdate": {
+      "document": "自动分批更新策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详细配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NewAutoBatchUpdateDetail",
+          "name": "Details",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本批次升级允许升级失败的Pod个数或比例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10%",
+          "member": "string",
+          "name": "MaxFailed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NewAutoBatchUpdateDetail": {
+      "document": "自动分批更新详细配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BatchName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群标签选择\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoBatchSelectorDetail",
+          "name": "AutoBatchSelector",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批次间升级的间隔时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "uint64",
+          "name": "BatchInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ture",
+          "member": "bool",
+          "name": "Pause",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ObjectMeta": {
       "document": "资源对象信息",
       "members": [
@@ -8074,6 +8217,89 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署策略的生效方式\nOnDelete(default),Immediate,ByWorkflow\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Effective",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果需要灰度，使用的灰度worfklow流程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PlacementWorkflow",
+          "name": "Workflow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "特征亲和性配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FeatureAffinity",
+          "name": "FeatureAffinity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PlacementWorkflow": {
+      "document": "在Placement的Workflow信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所需的workflow名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发的组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次更新的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间间隔(s/秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Interval",
+          "output_required": false,
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -9542,6 +9768,26 @@
         },
         {
           "disabled": false,
+          "document": "等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "BatchInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本批次是否暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Pause",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "升级状态\nWaitUpdate：待升级\nUpdating：升级中\nUpdateComplete：升级完成",
           "example": "WaitUpdate",
           "member": "string",
@@ -9656,6 +9902,17 @@
           "example": "无",
           "member": "AutoBatchUpdate",
           "name": "AutoBatchUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动分批更新配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NewAutoBatchUpdate",
+          "name": "NewAutoBatchUpdate",
           "output_required": true,
           "required": false,
           "type": "object",

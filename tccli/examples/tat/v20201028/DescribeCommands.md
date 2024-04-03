@@ -47,7 +47,52 @@ Output:
 }
 ```
 
-**Example 2: 使用 command-name Filter 查询**
+**Example 2: 使用 created-by Filter 查询**
+
+
+
+Input: 
+
+```
+tccli tat DescribeCommands --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name created-by \
+    --Filters.0.Values USER
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6b215093-e1f6-4803-b84a-a230849e88d1",
+        "TotalCount": 2,
+        "CommandSet": [
+            {
+                "CommandId": "cmd-hb2q34lk",
+                "CommandName": "second-command",
+                "Description": "ps",
+                "FormattedDescription": "",
+                "CreatedBy": "USER",
+                "Content": "cHM=",
+                "CommandType": "SHELL",
+                "WorkingDirectory": "/root/",
+                "Timeout": 60,
+                "EnableParameter": false,
+                "DefaultParameters": "",
+                "Username": "root",
+                "Tags": [],
+                "CreatedTime": "2020-10-30T07:19:52+00:00",
+                "UpdatedTime": "2020-10-30T07:19:52+00:00",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
+            }
+        ]
+    }
+}
+```
+
+**Example 3: 使用 command-name Filter 查询**
 
 
 
@@ -113,51 +158,6 @@ Output:
                 ],
                 "CreatedTime": "2020-10-26T11:26:07+00:00",
                 "UpdatedTime": "2020-11-09T08:12:45+00:00",
-                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
-                "OutputCOSKeyPrefix": "aa/bb/cc"
-            }
-        ]
-    }
-}
-```
-
-**Example 3: 使用 created-by Filter 查询**
-
-
-
-Input: 
-
-```
-tccli tat DescribeCommands --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 1 \
-    --Filters.0.Name created-by \
-    --Filters.0.Values USER
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6b215093-e1f6-4803-b84a-a230849e88d1",
-        "TotalCount": 2,
-        "CommandSet": [
-            {
-                "CommandId": "cmd-hb2q34lk",
-                "CommandName": "second-command",
-                "Description": "ps",
-                "FormattedDescription": "",
-                "CreatedBy": "USER",
-                "Content": "cHM=",
-                "CommandType": "SHELL",
-                "WorkingDirectory": "/root/",
-                "Timeout": 60,
-                "EnableParameter": false,
-                "DefaultParameters": "",
-                "Username": "root",
-                "Tags": [],
-                "CreatedTime": "2020-10-30T07:19:52+00:00",
-                "UpdatedTime": "2020-10-30T07:19:52+00:00",
                 "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
                 "OutputCOSKeyPrefix": "aa/bb/cc"
             }

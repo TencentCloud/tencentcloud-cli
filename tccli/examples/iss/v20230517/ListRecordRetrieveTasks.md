@@ -1,23 +1,4 @@
-**Example 1: 不存在取回任务**
-
- 
-
-Input: 
-
-```
-tccli iss ListRecordRetrieveTasks --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": null,
-        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
-    }
-}
-```
-
-**Example 2: 存在取回任务**
+**Example 1: 存在取回任务**
 
  
 
@@ -56,6 +37,25 @@ Output:
                 "Capacity": 64
             }
         ],
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
+}
+```
+
+**Example 2: 不存在取回任务**
+
+ 
+
+Input: 
+
+```
+tccli iss ListRecordRetrieveTasks --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": null,
         "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
     }
 }

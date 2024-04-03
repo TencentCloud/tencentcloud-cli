@@ -22,9 +22,9 @@ Output:
 }
 ```
 
-**Example 2: 变更歌曲音频参数**
+**Example 2: 设置播放模式**
 
-
+设置播放模式为随机播放。
 
 Input: 
 
@@ -33,8 +33,8 @@ tccli yinsuda SyncKTVRobotCommand --cli-unfold-argument  \
     --AppName ktv \
     --UserId 10001 \
     --RobotId xxxxx \
-    --SyncRobotCommands.0.Command SetAudioParam \
-    --SyncRobotCommands.0.SetAudioParamCommandInput.Type Accompaniment
+    --SyncRobotCommands.0.Command SetPlayMode \
+    --SyncRobotCommands.0.SetPlayModeCommandInput.PlayMode Shuffle
 ```
 
 Output: 
@@ -46,7 +46,32 @@ Output:
 }
 ```
 
-**Example 3: 切换下一首歌曲**
+**Example 3: 设置销毁模式**
+
+设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。
+
+Input: 
+
+```
+tccli yinsuda SyncKTVRobotCommand --cli-unfold-argument  \
+    --AppName ktv \
+    --UserId 10001 \
+    --RobotId xxxxx \
+    --SyncRobotCommands.0.Command SetDestroyMode \
+    --SyncRobotCommands.0.SetDestroyModeCommandInput.DestroyMode Expire \
+    --SyncRobotCommands.0.SetDestroyModeCommandInput.DestroyExpireTime 120
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+    }
+}
+```
+
+**Example 4: 切换下一首歌曲**
 
 
 
@@ -69,7 +94,7 @@ Output:
 }
 ```
 
-**Example 4: 发送自定义消息**
+**Example 5: 发送自定义消息**
 
 
 
@@ -94,33 +119,9 @@ Output:
 }
 ```
 
-**Example 5: 设置播放模式**
+**Example 6: 变更歌曲音频参数**
 
-设置播放模式为随机播放。
 
-Input: 
-
-```
-tccli yinsuda SyncKTVRobotCommand --cli-unfold-argument  \
-    --AppName ktv \
-    --UserId 10001 \
-    --RobotId xxxxx \
-    --SyncRobotCommands.0.Command SetPlayMode \
-    --SyncRobotCommands.0.SetPlayModeCommandInput.PlayMode Shuffle
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
-    }
-}
-```
-
-**Example 6: 设置销毁模式**
-
-设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。
 
 Input: 
 
@@ -129,9 +130,8 @@ tccli yinsuda SyncKTVRobotCommand --cli-unfold-argument  \
     --AppName ktv \
     --UserId 10001 \
     --RobotId xxxxx \
-    --SyncRobotCommands.0.Command SetDestroyMode \
-    --SyncRobotCommands.0.SetDestroyModeCommandInput.DestroyMode Expire \
-    --SyncRobotCommands.0.SetDestroyModeCommandInput.DestroyExpireTime 120
+    --SyncRobotCommands.0.Command SetAudioParam \
+    --SyncRobotCommands.0.SetAudioParamCommandInput.Type Accompaniment
 ```
 
 Output: 

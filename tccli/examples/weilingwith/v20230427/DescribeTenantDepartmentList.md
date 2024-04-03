@@ -1,6 +1,6 @@
-**Example 1: 查询租户组织部门列表**
+**Example 1: 组织部门列表**
 
-查询租户组织部门列表
+组织部门列表
 
 Input: 
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fbb81f22-548b-43e9-afad-08c595058205",
+        "RequestId": "86a86966-f838-44ec-b1e4-469429cf0b61",
         "Result": {
             "Departments": [
                 {
@@ -64,9 +64,9 @@ Output:
 }
 ```
 
-**Example 3: 组织部门列表**
+**Example 3: 查询租户组织部门列表**
 
-组织部门列表
+查询租户组织部门列表
 
 Input: 
 
@@ -82,7 +82,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "86a86966-f838-44ec-b1e4-469429cf0b61",
+        "RequestId": "fbb81f22-548b-43e9-afad-08c595058205",
         "Result": {
             "Departments": [
                 {

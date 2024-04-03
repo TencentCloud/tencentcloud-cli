@@ -1,64 +1,4 @@
-**Example 1: 小程序在线加固结果查询示例**
-
-小程序在线加固结果查询示例
-
-Input: 
-
-```
-tccli ms DescribeEncryptInstances --cli-unfold-argument  \
-    --PlatformType 4 \
-    --OrderType 1 \
-    --EncryptOpType 1 \
-    --EncryptState 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "EncryptResults": [
-            {
-                "AndroidResult": null,
-                "IOSResult": null,
-                "SDKResult": null,
-                "AppletResult": {
-                    "AppletInfo": {
-                        "AppletJsUrl": "http://xxxxxxxxxxx.zip",
-                        "AppletLevel": 1,
-                        "Name": "test.zip"
-                    },
-                    "CostTime": 13,
-                    "CreatTime": "2023-06-05 18:02:50",
-                    "EncryptErrCode": 0,
-                    "EncryptErrDesc": "",
-                    "EncryptErrRef": "",
-                    "EncryptPkgUrl": "https://xxxxxxxxxxxx/xxxxx/test.zip",
-                    "EncryptState": 1,
-                    "EncryptStateDesc": "加固成功",
-                    "EndTime": "2023-06-05 18:03:21",
-                    "OpUin": 700000154106,
-                    "OrderId": "20230605_96ca291a-6e84-47eb-xxxxx-xxxxxx",
-                    "ResourceId": "20230605_96ca291a-6e84-47eb-xxxxx-xxxxxx_0",
-                    "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95",
-                    "StartTime": "2023-06-05 18:02:55"
-                },
-                "EncryptOpType": 1,
-                "EncryptOpTypeDesc": "在线加固",
-                "OrderType": 1,
-                "OrderTypeDesc": "免费试用",
-                "PlatformDesc": "applet小程序加固",
-                "PlatformType": 4,
-                "ResourceId": "xxxxxxx",
-                "OrderId": "xxxxxxxxxxxxxx"
-            }
-        ],
-        "RequestId": "3a25bb5e-6334-449c-b4bf-bbea1e673e3a",
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 2: 根据ResultId进行单记录查询**
+**Example 1: 根据ResultId进行单记录查询**
 
 根据ResultId进行单记录查询
 
@@ -115,7 +55,7 @@ Output:
 }
 ```
 
-**Example 3: 查询Android在线加固成功任务**
+**Example 2: 查询Android在线加固成功任务**
 
 查询Android在线加固成功任务
 
@@ -196,7 +136,7 @@ Output:
 }
 ```
 
-**Example 4: 查询Android输出工具任务结果**
+**Example 3: 查询Android输出工具任务结果**
 
 查询Android输出工具任务结果
 
@@ -266,6 +206,66 @@ Output:
             }
         ],
         "RequestId": "59af19a2-9729-4397-a229-6ee8e8a15a1e",
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 4: 小程序在线加固结果查询示例**
+
+小程序在线加固结果查询示例
+
+Input: 
+
+```
+tccli ms DescribeEncryptInstances --cli-unfold-argument  \
+    --PlatformType 4 \
+    --OrderType 1 \
+    --EncryptOpType 1 \
+    --EncryptState 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "EncryptResults": [
+            {
+                "AndroidResult": null,
+                "IOSResult": null,
+                "SDKResult": null,
+                "AppletResult": {
+                    "AppletInfo": {
+                        "AppletJsUrl": "http://xxxxxxxxxxx.zip",
+                        "AppletLevel": 1,
+                        "Name": "test.zip"
+                    },
+                    "CostTime": 13,
+                    "CreatTime": "2023-06-05 18:02:50",
+                    "EncryptErrCode": 0,
+                    "EncryptErrDesc": "",
+                    "EncryptErrRef": "",
+                    "EncryptPkgUrl": "https://xxxxxxxxxxxx/xxxxx/test.zip",
+                    "EncryptState": 1,
+                    "EncryptStateDesc": "加固成功",
+                    "EndTime": "2023-06-05 18:03:21",
+                    "OpUin": 700000154106,
+                    "OrderId": "20230605_96ca291a-6e84-47eb-xxxxx-xxxxxx",
+                    "ResourceId": "20230605_96ca291a-6e84-47eb-xxxxx-xxxxxx_0",
+                    "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95",
+                    "StartTime": "2023-06-05 18:02:55"
+                },
+                "EncryptOpType": 1,
+                "EncryptOpTypeDesc": "在线加固",
+                "OrderType": 1,
+                "OrderTypeDesc": "免费试用",
+                "PlatformDesc": "applet小程序加固",
+                "PlatformType": 4,
+                "ResourceId": "xxxxxxx",
+                "OrderId": "xxxxxxxxxxxxxx"
+            }
+        ],
+        "RequestId": "3a25bb5e-6334-449c-b4bf-bbea1e673e3a",
         "TotalCount": 1
     }
 }

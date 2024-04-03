@@ -1,18 +1,44 @@
-**Example 1: 获取下载文件链接 --- 压缩多文件**
+**Example 1: 查询的文件没有权限**
 
-下载文件压缩包
+
 
 Input: 
 
 ```
 tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.UserId f2d8********f56b7 \
-    --FileType ZIP \
-    --BusinessType DOCUMENT \
+    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
+    --FileType PDF \
+    --BusinessType FLOW \
     --FileName 合同 \
     --Limit 0 \
     --Offset 0 \
-    --BusinessIds e1a5****dfabfdbec6 670d****590d4dcd dc3df****07f8323
+    --BusinessIds 11114444 11114444555 12315215515 12415251512
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "资源不存在或无权限"
+        },
+        "RequestId": "s166*******3046"
+    }
+}
+```
+
+**Example 2: 获取下载文件链接 --- 单个合同**
+
+下载单个合同文件
+
+Input: 
+
+```
+tccli ess DescribeFileUrls --cli-unfold-argument  \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --BusinessType FLOW \
+    --BusinessIds yDwFkUUckpstzjhfUugNAWf1KibXqS26
 ```
 
 Output: 
@@ -21,17 +47,17 @@ Output:
     "Response": {
         "FileUrls": [
             {
-                "Url": "https://file.ess.myqcloud.com/files/DOCUMENT/xxxx.ZIP?key=key********1234",
-                "Option": ""
+                "Option": "[\"595.00,841.00\",\"-1\"]",
+                "Url": "https://file.test.ess.tencent.cn/file/FLOW/yDR0dUxxxxxxxxWe1SbE7r/0/0.PDF?hkey=c80b3f1357821exxxxxxxxxxx2ad82345c777"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "XXXX"
+        "RequestId": "1e1da50xxxxxx5d570ab151c9",
+        "TotalCount": 1
     }
 }
 ```
 
-**Example 2: 获取下载文件链接 --- 多个文件**
+**Example 3: 获取下载文件链接 --- 多个文件**
 
 下载多个合同文件
 
@@ -76,47 +102,21 @@ Output:
 }
 ```
 
-**Example 3: 查询的文件没有权限**
+**Example 4: 获取下载文件链接 --- 压缩多文件**
 
-
+下载文件压缩包
 
 Input: 
 
 ```
 tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
-    --FileType PDF \
-    --BusinessType FLOW \
+    --Operator.UserId f2d8********f56b7 \
+    --FileType ZIP \
+    --BusinessType DOCUMENT \
     --FileName 合同 \
     --Limit 0 \
     --Offset 0 \
-    --BusinessIds 11114444 11114444555 12315215515 12415251512
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "ResourceNotFound",
-            "Message": "资源不存在或无权限"
-        },
-        "RequestId": "s166*******3046"
-    }
-}
-```
-
-**Example 4: 获取下载文件链接 --- 单个合同**
-
-下载单个合同文件
-
-Input: 
-
-```
-tccli ess DescribeFileUrls --cli-unfold-argument  \
-    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
-    --BusinessType FLOW \
-    --BusinessIds yDwFkUUckpstzjhfUugNAWf1KibXqS26
+    --BusinessIds e1a5****dfabfdbec6 670d****590d4dcd dc3df****07f8323
 ```
 
 Output: 
@@ -125,12 +125,12 @@ Output:
     "Response": {
         "FileUrls": [
             {
-                "Option": "[\"595.00,841.00\",\"-1\"]",
-                "Url": "https://file.test.ess.tencent.cn/file/FLOW/yDR0dUxxxxxxxxWe1SbE7r/0/0.PDF?hkey=c80b3f1357821exxxxxxxxxxx2ad82345c777"
+                "Url": "https://file.ess.myqcloud.com/files/DOCUMENT/xxxx.ZIP?key=key********1234",
+                "Option": ""
             }
         ],
-        "RequestId": "1e1da50xxxxxx5d570ab151c9",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "RequestId": "XXXX"
     }
 }
 ```

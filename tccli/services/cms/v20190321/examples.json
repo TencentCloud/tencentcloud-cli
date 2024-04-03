@@ -49,15 +49,15 @@
     "DeleteKeywordsLib": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"ID\": \"xx\",\n    \"UserSubUin\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除词库范例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeywordsLib\n<公共请求参数>\n\n{\n    \"UserUin\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"UserAppID\": \"123\",\n    \"ID\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adddea6d-8abb-45a7-bcfe-8c7f0bb999d8\"\n    }\n}",
         "title": "删除词库示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKeywordsLib\n<公共请求参数>\n\n{\n    \"UserAppID\": \"xx\",\n    \"UserUin\": \"xx\",\n    \"ID\": \"xx\",\n    \"UserSubUin\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除词库范例"
       }
     ],
     "DeleteLibSamples": [
@@ -70,16 +70,16 @@
     ],
     "DescribeGroupTag": [
       {
-        "document": "用于策略维护里面的标签组的选择界面显示分类的数据",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupTag\n<公共请求参数>\n\n{\n    \"HideStatus\": true,\n    \"TagType\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"GroupClassList\": [\n                    {\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"xx\",\n                                \"GroupMsg\": \"xx\",\n                                \"GroupName\": \"xx\"\n                            }\n                        ],\n                        \"GroupClassName\": \"xx\",\n                        \"GroupClassEname\": \"xx\"\n                    }\n                ],\n                \"TagType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "标签组数据返回试例"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupTag\n<公共请求参数>\n\n{\n    \"HideStatus\": \"true\",\n    \"TagType\": \"TagAudio\"\n}",
         "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"TagType\": \"TagAudio\",\n                \"GroupClassList\": [\n                    {\n                        \"GroupClassEname\": \"Polity\",\n                        \"GroupClassName\": \"政治\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Porn\",\n                        \"GroupClassName\": \"色情\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Moan\",\n                        \"GroupClassName\": \"娇喘\",\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"OVR\",\n                                \"GroupName\": \"低俗语音识别\",\n                                \"GroupMsg\": \"示例：呻吟、娇喘、娇喘等性暗示相关的语音\"\n                            }\n                        ]\n                    },\n                    {\n                        \"GroupClassEname\": \"Terror\",\n                        \"GroupClassName\": \"暴恐\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Illegal\",\n                        \"GroupClassName\": \"违法\",\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"Illegal\",\n                                \"GroupName\": \"违法违规内容\",\n                                \"GroupMsg\": \"\"\n                            }\n                        ]\n                    },\n                    {\n                        \"GroupClassEname\": \"Abuse\",\n                        \"GroupClassName\": \"谩骂\",\n                        \"LabelGroupList\": []\n                    },\n                    {\n                        \"GroupClassEname\": \"Ad\",\n                        \"GroupClassName\": \"广告\",\n                        \"LabelGroupList\": []\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"0411564c-0101-4bd0-8db8-6c4e4bd59b78\"\n    }\n}",
         "title": "正常调用"
+      },
+      {
+        "document": "用于策略维护里面的标签组的选择界面显示分类的数据",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupTag\n<公共请求参数>\n\n{\n    \"HideStatus\": true,\n    \"TagType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"GroupClassList\": [\n                    {\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"xx\",\n                                \"GroupMsg\": \"xx\",\n                                \"GroupName\": \"xx\"\n                            }\n                        ],\n                        \"GroupClassName\": \"xx\",\n                        \"GroupClassEname\": \"xx\"\n                    }\n                ],\n                \"TagType\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "标签组数据返回试例"
       }
     ],
     "DescribeImageLibImage": [
@@ -101,15 +101,15 @@
     "DescribeLevelTag": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLevelTag\n<公共请求参数>\n\n{\n    \"ParentTag\": \"xx\",\n    \"Type\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LevelTagList\": [\n            {\n                \"Code\": \"xx\",\n                \"Name\": \"xx\",\n                \"Scene\": \"xx\",\n                \"TagType\": \"xx\",\n                \"Priority\": 0,\n                \"Cname\": \"xx\",\n                \"BackGroundColor\": \"xx\",\n                \"FontColor\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "分级标签查询和返回"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLevelTag\n<公共请求参数>\n\n{\n    \"ParentTag\": \"\",\n    \"Type\": \"Text\"\n}",
         "output": "{\n    \"Response\": {\n        \"LevelTagList\": [\n            {\n                \"Code\": \"100\",\n                \"Name\": \"Normal\",\n                \"Cname\": \"正常\",\n                \"Scene\": \"\",\n                \"Priority\": 0,\n                \"FontColor\": \"#008000\",\n                \"BackGroundColor\": \"#008000\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20001\",\n                \"Name\": \"Polity\",\n                \"Cname\": \"政治\",\n                \"Scene\": \"\",\n                \"Priority\": 999,\n                \"FontColor\": \"#000000\",\n                \"BackGroundColor\": \"#E54545\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20105\",\n                \"Name\": \"Ad\",\n                \"Cname\": \"广告\",\n                \"Scene\": \"\",\n                \"Priority\": 750,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#149CFF\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20007\",\n                \"Name\": \"Abuse\",\n                \"Cname\": \"谩骂\",\n                \"Scene\": \"\",\n                \"Priority\": 800,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#9741D9\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20006\",\n                \"Name\": \"Illegal\",\n                \"Cname\": \"违法\",\n                \"Scene\": \"\",\n                \"Priority\": 900,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#4B70F5\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"25001\",\n                \"Name\": \"Spam\",\n                \"Cname\": \"灌水\",\n                \"Scene\": \"\",\n                \"Priority\": 700,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#1FC0CC\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"24001\",\n                \"Name\": \"Terror\",\n                \"Cname\": \"暴恐\",\n                \"Scene\": \"\",\n                \"Priority\": 950,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#FF7200\",\n                \"TagType\": \"Other\"\n            },\n            {\n                \"Code\": \"20002\",\n                \"Name\": \"Porn\",\n                \"Cname\": \"色情\",\n                \"Scene\": \"\",\n                \"Priority\": 970,\n                \"FontColor\": \"\",\n                \"BackGroundColor\": \"#FFBB00\",\n                \"TagType\": \"Other\"\n            }\n        ],\n        \"RequestId\": \"afb5ce6e-b68b-4da2-be4e-cf783ae4a91e\"\n    }\n}",
         "title": "获取成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLevelTag\n<公共请求参数>\n\n{\n    \"ParentTag\": \"xx\",\n    \"Type\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LevelTagList\": [\n            {\n                \"Code\": \"xx\",\n                \"Name\": \"xx\",\n                \"Scene\": \"xx\",\n                \"TagType\": \"xx\",\n                \"Priority\": 0,\n                \"Cname\": \"xx\",\n                \"BackGroundColor\": \"xx\",\n                \"FontColor\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "分级标签查询和返回"
       }
     ],
     "DescribeLibSamples": [

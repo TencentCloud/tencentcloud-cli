@@ -1,62 +1,4 @@
-**Example 1: 获取告警屏蔽规则列表**
-
-
-
-Input: 
-
-```
-tccli monitor DescribeAlarmShields --cli-unfold-argument  \
-    --Name xx \
-    --PageSize 1 \
-    --Module xx \
-    --Field xx \
-    --PageNumber 1 \
-    --ShieldIds xx \
-    --Order xx
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 3,
-        "RequestId": "fasdfaghash434stsi579ah",
-        "Shields": [
-            {
-                "ShieldId": "Shield-xxxx",
-                "Enable": 1,
-                "Name": "测试屏蔽",
-                "MonitorType": "MT_QCE",
-                "MonitorTypeShowName": "云产品监控",
-                "NameSpace": "CKAFKA-CONSUMERGROUP-TOPIC",
-                "NameSpaceShowName": "消息队列Kafka-ConsumerGroup-Topic",
-                "ShieldObject": [
-                    "cafka-xxx",
-                    "cafka-xxx"
-                ],
-                "ShieldMetric": [
-                    {
-                        "Metric": "UnconsumeTopic",
-                        "MetricShowName": "取消消费主题"
-                    },
-                    {
-                        "Metric": "MaxOffsetTopic",
-                        "MetricShowName": "最大偏移主题"
-                    }
-                ],
-                "ShieldTimeType": "LOOP_SHIELD",
-                "StartTime": "36000",
-                "EndTime": "72000",
-                "LoopStartDate": "1648742400",
-                "LoopEndDate": "1649088000",
-                "CurrentStatus": "NOT_TRIGGERED"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: DescribeAlarmShields示例1**
+**Example 1: DescribeAlarmShields示例1**
 
 
 
@@ -191,6 +133,64 @@ Output:
             }
         ],
         "TotalCount": 4
+    }
+}
+```
+
+**Example 2: 获取告警屏蔽规则列表**
+
+
+
+Input: 
+
+```
+tccli monitor DescribeAlarmShields --cli-unfold-argument  \
+    --Name xx \
+    --PageSize 1 \
+    --Module xx \
+    --Field xx \
+    --PageNumber 1 \
+    --ShieldIds xx \
+    --Order xx
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 3,
+        "RequestId": "fasdfaghash434stsi579ah",
+        "Shields": [
+            {
+                "ShieldId": "Shield-xxxx",
+                "Enable": 1,
+                "Name": "测试屏蔽",
+                "MonitorType": "MT_QCE",
+                "MonitorTypeShowName": "云产品监控",
+                "NameSpace": "CKAFKA-CONSUMERGROUP-TOPIC",
+                "NameSpaceShowName": "消息队列Kafka-ConsumerGroup-Topic",
+                "ShieldObject": [
+                    "cafka-xxx",
+                    "cafka-xxx"
+                ],
+                "ShieldMetric": [
+                    {
+                        "Metric": "UnconsumeTopic",
+                        "MetricShowName": "取消消费主题"
+                    },
+                    {
+                        "Metric": "MaxOffsetTopic",
+                        "MetricShowName": "最大偏移主题"
+                    }
+                ],
+                "ShieldTimeType": "LOOP_SHIELD",
+                "StartTime": "36000",
+                "EndTime": "72000",
+                "LoopStartDate": "1648742400",
+                "LoopEndDate": "1649088000",
+                "CurrentStatus": "NOT_TRIGGERED"
+            }
+        ]
     }
 }
 ```

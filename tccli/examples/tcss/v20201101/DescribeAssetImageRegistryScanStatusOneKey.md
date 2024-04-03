@@ -1,4 +1,32 @@
-**Example 1: 镜像仓库查询一键镜像扫描状态**
+**Example 1: 正常请求**
+
+正常请求
+
+Input: 
+
+```
+tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
+    --TaskID 13
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ImageScanCnt": 0,
+        "ImageStatus": [],
+        "ImageTotal": 1525,
+        "RequestId": "a8298892-31c6-4a39-84e2-ce998b5822fd",
+        "RiskCount": 0,
+        "ScanRemainTime": 0,
+        "Schedule": 0,
+        "Status": "SCANNING",
+        "SuccessCount": 0
+    }
+}
+```
+
+**Example 2: 镜像仓库查询一键镜像扫描状态**
 
 镜像仓库查询一键镜像扫描状态
 
@@ -38,34 +66,6 @@ Output:
         "Status": "abc",
         "ScanRemainTime": 1,
         "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 正常请求**
-
-正常请求
-
-Input: 
-
-```
-tccli tcss DescribeAssetImageRegistryScanStatusOneKey --cli-unfold-argument  \
-    --TaskID 13
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ImageScanCnt": 0,
-        "ImageStatus": [],
-        "ImageTotal": 1525,
-        "RequestId": "a8298892-31c6-4a39-84e2-ce998b5822fd",
-        "RiskCount": 0,
-        "ScanRemainTime": 0,
-        "Schedule": 0,
-        "Status": "SCANNING",
-        "SuccessCount": 0
     }
 }
 ```

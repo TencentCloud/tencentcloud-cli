@@ -20,7 +20,29 @@ Output:
 }
 ```
 
-**Example 2: 修改媒体归属为团队**
+**Example 2: 修改媒体的分类**
+
+ 
+
+Input: 
+
+```
+tccli cme ModifyMaterial --cli-unfold-argument  \
+    --Platform test \
+    --MaterialId 5fd8ad3d628dc30001bd0895 \
+    --ClassPath /媒体/视频
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a12"
+    }
+}
+```
+
+**Example 3: 修改媒体归属为团队**
 
  
 
@@ -39,28 +61,6 @@ Output:
 {
     "Response": {
         "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a09"
-    }
-}
-```
-
-**Example 3: 修改媒体的分类**
-
- 
-
-Input: 
-
-```
-tccli cme ModifyMaterial --cli-unfold-argument  \
-    --Platform test \
-    --MaterialId 5fd8ad3d628dc30001bd0895 \
-    --ClassPath /媒体/视频
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "7bf08361-4455-4cbd-afd6-423b62c54a12"
     }
 }
 ```

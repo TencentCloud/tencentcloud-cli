@@ -1,25 +1,4 @@
-**Example 1: 编辑自动化规则状态**
-
-编辑自动化规则状态
-
-Input: 
-
-```
-tccli hasim ModifyRuleStatus --cli-unfold-argument  \
-    --RuleID 10001 \
-    --IsActive True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: modifystatus**
+**Example 1: modifystatus**
 
 
 
@@ -36,6 +15,27 @@ Output:
 {
     "Response": {
         "RequestId": "0aabacc0-ca02-487d-a795-9376739257fd"
+    }
+}
+```
+
+**Example 2: 编辑自动化规则状态**
+
+编辑自动化规则状态
+
+Input: 
+
+```
+tccli hasim ModifyRuleStatus --cli-unfold-argument  \
+    --RuleID 10001 \
+    --IsActive True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
     }
 }
 ```

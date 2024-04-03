@@ -1,29 +1,6 @@
-**Example 1: 搜索一个云服务器绑定的告警策略**
+**Example 1: 根据接收组搜索**
 
-按照实例过滤策略，需要填入监控类型、策略类型、实例的维度信息。我们以搜索两个云服务器为例，假设他们的实例 ID 分别为 `ins-qr8d555g`,  `ins-qr8d555h`。
-
-MonitorTypes 指定为 `MT_QCE`
-
-Namespaces 指定为 `cvm_device`
-
-Dimensions 的 JSON 字符串为
-
-```
-[
-    {
-        "Dimensions": {
-            "unInstanceId": "ins-qr8d555g"
-        }
-    },
-     {
-        "Dimensions": {
-            "unInstanceId": "ins-qr8d555h"
-        }
-    }
-]
-```
-
-不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+根据接收组搜索
 
 Input: 
 
@@ -31,10 +8,7 @@ Input:
 tccli monitor DescribeAlarmPolicies --cli-unfold-argument  \
     --Module monitor \
     --PageSize 10 \
-    --PageNumber 1 \
-    --MonitorTypes MT_QCE \
-    --Namespaces cvm_device \
-    --Dimensions [{"Dimensions": { "unInstanceId": "ins-qr8d555g"}},{ "Dimensions": { "unInstanceId": "ins-qr8d555h"}}]
+    --PageNumber 1
 ```
 
 Output: 
@@ -287,9 +261,32 @@ Output:
 }
 ```
 
-**Example 2: 根据接收组搜索**
+**Example 2: 搜索一个云服务器绑定的告警策略**
 
-根据接收组搜索
+按照实例过滤策略，需要填入监控类型、策略类型、实例的维度信息。我们以搜索两个云服务器为例，假设他们的实例 ID 分别为 `ins-qr8d555g`,  `ins-qr8d555h`。
+
+MonitorTypes 指定为 `MT_QCE`
+
+Namespaces 指定为 `cvm_device`
+
+Dimensions 的 JSON 字符串为
+
+```
+[
+    {
+        "Dimensions": {
+            "unInstanceId": "ins-qr8d555g"
+        }
+    },
+     {
+        "Dimensions": {
+            "unInstanceId": "ins-qr8d555h"
+        }
+    }
+]
+```
+
+不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
 
 Input: 
 
@@ -297,7 +294,10 @@ Input:
 tccli monitor DescribeAlarmPolicies --cli-unfold-argument  \
     --Module monitor \
     --PageSize 10 \
-    --PageNumber 1
+    --PageNumber 1 \
+    --MonitorTypes MT_QCE \
+    --Namespaces cvm_device \
+    --Dimensions [{"Dimensions": { "unInstanceId": "ins-qr8d555g"}},{ "Dimensions": { "unInstanceId": "ins-qr8d555h"}}]
 ```
 
 Output: 

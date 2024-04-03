@@ -1,32 +1,4 @@
-**Example 1: 验证不通过**
-
-验证不通过
-
-Input: 
-
-```
-tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
-    --FlowId yDSLWUUckposmpkvUyb9xvpEQeni94od \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId 
-```
-
-Output: 
-```
-{
-    "Response": {
-        "VerifyResult": 4,
-        "PdfVerifyResults": [],
-        "VerifySerialNo": "16992543927198",
-        "PdfResourceMd5": "708BE88A797843094A74FA10ABF08F01",
-        "RequestId": "e5064ef6-4743-461a-9024-3120576f3f6b"
-    }
-}
-```
-
-**Example 2: 验证通过**
+**Example 1: 验证通过**
 
 示例-验证通过
 
@@ -115,6 +87,34 @@ Output:
         "VerifySerialNo": "16992543927198",
         "PdfResourceMd5": "708BE88A797843094A74FA10ABF08F01",
         "RequestId": "80c66dcb-fc07-48d4-8914-eb0171bbf1ac"
+    }
+}
+```
+
+**Example 2: 验证不通过**
+
+验证不通过
+
+Input: 
+
+```
+tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
+    --FlowId yDSLWUUckposmpkvUyb9xvpEQeni94od \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
+```
+
+Output: 
+```
+{
+    "Response": {
+        "VerifyResult": 4,
+        "PdfVerifyResults": [],
+        "VerifySerialNo": "16992543927198",
+        "PdfResourceMd5": "708BE88A797843094A74FA10ABF08F01",
+        "RequestId": "e5064ef6-4743-461a-9024-3120576f3f6b"
     }
 }
 ```

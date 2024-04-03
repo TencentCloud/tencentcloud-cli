@@ -1,50 +1,4 @@
-**Example 1: 查询物理专线列表-2**
-
-
-
-Input: 
-
-```
-tccli dc DescribeDirectConnects --cli-unfold-argument  \
-    --DirectConnectIds dc-6mqd6t9j
-```
-
-Output: 
-```
-{
-    "Response": {
-        "DirectConnectSet": [
-            {
-                "EnabledTime": "2019-03-30 09:48:39",
-                "CustomerContactNumber": "13924777788",
-                "AccessPointId": "ap-cn-shenzhen-ns-A",
-                "ChargeState": "NORMAL",
-                "DirectConnectId": "dc-6mqd6t9j",
-                "State": "PENDING",
-                "ExpiredTime": null,
-                "Location": "腾讯大厦",
-                "CreatedTime": "2019-02-28 09:48:39",
-                "PortType": "1000Base-LX",
-                "CustomerName": "张三",
-                "LineOperator": "ChinaTelecom",
-                "TencentAddress": "",
-                "CircuitCode": "",
-                "CustomerAddress": "",
-                "CustomerContactMail": "zzubupt@163.com",
-                "Vlan": -1,
-                "Bandwidth": 100,
-                "DirectConnectName": "bbb",
-                "ChargeType": "PREPAID_BY_YEAR",
-                "RedundantDirectConnectId": ""
-            }
-        ],
-        "RequestId": "a17e965b-5c58-4cf2-b5fb-2e00946deea8",
-        "TotalCount": 1
-    }
-}
-```
-
-**Example 2: 查询物理专线列表**
+**Example 1: 查询物理专线列表**
 
 使用Filter进行筛选，用direct-connect-name进行筛选；
 
@@ -133,6 +87,52 @@ Output:
         ],
         "RequestId": "70d690c8-477a-4e5d-99c0-fa1bb012a105",
         "TotalCount": 3
+    }
+}
+```
+
+**Example 2: 查询物理专线列表-2**
+
+
+
+Input: 
+
+```
+tccli dc DescribeDirectConnects --cli-unfold-argument  \
+    --DirectConnectIds dc-6mqd6t9j
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DirectConnectSet": [
+            {
+                "EnabledTime": "2019-03-30 09:48:39",
+                "CustomerContactNumber": "13924777788",
+                "AccessPointId": "ap-cn-shenzhen-ns-A",
+                "ChargeState": "NORMAL",
+                "DirectConnectId": "dc-6mqd6t9j",
+                "State": "PENDING",
+                "ExpiredTime": null,
+                "Location": "腾讯大厦",
+                "CreatedTime": "2019-02-28 09:48:39",
+                "PortType": "1000Base-LX",
+                "CustomerName": "张三",
+                "LineOperator": "ChinaTelecom",
+                "TencentAddress": "",
+                "CircuitCode": "",
+                "CustomerAddress": "",
+                "CustomerContactMail": "zzubupt@163.com",
+                "Vlan": -1,
+                "Bandwidth": 100,
+                "DirectConnectName": "bbb",
+                "ChargeType": "PREPAID_BY_YEAR",
+                "RedundantDirectConnectId": ""
+            }
+        ],
+        "RequestId": "a17e965b-5c58-4cf2-b5fb-2e00946deea8",
+        "TotalCount": 1
     }
 }
 ```

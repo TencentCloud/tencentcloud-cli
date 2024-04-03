@@ -1,4 +1,28 @@
-**Example 1: 修改名称成功**
+**Example 1: 设备不存在**
+
+ 
+
+Input: 
+
+```
+tccli iss UpdateUserDevice --cli-unfold-argument  \
+    --DeviceId 12345678-abcd-efgh-ijkl-1234567890abcd
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "该资源不存在"
+        },
+        "RequestId": "26085616-997b-4c4f-b0f5-e487a7956a32"
+    }
+}
+```
+
+**Example 2: 修改名称成功**
 
  
 
@@ -35,30 +59,6 @@ Output:
             "Status": 1
         },
         "RequestId": "ade1d1a7-6a0d-44d6-8633-b114e350bce9"
-    }
-}
-```
-
-**Example 2: 设备不存在**
-
- 
-
-Input: 
-
-```
-tccli iss UpdateUserDevice --cli-unfold-argument  \
-    --DeviceId 12345678-abcd-efgh-ijkl-1234567890abcd
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "ResourceNotFound",
-            "Message": "该资源不存在"
-        },
-        "RequestId": "26085616-997b-4c4f-b0f5-e487a7956a32"
     }
 }
 ```

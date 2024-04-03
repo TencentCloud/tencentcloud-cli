@@ -34,16 +34,16 @@
     ],
     "CreateHashDepositNoCert": [
       {
-        "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链。",
-        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoCert\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceInfo\": \"业务扩展信息\",\n    \"EvidenceHash\": \"数据hash\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BusinessId\": \"as1111323311\",\n        \"EvidenceId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "哈希上链存证"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoCert\n<公共请求参数>\n\n{\n    \"EvidenceInfo\": \"34545\",\n    \"BusinessId\": \"777\",\n    \"EvidenceHash\": \"34543\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3fe7162-b32f-469b-9850-3e3e328dfec5\",\n        \"BusinessId\": \"777\",\n        \"EvidenceId\": \"f3fe7162-b32f-469b-9850-3e3e328dfec5\"\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "用户通过本接口向BTOE写入待存证的原文数据Hash值，BTOE对业务数据Hash值存证上链。",
+        "input": "POST / HTTP/1.1\nHost: btoe.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHashDepositNoCert\n<公共请求参数>\n\n{\n    \"BusinessId\": \"as1111323311\",\n    \"EvidenceInfo\": \"业务扩展信息\",\n    \"EvidenceHash\": \"数据hash\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BusinessId\": \"as1111323311\",\n        \"EvidenceId\": \"as1111323311\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "哈希上链存证"
       }
     ],
     "CreateHashDepositNoSeal": [

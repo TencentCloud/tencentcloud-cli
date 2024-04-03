@@ -1,39 +1,4 @@
-**Example 1: 用于更新vpc的辅助CIDR**
-
-
-
-Input: 
-
-```
-tccli vpc UpdateVpcAssistCidrInternal --cli-unfold-argument  \
-    --VpcCidrSet.0.Subnet 172.16.0.0 \
-    --VpcCidrSet.0.VpcId 78257 \
-    --VpcCidrSet.0.OperationRouteToVbcFlag 1 \
-    --VpcCidrSet.0.IntMask 20 \
-    --VpcCidrSet.0.Owner 251198225 \
-    --VpcCidrSet.0.UniqueVpcId vpc-fjknwrrj
-```
-
-Output: 
-```
-{
-    "Response": {
-        "VpcCidrSet": [
-            {
-                "VpcId": 78257,
-                "UniqueVpcId": "vpc-fjknwrrj",
-                "Owner": "251198225",
-                "Subnet": "172.16.0.0",
-                "IntMask": 20,
-                "OperationRouteToVbcFlag": 1
-            }
-        ],
-        "RequestId": "1b2534de-3f38-4913-921a-af5ff1a9cb73"
-    }
-}
-```
-
-**Example 2: demo**
+**Example 1: demo**
 
 
 
@@ -76,6 +41,41 @@ Output:
             }
         ],
         "RequestId": "0ad42d3d-cfee-4c4e-b01e-d0b4f3d9d871"
+    }
+}
+```
+
+**Example 2: 用于更新vpc的辅助CIDR**
+
+
+
+Input: 
+
+```
+tccli vpc UpdateVpcAssistCidrInternal --cli-unfold-argument  \
+    --VpcCidrSet.0.Subnet 172.16.0.0 \
+    --VpcCidrSet.0.VpcId 78257 \
+    --VpcCidrSet.0.OperationRouteToVbcFlag 1 \
+    --VpcCidrSet.0.IntMask 20 \
+    --VpcCidrSet.0.Owner 251198225 \
+    --VpcCidrSet.0.UniqueVpcId vpc-fjknwrrj
+```
+
+Output: 
+```
+{
+    "Response": {
+        "VpcCidrSet": [
+            {
+                "VpcId": 78257,
+                "UniqueVpcId": "vpc-fjknwrrj",
+                "Owner": "251198225",
+                "Subnet": "172.16.0.0",
+                "IntMask": 20,
+                "OperationRouteToVbcFlag": 1
+            }
+        ],
+        "RequestId": "1b2534de-3f38-4913-921a-af5ff1a9cb73"
     }
 }
 ```

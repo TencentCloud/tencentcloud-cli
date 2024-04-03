@@ -1,4 +1,33 @@
-**Example 1: 轮询结果——任务成功**
+**Example 1: 轮询结果——任务失败**
+
+用户通过轮询方式获取识别结果，任务失败，具体原因请用户查看返回中ErrorMsg提示。
+
+Input: 
+
+```
+tccli asr DescribeTaskStatus --cli-unfold-argument  \
+    --TaskId 522931820
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "8824366f-0e8f-4bd4-8924-af5e84127caa",
+        "Data": {
+            "TaskId": 522931820,
+            "Status": 3,
+            "StatusStr": "failed",
+            "AudioDuration": 0,
+            "Result": "",
+            "ErrorMsg": "Failed to download audio file!",
+            "ResultDetail": []
+        }
+    }
+}
+```
+
+**Example 2: 轮询结果——任务成功**
 
 用户通过轮询方式获取识别结果，任务成功，并返回识别结果。
 
@@ -58,7 +87,7 @@ Output:
 }
 ```
 
-**Example 2: 轮询结果——任务等待**
+**Example 3: 轮询结果——任务等待**
 
 用户通过轮询方式获取识别结果，任务等待，说明任务还在识别队列中，请用户耐心等候。
 
@@ -87,7 +116,7 @@ Output:
 }
 ```
 
-**Example 3: 轮询结果——任务执行中**
+**Example 4: 轮询结果——任务执行中**
 
 用户通过轮询方式获取识别结果，任务执行中，说明任务已经开始识别，请用户耐心等候。
 
@@ -110,35 +139,6 @@ Output:
             "AudioDuration": 0,
             "Result": "",
             "ErrorMsg": "",
-            "ResultDetail": []
-        }
-    }
-}
-```
-
-**Example 4: 轮询结果——任务失败**
-
-用户通过轮询方式获取识别结果，任务失败，具体原因请用户查看返回中ErrorMsg提示。
-
-Input: 
-
-```
-tccli asr DescribeTaskStatus --cli-unfold-argument  \
-    --TaskId 522931820
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "8824366f-0e8f-4bd4-8924-af5e84127caa",
-        "Data": {
-            "TaskId": 522931820,
-            "Status": 3,
-            "StatusStr": "failed",
-            "AudioDuration": 0,
-            "Result": "",
-            "ErrorMsg": "Failed to download audio file!",
             "ResultDetail": []
         }
     }

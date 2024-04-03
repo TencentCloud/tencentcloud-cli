@@ -1,4 +1,49 @@
-**Example 1: 小程序免费加固示例**
+**Example 1: iOS混淆示例**
+
+POST / HTTP/1.1
+Host: ms.tencentcloudapi.com
+Content-Type: application/json
+X-TC-Action: CreateEncryptInstance
+<公共请求参数>
+
+{
+        "PlatformType": 2,
+        "OrderType": 1,
+        "EncryptOpType": 1,
+        "ResourceId":"xxxxxxxxxxxxxxxxxx",
+  "IOSInfo": {
+    "InfoPListUrl": "http://xxxxxxxxxxxxxxxxxxx.zip",
+    "InfoPListSize": 100,
+    "InfoPListMd5": "881ac0a49b3ae9967022217730cc0da8",
+    "BuildType": "release"
+  }
+}
+
+Input: 
+
+```
+tccli ms CreateEncryptInstance --cli-unfold-argument  \
+    --PlatformType 2 \
+    --OrderType 1 \
+    --EncryptOpType 1 \
+    --ResourceId xxxxxxxxxxxxxxxxxx \
+    --IOSInfo.InfoPListUrl http://xxxxxxxxxxxxxxxxxxx.zip \
+    --IOSInfo.InfoPListSize 100 \
+    --IOSInfo.InfoPListMd5 881ac0a49b3ae9967022217730cc0da8 \
+    --IOSInfo.BuildType release
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6ef4eac9-badc-40d9-9796-569741849f95",
+        "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95"
+    }
+}
+```
+
+**Example 2: 小程序免费加固示例**
 
 小程序免费加固示例
 
@@ -25,7 +70,7 @@ Output:
 }
 ```
 
-**Example 2: Android免费试用在线加固**
+**Example 3: Android免费试用在线加固**
 
 成功创建任务示例
 
@@ -60,7 +105,7 @@ Output:
 }
 ```
 
-**Example 3: Android按年收费加固输出工具**
+**Example 4: Android按年收费加固输出工具**
 
 Android按年收费加固输出工具
 
@@ -123,51 +168,6 @@ Output:
     "Response": {
         "RequestId": "0f869fd0-0fd0-44bd-95fc-06a15b50aa61",
         "ResultId": "0f869fd0-0fd0-44bd-95fc-06a15b50aa61"
-    }
-}
-```
-
-**Example 4: iOS混淆示例**
-
-POST / HTTP/1.1
-Host: ms.tencentcloudapi.com
-Content-Type: application/json
-X-TC-Action: CreateEncryptInstance
-<公共请求参数>
-
-{
-        "PlatformType": 2,
-        "OrderType": 1,
-        "EncryptOpType": 1,
-        "ResourceId":"xxxxxxxxxxxxxxxxxx",
-  "IOSInfo": {
-    "InfoPListUrl": "http://xxxxxxxxxxxxxxxxxxx.zip",
-    "InfoPListSize": 100,
-    "InfoPListMd5": "881ac0a49b3ae9967022217730cc0da8",
-    "BuildType": "release"
-  }
-}
-
-Input: 
-
-```
-tccli ms CreateEncryptInstance --cli-unfold-argument  \
-    --PlatformType 2 \
-    --OrderType 1 \
-    --EncryptOpType 1 \
-    --ResourceId xxxxxxxxxxxxxxxxxx \
-    --IOSInfo.InfoPListUrl http://xxxxxxxxxxxxxxxxxxx.zip \
-    --IOSInfo.InfoPListSize 100 \
-    --IOSInfo.InfoPListMd5 881ac0a49b3ae9967022217730cc0da8 \
-    --IOSInfo.BuildType release
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6ef4eac9-badc-40d9-9796-569741849f95",
-        "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95"
     }
 }
 ```

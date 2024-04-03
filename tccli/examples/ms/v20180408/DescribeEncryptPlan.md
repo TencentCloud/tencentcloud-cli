@@ -35,44 +35,7 @@ Output:
 }
 ```
 
-**Example 2: 小程序在线加固载入上次配置实例**
-
-小程序在线加固载入上次配置实例
-
-Input: 
-
-```
-tccli ms DescribeEncryptPlan --cli-unfold-argument  \
-    --PlatformType 4 \
-    --OrderType 1 \
-    --EncryptOpType 1 \
-    --ResourceId XXXXXXXXXXXXXXXX
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AndroidPlan": null,
-        "AppletPlan": {
-            "AppletLevel": 1,
-            "PlanId": 12012
-        },
-        "ResourceId": "XXXXXXXXXXXXXXXX",
-        "OrderType": 1,
-        "OrderTypeDesc": "免费试用",
-        "EncryptOpType": 1,
-        "EncryptOpTypeDesc": "在线加固",
-        "IOSPlan": null,
-        "PlatformType": 4,
-        "PlatformTypeDesc": "applet小程序加固",
-        "RequestId": "323b8dda-4623-4b7b-bb54-8d0a90e90cb1",
-        "SDKPlan": null
-    }
-}
-```
-
-**Example 3: Android输出工具配置查询**
+**Example 2: Android输出工具配置查询**
 
 Android输出工具配置查询
 
@@ -106,6 +69,43 @@ Output:
         "PlatformType": 1,
         "PlatformTypeDesc": "android加固",
         "RequestId": "a0d996fe-fa97-404a-87b0-b9690f92de26",
+        "SDKPlan": null
+    }
+}
+```
+
+**Example 3: 小程序在线加固载入上次配置实例**
+
+小程序在线加固载入上次配置实例
+
+Input: 
+
+```
+tccli ms DescribeEncryptPlan --cli-unfold-argument  \
+    --PlatformType 4 \
+    --OrderType 1 \
+    --EncryptOpType 1 \
+    --ResourceId XXXXXXXXXXXXXXXX
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AndroidPlan": null,
+        "AppletPlan": {
+            "AppletLevel": 1,
+            "PlanId": 12012
+        },
+        "ResourceId": "XXXXXXXXXXXXXXXX",
+        "OrderType": 1,
+        "OrderTypeDesc": "免费试用",
+        "EncryptOpType": 1,
+        "EncryptOpTypeDesc": "在线加固",
+        "IOSPlan": null,
+        "PlatformType": 4,
+        "PlatformTypeDesc": "applet小程序加固",
+        "RequestId": "323b8dda-4623-4b7b-bb54-8d0a90e90cb1",
         "SDKPlan": null
     }
 }

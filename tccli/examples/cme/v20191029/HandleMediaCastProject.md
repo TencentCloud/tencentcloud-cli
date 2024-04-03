@@ -1,37 +1,4 @@
-**Example 1: 修改结束时间**
-
-如果项目是 Working 状态，将按照修改后的结束时间结束项目。
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 ModifyPlaySetting。
-PlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation ModifyPlaySetting \
-    --PlaySetting.EndTime 2022-12-20T20:00:00Z \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": null,
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 2: 修改输出源**
+**Example 1: 修改输出源**
 
 修改输出源的名称或者输出地址，如果项目状态是 Working 状态并且修改了输出地址， 将断开原来输出源地址的直播流，向新的输出源地址输出直播流。
 **输入参数：**
@@ -66,43 +33,7 @@ Output:
 }
 ```
 
-**Example 3: 修改输出的媒体配置**
-
-修改输出的媒体配置，项目状态是 Working 状态时不能修改输出的媒体配置。
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 ModifyOutputMediaSetting。
-OutputMediaSetting | 是 | [MediaCastOutputMediaSetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastOutputMediaSetting) | 输出的媒体配置。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation ModifyOutputMediaSetting \
-    --OutputMediaSetting.VideoSetting.Width 1920 \
-    --OutputMediaSetting.VideoSetting.Height 1080 \
-    --OutputMediaSetting.VideoSetting.Bitrate 2500 \
-    --OutputMediaSetting.VideoSetting.FrameRate 30 \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": null,
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 4: 停止输出源**
+**Example 2: 停止输出源**
 
 项目状态是 Working 状态时，停止输出源将断开该输出源的直播流。
 **输入参数：**
@@ -135,40 +66,7 @@ Output:
 }
 ```
 
-**Example 5: 切换当前播放的输入源**
-
-项目状态为 Working 状态时切换生效，切换后从该输入源开始播放。
-**输入参数：**
-除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
-
-参数名称 | 必选 | 类型 | 描述
-------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 SwitchSource。
-SourceInfos| 是 |  Array of  [MediaCastSourceInfo](https://cloud.tencent.com/document/api/1156/40360#MediaCastSourceInfo) | 输入源信息，只需要带上输入源的 Id  。
-
-Input: 
-
-```
-tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
-    --Operation SwitchSource \
-    --SourceInfos.0.Id st_02 \
-    --ProjectId 12522d74de35ff
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PlayInfo": null,
-        "SourceInfoSet": [],
-        "DestinationInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 6: 删除输入源**
+**Example 3: 删除输入源**
 
 如果项目状态是 Working 状态，不能删除正在播放的输入源。
 
@@ -202,7 +100,7 @@ Output:
 }
 ```
 
-**Example 7: 删除输出源**
+**Example 4: 删除输出源**
 
 项目状态是 Working 状态时，删除输出源将停止该输出源的直播输出。
 **输入参数：**
@@ -235,7 +133,7 @@ Output:
 }
 ```
 
-**Example 8: 启动输出源**
+**Example 5: 启动输出源**
 
 重新启动已经停止的输出源，项目状态是 Working 状态时进行操作。
 **输入参数：**
@@ -268,7 +166,7 @@ Output:
 }
 ```
 
-**Example 9: 添加输入源**
+**Example 6: 添加输入源**
 
 新添加的输入源加到输入源列表的后面。
 **输入参数：**
@@ -317,7 +215,7 @@ Output:
 }
 ```
 
-**Example 10: 添加输出源**
+**Example 7: 添加输出源**
 
 项目状态为 Working 状态时，添加输出源后，将向新的输出源推送直播流。
 **输入参数：**
@@ -356,7 +254,40 @@ Output:
 }
 ```
 
-**Example 11: 停止媒体转推**
+**Example 8: 修改结束时间**
+
+如果项目是 Working 状态，将按照修改后的结束时间结束项目。
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 ModifyPlaySetting。
+PlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation ModifyPlaySetting \
+    --PlaySetting.EndTime 2022-12-20T20:00:00Z \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 9: 停止媒体转推**
 
 停止媒体转推。停止操作将停止输入源的播放并断开直播流，项目状态变为 Idle 状态。
 
@@ -388,7 +319,7 @@ Output:
 }
 ```
 
-**Example 12: 启动媒体转推**
+**Example 10: 启动媒体转推**
 
 启动媒体转推。启动成功后项目状态变为 Working 状态，从输入源列表的第一个输入源开始播放，向输出源列表推送直播流。
 
@@ -420,21 +351,24 @@ Output:
 }
 ```
 
-**Example 13: 查询媒体转推项目的播放信息**
+**Example 11: 设置定时转推**
 
+项目需要是 Idle 状态，设置自动转推时间后在指定时间内启动项目进行转推。
 **输入参数：**
 除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
 
 参数名称 | 必选 | 类型 | 描述
 ------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 DescribePlayInfo。
+Operation | 是 | String | 请填写 ModifyPlaySetting。
+PlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。
 
 Input: 
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
     --Platform test \
-    --Operation DescribePlayInfo \
+    --Operation ModifyPlaySetting \
+    --PlaySetting.AutoStartTime 2022-12-20T20:00:00Z \
     --ProjectId 12522d74de35ff
 ```
 
@@ -442,20 +376,76 @@ Output:
 ```
 {
     "Response": {
-        "PlayInfo": {
-            "Status": "Working",
-            "CurrentSourceId": "st_0123",
-            "CurrentSourcePosition": 100,
-            "CurrentSourceDuration": 3490,
-            "LoopCount": 1,
-            "DestinationStatusSet": [
-                {
-                    "Id": "dt_123",
-                    "PushUrl": "rtmp://test.com/live/aa?t=xx",
-                    "Status": "Working"
-                }
-            ]
-        },
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 12: 修改输出的媒体配置**
+
+修改输出的媒体配置，项目状态是 Working 状态时不能修改输出的媒体配置。
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 ModifyOutputMediaSetting。
+OutputMediaSetting | 是 | [MediaCastOutputMediaSetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastOutputMediaSetting) | 输出的媒体配置。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation ModifyOutputMediaSetting \
+    --OutputMediaSetting.VideoSetting.Width 1920 \
+    --OutputMediaSetting.VideoSetting.Height 1080 \
+    --OutputMediaSetting.VideoSetting.Bitrate 2500 \
+    --OutputMediaSetting.VideoSetting.FrameRate 30 \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
+        "SourceInfoSet": [],
+        "DestinationInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
+    }
+}
+```
+
+**Example 13: 切换当前播放的输入源**
+
+项目状态为 Working 状态时切换生效，切换后从该输入源开始播放。
+**输入参数：**
+除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
+
+参数名称 | 必选 | 类型 | 描述
+------- | ------- | ------- | -------
+Operation | 是 | String | 请填写 SwitchSource。
+SourceInfos| 是 |  Array of  [MediaCastSourceInfo](https://cloud.tencent.com/document/api/1156/40360#MediaCastSourceInfo) | 输入源信息，只需要带上输入源的 Id  。
+
+Input: 
+
+```
+tccli cme HandleMediaCastProject --cli-unfold-argument  \
+    --Platform test \
+    --Operation SwitchSource \
+    --SourceInfos.0.Id st_02 \
+    --ProjectId 12522d74de35ff
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PlayInfo": null,
         "SourceInfoSet": [],
         "DestinationInfoSet": [],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
@@ -495,24 +485,21 @@ Output:
 }
 ```
 
-**Example 15: 设置定时转推**
+**Example 15: 查询媒体转推项目的播放信息**
 
-项目需要是 Idle 状态，设置自动转推时间后在指定时间内启动项目进行转推。
 **输入参数：**
 除公共参数及 Platform、ProjectId 之外，其余参数填写规范如下：
 
 参数名称 | 必选 | 类型 | 描述
 ------- | ------- | ------- | -------
-Operation | 是 | String | 请填写 ModifyPlaySetting。
-PlaySetting | 是 | [MediaCastPlaySetting](https://cloud.tencent.com/document/api/1156/40360#MediaCastPlaySetting) | 播放参数。
+Operation | 是 | String | 请填写 DescribePlayInfo。
 
 Input: 
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
     --Platform test \
-    --Operation ModifyPlaySetting \
-    --PlaySetting.AutoStartTime 2022-12-20T20:00:00Z \
+    --Operation DescribePlayInfo \
     --ProjectId 12522d74de35ff
 ```
 
@@ -520,7 +507,20 @@ Output:
 ```
 {
     "Response": {
-        "PlayInfo": null,
+        "PlayInfo": {
+            "Status": "Working",
+            "CurrentSourceId": "st_0123",
+            "CurrentSourcePosition": 100,
+            "CurrentSourceDuration": 3490,
+            "LoopCount": 1,
+            "DestinationStatusSet": [
+                {
+                    "Id": "dt_123",
+                    "PushUrl": "rtmp://test.com/live/aa?t=xx",
+                    "Status": "Working"
+                }
+            ]
+        },
         "SourceInfoSet": [],
         "DestinationInfoSet": [],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"

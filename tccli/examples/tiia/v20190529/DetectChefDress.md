@@ -1,4 +1,28 @@
-**Example 1: 厨师穿戴识别请求成功**
+**Example 1: 厨师穿戴识别请求失败**
+
+
+
+Input: 
+
+```
+tccli tiia DetectChefDress --cli-unfold-argument  \
+    --ImageUrl https://123.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownLoadError",
+            "Message": "下载失败"
+        },
+        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
+    }
+}
+```
+
+**Example 2: 厨师穿戴识别请求成功**
 
 
 
@@ -52,30 +76,6 @@ Output:
             }
         ],
         "RequestId": "a9050291-41a7-48ca-bd94-7a2a25d1d466"
-    }
-}
-```
-
-**Example 2: 厨师穿戴识别请求失败**
-
-
-
-Input: 
-
-```
-tccli tiia DetectChefDress --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation.DownLoadError",
-            "Message": "下载失败"
-        },
-        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
     }
 }
 ```

@@ -1,4 +1,28 @@
-**Example 1: 车辆识别示例代码**
+**Example 1: 调用失败示例**
+
+输入图片URL，未检测到车辆信息。
+
+Input: 
+
+```
+tccli tiia RecognizeCarPro --cli-unfold-argument  \
+    --ImageUrl http://www.test.com/a.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.NoObjectDetected",
+            "Message": "未检测到目标。"
+        },
+        "RequestId": "ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd"
+    }
+}
+```
+
+**Example 2: 车辆识别示例代码**
 
 输入图片URL，成功检测到车辆信息。
 
@@ -91,30 +115,6 @@ Output:
             }
         ],
         "RequestId": "2aba0901-31b9-456f-ad38-a2e7075d0965"
-    }
-}
-```
-
-**Example 2: 调用失败示例**
-
-输入图片URL，未检测到车辆信息。
-
-Input: 
-
-```
-tccli tiia RecognizeCarPro --cli-unfold-argument  \
-    --ImageUrl http://www.test.com/a.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation.NoObjectDetected",
-            "Message": "未检测到目标。"
-        },
-        "RequestId": "ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd"
     }
 }
 ```

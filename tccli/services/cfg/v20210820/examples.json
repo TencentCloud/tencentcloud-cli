@@ -95,15 +95,15 @@
     "ModifyTaskRunStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskRunStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1004\",\n    \"IsExpect\": true,\n    \"TaskId\": \"222\",\n    \"Summary\": \"演习结论\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e38eca72-e4ae-4a86-9696-7df399e672bd\"\n    }\n}",
-        "title": "终止演练"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskRunStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1002\",\n    \"TaskId\": \"1698\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e9a0777-ff96-4020-8aec-6802d8103689\"\n    }\n}",
         "title": "示例1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskRunStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1004\",\n    \"IsExpect\": true,\n    \"TaskId\": \"222\",\n    \"Summary\": \"演习结论\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e38eca72-e4ae-4a86-9696-7df399e672bd\"\n    }\n}",
+        "title": "终止演练"
       }
     ],
     "TriggerPolicy": [

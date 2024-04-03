@@ -1,75 +1,4 @@
-**Example 1: 获取音频媒体详情**
-
-音频媒体
-
-Input: 
-
-```
-tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
-    --MaterialIds 5fd8ad3d628dc30001bd08893 \
-    --Operator user_id4114428941bd0420
-```
-
-Output: 
-```
-{
-    "Response": {
-        "MaterialInfoSet": [
-            {
-                "AudioMaterial": {
-                    "CoverUrl": "",
-                    "MaterialStatus": {
-                        "EditorUsableStatus": "NORMAL"
-                    },
-                    "MaterialUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/6df9fb785285890795345485561/FOMbrvcsytgA.mp3?t=5eaa3d36&sign=72576faefb2863396f2775bd45259a44",
-                    "MetaData": {
-                        "AudioStreamInfoSet": [
-                            {
-                                "Bitrate": 320000,
-                                "Codec": "mp3",
-                                "SamplingRate": 44100
-                            }
-                        ],
-                        "Bitrate": 320047,
-                        "Container": "mp3",
-                        "Duration": 221.04815673828,
-                        "Height": 0,
-                        "Rotate": 0,
-                        "Size": 8843241,
-                        "VideoStreamInfoSet": [],
-                        "Width": 0
-                    }
-                },
-                "BasicInfo": {
-                    "ClassPath": "",
-                    "CreateTime": "2019-10-29T09:36:33Z",
-                    "MaterialId": "5fd8ad3d628dc30001bd08893",
-                    "MaterialType": "AUDIO",
-                    "Name": "Fgi.mp3",
-                    "Owner": {
-                        "Id": "03ce2cd6-a889-4e4d-95a7-876e44f21831",
-                        "Type": "PERSON"
-                    },
-                    "PreviewUrl": "",
-                    "TagSet": [],
-                    "TagInfoSet": [],
-                    "PresetTagSet": [],
-                    "UpdateTime": "2019-10-29T09:37:29Z"
-                },
-                "ImageMaterial": null,
-                "LinkMaterial": null,
-                "VideoMaterial": null,
-                "VideoEditTemplateMaterial": null,
-                "OtherMaterial": null
-            }
-        ],
-        "RequestId": "964aae95-7344-4200-8962-92a44ff7a2ac"
-    }
-}
-```
-
-**Example 2: 获取图片媒体详情**
+**Example 1: 获取图片媒体详情**
 
  
 
@@ -122,7 +51,7 @@ Output:
 }
 ```
 
-**Example 3: 获取视频媒体详情**
+**Example 2: 获取视频媒体详情**
 
 视频媒体
 
@@ -207,6 +136,77 @@ Output:
             }
         ],
         "RequestId": "85b8cdac-8e18-430a-aeae-08076ac26a11"
+    }
+}
+```
+
+**Example 3: 获取音频媒体详情**
+
+音频媒体
+
+Input: 
+
+```
+tccli cme DescribeMaterials --cli-unfold-argument  \
+    --Platform test \
+    --MaterialIds 5fd8ad3d628dc30001bd08893 \
+    --Operator user_id4114428941bd0420
+```
+
+Output: 
+```
+{
+    "Response": {
+        "MaterialInfoSet": [
+            {
+                "AudioMaterial": {
+                    "CoverUrl": "",
+                    "MaterialStatus": {
+                        "EditorUsableStatus": "NORMAL"
+                    },
+                    "MaterialUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/6df9fb785285890795345485561/FOMbrvcsytgA.mp3?t=5eaa3d36&sign=72576faefb2863396f2775bd45259a44",
+                    "MetaData": {
+                        "AudioStreamInfoSet": [
+                            {
+                                "Bitrate": 320000,
+                                "Codec": "mp3",
+                                "SamplingRate": 44100
+                            }
+                        ],
+                        "Bitrate": 320047,
+                        "Container": "mp3",
+                        "Duration": 221.04815673828,
+                        "Height": 0,
+                        "Rotate": 0,
+                        "Size": 8843241,
+                        "VideoStreamInfoSet": [],
+                        "Width": 0
+                    }
+                },
+                "BasicInfo": {
+                    "ClassPath": "",
+                    "CreateTime": "2019-10-29T09:36:33Z",
+                    "MaterialId": "5fd8ad3d628dc30001bd08893",
+                    "MaterialType": "AUDIO",
+                    "Name": "Fgi.mp3",
+                    "Owner": {
+                        "Id": "03ce2cd6-a889-4e4d-95a7-876e44f21831",
+                        "Type": "PERSON"
+                    },
+                    "PreviewUrl": "",
+                    "TagSet": [],
+                    "TagInfoSet": [],
+                    "PresetTagSet": [],
+                    "UpdateTime": "2019-10-29T09:37:29Z"
+                },
+                "ImageMaterial": null,
+                "LinkMaterial": null,
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
+            }
+        ],
+        "RequestId": "964aae95-7344-4200-8962-92a44ff7a2ac"
     }
 }
 ```

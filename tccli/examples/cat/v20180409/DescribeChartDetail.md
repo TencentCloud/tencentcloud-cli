@@ -1,68 +1,4 @@
-**Example 1: 查询页面性能瀑布图，TCP连接图，饼图请求示例**
-
-
-
-Input: 
-
-```
-tccli cat DescribeChartDetail --cli-unfold-argument  \
-    --City aa \
-    --Operators aa \
-    --Districts aa \
-    --ProbeTime 1 \
-    --TaskID aa \
-    --TaskType aa \
-    --ChartType aa
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PieDetails": [
-            {
-                "MimeType": "aa",
-                "Index": 1,
-                "Domain": "aa",
-                "ElementUseable": 0,
-                "BytesReceived": 0,
-                "ElementNum": 0,
-                "Cname": "aa",
-                "ErrElementNum": 0,
-                "TotalTime": 0
-            }
-        ],
-        "RequestId": "aa",
-        "ChartDetails": [
-            {
-                "TotalTime": 0,
-                "Index": 1,
-                "SslTime": 0,
-                "RequestTime": 0,
-                "MimeType": "aa",
-                "ResponseTime": 0,
-                "Method": "aa",
-                "TcpNum": 1,
-                "URL": "aa",
-                "StatMainID": 1,
-                "DownloadTime": 0,
-                "BlockTime": 0,
-                "VeName": "aa",
-                "TcpTime": 0,
-                "StartTime": 0,
-                "TargetIP": "aa",
-                "HttpVersion": "aa",
-                "DnsTime": 0,
-                "DownloadSize": 0,
-                "MonitorTime": "aa",
-                "StatusCode": 1
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 瀑布图响应示例**
+**Example 1: 瀑布图响应示例**
 
 
 
@@ -172,6 +108,70 @@ Output:
             }
         ],
         "RequestId": "db809307-03b1-4675-9cde-8b4034a64d37"
+    }
+}
+```
+
+**Example 2: 查询页面性能瀑布图，TCP连接图，饼图请求示例**
+
+
+
+Input: 
+
+```
+tccli cat DescribeChartDetail --cli-unfold-argument  \
+    --City aa \
+    --Operators aa \
+    --Districts aa \
+    --ProbeTime 1 \
+    --TaskID aa \
+    --TaskType aa \
+    --ChartType aa
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PieDetails": [
+            {
+                "MimeType": "aa",
+                "Index": 1,
+                "Domain": "aa",
+                "ElementUseable": 0,
+                "BytesReceived": 0,
+                "ElementNum": 0,
+                "Cname": "aa",
+                "ErrElementNum": 0,
+                "TotalTime": 0
+            }
+        ],
+        "RequestId": "aa",
+        "ChartDetails": [
+            {
+                "TotalTime": 0,
+                "Index": 1,
+                "SslTime": 0,
+                "RequestTime": 0,
+                "MimeType": "aa",
+                "ResponseTime": 0,
+                "Method": "aa",
+                "TcpNum": 1,
+                "URL": "aa",
+                "StatMainID": 1,
+                "DownloadTime": 0,
+                "BlockTime": 0,
+                "VeName": "aa",
+                "TcpTime": 0,
+                "StartTime": 0,
+                "TargetIP": "aa",
+                "HttpVersion": "aa",
+                "DnsTime": 0,
+                "DownloadSize": 0,
+                "MonitorTime": "aa",
+                "StatusCode": 1
+            }
+        ]
     }
 }
 ```

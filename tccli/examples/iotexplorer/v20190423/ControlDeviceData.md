@@ -1,4 +1,4 @@
-**Example 1: 设置设备数据-2**
+**Example 1: 设置设备数据**
 
 设置设备数据
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer ControlDeviceData --cli-unfold-argument  \
-    --ProductId LJ0INDNU7U \
-    --DeviceName light1 \
-    --Data {"brightness":1}
+    --ProductId BKTTNGIQOG \
+    --DeviceName dev01 \
+    --Data {"payload":"test","id":"abc"}
 ```
 
 Output: 
@@ -22,7 +22,7 @@ Output:
 }
 ```
 
-**Example 2: 设置设备数据**
+**Example 2: 设置设备数据-2**
 
 设置设备数据
 
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli iotexplorer ControlDeviceData --cli-unfold-argument  \
-    --ProductId BKTTNGIQOG \
-    --DeviceName dev01 \
-    --Data {"payload":"test","id":"abc"}
+    --ProductId LJ0INDNU7U \
+    --DeviceName light1 \
+    --Data {"brightness":1}
 ```
 
 Output: 

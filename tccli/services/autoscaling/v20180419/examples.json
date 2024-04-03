@@ -96,16 +96,22 @@
     ],
     "CreateLifecycleHook": [
       {
+        "document": "创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为360秒。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleHookName\": \"one-hook\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": \"360\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-heyubibl\",\n        \"RequestId\": \"5e414011-3359-45bd-8ba4-5b503d3fd3f6\"\n    }\n}",
+        "title": "创建生命周期挂钩"
+      },
+      {
         "document": "创建生命周期挂钩，在实例创建场景下生效。DefaultResult采用默认值，即CONTINUE。HeartbeatTimeout采用默认值，即300秒。",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"one-hook-default\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-8azjzxj9\",\n        \"RequestId\": \"4fa9fd2e-5b6c-49fe-9ba7-ed2ee62d8271\"\n    }\n}",
         "title": "创建生命周期挂钩，采用默认值"
       },
       {
-        "document": "创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为360秒。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleHookName\": \"one-hook\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": \"360\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-heyubibl\",\n        \"RequestId\": \"5e414011-3359-45bd-8ba4-5b503d3fd3f6\"\n    }\n}",
-        "title": "创建生命周期挂钩"
+        "document": "创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的TDMQ主题模型。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"HeartbeatTimeout\": \"120\",\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"terminate-topic\",\n    \"NotificationMetadata\": \"topic\",\n    \"NotificationTarget\": {\n        \"TargetType\": \"TDMQ_TOPIC\",\n        \"TopicName\": \"one-topic\"\n    },\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleTransition\": \"INSTANCE_TERMINATING\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-oq76wsrx\",\n        \"RequestId\": \"cdb7670b-0412-444f-9d2f-0da9cd07c410\"\n    }\n}",
+        "title": "创建生命周期挂钩，通知TDMQ主题模型"
       },
       {
         "document": "创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为CONTINUE，HeartbeatTimeout设置为120秒，通知名为“one-queue”的TDMQ队列模型。",
@@ -118,12 +124,6 @@
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"HeartbeatTimeout\": \"300\",\n    \"AutoScalingGroupId\": \"asg-mp5ydedh\",\n    \"LifecycleCommand\": {\n        \"CommandId\": \"cmd-id9u919l\",\n        \"Parameters\": \"{\\\"var1\\\":\\\"ck\\\"}\"\n    },\n    \"LifecycleHookName\": \"demo2\",\n    \"DefaultResult\": \"CONTINUE\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\"\n}",
         "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-kjurq12y\",\n        \"RequestId\": \"08f7bea5-3e0a-4280-9970-5d959a922b0b\"\n    }\n}",
         "title": "创建执行自动化助手命令的生命周期挂钩"
-      },
-      {
-        "document": "创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的TDMQ主题模型。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleHook\n<公共请求参数>\n\n{\n    \"HeartbeatTimeout\": \"120\",\n    \"AutoScalingGroupId\": \"asg-8fbozqja\",\n    \"LifecycleHookName\": \"terminate-topic\",\n    \"NotificationMetadata\": \"topic\",\n    \"NotificationTarget\": {\n        \"TargetType\": \"TDMQ_TOPIC\",\n        \"TopicName\": \"one-topic\"\n    },\n    \"DefaultResult\": \"ABANDON\",\n    \"LifecycleTransition\": \"INSTANCE_TERMINATING\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LifecycleHookId\": \"ash-oq76wsrx\",\n        \"RequestId\": \"cdb7670b-0412-444f-9d2f-0da9cd07c410\"\n    }\n}",
-        "title": "创建生命周期挂钩，通知TDMQ主题模型"
       }
     ],
     "CreateNotificationConfiguration": [
@@ -142,12 +142,6 @@
     ],
     "CreateScalingPolicy": [
       {
-        "document": "保持伸缩组 CPU 平均利用率接近60%，告警触发的扩容实例预热300秒，关闭禁用缩容。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"ScalingPolicyName\": \"cpu_target_tracking_test\",\n    \"ScalingPolicyType\": \"TARGET_TRACKING\",\n    \"PredefinedMetricType\": \"ASG_AVG_CPU_UTILIZATION\",\n    \"EstimatedInstanceWarmup\": 300,\n    \"DisableScaleIn\": false,\n    \"TargetValue\": 60\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-ljr51ssq\",\n        \"RequestId\": \"58a8ac17-e864-4bf6-81c7-c5dc63b0057d\"\n    }\n}",
-        "title": "创建目标追踪策略：CPU 平均利用率"
-      },
-      {
         "document": "1分钟内，CPU平均利用率大于50%，连续发生5次，期望实例数增加1。",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyType\": \"SIMPLE\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \" CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n        \"RequestId\": \"fb02c8bd-5f38-4786-91b6-0c6e06a88832\"\n    }\n}",
@@ -158,6 +152,12 @@
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"Cooldown\": \"300\",\n    \"ScalingPolicyType\": \"SIMPLE\",\n    \"ScalingPolicyName\": \"mem_policy_test\",\n    \"AdjustmentType\": \" PERCENT_CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"LESS_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"MEM_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"-50\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-f59pppuh\",\n        \"RequestId\": \"116213d6-2269-44cc-af76-c4a8dc7dbdf9\"\n    }\n}",
         "title": "创建简单策略：内存平均利用率"
+      },
+      {
+        "document": "保持伸缩组 CPU 平均利用率接近60%，告警触发的扩容实例预热300秒，关闭禁用缩容。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"ScalingPolicyName\": \"cpu_target_tracking_test\",\n    \"ScalingPolicyType\": \"TARGET_TRACKING\",\n    \"PredefinedMetricType\": \"ASG_AVG_CPU_UTILIZATION\",\n    \"EstimatedInstanceWarmup\": 300,\n    \"DisableScaleIn\": false,\n    \"TargetValue\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoScalingPolicyId\": \"asp-ljr51ssq\",\n        \"RequestId\": \"58a8ac17-e864-4bf6-81c7-c5dc63b0057d\"\n    }\n}",
+        "title": "创建目标追踪策略：CPU 平均利用率"
       }
     ],
     "CreateScheduledAction": [
@@ -285,15 +285,15 @@
     "DescribeLaunchConfigurations": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"LaunchConfigurationIds\": [\n        \"asc-g9uwgyvx\",\n        \"asc-fa28v4in\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": [],\n                \"HpcClusterId\": \"\"\n            },\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-g9uwgyvx\",\n                \"VersionNumber\": 1,\n                \"LaunchConfigurationName\": \"lc2\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 40,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": null,\n                        \"Encrypt\": null,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-02T02:25:12Z\",\n                \"UpdatedTime\": \"2022-03-02T02:25:12Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": [],\n                \"HpcClusterId\": \"\"\n            }\n        ],\n        \"RequestId\": \"0d4514d4-e277-4f0f-bc85-8b7377a71980\"\n    }\n}",
-        "title": "根据启动配置ID查询启动配置列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"asc-fa28v4in\"\n            ],\n            \"Name\": \"launch-configuration-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"HpcClusterId\": \"\"\n            }\n        ],\n        \"RequestId\": \"923dd24c-e492-4bdb-90be-1d3bd4bfe8a5\"\n    }\n}",
         "title": "使用Filters查看启动配置列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchConfigurations\n<公共请求参数>\n\n{\n    \"LaunchConfigurationIds\": [\n        \"asc-g9uwgyvx\",\n        \"asc-fa28v4in\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LaunchConfigurationSet\": [\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-fa28v4in\",\n                \"VersionNumber\": 2,\n                \"LaunchConfigurationName\": \"lc1\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 10,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": false,\n                        \"Encrypt\": false,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-03T02:36:12Z\",\n                \"UpdatedTime\": \"2022-03-03T06:49:31Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": [],\n                \"HpcClusterId\": \"\"\n            },\n            {\n                \"ProjectId\": 0,\n                \"LaunchConfigurationId\": \"asc-g9uwgyvx\",\n                \"VersionNumber\": 1,\n                \"LaunchConfigurationName\": \"lc2\",\n                \"LaunchConfigurationStatus\": \"NORMAL\",\n                \"AutoScalingGroupAbstractSet\": [],\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"InstanceTypes\": [\n                    \"S3.MEDIUM4\"\n                ],\n                \"LastOperationInstanceTypesCheckPolicy\": \"ANY\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                \"InstanceMarketOptions\": null,\n                \"DiskTypePolicy\": \"ORIGINAL\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50\n                },\n                \"DataDisks\": [\n                    {\n                        \"DiskType\": \"CLOUD_PREMIUM\",\n                        \"DiskSize\": 40,\n                        \"SnapshotId\": null,\n                        \"DeleteWithInstance\": null,\n                        \"Encrypt\": null,\n                        \"ThroughputPerformance\": null\n                    }\n                ],\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"PublicIpAssigned\": false,\n                    \"BandwidthPackageId\": null\n                },\n                \"SecurityGroupIds\": [],\n                \"EnhancedService\": {\n                    \"SecurityService\": {\n                        \"Enabled\": true\n                    },\n                    \"MonitorService\": {\n                        \"Enabled\": true\n                    }\n                },\n                \"UserData\": null,\n                \"InstanceTags\": [],\n                \"CreatedTime\": \"2022-03-02T02:25:12Z\",\n                \"UpdatedTime\": \"2022-03-02T02:25:12Z\",\n                \"CamRoleName\": \"\",\n                \"HostNameSettings\": {\n                    \"HostName\": null,\n                    \"HostNameStyle\": null\n                },\n                \"InstanceNameSettings\": {\n                    \"InstanceName\": \"\",\n                    \"InstanceNameStyle\": \"\"\n                },\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 0,\n                    \"RenewFlag\": \"\"\n                },\n                \"Tags\": [],\n                \"HpcClusterId\": \"\"\n            }\n        ],\n        \"RequestId\": \"0d4514d4-e277-4f0f-bc85-8b7377a71980\"\n    }\n}",
+        "title": "根据启动配置ID查询启动配置列表"
       },
       {
         "document": "",
@@ -426,16 +426,16 @@
     ],
     "ModifyLaunchConfigurationAttributes": [
       {
-        "document": "指定启动配置asc-291kq6ku，修改镜像为img-8toqc6s3，修改实例类型为S2.SMALL1，修改启动配置名称为updated_config",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"LaunchConfigurationName\": \"updated_config\",\n    \"LaunchConfigurationId\": \"asc-291kq6ku\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07022dcb-5bba-48f0-a2b0-800ad006d031\"\n    }\n}",
-        "title": "指定启动配置，修改镜像、实例类型、名称"
-      },
-      {
         "document": "指定启动配置asc-291kq6ku，将UserData修改为空字符串",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"LaunchConfigurationId\": \"asc-291kq6ku\",\n    \"UserData\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c027f22-3a3b-489a-a77a-89c53fc15212\"\n    }\n}",
         "title": "清空UserData"
+      },
+      {
+        "document": "指定启动配置asc-291kq6ku，修改镜像为img-8toqc6s3，修改实例类型为S2.SMALL1，修改启动配置名称为updated_config",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaunchConfigurationAttributes\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"LaunchConfigurationName\": \"updated_config\",\n    \"LaunchConfigurationId\": \"asc-291kq6ku\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"07022dcb-5bba-48f0-a2b0-800ad006d031\"\n    }\n}",
+        "title": "指定启动配置，修改镜像、实例类型、名称"
       }
     ],
     "ModifyLifecycleHook": [
@@ -457,6 +457,12 @@
     "ModifyLoadBalancers": [
       {
         "document": "",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-rp63a5q8\",\n        \"RequestId\": \"7de5a82f-b781-4302-b723-e7a879c20767\"\n    }\n}",
+        "title": "清空伸缩组的负载均衡器"
+      },
+      {
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"LoadBalancerIds\": [\n        \"lb-crhgatrf\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-67izy66g\",\n        \"RequestId\": \"bd3c91e8-3051-4c02-ac58-54d47b9c9d63\"\n    }\n}",
         "title": "将伸缩组的负载均衡器修改为传统负载均衡器lb-crhgatrf"
@@ -466,12 +472,6 @@
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"10\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "将伸缩组的负载均衡器修改为应用型负载均衡器lb-23aejgcv，监听器为lbl-ncw704sn"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-rp63a5q8\",\n        \"RequestId\": \"7de5a82f-b781-4302-b723-e7a879c20767\"\n    }\n}",
-        "title": "清空伸缩组的负载均衡器"
       }
     ],
     "ModifyNotificationConfiguration": [
@@ -484,16 +484,16 @@
     ],
     "ModifyScalingPolicy": [
       {
-        "document": "指定策略ID，修改目标追踪策略相关属性。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-9uroe7ta\",\n    \"ScalingPolicyName\": \"target-trackiing-test-policy\",\n    \"DisableScaleIn\": false,\n    \"EstimatedInstanceWarmup\": 300,\n    \"TargetValue\": 60,\n    \"PredefinedMetricType\": \"ASG_AVG_CPU_UTILIZATION\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"881a6752-55e8-4485-878a-a80065732a9f\"\n    }\n}",
-        "title": "修改目标追踪类型告警触发策略"
-      },
-      {
         "document": "指定策略ID，修改简单策略相关属性。",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": \"60\",\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": \"60\",\n        \"ContinuousTime\": \"5\",\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": \"50\",\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"NotificationUserGroupIds\": [\n        \"1678\"\n    ],\n    \"AdjustmentValue\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"91413a64-9587-486b-aef4-9aba5e8a0068\"\n    }\n}",
         "title": "修改简单类型告警触发策略"
+      },
+      {
+        "document": "指定策略ID，修改目标追踪策略相关属性。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-9uroe7ta\",\n    \"ScalingPolicyName\": \"target-trackiing-test-policy\",\n    \"DisableScaleIn\": false,\n    \"EstimatedInstanceWarmup\": 300,\n    \"TargetValue\": 60,\n    \"PredefinedMetricType\": \"ASG_AVG_CPU_UTILIZATION\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"881a6752-55e8-4485-878a-a80065732a9f\"\n    }\n}",
+        "title": "修改目标追踪类型告警触发策略"
       }
     ],
     "ModifyScheduledAction": [

@@ -19,15 +19,15 @@
     "CreateImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"1\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"CustomContent\": \"test\",\n    \"Tags\": \"{\\\"k\\\": \\\"123\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
-        "title": "调用成功示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"CustomContent\": \"custom\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"EntityId\": \"456\",\n    \"GroupId\": \"hello\",\n    \"PicName\": \"456\"\n}",
         "output": "{\n    \"Response\": {\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
         "title": "调用成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"1\",\n    \"ImageUrl\": \"http://www.test.com/a.jpg\",\n    \"CustomContent\": \"test\",\n    \"Tags\": \"{\\\"k\\\": \\\"123\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Object\": {\n            \"Box\": {\n                \"Score\": 0,\n                \"Rect\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            },\n            \"CategoryId\": 0\n        },\n        \"RequestId\": \"da8eedd6-5977-4db8-9334-3b6b190e242b\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "CropImage": [
@@ -41,15 +41,15 @@
     "DeleteImages": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
-        "title": "调用成功示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"参数不合法。\"\n        },\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
         "title": "调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d642f7385c30\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "DescribeGroups": [
@@ -71,15 +71,15 @@
     "DetectChefDress": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别(酒店版)\"\n                    },\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无厨师帽\",\n                        \"Name\": \"厨师帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.99437755,\n                        \"Label\": \"赤膊\",\n                        \"Name\": \"赤膊识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"a9050291-41a7-48ca-bd94-7a2a25d1d466\"\n    }\n}",
-        "title": "厨师穿戴识别请求成功"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "厨师穿戴识别请求失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectChefDress\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无厨师服\",\n                        \"Name\": \"厨师服识别(酒店版)\"\n                    },\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无厨师帽\",\n                        \"Name\": \"厨师帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.99437755,\n                        \"Label\": \"赤膊\",\n                        \"Name\": \"赤膊识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"a9050291-41a7-48ca-bd94-7a2a25d1d466\"\n    }\n}",
+        "title": "厨师穿戴识别请求成功"
       }
     ],
     "DetectDisgust": [
@@ -107,15 +107,15 @@
     "DetectLabel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Scenes\": [\n        \"WEB\",\n        \"CAMERA\",\n        \"ALBUM\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NewsLabels\": [\n            {\n                \"Confidence\": 80,\n                \"Name\": \"塔楼\",\n                \"SecondCategory\": \"建筑\",\n                \"FirstCategory\": \"场景\"\n            }\n        ],\n        \"Labels\": [\n            {\n                \"Name\": \"塔楼\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 81\n            },\n            {\n                \"Name\": \"夜晚\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 79\n            },\n            {\n                \"Name\": \"天际线\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市景观\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 72\n            },\n            {\n                \"Name\": \"都市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 69\n            }\n        ],\n        \"CameraLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 92\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 3\n            },\n            {\n                \"Name\": \"游乐园\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 2\n            },\n            {\n                \"Name\": \"大厦\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 1\n            },\n            {\n                \"Name\": \"桥\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 0\n            }\n        ],\n        \"AlbumLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 93\n            },\n            {\n                \"Name\": \"塔\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 82\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 5\n            }\n        ],\n        \"RequestId\": \"e6d685b1-d898-4dc9-a545-cfeb3a988da8\"\n    }\n}",
-        "title": "图像标签检测请求成功"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
         "title": "图像标签检测请求失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectLabel\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\",\n    \"Scenes\": [\n        \"WEB\",\n        \"CAMERA\",\n        \"ALBUM\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NewsLabels\": [\n            {\n                \"Confidence\": 80,\n                \"Name\": \"塔楼\",\n                \"SecondCategory\": \"建筑\",\n                \"FirstCategory\": \"场景\"\n            }\n        ],\n        \"Labels\": [\n            {\n                \"Name\": \"塔楼\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 81\n            },\n            {\n                \"Name\": \"夜晚\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 79\n            },\n            {\n                \"Name\": \"天际线\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市景观\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 77\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 72\n            },\n            {\n                \"Name\": \"都市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"其他\",\n                \"Confidence\": 69\n            }\n        ],\n        \"CameraLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 92\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 3\n            },\n            {\n                \"Name\": \"游乐园\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"生活/娱乐场所\",\n                \"Confidence\": 2\n            },\n            {\n                \"Name\": \"大厦\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 1\n            },\n            {\n                \"Name\": \"桥\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 0\n            }\n        ],\n        \"AlbumLabels\": [\n            {\n                \"Name\": \"夜景\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"自然风光\",\n                \"Confidence\": 93\n            },\n            {\n                \"Name\": \"塔\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 82\n            },\n            {\n                \"Name\": \"城市\",\n                \"FirstCategory\": \"场景\",\n                \"SecondCategory\": \"建筑\",\n                \"Confidence\": 5\n            }\n        ],\n        \"RequestId\": \"e6d685b1-d898-4dc9-a545-cfeb3a988da8\"\n    }\n}",
+        "title": "图像标签检测请求成功"
       }
     ],
     "DetectLabelBeta": [
@@ -158,6 +158,12 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
+        "title": "识别失败"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\",\n        \"Pets\": [\n            {\n                \"Score\": 99,\n                \"Name\": \"cat\",\n                \"Location\": {\n                    \"Y\": 0,\n                    \"X\": 0,\n                    \"Height\": 0,\n                    \"Width\": 0\n                }\n            }\n        ]\n    }\n}",
         "title": "识别成功"
       },
@@ -166,12 +172,6 @@
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.NoObjectDetected\",\n            \"Message\": \"未检测到目标。\"\n        },\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
         "title": "图片中未识别出宠物"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectPet\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e576\"\n    }\n}",
-        "title": "识别失败"
       }
     ],
     "DetectProduct": [
@@ -192,24 +192,24 @@
     ],
     "DetectSecurity": [
       {
-        "document": "安全属性识别请求成功",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无安全帽\",\n                        \"Name\": \"安全帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9768763,\n                        \"Label\": \"没有电话\",\n                        \"Name\": \"玩手机识别\"\n                    },\n                    {\n                        \"Confidence\": 0.8206851,\n                        \"Label\": \"没有抽烟\",\n                        \"Name\": \"抽烟识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9113377,\n                        \"Label\": \"无工地安全带\",\n                        \"Name\": \"工地安全带识别\"\n                    },\n                    {\n                        \"Confidence\": 0.7201198,\n                        \"Label\": \"无手套\",\n                        \"Name\": \"手套识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无工服\",\n                        \"Name\": \"工服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.611658,\n                        \"Label\": \"无护目镜\",\n                        \"Name\": \"护目镜识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9828068,\n                        \"Label\": \"无反光衣\",\n                        \"Name\": \"反光衣识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"8a3f48ea-f995-4ad2-9ff5-7f8faf8bdbaf\"\n    }\n}",
-        "title": "安全属性识别请求成功"
-      },
-      {
         "document": "安全属性识别请求失败",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://123.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DownLoadError\",\n            \"Message\": \"下载失败\"\n        },\n        \"RequestId\": \"a169390a-6ff3-4c42-ad25-a7858c35e516\"\n    }\n}",
         "title": "安全属性识别请求失败"
+      },
+      {
+        "document": "安全属性识别请求成功",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectSecurity\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bodies\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Confidence\": 0.9608861,\n                        \"Label\": \"无安全帽\",\n                        \"Name\": \"安全帽识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9768763,\n                        \"Label\": \"没有电话\",\n                        \"Name\": \"玩手机识别\"\n                    },\n                    {\n                        \"Confidence\": 0.8206851,\n                        \"Label\": \"没有抽烟\",\n                        \"Name\": \"抽烟识别\"\n                    },\n                    {\n                        \"Confidence\": 0,\n                        \"Label\": \"被优选过滤\",\n                        \"Name\": \"口罩识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9113377,\n                        \"Label\": \"无工地安全带\",\n                        \"Name\": \"工地安全带识别\"\n                    },\n                    {\n                        \"Confidence\": 0.7201198,\n                        \"Label\": \"无手套\",\n                        \"Name\": \"手套识别\"\n                    },\n                    {\n                        \"Confidence\": 0.6875998,\n                        \"Label\": \"无工服\",\n                        \"Name\": \"工服识别\"\n                    },\n                    {\n                        \"Confidence\": 0.611658,\n                        \"Label\": \"无护目镜\",\n                        \"Name\": \"护目镜识别\"\n                    },\n                    {\n                        \"Confidence\": 0.9828068,\n                        \"Label\": \"无反光衣\",\n                        \"Name\": \"反光衣识别\"\n                    }\n                ],\n                \"DetectConfidence\": 0.914,\n                \"Rect\": {\n                    \"Height\": 1110,\n                    \"Width\": 440,\n                    \"X\": 217,\n                    \"Y\": 79\n                }\n            }\n        ],\n        \"RequestId\": \"8a3f48ea-f995-4ad2-9ff5-7f8faf8bdbaf\"\n    }\n}",
+        "title": "安全属性识别请求成功"
       }
     ],
     "EnhanceImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnhancedImage\": \"/9j/4AAQSkZJRgABAQAAAQABA...\",\n        \"RequestId\": \"75ad21c9-1db4-4032-9066-ab03e297349b\"\n    }\n}",
-        "title": "图像清晰度增强请求成功"
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://big.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"LimitExceeded.TooLargeFileError\",\n            \"Message\": \"文件太大\"\n        },\n        \"RequestId\": \"a1c397c8-5caf-44ce-975e-bf5e7c8242ef\"\n    }\n}",
+        "title": "文件过大"
       },
       {
         "document": "",
@@ -219,9 +219,9 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://big.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"LimitExceeded.TooLargeFileError\",\n            \"Message\": \"文件太大\"\n        },\n        \"RequestId\": \"a1c397c8-5caf-44ce-975e-bf5e7c8242ef\"\n    }\n}",
-        "title": "文件过大"
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnhanceImage\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://test.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnhancedImage\": \"/9j/4AAQSkZJRgABAQAAAQABA...\",\n        \"RequestId\": \"75ad21c9-1db4-4032-9066-ab03e297349b\"\n    }\n}",
+        "title": "图像清晰度增强请求成功"
       }
     ],
     "RecognizeCar": [
@@ -234,16 +234,16 @@
     ],
     "RecognizeCarPro": [
       {
-        "document": "输入图片URL，成功检测到车辆信息。",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://www.test.com/b.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CarCoords\": [\n            {\n                \"X\": 87,\n                \"Y\": 291\n            },\n            {\n                \"X\": 87,\n                \"Y\": 1\n            },\n            {\n                \"X\": 540,\n                \"Y\": 1\n            },\n            {\n                \"X\": 540,\n                \"Y\": 291\n            }\n        ],\n        \"CarTags\": [\n            {\n                \"Brand\": \"奔驰\",\n                \"CarLocation\": [\n                    {\n                        \"X\": 87,\n                        \"Y\": 291\n                    },\n                    {\n                        \"X\": 87,\n                        \"Y\": 1\n                    },\n                    {\n                        \"X\": 540,\n                        \"Y\": 1\n                    },\n                    {\n                        \"X\": 540,\n                        \"Y\": 291\n                    }\n                ],\n                \"Color\": \"绿\",\n                \"ColorConfidence\": 67,\n                \"Confidence\": 64,\n                \"Orientation\": \"车头\",\n                \"OrientationConfidence\": 99,\n                \"PlateConfidence\": 99,\n                \"PlateContent\": {\n                    \"Color\": \"蓝色\",\n                    \"Plate\": \"浙G29XY9\",\n                    \"PlateAngle\": 13.560508,\n                    \"PlateLocation\": [\n                        {\n                            \"X\": 452,\n                            \"Y\": 227\n                        },\n                        {\n                            \"X\": 452,\n                            \"Y\": 190\n                        },\n                        {\n                            \"X\": 507,\n                            \"Y\": 190\n                        },\n                        {\n                            \"X\": 507,\n                            \"Y\": 227\n                        }\n                    ],\n                    \"PlateStatus\": \"正常车牌\",\n                    \"PlateStatusConfidence\": 99,\n                    \"Type\": \"普通蓝牌\"\n                },\n                \"Serial\": \"奔驰GLC级\",\n                \"Type\": \"SUV\",\n                \"TypeConfidence\": 54,\n                \"Year\": 0\n            }\n        ],\n        \"RequestId\": \"2aba0901-31b9-456f-ad38-a2e7075d0965\"\n    }\n}",
-        "title": "车辆识别示例代码"
-      },
-      {
         "document": "输入图片URL，未检测到车辆信息。",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://www.test.com/a.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.NoObjectDetected\",\n            \"Message\": \"未检测到目标。\"\n        },\n        \"RequestId\": \"ad418ac5-fbfd-4bd7-8f4a-35ab085e27dd\"\n    }\n}",
         "title": "调用失败示例"
+      },
+      {
+        "document": "输入图片URL，成功检测到车辆信息。",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeCarPro\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"http://www.test.com/b.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CarCoords\": [\n            {\n                \"X\": 87,\n                \"Y\": 291\n            },\n            {\n                \"X\": 87,\n                \"Y\": 1\n            },\n            {\n                \"X\": 540,\n                \"Y\": 1\n            },\n            {\n                \"X\": 540,\n                \"Y\": 291\n            }\n        ],\n        \"CarTags\": [\n            {\n                \"Brand\": \"奔驰\",\n                \"CarLocation\": [\n                    {\n                        \"X\": 87,\n                        \"Y\": 291\n                    },\n                    {\n                        \"X\": 87,\n                        \"Y\": 1\n                    },\n                    {\n                        \"X\": 540,\n                        \"Y\": 1\n                    },\n                    {\n                        \"X\": 540,\n                        \"Y\": 291\n                    }\n                ],\n                \"Color\": \"绿\",\n                \"ColorConfidence\": 67,\n                \"Confidence\": 64,\n                \"Orientation\": \"车头\",\n                \"OrientationConfidence\": 99,\n                \"PlateConfidence\": 99,\n                \"PlateContent\": {\n                    \"Color\": \"蓝色\",\n                    \"Plate\": \"浙G29XY9\",\n                    \"PlateAngle\": 13.560508,\n                    \"PlateLocation\": [\n                        {\n                            \"X\": 452,\n                            \"Y\": 227\n                        },\n                        {\n                            \"X\": 452,\n                            \"Y\": 190\n                        },\n                        {\n                            \"X\": 507,\n                            \"Y\": 190\n                        },\n                        {\n                            \"X\": 507,\n                            \"Y\": 227\n                        }\n                    ],\n                    \"PlateStatus\": \"正常车牌\",\n                    \"PlateStatusConfidence\": 99,\n                    \"Type\": \"普通蓝牌\"\n                },\n                \"Serial\": \"奔驰GLC级\",\n                \"Type\": \"SUV\",\n                \"TypeConfidence\": 54,\n                \"Year\": 0\n            }\n        ],\n        \"RequestId\": \"2aba0901-31b9-456f-ad38-a2e7075d0965\"\n    }\n}",
+        "title": "车辆识别示例代码"
       }
     ],
     "SearchImage": [
@@ -257,15 +257,15 @@
     "UpdateImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\",\n    \"Tags\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4e26-8db5-d642f7385c30\"\n    }\n}",
-        "title": "更新图片接口调用成功示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.InvalidParameter\",\n            \"Message\": \"参数不合法。\"\n        },\n        \"RequestId\": \"cac925c7-c939-4eb6-8db5-d64123385c30\"\n    }\n}",
         "title": "更新图片接口调用失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tiia.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateImage\n<公共请求参数>\n\n{\n    \"GroupId\": \"123\",\n    \"EntityId\": \"1\",\n    \"PicName\": \"test\",\n    \"Tags\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cac925c7-c939-4e26-8db5-d642f7385c30\"\n    }\n}",
+        "title": "更新图片接口调用成功示例"
       }
     ]
   },

@@ -3,15 +3,15 @@
     "AddAccountBindForSaaS": [
       {
         "document": "",
-        "input": "https://account.tencentcloudapi.com/?Action=AddAccountBindForSaaS\n&Account=132****1234\n&Platform=co**ng\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"748cff28-3afd-4a8d-9a80-d783729d9a1f\"\n    }\n}",
-        "title": "绑定登录账号"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAccountBindForSaaS\n<公共请求参数>\n\n{\n    \"Platform\": \"cmp\",\n    \"Account\": \"122232\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"07635a8a-718d-4264-8edd-73b2dd606e78\"\n    }\n}",
         "title": "绑定SaaS账号"
+      },
+      {
+        "document": "",
+        "input": "https://account.tencentcloudapi.com/?Action=AddAccountBindForSaaS\n&Account=132****1234\n&Platform=co**ng\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"748cff28-3afd-4a8d-9a80-d783729d9a1f\"\n    }\n}",
+        "title": "绑定登录账号"
       }
     ],
     "AddWhitelistUin": [

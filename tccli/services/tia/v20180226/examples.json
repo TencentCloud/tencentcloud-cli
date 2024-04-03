@@ -25,15 +25,15 @@
     "DeleteModel": [
       {
         "document": "",
-        "input": "https://tia.tencentcloudapi.com/?Action=DeleteModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
-        "title": "删除一个集群中的模型"
-      },
-      {
-        "document": "",
         "input": "https://tia.tencentcloudapi.com/?Action=DeleteModel\r\n&Name=test-model\r\n&ServType=serverless\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "删除一个SCF模型"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DeleteModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "删除一个集群中的模型"
       }
     ],
     "DescribeJob": [
@@ -47,15 +47,15 @@
     "DescribeModel": [
       {
         "document": "",
-        "input": "https://tia.tencentcloudapi.com/?Action=DescribeModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"Name\": \"test-model\",\n            \"Description\": \"test\",\n            \"Cluster\": \"test\",\n            \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n            \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n            \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\n            \"State\": \"Running\",\n            \"ServingUrl\": \"140.143.181.246\",\n            \"Message\": \"Deployment has minimum availability.\",\n            \"Replicas\": 0,\n            \"AppId\": 1254139681,\n            \"Expose\": \"\",\n            \"ServType\": \"1U2G0P\"\n        },\n        \"RequestId\": \"daaecaca-46fb-47c7-ad4b-37387ec1ae09\"\n    }\n}",
-        "title": "描述一个集群内模型的详细信息"
-      },
-      {
-        "document": "",
         "input": "https://tia.tencentcloudapi.com/?Action=DescribeModel\r\n&Name=scf-test-model-1\r\n&ServType=serverless\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"Name\": \"scf-test-model-1\",\n            \"Description\": \"SCF model test.\",\n            \"Cluster\": \"\",\n            \"Model\": \"\",\n            \"RuntimeVersion\": \"Python2.7\",\n            \"CreateTime\": \"2018-09-12 20:26:02\",\n            \"State\": \"Ready\",\n            \"ServingUrl\": \"\",\n            \"Message\": \"\",\n            \"Replicas\": 0,\n            \"AppId\": 0,\n            \"Expose\": \"\",\n            \"ServType\": \"\"\n        },\n        \"RequestId\": \"4cbcc08a-d490-42c5-8ff6-f4549af710f1\"\n    }\n}",
         "title": "描述一个 SCF 模型的详细信息"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=DescribeModel\r\n&Name=test-model\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Model\": {\n            \"Name\": \"test-model\",\n            \"Description\": \"test\",\n            \"Cluster\": \"test\",\n            \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n            \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n            \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\n            \"State\": \"Running\",\n            \"ServingUrl\": \"140.143.181.246\",\n            \"Message\": \"Deployment has minimum availability.\",\n            \"Replicas\": 0,\n            \"AppId\": 1254139681,\n            \"Expose\": \"\",\n            \"ServType\": \"1U2G0P\"\n        },\n        \"RequestId\": \"daaecaca-46fb-47c7-ad4b-37387ec1ae09\"\n    }\n}",
+        "title": "描述一个集群内模型的详细信息"
       }
     ],
     "InstallAgent": [
@@ -77,15 +77,15 @@
     "ListModels": [
       {
         "document": "",
-        "input": "https://tia.tencentcloudapi.com/?Action=ListModels\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"Name\": \"test-model-2\",\n                \"Description\": \"test\",\n                \"Cluster\": \"test\",\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n                \"CreateTime\": \"2018-09-19 11:19:58 +0800 CST\",\n                \"State\": \"Running\",\n                \"ServingUrl\": \"140.143.114.17\",\n                \"Message\": \"Deployment has minimum availability.\",\n                \"Replicas\": 0,\n                \"AppId\": 1254139681,\n                \"Expose\": \"\",\n                \"ServType\": \"1U2G0P\"\n            },\n            {\n                \"Name\": \"test-model\",\n                \"Description\": \"test\",\n                \"Cluster\": \"test\",\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n                \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\n                \"State\": \"Running\",\n                \"ServingUrl\": \"140.143.181.246\",\n                \"Message\": \"Deployment has minimum availability.\",\n                \"Replicas\": 0,\n                \"AppId\": 1254139681,\n                \"Expose\": \"\",\n                \"ServType\": \"1U2G0P\"\n            }\n        ],\n        \"RequestId\": \"af499c6b-5f40-4e9c-a8eb-7df4e85cbf60\"\n    }\n}",
-        "title": "列出所有集群内模型"
-      },
-      {
-        "document": "",
         "input": "https://tia.tencentcloudapi.com/?Action=ListModels\r\n&Cluster=test\r\n&ServType=serverless\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"Name\": \"scf-test-model-0\",\n                \"Description\": \"\",\n                \"Cluster\": \"\",\n                \"Model\": \"\",\n                \"RuntimeVersion\": \"Python2.7\",\n                \"CreateTime\": \"2018-09-12 20:26:02\",\n                \"State\": \"\",\n                \"ServingUrl\": \"\",\n                \"Message\": \"\",\n                \"Replicas\": 0,\n                \"AppId\": 0,\n                \"Expose\": \"\",\n                \"ServType\": \"\"\n            },\n            {\n                \"Name\": \"scf-test-model-2\",\n                \"Description\": \"\",\n                \"Cluster\": \"\",\n                \"Model\": \"\",\n                \"RuntimeVersion\": \"Python2.7\",\n                \"CreateTime\": \"2018-09-12 20:25:55\",\n                \"State\": \"\",\n                \"ServingUrl\": \"\",\n                \"Message\": \"\",\n                \"Replicas\": 0,\n                \"AppId\": 0,\n                \"Expose\": \"\",\n                \"ServType\": \"\"\n            }\n        ],\n        \"RequestId\": \"a03d3814-1ea3-4bfd-8271-8ff717fd0d3e\"\n    }\n}",
         "title": "列出所有 SCF 模型"
+      },
+      {
+        "document": "",
+        "input": "https://tia.tencentcloudapi.com/?Action=ListModels\r\n&Cluster=ap-beijing\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Models\": [\n            {\n                \"Name\": \"test-model-2\",\n                \"Description\": \"test\",\n                \"Cluster\": \"test\",\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n                \"CreateTime\": \"2018-09-19 11:19:58 +0800 CST\",\n                \"State\": \"Running\",\n                \"ServingUrl\": \"140.143.114.17\",\n                \"Message\": \"Deployment has minimum availability.\",\n                \"Replicas\": 0,\n                \"AppId\": 1254139681,\n                \"Expose\": \"\",\n                \"ServType\": \"1U2G0P\"\n            },\n            {\n                \"Name\": \"test-model\",\n                \"Description\": \"test\",\n                \"Cluster\": \"test\",\n                \"Model\": \"cos://tia-demo-1255502019.cos.ap-shanghai.myqcloud.com/mnist_example:/data/mnist\",\n                \"RuntimeVersion\": \"tiaserv-1.6.0-cpu\",\n                \"CreateTime\": \"2018-09-19 11:18:19 +0800 CST\",\n                \"State\": \"Running\",\n                \"ServingUrl\": \"140.143.181.246\",\n                \"Message\": \"Deployment has minimum availability.\",\n                \"Replicas\": 0,\n                \"AppId\": 1254139681,\n                \"Expose\": \"\",\n                \"ServType\": \"1U2G0P\"\n            }\n        ],\n        \"RequestId\": \"af499c6b-5f40-4e9c-a8eb-7df4e85cbf60\"\n    }\n}",
+        "title": "列出所有集群内模型"
       }
     ],
     "QueryLogs": [

@@ -1,14 +1,15 @@
-**Example 1: 创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1**
+**Example 1: 创建HTTPS监听器，并绑定已有证书**
 
-创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1。
+创建HTTPS监听器，并绑定已有证书
 
 Input: 
 
 ```
 tccli clb CreateListener --cli-unfold-argument  \
-    --ListenerNames lis1 lis0 \
-    --Protocol TCP \
-    --Ports 7570 7569 \
+    --Protocol HTTPS \
+    --Ports 7572 \
+    --Certificate.SSLMode UNIDIRECTIONAL \
+    --Certificate.CertId MsJyaXVm \
     --LoadBalancerId lb-cuxw2rm0
 ```
 
@@ -17,10 +18,9 @@ Output:
 {
     "Response": {
         "ListenerIds": [
-            "lbl-d1ubsydq",
-            "lbl-4udz130k"
+            "lbl-4fbxq45k"
         ],
-        "RequestId": "8f272cef-14ff-458c-b67e-1bd21bd2942b"
+        "RequestId": "db8ae69f-ebda-402b-8d02-ead459aa6ff9"
     }
 }
 ```
@@ -55,34 +55,7 @@ Output:
 }
 ```
 
-**Example 3: 创建HTTPS监听器，并绑定已有证书**
-
-创建HTTPS监听器，并绑定已有证书
-
-Input: 
-
-```
-tccli clb CreateListener --cli-unfold-argument  \
-    --Protocol HTTPS \
-    --Ports 7572 \
-    --Certificate.SSLMode UNIDIRECTIONAL \
-    --Certificate.CertId MsJyaXVm \
-    --LoadBalancerId lb-cuxw2rm0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ListenerIds": [
-            "lbl-4fbxq45k"
-        ],
-        "RequestId": "db8ae69f-ebda-402b-8d02-ead459aa6ff9"
-    }
-}
-```
-
-**Example 4: 创建HTTPS监听器，并同时绑定新建的证书**
+**Example 3: 创建HTTPS监听器，并同时绑定新建的证书**
 
 创建HTTPS监听器，并同时绑定新建的证书
 
@@ -111,7 +84,7 @@ Output:
 }
 ```
 
-**Example 5: 创建UDP监听器，健康检查方式使用Ping（默认方式）**
+**Example 4: 创建UDP监听器，健康检查方式使用Ping（默认方式）**
 
 创建UDP监听器，健康检查方式使用Ping（默认方式）
 
@@ -134,6 +107,33 @@ Output:
             "lbl-aev333n1"
         ],
         "RequestId": "3b81f03e-6088-448d-abaf-8a487d4f985a"
+    }
+}
+```
+
+**Example 5: 创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1**
+
+创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1。
+
+Input: 
+
+```
+tccli clb CreateListener --cli-unfold-argument  \
+    --ListenerNames lis1 lis0 \
+    --Protocol TCP \
+    --Ports 7570 7569 \
+    --LoadBalancerId lb-cuxw2rm0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ListenerIds": [
+            "lbl-d1ubsydq",
+            "lbl-4udz130k"
+        ],
+        "RequestId": "8f272cef-14ff-458c-b67e-1bd21bd2942b"
     }
 }
 ```

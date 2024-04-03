@@ -25,51 +25,7 @@ Output:
 }
 ```
 
-**Example 2: 授权时，找不到对应的 UserId**
-
-授权时，找不到对应的 UserId
-
-Input: 
-
-```
-tccli essbasic ChannelCreateSealPolicy --cli-unfold-argument  \
-    --Agent.AppId abc \
-    --Agent.ProxyOrganizationOpenId abc \
-    --Agent.ProxyOperator.OpenId abc \
-    --Agent.ProxyOperator.Channel abc \
-    --Agent.ProxyOperator.CustomUserId abc \
-    --Agent.ProxyOperator.ClientIp abc \
-    --Agent.ProxyOperator.ProxyIp abc \
-    --Agent.ProxyAppId abc \
-    --Agent.ProxyOrganizationId abc \
-    --SealId abc \
-    --UserIds abc xxxid \
-    --Operator.OpenId abc \
-    --Operator.Channel abc \
-    --Operator.CustomUserId abc \
-    --Operator.ClientIp abc \
-    --Operator.ProxyIp abc \
-    --Organization.OrganizationId abc \
-    --Organization.Channel abc \
-    --Organization.OrganizationOpenId abc \
-    --Organization.ClientIp abc \
-    --Organization.ProxyIp abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameter.ParamError",
-            "Message": "无效的授权用户Id"
-        },
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 3: 授权时，缺少印章ID**
+**Example 2: 授权时，缺少印章ID**
 
 授权时，缺少印章ID
 
@@ -107,6 +63,50 @@ Output:
         "Error": {
             "Code": "InvalidParameter.ParamError",
             "Message": "缺失印章ID"
+        },
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 3: 授权时，找不到对应的 UserId**
+
+授权时，找不到对应的 UserId
+
+Input: 
+
+```
+tccli essbasic ChannelCreateSealPolicy --cli-unfold-argument  \
+    --Agent.AppId abc \
+    --Agent.ProxyOrganizationOpenId abc \
+    --Agent.ProxyOperator.OpenId abc \
+    --Agent.ProxyOperator.Channel abc \
+    --Agent.ProxyOperator.CustomUserId abc \
+    --Agent.ProxyOperator.ClientIp abc \
+    --Agent.ProxyOperator.ProxyIp abc \
+    --Agent.ProxyAppId abc \
+    --Agent.ProxyOrganizationId abc \
+    --SealId abc \
+    --UserIds abc xxxid \
+    --Operator.OpenId abc \
+    --Operator.Channel abc \
+    --Operator.CustomUserId abc \
+    --Operator.ClientIp abc \
+    --Operator.ProxyIp abc \
+    --Organization.OrganizationId abc \
+    --Organization.Channel abc \
+    --Organization.OrganizationOpenId abc \
+    --Organization.ClientIp abc \
+    --Organization.ProxyIp abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter.ParamError",
+            "Message": "无效的授权用户Id"
         },
         "RequestId": "abc"
     }

@@ -1,29 +1,4 @@
-**Example 1: 修改扩缩容规则成功示例**
-
-修改扩缩容规则
-
-Input: 
-
-```
-tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
-    --InstanceId emr-3ap64zl6 \
-    --StrategyType 1 \
-    --LoadAutoScaleStrategies.0.StrategyId 52 \
-    --LoadAutoScaleStrategies.0.ScaleNum 4 \
-    --LoadAutoScaleStrategies.0.ScaleAction 2 \
-    --LoadAutoScaleStrategies.0.Priority 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "23108dcf-506a-4246-b0bf-dca8ef2b0845"
-    }
-}
-```
-
-**Example 2: 修改扩缩容规则**
+**Example 1: 修改扩缩容规则**
 
 修改扩缩容规则
 
@@ -68,6 +43,31 @@ Output:
 {
     "Response": {
         "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 修改扩缩容规则成功示例**
+
+修改扩缩容规则
+
+Input: 
+
+```
+tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
+    --InstanceId emr-3ap64zl6 \
+    --StrategyType 1 \
+    --LoadAutoScaleStrategies.0.StrategyId 52 \
+    --LoadAutoScaleStrategies.0.ScaleNum 4 \
+    --LoadAutoScaleStrategies.0.ScaleAction 2 \
+    --LoadAutoScaleStrategies.0.Priority 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "23108dcf-506a-4246-b0bf-dca8ef2b0845"
     }
 }
 ```

@@ -40,45 +40,7 @@ Output:
 }
 ```
 
-**Example 2: 修改源站为COS对象存储**
-
-规则引擎修改源站为COS对象存储
-
-Input: 
-
-```
-tccli teo CreateRule --cli-unfold-argument  \
-    --ZoneId zone-2kmrcz5heaw2 \
-    --RuleName test_origin \
-    --Status enable \
-    --Rules.0.Conditions.0.Conditions.0.Operator equal \
-    --Rules.0.Conditions.0.Conditions.0.Target host \
-    --Rules.0.Conditions.0.Conditions.0.IgnoreCase False \
-    --Rules.0.Conditions.0.Conditions.0.Values rule.test.cloud \
-    --Rules.0.Conditions.0.Conditions.1.Operator equal \
-    --Rules.0.Conditions.0.Conditions.1.Target client_country \
-    --Rules.0.Conditions.0.Conditions.1.IgnoreCase False \
-    --Rules.0.Conditions.0.Conditions.1.Values CN \
-    --Rules.0.Actions.0.NormalAction.Action Origin \
-    --Rules.0.Actions.0.NormalAction.Parameters.0.Name Type \
-    --Rules.0.Actions.0.NormalAction.Parameters.0.Values COS \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Name ServerName \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Values bucke_name.gcp.storage.com \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Name CosPrivateAccess \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Values on
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RuleId": "rule-djuq21",
-        "RequestId": "811d2583-310c-41f4-b5e7-abe407404hs"
-    }
-}
-```
-
-**Example 3: 修改源站为IP域名**
+**Example 2: 修改源站为IP域名**
 
 规则引擎修改源站为IP域名
 
@@ -120,7 +82,91 @@ Output:
 }
 ```
 
-**Example 4: 修改源站为S3对象存储**
+**Example 3: 修改源站为源站组**
+
+规则引擎修改源站为源站组
+
+Input: 
+
+```
+tccli teo CreateRule --cli-unfold-argument  \
+    --ZoneId zone-2kmrcz5heaw2 \
+    --RuleName test_origin \
+    --Status enable \
+    --Rules.0.Conditions.0.Conditions.0.Operator equal \
+    --Rules.0.Conditions.0.Conditions.0.Target host \
+    --Rules.0.Conditions.0.Conditions.0.IgnoreCase False \
+    --Rules.0.Conditions.0.Conditions.0.Values rule.test.cloud \
+    --Rules.0.Conditions.0.Conditions.1.Operator equal \
+    --Rules.0.Conditions.0.Conditions.1.Target client_country \
+    --Rules.0.Conditions.0.Conditions.1.IgnoreCase False \
+    --Rules.0.Conditions.0.Conditions.1.Values CN \
+    --Rules.0.Actions.0.NormalAction.Action Origin \
+    --Rules.0.Actions.0.NormalAction.Parameters.0.Name Type \
+    --Rules.0.Actions.0.NormalAction.Parameters.0.Values OriginGroup \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Name OriginGroupId \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Values origin-ff7e677b-2c4d-11ee-9687-525400521111 \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Name OriginProtocol \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Values follow \
+    --Rules.0.Actions.0.NormalAction.Parameters.3.Name HttpOriginPort \
+    --Rules.0.Actions.0.NormalAction.Parameters.3.Values 80 \
+    --Rules.0.Actions.0.NormalAction.Parameters.4.Name HttpsOriginPort \
+    --Rules.0.Actions.0.NormalAction.Parameters.4.Values 443
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RuleId": "rule-djuq9s",
+        "RequestId": "811d2583-310c-41f4-b5e7-abe407404sdsd"
+    }
+}
+```
+
+**Example 4: 修改源站为负载均衡**
+
+规则引擎修改源站为负载均衡
+
+Input: 
+
+```
+tccli teo CreateRule --cli-unfold-argument  \
+    --ZoneId zone-2kmrcz5heaw2 \
+    --RuleName test_origin \
+    --Status enable \
+    --Rules.0.Conditions.0.Conditions.0.Operator equal \
+    --Rules.0.Conditions.0.Conditions.0.Target host \
+    --Rules.0.Conditions.0.Conditions.0.IgnoreCase False \
+    --Rules.0.Conditions.0.Conditions.0.Values rule.test.cloud \
+    --Rules.0.Conditions.0.Conditions.1.Operator equal \
+    --Rules.0.Conditions.0.Conditions.1.Target client_country \
+    --Rules.0.Conditions.0.Conditions.1.IgnoreCase False \
+    --Rules.0.Conditions.0.Conditions.1.Values CN \
+    --Rules.0.Actions.0.NormalAction.Action Origin \
+    --Rules.0.Actions.0.NormalAction.Parameters.0.Name Type \
+    --Rules.0.Actions.0.NormalAction.Parameters.0.Values LoadBalance \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Name OriginGroupId \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Values lb-ff7e677b-2c4d-11ee-9687 \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Name OriginProtocol \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Values follow \
+    --Rules.0.Actions.0.NormalAction.Parameters.3.Name HttpOriginPort \
+    --Rules.0.Actions.0.NormalAction.Parameters.3.Values 80 \
+    --Rules.0.Actions.0.NormalAction.Parameters.4.Name HttpsOriginPort \
+    --Rules.0.Actions.0.NormalAction.Parameters.4.Values 443
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RuleId": "rule-djuq91",
+        "RequestId": "811d2583-310c-41f4-b5e7-abe407404xs"
+    }
+}
+```
+
+**Example 5: 修改源站为S3对象存储**
 
 规则引擎修改源站为S3兼容的对象存储
 
@@ -166,51 +212,9 @@ Output:
 }
 ```
 
-**Example 5: 修改源站为源站组**
+**Example 6: 修改源站为COS对象存储**
 
-规则引擎修改源站为源站组
-
-Input: 
-
-```
-tccli teo CreateRule --cli-unfold-argument  \
-    --ZoneId zone-2kmrcz5heaw2 \
-    --RuleName test_origin \
-    --Status enable \
-    --Rules.0.Conditions.0.Conditions.0.Operator equal \
-    --Rules.0.Conditions.0.Conditions.0.Target host \
-    --Rules.0.Conditions.0.Conditions.0.IgnoreCase False \
-    --Rules.0.Conditions.0.Conditions.0.Values rule.test.cloud \
-    --Rules.0.Conditions.0.Conditions.1.Operator equal \
-    --Rules.0.Conditions.0.Conditions.1.Target client_country \
-    --Rules.0.Conditions.0.Conditions.1.IgnoreCase False \
-    --Rules.0.Conditions.0.Conditions.1.Values CN \
-    --Rules.0.Actions.0.NormalAction.Action Origin \
-    --Rules.0.Actions.0.NormalAction.Parameters.0.Name Type \
-    --Rules.0.Actions.0.NormalAction.Parameters.0.Values OriginGroup \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Name OriginGroupId \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Values origin-ff7e677b-2c4d-11ee-9687-525400521111 \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Name OriginProtocol \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Values follow \
-    --Rules.0.Actions.0.NormalAction.Parameters.3.Name HttpOriginPort \
-    --Rules.0.Actions.0.NormalAction.Parameters.3.Values 80 \
-    --Rules.0.Actions.0.NormalAction.Parameters.4.Name HttpsOriginPort \
-    --Rules.0.Actions.0.NormalAction.Parameters.4.Values 443
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RuleId": "rule-djuq9s",
-        "RequestId": "811d2583-310c-41f4-b5e7-abe407404sdsd"
-    }
-}
-```
-
-**Example 6: 修改源站为负载均衡**
-
-规则引擎修改源站为负载均衡
+规则引擎修改源站为COS对象存储
 
 Input: 
 
@@ -229,23 +233,19 @@ tccli teo CreateRule --cli-unfold-argument  \
     --Rules.0.Conditions.0.Conditions.1.Values CN \
     --Rules.0.Actions.0.NormalAction.Action Origin \
     --Rules.0.Actions.0.NormalAction.Parameters.0.Name Type \
-    --Rules.0.Actions.0.NormalAction.Parameters.0.Values LoadBalance \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Name OriginGroupId \
-    --Rules.0.Actions.0.NormalAction.Parameters.1.Values lb-ff7e677b-2c4d-11ee-9687 \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Name OriginProtocol \
-    --Rules.0.Actions.0.NormalAction.Parameters.2.Values follow \
-    --Rules.0.Actions.0.NormalAction.Parameters.3.Name HttpOriginPort \
-    --Rules.0.Actions.0.NormalAction.Parameters.3.Values 80 \
-    --Rules.0.Actions.0.NormalAction.Parameters.4.Name HttpsOriginPort \
-    --Rules.0.Actions.0.NormalAction.Parameters.4.Values 443
+    --Rules.0.Actions.0.NormalAction.Parameters.0.Values COS \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Name ServerName \
+    --Rules.0.Actions.0.NormalAction.Parameters.1.Values bucke_name.gcp.storage.com \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Name CosPrivateAccess \
+    --Rules.0.Actions.0.NormalAction.Parameters.2.Values on
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RuleId": "rule-djuq91",
-        "RequestId": "811d2583-310c-41f4-b5e7-abe407404xs"
+        "RuleId": "rule-djuq21",
+        "RequestId": "811d2583-310c-41f4-b5e7-abe407404hs"
     }
 }
 ```

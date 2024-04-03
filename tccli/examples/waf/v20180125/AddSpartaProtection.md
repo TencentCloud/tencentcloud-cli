@@ -1,44 +1,4 @@
-**Example 1: 重复添加的场景**
-
-重复添加的场景
-
-Input: 
-
-```
-tccli waf AddSpartaProtection --cli-unfold-argument  \
-    --Domain test.qcloud.com \
-    --LoadBalance 0 \
-    --Edition clb-waf \
-    --UpstreamType 0 \
-    --CertType 0 \
-    --InstanceID waf-9dasfds6gsd \
-    --IsKeepAlive 1 \
-    --Ports.0.NginxServerId 0 \
-    --Ports.0.Protocol http \
-    --Ports.0.Port 80 \
-    --Ports.0.UpstreamPort 80 \
-    --Ports.0.UpstreamProtocol http \
-    --SrcList 1.1.1.1 \
-    --IsCdn 0 \
-    --IsWebsocket 0 \
-    --IsGray 0 \
-    --IsHttp2 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InternalError",
-            "Message": "域名已经存在，请勿重复添加"
-        },
-        "RequestId": "4f284280-a493-4932-95f4-3d87e7320b3e"
-    }
-}
-```
-
-**Example 2: 添加域名**
+**Example 1: 添加域名**
 
 添加域名
 
@@ -81,7 +41,7 @@ Output:
 }
 ```
 
-**Example 3: 添加域名-1**
+**Example 2: 添加域名-1**
 
 添加域名-1
 
@@ -119,6 +79,46 @@ Output:
 {
     "Response": {
         "RequestId": "a5e5757a-2b04-4d56-a049-54eb8f053e75"
+    }
+}
+```
+
+**Example 3: 重复添加的场景**
+
+重复添加的场景
+
+Input: 
+
+```
+tccli waf AddSpartaProtection --cli-unfold-argument  \
+    --Domain test.qcloud.com \
+    --LoadBalance 0 \
+    --Edition clb-waf \
+    --UpstreamType 0 \
+    --CertType 0 \
+    --InstanceID waf-9dasfds6gsd \
+    --IsKeepAlive 1 \
+    --Ports.0.NginxServerId 0 \
+    --Ports.0.Protocol http \
+    --Ports.0.Port 80 \
+    --Ports.0.UpstreamPort 80 \
+    --Ports.0.UpstreamProtocol http \
+    --SrcList 1.1.1.1 \
+    --IsCdn 0 \
+    --IsWebsocket 0 \
+    --IsGray 0 \
+    --IsHttp2 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InternalError",
+            "Message": "域名已经存在，请勿重复添加"
+        },
+        "RequestId": "4f284280-a493-4932-95f4-3d87e7320b3e"
     }
 }
 ```

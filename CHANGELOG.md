@@ -1,3 +1,190 @@
+# Release 3.0.968.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 28 次发布
+
+发布时间：2024-04-03 11:10:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AutoBatchSelectorDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#AutoBatchSelectorDetail)
+* [FeatureAffinity](http://document.tencentcloudapi.woa.com/document/product/1609/78009#FeatureAffinity)
+* [FeatureTerm](http://document.tencentcloudapi.woa.com/document/product/1609/78009#FeatureTerm)
+* [NewAutoBatchUpdate](http://document.tencentcloudapi.woa.com/document/product/1609/78009#NewAutoBatchUpdate)
+* [NewAutoBatchUpdateDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#NewAutoBatchUpdateDetail)
+* [PlacementWorkflow](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementWorkflow)
+
+修改数据结构：
+
+* [AutoBatchUpdateDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#AutoBatchUpdateDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>BatchInterval
+
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
+
+	* 新增成员：Effective, Workflow, FeatureAffinity
+
+* [UpdateStatusDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStatusDetail)
+
+	* 新增成员：BatchInterval, Pause
+
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
+
+	* 新增成员：NewAutoBatchUpdate
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 25 次发布
+
+发布时间：2024-04-03 11:18:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTldList](http://document.tencentcloudapi.woa.com/document/product/242/83619)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 57 次发布
+
+发布时间：2024-04-03 11:19:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessInstance](http://document.tencentcloudapi.woa.com/document/product/845/77395)
+
+	* <font color="#dd0000">**修改入参**：</font>Zone, VpcId, SubnetId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 134 次发布
+
+发布时间：2024-04-03 11:20:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RegistrationOrganizationInfo)
+
+	* 新增成员：PowerOfAttorneys
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 56 次发布
+
+发布时间：2024-04-03 11:20:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetDeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1007/83620)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 56 次发布
+
+发布时间：2024-04-03 11:24:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveRecordTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32614)
+
+	* 新增入参：CosStore
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 11 次发布
+
+发布时间：2024-04-03 11:26:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
+
+	* 新增入参：InputCosUri, AccessMode
+
+	* <font color="#dd0000">**修改入参**：</font>InputBase64
+
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 11 次发布
+
+发布时间：2024-04-03 10:49:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchDeleteDevice](http://document.tencentcloudapi.woa.com/document/product/1734/83618)
+* [DeleteDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1734/83617)
+* [DescribeDeviceGroupList](http://document.tencentcloudapi.woa.com/document/product/1734/83616)
+* [ModifyDeviceField](http://document.tencentcloudapi.woa.com/document/product/1734/83615)
+* [ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1734/83614)
+* [ModifyDeviceTag](http://document.tencentcloudapi.woa.com/document/product/1734/83613)
+* [SaveDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1734/83612)
+
+新增数据结构：
+
+* [DescribeDeviceGroupListRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DescribeDeviceGroupListRes)
+* [DescribeGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DescribeGroupInfo)
+* [ModifyDeviceFieldInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ModifyDeviceFieldInfo)
+* [ModifyDeviceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ModifyDeviceGroupInfo)
+* [ModifyDeviceTagInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ModifyDeviceTagInfo)
+* [SaveDeviceGroupRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SaveDeviceGroupRes)
+
+
+
 # Release 3.0.967.1
 
 ## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15

@@ -62,40 +62,7 @@ Output:
 }
 ```
 
-**Example 3: 修改计划生命周期**
-
- 
-
-Input: 
-
-```
-tccli iss UpdateRecordPlan --cli-unfold-argument  \
-    --PlanId 88ac5ea6c1f**********24671d0f94f \
-    --Mod.LifeCycle.Transition 7 \
-    --Mod.LifeCycle.Expiration 80
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "PlanId": "88ac5ea6c1f**********24671d0f94f",
-            "PlanName": "name",
-            "TemplateId": "48676e89a8c**********baa36220fa4",
-            "Describe": "",
-            "StreamType": "main",
-            "LifeCycle": {
-                "Transition": 7,
-                "Expiration": 80
-            }
-        },
-        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
-    }
-}
-```
-
-**Example 4: 删除计划通道**
+**Example 3: 删除计划通道**
 
  
 
@@ -127,7 +94,7 @@ Output:
 }
 ```
 
-**Example 5: 增加计划通道**
+**Example 4: 增加计划通道**
 
  
 
@@ -153,6 +120,39 @@ Output:
             "LifeCycle": {
                 "Transition": 1,
                 "Expiration": 60
+            }
+        },
+        "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"
+    }
+}
+```
+
+**Example 5: 修改计划生命周期**
+
+ 
+
+Input: 
+
+```
+tccli iss UpdateRecordPlan --cli-unfold-argument  \
+    --PlanId 88ac5ea6c1f**********24671d0f94f \
+    --Mod.LifeCycle.Transition 7 \
+    --Mod.LifeCycle.Expiration 80
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "PlanId": "88ac5ea6c1f**********24671d0f94f",
+            "PlanName": "name",
+            "TemplateId": "48676e89a8c**********baa36220fa4",
+            "Describe": "",
+            "StreamType": "main",
+            "LifeCycle": {
+                "Transition": 7,
+                "Expiration": 80
             }
         },
         "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"

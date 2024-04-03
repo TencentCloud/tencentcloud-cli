@@ -1,11 +1,15 @@
-**Example 1: 获取域名价格列表**
+**Example 1: 请求成功**
 
-获取域名价格列表
+请求成功
 
 Input: 
 
 ```
-tccli domain DescribeIntlDomainPriceNewList --cli-unfold-argument ```
+tccli domain DescribeIntlDomainPriceNewList --cli-unfold-argument  \
+    --Operation renew \
+    --TldList .com \
+    --Year 1
+```
 
 Output: 
 ```
@@ -26,18 +30,14 @@ Output:
 }
 ```
 
-**Example 2: 请求成功**
+**Example 2: 获取域名价格列表**
 
-请求成功
+获取域名价格列表
 
 Input: 
 
 ```
-tccli domain DescribeIntlDomainPriceNewList --cli-unfold-argument  \
-    --Operation renew \
-    --TldList .com \
-    --Year 1
-```
+tccli domain DescribeIntlDomainPriceNewList --cli-unfold-argument ```
 
 Output: 
 ```

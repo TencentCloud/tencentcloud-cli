@@ -1,4 +1,36 @@
-**Example 1: 查询迁移中的主题列表**
+**Example 1: 标准请求**
+
+标准请求
+
+Input: 
+
+```
+tccli tdmq DescribeRocketMQMigratingTopicList --cli-unfold-argument  \
+    --TaskId 1 \
+    --Limit 10 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Error": null,
+    "RequestId": null,
+    "Response": {
+        "MigrateTopics": [
+            {
+                "HealthCheckPassed": false,
+                "MigrationStatus": "S_RW_D_NA",
+                "TopicName": "six"
+            }
+        ],
+        "RequestId": "f92642b4-e1bc-451f-ac4f-c639af4f6355",
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 2: 查询迁移中的主题列表**
 
 查询迁移中的主题列表
 
@@ -49,38 +81,6 @@ Output:
         ],
         "RequestId": "6191def5-5812-4339-b834-b2426e3a02b0",
         "TotalCount": 4
-    }
-}
-```
-
-**Example 2: 标准请求**
-
-标准请求
-
-Input: 
-
-```
-tccli tdmq DescribeRocketMQMigratingTopicList --cli-unfold-argument  \
-    --TaskId 1 \
-    --Limit 10 \
-    --Offset 0
-```
-
-Output: 
-```
-{
-    "Error": null,
-    "RequestId": null,
-    "Response": {
-        "MigrateTopics": [
-            {
-                "HealthCheckPassed": false,
-                "MigrationStatus": "S_RW_D_NA",
-                "TopicName": "six"
-            }
-        ],
-        "RequestId": "f92642b4-e1bc-451f-ac4f-c639af4f6355",
-        "TotalCount": 1
     }
 }
 ```

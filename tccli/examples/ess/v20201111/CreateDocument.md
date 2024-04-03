@@ -1,4 +1,36 @@
-**Example 1: 创建电子文档并填充内容控件**
+**Example 1: 创建电子文档-缺少填写控件**
+
+1.通过模板创建电子文档
+2.未对模板内的必填控件【单行文本2】控件进行赋值
+
+Input: 
+
+```
+tccli ess CreateDocument --cli-unfold-argument  \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FileNames 合同文件.pdf \
+    --FlowId yDwFdUUckpsvet4jUEn0aFRxtu5TdalM \
+    --TemplateId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --ClientToken  \
+    --NeedPreview False \
+    --FormFields.0.ComponentValue 123456 \
+    --FormFields.0.ComponentId 单行文本
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter.ParamError",
+            "Message": "控件[单行文本1]值未提交"
+        },
+        "RequestId": "28a7347b-xxxx-xxxx-xxxx-162c4bc230d6"
+    }
+}
+```
+
+**Example 2: 创建电子文档并填充内容控件**
 
 1.设置流程合同ID为yDwFmUUckpst10i3UubBSat8PWOt2iQF
 2.设置文档模板ID为yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR
@@ -47,7 +79,7 @@ Output:
 }
 ```
 
-**Example 2: 创建电子文档并填充图片控件**
+**Example 3: 创建电子文档并填充图片控件**
 
 1.设置流程合同ID为yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
 2.设置文档模板ID为yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc
@@ -89,38 +121,6 @@ Output:
         "RequestId": "956d7f8d-xxxx-xxxx-xxxx-4e48d923ecf0",
         "DocumentId": "yDxZ1UyKQDSIMaUuO5zjEypPWudeHbnG",
         "PreviewFileUrl": ""
-    }
-}
-```
-
-**Example 3: 创建电子文档-缺少填写控件**
-
-1.通过模板创建电子文档
-2.未对模板内的必填控件【单行文本2】控件进行赋值
-
-Input: 
-
-```
-tccli ess CreateDocument --cli-unfold-argument  \
-    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
-    --FileNames 合同文件.pdf \
-    --FlowId yDwFdUUckpsvet4jUEn0aFRxtu5TdalM \
-    --TemplateId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
-    --ClientToken  \
-    --NeedPreview False \
-    --FormFields.0.ComponentValue 123456 \
-    --FormFields.0.ComponentId 单行文本
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameter.ParamError",
-            "Message": "控件[单行文本1]值未提交"
-        },
-        "RequestId": "28a7347b-xxxx-xxxx-xxxx-162c4bc230d6"
     }
 }
 ```

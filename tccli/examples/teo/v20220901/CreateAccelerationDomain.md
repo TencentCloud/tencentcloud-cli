@@ -1,4 +1,27 @@
-**Example 1: 创建源站类型为 AWS S3 的加速域名**
+**Example 1: 创建源站类型为域名的加速域名**
+
+创建源站类型为域名的加速域名。
+
+Input: 
+
+```
+tccli teo CreateAccelerationDomain --cli-unfold-argument  \
+    --ZoneId zone-225qgrnvbi9w \
+    --DomainName qq.com \
+    --OriginInfo.OriginType ip_domain \
+    --OriginInfo.Origin www.test.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707"
+    }
+}
+```
+
+**Example 2: 创建源站类型为 AWS S3 的加速域名**
 
 创建源站类型为 AWS S3，开启私有访问，鉴权算法版本为 AWS signature v2 的加速域名。
 
@@ -26,29 +49,6 @@ Output:
 {
     "Response": {
         "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703"
-    }
-}
-```
-
-**Example 2: 创建源站类型为域名的加速域名**
-
-创建源站类型为域名的加速域名。
-
-Input: 
-
-```
-tccli teo CreateAccelerationDomain --cli-unfold-argument  \
-    --ZoneId zone-225qgrnvbi9w \
-    --DomainName qq.com \
-    --OriginInfo.OriginType ip_domain \
-    --OriginInfo.Origin www.test.com
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707"
     }
 }
 ```

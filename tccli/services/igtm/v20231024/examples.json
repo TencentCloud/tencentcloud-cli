@@ -18,16 +18,16 @@
     ],
     "CreateMonitor": [
       {
-        "document": "http监控",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控http\",\n    \"CheckProtocol\": \"HTTP\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"TcpPort\": 80,\n    \"ReturnCodeThreshold\": 400,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorId\": 93,\n        \"RequestId\": \"506ffb0f-a5d4-4b8e-8ce8-14e512ec731e\"\n    }\n}",
-        "title": "http监控"
-      },
-      {
         "document": "tcp监控",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控tcp\",\n    \"CheckProtocol\": \"TCP\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"TcpPort\": 80\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorId\": 92,\n        \"RequestId\": \"ea6eaf52-428b-4d1d-b7d7-1712cf508124\"\n    }\n}",
         "title": "tcp监控"
+      },
+      {
+        "document": "http监控",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控http\",\n    \"CheckProtocol\": \"HTTP\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"TcpPort\": 80,\n    \"ReturnCodeThreshold\": 400,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 93,\n        \"RequestId\": \"506ffb0f-a5d4-4b8e-8ce8-14e512ec731e\"\n    }\n}",
+        "title": "http监控"
       },
       {
         "document": "新增监控器",

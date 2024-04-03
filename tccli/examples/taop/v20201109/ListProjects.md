@@ -1,54 +1,4 @@
-**Example 1: 分页查询示例1**
-
-
-
-Input: 
-
-```
-tccli taop ListProjects --cli-unfold-argument  \
-    --PageNumber 1 \
-    --PageSize 2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Count": 6,
-        "ProjectList": [
-            {
-                "AIEngine": "无",
-                "Bucket": "100097-251006271",
-                "Cover": "",
-                "CreateUserId": "264334425865150000",
-                "Description": "描述说明",
-                "HasModifyAuth": true,
-                "ProjectId": "100097",
-                "ProjectName": "demo测试01",
-                "SimpleImageUrl": "",
-                "StudyCount": 0,
-                "UserCount": 1
-            },
-            {
-                "AIEngine": "无",
-                "Bucket": "100096-251006271",
-                "Cover": "",
-                "CreateUserId": "264334425865150000",
-                "Description": "描述说明",
-                "HasModifyAuth": true,
-                "ProjectId": "100096",
-                "ProjectName": "demo测试02",
-                "SimpleImageUrl": "",
-                "StudyCount": 0,
-                "UserCount": 1
-            }
-        ],
-        "RequestId": "3de3cacf-1bd4-4460-837f-fb71448e2d66"
-    }
-}
-```
-
-**Example 2: 增加 projectType**
+**Example 1: 增加 projectType**
 
 
 
@@ -205,7 +155,7 @@ Output:
 }
 ```
 
-**Example 3: 项目列表搜索**
+**Example 2: 项目列表搜索**
 
 
 
@@ -226,6 +176,56 @@ Output:
         "Count": 59,
         "ProjectList": [],
         "RequestId": "fcf1002e-dee5-4f80-bf79-74ab7171590b"
+    }
+}
+```
+
+**Example 3: 分页查询示例1**
+
+
+
+Input: 
+
+```
+tccli taop ListProjects --cli-unfold-argument  \
+    --PageNumber 1 \
+    --PageSize 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Count": 6,
+        "ProjectList": [
+            {
+                "AIEngine": "无",
+                "Bucket": "100097-251006271",
+                "Cover": "",
+                "CreateUserId": "264334425865150000",
+                "Description": "描述说明",
+                "HasModifyAuth": true,
+                "ProjectId": "100097",
+                "ProjectName": "demo测试01",
+                "SimpleImageUrl": "",
+                "StudyCount": 0,
+                "UserCount": 1
+            },
+            {
+                "AIEngine": "无",
+                "Bucket": "100096-251006271",
+                "Cover": "",
+                "CreateUserId": "264334425865150000",
+                "Description": "描述说明",
+                "HasModifyAuth": true,
+                "ProjectId": "100096",
+                "ProjectName": "demo测试02",
+                "SimpleImageUrl": "",
+                "StudyCount": 0,
+                "UserCount": 1
+            }
+        ],
+        "RequestId": "3de3cacf-1bd4-4460-837f-fb71448e2d66"
     }
 }
 ```

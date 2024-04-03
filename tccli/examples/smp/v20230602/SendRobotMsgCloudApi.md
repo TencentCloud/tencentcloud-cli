@@ -1,31 +1,4 @@
-**Example 1: 发送markdown**
-
-
-
-Input: 
-
-```
-tccli smp SendRobotMsgCloudApi --cli-unfold-argument  \
-    --Type md \
-    --MdReq.Sender 267f2042-ace8-4a6e-bfe9-10c6ae20c950 \
-    --MdReq.GroupReceivers wrkSFfCgAApC9AVWgPfXmBnXMpT-3Gew \
-    --MdReq.Markdown.Content ## md标题<@aronlwang> \
-    --MdReq.AppToken NvBXht8Kepo2aHTzSr7lhfP9nY
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "MsgId": "cljffposde2a7pht2cc0"
-        },
-        "RequestId": "rpa-4b6e83ae-4c8d-47fc-ac23-698034ce9d36"
-    }
-}
-```
-
-**Example 2: 发送图片**
+**Example 1: 发送图片**
 
 
 
@@ -52,7 +25,7 @@ Output:
 }
 ```
 
-**Example 3: 发送文字**
+**Example 2: 发送文字**
 
 
 
@@ -65,6 +38,33 @@ tccli smp SendRobotMsgCloudApi --cli-unfold-argument  \
     --TextReq.GroupReceivers wrkSFfCgAApC9AVWgPfXmBnXMpT-3Gew \
     --TextReq.Text.Content 测试<@aronlwang> \
     --TextReq.AppToken NvBXht8Kepo2aHTzSr7lhfP9nY
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "MsgId": "cljffposde2a7pht2cc0"
+        },
+        "RequestId": "rpa-4b6e83ae-4c8d-47fc-ac23-698034ce9d36"
+    }
+}
+```
+
+**Example 3: 发送markdown**
+
+
+
+Input: 
+
+```
+tccli smp SendRobotMsgCloudApi --cli-unfold-argument  \
+    --Type md \
+    --MdReq.Sender 267f2042-ace8-4a6e-bfe9-10c6ae20c950 \
+    --MdReq.GroupReceivers wrkSFfCgAApC9AVWgPfXmBnXMpT-3Gew \
+    --MdReq.Markdown.Content ## md标题<@aronlwang> \
+    --MdReq.AppToken NvBXht8Kepo2aHTzSr7lhfP9nY
 ```
 
 Output: 

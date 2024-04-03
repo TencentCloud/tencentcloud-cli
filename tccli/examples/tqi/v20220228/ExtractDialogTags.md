@@ -1,260 +1,4 @@
-**Example 1: 单个切片标签**
-
-单个切片标签
-
-Input: 
-
-```
-tccli tqi ExtractDialogTags --cli-unfold-argument  \
-    --DialogueContents.0.Role 0 \
-    --DialogueContents.0.Content 那当时你上初中的时候。 \
-    --DialogueContents.1.Role 0 \
-    --DialogueContents.1.Content 您您那时候有给孩子接触。 \
-    --DialogueContents.2.Role 0 \
-    --DialogueContents.2.Content 给他报那种补习班，让孩子去补一补这两科嘛。 \
-    --DialogueContents.3.Role 1 \
-    --DialogueContents.3.Content 补过，在线下补过。 \
-    --DialogueContents.4.Role 0 \
-    --DialogueContents.4.Content 是那种线下的一对一吗？还是说大班课呀？ \
-    --DialogueContents.5.Role 1 \
-    --DialogueContents.5.Content 一对一。 \
-    --DialogueContents.6.Role 0 \
-    --DialogueContents.6.Content 啊。 \
-    --DialogueContents.7.Role 0 \
-    --DialogueContents.7.Content 补课效果咋样呀，孩子？ \
-    --DialogueContents.8.Role 1 \
-    --DialogueContents.8.Content 嗯，他那个觉得老师讲的好的，他才。 \
-    --DialogueContents.9.Role 1 \
-    --DialogueContents.9.Content 行，你觉得不行的，我们就换老师呗。 \
-    --DialogueContents.10.Role 0 \
-    --DialogueContents.10.Content 哦，就是孩子他自己，嗯，需要对对这个老师的一个要求是比较高一些，需要满足自己的一个。 \
-    --DialogueContents.11.Role 0 \
-    --DialogueContents.11.Content 就是比较喜欢这个老师，要适应自己的一个讲课风格。 \
-    --DialogueContents.12.Role 1 \
-    --DialogueContents.12.Content 对呀，他觉得收益还太强。 \
-    --DialogueContents.13.Role 1 \
-    --DialogueContents.13.Content 要不一般那会儿一对一是也挺贵的。 \
-    --DialogueContents.14.Role 0 \
-    --DialogueContents.14.Content 嗯，确实。 \
-    --DialogueContents.15.Role 1 \
-    --DialogueContents.15.Content 嗯。 \
-    --DialogueContents.16.Role 0 \
-    --DialogueContents.16.Content 嗯，这个我们也是。 \
-    --DialogueContents.17.Role 1 \
-    --DialogueContents.17.Content 报了这课，想着试听一下。 \
-    --DialogueContents.18.Role 0 \
-    --DialogueContents.18.Content 那你像孩子的话，他们现在高一这个阶段，他们呃学校现在老师有没有跟他们提过这种呃选科呀之后。 \
-    --DialogueContents.19.Role 1 \
-    --DialogueContents.19.Content 12月份那个三科。 \
-    --DialogueContents.20.Role 0 \
-    --DialogueContents.20.Content 那现在呃，孩子他有确定好要选哪些科目吗？ \
-    --DialogueContents.21.Role 1 \
-    --DialogueContents.21.Content 他目前说要要选文科。 \
-    --DialogueContents.22.Role 0 \
-    --DialogueContents.22.Content 哦，文科政史地。 \
-    --DialogueContents.23.Role 1 \
-    --DialogueContents.23.Content 嗯，你说咱们整整十。 \
-    --DialogueContents.24.Role 0 \
-    --DialogueContents.24.Content 政治、历史和地理。 \
-    --DialogueContents.25.Role 1 \
-    --DialogueContents.25.Content 他没有说确定哪哈，他就反正说选。 \
-    --DialogueContents.26.Role 1 \
-    --DialogueContents.26.Content 政治跟历史哪一科没确定哦？ \
-    --DialogueContents.27.Role 0 \
-    --DialogueContents.27.Content 因为你像现在的话，咱们都是这个新高考，他这个文科。 \
-    --DialogueContents.28.Role 1 \
-    --DialogueContents.28.Content 分哪个？分政治历史地理还有哪科？ \
-    --DialogueContents.29.Role 0 \
-    --DialogueContents.29.Content 嗯，没了文科就是你像咱现在的话是新高考，然后之前老高考分文科还有理科，文科的话是政治历史和地理，但是新高考它是不分文理科，而是分物理组和历史组，也就是说物理和历史这两个学科是任选其一，只能选一科，那孩子如果想学文科，那肯定是选择历史。 \
-    --DialogueContents.30.Role 1 \
-    --DialogueContents.30.Content 怎么着，那理科物理跟那化学还学吗？ \
-    --DialogueContents.31.Role 0 \
-    --DialogueContents.31.Content 嗯，你像那个物理和历史的话，孩子他如果他是只能选择一科的，他如果选择历史，那剩下的政治地理，还有化学生物这些四科，他在任选两科可以随意选。 \
-    --DialogueContents.32.Role 1 \
-    --DialogueContents.32.Content 哦，是这么事啊他。 \
-    --DialogueContents.33.Role 0 \
-    --DialogueContents.33.Content 对对，因为现在是新高考了，就是新高考跟之前的咱老高考那个政策不太一样。 \
-    --DialogueContents.34.Role 1 \
-    --DialogueContents.34.Content 现在的这个不叫点了吧。 \
-    --DialogueContents.35.Role 0 \
-    --DialogueContents.35.Content 嗯，可能孩子他应该他是比较平时喜欢这个文科吗？还是说他觉得理科成绩就不太理想，所以就选择选文科。 \
-    --DialogueContents.36.Role 1 \
-    --DialogueContents.36.Content 他倒是觉得理科成绩不理解这些文科，文科他也比较有有些强盛。 \
-    --DialogueContents.37.Role 0 \
-    --DialogueContents.37.Content 就是自己也比较擅长对。 \
-    --DialogueContents.38.Role 1 \
-    --DialogueContents.38.Content 总的理解能力吧。 \
-    --DialogueContents.39.Role 1 \
-    --DialogueContents.39.Content 背诵也快，理解能力上也也强。 \
-    --DialogueContents.40.Role 0 \
-    --DialogueContents.40.Content 那孩子语文成绩应该挺好的吧？ \
-    --DialogueType gaotu
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "1019e8ce-6c35-4345-8617-1dd18120f629",
-        "Tags": [
-            {
-                "TagName": "学科",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "文科"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "科目",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "政治",
-                            "历史",
-                            "地理"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "补习情况",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "有补习"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "补习班类型",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "非高途线下补习班"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "学习态度",
-                "TagValues": [
-                    {
-                        "Name": "总体",
-                        "Values": [
-                            "主动"
-                        ]
-                    },
-                    {
-                        "Name": "认真学科",
-                        "Values": [
-                            "文科"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "状态",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "频率",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "回家时间",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "离家时间",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "薄弱学科",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "高考地区",
-                "TagValues": [
-                    {
-                        "Name": "省份&直辖市",
-                        "Values": [
-                            "未提及"
-                        ]
-                    },
-                    {
-                        "Name": "城市&地区",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "放假信息",
-                "TagValues": [
-                    {
-                        "Name": "是否放假",
-                        "Values": [
-                            "未提及"
-                        ]
-                    },
-                    {
-                        "Name": "放假时间",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 学科**
+**Example 1: 学科**
 
 学科
 
@@ -540,228 +284,7 @@ Output:
 }
 ```
 
-**Example 3: 薄弱学科**
-
-薄弱学科-未提及
-
-Input: 
-
-```
-tccli tqi ExtractDialogTags --cli-unfold-argument  \
-    --DialogueContents.0.Role 0 \
-    --DialogueContents.0.Content 喂喂，家长您好，呃，您现在是不是给孩子购买这个高途的资料呀，就三本的资料。 \
-    --DialogueContents.1.Role 0 \
-    --DialogueContents.1.Content 语数英的母题周周通对吧，花了19块钱啊，这个资料的话，会有配套的四千九节的清北名师直播课程，所以说老师跟您联系一下，我是负责这次课程的老师高途兰琪老师。 \
-    --DialogueContents.2.Role 0 \
-    --DialogueContents.2.Content 给您需要给您同步一下我们后续详细的课程安排，包括这个上完课程这个资料好吧。 \
-    --DialogueContents.3.Role 1 \
-    --DialogueContents.3.Content 你那不是书吗？ \
-    --DialogueContents.4.Role 0 \
-    --DialogueContents.4.Content 这个书配套的，您当时购书的时候应该知道这个书配套的，会有这个四千九节的清美原师直播课程，这个课程的话和这个书是配套的。 \
-    --DialogueContents.5.Role 1 \
-    --DialogueContents.5.Content 有什么考？ \
-    --DialogueContents.6.Role 0 \
-    --DialogueContents.6.Content 里面是四天九节的清北名师直播课程，包含了家长规划课程，包括以后这个选课的课程，以及语、数、英、物化这五大科目的。 \
-    --DialogueContents.7.Role 0 \
-    --DialogueContents.7.Content 知识点、方法技巧授课，就做题技巧这一方面的授课。 \
-    --DialogueContents.8.Role 0 \
-    --DialogueContents.8.Content 在这个周五，周六，周日，包括周一。 \
-    --DialogueContents.9.Role 0 \
-    --DialogueContents.9.Content 呃，您在您已经收到这个课了吗？您已经收到这个书了吗。 \
-    --DialogueContents.10.Role 1 \
-    --DialogueContents.10.Content 没有没有没有没有，里边还有个卡是吧。 \
-    --DialogueContents.11.Role 0 \
-    --DialogueContents.11.Content 卡的话没有这个卡吧。 \
-    --DialogueContents.12.Role 0 \
-    --DialogueContents.12.Content 19的话应该是资料，您当时收货以您收货的这个为主吧，因为您不知道您当时是发的这个19。 \
-    --DialogueContents.13.Role 0 \
-    --DialogueContents.13.Content 已经给您发送安排安排这个发货，您这两天注意一下您这个物流信息，看看，他是应该是三天左右，三天左右就可以到了。 \
-    --DialogueContents.14.Role 0 \
-    --DialogueContents.14.Content 应该是没有卡。 \
-    --DialogueContents.15.Role 1 \
-    --DialogueContents.15.Content 的，你听我说。 \
-    --DialogueContents.16.Role 1 \
-    --DialogueContents.16.Content 啊。 \
-    --DialogueContents.17.Role 0 \
-    --DialogueContents.17.Content 这个卡的话应该是没有的吧。 \
-    --DialogueContents.18.Role 1 \
-    --DialogueContents.18.Content 那不对，他说有卡来着。 \
-    --DialogueContents.19.Role 0 \
-    --DialogueContents.19.Content 那我不知道您当时购买下单的是哪哪一部分这个资料如果是19块钱的话，应该是这个语数英300。 \
-    --DialogueContents.20.Role 1 \
-    --DialogueContents.20.Content 块钱的这一部分，他说有个卡在纸上贴着。 \
-    --DialogueContents.21.Role 0 \
-    --DialogueContents.21.Content 在纸上贴的哦，就是。 \
-    --DialogueContents.22.Role 0 \
-    --DialogueContents.22.Content 就这个语数英的母题资料对吧。 \
-    --DialogueContents.23.Role 0 \
-    --DialogueContents.23.Content 是没贴纸。 \
-    --DialogueContents.24.Role 1 \
-    --DialogueContents.24.Content 上面贴上卡。 \
-    --DialogueContents.25.Role 0 \
-    --DialogueContents.25.Content 那应该就是他每每本书里面加的有这个相对来说资料吧，因为我不是负责那个资料的一个。 \
-    --DialogueContents.26.Role 0 \
-    --DialogueContents.26.Content 资料的一个发送，我这边只负责给您安排这个收货。 \
-    --DialogueContents.27.Role 1 \
-    --DialogueContents.27.Content 就行行行。 \
-    --DialogueContents.28.Role 0 \
-    --DialogueContents.28.Content 这个没问题，您到时候如果发货的话，肯定是一块给您发过去了。 \
-    --DialogueContents.29.Role 0 \
-    --DialogueContents.29.Content 对对，后续这个课程需要您，呃，跟我对接一下，因为后续这个课程是我进行负责的，我主要负责这一块。 \
-    --DialogueType gaotu
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "283886d1-2b5d-4ae6-8b55-cf19df12bc99",
-        "Tags": [
-            {
-                "TagName": "学科",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "科目",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "补习情况",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "补习班类型",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "学习态度",
-                "TagValues": [
-                    {
-                        "Name": "总体",
-                        "Values": [
-                            "未提及"
-                        ]
-                    },
-                    {
-                        "Name": "认真学科",
-                        "Values": [
-                            "未提及"
-                        ]
-                    },
-                    {
-                        "Name": "不认真学科",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "状态",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "频率",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "回家时间",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "离家时间",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "薄弱学科",
-                "TagValues": [
-                    {
-                        "Name": "",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            },
-            {
-                "TagName": "高考地区",
-                "TagValues": [
-                    {
-                        "Name": "省份&直辖市",
-                        "Values": [
-                            "未提及"
-                        ]
-                    },
-                    {
-                        "Name": "城市&地区",
-                        "Values": [
-                            "未提及"
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-}
-```
-
-**Example 4: 补习**
+**Example 2: 补习**
 
 补习
 
@@ -1011,6 +534,483 @@ Output:
                         "Name": "放假时间",
                         "Values": [
                             "昨天"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+**Example 3: 薄弱学科**
+
+薄弱学科-未提及
+
+Input: 
+
+```
+tccli tqi ExtractDialogTags --cli-unfold-argument  \
+    --DialogueContents.0.Role 0 \
+    --DialogueContents.0.Content 喂喂，家长您好，呃，您现在是不是给孩子购买这个高途的资料呀，就三本的资料。 \
+    --DialogueContents.1.Role 0 \
+    --DialogueContents.1.Content 语数英的母题周周通对吧，花了19块钱啊，这个资料的话，会有配套的四千九节的清北名师直播课程，所以说老师跟您联系一下，我是负责这次课程的老师高途兰琪老师。 \
+    --DialogueContents.2.Role 0 \
+    --DialogueContents.2.Content 给您需要给您同步一下我们后续详细的课程安排，包括这个上完课程这个资料好吧。 \
+    --DialogueContents.3.Role 1 \
+    --DialogueContents.3.Content 你那不是书吗？ \
+    --DialogueContents.4.Role 0 \
+    --DialogueContents.4.Content 这个书配套的，您当时购书的时候应该知道这个书配套的，会有这个四千九节的清美原师直播课程，这个课程的话和这个书是配套的。 \
+    --DialogueContents.5.Role 1 \
+    --DialogueContents.5.Content 有什么考？ \
+    --DialogueContents.6.Role 0 \
+    --DialogueContents.6.Content 里面是四天九节的清北名师直播课程，包含了家长规划课程，包括以后这个选课的课程，以及语、数、英、物化这五大科目的。 \
+    --DialogueContents.7.Role 0 \
+    --DialogueContents.7.Content 知识点、方法技巧授课，就做题技巧这一方面的授课。 \
+    --DialogueContents.8.Role 0 \
+    --DialogueContents.8.Content 在这个周五，周六，周日，包括周一。 \
+    --DialogueContents.9.Role 0 \
+    --DialogueContents.9.Content 呃，您在您已经收到这个课了吗？您已经收到这个书了吗。 \
+    --DialogueContents.10.Role 1 \
+    --DialogueContents.10.Content 没有没有没有没有，里边还有个卡是吧。 \
+    --DialogueContents.11.Role 0 \
+    --DialogueContents.11.Content 卡的话没有这个卡吧。 \
+    --DialogueContents.12.Role 0 \
+    --DialogueContents.12.Content 19的话应该是资料，您当时收货以您收货的这个为主吧，因为您不知道您当时是发的这个19。 \
+    --DialogueContents.13.Role 0 \
+    --DialogueContents.13.Content 已经给您发送安排安排这个发货，您这两天注意一下您这个物流信息，看看，他是应该是三天左右，三天左右就可以到了。 \
+    --DialogueContents.14.Role 0 \
+    --DialogueContents.14.Content 应该是没有卡。 \
+    --DialogueContents.15.Role 1 \
+    --DialogueContents.15.Content 的，你听我说。 \
+    --DialogueContents.16.Role 1 \
+    --DialogueContents.16.Content 啊。 \
+    --DialogueContents.17.Role 0 \
+    --DialogueContents.17.Content 这个卡的话应该是没有的吧。 \
+    --DialogueContents.18.Role 1 \
+    --DialogueContents.18.Content 那不对，他说有卡来着。 \
+    --DialogueContents.19.Role 0 \
+    --DialogueContents.19.Content 那我不知道您当时购买下单的是哪哪一部分这个资料如果是19块钱的话，应该是这个语数英300。 \
+    --DialogueContents.20.Role 1 \
+    --DialogueContents.20.Content 块钱的这一部分，他说有个卡在纸上贴着。 \
+    --DialogueContents.21.Role 0 \
+    --DialogueContents.21.Content 在纸上贴的哦，就是。 \
+    --DialogueContents.22.Role 0 \
+    --DialogueContents.22.Content 就这个语数英的母题资料对吧。 \
+    --DialogueContents.23.Role 0 \
+    --DialogueContents.23.Content 是没贴纸。 \
+    --DialogueContents.24.Role 1 \
+    --DialogueContents.24.Content 上面贴上卡。 \
+    --DialogueContents.25.Role 0 \
+    --DialogueContents.25.Content 那应该就是他每每本书里面加的有这个相对来说资料吧，因为我不是负责那个资料的一个。 \
+    --DialogueContents.26.Role 0 \
+    --DialogueContents.26.Content 资料的一个发送，我这边只负责给您安排这个收货。 \
+    --DialogueContents.27.Role 1 \
+    --DialogueContents.27.Content 就行行行。 \
+    --DialogueContents.28.Role 0 \
+    --DialogueContents.28.Content 这个没问题，您到时候如果发货的话，肯定是一块给您发过去了。 \
+    --DialogueContents.29.Role 0 \
+    --DialogueContents.29.Content 对对，后续这个课程需要您，呃，跟我对接一下，因为后续这个课程是我进行负责的，我主要负责这一块。 \
+    --DialogueType gaotu
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "283886d1-2b5d-4ae6-8b55-cf19df12bc99",
+        "Tags": [
+            {
+                "TagName": "学科",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "科目",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "补习情况",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "补习班类型",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "学习态度",
+                "TagValues": [
+                    {
+                        "Name": "总体",
+                        "Values": [
+                            "未提及"
+                        ]
+                    },
+                    {
+                        "Name": "认真学科",
+                        "Values": [
+                            "未提及"
+                        ]
+                    },
+                    {
+                        "Name": "不认真学科",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "状态",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "频率",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "回家时间",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "离家时间",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "薄弱学科",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "高考地区",
+                "TagValues": [
+                    {
+                        "Name": "省份&直辖市",
+                        "Values": [
+                            "未提及"
+                        ]
+                    },
+                    {
+                        "Name": "城市&地区",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+**Example 4: 单个切片标签**
+
+单个切片标签
+
+Input: 
+
+```
+tccli tqi ExtractDialogTags --cli-unfold-argument  \
+    --DialogueContents.0.Role 0 \
+    --DialogueContents.0.Content 那当时你上初中的时候。 \
+    --DialogueContents.1.Role 0 \
+    --DialogueContents.1.Content 您您那时候有给孩子接触。 \
+    --DialogueContents.2.Role 0 \
+    --DialogueContents.2.Content 给他报那种补习班，让孩子去补一补这两科嘛。 \
+    --DialogueContents.3.Role 1 \
+    --DialogueContents.3.Content 补过，在线下补过。 \
+    --DialogueContents.4.Role 0 \
+    --DialogueContents.4.Content 是那种线下的一对一吗？还是说大班课呀？ \
+    --DialogueContents.5.Role 1 \
+    --DialogueContents.5.Content 一对一。 \
+    --DialogueContents.6.Role 0 \
+    --DialogueContents.6.Content 啊。 \
+    --DialogueContents.7.Role 0 \
+    --DialogueContents.7.Content 补课效果咋样呀，孩子？ \
+    --DialogueContents.8.Role 1 \
+    --DialogueContents.8.Content 嗯，他那个觉得老师讲的好的，他才。 \
+    --DialogueContents.9.Role 1 \
+    --DialogueContents.9.Content 行，你觉得不行的，我们就换老师呗。 \
+    --DialogueContents.10.Role 0 \
+    --DialogueContents.10.Content 哦，就是孩子他自己，嗯，需要对对这个老师的一个要求是比较高一些，需要满足自己的一个。 \
+    --DialogueContents.11.Role 0 \
+    --DialogueContents.11.Content 就是比较喜欢这个老师，要适应自己的一个讲课风格。 \
+    --DialogueContents.12.Role 1 \
+    --DialogueContents.12.Content 对呀，他觉得收益还太强。 \
+    --DialogueContents.13.Role 1 \
+    --DialogueContents.13.Content 要不一般那会儿一对一是也挺贵的。 \
+    --DialogueContents.14.Role 0 \
+    --DialogueContents.14.Content 嗯，确实。 \
+    --DialogueContents.15.Role 1 \
+    --DialogueContents.15.Content 嗯。 \
+    --DialogueContents.16.Role 0 \
+    --DialogueContents.16.Content 嗯，这个我们也是。 \
+    --DialogueContents.17.Role 1 \
+    --DialogueContents.17.Content 报了这课，想着试听一下。 \
+    --DialogueContents.18.Role 0 \
+    --DialogueContents.18.Content 那你像孩子的话，他们现在高一这个阶段，他们呃学校现在老师有没有跟他们提过这种呃选科呀之后。 \
+    --DialogueContents.19.Role 1 \
+    --DialogueContents.19.Content 12月份那个三科。 \
+    --DialogueContents.20.Role 0 \
+    --DialogueContents.20.Content 那现在呃，孩子他有确定好要选哪些科目吗？ \
+    --DialogueContents.21.Role 1 \
+    --DialogueContents.21.Content 他目前说要要选文科。 \
+    --DialogueContents.22.Role 0 \
+    --DialogueContents.22.Content 哦，文科政史地。 \
+    --DialogueContents.23.Role 1 \
+    --DialogueContents.23.Content 嗯，你说咱们整整十。 \
+    --DialogueContents.24.Role 0 \
+    --DialogueContents.24.Content 政治、历史和地理。 \
+    --DialogueContents.25.Role 1 \
+    --DialogueContents.25.Content 他没有说确定哪哈，他就反正说选。 \
+    --DialogueContents.26.Role 1 \
+    --DialogueContents.26.Content 政治跟历史哪一科没确定哦？ \
+    --DialogueContents.27.Role 0 \
+    --DialogueContents.27.Content 因为你像现在的话，咱们都是这个新高考，他这个文科。 \
+    --DialogueContents.28.Role 1 \
+    --DialogueContents.28.Content 分哪个？分政治历史地理还有哪科？ \
+    --DialogueContents.29.Role 0 \
+    --DialogueContents.29.Content 嗯，没了文科就是你像咱现在的话是新高考，然后之前老高考分文科还有理科，文科的话是政治历史和地理，但是新高考它是不分文理科，而是分物理组和历史组，也就是说物理和历史这两个学科是任选其一，只能选一科，那孩子如果想学文科，那肯定是选择历史。 \
+    --DialogueContents.30.Role 1 \
+    --DialogueContents.30.Content 怎么着，那理科物理跟那化学还学吗？ \
+    --DialogueContents.31.Role 0 \
+    --DialogueContents.31.Content 嗯，你像那个物理和历史的话，孩子他如果他是只能选择一科的，他如果选择历史，那剩下的政治地理，还有化学生物这些四科，他在任选两科可以随意选。 \
+    --DialogueContents.32.Role 1 \
+    --DialogueContents.32.Content 哦，是这么事啊他。 \
+    --DialogueContents.33.Role 0 \
+    --DialogueContents.33.Content 对对，因为现在是新高考了，就是新高考跟之前的咱老高考那个政策不太一样。 \
+    --DialogueContents.34.Role 1 \
+    --DialogueContents.34.Content 现在的这个不叫点了吧。 \
+    --DialogueContents.35.Role 0 \
+    --DialogueContents.35.Content 嗯，可能孩子他应该他是比较平时喜欢这个文科吗？还是说他觉得理科成绩就不太理想，所以就选择选文科。 \
+    --DialogueContents.36.Role 1 \
+    --DialogueContents.36.Content 他倒是觉得理科成绩不理解这些文科，文科他也比较有有些强盛。 \
+    --DialogueContents.37.Role 0 \
+    --DialogueContents.37.Content 就是自己也比较擅长对。 \
+    --DialogueContents.38.Role 1 \
+    --DialogueContents.38.Content 总的理解能力吧。 \
+    --DialogueContents.39.Role 1 \
+    --DialogueContents.39.Content 背诵也快，理解能力上也也强。 \
+    --DialogueContents.40.Role 0 \
+    --DialogueContents.40.Content 那孩子语文成绩应该挺好的吧？ \
+    --DialogueType gaotu
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1019e8ce-6c35-4345-8617-1dd18120f629",
+        "Tags": [
+            {
+                "TagName": "学科",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "文科"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "科目",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "政治",
+                            "历史",
+                            "地理"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "补习情况",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "有补习"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "补习班类型",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "非高途线下补习班"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "学习态度",
+                "TagValues": [
+                    {
+                        "Name": "总体",
+                        "Values": [
+                            "主动"
+                        ]
+                    },
+                    {
+                        "Name": "认真学科",
+                        "Values": [
+                            "文科"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "状态",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "频率",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "回家时间",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "离家时间",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "薄弱学科",
+                "TagValues": [
+                    {
+                        "Name": "",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "高考地区",
+                "TagValues": [
+                    {
+                        "Name": "省份&直辖市",
+                        "Values": [
+                            "未提及"
+                        ]
+                    },
+                    {
+                        "Name": "城市&地区",
+                        "Values": [
+                            "未提及"
+                        ]
+                    }
+                ]
+            },
+            {
+                "TagName": "放假信息",
+                "TagValues": [
+                    {
+                        "Name": "是否放假",
+                        "Values": [
+                            "未提及"
+                        ]
+                    },
+                    {
+                        "Name": "放假时间",
+                        "Values": [
+                            "未提及"
                         ]
                     }
                 ]

@@ -1,4 +1,28 @@
-**Example 1: 已开通完成自动签，撤销链接失败**
+**Example 1: 撤销自动签开通链接成功**
+
+撤销自动签开通链接成功
+
+Input: 
+
+```
+tccli ess CancelUserAutoSignEnableUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
+    --UserInfo.Name 小明 \
+    --UserInfo.IdCardNumber 610000000000000000 \
+    --UserInfo.IdCardType ID_CARD
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a97c85196a3e"
+    }
+}
+```
+
+**Example 2: 已开通完成自动签，撤销链接失败**
 
 已经开通自动签成功，无法撤销
 
@@ -21,30 +45,6 @@ Output:
             "Code": "FailedOperation.UserAutoSignEnableAlready",
             "Message": "无法撤销，此用户已开通自动签成功"
         },
-        "RequestId": "a97c85196a3e"
-    }
-}
-```
-
-**Example 2: 撤销自动签开通链接成功**
-
-撤销自动签开通链接成功
-
-Input: 
-
-```
-tccli ess CancelUserAutoSignEnableUrl --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
-    --UserInfo.Name 小明 \
-    --UserInfo.IdCardNumber 610000000000000000 \
-    --UserInfo.IdCardType ID_CARD
-```
-
-Output: 
-```
-{
-    "Response": {
         "RequestId": "a97c85196a3e"
     }
 }

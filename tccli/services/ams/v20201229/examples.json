@@ -18,16 +18,16 @@
     ],
     "CreateAudioModerationTask": [
       {
-        "document": "创建音频审核任务",
-        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationTask\n<公共请求参数>\n\n{\n    \"Type\": \"AUDIO\",\n    \"Tasks\": [\n        {\n            \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n            \"Input\": {\n                \"Url\": \"https://test.myqcloud.com/test.mp3\"\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n                \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\n                \"Code\": \"OK\",\n                \"Message\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
-        "title": "创建音频审核任务"
-      },
-      {
         "document": "当用户在创建审核任务时配置了Seed，我们则会在回调当时候加入签名参数，以保证数据的安全性。\n签名方法：返回的HTTP头部，添加 `X-Signature` 的字段，值为： `seed ` +  `body ` 的 sha256 编码和Hex字符串。\n\n例如：\n假设用户 CallbackUrl 是：http://example.com, Seed 是： `dedb6dcc1cb7c63fde8fa5abfd57`，我们返回的回调的数据是： \n```{\"TaskId\": \"task-video-X0zpcRUMzVidxj20\",\"DataId\":\"test\",\"Suggestion\": \"Block\"}```,\n则，审核完成后，我们会在调用 http://example.com 的时候，在HTTP 头部 传入`X-Signature` 的值为：\n`74f0ae6d1f1e4eb1ffe4162da480a812f8a4dc19fe5a52bacbcd2c862d3edcfd`\n\n> 备注： 回调Body格式请参考查询任务详情接口，回调Body格式和查询任务详情接口一致。",
         "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationTask\n<公共请求参数>\n\n{\n    \"Type\": \"AUDIO\",\n    \"CallbackUrl\": \"https://apis.example.com/callback/audio\",\n    \"Seed\": \"dedb6dcc1cb7c63fde8fa5abfd57\",\n    \"Tasks\": [\n        {\n            \"DataId\": \"test\",\n            \"Input\": {\n                \"Url\": \"https://test.myqcloud.com/test.mp3\"\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"DataId\": \"test\",\n                \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\n                \"Code\": \"OK\",\n                \"Message\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
         "title": "回调签名示例"
+      },
+      {
+        "document": "创建音频审核任务",
+        "input": "POST / HTTP/1.1\nHost: ams.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationTask\n<公共请求参数>\n\n{\n    \"Type\": \"AUDIO\",\n    \"Tasks\": [\n        {\n            \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n            \"Input\": {\n                \"Url\": \"https://test.myqcloud.com/test.mp3\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n                \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\n                \"Code\": \"OK\",\n                \"Message\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
+        "title": "创建音频审核任务"
       }
     ],
     "DescribeTaskDetail": [
