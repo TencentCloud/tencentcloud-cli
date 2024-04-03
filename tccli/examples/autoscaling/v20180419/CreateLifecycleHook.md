@@ -1,27 +1,4 @@
-**Example 1: 创建生命周期挂钩，采用默认值**
-
-创建生命周期挂钩，在实例创建场景下生效。DefaultResult采用默认值，即CONTINUE。HeartbeatTimeout采用默认值，即300秒。
-
-Input: 
-
-```
-tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --AutoScalingGroupId asg-8fbozqja \
-    --LifecycleHookName one-hook-default \
-    --LifecycleTransition INSTANCE_LAUNCHING
-```
-
-Output: 
-```
-{
-    "Response": {
-        "LifecycleHookId": "ash-8azjzxj9",
-        "RequestId": "4fa9fd2e-5b6c-49fe-9ba7-ed2ee62d8271"
-    }
-}
-```
-
-**Example 2: 创建生命周期挂钩**
+**Example 1: 创建生命周期挂钩**
 
 创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为360秒。
 
@@ -46,7 +23,58 @@ Output:
 }
 ```
 
-**Example 3: 创建生命周期挂钩，通知TDMQ队列模型**
+**Example 2: 创建生命周期挂钩，采用默认值**
+
+创建生命周期挂钩，在实例创建场景下生效。DefaultResult采用默认值，即CONTINUE。HeartbeatTimeout采用默认值，即300秒。
+
+Input: 
+
+```
+tccli as CreateLifecycleHook --cli-unfold-argument  \
+    --AutoScalingGroupId asg-8fbozqja \
+    --LifecycleHookName one-hook-default \
+    --LifecycleTransition INSTANCE_LAUNCHING
+```
+
+Output: 
+```
+{
+    "Response": {
+        "LifecycleHookId": "ash-8azjzxj9",
+        "RequestId": "4fa9fd2e-5b6c-49fe-9ba7-ed2ee62d8271"
+    }
+}
+```
+
+**Example 3: 创建生命周期挂钩，通知TDMQ主题模型**
+
+创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的TDMQ主题模型。
+
+Input: 
+
+```
+tccli as CreateLifecycleHook --cli-unfold-argument  \
+    --HeartbeatTimeout 120 \
+    --AutoScalingGroupId asg-8fbozqja \
+    --LifecycleHookName terminate-topic \
+    --NotificationMetadata topic \
+    --NotificationTarget.TargetType TDMQ_TOPIC \
+    --NotificationTarget.TopicName one-topic \
+    --DefaultResult ABANDON \
+    --LifecycleTransition INSTANCE_TERMINATING
+```
+
+Output: 
+```
+{
+    "Response": {
+        "LifecycleHookId": "ash-oq76wsrx",
+        "RequestId": "cdb7670b-0412-444f-9d2f-0da9cd07c410"
+    }
+}
+```
+
+**Example 4: 创建生命周期挂钩，通知TDMQ队列模型**
 
 创建生命周期挂钩，在实例创建场景下生效，DefaultResult设置为CONTINUE，HeartbeatTimeout设置为120秒，通知名为“one-queue”的TDMQ队列模型。
 
@@ -74,7 +102,7 @@ Output:
 }
 ```
 
-**Example 4: 创建执行自动化助手命令的生命周期挂钩**
+**Example 5: 创建执行自动化助手命令的生命周期挂钩**
 
 
 
@@ -97,34 +125,6 @@ Output:
     "Response": {
         "LifecycleHookId": "ash-kjurq12y",
         "RequestId": "08f7bea5-3e0a-4280-9970-5d959a922b0b"
-    }
-}
-```
-
-**Example 5: 创建生命周期挂钩，通知TDMQ主题模型**
-
-创建生命周期挂钩，在实例销毁场景下生效，DefaultResult设置为ABANDON，HeartbeatTimeout设置为120秒，通知名为“one-topic”的TDMQ主题模型。
-
-Input: 
-
-```
-tccli as CreateLifecycleHook --cli-unfold-argument  \
-    --HeartbeatTimeout 120 \
-    --AutoScalingGroupId asg-8fbozqja \
-    --LifecycleHookName terminate-topic \
-    --NotificationMetadata topic \
-    --NotificationTarget.TargetType TDMQ_TOPIC \
-    --NotificationTarget.TopicName one-topic \
-    --DefaultResult ABANDON \
-    --LifecycleTransition INSTANCE_TERMINATING
-```
-
-Output: 
-```
-{
-    "Response": {
-        "LifecycleHookId": "ash-oq76wsrx",
-        "RequestId": "cdb7670b-0412-444f-9d2f-0da9cd07c410"
     }
 }
 ```

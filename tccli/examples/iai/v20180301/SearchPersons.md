@@ -1,4 +1,29 @@
-**Example 1: 人员搜索接口**
+**Example 1: 错误示例**
+
+图片URL错误
+
+Input: 
+
+```
+tccli iai SearchPersons --cli-unfold-argument  \
+    --Url http://test.image.myqcloud.com/testA \
+    --GroupIds TencentShenZhenEmployee
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.ImageDownloadError",
+            "Message": "图片下载错误。"
+        },
+        "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
+    }
+}
+```
+
+**Example 2: 人员搜索接口**
 
 
 
@@ -92,31 +117,6 @@ Output:
         "PersonNum": 5,
         "FaceModelVersion": "3.0",
         "RequestId": "c4608852-ff60-4a01-8dc3-367f6046baaf"
-    }
-}
-```
-
-**Example 2: 错误示例**
-
-图片URL错误
-
-Input: 
-
-```
-tccli iai SearchPersons --cli-unfold-argument  \
-    --Url http://test.image.myqcloud.com/testA \
-    --GroupIds TencentShenZhenEmployee
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation.ImageDownloadError",
-            "Message": "图片下载错误。"
-        },
-        "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }
 }
 ```

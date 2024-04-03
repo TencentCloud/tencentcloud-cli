@@ -16,6 +16,14 @@
         "title": "批量添加设备"
       }
     ],
+    "BatchDeleteDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteDevice\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"WIDSet\": [\n        \"aaa\",\n        \"bbb\"\n    ],\n    \"ApplicationToken\": \"YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ea50911-8e3d-40aa-82ee-c00d23cc044d\"\n    }\n}",
+        "title": "批量删除设备"
+      }
+    ],
     "BatchKillAlarm": [
       {
         "document": "成功响应",
@@ -62,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationToken\n<公共请求参数>\n\n{\n    \"ApplicationId\": 10001,\n    \"Nonce\": \"e222d195-ab43-4b68-b115-0ad71488f7ed\",\n    \"TenantId\": 10000,\n    \"RequestTime\": 1693797989,\n    \"Signature\": \"RDcVIT1tOqq5V3K0nnRjuTpFcVL8wlYb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Token\": \"886c2341d97352aa027916ec0e0339fa\"\n        },\n        \"RequestId\": \"e222d195-ab43-4b68-b115-0ad71488f7ed\"\n    }\n}",
         "title": "获取应用凭证示例"
+      }
+    ],
+    "DeleteDeviceGroup": [
+      {
+        "document": "\t\nPOST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: deleteDeviceGroup\n<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"WorkspaceId\": 1000,\n    \"ApplicationToken\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除设备分组"
       }
     ],
     "DescribeActionList": [
@@ -176,6 +192,14 @@
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCityWorkspaceList\n<公共请求参数>\n\n{\n    \"AdministrativeCodeSet\": [\n        \"002\"\n    ],\n    \"ApplicationToken\": \"YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec9a85c9-b887-4481-a318-1c41f7d46733\",\n        \"Result\": {\n            \"WorkspaceSet\": [\n                {\n                    \"WorkspaceId\": 1016,\n                    \"ChineseName\": \"华南园区项目\",\n                    \"Description\": \"华南园区项目\",\n                    \"Status\": 0,\n                    \"ParkName\": \"园区简称\",\n                    \"ParkNum\": \"001\",\n                    \"AdministrativeDetailSet\": [\n                        {\n                            \"AdministrativeTypeCode\": \"QH01\",\n                            \"AdministrativeCode\": \"440000\",\n                            \"AdministrativeName\": \"广东省\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
         "title": "通过行政区id获取项目空间信息"
+      }
+    ],
+    "DescribeDeviceGroupList": [
+      {
+        "document": "测试环境demo",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceGroupList\n<公共请求参数>\n\n{\n    \"ApplicationToken\": \"MZb6GZZtBTSI6mkwPqXVLggUOb0qAI3F\",\n    \"WorkspaceId\": 1016\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c0461157-50dc-4f20-aa1e-eebd26884645\",\n        \"Result\": {\n            \"List\": [\n                {\n                    \"Description\": \"\",\n                    \"Id\": 63,\n                    \"Name\": \"testqy111\",\n                    \"ParentId\": 0\n                },\n                {\n                    \"Description\": \"\",\n                    \"Id\": 64,\n                    \"Name\": \"testqy111dadad\",\n                    \"ParentId\": 62\n                },\n                {\n                    \"Description\": \"\",\n                    \"Id\": 65,\n                    \"Name\": \"testqy111dadad11666655\",\n                    \"ParentId\": 64\n                },\n                {\n                    \"Description\": \"\",\n                    \"Id\": 66,\n                    \"Name\": \"testqy111dadad11666\",\n                    \"ParentId\": 64\n                },\n                {\n                    \"Description\": \"\",\n                    \"Id\": 70,\n                    \"Name\": \"3213\",\n                    \"ParentId\": 0\n                },\n                {\n                    \"Description\": \"\",\n                    \"Id\": 62,\n                    \"Name\": \"testqy\",\n                    \"ParentId\": 0\n                }\n            ]\n        }\n    }\n}",
+        "title": "测试环境demo"
       }
     ],
     "DescribeDeviceList": [
@@ -404,16 +428,16 @@
     ],
     "DescribeSpaceRelationByDeviceId": [
       {
-        "document": "查询指定空间下设备与构件绑定关系列表成功响应示例",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceRelationByDeviceId\n<公共请求参数>\n\n{\n    \"DeviceId\": \"ad655ba1-975a-4238-94d7-5d2015d1cf1f\",\n    \"WorkspaceId\": \"1016\",\n    \"ApplicationToken\": \"GUsHDOIP614sDxEIiliCx7GIKTqyONoX\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b9a52a-1ed8-4d97-b17d-2459b938ca3a\",\n        \"Result\": {\n            \"SpaceRelation\": {\n                \"Children\": [\n                    {\n                        \"Children\": [\n                            {\n                                \"Children\": [],\n                                \"ElementId\": \"bdbbf537-d6c4-4b1e-80ae-e0bcaab8b06f\",\n                                \"ElementName\": \"test_no_100\",\n                                \"Level\": 9,\n                                \"ParentSpaceCode\": \"000162002\",\n                                \"SpaceCode\": \"00016200200000003\"\n                            }\n                        ],\n                        \"ElementId\": \"f3c5ffa5-05e3-4c26-a447-0edf71aa9783\",\n                        \"ElementName\": \"1F\",\n                        \"Level\": 7,\n                        \"ParentSpaceCode\": \"000162\",\n                        \"SpaceCode\": \"000162002\"\n                    }\n                ],\n                \"ElementId\": \"377a53a6-c5a7-445d-a3b7-c2d721f95408\",\n                \"ElementName\": \"小智新设备挂接0628\",\n                \"Level\": 6,\n                \"ParentSpaceCode\": \"\",\n                \"SpaceCode\": \"000162\"\n            }\n        }\n    }\n}",
-        "title": "查询指定空间下设备与构件绑定关系列表"
-      },
-      {
         "document": "查询设备绑定的空间层级关系示例-prod",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceRelationByDeviceId\n<公共请求参数>\n\n{\n    \"DeviceId\": \"3049938c-3048-4fef-a2e8-2843ede35edb\",\n    \"WorkspaceId\": \"1133\",\n    \"ApplicationToken\": \"Sl5ZDmVuHzhN52o8n1KWagl7sLdrLfN7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9565acba-fb0e-4ec7-be20-ab274b105fd9\",\n        \"Result\": {\n            \"SpaceRelation\": {\n                \"Children\": [\n                    {\n                        \"Children\": [\n                            {\n                                \"Children\": [],\n                                \"ElementId\": \"3425fbe2-3d6c-471f-9527-b878f35d1f03\",\n                                \"ElementName\": \"\",\n                                \"Level\": 8,\n                                \"ParentSpaceCode\": \"000218048\",\n                                \"SpaceCode\": \"00021804800000470\"\n                            }\n                        ],\n                        \"ElementId\": \"57e7c90c-e3e2-46e0-b9ee-8084c1889620\",\n                        \"ElementName\": \"7F\",\n                        \"Level\": 7,\n                        \"ParentSpaceCode\": \"000218\",\n                        \"SpaceCode\": \"000218048\"\n                    }\n                ],\n                \"ElementId\": \"306fc545-fc98-4513-ae6e-751f990ae61a\",\n                \"ElementName\": \"BHDA-1\",\n                \"Level\": 6,\n                \"ParentSpaceCode\": \"\",\n                \"SpaceCode\": \"000218\"\n            }\n        }\n    }\n}",
         "title": "查询设备绑定的空间层级关系示例-prod"
+      },
+      {
+        "document": "查询指定空间下设备与构件绑定关系列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceRelationByDeviceId\n<公共请求参数>\n\n{\n    \"DeviceId\": \"ad655ba1-975a-4238-94d7-5d2015d1cf1f\",\n    \"WorkspaceId\": \"1016\",\n    \"ApplicationToken\": \"GUsHDOIP614sDxEIiliCx7GIKTqyONoX\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b9a52a-1ed8-4d97-b17d-2459b938ca3a\",\n        \"Result\": {\n            \"SpaceRelation\": {\n                \"Children\": [\n                    {\n                        \"Children\": [\n                            {\n                                \"Children\": [],\n                                \"ElementId\": \"bdbbf537-d6c4-4b1e-80ae-e0bcaab8b06f\",\n                                \"ElementName\": \"test_no_100\",\n                                \"Level\": 9,\n                                \"ParentSpaceCode\": \"000162002\",\n                                \"SpaceCode\": \"00016200200000003\"\n                            }\n                        ],\n                        \"ElementId\": \"f3c5ffa5-05e3-4c26-a447-0edf71aa9783\",\n                        \"ElementName\": \"1F\",\n                        \"Level\": 7,\n                        \"ParentSpaceCode\": \"000162\",\n                        \"SpaceCode\": \"000162002\"\n                    }\n                ],\n                \"ElementId\": \"377a53a6-c5a7-445d-a3b7-c2d721f95408\",\n                \"ElementName\": \"小智新设备挂接0628\",\n                \"Level\": 6,\n                \"ParentSpaceCode\": \"\",\n                \"SpaceCode\": \"000162\"\n            }\n        }\n    }\n}",
+        "title": "查询指定空间下设备与构件绑定关系列表"
       }
     ],
     "DescribeSpaceTypeList": [
@@ -446,10 +470,10 @@
     ],
     "DescribeTenantDepartmentList": [
       {
-        "document": "查询租户组织部门列表",
+        "document": "组织部门列表",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantDepartmentList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"6\",\n    \"ApplicationToken\": \"zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbb81f22-548b-43e9-afad-08c595058205\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
-        "title": "查询租户组织部门列表"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a86966-f838-44ec-b1e4-469429cf0b61\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
+        "title": "组织部门列表"
       },
       {
         "document": "查询组织部门列表",
@@ -458,10 +482,10 @@
         "title": "查询组织部门列表"
       },
       {
-        "document": "组织部门列表",
+        "document": "查询租户组织部门列表",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantDepartmentList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"6\",\n    \"ApplicationToken\": \"zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a86966-f838-44ec-b1e4-469429cf0b61\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
-        "title": "组织部门列表"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbb81f22-548b-43e9-afad-08c595058205\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
+        "title": "查询租户组织部门列表"
       }
     ],
     "DescribeTenantUserList": [
@@ -526,6 +550,22 @@
         "title": "查询项目空间人员列表"
       }
     ],
+    "ModifyDeviceField": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceField\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"Set\": [\n        {\n            \"WID\": \"abc\",\n            \"Key\": \"size\",\n            \"Val\": \"100\"\n        }\n    ],\n    \"ApplicationToken\": \"YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ea50911-8e3d-40aa-82ee-c00d23cc044d\",\n        \"Result\": {\n            \"Msg\": \"ok\"\n        }\n    }\n}",
+        "title": "修改设备自定义字段"
+      }
+    ],
+    "ModifyDeviceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"Set\": [\n        {\n            \"WID\": \"abc\",\n            \"GroupId\": 100\n        }\n    ],\n    \"ApplicationToken\": \"YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ea50911-8e3d-40aa-82ee-c00d23cc044d\",\n        \"Result\": {\n            \"Msg\": \"ok\"\n        }\n    }\n}",
+        "title": "修改设备组"
+      }
+    ],
     "ModifyDeviceName": [
       {
         "document": "成功响应",
@@ -534,12 +574,28 @@
         "title": "修改设备名字"
       }
     ],
+    "ModifyDeviceTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceTag\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"Set\": [\n        {\n            \"WID\": \"abc\",\n            \"NameSet\": [\n                \"aaa\",\n                \"bbb\"\n            ]\n        }\n    ],\n    \"ApplicationToken\": \"YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ea50911-8e3d-40aa-82ee-c00d23cc044d\",\n        \"Result\": {\n            \"Msg\": \"ok\"\n        }\n    }\n}",
+        "title": "修改设备标签"
+      }
+    ],
     "ReportAppMessage": [
       {
         "document": "成功响应",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportAppMessage\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"Profile\": {\n        \"AppType\": \"security_monitoring\"\n    },\n    \"ReportTs\": 1,\n    \"Properties\": \"x-json:{\\\"executeId\\\": \\\"RX_TASK\\\"}\",\n    \"ApplicationToken\": \"baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d542c6ba-6e4b-4d29-be9a-4e48c1c8616d\",\n        \"Result\": {\n            \"Msg\": \"ok\"\n        }\n    }\n}",
         "title": "单个上报消息"
+      }
+    ],
+    "SaveDeviceGroup": [
+      {
+        "document": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: saveDeviceGroup",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"ParentId\": 0,\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"WorkspaceId\": 0,\n    \"ApplicationToken\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Id\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建or修改设备分组"
       }
     ],
     "StopVideoStreaming": [

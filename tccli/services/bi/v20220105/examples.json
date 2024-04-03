@@ -51,29 +51,29 @@
     "CreateUserRoleProject": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"王成林\",\n            \"UserId\": \"lenwang\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"RoleIdList\": [\n        \"100090\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed4d2bd1-ee13-4b67-80cf-a8a2794a82ed\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 1\n        },\n        \"Msg\": \"success\"\n    }\n}",
-        "title": "项目内-创建用户角色示例接口"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"null\",\n            \"UserId\": \"null\"\n        }\n    ],\n    \"ProjectId\": \"000\",\n    \"RoleIdList\": [\n        \"100100\"\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserName\": \"tommyho\",\n            \"PhoneNumber\": \"123456789\",\n            \"AreaCode\": \"86\",\n            \"UserId\": \"tommyho\",\n            \"Email\": \"123@qq.com\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"6cd11622-b240-40ae-8ec0-86b933aab8da\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 0\n        }\n    }\n}",
         "title": "demo"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"王成林\",\n            \"UserId\": \"lenwang\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"RoleIdList\": [\n        \"100090\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed4d2bd1-ee13-4b67-80cf-a8a2794a82ed\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 1\n        },\n        \"Msg\": \"success\"\n    }\n}",
+        "title": "项目内-创建用户角色示例接口"
       }
     ],
     "DeleteDatasource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Id\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b37bc0d-2a4d-40f0-a620-3a962872aecf\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"非法的数据源ID\"\n    }\n}",
-        "title": "无效id"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"Id\": \"56\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c22f4d3-e28c-450d-8c9f-2e72c40b7001\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
         "title": "success"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDatasource\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"Id\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b37bc0d-2a4d-40f0-a620-3a962872aecf\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"非法的数据源ID\"\n    }\n}",
+        "title": "无效id"
       }
     ],
     "DeleteProject": [
@@ -102,16 +102,16 @@
     ],
     "DescribeDatasourceList": [
       {
-        "document": "查询数据源列表",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatasourceList\n<公共请求参数>\n\n{\n    \"ProjectId\": 11\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8116ab8-92e8-4370-b3d5-6cb464b83609\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"List\": null,\n            \"Total\": 0,\n            \"TotalPages\": 0\n        },\n        \"Msg\": \"success\"\n    }\n}",
-        "title": "success"
-      },
-      {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatasourceList\n<公共请求参数>\n\n{\n    \"ProjectId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": null,\n            \"Total\": 0,\n            \"TotalPages\": 0\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"success\",\n        \"RequestId\": \"3a66482b-7460-4d22-95bc-eae8c28568e4\"\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "查询数据源列表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatasourceList\n<公共请求参数>\n\n{\n    \"ProjectId\": 11\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8116ab8-92e8-4370-b3d5-6cb464b83609\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"List\": null,\n            \"Total\": 0,\n            \"TotalPages\": 0\n        },\n        \"Msg\": \"success\"\n    }\n}",
+        "title": "success"
       }
     ],
     "DescribeProjectInfo": [
@@ -165,15 +165,15 @@
     "ModifyDatasourceCloud": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasourceCloud\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ProjectId\": \"abc\",\n    \"SourceName\": \"数据库别名\",\n    \"Vport\": \"3306\",\n    \"VpcId\": \"123456\",\n    \"Charset\": \"utf8\",\n    \"ExtraParam\": \"\",\n    \"DbUser\": \"root\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Cloud\\\",\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"InstanceId\\\":\\\"cdb-bdb0juh5\\\"}\",\n    \"DbType\": \"MySQL\",\n    \"UniqVpcId\": \"vpc-123\",\n    \"RegionId\": \"gz\",\n    \"DbName\": \"power-test\",\n    \"DbPwd\": \"12345\",\n    \"Vip\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f50c98-1e5b-41bc-9a6a-d630312f8de9\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"success\"\n    }\n}",
-        "title": "更新云数据库示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasourceCloud\n<公共请求参数>\n\n{\n    \"ServiceType\": \"abc\",\n    \"DbType\": \"abc\",\n    \"Charset\": \"abc\",\n    \"DbUser\": \"abc\",\n    \"DbPwd\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SourceName\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"Vip\": \"abc\",\n    \"Vport\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"UniqVpcId\": \"abc\",\n    \"RegionId\": \"abc\",\n    \"ExtraParam\": \"abc\",\n    \"Id\": 1,\n    \"InstanceId\": \"abc\",\n    \"ProdDbName\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新云数据源"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasourceCloud\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ProjectId\": \"abc\",\n    \"SourceName\": \"数据库别名\",\n    \"Vport\": \"3306\",\n    \"VpcId\": \"123456\",\n    \"Charset\": \"utf8\",\n    \"ExtraParam\": \"\",\n    \"DbUser\": \"root\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Cloud\\\",\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"InstanceId\\\":\\\"cdb-bdb0juh5\\\"}\",\n    \"DbType\": \"MySQL\",\n    \"UniqVpcId\": \"vpc-123\",\n    \"RegionId\": \"gz\",\n    \"DbName\": \"power-test\",\n    \"DbPwd\": \"12345\",\n    \"Vip\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f50c98-1e5b-41bc-9a6a-d630312f8de9\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"success\"\n    }\n}",
+        "title": "更新云数据库示例"
       }
     ],
     "ModifyProject": [

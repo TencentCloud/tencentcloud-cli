@@ -1,4 +1,30 @@
-**Example 1: 获取人员归属信息接口**
+**Example 1: 错误示例**
+
+人员ID不存在
+
+Input: 
+
+```
+tccli iai GetPersonGroupInfo --cli-unfold-argument  \
+    --PersonId 1002 \
+    --Offset 0 \
+    --Limit 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdNotExist",
+            "Message": "人员ID不存在。"
+        },
+        "RequestId": "98330f25-eb2e-432a-a30c-3830774210c1"
+    }
+}
+```
+
+**Example 2: 获取人员归属信息接口**
 
 
 
@@ -33,7 +59,7 @@ Output:
 }
 ```
 
-**Example 2: 获取人员归属信息接口-2**
+**Example 3: 获取人员归属信息接口-2**
 
 
 
@@ -63,32 +89,6 @@ Output:
         ],
         "FaceModelVersion": "3.0",
         "RequestId": "b7a505ad-4a85-42da-97b3-886c7999fb76"
-    }
-}
-```
-
-**Example 3: 错误示例**
-
-人员ID不存在
-
-Input: 
-
-```
-tccli iai GetPersonGroupInfo --cli-unfold-argument  \
-    --PersonId 1002 \
-    --Offset 0 \
-    --Limit 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.PersonIdNotExist",
-            "Message": "人员ID不存在。"
-        },
-        "RequestId": "98330f25-eb2e-432a-a30c-3830774210c1"
     }
 }
 ```

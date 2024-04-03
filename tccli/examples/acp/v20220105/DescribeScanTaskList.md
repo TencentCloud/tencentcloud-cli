@@ -1,4 +1,32 @@
-**Example 1: 获取应用合规诊断任务列表**
+**Example 1: 获取诊断任务为空的情况**
+
+
+
+Input: 
+
+```
+tccli acp DescribeScanTaskList --cli-unfold-argument  \
+    --TaskStatuses 0,1,2 \
+    --PageSize 10 \
+    --PageNo 1 \
+    --Platform 0 \
+    --TaskTypes 0,1 \
+    --Source -1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e7c3b1d4-a45b-4a45-be38-49565552a871",
+        "Result": 0,
+        "Total": 0,
+        "Data": null
+    }
+}
+```
+
+**Example 2: 获取应用合规诊断任务列表**
 
 
 
@@ -42,34 +70,6 @@ Output:
             }
         ],
         "Total": 1
-    }
-}
-```
-
-**Example 2: 获取诊断任务为空的情况**
-
-
-
-Input: 
-
-```
-tccli acp DescribeScanTaskList --cli-unfold-argument  \
-    --TaskStatuses 0,1,2 \
-    --PageSize 10 \
-    --PageNo 1 \
-    --Platform 0 \
-    --TaskTypes 0,1 \
-    --Source -1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "e7c3b1d4-a45b-4a45-be38-49565552a871",
-        "Result": 0,
-        "Total": 0,
-        "Data": null
     }
 }
 ```

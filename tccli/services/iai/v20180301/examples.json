@@ -27,43 +27,37 @@
     "CopyPerson": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CopyPerson\n&PersonId=2001\n&GroupIds.0=TencentShenZhenEmployee\n&GroupIds.1=ShenZhenCitizen\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SucGroupNum\": 2,\n        \"SucGroupIds\": [\n            \"ShenZhenCitizen\",\n            \"TencentShenZhenEmployee\"\n        ],\n        \"RequestId\": \"9841c008-e597-4356-a8d5-c47a246abd8d\"\n    }\n}",
-        "title": "复制人员接口"
-      },
-      {
-        "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=CopyPerson\n&PersonId=1001\n&GroupIds.0=TencentShenZhenEmployee\n&GroupIds.1=ZhuYuanDormitoryNo1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.GroupPersonMapExist\",\n            \"Message\": \"组中已包含对应的人员Id。\"\n        },\n        \"RequestId\": \"8ecfa566-68a9-4eb5-a6da-95ba9be26947\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=CopyPerson\n&PersonId=2001\n&GroupIds.0=TencentShenZhenEmployee\n&GroupIds.1=ShenZhenCitizen\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SucGroupNum\": 2,\n        \"SucGroupIds\": [\n            \"ShenZhenCitizen\",\n            \"TencentShenZhenEmployee\"\n        ],\n        \"RequestId\": \"9841c008-e597-4356-a8d5-c47a246abd8d\"\n    }\n}",
+        "title": "复制人员接口"
       }
     ],
     "CreateFace": [
-      {
-        "document": "将一组人脸图片添加到一个人员中",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateFace\n&PersonId=1001\n&Urls.0=http://test.image.myqcloud.com/testA.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SucFaceNum\": 1,\n        \"SucFaceIds\": [\n            \"2875186538564559728\"\n        ],\n        \"RetCode\": [\n            0\n        ],\n        \"SucIndexes\": [\n            0\n        ],\n        \"SucFaceRects\": [\n            {\n                \"X\": 135,\n                \"Y\": 42,\n                \"Width\": 98,\n                \"Height\": 136\n            }\n        ],\n        \"FaceModelVersion\": \"2.0\",\n        \"RequestId\": \"07d63403-a199-4bbe-b9e0-692356ac738d\"\n    }\n}",
-        "title": "增加人脸接口"
-      },
       {
         "document": "已有人员最多再新增4张人脸图片",
         "input": "https://iai.tencentcloudapi.com/?Action=CreateFace\n&PersonId=1001\n&Urls.0=http://test.image.myqcloud.com/testB.jpg\n&Urls.1=http://test.image.myqcloud.com/testC.jpg\n&Urls.2=http://test.image.myqcloud.com/testD.jpg\n&Urls.3=http://test.image.myqcloud.com/testE.jpg\n&Urls.4=http://test.image.myqcloud.com/testF.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UploadFaceNumExceed\",\n            \"Message\": \"一次最多上传四张人脸。\"\n        },\n        \"RequestId\": \"44506f79-2191-49bc-997b-748a566d781c\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "将一组人脸图片添加到一个人员中",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateFace\n&PersonId=1001\n&Urls.0=http://test.image.myqcloud.com/testA.jpg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SucFaceNum\": 1,\n        \"SucFaceIds\": [\n            \"2875186538564559728\"\n        ],\n        \"RetCode\": [\n            0\n        ],\n        \"SucIndexes\": [\n            0\n        ],\n        \"SucFaceRects\": [\n            {\n                \"X\": 135,\n                \"Y\": 42,\n                \"Width\": 98,\n                \"Height\": 136\n            }\n        ],\n        \"FaceModelVersion\": \"2.0\",\n        \"RequestId\": \"07d63403-a199-4bbe-b9e0-692356ac738d\"\n    }\n}",
+        "title": "增加人脸接口"
       }
     ],
     "CreateGroup": [
       {
-        "document": "创建人员库",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&FaceModelVersion=3.0\n&GroupId=TencentShenZhenEmployee\n&Tag=不含实习生\n&GroupExDescriptions.0=事业群\n&GroupExDescriptions.1=部门名\n&GroupExDescriptions.2=组名\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"e53ee4ec-9099-4b35-a129-21dd4820ff85\"\n    }\n}",
-        "title": "创建人员库接口-2"
-      },
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=某某大学竹园宿舍楼1号楼\n&GroupId=ZhuYuanDormitoryNo1\n&FaceModelVersion=3.0\n&Tag=全是女生哦\n&GroupExDescriptions.0=学院名\n&GroupExDescriptions.1=专业\n&GroupExDescriptions.2=年级\n&GroupExDescriptions.3=学号\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"1695f3dd-b668-479e-8b87-f37de371a8ec\"\n    }\n}",
-        "title": "创建人员库接口"
+        "document": "人员库ID不支持中文",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=腾讯深圳员工库\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdIllegal\",\n            \"Message\": \"人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。\"\n        },\n        \"RequestId\": \"8125dda4-2905-4e02-88bd-79a93a660ad2\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "人员库ID不可重复",
@@ -72,25 +66,19 @@
         "title": "错误示例-2"
       },
       {
-        "document": "人员库ID不支持中文",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&GroupId=腾讯深圳员工库\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdIllegal\",\n            \"Message\": \"人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。\"\n        },\n        \"RequestId\": \"8125dda4-2905-4e02-88bd-79a93a660ad2\"\n    }\n}",
-        "title": "错误示例"
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=某某大学竹园宿舍楼1号楼\n&GroupId=ZhuYuanDormitoryNo1\n&FaceModelVersion=3.0\n&Tag=全是女生哦\n&GroupExDescriptions.0=学院名\n&GroupExDescriptions.1=专业\n&GroupExDescriptions.2=年级\n&GroupExDescriptions.3=学号\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"1695f3dd-b668-479e-8b87-f37de371a8ec\"\n    }\n}",
+        "title": "创建人员库接口"
+      },
+      {
+        "document": "创建人员库",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreateGroup\n&GroupName=腾讯深圳员工库\n&FaceModelVersion=3.0\n&GroupId=TencentShenZhenEmployee\n&Tag=不含实习生\n&GroupExDescriptions.0=事业群\n&GroupExDescriptions.1=部门名\n&GroupExDescriptions.2=组名\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"e53ee4ec-9099-4b35-a129-21dd4820ff85\"\n    }\n}",
+        "title": "创建人员库接口-2"
       }
     ],
     "CreatePerson": [
-      {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&PersonName=Junly\r\n&PersonId=2001\r\n&Gender=1\r\n&Url=http://test.image.myqcloud.com/testB.jpg\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=0\r\n&PersonExDescriptionInfos.0.PersonExDescription=计算机学院\r\n&PersonExDescriptionInfos.1.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.1.PersonExDescription=软件工程\r\n&PersonExDescriptionInfos.2.PersonExDescriptionIndex=2\r\n&PersonExDescriptionInfos.2.PersonExDescription=15级\r\n&PersonExDescriptionInfos.3.PersonExDescriptionIndex=3\r\n&PersonExDescriptionInfos.3.PersonExDescription=3150808\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FaceId\": \"3454816969590585885\",\n        \"SimilarPersonId\": \"\",\n        \"FaceRect\": {\n            \"X\": 172,\n            \"Y\": 122,\n            \"Width\": 178,\n            \"Height\": 228\n        },\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"738a2fb0-bd4b-4cf6-9c91-18d50978d76b\"\n    }\n}",
-        "title": "创建人员接口"
-      },
-      {
-        "document": "创建人员",
-        "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonName=evanliao\r\n&PersonId=1001\r\n&Gender=1\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=0\r\n&PersonExDescriptionInfos.0.PersonExDescription=云与智慧产业事业群\r\n&PersonExDescriptionInfos.1.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.1.PersonExDescription=人工智能产品中心\r\n&PersonExDescriptionInfos.2.PersonExDescriptionIndex=2\r\n&PersonExDescriptionInfos.2.PersonExDescription=人脸识别产品组\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FaceId\": \"3454816969590585881\",\n        \"SimilarPersonId\": \"\",\n        \"FaceRect\": {\n            \"X\": 172,\n            \"Y\": 122,\n            \"Width\": 178,\n            \"Height\": 228\n        },\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"269a6bc0-0016-47e8-a63d-517ce4052b0e\"\n    }\n}",
-        "title": "创建人员接口-2"
-      },
       {
         "document": "人员ID不可重复",
         "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&PersonName=Cheng\r\n&PersonId=1001\r\n&Gender=2\r\n&Url=http://test.image.myqcloud.com/testD.jpg\r\n&Version=2018-03-01\r\n&<公共请求参数>",
@@ -102,62 +90,74 @@
         "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=ShenZhenCitizen\r\n&PersonName=Siccy\r\n&PersonId=3001\r\n&Gender=2\r\n&Url=http://test.image.myqcloud.com/testC.jpg\r\n&Version=2018-03-01\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"dfa512fc-fd07-4bf1-a292-cb497b620857\"\n    }\n}",
         "title": "错误示例-2"
+      },
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&PersonName=Junly\r\n&PersonId=2001\r\n&Gender=1\r\n&Url=http://test.image.myqcloud.com/testB.jpg\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=0\r\n&PersonExDescriptionInfos.0.PersonExDescription=计算机学院\r\n&PersonExDescriptionInfos.1.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.1.PersonExDescription=软件工程\r\n&PersonExDescriptionInfos.2.PersonExDescriptionIndex=2\r\n&PersonExDescriptionInfos.2.PersonExDescription=15级\r\n&PersonExDescriptionInfos.3.PersonExDescriptionIndex=3\r\n&PersonExDescriptionInfos.3.PersonExDescription=3150808\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FaceId\": \"3454816969590585885\",\n        \"SimilarPersonId\": \"\",\n        \"FaceRect\": {\n            \"X\": 172,\n            \"Y\": 122,\n            \"Width\": 178,\n            \"Height\": 228\n        },\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"738a2fb0-bd4b-4cf6-9c91-18d50978d76b\"\n    }\n}",
+        "title": "创建人员接口"
+      },
+      {
+        "document": "创建人员",
+        "input": "https://iai.tencentcloudapi.com/?Action=CreatePerson\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonName=evanliao\r\n&PersonId=1001\r\n&Gender=1\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=0\r\n&PersonExDescriptionInfos.0.PersonExDescription=云与智慧产业事业群\r\n&PersonExDescriptionInfos.1.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.1.PersonExDescription=人工智能产品中心\r\n&PersonExDescriptionInfos.2.PersonExDescriptionIndex=2\r\n&PersonExDescriptionInfos.2.PersonExDescription=人脸识别产品组\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FaceId\": \"3454816969590585881\",\n        \"SimilarPersonId\": \"\",\n        \"FaceRect\": {\n            \"X\": 172,\n            \"Y\": 122,\n            \"Width\": 178,\n            \"Height\": 228\n        },\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"269a6bc0-0016-47e8-a63d-517ce4052b0e\"\n    }\n}",
+        "title": "创建人员接口-2"
       }
     ],
     "DeleteFace": [
-      {
-        "document": "删除一个人员下的人脸图片",
-        "input": "https://iai.tencentcloudapi.com/?Action=DeleteFace\r\n&PersonId=1001\r\n&FaceIds.0=2875186538564559728\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SucDeletedNum\": 1,\n        \"SucFaceIds\": [\n            \"2875186538564559728\"\n        ],\n        \"RequestId\": \"38f96439-d5ea-48ea-899b-44a284708f6b\"\n    }\n}",
-        "title": "删除人脸接口"
-      },
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeleteFace\r\n&PersonId=5001\r\n&FaceIds.0=2875186538564559728\r\n&Version=2018-03-01\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.ErrorPersonNotExisted\",\n            \"Message\": \"个体不存在。\"\n        },\n        \"RequestId\": \"e2b603e5-51d0-4a8a-8319-2df026ae7518\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "删除一个人员下的人脸图片",
+        "input": "https://iai.tencentcloudapi.com/?Action=DeleteFace\r\n&PersonId=1001\r\n&FaceIds.0=2875186538564559728\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SucDeletedNum\": 1,\n        \"SucFaceIds\": [\n            \"2875186538564559728\"\n        ],\n        \"RequestId\": \"38f96439-d5ea-48ea-899b-44a284708f6b\"\n    }\n}",
+        "title": "删除人脸接口"
       }
     ],
     "DeleteGroup": [
-      {
-        "document": "删除指定人员库及包含的所有的人员",
-        "input": "https://iai.tencentcloudapi.com/?Action=DeleteGroup\n&GroupId=ZhuYuanDormitoryNo1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ff7181c-ef20-4f02-b4ed-13924b381368\"\n    }\n}",
-        "title": "删除人员库接口"
-      },
       {
         "document": "人员库ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeleteGroup\n&GroupId=ZhuYuanDormitory\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"878b225f-d3a4-4aa0-a849-3df415ac61a9\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "删除指定人员库及包含的所有的人员",
+        "input": "https://iai.tencentcloudapi.com/?Action=DeleteGroup\n&GroupId=ZhuYuanDormitoryNo1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ff7181c-ef20-4f02-b4ed-13924b381368\"\n    }\n}",
+        "title": "删除人员库接口"
       }
     ],
     "DeletePerson": [
-      {
-        "document": "删除指定人员信息",
-        "input": "https://iai.tencentcloudapi.com/?Action=DeletePerson\r\n&PersonId=2001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b609b7c-7a9a-4ea0-be8b-1fb638c2ceca\"\n    }\n}",
-        "title": "删除人员接口"
-      },
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=DeletePerson\r\n&PersonId=3001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.ErrorPersonNotExisted\",\n            \"Message\": \"个体不存在。\"\n        },\n        \"RequestId\": \"4b9c1bdc-86eb-413f-8c74-15bcf4466cd5\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "删除指定人员信息",
+        "input": "https://iai.tencentcloudapi.com/?Action=DeletePerson\r\n&PersonId=2001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b609b7c-7a9a-4ea0-be8b-1fb638c2ceca\"\n    }\n}",
+        "title": "删除人员接口"
       }
     ],
     "DeletePersonFromGroup": [
-      {
-        "document": "从某人员库中删除人员，此操作仅影响该人员库",
-        "input": "https://iai.tencentcloudapi.com/?Action=DeletePersonFromGroup\n&PersonId=1001\n&GroupId=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9b22bbc-c94d-4287-a2ab-fa68f7bbbaf3\"\n    }\n}",
-        "title": "人员库删除人员接口"
-      },
       {
         "document": "人员库中不包含指定人员",
         "input": "https://iai.tencentcloudapi.com/?Action=DeletePersonFromGroup\n&PersonId=3001\n&GroupId=ZhuYuanDormitoryNo1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.GroupPersonMapNotExist\",\n            \"Message\": \"组中不包含对应的人员Id。\"\n        },\n        \"RequestId\": \"b9d9641d-3de2-4a6f-a728-36a3b66e7bd0\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "从某人员库中删除人员，此操作仅影响该人员库",
+        "input": "https://iai.tencentcloudapi.com/?Action=DeletePersonFromGroup\n&PersonId=1001\n&GroupId=TencentShenZhenEmployee\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9b22bbc-c94d-4287-a2ab-fa68f7bbbaf3\"\n    }\n}",
+        "title": "人员库删除人员接口"
       }
     ],
     "DetectFace": [
@@ -200,38 +200,38 @@
     ],
     "GetGroupList": [
       {
-        "document": "获取人员库列表",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetGroupList\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupName\": \"腾讯深圳员工\",\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"GroupExDescriptions\": [\n                    \"事业群\",\n                    \"部门名\",\n                    \"组名\"\n                ],\n                \"Tag\": \"不含实习生\",\n                \"FaceModelVersion\": \"3.0\",\n                \"CreationTimestamp\": 1592210245686\n            },\n            {\n                \"GroupName\": \"某某大学竹园宿舍楼1号楼\",\n                \"GroupId\": \"ZhuYuanDormitoryNo1\",\n                \"GroupExDescriptions\": [\n                    \"学院名\",\n                    \"专业\",\n                    \"年级\",\n                    \"学号\"\n                ],\n                \"Tag\": \"全是女生哦\",\n                \"FaceModelVersion\": \"3.0\",\n                \"CreationTimestamp\": 1594552117118\n            }\n        ],\n        \"GroupNum\": 2,\n        \"RequestId\": \"72102087-a18d-4225-9ae9-87ef49e9f63e\"\n    }\n}",
-        "title": "获取人员库列表接口"
-      },
-      {
         "document": "返回数量不能大于1000",
         "input": "https://iai.tencentcloudapi.com/?Action=GetGroupList\n&Offset=0\n&Limit=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.LimitExceed\",\n            \"Message\": \"返回数量不在合法范围内。\"\n        },\n        \"RequestId\": \"a6bb57de-773b-45e4-9e1c-c30ef48eba85\"\n    }\n}",
         "title": "错误示例-2"
+      },
+      {
+        "document": "获取人员库列表",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetGroupList\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupName\": \"腾讯深圳员工\",\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"GroupExDescriptions\": [\n                    \"事业群\",\n                    \"部门名\",\n                    \"组名\"\n                ],\n                \"Tag\": \"不含实习生\",\n                \"FaceModelVersion\": \"3.0\",\n                \"CreationTimestamp\": 1592210245686\n            },\n            {\n                \"GroupName\": \"某某大学竹园宿舍楼1号楼\",\n                \"GroupId\": \"ZhuYuanDormitoryNo1\",\n                \"GroupExDescriptions\": [\n                    \"学院名\",\n                    \"专业\",\n                    \"年级\",\n                    \"学号\"\n                ],\n                \"Tag\": \"全是女生哦\",\n                \"FaceModelVersion\": \"3.0\",\n                \"CreationTimestamp\": 1594552117118\n            }\n        ],\n        \"GroupNum\": 2,\n        \"RequestId\": \"72102087-a18d-4225-9ae9-87ef49e9f63e\"\n    }\n}",
+        "title": "获取人员库列表接口"
       }
     ],
     "GetPersonBaseInfo": [
-      {
-        "document": "获取指定人员的信息，包括姓名、性别、人脸等",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PersonName\": \"EvanLiao\",\n        \"Gender\": 1,\n        \"FaceIds\": [\n            \"2873640802022644880\",\n            \"2875186538564559728\"\n        ],\n        \"RequestId\": \"9568a077-0710-40d2-9d6a-b9483d3f2051\"\n    }\n}",
-        "title": "获取人员基础信息接口"
-      },
       {
         "document": "人员ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1002\r\n&Version=2018-03-01\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98b4a0bc-802b-4764-9701-bc0c6c544395\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "获取指定人员的信息，包括姓名、性别、人脸等",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PersonName\": \"EvanLiao\",\n        \"Gender\": 1,\n        \"FaceIds\": [\n            \"2873640802022644880\",\n            \"2875186538564559728\"\n        ],\n        \"RequestId\": \"9568a077-0710-40d2-9d6a-b9483d3f2051\"\n    }\n}",
+        "title": "获取人员基础信息接口"
       }
     ],
     "GetPersonGroupInfo": [
       {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1001\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ]\n            }\n        ],\n        \"RequestId\": \"b7a505ad-4a85-42da-97b3-886c7999fb76\"\n    }\n}",
-        "title": "获取人员归属信息接口-2"
+        "document": "人员ID不存在",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1002\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "",
@@ -240,18 +240,18 @@
         "title": "获取人员归属信息接口"
       },
       {
-        "document": "人员ID不存在",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1002\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
-        "title": "错误示例"
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1001\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ]\n            }\n        ],\n        \"RequestId\": \"b7a505ad-4a85-42da-97b3-886c7999fb76\"\n    }\n}",
+        "title": "获取人员归属信息接口-2"
       }
     ],
     "GetPersonList": [
       {
-        "document": "获取指定人员库中的人员列表",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonList\r\n&GroupId=TencentShenZhenEmployee\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PersonInfos\": [\n            {\n                \"PersonName\": \"evanliao\",\n                \"PersonId\": \"1001\",\n                \"Gender\": 1,\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ],\n                \"FaceIds\": [\n                    \"2877242150180891493\"\n                ]\n            }\n        ],\n        \"PersonNum\": 1,\n        \"FaceNum\": 1,\n        \"RequestId\": \"aa292f16-27d9-423b-9048-cdd43f6e4156\"\n    }\n}",
-        "title": "获取人员列表接口-2"
+        "document": "人员库ID不存在",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonList\r\n&GroupId=ZhuYuanDormitory\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"b7c0cd81-d621-465f-8fd6-86a6b49e67be\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "",
@@ -260,24 +260,24 @@
         "title": "获取人员列表接口"
       },
       {
-        "document": "人员库ID不存在",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonList\r\n&GroupId=ZhuYuanDormitory\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"b7c0cd81-d621-465f-8fd6-86a6b49e67be\"\n    }\n}",
-        "title": "错误示例"
+        "document": "获取指定人员库中的人员列表",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonList\r\n&GroupId=TencentShenZhenEmployee\r\n&Offset=0\r\n&Limit=10\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PersonInfos\": [\n            {\n                \"PersonName\": \"evanliao\",\n                \"PersonId\": \"1001\",\n                \"Gender\": 1,\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ],\n                \"FaceIds\": [\n                    \"2877242150180891493\"\n                ]\n            }\n        ],\n        \"PersonNum\": 1,\n        \"FaceNum\": 1,\n        \"RequestId\": \"aa292f16-27d9-423b-9048-cdd43f6e4156\"\n    }\n}",
+        "title": "获取人员列表接口-2"
       }
     ],
     "GetPersonListNum": [
-      {
-        "document": "获取指定人员库中人员数量",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonListNum\r\n&GroupId=TencentShenZhenEmployee\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PersonNum\": 2,\n        \"FaceNum\": 2,\n        \"RequestId\": \"18fb1e31-0d33-4371-9f41-b1fd59e0c781\"\n    }\n}",
-        "title": "获取人员列表长度接口"
-      },
       {
         "document": "人员库ID不存在",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonListNum\r\n&GroupId=Tencent\r\n&Version=2018-03-01\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupIdNotExist\",\n            \"Message\": \"人员库ID不存在。\"\n        },\n        \"RequestId\": \"2865a458-4db1-46bd-ae52-b7507c9f4e62\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "获取指定人员库中人员数量",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonListNum\r\n&GroupId=TencentShenZhenEmployee\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PersonNum\": 2,\n        \"FaceNum\": 2,\n        \"RequestId\": \"18fb1e31-0d33-4371-9f41-b1fd59e0c781\"\n    }\n}",
+        "title": "获取人员列表长度接口"
       }
     ],
     "GetUpgradeGroupFaceModelVersionJobList": [
@@ -298,16 +298,10 @@
     ],
     "ModifyGroup": [
       {
-        "document": "修改人员库名称、备注、自定义描述字段名称",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupName=腾讯深圳在职人员库\r\n&Tag=包含实习生\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=1\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&GroupExDescriptionInfos.1.GroupExDescriptionIndex=2\r\n&GroupExDescriptionInfos.1.GroupExDescription=项目组\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98381738-509f-4749-8a66-dbf54247333d\"\n    }\n}",
-        "title": "修改人员库接口-2"
-      },
-      {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&GroupName=某某大学竹园1号宿舍楼\r\n&Tag=研究生入住\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=学院\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da051f16-0400-49d4-9832-2cfd3b51866f\"\n    }\n}",
-        "title": "修改人员库接口"
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DuplicatedGroupDescription\",\n            \"Message\": \"同一人员库中自定义描述字段不可重复。\"\n        },\n        \"RequestId\": \"4b483679-3f08-4a7c-b827-4a6332dc030f\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "人员库名称不可重复",
@@ -317,17 +311,23 @@
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DuplicatedGroupDescription\",\n            \"Message\": \"同一人员库中自定义描述字段不可重复。\"\n        },\n        \"RequestId\": \"4b483679-3f08-4a7c-b827-4a6332dc030f\"\n    }\n}",
-        "title": "错误示例"
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&GroupName=某某大学竹园1号宿舍楼\r\n&Tag=研究生入住\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=学院\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da051f16-0400-49d4-9832-2cfd3b51866f\"\n    }\n}",
+        "title": "修改人员库接口"
+      },
+      {
+        "document": "修改人员库名称、备注、自定义描述字段名称",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupName=腾讯深圳在职人员库\r\n&Tag=包含实习生\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=1\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&GroupExDescriptionInfos.1.GroupExDescriptionIndex=2\r\n&GroupExDescriptionInfos.1.GroupExDescription=项目组\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"98381738-509f-4749-8a66-dbf54247333d\"\n    }\n}",
+        "title": "修改人员库接口-2"
       }
     ],
     "ModifyPersonBaseInfo": [
       {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&PersonName=EvanLiao\r\n&Gender=1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
-        "title": "修改人员基础信息接口-2"
+        "document": "人员性别设置错误",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&Gender=-1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonGenderIllegal\",\n            \"Message\": \"人员性别设置出错。0代表未填写，1代表男性，2代表女性。\"\n        },\n        \"RequestId\": \"f40bf659-0283-4773-abe8-945f643d5015\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "",
@@ -336,18 +336,18 @@
         "title": "修改人员基础信息接口"
       },
       {
-        "document": "人员性别设置错误",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&Gender=-1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonGenderIllegal\",\n            \"Message\": \"人员性别设置出错。0代表未填写，1代表男性，2代表女性。\"\n        },\n        \"RequestId\": \"f40bf659-0283-4773-abe8-945f643d5015\"\n    }\n}",
-        "title": "错误示例"
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&PersonName=EvanLiao\r\n&Gender=1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
+        "title": "修改人员基础信息接口-2"
       }
     ],
     "ModifyPersonGroupInfo": [
       {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonGroupInfo\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonId=1001\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.0.PersonExDescription=大数据及人工智能产品中心\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77e11a2d-0fc0-4fba-ab25-016e998221c3\"\n    }\n}",
-        "title": "修改人员描述信息接口-2"
+        "document": "下标不合法",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonGroupInfo\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonId=1001\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=-1\r\n&PersonExDescriptionInfos.0.PersonExDescription=人工智能实验室\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"The value type of parameter `PersonExDescriptionInfos.0.PersonExDescriptionIndex` is not valid.\"\n        },\n        \"RequestId\": \"f944657d-6260-4a2e-a4d8-9c1845f39e56\"\n    }\n}",
+        "title": "错误示例"
       },
       {
         "document": "",
@@ -356,10 +356,10 @@
         "title": "修改人员描述信息接口"
       },
       {
-        "document": "下标不合法",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonGroupInfo\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonId=1001\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=-1\r\n&PersonExDescriptionInfos.0.PersonExDescription=人工智能实验室\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"The value type of parameter `PersonExDescriptionInfos.0.PersonExDescriptionIndex` is not valid.\"\n        },\n        \"RequestId\": \"f944657d-6260-4a2e-a4d8-9c1845f39e56\"\n    }\n}",
-        "title": "错误示例"
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonGroupInfo\r\n&GroupId=TencentShenZhenEmployee\r\n&PersonId=1001\r\n&PersonExDescriptionInfos.0.PersonExDescriptionIndex=1\r\n&PersonExDescriptionInfos.0.PersonExDescription=大数据及人工智能产品中心\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77e11a2d-0fc0-4fba-ab25-016e998221c3\"\n    }\n}",
+        "title": "修改人员描述信息接口-2"
       }
     ],
     "RevertGroupFaceModelVersion": [
@@ -372,12 +372,6 @@
     ],
     "SearchFaces": [
       {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=1\n&MinFaceSize=40\n&MaxPersonNum=5\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"1001\",\n                        \"FaceId\": \"2875093635484912302\",\n                        \"PersonName\": \"Jerry\",\n                        \"Gender\": 0,\n                        \"Score\": 100,\n                        \"PersonGroupInfos\": [\n                            {\n                                \"GroupId\": \"abc\",\n                                \"PersonExDescriptions\": [\n                                    \"description1\",\n                                    \"description2\"\n                                ]\n                            }\n                        ]\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 370,\n                    \"Y\": 46,\n                    \"Width\": 75,\n                    \"Height\": 75\n                }\n            }\n        ],\n        \"FaceNum\": 1,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"57b42b73-b978-45b9-8095-8f50e9642d35\"\n    }\n}",
-        "title": "人脸搜索接口"
-      },
-      {
         "document": "MaxFaceNum不能大于10",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=11\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.SearchFacesExceed\",\n            \"Message\": \"检索人脸个数超过限制。\"\n        },\n        \"RequestId\": \"f04ba2f3-532c-4207-9caa-6e818ded7fb9\"\n    }\n}",
@@ -388,6 +382,12 @@
         "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例-2"
+      },
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=SearchFaces\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=1\n&MinFaceSize=40\n&MaxPersonNum=5\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"1001\",\n                        \"FaceId\": \"2875093635484912302\",\n                        \"PersonName\": \"Jerry\",\n                        \"Gender\": 0,\n                        \"Score\": 100,\n                        \"PersonGroupInfos\": [\n                            {\n                                \"GroupId\": \"abc\",\n                                \"PersonExDescriptions\": [\n                                    \"description1\",\n                                    \"description2\"\n                                ]\n                            }\n                        ]\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 370,\n                    \"Y\": 46,\n                    \"Width\": 75,\n                    \"Height\": 75\n                }\n            }\n        ],\n        \"FaceNum\": 1,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"57b42b73-b978-45b9-8095-8f50e9642d35\"\n    }\n}",
+        "title": "人脸搜索接口"
       }
     ],
     "SearchFacesReturnsByGroup": [
@@ -400,30 +400,30 @@
     ],
     "SearchPersons": [
       {
-        "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=SearchPersons\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=2\n&MinFaceSize=40\n&MaxPersonNum=3\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"person1\",\n                        \"FaceId\": \"\",\n                        \"Score\": 100,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person2\",\n                        \"FaceId\": \"\",\n                        \"Score\": 60,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person3\",\n                        \"FaceId\": \"\",\n                        \"Score\": 50,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 139,\n                    \"Y\": 59,\n                    \"Width\": 124,\n                    \"Height\": 162\n                }\n            },\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"person2\",\n                        \"FaceId\": \"\",\n                        \"Score\": 100,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person1\",\n                        \"FaceId\": \"\",\n                        \"Score\": 60,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person3\",\n                        \"FaceId\": \"\",\n                        \"Score\": 20,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 328,\n                    \"Y\": 70,\n                    \"Width\": 119,\n                    \"Height\": 162\n                }\n            }\n        ],\n        \"PersonNum\": 5,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"c4608852-ff60-4a01-8dc3-367f6046baaf\"\n    }\n}",
-        "title": "人员搜索接口"
-      },
-      {
         "document": "图片URL错误",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchPersons\n&Url=http://test.image.myqcloud.com/testA\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=SearchPersons\n&Url=http://test.image.myqcloud.com/testA.jpg\n&MaxFaceNum=2\n&MinFaceSize=40\n&MaxPersonNum=3\n&GroupIds.0=TencentShenZhenEmployee\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"person1\",\n                        \"FaceId\": \"\",\n                        \"Score\": 100,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person2\",\n                        \"FaceId\": \"\",\n                        \"Score\": 60,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person3\",\n                        \"FaceId\": \"\",\n                        \"Score\": 50,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 139,\n                    \"Y\": 59,\n                    \"Width\": 124,\n                    \"Height\": 162\n                }\n            },\n            {\n                \"RetCode\": 0,\n                \"Candidates\": [\n                    {\n                        \"PersonId\": \"person2\",\n                        \"FaceId\": \"\",\n                        \"Score\": 100,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person1\",\n                        \"FaceId\": \"\",\n                        \"Score\": 60,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    },\n                    {\n                        \"PersonId\": \"person3\",\n                        \"FaceId\": \"\",\n                        \"Score\": 20,\n                        \"PersonName\": null,\n                        \"Gender\": null,\n                        \"PersonGroupInfos\": null\n                    }\n                ],\n                \"FaceRect\": {\n                    \"X\": 328,\n                    \"Y\": 70,\n                    \"Width\": 119,\n                    \"Height\": 162\n                }\n            }\n        ],\n        \"PersonNum\": 5,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"c4608852-ff60-4a01-8dc3-367f6046baaf\"\n    }\n}",
+        "title": "人员搜索接口"
       }
     ],
     "SearchPersonsReturnsByGroup": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=SearchPersonsReturnsByGroup\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&MaxPersonNumPerGroup=5\r\n&GroupIds.0=TencentShenZhenEmployee\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ResultsReturnsByGroup\": [\n            {\n                \"RetCode\": 0,\n                \"FaceRect\": {\n                    \"X\": 375,\n                    \"Y\": 37,\n                    \"Width\": 63,\n                    \"Height\": 82\n                },\n                \"GroupCandidates\": [\n                    {\n                        \"GroupId\": \"TencentShenZhenEmployee\",\n                        \"Candidates\": [\n                            {\n                                \"PersonId\": \"testtest3\",\n                                \"FaceId\": \"\",\n                                \"Score\": 100,\n                                \"PersonName\": null,\n                                \"Gender\": null,\n                                \"PersonGroupInfos\": null\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"PersonNum\": 1,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"c8a06ec5-ecb4-4dd7-a8c8-ce5e675495c2\"\n    }\n}",
-        "title": "人员搜索分库返回接口"
-      },
-      {
-        "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=SearchPersonsReturnsByGroup\r\n&Url=http://test.image.myqcloud.com/testB.jpg\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&MaxPersonNumPerGroup=5\r\n&GroupIds.0=TencentShenZhenEmployee\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDownloadError\",\n            \"Message\": \"图片下载错误。\"\n        },\n        \"RequestId\": \"527ecffe-4c6a-47c9-8217-4dd2e3f018da\"\n    }\n}",
         "title": "错误示例"
+      },
+      {
+        "document": "",
+        "input": "https://iai.tencentcloudapi.com/?Action=SearchPersonsReturnsByGroup\r\n&Url=http://test.image.myqcloud.com/testA.jpg\r\n&MaxFaceNum=1\r\n&MinFaceSize=40\r\n&MaxPersonNumPerGroup=5\r\n&GroupIds.0=TencentShenZhenEmployee\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ResultsReturnsByGroup\": [\n            {\n                \"RetCode\": 0,\n                \"FaceRect\": {\n                    \"X\": 375,\n                    \"Y\": 37,\n                    \"Width\": 63,\n                    \"Height\": 82\n                },\n                \"GroupCandidates\": [\n                    {\n                        \"GroupId\": \"TencentShenZhenEmployee\",\n                        \"Candidates\": [\n                            {\n                                \"PersonId\": \"testtest3\",\n                                \"FaceId\": \"\",\n                                \"Score\": 100,\n                                \"PersonName\": null,\n                                \"Gender\": null,\n                                \"PersonGroupInfos\": null\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"PersonNum\": 1,\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"c8a06ec5-ecb4-4dd7-a8c8-ce5e675495c2\"\n    }\n}",
+        "title": "人员搜索分库返回接口"
       }
     ],
     "UpgradeGroupFaceModelVersion": [

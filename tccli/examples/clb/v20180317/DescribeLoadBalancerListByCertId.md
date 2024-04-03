@@ -1,30 +1,4 @@
-**Example 1: 指定的证书ID没有关联到任何负载均衡**
-
-
-
-Input: 
-
-```
-tccli clb DescribeLoadBalancerListByCertId --cli-unfold-argument  \
-    --CertIds RwFAfr8Y
-```
-
-Output: 
-```
-{
-    "Response": {
-        "CertSet": [
-            {
-                "CertId": "RwFAfr8Y",
-                "LoadBalancers": []
-            }
-        ],
-        "RequestId": "fe6059b5-faa6-4f21-92a1-0c9ee5df5e54"
-    }
-}
-```
-
-**Example 2: 指定的证书ID有关联到负载均衡**
+**Example 1: 指定的证书ID有关联到负载均衡**
 
 
 
@@ -84,6 +58,32 @@ Output:
             }
         ],
         "RequestId": "7718d187-7684-4294-954b-1e13009d75f6"
+    }
+}
+```
+
+**Example 2: 指定的证书ID没有关联到任何负载均衡**
+
+
+
+Input: 
+
+```
+tccli clb DescribeLoadBalancerListByCertId --cli-unfold-argument  \
+    --CertIds RwFAfr8Y
+```
+
+Output: 
+```
+{
+    "Response": {
+        "CertSet": [
+            {
+                "CertId": "RwFAfr8Y",
+                "LoadBalancers": []
+            }
+        ],
+        "RequestId": "fe6059b5-faa6-4f21-92a1-0c9ee5df5e54"
     }
 }
 ```

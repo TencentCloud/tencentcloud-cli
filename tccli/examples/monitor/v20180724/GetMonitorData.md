@@ -1,4 +1,53 @@
-**Example 1: 拉取单台云服务器监控数据**
+**Example 1: 拉取单台CDB监控数据**
+
+拉取某台CDB实例某段时间内统计周期为5分钟的CPU利用率监控数据
+
+Input: 
+
+```
+tccli monitor GetMonitorData --cli-unfold-argument  \
+    --Namespace QCE/CDB \
+    --MetricName CpuUseRate \
+    --Period 300 \
+    --Instances.0.Dimensions.0.Name InstanceId \
+    --Instances.0.Dimensions.0.Value cdb-k5d6z7p0 \
+    --Instances.0.Dimensions.1.Name InstanceType \
+    --Instances.0.Dimensions.1.Value 2 \
+    --StartTime 2018-09-22T19:23:07+08:00 \
+    --EndTime 2018-09-22T20:23:07+08:00
+```
+
+Output: 
+```
+{
+    "Response": {
+        "StartTime": "2018-09-22T19:20:00+08:00",
+        "EndTime": "2018-09-22T20:20:00+08:00",
+        "Period": 300,
+        "MetricName": "CpuUseRate",
+        "DataPoints": [
+            {
+                "Dimensions": [
+                    {
+                        "Name": "InstanceType",
+                        "Value": "2"
+                    },
+                    {
+                        "Name": "InstanceId",
+                        "Value": "cdb-k5d6z7p0"
+                    }
+                ],
+                "Timestamps": [],
+                "Values": []
+            }
+        ],
+        "Msg": "",
+        "RequestId": "2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd"
+    }
+}
+```
+
+**Example 2: 拉取单台云服务器监控数据**
 
 拉取某台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据
 
@@ -55,7 +104,7 @@ Output:
 }
 ```
 
-**Example 2: 拉取多台云服务器监控数据**
+**Example 3: 拉取多台云服务器监控数据**
 
 拉取多台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据
 
@@ -106,55 +155,6 @@ Output:
         ],
         "Msg": "",
         "RequestId": "9ac53ccc-fbab-483d-980b-b763bcc2f83f"
-    }
-}
-```
-
-**Example 3: 拉取单台CDB监控数据**
-
-拉取某台CDB实例某段时间内统计周期为5分钟的CPU利用率监控数据
-
-Input: 
-
-```
-tccli monitor GetMonitorData --cli-unfold-argument  \
-    --Namespace QCE/CDB \
-    --MetricName CpuUseRate \
-    --Period 300 \
-    --Instances.0.Dimensions.0.Name InstanceId \
-    --Instances.0.Dimensions.0.Value cdb-k5d6z7p0 \
-    --Instances.0.Dimensions.1.Name InstanceType \
-    --Instances.0.Dimensions.1.Value 2 \
-    --StartTime 2018-09-22T19:23:07+08:00 \
-    --EndTime 2018-09-22T20:23:07+08:00
-```
-
-Output: 
-```
-{
-    "Response": {
-        "StartTime": "2018-09-22T19:20:00+08:00",
-        "EndTime": "2018-09-22T20:20:00+08:00",
-        "Period": 300,
-        "MetricName": "CpuUseRate",
-        "DataPoints": [
-            {
-                "Dimensions": [
-                    {
-                        "Name": "InstanceType",
-                        "Value": "2"
-                    },
-                    {
-                        "Name": "InstanceId",
-                        "Value": "cdb-k5d6z7p0"
-                    }
-                ],
-                "Timestamps": [],
-                "Values": []
-            }
-        ],
-        "Msg": "",
-        "RequestId": "2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd"
     }
 }
 ```

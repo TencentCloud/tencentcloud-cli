@@ -209,15 +209,15 @@
     "ModifyResourceTags": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"testTagKey2\",\n            \"TagValue\": \"testTagValue2\"\n        },\n        {\n            \"TagKey\": \"testTagKey1\",\n            \"TagValue\": \"testTagValue1\"\n        }\n    ],\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "将资源关联的标签替换为输入的标签集合"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceTags\n<公共请求参数>\n\n{\n    \"DeleteTags\": [\n        {\n            \"TagKey\": \"testTagKey2\"\n        },\n        {\n            \"TagKey\": \"testTagKey1\"\n        }\n    ],\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "给资源解除绑定多个标签"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceTags\n<公共请求参数>\n\n{\n    \"ReplaceTags\": [\n        {\n            \"TagKey\": \"testTagKey2\",\n            \"TagValue\": \"testTagValue2\"\n        },\n        {\n            \"TagKey\": \"testTagKey1\",\n            \"TagValue\": \"testTagValue1\"\n        }\n    ],\n    \"Resource\": \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "将资源关联的标签替换为输入的标签集合"
       }
     ],
     "ModifyResourcesTagValue": [

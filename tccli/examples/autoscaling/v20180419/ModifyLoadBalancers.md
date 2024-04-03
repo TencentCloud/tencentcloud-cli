@@ -1,4 +1,25 @@
-**Example 1: 将伸缩组的负载均衡器修改为传统负载均衡器lb-crhgatrf**
+**Example 1: 清空伸缩组的负载均衡器**
+
+
+
+Input: 
+
+```
+tccli as ModifyLoadBalancers --cli-unfold-argument  \
+    --AutoScalingGroupId asg-12wjuh0s
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ActivityId": "asa-rp63a5q8",
+        "RequestId": "7de5a82f-b781-4302-b723-e7a879c20767"
+    }
+}
+```
+
+**Example 2: 将伸缩组的负载均衡器修改为传统负载均衡器lb-crhgatrf**
 
 
 
@@ -20,7 +41,7 @@ Output:
 }
 ```
 
-**Example 2: 将伸缩组的负载均衡器修改为应用型负载均衡器lb-23aejgcv，监听器为lbl-ncw704sn**
+**Example 3: 将伸缩组的负载均衡器修改为应用型负载均衡器lb-23aejgcv，监听器为lbl-ncw704sn**
 
 
 
@@ -43,27 +64,6 @@ Output:
     "Response": {
         "ActivityId": "asa-9asddelc",
         "RequestId": "8d78668d-61eb-456d-855b-f34f91371089"
-    }
-}
-```
-
-**Example 3: 清空伸缩组的负载均衡器**
-
-
-
-Input: 
-
-```
-tccli as ModifyLoadBalancers --cli-unfold-argument  \
-    --AutoScalingGroupId asg-12wjuh0s
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ActivityId": "asa-rp63a5q8",
-        "RequestId": "7de5a82f-b781-4302-b723-e7a879c20767"
     }
 }
 ```

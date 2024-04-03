@@ -2153,15 +2153,6 @@
         },
         {
           "disabled": false,
-          "document": "任务输入JSON。需要进行base64编码。",
-          "example": "无",
-          "member": "string",
-          "name": "InputBase64",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "项目ID。（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
@@ -2175,6 +2166,24 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务输入COS地址。（InputBase64和InputCosUri必选其一）",
+          "example": "无",
+          "member": "string",
+          "name": "InputCosUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）",
+          "example": "无",
+          "member": "string",
+          "name": "InputBase64",
           "required": false,
           "type": "string"
         },
@@ -2238,6 +2247,15 @@
           "example": "无",
           "member": "string",
           "name": "WorkDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问模式，不填默认私有。取值范围\n- PRIVATE：私有应用\n- PUBLIC：公共应用",
+          "example": "无",
+          "member": "string",
+          "name": "AccessMode",
           "required": false,
           "type": "string"
         }

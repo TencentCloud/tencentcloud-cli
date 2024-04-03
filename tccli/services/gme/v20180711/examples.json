@@ -192,12 +192,6 @@
     ],
     "ScanVoice": [
       {
-        "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"c91b5243-bbd1-48e0-af41-d66891cabecb\"\n    }\n}",
-        "title": "提交语音文件检测任务-2"
-      },
-      {
         "document": "通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"true\",\n    \"Tasks\": [\n        {\n            \"Url\": \"https://xxxx\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"c91b5243-bbd1-48e0-af41-d66891cabecb\"\n    }\n}",
@@ -208,6 +202,12 @@
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"de52afb5-3887-462d-876a-f8b0b654dc92\"\n    }\n}",
         "title": "提交语音文件检测任务"
+      },
+      {
+        "document": "通过语音文件的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVoice\n<公共请求参数>\n\n{\n    \"Callback\": \"https://0.0.0.0/user_callback\",\n    \"Live\": \"false\",\n    \"Tasks\": [\n        {\n            \"Url\": \"http://xxx/audio_store/xxxx.mp3\",\n            \"DataId\": \"1400000000_test_data_id\"\n        }\n    ],\n    \"BizId\": \"1400000000\",\n    \"Scenes\": [\n        \"default\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DataId\": \"1400000000_test_data_id\",\n                \"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\"\n            }\n        ],\n        \"RequestId\": \"c91b5243-bbd1-48e0-af41-d66891cabecb\"\n    }\n}",
+        "title": "提交语音文件检测任务-2"
       }
     ],
     "StartRecord": [

@@ -194,16 +194,16 @@
     ],
     "DescribeAccountBalance": [
       {
-        "document": "正常请求的入参回参",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountBalance\n<公共请求参数>\n\n{\n    \"AccountType\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"Balance\": 7652,\n        \"LastUpdateTime\": 1607069420,\n        \"AccountType\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "DescribeAccountBalance正常请求"
-      },
-      {
         "document": "请求异常的入参和出参",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountBalance\n<公共请求参数>\n\n{\n    \"AccountType\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"账号不存在\"\n        }\n    }\n}",
         "title": "DescribeAccountBalance异常请求"
+      },
+      {
+        "document": "正常请求的入参回参",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountBalance\n<公共请求参数>\n\n{\n    \"AccountType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"Balance\": 7652,\n        \"LastUpdateTime\": 1607069420,\n        \"AccountType\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "DescribeAccountBalance正常请求"
       }
     ],
     "DescribeBindDev": [
@@ -336,16 +336,16 @@
     ],
     "DescribeRechargeRecords": [
       {
-        "document": "正常请求的情况",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRechargeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"AccountType\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"AccountType\": 1,\n        \"Records\": [\n            {\n                \"WaterId\": 919,\n                \"BalanceBeforeRecharge\": 10367808782,\n                \"OperateTime\": 1602764840\n            },\n            {\n                \"WaterId\": 920,\n                \"BalanceBeforeRecharge\": 10367807918,\n                \"OperateTime\": 1602765531\n            }\n        ]\n    }\n}",
-        "title": "DescribeRechargeRecords正常回参"
-      },
-      {
         "document": "请求异常的情况",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRechargeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"AccountType\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"AccountType\": 1,\n        \"Records\": null\n    }\n}",
         "title": "DescribeRechargeRecords异常回参"
+      },
+      {
+        "document": "正常请求的情况",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRechargeRecords\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"AccountType\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43348837-a756-4939-92b6-77c333c1b96e\",\n        \"AccountType\": 1,\n        \"Records\": [\n            {\n                \"WaterId\": 919,\n                \"BalanceBeforeRecharge\": 10367808782,\n                \"OperateTime\": 1602764840\n            },\n            {\n                \"WaterId\": 920,\n                \"BalanceBeforeRecharge\": 10367807918,\n                \"OperateTime\": 1602765531\n            }\n        ]\n    }\n}",
+        "title": "DescribeRechargeRecords正常回参"
       }
     ],
     "DescribeRegistrationStatus": [

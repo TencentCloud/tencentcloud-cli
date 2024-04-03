@@ -210,6 +210,12 @@
     ],
     "DescribeDocument": [
       {
+        "document": "课件预览示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"ntxsfrzk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"ntxsfrzk\",\n        \"DocumentName\": \"test.pptx\",\n        \"DocumentSize\": 15814364,\n        \"DocumentType\": \"pptx\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1677202414_85bt9f0X.pptx\",\n        \"Owner\": \"2M04q0j5mhsbq1lAEbCW1dhRvA2\",\n        \"Pages\": 2,\n        \"Permission\": 0,\n        \"Preview\": \"https://class.qcloudclass.com/temp/preview.html?isppt=1&url=https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html&total=2\",\n        \"RequestId\": \"8a7bafba-bc67-4040-8203-475532db535f\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"Microsoft Macintosh PowerPoint\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1677202419\n    }\n}",
+        "title": "示例"
+      },
+      {
         "document": "pdf 示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"omxxxsdc\"\n}",
         "output": "{\n    \"Response\": {\n        \"DocumentId\": \"omxxxsdc\",\n        \"DocumentName\": \"滴滴电子发票 (1).pdf\",\n        \"DocumentSize\": 38673,\n        \"DocumentType\": \"pdf\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1679021408_KzpMGD38.pdf\",\n        \"Owner\": \"2N1zP0mW7E3Vr3xJ2ZQ9GeFDK4t\",\n        \"Pages\": 1,\n        \"Permission\": 0,\n        \"RequestId\": \"ee3fdca0-c88c-43f1-81b4-4f51f9e50521\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/01aq2v7djsh31noat9gc_tiw/picture/\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1679021410\n    }\n}",
@@ -220,12 +226,6 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"ntxsfrzk\"\n}",
         "output": "{\n    \"Response\": {\n        \"DocumentId\": \"ntxsfrzk\",\n        \"DocumentName\": \"test.pptx\",\n        \"DocumentSize\": 15814364,\n        \"DocumentType\": \"pptx\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1677202414_85bt9f0X.pptx\",\n        \"Owner\": \"2M04q0j5mhsbq1lAEbCW1dhRvA2\",\n        \"Pages\": 0,\n        \"Permission\": 0,\n        \"RequestId\": \"d97f98d7-de89-455a-a1f3-b9dae84d84bb\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"Microsoft Macintosh PowerPoint\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1677202419\n    }\n}",
         "title": "获取文档详情"
-      },
-      {
-        "document": "课件预览示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocument\n<公共请求参数>\n\n{\n    \"DocumentId\": \"ntxsfrzk\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"ntxsfrzk\",\n        \"DocumentName\": \"test.pptx\",\n        \"DocumentSize\": 15814364,\n        \"DocumentType\": \"pptx\",\n        \"DocumentUrl\": \"https://tcic-source.qcloudclass.com/uploads/5390248a-5eb7-4fe8-be27-c43dbad1380f/3520371/1677202414_85bt9f0X.pptx\",\n        \"Owner\": \"2M04q0j5mhsbq1lAEbCW1dhRvA2\",\n        \"Pages\": 2,\n        \"Permission\": 0,\n        \"Preview\": \"https://class.qcloudclass.com/temp/preview.html?isppt=1&url=https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html&total=2\",\n        \"RequestId\": \"8a7bafba-bc67-4040-8203-475532db535f\",\n        \"SdkAppId\": 3520371,\n        \"TranscodeInfo\": \"Microsoft Macintosh PowerPoint\",\n        \"TranscodeProgress\": 100,\n        \"TranscodeResult\": \"https://tcic-test-1257307760.qcloudclass.com/doc/gsutgbm7ssh31ns71sfc_tiw/h5/index.html\",\n        \"TranscodeState\": 3,\n        \"TranscodeType\": 1,\n        \"UpdateTime\": 1677202419\n    }\n}",
-        "title": "示例"
       }
     ],
     "DescribeDocuments": [
@@ -284,16 +284,16 @@
     ],
     "DescribeRoom": [
       {
-        "document": "获取课堂房间信息",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"test\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"test\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"test\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
-        "title": "房间信息"
-      },
-      {
         "document": "获取房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 331450358\n}",
         "output": "{\n    \"Response\": {\n        \"Assistants\": [],\n        \"AudienceType\": 1,\n        \"AudioQuality\": 0,\n        \"AutoMic\": 0,\n        \"DisableRecord\": 0,\n        \"EnableDirectControl\": 0,\n        \"EndTime\": 1687943391,\n        \"GroupId\": \"\",\n        \"InteractionMode\": 1,\n        \"IsGradingRequiredPostClass\": 0,\n        \"MaxMicNumber\": 2,\n        \"Name\": \"测试1\",\n        \"RecordUrl\": \"\",\n        \"RequestId\": \"a8dea9b9-5172-4c01-a53d-5a53437f7fdf\",\n        \"Resolution\": 1,\n        \"RoomType\": 1,\n        \"SdkAppId\": 3923193,\n        \"StartTime\": 1687943339,\n        \"Status\": 0,\n        \"SubType\": \"video\",\n        \"TeacherId\": \"2O2bjPEXxStIac3NC9kfH3mHeBC\",\n        \"VideoOrientation\": 1,\n        \"VideoDuration\": 0\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "获取课堂房间信息",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"test\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"test\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"test\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
+        "title": "房间信息"
       }
     ],
     "DescribeRoomForbiddenUser": [
@@ -434,16 +434,16 @@
     ],
     "ModifyRoom": [
       {
-        "document": "修改房间参数示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"SdkAppId\": 1,\n    \"GroupId\": \"abc\",\n    \"EnableDirectControl\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "修改房间"
-      },
-      {
         "document": "修改类型",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 368760996,\n    \"SdkAppId\": 3520371,\n    \"InteractionMode\": 0,\n    \"VideoOrientation\": 0,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"50034c8f-cd77-43f2-815e-afe990fb023d\"\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "修改房间参数示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"SdkAppId\": 1,\n    \"GroupId\": \"abc\",\n    \"EnableDirectControl\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改房间"
       }
     ],
     "ModifyUserProfile": [

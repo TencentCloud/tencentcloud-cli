@@ -22,27 +22,7 @@ Output:
 }
 ```
 
-**Example 2: describe project with params**
-
-
-
-Input: 
-
-```
-tccli wedata DescribeProject --cli-unfold-argument  \
-    --ProjectId 978203585769070592
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "9ef8a942-efbe-4f77-8617-a9eb8875fea6"
-    }
-}
-```
-
-**Example 3: projectName transfer**
+**Example 2: projectName transfer**
 
 
 
@@ -58,6 +38,26 @@ Output:
 {
     "Response": {
         "RequestId": "949cd55d-e683-4698-a1cd-c142cf7b1e75"
+    }
+}
+```
+
+**Example 3: describe project with params**
+
+
+
+Input: 
+
+```
+tccli wedata DescribeProject --cli-unfold-argument  \
+    --ProjectId 978203585769070592
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "9ef8a942-efbe-4f77-8617-a9eb8875fea6"
     }
 }
 ```

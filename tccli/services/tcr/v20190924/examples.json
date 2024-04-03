@@ -152,16 +152,16 @@
     ],
     "CreateServiceAccount": [
       {
-        "document": "使用Duration创建ServiceAccount",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-45uu7ras\",\n    \"Name\": \"test\",\n    \"Description\": \"for test\",\n    \"Duration\": 10,\n    \"Permissions\": [\n        {\n            \"Resource\": \"test\",\n            \"Actions\": [\n                \"tcr:PullRepository\",\n                \"tcr:PushRepository\",\n                \"tcr:CreateRepository\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2023-03-28T15:48:31+08:00\",\n        \"ExpiresAt\": 1680853711137,\n        \"Name\": \"tcr$test\",\n        \"Password\": \"oNKUtqrB5Eb68JufkVanSwuhmC4Ergn7\",\n        \"RequestId\": \"20b67612-28a0-4c51-8efb-0fe14bc23a64\"\n    }\n}",
-        "title": "使用Duration创建ServiceAccount"
-      },
-      {
         "document": "创建服务级账号",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"Duration\": 0,\n    \"ExpiresAt\": 0,\n    \"Disable\": true,\n    \"Permissions\": [\n        {\n            \"Resource\": \"abc\",\n            \"Actions\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"tcr$abc\",\n        \"Password\": \"abc\",\n        \"ExpiresAt\": 0,\n        \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建服务级账号"
+      },
+      {
+        "document": "使用Duration创建ServiceAccount",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-45uu7ras\",\n    \"Name\": \"test\",\n    \"Description\": \"for test\",\n    \"Duration\": 10,\n    \"Permissions\": [\n        {\n            \"Resource\": \"test\",\n            \"Actions\": [\n                \"tcr:PullRepository\",\n                \"tcr:PushRepository\",\n                \"tcr:CreateRepository\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2023-03-28T15:48:31+08:00\",\n        \"ExpiresAt\": 1680853711137,\n        \"Name\": \"tcr$test\",\n        \"Password\": \"oNKUtqrB5Eb68JufkVanSwuhmC4Ergn7\",\n        \"RequestId\": \"20b67612-28a0-4c51-8efb-0fe14bc23a64\"\n    }\n}",
+        "title": "使用Duration创建ServiceAccount"
       }
     ],
     "CreateSignature": [
@@ -789,6 +789,12 @@
     "ModifyInstanceToken": [
       {
         "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Desc=aaa\n&ModifyFlag=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
+        "title": "更新描述"
+      },
+      {
+        "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
         "title": "启用实例长期访问凭证"
@@ -798,12 +804,6 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
         "title": "禁用实例长期访问凭证"
-      },
-      {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Desc=aaa\n&ModifyFlag=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
-        "title": "更新描述"
       }
     ],
     "ModifyNamespace": [
@@ -856,16 +856,16 @@
     ],
     "ModifyServiceAccountPassword": [
       {
-        "document": "自定义服务级账号密码",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccountPassword\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-gijwqid7\",\n    \"Name\": \"robot\",\n    \"Random\": false,\n    \"Password\": \"NewPass123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Password\": \"NewPass123\",\n        \"RequestId\": \"8c63b1e6-02b8-48af-94c2-416aa71e0c12\"\n    }\n}",
-        "title": "自定义服务级账号密码"
-      },
-      {
         "document": "重置服务级账号密码",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccountPassword\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-gijwqid7\",\n    \"Name\": \"robot\",\n    \"Random\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Password\": \"kukui1ECDL8kr9cm6W66Me8PlhHemFmC\",\n        \"RequestId\": \"60e7d0ce-c8ed-4495-9814-9397482f0d4a\"\n    }\n}",
         "title": "重置服务级账号密码"
+      },
+      {
+        "document": "自定义服务级账号密码",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccountPassword\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-gijwqid7\",\n    \"Name\": \"robot\",\n    \"Random\": false,\n    \"Password\": \"NewPass123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Password\": \"NewPass123\",\n        \"RequestId\": \"8c63b1e6-02b8-48af-94c2-416aa71e0c12\"\n    }\n}",
+        "title": "自定义服务级账号密码"
       }
     ],
     "ModifyTagRetentionRule": [

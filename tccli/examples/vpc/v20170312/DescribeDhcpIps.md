@@ -31,7 +31,7 @@ Output:
 }
 ```
 
-**Example 2: 根据DhcpIpIds查询DhcpIp列表**
+**Example 2: 根据Filters查询DhcpIp列表**
 
 
 
@@ -39,7 +39,8 @@ Input:
 
 ```
 tccli vpc DescribeDhcpIps --cli-unfold-argument  \
-    --DhcpIpIds dhcpip-12345678
+    --Filters.0.Name dhcpip-id \
+    --Filters.0.Values dhcpip-12345678
 ```
 
 Output: 
@@ -66,7 +67,7 @@ Output:
 }
 ```
 
-**Example 3: 根据Filters查询DhcpIp列表**
+**Example 3: 根据DhcpIpIds查询DhcpIp列表**
 
 
 
@@ -74,8 +75,7 @@ Input:
 
 ```
 tccli vpc DescribeDhcpIps --cli-unfold-argument  \
-    --Filters.0.Name dhcpip-id \
-    --Filters.0.Values dhcpip-12345678
+    --DhcpIpIds dhcpip-12345678
 ```
 
 Output: 

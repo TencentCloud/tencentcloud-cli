@@ -1,27 +1,4 @@
-**Example 1: 查询满足规格的 Pod 信息**
-
-可被预留券抵扣的 Pod 信息
-
-Input: 
-
-```
-tccli tke DescribePodsBySpec --cli-unfold-argument  \
-    --Cpu 1 \
-    --Memory 2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PodSet": [],
-        "RequestId": "3bd23fef-56bf-4d61-a2f2-5ea6adef1508",
-        "TotalCount": 0
-    }
-}
-```
-
-**Example 2: Filter Name值不支持**
+**Example 1: Filter Name值不支持**
 
 Filter Name只支持文档中的示例值
 
@@ -43,6 +20,29 @@ Output:
             "Message": "Filter Name:not-support-filter-name not supported"
         },
         "RequestId": "3323e599-cc1f-481b-95a7-dec3f145d158"
+    }
+}
+```
+
+**Example 2: 查询满足规格的 Pod 信息**
+
+可被预留券抵扣的 Pod 信息
+
+Input: 
+
+```
+tccli tke DescribePodsBySpec --cli-unfold-argument  \
+    --Cpu 1 \
+    --Memory 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PodSet": [],
+        "RequestId": "3bd23fef-56bf-4d61-a2f2-5ea6adef1508",
+        "TotalCount": 0
     }
 }
 ```

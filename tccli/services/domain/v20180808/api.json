@@ -168,6 +168,13 @@
       "output": "DescribeTemplateListResponse",
       "status": "online"
     },
+    "DescribeTldList": {
+      "document": "用于获取域名注册当前支持注册的后缀",
+      "input": "DescribeTldListRequest",
+      "name": "查询支持注册后缀",
+      "output": "DescribeTldListResponse",
+      "status": "online"
+    },
     "ModifyCustomDnsHost": {
       "document": "修改自定义DNS Host",
       "input": "ModifyCustomDnsHostRequest",
@@ -2005,6 +2012,33 @@
           "member": "TemplateInfo",
           "name": "Template",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTldListRequest": {
+      "document": "DescribeTldList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTldListResponse": {
+      "document": "DescribeTldList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的后缀列表",
+          "example": "[\".cn\"]",
+          "member": "string",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

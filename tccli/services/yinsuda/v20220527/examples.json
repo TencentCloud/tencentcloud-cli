@@ -172,10 +172,16 @@
         "title": "播放指定音乐"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetAudioParam\",\n            \"SetAudioParamCommandInput\": {\n                \"Type\": \"Accompaniment\"\n            }\n        }\n    ]\n}",
+        "document": "设置播放模式为随机播放。",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetPlayMode\",\n            \"SetPlayModeCommandInput\": {\n                \"PlayMode\": \"Shuffle\"\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "变更歌曲音频参数"
+        "title": "设置播放模式"
+      },
+      {
+        "document": "设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetDestroyMode\",\n            \"SetDestroyModeCommandInput\": {\n                \"DestroyMode\": \"Expire\",\n                \"DestroyExpireTime\": 120\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "设置销毁模式"
       },
       {
         "document": "",
@@ -190,16 +196,10 @@
         "title": "发送自定义消息"
       },
       {
-        "document": "设置播放模式为随机播放。",
-        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetPlayMode\",\n            \"SetPlayModeCommandInput\": {\n                \"PlayMode\": \"Shuffle\"\n            }\n        }\n    ]\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetAudioParam\",\n            \"SetAudioParamCommandInput\": {\n                \"Type\": \"Accompaniment\"\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "设置播放模式"
-      },
-      {
-        "document": "设置销毁模式为：房间没人后，2分钟内无人进入自动销毁。",
-        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncKTVRobotCommand\n<公共请求参数>\n\n{\n    \"AppName\": \"ktv\",\n    \"UserId\": \"10001\",\n    \"RobotId\": \"xxxxx\",\n    \"SyncRobotCommands\": [\n        {\n            \"Command\": \"SetDestroyMode\",\n            \"SetDestroyModeCommandInput\": {\n                \"DestroyMode\": \"Expire\",\n                \"DestroyExpireTime\": 120\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "设置销毁模式"
+        "title": "变更歌曲音频参数"
       },
       {
         "document": "",

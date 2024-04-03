@@ -28,28 +28,28 @@
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=CreateModel\n&LUTFile=xxxxx\n&Description=红色\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ModelId\": \"id\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "调用返回成功"
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.LutImageInvalid\",\n            \"Message\": \"图片不合法，必须是512*512的PNG图片。\"\n        },\n        \"RequestId\": \"615c23aa-8877-4a10-b01b-50a3d346050f\"\n    }\n}",
+        "title": "调用返回失败"
       },
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=CreateModel\n&LUTFile=xxxxx\n&Description=红色\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.LutImageInvalid\",\n            \"Message\": \"图片不合法，必须是512*512的PNG图片。\"\n        },\n        \"RequestId\": \"615c23aa-8877-4a10-b01b-50a3d346050f\"\n    }\n}",
-        "title": "调用返回失败"
+        "output": "{\n    \"Response\": {\n        \"ModelId\": \"id\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "调用返回成功"
       }
     ],
     "DeleteModel": [
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=DeleteModel\r\n&ModelId=xxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "调用返回成功"
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ModelIdNotFound\",\n            \"Message\": \"未查找到素材id。\"\n        },\n        \"RequestId\": \"9208c1e0-d2e2-493f-9a46-299c02824625\"\n    }\n}",
+        "title": "调用返回失败"
       },
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=DeleteModel\r\n&ModelId=xxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ModelIdNotFound\",\n            \"Message\": \"未查找到素材id。\"\n        },\n        \"RequestId\": \"9208c1e0-d2e2-493f-9a46-299c02824625\"\n    }\n}",
-        "title": "调用返回失败"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "调用返回成功"
       }
     ],
     "GetModelList": [
@@ -85,18 +85,24 @@
     "StyleImagePro": [
       {
         "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=StyleImagePro\n&Image=xxxxx\n&FilterType=-1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
-        "title": "调用返回失败"
-      },
-      {
-        "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=StyleImagePro\n&Image=xxxxx\n&FilterType=2\n&FilterDegree=80\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"ResultUrl\": \"\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "调用成功示例"
+      },
+      {
+        "document": "",
+        "input": "https://fmu.tencentcloudapi.com/?Action=StyleImagePro\n&Image=xxxxx\n&FilterType=-1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "title": "调用返回失败"
       }
     ],
     "TryLipstickPic": [
+      {
+        "document": "",
+        "input": "https://fmu.tencentcloudapi.com/?Action=TryLipstickPic\r\n&Image=xxxxx\r\n&LipColorInfos.0.RGBA.R=200\r\n&LipColorInfos.0.RGBA.G=0\r\n&LipColorInfos.0.RGBA.B=0\r\n&LipColorInfos.0.RGBA.A=50\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
+        "title": "调用返回失败"
+      },
       {
         "document": "",
         "input": "https://fmu.tencentcloudapi.com/?Action=TryLipstickPic\r\n&Image=xxxxx\r\n&LipColorInfos.0.RGBA.R=200\r\n&LipColorInfos.0.RGBA.G=0\r\n&LipColorInfos.0.RGBA.B=0\r\n&LipColorInfos.0.RGBA.A=50\r\n&<公共请求参数>",
@@ -114,12 +120,6 @@
         "input": "https://fmu.tencentcloudapi.com/?Action=TryLipstickPic\r\n&Image=xxxxx\r\n&LipColorInfos.0.ModelId=xxx\r\n&LipColorInfos.0.FaceRect.X=整型\r\n&LipColorInfos.0.FaceRect.Y=整型\r\n&LipColorInfos.0.FaceRect.Width=整型\r\n&LipColorInfos.0.FaceRect.Height=整型\r\n&LipColorInfos.1.ModelId=xxx\r\n&LipColorInfos.1.FaceRect.X=整型\r\n&LipColorInfos.1.FaceRect.Y=整型\r\n&LipColorInfos.1.FaceRect.Width=整型\r\n&LipColorInfos.1.FaceRect.Height=整型\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"ResultImage\": \"base64编码的图片\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "调用返回成功（图片有多张脸时指定人脸框）"
-      },
-      {
-        "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=TryLipstickPic\r\n&Image=xxxxx\r\n&LipColorInfos.0.RGBA.R=200\r\n&LipColorInfos.0.RGBA.G=0\r\n&LipColorInfos.0.RGBA.B=0\r\n&LipColorInfos.0.RGBA.A=50\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"b68b7c3a-410d-4af1-b63c-97450683b09b\"\n    }\n}",
-        "title": "调用返回失败"
       }
     ]
   },

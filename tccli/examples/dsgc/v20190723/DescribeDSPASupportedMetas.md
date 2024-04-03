@@ -1,4 +1,36 @@
-**Example 1: 示例**
+**Example 1: 例子**
+
+
+
+Input: 
+
+```
+tccli dsgc DescribeDSPASupportedMetas --cli-unfold-argument  \
+    --MetaTypes abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Metas": [
+            {
+                "MetaType": "abc",
+                "Regions": [
+                    "abc"
+                ],
+                "SupportedAuthTypes": [
+                    "abc"
+                ]
+            }
+        ],
+        "MaxDBInstanceLimit": 0,
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 示例**
 
 
 
@@ -88,38 +120,6 @@ Output:
                 ]
             }
         ]
-    }
-}
-```
-
-**Example 2: 例子**
-
-
-
-Input: 
-
-```
-tccli dsgc DescribeDSPASupportedMetas --cli-unfold-argument  \
-    --MetaTypes abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Metas": [
-            {
-                "MetaType": "abc",
-                "Regions": [
-                    "abc"
-                ],
-                "SupportedAuthTypes": [
-                    "abc"
-                ]
-            }
-        ],
-        "MaxDBInstanceLimit": 0,
-        "RequestId": "abc"
     }
 }
 ```

@@ -1,54 +1,4 @@
-**Example 1: 创建App隐私合规基础诊断任务**
-
-
-
-Input: 
-
-```
-tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --AppPackage com.test.app \
-    --Source 2 \
-    --Platform 0 \
-    --TaskType 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "xxxxxx",
-        "Result": 0,
-        "TaskID": "170143813*******360"
-    }
-}
-```
-
-**Example 2: 创建小程序基本检测任务**
-
-
-
-Input: 
-
-```
-tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --Platform 2 \
-    --Source 0 \
-    --AppPackage wxe***97c684 \
-    --TaskType 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6d9fc265-a647-4f3c-b188-3b98e064e905",
-        "Result": 0,
-        "TaskID": "267***400"
-    }
-}
-```
-
-**Example 3: 本地化任务**
+**Example 1: 本地化任务**
 
 
 
@@ -75,6 +25,56 @@ Output:
         "RequestId": "6c296e5b-48ad-4cfb-a90d-8010c9951341",
         "Result": 0,
         "TaskID": "271***520"
+    }
+}
+```
+
+**Example 2: 提交漏洞扫描app任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --AppDownloadUrl https://bm***berJdezPIV926.apk \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "0b496234-892d-4f58-8261-9eb7ac3062a9",
+        "Result": 0,
+        "TaskID": "347***496"
+    }
+}
+```
+
+**Example 3: 创建小程序基本检测任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --Platform 2 \
+    --Source 0 \
+    --AppPackage wxe***97c684 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6d9fc265-a647-4f3c-b188-3b98e064e905",
+        "Result": 0,
+        "TaskID": "267***400"
     }
 }
 ```
@@ -149,7 +149,7 @@ Output:
 }
 ```
 
-**Example 6: 提交漏洞扫描app任务**
+**Example 6: 创建App隐私合规基础诊断任务**
 
 
 
@@ -157,9 +157,9 @@ Input:
 
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --AppPackage com.test.app \
+    --Source 2 \
     --Platform 0 \
-    --Source 3 \
-    --AppDownloadUrl https://bm***berJdezPIV926.apk \
     --TaskType 0
 ```
 
@@ -167,9 +167,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "0b496234-892d-4f58-8261-9eb7ac3062a9",
+        "RequestId": "xxxxxx",
         "Result": 0,
-        "TaskID": "347***496"
+        "TaskID": "170143813*******360"
     }
 }
 ```

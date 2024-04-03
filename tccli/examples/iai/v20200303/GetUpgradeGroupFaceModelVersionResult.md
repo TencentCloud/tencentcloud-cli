@@ -1,6 +1,6 @@
-**Example 1: 人员库升级结果查询（升级成功）**
+**Example 1: 人员库升级结果查询（升级中）**
 
-人员库升级成功（Status返回1）
+人员库升级中（Status返回0）
 
 Input: 
 
@@ -13,15 +13,15 @@ Output:
 ```
 {
     "Response": {
-        "Progress": 100,
-        "EndTimestamp": 1596529510000,
-        "Status": 1,
-        "StartTime": 1596529493217,
+        "Progress": 77,
+        "EndTimestamp": 1607091150000,
+        "Status": 0,
+        "StartTime": 1607073566782,
         "FromFaceModelVersion": "2.0",
-        "GroupId": "100001testGroupUpgrade",
+        "GroupId": "965e41210ab6eaf56dee78bad4743b23",
         "FailedFacesUrl": "",
         "ToFaceModelVersion": "3.0",
-        "RequestId": "b0835106-e301-4959-90d5-f982007bb4c8"
+        "RequestId": "3c834d55-967a-4795-9beb-4c877418cd79"
     }
 }
 ```
@@ -62,9 +62,9 @@ Output:
 }
 ```
 
-**Example 3: 人员库升级结果查询（升级中）**
+**Example 3: 人员库升级结果查询（升级成功）**
 
-人员库升级中（Status返回0）
+人员库升级成功（Status返回1）
 
 Input: 
 
@@ -77,15 +77,15 @@ Output:
 ```
 {
     "Response": {
-        "Progress": 77,
-        "EndTimestamp": 1607091150000,
-        "Status": 0,
-        "StartTime": 1607073566782,
+        "Progress": 100,
+        "EndTimestamp": 1596529510000,
+        "Status": 1,
+        "StartTime": 1596529493217,
         "FromFaceModelVersion": "2.0",
-        "GroupId": "965e41210ab6eaf56dee78bad4743b23",
+        "GroupId": "100001testGroupUpgrade",
         "FailedFacesUrl": "",
         "ToFaceModelVersion": "3.0",
-        "RequestId": "3c834d55-967a-4795-9beb-4c877418cd79"
+        "RequestId": "b0835106-e301-4959-90d5-f982007bb4c8"
     }
 }
 ```

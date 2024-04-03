@@ -1,20 +1,19 @@
-**Example 1: 绑定多个安全组至负载均衡实例**
+**Example 1: 解绑所有安全组**
 
-负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-12345678 将被绑定至此负载均衡实例。
+负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerSecurityGroups --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00 \
-    --SecurityGroups sg-0936o7sd sg-12345678
+    --LoadBalancerId lb-cuxw2r00
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "00ca7fca-90f1-47fe-a724-5d7e96d04633"
+        "RequestId": "00ca7fca-90f1-47fe-a724-5d7e96d04655"
     }
 }
 ```
@@ -40,22 +39,23 @@ Output:
 }
 ```
 
-**Example 3: 解绑所有安全组**
+**Example 3: 绑定多个安全组至负载均衡实例**
 
-负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。
+负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-12345678 将被绑定至此负载均衡实例。
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerSecurityGroups --cli-unfold-argument  \
-    --LoadBalancerId lb-cuxw2r00
+    --LoadBalancerId lb-cuxw2r00 \
+    --SecurityGroups sg-0936o7sd sg-12345678
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "00ca7fca-90f1-47fe-a724-5d7e96d04655"
+        "RequestId": "00ca7fca-90f1-47fe-a724-5d7e96d04633"
     }
 }
 ```

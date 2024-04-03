@@ -76,7 +76,61 @@ Output:
 }
 ```
 
-**Example 2: 根据事件的镜像ID，查询当前镜像的规则详情（用户策略）**
+**Example 2: 根据规则ID查询规则详情（系统策略）**
+
+
+
+Input: 
+
+```
+tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
+    --RuleId xxx \
+    --Limit 10 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1af946cb-d3d5-4b03-bbfc-3d5ad306f753",
+        "RuleDetail": {
+            "RuleId": "60484042d620f3f9012c521e",
+            "IsEnable": true,
+            "IsDefault": true,
+            "RuleName": "kkkkk",
+            "ChildRules": [],
+            "SystemChildRules": [
+                {
+                    "RuleId": "200000000000000000000001",
+                    "IsEnable": true,
+                    "RuleMode": "RULE_MODE_ALERT",
+                    "RuleType": "CHANGE_CRONTAB"
+                },
+                {
+                    "RuleId": "200000000000000000000002",
+                    "IsEnable": true,
+                    "RuleMode": "RULE_MODE_ALERT",
+                    "RuleType": "CHANGE_SYS_BIN"
+                },
+                {
+                    "RuleId": "200000000000000000000003",
+                    "IsEnable": true,
+                    "RuleMode": "RULE_MODE_ALERT",
+                    "RuleType": "CHANGE_USRCFG"
+                }
+            ],
+            "ImageIds": [
+                "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55",
+                "sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25",
+                "sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549"
+            ]
+        }
+    }
+}
+```
+
+**Example 3: 根据事件的镜像ID，查询当前镜像的规则详情（用户策略）**
 
 
 
@@ -144,60 +198,6 @@ Output:
                 }
             ],
             "SystemChildRules": [],
-            "ImageIds": [
-                "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55",
-                "sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25",
-                "sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549"
-            ]
-        }
-    }
-}
-```
-
-**Example 3: 根据规则ID查询规则详情（系统策略）**
-
-
-
-Input: 
-
-```
-tccli tcss DescribeAccessControlRuleDetail --cli-unfold-argument  \
-    --RuleId xxx \
-    --Limit 10 \
-    --Offset 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "1af946cb-d3d5-4b03-bbfc-3d5ad306f753",
-        "RuleDetail": {
-            "RuleId": "60484042d620f3f9012c521e",
-            "IsEnable": true,
-            "IsDefault": true,
-            "RuleName": "kkkkk",
-            "ChildRules": [],
-            "SystemChildRules": [
-                {
-                    "RuleId": "200000000000000000000001",
-                    "IsEnable": true,
-                    "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "CHANGE_CRONTAB"
-                },
-                {
-                    "RuleId": "200000000000000000000002",
-                    "IsEnable": true,
-                    "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "CHANGE_SYS_BIN"
-                },
-                {
-                    "RuleId": "200000000000000000000003",
-                    "IsEnable": true,
-                    "RuleMode": "RULE_MODE_ALERT",
-                    "RuleType": "CHANGE_USRCFG"
-                }
-            ],
             "ImageIds": [
                 "sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55",
                 "sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25",

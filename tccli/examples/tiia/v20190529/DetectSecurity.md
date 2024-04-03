@@ -1,4 +1,28 @@
-**Example 1: 安全属性识别请求成功**
+**Example 1: 安全属性识别请求失败**
+
+安全属性识别请求失败
+
+Input: 
+
+```
+tccli tiia DetectSecurity --cli-unfold-argument  \
+    --ImageUrl https://123.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownLoadError",
+            "Message": "下载失败"
+        },
+        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e516"
+    }
+}
+```
+
+**Example 2: 安全属性识别请求成功**
 
 安全属性识别请求成功
 
@@ -72,30 +96,6 @@ Output:
             }
         ],
         "RequestId": "8a3f48ea-f995-4ad2-9ff5-7f8faf8bdbaf"
-    }
-}
-```
-
-**Example 2: 安全属性识别请求失败**
-
-安全属性识别请求失败
-
-Input: 
-
-```
-tccli tiia DetectSecurity --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation.DownLoadError",
-            "Message": "下载失败"
-        },
-        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e516"
     }
 }
 ```

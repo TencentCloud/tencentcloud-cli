@@ -1,4 +1,29 @@
-**Example 1: 示例一**
+**Example 1: 1**
+
+1
+
+Input: 
+
+```
+tccli wedata DescribeSchedulerTaskTypeCnt --cli-unfold-argument  \
+    --ProjectId 1 \
+    --InCharge 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnknownParameter",
+            "Message": "The parameter `InCharge` is not recognized."
+        },
+        "RequestId": "11beba5a-ce1f-4347-a64e-29e60cb9955d"
+    }
+}
+```
+
+**Example 2: 示例一**
 
 示例一
 
@@ -31,31 +56,6 @@ Output:
             }
         ],
         "RequestId": "5a95de10-2d07-4c4b-ad03-fcc8e1c5c1f7"
-    }
-}
-```
-
-**Example 2: 1**
-
-1
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerTaskTypeCnt --cli-unfold-argument  \
-    --ProjectId 1 \
-    --InCharge 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "UnknownParameter",
-            "Message": "The parameter `InCharge` is not recognized."
-        },
-        "RequestId": "11beba5a-ce1f-4347-a64e-29e60cb9955d"
     }
 }
 ```

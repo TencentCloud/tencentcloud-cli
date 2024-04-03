@@ -1,145 +1,4 @@
-**Example 1: 查询集成任务列表**
-
-查询集成任务列表
-
-Input: 
-
-```
-tccli wedata DescribeIntegrationTasks --cli-unfold-argument  \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --ProjectId abc \
-    --OrderFields.0.Name abc \
-    --OrderFields.0.Direction abc \
-    --StartTime abc \
-    --EndTime abc \
-    --PageNumber 0 \
-    --PageSize 0 \
-    --TaskType 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "TaskInfoSet": [
-            {
-                "TaskGroupId": "abc",
-                "Status": 0,
-                "WorkflowId": "abc",
-                "Description": "abc",
-                "CreatorUin": "abc",
-                "SyncType": 0,
-                "ProjectId": "abc",
-                "OwnerUin": "abc",
-                "ExecuteContext": [
-                    {
-                        "Name": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "ScheduleTaskId": "abc",
-                "TaskType": 0,
-                "AppId": "abc",
-                "ExecutorId": "abc",
-                "TaskId": "abc",
-                "OperatorUin": "abc",
-                "Nodes": [
-                    {
-                        "NodeType": "abc",
-                        "Description": "abc",
-                        "CreatorUin": "abc",
-                        "DataSourceType": "abc",
-                        "ProjectId": "abc",
-                        "OwnerUin": "abc",
-                        "ExtConfig": [
-                            {
-                                "Name": "abc",
-                                "Value": "abc"
-                            }
-                        ],
-                        "DatasourceId": "abc",
-                        "NodeMapping": {
-                            "SourceId": "abc",
-                            "SchemaMappings": [
-                                {
-                                    "SinkSchemaId": "abc",
-                                    "SourceSchemaId": "abc"
-                                }
-                            ],
-                            "SinkId": "abc",
-                            "SourceSchema": [
-                                {
-                                    "Type": "abc",
-                                    "Id": "abc",
-                                    "Value": "abc",
-                                    "Name": "abc"
-                                }
-                            ]
-                        },
-                        "TaskId": "abc",
-                        "AppId": "abc",
-                        "Schema": [
-                            {
-                                "Type": "abc",
-                                "Id": "abc",
-                                "Value": "abc",
-                                "Name": "abc"
-                            }
-                        ],
-                        "Config": [
-                            {
-                                "Name": "abc",
-                                "Value": "abc"
-                            }
-                        ],
-                        "Id": "abc",
-                        "OperatorUin": "abc",
-                        "Name": "abc"
-                    }
-                ],
-                "ExtConfig": [
-                    {
-                        "Name": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "Config": [
-                    {
-                        "Name": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "TaskName": "abc",
-                "Mappings": [
-                    {
-                        "SourceId": "abc",
-                        "SchemaMappings": [
-                            {
-                                "SinkSchemaId": "abc",
-                                "SourceSchemaId": "abc"
-                            }
-                        ],
-                        "SinkId": "abc",
-                        "SourceSchema": [
-                            {
-                                "Type": "abc",
-                                "Id": "abc",
-                                "Value": "abc",
-                                "Name": "abc"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: DescribeIntegrationTasks**
+**Example 1: DescribeIntegrationTasks**
 
 DescribeIntegrationTasks
 
@@ -314,6 +173,147 @@ Output:
             }
         ],
         "TotalCount": 0,
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 查询集成任务列表**
+
+查询集成任务列表
+
+Input: 
+
+```
+tccli wedata DescribeIntegrationTasks --cli-unfold-argument  \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --ProjectId abc \
+    --OrderFields.0.Name abc \
+    --OrderFields.0.Direction abc \
+    --StartTime abc \
+    --EndTime abc \
+    --PageNumber 0 \
+    --PageSize 0 \
+    --TaskType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "TaskInfoSet": [
+            {
+                "TaskGroupId": "abc",
+                "Status": 0,
+                "WorkflowId": "abc",
+                "Description": "abc",
+                "CreatorUin": "abc",
+                "SyncType": 0,
+                "ProjectId": "abc",
+                "OwnerUin": "abc",
+                "ExecuteContext": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "ScheduleTaskId": "abc",
+                "TaskType": 0,
+                "AppId": "abc",
+                "ExecutorId": "abc",
+                "TaskId": "abc",
+                "OperatorUin": "abc",
+                "Nodes": [
+                    {
+                        "NodeType": "abc",
+                        "Description": "abc",
+                        "CreatorUin": "abc",
+                        "DataSourceType": "abc",
+                        "ProjectId": "abc",
+                        "OwnerUin": "abc",
+                        "ExtConfig": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "DatasourceId": "abc",
+                        "NodeMapping": {
+                            "SourceId": "abc",
+                            "SchemaMappings": [
+                                {
+                                    "SinkSchemaId": "abc",
+                                    "SourceSchemaId": "abc"
+                                }
+                            ],
+                            "SinkId": "abc",
+                            "SourceSchema": [
+                                {
+                                    "Type": "abc",
+                                    "Id": "abc",
+                                    "Value": "abc",
+                                    "Name": "abc"
+                                }
+                            ]
+                        },
+                        "TaskId": "abc",
+                        "AppId": "abc",
+                        "Schema": [
+                            {
+                                "Type": "abc",
+                                "Id": "abc",
+                                "Value": "abc",
+                                "Name": "abc"
+                            }
+                        ],
+                        "Config": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Id": "abc",
+                        "OperatorUin": "abc",
+                        "Name": "abc"
+                    }
+                ],
+                "ExtConfig": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "Config": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "TaskName": "abc",
+                "Mappings": [
+                    {
+                        "SourceId": "abc",
+                        "SchemaMappings": [
+                            {
+                                "SinkSchemaId": "abc",
+                                "SourceSchemaId": "abc"
+                            }
+                        ],
+                        "SinkId": "abc",
+                        "SourceSchema": [
+                            {
+                                "Type": "abc",
+                                "Id": "abc",
+                                "Value": "abc",
+                                "Name": "abc"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
         "RequestId": "abc"
     }
 }

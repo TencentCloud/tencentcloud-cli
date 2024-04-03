@@ -1,4 +1,51 @@
-**Example 1: 列出表血缘信息**
+**Example 1: 表血缘信息**
+
+表血缘信息
+
+Input: 
+
+```
+tccli wedata DescribeTableLineage --cli-unfold-argument  \
+    --Direction INPUT \
+    --InputDepth 1 \
+    --OutputDepth 1 \
+    --Data.TableId nCG0n7zjR7-N-EbAAi8Ruw \
+    --Data.MetastoreType HIVE \
+    --Data.PrefixPath  \
+    --IgnoreTemp True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "cea6a2ea-a841-43ae-883a-805a58dc53d3",
+        "TableLineage": {
+            "ChildSet": "[]",
+            "CreateTime": "",
+            "DatasourceId": "",
+            "Description": "",
+            "DownStreamCount": 0,
+            "ExtParams": [],
+            "Id": null,
+            "MetastoreType": null,
+            "MetastoreTypeName": null,
+            "ModifyTime": "",
+            "Params": [],
+            "ParentSet": "[]",
+            "PrefixPath": "",
+            "ProjectId": null,
+            "QualifiedName": null,
+            "TableId": "nCG0n7zjR7-N-EbAAi8Ruw",
+            "TableName": "student",
+            "Tasks": [],
+            "UpStreamCount": 0
+        }
+    }
+}
+```
+
+**Example 2: 列出表血缘信息**
 
 列出表血缘信息
 
@@ -74,53 +121,6 @@ Output:
             ]
         },
         "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 表血缘信息**
-
-表血缘信息
-
-Input: 
-
-```
-tccli wedata DescribeTableLineage --cli-unfold-argument  \
-    --Direction INPUT \
-    --InputDepth 1 \
-    --OutputDepth 1 \
-    --Data.TableId nCG0n7zjR7-N-EbAAi8Ruw \
-    --Data.MetastoreType HIVE \
-    --Data.PrefixPath  \
-    --IgnoreTemp True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "cea6a2ea-a841-43ae-883a-805a58dc53d3",
-        "TableLineage": {
-            "ChildSet": "[]",
-            "CreateTime": "",
-            "DatasourceId": "",
-            "Description": "",
-            "DownStreamCount": 0,
-            "ExtParams": [],
-            "Id": null,
-            "MetastoreType": null,
-            "MetastoreTypeName": null,
-            "ModifyTime": "",
-            "Params": [],
-            "ParentSet": "[]",
-            "PrefixPath": "",
-            "ProjectId": null,
-            "QualifiedName": null,
-            "TableId": "nCG0n7zjR7-N-EbAAi8Ruw",
-            "TableName": "student",
-            "Tasks": [],
-            "UpStreamCount": 0
-        }
     }
 }
 ```

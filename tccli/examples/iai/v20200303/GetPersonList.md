@@ -1,4 +1,30 @@
-**Example 1: 获取人员列表接口**
+**Example 1: 错误示例**
+
+
+
+Input: 
+
+```
+tccli iai GetPersonList --cli-unfold-argument  \
+    --GroupId ZhuYuanDormitory \
+    --Offset 0 \
+    --Limit 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
+        "RequestId": "b7c0cd81-d621-465f-8fd6-86a6b49e67be"
+    }
+}
+```
+
+**Example 2: 获取人员列表接口**
 
 
 
@@ -40,7 +66,7 @@ Output:
 }
 ```
 
-**Example 2: 获取人员列表接口-2**
+**Example 3: 获取人员列表接口-2**
 
 
 
@@ -77,32 +103,6 @@ Output:
         "FaceNum": 1,
         "FaceModelVersion": "3.0",
         "RequestId": "aa292f16-27d9-423b-9048-cdd43f6e4156"
-    }
-}
-```
-
-**Example 3: 错误示例**
-
-
-
-Input: 
-
-```
-tccli iai GetPersonList --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitory \
-    --Offset 0 \
-    --Limit 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.GroupIdNotExist",
-            "Message": "人员库ID不存在。"
-        },
-        "RequestId": "b7c0cd81-d621-465f-8fd6-86a6b49e67be"
     }
 }
 ```

@@ -1,28 +1,4 @@
-**Example 1: DescribeAccountBalance正常请求**
-
-正常请求的入参回参
-
-Input: 
-
-```
-tccli iotvideo DescribeAccountBalance --cli-unfold-argument  \
-    --AccountType 2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "State": 0,
-        "Balance": 7652,
-        "LastUpdateTime": 1607069420,
-        "AccountType": 2,
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: DescribeAccountBalance异常请求**
+**Example 1: DescribeAccountBalance异常请求**
 
 请求异常的入参和出参
 
@@ -42,6 +18,30 @@ Output:
             "Code": "ResourceNotFound",
             "Message": "账号不存在"
         }
+    }
+}
+```
+
+**Example 2: DescribeAccountBalance正常请求**
+
+正常请求的入参回参
+
+Input: 
+
+```
+tccli iotvideo DescribeAccountBalance --cli-unfold-argument  \
+    --AccountType 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "State": 0,
+        "Balance": 7652,
+        "LastUpdateTime": 1607069420,
+        "AccountType": 2,
+        "RequestId": "xx"
     }
 }
 ```

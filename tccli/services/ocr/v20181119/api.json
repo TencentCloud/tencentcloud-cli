@@ -2780,6 +2780,16 @@
         },
         {
           "disabled": false,
+          "document": "入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsetImageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DocumentElement",

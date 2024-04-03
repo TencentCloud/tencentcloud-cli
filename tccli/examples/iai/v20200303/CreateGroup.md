@@ -1,54 +1,4 @@
-**Example 1: 创建人员库接口**
-
-
-
-Input: 
-
-```
-tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 腾讯深圳员工库 \
-    --FaceModelVersion 3.0 \
-    --GroupId TencentShenZhenEmployee \
-    --Tag 不含实习生 \
-    --GroupExDescriptions 事业群 部门名 组名
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FaceModelVersion": "3.0",
-        "RequestId": "e53ee4ec-9099-4b35-a129-21dd4820ff85"
-    }
-}
-```
-
-**Example 2: 创建人员库接口-2**
-
-
-
-Input: 
-
-```
-tccli iai CreateGroup --cli-unfold-argument  \
-    --GroupName 某某大学竹园宿舍楼1号楼 \
-    --GroupId ZhuYuanDormitoryNo1 \
-    --FaceModelVersion 3.0 \
-    --Tag 全是女生哦 \
-    --GroupExDescriptions 学院名 专业 年级 学号
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FaceModelVersion": "3.0",
-        "RequestId": "1695f3dd-b668-479e-8b87-f37de371a8ec"
-    }
-}
-```
-
-**Example 3: 错误示例**
+**Example 1: 错误示例**
 
 人员库ID不可重复
 
@@ -73,7 +23,7 @@ Output:
 }
 ```
 
-**Example 4: 错误示例-2**
+**Example 2: 错误示例-2**
 
 人员库ID不支持中文
 
@@ -94,6 +44,56 @@ Output:
             "Message": "人员库ID包含非法字符。人员库ID只支持英文、数字、-%@#&_。"
         },
         "RequestId": "8125dda4-2905-4e02-88bd-79a93a660ad2"
+    }
+}
+```
+
+**Example 3: 创建人员库接口**
+
+
+
+Input: 
+
+```
+tccli iai CreateGroup --cli-unfold-argument  \
+    --GroupName 腾讯深圳员工库 \
+    --FaceModelVersion 3.0 \
+    --GroupId TencentShenZhenEmployee \
+    --Tag 不含实习生 \
+    --GroupExDescriptions 事业群 部门名 组名
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FaceModelVersion": "3.0",
+        "RequestId": "e53ee4ec-9099-4b35-a129-21dd4820ff85"
+    }
+}
+```
+
+**Example 4: 创建人员库接口-2**
+
+
+
+Input: 
+
+```
+tccli iai CreateGroup --cli-unfold-argument  \
+    --GroupName 某某大学竹园宿舍楼1号楼 \
+    --GroupId ZhuYuanDormitoryNo1 \
+    --FaceModelVersion 3.0 \
+    --Tag 全是女生哦 \
+    --GroupExDescriptions 学院名 专业 年级 学号
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FaceModelVersion": "3.0",
+        "RequestId": "1695f3dd-b668-479e-8b87-f37de371a8ec"
     }
 }
 ```

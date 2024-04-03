@@ -530,16 +530,10 @@
     ],
     "ModifyDomainConfig": [
       {
-        "document": "更新 HTTPS 服务器证书 ID（在 SSL 证书管理进行证书托管时自动生成）",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"Https.CertInfo.CertId\",\n    \"Value\": \"{\\\"update\\\":\\\"0VpOXiPz\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56a166ec-d784-4001-a850-7d62a5c07971\"\n    }\n}",
-        "title": "更新 HTTPS 服务器证书 ID（在 SSL 证书管理进行证书托管时自动生成）"
-      },
-      {
-        "document": "更新域名回源建连超时时间",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"OriginPullTimeout.ConnectTimeout\",\n    \"Value\": \"{\\\"update\\\":10}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c11\"\n    }\n}",
-        "title": "更新域名回源建连超时时间"
+        "document": "更新域名源站配置",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"Origin.Origins\",\n    \"Value\": \"{\\\"update\\\":[\\\"1.1.1.1\\\"]}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb029ee0-7e91-4a18-86f3-7fac952a446e\"\n    }\n}",
+        "title": "更新域名源站配置"
       },
       {
         "document": "更新域名回源超时配置",
@@ -548,10 +542,16 @@
         "title": "更新域名回源超时配置"
       },
       {
-        "document": "更新域名源站配置",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"Origin.Origins\",\n    \"Value\": \"{\\\"update\\\":[\\\"1.1.1.1\\\"]}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb029ee0-7e91-4a18-86f3-7fac952a446e\"\n    }\n}",
-        "title": "更新域名源站配置"
+        "document": "更新域名回源建连超时时间",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"OriginPullTimeout.ConnectTimeout\",\n    \"Value\": \"{\\\"update\\\":10}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c11\"\n    }\n}",
+        "title": "更新域名回源建连超时时间"
+      },
+      {
+        "document": "更新 HTTPS 服务器证书 ID（在 SSL 证书管理进行证书托管时自动生成）",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Route\": \"Https.CertInfo.CertId\",\n    \"Value\": \"{\\\"update\\\":\\\"0VpOXiPz\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56a166ec-d784-4001-a850-7d62a5c07971\"\n    }\n}",
+        "title": "更新 HTTPS 服务器证书 ID（在 SSL 证书管理进行证书托管时自动生成）"
       }
     ],
     "ModifyPurgeFetchTaskStatus": [
@@ -660,16 +660,16 @@
     ],
     "VerifyDomainRecord": [
       {
-        "document": "正常回包",
-        "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b\",\n        \"Result\": true\n    }\n}",
-        "title": "验证解析记录-2"
-      },
-      {
         "document": "异常返回",
         "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation.CdnTxtRecordValueNotMatch\",\n            \"Message\": \"cdn txt record value not match(txt record value not match)\"\n        },\n        \"RequestId\": \"2424\"\n    }\n}",
         "title": "验证解析记录"
+      },
+      {
+        "document": "正常回包",
+        "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6926bb2-d0b5-42bc-b17f-e4402bdb9e9b\",\n        \"Result\": true\n    }\n}",
+        "title": "验证解析记录-2"
       }
     ]
   },

@@ -1,4 +1,4 @@
-**Example 1: 查询用户TLS版本**
+**Example 1: TLS版本**
 
 
 
@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b4f13899-561b-46a0-a045-6ba6b72c38f2",
+        "RequestId": "d05712e6-2229-4c15-a56d-86480e5c62b3",
         "TLS": [
             {
                 "VersionId": 0,
@@ -42,7 +42,7 @@ Output:
 }
 ```
 
-**Example 2: TLS版本**
+**Example 2: 查询用户TLS版本**
 
 
 
@@ -55,7 +55,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d05712e6-2229-4c15-a56d-86480e5c62b3",
+        "RequestId": "b4f13899-561b-46a0-a045-6ba6b72c38f2",
         "TLS": [
             {
                 "VersionId": 0,

@@ -1,6 +1,6 @@
-**Example 1: 根据搜索空间检索媒体**
+**Example 1: 根据关键字检索媒体**
 
-检索某搜索空间下的媒体。
+检索某搜索空间下包含关键字的媒体。
 
 Input: 
 
@@ -9,7 +9,8 @@ tccli cme SearchMaterial --cli-unfold-argument  \
     --Platform test \
     --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
     --SearchScopes.0.Owner.Type PERSON \
-    --SearchScopes.0.ClassPath /a/b
+    --SearchScopes.0.ClassPath /a/b \
+    --Text 滨海
 ```
 
 Output: 
@@ -20,9 +21,9 @@ Output:
         "MaterialInfoSet": [
             {
                 "BasicInfo": {
-                    "MaterialId": "5feb08c4b4e0960001ed96a4",
+                    "MaterialId": "5feb08c4b4e0960001ed96a5",
                     "MaterialType": "VIDEO",
-                    "Name": "9Qvacao2r7EA",
+                    "Name": "腾讯滨海大厦",
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/a/b",
@@ -99,9 +100,9 @@ Output:
 }
 ```
 
-**Example 3: 根据关键字检索媒体**
+**Example 3: 根据搜索空间检索媒体**
 
-检索某搜索空间下包含关键字的媒体。
+检索某搜索空间下的媒体。
 
 Input: 
 
@@ -110,8 +111,7 @@ tccli cme SearchMaterial --cli-unfold-argument  \
     --Platform test \
     --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
     --SearchScopes.0.Owner.Type PERSON \
-    --SearchScopes.0.ClassPath /a/b \
-    --Text 滨海
+    --SearchScopes.0.ClassPath /a/b
 ```
 
 Output: 
@@ -122,9 +122,9 @@ Output:
         "MaterialInfoSet": [
             {
                 "BasicInfo": {
-                    "MaterialId": "5feb08c4b4e0960001ed96a5",
+                    "MaterialId": "5feb08c4b4e0960001ed96a4",
                     "MaterialType": "VIDEO",
-                    "Name": "腾讯滨海大厦",
+                    "Name": "9Qvacao2r7EA",
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/a/b",

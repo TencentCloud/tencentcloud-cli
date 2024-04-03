@@ -749,7 +749,7 @@
       "usage": "both"
     },
     "Paging": {
-      "document": "数据分页信息",
+      "document": "页码",
       "members": [
         {
           "disabled": false,

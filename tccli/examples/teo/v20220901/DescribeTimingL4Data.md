@@ -47,7 +47,7 @@ Output:
 }
 ```
 
-**Example 2: 根据转发规则ID查询四层流量数据**
+**Example 2: 根据四层代理ID查询四层流量数据**
 
 
 
@@ -61,9 +61,9 @@ tccli teo DescribeTimingL4Data --cli-unfold-argument  \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l4Flow_inFlux \
     --ZoneIds zone-28kw53cmc6ky \
-    --Filters.0.Key ruleId \
+    --Filters.0.Key proxyId \
     --Filters.0.Operator equals \
-    --Filters.0.Value rule-033950bf-6fc4-11ed-8ab2-525400a22580
+    --Filters.0.Value sid-2c2uug8ubfmn
 ```
 
 Output: 
@@ -223,7 +223,7 @@ Output:
 }
 ```
 
-**Example 3: 根据四层代理ID查询四层流量数据**
+**Example 3: 根据转发规则ID查询四层流量数据**
 
 
 
@@ -237,9 +237,9 @@ tccli teo DescribeTimingL4Data --cli-unfold-argument  \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l4Flow_inFlux \
     --ZoneIds zone-28kw53cmc6ky \
-    --Filters.0.Key proxyId \
+    --Filters.0.Key ruleId \
     --Filters.0.Operator equals \
-    --Filters.0.Value sid-2c2uug8ubfmn
+    --Filters.0.Value rule-033950bf-6fc4-11ed-8ab2-525400a22580
 ```
 
 Output: 

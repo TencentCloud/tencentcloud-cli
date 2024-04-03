@@ -1,4 +1,4 @@
-**Example 1: 创建他方自动签授权链接**
+**Example 1: 授权给渠道平台应用**
 
 
 
@@ -10,7 +10,8 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId org_open_id \
     --Agent.ProxyOperator.OpenId user_open_id \
     --AuthorizedOrganizationId org_open_id_another \
-    --AuthorizedOrganizationName 典子谦子客企业
+    --AuthorizedOrganizationName 典子谦子客企业 \
+    --PlatformAppAuthorization True
 ```
 
 Output: 
@@ -25,7 +26,7 @@ Output:
 }
 ```
 
-**Example 2: 授权给渠道平台应用**
+**Example 2: 创建他方自动签授权链接**
 
 
 
@@ -37,8 +38,7 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId org_open_id \
     --Agent.ProxyOperator.OpenId user_open_id \
     --AuthorizedOrganizationId org_open_id_another \
-    --AuthorizedOrganizationName 典子谦子客企业 \
-    --PlatformAppAuthorization True
+    --AuthorizedOrganizationName 典子谦子客企业
 ```
 
 Output: 

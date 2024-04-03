@@ -1,12 +1,13 @@
-**Example 1: 获取模板 ID 为 30 的内容审核模板**
+**Example 1: 获取指定个数的内容审核模板**
 
-获取模板 ID 为 30 的内容审核模板
+从序号 0 开始，获取 10 个内容审核模板，包括系统默认内容审核模板。
 
 Input: 
 
 ```
 tccli vod DescribeContentReviewTemplates --cli-unfold-argument  \
-    --Definitions 30
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -193,16 +194,15 @@ Output:
 }
 ```
 
-**Example 2: 获取指定个数的内容审核模板**
+**Example 2: 获取模板 ID 为 30 的内容审核模板**
 
-从序号 0 开始，获取 10 个内容审核模板，包括系统默认内容审核模板。
+获取模板 ID 为 30 的内容审核模板
 
 Input: 
 
 ```
 tccli vod DescribeContentReviewTemplates --cli-unfold-argument  \
-    --Limit 10 \
-    --Offset 0
+    --Definitions 30
 ```
 
 Output: 

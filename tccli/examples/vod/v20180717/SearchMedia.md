@@ -1,6 +1,6 @@
-**Example 1: 根据推流直播码搜索一定时间范围内的录制文件，并且按创建时间降序排序**
+**Example 1: 根据标签搜索一定时间范围内的上传文件，并且按创建时间降序排序**
 
-搜索直播码为 StreamId_test1 和 StreamId_test2 、创建时间在 2020-12-10T07:25:52Z 到 2020-12-13T07:25:52Z 之间的录制文件，按创建时间进行降序排序，只返回符合条件的第一个文件。
+搜索标签为 tag1 和 tag2 、创建时间在 2020-12-10T07:25:52Z 到 2020-12-13T07:25:52Z 之间的、文件来源为 Upload 的文件，并按创建时间进行降序排序。
 
 Input: 
 
@@ -8,12 +8,10 @@ Input:
 tccli vod SearchMedia --cli-unfold-argument  \
     --Sort.Field CreateTime \
     --Sort.Order Desc \
-    --StreamIds StreamId_test2 StreamId_test1 \
-    --Limit 1 \
-    --SourceTypes Record \
-    --Offset 0 \
     --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z
+    --CreateTime.Before 2020-12-13T07:25:52Z \
+    --SourceTypes Upload \
+    --Tags tag2 tag1
 ```
 
 Output: 
@@ -1084,9 +1082,9 @@ Output:
 }
 ```
 
-**Example 4: 根据标签搜索一定时间范围内的上传文件，并且按创建时间降序排序**
+**Example 4: 根据推流直播码搜索一定时间范围内的录制文件，并且按创建时间降序排序**
 
-搜索标签为 tag1 和 tag2 、创建时间在 2020-12-10T07:25:52Z 到 2020-12-13T07:25:52Z 之间的、文件来源为 Upload 的文件，并按创建时间进行降序排序。
+搜索直播码为 StreamId_test1 和 StreamId_test2 、创建时间在 2020-12-10T07:25:52Z 到 2020-12-13T07:25:52Z 之间的录制文件，按创建时间进行降序排序，只返回符合条件的第一个文件。
 
 Input: 
 
@@ -1094,10 +1092,12 @@ Input:
 tccli vod SearchMedia --cli-unfold-argument  \
     --Sort.Field CreateTime \
     --Sort.Order Desc \
+    --StreamIds StreamId_test2 StreamId_test1 \
+    --Limit 1 \
+    --SourceTypes Record \
+    --Offset 0 \
     --CreateTime.After 2020-12-10T07:25:52Z \
-    --CreateTime.Before 2020-12-13T07:25:52Z \
-    --SourceTypes Upload \
-    --Tags tag2 tag1
+    --CreateTime.Before 2020-12-13T07:25:52Z
 ```
 
 Output: 

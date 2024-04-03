@@ -1,12 +1,13 @@
-**Example 1: 根据Ip6AddressIds查询IPV6信息**
+**Example 1: 根据Filter查询IPV6信息**
 
-根据Ip6AddressIds查询IPV6信息。
+根据Filter查询IPV6信息。
 
 Input: 
 
 ```
 tccli vpc DescribeIp6Addresses --cli-unfold-argument  \
-    --Ip6AddressIds eip-lrhy2lpe
+    --Filters.0.Name address-ip \
+    --Filters.0.Values 2402:4e00:1000:2d00:0:8f3f:6:9895
 ```
 
 Output: 
@@ -53,16 +54,15 @@ Output:
 }
 ```
 
-**Example 2: 根据Filter查询IPV6信息**
+**Example 2: 根据Ip6AddressIds查询IPV6信息**
 
-根据Filter查询IPV6信息。
+根据Ip6AddressIds查询IPV6信息。
 
 Input: 
 
 ```
 tccli vpc DescribeIp6Addresses --cli-unfold-argument  \
-    --Filters.0.Name address-ip \
-    --Filters.0.Values 2402:4e00:1000:2d00:0:8f3f:6:9895
+    --Ip6AddressIds eip-lrhy2lpe
 ```
 
 Output: 

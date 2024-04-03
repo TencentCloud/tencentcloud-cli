@@ -1,30 +1,4 @@
-**Example 1: 检查快照可用性**
-
-
-
-Input: 
-
-```
-tccli oceanus CheckSavepoint --cli-unfold-argument  \
-    --JobId cql-52xkpymp \
-    --SerialId svp-52xkpymp \
-    --RecordType 1 \
-    --SavepointPath cosn://xxxx/xxxx/xxxx/chk-1 \
-    --WorkSpaceId space-12345
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16",
-        "SerialId": "svp-52xkpymp",
-        "SavepointStatus": 1
-    }
-}
-```
-
-**Example 2: 成功**
+**Example 1: 成功**
 
 
 
@@ -46,6 +20,32 @@ Output:
         "RequestId": "8e9e8172-17e2-4fc5-b363-1d480a4795ae",
         "SavepointStatus": 2,
         "SerialId": "cql-52xkpymp"
+    }
+}
+```
+
+**Example 2: 检查快照可用性**
+
+
+
+Input: 
+
+```
+tccli oceanus CheckSavepoint --cli-unfold-argument  \
+    --JobId cql-52xkpymp \
+    --SerialId svp-52xkpymp \
+    --RecordType 1 \
+    --SavepointPath cosn://xxxx/xxxx/xxxx/chk-1 \
+    --WorkSpaceId space-12345
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16",
+        "SerialId": "svp-52xkpymp",
+        "SavepointStatus": 1
     }
 }
 ```

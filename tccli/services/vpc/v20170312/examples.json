@@ -228,16 +228,16 @@
     ],
     "CheckAssistantCidr": [
       {
-        "document": "CIDR与VPC现存信息不存在冲突。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [],\n        \"RequestId\": \"e906fed4-292c-44ba-a240-f5bde9fd84c7\"\n    }\n}",
-        "title": "检查辅助CIDR冲突-2"
-      },
-      {
         "document": "CIDR与VPC现存信息存在冲突。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [\n            {\n                \"ConflictSourceId\": \"vpcd-122d5678\",\n                \"SourceItem\": \"172.16.0.0/16\",\n                \"ConflictItemSet\": [\n                    {\n                        \"ConfilctId\": \"vpc-12345678\",\n                        \"DestinationItem\": \"172.16.0.0/24\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e906fed4-29ew-44ba-a240-f5bde9fd84c7\"\n    }\n}",
         "title": "检查辅助CIDR冲突"
+      },
+      {
+        "document": "CIDR与VPC现存信息不存在冲突。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAssistantCidr\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-12345678\",\n    \"NewCidrBlocks\": [\n        \"172.16.0.0/24\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictSourceSet\": [],\n        \"RequestId\": \"e906fed4-292c-44ba-a240-f5bde9fd84c7\"\n    }\n}",
+        "title": "检查辅助CIDR冲突-2"
       }
     ],
     "CheckDefaultSubnet": [
@@ -264,16 +264,16 @@
         "title": "克隆安全组"
       },
       {
-        "document": "克隆安全组，指定名称和备注",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&GroupName=test\n&GroupDescription=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341256\",\n            \"SecurityGroupName\": \"test\",\n            \"SecurityGroupDesc\": \"test\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
-        "title": "克隆安全组，指定名称和备注"
-      },
-      {
         "document": "克隆安全组，指定项目ID",
         "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&ProjectId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341278\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"ProjectId\": \"1001\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
         "title": "克隆安全组，指定项目ID"
+      },
+      {
+        "document": "克隆安全组，指定名称和备注",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CloneSecurityGroup\n&SecurityGroupId=sg-12345678\n&GroupName=test\n&GroupDescription=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"sg-12341256\",\n            \"SecurityGroupName\": \"test\",\n            \"SecurityGroupDesc\": \"test\",\n            \"ProjectId\": \"0\",\n            \"CreatedTime\": \"2018-01-13 19:26:33\"\n        }\n    }\n}",
+        "title": "克隆安全组，指定名称和备注"
       }
     ],
     "CreateAddressTemplate": [
@@ -348,16 +348,16 @@
         "title": "创建默认VPC"
       },
       {
-        "document": "不强制创建默认VPC",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"0\",\n            \"SubnetId\": \"0\"\n        },\n        \"RequestId\": \"c52dda11-9e53-440f-b034-6292f2144dd0\"\n    }\n}",
-        "title": "用户账号网络属性（DescribeAccountAttributes）同时支持基础网络和VPC，不强制创建默认VPC，则返回VpcId为0，表示不创建默认VPC"
-      },
-      {
         "document": "强制创建默认VPC",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&Force=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"vpc-8mpwlbdv\",\n            \"SubnetId\": \"subnet-l9emqwnw\"\n        },\n        \"RequestId\": \"91348b0a-6846-49ff-822b-a21eef848c9f\"\n    }\n}",
         "title": "强制生产默认VPC"
+      },
+      {
+        "document": "不强制创建默认VPC",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateDefaultVpc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Vpc\": {\n            \"VpcId\": \"0\",\n            \"SubnetId\": \"0\"\n        },\n        \"RequestId\": \"c52dda11-9e53-440f-b034-6292f2144dd0\"\n    }\n}",
+        "title": "用户账号网络属性（DescribeAccountAttributes）同时支持基础网络和VPC，不强制创建默认VPC，则返回VpcId为0，表示不创建默认VPC"
       }
     ],
     "CreateDhcpIp": [
@@ -866,18 +866,6 @@
     ],
     "DeleteSecurityGroupPolicies": [
       {
-        "document": "使用规则匹配删除安全组入站规则",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"Action\": \"Accept\",\n                \"Protocol\": \"icmp\",\n                \"CidrBlock\": \"1.1.1.1/32\",\n                \"Port\": \"all\"\n            }\n        ],\n        \"Version\": \"37\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "使用规则匹配删除安全组入站规则"
-      },
-      {
-        "document": "使用规则匹配删除安全组出站规则",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Version\": \"38\",\n        \"Egress\": [\n            {\n                \"Action\": \"Accept\",\n                \"Protocol\": \"icmp\",\n                \"CidrBlock\": \"1.1.1.1/32\",\n                \"Port\": \"all\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "使用规则匹配删除安全组出站规则"
-      },
-      {
         "document": "使用索引匹配删除安全组入站规则",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"PolicyIndex\": \"1\"\n            },\n            {\n                \"PolicyIndex\": \"0\"\n            }\n        ],\n        \"Version\": \"39\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
@@ -888,6 +876,18 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Version\": \"40\",\n        \"Egress\": [\n            {\n                \"PolicyIndex\": \"1\"\n            },\n            {\n                \"PolicyIndex\": \"0\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "使用索引匹配删除安全组出站规则"
+      },
+      {
+        "document": "使用规则匹配删除安全组入站规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Ingress\": [\n            {\n                \"Action\": \"Accept\",\n                \"Protocol\": \"icmp\",\n                \"CidrBlock\": \"1.1.1.1/32\",\n                \"Port\": \"all\"\n            }\n        ],\n        \"Version\": \"37\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "使用规则匹配删除安全组入站规则"
+      },
+      {
+        "document": "使用规则匹配删除安全组出站规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityGroupPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-xxxxxxxx\",\n    \"SecurityGroupPolicySet\": {\n        \"Version\": \"38\",\n        \"Egress\": [\n            {\n                \"Action\": \"Accept\",\n                \"Protocol\": \"icmp\",\n                \"CidrBlock\": \"1.1.1.1/32\",\n                \"Port\": \"all\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "使用规则匹配删除安全组出站规则"
       }
     ],
     "DeleteServiceTemplate": [
@@ -1070,10 +1070,10 @@
     ],
     "DescribeAddresses": [
       {
-        "document": "查询弹性公网EIP。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddresses\n&AddressIds.0=eip-hxlqja90\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-12345678\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressIp\": \"34.3.4.5.6\",\n                \"InstanceId\": \"ins-12345678\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"WanIp\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"BGP\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\",\n                \"Egress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询弹性公网EIP"
+        "document": "查询EIP信息。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddresses\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-qhx8udkc\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.91.34\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-wf123456\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:57:05Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            },\n            {\n                \"AddressId\": \"eip-qygpzm9y\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.90.212\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-12345678\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.3.4.5.6\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:47:03Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"4ead34c4-3112-40fe-bbde-2295eee9d664\"\n    }\n}",
+        "title": "查询EIP信息"
       },
       {
         "document": "查询普通公网IP。",
@@ -1082,10 +1082,10 @@
         "title": "查询普通公网IP"
       },
       {
-        "document": "查询EIP信息。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddresses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-qhx8udkc\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.91.34\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-wf123456\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:57:05Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            },\n            {\n                \"AddressId\": \"eip-qygpzm9y\",\n                \"AddressName\": \"未命名\",\n                \"AddressIp\": \"1.14.90.212\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-12345678\",\n                \"InstanceType\": null,\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.3.4.5.6\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": false,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"LocalBgp\": false,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2022-08-11T03:47:03Z\",\n                \"TagSet\": [],\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"Bandwidth\": 1,\n                \"DeadlineDate\": null,\n                \"InternetServiceProvider\": \"BGP\"\n            }\n        ],\n        \"RequestId\": \"4ead34c4-3112-40fe-bbde-2295eee9d664\"\n    }\n}",
-        "title": "查询EIP信息"
+        "document": "查询弹性公网EIP。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddresses\n&AddressIds.0=eip-hxlqja90\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-12345678\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"UNBIND\",\n                \"AddressIp\": \"34.3.4.5.6\",\n                \"InstanceId\": \"ins-12345678\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-12345678\",\n                \"PrivateAddressIp\": \"10.2.3.4\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"WanIp\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"BGP\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\",\n                \"Egress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询弹性公网EIP"
       }
     ],
     "DescribeAssistantCidr": [
@@ -1188,16 +1188,16 @@
         "title": "无入参查询"
       },
       {
-        "document": "根据云联网ID查询云联网跨境限速实例",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ccn-025qoqpx\"\n            ],\n            \"Name\": \"ccn-ids\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CcnBandwidthSet\": [\n            {\n                \"CcnId\": \"ccn-025qoqpx\",\n                \"CreatedTime\": \"2020-07-30 15:32:27\",\n                \"ExpiredTime\": \"2021-01-30 15:32:27\",\n                \"UpdateTime\": \"2022-03-07 12:36:17\",\n                \"RegionFlowControlId\": \"fcr-1duimd7w\",\n                \"MarketId\": \"\",\n                \"UserAccountID\": \"3436874624\",\n                \"IsCrossBorder\": true,\n                \"IsSecurityLock\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"\",\n                \"CcnRegionBandwidthLimit\": {\n                    \"SourceRegion\": \"ap-guangzhou\",\n                    \"DestinationRegion\": \"ap-hongkong\",\n                    \"BandwidthLimit\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8ef886fc-e394-4eba-8da6-b1ae8f88fe61\"\n    }\n}",
-        "title": "根据云联网ID查询"
-      },
-      {
         "document": "根据账户ID查询云联网跨境限速实例",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"3436874624\"\n            ],\n            \"Name\": \"user-account-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CcnBandwidthSet\": [\n            {\n                \"CcnId\": \"ccn-025qoqpx\",\n                \"CreatedTime\": \"2020-07-30 15:32:27\",\n                \"ExpiredTime\": \"2021-01-30 15:32:27\",\n                \"UpdateTime\": \"2022-03-07 12:36:17\",\n                \"RegionFlowControlId\": \"fcr-1duimd7w\",\n                \"MarketId\": \"\",\n                \"UserAccountID\": \"3436874624\",\n                \"IsCrossBorder\": true,\n                \"IsSecurityLock\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"\",\n                \"CcnRegionBandwidthLimit\": {\n                    \"SourceRegion\": \"ap-guangzhou\",\n                    \"DestinationRegion\": \"ap-hongkong\",\n                    \"BandwidthLimit\": 0\n                }\n            },\n            {\n                \"CcnId\": \"ccn-cdnjw6bv\",\n                \"CreatedTime\": \"2020-08-02 13:29:47\",\n                \"ExpiredTime\": \"2020-11-02 13:29:47\",\n                \"UpdateTime\": \"2022-03-07 12:36:17\",\n                \"RegionFlowControlId\": \"fcr-frs5y7mo\",\n                \"MarketId\": \"market-4rvy8k8eo\",\n                \"UserAccountID\": \"3436874624\",\n                \"IsCrossBorder\": true,\n                \"IsSecurityLock\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"\",\n                \"CcnRegionBandwidthLimit\": {\n                    \"SourceRegion\": \"ap-guangzhou\",\n                    \"DestinationRegion\": \"ap-hongkong\",\n                    \"BandwidthLimit\": 2\n                }\n            },\n            {\n                \"CcnId\": \"ccn-cdnjw6bv\",\n                \"CreatedTime\": \"2020-08-12 16:10:09\",\n                \"ExpiredTime\": \"2021-01-12 16:10:09\",\n                \"UpdateTime\": \"2022-03-07 12:36:17\",\n                \"RegionFlowControlId\": \"fcr-d7vklnwm\",\n                \"MarketId\": \"market-0gctjva40\",\n                \"UserAccountID\": \"3436874624\",\n                \"IsCrossBorder\": true,\n                \"IsSecurityLock\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"\",\n                \"CcnRegionBandwidthLimit\": {\n                    \"SourceRegion\": \"ap-hongkong\",\n                    \"DestinationRegion\": \"ap-beijing\",\n                    \"BandwidthLimit\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"a5cf93d0-d717-4e89-8a51-e1418b43d9f9\"\n    }\n}",
         "title": "根据账户ID查询"
+      },
+      {
+        "document": "根据云联网ID查询云联网跨境限速实例",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCrossBorderCcnRegionBandwidthLimits\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ccn-025qoqpx\"\n            ],\n            \"Name\": \"ccn-ids\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CcnBandwidthSet\": [\n            {\n                \"CcnId\": \"ccn-025qoqpx\",\n                \"CreatedTime\": \"2020-07-30 15:32:27\",\n                \"ExpiredTime\": \"2021-01-30 15:32:27\",\n                \"UpdateTime\": \"2022-03-07 12:36:17\",\n                \"RegionFlowControlId\": \"fcr-1duimd7w\",\n                \"MarketId\": \"\",\n                \"UserAccountID\": \"3436874624\",\n                \"IsCrossBorder\": true,\n                \"IsSecurityLock\": false,\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"InstanceChargeType\": \"\",\n                \"CcnRegionBandwidthLimit\": {\n                    \"SourceRegion\": \"ap-guangzhou\",\n                    \"DestinationRegion\": \"ap-hongkong\",\n                    \"BandwidthLimit\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8ef886fc-e394-4eba-8da6-b1ae8f88fe61\"\n    }\n}",
+        "title": "根据云联网ID查询"
       }
     ],
     "DescribeCrossBorderCompliance": [
@@ -1241,15 +1241,15 @@
       },
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&DhcpIpIds.0=dhcpip-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
-        "title": "根据DhcpIpIds查询DhcpIp列表"
-      },
-      {
-        "document": "",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&Filters.0.Name=dhcpip-id\n&Filters.0.Values.0=dhcpip-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "根据Filters查询DhcpIp列表"
+      },
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeDhcpIps\n&DhcpIpIds.0=dhcpip-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DhcpIpSet\": [\n            {\n                \"DhcpIpId\": \"dhcpip-12345678\",\n                \"DhcpIpName\": \"test\",\n                \"PrivateIpAddress\": \"10.0.0.13\",\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-12345678\",\n                \"NetworkInterfaceId\": \"\",\n                \"InstanceId\": \"\",\n                \"AddressIp\": \"\",\n                \"State\": \"UNBIND\",\n                \"CreatedTime\": \"2018-10-10 17:03:09\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "title": "根据DhcpIpIds查询DhcpIp列表"
       }
     ],
     "DescribeDirectConnectGatewayCcnRoutes": [
@@ -1328,16 +1328,16 @@
     ],
     "DescribeIp6Addresses": [
       {
-        "document": "根据Ip6AddressIds查询IPV6信息。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Ip6AddressIds.0=eip-lrhy2lpe\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"abc\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"abc\",\n                \"AddressIp\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"abc\",\n                \"PrivateAddressIp\": \"abc\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"abc\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\",\n                \"Egress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "根据Ip6AddressIds查询IPV6信息"
-      },
-      {
         "document": "根据Filter查询IPV6信息。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Filters.0.Name=address-ip\r\n&Filters.0.Values.0=2402:4e00:1000:2d00:0:8f3f:6:9895\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"abc\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"abc\",\n                \"AddressIp\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"abc\",\n                \"PrivateAddressIp\": \"abc\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"abc\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\",\n                \"Egress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据Filter查询IPV6信息"
+      },
+      {
+        "document": "根据Ip6AddressIds查询IPV6信息。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Ip6AddressIds.0=eip-lrhy2lpe\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"abc\",\n                \"AddressName\": \"abc\",\n                \"AddressStatus\": \"abc\",\n                \"AddressIp\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"abc\",\n                \"PrivateAddressIp\": \"abc\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"abc\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"abc\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"abc\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"abc\",\n                \"Egress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "根据Ip6AddressIds查询IPV6信息"
       }
     ],
     "DescribeIp6TranslatorQuota": [
@@ -1388,16 +1388,16 @@
     ],
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": [
       {
-        "document": "用NatGatewayId数组拉取NAT网关的端口转发规则",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewayDestinationIpPortTranslationNatRules\n&NatGatewayIds.0=nat-3isn9hr0\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"NatGatewayDestinationIpPortTranslationNatRuleSet\": [\n            {\n                \"IpProtocol\": \"TCP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:09:25\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            },\n            {\n                \"IpProtocol\": \"UDP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:20:20\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            }\n        ],\n        \"RequestId\": \"9b751ec3-d10a-4138-bdd9-fa5564684e60\"\n    }\n}",
-        "title": "查询NAT网关端口转发规则-2"
-      },
-      {
         "document": "用Filter数组拉取NAT网关的端口转发规则",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewayDestinationIpPortTranslationNatRules\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-0yi4hekt\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"NatGatewayDestinationIpPortTranslationNatRuleSet\": [\n            {\n                \"IpProtocol\": \"TCP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:42:11\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            },\n            {\n                \"IpProtocol\": \"UDP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:20:20\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            }\n        ],\n        \"RequestId\": \"eb203971-a7a0-45c1-9c72-36ad86688590\"\n    }\n}",
         "title": "查询NAT网关端口转发规则"
+      },
+      {
+        "document": "用NatGatewayId数组拉取NAT网关的端口转发规则",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewayDestinationIpPortTranslationNatRules\n&NatGatewayIds.0=nat-3isn9hr0\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"NatGatewayDestinationIpPortTranslationNatRuleSet\": [\n            {\n                \"IpProtocol\": \"TCP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:09:25\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            },\n            {\n                \"IpProtocol\": \"UDP\",\n                \"PublicIpAddress\": \"139.199.232.238\",\n                \"PublicPort\": 8989,\n                \"PrivateIpAddress\": \"10.80.80.41\",\n                \"PrivatePort\": 8989,\n                \"Description\": \"test_dnapt\",\n                \"CreatedTime\": \"2019-05-04 13:20:20\",\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"VpcId\": \"vpc-0yi4hekt\"\n            }\n        ],\n        \"RequestId\": \"9b751ec3-d10a-4138-bdd9-fa5564684e60\"\n    }\n}",
+        "title": "查询NAT网关端口转发规则-2"
       }
     ],
     "DescribeNatGatewayDirectConnectGatewayRoute": [
@@ -1418,16 +1418,16 @@
     ],
     "DescribeNatGateways": [
       {
-        "document": "用NatGatewayIds进行查询NAT网关信息。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGateways\n&NatGatewayIds.0=nat-3isn9hr0\n&NatGatewayIds.1=nat-mxkohguo\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"NatGatewayName\": \"test\",\n                \"VpcId\": \"vpc-0yi4hekt\",\n                \"CreatedTime\": \"2017-09-20 20:28:24\",\n                \"State\": \"AVAILABLE\",\n                \"NetworkState\": \"RUNNING\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"PublicIpAddressSet\": [\n                    {\n                        \"AddressId\": \"eip-7qcdm91q\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"IsBlocked\": false\n                    }\n                ],\n                \"DestinationIpPortTranslationNatRuleSet\": [\n                    {\n                        \"IpProtocol\": \"TCP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8586,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_modify\"\n                    },\n                    {\n                        \"IpProtocol\": \"UDP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8989,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_dnapt\"\n                    }\n                ],\n                \"Zone\": \"ap-guangzhou-1\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value1\"\n                    }\n                ],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 1\n            },\n            {\n                \"NatGatewayId\": \"nat-mxkohguo\",\n                \"NatGatewayName\": \"aaaaaa\",\n                \"VpcId\": \"vpc-m7sihqw5\",\n                \"CreatedTime\": \"2018-07-25 11:37:29\",\n                \"State\": \"PENDING\",\n                \"NetworkState\": \"UNAVAILABLE\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"PublicIpAddressSet\": [],\n                \"DestinationIpPortTranslationNatRuleSet\": [],\n                \"Zone\": \"ap-guangzhou-1\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value2\"\n                    }\n                ],\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 1\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"fed7e087-083f-49e4-8754-17fb130828e0\"\n    }\n}",
-        "title": "查询 NAT 网关信息-2"
-      },
-      {
         "document": "用Filters进行查询NAT网关信息。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGateways\n&Filters.0.Name=vpc-id\n&Filters.0.Values.0=vpc-0yi4hekt\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"NatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"NatGatewayName\": \"test\",\n                \"VpcId\": \"vpc-0yi4hekt\",\n                \"CreatedTime\": \"2017-09-20 20:28:24\",\n                \"State\": \"AVAILABLE\",\n                \"NetworkState\": \"RUNNING\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"PublicIpAddressSet\": [\n                    {\n                        \"AddressId\": \"eip-7qcdm91q\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"IsBlocked\": false\n                    }\n                ],\n                \"DestinationIpPortTranslationNatRuleSet\": [\n                    {\n                        \"IpProtocol\": \"TCP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8586,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_modify\"\n                    },\n                    {\n                        \"IpProtocol\": \"UDP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8989,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_dnapt\"\n                    }\n                ],\n                \"Zone\": \"ap-guangzhou-1\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value3\"\n                    }\n                ],\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 1\n            },\n            {\n                \"NatGatewayId\": \"nat-7xh58vea\",\n                \"NatGatewayName\": \"test_create\",\n                \"VpcId\": \"vpc-0yi4hekt\",\n                \"CreatedTime\": \"2019-05-04 15:01:11\",\n                \"State\": \"PENDING\",\n                \"NetworkState\": \"RUNNING\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"PublicIpAddressSet\": [],\n                \"DestinationIpPortTranslationNatRuleSet\": [],\n                \"Zone\": \"ap-guangzhou-2\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value4\"\n                    }\n                ],\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 2\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"a3964872-e2f5-4180-8607-0b49ec8e0109\"\n    }\n}",
         "title": "查询 NAT 网关信息"
+      },
+      {
+        "document": "用NatGatewayIds进行查询NAT网关信息。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGateways\n&NatGatewayIds.0=nat-3isn9hr0\n&NatGatewayIds.1=nat-mxkohguo\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"nat-3isn9hr0\",\n                \"NatGatewayName\": \"test\",\n                \"VpcId\": \"vpc-0yi4hekt\",\n                \"CreatedTime\": \"2017-09-20 20:28:24\",\n                \"State\": \"AVAILABLE\",\n                \"NetworkState\": \"RUNNING\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"PublicIpAddressSet\": [\n                    {\n                        \"AddressId\": \"eip-7qcdm91q\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"IsBlocked\": false\n                    }\n                ],\n                \"DestinationIpPortTranslationNatRuleSet\": [\n                    {\n                        \"IpProtocol\": \"TCP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8586,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_modify\"\n                    },\n                    {\n                        \"IpProtocol\": \"UDP\",\n                        \"PublicIpAddress\": \"139.199.232.238\",\n                        \"PublicPort\": 8989,\n                        \"PrivateIpAddress\": \"10.80.80.41\",\n                        \"PrivatePort\": 8989,\n                        \"Description\": \"test_dnapt\"\n                    }\n                ],\n                \"Zone\": \"ap-guangzhou-1\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value1\"\n                    }\n                ],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 1\n            },\n            {\n                \"NatGatewayId\": \"nat-mxkohguo\",\n                \"NatGatewayName\": \"aaaaaa\",\n                \"VpcId\": \"vpc-m7sihqw5\",\n                \"CreatedTime\": \"2018-07-25 11:37:29\",\n                \"State\": \"PENDING\",\n                \"NetworkState\": \"UNAVAILABLE\",\n                \"InternetMaxBandwidthOut\": 100,\n                \"MaxConcurrentConnection\": 1000000,\n                \"PublicIpAddressSet\": [],\n                \"DestinationIpPortTranslationNatRuleSet\": [],\n                \"Zone\": \"ap-guangzhou-1\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"test-key\",\n                        \"Value\": \"test-value2\"\n                    }\n                ],\n                \"SecurityGroupSet\": [],\n                \"ExclusiveGatewayBandwidth\": 1,\n                \"IsExclusive\": true,\n                \"SubnetId\": \"sub-er88uji9\",\n                \"DirectConnectGatewayIds\": [],\n                \"SourceIpTranslationNatRuleSet\": [],\n                \"RestrictState\": \"NORMAL\",\n                \"NatProductVersion\": 1\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"fed7e087-083f-49e4-8754-17fb130828e0\"\n    }\n}",
+        "title": "查询 NAT 网关信息-2"
       }
     ],
     "DescribeNetDetectStates": [
@@ -2414,10 +2414,10 @@
     ],
     "ModifyNetworkAclEntries": [
       {
-        "document": "网络ACL添加入站规则和出站规则",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
+        "document": "传参只传需要保留的规则，待删除的规则不传即可。比如实例acl-12345678当前有两条入站规则：\n* 规则1：TCP 192.168.1.0/24 80 Accept\n* 规则2：TCP 192.168.1.0/24 443 Accept\n<br/>比如，此时需要删除入站规则2，按照下面实例传参。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
-        "title": "网络ACL添加入站规则和出站规则"
+        "title": "网络ACL删除入站规则"
       },
       {
         "document": "网络ACL只添加入站规则",
@@ -2426,10 +2426,10 @@
         "title": "网络ACL只添加入站规则"
       },
       {
-        "document": "传参只传需要保留的规则，待删除的规则不传即可。比如实例acl-12345678当前有两条入站规则：\n* 规则1：TCP 192.168.1.0/24 80 Accept\n* 规则2：TCP 192.168.1.0/24 443 Accept\n<br/>比如，此时需要删除入站规则2，按照下面实例传参。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
+        "document": "网络ACL添加入站规则和出站规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Description\": \"test\",\n                \"Action\": \"Accept\",\n                \"CidrBlock\": \"192.168.1.0/24\",\n                \"Port\": \"80\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
-        "title": "网络ACL删除入站规则"
+        "title": "网络ACL添加入站规则和出站规则"
       }
     ],
     "ModifyNetworkAclQuintupleEntries": [
@@ -2636,16 +2636,16 @@
     ],
     "RefreshDirectConnectGatewayRouteToNatGateway": [
       {
-        "document": "预刷新路由，只展示IDC网段信息",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDirectConnectGatewayRouteToNatGateway\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-3m6kvgrx\",\n    \"NatGatewayId\": \"nat-2jd1e1rm\",\n    \"DryRun\": \"True\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"928d1513-d3fa-4c4e-b8fd-077cebbc3118\",\n        \"DirectConnectSubnetSet\": [\n            {\n                \"DirectConnectGatewayId\": \"dcg-71awizmv\",\n                \"CidrBlock\": \"99.99.99.77/32\"\n            }\n        ]\n    }\n}",
-        "title": "路由预刷新"
-      },
-      {
         "document": "正式刷新路由，执行刷新操作",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDirectConnectGatewayRouteToNatGateway\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-3m6kvgrx\",\n    \"NatGatewayId\": \"nat-2jd1e1rm\",\n    \"DryRun\": \"False\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2b08cbc-c0dc-4346-bc55-a9b17a7a2a03\",\n        \"DirectConnectSubnetSet\": [\n            {\n                \"DirectConnectGatewayId\": \"dcg-71awizmv\",\n                \"CidrBlock\": \"99.99.99.77/32\"\n            }\n        ]\n    }\n}",
         "title": "刷新路由"
+      },
+      {
+        "document": "预刷新路由，只展示IDC网段信息",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDirectConnectGatewayRouteToNatGateway\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-3m6kvgrx\",\n    \"NatGatewayId\": \"nat-2jd1e1rm\",\n    \"DryRun\": \"True\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"928d1513-d3fa-4c4e-b8fd-077cebbc3118\",\n        \"DirectConnectSubnetSet\": [\n            {\n                \"DirectConnectGatewayId\": \"dcg-71awizmv\",\n                \"CidrBlock\": \"99.99.99.77/32\"\n            }\n        ]\n    }\n}",
+        "title": "路由预刷新"
       }
     ],
     "RejectAttachCcnInstances": [
@@ -2674,16 +2674,16 @@
     ],
     "ReleaseIp6AddressesBandwidth": [
       {
-        "document": "入参传递Ip6Addresses",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseIp6AddressesBandwidth\r\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579786\",\n        \"RequestId\": \"3287c8ef-2bfb-4ae7-8874-f3628c0344b1\"\n    }\n}",
-        "title": "释放弹性公网IPv6地址带宽-2"
-      },
-      {
         "document": "入参传递Ip6AddressIds",
         "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseIp6AddressesBandwidth\r\n&Ip6AddressIds.0=eip-31g37kea\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579789\",\n        \"RequestId\": \"fe6aa94a-2a74-41d8-9570-337a575443fe\"\n    }\n}",
         "title": "释放弹性公网IPv6地址带宽"
+      },
+      {
+        "document": "入参传递Ip6Addresses",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseIp6AddressesBandwidth\r\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579786\",\n        \"RequestId\": \"3287c8ef-2bfb-4ae7-8874-f3628c0344b1\"\n    }\n}",
+        "title": "释放弹性公网IPv6地址带宽-2"
       }
     ],
     "RemoveBandwidthPackageResources": [
@@ -2816,16 +2816,16 @@
     ],
     "SetCcnRegionBandwidthLimits": [
       {
-        "document": "设置云联网各地域出带宽上限。例如在示例中，设置ap-guangzhou，ap-shanghai地域的出带宽上限分别为1000Mbps，500Mbps。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=SetCcnRegionBandwidthLimits\n&CcnId=ccn-gree226l\n&CcnRegionBandwidthLimits.0.Region=ap-guangzhou\n&CcnRegionBandwidthLimits.0.BandwidthLimit=1000\n&CcnRegionBandwidthLimits.1.Region=ap-shanghai\n&CcnRegionBandwidthLimits.1.BandwidthLimit=500\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c53ff69-1bb6-4c89-adbb-812233a85acc\"\n    }\n}",
-        "title": "设置云联网各地域出带宽上限"
-      },
-      {
         "document": "设置云联网地域间带宽上限，需要传递源和目的端地域，如果设置的是源或者目的地域为黑石地域，需要传递IsBm或者DstIsBm为true。例如在示例中，设置ap-guangzhou到ap-shanghai黑石的地域间上限为1000Mbps，设置ap-guangzhou到ap-beijing的地域间上限为500Mbps。",
         "input": "https://vpc.tencentcloudapi.com/?Action=SetCcnRegionBandwidthLimits\n&CcnId=ccn-gree226l\n&CcnRegionBandwidthLimits.0.Region=ap-guangzhou\n&CcnRegionBandwidthLimits.0.BandwidthLimit=1000\n&CcnRegionBandwidthLimits.0.DstRegion=ap-shanghai\n&CcnRegionBandwidthLimits.0.DstIsBm=true\n&CcnRegionBandwidthLimits.1.Region=ap-guangzhou\n&CcnRegionBandwidthLimits.1.BandwidthLimit=500\n&CcnRegionBandwidthLimits.1.DstRegion=ap-beijing\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c53ff69-1bb6-4c89-adbb-812233a85acc\"\n    }\n}",
         "title": "设置云联网地域间带宽上限"
+      },
+      {
+        "document": "设置云联网各地域出带宽上限。例如在示例中，设置ap-guangzhou，ap-shanghai地域的出带宽上限分别为1000Mbps，500Mbps。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=SetCcnRegionBandwidthLimits\n&CcnId=ccn-gree226l\n&CcnRegionBandwidthLimits.0.Region=ap-guangzhou\n&CcnRegionBandwidthLimits.0.BandwidthLimit=1000\n&CcnRegionBandwidthLimits.1.Region=ap-shanghai\n&CcnRegionBandwidthLimits.1.BandwidthLimit=500\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c53ff69-1bb6-4c89-adbb-812233a85acc\"\n    }\n}",
+        "title": "设置云联网各地域出带宽上限"
       }
     ],
     "SetVpnGatewaysRenewFlag": [

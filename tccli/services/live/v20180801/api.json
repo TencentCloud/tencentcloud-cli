@@ -3348,6 +3348,15 @@
         },
         {
           "disabled": false,
+          "document": "是否存储至 cos，值为 1 时表示存储至 cos。",
+          "example": "1",
+          "member": "int64",
+          "name": "CosStore",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "是否去除水印，类型为慢直播时此参数无效。\n如果为false，则录制水印流或转码流；如果为true，则录制原始流。",
           "example": "false",
           "member": "bool",

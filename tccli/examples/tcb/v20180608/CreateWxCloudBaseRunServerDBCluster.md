@@ -1,26 +1,4 @@
-**Example 1: 开通微信云托管MySQL服务实例**
-
-在微信云托管后台，用户开通MySQL时需要调用
-
-Input: 
-
-```
-tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
-    --EnvId env-test \
-    --AccountPassword pwd-test \
-    --DbVersion 5.7
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "asdasda-asfdafs"
-    }
-}
-```
-
-**Example 2: success**
+**Example 1: success**
 
 
 
@@ -43,7 +21,7 @@ Output:
 }
 ```
 
-**Example 3: success-20221010**
+**Example 2: success-20221010**
 
 
 
@@ -63,6 +41,28 @@ Output:
 {
     "Response": {
         "RequestId": "e1faa7da-a58b-44e1-9647-4782d8c11321"
+    }
+}
+```
+
+**Example 3: 开通微信云托管MySQL服务实例**
+
+在微信云托管后台，用户开通MySQL时需要调用
+
+Input: 
+
+```
+tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
+    --EnvId env-test \
+    --AccountPassword pwd-test \
+    --DbVersion 5.7
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "asdasda-asfdafs"
     }
 }
 ```

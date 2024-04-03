@@ -50,16 +50,16 @@
     ],
     "DescribeInstanceNodesInfo": [
       {
-        "document": "查询节点角色",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesInfo\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BeNodes\": [\n            \"abc\"\n        ],\n        \"FeNodes\": [\n            \"abc\"\n        ],\n        \"FeMaster\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询节点角色"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesInfo\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"BeNodes\": [\n            \"abc\"\n        ],\n        \"FeNodes\": [\n            \"abc\"\n        ],\n        \"FeMaster\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询节点信息"
+      },
+      {
+        "document": "查询节点角色",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesInfo\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BeNodes\": [\n            \"abc\"\n        ],\n        \"FeNodes\": [\n            \"abc\"\n        ],\n        \"FeMaster\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询节点角色"
       }
     ],
     "DescribeInstanceState": [

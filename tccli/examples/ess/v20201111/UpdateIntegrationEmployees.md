@@ -30,35 +30,7 @@ Output:
 }
 ```
 
-**Example 2: 错误示例：没有接口调用权限**
-
-如果 Operator 里面的 UserId 没有对应的组织架构权限，则会报错没有 API 权限
-
-Input: 
-
-```
-tccli ess UpdateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C \
-    --Operator.ClientIp 8.8.8.8 \
-    --Employees.0.UserId yDCNCUUckpv0ox66UC7yFOvFzax82lgp \
-    --Employees.0.DisplayName 李四 \
-    --Employees.0.Mobile 15100000000
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "OperationDenied.NoApiAuth",
-            "Message": "没有API权限"
-        },
-        "RequestId": "s2df9ddsk*****kfjdsklfjs"
-    }
-}
-```
-
-**Example 3: H5端修改未实名员工信息**
+**Example 2: H5端修改未实名员工信息**
 
 H5端,用户修改员工用户信息, 会生成一个链接,用户可通过这个链接,员工可通过此链接进入, 进行实名认证,加入企业
 
@@ -89,6 +61,34 @@ Output:
                 "UserId": "yDCNCUUckpv0ox66UC7yFOvFzax82lgp"
             }
         ]
+    }
+}
+```
+
+**Example 3: 错误示例：没有接口调用权限**
+
+如果 Operator 里面的 UserId 没有对应的组织架构权限，则会报错没有 API 权限
+
+Input: 
+
+```
+tccli ess UpdateIntegrationEmployees --cli-unfold-argument  \
+    --Operator.UserId yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C \
+    --Operator.ClientIp 8.8.8.8 \
+    --Employees.0.UserId yDCNCUUckpv0ox66UC7yFOvFzax82lgp \
+    --Employees.0.DisplayName 李四 \
+    --Employees.0.Mobile 15100000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "OperationDenied.NoApiAuth",
+            "Message": "没有API权限"
+        },
+        "RequestId": "s2df9ddsk*****kfjdsklfjs"
     }
 }
 ```

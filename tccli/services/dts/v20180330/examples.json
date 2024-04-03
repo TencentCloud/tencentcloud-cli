@@ -26,12 +26,6 @@
     ],
     "CreateMigrateJob": [
       {
-        "document": "将用户的mysql公网实例数据, 采用全量方式迁移到腾讯云上海地域的cdb-e78e0nnv实例上. 其中源实例的接入地域为广州. 数据一致性检查做全量检测.",
-        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrateJob\n<公共请求参数>\n\n{\n    \"JobName\": \"设置为一个方便辨识的名称\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcAccessType\": \"extranet\",\n    \"SrcInfo\": {\n        \"Supplier\": \"others\",\n        \"Ip\": \"14.17.22.36\",\n        \"Region\": \"ap-guangzhou\",\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\",\n        \"Port\": 3306\n    },\n    \"DstDatabaseType\": \"mysql\",\n    \"DstAccessType\": \"cdb\",\n    \"DstInfo\": {\n        \"InstanceId\": \"cdb-e78e0nnv\",\n        \"Region\": \"ap-shanghai\",\n        \"ReadOnly\": 0,\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\"\n    },\n    \"DatabaseInfo\": \"[]\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"负责人\",\n            \"TagValue\": \"bob\"\n        }\n    ],\n    \"MigrateOption\": {\n        \"ExternParams\": \"{}\",\n        \"MigrateObject\": 1,\n        \"RunMode\": 1,\n        \"ExpectTime\": \"2020-09-22 00:00:00\",\n        \"ConsistencyType\": 2,\n        \"MigrateType\": 2,\n        \"IsOverrideRoot\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"dts-1kl0iy0v\",\n        \"RequestId\": \"2201c42a-714f-4faa-915b-a51cc09f5cec\"\n    }\n}",
-        "title": "创建公网数据迁移任务"
-      },
-      {
         "document": "将用户通过专线接入的mysql实例,  全量+增量迁移迁移到腾讯云上海地域的cdb-d0dqi8nv实例上. 其中源实例的接入地域为广州.",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrateJob\n<公共请求参数>\n\n{\n    \"JobName\": \"设置为一个方便辨识的名称\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcAccessType\": \"dcg\",\n    \"SrcInfo\": {\n        \"Supplier\": \"others\",\n        \"UniqDcgId\": \"dcg-cyrjcc09\",\n        \"VpcId\": \"vpc-72jblfaa\",\n        \"SubnetId\": \"subnet-7raec42a\",\n        \"Ip\": \"192.168.120.136\",\n        \"Region\": \"ap-guangzhou\",\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\",\n        \"Port\": 3306\n    },\n    \"DstDatabaseType\": \"mysql\",\n    \"DstAccessType\": \"cdb\",\n    \"DstInfo\": {\n        \"InstanceId\": \"cdb-d0dqi8nv\",\n        \"Region\": \"ap-shanghai\",\n        \"ReadOnly\": 0,\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\"\n    },\n    \"DatabaseInfo\": \"[{\\\"Database\\\":\\\"test\\\",\\\"Table\\\":[\\\"user\\\",\\\"log\\\"]}]\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"负责人\",\n            \"TagValue\": \"bob\"\n        }\n    ],\n    \"MigrateOption\": {\n        \"ExternParams\": \"{}\",\n        \"MigrateObject\": 1,\n        \"RunMode\": 1,\n        \"ExpectTime\": \"2020-09-22 00:00:00\",\n        \"ConsistencyType\": 2,\n        \"MigrateType\": 2,\n        \"IsOverrideRoot\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"dts-o3s1vxsp\",\n        \"RequestId\": \"915bc42a-714f-4faa-915b-a51cc09f5714\"\n    }\n}",
@@ -42,6 +36,12 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrateJob\n<公共请求参数>\n\n{\n    \"JobName\": \"设置为一个方便辨识的名称\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcAccessType\": \"cdb\",\n    \"SrcInfo\": {\n        \"Supplier\": \"others\",\n        \"InstanceId\": \"cdb-ieow93923\",\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\"\n    },\n    \"DstDatabaseType\": \"mysql\",\n    \"DstAccessType\": \"cdb\",\n    \"DstInfo\": {\n        \"InstanceId\": \"cdb-e78e0nnv\",\n        \"Region\": \"ap-shanghai\",\n        \"ReadOnly\": 0,\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\"\n    },\n    \"DatabaseInfo\": \"[]\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"负责人\",\n            \"TagValue\": \"bob\"\n        }\n    ],\n    \"MigrateOption\": {\n        \"ExternParams\": \"{}\",\n        \"MigrateObject\": 1,\n        \"RunMode\": 1,\n        \"ExpectTime\": \"2020-09-22 00:00:00\",\n        \"ConsistencyType\": 5,\n        \"MigrateType\": 2,\n        \"IsOverrideRoot\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"dts-46i7easd\",\n        \"RequestId\": \"bc94c57b-9d69-11e9-84cb-256e968056b0\"\n    }\n}",
         "title": "创建云数据库迁移任务"
+      },
+      {
+        "document": "将用户的mysql公网实例数据, 采用全量方式迁移到腾讯云上海地域的cdb-e78e0nnv实例上. 其中源实例的接入地域为广州. 数据一致性检查做全量检测.",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrateJob\n<公共请求参数>\n\n{\n    \"JobName\": \"设置为一个方便辨识的名称\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcAccessType\": \"extranet\",\n    \"SrcInfo\": {\n        \"Supplier\": \"others\",\n        \"Ip\": \"14.17.22.36\",\n        \"Region\": \"ap-guangzhou\",\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\",\n        \"Port\": 3306\n    },\n    \"DstDatabaseType\": \"mysql\",\n    \"DstAccessType\": \"cdb\",\n    \"DstInfo\": {\n        \"InstanceId\": \"cdb-e78e0nnv\",\n        \"Region\": \"ap-shanghai\",\n        \"ReadOnly\": 0,\n        \"User\": \"root\",\n        \"Password\": \"yourPassword\"\n    },\n    \"DatabaseInfo\": \"[]\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"负责人\",\n            \"TagValue\": \"bob\"\n        }\n    ],\n    \"MigrateOption\": {\n        \"ExternParams\": \"{}\",\n        \"MigrateObject\": 1,\n        \"RunMode\": 1,\n        \"ExpectTime\": \"2020-09-22 00:00:00\",\n        \"ConsistencyType\": 2,\n        \"MigrateType\": 2,\n        \"IsOverrideRoot\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"dts-1kl0iy0v\",\n        \"RequestId\": \"2201c42a-714f-4faa-915b-a51cc09f5cec\"\n    }\n}",
+        "title": "创建公网数据迁移任务"
       }
     ],
     "CreateSubscribe": [
@@ -70,16 +70,16 @@
     ],
     "DescribeMigrateCheckJob": [
       {
-        "document": "校验失败",
-        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\n&JobId=dts-1kl0iy0v\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"ErrorCode\": -1,\n        \"ErrorMessage\": \"选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]\",\n        \"Progress\": \"100\",\n        \"CheckFlag\": 0,\n        \"RequestId\": \"67b4cfcf-6957-48ae-b7ef-ba33209895e3\"\n    }\n}",
-        "title": "获取迁移校验结果-2"
-      },
-      {
         "document": "校验成功",
         "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\n&JobId=dts-dau5czmd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"ErrorCode\": 0,\n        \"ErrorMessage\": \"ok\",\n        \"Progress\": \"100\",\n        \"CheckFlag\": 1,\n        \"RequestId\": \"336448b0-2a45-4be4-8356-c245eab5784f\"\n    }\n}",
         "title": "获取迁移校验结果"
+      },
+      {
+        "document": "校验失败",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeMigrateCheckJob\n&JobId=dts-1kl0iy0v\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"ErrorCode\": -1,\n        \"ErrorMessage\": \"选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]\",\n        \"Progress\": \"100\",\n        \"CheckFlag\": 0,\n        \"RequestId\": \"67b4cfcf-6957-48ae-b7ef-ba33209895e3\"\n    }\n}",
+        "title": "获取迁移校验结果-2"
       }
     ],
     "DescribeMigrateJobs": [

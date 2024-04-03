@@ -52,7 +52,68 @@ Output:
 }
 ```
 
-**Example 3: 创建一个云转推项目，初始化输入源为直播拉流**
+**Example 3: 使用初始轨道创建项目**
+
+ 
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Category VIDEO_EDIT \
+    --Platform test \
+    --Owner.Type PERSON \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Name 视频剪辑项目并初始化轨道 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.Type Video \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.Duration 10 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMedia 52858908113623182311 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMediaStartTime 0 \
+    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceType VOD \
+    --VideoEditProjectInput.InitTracks.0.Type Video \
+    --VideoEditProjectInput.AspectRatio 16:9
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f31",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e6a"
+    }
+}
+```
+
+**Example 4: 使用剪辑模板创建项目**
+
+ 
+
+Input: 
+
+```
+tccli cme CreateProject --cli-unfold-argument  \
+    --Category VIDEO_EDIT \
+    --Platform test \
+    --Owner.Type PERSON \
+    --Owner.Id user_id_61978823e6a253000100fb0f \
+    --Name 剪辑模板项目 \
+    --VideoEditProjectInput.AspectRatio 16:9 \
+    --VideoEditProjectInput.VideoEditTemplateId 61385efc24827f05859d3765@Public@CME
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ProjectId": "3f1699f3f97b9f0001920f30",
+        "RtmpPushInputInfoSet": [],
+        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5a"
+    }
+}
+```
+
+**Example 5: 创建一个云转推项目，初始化输入源为直播拉流**
 
 云转推项目初始化输入输出源
 
@@ -81,7 +142,7 @@ Output:
 }
 ```
 
-**Example 4: 创建一个云转推项目，初始化输入源为直播推流**
+**Example 6: 创建一个云转推项目，初始化输入源为直播推流**
 
 云转推项目初始化输入输出源
 
@@ -115,67 +176,6 @@ Output:
             }
         ],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
-    }
-}
-```
-
-**Example 5: 使用剪辑模板创建项目**
-
- 
-
-Input: 
-
-```
-tccli cme CreateProject --cli-unfold-argument  \
-    --Category VIDEO_EDIT \
-    --Platform test \
-    --Owner.Type PERSON \
-    --Owner.Id user_id_61978823e6a253000100fb0f \
-    --Name 剪辑模板项目 \
-    --VideoEditProjectInput.AspectRatio 16:9 \
-    --VideoEditProjectInput.VideoEditTemplateId 61385efc24827f05859d3765@Public@CME
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ProjectId": "3f1699f3f97b9f0001920f30",
-        "RtmpPushInputInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5a"
-    }
-}
-```
-
-**Example 6: 使用初始轨道创建项目**
-
- 
-
-Input: 
-
-```
-tccli cme CreateProject --cli-unfold-argument  \
-    --Category VIDEO_EDIT \
-    --Platform test \
-    --Owner.Type PERSON \
-    --Owner.Id user_id_61978823e6a253000100fb0f \
-    --Name 视频剪辑项目并初始化轨道 \
-    --VideoEditProjectInput.InitTracks.0.TrackItems.0.Type Video \
-    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.Duration 10 \
-    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMedia 52858908113623182311 \
-    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceMediaStartTime 0 \
-    --VideoEditProjectInput.InitTracks.0.TrackItems.0.VideoItem.SourceType VOD \
-    --VideoEditProjectInput.InitTracks.0.Type Video \
-    --VideoEditProjectInput.AspectRatio 16:9
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ProjectId": "3f1699f3f97b9f0001920f31",
-        "RtmpPushInputInfoSet": [],
-        "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e6a"
     }
 }
 ```

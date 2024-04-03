@@ -3,15 +3,15 @@
     "AddAntiFakeUrl": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=AddAntiFakeUrl\r\n&Domain=www.test.com\r\n&Name=test\r\n&Uri=http://zanyang.qcloudwaf.com/index.html\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09f0ad6a-cca6-4652-9be0-723d474c2d84\",\n        \"Result\": \"failure\"\n    }\n}",
-        "title": "添加防篡改url"
-      },
-      {
-        "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=AddAntiFakeUrl\r\n&Domain=www.test1.com\r\n&Name=test\r\n&Uri=http://www.test1.com/a1.html\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce58ce20-e508-4c68-9a55-18233f703e6f\",\n        \"Result\": \"success\"\n    }\n}",
         "title": "添加成功"
+      },
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddAntiFakeUrl\r\n&Domain=www.test.com\r\n&Name=test\r\n&Uri=http://zanyang.qcloudwaf.com/index.html\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09f0ad6a-cca6-4652-9be0-723d474c2d84\",\n        \"Result\": \"failure\"\n    }\n}",
+        "title": "添加防篡改url"
       }
     ],
     "AddAntiInfoLeakRules": [
@@ -56,12 +56,6 @@
     ],
     "AddSpartaProtection": [
       {
-        "document": "重复添加的场景",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"InstanceID\": \"waf-9dasfds6gsd\",\n    \"IsKeepAlive\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"域名已经存在，请勿重复添加\"\n        },\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
-        "title": "重复添加的场景"
-      },
-      {
         "document": "添加域名",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"UpstreamScheme\": \"http\",\n    \"IsGray\": \"1\",\n    \"Domain\": \"lucas0621.qcloudwaf.com\",\n    \"LoadBalance\": \"1\",\n    \"HttpsUpstreamPort\": \"80\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"1\",\n    \"UpstreamDomain\": \"lucas0622.qcloudwaf.com\",\n    \"IsWebsocket\": \"1\",\n    \"IsHttp2\": \"1\",\n    \"Edition\": \"sass\",\n    \"CertType\": \"0\",\n    \"Weights\": [\n        \"1\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"ActiveCheck\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"1\",\n    \"Anycast\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"HttpsRewrite\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"87c8499e-3748-4bb0-9740-b2683a003975\"\n    }\n}",
@@ -72,6 +66,12 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"UpstreamScheme\": \"http\",\n    \"IsGray\": \"1\",\n    \"Domain\": \"lucas0919.qcloudwaf.com\",\n    \"LoadBalance\": \"1\",\n    \"HttpsUpstreamPort\": \"80\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"1\",\n    \"UpstreamDomain\": \"lucas0622.qcloudwaf.com\",\n    \"IsWebsocket\": \"1\",\n    \"IsHttp2\": \"1\",\n    \"Edition\": \"saas\",\n    \"CertType\": \"0\",\n    \"Weights\": [\n        \"1\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"ActiveCheck\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"HttpsRewrite\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5e5757a-2b04-4d56-a049-54eb8f053e75\"\n    }\n}",
         "title": "添加域名-1"
+      },
+      {
+        "document": "重复添加的场景",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloud.com\",\n    \"LoadBalance\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"InstanceID\": \"waf-9dasfds6gsd\",\n    \"IsKeepAlive\": \"1\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"域名已经存在，请勿重复添加\"\n        },\n        \"RequestId\": \"4f284280-a493-4932-95f4-3d87e7320b3e\"\n    }\n}",
+        "title": "重复添加的场景"
       },
       {
         "document": "添加SAAS-WAF防护域名",
@@ -343,15 +343,15 @@
     "DescribeCCRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"clb\",\n                \"saas\"\n            ],\n            \"Name\": \"InstanceType\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"ts_version\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 22,\n                    \"Advance\": 0,\n                    \"Interval\": 60,\n                    \"Limit\": 60,\n                    \"MatchFunc\": 0,\n                    \"Name\": \"test1\",\n                    \"Priority\": 50,\n                    \"Status\": 1,\n                    \"TsVersion\": 1579058116920,\n                    \"Url\": \"///\",\n                    \"ValidTime\": 600,\n                    \"Options\": \"\",\n                    \"RuleId\": 1900009616,\n                    \"EventId\": \"111\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
-        "title": "根据URL查询API规则"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"By\": \"ts_version\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Limit\": \"10\",\n    \"Order\": \"asc\",\n    \"Offset\": \"10000002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41b55f8b-1ed1-484c-aab7-c14c0889f78b\",\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"Name\": \"test\",\n                    \"Status\": 0,\n                    \"Advance\": 0,\n                    \"Limit\": 2,\n                    \"Interval\": 60,\n                    \"Url\": \"/\",\n                    \"MatchFunc\": 0,\n                    \"ActionType\": 22,\n                    \"Priority\": 50,\n                    \"ValidTime\": 600,\n                    \"TsVersion\": 1609769256761,\n                    \"Options\": \"[]\",\n                    \"RuleId\": 0,\n                    \"EventId\": \"11\"\n                },\n                {\n                    \"Name\": \"ddp\",\n                    \"Status\": 0,\n                    \"Advance\": 0,\n                    \"Limit\": 10,\n                    \"Interval\": 10,\n                    \"Url\": \"/test\",\n                    \"MatchFunc\": 0,\n                    \"ActionType\": 20,\n                    \"Priority\": 1,\n                    \"ValidTime\": 61,\n                    \"TsVersion\": 1669794335102,\n                    \"Options\": \"\",\n                    \"RuleId\": 1900009616,\n                    \"EventId\": \"111\"\n                }\n            ],\n            \"TotalCount\": 2\n        }\n    }\n}",
         "title": "test1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"clb\",\n                \"saas\"\n            ],\n            \"Name\": \"InstanceType\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"ts_version\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 22,\n                    \"Advance\": 0,\n                    \"Interval\": 60,\n                    \"Limit\": 60,\n                    \"MatchFunc\": 0,\n                    \"Name\": \"test1\",\n                    \"Priority\": 50,\n                    \"Status\": 1,\n                    \"TsVersion\": 1579058116920,\n                    \"Url\": \"///\",\n                    \"ValidTime\": 600,\n                    \"Options\": \"\",\n                    \"RuleId\": 1900009616,\n                    \"EventId\": \"111\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
+        "title": "根据URL查询API规则"
       }
     ],
     "DescribeCertificateVerifyResult": [
@@ -373,15 +373,15 @@
     "DescribeCustomRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"2\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
-        "title": "获取访问控制规则列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Limit\": \"10\",\n    \"Offset\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d3f512-674f-4ecf-b766-90d2600fa498\",\n        \"RuleList\": [],\n        \"TotalCount\": \"1\"\n    }\n}",
         "title": "test1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"2\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取访问控制规则列表"
       }
     ],
     "DescribeCustomWhiteRule": [
@@ -602,14 +602,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTlsVersion\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"TLS\": [\n            {\n                \"VersionId\": 0,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 1,\n                \"VersionName\": \"TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 2,\n                \"VersionName\": \"TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 3,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 4,\n                \"VersionName\": \"TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 5,\n                \"VersionName\": \"TLSv1.2\"\n            }\n        ]\n    }\n}",
-        "title": "查询用户TLS版本"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d05712e6-2229-4c15-a56d-86480e5c62b3\",\n        \"TLS\": [\n            {\n                \"VersionId\": 0,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 1,\n                \"VersionName\": \"TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 2,\n                \"VersionName\": \"TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 3,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 4,\n                \"VersionName\": \"TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 5,\n                \"VersionName\": \"TLSv1.2\"\n            }\n        ]\n    }\n}",
+        "title": "TLS版本"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTlsVersion\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d05712e6-2229-4c15-a56d-86480e5c62b3\",\n        \"TLS\": [\n            {\n                \"VersionId\": 0,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 1,\n                \"VersionName\": \"TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 2,\n                \"VersionName\": \"TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 3,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 4,\n                \"VersionName\": \"TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 5,\n                \"VersionName\": \"TLSv1.2\"\n            }\n        ]\n    }\n}",
-        "title": "TLS版本"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"TLS\": [\n            {\n                \"VersionId\": 0,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 1,\n                \"VersionName\": \"TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 2,\n                \"VersionName\": \"TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 3,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 4,\n                \"VersionName\": \"TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 5,\n                \"VersionName\": \"TLSv1.2\"\n            }\n        ]\n    }\n}",
+        "title": "查询用户TLS版本"
       }
     ],
     "DescribeTopAttackDomain": [
@@ -790,12 +790,6 @@
     ],
     "ModifyApiAnalyzeStatus": [
       {
-        "document": "api分析页面开关",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiAnalyzeStatus\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Domain\": \"abc.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"UnSupportedList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "api分析页面开关"
-      },
-      {
         "document": "test2",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiAnalyzeStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1\",\n    \"Domain\": \"hzh.qcloud.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"UnSupportedList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
@@ -806,6 +800,12 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiAnalyzeStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1\",\n    \"Domain\": \"hzh.qcloud.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"UnSupportedList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test4"
+      },
+      {
+        "document": "api分析页面开关",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiAnalyzeStatus\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Domain\": \"abc.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 0,\n        \"UnSupportedList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "api分析页面开关"
       }
     ],
     "ModifyAreaBanStatus": [
@@ -833,15 +833,15 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotStatus\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"Category\": \"bot\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"IsVersionFour\": \"true\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"c6ae93c9-f71c-473c-ad9b-ba1b59e47059\"\n    }\n}",
-        "title": "老版本_bot总开关"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1\",\n    \"Category\": \"bot\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"IsVersionFour\": \"true\",\n    \"BotVersion\": \"4.1.0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"110a2ef2-74ee-4db1-9b96-7da77283653f\"\n    }\n}",
         "title": "新版本_bot总开关"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotStatus\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"Category\": \"bot\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"IsVersionFour\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"c6ae93c9-f71c-473c-ad9b-ba1b59e47059\"\n    }\n}",
+        "title": "老版本_bot总开关"
       }
     ],
     "ModifyCustomRule": [
@@ -1007,18 +1007,6 @@
     "ModifySpartaProtection": [
       {
         "document": "修改SAASWAF域名",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LoadBalance\": \"0\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"DomainId\": \"womdaswadfgsdgd\",\n    \"InstanceID\": \"waf-9dja7dasggdsgs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
-        "title": "修改域名配置"
-      },
-      {
-        "document": "修改SAASWAF域名",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"lucas0407-1.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"InstanceID\": \"waf_2kuj60v200b09bsr\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"11.148.84.137\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"eb454223185451fe8b255a82b9d4bf94\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"IsGray\": \"0\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"62094\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c553d61-526a-44cf-a874-b24956033973\"\n    }\n}",
-        "title": "修改域名接入配置"
-      },
-      {
-        "document": "修改SAASWAF域名",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"IsGray\": \"0\",\n    \"Domain\": \"lucas0407-1.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"CipherTemplate\": \"0\",\n    \"InstanceID\": \"waf_2kuj60v200b09bsr\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"114.132.223.23\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"eb454223185451fe8b255a82b9d4bf94\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"62094\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13b8a309-3e7d-4393-91a4-271bf6d5dd71\"\n    }\n}",
         "title": "ts"
@@ -1028,6 +1016,18 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"IsGray\": \"0\",\n    \"Domain\": \"lucas0919.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"CipherTemplate\": \"0\",\n    \"InstanceID\": \"lucas\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"114.132.223.23\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"e801733b69605960a17388999868512a\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"TLSVersion\": \"3\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"63953\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6bd6f14-926e-4a3e-9a34-bb1dd7d9a51d\"\n    }\n}",
         "title": "Modify-Host-1"
+      },
+      {
+        "document": "修改SAASWAF域名",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LoadBalance\": \"0\",\n    \"UpstreamType\": \"0\",\n    \"CertType\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"0\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"SrcList\": [\n        \"1.1.1.1\"\n    ],\n    \"IsCdn\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsGray\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"DomainId\": \"womdaswadfgsdgd\",\n    \"InstanceID\": \"waf-9dja7dasggdsgs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
+        "title": "修改域名配置"
+      },
+      {
+        "document": "修改SAASWAF域名",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySpartaProtection\n<公共请求参数>\n\n{\n    \"Domain\": \"lucas0407-1.qcloudwaf.com\",\n    \"LoadBalance\": \"0\",\n    \"InstanceID\": \"waf_2kuj60v200b09bsr\",\n    \"UpstreamType\": \"0\",\n    \"IsWebsocket\": \"0\",\n    \"IsHttp2\": \"0\",\n    \"SrcList\": [\n        \"11.148.84.137\"\n    ],\n    \"CertType\": \"0\",\n    \"DomainId\": \"eb454223185451fe8b255a82b9d4bf94\",\n    \"Weights\": [\n        \"100\"\n    ],\n    \"IsKeepAlive\": \"1\",\n    \"IsCdn\": \"1\",\n    \"IsGray\": \"0\",\n    \"Anycast\": \"0\",\n    \"Ports\": [\n        {\n            \"NginxServerId\": \"62094\",\n            \"Protocol\": \"http\",\n            \"Port\": \"80\",\n            \"UpstreamPort\": \"80\",\n            \"UpstreamProtocol\": \"http\"\n        }\n    ],\n    \"ActiveCheck\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c553d61-526a-44cf-a874-b24956033973\"\n    }\n}",
+        "title": "修改域名接入配置"
       }
     ],
     "ModifySpartaProtectionMode": [
@@ -1143,12 +1143,6 @@
     "UpsertCCRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"Advance\": \"0\",\n    \"Domain\": \"test.com\",\n    \"Name\": \"test2\",\n    \"Url\": \"/test\",\n    \"Priority\": \"50\",\n    \"Interval\": \"60\",\n    \"MatchFunc\": \"0\",\n    \"ValidTime\": \"600\\n\",\n    \"Limit\": \"60\",\n    \"ActionType\": \"22\",\n    \"OptionsArr\": \"[{\\\"key\\\":\\\"get\\\",\\\"args\\\":[\\\"a=12\\\"]}]\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"5029e2b0-493c-4dcc-9e4e-d53ab98ede99\"\n    }\n}",
-        "title": "Waf  CC V2 Upsert接口"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"MatchFunc\": \"0\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Name\": \"ddp\",\n    \"Advance\": \"0\",\n    \"ValidTime\": \"61\",\n    \"Interval\": \"10\",\n    \"Priority\": \"1\",\n    \"Url\": \"/test\",\n    \"Limit\": \"10\",\n    \"ActionType\": \"20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ca5c6bb-05b7-4183-bbf2-3c7059544317\",\n        \"Data\": \"\"\n    }\n}",
         "title": "test"
@@ -1158,6 +1152,12 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"MatchFunc\": \"0\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Name\": \"ddp\",\n    \"Advance\": \"0\",\n    \"ValidTime\": \"61\",\n    \"Interval\": \"10\",\n    \"Priority\": \"1\",\n    \"Url\": \"/test\",\n    \"Limit\": \"10\",\n    \"ActionType\": \"20\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ca5c6bb-05b7-4183-bbf2-3c7059544317\",\n        \"Data\": \"\"\n    }\n}",
         "title": "test1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertCCRule\n<公共请求参数>\n\n{\n    \"Status\": \"0\",\n    \"Advance\": \"0\",\n    \"Domain\": \"test.com\",\n    \"Name\": \"test2\",\n    \"Url\": \"/test\",\n    \"Priority\": \"50\",\n    \"Interval\": \"60\",\n    \"MatchFunc\": \"0\",\n    \"ValidTime\": \"600\\n\",\n    \"Limit\": \"60\",\n    \"ActionType\": \"22\",\n    \"OptionsArr\": \"[{\\\"key\\\":\\\"get\\\",\\\"args\\\":[\\\"a=12\\\"]}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"5029e2b0-493c-4dcc-9e4e-d53ab98ede99\"\n    }\n}",
+        "title": "Waf  CC V2 Upsert接口"
       }
     ],
     "UpsertIpAccessControl": [

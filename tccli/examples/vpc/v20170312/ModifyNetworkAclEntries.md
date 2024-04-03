@@ -1,6 +1,9 @@
-**Example 1: 网络ACL添加入站规则和出站规则**
+**Example 1: 网络ACL删除入站规则**
 
-网络ACL添加入站规则和出站规则
+传参只传需要保留的规则，待删除的规则不传即可。比如实例acl-12345678当前有两条入站规则：
+* 规则1：TCP 192.168.1.0/24 80 Accept
+* 规则2：TCP 192.168.1.0/24 443 Accept
+<br/>比如，此时需要删除入站规则2，按照下面实例传参。
 
 Input: 
 
@@ -11,12 +14,7 @@ tccli vpc ModifyNetworkAclEntries --cli-unfold-argument  \
     --NetworkAclEntrySet.Ingress.0.Description test \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.1.0/24 \
-    --NetworkAclEntrySet.Ingress.0.Port 80 \
-    --NetworkAclEntrySet.Egress.0.Protocol TCP \
-    --NetworkAclEntrySet.Egress.0.Description test \
-    --NetworkAclEntrySet.Egress.0.Action Accept \
-    --NetworkAclEntrySet.Egress.0.CidrBlock 192.168.1.0/24 \
-    --NetworkAclEntrySet.Egress.0.Port 80
+    --NetworkAclEntrySet.Ingress.0.Port 80
 ```
 
 Output: 
@@ -58,12 +56,9 @@ Output:
 }
 ```
 
-**Example 3: 网络ACL删除入站规则**
+**Example 3: 网络ACL添加入站规则和出站规则**
 
-传参只传需要保留的规则，待删除的规则不传即可。比如实例acl-12345678当前有两条入站规则：
-* 规则1：TCP 192.168.1.0/24 80 Accept
-* 规则2：TCP 192.168.1.0/24 443 Accept
-<br/>比如，此时需要删除入站规则2，按照下面实例传参。
+网络ACL添加入站规则和出站规则
 
 Input: 
 
@@ -74,7 +69,12 @@ tccli vpc ModifyNetworkAclEntries --cli-unfold-argument  \
     --NetworkAclEntrySet.Ingress.0.Description test \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.1.0/24 \
-    --NetworkAclEntrySet.Ingress.0.Port 80
+    --NetworkAclEntrySet.Ingress.0.Port 80 \
+    --NetworkAclEntrySet.Egress.0.Protocol TCP \
+    --NetworkAclEntrySet.Egress.0.Description test \
+    --NetworkAclEntrySet.Egress.0.Action Accept \
+    --NetworkAclEntrySet.Egress.0.CidrBlock 192.168.1.0/24 \
+    --NetworkAclEntrySet.Egress.0.Port 80
 ```
 
 Output: 

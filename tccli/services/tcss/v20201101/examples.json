@@ -18,16 +18,16 @@
     ],
     "AddAssetImageRegistryRegistryDetail": [
       {
-        "document": "新增单个镜像仓库详细信息",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"Username\": \"usename\",\n    \"Name\": \"test\",\n    \"Url\": \"http://127.0.0.1:8080\",\n    \"RegistryVersion\": \"V2\",\n    \"RegistryRegion\": \"default\",\n    \"NetType\": \"public\",\n    \"Password\": \"xxx\",\n    \"RegistryType\": \"harbor\"\n}",
-        "output": "{\n    \"Response\": {\n        \"HealthCheckErr\": \"abc\",\n        \"NameRepeatErr\": \"abc\",\n        \"RegistryId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "新增单个镜像仓库详细信息"
-      },
-      {
         "document": "正常添加",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Username\": \"abc\",\n    \"Password\": \"abc\",\n    \"Url\": \"abc\",\n    \"RegistryType\": \"abc\",\n    \"RegistryVersion\": \"abc\",\n    \"NetType\": \"abc\",\n    \"RegistryRegion\": \"abc\",\n    \"SpeedLimit\": 0,\n    \"Insecure\": 1,\n    \"ConnDetectConfig\": [\n        {\n            \"Quuid\": \"abc\",\n            \"Uuid\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"HealthCheckErr\": \"\",\n        \"NameRepeatErr\": \"\",\n        \"RegistryId\": 8329,\n        \"RequestId\": \"f8d97649-ca1b-4f94-8ed4-40052a40d426\"\n    }\n}",
         "title": "正常添加"
+      },
+      {
+        "document": "新增单个镜像仓库详细信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAssetImageRegistryRegistryDetail\n<公共请求参数>\n\n{\n    \"Username\": \"usename\",\n    \"Name\": \"test\",\n    \"Url\": \"http://127.0.0.1:8080\",\n    \"RegistryVersion\": \"V2\",\n    \"RegistryRegion\": \"default\",\n    \"NetType\": \"public\",\n    \"Password\": \"xxx\",\n    \"RegistryType\": \"harbor\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckErr\": \"abc\",\n        \"NameRepeatErr\": \"abc\",\n        \"RegistryId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新增单个镜像仓库详细信息"
       }
     ],
     "AddComplianceAssetPolicySetToWhitelist": [
@@ -188,16 +188,16 @@
     ],
     "CreateAssetImageRegistryScanTask": [
       {
-        "document": "镜像仓库创建镜像扫描任务",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"Id\": [\n        8741110\n    ],\n    \"ScanType\": [\n        \"CVE\",\n        \"VIRUS\",\n        \"RISK\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68d5d49c-4b6b-46af-b060-46f521db0400\"\n    }\n}",
-        "title": "镜像仓库创建镜像扫描任务"
-      },
-      {
         "document": "正常请求",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"All\": false,\n    \"Id\": [\n        1256299843\n    ],\n    \"OnlyScanLatest\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"538366ac-d056-4f69-92ca-cf9bc6c9463b\",\n        \"TaskID\": 2\n    }\n}",
         "title": "正常请求"
+      },
+      {
+        "document": "镜像仓库创建镜像扫描任务",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageRegistryScanTask\n<公共请求参数>\n\n{\n    \"Id\": [\n        8741110\n    ],\n    \"ScanType\": [\n        \"CVE\",\n        \"VIRUS\",\n        \"RISK\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68d5d49c-4b6b-46af-b060-46f521db0400\"\n    }\n}",
+        "title": "镜像仓库创建镜像扫描任务"
       }
     ],
     "CreateAssetImageRegistryScanTaskOneKey": [
@@ -673,15 +673,15 @@
       },
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&ImageId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045892534b9a9000c4ae5ba\",\n            \"IsEnable\": true,\n            \"RuleName\": \"9999\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"6020e81134b9a9000c50b56a\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/bin/ptest\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60212ddd98dab16785dfeab2\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/ps\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"6021472934b9a9000c358fa3\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/top\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"602f603d34b9a9000cb2b405\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/tail\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60326e4434b9a9000c0897a8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/busybox\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60337df034b9a9000c2240c8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/sss\",\n                    \"RuleLevel\": \"MIDDLE\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
-        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
-      },
-      {
-        "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&RuleId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6048403bd620f3f9012c521d\",\n            \"IsEnable\": true,\n            \"IsDefault\": true,\n            \"RuleName\": \"系统策略\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"100000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"PROXY_TOOL\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"TRANSFER_CONTROL\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ATTACK_CMD\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000004\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"REVERSE_SHELL\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000005\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"FILELESS\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000006\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"RISK_CMD\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"100000000000000000000007\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"ABNORMAL_CHILD_PROC\",\n                    \"RuleLevel\": \"MIDDLE\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
         "title": "根据规则ID查询规则详情（系统策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAbnormalProcessRuleDetail\n&ImageId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fee1bdb0-c13f-4c65-b567-8e270df211c1\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045892534b9a9000c4ae5ba\",\n            \"IsEnable\": true,\n            \"RuleName\": \"9999\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"6020e81134b9a9000c50b56a\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/bin/ptest\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60212ddd98dab16785dfeab2\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/ps\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"6021472934b9a9000c358fa3\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/top\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"602f603d34b9a9000cb2b405\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/tail\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60326e4434b9a9000c0897a8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/busybox\",\n                    \"RuleLevel\": \"MIDDLE\"\n                },\n                {\n                    \"RuleId\": \"60337df034b9a9000c2240c8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/sss\",\n                    \"RuleLevel\": \"MIDDLE\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
       },
       {
         "document": "",
@@ -739,15 +739,15 @@
       },
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&ImageId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045899634b9a9000c4ae5bb\",\n            \"IsEnable\": true,\n            \"IsDefault\": false,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"603279ba34b9a9000c0897ae\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.txt\"\n                },\n                {\n                    \"RuleId\": \"60327a7b34b9a9000c0897af\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test2.txt\"\n                },\n                {\n                    \"RuleId\": \"6033081234b9a9000c0897b0\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/coreutils\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60337e1034b9a9000c2240c9\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60361e8234b9a9000cf7a3ee\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"603772d334b9a9000cd92ae8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/iv\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"6045899634b9a9000c4ae5bc\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"/1.txt\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
-        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
-      },
-      {
-        "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&RuleId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"60484042d620f3f9012c521e\",\n            \"IsEnable\": true,\n            \"IsDefault\": true,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [],\n            \"SystemChildRules\": [\n                {\n                    \"RuleId\": \"200000000000000000000001\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_CRONTAB\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000002\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_SYS_BIN\"\n                },\n                {\n                    \"RuleId\": \"200000000000000000000003\",\n                    \"IsEnable\": true,\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"RuleType\": \"CHANGE_USRCFG\"\n                }\n            ],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
         "title": "根据规则ID查询规则详情（系统策略）"
+      },
+      {
+        "document": "",
+        "input": "https://tcss.tencentcloudapi.com/?Action=DescribeAccessControlRuleDetail\n&ImageId=xxx\n&Limit=10\n&Offset=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1af946cb-d3d5-4b03-bbfc-3d5ad306f753\",\n        \"RuleDetail\": {\n            \"RuleId\": \"6045899634b9a9000c4ae5bb\",\n            \"IsEnable\": true,\n            \"IsDefault\": false,\n            \"RuleName\": \"kkkkk\",\n            \"ChildRules\": [\n                {\n                    \"RuleId\": \"603279ba34b9a9000c0897ae\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.txt\"\n                },\n                {\n                    \"RuleId\": \"60327a7b34b9a9000c0897af\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test2.txt\"\n                },\n                {\n                    \"RuleId\": \"6033081234b9a9000c0897b0\",\n                    \"RuleMode\": \"RULE_MODE_HOLDUP\",\n                    \"ProcessPath\": \"/usr/bin/coreutils\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60337e1034b9a9000c2240c9\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/data/a.out\",\n                    \"TargetFilePath\": \"/tmp/test.txt\"\n                },\n                {\n                    \"RuleId\": \"60361e8234b9a9000cf7a3ee\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"603772d334b9a9000cd92ae8\",\n                    \"RuleMode\": \"RULE_MODE_ALERT\",\n                    \"ProcessPath\": \"/usr/bin/iv\",\n                    \"TargetFilePath\": \"*.HTML\"\n                },\n                {\n                    \"RuleId\": \"6045899634b9a9000c4ae5bc\",\n                    \"RuleMode\": \"RULE_MODE_RELEASE\",\n                    \"ProcessPath\": \"/usr/bin/vi\",\n                    \"TargetFilePath\": \"/1.txt\"\n                }\n            ],\n            \"SystemChildRules\": [],\n            \"ImageIds\": [\n                \"sha256:300e315adb2f96afe5f0b2780b87f28ae95231fe3bdd1e16b9ba606307728f55\",\n                \"sha256:e50c909a8df2b7c8b92a6e8730e210ebe98e5082871e66edd8ef4d90838cbd25\",\n                \"sha256:298ec0e28760b8eb1aad79711dc29c19041c61d7cf342dd1f445e91f30500549\"\n            ]\n        }\n    }\n}",
+        "title": "根据事件的镜像ID，查询当前镜像的规则详情（用户策略）"
       },
       {
         "document": "",
@@ -927,15 +927,15 @@
     "DescribeAssetImageRegistryDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryDetail\n<公共请求参数>\n\n{\n    \"Id\": 3421599\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ImageDigest\": \"sha256:8d8faaa36c253a8745c392fc71640757d29a5f026fc0e44bb9c98d56544f5175\",\n        \"ImageId\": \"sha256:bb804a9c85d7199b8fd6a0c1a34ef1d049689604046fc5ce1ee6b968de78281b\",\n        \"RegistryType\": \"ccr\",\n        \"ImageRepoAddress\": \"hkccr.ccs.tencentyun.com/mhzou/mhccrxg\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"ccr-ap-hongkong\",\n        \"Namespace\": \"mhzou\",\n        \"ImageName\": \"mhccrxg\",\n        \"ImageTag\": \"mhccrxg1\",\n        \"ImageSize\": 8544764,\n        \"ScanTime\": \"2022-01-19T22:58:23+08:00\",\n        \"ScanStatus\": \"SCANNED\",\n        \"Progress\": 100,\n        \"VulCnt\": 2425,\n        \"VirusCnt\": 0,\n        \"RiskCnt\": 0,\n        \"SentiveInfoCnt\": 0,\n        \"OsName\": \"linux\",\n        \"ScanVirusError\": \"\",\n        \"ScanVulError\": \"\",\n        \"ScanRiskError\": \"\",\n        \"ScanVirusProgress\": 0,\n        \"ScanVulProgress\": 100,\n        \"ScanRiskProgress\": 100,\n        \"ScanRemainTime\": 0,\n        \"CveStatus\": \"SCANNED\",\n        \"RiskStatus\": \"SCANNED\",\n        \"VirusStatus\": \"NOT_SCAN\",\n        \"IsAuthorized\": 1,\n        \"LayerInfo\": \"xxx\",\n        \"RegistryRegion\": \"ap-hongkong\",\n        \"ImageCreateTime\": \"1900-01-01T00:00:00+00:00\"\n    }\n}",
-        "title": "镜像仓库查询镜像仓库详情"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryDetail\n<公共请求参数>\n\n{\n    \"Id\": \"5427\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"acc92f01-ee14-4eec-a1b6-e78d3ea0b7e9\",\n        \"ImageDigest\": \"sha256:615475135bb705517e749767a28f6bd57199008d3e9b688efa0f73a8befccc97\",\n        \"ImageId\": \"sha256:e68ba1280908f76a9e22a813b9ea0c7358e9bcf0ed616fddf88dad557e33d1ca\",\n        \"RegistryType\": \"ccr\",\n        \"ImageRepoAddress\": \"ccr.ccs.tencentyun.com/yunding/person1\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"ccr-default\",\n        \"Namespace\": \"yunding\",\n        \"ImageName\": \"person1\",\n        \"ImageTag\": \"v1\",\n        \"ImageSize\": 74866818,\n        \"ScanTime\": \"2022-01-14T21:03:19+08:00\",\n        \"ScanStatus\": \"SCANNED\",\n        \"Progress\": 100,\n        \"VulCnt\": 172,\n        \"VirusCnt\": 0,\n        \"RiskCnt\": 1,\n        \"SentiveInfoCnt\": 1,\n        \"OsName\": \"linux\",\n        \"ScanVirusError\": \"\",\n        \"ScanVulError\": \"\",\n        \"ScanRiskError\": \"\",\n        \"ScanVirusProgress\": 0,\n        \"ScanVulProgress\": 100,\n        \"ScanRiskProgress\": 100,\n        \"ScanRemainTime\": 0,\n        \"CveStatus\": \"SCANNED\",\n        \"RiskStatus\": \"SCANNED\",\n        \"VirusStatus\": \"NOT_SCAN\",\n        \"IsAuthorized\": 1,\n        \"LayerInfo\": \"#2020-06-17 00:22:24.918233762 +0000 UTC\\n\\n/bin/sh -c #(nop) ADD file:84700c11fcc969ac08ef25f115513d76c7b72a4118c01fbc86ef0a6056fdebeb in / \\n\\n#2020-06-17 00:22:25.276021438 +0000 UTC\\n\\n/bin/sh -c #(nop)  LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20200611\\n\\n#2020-06-17 00:22:25.47282687 +0000 UTC\\n\\n/bin/sh -c #(nop)  CMD [\\\"/bin/bash\\\"]\\n\\n#2020-12-18 10:06:01.1576746 +0000 UTC\\n\\n/bin/sh -c echo \\\"RSYNC_PASSWORD='xxx' rsync\\\"\\n\\n\",\n        \"RegistryRegion\": \"default\",\n        \"ImageCreateTime\": \"2020-12-25T16:40:39+08:00\"\n    }\n}",
         "title": "查看仓库镜像详情"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryDetail\n<公共请求参数>\n\n{\n    \"Id\": 3421599\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"ImageDigest\": \"sha256:8d8faaa36c253a8745c392fc71640757d29a5f026fc0e44bb9c98d56544f5175\",\n        \"ImageId\": \"sha256:bb804a9c85d7199b8fd6a0c1a34ef1d049689604046fc5ce1ee6b968de78281b\",\n        \"RegistryType\": \"ccr\",\n        \"ImageRepoAddress\": \"hkccr.ccs.tencentyun.com/mhzou/mhccrxg\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"ccr-ap-hongkong\",\n        \"Namespace\": \"mhzou\",\n        \"ImageName\": \"mhccrxg\",\n        \"ImageTag\": \"mhccrxg1\",\n        \"ImageSize\": 8544764,\n        \"ScanTime\": \"2022-01-19T22:58:23+08:00\",\n        \"ScanStatus\": \"SCANNED\",\n        \"Progress\": 100,\n        \"VulCnt\": 2425,\n        \"VirusCnt\": 0,\n        \"RiskCnt\": 0,\n        \"SentiveInfoCnt\": 0,\n        \"OsName\": \"linux\",\n        \"ScanVirusError\": \"\",\n        \"ScanVulError\": \"\",\n        \"ScanRiskError\": \"\",\n        \"ScanVirusProgress\": 0,\n        \"ScanVulProgress\": 100,\n        \"ScanRiskProgress\": 100,\n        \"ScanRemainTime\": 0,\n        \"CveStatus\": \"SCANNED\",\n        \"RiskStatus\": \"SCANNED\",\n        \"VirusStatus\": \"NOT_SCAN\",\n        \"IsAuthorized\": 1,\n        \"LayerInfo\": \"xxx\",\n        \"RegistryRegion\": \"ap-hongkong\",\n        \"ImageCreateTime\": \"1900-01-01T00:00:00+00:00\"\n    }\n}",
+        "title": "镜像仓库查询镜像仓库详情"
       }
     ],
     "DescribeAssetImageRegistryList": [
@@ -994,16 +994,16 @@
     ],
     "DescribeAssetImageRegistryScanStatusOneKey": [
       {
-        "document": "镜像仓库查询一键镜像扫描状态",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryScanStatusOneKey\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"TaskID\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ImageTotal\": 1,\n        \"ImageScanCnt\": 1,\n        \"ImageStatus\": [\n            {\n                \"ImageId\": \"abc\",\n                \"RegistryType\": \"abc\",\n                \"ImageRepoAddress\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"ImageName\": \"abc\",\n                \"ImageTag\": \"abc\",\n                \"ScanStatus\": \"abc\",\n                \"CveProgress\": 1,\n                \"RiskProgress\": 1,\n                \"VirusProgress\": 1\n            }\n        ],\n        \"SuccessCount\": 1,\n        \"RiskCount\": 1,\n        \"Schedule\": 1,\n        \"Status\": \"abc\",\n        \"ScanRemainTime\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "镜像仓库查询一键镜像扫描状态"
-      },
-      {
         "document": "正常请求",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryScanStatusOneKey\n<公共请求参数>\n\n{\n    \"TaskID\": 13\n}",
         "output": "{\n    \"Response\": {\n        \"ImageScanCnt\": 0,\n        \"ImageStatus\": [],\n        \"ImageTotal\": 1525,\n        \"RequestId\": \"a8298892-31c6-4a39-84e2-ce998b5822fd\",\n        \"RiskCount\": 0,\n        \"ScanRemainTime\": 0,\n        \"Schedule\": 0,\n        \"Status\": \"SCANNING\",\n        \"SuccessCount\": 0\n    }\n}",
         "title": "正常请求"
+      },
+      {
+        "document": "镜像仓库查询一键镜像扫描状态",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryScanStatusOneKey\n<公共请求参数>\n\n{\n    \"All\": true,\n    \"TaskID\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageTotal\": 1,\n        \"ImageScanCnt\": 1,\n        \"ImageStatus\": [\n            {\n                \"ImageId\": \"abc\",\n                \"RegistryType\": \"abc\",\n                \"ImageRepoAddress\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"ImageName\": \"abc\",\n                \"ImageTag\": \"abc\",\n                \"ScanStatus\": \"abc\",\n                \"CveProgress\": 1,\n                \"RiskProgress\": 1,\n                \"VirusProgress\": 1\n            }\n        ],\n        \"SuccessCount\": 1,\n        \"RiskCount\": 1,\n        \"Schedule\": 1,\n        \"Status\": \"abc\",\n        \"ScanRemainTime\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "镜像仓库查询一键镜像扫描状态"
       }
     ],
     "DescribeAssetImageRegistrySummary": [
@@ -2412,30 +2412,30 @@
     ],
     "ModifyAssetImageRegistryScanStop": [
       {
-        "document": "镜像仓库停止镜像一键扫描任务",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStop\n<公共请求参数>\n\n{\n    \"Id\": [\n        12034807\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
-        "title": "镜像仓库停止镜像一键扫描任务"
-      },
-      {
         "document": "正常请求",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStop\n<公共请求参数>\n\n{\n    \"Id\": [\n        314\n    ],\n    \"TaskID\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18808687-b25a-43d8-9f79-5541bbe47a8e\"\n    }\n}",
         "title": "正常请求"
+      },
+      {
+        "document": "镜像仓库停止镜像一键扫描任务",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStop\n<公共请求参数>\n\n{\n    \"Id\": [\n        12034807\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
+        "title": "镜像仓库停止镜像一键扫描任务"
       }
     ],
     "ModifyAssetImageRegistryScanStopOneKey": [
-      {
-        "document": "镜像仓库停止镜像一键扫描任务",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStopOneKey\n<公共请求参数>\n\n{\n    \"All\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
-        "title": "镜像仓库停止镜像一键扫描任务"
-      },
       {
         "document": "停止任务",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStopOneKey\n<公共请求参数>\n\n{\n    \"TaskID\": 13\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"64c2b99b-ed9d-431b-b0c7-15c73d57c8e4\"\n    }\n}",
         "title": "停止任务"
+      },
+      {
+        "document": "镜像仓库停止镜像一键扫描任务",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetImageRegistryScanStopOneKey\n<公共请求参数>\n\n{\n    \"All\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"459ab056-ab0e-460f-b937-9e5c7d02275f\"\n    }\n}",
+        "title": "镜像仓库停止镜像一键扫描任务"
       }
     ],
     "ModifyAssetImageScanStop": [

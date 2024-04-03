@@ -217,49 +217,7 @@ Output:
 }
 ```
 
-**Example 2: 根据云联网ID查询**
-
-根据云联网ID查询云联网跨境限速实例
-
-Input: 
-
-```
-tccli vpc DescribeCrossBorderCcnRegionBandwidthLimits --cli-unfold-argument  \
-    --Filters.0.Values ccn-025qoqpx \
-    --Filters.0.Name ccn-ids
-```
-
-Output: 
-```
-{
-    "Response": {
-        "CcnBandwidthSet": [
-            {
-                "CcnId": "ccn-025qoqpx",
-                "CreatedTime": "2020-07-30 15:32:27",
-                "ExpiredTime": "2021-01-30 15:32:27",
-                "UpdateTime": "2022-03-07 12:36:17",
-                "RegionFlowControlId": "fcr-1duimd7w",
-                "MarketId": "",
-                "UserAccountID": "3436874624",
-                "IsCrossBorder": true,
-                "IsSecurityLock": false,
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "InstanceChargeType": "",
-                "CcnRegionBandwidthLimit": {
-                    "SourceRegion": "ap-guangzhou",
-                    "DestinationRegion": "ap-hongkong",
-                    "BandwidthLimit": 0
-                }
-            }
-        ],
-        "TotalCount": 1,
-        "RequestId": "8ef886fc-e394-4eba-8da6-b1ae8f88fe61"
-    }
-}
-```
-
-**Example 3: 根据账户ID查询**
+**Example 2: 根据账户ID查询**
 
 根据账户ID查询云联网跨境限速实例
 
@@ -333,6 +291,48 @@ Output:
         ],
         "TotalCount": 3,
         "RequestId": "a5cf93d0-d717-4e89-8a51-e1418b43d9f9"
+    }
+}
+```
+
+**Example 3: 根据云联网ID查询**
+
+根据云联网ID查询云联网跨境限速实例
+
+Input: 
+
+```
+tccli vpc DescribeCrossBorderCcnRegionBandwidthLimits --cli-unfold-argument  \
+    --Filters.0.Values ccn-025qoqpx \
+    --Filters.0.Name ccn-ids
+```
+
+Output: 
+```
+{
+    "Response": {
+        "CcnBandwidthSet": [
+            {
+                "CcnId": "ccn-025qoqpx",
+                "CreatedTime": "2020-07-30 15:32:27",
+                "ExpiredTime": "2021-01-30 15:32:27",
+                "UpdateTime": "2022-03-07 12:36:17",
+                "RegionFlowControlId": "fcr-1duimd7w",
+                "MarketId": "",
+                "UserAccountID": "3436874624",
+                "IsCrossBorder": true,
+                "IsSecurityLock": false,
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "InstanceChargeType": "",
+                "CcnRegionBandwidthLimit": {
+                    "SourceRegion": "ap-guangzhou",
+                    "DestinationRegion": "ap-hongkong",
+                    "BandwidthLimit": 0
+                }
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "8ef886fc-e394-4eba-8da6-b1ae8f88fe61"
     }
 }
 ```

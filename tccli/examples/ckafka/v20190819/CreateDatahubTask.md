@@ -36,7 +36,42 @@ Output:
 }
 ```
 
-**Example 2: 创建TRANSFORM任务**
+**Example 2: 创建SINK任务(ES)**
+
+
+
+Input: 
+
+```
+tccli ckafka CreateDatahubTask --cli-unfold-argument  \
+    --TaskName MyTaskName \
+    --TaskType SINK \
+    --SourceResource.Type KAFKA \
+    --SourceResource.KafkaParam.SelfBuilt False \
+    --SourceResource.KafkaParam.Resource ckafka-7kd5rzza \
+    --SourceResource.KafkaParam.Topic topic-test \
+    --SourceResource.KafkaParam.OffsetType earliest \
+    --TargetResource.Type ES \
+    --TargetResource.EsParam.Resource resource-xxx \
+    --TargetResource.EsParam.DropInvalidMessage True \
+    --TargetResource.EsParam.Index xxx \
+    --TargetResource.EsParam.DropInvalidJsonMessage False
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": {
+            "TaskId": "task-xx",
+            "DatahubId": "xx"
+        },
+        "RequestId": "xx"
+    }
+}
+```
+
+**Example 3: 创建TRANSFORM任务**
 
 TRANSFORM任务
 
@@ -85,41 +120,6 @@ Output:
     "Response": {
         "Result": {
             "TaskId": "datahub-xx",
-            "DatahubId": "xx"
-        },
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 3: 创建SINK任务(ES)**
-
-
-
-Input: 
-
-```
-tccli ckafka CreateDatahubTask --cli-unfold-argument  \
-    --TaskName MyTaskName \
-    --TaskType SINK \
-    --SourceResource.Type KAFKA \
-    --SourceResource.KafkaParam.SelfBuilt False \
-    --SourceResource.KafkaParam.Resource ckafka-7kd5rzza \
-    --SourceResource.KafkaParam.Topic topic-test \
-    --SourceResource.KafkaParam.OffsetType earliest \
-    --TargetResource.Type ES \
-    --TargetResource.EsParam.Resource resource-xxx \
-    --TargetResource.EsParam.DropInvalidMessage True \
-    --TargetResource.EsParam.Index xxx \
-    --TargetResource.EsParam.DropInvalidJsonMessage False
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Result": {
-            "TaskId": "task-xx",
             "DatahubId": "xx"
         },
         "RequestId": "xx"

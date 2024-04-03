@@ -40,30 +40,30 @@
         "title": "同步调用设备行为"
       },
       {
-        "document": "当设备不在线或未订阅相关 topic 时，设备返回情况如样例所示。",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
-        "title": "同步调用设备行为，设备不在线。"
-      },
-      {
         "document": "当设备响应时间过长时，设备返回情况如样例所示。",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.Timeout\",\n            \"Message\": \"调用超时\"\n        },\n        \"RequestId\": \"b1de7dcf-5029-4d70-b6b5-d1ad0f785552\"\n    }\n}",
         "title": "同步调用设备行为，设备超时"
+      },
+      {
+        "document": "当设备不在线或未订阅相关 topic 时，设备返回情况如样例所示。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
+        "title": "同步调用设备行为，设备不在线。"
       }
     ],
     "ControlDeviceData": [
       {
         "document": "设置设备数据",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ControlDeviceData\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&Data={\"brightness\":1}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
-        "title": "设置设备数据-2"
-      },
-      {
-        "document": "设置设备数据",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=ControlDeviceData\n&ProductId=BKTTNGIQOG\n&DeviceName=dev01\n&Data={\"payload\":\"test\",\"id\":\"abc\"}\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
         "title": "设置设备数据"
+      },
+      {
+        "document": "设置设备数据",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=ControlDeviceData\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&Data={\"brightness\":1}\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf\",\n        \"Result\": \"{\\\"Sent\\\":1,\\\"pushResult\\\":0}\"\n    }\n}",
+        "title": "设置设备数据-2"
       },
       {
         "document": "设备不在线时或未订阅相关 Topic 时，设置设备数据",
@@ -74,16 +74,16 @@
     ],
     "CreateBatchProduction": [
       {
-        "document": "使用系统生成的方式进行量产",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchProduction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-pq00mstg\",\n    \"BurnMethod\": \"0\",\n    \"BatchCnt\": \"5\",\n    \"GenerationMethod\": \"0\",\n    \"ProductId\": \"R32ONVL0EU\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client2213121026\"\n    }\n}",
-        "title": "新建量产 - 系统生成"
-      },
-      {
         "document": "使用上传文件 url 的方式进行量产",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchProduction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-pq00mstg\",\n    \"BurnMethod\": \"0\",\n    \"UploadUrl\": \"www.xxxxxxxx.com/xxxxxx.csv\",\n    \"GenerationMethod\": \"1\",\n    \"ProductId\": \"R32ONVL0EU\"\n}",
         "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client3331231026\"\n    }\n}",
         "title": "新建量产 - 上传URL"
+      },
+      {
+        "document": "使用系统生成的方式进行量产",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchProduction\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-pq00mstg\",\n    \"BurnMethod\": \"0\",\n    \"BatchCnt\": \"5\",\n    \"GenerationMethod\": \"0\",\n    \"ProductId\": \"R32ONVL0EU\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchProductionId\": \"LC-74ais6a3\",\n        \"ProductId\": \"R32ONVL0EU\",\n        \"ProjectId\": \"prj-pq00mstg\",\n        \"RequestId\": \"rest-client2213121026\"\n    }\n}",
+        "title": "新建量产 - 系统生成"
       }
     ],
     "CreateDevice": [
@@ -693,15 +693,15 @@
     "GetLoRaGatewayList": [
       {
         "document": "",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetLoRaGatewayList\n&IsCommunity=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"ff00000000000003\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw3\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"fyd\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"LastSeenAt\": \"\"\n            },\n            {\n                \"GatewayId\": \"1000000000000019\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"test0233\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"teshu\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"1970-01-01 08:00:00 AM\",\n                \"CreatedAt\": \"2019-12-03 02:32:18 PM\",\n                \"LastSeenAt\": \"\"\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\",\n        \"Total\": 2\n    }\n}",
-        "title": "获取 LoRa 社区网关列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLoRaGatewayList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"IsCommunity\": true,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"ff00000000000003\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw3\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"fyd\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"LastSeenAt\": \"\"\n            },\n            {\n                \"GatewayId\": \"ff00000000000004\",\n                \"IsPublic\": false,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw4\",\n                \"Position\": \"\",\n                \"PositionDetails\": \"\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 04:13:50 PM\",\n                \"CreatedAt\": \"2019-12-05 04:13:50 PM\",\n                \"LastSeenAt\": \"\"\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\",\n        \"Total\": 2\n    }\n}",
         "title": "获取非社区网关列表"
+      },
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetLoRaGatewayList\n&IsCommunity=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"ff00000000000003\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"ddgw3\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"fyd\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"CreatedAt\": \"2019-12-05 03:53:32 PM\",\n                \"LastSeenAt\": \"\"\n            },\n            {\n                \"GatewayId\": \"1000000000000019\",\n                \"IsPublic\": true,\n                \"Description\": \"fortest\",\n                \"Name\": \"test0233\",\n                \"Position\": \"tfine\",\n                \"PositionDetails\": \"teshu\",\n                \"Location\": {\n                    \"Latitude\": 0,\n                    \"Longitude\": 0,\n                    \"Altitude\": 0,\n                    \"Accuracy\": 0\n                },\n                \"UpdatedAt\": \"1970-01-01 08:00:00 AM\",\n                \"CreatedAt\": \"2019-12-03 02:32:18 PM\",\n                \"LastSeenAt\": \"\"\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取 LoRa 社区网关列表"
       }
     ],
     "GetPositionSpaceList": [

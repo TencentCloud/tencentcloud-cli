@@ -1,4 +1,4 @@
-**Example 1: 查询源站 区域**
+**Example 1: 查询源站区域**
 
 
 
@@ -13,6 +13,94 @@ Output:
     "Response": {
         "TotalCount": 1,
         "DestRegionSet": [
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
+            {
+                "RegionId": "xx",
+                "RegionAreaName": "xx",
+                "IDCType": "xx",
+                "FeatureBitmap": 1,
+                "RegionArea": "xx",
+                "RegionName": "xx"
+            },
             {
                 "RegionId": "xx",
                 "RegionAreaName": "xx",
@@ -27,7 +115,7 @@ Output:
 }
 ```
 
-**Example 2: 查询源站区域**
+**Example 2: 查询源站 区域**
 
 
 
@@ -42,94 +130,6 @@ Output:
     "Response": {
         "TotalCount": 1,
         "DestRegionSet": [
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
             {
                 "RegionId": "xx",
                 "RegionAreaName": "xx",

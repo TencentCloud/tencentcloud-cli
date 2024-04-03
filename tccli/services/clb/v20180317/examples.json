@@ -72,22 +72,16 @@
     ],
     "CreateListener": [
       {
-        "document": "创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1。",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"ListenerNames\": [\n        \"lis1\",\n        \"lis0\"\n    ],\n    \"Protocol\": \"TCP\",\n    \"Ports\": [\n        \"7570\",\n        \"7569\"\n    ],\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-d1ubsydq\",\n            \"lbl-4udz130k\"\n        ],\n        \"RequestId\": \"8f272cef-14ff-458c-b67e-1bd21bd2942b\"\n    }\n}",
-        "title": "创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1"
+        "document": "创建HTTPS监听器，并绑定已有证书",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"Protocol\": \"HTTPS\",\n    \"Ports\": [\n        \"7572\"\n    ],\n    \"Certificate\": {\n        \"SSLMode\": \"UNIDIRECTIONAL\",\n        \"CertId\": \"MsJyaXVm\"\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-4fbxq45k\"\n        ],\n        \"RequestId\": \"db8ae69f-ebda-402b-8d02-ead459aa6ff9\"\n    }\n}",
+        "title": "创建HTTPS监听器，并绑定已有证书"
       },
       {
         "document": "创建TCP监听器的同时设置健康检查信息",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"HealthCheck\": {\n        \"UnHealthNum\": \"4\",\n        \"HealthNum\": \"4\",\n        \"IntervalTime\": \"7\",\n        \"TimeOut\": \"5\",\n        \"HealthSwitch\": \"1\"\n    },\n    \"Protocol\": \"TCP\",\n    \"Ports\": [\n        \"7571\"\n    ],\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
         "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-lbbxvq26\"\n        ],\n        \"RequestId\": \"fff13c83-dcb5-481a-ba7c-30e92c276c19\"\n    }\n}",
         "title": "创建TCP监听器的同时设置健康检查信息"
-      },
-      {
-        "document": "创建HTTPS监听器，并绑定已有证书",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"Protocol\": \"HTTPS\",\n    \"Ports\": [\n        \"7572\"\n    ],\n    \"Certificate\": {\n        \"SSLMode\": \"UNIDIRECTIONAL\",\n        \"CertId\": \"MsJyaXVm\"\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-4fbxq45k\"\n        ],\n        \"RequestId\": \"db8ae69f-ebda-402b-8d02-ead459aa6ff9\"\n    }\n}",
-        "title": "创建HTTPS监听器，并绑定已有证书"
       },
       {
         "document": "创建HTTPS监听器，并同时绑定新建的证书",
@@ -100,6 +94,12 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"HealthCheck\": {\n        \"HealthSwitch\": \"1\"\n    },\n    \"Protocol\": \"UDP\",\n    \"ListenerNames\": [\n        \"lis_test\"\n    ],\n    \"Ports\": [\n        \"432\"\n    ],\n    \"LoadBalancerId\": \"lb-6wlxe9rj\"\n}",
         "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-aev333n1\"\n        ],\n        \"RequestId\": \"3b81f03e-6088-448d-abaf-8a487d4f985a\"\n    }\n}",
         "title": "创建UDP监听器，健康检查方式使用Ping（默认方式）"
+      },
+      {
+        "document": "创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1。",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"ListenerNames\": [\n        \"lis1\",\n        \"lis0\"\n    ],\n    \"Protocol\": \"TCP\",\n    \"Ports\": [\n        \"7570\",\n        \"7569\"\n    ],\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-d1ubsydq\",\n            \"lbl-4udz130k\"\n        ],\n        \"RequestId\": \"8f272cef-14ff-458c-b67e-1bd21bd2942b\"\n    }\n}",
+        "title": "创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1"
       }
     ],
     "CreateLoadBalancer": [
@@ -173,15 +173,15 @@
     "DeleteLoadBalancerListeners": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DeleteLoadBalancerListeners\n&LoadBalancerId=lb-db2nt5l2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1157c81-f3dc-4f2a-9346-76f161d548eb\"\n    }\n}",
-        "title": "删除一个负载均衡下的所有监听器"
-      },
-      {
-        "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DeleteLoadBalancerListeners\n&LoadBalancerId=lb-db2nt5l2\n&ListenerIds.0=lbl-jmgysito\n&ListenerIds.1=lbl-3bgc6o9a\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9706db49-a5d4-413a-9610-7aa1075517e1\"\n    }\n}",
         "title": "删除负载均衡下的多个监听器"
+      },
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DeleteLoadBalancerListeners\n&LoadBalancerId=lb-db2nt5l2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1157c81-f3dc-4f2a-9346-76f161d548eb\"\n    }\n}",
+        "title": "删除一个负载均衡下的所有监听器"
       }
     ],
     "DeleteLoadBalancerSnatIps": [
@@ -363,29 +363,29 @@
     "DescribeListeners": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeListeners\n&LoadBalancerId=lb-aniq7ewx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-hd9nfp6o\",\n                \"ListenerName\": \"12345\",\n                \"CreateTime\": \"2020-12-31 12:03:36\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 333,\n                \"EndPort\": 0,\n                \"HealthCheck\": {\n                    \"HealthSwitch\": 1,\n                    \"TimeOut\": 2,\n                    \"IntervalTime\": 5,\n                    \"HealthNum\": 3,\n                    \"UnHealthNum\": 3,\n                    \"CheckPort\": null,\n                    \"CheckType\": \"TCP\",\n                    \"HttpCheckDomain\": null,\n                    \"HttpCheckPath\": null,\n                    \"HttpCheckMethod\": null,\n                    \"HttpVersion\": null,\n                    \"HttpCode\": null,\n                    \"ContextType\": null,\n                    \"SendContext\": null,\n                    \"RecvContext\": null,\n                    \"ExtendedCode\": null,\n                    \"SourceIpType\": 0\n                },\n                \"Certificate\": null,\n                \"Scheduler\": \"WRR\",\n                \"SessionExpireTime\": 0,\n                \"SniSwitch\": 0,\n                \"Rules\": null,\n                \"TargetType\": \"NODE\",\n                \"TargetGroup\": null,\n                \"KeepaliveEnable\": null,\n                \"SessionType\": \"NORMAL\",\n                \"Toa\": false,\n                \"DeregisterTargetRst\": false,\n                \"MaxConn\": 100,\n                \"MaxCps\": 100,\n                \"IdleConnectTimeout\": 0,\n                \"AttrFlags\": [\n                    \"abc\"\n                ],\n                \"TargetGroupList\": null\n            }\n        ],\n        \"RequestId\": \"3ddae670-4a89-4919-af6e-0d6bf195c92e\"\n    }\n}",
-        "title": "查询负载均衡实例下的全部监听器信息"
-      },
-      {
-        "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeListeners\n&LoadBalancerId=lb-aniq7ewx\n&Protocol=TCP\n&Port=333\n&ListenerIds.0=lbl-hd9nfp6o\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-hd9nfp6o\",\n                \"ListenerName\": \"12345\",\n                \"CreateTime\": \"2020-12-31 12:03:36\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 333,\n                \"EndPort\": 0,\n                \"HealthCheck\": {\n                    \"HealthSwitch\": 1,\n                    \"TimeOut\": 2,\n                    \"IntervalTime\": 5,\n                    \"HealthNum\": 3,\n                    \"UnHealthNum\": 3,\n                    \"CheckPort\": null,\n                    \"CheckType\": \"TCP\",\n                    \"HttpCheckDomain\": null,\n                    \"HttpCheckPath\": null,\n                    \"HttpCheckMethod\": null,\n                    \"HttpVersion\": null,\n                    \"HttpCode\": null,\n                    \"ContextType\": null,\n                    \"SendContext\": null,\n                    \"RecvContext\": null,\n                    \"ExtendedCode\": null,\n                    \"SourceIpType\": 0\n                },\n                \"Certificate\": null,\n                \"Scheduler\": \"WRR\",\n                \"SessionExpireTime\": 0,\n                \"SniSwitch\": 0,\n                \"Rules\": null,\n                \"TargetType\": \"NODE\",\n                \"TargetGroup\": null,\n                \"KeepaliveEnable\": null,\n                \"SessionType\": \"NORMAL\",\n                \"Toa\": false,\n                \"DeregisterTargetRst\": false,\n                \"MaxConn\": 100,\n                \"MaxCps\": 100,\n                \"IdleConnectTimeout\": 0,\n                \"AttrFlags\": [\n                    \"abc\"\n                ],\n                \"TargetGroupList\": null\n            }\n        ],\n        \"RequestId\": \"3ddae670-4a89-4919-af6e-0d6bf195c92e\"\n    }\n}",
         "title": "按照端口、协议及监听器ID查询监听器"
+      },
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeListeners\n&LoadBalancerId=lb-aniq7ewx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-hd9nfp6o\",\n                \"ListenerName\": \"12345\",\n                \"CreateTime\": \"2020-12-31 12:03:36\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 333,\n                \"EndPort\": 0,\n                \"HealthCheck\": {\n                    \"HealthSwitch\": 1,\n                    \"TimeOut\": 2,\n                    \"IntervalTime\": 5,\n                    \"HealthNum\": 3,\n                    \"UnHealthNum\": 3,\n                    \"CheckPort\": null,\n                    \"CheckType\": \"TCP\",\n                    \"HttpCheckDomain\": null,\n                    \"HttpCheckPath\": null,\n                    \"HttpCheckMethod\": null,\n                    \"HttpVersion\": null,\n                    \"HttpCode\": null,\n                    \"ContextType\": null,\n                    \"SendContext\": null,\n                    \"RecvContext\": null,\n                    \"ExtendedCode\": null,\n                    \"SourceIpType\": 0\n                },\n                \"Certificate\": null,\n                \"Scheduler\": \"WRR\",\n                \"SessionExpireTime\": 0,\n                \"SniSwitch\": 0,\n                \"Rules\": null,\n                \"TargetType\": \"NODE\",\n                \"TargetGroup\": null,\n                \"KeepaliveEnable\": null,\n                \"SessionType\": \"NORMAL\",\n                \"Toa\": false,\n                \"DeregisterTargetRst\": false,\n                \"MaxConn\": 100,\n                \"MaxCps\": 100,\n                \"IdleConnectTimeout\": 0,\n                \"AttrFlags\": [\n                    \"abc\"\n                ],\n                \"TargetGroupList\": null\n            }\n        ],\n        \"RequestId\": \"3ddae670-4a89-4919-af6e-0d6bf195c92e\"\n    }\n}",
+        "title": "查询负载均衡实例下的全部监听器信息"
       }
     ],
     "DescribeLoadBalancerListByCertId": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\n&CertIds.0=RwFAfr8Y\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"RwFAfr8Y\",\n                \"LoadBalancers\": []\n            }\n        ],\n        \"RequestId\": \"fe6059b5-faa6-4f21-92a1-0c9ee5df5e54\"\n    }\n}",
-        "title": "指定的证书ID没有关联到任何负载均衡"
-      },
-      {
-        "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\n&CertIds.0=Rrsw4nIA\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"Rrsw4nIA\",\n                \"LoadBalancers\": [\n                    {\n                        \"LoadBalancerId\": \"lb-rbw529fz\",\n                        \"LoadBalancerName\": \"test_LB\",\n                        \"Forward\": 1,\n                        \"Domain\": \"\",\n                        \"LoadBalancerVips\": [\n                            \"129.226.78.67\"\n                        ],\n                        \"LoadBalancerType\": \"OPEN\",\n                        \"Status\": 1,\n                        \"CreateTime\": \"2019-07-02 18:12:52\",\n                        \"StatusTime\": \"2019-07-02 21:50:07\",\n                        \"ProjectId\": 0,\n                        \"OpenBgp\": 0,\n                        \"Snat\": false,\n                        \"Isolation\": 0,\n                        \"Log\": \"\",\n                        \"AnycastZone\": \"\",\n                        \"AddressIPVersion\": \"ipv4\",\n                        \"VpcId\": \"vpc-lt9uj4mo\",\n                        \"NumericalVpcId\": 117008,\n                        \"TargetRegionInfo\": {\n                            \"Region\": \"ap-hongkong\",\n                            \"VpcId\": \"vpc-lt9uj4mo\"\n                        },\n                        \"SubnetId\": \"\",\n                        \"SecureGroups\": [],\n                        \"Tags\": [],\n                        \"VipIsp\": \"BGP\",\n                        \"MasterZone\": null,\n                        \"BackupZoneSet\": null,\n                        \"IsolatedTime\": null,\n                        \"ExpireTime\": null,\n                        \"ChargeType\": null,\n                        \"NetworkAttributes\": null,\n                        \"PrepaidAttributes\": null\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"7718d187-7684-4294-954b-1e13009d75f6\"\n    }\n}",
         "title": "指定的证书ID有关联到负载均衡"
+      },
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLoadBalancerListByCertId\n&CertIds.0=RwFAfr8Y\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CertSet\": [\n            {\n                \"CertId\": \"RwFAfr8Y\",\n                \"LoadBalancers\": []\n            }\n        ],\n        \"RequestId\": \"fe6059b5-faa6-4f21-92a1-0c9ee5df5e54\"\n    }\n}",
+        "title": "指定的证书ID没有关联到任何负载均衡"
       }
     ],
     "DescribeLoadBalancerOverview": [
@@ -406,6 +406,18 @@
     ],
     "DescribeLoadBalancers": [
       {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"lb-rbw5****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw5****\",\n                \"LoadBalancerName\": \"test_LB_****\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
+        "title": "根据负载均衡实例ID来查询"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"LoadBalancerType\": \"OPEN\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"test_tag_value2\",\n                \"test_tag_value1\"\n            ],\n            \"Name\": \"tag:test_tag_key\"\n        }\n    ],\n    \"LoadBalancerName\": \"test_LB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw5****\",\n                \"LoadBalancerName\": \"test_LB_****\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
+        "title": "根据负载均衡的标签键值对过滤查询"
+      },
+      {
         "document": "查询绑定了内网IP为172.26.0.11的后端服务的负载均衡实例。",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"BackendPrivateIps\": [\n        \"172.26.0.11\"\n    ],\n    \"WithRs\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-9vpm****\",\n                \"LoadBalancerName\": \"lb-test-****-1227\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
@@ -419,21 +431,9 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"lb-rbw5****\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw5****\",\n                \"LoadBalancerName\": \"test_LB_****\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
-        "title": "根据负载均衡实例ID来查询"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"LoadBalancerType\": \"OPEN\",\n    \"LoadBalancerVips\": [\n        \"119.***.***.51\"\n    ],\n    \"LoadBalancerName\": \"test_LB\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw5****\",\n                \"LoadBalancerName\": \"test_LB_****\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
         "title": "根据负载均衡类型、所属项目、负载均衡名称、负载均衡实例的vip来查询"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"LoadBalancerType\": \"OPEN\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"test_tag_value2\",\n                \"test_tag_value1\"\n            ],\n            \"Name\": \"tag:test_tag_key\"\n        }\n    ],\n    \"LoadBalancerName\": \"test_LB\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw5****\",\n                \"LoadBalancerName\": \"test_LB_****\",\n                \"Forward\": 1,\n                \"Domain\": \"\",\n                \"LoadBalancerDomain\": \"\",\n                \"LoadBalancerVips\": [\n                    \"119.***.***.51\"\n                ],\n                \"AddressIPv6\": null,\n                \"AddressIPVersion\": \"ipv4\",\n                \"IPv6Mode\": null,\n                \"LoadBalancerType\": \"OPEN\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-27 15:53:46\",\n                \"StatusTime\": \"2024-01-22 19:58:03\",\n                \"ProjectId\": 0,\n                \"OpenBgp\": 0,\n                \"Snat\": false,\n                \"Isolation\": 0,\n                \"Log\": \"\",\n                \"AnycastZone\": \"\",\n                \"VpcId\": \"vpc-1y****83\",\n                \"NumericalVpcId\": 1111113,\n                \"TargetRegionInfo\": {\n                    \"Region\": \"ap-guangzhou\",\n                    \"VpcId\": \"vpc-1y****83\"\n                },\n                \"SubnetId\": \"\",\n                \"SecureGroups\": [],\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key-****\",\n                        \"TagValue\": \"value-****\"\n                    }\n                ],\n                \"MasterZone\": {\n                    \"ZoneId\": 100003,\n                    \"Zone\": \"ap-guangzhou-3\",\n                    \"ZoneName\": \"广州三区\",\n                    \"ZoneRegion\": \"ap-guangzhou\",\n                    \"LocalZone\": false,\n                    \"EdgeZone\": false\n                },\n                \"BackupZoneSet\": null,\n                \"IsolatedTime\": null,\n                \"ExpireTime\": \"2024-01-27 15:53:46\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"NetworkAttributes\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 5,\n                    \"BandwidthpkgSubType\": \"BGP\"\n                },\n                \"PrepaidAttributes\": null,\n                \"ExtraInfo\": null,\n                \"LogSetId\": \"\",\n                \"LogTopicId\": \"\",\n                \"LoadBalancerPassToTarget\": false,\n                \"IsDDos\": false,\n                \"ConfigId\": \"\",\n                \"ExclusiveCluster\": {\n                    \"L4Clusters\": null,\n                    \"L7Clusters\": null,\n                    \"ClassicalCluster\": null\n                },\n                \"SnatPro\": false,\n                \"SnatIps\": [],\n                \"IsBlock\": false,\n                \"IsBlockTime\": \"\",\n                \"SlaType\": \"\",\n                \"ClusterTag\": null,\n                \"LocalBgp\": false,\n                \"MixIpTarget\": false,\n                \"Zones\": null,\n                \"NfvInfo\": \"\",\n                \"HealthLogSetId\": \"\",\n                \"HealthLogTopicId\": \"\",\n                \"ClusterIds\": null,\n                \"AttributeFlags\": [\n                    \"SharedLimitFlag\"\n                ],\n                \"VipIsp\": \"BGP\",\n                \"Egress\": \"\"\n            }\n        ],\n        \"RequestId\": \"b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976\"\n    }\n}",
-        "title": "根据负载均衡的标签键值对过滤查询"
       }
     ],
     "DescribeLoadBalancersDetail": [
@@ -508,16 +508,16 @@
     ],
     "DescribeTargets": [
       {
-        "document": "查询负载均衡实例上绑定的所有后端服务",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargets\n&LoadBalancerId=lb-10iq9lou\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-4fo6k8na\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-o9732aw0\",\n                        \"Domain\": \"www.123.com\",\n                        \"Url\": \"/\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"cvm\",\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.12\"\n                                ],\n                                \"EniId\": \"\",\n                                \"PublicIpAddresses\": null,\n                                \"InstanceName\": \"abcd1234\",\n                                \"Port\": 555,\n                                \"Weight\": 10,\n                                \"InstanceId\": \"ins-19425y2y\",\n                                \"RegisteredTime\": \"2019-07-12 16:22:02\"\n                            }\n                        ],\n                        \"FunctionTargets\": []\n                    }\n                ],\n                \"Targets\": null\n            },\n            {\n                \"ListenerId\": \"lbl-4ue2rpl2\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 888,\n                \"Rules\": null,\n                \"Targets\": [\n                    {\n                        \"Type\": \"cvm\",\n                        \"PrivateIpAddresses\": [\n                            \"172.16.0.12\"\n                        ],\n                        \"EniId\": \"\",\n                        \"PublicIpAddresses\": null,\n                        \"InstanceName\": \"abcd1234\",\n                        \"Port\": 666,\n                        \"Weight\": 40,\n                        \"InstanceId\": \"ins-19425y2y\",\n                        \"RegisteredTime\": \"2019-07-12 16:22:54\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a5cbe92d-c7f2-41d4-8343-3cb42c3fd1dd\"\n    }\n}",
-        "title": "查询负载均衡实例上绑定的所有后端服务"
-      },
-      {
         "document": "当负载均衡的7层监听器规则太多，而只想查询某个规则下的服务列表时，可通过Filters过滤location-id。",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargets\n&LoadBalancerId=lb-12345678\n&Filters.0.Name=location-id\n&Filters.0.Values.0=loc-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-12345678\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-12345678\",\n                        \"Domain\": \"123.com\",\n                        \"Url\": \"/\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"CVM\",\n                                \"InstanceId\": \"ins-12345678\",\n                                \"Port\": 80,\n                                \"Weight\": 10,\n                                \"PublicIpAddresses\": null,\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.100\"\n                                ],\n                                \"InstanceName\": \"123\",\n                                \"RegisteredTime\": \"2023-01-01\",\n                                \"EniId\": \"eni-12345678\"\n                            }\n                        ],\n                        \"FunctionTargets\": null\n                    }\n                ],\n                \"Targets\": null,\n                \"EndPort\": 0\n            }\n        ],\n        \"RequestId\": \"038afb75-7303-48da-abdc-e25f0cbfda0f\"\n    }\n}",
         "title": "通过Location过滤查询后端服务列表"
+      },
+      {
+        "document": "查询负载均衡实例上绑定的所有后端服务",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargets\n&LoadBalancerId=lb-10iq9lou\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-4fo6k8na\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-o9732aw0\",\n                        \"Domain\": \"www.123.com\",\n                        \"Url\": \"/\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"cvm\",\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.12\"\n                                ],\n                                \"EniId\": \"\",\n                                \"PublicIpAddresses\": null,\n                                \"InstanceName\": \"abcd1234\",\n                                \"Port\": 555,\n                                \"Weight\": 10,\n                                \"InstanceId\": \"ins-19425y2y\",\n                                \"RegisteredTime\": \"2019-07-12 16:22:02\"\n                            }\n                        ],\n                        \"FunctionTargets\": []\n                    }\n                ],\n                \"Targets\": null\n            },\n            {\n                \"ListenerId\": \"lbl-4ue2rpl2\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 888,\n                \"Rules\": null,\n                \"Targets\": [\n                    {\n                        \"Type\": \"cvm\",\n                        \"PrivateIpAddresses\": [\n                            \"172.16.0.12\"\n                        ],\n                        \"EniId\": \"\",\n                        \"PublicIpAddresses\": null,\n                        \"InstanceName\": \"abcd1234\",\n                        \"Port\": 666,\n                        \"Weight\": 40,\n                        \"InstanceId\": \"ins-19425y2y\",\n                        \"RegisteredTime\": \"2019-07-12 16:22:54\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a5cbe92d-c7f2-41d4-8343-3cb42c3fd1dd\"\n    }\n}",
+        "title": "查询负载均衡实例上绑定的所有后端服务"
       }
     ],
     "DescribeTaskStatus": [
@@ -538,16 +538,16 @@
     ],
     "InquiryPriceCreateLoadBalancer": [
       {
+        "document": "查询创建预付费负载均衡价格",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=PREPAID\n&GoodsNum=1\n&InternetAccessible.InternetChargeType=BANDWIDTH_PREPAID\n&InternetAccessible.InternetMaxBandwidthOut=1\n&LoadBalancerChargePrepaid.Period=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"OriginalPrice\": 37.4,\n                \"DiscountPrice\": 37.4,\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"52f22ea7-3592-4ff0-9d63-a5cc14b79859\"\n    }\n}",
+        "title": "查询创建预付费负载均衡价格"
+      },
+      {
         "document": "查询LB按量计费，网络按量计费的费用",
         "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"f4953b5c-990c-49fa-9937-7aebef241d42\"\n    }\n}",
         "title": "查询LB按量计费，网络按量计费的费用"
-      },
-      {
-        "document": "查询创建LB按量计费，网络按带宽计费的价格",
-        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&InternetAccessible.InternetChargeType=BANDWIDTH_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.04,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"835f9cd8-6af1-4ac6-8fc3-2a9f900b7fff\"\n    }\n}",
-        "title": "查询创建LB按量计费，网络按带宽计费的价格"
       },
       {
         "document": "查询创建LB按量计费，网络按带宽包计费",
@@ -556,10 +556,10 @@
         "title": "查询创建LB按量计费，网络按带宽包计费"
       },
       {
-        "document": "查询创建预付费负载均衡价格",
-        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=PREPAID\n&GoodsNum=1\n&InternetAccessible.InternetChargeType=BANDWIDTH_PREPAID\n&InternetAccessible.InternetMaxBandwidthOut=1\n&LoadBalancerChargePrepaid.Period=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"OriginalPrice\": 37.4,\n                \"DiscountPrice\": 37.4,\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"52f22ea7-3592-4ff0-9d63-a5cc14b79859\"\n    }\n}",
-        "title": "查询创建预付费负载均衡价格"
+        "document": "查询创建LB按量计费，网络按带宽计费的价格",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&InternetAccessible.InternetChargeType=BANDWIDTH_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.04,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"835f9cd8-6af1-4ac6-8fc3-2a9f900b7fff\"\n    }\n}",
+        "title": "查询创建LB按量计费，网络按带宽计费的价格"
       }
     ],
     "InquiryPriceModifyLoadBalancer": [
@@ -604,16 +604,16 @@
     ],
     "ModifyBlockIPList": [
       {
-        "document": "使用封禁功能，需要先设置header，指定客户端真实IP存放的header字段名，开启黑名单功能。",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyBlockIPList\r\n&LoadBalancerIds.0=lb-6efswuxa\r\n&Type=add_customized_field\r\n&ClientIPField=client_ip_test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JodId\": \"localjob010916173469001234512345\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a30212345\"\n    }\n}",
-        "title": "设置header，开启黑名单功能"
-      },
-      {
         "document": "指定客户端真实IP存放的header字段名，开启黑名单功能完成后，即可添加黑名单（删除黑名单、清空黑名单功能类似）",
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyBlockIPList\r\n&LoadBalancerIds.0=lb-6efswuxa\r\n&Type=add_blocked\r\n&BlockIPList.0=1.2.3.4\r\n&ExpireTime=3000\r\n&AddStrategy=fifo\r\n&ClientIPField=client_ip_test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JodId\": \"localjob010916173469001234567890\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a3025baff\"\n    }\n}",
         "title": "添加黑名单"
+      },
+      {
+        "document": "使用封禁功能，需要先设置header，指定客户端真实IP存放的header字段名，开启黑名单功能。",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyBlockIPList\r\n&LoadBalancerIds.0=lb-6efswuxa\r\n&Type=add_customized_field\r\n&ClientIPField=client_ip_test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"JodId\": \"localjob010916173469001234512345\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a30212345\"\n    }\n}",
+        "title": "设置header，开启黑名单功能"
       }
     ],
     "ModifyDomain": [
@@ -642,16 +642,16 @@
     ],
     "ModifyListener": [
       {
-        "document": "修改TCP监听器的名称、健康检查参数及转发策略",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"HealthCheck\": {\n        \"UnHealthNum\": \"5\",\n        \"HealthNum\": \"5\",\n        \"IntervalTime\": \"60\",\n        \"TimeOut\": \"35\",\n        \"HealthSwitch\": \"1\"\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\",\n    \"ListenerId\": \"lbl-d1ubsydq\",\n    \"ListenerName\": \"newlis\",\n    \"Scheduler\": \"LEAST_CONN\",\n    \"SessionExpireTime\": \"120\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8cd88c83-fd30-47c0-8e7a-89bf13a7a83c\"\n    }\n}",
-        "title": "修改TCP监听器的名称、健康检查参数及转发策略"
-      },
-      {
         "document": "修改HTTPS监听器绑定的证书",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"ListenerId\": \"lbl-4fbxq45k\",\n    \"Certificate\": {\n        \"SSLMode\": \"UNIDIRECTIONAL\",\n        \"CertId\": \"Nb1DY3hQ\"\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b64574f9-5bc7-4a63-a9d7-3671b6a6d62b\"\n    }\n}",
         "title": "修改HTTPS监听器绑定的证书"
+      },
+      {
+        "document": "修改TCP监听器的名称、健康检查参数及转发策略",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"HealthCheck\": {\n        \"UnHealthNum\": \"5\",\n        \"HealthNum\": \"5\",\n        \"IntervalTime\": \"60\",\n        \"TimeOut\": \"35\",\n        \"HealthSwitch\": \"1\"\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\",\n    \"ListenerId\": \"lbl-d1ubsydq\",\n    \"ListenerName\": \"newlis\",\n    \"Scheduler\": \"LEAST_CONN\",\n    \"SessionExpireTime\": \"120\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8cd88c83-fd30-47c0-8e7a-89bf13a7a83c\"\n    }\n}",
+        "title": "修改TCP监听器的名称、健康检查参数及转发策略"
       }
     ],
     "ModifyLoadBalancerAttributes": [
@@ -759,15 +759,15 @@
       },
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=RegisterTargets\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&Domain=foo.net\n&Url=/bar8\n&Targets.0.InstanceId=ins-dm4xtz0i\n&Targets.0.Port=233\n&Targets.0.Weight=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
-        "title": "注册云服务器到HTTP监听器的转发规则上（使用Domain和Url指定规则）"
-      },
-      {
-        "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=RegisterTargets\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&LocationId=loc-r2q3jd4c\n&Targets.0.InstanceId=ins-dm4xtz0i\n&Targets.0.Port=334\n&Targets.0.Weight=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4846a22-e758-407f-a526-db3f2d37d00e\"\n    }\n}",
         "title": "注册云服务器到HTTP监听器的转发规则上（使用LocationId指定规则）"
+      },
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=RegisterTargets\n&LoadBalancerId=lb-cuxw2rm0\n&ListenerId=lbl-4fbxq45k\n&Domain=foo.net\n&Url=/bar8\n&Targets.0.InstanceId=ins-dm4xtz0i\n&Targets.0.Port=233\n&Targets.0.Weight=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11b4338f-2d00-4766-bc67-581d959b3488\"\n    }\n}",
+        "title": "注册云服务器到HTTP监听器的转发规则上（使用Domain和Url指定规则）"
       }
     ],
     "RegisterTargetsWithClassicalLB": [
@@ -796,24 +796,24 @@
     ],
     "SetLoadBalancerClsLog": [
       {
-        "document": "添加，或修改负载均衡的日志服务(CLS)主题",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\n&LoadBalancerId=lb-cuxw2r00\n&LogSetId=xxxx-xx-xx-xx-xxxxxxxx\n&LogTopicId=xxxx-xx-xx-xx-yyyyyyyy\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
-        "title": "设置日志服务主题"
-      },
-      {
         "document": "删除负载均衡的日志服务(CLS)主题",
         "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\n&LoadBalancerId=lb-cuxw2r00\n&LogSetId= \n&LogTopicId= \n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
         "title": "删除日志服务主题"
+      },
+      {
+        "document": "添加，或修改负载均衡的日志服务(CLS)主题",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerClsLog\n&LoadBalancerId=lb-cuxw2r00\n&LogSetId=xxxx-xx-xx-xx-xxxxxxxx\n&LogTopicId=xxxx-xx-xx-xx-yyyyyyyy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78a40898-8210-44c7-8bc6-f83e50878d12\"\n    }\n}",
+        "title": "设置日志服务主题"
       }
     ],
     "SetLoadBalancerSecurityGroups": [
       {
-        "document": "负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-12345678 将被绑定至此负载均衡实例。",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&SecurityGroups.0=sg-0936o7sd\n&SecurityGroups.1=sg-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
-        "title": "绑定多个安全组至负载均衡实例"
+        "document": "负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04655\"\n    }\n}",
+        "title": "解绑所有安全组"
       },
       {
         "document": "负载均衡实例原来绑定了两个安全组： sg-0936o7sd、sg-12345678，执行本操作后，安全组 sg-12345678 将从此负载均衡实例解绑。",
@@ -822,10 +822,10 @@
         "title": "从负载均衡实例解绑一个安全组"
       },
       {
-        "document": "负载均衡实例原来已绑定若干个安全组，执行本操作后，所有安全组都将从此负载均衡实例解绑。",
-        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04655\"\n    }\n}",
-        "title": "解绑所有安全组"
+        "document": "负载均衡实例原来未绑定任何安全组，执行本操作后，安全组 sg-0936o7sd、sg-12345678 将被绑定至此负载均衡实例。",
+        "input": "https://clb.tencentcloudapi.com/?Action=SetLoadBalancerSecurityGroups\n&LoadBalancerId=lb-cuxw2r00\n&SecurityGroups.0=sg-0936o7sd\n&SecurityGroups.1=sg-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00ca7fca-90f1-47fe-a724-5d7e96d04633\"\n    }\n}",
+        "title": "绑定多个安全组至负载均衡实例"
       }
     ],
     "SetLoadBalancerStartStatus": [

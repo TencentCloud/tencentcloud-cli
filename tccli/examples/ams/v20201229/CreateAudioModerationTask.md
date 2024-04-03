@@ -1,34 +1,4 @@
-**Example 1: 创建音频审核任务**
-
-创建音频审核任务
-
-Input: 
-
-```
-tccli ams CreateAudioModerationTask --cli-unfold-argument  \
-    --Type AUDIO \
-    --Tasks.0.DataId 0a782332-c9db-4cf5-a66e-20d60b4ea469 \
-    --Tasks.0.Input.Url https://test.myqcloud.com/test.mp3
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Results": [
-            {
-                "DataId": "0a782332-c9db-4cf5-a66e-20d60b4ea469",
-                "TaskId": "c933aca1-90d2-4ab8-b045-f1b08069d76f",
-                "Code": "OK",
-                "Message": "Success"
-            }
-        ],
-        "RequestId": "c933aca1-90d2-4ab8-b045-f1b08069d76f"
-    }
-}
-```
-
-**Example 2: 回调签名示例**
+**Example 1: 回调签名示例**
 
 当用户在创建审核任务时配置了Seed，我们则会在回调当时候加入签名参数，以保证数据的安全性。
 签名方法：返回的HTTP头部，添加 `X-Signature` 的字段，值为： `seed ` +  `body ` 的 sha256 编码和Hex字符串。
@@ -59,6 +29,36 @@ Output:
         "Results": [
             {
                 "DataId": "test",
+                "TaskId": "c933aca1-90d2-4ab8-b045-f1b08069d76f",
+                "Code": "OK",
+                "Message": "Success"
+            }
+        ],
+        "RequestId": "c933aca1-90d2-4ab8-b045-f1b08069d76f"
+    }
+}
+```
+
+**Example 2: 创建音频审核任务**
+
+创建音频审核任务
+
+Input: 
+
+```
+tccli ams CreateAudioModerationTask --cli-unfold-argument  \
+    --Type AUDIO \
+    --Tasks.0.DataId 0a782332-c9db-4cf5-a66e-20d60b4ea469 \
+    --Tasks.0.Input.Url https://test.myqcloud.com/test.mp3
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Results": [
+            {
+                "DataId": "0a782332-c9db-4cf5-a66e-20d60b4ea469",
                 "TaskId": "c933aca1-90d2-4ab8-b045-f1b08069d76f",
                 "Code": "OK",
                 "Message": "Success"

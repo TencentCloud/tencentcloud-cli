@@ -1,14 +1,14 @@
-**Example 1: 设置日志服务主题**
+**Example 1: 删除日志服务主题**
 
-添加，或修改负载均衡的日志服务(CLS)主题
+删除负载均衡的日志服务(CLS)主题
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2r00 \
-    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
-    --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
+    --LogSetId  \
+    --LogTopicId 
 ```
 
 Output: 
@@ -20,17 +20,17 @@ Output:
 }
 ```
 
-**Example 2: 删除日志服务主题**
+**Example 2: 设置日志服务主题**
 
-删除负载均衡的日志服务(CLS)主题
+添加，或修改负载均衡的日志服务(CLS)主题
 
 Input: 
 
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2r00 \
-    --LogSetId  \
-    --LogTopicId 
+    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
+    --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
 ```
 
 Output: 

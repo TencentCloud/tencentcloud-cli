@@ -262,16 +262,16 @@
         "title": "查询审计日志"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2023-08-01 00:00:00\",\n    \"EndTime\": \"2023-08-07 00:00:00\",\n    \"Limit\": 20,\n    \"LogFilter\": [\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"select\"\n            ]\n        },\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"test_db\"\n            ]\n        },\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"NEQ\",\n            \"Value\": [\n                \"10.0.0.1\",\n                \"100.0.0.1\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": null,\n        \"RequestId\": \"90d90456-2a5b-4015-81b8-9e2fca52012b\",\n        \"TotalCount\": 0\n    }\n}",
-        "title": "查询xx时间范围内，sql中包含select和test_db，并且来源IP不等于10.0.0.1并且不等100.0.0.1的记录"
-      },
-      {
         "document": "sql样例：select * from test_db limit 1;\nsql  INC selec 能搜索到;\nsql  WINC selec 搜索不到样例;",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2023-08-01 00:00:00\",\n    \"EndTime\": \"2023-08-07 00:00:00\",\n    \"Limit\": 20,\n    \"LogFilter\": [\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"INC\",\n            \"Value\": [\n                \"selec\",\n                \"up\"\n            ]\n        },\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"INC\",\n            \"Value\": [\n                \"10.0.\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": null,\n        \"RequestId\": \"90d90456-2a5b-4015-81b8-9e2fca52012b\",\n        \"TotalCount\": 0\n    }\n}",
         "title": "查询xx时间范围内，sql中包含selec或者upda，并且来源IP包含10.0.的记录"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\",\n    \"StartTime\": \"2023-08-01 00:00:00\",\n    \"EndTime\": \"2023-08-07 00:00:00\",\n    \"Limit\": 20,\n    \"LogFilter\": [\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"select\"\n            ]\n        },\n        {\n            \"Type\": \"sql\",\n            \"Compare\": \"WINC\",\n            \"Value\": [\n                \"test_db\"\n            ]\n        },\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"NEQ\",\n            \"Value\": [\n                \"10.0.0.1\",\n                \"100.0.0.1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": null,\n        \"RequestId\": \"90d90456-2a5b-4015-81b8-9e2fca52012b\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询xx时间范围内，sql中包含select和test_db，并且来源IP不等于10.0.0.1并且不等100.0.0.1的记录"
       }
     ],
     "DescribeAuditRuleTemplates": [
@@ -526,14 +526,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySpecs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Mem\": 0,\n                \"Cpu\": 0\n            }\n        ],\n        \"RequestId\": \"request-756112\"\n    }\n}",
-        "title": "查询数据库代理规格"
+        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Cpu\": 2,\n                \"Mem\": 4000\n            },\n            {\n                \"Cpu\": 4,\n                \"Mem\": 8000\n            },\n            {\n                \"Cpu\": 8,\n                \"Mem\": 16000\n            }\n        ],\n        \"RequestId\": \"f4479b74-e428-40d9-a81f-e34cac00ae70\"\n    }\n}",
+        "title": "查询proxy规格"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySpecs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Cpu\": 2,\n                \"Mem\": 4000\n            },\n            {\n                \"Cpu\": 4,\n                \"Mem\": 8000\n            },\n            {\n                \"Cpu\": 8,\n                \"Mem\": 16000\n            }\n        ],\n        \"RequestId\": \"f4479b74-e428-40d9-a81f-e34cac00ae70\"\n    }\n}",
-        "title": "查询proxy规格"
+        "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Mem\": 0,\n                \"Cpu\": 0\n            }\n        ],\n        \"RequestId\": \"request-756112\"\n    }\n}",
+        "title": "查询数据库代理规格"
       }
     ],
     "DescribeResourcePackageDetail": [

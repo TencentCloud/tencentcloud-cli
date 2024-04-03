@@ -1,4 +1,47 @@
-**Example 1: 查询源集群主题列表**
+**Example 1: 正常调用**
+
+正常调用
+
+Input: 
+
+```
+tccli tdmq DescribeRocketMQSourceClusterTopicList --cli-unfold-argument  \
+    --Limit 2 \
+    --Offset 0 \
+    --TaskId 700000780521-migratetest-d93e34d2
+```
+
+Output: 
+```
+{
+    "Error": null,
+    "RequestId": null,
+    "Response": {
+        "RequestId": "2445d687-10f2-403a-a46a-cfa9a939074f",
+        "Topics": [
+            {
+                "Imported": false,
+                "Namespace": "",
+                "Partitions": 1,
+                "Remark": null,
+                "TopicName": "OFFSET_MOVED_EVENT",
+                "Type": null
+            },
+            {
+                "Imported": false,
+                "Namespace": "",
+                "Partitions": 8,
+                "Remark": null,
+                "TopicName": "Topic_213",
+                "Type": null
+            }
+        ],
+        "TotalCount": 2
+    }
+}
+```
+
+**Example 2: 查询源集群主题列表**
 
 查询源集群主题列表
 
@@ -101,49 +144,6 @@ Output:
             }
         ],
         "TotalCount": 54
-    }
-}
-```
-
-**Example 2: 正常调用**
-
-正常调用
-
-Input: 
-
-```
-tccli tdmq DescribeRocketMQSourceClusterTopicList --cli-unfold-argument  \
-    --Limit 2 \
-    --Offset 0 \
-    --TaskId 700000780521-migratetest-d93e34d2
-```
-
-Output: 
-```
-{
-    "Error": null,
-    "RequestId": null,
-    "Response": {
-        "RequestId": "2445d687-10f2-403a-a46a-cfa9a939074f",
-        "Topics": [
-            {
-                "Imported": false,
-                "Namespace": "",
-                "Partitions": 1,
-                "Remark": null,
-                "TopicName": "OFFSET_MOVED_EVENT",
-                "Type": null
-            },
-            {
-                "Imported": false,
-                "Namespace": "",
-                "Partitions": 8,
-                "Remark": null,
-                "TopicName": "Topic_213",
-                "Type": null
-            }
-        ],
-        "TotalCount": 2
     }
 }
 ```

@@ -35,15 +35,15 @@
     "CreateWhitelist": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"222\",\n    \"Remark\": \"备注\",\n    \"WhitelistUin\": \"1123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"ID\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建白名单"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"333\",\n    \"Remark\": \"222\",\n    \"WhitelistUin\": \"22323\"\n}",
         "output": "{\n    \"Response\": {\n        \"ID\": 77,\n        \"Msg\": \"success\",\n        \"RequestId\": \"fcaec326-8c68-4302-8624-c5b08b9f1893\"\n    }\n}",
         "title": "12"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"222\",\n    \"Remark\": \"备注\",\n    \"WhitelistUin\": \"1123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"ID\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建白名单"
       }
     ],
     "DeleteInstance": [
@@ -145,23 +145,23 @@
     "DescribeDataFetchProject": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchProject\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取DescribeDataFetchProject信息"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchProject\n<公共请求参数>\n\n{\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"condition\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1625444040\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9906759b-ea71-409e-b4e0-b877512713cf\",\n        \"Result\": \"{\\\"request_id\\\":\\\"9906759b-ea71-409e-b4e0-b877512713cf\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":3,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":4,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":5,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":6,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":7,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":8,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0},{\\\"statement_id\\\":9,\\\"series\\\":[{\\\"name\\\":\\\"fetch_project_statistics\\\",\\\"columns\\\":[\\\"key\\\",\\\"value\\\"]}],\\\"total\\\":0}]}\"\n    }\n}",
         "title": "111"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchProject\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataFetchProject信息"
       }
     ],
     "DescribeDataFetchUrl": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchUrl\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取DescribeDataFetchUrl信息"
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchUrl\n<公共请求参数>\n\n{\n    \"EndTime\": \"1658390700\",\n    \"Type\": \"allcount\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1658304300\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d446c290-7034-47d3-8d72-46e7a692f5ac\",\n        \"Result\": \"{\\\"request_id\\\":\\\"d446c290-7034-47d3-8d72-46e7a692f5ac\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"\n    }\n}",
+        "title": "1"
       },
       {
         "document": "",
@@ -171,9 +171,9 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchUrl\n<公共请求参数>\n\n{\n    \"EndTime\": \"1658390700\",\n    \"Type\": \"allcount\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1658304300\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d446c290-7034-47d3-8d72-46e7a692f5ac\",\n        \"Result\": \"{\\\"request_id\\\":\\\"d446c290-7034-47d3-8d72-46e7a692f5ac\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"\n    }\n}",
-        "title": "1"
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFetchUrl\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataFetchUrl信息"
       }
     ],
     "DescribeDataFetchUrlInfo": [
@@ -203,15 +203,15 @@
     "DescribeDataPerformancePage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPerformancePage\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取PerformancePage信息"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPerformancePage\n<公共请求参数>\n\n{\n    \"EndTime\": \"1658390700\",\n    \"Type\": \"allcount\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1658304300\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddec0dc8-3268-4571-9ac0-566ae7537495\",\n        \"Result\": \"{\\\"request_id\\\":\\\"ddec0dc8-3268-4571-9ac0-566ae7537495\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0},{\\\"statement_id\\\":3,\\\"total\\\":0}]}\"\n    }\n}",
         "title": "22"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPerformancePage\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取PerformancePage信息"
       }
     ],
     "DescribeDataPvUrlInfo": [
@@ -224,10 +224,10 @@
     ],
     "DescribeDataPvUrlStatistics": [
       {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataPvUrlStatistics\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取DescribeDataPvUrlStatistics信息"
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": 1697078966,\n    \"Type\": \"ckuv\",\n    \"EndTime\": 1697093366,\n    \"ID\": 120000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\",\n        \"Result\": \"{\\\"request_id\\\":\\\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
+        "title": "1"
       },
       {
         "document": "测试",
@@ -236,10 +236,10 @@
         "title": "测试"
       },
       {
-        "document": "1",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": 1697078966,\n    \"Type\": \"ckuv\",\n    \"EndTime\": 1697093366,\n    \"ID\": 120000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\",\n        \"Result\": \"{\\\"request_id\\\":\\\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
-        "title": "1"
+        "document": "",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataPvUrlStatistics\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataPvUrlStatistics信息"
       }
     ],
     "DescribeDataReportCount": [
@@ -253,15 +253,15 @@
     "DescribeDataSetUrlStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSetUrlStatistics\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取DescribeDataSetUrlStatistics信息"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSetUrlStatistics\n<公共请求参数>\n\n{\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"condition\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1625444040\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"888d57f1-f544-4291-9a88-8638c050f208\",\n        \"Result\": \"{\\\"request_id\\\":\\\"888d57f1-f544-4291-9a88-8638c050f208\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0}]}\"\n    }\n}",
         "title": "222"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSetUrlStatistics\n<公共请求参数>\n\n{\n    \"ExtSecond\": \"自定义2\",\n    \"Engine\": \"ie2\",\n    \"IsAbroad\": \"1\",\n    \"Area\": \"中国\",\n    \"NetType\": \"2\",\n    \"CostType\": \"avg\",\n    \"Level\": \"1\",\n    \"Os\": \"apple\",\n    \"Brand\": \"apple\",\n    \"Isp\": \"中国移动\",\n    \"VersionNum\": \"版本\",\n    \"Platform\": \"2\",\n    \"ExtThird\": \"自定义3\",\n    \"ExtFirst\": \"自定义1\",\n    \"StartTime\": \"1625444040\",\n    \"Device\": \"三星\",\n    \"From\": \"index.html\",\n    \"EndTime\": \"1625454840\",\n    \"Type\": \"pagepv\",\n    \"ID\": \"1\",\n    \"Browser\": \"ie\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取DescribeDataSetUrlStatistics信息"
       }
     ],
     "DescribeDataStaticProject": [
@@ -314,16 +314,16 @@
     ],
     "DescribeProjects": [
       {
-        "document": "根据过滤条件获取 RUM 应用列表",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"'测试项目名2'\",\n                \"'测试项目名'\"\n            ],\n            \"Name\": \"'Name'\"\n        }\n    ],\n    \"Offset\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProjectSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "根据过滤条件获取 RUM 应用列表"
-      },
-      {
         "document": "获取 RUM 应用列表",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProjectSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取 RUM 应用列表"
+      },
+      {
+        "document": "根据过滤条件获取 RUM 应用列表",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"'测试项目名2'\",\n                \"'测试项目名'\"\n            ],\n            \"Name\": \"'Name'\"\n        }\n    ],\n    \"Offset\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProjectSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "根据过滤条件获取 RUM 应用列表"
       }
     ],
     "DescribePvList": [
@@ -353,71 +353,71 @@
     "DescribeRumGroupLog": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\",\n    \"Page\": \"1\",\n    \"GroupField\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取日志列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"ID\": \"1\",\n    \"Limit\": \"1\",\n    \"GroupField\": \"\",\n    \"StartTime\": \"1\",\n    \"Query\": \"1\",\n    \"EndTime\": \"1\",\n    \"Page\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a43a52-d00f-462a-82da-89841117f4ca\",\n        \"Result\": \"\"\n    }\n}",
         "title": "2312"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\",\n    \"Page\": \"1\",\n    \"GroupField\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
       }
     ],
     "DescribeRumLogExport": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Fields\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"xx\",\n    \"Query\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"ID\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取日志列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Query\": \"id:1\",\n    \"EndTime\": \"1\",\n    \"Name\": \"\",\n    \"StartTime\": \"1665994920000\",\n    \"ID\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"763188d1-9f99-45e8-8bbf-bcdffa8f58f0\",\n        \"Result\": \"\"\n    }\n}",
         "title": "1212"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Fields\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"xx\",\n    \"Query\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"ID\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
       }
     ],
     "DescribeRumLogExports": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"ID\": \"10\",\n    \"PageNum\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取日志列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageNum\": \"1\",\n    \"ID\": \"1\",\n    \"PageSize\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"641faf00-efc4-46b5-b3ce-03383133dc08\",\n        \"Result\": \"\"\n    }\n}",
         "title": "xc"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"ID\": \"10\",\n    \"PageNum\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
       }
     ],
     "DescribeRumLogList": [
-      {
-        "document": "获取日志列表",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogList\n<公共请求参数>\n\n{\n    \"OrderBy\": \"desc\",\n    \"ID\": \"120000\",\n    \"Limit\": \"100\",\n    \"StartTime\": \"1665994920000\",\n    \"Query\": \"id:120000\",\n    \"EndTime\": \"1673417492913\",\n    \"Page\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72ef03a0-01a8-443e-908a-8573fbeaafcd\",\n        \"Result\": \"\"\n    }\n}",
-        "title": "获取日志列表"
-      },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogList\n<公共请求参数>\n\n{\n    \"OrderBy\": \"asc\",\n    \"ID\": \"4\",\n    \"Limit\": \"1\",\n    \"StartTime\": \"1676390400000\",\n    \"Query\": \"id:4\",\n    \"EndTime\": \"1676476799000\",\n    \"Page\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bafa2f-3f6a-4f1a-b9a3-d1d848d34168\",\n        \"Result\": \"\"\n    }\n}",
         "title": "123"
+      },
+      {
+        "document": "获取日志列表",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogList\n<公共请求参数>\n\n{\n    \"OrderBy\": \"desc\",\n    \"ID\": \"120000\",\n    \"Limit\": \"100\",\n    \"StartTime\": \"1665994920000\",\n    \"Query\": \"id:120000\",\n    \"EndTime\": \"1673417492913\",\n    \"Page\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72ef03a0-01a8-443e-908a-8573fbeaafcd\",\n        \"Result\": \"\"\n    }\n}",
+        "title": "获取日志列表"
       }
     ],
     "DescribeRumStatsLogList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取日志列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"Query\": \"1\",\n    \"EndTime\": \"1\",\n    \"Limit\": \"1\",\n    \"ID\": \"1\",\n    \"StartTime\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7987e9a1-cece-4468-b104-cd239f2f6cd6\",\n        \"Result\": \"\"\n    }\n}",
         "title": "1212"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "title": "获取日志列表"
       }
     ],
     "DescribeScores": [
@@ -478,16 +478,16 @@
     ],
     "ModifyProjectLimit": [
       {
-        "document": "新增修改限流",
-        "input": "https://rum.tencentcloudapi.com/?Action=ModifyProjectLimit\n&ProjectID=1\n&ProjectInterface=web\n&ReportRate=10\n&ReportType=1\n&ID=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "新增修改限流"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectLimit\n<公共请求参数>\n\n{\n    \"ProjectInterface\": \"web\",\n    \"ProjectID\": \"8\",\n    \"ReportRate\": \"10\",\n    \"ReportType\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"a62c0f90-5ed0-4f3e-b285-8e4885a5ca45\"\n    }\n}",
         "title": "新增抽样"
+      },
+      {
+        "document": "新增修改限流",
+        "input": "https://rum.tencentcloudapi.com/?Action=ModifyProjectLimit\n&ProjectID=1\n&ProjectInterface=web\n&ReportRate=10\n&ReportType=1\n&ID=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新增修改限流"
       }
     ],
     "ResumeInstance": [

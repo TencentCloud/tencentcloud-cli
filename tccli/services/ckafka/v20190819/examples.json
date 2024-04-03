@@ -74,16 +74,16 @@
     ],
     "CreateConnectResource": [
       {
-        "document": "创建Datahub连接源(DTS)",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxxxx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-xxx\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"xxxx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xxxx\",\n    \"Type\": \"DTS\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxxx\"\n    }\n}",
-        "title": "创建Datahub连接源(DTS)"
-      },
-      {
         "document": "创建Datahub连接源(ES)",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxxx\",\n    \"EsConnectParam\": {\n        \"UserName\": \"elastic\",\n        \"Resource\": \"es-xxx\",\n        \"Password\": \"xxxx\",\n        \"Port\": 9200,\n        \"ServiceVip\": \"10.0.0.1\",\n        \"UniqVpcId\": \"vpc-xxx\",\n        \"SelfBuilt\": false\n    },\n    \"ResourceName\": \"xxxx\",\n    \"Type\": \"ES\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "创建Datahub连接源(ES)"
+      },
+      {
+        "document": "创建Datahub连接源(DTS)",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectResource\n<公共请求参数>\n\n{\n    \"Description\": \"xxxxx\",\n    \"DtsConnectParam\": {\n        \"UserName\": \"root\",\n        \"Resource\": \"dts-xxx\",\n        \"Topic\": \"topic\",\n        \"GroupId\": \"group\",\n        \"Password\": \"xxxx\",\n        \"Port\": 0\n    },\n    \"ResourceName\": \"xxxx\",\n    \"Type\": \"DTS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ResourceId\": \"resource-xx\"\n        },\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "title": "创建Datahub连接源(DTS)"
       }
     ],
     "CreateConsumer": [
@@ -102,16 +102,16 @@
         "title": "创建SINK任务"
       },
       {
-        "document": "TRANSFORM任务",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"TRANSFORM\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-aaa\",\n            \"Topic\": \"topic-source\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-bbb\",\n            \"Topic\": \"topic-traget\"\n        }\n    },\n    \"TransformParam\": {\n        \"Regex\": \";\",\n        \"AnalysisFormat\": \"DELIMITER\",\n        \"OutputFormat\": \"JSON\",\n        \"SourceType\": \"xx\",\n        \"FilterParam\": [\n            {\n                \"MatchMode\": \"PREFIX\",\n                \"Value\": \"cass\",\n                \"Key\": \"0\"\n            }\n        ],\n        \"FailureParam\": {\n            \"Type\": \"DLQ\",\n            \"MaxRetryAttempts\": 1,\n            \"KafkaParam\": {\n                \"Resource\": \"ckafka-xxx\",\n                \"SelfBuilt\": false,\n                \"Topic\": \"test-dlq\"\n            }\n        },\n        \"Content\": \"xx\",\n        \"MapParam\": [\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"1\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"2\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Value\": \"abc\",\n                \"Key\": \"3\"\n            },\n            {\n                \"Type\": \"DATE\",\n                \"Value\": \"\",\n                \"Key\": \"5\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"datahub-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建TRANSFORM任务"
-      },
-      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"SINK\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-7kd5rzza\",\n            \"Topic\": \"topic-test\",\n            \"OffsetType\": \"earliest\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"ES\",\n        \"EsParam\": {\n            \"Resource\": \"resource-xxx\",\n            \"DropInvalidMessage\": true,\n            \"Index\": \"xxx\",\n            \"DropInvalidJsonMessage\": false\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"task-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "创建SINK任务(ES)"
+      },
+      {
+        "document": "TRANSFORM任务",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatahubTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"MyTaskName\",\n    \"TaskType\": \"TRANSFORM\",\n    \"SourceResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-aaa\",\n            \"Topic\": \"topic-source\"\n        }\n    },\n    \"TargetResource\": {\n        \"Type\": \"KAFKA\",\n        \"KafkaParam\": {\n            \"SelfBuilt\": false,\n            \"Resource\": \"ckafka-bbb\",\n            \"Topic\": \"topic-traget\"\n        }\n    },\n    \"TransformParam\": {\n        \"Regex\": \";\",\n        \"AnalysisFormat\": \"DELIMITER\",\n        \"OutputFormat\": \"JSON\",\n        \"SourceType\": \"xx\",\n        \"FilterParam\": [\n            {\n                \"MatchMode\": \"PREFIX\",\n                \"Value\": \"cass\",\n                \"Key\": \"0\"\n            }\n        ],\n        \"FailureParam\": {\n            \"Type\": \"DLQ\",\n            \"MaxRetryAttempts\": 1,\n            \"KafkaParam\": {\n                \"Resource\": \"ckafka-xxx\",\n                \"SelfBuilt\": false,\n                \"Topic\": \"test-dlq\"\n            }\n        },\n        \"Content\": \"xx\",\n        \"MapParam\": [\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"1\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Key\": \"2\"\n            },\n            {\n                \"Type\": \"DEFAULT\",\n                \"Value\": \"abc\",\n                \"Key\": \"3\"\n            },\n            {\n                \"Type\": \"DATE\",\n                \"Value\": \"\",\n                \"Key\": \"5\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TaskId\": \"datahub-xx\",\n            \"DatahubId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建TRANSFORM任务"
       },
       {
         "document": "",

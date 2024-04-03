@@ -1,14 +1,13 @@
-**Example 1: 获取回放视频流(NVR录制用)，使用StartTime/EndTime**
+**Example 1: 获取回放视频流(NVR录制用)，使用RecordId**
 
-使用StartTime/EndTime
+使用RecordId，当使用RecordId时候，可以使用RecordId 起始时间组成一个新的RecordId（包含在原来RecordId时间范围内），来实现偏移的效果，例如：服务器返回RecordId为 123456_456789   可以使用 153456_456789 来实现起始时间偏移播放
 
 Input: 
 
 ```
 tccli iotvideoindustry DescribeRecordStream --cli-unfold-argument  \
     --DeviceId 34020000001180000036_34020000001320000092 \
-    --StartTime 1615998219 \
-    --EndTime 1616001641 \
+    --RecordId 1615998219_1616001641 \
     --ExpireTime 1616914614
 ```
 
@@ -28,16 +27,17 @@ Output:
 }
 ```
 
-**Example 2: 获取回放视频流(NVR录制用)，使用RecordId**
+**Example 2: 获取回放视频流(NVR录制用)，使用StartTime/EndTime**
 
-使用RecordId，当使用RecordId时候，可以使用RecordId 起始时间组成一个新的RecordId（包含在原来RecordId时间范围内），来实现偏移的效果，例如：服务器返回RecordId为 123456_456789   可以使用 153456_456789 来实现起始时间偏移播放
+使用StartTime/EndTime
 
 Input: 
 
 ```
 tccli iotvideoindustry DescribeRecordStream --cli-unfold-argument  \
     --DeviceId 34020000001180000036_34020000001320000092 \
-    --RecordId 1615998219_1616001641 \
+    --StartTime 1615998219 \
+    --EndTime 1616001641 \
     --ExpireTime 1616914614
 ```
 

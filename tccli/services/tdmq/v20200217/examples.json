@@ -35,15 +35,15 @@
     "CreateCmqQueue": [
       {
         "document": "创建队列",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqQueue\n<公共请求参数>\n\n{\n    \"QueueName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
-        "title": "创建队列"
-      },
-      {
-        "document": "创建队列",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqQueue\n<公共请求参数>\n\n{\n    \"QueueName\": \"test789\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"864b1295-ed7e-45ed-9602-be53ac23177b\",\n        \"QueueId\": \"cmqq-rd42drdeaag9\"\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "创建队列",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqQueue\n<公共请求参数>\n\n{\n    \"QueueName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QueueId\": \"queue-ges05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建队列"
       }
     ],
     "CreateCmqSubscribe": [
@@ -57,15 +57,15 @@
     "CreateCmqTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqTopic\n<公共请求参数>\n\n{\n    \"TopicName\": \"ConnTopic\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
-        "title": "创建主题"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqTopic\n<公共请求参数>\n\n{\n    \"TopicName\": \"testtopic\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae412902-bb35-4237-955d-3e1f9901e0cc\",\n        \"TopicId\": \"cmqt-7jwedr3jqb54\"\n    }\n}",
         "title": "示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCmqTopic\n<公共请求参数>\n\n{\n    \"TopicName\": \"ConnTopic\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"topic-gzz05csc\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "title": "创建主题"
       }
     ],
     "CreateEnvironment": [
@@ -630,16 +630,16 @@
     ],
     "DescribeRocketMQMigratingTopicList": [
       {
-        "document": "查询迁移中的主题列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMigratingTopicList\n<公共请求参数>\n\n{\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MigrateTopics\": [\n            {\n                \"HealthCheckError\": null,\n                \"HealthCheckPassed\": false,\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_11334\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNoMessagesIn5Minutes\",\n                \"HealthCheckPassed\": false,\n                \"MigrationStatus\": \"S_R_D_RW\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_12371\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNewMessagesIn5Minutes\",\n                \"HealthCheckPassed\": true,\n                \"MigrationStatus\": \"S_RW_D_R\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_18637\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNewMessagesIn5Minutes\",\n                \"HealthCheckPassed\": true,\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_18786\"\n            }\n        ],\n        \"RequestId\": \"6191def5-5812-4339-b834-b2426e3a02b0\",\n        \"TotalCount\": 4\n    }\n}",
-        "title": "查询迁移中的主题列表"
-      },
-      {
         "document": "标准请求",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMigratingTopicList\n<公共请求参数>\n\n{\n    \"TaskId\": \"1\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MigrateTopics\": [\n            {\n                \"HealthCheckPassed\": false,\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"TopicName\": \"six\"\n            }\n        ],\n        \"RequestId\": \"f92642b4-e1bc-451f-ac4f-c639af4f6355\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "标准请求"
+      },
+      {
+        "document": "查询迁移中的主题列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMigratingTopicList\n<公共请求参数>\n\n{\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MigrateTopics\": [\n            {\n                \"HealthCheckError\": null,\n                \"HealthCheckPassed\": false,\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_11334\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNoMessagesIn5Minutes\",\n                \"HealthCheckPassed\": false,\n                \"MigrationStatus\": \"S_R_D_RW\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_12371\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNewMessagesIn5Minutes\",\n                \"HealthCheckPassed\": true,\n                \"MigrationStatus\": \"S_RW_D_R\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_18637\"\n            },\n            {\n                \"HealthCheckError\": \"TargetTopicHasNewMessagesIn5Minutes\",\n                \"HealthCheckPassed\": true,\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"Namespace\": \"tdmq_default\",\n                \"TopicName\": \"Topic_18786\"\n            }\n        ],\n        \"RequestId\": \"6191def5-5812-4339-b834-b2426e3a02b0\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "查询迁移中的主题列表"
       }
     ],
     "DescribeRocketMQMsg": [
@@ -700,30 +700,30 @@
     ],
     "DescribeRocketMQSourceClusterGroupList": [
       {
-        "document": "查询源集群消费组列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterGroupList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"GroupName\": \"CID_ONSAPI_OWNER\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10977\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"CID_ONSAPI_PULL\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_11578\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10524\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10178\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10506\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10370\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_1039\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_1049\",\n                \"Imported\": true,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"5c27cf42-a31c-4605-9cfd-115a8414fef9\",\n        \"TotalCount\": 308\n    }\n}",
-        "title": "查询源集群消费组列表"
-      },
-      {
         "document": "标准请求",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterGroupList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780521-migratetest-d93e34d2\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"GroupName\": \"ConsumerGroup_3503\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_998\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_25517\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_13781\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_6815\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_7522\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_29106\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10204\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_27223\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_8601\",\n                \"Imported\": false,\n                \"Namespace\": null,\n                \"Remark\": null\n            }\n        ],\n        \"RequestId\": \"a99c8984-c523-44e0-a019-2362015e8253\",\n        \"TotalCount\": 10\n    }\n}",
         "title": "标准请求"
+      },
+      {
+        "document": "查询源集群消费组列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterGroupList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"GroupName\": \"CID_ONSAPI_OWNER\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10977\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"CID_ONSAPI_PULL\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_11578\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10524\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10178\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10506\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_10370\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_1039\",\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": null\n            },\n            {\n                \"GroupName\": \"ConsumerGroup_1049\",\n                \"Imported\": true,\n                \"Namespace\": \"tdmq_default\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"5c27cf42-a31c-4605-9cfd-115a8414fef9\",\n        \"TotalCount\": 308\n    }\n}",
+        "title": "查询源集群消费组列表"
       }
     ],
     "DescribeRocketMQSourceClusterTopicList": [
-      {
-        "document": "查询源集群主题列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterTopicList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"fba29035-5771-45ee-b4d3-f0e45d6f9e5c\",\n        \"Topics\": [\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 1,\n                \"Remark\": \"\",\n                \"TopicName\": \"broker-a\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 16,\n                \"Remark\": \"\",\n                \"TopicName\": \"DefaultCluster\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 1,\n                \"Remark\": \"\",\n                \"TopicName\": \"DefaultCluster_REPLY_TOPIC\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"TopicTest\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_1018\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10240\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10388\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10722\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_11334\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_12187\",\n                \"Type\": \"Normal\"\n            }\n        ],\n        \"TotalCount\": 54\n    }\n}",
-        "title": "查询源集群主题列表"
-      },
       {
         "document": "正常调用",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterTopicList\n<公共请求参数>\n\n{\n    \"Limit\": 2,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780521-migratetest-d93e34d2\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"2445d687-10f2-403a-a46a-cfa9a939074f\",\n        \"Topics\": [\n            {\n                \"Imported\": false,\n                \"Namespace\": \"\",\n                \"Partitions\": 1,\n                \"Remark\": null,\n                \"TopicName\": \"OFFSET_MOVED_EVENT\",\n                \"Type\": null\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"\",\n                \"Partitions\": 8,\n                \"Remark\": null,\n                \"TopicName\": \"Topic_213\",\n                \"Type\": null\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "正常调用"
+      },
+      {
+        "document": "查询源集群主题列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSourceClusterTopicList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"fba29035-5771-45ee-b4d3-f0e45d6f9e5c\",\n        \"Topics\": [\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 1,\n                \"Remark\": \"\",\n                \"TopicName\": \"broker-a\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 16,\n                \"Remark\": \"\",\n                \"TopicName\": \"DefaultCluster\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 1,\n                \"Remark\": \"\",\n                \"TopicName\": \"DefaultCluster_REPLY_TOPIC\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"TopicTest\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_1018\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10240\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10388\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_10722\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_11334\",\n                \"Type\": \"Normal\"\n            },\n            {\n                \"Imported\": false,\n                \"Namespace\": \"tdmq_default\",\n                \"Partitions\": 8,\n                \"Remark\": \"\",\n                \"TopicName\": \"Topic_12187\",\n                \"Type\": \"Normal\"\n            }\n        ],\n        \"TotalCount\": 54\n    }\n}",
+        "title": "查询源集群主题列表"
       }
     ],
     "DescribeRocketMQSubscriptions": [
@@ -808,16 +808,16 @@
     ],
     "ImportRocketMQConsumerGroups": [
       {
-        "document": "导入消费组列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQConsumerGroups\n<公共请求参数>\n\n{\n    \"Groups\": [\n        {\n            \"Namespace\": \"\",\n            \"GroupName\": \"ConsumerGroup_1039\",\n            \"ConsumeBroadcastEnable\": true,\n            \"ConsumeEnable\": true,\n            \"Remark\": \"abc\",\n            \"ConsumerGroupType\": \"TCP\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"78ef8089-2ec3-4784-ad21-68c71d289d69\"\n    }\n}",
-        "title": "导入消费组列表"
-      },
-      {
         "document": "标准调用",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQConsumerGroups\n<公共请求参数>\n\n{\n    \"Groups\": [\n        {\n            \"Namespace\": \"tdmq_default\",\n            \"GroupName\": \"ConsumerGroup_29106\",\n            \"ConsumeBroadcastEnable\": true,\n            \"ConsumeEnable\": true\n        }\n    ],\n    \"TaskId\": \"700000780521-migratetest-d93e34d2\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"f324d108-56ba-4527-822a-4f73283388b1\"\n    }\n}",
         "title": "标准调用"
+      },
+      {
+        "document": "导入消费组列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQConsumerGroups\n<公共请求参数>\n\n{\n    \"Groups\": [\n        {\n            \"Namespace\": \"\",\n            \"GroupName\": \"ConsumerGroup_1039\",\n            \"ConsumeBroadcastEnable\": true,\n            \"ConsumeEnable\": true,\n            \"Remark\": \"abc\",\n            \"ConsumerGroupType\": \"TCP\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"78ef8089-2ec3-4784-ad21-68c71d289d69\"\n    }\n}",
+        "title": "导入消费组列表"
       }
     ],
     "ImportRocketMQTopics": [

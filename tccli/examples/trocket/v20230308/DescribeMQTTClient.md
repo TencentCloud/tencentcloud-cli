@@ -1,4 +1,41 @@
-**Example 1: 标准请求**
+**Example 1: 示例**
+
+示例
+
+Input: 
+
+```
+tccli trocket DescribeMQTTClient --cli-unfold-argument  \
+    --InstanceId mqtt-47ka4rdr \
+    --ClientId subscribe_client
+```
+
+Output: 
+```
+{
+    "Error": null,
+    "RequestId": null,
+    "Response": {
+        "ClientAddress": "11.176.16.153:37360",
+        "ClientId": "subscribe_client",
+        "ConnectTime": 1705632841108,
+        "ConnectionStatus": "CONNECTED",
+        "CreateTime": 1705632841106,
+        "DisconnectTime": 0,
+        "Keepalive": 60,
+        "MQTTClientSubscriptions": [
+            {
+                "Qos": 0,
+                "TopicFilter": "mqtt-47ka4rdr%topic24"
+            }
+        ],
+        "ProtocolVersion": 4,
+        "RequestId": "4ec9c58c-e6ac-4149-9673-b8f0d526a6aa"
+    }
+}
+```
+
+**Example 2: 标准请求**
 
 标准请求
 
@@ -39,43 +76,6 @@ Output:
         ],
         "ProtocolVersion": 4,
         "RequestId": "b0f34768-130d-4a15-89d3-d3ca1976b4b7"
-    }
-}
-```
-
-**Example 2: 示例**
-
-示例
-
-Input: 
-
-```
-tccli trocket DescribeMQTTClient --cli-unfold-argument  \
-    --InstanceId mqtt-47ka4rdr \
-    --ClientId subscribe_client
-```
-
-Output: 
-```
-{
-    "Error": null,
-    "RequestId": null,
-    "Response": {
-        "ClientAddress": "11.176.16.153:37360",
-        "ClientId": "subscribe_client",
-        "ConnectTime": 1705632841108,
-        "ConnectionStatus": "CONNECTED",
-        "CreateTime": 1705632841106,
-        "DisconnectTime": 0,
-        "Keepalive": 60,
-        "MQTTClientSubscriptions": [
-            {
-                "Qos": 0,
-                "TopicFilter": "mqtt-47ka4rdr%topic24"
-            }
-        ],
-        "ProtocolVersion": 4,
-        "RequestId": "4ec9c58c-e6ac-4149-9673-b8f0d526a6aa"
     }
 }
 ```

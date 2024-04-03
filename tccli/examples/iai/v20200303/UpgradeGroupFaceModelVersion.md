@@ -1,26 +1,4 @@
-**Example 1: 人员库升级**
-
-
-
-Input: 
-
-```
-tccli iai UpgradeGroupFaceModelVersion --cli-unfold-argument  \
-    --GroupId 1001 \
-    --FaceModelVersion 3.0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "JobId": "251007453_upgrade_group_qta_1596529493_gjwh07X7",
-        "RequestId": "d1388dbb-c9f0-4b7a-8528-ebf61f718e67"
-    }
-}
-```
-
-**Example 2: 升级失败**
+**Example 1: 升级失败**
 
 当人员库存在一些无法升级的人脸时，返回FailedOperation.GroupLostFaces错误，并返回一个Url查看具体的PersonId和FaceId，需要删除这些Person或Face，或者重新创建，才可以升级成功。
 文件格式：
@@ -47,6 +25,28 @@ Output:
             "Message": "人员库中人脸图片丢失，详情可参见https://iaiface-upgradegroup-failedface-1254418846.cos.ap-guangzhou.myqcloud.com/1253657503/1002.json"
         },
         "RequestId": "3ad7ccb4-29b5-46b4-adcd-69fd6728d530"
+    }
+}
+```
+
+**Example 2: 人员库升级**
+
+
+
+Input: 
+
+```
+tccli iai UpgradeGroupFaceModelVersion --cli-unfold-argument  \
+    --GroupId 1001 \
+    --FaceModelVersion 3.0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "JobId": "251007453_upgrade_group_qta_1596529493_gjwh07X7",
+        "RequestId": "d1388dbb-c9f0-4b7a-8528-ebf61f718e67"
     }
 }
 ```

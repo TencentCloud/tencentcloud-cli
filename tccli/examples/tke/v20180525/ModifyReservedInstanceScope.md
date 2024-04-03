@@ -1,13 +1,13 @@
-**Example 1: Scope 输入错误示例**
+**Example 1: 资源 ID 不存在**
 
-Scope 输入错误示例
+输入的资源 ID不存在
 
 Input: 
 
 ```
 tccli tke ModifyReservedInstanceScope --cli-unfold-argument  \
-    --ReservedInstanceIds eksri-762dtf76 \
-    --ReservedInstanceScope.Scope regio
+    --ReservedInstanceIds eksri-762dtf7 \
+    --ReservedInstanceScope.Scope region
 ```
 
 Output: 
@@ -15,10 +15,10 @@ Output:
 {
     "Response": {
         "Error": {
-            "Code": "InternalError.Param",
-            "Message": "Scope must be in [Region, Zone, Node]"
+            "Code": "ResourceNotFound.NotFound",
+            "Message": "ReservedInstanceIds:[]string{\"eksri-762dtf7\"} not found"
         },
-        "RequestId": "e88f8640-0e36-4154-a3bf-907b01aa62f0"
+        "RequestId": "134fa43d-83a5-4b8d-8ea9-293a96515b68"
     }
 }
 ```
@@ -44,16 +44,16 @@ Output:
 }
 ```
 
-**Example 3: 设置抵扣范围为可用区**
+**Example 3: Scope 输入错误示例**
 
-抵扣范围为可用区时，Zone 必传，如：ap-guangzhou-2
+Scope 输入错误示例
 
 Input: 
 
 ```
 tccli tke ModifyReservedInstanceScope --cli-unfold-argument  \
     --ReservedInstanceIds eksri-762dtf76 \
-    --ReservedInstanceScope.Scope Zone
+    --ReservedInstanceScope.Scope regio
 ```
 
 Output: 
@@ -62,9 +62,9 @@ Output:
     "Response": {
         "Error": {
             "Code": "InternalError.Param",
-            "Message": "Zone invalid"
+            "Message": "Scope must be in [Region, Zone, Node]"
         },
-        "RequestId": "e949558d-f637-4223-8305-047cb2d5bf06"
+        "RequestId": "e88f8640-0e36-4154-a3bf-907b01aa62f0"
     }
 }
 ```
@@ -93,16 +93,16 @@ Output:
 }
 ```
 
-**Example 5: 资源 ID 不存在**
+**Example 5: 设置抵扣范围为可用区**
 
-输入的资源 ID不存在
+抵扣范围为可用区时，Zone 必传，如：ap-guangzhou-2
 
 Input: 
 
 ```
 tccli tke ModifyReservedInstanceScope --cli-unfold-argument  \
-    --ReservedInstanceIds eksri-762dtf7 \
-    --ReservedInstanceScope.Scope region
+    --ReservedInstanceIds eksri-762dtf76 \
+    --ReservedInstanceScope.Scope Zone
 ```
 
 Output: 
@@ -110,10 +110,10 @@ Output:
 {
     "Response": {
         "Error": {
-            "Code": "ResourceNotFound.NotFound",
-            "Message": "ReservedInstanceIds:[]string{\"eksri-762dtf7\"} not found"
+            "Code": "InternalError.Param",
+            "Message": "Zone invalid"
         },
-        "RequestId": "134fa43d-83a5-4b8d-8ea9-293a96515b68"
+        "RequestId": "e949558d-f637-4223-8305-047cb2d5bf06"
     }
 }
 ```

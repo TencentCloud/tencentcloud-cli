@@ -1,28 +1,4 @@
-**Example 1: 查询数据库代理规格**
-
-
-
-Input: 
-
-```
-tccli cynosdb DescribeProxySpecs --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "ProxySpecs": [
-            {
-                "Mem": 0,
-                "Cpu": 0
-            }
-        ],
-        "RequestId": "request-756112"
-    }
-}
-```
-
-**Example 2: 查询proxy规格**
+**Example 1: 查询proxy规格**
 
 
 
@@ -50,6 +26,30 @@ Output:
             }
         ],
         "RequestId": "f4479b74-e428-40d9-a81f-e34cac00ae70"
+    }
+}
+```
+
+**Example 2: 查询数据库代理规格**
+
+
+
+Input: 
+
+```
+tccli cynosdb DescribeProxySpecs --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "ProxySpecs": [
+            {
+                "Mem": 0,
+                "Cpu": 0
+            }
+        ],
+        "RequestId": "request-756112"
     }
 }
 ```

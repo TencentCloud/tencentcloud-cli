@@ -194,16 +194,16 @@
     ],
     "InquiryPriceRenewInstance": [
       {
-        "document": "续费询价示例",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"Placement\": {\n        \"ProjectId\": \"0\",\n        \"Zone\": \"ap-guangzhou-4\"\n    },\n    \"Currency\": \"CNY\",\n    \"TimeSpan\": \"1\",\n    \"PayMode\": \"1\",\n    \"ResourceIds\": [\n        \"emr-vm-jv1s4zas\"\n    ],\n    \"TimeUnit\": \"m\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DiscountCost\": 596.54,\n        \"OriginalCost\": 898.9,\n        \"RequestId\": \"223c838e-ce27-4adf-9a41-89661fe7ad21\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\"\n    }\n}",
-        "title": "续费询价示例"
-      },
-      {
         "document": "续费询价",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"TimeUnit\": \"abc\",\n    \"TimeSpan\": 1,\n    \"ResourceIds\": [\n        \"abc\"\n    ],\n    \"Currency\": \"abc\",\n    \"Placement\": {\n        \"ProjectId\": 0,\n        \"Zone\": \"abc\"\n    },\n    \"PayMode\": 0,\n    \"ModifyPayMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"OriginalCost\": 0,\n        \"DiscountCost\": 0,\n        \"TimeUnit\": \"abc\",\n        \"TimeSpan\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "续费询价"
+      },
+      {
+        "document": "续费询价示例",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewInstance\n<公共请求参数>\n\n{\n    \"Placement\": {\n        \"ProjectId\": \"0\",\n        \"Zone\": \"ap-guangzhou-4\"\n    },\n    \"Currency\": \"CNY\",\n    \"TimeSpan\": \"1\",\n    \"PayMode\": \"1\",\n    \"ResourceIds\": [\n        \"emr-vm-jv1s4zas\"\n    ],\n    \"TimeUnit\": \"m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiscountCost\": 596.54,\n        \"OriginalCost\": 898.9,\n        \"RequestId\": \"223c838e-ce27-4adf-9a41-89661fe7ad21\",\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"m\"\n    }\n}",
+        "title": "续费询价示例"
       }
     ],
     "InquiryPriceScaleOutInstance": [
@@ -225,15 +225,15 @@
     "ModifyAutoScaleStrategy": [
       {
         "document": "修改扩缩容规则",
-        "input": "https://emr.tencentcloudapi.com/?Action=ModifyAutoScaleStrategy\n&InstanceId=emr-3ap64zl6\n&StrategyType=1\n&LoadAutoScaleStrategies.0.StrategyId=52\n&LoadAutoScaleStrategies.0.ScaleNum=4\n&LoadAutoScaleStrategies.0.ScaleAction=2\n&LoadAutoScaleStrategies.0.Priority=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23108dcf-506a-4246-b0bf-dca8ef2b0845\"\n    }\n}",
-        "title": "修改扩缩容规则成功示例"
-      },
-      {
-        "document": "修改扩缩容规则",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoScaleStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyType\": 0,\n    \"TimeAutoScaleStrategies\": [\n        {\n            \"StrategyId\": 1,\n            \"StrategyName\": \"abc\",\n            \"IntervalTime\": 1,\n            \"ScaleAction\": 1,\n            \"ScaleNum\": 1,\n            \"StrategyStatus\": 1,\n            \"Priority\": 1,\n            \"RetryValidTime\": 1,\n            \"RepeatStrategy\": {\n                \"RepeatType\": \"abc\",\n                \"DayRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"Step\": 1\n                },\n                \"WeekRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"DaysOfWeek\": [\n                        1\n                    ]\n                },\n                \"MonthRepeat\": {\n                    \"ExecuteAtTimeOfDay\": \"abc\",\n                    \"DaysOfMonthRange\": [\n                        1\n                    ]\n                },\n                \"NotRepeat\": {\n                    \"ExecuteAt\": \"abc\"\n                },\n                \"Expire\": \"abc\"\n            },\n            \"GraceDownFlag\": true,\n            \"GraceDownTime\": 0,\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"ConfigGroupAssigned\": \"abc\",\n            \"MeasureMethod\": \"abc\",\n            \"TerminatePolicy\": \"abc\",\n            \"MaxUse\": 0,\n            \"SoftDeployInfo\": [\n                0\n            ],\n            \"ServiceNodeInfo\": [\n                0\n            ],\n            \"CompensateFlag\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改扩缩容规则"
+      },
+      {
+        "document": "修改扩缩容规则",
+        "input": "https://emr.tencentcloudapi.com/?Action=ModifyAutoScaleStrategy\n&InstanceId=emr-3ap64zl6\n&StrategyType=1\n&LoadAutoScaleStrategies.0.StrategyId=52\n&LoadAutoScaleStrategies.0.ScaleNum=4\n&LoadAutoScaleStrategies.0.ScaleAction=2\n&LoadAutoScaleStrategies.0.Priority=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23108dcf-506a-4246-b0bf-dca8ef2b0845\"\n    }\n}",
+        "title": "修改扩缩容规则成功示例"
       }
     ],
     "ModifyResourcePools": [

@@ -1,4 +1,31 @@
-**Example 1: Filters参数示例**
+**Example 1: 请求失败**
+
+下面的示例提示参数错误
+
+Input: 
+
+```
+tccli apigateway DescribeLogSearch --cli-unfold-argument  \
+    --StartTime '2019-10-10 00:00:00' \
+    --EndTime '2019-10-10 23:59:59' \
+    --ServiceId service-8xipv0ua \
+    --Limit 101
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue",
+            "Message": "Param is illegal: `101`"
+        },
+        "RequestId": "5a8b1de4-04f5-48eb-9be6-93491ebee6e1"
+    }
+}
+```
+
+**Example 2: Filters参数示例**
 
 LogQuerys 表示日志检索条件，
 其中: LogQuerys.0.Name=api_id&LogQuerys.0.Operator==&LogQuerys.0.Value=api-55rj9ide
@@ -45,33 +72,6 @@ Output:
             "[1300127097][release][service-8xipv0ua][service-8xipv0ua-1300127097.gz.apigw.tencentcs.com][api-55rj9ide][/][http][rsp_st:200][ups_st:-][cip:119.123.71.59][uip:-][vip:193.112.148.212][rsp_len:328][req_len:114][req_t:0.000][ups_rsp_t:-][ups_conn_t:-][ups_head_t:-][err_msg:-][tcp_rtt:8500][20246][28/May/2020:22:42:32 +0800][req_id:64866292cce1f59504e4ae30796d3731]"
         ],
         "RequestId": "239c9af4-2e79-4252-b5e5-c7a4c0c7f743"
-    }
-}
-```
-
-**Example 2: 请求失败**
-
-下面的示例提示参数错误
-
-Input: 
-
-```
-tccli apigateway DescribeLogSearch --cli-unfold-argument  \
-    --StartTime '2019-10-10 00:00:00' \
-    --EndTime '2019-10-10 23:59:59' \
-    --ServiceId service-8xipv0ua \
-    --Limit 101
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue",
-            "Message": "Param is illegal: `101`"
-        },
-        "RequestId": "5a8b1de4-04f5-48eb-9be6-93491ebee6e1"
     }
 }
 ```

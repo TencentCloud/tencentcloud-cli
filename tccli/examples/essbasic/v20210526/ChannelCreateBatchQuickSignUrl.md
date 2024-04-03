@@ -1,11 +1,9 @@
-**Example 1: 创建H5批量签署链接，签署完成后跳转到指定地址**
+**Example 1: 为个人用户生成合同组H5批量签署链接**
 
-1. 个人用户在批量签署的合同中是待签署的状态
-2. 签署的合同中个人用户没有填写控件，只有签名控件
-3. 企业的版本符合专业版及以上企业版本
-4. 批量签署链接中指定签名类型为手写签名和OCR楷体签名
-5. 批量签署链接中指定意愿确认方式为人脸认证和手机号认证
-6. 批量签署链接中指定签署完成后的跳转地址为https://abc.com
+1. 为个人用户生成合同组H5批量签署链接
+2. 使用默认的签名类型
+3. 使用默认的签署方式
+4. 默认跳转到合同列表页
 
 Input: 
 
@@ -18,10 +16,7 @@ tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
     --FlowApproverInfo.Name 典子谦 \
     --FlowApproverInfo.IdCardNumber 620000198802020000 \
     --FlowApproverInfo.IdCardType ID_CARD \
-    --JumpUrl https://abc.com \
-    --SignatureTypes 0 1 \
-    --ApproverSignTypes 1 3 \
-    --FlowIds yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm yDwFmUUckpst10i3UubBSat8PWOt2iQF
+    --FlowGroupId yDSL9UUckpo*****jwSsug2y3cW
 ```
 
 Output: 
@@ -81,10 +76,52 @@ Output:
 }
 ```
 
-**Example 3: 错误示例-创建批量签署链接中的合同，个人用户还有填写控件需要补充**
+**Example 3: 创建H5批量签署链接，签署完成后跳转到指定地址**
 
-1. 合同已经创建完成，其中个人用户A需要补充一些合同信息
-2. 给个人用户A创建批量签署链接
+1. 个人用户在批量签署的合同中是待签署的状态
+2. 签署的合同中个人用户没有填写控件，只有签名控件
+3. 企业的版本符合专业版及以上企业版本
+4. 批量签署链接中指定签名类型为手写签名和OCR楷体签名
+5. 批量签署链接中指定意愿确认方式为人脸认证和手机号认证
+6. 批量签署链接中指定签署完成后的跳转地址为https://abc.com
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType PERSON \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典子谦 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD \
+    --JumpUrl https://abc.com \
+    --SignatureTypes 0 1 \
+    --ApproverSignTypes 1 3 \
+    --FlowIds yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm yDwFmUUckpst10i3UubBSat8PWOt2iQF
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "PERSON",
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
+            "Mobile": "13200000000",
+            "Name": "典子谦",
+            "SignUrl": "https://test.essurl.cn/C**E"
+        },
+        "RequestId": "s16986**08"
+    }
+}
+```
+
+**Example 4: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
+
+1. 企业A创建了一些合同
+2. 企业B用上述合同编号创建批量签署链接
 
 Input: 
 
@@ -108,14 +145,14 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation",
-            "Message": "个人H5批量签署，不支持还需签署方推拽签署控件的合同。不满足合同：[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
+            "Message": "不支持非当前企业发起的合同，生成批量签署链接。不满足合同:[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
         },
-        "RequestId": "s1698**1759"
+        "RequestId": "s1698**02"
     }
 }
 ```
 
-**Example 4: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
+**Example 5: 错误示例-创建签署链接中指定的C端个人用户不在合同参与人列表中**
 
 1. 合同已经创建完成，其中个人用户为A
 2. 创建个人H5批量签署链接中的ApproverType指定了个人类型(ApproverType=PERSON)
@@ -150,10 +187,10 @@ Output:
 }
 ```
 
-**Example 5: 错误示例-创建签署链接的企业不是待批量签署合同的发起方**
+**Example 6: 错误示例-创建批量签署链接中的合同，个人用户还有填写控件需要补充**
 
-1. 企业A创建了一些合同
-2. 企业B用上述合同编号创建批量签署链接
+1. 合同已经创建完成，其中个人用户A需要补充一些合同信息
+2. 给个人用户A创建批量签署链接
 
 Input: 
 
@@ -177,46 +214,9 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation",
-            "Message": "不支持非当前企业发起的合同，生成批量签署链接。不满足合同:[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
+            "Message": "个人H5批量签署，不支持还需签署方推拽签署控件的合同。不满足合同：[\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]"
         },
-        "RequestId": "s1698**02"
-    }
-}
-```
-
-**Example 6: 为个人用户生成合同组H5批量签署链接**
-
-1. 为个人用户生成合同组H5批量签署链接
-2. 使用默认的签名类型
-3. 使用默认的签署方式
-4. 默认跳转到合同列表页
-
-Input: 
-
-```
-tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
-    --FlowApproverInfo.ApproverType PERSON \
-    --FlowApproverInfo.Mobile 13200000000 \
-    --FlowApproverInfo.Name 典子谦 \
-    --FlowApproverInfo.IdCardNumber 620000198802020000 \
-    --FlowApproverInfo.IdCardType ID_CARD \
-    --FlowGroupId yDSL9UUckpo*****jwSsug2y3cW
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FlowApproverUrlInfo": {
-            "ApproverType": "PERSON",
-            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
-            "Mobile": "13200000000",
-            "Name": "典子谦",
-            "SignUrl": "https://test.essurl.cn/C**E"
-        },
-        "RequestId": "s16986**08"
+        "RequestId": "s1698**1759"
     }
 }
 ```

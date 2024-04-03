@@ -14,6 +14,13 @@
       "output": "BatchCreateDeviceResponse",
       "status": "online"
     },
+    "BatchDeleteDevice": {
+      "document": "批量删除设备",
+      "input": "BatchDeleteDeviceRequest",
+      "name": "批量删除设备",
+      "output": "BatchDeleteDeviceResponse",
+      "status": "online"
+    },
     "BatchKillAlarm": {
       "document": "批量消警",
       "input": "BatchKillAlarmRequest",
@@ -54,6 +61,13 @@
       "input": "CreateApplicationTokenRequest",
       "name": "创建应用授权令牌",
       "output": "CreateApplicationTokenResponse",
+      "status": "online"
+    },
+    "DeleteDeviceGroup": {
+      "document": "删除设备分组",
+      "input": "DeleteDeviceGroupRequest",
+      "name": "删除设备分组",
+      "output": "DeleteDeviceGroupResponse",
       "status": "online"
     },
     "DescribeActionList": {
@@ -138,6 +152,13 @@
       "input": "DescribeCityWorkspaceListRequest",
       "name": "通过城市id查询工作空间列表",
       "output": "DescribeCityWorkspaceListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceGroupList": {
+      "document": "设备分组列表",
+      "input": "DescribeDeviceGroupListRequest",
+      "name": "设备分组列表",
+      "output": "DescribeDeviceGroupListResponse",
       "status": "online"
     },
     "DescribeDeviceList": {
@@ -371,6 +392,20 @@
       "output": "DescribeWorkspaceUserListResponse",
       "status": "online"
     },
+    "ModifyDeviceField": {
+      "document": "批量修改设备自定义字段值",
+      "input": "ModifyDeviceFieldRequest",
+      "name": "修改设备自定义字段值",
+      "output": "ModifyDeviceFieldResponse",
+      "status": "online"
+    },
+    "ModifyDeviceGroup": {
+      "document": "批量修改设备组",
+      "input": "ModifyDeviceGroupRequest",
+      "name": "修改设备分组",
+      "output": "ModifyDeviceGroupResponse",
+      "status": "online"
+    },
     "ModifyDeviceName": {
       "document": "批量修改设备名字",
       "input": "ModifyDeviceNameRequest",
@@ -378,11 +413,25 @@
       "output": "ModifyDeviceNameResponse",
       "status": "online"
     },
+    "ModifyDeviceTag": {
+      "document": "批量修改设备标签",
+      "input": "ModifyDeviceTagRequest",
+      "name": "修改设备绑定标签",
+      "output": "ModifyDeviceTagResponse",
+      "status": "online"
+    },
     "ReportAppMessage": {
       "document": "上报应用消息",
       "input": "ReportAppMessageRequest",
       "name": "上报应用消息",
       "output": "ReportAppMessageResponse",
+      "status": "online"
+    },
+    "SaveDeviceGroup": {
+      "document": "设备分组新增/修改",
+      "input": "SaveDeviceGroupRequest",
+      "name": "设备分组新增or修改",
+      "output": "SaveDeviceGroupResponse",
       "status": "online"
     },
     "StopVideoStreaming": {
@@ -1723,6 +1772,61 @@
       ],
       "type": "object"
     },
+    "BatchDeleteDeviceRequest": {
+      "document": "BatchDeleteDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备wid数组列表",
+          "example": "[\"aaa\",\"bbb\"]",
+          "member": "string",
+          "name": "WIDSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteDeviceResponse": {
+      "document": "BatchDeleteDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回请求结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchKillAlarmRequest": {
       "document": "BatchKillAlarm请求参数结构体",
       "members": [
@@ -2744,6 +2848,61 @@
       ],
       "usage": "out"
     },
+    "DeleteDeviceGroupRequest": {
+      "document": "DeleteDeviceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备分组的id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间的id",
+          "example": "无",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceGroupResponse": {
+      "document": "DeleteDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无返回信息",
+          "example": "无",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeActionListRequest": {
       "document": "DescribeActionList请求参数结构体",
       "members": [
@@ -3739,6 +3898,78 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceGroupListRequest": {
+      "document": "DescribeDeviceGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "Lawbk967Ng41d934u8vveoS",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组id, 不传默认全部",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceGroupListRes": {
+      "document": "设备分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备分组list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeGroupInfo",
+          "name": "List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDeviceGroupListResponse": {
+      "document": "DescribeDeviceGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组信息",
+          "example": "无",
+          "member": "DescribeDeviceGroupListRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4970,6 +5201,56 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeGroupInfo": {
+      "document": "分组信息实体类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备分组名称",
+          "example": "分组001",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分组描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组父级ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeInterfaceListRequest": {
       "document": "DescribeInterfaceList请求参数结构体",
@@ -8575,6 +8856,173 @@
       ],
       "usage": "out"
     },
+    "ModifyDeviceFieldInfo": {
+      "document": "设备自定义值修改信息入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义字段key",
+          "example": "xxx",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义字段值",
+          "example": "xxx",
+          "member": "string",
+          "name": "Val",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyDeviceFieldRequest": {
+      "document": "ModifyDeviceField请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备自定义字段修改信息集合",
+          "example": "[{\"WID\":\"xx\",\"Key\":\"size\",\"Val\":\"100\"}}]",
+          "member": "ModifyDeviceFieldInfo",
+          "name": "Set",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceFieldResponse": {
+      "document": "ModifyDeviceField返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回请求结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceGroupInfo": {
+      "document": "设备组修改信息入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备分组id",
+          "example": "100",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyDeviceGroupRequest": {
+      "document": "ModifyDeviceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备组修改信息集合\t",
+          "example": "[{\"WID\":\"xx\",\"GroupId\":100},{\"WID\":\"xx2\",\"GroupId\":100}]",
+          "member": "ModifyDeviceGroupInfo",
+          "name": "Set",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceGroupResponse": {
+      "document": "ModifyDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回请求结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDeviceNameRequest": {
       "document": "ModifyDeviceName请求参数结构体",
       "members": [
@@ -8610,6 +9058,85 @@
     },
     "ModifyDeviceNameResponse": {
       "document": "ModifyDeviceName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回请求结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceTagInfo": {
+      "document": "设备标签修改信息入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备标签名称集合",
+          "example": "[\"aaa\",\"bbb\"]",
+          "member": "string",
+          "name": "NameSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyDeviceTagRequest": {
+      "document": "ModifyDeviceTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备标签修改信息集合",
+          "example": "[{\"WID\":\"xx\",\"NameSet\":[\"aaa\",\"bbb\"]}]",
+          "member": "ModifyDeviceTagInfo",
+          "name": "Set",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token\t",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceTagResponse": {
+      "document": "ModifyDeviceTag返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -9374,6 +9901,104 @@
         }
       ],
       "usage": "out"
+    },
+    "SaveDeviceGroupRequest": {
+      "document": "SaveDeviceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "无",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id, 携带则为修改, 不携带则为新增",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分组父级id",
+          "example": "无",
+          "member": "int64",
+          "name": "ParentId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveDeviceGroupRes": {
+      "document": "保存or修改设备分组回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保存or修改设备分组回包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SaveDeviceGroupResponse": {
+      "document": "SaveDeviceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增/修改的设备分组记录的id",
+          "example": "{}",
+          "member": "SaveDeviceGroupRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SceneInfo": {
       "document": "场景信息",

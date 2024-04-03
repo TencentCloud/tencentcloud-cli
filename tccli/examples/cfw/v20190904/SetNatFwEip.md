@@ -1,4 +1,4 @@
-**Example 1: 绑定防火墙实例的弹性公网ip**
+**Example 1: 新增防火墙实例的弹性公网ip**
 
 仅支持新增模式的防火墙实例
 
@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli cfw SetNatFwEip --cli-unfold-argument  \
-    --OperationType bind \
-    --CfwInstance cfwnat-d2afc817 \
-    --EipList 1.2.3.8
+    --OperationType newAdd \
+    --CfwInstance cfwnat-d2afc817
 ```
 
 Output: 
@@ -20,7 +19,7 @@ Output:
 }
 ```
 
-**Example 2: 新增防火墙实例的弹性公网ip**
+**Example 2: 绑定防火墙实例的弹性公网ip**
 
 仅支持新增模式的防火墙实例
 
@@ -28,8 +27,9 @@ Input:
 
 ```
 tccli cfw SetNatFwEip --cli-unfold-argument  \
-    --OperationType newAdd \
-    --CfwInstance cfwnat-d2afc817
+    --OperationType bind \
+    --CfwInstance cfwnat-d2afc817 \
+    --EipList 1.2.3.8
 ```
 
 Output: 

@@ -384,14 +384,14 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7723f78-ff6f-43bc-89ee-bc225376276b\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Status\": \"waiting\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 0,\n        \"LeftMinutes\": 1,\n        \"Success\": null,\n        \"Failed\": null,\n        \"Total\": null,\n        \"CosUrl\": null,\n        \"FailedRecordList\": null\n    }\n}",
-        "title": "查询快照回滚结果，进行中"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4c4c0e9-ca5a-44a2-9d51-b0c64656b8bb\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Success\": 63,\n        \"Failed\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xxx.csv\",\n        \"Status\": \"ok\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 63,\n        \"Domain\": \"domain.com\",\n        \"FailedRecordList\": []\n    }\n}",
+        "title": "查询快照回滚结果，已完成"
       },
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotRollbackResult\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"TaskId\": 177\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4c4c0e9-ca5a-44a2-9d51-b0c64656b8bb\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Success\": 63,\n        \"Failed\": 0,\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_rollback_91724229_xxx.csv\",\n        \"Status\": \"ok\",\n        \"Progress\": 100,\n        \"LeftMinutes\": 0,\n        \"Total\": 63,\n        \"Domain\": \"domain.com\",\n        \"FailedRecordList\": []\n    }\n}",
-        "title": "查询快照回滚结果，已完成"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7723f78-ff6f-43bc-89ee-bc225376276b\",\n        \"TaskId\": 177,\n        \"SnapshotId\": \"A45AXXXX\",\n        \"Status\": \"waiting\",\n        \"Domain\": \"domain.com\",\n        \"Progress\": 0,\n        \"LeftMinutes\": 1,\n        \"Success\": null,\n        \"Failed\": null,\n        \"Total\": null,\n        \"CosUrl\": null,\n        \"FailedRecordList\": null\n    }\n}",
+        "title": "查询快照回滚结果，进行中"
       }
     ],
     "DescribeSnapshotRollbackTask": [

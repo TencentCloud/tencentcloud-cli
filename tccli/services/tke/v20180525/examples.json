@@ -546,16 +546,16 @@
     ],
     "DeleteReservedInstances": [
       {
-        "document": "返回NotFound",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"not-found\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"resources:[]string{\\\"not-found\\\"} not found\"\n        },\n        \"RequestId\": \"e15cab8e-926a-4119-a4e5-208868d6821a\"\n    }\n}",
-        "title": "退还一个不存在的资源"
-      },
-      {
         "document": "同时会退还预留券相应的费用。",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-epmr2bww\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d996a6f-5b4a-4e18-8fd1-cb258b2ce21f\"\n    }\n}",
         "title": "退还预留券实例"
+      },
+      {
+        "document": "返回NotFound",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"not-found\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"resources:[]string{\\\"not-found\\\"} not found\"\n        },\n        \"RequestId\": \"e15cab8e-926a-4119-a4e5-208868d6821a\"\n    }\n}",
+        "title": "退还一个不存在的资源"
       }
     ],
     "DeleteTKEEdgeCluster": [
@@ -1008,16 +1008,16 @@
     ],
     "DescribePodsBySpec": [
       {
-        "document": "可被预留券抵扣的 Pod 信息",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"PodSet\": [],\n        \"RequestId\": \"3bd23fef-56bf-4d61-a2f2-5ea6adef1508\",\n        \"TotalCount\": 0\n    }\n}",
-        "title": "查询满足规格的 Pod 信息"
-      },
-      {
         "document": "Filter Name只支持文档中的示例值",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"3323e599-cc1f-481b-95a7-dec3f145d158\"\n    }\n}",
         "title": "Filter Name值不支持"
+      },
+      {
+        "document": "可被预留券抵扣的 Pod 信息",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"PodSet\": [],\n        \"RequestId\": \"3bd23fef-56bf-4d61-a2f2-5ea6adef1508\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询满足规格的 Pod 信息"
       },
       {
         "document": "可通过 Filter中的 pod-type 指定查询某些类型的 Pod",
@@ -1200,16 +1200,16 @@
     ],
     "DescribeRIUtilizationDetail": [
       {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRIUtilizationDetail\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RIUtilizationDetailSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
-        "title": "DescribeRIUtilizationDetail"
-      },
-      {
         "document": "Filter Name只支持文档中的示例值",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRIUtilizationDetail\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"e6a4cb0c-defc-4829-8c12-784f300cea6a\"\n    }\n}",
         "title": "Filter Name值不支持"
+      },
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRIUtilizationDetail\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RIUtilizationDetailSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "DescribeRIUtilizationDetail"
       },
       {
         "document": "查询时间范围内的抵扣记录",
@@ -1228,16 +1228,16 @@
     ],
     "DescribeReservedInstances": [
       {
-        "document": "查询预留券列表",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeReservedInstances\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
-        "title": "DescribeReservedInstances"
-      },
-      {
         "document": "Filter Name只支持文档中的示例值",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\",\n            \"Values\": [\n                \"value\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"b31166bd-80d6-4868-b13a-952bc1cdc74c\"\n    }\n}",
         "title": "Filter Name值不支持"
+      },
+      {
+        "document": "查询预留券列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeReservedInstances\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "DescribeReservedInstances"
       },
       {
         "document": "支持的 Filter Name示例",
@@ -1656,10 +1656,10 @@
     ],
     "ModifyReservedInstanceScope": [
       {
-        "document": "Scope 输入错误示例",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"regio\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Scope must be in [Region, Zone, Node]\"\n        },\n        \"RequestId\": \"e88f8640-0e36-4154-a3bf-907b01aa62f0\"\n    }\n}",
-        "title": "Scope 输入错误示例"
+        "document": "输入的资源 ID不存在",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf7\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"region\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"ReservedInstanceIds:[]string{\\\"eksri-762dtf7\\\"} not found\"\n        },\n        \"RequestId\": \"134fa43d-83a5-4b8d-8ea9-293a96515b68\"\n    }\n}",
+        "title": "资源 ID 不存在"
       },
       {
         "document": "设置预留券抵扣范围为地域",
@@ -1668,10 +1668,10 @@
         "title": "抵扣范围为地域"
       },
       {
-        "document": "抵扣范围为可用区时，Zone 必传，如：ap-guangzhou-2",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"Zone\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Zone invalid\"\n        },\n        \"RequestId\": \"e949558d-f637-4223-8305-047cb2d5bf06\"\n    }\n}",
-        "title": "设置抵扣范围为可用区"
+        "document": "Scope 输入错误示例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"regio\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Scope must be in [Region, Zone, Node]\"\n        },\n        \"RequestId\": \"e88f8640-0e36-4154-a3bf-907b01aa62f0\"\n    }\n}",
+        "title": "Scope 输入错误示例"
       },
       {
         "document": "设置抵扣范围为节点",
@@ -1680,10 +1680,10 @@
         "title": "设置抵扣范围为节点"
       },
       {
-        "document": "输入的资源 ID不存在",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf7\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"region\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"ReservedInstanceIds:[]string{\\\"eksri-762dtf7\\\"} not found\"\n        },\n        \"RequestId\": \"134fa43d-83a5-4b8d-8ea9-293a96515b68\"\n    }\n}",
-        "title": "资源 ID 不存在"
+        "document": "抵扣范围为可用区时，Zone 必传，如：ap-guangzhou-2",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"Zone\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Zone invalid\"\n        },\n        \"RequestId\": \"e949558d-f637-4223-8305-047cb2d5bf06\"\n    }\n}",
+        "title": "设置抵扣范围为可用区"
       }
     ],
     "RemoveNodeFromNodePool": [

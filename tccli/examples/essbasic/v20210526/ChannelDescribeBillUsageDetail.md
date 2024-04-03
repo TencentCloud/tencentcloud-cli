@@ -29,7 +29,7 @@ Output:
 }
 ```
 
-**Example 2: 查询某个应用下某个子客的消耗情况**
+**Example 2: 查询某应用下渠道企业的消耗情况**
 
 
 
@@ -41,10 +41,7 @@ tccli essbasic ChannelDescribeBillUsageDetail --cli-unfold-argument  \
     --EndTime 20230930 \
     --Offset 0 \
     --Limit 20 \
-    --Agent.AppId yDwFdUUckpsw******yQ0af8bHosXQtb \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId 
+    --Agent.AppId yDwFdUUckpsw******yQ0af8bHosXQtb
 ```
 
 Output: 
@@ -72,7 +69,7 @@ Output:
 }
 ```
 
-**Example 3: 查询某应用下渠道企业的消耗情况**
+**Example 3: 查询某个应用下某个子客的消耗情况**
 
 
 
@@ -84,7 +81,10 @@ tccli essbasic ChannelDescribeBillUsageDetail --cli-unfold-argument  \
     --EndTime 20230930 \
     --Offset 0 \
     --Limit 20 \
-    --Agent.AppId yDwFdUUckpsw******yQ0af8bHosXQtb
+    --Agent.AppId yDwFdUUckpsw******yQ0af8bHosXQtb \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 

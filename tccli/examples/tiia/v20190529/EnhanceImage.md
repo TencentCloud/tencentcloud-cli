@@ -1,4 +1,4 @@
-**Example 1: 图像清晰度增强请求成功**
+**Example 1: 文件过大**
 
 
 
@@ -6,15 +6,18 @@ Input:
 
 ```
 tccli tiia EnhanceImage --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://big.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnhancedImage": "/9j/4AAQSkZJRgABAQAAAQABA...",
-        "RequestId": "75ad21c9-1db4-4032-9066-ab03e297349b"
+        "Error": {
+            "Code": "LimitExceeded.TooLargeFileError",
+            "Message": "文件太大"
+        },
+        "RequestId": "a1c397c8-5caf-44ce-975e-bf5e7c8242ef"
     }
 }
 ```
@@ -43,7 +46,7 @@ Output:
 }
 ```
 
-**Example 3: 文件过大**
+**Example 3: 图像清晰度增强请求成功**
 
 
 
@@ -51,18 +54,15 @@ Input:
 
 ```
 tccli tiia EnhanceImage --cli-unfold-argument  \
-    --ImageUrl https://big.jpg
+    --ImageUrl https://test.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "LimitExceeded.TooLargeFileError",
-            "Message": "文件太大"
-        },
-        "RequestId": "a1c397c8-5caf-44ce-975e-bf5e7c8242ef"
+        "EnhancedImage": "/9j/4AAQSkZJRgABAQAAAQABA...",
+        "RequestId": "75ad21c9-1db4-4032-9066-ab03e297349b"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 查询负载均衡实例下的全部监听器信息**
+**Example 1: 按照端口、协议及监听器ID查询监听器**
 
 
 
@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli clb DescribeListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-aniq7ewx
+    --LoadBalancerId lb-aniq7ewx \
+    --Protocol TCP \
+    --Port 333 \
+    --ListenerIds lbl-hd9nfp6o
 ```
 
 Output: 
@@ -66,7 +69,7 @@ Output:
 }
 ```
 
-**Example 2: 按照端口、协议及监听器ID查询监听器**
+**Example 2: 查询负载均衡实例下的全部监听器信息**
 
 
 
@@ -74,10 +77,7 @@ Input:
 
 ```
 tccli clb DescribeListeners --cli-unfold-argument  \
-    --LoadBalancerId lb-aniq7ewx \
-    --Protocol TCP \
-    --Port 333 \
-    --ListenerIds lbl-hd9nfp6o
+    --LoadBalancerId lb-aniq7ewx
 ```
 
 Output: 

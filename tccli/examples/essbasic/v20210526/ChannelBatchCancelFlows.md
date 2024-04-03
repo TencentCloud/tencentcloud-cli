@@ -32,35 +32,7 @@ Output:
 }
 ```
 
-**Example 2: 自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同**
-
-撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>
-假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
-
-Input: 
-
-```
-tccli essbasic ChannelBatchCancelFlows --cli-unfold-argument  \
-    --Agent.AppId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --CancelMessage 合同内容错误，需要修正 \
-    --CancelMessageFormat 1 \
-    --FlowIds yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa yDmFmUUckpst10i3UubBSat8PWOt2iQc yDmFdUUckpsvi8mpUEn0aFR1tWzReolk
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FailMessages": [],
-        "RequestId": "s1698667230378832497",
-        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
-    }
-}
-```
-
-**Example 3: 自定义撤销理由，使用只保留身份信息的方式撤销合同**
+**Example 2: 自定义撤销理由，使用只保留身份信息的方式撤销合同**
 
 撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为1) </br>
 假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方以"合同内容错误，需要修正"的理由撤销当前合同
@@ -83,6 +55,34 @@ Output:
     "Response": {
         "FailMessages": [],
         "RequestId": "s1698667230378832487",
+        "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
+    }
+}
+```
+
+**Example 3: 自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同**
+
+撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>
+假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
+
+Input: 
+
+```
+tccli essbasic ChannelBatchCancelFlows --cli-unfold-argument  \
+    --Agent.AppId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --CancelMessage 合同内容错误，需要修正 \
+    --CancelMessageFormat 1 \
+    --FlowIds yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa yDmFmUUckpst10i3UubBSat8PWOt2iQc yDmFdUUckpsvi8mpUEn0aFR1tWzReolk
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FailMessages": [],
+        "RequestId": "s1698667230378832497",
         "TaskId": "yDCVWUUckpwk3b05UyEZnO0xOn4snWWY"
     }
 }

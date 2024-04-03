@@ -1,4 +1,29 @@
-**Example 1: 获取人员库列表接口**
+**Example 1: 错误示例-2**
+
+返回数量不能大于1000
+
+Input: 
+
+```
+tccli iai GetGroupList --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1001
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.LimitExceed",
+            "Message": "返回数量不在合法范围内。"
+        },
+        "RequestId": "a6bb57de-773b-45e4-9e1c-c30ef48eba85"
+    }
+}
+```
+
+**Example 2: 获取人员库列表接口**
 
 获取人员库列表
 
@@ -43,31 +68,6 @@ Output:
         ],
         "GroupNum": 2,
         "RequestId": "72102087-a18d-4225-9ae9-87ef49e9f63e"
-    }
-}
-```
-
-**Example 2: 错误示例-2**
-
-返回数量不能大于1000
-
-Input: 
-
-```
-tccli iai GetGroupList --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 1001
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.LimitExceed",
-            "Message": "返回数量不在合法范围内。"
-        },
-        "RequestId": "a6bb57de-773b-45e4-9e1c-c30ef48eba85"
     }
 }
 ```

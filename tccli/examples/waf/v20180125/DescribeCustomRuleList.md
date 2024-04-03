@@ -1,4 +1,28 @@
-**Example 1: 获取访问控制规则列表**
+**Example 1: test1**
+
+
+
+Input: 
+
+```
+tccli waf DescribeCustomRuleList --cli-unfold-argument  \
+    --Domain hzh.qcloud.com \
+    --Limit 10 \
+    --Offset 10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "89d3f512-674f-4ecf-b766-90d2600fa498",
+        "RuleList": [],
+        "TotalCount": "1"
+    }
+}
+```
+
+**Example 2: 获取访问控制规则列表**
 
 
 
@@ -40,30 +64,6 @@ Output:
                 ]
             }
         ],
-        "TotalCount": "1"
-    }
-}
-```
-
-**Example 2: test1**
-
-
-
-Input: 
-
-```
-tccli waf DescribeCustomRuleList --cli-unfold-argument  \
-    --Domain hzh.qcloud.com \
-    --Limit 10 \
-    --Offset 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "89d3f512-674f-4ecf-b766-90d2600fa498",
-        "RuleList": [],
         "TotalCount": "1"
     }
 }

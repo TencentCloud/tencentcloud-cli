@@ -430,16 +430,16 @@
     ],
     "UploadCertificate": [
       {
-        "document": "上传服务端证书",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadCertificate\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"-----BEGIN CERTIFICATE-----\\nxxxxxxxxxxxxxxxxxxx\\n-----END CERTIFICATE-----\",\n    \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\r\\nxxxxxxxxxxxxxxxxxxxxxxxx\\r\\n-----END RSA PRIVATE KEY-----\",\n    \"Alias\": \"上传证书\",\n    \"ProjectId\": \"12345\",\n    \"Repeatable\": false,\n    \"CertificateType\": \"SVR\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"key1\",\n            \"TagValue\": \"value1\"\n        },\n        {\n            \"TagKey\": \"key2\",\n            \"TagValue\": \"value2\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"DSAuy46E\",\n        \"RepeatCertId\": \"DSAuy46E\",\n        \"RequestId\": \"6d69e2d8-2c31-40d2-a244-9f86ffb20cd0\"\n    }\n}",
-        "title": "上传服务端证书"
-      },
-      {
         "document": "上传证书根证书",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadCertificate\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"-----BEGIN CERTIFICATE-----\\nxxxxxxxxxxxxxxxxxxx\\n-----END CERTIFICATE-----\",\n    \"Alias\": \"上传CA证书\",\n    \"ProjectId\": \"12345\",\n    \"Repeatable\": false,\n    \"CertificateType\": \"CA\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"key1\",\n            \"TagValue\": \"value1\"\n        },\n        {\n            \"TagKey\": \"key2\",\n            \"TagValue\": \"value2\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a92b1Z1i\",\n        \"RepeatCertId\": \"\",\n        \"RequestId\": \"7ef2d2bb-f609-4e3d-a35c-04a5d3ac633b\"\n    }\n}",
         "title": "上传证书CA证书"
+      },
+      {
+        "document": "上传服务端证书",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadCertificate\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"-----BEGIN CERTIFICATE-----\\nxxxxxxxxxxxxxxxxxxx\\n-----END CERTIFICATE-----\",\n    \"CertificatePrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\r\\nxxxxxxxxxxxxxxxxxxxxxxxx\\r\\n-----END RSA PRIVATE KEY-----\",\n    \"Alias\": \"上传证书\",\n    \"ProjectId\": \"12345\",\n    \"Repeatable\": false,\n    \"CertificateType\": \"SVR\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"key1\",\n            \"TagValue\": \"value1\"\n        },\n        {\n            \"TagKey\": \"key2\",\n            \"TagValue\": \"value2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"DSAuy46E\",\n        \"RepeatCertId\": \"DSAuy46E\",\n        \"RequestId\": \"6d69e2d8-2c31-40d2-a244-9f86ffb20cd0\"\n    }\n}",
+        "title": "上传服务端证书"
       }
     ],
     "UploadConfirmLetter": [

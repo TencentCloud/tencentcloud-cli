@@ -1,30 +1,4 @@
-**Example 1: 提交集成任务**
-
-提交集成任务
-
-Input: 
-
-```
-tccli wedata CommitIntegrationTask --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc \
-    --CommitType 0 \
-    --TaskType 1 \
-    --ExtConfig.0.Name abc \
-    --ExtConfig.0.Value abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "1x",
-        "Data": true
-    }
-}
-```
-
-**Example 2: 1**
+**Example 1: 1**
 
 2
 
@@ -49,6 +23,32 @@ Output:
             "Message": "CloudApiException: The current task is locked by 100028625403 and cannot be committed"
         },
         "RequestId": "6a160ebb-720b-47a7-8f88-4e30f033955d"
+    }
+}
+```
+
+**Example 2: 提交集成任务**
+
+提交集成任务
+
+Input: 
+
+```
+tccli wedata CommitIntegrationTask --cli-unfold-argument  \
+    --TaskId abc \
+    --ProjectId abc \
+    --CommitType 0 \
+    --TaskType 1 \
+    --ExtConfig.0.Name abc \
+    --ExtConfig.0.Value abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1x",
+        "Data": true
     }
 }
 ```

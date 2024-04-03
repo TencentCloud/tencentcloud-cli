@@ -1,15 +1,14 @@
-**Example 1: 创建App隐私合规诊断重试任务**
+**Example 1: 重新提交漏洞扫描任务**
 
-原任务失败后，重新提交隐私合规诊断基础版任务
+
 
 Input: 
 
 ```
 tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
-    --AppPackage com.test.app \
-    --Source 2 \
-    --OrgTaskID 170143813*******360 \
     --Platform 0 \
+    --Source 3 \
+    --OrgTaskID 347***22496 \
     --TaskType 0
 ```
 
@@ -17,40 +16,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxx",
+        "RequestId": "abc2*******2b2ffd0",
         "Result": 0,
-        "TaskID": "170143813*******360"
+        "TaskID": "347*********16"
     }
 }
 ```
 
-**Example 2: 重新提交小程序基础版诊断任务**
-
-
-
-Input: 
-
-```
-tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
-    --Platform 2 \
-    --Source 0 \
-    --OrgTaskID 2673***400 \
-    --AppPackage wxec***97c684 \
-    --TaskType 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "1c2cde1b-8226-4ab9-a6da-52edc66af0af",
-        "Result": 0,
-        "TaskID": "2673***638272"
-    }
-}
-```
-
-**Example 3: 重新小程序基础诊断任务**
+**Example 2: 重新小程序基础诊断任务**
 
 
 
@@ -76,17 +49,18 @@ Output:
 }
 ```
 
-**Example 4: 重新提交漏洞扫描任务**
+**Example 3: 创建App隐私合规诊断重试任务**
 
-
+原任务失败后，重新提交隐私合规诊断基础版任务
 
 Input: 
 
 ```
 tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
+    --AppPackage com.test.app \
+    --Source 2 \
+    --OrgTaskID 170143813*******360 \
     --Platform 0 \
-    --Source 3 \
-    --OrgTaskID 347***22496 \
     --TaskType 0
 ```
 
@@ -94,9 +68,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc2*******2b2ffd0",
+        "RequestId": "xxxxxx",
         "Result": 0,
-        "TaskID": "347*********16"
+        "TaskID": "170143813*******360"
+    }
+}
+```
+
+**Example 4: 重新提交小程序基础版诊断任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTaskRepeat --cli-unfold-argument  \
+    --Platform 2 \
+    --Source 0 \
+    --OrgTaskID 2673***400 \
+    --AppPackage wxec***97c684 \
+    --TaskType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1c2cde1b-8226-4ab9-a6da-52edc66af0af",
+        "Result": 0,
+        "TaskID": "2673***638272"
     }
 }
 ```

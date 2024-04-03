@@ -1,30 +1,4 @@
-**Example 1: 网段方式创建NAT网关**
-
-
-
-Input: 
-
-```
-tccli bmvpc CreateNatGateway --cli-unfold-argument  \
-    --ForwardMode 1 \
-    --VpcId vpc-mi51u7gs \
-    --NatName test \
-    --MaxConcurrent 10000000 \
-    --AssignedEips 139.199.40.59 \
-    --SubnetIds subnet-d3668cur subnet-dipbsl5n
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskId": 18403,
-        "RequestId": "6e9f212d-b3cb-417e-b78e-3ae6ec690e4d"
-    }
-}
-```
-
-**Example 2: IP方式创建NAT网关**
+**Example 1: IP方式创建NAT网关**
 
 
 
@@ -50,6 +24,32 @@ Output:
     "Response": {
         "TaskId": 18405,
         "RequestId": "7d18fca8-4b3c-4bc6-818e-ec291764b8fb"
+    }
+}
+```
+
+**Example 2: 网段方式创建NAT网关**
+
+
+
+Input: 
+
+```
+tccli bmvpc CreateNatGateway --cli-unfold-argument  \
+    --ForwardMode 1 \
+    --VpcId vpc-mi51u7gs \
+    --NatName test \
+    --MaxConcurrent 10000000 \
+    --AssignedEips 139.199.40.59 \
+    --SubnetIds subnet-d3668cur subnet-dipbsl5n
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": 18403,
+        "RequestId": "6e9f212d-b3cb-417e-b78e-3ae6ec690e4d"
     }
 }
 ```

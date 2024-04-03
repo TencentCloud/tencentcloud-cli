@@ -1,6 +1,6 @@
-**Example 1: 通过准备好的个人印章图片创建印章**
+**Example 1: 参数UserName不能为空**
 
-通过准备好的个人印章图片创建印章
+参数UserName不能为空
 
 Input: 
 
@@ -20,21 +20,26 @@ tccli essbasic ChannelCreatePreparedPersonalEsign --cli-unfold-argument  \
     --Agent.ProxyOperator.ProxyIp abc \
     --Agent.ProxyAppId abc \
     --Agent.ProxyOrganizationId abc \
-    --UserName 印章归属个人姓名 \
-    --IdCardType  \
-    --IdCardNumber 身份证件号码 \
-    --SealImage 印章图片Base64 \
-    --SealName 我的印章名称 \
-    --Mobile 135*111 \
-    --EnableAutoSign True
+    --UserName  \
+    --IdCardType abc \
+    --IdCardNumber abc \
+    --SealName abc \
+    --SealImage abc \
+    --SealImageCompress True \
+    --Mobile abc \
+    --EnableAutoSign True \
+    --LicenseType 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SealId": "abc",
-        "RequestId": "abc"
+        "Error": {
+            "Code": "InvalidParameterValue",
+            "Message": "参数UserName不能为空"
+        },
+        "RequestId": "xxxx111xxxx"
     }
 }
 ```
@@ -85,9 +90,9 @@ Output:
 }
 ```
 
-**Example 3: 参数UserName不能为空**
+**Example 3: 通过准备好的个人印章图片创建印章**
 
-参数UserName不能为空
+通过准备好的个人印章图片创建印章
 
 Input: 
 
@@ -107,26 +112,21 @@ tccli essbasic ChannelCreatePreparedPersonalEsign --cli-unfold-argument  \
     --Agent.ProxyOperator.ProxyIp abc \
     --Agent.ProxyAppId abc \
     --Agent.ProxyOrganizationId abc \
-    --UserName  \
-    --IdCardType abc \
-    --IdCardNumber abc \
-    --SealName abc \
-    --SealImage abc \
-    --SealImageCompress True \
-    --Mobile abc \
-    --EnableAutoSign True \
-    --LicenseType 0
+    --UserName 印章归属个人姓名 \
+    --IdCardType  \
+    --IdCardNumber 身份证件号码 \
+    --SealImage 印章图片Base64 \
+    --SealName 我的印章名称 \
+    --Mobile 135*111 \
+    --EnableAutoSign True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue",
-            "Message": "参数UserName不能为空"
-        },
-        "RequestId": "xxxx111xxxx"
+        "SealId": "abc",
+        "RequestId": "abc"
     }
 }
 ```
