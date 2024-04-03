@@ -4764,6 +4764,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长",
+          "example": "72",
+          "member": "int64",
+          "name": "MsgTTL",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
