@@ -12,7 +12,7 @@
       {
         "document": "获取企业下应用详情",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"45454545464646\",\n        \"AppType\": \"knowledge_qa\",\n        \"BaseConfig\": {\n            \"Name\": \"应用\",\n            \"Avatar\": \"头像\",\n            \"Desc\": \"应用描述\"\n        },\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"45454545464646\",\n        \"AppType\": \"knowledge_qa\",\n        \"BaseConfig\": {\n            \"Name\": \"应用\",\n            \"Avatar\": \"头像\",\n            \"Desc\": \"应用描述\"\n        },\n        \"AppKey\": \"app_key\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
         "title": "DescribeApp"
       }
     ],

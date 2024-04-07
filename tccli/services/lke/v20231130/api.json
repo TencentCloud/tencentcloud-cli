@@ -461,15 +461,6 @@
         },
         {
           "disabled": false,
-          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
-          "example": "无",
-          "member": "string",
-          "name": "AppType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "登录用户主账号(集成商模式必填)\t",
           "example": "6000005624511",
           "member": "string",
@@ -485,6 +476,24 @@
           "name": "LoginSubAccountUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "example": "无",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否发布后的配置",
+          "example": "无",
+          "member": "bool",
+          "name": "IsRelease",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -590,6 +599,16 @@
           "name": "BareAnswerInAppeal",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用appKey",
+          "example": "无",
+          "member": "string",
+          "name": "AppKey",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1094,6 +1113,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

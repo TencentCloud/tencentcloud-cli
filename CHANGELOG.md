@@ -1,3 +1,149 @@
+# Release 3.0.970.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 50 次发布
+
+发布时间：2024-04-08 01:10:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIvrAudioList](http://document.tencentcloudapi.woa.com/document/product/679/83622)
+* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
+
+新增数据结构：
+
+* [AudioFileInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AudioFileInfo)
+* [UploadAudioInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadAudioInfo)
+* [UploadIvrAudioFailedInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadIvrAudioFailedInfo)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 31 次发布
+
+发布时间：2024-04-08 01:13:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAssetViewVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/83623)
+
+新增数据结构：
+
+* [AssetViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRiskData)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 57 次发布
+
+发布时间：2024-04-08 01:21:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordParam](http://document.tencentcloudapi.woa.com/document/product/267/20474#RecordParam)
+
+	* 新增成员：CosBucketName, CosBucketRegion, CosBucketPath
+
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 3 次发布
+
+发布时间：2024-04-08 01:21:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApp](http://document.tencentcloudapi.woa.com/document/product/1759/83609)
+
+	* 新增入参：IsRelease
+
+	* 新增出参：AppKey
+
+* [ModifyApp](http://document.tencentcloudapi.woa.com/document/product/1759/83605)
+
+	* 新增出参：UpdateTime
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 131 次发布
+
+发布时间：2024-04-08 01:30:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：BandwidthPackageId
+
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 7 次发布
+
+发布时间：2024-04-08 01:31:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectEnvAndSoundQuality](http://document.tencentcloudapi.woa.com/document/product/1664/79149)
+
+	* 新增入参：Audition, TaskType
+
+* [GetTrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79148)
+
+	* 新增入参：TaskType, Domain, TextLanguage
+
+* [GetVRSVoiceTypes](http://document.tencentcloudapi.woa.com/document/product/1664/82607)
+
+	* 新增入参：TaskType
+
+
+修改数据结构：
+
+* [DescribeVRSTaskStatusRespData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DescribeVRSTaskStatusRespData)
+
+	* 新增成员：ExpireTime, FastVoiceType
+
+* [VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo)
+
+	* 新增成员：ExpireTime, FastVoiceType
+
+
+
+
 # Release 3.0.969.1
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08

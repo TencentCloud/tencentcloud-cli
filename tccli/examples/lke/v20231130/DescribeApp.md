@@ -21,6 +21,7 @@ Output:
             "Avatar": "头像",
             "Desc": "应用描述"
         },
+        "AppKey": "app_key",
         "RequestId": "dwec-adsdsdsd-sfsfdsfsf"
     }
 }

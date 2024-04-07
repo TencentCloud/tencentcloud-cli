@@ -308,6 +308,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务过期时间。当复刻类型为快速复刻时展示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快速复刻音色id。当复刻类型为快速复刻时展示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FastVoiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -378,6 +398,24 @@
           "example": "无",
           "member": "int64",
           "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否试听",
+          "example": "无",
+          "member": "bool",
+          "name": "Audition",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "复刻类型。 0 - 轻量版声音复刻（默认）; 5 - 快速声音复刻。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
           "required": false,
           "type": "int"
         }
@@ -556,6 +594,33 @@
           "name": "GetTextAudioDemo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "音色场景。（仅支持快速声音复刻，其余复刻类型不生效） 0 - 通用场景（默认）； 1 - 聊天场景； 2 - 阅读场景； 3 - 资讯播报场景。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音色场景。（仅支持快速声音复刻，其余复刻类型不生效） 0 - 通用场景； 1 - 聊天场景； 2 - 阅读场景； 3 - 资讯播报场景。",
+          "example": "无",
+          "member": "int64",
+          "name": "Domain",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文本语种。（仅支持快速声音复刻，其余复刻类型不生效） 1 - 中文（默认）。",
+          "example": "无",
+          "member": "int64",
+          "name": "TextLanguage",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -584,7 +649,17 @@
     },
     "GetVRSVoiceTypesRequest": {
       "document": "GetVRSVoiceTypes请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 - 除快速声音复刻外其他复刻类型（默认）； 5 - 快速声音复刻。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "GetVRSVoiceTypesResponse": {
@@ -723,6 +798,26 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务过期时间。当复刻类型为快速复刻时展示。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快速复刻音色id。当复刻类型为快速复刻时展示。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FastVoiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
