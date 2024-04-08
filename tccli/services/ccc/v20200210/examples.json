@@ -232,6 +232,14 @@
         "title": "查询在线客服记录示例"
       }
     ],
+    "DescribeIvrAudioList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIvrAudioList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 160000000,\n    \"CustomFileName\": [\n        \"abc\"\n    ],\n    \"AudioFileName\": [],\n    \"FileId\": [],\n    \"PageSize\": 1,\n    \"PageNumber\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FileInfo\": [\n            {\n                \"FileId\": 1,\n                \"CustomFileName\": \"abc\",\n                \"AudioFileName\": \"a.mp3\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询IVR音频文件列表示例"
+      }
+    ],
     "DescribeNumbers": [
       {
         "document": "查询号码列表",
@@ -430,6 +438,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePredictiveDialingCampaign\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"CampaignId\": 2569,\n    \"Name\": \"新能源SUV推荐\",\n    \"Callees\": [\n        \"+8613012345678\",\n        \"+8613012345679\",\n        \"+8613012345670\"\n    ],\n    \"Callers\": [\n        \"0086075586013388\"\n    ],\n    \"CallOrder\": 0,\n    \"SkillGroupId\": 255,\n    \"IVRId\": 4600,\n    \"Priority\": 3,\n    \"ExpectedAbandonRate\": 10,\n    \"RetryTimes\": 1,\n    \"RetryInterval\": 1800,\n    \"StartTime\": 1708483433,\n    \"EndTime\": 1708485433\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "更新预测式外呼任务示例"
+      }
+    ],
+    "UploadIvrAudio": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadIvrAudio\n<公共请求参数>\n\n{\n    \"SdkAppId\": 0,\n    \"AudioList\": [\n        {\n            \"CustomFileName\": \"abc\",\n            \"AudioUrl\": \"http://xxxx.com/a.mp3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "上传IVR音频文件"
       }
     ]
   },

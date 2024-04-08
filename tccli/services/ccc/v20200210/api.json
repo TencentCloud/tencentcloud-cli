@@ -203,6 +203,13 @@
       "output": "DescribeIMCdrsResponse",
       "status": "online"
     },
+    "DescribeIvrAudioList": {
+      "document": "查询IVR音频文件列表信息",
+      "input": "DescribeIvrAudioListRequest",
+      "name": "查询IVR音频文件列表",
+      "output": "DescribeIvrAudioListResponse",
+      "status": "online"
+    },
     "DescribeNumbers": {
       "document": "查询号码列表",
       "input": "DescribeNumbersRequest",
@@ -377,6 +384,13 @@
       "name": "更新预测式外呼任务",
       "output": "UpdatePredictiveDialingCampaignResponse",
       "status": "online"
+    },
+    "UploadIvrAudio": {
+      "document": "上传IVR中使用的音频文件，每日上传文件限制50个。（参数中音频文件Url建议使用腾讯云Cos存储的临时链接）",
+      "input": "UploadIvrAudioRequest",
+      "name": "上传IVR音频文件",
+      "output": "UploadIvrAudioResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -464,6 +478,52 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioFileInfo": {
+      "document": "音频文件审核信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FileId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "欢迎",
+          "member": "string",
+          "name": "CustomFileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx.mp3",
+          "member": "string",
+          "name": "AudioFileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核状态，0-未审核，1-审核通过，2-审核拒绝\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3273,6 +3333,98 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIvrAudioListRequest": {
+      "document": "DescribeIvrAudioList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1600000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸，上限 50",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，从 0 开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文件别名",
+          "example": "欢迎",
+          "member": "string",
+          "name": "CustomFileName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "aaa.mp3",
+          "member": "string",
+          "name": "AudioFileName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "FileId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIvrAudioListResponse": {
+      "document": "DescribeIvrAudioList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件信息",
+          "example": "无",
+          "member": "AudioFileInfo",
+          "name": "FileInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7214,6 +7366,102 @@
     "UpdatePredictiveDialingCampaignResponse": {
       "document": "UpdatePredictiveDialingCampaign返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadAudioInfo": {
+      "document": "上传音频文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件别名（可重复）",
+          "example": "呼入使用",
+          "member": "string",
+          "name": "CustomFileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频文件链接。(支持mp3和wav格式，文件不超过5MB)",
+          "example": "http://xxx.com/aa.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadIvrAudioFailedInfo": {
+      "document": "上传音频文件失败信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx.mp3",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "文件内容重复",
+          "member": "string",
+          "name": "FailedMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UploadIvrAudioRequest": {
+      "document": "UploadIvrAudio请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1600000001",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频文件列表",
+          "example": "无",
+          "member": "UploadAudioInfo",
+          "name": "AudioList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadIvrAudioResponse": {
+      "document": "UploadIvrAudio返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传失败的文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UploadIvrAudioFailedInfo",
+          "name": "FailedFileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

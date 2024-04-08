@@ -2770,6 +2770,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bwp-ki2fa60h",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
