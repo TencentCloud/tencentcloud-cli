@@ -290,6 +290,8 @@ tccli/services/csip/__init__.py
 tccli/services/csip/csip_client.py
 tccli/services/csxg/__init__.py
 tccli/services/csxg/csxg_client.py
+tccli/services/cube/__init__.py
+tccli/services/cube/cube_client.py
 tccli/services/cvm/__init__.py
 tccli/services/cvm/cvm_client.py
 tccli/services/cvm/v20170312/api.json

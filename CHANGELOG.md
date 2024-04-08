@@ -1,3 +1,122 @@
+# Release 3.0.971.1
+
+## 业务风险情报(bri) 版本：2019-03-28
+
+### 第 2 次发布
+
+发布时间：2024-04-09 01:15:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeBRI
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 77 次发布
+
+发布时间：2024-04-09 01:45:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
+
+	* 新增入参：UserData
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
+
+	* 新增成员：JumpUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 135 次发布
+
+发布时间：2024-04-09 01:46:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81610)
+
+	* 新增入参：UserData
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
+
+	* 新增成员：JumpUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 25 次发布
+
+发布时间：2024-04-09 02:01:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)
+
+新增数据结构：
+
+* [FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)
+* [FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)
+* [FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 54 次发布
+
+发布时间：2024-04-09 02:13:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77809)
+
+	* 新增入参：IsCache
+
+
+
+
 # Release 3.0.970.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

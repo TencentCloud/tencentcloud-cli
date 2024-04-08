@@ -1,0 +1,420 @@
+{
+  "actions": {
+    "DescribeInstances": {
+      "document": "本接口 (DescribeInstances) 用于查询一个或多个实例的详细信息。\n\n- 可以根据实例ID、vpcid或者实例私有IP等信息来查询实例的详细信息。过滤信息详细请见过滤器Filter。\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例。",
+      "input": "DescribeInstancesRequest",
+      "name": "查看实例列表",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-03-04",
+    "api_brief": "管理Cube安全容器的整个生命周期",
+    "serviceNameCN": "高性能弹性计算底座",
+    "serviceShortName": "cube"
+  },
+  "objects": {
+    "DataDisk": {
+      "document": "描述了数据盘的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID，暂时不支持该参数。\n该参数目前仅用于DescribeInstances等查询类接口的返回参数，不可用于RunInstances等写接口的入参。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"disk-lzrg2pwi\"",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬盘介质类型。取值范围：\n\n- CLOUD_BASIC：表示普通云硬盘\n- CLOUD_PREMIUM：表示高性能云硬盘\n- CLOUD_BSSD：表示通用型SSD云硬盘\n- CLOUD_SSD：表示SSD云硬盘\n- CLOUD_HSSD：表示增强型SSD云硬盘\n- CLOUD_TSSD：表示极速型SSD云硬盘。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n- 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "无",
+          "member": "FilterItem",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例总个数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilterItem": {
+      "document": "过滤条件。可以指定的过滤参数为：private-ip-address, instance-id, vpc-id。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段\n",
+          "example": "vpc-id，instance-id，private-ip-address",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Instance": {
+      "document": "描述实例的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "例状态。取值范围：\n\n- PENDING：表示创建中\n- LAUNCH_FAILED：表示创建失败\n- RUNNING：表示运行中\n- STOPPED：表示关机\n- SHUTDOWN：表示停止待销毁\n- TERMINATING：表示销毁中\n- TERMINATED：表示已销毁成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例内存容量，单位：MiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例的CPU核数，单位：核*100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CPU",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统架构-INTEL|AMD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所在裸金属IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GPU",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Placement",
+          "name": "Placement",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Placement": {
+      "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所属的可用区ID。该参数可以通过调用 DescribeZones 的返回值中的Zone字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的宿主机ID，仅用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SystemDisk": {
+      "document": "描述了系统盘的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘大小，单位GB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云盘介质类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_BASIC",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VirtualPrivateCloud": {
+      "document": "描述了VPC相关信息，包括子网，IP信息等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VpcId, 短ID， 如vpc-12345678\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-2ij",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID, 短ID， 如subnet-12345678\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-2ks",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定IP，vstation申请\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定IP，eks已经申请的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyIpAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

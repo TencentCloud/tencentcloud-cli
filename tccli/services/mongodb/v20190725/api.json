@@ -147,6 +147,13 @@
       "output": "DescribeSpecInfoResponse",
       "status": "online"
     },
+    "FlashBackDBInstance": {
+      "document": "该接口用于发起按 Key 闪回任务，依据数据的闪回 Key（默认为 id）对数据进行极速回档，快速恢复业务。\n**说明：按 Key 闪回于2023年09月11日正式进行公测，在此期间，该接口仅对公测用户开放。**",
+      "input": "FlashBackDBInstanceRequest",
+      "name": "按 Key 回档",
+      "output": "FlashBackDBInstanceResponse",
+      "status": "online"
+    },
     "FlushInstanceRouterConfig": {
       "document": "在所有mongos上执行FlushRouterConfig命令",
       "input": "FlushInstanceRouterConfigRequest",
@@ -2746,6 +2753,160 @@
         }
       ],
       "type": "object"
+    },
+    "FBKeyValue": {
+      "document": "按key回档，用于筛选数据的键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于按key回档过滤的key",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于按key回档过滤的value",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlashBackDBInstanceRequest": {
+      "document": "FlashBackDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启按 Key 回档的实例 ID。",
+          "example": "cmgo-igjysqkr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源数据想恢复到的时间。",
+          "example": "2023-08-04 14:00:00",
+          "member": "string",
+          "name": "TargetFlashbackTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源数据所在的库表信息。",
+          "example": "无",
+          "member": "FlashbackDatabase",
+          "name": "TargetDatabases",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据最终写入的实例 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlashBackDBInstanceResponse": {
+      "document": "FlashBackDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回档数据异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FlashbackCollection": {
+      "document": "按key回档，源数据所在的表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按key回档指定的集合名",
+          "example": "无",
+          "member": "string",
+          "name": "CollectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按key回档到的目标集合名",
+          "example": "无",
+          "member": "string",
+          "name": "TargetResultCollectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传到cos的文件的value所对应的key值",
+          "example": "无",
+          "member": "string",
+          "name": "FilterKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于按key回档过滤的键值对",
+          "example": "无",
+          "member": "FBKeyValue",
+          "name": "KeyValues",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlashbackDatabase": {
+      "document": "按key回档，源数据所在的库表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按key回档源数据所在库",
+          "example": "无",
+          "member": "string",
+          "name": "DBName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按key回档的集群数组",
+          "example": "无",
+          "member": "FlashbackCollection",
+          "name": "Collections",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "FlushInstanceRouterConfigRequest": {
       "document": "FlushInstanceRouterConfig请求参数结构体",

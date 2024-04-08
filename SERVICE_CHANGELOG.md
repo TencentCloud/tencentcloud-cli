@@ -1,72 +1,26 @@
 # 本版本更新包含以下内容：
 
-## 云联络中心(ccc) 版本：2020-02-10
+## 业务风险情报(bri) 版本：2019-03-28
 
-### 第 50 次发布
+### 第 2 次发布
 
-发布时间：2024-04-08 01:10:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeIvrAudioList](http://document.tencentcloudapi.woa.com/document/product/679/83622)
-* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
-
-新增数据结构：
-
-* [AudioFileInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AudioFileInfo)
-* [UploadAudioInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadAudioInfo)
-* [UploadIvrAudioFailedInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadIvrAudioFailedInfo)
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 31 次发布
-
-发布时间：2024-04-08 01:13:09
+发布时间：2024-04-09 01:15:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [DescribeAssetViewVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/83623)
-
-新增数据结构：
-
-* [AssetViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRiskData)
+* DescribeBRI
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 57 次发布
+### 第 77 次发布
 
-发布时间：2024-04-08 01:21:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RecordParam](http://document.tencentcloudapi.woa.com/document/product/267/20474#RecordParam)
-
-	* 新增成员：CosBucketName, CosBucketRegion, CosBucketPath
-
-
-
-
-## 大模型知识引擎(lke) 版本：2023-11-30
-
-### 第 3 次发布
-
-发布时间：2024-04-08 01:21:50
+发布时间：2024-04-09 01:45:35
 
 本次发布包含了以下内容：
 
@@ -74,43 +28,25 @@
 
 修改接口：
 
-* [DescribeApp](http://document.tencentcloudapi.woa.com/document/product/1759/83609)
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
 
-	* 新增入参：IsRelease
+	* 新增入参：UserData
 
-	* 新增出参：AppKey
-
-* [ModifyApp](http://document.tencentcloudapi.woa.com/document/product/1759/83605)
-
-	* 新增出参：UpdateTime
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 131 次发布
-
-发布时间：2024-04-08 01:30:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
 
 修改数据结构：
 
-* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
 
-	* 新增成员：BandwidthPackageId
-
-
+	* 新增成员：JumpUrl
 
 
-## 声音复刻(vrs) 版本：2020-08-24
 
-### 第 7 次发布
 
-发布时间：2024-04-08 01:31:09
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 135 次发布
+
+发布时间：2024-04-09 01:46:26
 
 本次发布包含了以下内容：
 
@@ -118,28 +54,65 @@
 
 修改接口：
 
-* [DetectEnvAndSoundQuality](http://document.tencentcloudapi.woa.com/document/product/1664/79149)
+* [ChannelCreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81610)
 
-	* 新增入参：Audition, TaskType
-
-* [GetTrainingText](http://document.tencentcloudapi.woa.com/document/product/1664/79148)
-
-	* 新增入参：TaskType, Domain, TextLanguage
-
-* [GetVRSVoiceTypes](http://document.tencentcloudapi.woa.com/document/product/1664/82607)
-
-	* 新增入参：TaskType
+	* 新增入参：UserData
 
 
 修改数据结构：
 
-* [DescribeVRSTaskStatusRespData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DescribeVRSTaskStatusRespData)
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
 
-	* 新增成员：ExpireTime, FastVoiceType
+	* 新增成员：JumpUrl
 
-* [VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo)
 
-	* 新增成员：ExpireTime, FastVoiceType
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 25 次发布
+
+发布时间：2024-04-09 02:01:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)
+
+新增数据结构：
+
+* [FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)
+* [FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)
+* [FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 54 次发布
+
+发布时间：2024-04-09 02:13:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77809)
+
+	* 新增入参：IsCache
 
 
 
@@ -7875,6 +7848,18 @@
 
 ## 业务风险情报(bri) 版本：2019-03-28
 
+### 第 2 次发布
+
+发布时间：2024-04-09 01:15:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeBRI
+
 ### 第 1 次发布
 
 发布时间：2023-06-27 20:09:28
@@ -10869,14 +10854,14 @@
 
 新增接口：
 
-* [[DescribeIvrAudioList](http://document.tencentcloudapi.woa.com/document/product/679/83622)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeIvrAudioList](http://document.tencentcloudapi.woa.com/document/product/679/83622)
+* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
 
 新增数据结构：
 
-* [[AudioFileInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AudioFileInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AudioFileInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AudioFileInfo))
-* [[UploadAudioInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadAudioInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[UploadAudioInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadAudioInfo))
-* [[UploadIvrAudioFailedInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadIvrAudioFailedInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[UploadIvrAudioFailedInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadIvrAudioFailedInfo))
+* [AudioFileInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AudioFileInfo)
+* [UploadAudioInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadAudioInfo)
+* [UploadIvrAudioFailedInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#UploadIvrAudioFailedInfo)
 
 ### 第 49 次发布
 
@@ -25800,11 +25785,11 @@
 
 新增接口：
 
-* [[DescribeAssetViewVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/83623)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAssetViewVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/83623)
 
 新增数据结构：
 
-* [[AssetViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRiskData)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[AssetViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRiskData))
+* [AssetViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRiskData)
 
 ### 第 30 次发布
 
@@ -26545,6 +26530,32 @@
 * [Describe5GAPNs](http://document.tencentcloudapi.woa.com/document/product/1730/80873)
 * [Describe5GInstances](http://document.tencentcloudapi.woa.com/document/product/1730/80872)
 * [Modify5GInstanceAttribute](http://document.tencentcloudapi.woa.com/document/product/1730/80871)
+
+
+
+
+## 高性能弹性计算底座(cube) 版本：2024-03-04
+
+### 第 1 次发布
+
+发布时间：2024-04-08 14:27:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1760/83626)
+
+新增数据结构：
+
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1760/83627#DataDisk)
+* [FilterItem](http://document.tencentcloudapi.woa.com/document/product/1760/83627#FilterItem)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1760/83627#Instance)
+* [Placement](http://document.tencentcloudapi.woa.com/document/product/1760/83627#Placement)
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1760/83627#SystemDisk)
+* [VirtualPrivateCloud](http://document.tencentcloudapi.woa.com/document/product/1760/83627#VirtualPrivateCloud)
 
 
 
@@ -42792,6 +42803,28 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 77 次发布
+
+发布时间：2024-04-09 01:45:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
+
+	* 新增入参：UserData
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
+
+	* 新增成员：JumpUrl
+
+
 ### 第 76 次发布
 
 发布时间：2024-03-28 01:17:58
@@ -44586,6 +44619,28 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 135 次发布
+
+发布时间：2024-04-09 01:46:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81610)
+
+	* 新增入参：UserData
+
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
+
+	* 新增成员：JumpUrl
+
 
 ### 第 134 次发布
 
@@ -59349,6 +59404,24 @@
 
 
 ## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 25 次发布
+
+发布时间：2024-04-09 02:01:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue))
+* [[FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection))
+* [[FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase))
 
 ### 第 24 次发布
 
@@ -74426,6 +74499,21 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 54 次发布
+
+发布时间：2024-04-09 02:13:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeployCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77809)
+
+	* 新增入参：IsCache
+
 
 ### 第 53 次发布
 
