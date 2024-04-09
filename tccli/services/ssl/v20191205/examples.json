@@ -96,9 +96,9 @@
     ],
     "DeployCertificateInstance": [
       {
-        "document": "证书部署到clb云资源实例列表",
+        "document": "证书部署到clb云资源实例列表， 若部署的监听器开启了SNI，则InstanceIdList传参需要到域名， 若未开启SNI， InstanceIdList只需要到监听器",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"lb-pk278gkq|lbl-2yju432e\",\n        \"lb-mmgz14kg|lbl-5q6yn03o|asdasd.ninghhuang.top\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeployStatus\": 0,\n        \"DeployRecordId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "证书部署到clb云资源实例列表"
       }
     ],

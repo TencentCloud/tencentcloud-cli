@@ -2551,6 +2551,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2564,7 +2573,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DeployRecordId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2574,7 +2583,7 @@
           "example": "无",
           "member": "int64",
           "name": "DeployStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
