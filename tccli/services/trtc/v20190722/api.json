@@ -6452,6 +6452,15 @@
           "name": "RecordId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1",
+          "example": "无",
+          "member": "McuPublishCdnParam",
+          "name": "PublishCdnParams",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

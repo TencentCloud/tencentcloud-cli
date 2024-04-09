@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DescribeOrganizationMemberPolicies --cli-unfold-argument  \
-    --MemberUin 100000546922 \
+    --MemberUin 111111111111 \
     --Limit 10 \
     --Offset 0
 ```

@@ -135,7 +135,7 @@
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [\"innercfg\", \"zhiyan\"]",
           "member": "string",
           "name": "ServiceNameList",
           "output_required": true,
@@ -146,7 +146,7 @@
         {
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "output_required": false,
@@ -208,7 +208,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "5689",
           "member": "int64",
           "name": "TaskId",
           "required": true,
@@ -403,7 +403,7 @@
         {
           "disabled": false,
           "document": "更新时间，固定格式%Y-%m-%d %H:%M:%S",
-          "example": "无",
+          "example": "\"2024-03-09 20:59:59\"",
           "member": "string",
           "name": "TaskUpdateTime",
           "required": false,
@@ -430,7 +430,7 @@
         {
           "disabled": false,
           "document": "演练ID",
-          "example": "无",
+          "example": "5871",
           "member": "uint64",
           "name": "TaskId",
           "required": false,
@@ -439,7 +439,7 @@
         {
           "disabled": false,
           "document": "关联应用ID筛选",
-          "example": "无",
+          "example": "\"app-faee9ba9\"",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -448,7 +448,7 @@
         {
           "disabled": false,
           "document": "关联应用筛选",
-          "example": "无",
+          "example": "\"yh-test001\"",
           "member": "string",
           "name": "ApplicationName",
           "required": false,
@@ -457,7 +457,7 @@
         {
           "disabled": false,
           "document": "任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)",
-          "example": "无",
+          "example": "[1001, 1002]",
           "member": "uint64",
           "name": "TaskStatusList",
           "required": false,
@@ -660,7 +660,7 @@
         {
           "disabled": false,
           "document": "经验来源 0-自建 1-专家推荐",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TemplateSource",
           "required": false,
@@ -669,7 +669,7 @@
         {
           "disabled": false,
           "document": "经验ID",
-          "example": "无",
+          "example": "1870",
           "member": "int64",
           "name": "TemplateIdList",
           "required": false,
@@ -1254,7 +1254,7 @@
         {
           "disabled": false,
           "document": "关联的演练计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2458",
           "member": "int64",
           "name": "TaskPlanId",
           "output_required": true,
@@ -1265,7 +1265,7 @@
         {
           "disabled": false,
           "document": "关联的演练计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " \"运营端计划\"",
           "member": "string",
           "name": "TaskPlanTitle",
           "output_required": true,
@@ -1276,7 +1276,7 @@
         {
           "disabled": false,
           "document": "关联的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"app-faee9ba9\"",
           "member": "string",
           "name": "ApplicationId",
           "output_required": false,
@@ -1287,7 +1287,7 @@
         {
           "disabled": false,
           "document": "关联的应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"yh-test001\"",
           "member": "string",
           "name": "ApplicationName",
           "output_required": false,
@@ -1298,7 +1298,7 @@
         {
           "disabled": false,
           "document": "关联的告警指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\t[\"policy-3pklm3so\"]",
           "member": "string",
           "name": "AlarmPolicy",
           "output_required": false,
@@ -1320,7 +1320,7 @@
         {
           "disabled": false,
           "document": "关联的隐患验证项ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3001",
           "member": "uint64",
           "name": "VerifyId",
           "output_required": false,
@@ -1763,28 +1763,25 @@
           "member": "uint64",
           "name": "TaskGroupActionOrder",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "动作通用参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
-          "example": "无",
+          "example": "\"{\\\"timeout\\\":200,\\\"percentage\\\":80}\"",
           "member": "string",
           "name": "TaskGroupActionGeneralConfiguration",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "动作自定义参数，需要json序列化传入，可以从查询经验详情接口获取，不填默认使用经验中动作参数",
-          "example": "无",
+          "example": "\"{\\\"PreTimeWait\\\":60,\\\"ActionTimeout\\\":180}\"",
           "member": "string",
           "name": "TaskGroupActionCustomConfiguration",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2104,7 +2101,7 @@
         {
           "disabled": false,
           "document": "演练是否符合预期 1-符合预期 2-不符合预期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TaskExpect",
           "output_required": false,
@@ -2114,7 +2111,7 @@
         {
           "disabled": false,
           "document": "关联应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"app-faee9ba9\"",
           "member": "string",
           "name": "ApplicationId",
           "output_required": false,
@@ -2124,7 +2121,7 @@
         {
           "disabled": false,
           "document": "关联应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"yh-test001\"",
           "member": "string",
           "name": "ApplicationName",
           "output_required": false,
@@ -2134,7 +2131,7 @@
         {
           "disabled": false,
           "document": "验证项ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3001",
           "member": "uint64",
           "name": "VerifyId",
           "output_required": false,
@@ -2144,7 +2141,7 @@
         {
           "disabled": false,
           "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TaskStatusType",
           "output_required": false,
@@ -2459,7 +2456,7 @@
         {
           "disabled": false,
           "document": "经验来源 0-自建 1-专家推荐\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TemplateSource",
           "output_required": false,
@@ -2479,7 +2476,7 @@
         {
           "disabled": false,
           "document": "告警指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"policy-3pklm3so\"]",
           "member": "string",
           "name": "AlarmPolicy",
           "output_required": false,
@@ -2836,7 +2833,7 @@
         {
           "disabled": false,
           "document": "经验库来源 0-自建经验 1-专家推荐\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TemplateSource",
           "output_required": false,
@@ -2944,7 +2941,7 @@
         {
           "disabled": false,
           "document": "混沌演练ID\n",
-          "example": "无",
+          "example": "5871",
           "member": "int64",
           "name": "TaskId",
           "required": true,

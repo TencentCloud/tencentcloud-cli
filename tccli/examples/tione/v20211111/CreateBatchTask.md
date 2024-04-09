@@ -36,6 +36,7 @@ tccli tione CreateBatchTask --cli-unfold-argument  \
     --CodePackage.Region ap-shanghai \
     --CodePackage.Paths test/model/code_Path \
     --StartCmd python3 /opt/ml/code/model_service.py \
+    --StartCmdBase64 L2FwcC9ydW4uc2g= \
     --DataConfigs.0.MappingPath  \
     --DataConfigs.0.DataSourceType  \
     --DataConfigs.0.DataSetSource.Id 12345678 \

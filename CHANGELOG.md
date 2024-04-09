@@ -1,3 +1,163 @@
+# Release 3.0.972.1
+
+## 商业流程服务(bpaas) 版本：2018-12-17
+
+### 第 2 次发布
+
+发布时间：2024-04-10 01:09:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetBpaasApplicationList](http://document.tencentcloudapi.woa.com/document/product/1628/83641)
+
+新增数据结构：
+
+* [BpaasApplication](http://document.tencentcloudapi.woa.com/document/product/1628/78459#BpaasApplication)
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 51 次发布
+
+发布时间：2024-04-10 01:09:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
+
+	* 新增出参：SuccessFileList
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 19 次发布
+
+发布时间：2024-04-10 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ConfigureSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/78330)
+
+	* 新增入参：SrcConnectType
+
+
+修改数据结构：
+
+* [DBEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBEndpointInfo)
+
+	* 新增成员：ConnectType
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 7 次发布
+
+发布时间：2024-04-10 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartPublishStreamToCSS](http://document.tencentcloudapi.woa.com/document/product/1162/83642)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 36 次发布
+
+发布时间：2024-04-10 01:24:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：OldVipList
+
+
+新增数据结构：
+
+* [OldVip](http://document.tencentcloudapi.woa.com/document/product/238/19976#OldVip)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 55 次发布
+
+发布时间：2024-04-10 01:27:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
+
+	* 新增入参：StartCmdBase64
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：CommandBase64
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：CommandBase64
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 43 次发布
+
+发布时间：2024-04-10 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+
+	* 新增入参：PublishCdnParams
+
+
+
+
 # Release 3.0.971.1
 
 ## 业务风险情报(bri) 版本：2019-03-28

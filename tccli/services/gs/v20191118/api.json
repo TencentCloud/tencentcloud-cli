@@ -28,6 +28,13 @@
       "output": "StartPublishStreamResponse",
       "status": "online"
     },
+    "StartPublishStreamToCSS": {
+      "document": "开始云端推流",
+      "input": "StartPublishStreamToCSSRequest",
+      "name": "开始云端推流到云直播",
+      "output": "StartPublishStreamToCSSResponse",
+      "status": "online"
+    },
     "StopGame": {
       "document": "强制退出游戏",
       "input": "StopGameRequest",
@@ -405,6 +412,42 @@
     },
     "StartPublishStreamResponse": {
       "document": "StartPublishStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamToCSSRequest": {
+      "document": "StartPublishStreamToCSS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
+          "example": "abc123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流参数，推流时携带自定义参数。",
+          "example": "bar=1&foo=2",
+          "member": "string",
+          "name": "PublishStreamArgs",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamToCSSResponse": {
+      "document": "StartPublishStreamToCSS返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

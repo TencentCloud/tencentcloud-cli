@@ -32,6 +32,14 @@
         "title": "开始云端推流"
       }
     ],
+    "StartPublishStreamToCSS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStreamToCSS\n<公共请求参数>\n\n{\n    \"UserId\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "StartPublishStreamToCSS 示例"
+      }
+    ],
     "StopGame": [
       {
         "document": "",

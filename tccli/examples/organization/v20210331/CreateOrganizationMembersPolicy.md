@@ -7,9 +7,9 @@ Input:
 ```
 tccli organization CreateOrganizationMembersPolicy --cli-unfold-argument  \
     --MemberUins 111111111111 \
-    --PolicyName test \
+    --PolicyName policy_name \
     --IdentityId 11 \
-    --Description 
+    --Description description
 ```
 
 Output: 

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "GetBpaasApplicationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bpaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBpaasApplicationList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationList\": [\n            {\n                \"ApplicationId\": 1000000001,\n                \"BpaasId\": 1000000001,\n                \"BpaasName\": \"ww\",\n                \"Status\": 1,\n                \"CreateTime\": \"2020-06-09 18:54:36\",\n                \"Users\": [],\n                \"NodeId\": \"\",\n                \"ApproveMethod\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1e7d1633-0fff-474d-a980-5c79d1233440\"\n    }\n}",
+        "title": "获取申请列表"
+      }
+    ],
     "GetBpaasApproveDetail": [
       {
         "document": "查看审批详情",

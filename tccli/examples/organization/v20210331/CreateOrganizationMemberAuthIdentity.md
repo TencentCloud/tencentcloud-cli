@@ -7,7 +7,7 @@ Input:
 ```
 tccli organization CreateOrganizationMemberAuthIdentity --cli-unfold-argument  \
     --MemberUins 111111111111 \
-    --IdentityIds 1
+    --IdentityIds 13
 ```
 
 Output: 

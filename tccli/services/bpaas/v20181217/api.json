@@ -1,5 +1,12 @@
 {
   "actions": {
+    "GetBpaasApplicationList": {
+      "document": "获取申请列表",
+      "input": "GetBpaasApplicationListRequest",
+      "name": "获取申请列表",
+      "output": "GetBpaasApplicationListResponse",
+      "status": "online"
+    },
     "GetBpaasApproveDetail": {
       "document": "查看审批详情",
       "input": "GetBpaasApproveDetailRequest",
@@ -139,6 +146,186 @@
         }
       ],
       "usage": "both"
+    },
+    "BpaasApplication": {
+      "document": "申请列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请id",
+          "example": "123",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批流id",
+          "example": "11",
+          "member": "uint64",
+          "name": "BpaasId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批流模板名称",
+          "example": "test",
+          "member": "string",
+          "name": "BpaasName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态  0:待审批  1:审批通过  2:拒绝  3:scf执行失败  4:自动拒绝  5:外部scf审批拒绝 18:外部审批",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-02-01 10:10:10",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待审批节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待审批节点审批人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproveUser",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ApproveMethod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部审批Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ExternalUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持撤回，取值：1支持，2不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSupportRecall",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetBpaasApplicationListRequest": {
+      "document": "GetBpaasApplicationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "50",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审批流名称",
+          "example": "test",
+          "member": "string",
+          "name": "BpaasName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按时间排序（asc, desc,  DESC, ASC）",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBpaasApplicationListResponse": {
+      "document": "GetBpaasApplicationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请列表",
+          "example": "无",
+          "member": "BpaasApplication",
+          "name": "ApplicationList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetBpaasApproveDetailRequest": {
       "document": "GetBpaasApproveDetail请求参数结构体",

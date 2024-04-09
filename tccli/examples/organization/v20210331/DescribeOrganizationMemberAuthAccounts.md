@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli organization DescribeOrganizationMemberAuthAccounts --cli-unfold-argument  \
-    --MemberUin 100000546922 \
+    --MemberUin 111111111111 \
     --Limit 10 \
-    --PolicyId 98081 \
+    --PolicyId 11 \
     --Offset 0
 ```
 

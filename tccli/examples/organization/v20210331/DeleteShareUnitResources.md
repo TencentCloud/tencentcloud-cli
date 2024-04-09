@@ -8,7 +8,7 @@ Input:
 tccli organization DeleteShareUnitResources --cli-unfold-argument  \
     --UnitId shareUnit-xhre**ra2p \
     --Area ap-guangzhou \
-    --Type vpc \
+    --Type secret \
     --Resources.0.ResourceId shareResource-12**erte
 ```
 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli organization UpdateOrganizationMemberEmailBind --cli-unfold-argument  \
-    --MemberUin 12726 \
+    --MemberUin 111111111111 \
     --BindId 12 \
-    --Email 2727226@qq.com \
+    --Email 12***@qq.com \
     --CountryCode 86 \
-    --Phone 18765431234
+    --Phone 18***32
 ```
 
 Output: 

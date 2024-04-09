@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization MoveOrganizationNodeMembers --cli-unfold-argument  \
-    --MemberUin 100000023837 \
-    --NodeId 123
+    --MemberUin 111111111111 \
+    --NodeId 1001
 ```
 
 Output: 

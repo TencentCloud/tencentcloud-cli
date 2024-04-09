@@ -1,82 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 业务风险情报(bri) 版本：2019-03-28
+## 商业流程服务(bpaas) 版本：2018-12-17
 
 ### 第 2 次发布
 
-发布时间：2024-04-09 01:15:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeBRI
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 77 次发布
-
-发布时间：2024-04-09 01:45:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79356)
-
-	* 新增入参：UserData
-
-
-修改数据结构：
-
-* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
-
-	* 新增成员：JumpUrl
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 135 次发布
-
-发布时间：2024-04-09 01:46:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelCreateUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81610)
-
-	* 新增入参：UserData
-
-
-修改数据结构：
-
-* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#AutoSignConfig)
-
-	* 新增成员：JumpUrl
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 25 次发布
-
-发布时间：2024-04-09 02:01:30
+发布时间：2024-04-10 01:09:07
 
 本次发布包含了以下内容：
 
@@ -84,25 +12,19 @@
 
 新增接口：
 
-* [FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)
+* [GetBpaasApplicationList](http://document.tencentcloudapi.woa.com/document/product/1628/83641)
 
 新增数据结构：
 
-* [FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)
-* [FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)
-* [FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)
+* [BpaasApplication](http://document.tencentcloudapi.woa.com/document/product/1628/78459#BpaasApplication)
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+## 云联络中心(ccc) 版本：2020-02-10
 
+### 第 51 次发布
 
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 54 次发布
-
-发布时间：2024-04-09 02:13:21
+发布时间：2024-04-10 01:09:52
 
 本次发布包含了以下内容：
 
@@ -110,9 +32,128 @@
 
 修改接口：
 
-* [DeployCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77809)
+* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
 
-	* 新增入参：IsCache
+	* 新增出参：SuccessFileList
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 19 次发布
+
+发布时间：2024-04-10 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ConfigureSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/78330)
+
+	* 新增入参：SrcConnectType
+
+
+修改数据结构：
+
+* [DBEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBEndpointInfo)
+
+	* 新增成员：ConnectType
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 7 次发布
+
+发布时间：2024-04-10 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartPublishStreamToCSS](http://document.tencentcloudapi.woa.com/document/product/1162/83642)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 36 次发布
+
+发布时间：2024-04-10 01:24:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：OldVipList
+
+
+新增数据结构：
+
+* [OldVip](http://document.tencentcloudapi.woa.com/document/product/238/19976#OldVip)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 55 次发布
+
+发布时间：2024-04-10 01:27:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
+
+	* 新增入参：StartCmdBase64
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：CommandBase64
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：CommandBase64
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 43 次发布
+
+发布时间：2024-04-10 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+
+	* 新增入参：PublishCdnParams
 
 
 
@@ -7821,6 +7862,22 @@
 
 ## 商业流程服务(bpaas) 版本：2018-12-17
 
+### 第 2 次发布
+
+发布时间：2024-04-10 01:09:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetBpaasApplicationList](http://document.tencentcloudapi.woa.com/document/product/1628/83641)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BpaasApplication](http://document.tencentcloudapi.woa.com/document/product/1628/78459#BpaasApplication)](http://document.tencentcloudapi.woa.com/document/product/1628/78459#[BpaasApplication](http://document.tencentcloudapi.woa.com/document/product/1628/78459#BpaasApplication))
+
 ### 第 1 次发布
 
 发布时间：2023-06-27 19:47:58
@@ -10843,6 +10900,21 @@
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 51 次发布
+
+发布时间：2024-04-10 01:09:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadIvrAudio](http://document.tencentcloudapi.woa.com/document/product/679/83621)
+
+	* 新增出参：SuccessFileList
+
 
 ### 第 50 次发布
 
@@ -38359,6 +38431,28 @@
 
 ## 数据传输服务(dts) 版本：2021-12-06
 
+### 第 19 次发布
+
+发布时间：2024-04-10 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ConfigureSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/78330)
+
+	* 新增入参：SrcConnectType
+
+
+修改数据结构：
+
+* [DBEndpointInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBEndpointInfo)
+
+	* 新增成员：ConnectType
+
+
 ### 第 18 次发布
 
 发布时间：2024-03-29 01:17:02
@@ -49900,6 +49994,18 @@
 
 ## 云游戏(gs) 版本：2019-11-18
 
+### 第 7 次发布
+
+发布时间：2024-04-10 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[StartPublishStreamToCSS](http://document.tencentcloudapi.woa.com/document/product/1162/83642)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 6 次发布
 
 发布时间：2023-02-27 01:25:37
@@ -59415,13 +59521,13 @@
 
 新增接口：
 
-* [[FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [FlashBackDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/83640)
 
 新增数据结构：
 
-* [[FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue))
-* [[FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection))
-* [[FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase))
+* [FBKeyValue](http://document.tencentcloudapi.woa.com/document/product/240/38576#FBKeyValue)
+* [FlashbackCollection](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackCollection)
+* [FlashbackDatabase](http://document.tencentcloudapi.woa.com/document/product/240/38576#FlashbackDatabase)
 
 ### 第 24 次发布
 
@@ -73151,6 +73257,25 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 36 次发布
+
+发布时间：2024-04-10 01:24:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：OldVipList
+
+
+新增数据结构：
+
+* [[OldVip](http://document.tencentcloudapi.woa.com/document/product/238/19976#OldVip)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[OldVip](http://document.tencentcloudapi.woa.com/document/product/238/19976#OldVip))
+
 ### 第 35 次发布
 
 发布时间：2024-03-15 01:22:14
@@ -85471,6 +85596,29 @@
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
+### 第 55 次发布
+
+发布时间：2024-04-10 01:27:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchTask](http://document.tencentcloudapi.woa.com/document/product/851/75925)
+
+	* 新增入参：StartCmdBase64
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：CommandBase64
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：CommandBase64
+
+
 ### 第 54 次发布
 
 发布时间：2024-03-29 01:28:47
@@ -90262,6 +90410,21 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 43 次发布
+
+发布时间：2024-04-10 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83550)
+
+	* 新增入参：PublishCdnParams
+
 
 ### 第 42 次发布
 
