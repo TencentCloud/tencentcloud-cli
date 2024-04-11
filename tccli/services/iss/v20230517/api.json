@@ -3806,6 +3806,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频关开（0：关闭；1：开启）关闭时丢弃音频\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AudioSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SubscribeSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10171,6 +10191,24 @@
           "example": "1",
           "member": "int64",
           "name": "ProtocolType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频",
+          "example": "1",
+          "member": "int64",
+          "name": "AudioSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效",
+          "example": "1",
+          "member": "int64",
+          "name": "SubscribeSwitch",
           "required": false,
           "type": "int"
         }

@@ -273,13 +273,6 @@
       "output": "CreateHiveTableByDDLResponse",
       "status": "online"
     },
-    "CreateInLongAgent": {
-      "document": "注册采集器",
-      "input": "CreateInLongAgentRequest",
-      "name": "注册采集器",
-      "output": "CreateInLongAgentResponse",
-      "status": "online"
-    },
     "CreateIntegrationNode": {
       "document": "创建集成节点",
       "input": "CreateIntegrationNodeRequest",
@@ -418,13 +411,6 @@
       "input": "DeleteFolderRequest",
       "name": "删除文件夹【Beta版本】",
       "output": "DeleteFolderResponse",
-      "status": "online"
-    },
-    "DeleteInLongAgent": {
-      "document": "删除采集器",
-      "input": "DeleteInLongAgentRequest",
-      "name": "删除采集器",
-      "output": "DeleteInLongAgentResponse",
       "status": "online"
     },
     "DeleteIntegrationNode": {
@@ -628,13 +614,6 @@
       "input": "DescribeBelongToRequest",
       "name": "所属任务-基线列表",
       "output": "DescribeBelongToResponse",
-      "status": "online"
-    },
-    "DescribeClusterNamespaceList": {
-      "document": "获取集群命名空间列表",
-      "input": "DescribeClusterNamespaceListRequest",
-      "name": "获取集群命名空间列表",
-      "output": "DescribeClusterNamespaceListResponse",
       "status": "online"
     },
     "DescribeColumnLineage": {
@@ -896,34 +875,6 @@
       "output": "DescribeFunctionTypesResponse",
       "status": "online"
     },
-    "DescribeInLongAgentList": {
-      "document": "获取采集器列表",
-      "input": "DescribeInLongAgentListRequest",
-      "name": "获取采集器列表",
-      "output": "DescribeInLongAgentListResponse",
-      "status": "online"
-    },
-    "DescribeInLongAgentTaskList": {
-      "document": "查询采集器关联的任务列表",
-      "input": "DescribeInLongAgentTaskListRequest",
-      "name": "查询采集器关联的任务列表",
-      "output": "DescribeInLongAgentTaskListResponse",
-      "status": "online"
-    },
-    "DescribeInLongAgentVpcList": {
-      "document": "获取采集器所在集群的VPC列表",
-      "input": "DescribeInLongAgentVpcListRequest",
-      "name": "获取采集器所在集群的VPC列表",
-      "output": "DescribeInLongAgentVpcListResponse",
-      "status": "online"
-    },
-    "DescribeInLongTkeClusterList": {
-      "document": "获取TKE集群列表",
-      "input": "DescribeInLongTkeClusterListRequest",
-      "name": "获取TKE集群列表",
-      "output": "DescribeInLongTkeClusterListResponse",
-      "status": "online"
-    },
     "DescribeInstanceByCycle": {
       "document": "根据周期类型查询所有实例",
       "input": "DescribeInstanceByCycleRequest",
@@ -1013,13 +964,6 @@
       "input": "DescribeIntegrationStatisticsRequest",
       "name": "数据集成大屏概览",
       "output": "DescribeIntegrationStatisticsResponse",
-      "status": "online"
-    },
-    "DescribeIntegrationStatisticsAgentStatus": {
-      "document": "数据集成大屏采集器状态分布统计",
-      "input": "DescribeIntegrationStatisticsAgentStatusRequest",
-      "name": "数据集成大屏采集器状态分布统计",
-      "output": "DescribeIntegrationStatisticsAgentStatusResponse",
       "status": "online"
     },
     "DescribeIntegrationStatisticsInstanceTrend": {
@@ -1426,13 +1370,6 @@
       "input": "DescribeSonInstancesRequest",
       "name": "获取关联子实例",
       "output": "DescribeSonInstancesResponse",
-      "status": "online"
-    },
-    "DescribeStandardRuleDetailInfoList": {
-      "document": "获取数据标准规则详情",
-      "input": "DescribeStandardRuleDetailInfoListRequest",
-      "name": "获取数据标准规则详情",
-      "output": "DescribeStandardRuleDetailInfoListResponse",
       "status": "online"
     },
     "DescribeStatisticInstanceStatusTrendOps": {
@@ -2044,13 +1981,6 @@
       "output": "RerunScheduleInstancesResponse",
       "status": "online"
     },
-    "RestartInLongAgent": {
-      "document": "重启采集器",
-      "input": "RestartInLongAgentRequest",
-      "name": "重启采集器",
-      "output": "RestartInLongAgentResponse",
-      "status": "online"
-    },
     "ResumeIntegrationTask": {
       "document": "继续集成任务",
       "input": "ResumeIntegrationTaskRequest",
@@ -2203,13 +2133,6 @@
       "input": "UnlockIntegrationTaskRequest",
       "name": "解锁集成任务",
       "output": "UnlockIntegrationTaskResponse",
-      "status": "online"
-    },
-    "UpdateInLongAgent": {
-      "document": "更新采集器",
-      "input": "UpdateInLongAgentRequest",
-      "name": "更新采集器",
-      "output": "UpdateInLongAgentResponse",
       "status": "online"
     },
     "UpdateWorkflowOwner": {
@@ -9371,88 +9294,6 @@
       ],
       "type": "object"
     },
-    "CreateInLongAgentRequest": {
-      "document": "CreateInLongAgent请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器类型，1：TKE Agent，2：BOSS SDK，默认：1",
-          "example": "1",
-          "member": "uint64",
-          "name": "AgentType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "采集器名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集成资源组id",
-          "example": "xxx",
-          "member": "string",
-          "name": "ExecutorGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "TKE集群的地域",
-          "example": "xxx",
-          "member": "string",
-          "name": "TkeRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "当AgentType为1时，必填。当AgentType为2时，不用填",
-          "example": "xxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateInLongAgentResponse": {
-      "document": "CreateInLongAgent返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateIntegrationNodeRequest": {
       "document": "CreateIntegrationNode请求参数结构体",
       "members": [
@@ -10750,32 +10591,6 @@
         }
       ],
       "type": "object"
-    },
-    "CvmAgentStatus": {
-      "document": "采集器状态统计",
-      "members": [
-        {
-          "disabled": false,
-          "document": "agent状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RUNNING",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "对应状态的agent总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
-          "member": "uint64",
-          "name": "Count",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "DagInstancesRequest": {
       "document": "DagInstances请求参数结构体",
@@ -12266,42 +12081,6 @@
           "type": "bool",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteInLongAgentRequest": {
-      "document": "DeleteInLongAgent请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteInLongAgentResponse": {
-      "document": "DeleteInLongAgent返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14793,52 +14572,6 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClusterNamespaceListRequest": {
-      "document": "DescribeClusterNamespaceList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClusterNamespaceListResponse": {
-      "document": "DescribeClusterNamespaceList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "命名空间",
-          "example": "无",
-          "member": "Namespace",
-          "name": "Namespaces",
-          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17493,382 +17226,6 @@
       ],
       "type": "object"
     },
-    "DescribeInLongAgentListRequest": {
-      "document": "DescribeInLongAgentList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Agent Name",
-          "example": "xxxx",
-          "member": "string",
-          "name": "AgentName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】",
-          "example": "1",
-          "member": "uint64",
-          "name": "AgentType",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "Agent状态(running运行中，initializing 操作中，failed心跳异常)",
-          "example": "xxx",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Vpc Id",
-          "example": "xxx",
-          "member": "string",
-          "name": "VpcId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页页码，从1开始，默认：1",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageIndex",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页每页记录数，默认10",
-          "example": "10",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "名称搜索是否开启模糊匹配，1：开启，0：不开启（精确匹配）",
-          "example": "1",
-          "member": "uint64",
-          "name": "Like",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "agent类型【多个用逗号分隔】",
-          "example": "1",
-          "member": "string",
-          "name": "AgentTypes",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongAgentListResponse": {
-      "document": "DescribeInLongAgentList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器信息列表",
-          "example": "无",
-          "member": "InLongAgentDetail",
-          "name": "Items",
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "页码",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageIndex",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每页记录数",
-          "example": "10",
-          "member": "uint64",
-          "name": "PageSize",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总记录数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总页数",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalPage",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongAgentTaskListRequest": {
-      "document": "DescribeInLongAgentTaskList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongAgentTaskListResponse": {
-      "document": "DescribeInLongAgentTaskList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器关联的集成任务列表",
-          "example": "无",
-          "member": "InLongAgentTask",
-          "name": "Items",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongAgentVpcListRequest": {
-      "document": "DescribeInLongAgentVpcList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongAgentVpcListResponse": {
-      "document": "DescribeInLongAgentVpcList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "VPC列表",
-          "example": "无",
-          "member": "string",
-          "name": "VpcList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongTkeClusterListRequest": {
-      "document": "DescribeInLongTkeClusterList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "TKE集群地域",
-          "example": "xxx",
-          "member": "string",
-          "name": "TkeRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群名称。\n多个名称用逗号连接。",
-          "example": "TradeCode21",
-          "member": "string",
-          "name": "ClusterName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "TKE集群状态 (Running 运行中 Creating 创建中 Idling 闲置中 Abnormal 异常 Failed 失败 Deleting 删除中 Scaling 规模调整中 Upgrading 升级中 Isolated 欠费隔离中 NodeUpgrading 节点升级中 Recovering 唤醒中 Activating 激活中 MasterScaling Master扩缩容中 Waiting 等待注册 ClusterLevelUpgrading 调整规格中 ResourceIsolate 隔离中 ResourceIsolated 已隔离 ResourceReverse 冲正中 Trading 集群开通中 ResourceReversal 集群冲正 ClusterLevelTrading 集群变配交易中)\n多个状态用逗号连接。",
-          "example": "Running",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否安装Agent，true: 是，false: 否",
-          "example": "true",
-          "member": "bool",
-          "name": "HasAgent",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。\n多个集群用逗号连接。",
-          "example": "INDEPENDENT_CLUSTER",
-          "member": "string",
-          "name": "ClusterType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页页码，从1开始，默认：1",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageIndex",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页每页记录数，默认10",
-          "example": "10",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInLongTkeClusterListResponse": {
-      "document": "DescribeInLongTkeClusterList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "TKE集群信息",
-          "example": "无",
-          "member": "InLongTkeDetail",
-          "name": "Items",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "页码",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageIndex",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每页记录数",
-          "example": "10",
-          "member": "uint64",
-          "name": "PageSize",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总记录数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总页数",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalPage",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeInstanceByCycleReportRequest": {
       "document": "DescribeInstanceByCycleReport请求参数结构体",
       "members": [
@@ -18821,70 +18178,6 @@
           "name": "SourceCheckFlag",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIntegrationStatisticsAgentStatusRequest": {
-      "document": "DescribeIntegrationStatisticsAgentStatus请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务类型（实时：201，离线：202）",
-          "example": "201",
-          "member": "int64",
-          "name": "TaskType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "项目id",
-          "example": "1",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询日期",
-          "example": "2022-01-01",
-          "member": "string",
-          "name": "QueryDate",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源组id",
-          "example": "1",
-          "member": "string",
-          "name": "ExecutorGroupId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIntegrationStatisticsAgentStatusResponse": {
-      "document": "DescribeIntegrationStatisticsAgentStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " {\"running\":0}",
-          "member": "string",
-          "name": "StatusData",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -23572,52 +22865,6 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeStandardRuleDetailInfoListRequest": {
-      "document": "DescribeStandardRuleDetailInfoList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "空间、项目id",
-          "example": "123",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "标准分类11编码映射 12数据过滤 13字符串转换 14数据元定义 15正则表达 16术语词典",
-          "example": "13",
-          "member": "int64",
-          "name": "Type",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeStandardRuleDetailInfoListResponse": {
-      "document": "DescribeStandardRuleDetailInfoList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "StandardRuleDetailList",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -30074,294 +29321,6 @@
         }
       ],
       "type": "object"
-    },
-    "InLongAgentDetail": {
-      "document": "采集器详细信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Agent ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Agent Name",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Agent状态(running运行中，initializing 操作中，failed心跳异常)",
-          "example": "initializing",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Agent状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
-          "member": "string",
-          "name": "StatusDesc",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "集群类型，1：TKE Agent，2：BOSS SDK，默认：1",
-          "example": "1",
-          "member": "uint64",
-          "name": "AgentType",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "采集来源",
-          "example": "xxx",
-          "member": "string",
-          "name": "Source",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "VPC",
-          "example": "xxx",
-          "member": "string",
-          "name": "VpcId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集成资源组Id",
-          "example": "xxx",
-          "member": "string",
-          "name": "ExecutorGroupId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集成资源组名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "ExecutorGroupName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "关联任务数",
-          "example": "0",
-          "member": "uint64",
-          "name": "TaskCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "采集器组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "hdgrsa",
-          "member": "string",
-          "name": "AgentGroupId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "agent状态统计\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CvmAgentStatus",
-          "name": "CvmAgentStatusList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "agent数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "AgentTotal",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "LifeDays",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
-          "member": "string",
-          "name": "ClusterId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "agent地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "beijing",
-          "member": "string",
-          "name": "AgentRegion",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "InLongAgentTask": {
-      "document": "采集器关联的集成任务",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集成任务ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集成任务名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "TaskName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集成任务状态",
-          "example": "xxx",
-          "member": "string",
-          "name": "TaskStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "InLongTkeDetail": {
-      "document": "TKE集群信息详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群Id",
-          "example": "tke-sfflqer2",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群名称",
-          "example": "TradeCode21",
-          "member": "string",
-          "name": "ClusterName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "TKE集群状态 (Running 运行中 Creating 创建中 Idling 闲置中 Abnormal 异常)",
-          "example": "running",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否安装Agent，true: 是，false: 否",
-          "example": "true",
-          "member": "bool",
-          "name": "HasAgent",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "采集器ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "VPC ID",
-          "example": "vpc-fjsl922",
-          "member": "string",
-          "name": "VpcId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "TKE集群区域ID",
-          "example": "ap-beijing",
-          "member": "string",
-          "name": "TkeRegion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER",
-          "example": "INDEPENDENT_CLUSTER",
-          "member": "string",
-          "name": "ClusterType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "InstanceApiOpsRequest": {
       "document": "实例查询类型",
@@ -37424,42 +36383,6 @@
       ],
       "type": "object"
     },
-    "Namespace": {
-      "document": "命名空间",
-      "members": [
-        {
-          "disabled": false,
-          "document": "名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前状态",
-          "example": "xxx",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "xxx",
-          "member": "string",
-          "name": "CreatedAt",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "OfflineInstance": {
       "document": "离线实例",
       "members": [
@@ -40329,42 +39252,6 @@
         }
       ],
       "usage": "out"
-    },
-    "RestartInLongAgentRequest": {
-      "document": "RestartInLongAgent请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RestartInLongAgentResponse": {
-      "document": "RestartInLongAgent返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ResumeIntegrationTaskRequest": {
       "document": "ResumeIntegrationTask请求参数结构体",
@@ -55081,60 +53968,6 @@
           "type": "bool",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateInLongAgentRequest": {
-      "document": "UpdateInLongAgent请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "采集器ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WeData项目ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "采集器名称",
-          "example": "xxx",
-          "member": "string",
-          "name": "AgentName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集成资源组ID",
-          "example": "xxx",
-          "member": "string",
-          "name": "ExecutorGroupId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateInLongAgentResponse": {
-      "document": "UpdateInLongAgent返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

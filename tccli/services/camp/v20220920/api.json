@@ -785,7 +785,7 @@
         },
         {
           "disabled": false,
-          "document": "开启 CLB VIP 直通特性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VIP 直通（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "VIPDirectConnection",
@@ -7176,6 +7176,17 @@
     "Migration": {
       "document": "迁移相关信息",
       "members": [
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",

@@ -35,6 +35,13 @@
       "output": "AttachUserPolicyResponse",
       "status": "online"
     },
+    "BuildDataFlowAuthToken": {
+      "document": "获取数据流认证Token",
+      "input": "BuildDataFlowAuthTokenRequest",
+      "name": "获取数据流认证Token",
+      "output": "BuildDataFlowAuthTokenResponse",
+      "status": "online"
+    },
     "ChangeTokenUser": {
       "document": "SaaS切换用户",
       "input": "ChangeTokenUserRequest",
@@ -47,6 +54,13 @@
       "input": "CheckTokenValidRequest",
       "name": "检验saasToken有效性",
       "output": "CheckTokenValidResponse",
+      "status": "online"
+    },
+    "CloseDataFlowAuth": {
+      "document": "对云上资源关闭CAM数据流认证",
+      "input": "CloseDataFlowAuthRequest",
+      "name": "关闭云上资源数据流CAM认证",
+      "output": "CloseDataFlowAuthResponse",
       "status": "online"
     },
     "ConsumeCustomMFAToken": {
@@ -518,6 +532,13 @@
       "output": "ListWeChatWorkSubAccountsResponse",
       "status": "online"
     },
+    "OpenDataFlowAuth": {
+      "document": "对云上资源开启CAM数据流认证",
+      "input": "OpenDataFlowAuthRequest",
+      "name": "开启云上资源数据流CAM认证",
+      "output": "OpenDataFlowAuthResponse",
+      "status": "online"
+    },
     "PutRolePermissionsBoundary": {
       "document": "设置角色权限边界",
       "input": "PutRolePermissionsBoundaryRequest",
@@ -537,6 +558,13 @@
       "input": "RemoveUserFromGroupRequest",
       "name": "从用户组删除用户",
       "output": "RemoveUserFromGroupResponse",
+      "status": "online"
+    },
+    "RotateDataFlowAuth": {
+      "document": "对云上资源关闭CAM数据流认证",
+      "input": "RotateDataFlowAuthRequest",
+      "name": "轮转云上资源数据流CAM认证",
+      "output": "RotateDataFlowAuthResponse",
       "status": "online"
     },
     "SetDefaultPolicyVersion": {
@@ -1448,6 +1476,127 @@
       ],
       "usage": "out"
     },
+    "AuthToken": {
+      "document": "认证凭据Token",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证Token",
+          "example": "Ad3**asf3",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "987654321",
+          "member": "int64",
+          "name": "CurrentTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳，根据轮转周期准确计算得到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567890",
+          "member": "int64",
+          "name": "NextRotationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "毫秒，如果轮转失败则为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "LastRotationTimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功：success\n失败：failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "RotationStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功：success\n失败：失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "RotationMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BuildDataFlowAuthTokenRequest": {
+      "document": "BuildDataFlowAuthToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cbd-esq42",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源用户名",
+          "example": "readOnly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildDataFlowAuthTokenResponse": {
+      "document": "BuildDataFlowAuthToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证凭据AuthToken信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthToken",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChangeTokenUserRequest": {
       "document": "ChangeTokenUser请求参数结构体",
       "members": [
@@ -1646,6 +1795,79 @@
     "CheckTokenValidResponse": {
       "document": "CheckTokenValid返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseDataFlowAuthRequest": {
+      "document": "CloseDataFlowAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需管控的资源ID",
+          "example": "cbd-esq42",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源用户名",
+          "example": "readOnly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源类型，支持：cdb等",
+          "example": "cdb",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号地址",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseDataFlowAuthResponse": {
+      "document": "CloseDataFlowAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DBTKN_cdb-ad3",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6421,6 +6643,88 @@
       ],
       "usage": "both"
     },
+    "OpenDataFlowAuthRequest": {
+      "document": "OpenDataFlowAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需管控的资源ID",
+          "example": "cbd-esq42",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源用户名",
+          "example": "readOnly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源类型，支持：cdb等",
+          "example": "cdb",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轮转周期。单位分钟，默认24小时",
+          "example": "15",
+          "member": "int64",
+          "name": "RotateFreq",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账号地址",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenDataFlowAuthResponse": {
+      "document": "OpenDataFlowAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DBTKN_cdb-ad3",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OwnerInfo": {
       "document": "主帐号信息",
       "members": [
@@ -6788,6 +7092,79 @@
         }
       ],
       "usage": "both"
+    },
+    "RotateDataFlowAuthRequest": {
+      "document": "RotateDataFlowAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需管控的资源ID",
+          "example": "cbd-esq42",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源用户名",
+          "example": "readOnly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需管控的资源类型，支持：cdb等",
+          "example": "cdb",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号地址",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RotateDataFlowAuthResponse": {
+      "document": "RotateDataFlowAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启认证凭据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DBTKN_cdb-ad3",
+          "member": "string",
+          "name": "CredentialName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SAMLProviderInfo": {
       "document": "SAML身份提供商",

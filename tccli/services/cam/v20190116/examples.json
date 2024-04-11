@@ -40,6 +40,14 @@
         "title": "绑定策略到用户"
       }
     ],
+    "BuildDataFlowAuthToken": [
+      {
+        "document": "生成AuthToken",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildDataFlowAuthToken\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-12dd3d\",\n    \"ResourceRegion\": \"ap-shanghai\",\n    \"ResourceAccount\": \"ReadOnly\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"CurrentTime\": 12332343423,\n            \"LastRotationTimeCost\": 343,\n            \"NextRotationTime\": 10,\n            \"RotationMessage\": \"success\",\n            \"RotationStatus\": \"success\",\n            \"Token\": \"944a***mtHS\"\n        },\n        \"RequestId\": \"5bc7f0df-18a3-426b-84ce-ddbc8d1c95d1\"\n    }\n}",
+        "title": "生成AuthToken"
+      }
+    ],
     "ChangeTokenUser": [
       {
         "document": "",
@@ -54,6 +62,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=CheckTokenValid\n&SaaSToken=100000009472\n&Platform=coding\n&TokenUin=123456\n&TokenOwnerUin=123456\n&ClientIP=127.0.0.1\n&ClientUA=chrome\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": 0\n    }\n}",
         "title": "检验saas登录态"
+      }
+    ],
+    "CloseDataFlowAuth": [
+      {
+        "document": "关闭CAM认证",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseDataFlowAuth\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-de32s4\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ReadOnly\",\n    \"ResourceType\": \"cdb\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialName\": \"DBTKN*ReadOnly\",\n        \"RequestId\": \"de27022a-9561-4431-951d-f7b6a88ede05\"\n    }\n}",
+        "title": "关闭CAM认证"
       }
     ],
     "ConsumeCustomMFAToken": [
@@ -604,6 +620,14 @@
         "title": "拉取企业微信子用户"
       }
     ],
+    "OpenDataFlowAuth": [
+      {
+        "document": "开启CAM认证",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDataFlowAuth\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-ed23s1\",\n    \"ResourceRegion\": \"ap-shanghai\",\n    \"ResourceAccount\": \"ReadOnly\",\n    \"ResourceType\": \"cdb\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialName\": \"DBTKN_*Only\",\n        \"RequestId\": \"586de8c1-58a2-48f7-b765-9843085b4c53\"\n    }\n}",
+        "title": "开启CAM认证"
+      }
+    ],
     "PutRolePermissionsBoundary": [
       {
         "document": "",
@@ -626,6 +650,14 @@
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveUserFromGroup\n<公共请求参数>\n\n{\n    \"Info\": [\n        {\n            \"Uid\": \"1001408\",\n            \"GroupId\": \"2020\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fadd33e-6f57-4404-a912-bc00680b89d2\"\n    }\n}",
         "title": "从用户组删除用户"
+      }
+    ],
+    "RotateDataFlowAuth": [
+      {
+        "document": "轮转认证",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RotateDataFlowAuth\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-df31ss\",\n    \"ResourceRegion\": \"ap-shanghai\",\n    \"ResourceAccount\": \"ReadOnly\",\n    \"ResourceType\": \"cdb\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialName\": \"DBTKN*ReadOnly\",\n        \"RequestId\": \"1e1ef548-5138-4a9a-aa1e-70df71065799\"\n    }\n}",
+        "title": "轮转认证"
       }
     ],
     "SetDefaultPolicyVersion": [
