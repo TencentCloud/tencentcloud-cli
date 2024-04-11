@@ -1,3 +1,159 @@
+# Release 3.0.974.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 55 次发布
+
+发布时间：2024-04-12 01:07:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：SuperPackFlag
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 92 次发布
+
+发布时间：2024-04-12 01:10:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckMigrateCluster](http://document.tencentcloudapi.woa.com/document/product/236/83724)
+* [DescribeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/83723)
+
+修改接口：
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15876)
+
+	* 新增入参：ClusterTopology
+
+
+新增数据结构：
+
+* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AddressInfo)
+* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterNodeInfo)
+* [ClusterTopology](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterTopology)
+* [ReadWriteNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadWriteNode)
+* [ReadonlyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadonlyNode)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 17 次发布
+
+发布时间：2024-04-12 01:21:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OrderFlowPackage](http://document.tencentcloudapi.woa.com/document/product/1385/82763)
+
+	* 新增入参：FlowTruncFlag
+
+
+修改数据结构：
+
+* [FlowPackageInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#FlowPackageInfo)
+
+	* 新增成员：TruncFlag, CapacityRemainPrecise
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 56 次发布
+
+发布时间：2024-04-12 01:27:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* 新增入参：EncodedStartCmdInfo
+
+
+新增数据结构：
+
+* [EncodedStartCmdInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#EncodedStartCmdInfo)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 45 次发布
+
+发布时间：2024-04-12 01:28:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [McuBackgroundCustomRender](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuBackgroundCustomRender)
+
+修改数据结构：
+
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+
+	* 新增成员：BackgroundCustomRender
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 43 次发布
+
+发布时间：2024-04-12 01:30:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceList)
+
+	* <font color="#dd0000">**修改成员**：</font>CostTime, CurRunDate, CycleType, DoFlag, InCharge, LastLog, SchedulerDesc, StartTime, State, TaskId, TaskName, TryLimit
+
+* [InstanceLogList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogList)
+
+	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, Tries, LastUpdate, BrokerIp, FileSize, OriginFileName, CreateTime, InstanceLogType, TaskName, CostTime
+
+* [IntegrationInstanceLog](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationInstanceLog)
+
+	* <font color="#dd0000">**修改成员**：</font>LogInfo
+
+
+
+
 # Release 3.0.973.1
 
 ## 语音识别(asr) 版本：2019-06-14

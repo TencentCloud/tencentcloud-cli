@@ -1475,6 +1475,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量截断标识。true代表开启流量截断，false代表不开启流量截断",
+          "example": "false",
+          "member": "bool",
+          "name": "TruncFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包精确余量，单位：MB",
+          "example": "12345",
+          "member": "uint64",
+          "name": "CapacityRemainPrecise",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2656,7 +2676,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费",
+          "document": "是否自动续费，该选项和流量截断冲突，只能开启一个",
           "example": "true",
           "member": "bool",
           "name": "AutoRenewFlag",
@@ -2671,6 +2691,15 @@
           "name": "PackageRegion",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启流量截断功能，该选项和自动续费冲突",
+          "example": "false",
+          "member": "bool",
+          "name": "FlowTruncFlag",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
