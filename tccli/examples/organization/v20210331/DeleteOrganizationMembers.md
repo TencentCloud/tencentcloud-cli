@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization DeleteOrganizationMembers --cli-unfold-argument  \
-    --MemberUin 10000023635
+    --MemberUin 111111111111
 ```
 
 Output: 

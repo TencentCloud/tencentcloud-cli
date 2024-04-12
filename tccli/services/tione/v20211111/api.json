@@ -1925,7 +1925,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "启动命令",
           "example": "sh start.sh",
           "member": "string",
@@ -1984,6 +1984,15 @@
           "example": "http://www.qq.com",
           "member": "string",
           "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。",
+          "example": "L2FwcC9ydW4uc2g=",
+          "member": "string",
+          "name": "StartCmdBase64",
           "required": false,
           "type": "string"
         }
@@ -2404,7 +2413,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令",
+          "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
           "example": "无",
           "member": "string",
           "name": "Command",
@@ -2419,6 +2428,15 @@
           "name": "ServiceEIP",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务的启动命令，以base64格式进行输入",
+          "example": "无",
+          "member": "string",
+          "name": "CommandBase64",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9695,7 +9713,7 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令",
+          "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
           "example": "无",
           "member": "string",
           "name": "Command",
@@ -9710,6 +9728,15 @@
           "name": "ServiceEIP",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务的启动命令，以base64格式进行输入",
+          "example": "无",
+          "member": "string",
+          "name": "CommandBase64",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11492,6 +11519,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "Cpu",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -11502,6 +11530,7 @@
           "example": "256",
           "member": "uint64",
           "name": "Memory",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -11512,6 +11541,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Gpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11522,6 +11552,7 @@
           "example": "none",
           "member": "string",
           "name": "GpuType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11532,6 +11563,7 @@
           "example": "50",
           "member": "uint64",
           "name": "RealGpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11542,6 +11574,7 @@
           "example": "{}",
           "member": "GpuDetail",
           "name": "RealGpuDetailSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false

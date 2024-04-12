@@ -917,13 +917,6 @@
       "output": "RunPrometheusInstanceResponse",
       "status": "online"
     },
-    "SendCustomAlarmMsg": {
-      "document": "发送自定义消息告警",
-      "input": "SendCustomAlarmMsgRequest",
-      "name": "发送自定义消息告警",
-      "output": "SendCustomAlarmMsgResponse",
-      "status": "online"
-    },
     "SetDefaultAlarmPolicy": {
       "document": "设置一个策略为该告警策略类型、该项目的默认告警策略。\n同一项目下相同的告警策略类型，就会被设置为非默认。",
       "input": "SetDefaultAlarmPolicyRequest",
@@ -19114,51 +19107,6 @@
     },
     "RunPrometheusInstanceResponse": {
       "document": "RunPrometheusInstance返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SendCustomAlarmMsgRequest": {
-      "document": "SendCustomAlarmMsg请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口模块名，当前取值monitor",
-          "example": "monitor",
-          "member": "string",
-          "name": "Module",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "消息策略ID，在自定义消息页面配置",
-          "example": "cm-04rhwvwg",
-          "member": "string",
-          "name": "PolicyId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户想要发送的自定义消息内容",
-          "example": "xxx",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SendCustomAlarmMsgResponse": {
-      "document": "SendCustomAlarmMsg返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

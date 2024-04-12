@@ -5443,7 +5443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"^甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前面不能有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署^</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">后面不能有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板页面的位置</a>\n",
+          "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板页面的位置</a>\n",
           "example": "ComponentId",
           "member": "string",
           "name": "ComponentId",
@@ -9518,7 +9518,7 @@
           "example": "无",
           "member": "string",
           "name": "SealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9528,7 +9528,7 @@
           "example": "无",
           "member": "string",
           "name": "SealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9538,7 +9538,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreateOn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9548,7 +9548,7 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9558,7 +9558,7 @@
           "example": "无",
           "member": "string",
           "name": "SealPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9568,7 +9568,7 @@
           "example": "无",
           "member": "string",
           "name": "SealStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9578,7 +9578,7 @@
           "example": "无",
           "member": "string",
           "name": "FailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9588,17 +9588,17 @@
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章",
+          "document": "电子印章类型 , 可选类型如下: \n<ul><li>**OFFICIAL**: (默认)公章</li>\n<li>**CONTRACT**: 合同专用章;</li>\n<li>**FINANCE**: 财务专用章;</li>\n<li>**PERSONNEL**: 人事专用章</li>\n<li>**INVOICE**: 发票专用章</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "SealType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9608,7 +9608,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsAllTime",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9618,7 +9618,7 @@
           "example": "无",
           "member": "AuthorizedUser",
           "name": "AuthorizedUsers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

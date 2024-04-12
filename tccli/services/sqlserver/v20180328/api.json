@@ -7602,6 +7602,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "等待回收的IP列表",
+          "example": "[{\"Vip\":\"127.0.0.1\",\"RecycleTime\":\"2024-03-26 12:28:41\"}],]",
+          "member": "OldVip",
+          "name": "OldVipList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -14614,6 +14624,42 @@
         }
       ],
       "type": "object"
+    },
+    "OldVip": {
+      "document": "用于返回实例存在的未回收的ip数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "未回收的旧ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip回收时间",
+          "example": "2024-03-26 12:28:41",
+          "member": "string",
+          "name": "RecycleTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧IP保留时间小时数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OldIpRetainTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OpenInterCommunicationRequest": {
       "document": "OpenInterCommunication请求参数结构体",

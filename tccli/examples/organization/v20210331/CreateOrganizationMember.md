@@ -7,8 +7,8 @@ Input:
 ```
 tccli organization CreateOrganizationMember --cli-unfold-argument  \
     --Remark test \
-    --Name test \
-    --NodeId 27 \
+    --Name name \
+    --NodeId 1001 \
     --AccountName test \
     --PermissionIds 1 2 \
     --PolicyType Finical \

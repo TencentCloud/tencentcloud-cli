@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CheckPhoneAndName": {
-      "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。\n",
+      "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "CheckPhoneAndNameRequest",
       "name": "手机号二要素核验",
       "output": "CheckPhoneAndNameResponse",
@@ -1043,11 +1043,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 验证结果一致\n1: 验证结果不一致\n不收费结果码：\n-1:查无记录\n-2:引擎未知错误\n-3:引擎服务异常",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 验证结果一致\n1: 验证结果不一致\n不收费结果码：\n-1:查无记录\n-2:引擎未知错误\n-3:引擎服务异常\n-4:姓名校验不通过\n-5:手机号码不合法",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1057,7 +1057,7 @@
           "example": "验证结果一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

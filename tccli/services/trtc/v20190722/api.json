@@ -29,7 +29,7 @@
       "status": "online"
     },
     "DescribeCallDetailInfo": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口目前免费提供中，监控仪表盘商业化计费后该接口需要订阅付费版后方可调用，仪表盘商业化说明请见：https://cloud.tencent.com/document/product/647/77735",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
       "input": "DescribeCallDetailInfoRequest",
       "name": "查询历史用户列表与通话指标",
       "output": "DescribeCallDetailInfoResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeRoomInfo": {
-      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口目前免费提供中，监控仪表盘商业化计费后该接口需要订阅付费版后方可调用，仪表盘商业化说明请见：https://cloud.tencent.com/document/product/647/77735",
+      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
       "input": "DescribeRoomInfoRequest",
       "name": "查询历史房间列表",
       "output": "DescribeRoomInfoResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "DescribeUserInfo": {
-      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口目前免费提供中，监控仪表盘商业化计费后该接口需要订阅付费版后方可调用，仪表盘商业化说明请见：https://cloud.tencent.com/document/product/647/77735",
+      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
       "input": "DescribeUserInfoRequest",
       "name": "查询历史用户列表",
       "output": "DescribeUserInfoResponse",
@@ -1532,7 +1532,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1542,7 +1542,7 @@
           "example": "RoomList",
           "member": "RoomState",
           "name": "RoomList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2584,7 +2584,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2594,7 +2594,7 @@
           "example": "UserList",
           "member": "UserInformation",
           "name": "UserList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2616,7 +2616,25 @@
           "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起页面录制时传递的SdkAppId",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "发起录制时传递的RecordId, 传入此值时需要传递SdkAppId",
+          "example": "record_class_1",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -5504,7 +5522,7 @@
         },
         {
           "disabled": false,
-          "document": "录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)\n",
+          "document": "录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)\n",
           "example": "36000",
           "member": "uint64",
           "name": "MaxDurationLimit",
@@ -5546,6 +5564,15 @@
           "name": "RecordId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1",
+          "example": "无",
+          "member": "McuPublishCdnParam",
+          "name": "PublishCdnParams",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

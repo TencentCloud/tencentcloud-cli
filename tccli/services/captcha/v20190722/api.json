@@ -462,7 +462,7 @@
         {
           "disabled": false,
           "document": "票据验证总量返回",
-          "example": "",
+          "example": "0",
           "member": "TicketAmountUnit",
           "name": "TicketAmountArray",
           "required": true,
@@ -472,7 +472,7 @@
         {
           "disabled": false,
           "document": "票据验证通过量返回",
-          "example": "",
+          "example": "0",
           "member": "TicketThroughUnit",
           "name": "TicketThroughArray",
           "required": true,
@@ -482,7 +482,7 @@
         {
           "disabled": false,
           "document": "票据验证拦截量返回",
-          "example": "",
+          "example": "0",
           "member": "TicketInterceptUnit",
           "name": "TicketInterceptArray",
           "required": true,
@@ -562,6 +562,7 @@
           "example": "",
           "member": "string",
           "name": "SchemeColor",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -571,6 +572,7 @@
           "example": "",
           "member": "int64",
           "name": "Language",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -580,6 +582,7 @@
           "example": "",
           "member": "int64",
           "name": "SceneType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -589,6 +592,7 @@
           "example": "",
           "member": "int64",
           "name": "EvilInterceptGrade",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -598,6 +602,7 @@
           "example": "",
           "member": "int64",
           "name": "SmartVerify",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -607,6 +612,7 @@
           "example": "",
           "member": "int64",
           "name": "SmartEngine",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -616,6 +622,7 @@
           "example": "",
           "member": "int64",
           "name": "CapType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -625,6 +632,7 @@
           "example": "",
           "member": "string",
           "name": "AppName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -634,6 +642,7 @@
           "example": "",
           "member": "string",
           "name": "DomainLimit",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -643,6 +652,7 @@
           "example": "",
           "member": "string",
           "name": "MailAlarm",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -652,6 +662,7 @@
           "example": "",
           "member": "int64",
           "name": "TrafficThreshold",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -661,6 +672,7 @@
           "example": "",
           "member": "string",
           "name": "EncryptKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -670,6 +682,7 @@
           "example": "",
           "member": "int64",
           "name": "TopFullScreen",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -679,6 +692,7 @@
           "example": "",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -688,6 +702,7 @@
           "example": "",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -751,6 +766,7 @@
           "example": "",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -760,6 +776,7 @@
           "example": "",
           "member": "CaptchaQueryData",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -769,6 +786,7 @@
           "example": "",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -823,7 +841,7 @@
           "example": "123",
           "member": "int64",
           "name": "GetSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -833,7 +851,7 @@
           "example": "112",
           "member": "int64",
           "name": "VfySuccSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -843,7 +861,7 @@
           "example": "110",
           "member": "int64",
           "name": "VfySum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -853,7 +871,7 @@
           "example": "13",
           "member": "int64",
           "name": "AttackSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -863,7 +881,7 @@
           "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -873,7 +891,7 @@
           "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -883,7 +901,7 @@
           "example": "100",
           "member": "int64",
           "name": "CheckTicketSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -893,7 +911,7 @@
           "example": "90",
           "member": "int64",
           "name": "TicketThroughputSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -903,7 +921,7 @@
           "example": "10",
           "member": "int64",
           "name": "TicketInterceptSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -967,7 +985,7 @@
           "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -977,7 +995,7 @@
           "example": "{                 \"Cnt\": 0,                 \"Date\": \"2019112900\"",
           "member": "CaptchaQueryData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -987,7 +1005,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1042,6 +1060,7 @@
           "example": "",
           "member": "int64",
           "name": "GetSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1051,6 +1070,7 @@
           "example": "",
           "member": "int64",
           "name": "VfySuccSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1060,6 +1080,7 @@
           "example": "",
           "member": "int64",
           "name": "VfySum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1069,6 +1090,7 @@
           "example": "",
           "member": "int64",
           "name": "AttackSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1078,6 +1100,7 @@
           "example": "",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1087,6 +1110,7 @@
           "example": "",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1096,6 +1120,7 @@
           "example": "",
           "member": "int64",
           "name": "CheckTicketSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1105,6 +1130,7 @@
           "example": "",
           "member": "int64",
           "name": "TicketThroughputSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1114,6 +1140,7 @@
           "example": "",
           "member": "int64",
           "name": "TicketInterceptSum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1177,7 +1204,7 @@
           "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1187,7 +1214,7 @@
           "example": "xxxxxxx",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1197,7 +1224,7 @@
           "example": "无",
           "member": "CaptchaOperDataRes",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1527,7 +1554,7 @@
           "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1537,7 +1564,7 @@
           "example": "xxxxxx",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1547,7 +1574,7 @@
           "example": "无",
           "member": "CaptchaOperDataRes",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1861,6 +1888,7 @@
           "example": "1",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1870,6 +1898,7 @@
           "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1879,6 +1908,7 @@
           "example": "0",
           "member": "int64",
           "name": "EvilLevel",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1888,6 +1918,7 @@
           "example": "1583749870",
           "member": "int64",
           "name": "GetCaptchaTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1897,6 +1928,7 @@
           "example": "0",
           "member": "int64",
           "name": "EvilBitmap",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1906,6 +1938,7 @@
           "example": "1583749870",
           "member": "int64",
           "name": "SubmitCaptchaTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1960,7 +1993,7 @@
           "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1970,7 +2003,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1980,7 +2013,7 @@
           "example": "{                       \"DateKey\":\"20200909\",                   ",
           "member": "CaptchaTicketDataRes",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2007,6 +2040,7 @@
           "example": "",
           "member": "CaptchaUserAllAppId",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2016,6 +2050,7 @@
           "example": "",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2025,6 +2060,7 @@
           "example": "",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2088,6 +2124,7 @@
           "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
           "member": "CaptchaStatisticObj",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2097,6 +2134,7 @@
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2106,6 +2144,7 @@
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2169,17 +2208,17 @@
           "example": "{\"ActionTotal\":155,\"VerifyTotal\":32}",
           "member": "CaptchaStatisticObj",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "验证码返回码",
-          "example": "11000",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2189,7 +2228,7 @@
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2244,6 +2283,7 @@
           "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
           "member": "CaptchaStatisticObj",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2253,6 +2293,7 @@
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2262,6 +2303,7 @@
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2316,7 +2358,7 @@
           "example": "{             \"ActionTotal\": 155,             \"VerifyTotal\": 32,",
           "member": "CaptchaStatisticObj",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2326,7 +2368,7 @@
           "example": "11000",
           "member": "int64",
           "name": "CaptchaCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2336,7 +2378,7 @@
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2867,6 +2909,7 @@
           "example": "",
           "member": "int64",
           "name": "CaptchaCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2876,6 +2919,7 @@
           "example": "",
           "member": "string",
           "name": "CaptchaMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

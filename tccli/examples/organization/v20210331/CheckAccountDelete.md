@@ -13,14 +13,14 @@ Output:
 ```
 {
     "Response": {
-        "AllowDelete": false,
+        "AllowDelete": true,
         "NotAllowReason": {
             "IsCreateMember": true,
             "DeletionPermission": true,
-            "IsAssignManager": true,
-            "IsAuthManager": true,
-            "IsShareManager": true,
-            "OperateProcess": true,
+            "IsAssignManager": false,
+            "IsAuthManager": false,
+            "IsShareManager": false,
+            "OperateProcess": false,
             "BillingPermission": true,
             "ExistResources": [],
             "DetectFailedResources": []

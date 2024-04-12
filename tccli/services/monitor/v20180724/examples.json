@@ -1228,14 +1228,6 @@
         "title": "初始化实例"
       }
     ],
-    "SendCustomAlarmMsg": [
-      {
-        "document": "发送自定义消息告警",
-        "input": "https://monitor.tencentcloudapi.com/?Action=SendCustomAlarmMsg\r\n&Module=monitor\r\n&PolicyId=cm-04rhwvwg\r\n&Msg=XXXX\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9q1zxtmzw6xqyqriu8run9jf6fnnkdbn\"\n    }\n}",
-        "title": "发送自定义消息告警"
-      }
-    ],
     "SetDefaultAlarmPolicy": [
       {
         "document": "",

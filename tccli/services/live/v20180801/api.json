@@ -10905,7 +10905,7 @@
           "example": "abc.com",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10915,7 +10915,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10925,7 +10925,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10935,7 +10935,7 @@
           "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10945,7 +10945,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BCName",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10955,7 +10955,7 @@
           "example": "abc.com",
           "member": "string",
           "name": "TargetDomain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10965,7 +10965,7 @@
           "example": "2",
           "member": "int64",
           "name": "PlayType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10975,7 +10975,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsDelayLive",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10985,7 +10985,7 @@
           "example": "abc.com",
           "member": "string",
           "name": "CurrentCName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10995,7 +10995,7 @@
           "example": "a",
           "member": "int64",
           "name": "RentTag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11005,7 +11005,7 @@
           "example": "2011-09-09 11:11:11",
           "member": "string",
           "name": "RentExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11015,7 +11015,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsMiniProgramLive",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

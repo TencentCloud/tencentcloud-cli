@@ -39,7 +39,13 @@ Output:
             "VPort": 1433,
             "UniqVpcId": "vpc-h8a9j18",
             "UniqSubnetId": "sub-jia891k9"
-        }
+        },
+        "OldVipList": [
+            {
+                "Vip": "127.0.0.1",
+                "RecycleTime": "2024-03-26 12:28:41"
+            }
+        ]
     }
 }
 ```

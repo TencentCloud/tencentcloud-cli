@@ -1786,7 +1786,7 @@
         {
           "disabled": false,
           "document": "风险ID",
-          "example": "dffe78de8b51a46a131fd0d49687ed0a",
+          "example": "dffe78dexxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "RiskId",
           "output_required": true,
@@ -1916,7 +1916,7 @@
         {
           "disabled": false,
           "document": "pocid",
-          "example": "c808d8eb0e9c322279c2efa3b82a491c",
+          "example": "c808d8ebxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "POCId",
           "output_required": true,
@@ -1946,7 +1946,7 @@
         {
           "disabled": false,
           "document": "实例uuid",
-          "example": "69b75e3e-5601-46e5-9fb9-7f386a757a5d",
+          "example": "69b75e3e-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
           "member": "string",
           "name": "InstanceUUID",
           "output_required": true,
@@ -1986,7 +1986,7 @@
         {
           "disabled": false,
           "document": "前端索引id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "78de8b51a46a131fd0d49687ed0a",
+          "example": "78de8b51xxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -11090,33 +11090,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤的项",
+          "document": "过滤的项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Appid",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "过滤的值",
+          "document": "过滤的值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"1300448058\"]",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "中台定义：\n1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与\n精确匹配填 7 模糊匹配填9 \n",
+          "document": "中台定义：\n1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与\n精确匹配填 7 模糊匹配填9 \n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9",
           "member": "int64",
           "name": "OperatorType",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     }
   },
   "version": "1.0"

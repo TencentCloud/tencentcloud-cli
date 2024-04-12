@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli organization QuitOrganization --cli-unfold-argument  \
-    --OrgId 123
+    --OrgId 1234
 ```
 
 Output: 

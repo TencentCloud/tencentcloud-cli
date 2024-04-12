@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CancelOrganizationMemberAuthAccount": {
-      "document": "取消组织成员和组织管理员子账号的授权关系\n",
+      "document": "取消组织成员和组织管理员子账号的授权关系",
       "input": "CancelOrganizationMemberAuthAccountRequest",
       "name": "取消组织成员和组织管理员子账号的授权关系",
       "output": "CancelOrganizationMemberAuthAccountResponse",
@@ -342,7 +342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员Uin",
+          "document": "成员Uin。",
           "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
@@ -351,7 +351,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱地址",
+          "document": "邮箱地址。",
           "example": "12***@qq.com",
           "member": "string",
           "name": "Email",
@@ -360,7 +360,7 @@
         },
         {
           "disabled": false,
-          "document": "国际区号",
+          "document": "国际区号。",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -369,8 +369,8 @@
         },
         {
           "disabled": false,
-          "document": "手机号",
-          "example": "18***32",
+          "document": "手机号。",
+          "example": "18***11",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -406,8 +406,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "父节点ID。可以调用DescribeOrganizationNodes获取",
-          "example": "1234",
+          "document": "父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
+          "example": "123",
           "member": "uint64",
           "name": "ParentNodeId",
           "required": true,
@@ -425,7 +425,7 @@
         {
           "disabled": false,
           "document": "备注。",
-          "example": "test",
+          "example": "\"\"",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -443,7 +443,7 @@
           "example": "1001",
           "member": "int64",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -515,7 +515,7 @@
         },
         {
           "disabled": false,
-          "document": "共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。",
+          "document": "共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
@@ -652,7 +652,7 @@
         {
           "disabled": false,
           "document": "成员Uin。",
-          "example": "1000001",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -660,8 +660,8 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。可以调用DescribeOrganizationMemberPolicies获取",
-          "example": "10",
+          "document": "策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取",
+          "example": "123",
           "member": "int64",
           "name": "PolicyId",
           "required": true,
@@ -670,7 +670,7 @@
         {
           "disabled": false,
           "document": "组织管理员子账号Uin列表。最大5个",
-          "example": "无",
+          "example": "[222222222222]",
           "member": "int64",
           "name": "OrgSubAccountUins",
           "required": true,
@@ -697,7 +697,7 @@
         {
           "disabled": false,
           "document": "成员Uin。",
-          "example": "1000001",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -705,8 +705,8 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
-          "example": "10",
+          "document": "策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取",
+          "example": "123",
           "member": "int64",
           "name": "PolicyId",
           "required": true,
@@ -715,7 +715,7 @@
         {
           "disabled": false,
           "document": "组织子账号Uin。",
-          "example": "1000002",
+          "example": "222222222222",
           "member": "int64",
           "name": "OrgSubAccountUin",
           "required": true,
@@ -741,7 +741,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员uin。",
+          "document": "成员Uin。",
           "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
@@ -760,6 +760,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowDelete",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -769,6 +770,7 @@
           "example": "无",
           "member": "NotAllowReason",
           "name": "NotAllowReason",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -841,7 +843,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员uin列表。最多10个",
+          "document": "成员Uin列表。最多10个",
           "example": "[111111111111]",
           "member": "uint64",
           "name": "MemberUins",
@@ -850,7 +852,7 @@
         },
         {
           "disabled": false,
-          "document": "身份Id列表。最多5个",
+          "document": "身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
           "example": "[13]",
           "member": "uint64",
           "name": "IdentityIds",
@@ -878,7 +880,7 @@
         {
           "disabled": false,
           "document": "成员Uin。",
-          "example": "1000001",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -887,7 +889,7 @@
         {
           "disabled": false,
           "document": "策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-",
-          "example": "test",
+          "example": "policy_name",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -895,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取",
+          "document": "成员访问身份ID。可以调用[DescribeOrganizationMemberAuthIdentities](https://cloud.tencent.com/document/product/850/82936)获取",
           "example": "11",
           "member": "int64",
           "name": "IdentityId",
@@ -905,7 +907,7 @@
         {
           "disabled": false,
           "document": "描述。",
-          "example": "test",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -920,10 +922,10 @@
         {
           "disabled": false,
           "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "123",
           "member": "int64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -942,7 +944,7 @@
         {
           "disabled": false,
           "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
-          "example": "testAccount",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -968,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取",
+          "document": "成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
           "example": "1001",
           "member": "int64",
           "name": "NodeId",
@@ -996,7 +998,7 @@
         {
           "disabled": false,
           "document": "成员创建记录ID。创建异常重试时需要",
-          "example": "12344",
+          "example": "0",
           "member": "int64",
           "name": "RecordId",
           "required": false,
@@ -1038,7 +1040,7 @@
         {
           "disabled": false,
           "document": "成员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100019119",
+          "example": "111111111111",
           "member": "int64",
           "name": "Uin",
           "output_required": true,
@@ -1069,7 +1071,7 @@
         {
           "disabled": false,
           "document": "策略名。长度1～128个字符，支持英文字母、数字、符号+=,.@_-",
-          "example": "test",
+          "example": "policy_name",
           "member": "string",
           "name": "PolicyName",
           "required": true,
@@ -1077,7 +1079,7 @@
         },
         {
           "disabled": false,
-          "document": "成员访问身份ID。",
+          "document": "成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
           "example": "11",
           "member": "int64",
           "name": "IdentityId",
@@ -1087,7 +1089,7 @@
         {
           "disabled": false,
           "document": "策略描述。最大长度为128个字符",
-          "example": "test",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1102,9 +1104,10 @@
         {
           "disabled": false,
           "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "123",
           "member": "int64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1159,7 +1162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员uin。",
+          "document": "成员Uin。",
           "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
@@ -1186,7 +1189,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份ID",
+          "document": "身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
           "example": "1",
           "member": "uint64",
           "name": "IdentityId",
@@ -1213,7 +1216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员uin。",
+          "document": "成员Uin。",
           "example": "111111111111",
           "member": "uint64",
           "name": "MemberUin",
@@ -1222,8 +1225,8 @@
         },
         {
           "disabled": false,
-          "document": "身份Id。",
-          "example": "13",
+          "document": "身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
+          "example": "11",
           "member": "uint64",
           "name": "IdentityId",
           "required": true,
@@ -1249,8 +1252,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问策略ID。",
-          "example": "11",
+          "document": "访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取",
+          "example": "123",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -1276,8 +1279,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "被删除成员的UIN列表。",
-          "example": "无",
+          "document": "被删除成员的Uin列表。",
+          "example": "[111111111111]",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -1303,8 +1306,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点ID列表。",
-          "example": "无",
+          "document": "节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
+          "example": "[1001]",
           "member": "int64",
           "name": "NodeId",
           "required": true,
@@ -1425,8 +1428,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型。支持共享的资源类型。",
-          "example": "vpc",
+          "document": "共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)",
+          "example": "secret",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1473,7 +1476,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -1482,7 +1485,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目。最大50",
+          "document": "限制数目。取值范围：1~50。默认值：10。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1507,9 +1510,10 @@
         {
           "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1519,6 +1523,7 @@
           "example": "无",
           "member": "AuthNode",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1797,7 +1802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1806,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目。",
+          "document": "限制数目。取值范围：1~50。默认值：10。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -1816,7 +1821,7 @@
         {
           "disabled": false,
           "document": "成员Uin。",
-          "example": "1000001",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -1824,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)",
           "example": "11",
           "member": "int64",
           "name": "PolicyId",
@@ -1843,7 +1848,7 @@
           "example": "无",
           "member": "OrgMemberAuthAccount",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1853,7 +1858,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1898,7 +1903,7 @@
         },
         {
           "disabled": false,
-          "document": "身份ID。入参MemberUin与IdentityId至少填写一个",
+          "document": "身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
           "example": "123",
           "member": "uint64",
           "name": "IdentityId",
@@ -1945,8 +1950,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员Uin",
-          "example": "123",
+          "document": "成员Uin。",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -1960,91 +1965,91 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12",
           "member": "uint64",
           "name": "BindId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-01-13 12:08:09",
           "member": "string",
           "name": "ApplyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "邮箱地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123@qq.com",
+          "document": "邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12***@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "18797765432",
+          "document": "安全手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18***32",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "绑定状态    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定状态。    未绑定：Unbound，待激活：Valid，绑定成功：Success，绑定失败：Failed\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
           "member": "string",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-01-13 18:08:09",
           "member": "string",
           "name": "BindTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "失败说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败说明。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全手机绑定状态  未绑定：0，已绑定：1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全手机绑定状态 。 未绑定：0，已绑定：1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "PhoneBind",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "国际区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国际区号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2062,7 +2067,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2071,7 +2076,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目。最大50",
+          "document": "限制数目。取值范围：1~50。默认值：10。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2081,7 +2086,7 @@
         {
           "disabled": false,
           "document": "成员Uin。",
-          "example": "1000001",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -2090,7 +2095,7 @@
         {
           "disabled": false,
           "document": "搜索关键字。可用于策略名或描述搜索",
-          "example": "test",
+          "example": "policy_name",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -2108,17 +2113,17 @@
           "example": "无",
           "member": "OrgMemberPolicy",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总数目。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2155,7 +2160,7 @@
         {
           "disabled": false,
           "document": "国际站：en，国内站：zh",
-          "example": "en",
+          "example": "zh",
           "member": "string",
           "name": "Lang",
           "required": false,
@@ -2164,7 +2169,7 @@
         {
           "disabled": false,
           "document": "成员名称或者成员ID搜索。",
-          "example": "test",
+          "example": "\"\"",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -2200,15 +2205,17 @@
           "example": "无",
           "member": "OrgMember",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数目。",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2235,7 +2242,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2251,10 +2258,10 @@
         {
           "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2264,7 +2271,7 @@
           "example": "无",
           "member": "OrgNode",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2643,7 +2650,7 @@
         },
         {
           "disabled": false,
-          "document": "共享资源类型。",
+          "document": "共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)",
           "example": "secret",
           "member": "string",
           "name": "Type",
@@ -2690,7 +2697,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。",
+          "document": "共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Area",
@@ -2841,7 +2848,7 @@
         },
         {
           "disabled": false,
-          "document": "身份ID搜索。",
+          "document": "身份ID。可以通过身份ID搜索",
           "example": "1",
           "member": "uint64",
           "name": "IdentityId",
@@ -2866,9 +2873,10 @@
         {
           "disabled": false,
           "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2878,6 +2886,7 @@
           "example": "无",
           "member": "OrgIdentity",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3043,8 +3052,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "组织节点ID。",
-          "example": "123",
+          "document": "组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
+          "example": "1001",
           "member": "int64",
           "name": "NodeId",
           "required": true,
@@ -3052,8 +3061,8 @@
         },
         {
           "disabled": false,
-          "document": "成员UIN列表。",
-          "example": "无",
+          "document": "成员Uin列表。",
+          "example": "[111111111111]",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -4167,7 +4176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份ID",
+          "document": "身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取",
           "example": "1",
           "member": "uint64",
           "name": "IdentityId",
@@ -4176,7 +4185,7 @@
         },
         {
           "disabled": false,
-          "document": "身份描述",
+          "document": "身份描述。",
           "example": "\"\"",
           "member": "string",
           "name": "Description",
@@ -4185,7 +4194,7 @@
         },
         {
           "disabled": false,
-          "document": "身份策略",
+          "document": "身份策略。",
           "example": "无",
           "member": "IdentityPolicy",
           "name": "IdentityPolicy",
@@ -4212,8 +4221,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员Uin",
-          "example": "1234",
+          "document": "成员Uin。",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -4221,7 +4230,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定ID",
+          "document": "绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取",
           "example": "12",
           "member": "int64",
           "name": "BindId",
@@ -4230,8 +4239,8 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
-          "example": "23376@qq.com",
+          "document": "邮箱地址。",
+          "example": "12***@qq.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -4239,7 +4248,7 @@
         },
         {
           "disabled": false,
-          "document": "国际区号",
+          "document": "国际区号。",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -4248,8 +4257,8 @@
         },
         {
           "disabled": false,
-          "document": "手机号",
-          "example": "18792790987",
+          "document": "手机号。",
+          "example": "18***32",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -4285,7 +4294,7 @@
         {
           "disabled": false,
           "document": "成员名称。最大长度为25个字符，支持英文字母、数字、汉字、符号+@、&._[]-:,",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4294,7 +4303,7 @@
         {
           "disabled": false,
           "document": "备注。最大长度为40个字符",
-          "example": "test",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4356,7 +4365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点ID。",
+          "document": "节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取",
           "example": "1001",
           "member": "uint64",
           "name": "NodeId",
@@ -4366,7 +4375,7 @@
         {
           "disabled": false,
           "document": "节点名称。最大长度为40个字符，支持英文字母、数字、汉字、符号+@、&._[]-",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4375,7 +4384,7 @@
         {
           "disabled": false,
           "document": "备注。",
-          "example": "test",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,

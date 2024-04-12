@@ -444,7 +444,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadIvrAudio\n<公共请求参数>\n\n{\n    \"SdkAppId\": 0,\n    \"AudioList\": [\n        {\n            \"CustomFileName\": \"abc\",\n            \"AudioUrl\": \"http://xxxx.com/a.mp3\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a\",\n        \"FailedFileList\": [],\n        \"SuccessFileList\": [\n            {\n                \"AudioFileName\": \"business_id_pic5.mp3\",\n                \"CustomFileName\": \"1231\",\n                \"FileId\": 50,\n                \"Status\": 0\n            },\n            {\n                \"AudioFileName\": \"business_id_pic6.mp3\",\n                \"CustomFileName\": \"4561\",\n                \"FileId\": 51,\n                \"Status\": 0\n            }\n        ]\n    }\n}",
         "title": "上传IVR音频文件"
       }
     ]
