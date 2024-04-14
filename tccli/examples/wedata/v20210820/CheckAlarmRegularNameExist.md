@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata CheckAlarmRegularNameExist --cli-unfold-argument  \
-    --ProjectId 123 \
+    --ProjectId 11022568003970304 \
     --AlarmRegularName test_regular
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "123",
+        "RequestId": "9f2cdb12-cbc8-431a-94e8-c658ae3ca3ac",
         "Data": true
     }
 }

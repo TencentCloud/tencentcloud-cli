@@ -34,9 +34,9 @@ Input:
 
 ```
 tccli wedata BatchStopIntegrationTasks --cli-unfold-argument  \
-    --TaskIds abc \
+    --TaskIds 20220506145218687 \
     --TaskType 0 \
-    --ProjectId abc
+    --ProjectId 11022568003970304
 ```
 
 Output: 
@@ -47,9 +47,9 @@ Output:
         "FailedCount": 0,
         "TotalCount": 0,
         "TaskNames": [
-            "abc"
+            "20220506145218687"
         ],
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

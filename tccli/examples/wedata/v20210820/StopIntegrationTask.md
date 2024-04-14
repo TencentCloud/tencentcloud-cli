@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata StopIntegrationTask --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc
+    --TaskId f00vb100e8264c67a3442mffd53ac2 \
+    --ProjectId 1102250839773970304
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "tyv7b1-h00e826ad-4c67a349m-fkd53ac2"
     }
 }
 ```

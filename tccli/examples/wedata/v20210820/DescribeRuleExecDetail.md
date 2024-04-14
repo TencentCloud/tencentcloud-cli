@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeRuleExecDetail --cli-unfold-argument  \
-    --ProjectId abc \
+    --ProjectId 19419808749824 \
     --RuleExecId 1
 ```
 
@@ -15,83 +15,59 @@ Output:
 {
     "Response": {
         "Data": {
-            "DatasourceId": 1,
-            "DatasourceName": "hive89yuhihutg",
-            "DatabaseId": "89y7hui87by",
-            "DatabaseName": "dbName",
-            "InstanceId": "978uijhbb87",
-            "TableId": "0oi8hejnfc",
-            "TableName": "test",
+            "DatabaseId": "zw-oGh2Y9XSkZxkPQVA",
+            "DatabaseName": "at_dlc_sh_dq",
+            "DatasourceId": 6259,
+            "DatasourceName": "dlc_qehpp208",
+            "DatasourceType": 3,
+            "InstanceId": "qep208",
             "RuleExecResult": {
-                "RuleExecId": 1,
-                "RuleGroupExecId": 1,
-                "RuleGroupId": 1,
-                "RuleId": 1,
-                "RuleName": "规则1",
-                "RuleType": 1,
-                "SourceObjectDataTypeName": "name",
-                "SourceObjectValue": "value",
-                "ConditionExpression": "exp",
-                "ExecResultStatus": 1,
-                "TriggerResult": "res",
+                "AlarmLevel": 1,
                 "CompareResult": {
                     "Items": [
                         {
-                            "FixResult": 1,
-                            "ResultValue": "value",
+                            "CompareType": 5,
+                            "FixResult": null,
+                            "Operator": "==",
+                            "ResultValue": "3.0000",
+                            "ValueComputeType": null,
                             "Values": [
                                 {
-                                    "ValueType": 1,
-                                    "Value": "10"
-                                }
-                            ],
-                            "Operator": ">",
-                            "CompareType": 1,
-                            "ValueComputeType": 1
-                        }
-                    ],
-                    "TotalRows": 1,
-                    "PassRows": 1,
-                    "TriggerRows": 1
-                },
-                "TemplateName": "abc",
-                "QualityDim": 1,
-                "TargetDBTableName": "abc",
-                "TargetObjectValue": "abc",
-                "TargetObjectDataType": "abc",
-                "FieldConfig": {
-                    "WhereConfig": [
-                        {
-                            "FieldKey": "name",
-                            "FieldValue": "zhangsan",
-                            "FieldDataType": "string"
-                        }
-                    ],
-                    "TableConfig": [
-                        {
-                            "DatabaseId": "897yuhijjhu8h89u",
-                            "DatabaseName": "name",
-                            "TableId": "abc",
-                            "TableName": "test",
-                            "TableKey": "abc",
-                            "FieldConfig": [
-                                {
-                                    "FieldKey": "id",
-                                    "FieldValue": "1",
-                                    "FieldDataType": "int"
+                                    "Value": "0",
+                                    "ValueType": 3
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "PassRows": null,
+                    "TotalRows": 3,
+                    "TriggerRows": null
                 },
-                "RelConditionExpr": "expr",
-                "StartTime": "abc",
-                "AlarmLevel": 1
+                "ConditionExpression": "全表",
+                "ExecResultStatus": 1,
+                "FieldConfig": null,
+                "QualityDim": 5,
+                "RelConditionExpr": null,
+                "RuleExecId": 341876,
+                "RuleGroupExecId": 112532,
+                "RuleGroupId": 308,
+                "RuleId": 885,
+                "RuleName": "data_in_time_fail",
+                "RuleType": 1,
+                "SourceObjectDataTypeName": "table",
+                "SourceObjectValue": "表",
+                "StartTime": "2024-04-09 21:10:25",
+                "TargetDBTableName": "null.null",
+                "TargetObjectDataType": null,
+                "TargetObjectValue": null,
+                "TemplateName": "数据产出及时性",
+                "TriggerResult": "无"
             },
-            "TableOwnerUserId": 1,
-            "DatasourceType": 1
+            "TableId": "OE3C5Y0Qp5Sh40qq9g",
+            "TableName": "auto_dlc_test_dq",
+            "TableOwnerUserId": 10002056
         },
-        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
+        "RequestId": "572b64f8-9-4207-8385-151c5e553ca1"
     }
 }
 ```

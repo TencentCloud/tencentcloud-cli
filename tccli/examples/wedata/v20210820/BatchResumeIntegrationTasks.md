@@ -7,7 +7,7 @@ Input:
 ```
 tccli wedata BatchResumeIntegrationTasks --cli-unfold-argument  \
     --ProjectId 17865298918277529 \
-    --TaskIds 123 124 \
+    --TaskIds 20220506145218687 20230506145218687 \
     --TaskType 201
 ```
 

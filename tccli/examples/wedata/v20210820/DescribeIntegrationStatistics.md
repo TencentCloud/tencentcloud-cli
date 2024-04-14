@@ -26,8 +26,8 @@ Output:
         "IncreaseWriteRecords": 0,
         "IncreaseErrorRecords": 0,
         "IncreaseAlarmEvent": 0,
-        "AlarmEvent": "abc",
-        "RequestId": "abc"
+        "AlarmEvent": "{\"important\":1,\"ordinary\":0,\"urgent\":0}",
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

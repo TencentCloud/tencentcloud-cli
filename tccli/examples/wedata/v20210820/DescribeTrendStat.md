@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeTrendStat --cli-unfold-argument  \
-    --ProjectId 1 \
+    --ProjectId 1554778168856817664 \
     --BeginDate 1645155262 \
     --EndDate 1645155262
 ```

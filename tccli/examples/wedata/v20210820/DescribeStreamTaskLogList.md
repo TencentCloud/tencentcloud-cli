@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata DescribeStreamTaskLogList --cli-unfold-argument  \
-    --ProjectId abc \
-    --TaskId abc \
-    --JobId abc \
-    --Container abc \
-    --EndTime 1 \
-    --StartTime 1 \
+    --ProjectId 1 \
+    --TaskId 20230112170349643 \
+    --JobId 123213 \
+    --Container pod \
+    --EndTime 143213 \
+    --StartTime 143113 \
     --Limit 1 \
-    --OrderType abc \
+    --OrderType desc \
     --RunningOrderId 1 \
-    --Keyword abc
+    --Keyword INFO
 ```
 
 Output: 
@@ -25,14 +25,14 @@ Output:
         "ListOver": true,
         "LogContentList": [
             {
-                "Log": "abc",
-                "PkgId": "abc",
-                "PkgLogId": "abc",
+                "Log": "vdscsdcs",
+                "PkgId": "1",
+                "PkgLogId": "1",
                 "Time": 1,
-                "ContainerName": "abc"
+                "ContainerName": "pod"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeTopTableStat --cli-unfold-argument  \
-    --ProjectId 1 \
+    --ProjectId 153160990365952 \
     --BeginDate 1645155262 \
     --EndDate 1645155262
 ```

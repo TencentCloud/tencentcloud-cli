@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata CheckIntegrationNodeNameExists --cli-unfold-argument  \
-    --ProjectId abc \
+    --ProjectId 11022568003970304 \
     --Id 0 \
-    --TaskId abc \
-    --Name abc
+    --TaskId 20220506145218687 \
+    --Name hive
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

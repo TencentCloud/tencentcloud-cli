@@ -11,7 +11,7 @@ tccli lke SaveDoc --cli-unfold-argument  \
     --FileType docx \
     --CosUrl /corp/137/doc/jkadslfjalkdfjaklsdfla.docx \
     --ETag f679b6029cba26d65ef93c4e174b59d8 \
-    --CosHash f679b6029cba26d65ef93c4e174b59d8 \
+    --CosHash xxxxxxxxx \
     --Size 643000 \
     --Source 1 \
     --WebUrl  \

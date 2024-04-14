@@ -2110,7 +2110,7 @@
     "TaskLog": {
       "document": "查询Inlong manager日志",
       "input": "TaskLogRequest",
-      "name": "管控日志接口",
+      "name": "查询实时任务日志接口",
       "output": "TaskLogResponse",
       "status": "online"
     },
@@ -4561,7 +4561,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -4579,7 +4579,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4796,7 +4796,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"3cd6b1b3-76a0-4147-8f0e-6df206bc58c0\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -4804,8 +4804,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "201",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -4814,7 +4814,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4823,7 +4823,7 @@
         {
           "disabled": false,
           "document": "是否删除开发态任务。默认不删除开发态，为 0 不删除 , 为 1 删除",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DeleteKFFlag",
           "required": false,
@@ -4832,7 +4832,7 @@
         {
           "disabled": false,
           "document": "操作名称",
-          "example": "无",
+          "example": "\"Delete\"",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4841,7 +4841,7 @@
         {
           "disabled": false,
           "document": "本次批量操作涉及任务，用于审计",
-          "example": "无",
+          "example": "[\"test111\"]",
           "member": "string",
           "name": "TaskNames",
           "required": false,
@@ -5108,7 +5108,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5174,7 +5174,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5219,7 +5219,7 @@
         {
           "disabled": false,
           "document": "实际传的为taskId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ \"20220506145218687\"]",
           "member": "string",
           "name": "TaskNames",
           "output_required": false,
@@ -5241,7 +5241,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"20220506145218687\",\"20220413104752613\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -5249,8 +5249,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "202",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -5259,7 +5259,7 @@
         {
           "disabled": false,
           "document": "补数据开始时间",
-          "example": "无",
+          "example": "\"2022-04-18 12:00:00\"",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5268,7 +5268,7 @@
         {
           "disabled": false,
           "document": "补数据结束时间",
-          "example": "无",
+          "example": "\"2022-04-18 13:00:00\"",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5277,7 +5277,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5642,7 +5642,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5687,7 +5687,7 @@
         {
           "disabled": false,
           "document": "实际传的为taskId",
-          "example": "无",
+          "example": "[\"20220506145218687\" ]",
           "member": "string",
           "name": "TaskNames",
           "output_required": false,
@@ -5755,7 +5755,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"3cd6b1b3-76a0-4147-8f0e-6df206bc58c0\"",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -5773,7 +5773,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"1075233731086999552\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5818,7 +5818,7 @@
         {
           "disabled": false,
           "document": "本次批量操作涉及任务，用于审计",
-          "example": "无",
+          "example": "[\"test111\"]",
           "member": "string",
           "name": "TaskNames",
           "output_required": false,
@@ -5929,8 +5929,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "202",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -5939,7 +5939,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -5948,7 +5948,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"20220506145218687\",\"20220413104752613\"",
           "member": "string",
           "name": "TaskIds",
           "required": false,
@@ -6002,7 +6002,7 @@
         {
           "disabled": false,
           "document": "本次批量操作成功任务id，用于审计",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskNames",
           "output_required": false,
@@ -6024,7 +6024,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -6032,8 +6032,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "202",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -6042,7 +6042,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6087,7 +6087,7 @@
         {
           "disabled": false,
           "document": "本次批量操作涉及成功任务，用于审计",
-          "example": "无",
+          "example": " [ \"20220506145218687\"]",
           "member": "string",
           "name": "TaskNames",
           "output_required": false,
@@ -6245,7 +6245,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -6253,8 +6253,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "201",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -6263,7 +6263,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6272,7 +6272,7 @@
         {
           "disabled": false,
           "document": "事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)\t",
-          "example": "SUSPEND_WITHOUT_SP",
+          "example": "\"SUSPEND_WITHOUT_SP\"",
           "member": "string",
           "name": "Event",
           "required": false,
@@ -6281,7 +6281,7 @@
         {
           "disabled": false,
           "document": "本次批量操作涉及任务，用于审计",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskNames",
           "required": false,
@@ -6338,7 +6338,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "\"3cd6b1b3-76a0-4147-8f0e-6df206bc58c0\"",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -6347,7 +6347,7 @@
         {
           "disabled": false,
           "document": "责任人（多个责任人用小写分号隔开；离线任务传入的是账号名，实时任务传入的是账号id）",
-          "example": "无",
+          "example": "\"100022256608\"",
           "member": "string",
           "name": "Incharge",
           "required": true,
@@ -6356,7 +6356,7 @@
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "无",
+          "example": "201",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -6365,7 +6365,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6374,7 +6374,7 @@
         {
           "disabled": false,
           "document": "责任人Id（多个责任人用小写分号隔开）",
-          "example": "无",
+          "example": "\"100022256608;100006908545\"",
           "member": "string",
           "name": "InchargeIds",
           "required": false,
@@ -6383,7 +6383,7 @@
         {
           "disabled": false,
           "document": "本次批量操作涉及任务，用于审计",
-          "example": "无",
+          "example": "\"test111\"",
           "member": "string",
           "name": "TaskNames",
           "required": false,
@@ -6576,7 +6576,7 @@
         {
           "disabled": false,
           "document": "项目名称",
-          "example": "97876567",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6585,7 +6585,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "feyer",
+          "example": "\"test_regular\"",
           "member": "string",
           "name": "AlarmRegularName",
           "required": true,
@@ -6594,7 +6594,7 @@
         {
           "disabled": true,
           "document": "任务ID",
-          "example": "8764",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -6603,7 +6603,7 @@
         {
           "disabled": false,
           "document": "主键ID",
-          "example": "7467",
+          "example": "\"7467\"",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -6777,7 +6777,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "876",
+          "example": "\"20220413104752613\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6786,7 +6786,7 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "uytyrr",
+          "example": "\"hive“",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6795,7 +6795,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "8765",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6841,7 +6841,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "hyrtjyr",
+          "example": "\"整库迁移\"",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -6850,7 +6850,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "876657",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6859,7 +6859,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "5677",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -6915,7 +6915,7 @@
         {
           "disabled": false,
           "document": "项目id/工作空间id",
-          "example": "1",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6933,7 +6933,7 @@
         {
           "disabled": false,
           "document": "任务名",
-          "example": "123",
+          "example": "\"testTaskName\"",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -6948,7 +6948,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Data",
           "output_required": true,
@@ -7898,7 +7898,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7907,7 +7907,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -7934,7 +7934,7 @@
         {
           "disabled": false,
           "document": "额外参数",
-          "example": "[{\"timestamp\": \"1686811933000\"}]",
+          "example": "无",
           "member": "RecordField",
           "name": "ExtConfig",
           "required": false,
@@ -7943,7 +7943,7 @@
         {
           "disabled": false,
           "document": "提交版本描述",
-          "example": "无",
+          "example": "\"1\"",
           "member": "string",
           "name": "VersionDesc",
           "required": false,
@@ -7952,7 +7952,7 @@
         {
           "disabled": false,
           "document": "提交版本号",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "InstanceVersion",
           "required": false,
@@ -8080,7 +8080,7 @@
         {
           "disabled": false,
           "document": "规则配置列表",
-          "example": "无",
+          "example": "[     {         \"ruleId\": 13371,         \"conditionType\": null,         \"condition\": \"2024-04-11 11:00:00\",         \"targetCondition\": null,         \"cycleStep\": 3600     } ]",
           "member": "RuleConfig",
           "name": "ExecRuleConfig",
           "required": false,
@@ -8089,7 +8089,7 @@
         {
           "disabled": false,
           "document": "执行配置",
-          "example": "无",
+          "example": "{     \"engineType\": \"SPARK\",     \"queueName\": \"aidp_rd\",     \"executorGroupId\": \"20220803103215846318\",     \"schedulingPlan\": null,     \"pipelineTasks\": [         {             \"taskId\": \"20230423104515974\",             \"taskName\": \"ods_aipdata_prod_cdm_abnormal_emergency_crash_d_i_new\",             \"workflowId\": \"08a0a978-f15d-11ec-abaa-08c0eb3c20e0\"         }     ] }",
           "member": "RuleExecConfig",
           "name": "ExecConfig",
           "required": false,
@@ -8122,9 +8122,10 @@
         {
           "disabled": false,
           "document": "规则组执行id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"RuleGroupExecId\": 1,       \"RuleGroupId\": 1,       \"TriggerType\": 1,       \"ExecTime\": \"1712804400000\",       \"Status\": 1,       \"AlarmRuleCount\": 1,       \"TotalRuleCount\": 1,       \"TableOwnerName\": \"zhangsan\",       \"TableName\": \"dq\",       \"TableId\": \"697ytfgquhewfa21we\",       \"DatabaseId\": \"85rft7qie3vwukacdavk\",       \"DatasourceId\": \"456789\",       \"Permission\": true,       \"ExecDetail\": \"2023-09-07 ~ 2099-12-31，每天07:00执行一次\",       \"EngineType\": \"HIVE\",       \"RuleExecResultVOList\": [         {           \"RuleExecId\": 1,           \"RuleGroupExecId\": 1,           \"RuleGroupId\": 1,           \"RuleId\": 1,           \"RuleName\": \"规则\",           \"RuleType\": 1,           \"SourceObjectDataTypeName\": \"int\",           \"SourceObjectValue\": \"age\",           \"ConditionExpression\": \"pt=substring('${yyyyMMddHHmmss-1H}',1,10)\",           \"ExecResultStatus\": 1,           \"TriggerResult\": \"\",           \"CompareResult\": {             \"Items\": [               {                 \"FixResult\": 1,                 \"ResultValue\": \"0\",                 \"Values\": [                   {                     \"ValueType\": 1,                     \"Value\": \"2\"                   }                 ],                 \"Operator\": \">\",                 \"CompareType\": 1,                 \"ValueComputeType\": 1               }             ],             \"TotalRows\": 1,             \"PassRows\": 1,             \"TriggerRows\": 1           },           \"TemplateName\": \"模版\",           \"QualityDim\": 1,           \"TargetDBTableName\": \"targaetName\",           \"TargetObjectValue\": \"value\",           \"TargetObjectDataType\": \"1\",           \"FieldConfig\": {             \"WhereConfig\": [               {                 \"FieldKey\": \"param_1\",                 \"FieldValue\": \"id\",                 \"FieldDataType\": \"int\"               }             ],             \"TableConfig\": [               {                 \"DatabaseId\": \"NW0VL_YYPESvi8w\",                 \"DatabaseName\": \"default\",                 \"TableId\": \"EHdPET2IKQ2KBhGw\",                 \"TableName\": \"dq_student\",                 \"TableKey\": \"table_1\",                 \"FieldConfig\": [                   {                     \"FieldKey\": \"table_1.column_1\",                     \"FieldValue\": \"id\",                     \"FieldDataType\": \"int\"                   }                 ]               }             ]           },           \"RelConditionExpr\": \"sourceTable.id=targetTable.id\",           \"StartTime\": \"2023-10-01\",           \"AlarmLevel\": 1         }       ]     }",
           "member": "RuleGroupExecResult",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9127,7 +9128,7 @@
         {
           "disabled": false,
           "document": "数据源ID",
-          "example": "53632",
+          "example": "\"423123421\"",
           "member": "string",
           "name": "DatasourceId",
           "required": true,
@@ -9136,7 +9137,7 @@
         {
           "disabled": false,
           "document": "数据库",
-          "example": "用户re",
+          "example": "\"databaseName\"",
           "member": "string",
           "name": "Database",
           "required": true,
@@ -9145,7 +9146,7 @@
         {
           "disabled": false,
           "document": "建hive表ddl",
-          "example": "gefraesd",
+          "example": "\"CREATE TABLE IF NOT EXISTS employee\"",
           "member": "string",
           "name": "DDLSql",
           "required": true,
@@ -9163,7 +9164,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "1",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9181,7 +9182,7 @@
         {
           "disabled": false,
           "document": "责任人",
-          "example": "gsgf",
+          "example": "\"321231\"",
           "member": "string",
           "name": "Incharge",
           "required": false,
@@ -9196,7 +9197,7 @@
         {
           "disabled": false,
           "document": "表名称",
-          "example": "fad",
+          "example": "\"true\"",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -9218,7 +9219,7 @@
         {
           "disabled": false,
           "document": "数据源id",
-          "example": "123",
+          "example": "\"423123421\"",
           "member": "string",
           "name": "DatasourceId",
           "required": true,
@@ -9227,7 +9228,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "databaseName",
+          "example": "\"databaseName\"",
           "member": "string",
           "name": "Database",
           "required": true,
@@ -9236,7 +9237,7 @@
         {
           "disabled": false,
           "document": "base64转码之后的建表语句",
-          "example": "c2VsZWN0ICogZnJvbSB0ZXN0MQo=",
+          "example": "\"c2VsZWN0ICogZnJvbSB0ZXN0MQo=\"",
           "member": "string",
           "name": "DDLSql",
           "required": true,
@@ -9254,7 +9255,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "1",
+          "example": "\"231231234432312\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9263,7 +9264,7 @@
         {
           "disabled": false,
           "document": "责任人",
-          "example": "123",
+          "example": "\"218687\"",
           "member": "string",
           "name": "Incharge",
           "required": false,
@@ -9278,7 +9279,7 @@
         {
           "disabled": false,
           "document": "建表是否成功",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsSuccess",
           "output_required": true,
@@ -9309,7 +9310,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9318,7 +9319,7 @@
         {
           "disabled": false,
           "document": "任务类型，201为实时任务，202为离线任务",
-          "example": "201. stream, 202. offline",
+          "example": "201",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
@@ -9333,7 +9334,7 @@
         {
           "disabled": false,
           "document": "节点",
-          "example": "123",
+          "example": "\"12321232\"",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -9343,7 +9344,7 @@
         {
           "disabled": false,
           "document": "当前任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -9374,7 +9375,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9389,7 +9390,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -9456,8 +9457,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目/工作",
-          "example": "123",
+          "document": "项目ID",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -9465,7 +9466,7 @@
         },
         {
           "disabled": false,
-          "document": "1",
+          "document": "间隔，可选，默认1。非空。默认 1",
           "example": "1",
           "member": "int64",
           "name": "CycleStep",
@@ -9474,7 +9475,7 @@
         },
         {
           "disabled": false,
-          "document": "0",
+          "document": "延时执行时间，单位分钟",
           "example": "0",
           "member": "int64",
           "name": "DelayTime",
@@ -9483,7 +9484,7 @@
         },
         {
           "disabled": false,
-          "document": "2099-12-31 00:00:00",
+          "document": "任务结束数据时间。非空。默认当前时间",
           "example": "2099-12-31 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -9493,7 +9494,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "123",
+          "example": "\"备注信息“",
           "member": "string",
           "name": "Notes",
           "required": true,
@@ -9511,7 +9512,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "123",
+          "example": "task test name",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -9528,8 +9529,8 @@
         },
         {
           "disabled": false,
-          "document": "默认 \"\"",
-          "example": "默认 \"\"",
+          "document": "时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 \"\" 月任务：如具体1，3号则写 \"1,3\"，指定月末不可和具体号数一起输入，仅能为 \"L\"",
+          "example": "1",
           "member": "string",
           "name": "TaskAction",
           "required": true,
@@ -9553,18 +9554,20 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20220411181355382",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "”true\"",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9999,7 +10002,7 @@
         {
           "disabled": false,
           "document": "数据表ID",
-          "example": "123456",
+          "example": "802yuhefwo08yih2",
           "member": "string",
           "name": "TableId",
           "required": false,
@@ -10080,7 +10083,7 @@
         {
           "disabled": false,
           "document": "报警触发条件",
-          "example": "无",
+          "example": "{         \"Items\": [             {                 \"CompareType\": 1,                 \"Operator\": \">\",                 \"ValueComputeType\": 1,                 \"ValueList\": [                     {                         \"ValueType\": 3,                         \"Value\": \"0\"                     }                 ]             }         ],         \"CycleStep\": 1,         \"ComputeExpression\": \"0\"     }",
           "member": "CompareRule",
           "name": "CompareRule",
           "required": false,
@@ -10116,7 +10119,7 @@
         {
           "disabled": false,
           "document": "数据库Id",
-          "example": "123456",
+          "example": "297ygefhi80uih2o",
           "member": "string",
           "name": "DatabaseId",
           "required": false,
@@ -10125,7 +10128,7 @@
         {
           "disabled": false,
           "document": "目标库Id",
-          "example": "123456",
+          "example": "0u79hf2ojonjke8",
           "member": "string",
           "name": "TargetDatabaseId",
           "required": false,
@@ -10134,7 +10137,7 @@
         {
           "disabled": false,
           "document": "目标表Id",
-          "example": "123456",
+          "example": "80y23rhgufujhbwfeu89",
           "member": "string",
           "name": "TargetTableId",
           "required": false,
@@ -10161,7 +10164,7 @@
         {
           "disabled": false,
           "document": "自定义模版sql表达式字段替换参数",
-          "example": "无",
+          "example": "{                 \"TableConfig\": [                     {                         \"DatabaseId\": \"NW0VL_YPESvi8w\",                         \"DatabaseName\": \"default\",                         \"TableId\": \"EHdPET2IKQ2KBhGw\",                         \"TableName\": \"dq_student\",                         \"TableKey\": \"table_1\",                         \"FieldConfig\": [                             {                                 \"FieldKey\": \"table_1.column_1\",                                 \"FieldDataType\": \"int\",                                 \"FieldValue\": \"id\"                             }                         ]                     }                 ],                 \"WhereConfig\": [                     {                         \"FieldKey\": \"param_1\",                         \"FieldDataType\": \"int\",                         \"FieldValue\": \"id\"                     }                 ]             }",
           "member": "RuleFieldConfig",
           "name": "FieldConfig",
           "required": false,
@@ -10194,9 +10197,10 @@
         {
           "disabled": false,
           "document": "规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "{             \"RuleId\": 1,             \"RuleGroupId\": 1,             \"TableId\": \"E-UEBWQB-XRjERluUg\",             \"TableName\": \"dq\",              \"DatabaseId\": \"roeqgaBtT4m22RyjnMQ\",             \"DatasourceId\": 6789789,             \"Name\": \"测试\",             \"Type\": 1,             \"RuleTemplateId\": 1,             \"RuleTemplateContent\": \"描述\",             \"QualityDim\": 1,             \"SourceObjectType\": 1,             \"SourceObjectDataType\": 1,             \"SourceObjectDataTypeName\": \"int\",             \"SourceObjectValue\": \"age\",             \"ConditionType\": 1,             \"ConditionExpression\": \"pt=substring('${yyyyMMddHHmmss-1H}',1,10)\",             \"CustomSql\": \"SELECT id,name FROM `at_hive_bj`.`at_hive_22`;\",              \"CreateTime\": \"2024-02-22 21:49:55\",              \"TableOwnerName\": \"AUTO_TEST\",               \"SourceEngineTypes\": [                         2,                         4,                         16                     ],             \"ExecStrategy\": {                         \"CycleStep\": null,                         \"CycleType\": null,                         \"DelayTime\": null,                         \"EndTime\": null,                         \"ExecEngineType\": null,                         \"ExecPlan\": null,                         \"ExecQueue\": null,                         \"ExecutorGroupId\": null,                         \"ExecutorGroupName\": null,                         \"MonitorType\": 2,                         \"RuleGroupId\": null,                         \"RuleId\": 1263,                         \"RuleName\": \"field_minimum_trigger_fail\",                         \"StartTime\": null,                         \"TaskAction\": null,                         \"Tasks\": [                             {                                 \"TaskId\": \"20240205135835\",                                 \"TaskName\": \"at_qualire_task_1708606293AquG\",                                 \"WorkflowId\": \"1c2a85c6-d181-11eeb-b8cef68a6637\"                             }                         ]             },             \"Subscription\": {                         \"Receivers\": [                             {                                 \"ReceiverName\": \"yukzhang\",                                 \"ReceiverOwnerUserId\": null,                                 \"ReceiverUserId\": 100581064                             }                         ],                         \"RuleGroupId\": null,                         \"RuleId\": 125,                         \"RuleName\": null,                         \"SubscribeType\": [                             1                         ],                         \"WebHooks\": []             },              \"CompareRule\": {                 \"Items\": [                     {                         \"CompareType\": 1,                         \"Operator\": \">\",                         \"ValueComputeType\": 1,                         \"ValueList\": [                             {                                 \"ValueType\": 3,                                 \"Value\": \"0\"                             }                         ]                     }                 ],                 \"CycleStep\": 1             },             \"AlarmLevel\": 2,             \"Description\": \"测试\",             \"Operator\": \"zhangsan\",             \"TargetDatabaseId\": \"6788897uigygh967q23e\",             \"TargetDatabaseName\": \"test\",             \"TargetTableId\": \"y8o97hufe378qygfvbqd\",             \"TargetTableName\": \"dq\",             \"TargetConditionExpr\": \"ct='${yyyy-mm-dd-1}'\",             \"RelConditionExpr\": \"sourceTable.id=targetTable.id\",             \"FieldConfig\": {                \"TableConfig\": [             {                 \"DatabaseId\": \"NW0VL_YYPESvi8w\",                 \"DatabaseName\": \"default\",                 \"TableId\": \"EHdPET2IKQ2KBhGw\",                 \"TableName\": \"dq_student\",                 \"TableKey\": \"table_1\",                 \"FieldConfig\": [                     {                         \"FieldKey\": \"table_1.column_1\",                         \"FieldDataType\": \"int\",                         \"FieldValue\": \"id\"                     }                 ]             }         ],         \"WhereConfig\": [             {                 \"FieldKey\": \"param_1\",                 \"FieldDataType\": \"int\",                 \"FieldValue\": \"id\"             }         ]             },             \"MultiSourceFlag\": true,             \"WhereFlag\": true,             \"TemplateSql\": \"select count(${table_1.column_1}) from ${table_1}\",             \"SubQualityDim\": 1,             \"TargetObjectType\": 1,             \"TargetObjectDataType\": 1,             \"TargetObjectDataTypeName\": \"name\",             \"TargetObjectValue\": \"value\"         }",
           "member": "Rule",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10215,7 +10219,7 @@
         {
           "disabled": false,
           "document": "模板类型  1.系统模板   2.自定义模板",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -10224,7 +10228,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "123456",
+          "example": "规则模版",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -10233,7 +10237,7 @@
         {
           "disabled": false,
           "document": "质量检测维度 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "QualityDim",
           "required": false,
@@ -10251,7 +10255,7 @@
         {
           "disabled": false,
           "document": "模板描述",
-          "example": "123456",
+          "example": "描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -10260,7 +10264,7 @@
         {
           "disabled": false,
           "document": "源端对应的引擎类型",
-          "example": "123456",
+          "example": "[         2     ]",
           "member": "uint64",
           "name": "SourceEngineTypes",
           "required": false,
@@ -10278,7 +10282,7 @@
         {
           "disabled": false,
           "document": "SQL 表达式",
-          "example": "123456",
+          "example": "c2VsZWN0IGNvdW50KCR7dGFibGVfY29sdW1uXzJ9ID0gJHt0YWJsZV9jb2x1bW5fMn0=",
           "member": "string",
           "name": "SqlExpression",
           "required": false,
@@ -10311,7 +10315,7 @@
         {
           "disabled": false,
           "document": "模板Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Data",
           "output_required": true,
@@ -10342,7 +10346,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "678564",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -11284,6 +11288,7 @@
           "example": "datasource1",
           "member": "string",
           "name": "DatasourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11294,6 +11299,7 @@
           "example": "123456",
           "member": "string",
           "name": "DatasourceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11304,6 +11310,7 @@
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11314,6 +11321,7 @@
           "example": "123456",
           "member": "string",
           "name": "DatabaseId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11324,6 +11332,7 @@
           "example": "EMR123456",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11334,6 +11343,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DatasourceType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11344,6 +11354,7 @@
           "example": "123",
           "member": "string",
           "name": "OriginDatabaseName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11354,8 +11365,20 @@
           "example": "123",
           "member": "string",
           "name": "OriginSchemaName",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0或者未返回.未定义，1.生产 2.开发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DsEnvType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11566,7 +11589,7 @@
           "example": "Default",
           "member": "string",
           "name": "DatabaseNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11576,7 +11599,7 @@
           "example": "Desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11586,7 +11609,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11596,7 +11619,7 @@
           "example": "uuid",
           "member": "string",
           "name": "Instance",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11606,7 +11629,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11616,7 +11639,7 @@
           "example": "beijing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11626,7 +11649,7 @@
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11636,7 +11659,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11646,7 +11669,17 @@
           "example": "无",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源附带参数信息Params json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParamsString",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12096,7 +12129,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "123",
+          "example": "\"321123\"",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -12105,7 +12138,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -12142,7 +12175,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -12151,7 +12184,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -12176,7 +12209,7 @@
         {
           "disabled": false,
           "document": "任务删除成功与否标识\n0表示删除成功\n1 表示失败，失败原因见 DeleteErrInfo\n100 表示running or suspend task can't be deleted失败，失败原因也会写到DeleteErrInfo里面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DeleteFlag",
           "output_required": false,
@@ -12186,7 +12219,7 @@
         {
           "disabled": false,
           "document": "删除失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"删除失败+err\"",
           "member": "string",
           "name": "DeleteErrInfo",
           "output_required": false,
@@ -12208,7 +12241,7 @@
         {
           "disabled": false,
           "document": "操作者name",
-          "example": "123",
+          "example": "\"tom\"",
           "member": "string",
           "name": "OperatorName",
           "required": true,
@@ -12217,7 +12250,7 @@
         {
           "disabled": false,
           "document": "项目/工作空间id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -12226,7 +12259,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"40c442b0-3a33-4a95-ae7f-452eb5fdfa50\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -12250,7 +12283,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Data",
           "output_required": true,
@@ -12544,7 +12577,7 @@
         {
           "disabled": false,
           "document": "模板Id列表",
-          "example": "无",
+          "example": "[     1   ]",
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -12581,7 +12614,7 @@
         {
           "disabled": false,
           "document": "主键ID",
-          "example": "6798",
+          "example": "\"123212412\"",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -12590,7 +12623,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "78909",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -12599,7 +12632,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "7898",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -12626,6 +12659,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -12995,7 +13029,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "67847",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -13049,7 +13083,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "2022-12-12 12:12:12",
+          "example": "\"2022-12-12 12:12:12\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -13058,7 +13092,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2022-12-12 12:12:12",
+          "example": "\"2022-12-12 12:12:12\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -13186,7 +13220,7 @@
         {
           "disabled": false,
           "document": "消息ID",
-          "example": "kjhgf",
+          "example": "123421",
           "member": "string",
           "name": "MessageId",
           "required": false,
@@ -13229,7 +13263,7 @@
         {
           "disabled": false,
           "document": "总记录数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -14828,7 +14862,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "45678965",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -14861,7 +14895,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "{       \"TableTotal\": 1,       \"ColumnTotal\": 1,       \"TableConfig\": 1,       \"ColumnConfig\": 1,       \"TableExec\": 1,       \"ColumnExec\": 1     }",
           "member": "DataCheckStat",
           "name": "Data",
           "output_required": true,
@@ -14947,7 +14981,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -15001,7 +15035,7 @@
         {
           "disabled": false,
           "document": "数据源名称过滤",
-          "example": "123",
+          "example": "test_mysql",
           "member": "string",
           "name": "DatasourceName",
           "required": false,
@@ -15016,7 +15050,7 @@
         {
           "disabled": false,
           "document": "总条数。",
-          "example": "无",
+          "example": "55",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -15204,7 +15238,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "[{\"Name\":\"type\",\"Values\":[\"HIVE\"]},{\"Name\":\"datasourceId\",\"Values\":[\"xcd-erere\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -15227,13 +15261,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库列表",
+          "document": "数据库列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DatabaseInfo",
           "name": "DatabaseInfo",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15638,7 +15672,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "12345678",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -15647,7 +15681,7 @@
         {
           "disabled": false,
           "document": "数据来源id",
-          "example": "12eq",
+          "example": "2345678",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
@@ -15656,7 +15690,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "无",
+          "example": "[         {             \"Name\": \"DatabaseId\",             \"Values\": [                 \"Z9ihkBxtQaa0FmNcfA_hZw\"             ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -15674,6 +15708,7 @@
           "example": "无",
           "member": "DimensionScore",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16635,7 +16670,7 @@
         {
           "disabled": false,
           "document": "规则组执行策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"RuleGroupId\": 1,       \"MonitorType\": 1,       \"ExecQueue\": \"test\",       \"ExecutorGroupId\": \"5678987567\",       \"ExecutorGroupName\": \"执行队列\",       \"Tasks\": [         {           \"TaskId\": \"56777777777767tgy676tgy\",           \"TaskName\": \"任务名\",           \"WorkflowId\": \"67tyg9h87yhun80o7yuh\"         }       ],       \"StartTime\": \"2023-10-01\",       \"EndTime\": \"2023-10-01\",       \"CycleType\": \"abc\",       \"DelayTime\": 1,       \"CycleStep\": 1,       \"TaskAction\": \"2\",       \"ExecEngineType\": \"HIVE\",       \"ExecPlan\": \"2024-03-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次\",       \"RuleId\": 1,       \"RuleName\": \"规则1\"     }",
           "member": "RuleGroupExecStrategy",
           "name": "Data",
           "output_required": true,
@@ -17364,7 +17399,7 @@
         {
           "disabled": false,
           "document": "日志",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -17386,7 +17421,7 @@
         {
           "disabled": false,
           "document": "项目/工作空间id",
-          "example": "1",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -17467,7 +17502,7 @@
         {
           "disabled": false,
           "document": "状态列表（如成功 2，正在执行 1），可选",
-          "example": "[]",
+          "example": "[2]",
           "member": "int64",
           "name": "StateList",
           "required": true,
@@ -17491,7 +17526,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -17511,7 +17546,7 @@
         {
           "disabled": false,
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -17720,9 +17755,10 @@
         {
           "disabled": false,
           "document": "日志列表",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17732,6 +17768,7 @@
           "example": "无",
           "member": "InstanceLogList",
           "name": "InstanceLogList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17792,9 +17829,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17804,6 +17842,7 @@
           "example": "无",
           "member": "IntegrationInstanceLog",
           "name": "InstanceLogInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18130,7 +18169,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "123",
+          "example": "\"13231231\"",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -18139,7 +18178,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18147,8 +18186,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "201. stream, 202. offline",
+          "document": "任务类型，201为实时任务，202为离线任务",
+          "example": "201",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
@@ -18173,7 +18212,7 @@
         {
           "disabled": false,
           "document": "上游节点是否已经修改。true 已修改，需要提示；false 没有修改\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "SourceCheckFlag",
           "output_required": true,
@@ -18204,7 +18243,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "13231241233",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18222,7 +18261,7 @@
         {
           "disabled": false,
           "document": "资源组id",
-          "example": "1",
+          "example": "132131",
           "member": "string",
           "name": "ExecutorGroupId",
           "required": false,
@@ -18237,7 +18276,7 @@
         {
           "disabled": false,
           "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationStatisticsTrendResult",
           "name": "TrendsData",
           "output_required": true,
@@ -18292,7 +18331,7 @@
         {
           "disabled": false,
           "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationStatisticsTrendResult",
           "name": "TrendsData",
           "output_required": true,
@@ -18457,7 +18496,7 @@
         {
           "disabled": false,
           "document": "告警事件统计\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"important\":1,\"ordinary\":0,\"urgent\":0}",
+          "example": "\"{\"important\":1,\"ordinary\":0,\"urgent\":0}\"",
           "member": "string",
           "name": "AlarmEvent",
           "output_required": true,
@@ -18488,7 +18527,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18552,7 +18591,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18570,7 +18609,7 @@
         {
           "disabled": false,
           "document": "资源组id",
-          "example": "1",
+          "example": "\"2312312\"",
           "member": "string",
           "name": "ExecutorGroupId",
           "required": false,
@@ -18585,7 +18624,7 @@
         {
           "disabled": false,
           "document": "统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationStatisticsTrendResult",
           "name": "TrendsData",
           "output_required": true,
@@ -18607,7 +18646,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "5c6f6968-97c0-4e40-b25b-8258c0170f4",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -18616,7 +18655,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18625,7 +18664,7 @@
         {
           "disabled": false,
           "document": "任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型",
-          "example": "201. stream, 202. offline",
+          "example": "201",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
@@ -18634,7 +18673,7 @@
         {
           "disabled": false,
           "document": "提交版本号",
-          "example": "无",
+          "example": "12",
           "member": "int64",
           "name": "InstanceVersion",
           "required": false,
@@ -18691,7 +18730,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18753,8 +18792,8 @@
         },
         {
           "disabled": false,
-          "document": "201. stream, 202. offline 默认实时",
-          "example": "201. stream, 202. offline",
+          "document": "201. 实时同步, 202. 离线同步 默认实时",
+          "example": "201",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
@@ -18772,15 +18811,17 @@
           "example": "无",
           "member": "IntegrationTaskInfo",
           "name": "TaskInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -18808,7 +18849,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "\"123\"",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -18841,7 +18882,7 @@
         {
           "disabled": false,
           "document": "任务节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationNodeInfo",
           "name": "Nodes",
           "output_required": true,
@@ -18851,7 +18892,7 @@
         {
           "disabled": false,
           "document": "任务映射信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationNodeMapping",
           "name": "Mappings",
           "output_required": true,
@@ -18961,7 +19002,7 @@
         {
           "disabled": false,
           "document": "长连接临时token",
-          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIiOlt7InVzZXJfaWQiOiIxMTE",
+          "example": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIiOlt7InVzZXJfaWQiOiIxMTE\"",
           "member": "string",
           "name": "Token",
           "output_required": true,
@@ -18971,7 +19012,7 @@
         {
           "disabled": false,
           "document": "长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "example": "\"true\"",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -20057,8 +20098,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
-          "example": "123456",
+          "document": "项目ID（必填）",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -20066,7 +20107,7 @@
         },
         {
           "disabled": false,
-          "document": "页面大小",
+          "document": "页面大小（必填）",
           "example": "1",
           "member": "uint64",
           "name": "PageSize",
@@ -20075,7 +20116,7 @@
         },
         {
           "disabled": false,
-          "document": "分页序号",
+          "document": "分页序号（必填）",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -20221,7 +20262,7 @@
         {
           "disabled": false,
           "document": "数据来源id",
-          "example": "12",
+          "example": "456789",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
@@ -20239,7 +20280,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "无",
+          "example": "[         {             \"Name\": \"DatabasesIds\",             \"Values\": [                 \"Z9ihkBxtQaa0FmNcfA_hZw\"             ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -20254,9 +20295,10 @@
         {
           "disabled": false,
           "document": "质量评分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"CompositeScore\": 13.64,             \"ScoringDistribution\": [                 {                     \"Level\": 1,                     \"Scale\": 0,                     \"TableNumber\": 0                 },                 {                     \"Level\": 2,                     \"Scale\": 0,                     \"TableNumber\": 0                 },                 {                     \"Level\": 3,                     \"Scale\": 0,                     \"TableNumber\": 0                 }             ],             \"TotalTableNumber\": 1         }",
           "member": "QualityScore",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -20293,7 +20335,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "12",
+          "example": "234567",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -20302,7 +20344,7 @@
         {
           "disabled": false,
           "document": "数据来源id",
-          "example": "12",
+          "example": "4567",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
@@ -20320,7 +20362,7 @@
         {
           "disabled": false,
           "document": "过滤参数",
-          "example": "无",
+          "example": "[         {             \"Name\": \"DatabasesIds\",             \"Values\": [                 \"Z9ihkBxtQaa0FmNcfA_hZw\"             ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -20335,9 +20377,10 @@
         {
           "disabled": false,
           "document": "质量评分趋势视图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"AverageScore\": 0.0,             \"DailyScoreList\": [                  {                      \"StatisticsDate\": 0,                      \"Score\": 0.0                  }               ]         }",
           "member": "QualityScoreTrend",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -20356,7 +20399,7 @@
         {
           "disabled": false,
           "document": "实时任务id",
-          "example": "无",
+          "example": "\"20220331184313320\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -20364,8 +20407,8 @@
         },
         {
           "disabled": false,
-          "document": "工程id",
-          "example": "无",
+          "document": "项目id",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -20444,7 +20487,7 @@
         {
           "disabled": false,
           "document": "总读取记录数",
-          "example": "无",
+          "example": "91171",
           "member": "uint64",
           "name": "TotalRecordNumOfRead",
           "output_required": true,
@@ -20454,7 +20497,7 @@
         {
           "disabled": false,
           "document": "总读取字节数",
-          "example": "无",
+          "example": "91171",
           "member": "uint64",
           "name": "TotalRecordByteNumOfRead",
           "output_required": true,
@@ -20464,7 +20507,7 @@
         {
           "disabled": false,
           "document": "总写入记录数",
-          "example": "无",
+          "example": "91171",
           "member": "uint64",
           "name": "TotalRecordNumOfWrite",
           "output_required": true,
@@ -20474,7 +20517,7 @@
         {
           "disabled": false,
           "document": "总写入字节数 单位字节",
-          "example": "无",
+          "example": "1911271",
           "member": "uint64",
           "name": "TotalRecordByteNumOfWrite",
           "output_required": true,
@@ -20484,7 +20527,7 @@
         {
           "disabled": false,
           "document": "总的脏记录数据",
-          "example": "无",
+          "example": "91171",
           "member": "uint64",
           "name": "TotalDirtyRecordNum",
           "output_required": true,
@@ -20494,7 +20537,7 @@
         {
           "disabled": false,
           "document": "总的脏字节数 单位字节",
-          "example": "无",
+          "example": "1291171",
           "member": "uint64",
           "name": "TotalDirtyRecordByte",
           "output_required": true,
@@ -20504,7 +20547,7 @@
         {
           "disabled": false,
           "document": "运行时长 单位s",
-          "example": "无",
+          "example": "91171",
           "member": "uint64",
           "name": "TotalDuration",
           "output_required": true,
@@ -20514,7 +20557,7 @@
         {
           "disabled": false,
           "document": "开始运行时间",
-          "example": "无",
+          "example": "2022-04-10 16:27:09",
           "member": "string",
           "name": "BeginRunTime",
           "output_required": true,
@@ -20524,7 +20567,7 @@
         {
           "disabled": false,
           "document": "目前运行到的时间",
-          "example": "无",
+          "example": "2022-04-11 17:46:40",
           "member": "string",
           "name": "EndRunTime",
           "output_required": true,
@@ -20545,8 +20588,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
+          "document": "任务id",
+          "example": "\"123\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -20555,7 +20598,7 @@
         {
           "disabled": false,
           "document": "带毫秒的时间戳",
-          "example": "无",
+          "example": "1712803796000",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -20564,7 +20607,7 @@
         {
           "disabled": false,
           "document": "带毫秒的时间戳",
-          "example": "无",
+          "example": "1712809796000",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -20581,8 +20624,8 @@
         },
         {
           "disabled": false,
-          "document": "无",
-          "example": "无",
+          "document": "项目id",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -20882,7 +20925,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": " {       \"TotalCnt\": 1,       \"DimCntList\": [         {           \"Dim\": 1,           \"Cnt\": 1         }       ]     }",
           "member": "RuleDimStat",
           "name": "Data",
           "output_required": true,
@@ -20928,7 +20971,7 @@
         {
           "disabled": false,
           "document": "规则执行结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"DatabaseId\": \"zw-oGh2Y9XSkZxkPQVA\",             \"DatabaseName\": \"at_dlc_sh_dq\",             \"DatasourceId\": 6259,             \"DatasourceName\": \"dlc_qehpp208\",             \"DatasourceType\": 3,             \"InstanceId\": \"qep208\",             \"RuleExecResult\": {                 \"AlarmLevel\": 1,                 \"CompareResult\": {                     \"Items\": [                         {                             \"CompareType\": 5,                             \"FixResult\": null,                             \"Operator\": \"==\",                             \"ResultValue\": \"3.0000\",                             \"ValueComputeType\": null,                             \"Values\": [                                 {                                     \"Value\": \"0\",                                     \"ValueType\": 3                                 }                             ]                         }                     ],                     \"PassRows\": null,                     \"TotalRows\": 3,                     \"TriggerRows\": null                 },                 \"ConditionExpression\": \"全表\",                 \"ExecResultStatus\": 1,                 \"FieldConfig\": null,                 \"QualityDim\": 5,                 \"RelConditionExpr\": null,                 \"RuleExecId\": 341876,                 \"RuleGroupExecId\": 112532,                 \"RuleGroupId\": 308,                 \"RuleId\": 885,                 \"RuleName\": \"data_in_time_fail\",                 \"RuleType\": 1,                 \"SourceObjectDataTypeName\": \"table\",                 \"SourceObjectValue\": \"表\",                 \"StartTime\": \"2024-04-09 21:10:25\",                 \"TargetDBTableName\": \"null.null\",                 \"TargetObjectDataType\": null,                 \"TargetObjectValue\": null,                 \"TemplateName\": \"数据产出及时性\",                 \"TriggerResult\": \"无\"             },             \"TableId\": \"OE3C5Y0Qp5Sh40qq9g\",             \"TableName\": \"auto_dlc_test_dq\",             \"TableOwnerUserId\": 10002056         }",
           "member": "RuleExecResultDetail",
           "name": "Data",
           "output_required": true,
@@ -21075,7 +21118,7 @@
         {
           "disabled": false,
           "document": "规则执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"Finished\": true,       \"Log\": \"[2024-04-09 21:10:24]-[INFO] the rule-sql list :\"     }",
           "member": "RuleExecLog",
           "name": "Data",
           "output_required": true,
@@ -21176,7 +21219,7 @@
         {
           "disabled": false,
           "document": "规则执行结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"Items\": [                 {                     \"AlarmLevel\": 1,                     \"CompareResult\": {                          \"Items\": [                             {                                 \"CompareType\": 5,                                 \"FixResult\": null,                                 \"Operator\": \"==\",                                 \"ResultValue\": \"3.0000\",                                 \"ValueComputeType\": null,                                 \"Values\": [                                     {                                         \"Value\": \"0\",                                         \"ValueType\": 3                                     }                                 ]                             }                         ],                         \"PassRows\": null,                         \"TotalRows\": 3,                         \"TriggerRows\": null                     },                     \"ConditionExpression\": \"全表\",                     \"ExecResultStatus\": 1,                     \"FieldConfig\": null,                     \"QualityDim\": 5,                     \"RelConditionExpr\": null,                     \"RuleExecId\": 341876,                     \"RuleGroupExecId\": 11232,                     \"RuleGroupId\": 308,                     \"RuleId\": 885,                     \"RuleName\": \"data_in_time_fail\",                     \"RuleType\": 1,                     \"SourceObjectDataTypeName\": \"table\",                     \"SourceObjectValue\": \"表\",                     \"StartTime\": \"2024-04-09 21:10:25\",                     \"TargetDBTableName\": \"null.null\",                     \"TargetObjectDataType\": null,                     \"TargetObjectValue\": null,                     \"TemplateName\": \"数据产出及时性\",                      \"TriggerResult\": \"无\"                 }             ],             \"TotalCount\": 1         }",
           "member": "RuleExecResultPage",
           "name": "Data",
           "output_required": true,
@@ -21231,7 +21274,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "{       \"TotalCnt\": 1,       \"LastTotalCnt\": 1,       \"TotalCntRatio\": 0,       \"LastTotalCntRatio\": 0,       \"TriggerCnt\": 1,       \"LastTriggerCnt\": 1,       \"TriggerCntRatio\": 0,       \"LastTriggerCntRatio\": 0,       \"AlarmCnt\": 1,       \"LastAlarmCnt\": 1,       \"AlarmCntRatio\": 0,       \"LastAlarmCntRatio\": 0,       \"PipelineCnt\": 1,       \"LastPipelineCnt\": 1,       \"PipelineCntRatio\": 0,       \"LastPipelineCntRatio\": 0     }",
           "member": "RuleExecStat",
           "name": "Data",
           "output_required": true,
@@ -21271,7 +21314,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "无",
+          "example": "[         {             \"Name\": \"StartTime\",             \"Values\":             [                 \"1712160000\"             ]         },         {             \"Name\": \"EndTime\",             \"Values\":             [                 \"1712764799\"             ]         }  ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -21280,7 +21323,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "无",
+          "example": "[             {                 \"Name\": \"CitationCount\",                 \"Direction\": \"DESC\"             }         ]",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
@@ -21289,7 +21332,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123456",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -21304,7 +21347,7 @@
         {
           "disabled": false,
           "document": "规则组执行结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"Items\": [                 {                     \"AlarmRuleCount\": 1,                     \"BizCatalogId\": null,                     \"BizCatalogName\": null,                     \"DatabaseId\": \"sqhsS5G57A\",                     \"DatasourceId\": \"92\",                     \"EngineType\": \"HIVE\",                     \"ExecDetail\": \"2024-04-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次\",                     \"ExecTime\": \"2024-04-10 17:01:23\",                     \"FailMsg\": null,                     \"Permission\": true,                     \"RuleExecResultVOList\": [                         {                             \"AlarmLevel\": 3,                             \"CompareResult\": {                                 \"ComputeExpression\": \"0\",                                 \"Items\": [                                     {                                         \"CompareType\": 1,                                         \"FixResult\": 1,                                         \"Operator\": \"\\u003e\",                                         \"ResultValue\": \"2.0000\",                                         \"ValueComputeType\": null,                                         \"Values\": [                                             {                                                 \"Value\": \"1\",                                                 \"ValueType\": 3                                             }                                         ]                                     }                                 ],                                 \"PassRows\": null,                                 \"TotalRows\": null,                                 \"TriggerRows\": null                             },                             \"ConditionExpression\": null,                             \"ExecResultStatus\": 2,                             \"FieldConfig\": null,                             \"QualityDim\": 2,                             \"RelConditionExpr\": null,                             \"RuleExecId\": 3047,                             \"RuleGroupExecId\": 1071,                             \"RuleGroupId\": 1726,                             \"RuleId\": 14723,                             \"RuleName\": \"文件上传规则\",                             \"RuleType\": 3,                             \"SourceObjectDataTypeName\": \"table\",                             \"SourceObjectValue\": \"表\",                             \"StartTime\": \"2024-04-10 17:01:23\",                             \"TargetDBTableName\": \"null.null\",                             \"TargetObjectDataType\": null,                             \"TargetObjectValue\": null,                             \"TemplateName\": \"用户定义SQL\",                             \"TriggerCondition\": \"固定值大于1\",                             \"TriggerResult\": \"发送告警成功, 阻断任务成功\"                         }                     ],                     \"RuleGroupExecId\": 1057371,                     \"RuleGroupId\": 1726,                     \"Status\": 4,                     \"TableId\": \"fr7xvusttwfQ\",                     \"TableName\": \"at_1\",                     \"TableOwnerName\": \"AUEST\",                     \"TotalRuleCount\": 1,                     \"TriggerType\": 3                 }             ],             \"TotalCount\": 1         }",
           "member": "RuleGroupExecResultPage",
           "name": "Data",
           "output_required": true,
@@ -21417,7 +21460,7 @@
         {
           "disabled": false,
           "document": "数据表Id",
-          "example": "123456",
+          "example": "65R7TYFU9862YE",
           "member": "string",
           "name": "TableId",
           "required": false,
@@ -21435,7 +21478,7 @@
         {
           "disabled": false,
           "document": "数据库ID",
-          "example": "123456",
+          "example": "7568tfvgy57tfvgy",
           "member": "string",
           "name": "DatabaseId",
           "required": false,
@@ -21450,7 +21493,7 @@
         {
           "disabled": false,
           "document": "数据质量规则组详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"CreateTime\": null,             \"DatabaseId\": null,             \"DatabaseName\": \"v_vzjfzng\",             \"DatasourceId\": null,             \"DatasourceName\": \"hive_er-o5bxp\",             \"DatasourceType\": 2,             \"ExecStrategy\": null,             \"InstanceId\": \"emr-ovzb5bxp\",             \"MonitorStatus\": true,             \"MonitorType\": null,             \"Permission\": true,             \"RuleCount\": 0,             \"RuleGroupId\": null,             \"Subscription\": null,             \"TableId\": \"XuKflA-wQbbohxQbg\",             \"TableName\": \"test\",             \"TableOwnerName\": \"zheyuang\",             \"TableOwnerUserId\": null,             \"UpdateTime\": null         }",
           "member": "RuleGroup",
           "name": "Data",
           "output_required": true,
@@ -21496,7 +21539,7 @@
         {
           "disabled": false,
           "document": "规则组订阅信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"RuleGroupId\": 1,       \"Receivers\": [         {           \"ReceiverOwnerUserId\": 1,           \"ReceiverUserId\": 1,           \"ReceiverName\": \"zhangsan\"         }       ],       \"SubscribeType\": [         1       ],       \"WebHooks\": [         {           \"HookType\": \"8\",           \"HookAddress\": \"http:www.baidu.com\"         }       ],       \"RuleId\": 1,       \"RuleName\": \"规则1\"     }",
           "member": "RuleGroupSubscribe",
           "name": "Data",
           "output_required": true,
@@ -21518,7 +21561,7 @@
         {
           "disabled": false,
           "document": "表ID",
-          "example": "x",
+          "example": "sqhsS5G57A",
           "member": "string",
           "name": "TableId",
           "required": true,
@@ -21533,7 +21576,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{       \"TableInfo\": {         \"TableId\": \"896rtfyogbasd\",         \"TableName\": \"teste\",         \"InstanceId\": \"5679t8yihub\",         \"DatasourceId\": \"6789\",         \"DatasourceName\": \"hive-uij97ug\",         \"DatasourceType\": 0,         \"DatabaseId\": \"7tyg89i8yuh\",         \"DatabaseName\": \"dbName\",         \"ProjectId\": 0,         \"UserId\": 0       },       \"RuleGroups\": [         {           \"Id\": 0,           \"MonitorType\": 0,           \"StartTime\": \"2023-10-01\",           \"EndTime\": \"2023-10-01\",           \"CycleType\": \"10\",           \"CycleStep\": 0,           \"CycleDesc\": \"abc\",           \"TaskAction\": \"abc\",           \"DelayTime\": 0,           \"CycleTaskId\": \"abc\",           \"AssociateTaskIds\": [             \"abc\"           ]         }       ],       \"Subscriptions\": [         {           \"RuleGroupId\": 1,           \"Receivers\": [             {               \"ReceiverOwnerUserId\": 1,               \"ReceiverUserId\": 1,               \"ReceiverName\": \"zhangan\"             }           ],           \"SubscribeType\": [             1           ],           \"WebHooks\": [             {               \"HookType\": \"1\",               \"HookAddress\": \"zhangsan\"             }           ],           \"RuleId\": 1,           \"RuleName\": \"规则1\"         }       ]     }",
           "member": "RuleGroupTable",
           "name": "Data",
           "output_required": true,
@@ -21573,7 +21616,7 @@
         {
           "disabled": false,
           "document": "过滤条件,每次请求的Filters的上限为10，Filter.Values的上限为5",
-          "example": "无",
+          "example": "[         {             \"Name\": \"StartTime\",             \"Values\":             [                 \"1712160000\"             ]         },         {             \"Name\": \"EndTime\",             \"Values\":             [                 \"1712764799\"             ]         }  ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -21582,7 +21625,7 @@
         {
           "disabled": false,
           "document": "排序方式",
-          "example": "无",
+          "example": "[             {                 \"Name\": \"CitationCount\",                 \"Direction\": \"DESC\"             }         ]",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
@@ -21591,7 +21634,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "123456",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -21606,7 +21649,7 @@
         {
           "disabled": false,
           "document": "规则组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"Items\": [                 {                     \"BizCatalogId\": null,                     \"BizCatalogName\": null,                     \"CreateTime\": \"2024-03-28 21:25:54\",                     \"DatabaseId\": \"IBw6DFI_pGVj1F73Q\",                     \"DatabaseName\": \"deo_hve_3\",                     \"DatasourceId\": \"968\",                     \"DatasourceName\": \"hive_emr-dbrxq\",                     \"DatasourceType\": 2,                     \"ExecStrategy\": null,                     \"InstanceId\": null,                     \"MonitorStatus\": null,                     \"MonitorType\": null,                     \"Permission\": true,                     \"RuleCount\": null,                     \"RuleGroupId\": null,                     \"StrategyConfiged\": false,                     \"SubscribeConfiged\": false,                     \"Subscription\": null,                     \"TableId\": \"uEx-slyaR9mod2pr3Zw\",                     \"TableName\": \"mysql_l_read\",                     \"TableOwnerName\": null,                     \"TableOwnerUserId\": 1048673,                     \"UpdateTime\": null                 }             ],             \"TotalCount\": 1         }",
           "member": "RuleGroupPage",
           "name": "Data",
           "output_required": true,
@@ -21716,7 +21759,7 @@
         {
           "disabled": false,
           "document": "规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"AlarmLevel\": 2,             \"CompareRule\": {                 \"ComputeExpression\": \"0\",                 \"CycleStep\": 1,                 \"Items\": [                     {                         \"CompareType\": 1,                         \"Operator\": \"\\u003e\",                         \"ValueComputeType\": 1,                         \"ValueList\": [                             {                                 \"Value\": \"10\",                                 \"ValueType\": 3                             }                         ]                     }                 ]             },             \"ConditionExpression\": \"pt=substring('${yyyyMMddHHmmss-1H}',1,10)\",             \"ConditionType\": 1,             \"CreateTime\": \"2024-02-22 21:49:55\",             \"CustomSql\": \"SELECT id,name FROM `at_hive_bj`.`at_hive_22`;\", \"DatabaseId\": \"roeqgaBtT4m22RyjnMQ\", \"DatasourceId\": \"678990\",             \"Description\": null,             \"ExecStrategy\": {                 \"CycleStep\": 10,                 \"CycleType\": \"I\",                 \"DelayTime\": 0,                 \"EndTime\": \"2099-12-31 23:59:59\",                 \"ExecEngineType\": \"HIVE\",                 \"ExecPlan\": \"2024-03-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次\",                 \"ExecQueue\": \"default\",                 \"ExecutorGroupId\": \"20240307193015743960\",                 \"ExecutorGroupName\": \"wedata-test-use-sch-sh\",                 \"MonitorType\": 3,                 \"RuleGroupId\": null,                 \"RuleId\": 1293,                 \"RuleName\": \"表记录数小于10\",                 \"StartTime\": \"2024-03-07 00:00:00\",                 \"TaskAction\": \"\", \"Tasks\": [                             {                                 \"TaskId\": \"20240205135835\",                                 \"TaskName\": \"at_qualire_task_1708606293AquG\",                                 \"WorkflowId\": \"1c2a85c6-d181-11eeb-b8cef68a6637\"                             }                         ]             },             \"FieldConfig\": null,             \"MonitorStatus\": 0,             \"MultiSourceFlag\": false,             \"Name\": \"表记录数小于10\",             \"Operator\": \"dylandlwu\",             \"QualityDim\": 1,             \"RelConditionExpr\": \"sourceTable.id=targetTable.id\",             \"RuleGroupId\": 371,             \"RuleId\": 1293,             \"RuleTemplateContent\": \"准确性: 表行数\",             \"RuleTemplateId\": 1,             \"SourceEngineTypes\": [                 2,                 4,                 16             ],             \"SourceObjectDataType\": 3,             \"SourceObjectDataTypeName\": \"table\",             \"SourceObjectType\": 2,             \"SourceObjectValue\": \"表\",             \"SubQualityDim\": 0,             \"Subscription\": {                 \"Receivers\": [                     {                         \"ReceiverName\": \"solondeng\",                         \"ReceiverOwnerUserId\": null,                         \"ReceiverUserId\": 100596846                     }                 ],                 \"RuleGroupId\": null,                 \"RuleId\": 1293,                 \"RuleName\": null,                 \"SubscribeType\": [                     1,                     2,                     5                 ],                 \"WebHooks\": [                     {                         \"HookAddress\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=2477c-5a80-43f7-bb6b-6c606420e\",                         \"HookType\": \"qywx\"                     }                 ]             },             \"TableId\": \"O34kNIp-70pmT10q4vQ\",             \"TableName\": null,             \"TableOwnerName\": null,             \"TargetConditionExpr\": null,             \"TargetDatabaseId\": null,             \"TargetDatabaseName\": null,             \"TargetObjectDataType\": null,             \"TargetObjectDataTypeName\": null,             \"TargetObjectType\": null,             \"TargetObjectValue\": null,             \"TargetTableId\": null,             \"TargetTableName\": null,             \"TemplateSql\": null,             \"TriggerCondition\": \"固定值大于10\",             \"Type\": 1,             \"WhereFlag\": false         }",
           "member": "Rule",
           "name": "Data",
           "output_required": true,
@@ -21811,7 +21854,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123456",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -21820,7 +21863,7 @@
         {
           "disabled": false,
           "document": "规则模板Id",
-          "example": "123456",
+          "example": "2",
           "member": "uint64",
           "name": "TemplateId",
           "required": false,
@@ -21835,7 +21878,7 @@
         {
           "disabled": false,
           "document": "模板详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"Items\": [                 {                     \"CitationCount\": 1,                     \"CompareType\": 2,                     \"DatasourceTypes\": [                         2                     ],                     \"Description\": \"（本周期表行数-上一周期表行数）/上一周期表行数\",                     \"MultiSourceFlag\": null,                     \"Name\": \"表行数，上周期波动率\",                     \"QualityDim\": 1,                     \"ResolvedSqlExpression\": null,                     \"RuleTemplateId\": 1239,                     \"SourceContent\": null,                     \"SourceEngineTypes\": [                         2,                         4                     ],                     \"SourceObjectDataType\": 3,                     \"SourceObjectType\": 2,                     \"SqlExpression\": null,                     \"SubQualityDim\": null,                     \"Type\": 1,                     \"UpdateTime\": null,                     \"UserId\": 1,                     \"UserName\": null,                     \"Version\": null,                     \"WhereFlag\": null                 }             ],             \"TotalCount\": 1         }",
           "member": "RuleTemplate",
           "name": "Data",
           "output_required": true,
@@ -21948,7 +21991,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "123456",
+          "example": "153160365952",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -21972,7 +22015,7 @@
         {
           "disabled": false,
           "document": "规则模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"Items\": [                 {                     \"CitationCount\": 1,                     \"CompareType\": 2,                     \"DatasourceTypes\": [                         2                     ],                     \"Description\": \"（本周期表行数-上一周期表行数）/上一周期表行数\",                     \"MultiSourceFlag\": null,                     \"Name\": \"表行数，上周期波动率\",                     \"QualityDim\": 1,                     \"ResolvedSqlExpression\": null,                     \"RuleTemplateId\": 1239,                     \"SourceContent\": null,                     \"SourceEngineTypes\": [                         2,                         4                     ],                     \"SourceObjectDataType\": 3,                     \"SourceObjectType\": 2,                     \"SqlExpression\": null,                     \"SubQualityDim\": null,                     \"Type\": 1,                     \"UpdateTime\": null,                     \"UserId\": 1,                     \"UserName\": null,                     \"Version\": null,                     \"WhereFlag\": null                 }             ],             \"TotalCount\": 1         }",
           "member": "RuleTemplate",
           "name": "Data",
           "output_required": true,
@@ -22012,7 +22055,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "无",
+          "example": "[         {             \"Name\": \"StartTime\",             \"Values\":             [                 \"1712160000\"             ]         },         {             \"Name\": \"EndTime\",             \"Values\":             [                 \"1712764799\"             ]         }  ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -22021,7 +22064,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "无",
+          "example": "[             {                 \"Name\": \"CitationCount\",                 \"Direction\": \"DESC\"             }         ]",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
@@ -22030,7 +22073,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123456",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -22045,7 +22088,7 @@
         {
           "disabled": false,
           "document": "规则质量列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[                 {                     \"AlarmLevel\": 1,                     \"CompareRule\": {                         \"ComputeExpression\": \"0\",                         \"CycleStep\": null,                         \"Items\": [                             {                                 \"CompareType\": 1,                                 \"Operator\": \"\\u003c\",                                 \"ValueComputeType\": null,                                 \"ValueList\": [                                     {                                         \"Value\": \"1\",                                         \"ValueType\": 3                                     }                                 ]                             }                         ]                     },                     \"ConditionExpression\": null,                     \"ConditionType\": null,                     \"CreateTime\": \"2024-04-10 17:59:19\",                     \"CustomSql\": null,                     \"DatabaseId\": \"sqhsS5G5l43Bm7A\",                     \"DatabaseName\": \"at_hive_bj23\",                     \"DatasourceId\": 9682,                     \"DatasourceName\": \"hive_emr-drxq\",                     \"Description\": null,                     \"ExecStrategy\": {                         \"CycleStep\": null,                         \"CycleType\": null,                         \"DelayTime\": null,                         \"EndTime\": null,                         \"ExecEngineType\": null,                         \"ExecPlan\": null,                         \"ExecQueue\": null,                         \"ExecutorGroupId\": null,                         \"ExecutorGroupName\": null,                         \"MonitorType\": null,                         \"RuleGroupId\": null,                         \"RuleId\": null,                         \"RuleName\": null,                         \"StartTime\": null,                         \"TaskAction\": null,                         \"Tasks\": null                     },                     \"FieldConfig\": {                         \"TableConfig\": [                             {                                 \"DatabaseId\": \"sqhsS5Q8-956Ql43Bm7A\",                                 \"DatabaseName\": \"at_hive_bj23\",                                 \"FieldConfig\": [                                     {                                         \"FieldDataType\": \"string\",                                         \"FieldKey\": \"table_1.column_1\",                                         \"FieldValue\": \"cid\"                                     }                                 ],                                 \"TableId\": \"brNMA9jdQovU49I3x2Q\",                                 \"TableKey\": \"table_1\",                                 \"TableName\": \"at_dq_0\"                             }                         ],                         \"WhereConfig\": []                     },                     \"MonitorStatus\": 0,                     \"MultiSourceFlag\": null,                     \"Name\": \"自定义字段模版\",                     \"Operator\": \"tiezhuzhang\",                     \"QualityDim\": 3,                     \"RelConditionExpr\": null,                     \"RuleGroupId\": 1691,                     \"RuleId\": 14735,                     \"RuleTemplateContent\": \"完整性:integrity_col_template\",                     \"RuleTemplateId\": 13516,                     \"SourceEngineTypes\": [                         2                     ],                     \"SourceObjectDataType\": null,                     \"SourceObjectDataTypeName\": null,                     \"SourceObjectType\": 3,                     \"SourceObjectValue\": null,                     \"SubQualityDim\": null,                     \"Subscription\": null,                     \"TableId\": \"brNMA9jdQo69I3x2Q\",                     \"TableName\": \"at_dq_0\",                     \"TableOwnerName\": \"AUTO_TEST\",                     \"TargetConditionExpr\": null,                     \"TargetDatabaseId\": null,                     \"TargetDatabaseName\": null,                     \"TargetObjectDataType\": null,                     \"TargetObjectDataTypeName\": null,                     \"TargetObjectType\": null,                     \"TargetObjectValue\": null,                     \"TargetTableId\": null,                     \"TargetTableName\": null,                     \"TemplateSql\": null,                     \"TriggerCondition\": \"固定值小于1\",                     \"Type\": 2,                     \"WhereFlag\": null                 }             ]",
           "member": "RulePage",
           "name": "Data",
           "output_required": true,
@@ -22067,7 +22110,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123456",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -22076,7 +22119,7 @@
         {
           "disabled": false,
           "document": "规则组id",
-          "example": "123456",
+          "example": "12",
           "member": "uint64",
           "name": "RuleGroupId",
           "required": false,
@@ -22100,9 +22143,10 @@
         {
           "disabled": false,
           "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[       {         \"RuleId\": 1,         \"RuleGroupId\": 1,         \"TableId\": \"79tyugihbksda\",         \"Name\": \"规则\",         \"Type\": 1,         \"RuleTemplateId\": 1,         \"RuleTemplateContent\": \"准确性：表行数\",         \"QualityDim\": 1,         \"SourceObjectType\": 1,         \"SourceObjectDataType\": 1,         \"SourceObjectDataTypeName\": \"string\",         \"SourceObjectValue\": \"1\",         \"ConditionType\": 1,         \"ConditionExpression\": \">\",         \"CustomSql\": \"abc\",         \"CompareRule\": {           \"Items\": [             {               \"CompareType\": 1,               \"Operator\": \">\",               \"ValueComputeType\": 1,               \"ValueList\": [                 {                   \"ValueType\": 1,                   \"Value\": \"1\"                 }               ]             }           ],           \"CycleStep\": 1,           \"ComputeExpression\": \"0\"         },         \"AlarmLevel\": 1,         \"Description\": \"描述\",         \"Operator\": \"zhangsan\",         \"TargetDatabaseId\": \"easdsad-dasdas\",         \"TargetDatabaseName\": \"db1\",         \"TargetTableId\": \"dsadxc-dsada\",         \"TargetTableName\": \"table1\",         \"TargetConditionExpr\": \"0\",         \"RelConditionExpr\": \"sourceTable.id = targetTable.id\",         \"FieldConfig\": {           \"WhereConfig\": [             {               \"FieldKey\": \"name\",               \"FieldValue\": \"zhangsan\",               \"FieldDataType\": \"string\"             }           ],           \"TableConfig\": [             {               \"DatabaseId\": \"7p9gyuih78tgy\",               \"DatabaseName\": \"dbTest\",               \"TableId\": \"7t8ygihb670ygo\",               \"TableName\": \"test\",               \"TableKey\": \"asdfsdf\",               \"FieldConfig\": [                 {                   \"FieldKey\": \"id\",                   \"FieldValue\": \"12\",                   \"FieldDataType\": \"int\"                 }               ]             }           ]         },         \"MultiSourceFlag\": true,         \"WhereFlag\": true,         \"TemplateSql\": \"select count(*) from a\",         \"SubQualityDim\": 1,         \"TargetObjectType\": 1,         \"TargetObjectDataType\": 1,         \"TargetObjectDataTypeName\": \"int\",         \"TargetObjectValue\": \"1\",         \"SourceEngineTypes\": [           2         ],         \"TableName\": \"abc\",         \"TableOwnerName\": \"abc\",         \"ExecStrategy\": {           \"RuleGroupId\": 1,           \"MonitorType\": 1,           \"ExecQueue\": \"default\",           \"ExecutorGroupId\": \"2\",           \"ExecutorGroupName\": \"资源组\",           \"Tasks\": [             {               \"WorkflowId\": \"32131232323\",               \"TaskId\": \"321321321321\",               \"TaskName\": \"shell1\",               \"CycleType\": 1             }           ],           \"StartTime\": \"2023-10-01\",           \"EndTime\": \"2023-10-01\",           \"CycleType\": \"D\",           \"DelayTime\": 1,           \"CycleStep\": 1,           \"TaskAction\": \"\",           \"ExecEngineType\": \"HIVE\",           \"ExecPlan\": \"2024-04-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次\",           \"RuleId\": 1,           \"RuleName\": \"规则\",           \"TriggerTypes\": [             \"2\"           ]         },         \"Subscription\": {           \"RuleGroupId\": 1,           \"Receivers\": [             {               \"ReceiverOwnerUserId\": 1,               \"ReceiverUserId\": 1,               \"ReceiverName\": \"zhangsan\"             }           ],           \"SubscribeType\": [             1           ],           \"WebHooks\": [             {               \"HookType\": \"1\",               \"HookAddress\": \"http://www.test.com\"             }           ],           \"RuleId\": 1,           \"RuleName\": \"规则1\"         },         \"CreateTime\": \"2023-10-01\",         \"DatasourceId\": 1,         \"DatabaseId\": \"sddyhhjj-daskk\",         \"MonitorStatus\": 0,         \"TriggerCondition\": \"固定值 小于 2\"       }     ]",
           "member": "Rule",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23035,7 +23079,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "无",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -23044,7 +23088,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "\"20230112170349643\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -23053,7 +23097,7 @@
         {
           "disabled": false,
           "document": "作业ID",
-          "example": "无",
+          "example": "\"123412\"",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -23062,7 +23106,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "2312311232",
           "member": "uint64",
           "name": "EndTime",
           "required": true,
@@ -23071,7 +23115,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "2312311211",
           "member": "uint64",
           "name": "StartTime",
           "required": true,
@@ -23080,7 +23124,7 @@
         {
           "disabled": false,
           "document": "container名字",
-          "example": "无",
+          "example": "\"pod\"",
           "member": "string",
           "name": "Container",
           "required": false,
@@ -23089,7 +23133,7 @@
         {
           "disabled": false,
           "document": "条数",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -23098,7 +23142,7 @@
         {
           "disabled": false,
           "document": "排序类型 desc asc",
-          "example": "无",
+          "example": "\"desc\"",
           "member": "string",
           "name": "OrderType",
           "required": false,
@@ -23107,7 +23151,7 @@
         {
           "disabled": false,
           "document": "作业运行的实例ID",
-          "example": "无",
+          "example": "12312",
           "member": "uint64",
           "name": "RunningOrderId",
           "required": false,
@@ -23131,7 +23175,7 @@
         {
           "disabled": false,
           "document": "是否是全量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ListOver",
           "output_required": true,
@@ -23282,7 +23326,7 @@
         {
           "disabled": false,
           "document": "表名",
-          "example": "123",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -23291,7 +23335,7 @@
         {
           "disabled": false,
           "document": "如果是hive这里写rpc，如果是其他类型不传",
-          "example": "rpc",
+          "example": "\"rpc\"",
           "member": "string",
           "name": "ConnectionType",
           "required": true,
@@ -23300,7 +23344,7 @@
         {
           "disabled": false,
           "document": "数据库源类型",
-          "example": "HIVE",
+          "example": "\"HIVE\"",
           "member": "string",
           "name": "Catalog",
           "required": true,
@@ -23639,7 +23683,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -23657,7 +23701,7 @@
         {
           "disabled": false,
           "document": "分页大小",
-          "example": "11",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -23666,7 +23710,7 @@
         {
           "disabled": false,
           "document": "过滤参数TableName、DatabaseId 、DatabaseName、OwnerUserName",
-          "example": "无",
+          "example": "[         {             \"Name\": \"StartTime\",             \"Values\":             [                 \"1712160000\"             ]         },         {             \"Name\": \"EndTime\",             \"Values\":             [                 \"1712764799\"             ]         }  ]         }     ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23675,7 +23719,7 @@
         {
           "disabled": false,
           "document": "排序参数 排序方式 DESC 或者 ASC，表得分排序 TableScore",
-          "example": "无",
+          "example": "[             {                 \"Name\": \"CitationCount\",                 \"Direction\": \"DESC\"             }         ]",
           "member": "OrderField",
           "name": "OrderFields",
           "required": false,
@@ -23684,7 +23728,7 @@
         {
           "disabled": false,
           "document": "数据来源id",
-          "example": "qe123",
+          "example": "sykhj23ds-dsdh",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
@@ -23708,9 +23752,10 @@
         {
           "disabled": false,
           "document": "表质量分详情结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{             \"TotalCount\": 4,             \"Items\":             [                 {                     \"DatabaseId\": \"dsadasd-dsad\",                     \"DatabaseName\": \"dq_db1\",                     \"TableId\": \"dsjklj-jkjk\",                     \"TableName\": \"dq_table1\",                     \"OwnerUserId\": 100333290099,                     \"OwnerUserName\": \"zhangsna\",                     \"DatabaseScore\": 0.8,                     \"TableScore\": 12.0,                     \"LastPeriodRatio\": 0.18                 }             ]         }",
           "member": "TableQualityDetailPage",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -23811,7 +23856,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "153161111111111111",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -23838,7 +23883,7 @@
         {
           "disabled": false,
           "document": "表id",
-          "example": "qweqasd",
+          "example": "dewd-dqdsda",
           "member": "string",
           "name": "TableId",
           "required": true,
@@ -23862,9 +23907,10 @@
         {
           "disabled": false,
           "document": "表得分趋势\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "         {             \"AverageScore\": 12.0,             \"DailyScoreList\":             [                 {                     \"StatisticsDate\": 1679414400,                     \"Score\": 8.0                 }             ]         }     ",
           "member": "QualityScoreTrend",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -23883,7 +23929,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "67980",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -23928,7 +23974,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "76645",
+          "example": "j224b9321-3be0-45de-ad6a-8fed924036a4",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -23955,15 +24001,17 @@
           "example": "无",
           "member": "TaskAlarmInfo",
           "name": "TaskAlarmInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -24282,7 +24330,7 @@
         {
           "disabled": false,
           "document": "WeData项目ID",
-          "example": "1",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -24291,7 +24339,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "202205058668886",
+          "example": "\"202205058668886\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -24300,7 +24348,7 @@
         {
           "disabled": false,
           "document": "任务实例数据时间",
-          "example": "2020-05-05 12:00:00",
+          "example": "\"2020-05-05 12:00:00\"",
           "member": "string",
           "name": "CurRunDate",
           "required": false,
@@ -24309,7 +24357,7 @@
         {
           "disabled": false,
           "document": "任务实例运行时间",
-          "example": "2020-05-05 12:04:18",
+          "example": "\"2020-05-05 12:04:18\"",
           "member": "string",
           "name": "IssueDate",
           "required": false,
@@ -24366,7 +24414,7 @@
         {
           "disabled": false,
           "document": "WeData项目ID",
-          "example": "1",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -24375,7 +24423,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "202205058668886",
+          "example": "\"202205058668886\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -24384,7 +24432,7 @@
         {
           "disabled": false,
           "document": "任务实例数据时间",
-          "example": "2020-05-05 12:00:00",
+          "example": "\"2020-05-05 12:00:00",
           "member": "string",
           "name": "CurRunDate",
           "required": false,
@@ -24393,7 +24441,7 @@
         {
           "disabled": false,
           "document": "任务实例运行时间",
-          "example": "2020-05-05 12:04:18",
+          "example": "\"2020-05-05 12:04:18\"",
           "member": "string",
           "name": "IssueDate",
           "required": false,
@@ -24649,7 +24697,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -24658,7 +24706,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "\"11022568003970304\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -24667,7 +24715,7 @@
         {
           "disabled": false,
           "document": "任务类型：201. stream,   202. offline",
-          "example": "123",
+          "example": "\"201",
           "member": "uint64",
           "name": "TaskType",
           "required": true,
@@ -24704,7 +24752,7 @@
         {
           "disabled": false,
           "document": "WeData项目id",
-          "example": "1",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -24713,7 +24761,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "202205058668886",
+          "example": "\"202205058668886\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -24740,7 +24788,7 @@
         {
           "disabled": false,
           "document": "任务状态，多个状态用逗号连接",
-          "example": "1,2",
+          "example": "\"1,2\"",
           "member": "string",
           "name": "StateList",
           "required": false,
@@ -24749,7 +24797,7 @@
         {
           "disabled": false,
           "document": "排序字段名",
-          "example": "startDate",
+          "example": "\"startDate\"",
           "member": "string",
           "name": "SortItem",
           "required": false,
@@ -24758,7 +24806,7 @@
         {
           "disabled": false,
           "document": "升序或降序，传ASC或DESC",
-          "example": "DESC",
+          "example": "\"DESC\"",
           "member": "string",
           "name": "SortType",
           "required": false,
@@ -24853,7 +24901,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "202205058668886",
+          "example": "\"202205058668886\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -24862,7 +24910,7 @@
         {
           "disabled": false,
           "document": "统计周期的开始日期，格式为 yyyy-MM-dd",
-          "example": "2022-05-01",
+          "example": "\"2022-05-01\"",
           "member": "date",
           "name": "BeginDate",
           "required": true,
@@ -24871,7 +24919,7 @@
         {
           "disabled": false,
           "document": "统计周期的结束日期，格式为 yyyy-MM-dd",
-          "example": "2022-05-05",
+          "example": "\"2022-05-01\"",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -24880,7 +24928,7 @@
         {
           "disabled": false,
           "document": "WeData项目id",
-          "example": "1",
+          "example": "\"1\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -25155,7 +25203,7 @@
         {
           "disabled": false,
           "document": "维度统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[             {                 \"Count\": 40,                 \"QualityDim\": 1             },             {                 \"Count\": 4,                 \"QualityDim\": 2             },             {                 \"Count\": 2,                 \"QualityDim\": 3             },             {                 \"Count\": 3,                 \"QualityDim\": 4             },             {                 \"Count\": 1,                 \"QualityDim\": 5             },             {                 \"Count\": 6,                 \"QualityDim\": 6             }         ]",
           "member": "DimensionCount",
           "name": "Data",
           "output_required": true,
@@ -25286,7 +25334,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "158168856817664",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -25319,7 +25367,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "{   \"alarmTables\": [     {       \"tableId\": \"1\",       \"tableName\": \"AlarmTable1\",       \"cnt\": 10     },     {       \"tableId\": \"2\",       \"tableName\": \"AlarmTable2\",       \"cnt\": 20     }   ],   \"pipelineTables\": [     {       \"tableId\": \"3\",       \"tableName\": \"PipelineTable1\",       \"cnt\": 30     },     {       \"tableId\": \"4\",       \"tableName\": \"PipelineTable2\",       \"cnt\": 40     }   ] }",
           "member": "TopTableStat",
           "name": "Data",
           "output_required": true,
@@ -25374,7 +25422,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "无",
+          "example": "[             {                 \"AlarmCnt\": 0,                 \"PipelineCnt\": 0,                 \"StatDate\": \"2024-04-09\"             },             {                 \"AlarmCnt\": 0,                 \"PipelineCnt\": 0,                 \"StatDate\": \"2024-04-10\"             }         ]",
           "member": "RuleExecDateStat",
           "name": "Data",
           "output_required": true,
@@ -26484,7 +26532,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "\"123\"",
+          "example": "20220403160554926",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -26493,7 +26541,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "\"123\"",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -26502,7 +26550,7 @@
         {
           "disabled": false,
           "document": "资源组Id",
-          "example": "\"123\"",
+          "example": "20220331190555092303",
           "member": "string",
           "name": "ResourceGroup",
           "required": false,
@@ -26526,7 +26574,7 @@
         {
           "disabled": false,
           "document": "数据时间",
-          "example": "\"123\"",
+          "example": "2022-04-12 17:00:15",
           "member": "string",
           "name": "CurrentRunDate",
           "output_required": true,
@@ -26536,7 +26584,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "\"123\"",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -26546,7 +26594,7 @@
         {
           "disabled": false,
           "document": "任务状态",
-          "example": "\"123\"",
+          "example": "Continue",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -26556,7 +26604,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "\"123\"",
+          "example": "20220403160554926",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -26566,7 +26614,7 @@
         {
           "disabled": false,
           "document": "任务实例唯一key",
-          "example": "\"123\"",
+          "example": "\"64893b7dff394c353ae305796ba2\"",
           "member": "string",
           "name": "TaskInstanceKey",
           "output_required": true,
@@ -28819,7 +28867,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -28828,7 +28876,7 @@
         {
           "disabled": false,
           "document": "目标数据库",
-          "example": "123",
+          "example": "test_hive",
           "member": "string",
           "name": "SinkDatabase",
           "required": true,
@@ -28837,7 +28885,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "123",
+          "example": "无",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -28846,7 +28894,7 @@
         {
           "disabled": false,
           "document": "元数据类型(MYSQL、ORACLE)",
-          "example": "123",
+          "example": "MYSQL",
           "member": "string",
           "name": "MsType",
           "required": false,
@@ -28855,7 +28903,7 @@
         {
           "disabled": false,
           "document": "数据源id",
-          "example": "123",
+          "example": "915669",
           "member": "string",
           "name": "DatasourceId",
           "required": false,
@@ -28863,8 +28911,8 @@
         },
         {
           "disabled": false,
-          "document": "来源库",
-          "example": "123",
+          "document": "来源库名",
+          "example": "test_mysql",
           "member": "string",
           "name": "SourceDatabase",
           "required": false,
@@ -28872,8 +28920,8 @@
         },
         {
           "disabled": false,
-          "document": "来源表",
-          "example": "123",
+          "document": "来源表名",
+          "example": "table_test",
           "member": "string",
           "name": "TableName",
           "required": false,
@@ -28890,8 +28938,8 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
-          "example": "3424",
+          "document": "源端schema名称",
+          "example": "test_schema",
           "member": "string",
           "name": "SchemaName",
           "required": false,
@@ -29022,6 +29070,15 @@
           "name": "TableBaseInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "目标端schema名称",
+          "example": "public",
+          "member": "string",
+          "name": "SinkSchemaName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -29032,18 +29089,20 @@
         {
           "disabled": false,
           "document": "生成的ddl语句",
-          "example": "123",
+          "example": "CREATE TABLE IF NOT EXISTS `test_hive`.`test_table`(`id` bigint comment '主键id',`name` string comment '名称',`len` decimal(5,2),`a1` bigint)row format delimited fields terminated by '\\\\t' STORED AS PARQUET;",
           "member": "string",
           "name": "DDLSql",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生成的ddl语句。与DDLSql相同含义，优先取Data，如果Data为空，则取DDLSql。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "CREATE TABLE IF NOT EXISTS `test_hive`.`test_table`(`id` bigint comment '主键id',`name` string comment '名称',`len` decimal(5,2),`a1` bigint)row format delimited fields terminated by '\\\\t' STORED AS PARQUET;",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29134,7 +29193,7 @@
         {
           "disabled": false,
           "document": "字段示例（json格式）",
-          "example": "xx",
+          "example": "{\"id\": 1699859100000,  \"name\": \"This seems to be a string\",   \"len\": 0,  \"a1\": \"This seems to be a string\"}",
           "member": "string",
           "name": "ColumnContent",
           "required": false,
@@ -29142,8 +29201,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型",
-          "example": "Mysql",
+          "document": "数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|",
+          "example": "MYSQL",
           "member": "string",
           "name": "DatasourceType",
           "required": false,
@@ -29158,7 +29217,7 @@
         {
           "disabled": false,
           "document": "字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationNodeSchema",
           "name": "Schemas",
           "output_required": true,
@@ -29180,7 +29239,7 @@
         {
           "disabled": false,
           "document": "第几页",
-          "example": "\"123\"",
+          "example": "0",
           "member": "uint64",
           "name": "PageIndex",
           "required": true,
@@ -29189,7 +29248,7 @@
         {
           "disabled": false,
           "document": "每页几条",
-          "example": "\"123\"",
+          "example": "1",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -29198,7 +29257,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "\"123\"",
+          "example": "148644656962993696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -29222,7 +29281,7 @@
         {
           "disabled": false,
           "document": "总条数",
-          "example": "1",
+          "example": "4",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
@@ -29232,7 +29291,7 @@
         {
           "disabled": false,
           "document": "实例详情",
-          "example": "\"123\"",
+          "example": "无",
           "member": "OfflineInstance",
           "name": "List",
           "output_required": true,
@@ -29254,7 +29313,7 @@
         {
           "disabled": false,
           "document": "第几页",
-          "example": "\"123\"",
+          "example": "1",
           "member": "string",
           "name": "PageIndex",
           "required": true,
@@ -29263,7 +29322,7 @@
         {
           "disabled": false,
           "document": "每页几条",
-          "example": "\"123\"",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -29272,7 +29331,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "\"123\"",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -29296,20 +29355,20 @@
         {
           "disabled": false,
           "document": "总条数",
-          "example": "1",
+          "example": "4",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例详情",
-          "example": "\"123\"",
+          "example": "无",
           "member": "OfflineInstance",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -33126,7 +33185,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "20220410163642075",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -33135,7 +33194,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34544,7 +34603,7 @@
         {
           "disabled": false,
           "document": "权重信息列表",
-          "example": "无",
+          "example": "[             {                 \"QualityDim\": 1,                 \"Weight\": 25             },             {                 \"QualityDim\": 5,                 \"Weight\": 26             },             {                 \"QualityDim\": 2,                 \"Weight\": 15             },             {                 \"QualityDim\": 6,                 \"Weight\": 15             },             {                 \"QualityDim\": 3,                 \"Weight\": 20             },             {                 \"QualityDim\": 4,                 \"Weight\": 10             }         ]",
           "member": "WeightInfo",
           "name": "WeightInfoList",
           "required": true,
@@ -34553,7 +34612,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "12",
+          "example": "1256789",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34580,7 +34639,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -34707,7 +34766,7 @@
         {
           "disabled": false,
           "document": "关联的生产调度任务列表",
-          "example": "无",
+          "example": "[         {           \"TaskId\": \"56777777777767tgy676tgy\",           \"TaskName\": \"任务名\",           \"WorkflowId\": \"67tyg9h87yhun80o7yuh\"         }       ]",
           "member": "ProdSchedulerTask",
           "name": "Tasks",
           "required": false,
@@ -34725,7 +34784,7 @@
         {
           "disabled": false,
           "document": "离线周期模式下,生效日期-开始时间",
-          "example": "yyyyy-MM-dd",
+          "example": "2023-10-01",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -34734,7 +34793,7 @@
         {
           "disabled": false,
           "document": "离线周期模式下,生效日期-结束时间",
-          "example": "yyyyy-MM-dd",
+          "example": "2023-10-01",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -34743,7 +34802,7 @@
         {
           "disabled": false,
           "document": "离线周期模式下,调度周期 \nMINUTE_CYCLE:I,\nHOUR_CYCLE:H,\nDAY_CYCLE:D,\nWEEK_CYCLE:W,\nMONTH_CYCLE:M",
-          "example": "H",
+          "example": "HOUR_CYCLE",
           "member": "string",
           "name": "CycleType",
           "required": false,
@@ -34761,7 +34820,7 @@
         {
           "disabled": false,
           "document": "离线周期模式下,指定时间",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "TaskAction",
           "required": false,
@@ -34779,7 +34838,7 @@
         {
           "disabled": false,
           "document": "数据库Id",
-          "example": "123456",
+          "example": "67ytug70uugo34twef",
           "member": "string",
           "name": "DatabaseId",
           "required": false,
@@ -34797,7 +34856,7 @@
         {
           "disabled": false,
           "document": "数据表Id",
-          "example": "123456",
+          "example": "76ty9gq23iebhfwak07uoaw",
           "member": "string",
           "name": "TableId",
           "required": false,
@@ -34811,6 +34870,15 @@
           "name": "ExecEngineType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发场景",
+          "example": "[\"CYCLE\"]",
+          "member": "string",
+          "name": "TriggerTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -34824,6 +34892,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "Data",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -34915,7 +34984,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "11022568003970304",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34923,8 +34992,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "201. stream, 202. offline",
+          "document": "任务类型 \"201. stream, 202. offline\"",
+          "example": "202",
           "member": "uint64",
           "name": "TaskType",
           "required": false,
@@ -34932,8 +35001,8 @@
         },
         {
           "disabled": false,
-          "document": "区分画布模式和表单模式",
-          "example": "1. 画布, 2. 表单",
+          "document": "区分画布模式和表单 \"1. 画布, 2. 表单\"模式",
+          "example": "2",
           "member": "uint64",
           "name": "TaskMode",
           "required": false,
@@ -34948,7 +35017,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "123",
+          "example": "10439",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -34958,7 +35027,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20240410204219264",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -34989,7 +35058,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34998,7 +35067,7 @@
         {
           "disabled": false,
           "document": "默认false . 为true时表示走回滚节点逻辑",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "RollbackFlag",
           "required": false,
@@ -35013,7 +35082,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -35099,7 +35168,7 @@
         {
           "disabled": false,
           "document": "订阅人信息",
-          "example": "无",
+          "example": "[         {             \"receiverOwnerUserId\": null,             \"receiverUserId\": 100032160298,             \"receiverName\": \"sashaszhang\"         }     ]",
           "member": "SubscribeReceiver",
           "name": "Receivers",
           "required": false,
@@ -35126,7 +35195,7 @@
         {
           "disabled": false,
           "document": "数据库Id",
-          "example": "123456",
+          "example": "q032wey8aifsdfui",
           "member": "string",
           "name": "DatabaseId",
           "required": false,
@@ -35144,7 +35213,7 @@
         {
           "disabled": false,
           "document": "数据表Id",
-          "example": "123456",
+          "example": "38w4eryufh9odsjhhc",
           "member": "string",
           "name": "TableId",
           "required": false,
@@ -35307,7 +35376,7 @@
         {
           "disabled": false,
           "document": "报警触发条件",
-          "example": "无",
+          "example": "{         \"Items\": [             {                 \"CompareType\": 1,                 \"Operator\": \">\",                 \"ValueComputeType\": 1,                 \"ValueList\": [                     {                         \"ValueType\": 3,                         \"Value\": \"0\"                     }                 ]             }         ],         \"CycleStep\": 1,         \"ComputeExpression\": \"0\"     }",
           "member": "CompareRule",
           "name": "CompareRule",
           "required": false,
@@ -35370,7 +35439,7 @@
         {
           "disabled": false,
           "document": "自定义模版sql表达式字段替换参数",
-          "example": "无",
+          "example": "{         \"TableConfig\": [             {                 \"DatabaseId\": \"NW0VL_YYPESvi8w\",                 \"DatabaseName\": \"default\",                 \"TableId\": \"EHdPET2IKQ2KBhGw\",                 \"TableName\": \"dq_student\",                 \"TableKey\": \"table_1\",                 \"FieldConfig\": [                     {                         \"FieldKey\": \"table_1.column_1\",                         \"FieldDataType\": \"int\",                         \"FieldValue\": \"id\"                     }                 ]             }         ],         \"WhereConfig\": [             {                 \"FieldKey\": \"param_1\",                 \"FieldDataType\": \"int\",                 \"FieldValue\": \"id\"             }         ]     }",
           "member": "RuleFieldConfig",
           "name": "FieldConfig",
           "required": false,
@@ -35434,7 +35503,7 @@
         {
           "disabled": false,
           "document": "模板类型  1.系统模板   2.自定义模板",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": false,
@@ -35443,7 +35512,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "123456",
+          "example": "tpl_name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -35452,7 +35521,7 @@
         {
           "disabled": false,
           "document": "质量检测维度 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "QualityDim",
           "required": false,
@@ -35461,7 +35530,7 @@
         {
           "disabled": false,
           "document": "源端数据对象类型 1.常量  2.离线表级   2.离线字段级",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "SourceObjectType",
           "required": false,
@@ -35479,7 +35548,7 @@
         {
           "disabled": false,
           "document": "源端对应的引擎类型",
-          "example": "123456",
+          "example": "[2,4]",
           "member": "uint64",
           "name": "SourceEngineTypes",
           "required": false,
@@ -35497,7 +35566,7 @@
         {
           "disabled": false,
           "document": "SQL 表达式",
-          "example": "123456",
+          "example": "c2VsZWN0IGNvdW50KCR7dGFibGVfY29sdW1uXzJ9ID0gJHt0YWJsZV9jb2x1bW5fMn0=",
           "member": "string",
           "name": "SqlExpression",
           "required": false,
@@ -35551,7 +35620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "规则ID",
           "example": "8756",
           "member": "string",
           "name": "Id",
@@ -35570,7 +35639,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "7y899090",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -36005,7 +36074,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "123",
+          "example": "newtaskname",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -36014,7 +36083,7 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "123",
+          "example": "20220410160743666",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -36023,7 +36092,7 @@
         {
           "disabled": false,
           "document": "项目/工作空间id",
-          "example": "123",
+          "example": "1486446569620773677",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -36032,7 +36101,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "123",
+          "example": "desc",
           "member": "string",
           "name": "Notes",
           "required": false,
@@ -38192,6 +38261,7 @@
           "example": "123456",
           "member": "string",
           "name": "WorkflowId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -38202,6 +38272,7 @@
           "example": "123456",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -38212,8 +38283,20 @@
           "example": "task1",
           "member": "string",
           "name": "TaskName",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产调度任务任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "CycleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -39284,7 +39367,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "4c187b4a-394b-4eb7-b9b0-948ca0552378",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -39293,7 +39376,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -39357,7 +39440,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "b100e8264c67a3442df5ffd53ac2",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -39366,7 +39449,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1102250839503970304",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -39375,7 +39458,7 @@
         {
           "disabled": false,
           "document": "任务类型：201. stream,   202. offline",
-          "example": "1",
+          "example": "202",
           "member": "uint64",
           "name": "TaskType",
           "required": true,
@@ -39918,6 +40001,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0或者未返回或者null：未定义，1：生产，2：开发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DsEnvType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -40154,6 +40248,7 @@
           "member": "uint64",
           "name": "RuleExecId",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40164,6 +40259,7 @@
           "member": "uint64",
           "name": "RuleGroupExecId",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40174,6 +40270,7 @@
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40184,6 +40281,7 @@
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40194,6 +40292,7 @@
           "member": "string",
           "name": "RuleName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40204,6 +40303,7 @@
           "member": "uint64",
           "name": "RuleType",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40214,6 +40314,7 @@
           "member": "string",
           "name": "SourceObjectDataTypeName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40224,6 +40325,7 @@
           "member": "string",
           "name": "SourceObjectValue",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40234,6 +40336,7 @@
           "member": "string",
           "name": "ConditionExpression",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40244,6 +40347,7 @@
           "member": "uint64",
           "name": "ExecResultStatus",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40254,6 +40358,7 @@
           "member": "string",
           "name": "TriggerResult",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40264,6 +40369,7 @@
           "member": "CompareResult",
           "name": "CompareResult",
           "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -40274,6 +40380,7 @@
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40284,6 +40391,7 @@
           "member": "uint64",
           "name": "QualityDim",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -40294,6 +40402,7 @@
           "member": "string",
           "name": "TargetDBTableName",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40304,6 +40413,7 @@
           "member": "string",
           "name": "TargetObjectValue",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40314,6 +40424,7 @@
           "member": "string",
           "name": "TargetObjectDataType",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40324,6 +40435,7 @@
           "member": "RuleFieldConfig",
           "name": "FieldConfig",
           "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -40334,6 +40446,7 @@
           "member": "string",
           "name": "RelConditionExpr",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40344,6 +40457,7 @@
           "member": "string",
           "name": "StartTime",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -40354,11 +40468,12 @@
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RuleExecResultDetail": {
       "document": "规则执行结果详情",
@@ -40917,6 +41032,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源环境：0或者未返回.未定义，1.生产 2.开发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DsEnvType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -41306,6 +41432,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"CYCLE\"]",
+          "member": "string",
+          "name": "TriggerTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -42967,22 +43104,20 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "\"20220506145218687\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "实例运行时间",
-          "example": "无",
+          "example": "\"2022-04-12 17:00:15\"",
           "member": "string",
           "name": "CurRunDate",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -43672,11 +43807,10 @@
           "disabled": false,
           "document": "查询框架，必选",
           "example": "无",
-          "member": "SearchConditionInstance",
+          "member": "SearchConditionInstanceNew",
           "name": "Instance",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -43685,8 +43819,7 @@
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -43695,8 +43828,7 @@
           "member": "string",
           "name": "Sort",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -43705,44 +43837,7 @@
           "member": "string",
           "name": "SortCol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
-    "SearchConditionInstance": {
-      "document": "查询框架",
-      "members": [
-        {
-          "disabled": false,
-          "document": "执行空间 \"DRY_RUN\"",
-          "example": "1",
-          "member": "uint64",
-          "name": "ExecutionSpace",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "产品名称，可选",
-          "example": "1",
-          "member": "uint64",
-          "name": "ProductName",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源组",
-          "example": "1",
-          "member": "uint64",
-          "name": "ResourceGroup",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -43752,33 +43847,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行空间 \"DRY_RUN\"",
-          "example": "1",
+          "document": "执行空间，可选 \n \"DRY_RUN\"",
+          "example": "DRY_RUN",
           "member": "string",
           "name": "ExecutionSpace",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "产品名称，可选",
-          "example": "1",
+          "document": "业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目",
+          "example": "DATA_INTEGRATION",
           "member": "string",
           "name": "ProductName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "资源组",
-          "example": "1",
+          "document": "资源组信息，可选",
+          "example": "20220228110048059",
           "member": "string",
           "name": "ResourceGroup",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -43789,42 +43881,38 @@
         {
           "disabled": false,
           "document": "查询框架，必选",
-          "example": "1",
+          "example": "无",
           "member": "SearchConditionInstanceNew",
           "name": "Instance",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "查询关键字（任务Id精确匹配，任务名称模糊匹配），可选",
-          "example": "1",
+          "example": "\"keyword\"",
           "member": "string",
           "name": "Keyword",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "排序顺序（asc，desc）",
-          "example": "1",
+          "example": "\"asc\"",
           "member": "string",
           "name": "Sort",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "排序列（costTime 运行耗时，startTime 开始时间，state 实例状态，curRunDate 数据时间）",
-          "example": "1",
+          "example": "\"costTime\"",
           "member": "string",
           "name": "SortCol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -44415,20 +44503,20 @@
         {
           "disabled": false,
           "document": "带毫秒的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1712910802000",
           "member": "uint64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "Speed",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -44639,7 +44727,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "4c187b4a-394b-4eb7-b9b0-948ca0552378",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -44648,7 +44736,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -44723,7 +44811,7 @@
         {
           "disabled": false,
           "document": "任务Id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"20220506145218687\"]",
           "member": "string",
           "name": "TaskIds",
           "output_required": false,
@@ -44745,7 +44833,7 @@
         {
           "disabled": false,
           "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"test descript\"\"",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -44807,7 +44895,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "a64893b7dff394c3f89953a96ba2",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -44816,7 +44904,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1102250833970304",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -45523,7 +45611,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "c4c187b4a-394b-4eb7-b9b0-948ca0552378",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -45532,7 +45620,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1486446569620893696",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -47251,7 +47339,7 @@
           "example": "123",
           "member": "string",
           "name": "DatabaseId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -47261,7 +47349,7 @@
           "example": "test",
           "member": "string",
           "name": "DatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -47271,7 +47359,7 @@
           "example": "123",
           "member": "string",
           "name": "TableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -47281,7 +47369,7 @@
           "example": "test",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -47291,7 +47379,7 @@
           "example": "1234",
           "member": "int64",
           "name": "OwnerUserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -47301,7 +47389,7 @@
           "example": "小明",
           "member": "string",
           "name": "OwnerUserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -47311,7 +47399,7 @@
           "example": "12.21",
           "member": "float",
           "name": "DatabaseScore",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -47321,7 +47409,7 @@
           "example": "12.21",
           "member": "float",
           "name": "TableScore",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -47331,8 +47419,18 @@
           "example": "12.1",
           "member": "float",
           "name": "LastPeriodRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0或者未返回或者null：未定义，1：生产，2：开发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DsEnvType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -52004,7 +52102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详细日志",
+          "document": "任务详细日志",
           "example": "无",
           "member": "LogContent",
           "name": "LogContentList",
@@ -53962,7 +54060,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "64893b7dff394c3f899796ba2",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -53971,7 +54069,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "1102250839503904",
           "member": "string",
           "name": "ProjectId",
           "required": true,

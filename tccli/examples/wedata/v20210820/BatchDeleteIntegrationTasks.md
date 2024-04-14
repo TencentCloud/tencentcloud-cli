@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata BatchDeleteIntegrationTasks --cli-unfold-argument  \
-    --ProjectId 2385923 \
-    --TaskIds 123 124 \
+    --ProjectId 11022568003970304 \
+    --TaskIds 20220506145218687 20230506145218687 \
     --TaskType 201 \
     --DeleteKFFlag 1
 ```

@@ -15,77 +15,53 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 1,
             "Items": [
                 {
-                    "RuleExecId": 1,
-                    "RuleGroupExecId": 1,
-                    "RuleGroupId": 1,
-                    "RuleId": 1,
-                    "RuleName": "规则1",
-                    "RuleType": 1,
-                    "SourceObjectDataTypeName": "name",
-                    "SourceObjectValue": "value",
-                    "ConditionExpression": "exp",
-                    "ExecResultStatus": 1,
-                    "TriggerResult": "result",
+                    "AlarmLevel": 1,
                     "CompareResult": {
                         "Items": [
                             {
-                                "FixResult": 1,
-                                "ResultValue": "value",
+                                "CompareType": 5,
+                                "FixResult": null,
+                                "Operator": "==",
+                                "ResultValue": "3.0000",
+                                "ValueComputeType": null,
                                 "Values": [
                                     {
-                                        "ValueType": 1,
-                                        "Value": "abc"
-                                    }
-                                ],
-                                "Operator": "abc",
-                                "CompareType": 1,
-                                "ValueComputeType": 1
-                            }
-                        ],
-                        "TotalRows": 1,
-                        "PassRows": 1,
-                        "TriggerRows": 1
-                    },
-                    "TemplateName": "name",
-                    "QualityDim": 1,
-                    "TargetDBTableName": "name",
-                    "TargetObjectValue": "value",
-                    "TargetObjectDataType": "type",
-                    "FieldConfig": {
-                        "WhereConfig": [
-                            {
-                                "FieldKey": "name",
-                                "FieldValue": "zhangsan",
-                                "FieldDataType": "string"
-                            }
-                        ],
-                        "TableConfig": [
-                            {
-                                "DatabaseId": "9uihjbkjhu78hui",
-                                "DatabaseName": "dbtest",
-                                "TableId": "abc",
-                                "TableName": "test",
-                                "TableKey": "abc",
-                                "FieldConfig": [
-                                    {
-                                        "FieldKey": "id",
-                                        "FieldValue": "1",
-                                        "FieldDataType": "int"
+                                        "Value": "0",
+                                        "ValueType": 3
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "PassRows": null,
+                        "TotalRows": 3,
+                        "TriggerRows": null
                     },
-                    "RelConditionExpr": "expr",
-                    "StartTime": "2023-10-01",
-                    "AlarmLevel": 1
+                    "ConditionExpression": "全表",
+                    "ExecResultStatus": 1,
+                    "FieldConfig": null,
+                    "QualityDim": 5,
+                    "RelConditionExpr": null,
+                    "RuleExecId": 341876,
+                    "RuleGroupExecId": 11232,
+                    "RuleGroupId": 308,
+                    "RuleId": 885,
+                    "RuleName": "data_in_time_fail",
+                    "RuleType": 1,
+                    "SourceObjectDataTypeName": "table",
+                    "SourceObjectValue": "表",
+                    "StartTime": "2024-04-09 21:10:25",
+                    "TargetDBTableName": "null.null",
+                    "TargetObjectDataType": null,
+                    "TargetObjectValue": null,
+                    "TemplateName": "数据产出及时性",
+                    "TriggerResult": "无"
                 }
-            ]
+            ],
+            "TotalCount": 1
         },
-        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
+        "RequestId": "8150d24f-6ee7-4797-a7fccc771e008"
     }
 }
 ```

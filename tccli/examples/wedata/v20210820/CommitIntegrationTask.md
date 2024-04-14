@@ -10,7 +10,7 @@ tccli wedata CommitIntegrationTask --cli-unfold-argument  \
     --ProjectId 1486804694126882816 \
     --CommitType 1 \
     --TaskType 201 \
-    --VersionDesc  \
+    --VersionDesc v1 \
     --InstanceVersion 3
 ```
 
@@ -35,19 +35,19 @@ Input:
 
 ```
 tccli wedata CommitIntegrationTask --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc \
+    --TaskId 3cd6b1b3-76a0-4147-8f0e-6df206bc58c0 \
+    --ProjectId 1 \
     --CommitType 0 \
     --TaskType 1 \
-    --ExtConfig.0.Name abc \
-    --ExtConfig.0.Value abc
+    --ExtConfig.0.Name name1 \
+    --ExtConfig.0.Value 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1x",
+        "RequestId": "as1cs2c123asyi23bh213cc",
         "Data": true
     }
 }

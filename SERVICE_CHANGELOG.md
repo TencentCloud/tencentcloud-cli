@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+## 域名注册(domain) 版本：2018-08-08
 
-### 第 55 次发布
+### 第 26 次发布
 
-发布时间：2024-04-12 01:07:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
-
-	* 新增成员：SuperPackFlag
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 92 次发布
-
-发布时间：2024-04-12 01:10:05
+发布时间：2024-04-15 01:19:51
 
 本次发布包含了以下内容：
 
@@ -31,125 +12,153 @@
 
 新增接口：
 
-* [CheckMigrateCluster](http://document.tencentcloudapi.woa.com/document/product/236/83724)
-* [DescribeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/83723)
-
-修改接口：
-
-* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15876)
-
-	* 新增入参：ClusterTopology
-
+* [BidPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83726)
+* [DescribeReservedBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/83725)
 
 新增数据结构：
 
-* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AddressInfo)
-* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterNodeInfo)
-* [ClusterTopology](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterTopology)
-* [ReadWriteNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadWriteNode)
-* [ReadonlyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadonlyNode)
-
-
-
-## 多网聚合加速(mna) 版本：2021-01-19
-
-### 第 17 次发布
-
-发布时间：2024-04-12 01:21:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [OrderFlowPackage](http://document.tencentcloudapi.woa.com/document/product/1385/82763)
-
-	* 新增入参：FlowTruncFlag
-
+* [ReserveBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReserveBidInfo)
 
 修改数据结构：
 
-* [FlowPackageInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#FlowPackageInfo)
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
 
-	* 新增成员：TruncFlag, CapacityRemainPrecise
-
-
+	* 新增成员：BusinessId
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 56 次发布
 
-发布时间：2024-04-12 01:27:42
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 78 次发布
+
+发布时间：2024-04-15 01:21:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [CreateBatchOrganizationRegistrationTasks](http://document.tencentcloudapi.woa.com/document/product/1668/83728)
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
 
 修改接口：
 
-* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+* [CreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81399)
 
-	* 新增入参：EncodedStartCmdInfo
+	* 新增入参：RecipientIds
 
 
 新增数据结构：
 
-* [EncodedStartCmdInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#EncodedStartCmdInfo)
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo)
 
 
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
+### 第 75 次发布
 
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 45 次发布
-
-发布时间：2024-04-12 01:28:21
+发布时间：2024-04-15 01:25:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
-
-* [McuBackgroundCustomRender](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuBackgroundCustomRender)
-
 修改数据结构：
 
-* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/248/30354#Condition)
 
-	* 新增成员：BackgroundCustomRender
+	* 新增成员：HierarchicalValue
 
+* [EventCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#EventCondition)
+
+	* 新增成员：MetricName
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 37 次发布
+
+发布时间：2024-04-15 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRestoreTimeRange](http://document.tencentcloudapi.woa.com/document/product/238/83729)
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-### 第 43 次发布
+### 第 44 次发布
 
-发布时间：2024-04-12 01:30:45
+发布时间：2024-04-15 01:33:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [GenHiveTableDDLSql](http://document.tencentcloudapi.woa.com/document/product/1607/77565)
+
+	* 新增入参：SinkSchemaName
+
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
+
+	* 新增入参：TriggerTypes
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SearchConditionInstance
+
 修改数据结构：
 
-* [InstanceList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceList)
+* [DatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>CostTime, CurRunDate, CycleType, DoFlag, InCharge, LastLog, SchedulerDesc, StartTime, State, TaskId, TaskName, TryLimit
+	* 新增成员：DsEnvType
 
-* [InstanceLogList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceLogList)
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>TaskId, CurRunDate, Tries, LastUpdate, BrokerIp, FileSize, OriginFileName, CreateTime, InstanceLogType, TaskName, CostTime
+	* 新增成员：ParamsString
 
-* [IntegrationInstanceLog](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationInstanceLog)
+	* <font color="#dd0000">**修改成员**：</font>Version
 
-	* <font color="#dd0000">**修改成员**：</font>LogInfo
+* [ProdSchedulerTask](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ProdSchedulerTask)
+
+	* 新增成员：CycleType
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：DsEnvType
+
+* [RuleExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResult)
+
+	* <font color="#dd0000">**修改成员**：</font>RuleExecId, RuleGroupExecId, RuleGroupId, RuleId, RuleName, RuleType, SourceObjectDataTypeName, SourceObjectValue, ConditionExpression, ExecResultStatus, TriggerResult, CompareResult, TemplateName, QualityDim, TargetDBTableName, TargetObjectValue, TargetObjectDataType, FieldConfig, RelConditionExpr, StartTime, AlarmLevel
+
+* [RuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroup)
+
+	* 新增成员：DsEnvType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：TriggerTypes
+
+* [SearchCondition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SearchCondition)
+
+	* <font color="#dd0000">**修改成员**：</font>Instance
+
+* [TableQualityDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableQualityDetail)
+
+	* 新增成员：DsEnvType
 
 
 
@@ -11980,8 +11989,8 @@
 
 新增接口：
 
-* [[CheckMigrateCluster](http://document.tencentcloudapi.woa.com/document/product/236/83724)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/83723)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckMigrateCluster](http://document.tencentcloudapi.woa.com/document/product/236/83724)
+* [DescribeClusterInfo](http://document.tencentcloudapi.woa.com/document/product/236/83723)
 
 修改接口：
 
@@ -11992,11 +12001,11 @@
 
 新增数据结构：
 
-* [[AddressInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AddressInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[AddressInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AddressInfo))
-* [[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterNodeInfo))
-* [[ClusterTopology](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterTopology)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ClusterTopology](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterTopology))
-* [[ReadWriteNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadWriteNode)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ReadWriteNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadWriteNode))
-* [[ReadonlyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadonlyNode)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[ReadonlyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadonlyNode))
+* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AddressInfo)
+* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterNodeInfo)
+* [ClusterTopology](http://document.tencentcloudapi.woa.com/document/product/236/15878#ClusterTopology)
+* [ReadWriteNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadWriteNode)
+* [ReadonlyNode](http://document.tencentcloudapi.woa.com/document/product/236/15878#ReadonlyNode)
 
 ### 第 91 次发布
 
@@ -37732,6 +37741,30 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 26 次发布
+
+发布时间：2024-04-15 01:19:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[BidPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83726)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeReservedBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/83725)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ReserveBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReserveBidInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[ReserveBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReserveBidInfo))
+
+修改数据结构：
+
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
+
+	* 新增成员：BusinessId
+
+
 ### 第 25 次发布
 
 发布时间：2024-04-03 11:18:21
@@ -42984,6 +43017,30 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 78 次发布
+
+发布时间：2024-04-15 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateBatchOrganizationRegistrationTasks](http://document.tencentcloudapi.woa.com/document/product/1668/83728)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81399)
+
+	* 新增入参：RecipientIds
+
+
+新增数据结构：
+
+* [[RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo))
 
 ### 第 77 次发布
 
@@ -60287,6 +60344,25 @@
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
+### 第 75 次发布
+
+发布时间：2024-04-15 01:25:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/248/30354#Condition)
+
+	* 新增成员：HierarchicalValue
+
+* [EventCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#EventCondition)
+
+	* 新增成员：MetricName
+
+
 ### 第 74 次发布
 
 发布时间：2024-04-11 15:59:58
@@ -73595,6 +73671,18 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 37 次发布
+
+发布时间：2024-04-15 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRestoreTimeRange](http://document.tencentcloudapi.woa.com/document/product/238/83729)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 36 次发布
 
 发布时间：2024-04-10 01:24:23
@@ -85951,7 +86039,7 @@
 
 新增数据结构：
 
-* [[EncodedStartCmdInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#EncodedStartCmdInfo)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[EncodedStartCmdInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#EncodedStartCmdInfo))
+* [EncodedStartCmdInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#EncodedStartCmdInfo)
 
 ### 第 55 次发布
 
@@ -90778,7 +90866,7 @@
 
 新增数据结构：
 
-* [[McuBackgroundCustomRender](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuBackgroundCustomRender)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[McuBackgroundCustomRender](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuBackgroundCustomRender))
+* [McuBackgroundCustomRender](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuBackgroundCustomRender)
 
 修改数据结构：
 
@@ -102513,6 +102601,70 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 44 次发布
+
+发布时间：2024-04-15 01:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GenHiveTableDDLSql](http://document.tencentcloudapi.woa.com/document/product/1607/77565)
+
+	* 新增入参：SinkSchemaName
+
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
+
+	* 新增入参：TriggerTypes
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SearchConditionInstance
+
+修改数据结构：
+
+* [DatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseInfo)
+
+	* 新增成员：DsEnvType
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：ParamsString
+
+	* <font color="#dd0000">**修改成员**：</font>Version
+
+* [ProdSchedulerTask](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ProdSchedulerTask)
+
+	* 新增成员：CycleType
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：DsEnvType
+
+* [RuleExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResult)
+
+	* <font color="#dd0000">**修改成员**：</font>RuleExecId, RuleGroupExecId, RuleGroupId, RuleId, RuleName, RuleType, SourceObjectDataTypeName, SourceObjectValue, ConditionExpression, ExecResultStatus, TriggerResult, CompareResult, TemplateName, QualityDim, TargetDBTableName, TargetObjectValue, TargetObjectDataType, FieldConfig, RelConditionExpr, StartTime, AlarmLevel
+
+* [RuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroup)
+
+	* 新增成员：DsEnvType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：TriggerTypes
+
+* [SearchCondition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SearchCondition)
+
+	* <font color="#dd0000">**修改成员**：</font>Instance
+
+* [TableQualityDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableQualityDetail)
+
+	* 新增成员：DsEnvType
+
 
 ### 第 43 次发布
 

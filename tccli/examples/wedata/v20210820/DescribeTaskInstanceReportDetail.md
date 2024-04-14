@@ -26,12 +26,12 @@ Output:
             "TotalErrorRecords": 1,
             "TotalErrorBytes": 1,
             "TotalRunDuration": 1,
-            "BeginRunTime": "abc",
-            "EndRunTime": "abc"
+            "BeginRunTime": "2020-05-05 12:00:00",
+            "EndRunTime": "2021-05-05 12:00:00"
         },
         "ReadNode": {
-            "NodeName": "abc",
-            "DataSource": "abc",
+            "NodeName": "NodeName",
+            "DataSource": "DataSource",
             "TotalReadRecords": 1,
             "TotalReadBytes": 1,
             "RecordSpeed": 1,
@@ -40,8 +40,8 @@ Output:
             "WaitWriterTime": 0
         },
         "WriteNode": {
-            "NodeName": "abc",
-            "DataSource": "abc",
+            "NodeName": "NodeName",
+            "DataSource": "DataSource",
             "TotalWriteRecords": 1,
             "TotalWriteBytes": 1,
             "RecordSpeed": 1,
@@ -49,7 +49,7 @@ Output:
             "TotalErrorRecords": 1,
             "WaitReaderTime": 0
         },
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

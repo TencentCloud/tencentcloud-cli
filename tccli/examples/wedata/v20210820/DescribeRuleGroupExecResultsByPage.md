@@ -8,11 +8,11 @@ Input:
 tccli wedata DescribeRuleGroupExecResultsByPage --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 1 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --OrderFields.0.Name abc \
-    --OrderFields.0.Direction abc \
-    --ProjectId abc
+    --Filters.0.Name StartTime \
+    --Filters.0.Values 1712160000 \
+    --OrderFields.0.Name CitationCount \
+    --OrderFields.0.Direction DESC \
+    --ProjectId 66661616161616161616
 ```
 
 Output: 
@@ -20,96 +20,72 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 1,
             "Items": [
                 {
-                    "RuleGroupExecId": 1,
-                    "RuleGroupId": 1,
-                    "TriggerType": 1,
-                    "ExecTime": "abc",
-                    "Status": 1,
                     "AlarmRuleCount": 1,
-                    "TotalRuleCount": 1,
-                    "TableOwnerName": "abc",
-                    "TableName": "abc",
-                    "TableId": "abc",
-                    "DatabaseId": "abc",
-                    "DatasourceId": "abc",
+                    "DatabaseId": "sqhsS5G57A",
+                    "DatasourceId": "92",
+                    "EngineType": "HIVE",
+                    "ExecDetail": "2024-04-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次",
+                    "ExecTime": "2024-04-10 17:01:23",
                     "Permission": true,
-                    "ExecDetail": "abc",
-                    "EngineType": "abc",
                     "RuleExecResultVOList": [
                         {
-                            "RuleExecId": 1,
-                            "RuleGroupExecId": 1,
-                            "RuleGroupId": 1,
-                            "RuleId": 1,
-                            "RuleName": "abc",
-                            "RuleType": 1,
-                            "SourceObjectDataTypeName": "abc",
-                            "SourceObjectValue": "abc",
-                            "ConditionExpression": "abc",
-                            "ExecResultStatus": 1,
-                            "TriggerResult": "abc",
+                            "AlarmLevel": 3,
                             "CompareResult": {
                                 "Items": [
                                     {
+                                        "CompareType": 1,
                                         "FixResult": 1,
-                                        "ResultValue": "abc",
+                                        "Operator": ">",
+                                        "ResultValue": "2.0000",
+                                        "ValueComputeType": null,
                                         "Values": [
                                             {
-                                                "ValueType": 1,
-                                                "Value": "abc"
-                                            }
-                                        ],
-                                        "Operator": "abc",
-                                        "CompareType": 1,
-                                        "ValueComputeType": 1
-                                    }
-                                ],
-                                "TotalRows": 1,
-                                "PassRows": 1,
-                                "TriggerRows": 1
-                            },
-                            "TemplateName": "abc",
-                            "QualityDim": 1,
-                            "TargetDBTableName": "abc",
-                            "TargetObjectValue": "abc",
-                            "TargetObjectDataType": "abc",
-                            "FieldConfig": {
-                                "WhereConfig": [
-                                    {
-                                        "FieldKey": "abc",
-                                        "FieldValue": "abc",
-                                        "FieldDataType": "abc"
-                                    }
-                                ],
-                                "TableConfig": [
-                                    {
-                                        "DatabaseId": "abc",
-                                        "DatabaseName": "abc",
-                                        "TableId": "abc",
-                                        "TableName": "abc",
-                                        "TableKey": "abc",
-                                        "FieldConfig": [
-                                            {
-                                                "FieldKey": "abc",
-                                                "FieldValue": "abc",
-                                                "FieldDataType": "abc"
+                                                "Value": "1",
+                                                "ValueType": 3
                                             }
                                         ]
                                     }
-                                ]
+                                ],
+                                "PassRows": null,
+                                "TotalRows": null,
+                                "TriggerRows": null
                             },
-                            "RelConditionExpr": "abc",
-                            "StartTime": "abc",
-                            "AlarmLevel": 1
+                            "ConditionExpression": null,
+                            "ExecResultStatus": 2,
+                            "FieldConfig": null,
+                            "QualityDim": 2,
+                            "RelConditionExpr": null,
+                            "RuleExecId": 3047,
+                            "RuleGroupExecId": 1071,
+                            "RuleGroupId": 1726,
+                            "RuleId": 14723,
+                            "RuleName": "文件上传规则",
+                            "RuleType": 3,
+                            "SourceObjectDataTypeName": "table",
+                            "SourceObjectValue": "表",
+                            "StartTime": "2024-04-10 17:01:23",
+                            "TargetDBTableName": "null.null",
+                            "TargetObjectDataType": null,
+                            "TargetObjectValue": null,
+                            "TemplateName": "用户定义SQL",
+                            "TriggerResult": "发送告警成功, 阻断任务成功"
                         }
-                    ]
+                    ],
+                    "RuleGroupExecId": 1057371,
+                    "RuleGroupId": 1726,
+                    "Status": 4,
+                    "TableId": "fr7xvusttwfQ",
+                    "TableName": "at_1",
+                    "TableOwnerName": "AUEST",
+                    "TotalRuleCount": 1,
+                    "TriggerType": 3
                 }
-            ]
+            ],
+            "TotalCount": 1
         },
-        "RequestId": "abc"
+        "RequestId": "15bb9da3584b"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DeleteTaskAlarmRegular --cli-unfold-argument  \
-    --ProjectId 123 \
-    --Id 1
+    --ProjectId 11022568003970304 \
+    --Id 14324234
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "123"
+        "RequestId": "9f2cdb12-cbc8-431a-94e8-c658ae3ca3ac"
     }
 }
 ```

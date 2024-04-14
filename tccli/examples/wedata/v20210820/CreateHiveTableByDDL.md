@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli wedata CreateHiveTableByDDL --cli-unfold-argument  \
-    --DatasourceId abc \
-    --Database abc \
-    --DDLSql abc \
-    --Incharge abc \
+    --DatasourceId 12342313 \
+    --Database hive \
+    --DDLSql select * from database; \
+    --Incharge 231232 \
     --Privilege 0 \
-    --ProjectId abc \
-    --Type abc
+    --ProjectId 124537 \
+    --Type HIVE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "abc",
-        "RequestId": "abc"
+        "Data": "true",
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

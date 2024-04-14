@@ -22,13 +22,13 @@ Output:
     "Response": {
         "TableInfo": [
             {
-                "TableId": "abc",
-                "TableName": "abc",
-                "OriginDatabaseName": "abc",
-                "OriginSchemaName": "abc"
+                "TableId": "1",
+                "TableName": "table1",
+                "OriginDatabaseName": "mysql",
+                "OriginSchemaName": "datasource"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

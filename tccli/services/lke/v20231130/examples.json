@@ -528,7 +528,7 @@
       {
         "document": "查询文档解析结果",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryParseDocResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"D78iBBGi\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=AKIDqQ2UCeGDtjVkjauVp8NM1czNWPAgwvhF&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698206c1f2cbe8ddec0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\"\n    }\n}",
         "title": "查询文档解析结果"
       }
     ],
@@ -583,7 +583,7 @@
     "SaveDoc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n    \"ETag\": \"f679b6029cba26d65ef93c4e174b59d8\",\n    \"CosHash\": \"f679b6029cba26d65ef93c4e174b59d8\",\n    \"Size\": \"643000\",\n    \"Source\": 1,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n    \"ETag\": \"f679b6029cba26d65ef93c4e174b59d8\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"643000\",\n    \"Source\": 1,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"DocBizId\": \"1694921462777761792\",\n        \"ErrorMsg\": \"\",\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
         "title": "保存文档"
       }
@@ -599,7 +599,7 @@
     "UploadAttributeLabel": [
       {
         "document": "上传导入知识标签",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"FileName\": \"99个属性.xlsx\",\n    \"CosUrl\": \"/corp/137/doc/vflu03AWF1qQx7bkoGrA-7113266998.xlsx\",\n    \"CosHash\": \"f4f1f0703126b70f407440590a6f1538\",\n    \"Size\": \"17544\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"FileName\": \"99个属性.xlsx\",\n    \"CosUrl\": \"/corp/137/doc/vflu03AWF1qQx7bkoGrA-7113266998.xlsx\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"17544\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c41dfeef-6a60-4b79-bff5-377ffc218223\"\n    }\n}",
         "title": "上传导入知识标签"
       }

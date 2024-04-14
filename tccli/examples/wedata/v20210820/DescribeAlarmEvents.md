@@ -13,9 +13,9 @@ tccli wedata DescribeAlarmEvents --cli-unfold-argument  \
     --OrderFields.0.Direction DESC \
     --OrderFields.0.Name AlarmTime \
     --PageNumber 1 \
-    --StartTime  \
+    --StartTime 2022-12-12 12:12:12 \
     --TaskType 1 \
-    --EndTime 
+    --EndTime 2022-12-12 12:12:12
 ```
 
 Output: 

@@ -6,35 +6,35 @@ Input:
 
 ```
 tccli wedata DescribeTableQualityDetails --cli-unfold-argument  \
-    --PageSize 0 \
-    --ProjectId 0 \
-    --StatisticsDate 0 \
-    --DatasourceId  \
+    --PageSize 1 \
+    --ProjectId 153161111111111111 \
+    --StatisticsDate 1679414400 \
+    --DatasourceId dsadsa-dsadihjks \
     --OrderFields.0.Direction DESC \
     --OrderFields.0.Name TableScore \
     --PageNumber 0 \
     --Filters.0.Values TableName \
-    --Filters.0.Name test
+    --Filters.0.Name dq_table1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f2a131b8-0de7-4cb8-a354-9bbfc5d3a028",
+        "RequestId": "f2a131b8-0dd3a028",
         "Data": {
             "TotalCount": 4,
             "Items": [
                 {
-                    "DatabaseId": "",
-                    "DatabaseName": "",
-                    "TableId": "",
-                    "TableName": "",
-                    "OwnerUserId": 1234,
-                    "OwnerUserName": "",
-                    "DatabaseScore": 0.0,
-                    "TableScore": 0.0,
-                    "LastPeriodRatio": 0.0
+                    "DatabaseId": "dsadasd-dsad",
+                    "DatabaseName": "dq_db1",
+                    "TableId": "dsjklj-jkjk",
+                    "TableName": "dq_table1",
+                    "OwnerUserId": 100333290099,
+                    "OwnerUserName": "zhangsna",
+                    "DatabaseScore": 0.8,
+                    "TableScore": 12.0,
+                    "LastPeriodRatio": 0.18
                 }
             ]
         }

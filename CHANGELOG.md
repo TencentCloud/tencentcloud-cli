@@ -1,3 +1,168 @@
+# Release 3.0.975.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 26 次发布
+
+发布时间：2024-04-15 01:19:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BidPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83726)
+* [DescribeReservedBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/83725)
+
+新增数据结构：
+
+* [ReserveBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReserveBidInfo)
+
+修改数据结构：
+
+* [ReservedPreDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#ReservedPreDomainInfo)
+
+	* 新增成员：BusinessId
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 78 次发布
+
+发布时间：2024-04-15 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchOrganizationRegistrationTasks](http://document.tencentcloudapi.woa.com/document/product/1668/83728)
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
+
+修改接口：
+
+* [CreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81399)
+
+	* 新增入参：RecipientIds
+
+
+新增数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 75 次发布
+
+发布时间：2024-04-15 01:25:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/248/30354#Condition)
+
+	* 新增成员：HierarchicalValue
+
+* [EventCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#EventCondition)
+
+	* 新增成员：MetricName
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 37 次发布
+
+发布时间：2024-04-15 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRestoreTimeRange](http://document.tencentcloudapi.woa.com/document/product/238/83729)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 44 次发布
+
+发布时间：2024-04-15 01:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GenHiveTableDDLSql](http://document.tencentcloudapi.woa.com/document/product/1607/77565)
+
+	* 新增入参：SinkSchemaName
+
+* [ModifyExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77630)
+
+	* 新增入参：TriggerTypes
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SearchConditionInstance
+
+修改数据结构：
+
+* [DatabaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseInfo)
+
+	* 新增成员：DsEnvType
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：ParamsString
+
+	* <font color="#dd0000">**修改成员**：</font>Version
+
+* [ProdSchedulerTask](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ProdSchedulerTask)
+
+	* 新增成员：CycleType
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Rule)
+
+	* 新增成员：DsEnvType
+
+* [RuleExecResult](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleExecResult)
+
+	* <font color="#dd0000">**修改成员**：</font>RuleExecId, RuleGroupExecId, RuleGroupId, RuleId, RuleName, RuleType, SourceObjectDataTypeName, SourceObjectValue, ConditionExpression, ExecResultStatus, TriggerResult, CompareResult, TemplateName, QualityDim, TargetDBTableName, TargetObjectValue, TargetObjectDataType, FieldConfig, RelConditionExpr, StartTime, AlarmLevel
+
+* [RuleGroup](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroup)
+
+	* 新增成员：DsEnvType
+
+* [RuleGroupExecStrategy](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleGroupExecStrategy)
+
+	* 新增成员：TriggerTypes
+
+* [SearchCondition](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SearchCondition)
+
+	* <font color="#dd0000">**修改成员**：</font>Instance
+
+* [TableQualityDetail](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableQualityDetail)
+
+	* 新增成员：DsEnvType
+
+
+
+
 # Release 3.0.974.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

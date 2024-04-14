@@ -9,7 +9,7 @@ tccli lke UploadAttributeLabel --cli-unfold-argument  \
     --BotBizId 1696822786072117248 \
     --FileName 99个属性.xlsx \
     --CosUrl /corp/137/doc/vflu03AWF1qQx7bkoGrA-7113266998.xlsx \
-    --CosHash f4f1f0703126b70f407440590a6f1538 \
+    --CosHash xxxxxxxxx \
     --Size 17544
 ```
 
