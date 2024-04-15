@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateClusters": {
+      "document": "创建集群",
+      "input": "CreateClustersRequest",
+      "name": "创建集群",
+      "output": "CreateClustersResponse",
+      "status": "online"
+    },
     "DescribeRenewResourceParams": {
       "document": "获取续费集群入参",
       "input": "DescribeRenewResourceParamsRequest",
@@ -29,6 +36,177 @@
     "serviceShortName": "lighthousedb"
   },
   "objects": {
+    "ClusterParam": {
+      "document": "数据库参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "xx",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "xx",
+          "member": "string",
+          "name": "CurrentValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateClustersRequest": {
+      "document": "CreateClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区,每个地域提供最佳实践",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型，默认Mysql",
+          "example": "Mysql",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本，Mysql默认5.7",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名字,默认与集群ID相同",
+          "example": "测试集群",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群密码（8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|(){}[]:;'<>,.?/中的任意三种）默认系统自动生成",
+          "example": "xxXXX@123",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口，默认3306",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Cpu核数，默认1核",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位G，默认1G",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长,与TimeUnit组合才能生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长单位，与TimeSpan组合生效，可选:日:d,月:m, 年:y；默认m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标志: 0:默认状态; 1:自动续费; 2:不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，单位G，默认1000G",
+          "example": "1000",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参数列表，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
+          "example": "xx",
+          "member": "ClusterParam",
+          "name": "ClusterParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClustersResponse": {
+      "document": "CreateClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单ID列表",
+          "example": "[\"123\",\"345\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRenewResourceParamsRequest": {
       "document": "DescribeRenewResourceParams请求参数结构体",
       "members": [

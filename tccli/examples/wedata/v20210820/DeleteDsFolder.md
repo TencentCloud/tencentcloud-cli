@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DeleteDsFolder --cli-unfold-argument  \
-    --ProjectId abc \
-    --FolderId abc
+    --ProjectId 1460947878944567296 \
+    --FolderId d1962251-b6b9-4b9f-9039-e6456697cecf
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "d1962251-b6b9-4b9f-9039-e6456697cecf"
     }
 }
 ```

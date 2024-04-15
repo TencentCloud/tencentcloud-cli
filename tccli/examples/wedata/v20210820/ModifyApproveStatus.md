@@ -1,28 +1,4 @@
-**Example 1: 样例**
-
-
-
-Input: 
-
-```
-tccli wedata ModifyApproveStatus --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": [
-            {
-                "ApproveId": "abc",
-                "Success": true
-            }
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 成功示例**
+**Example 1: 成功示例**
 
 
 

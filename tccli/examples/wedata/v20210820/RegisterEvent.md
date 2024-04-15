@@ -1,61 +1,33 @@
-**Example 1: 范例**
+**Example 1: 注册事件**
 
-
+注册事件
 
 Input: 
 
 ```
 tccli wedata RegisterEvent --cli-unfold-argument  \
-    --EventSubType DAY \
-    --Name aab \
+    --ProjectId 1492511691706699776 \
+    --Name test_event_11 \
     --EventType TIME_SERIES \
-    --DimensionFormat yyyyMMdd \
+    --EventSubType DAY \
     --EventBroadcastType SINGLE \
-    --ProjectId 1 \
-    --Owner TBDS \
+    --DimensionFormat yyyyMMdd \
+    --TimeToLive 30 \
     --TimeUnit DAYS \
-    --Description aa
+    --Owner micofywang \
+    --Description test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "150c868d-0f20-4c31-b300-12c08be75328",
-        "Data": true
-    }
-}
-```
-
-**Example 2: 范例2**
-
-
-
-Input: 
-
-```
-tccli wedata RegisterEvent --cli-unfold-argument  \
-    --EventSubType DAY \
-    --Name mytest4 \
-    --EventType TIME_SERIES \
-    --DimensionFormat yyyyMMdd \
-    --EventBroadcastType SINGLE \
-    --ProjectId 1 \
-    --Owner TBDS \
-    --TimeUnit DAYS \
-    --Description aa
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "3ba35016-968f-456e-aae9-b31e1e0c8df3",
         "Data": {
-            "Result": true,
+            "ErrorDesc": null,
             "ErrorId": null,
-            "ErrorDesc": null
-        }
+            "Result": true
+        },
+        "RequestId": "d43d2a97-0522-4917-a471-dbc0a8b3c318"
     }
 }
 ```

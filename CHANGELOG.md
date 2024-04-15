@@ -1,3 +1,352 @@
+# Release 3.0.976.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 4 次发布
+
+发布时间：2024-04-16 01:07:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83557)
+
+	* 新增出参：RevisedPrompt
+
+* [SubmitTextToImageProJob](http://document.tencentcloudapi.woa.com/document/product/1728/83556)
+
+	* 新增入参：Revise
+
+
+
+
+## 二进制软件成分分析(bsca) 版本：2021-08-11
+
+### 第 6 次发布
+
+发布时间：2024-04-16 01:08:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeKBComponentVulnerability](http://document.tencentcloudapi.woa.com/document/product/1693/79859)
+
+	* 新增入参：Language
+
+* [DescribeKBVulnerability](http://document.tencentcloudapi.woa.com/document/product/1693/79857)
+
+	* 新增入参：Language
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 77 次发布
+
+发布时间：2024-04-16 01:13:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDbTknResource](http://document.tencentcloudapi.woa.com/document/product/1003/83731)
+* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/1003/83730)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 79 次发布
+
+发布时间：2024-04-16 01:16:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
+
+	* 新增入参：Operator, AuthorizationTypes, OrganizationName, UniformSocialCreditCode, LegalName, AutoJumpUrl, OrganizationAddress, AdminName, AdminMobile, AdminIdCardNumber, AdminIdCardType, UniformSocialCreditCodeSame, LegalNameSame, AdminNameSame, AdminIdCardNumberSame, AdminMobileSame, OrganizationNameSame, BusinessLicense, Endpoint
+
+	* 新增出参：AuthUrl, ExpiredTime
+
+
+
+
+## 轻量数据库服务LighthouseDB(lighthousedb) 版本：2021-04-20
+
+### 第 2 次发布
+
+发布时间：2024-04-16 01:19:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1684/83733)
+
+新增数据结构：
+
+* [ClusterParam](http://document.tencentcloudapi.woa.com/document/product/1684/83734#ClusterParam)
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 5 次发布
+
+发布时间：2024-04-16 01:20:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeStorageCredential](http://document.tencentcloudapi.woa.com/document/product/1759/83676)
+
+	* 新增出参：ImagePath
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 45 次发布
+
+发布时间：2024-04-16 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* BatchCreateTaskVersionDs
+* BatchDeleteTasksDs
+* BatchDeleteTasksNew
+* BatchModifyOwnersNew
+* BatchStopTasksNew
+* CheckDuplicateRuleName
+* CheckDuplicateTemplateName
+* CommitExportTask
+* CommitRuleGroupExecResult
+* CreateBaseline
+* CreateFolder
+* CreateOrUpdateResource
+* CreateResourcePath
+* CreateWorkflow
+* DeleteBaseline
+* DeleteFolder
+* DeleteWorkflowNew
+* DescribeAllTaskType
+* DescribeAllUsedVersionSon
+* DescribeBaselineAllTaskDag
+* DescribeBaselineById
+* DescribeBaselineInstanceDag
+* DescribeBaselineInstanceGantt
+* DescribeBaselineInstances
+* DescribeBaselines
+* DescribeBelongTo
+* DescribeDataBases
+* DescribeDataObjects
+* DescribeDataSourceWithoutInfo
+* DescribeDataTypes
+* DescribeDependOpsTaskList
+* DescribeDependTasksNew
+* DescribeDiagnosticInfoByBaselineId
+* DescribeDrInstanceScriptContent
+* DescribeDrSonInstance
+* DescribeEventDetail
+* DescribeEventIsAlarmTypes
+* DescribeEventTypes
+* DescribeEvents
+* DescribeFathers
+* DescribeFolderList
+* DescribeInstanceLogs
+* DescribeInstances
+* DescribeInstancesInfoWithTaskInfo
+* DescribeMonitorsByPage
+* DescribeOperateTasks
+* DescribeProdTasks
+* DescribeRelatedInstances
+* DescribeRuleDataSources
+* DescribeRuleExecExportResult
+* DescribeRuleExecHistory
+* DescribeRuleExecResultsByPage
+* DescribeRuleGroupExecResultsByPageWithoutAuth
+* DescribeRuleHistoryByPage
+* DescribeRuleTablesByPage
+* DescribeScheduleInstance
+* DescribeSonInstances
+* DescribeTaskInstance
+* DescribeTaskInstanceReportDetail
+* DescribeTaskInstances
+* DescribeTaskReport
+* DescribeTaskReportDetailList
+* DescribeTemplateHistory
+* DescribeWorkflowOpsCanvasInfo
+* DiagnosePlus
+* EditBaseline
+* ForceSucInstances
+* ForceSucScheduleInstances
+* FreezeTasks
+* FreezeTasksByMultiWorkflow
+* KillInstances
+* MakeUpOpsTasks
+* MakeUpTasksByWorkflow
+* MakeUpTasksNew
+* MakeUpWorkflowNew
+* ModifyBaselineAlarmStatus
+* ModifyBaselineTaskAlarmStatus
+* ModifyFolder
+* RerunInstances
+* RerunOpsMakePlanInstances
+* RerunScheduleInstances
+* RunTask
+* StopBaseline
+* SubmitBaseline
+
+修改接口：
+
+* [CreateTaskVersionDs](http://document.tencentcloudapi.woa.com/document/product/1607/82941)
+
+	* 新增入参：EnableCheckTaskCycleLink
+
+* [DeleteProjectUsers](http://document.tencentcloudapi.woa.com/document/product/1607/83004)
+
+	* 新增入参：ProjectId, UserIds, TargetTransferUserId
+
+* [DescribeDatasource](http://document.tencentcloudapi.woa.com/document/product/1607/77684)
+
+	* 新增入参：Env
+
+* [DescribeOrganizationalFunctions](http://document.tencentcloudapi.woa.com/document/product/1607/77701)
+
+	* 新增入参：EnvType
+
+* [SaveCustomFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77700)
+
+	* 新增入参：ProjectId, DbName, Name
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AlarmDsVO
+* AlarmExtDsVO
+* AlarmRuleDto
+* AttributeItemDsVO
+* BaselineDetailResponse
+* BaselineDto
+* BaselineInstanceVo
+* BaselineTaskDto
+* BaselineTaskInfo
+* BaselineTaskInstanceDto
+* BatchCreateTaskVersionDsDTOLite
+* BatchOperateResultDs
+* BooleanResponse
+* CandidateDsDTo
+* CanvasInfo
+* CollectionTaskOpsDto
+* CreateAlarmRuleRequest
+* DependencyConfigDsDTONoRecurV2
+* DependencyStrategyDs
+* DescribeBaselineResponse
+* DescribeBaselineTaskDagResponse
+* DescribeDiagnosticInfoResponse
+* DescribeFolderListData
+* DescribeTaskInstancesData
+* EventDto
+* EventPage
+* ExportTaskInfo
+* Folder
+* InstanceInfo
+* InstanceLog
+* InstanceReportReadNode
+* InstanceReportSummary
+* InstanceReportWriteNode
+* Label
+* ModifyAlarmRuleRequest
+* OperateResult
+* ParamInfoDs
+* ParameterTaskDsDto
+* ParameterTaskInDsDto
+* ParameterTaskOutDsDto
+* RuleExecExportResult
+* RuleGroupMonitor
+* RuleGroupMonitorPage
+* RuleHistory
+* RuleHistoryPage
+* RuleTemplateHistory
+* RuleTemplateHistoryPage
+* RunnerRuleExecResult
+* SourceObject
+* StringListNode
+* TaskCanvasInfo
+* TaskDsDTOLiteV2
+* TaskDsDTONoRecurV2
+* TaskExtDsVO
+* TaskInfoPage
+* TaskInstanceDetail
+* TaskInstanceInfo
+* TaskLinkDsDTO
+* TaskLinkInfo
+* TaskReportDetail
+* TaskTypeDsVO
+* TaskTypeExtDsVO
+* TaskTypeExtParamDsVO
+* UserFileDTO
+
+修改数据结构：
+
+* [CommonIdOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CommonIdOpsDto)
+
+	* <font color="#dd0000">**修改成员**：</font>Id
+
+* [EventCaseConsumeLogOptDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#EventCaseConsumeLogOptDto)
+
+	* <font color="#dd0000">**修改成员**：</font>ConsumeLogId, EventCaseId, ConsumerId, CreationTimestamp, ConsumerDetail
+
+* [EventCaseConsumeLogOptDtoCollection](http://document.tencentcloudapi.woa.com/document/product/1607/77747#EventCaseConsumeLogOptDtoCollection)
+
+	* <font color="#dd0000">**修改成员**：</font>TotalCount, TotalPage, PageCount, PageNumber, PageSize, Items
+
+* [EventCaseOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#EventCaseOpsDto)
+
+	* <font color="#dd0000">**修改成员**：</font>CaseId, Name, Dimension, CreationTimestamp, ConsumerId, Description
+
+* [EventListenerOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#EventListenerOpsDto)
+
+	* <font color="#dd0000">**修改成员**：</font>EventName, Key, Type, Properties, CreationTimestamp
+
+* [EventOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#EventOpsDto)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, EventType, EventSubType, EventBroadcastType, DimensionFormat, TimeToLive, TimeUnit, CreationTimestamp, Owner, Properties, Description, Listeners, EventCases
+
+* [MakePlanTaskOpsDtoCollection](http://document.tencentcloudapi.woa.com/document/product/1607/77747#MakePlanTaskOpsDtoCollection)
+
+	* <font color="#dd0000">**修改成员**：</font>TotalCount, TotalPage, PageCount, PageNumber, PageSize, Items
+
+* [OrganizationalFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrganizationalFunction)
+
+	* 新增成员：Tag
+
+
+
+
 # Release 3.0.975.1
 
 ## 域名注册(domain) 版本：2018-08-08

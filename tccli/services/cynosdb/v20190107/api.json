@@ -371,6 +371,13 @@
       "output": "DescribeDBSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeDbTknResource": {
+      "document": "本接口(DescribeDbTknResource)用于查询数据库账号",
+      "input": "DescribeDbTknResourceRequest",
+      "name": "查询数据库账号资源",
+      "output": "DescribeDbTknResourceResponse",
+      "status": "online"
+    },
     "DescribeFlow": {
       "document": "本接口（DescribeFlow）用于查询任务流信息",
       "input": "DescribeFlowRequest",
@@ -894,6 +901,13 @@
       "input": "ResetAccountPasswordRequest",
       "name": "修改数据库账号密码",
       "output": "ResetAccountPasswordResponse",
+      "status": "online"
+    },
+    "ResetInstancePassword": {
+      "document": "本接口(ResetInstancePassword)用于设置数据库账号密码",
+      "input": "ResetInstancePasswordRequest",
+      "name": "设置数据库账号密码",
+      "output": "ResetInstancePasswordResponse",
       "status": "online"
     },
     "RestartInstance": {
@@ -9526,6 +9540,79 @@
       ],
       "type": "object"
     },
+    "DescribeDbTknResourceRequest": {
+      "document": "DescribeDbTknResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-on5xw0ni",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，只允许 cynosdb",
+          "example": "cynosdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceResponse": {
+      "document": "DescribeDbTknResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号存在并且开启了密码轮转",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFlowRequest": {
       "document": "DescribeFlow请求参数结构体",
       "members": [
@@ -17559,6 +17646,89 @@
     "ResetAccountPasswordResponse": {
       "document": "ResetAccountPassword返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-on5xw0ni",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "awdqwd223~!",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重置密码耗时，单位：毫秒",
+          "example": "1000",
+          "member": "int64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重置密码成功时的时间戳，单位：毫秒",
+          "example": "123456789",
+          "member": "int64",
+          "name": "ResetTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

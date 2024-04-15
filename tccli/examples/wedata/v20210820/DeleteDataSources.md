@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli wedata DeleteDataSources --cli-unfold-argument  \
-    --Ids 1 2
+    --Ids 10065 251
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123",
+        "RequestId": "1215-sdg15asg-15sd3",
         "Data": true
     }
 }

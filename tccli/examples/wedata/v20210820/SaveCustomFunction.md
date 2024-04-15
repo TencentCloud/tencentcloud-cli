@@ -26,7 +26,7 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMessage": "查询失败",
+        "ErrorMessage": null,
         "FunctionId": "d65df5af-28b4-4171-9a24-ce96fc4e83fa",
         "RequestId": "ef431542-96ae-467c-b821-f594df8ac83c"
     }

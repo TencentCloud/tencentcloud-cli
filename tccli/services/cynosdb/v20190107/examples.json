@@ -442,6 +442,14 @@
         "title": "查询实例安全组信息"
       }
     ],
+    "DescribeDbTknResource": [
+      {
+        "document": "查询数据库账号",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cynosdbysql-on5xw0ni\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"test\",\n    \"AccountHost\": \"%\",\n    \"InstanceType\": \"cynosdb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询数据库账号"
+      }
+    ],
     "DescribeFlow": [
       {
         "document": "",
@@ -1046,6 +1054,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=ResetAccountPassword\n&ClusterId=cynosdbpg-on5xw0ni\n&AccountName=root\n&AccountPassword=abc@2018\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"148561\"\n    }\n}",
         "title": "修改数据库账号密码"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "设置数据库账号密码",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cynosdbysql-on5xw0ni\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"test\",\n    \"AccountHost\": \"%\",\n    \"Password\": \"sadaw@1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TimeCost\": 250,\n        \"ResetTimestamp\": 123145566,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置数据库账号密码"
       }
     ],
     "RestartInstance": [

@@ -20,6 +20,8 @@ Output:
                 {
                     "ConsumeLogId": "9eb04578870ec50d018712b3938d0005",
                     "ConsumerDetail": {
+                        "Submit": true,
+                        "TasksStr": "",
                         "BrokerIp": "any",
                         "ClusterId": null,
                         "CreateTime": "2023-03-24 16:09:14",

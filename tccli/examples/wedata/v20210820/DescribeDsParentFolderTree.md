@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DescribeDsParentFolderTree --cli-unfold-argument  \
-    --ProjectId abc \
-    --FolderId abc \
-    --WorkflowId abc \
-    --TaskId abc
+    --ProjectId 1460947878944567296 \
+    --FolderId 37ae6016-1ea0-4aad-a070-48ecbf660588 \
+    --WorkflowId ed7ea1ca-be5c-11ed-b7fc-043f72e73c62 \
+    --TaskId 20230504163927698
 ```
 
 Output: 
@@ -18,35 +18,35 @@ Output:
     "Response": {
         "Data": [
             {
-                "Id": "abc",
-                "Title": "abc",
-                "Type": "abc",
-                "ParentId": "abc",
+                "Id": "100028578885",
+                "Title": "wedata",
+                "Type": "select-option",
+                "ParentId": "e345e27f-be5c-11ed-b7fc-043f72e73c62",
                 "IsLeaf": true,
                 "Children": [
                     {
-                        "Id": "abc",
-                        "Title": "abc",
-                        "Type": "abc",
-                        "ParentId": "abc",
+                        "Id": "100028578886",
+                        "Title": "tbds",
+                        "Type": "select-option",
+                        "ParentId": "e345e27f-be5c-11ed-b7fc-043f72e73c7",
                         "IsLeaf": true,
                         "Children": [
                             {
-                                "Id": "abc",
-                                "Title": "abc",
-                                "Type": "abc",
-                                "ParentId": "abc",
+                                "Id": "100028578887",
+                                "Title": "tenc",
+                                "Type": "select-option",
+                                "ParentId": "e345e27f-be5c-11ed-b7fc-043f72e73c8",
                                 "IsLeaf": true,
-                                "Params": "abc"
+                                "Params": "json"
                             }
                         ],
-                        "Params": "abc"
+                        "Params": "code1"
                     }
                 ],
-                "Params": "abc"
+                "Params": "code2"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "2ff1f873-90fb-438d-a948-50f90bc9c686"
     }
 }
 ```

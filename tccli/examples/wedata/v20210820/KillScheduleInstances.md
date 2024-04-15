@@ -1,6 +1,6 @@
-**Example 1: test**
+**Example 1: 批量终止实例**
 
-test
+实例运维-批量终止实例
 
 Input: 
 
