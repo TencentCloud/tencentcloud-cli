@@ -385,7 +385,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "required": false,
@@ -394,7 +394,7 @@
         {
           "disabled": false,
           "document": "价格",
-          "example": "无",
+          "example": "100.00",
           "member": "int64",
           "name": "Price",
           "required": false,
@@ -1912,7 +1912,7 @@
         {
           "disabled": false,
           "document": "领先用户",
-          "example": "无",
+          "example": "r***cent@.com",
           "member": "string",
           "name": "UpUser",
           "output_required": true,
@@ -1953,7 +1953,7 @@
         {
           "disabled": false,
           "document": "状态，用于筛选，可不填写(1. 成功 2. 失败（失败Reason字段将会被赋值）3. 域名交割中 4. 域名交割完成 5. 预约 6. 竞价)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ReservedStatus",
           "required": false,
@@ -2784,7 +2784,7 @@
         {
           "disabled": false,
           "document": "预约失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "当前已经提交预约信息,请勿重复提交",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
@@ -3223,7 +3223,7 @@
         {
           "disabled": false,
           "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "r***cent@.com",
           "member": "string",
           "name": "User",
           "output_required": false,
@@ -3233,7 +3233,7 @@
         {
           "disabled": false,
           "document": "出价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "int64",
           "name": "Price",
           "output_required": false,
@@ -3243,7 +3243,7 @@
         {
           "disabled": false,
           "document": "出价时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "15:04:05",
           "member": "string",
           "name": "BidTime",
           "output_required": false,
@@ -3253,7 +3253,7 @@
         {
           "disabled": false,
           "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "down",
           "member": "string",
           "name": "BidStatus",
           "output_required": false,
@@ -3355,7 +3355,7 @@
         {
           "disabled": false,
           "document": "域名预定失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "当前已经提交预约信息,请勿重复提交",
           "member": "string",
           "name": "FailReason",
           "output_required": false,

@@ -1036,6 +1036,13 @@
       "output": "DescribeRouteTableConflictsResponse",
       "status": "online"
     },
+    "DescribeSupportedRuntime": {
+      "document": "根据K8S版本获取可选运行时版本",
+      "input": "DescribeSupportedRuntimeRequest",
+      "name": "基于K8S版本获取可选运行时版本",
+      "output": "DescribeSupportedRuntimeResponse",
+      "status": "online"
+    },
     "DescribeTKEEdgeClusterCredential": {
       "document": "获取边缘计算集群的认证信息",
       "input": "DescribeTKEEdgeClusterCredentialRequest",
@@ -1279,6 +1286,13 @@
       "input": "ModifyClusterNodePoolRequest",
       "name": "编辑节点池",
       "output": "ModifyClusterNodePoolResponse",
+      "status": "online"
+    },
+    "ModifyClusterRuntimeConfig": {
+      "document": "修改集群及节点池纬度运行时配置",
+      "input": "ModifyClusterRuntimeConfigRequest",
+      "name": "修改集群运行时配置",
+      "output": "ModifyClusterRuntimeConfigResponse",
       "status": "online"
     },
     "ModifyClusterVirtualNodePool": {
@@ -5111,7 +5125,7 @@
         {
           "disabled": false,
           "document": "路由表名称。",
-          "example": "",
+          "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -5119,8 +5133,8 @@
         },
         {
           "disabled": false,
-          "document": "目的端CIDR。",
-          "example": "",
+          "document": "目的节点的 PodCIDR",
+          "example": "10.4.0.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -5128,8 +5142,8 @@
         },
         {
           "disabled": false,
-          "document": "下一跳地址。",
-          "example": "",
+          "document": "下一跳地址，即目的节点的内网 IP 地址",
+          "example": "10.0.0.3",
           "member": "string",
           "name": "GatewayIp",
           "required": true,
@@ -5155,8 +5169,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由表名称",
-          "example": "",
+          "document": "路由表名称，一般为集群ID",
+          "example": "cls-abcdefgh",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -5165,7 +5179,7 @@
         {
           "disabled": false,
           "document": "路由表CIDR",
-          "example": "",
+          "example": "172.16.0.0/16",
           "member": "string",
           "name": "RouteTableCidrBlock",
           "required": true,
@@ -5174,7 +5188,7 @@
         {
           "disabled": false,
           "document": "路由表绑定的VPC",
-          "example": "",
+          "example": "vpc-abcdefgh",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5182,8 +5196,8 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略CIDR冲突",
-          "example": "",
+          "document": "是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略",
+          "example": "0",
           "member": "int64",
           "name": "IgnoreClusterCidrConflict",
           "required": false,
@@ -13333,6 +13347,42 @@
       ],
       "type": "object"
     },
+    "DescribeSupportedRuntimeRequest": {
+      "document": "DescribeSupportedRuntime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "K8S版本",
+          "example": "",
+          "member": "string",
+          "name": "K8sVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSupportedRuntimeResponse": {
+      "document": "DescribeSupportedRuntime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选运行时列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "OptionalRuntimes",
+          "name": "OptionalRuntimes",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTKEEdgeClusterCredentialRequest": {
       "document": "DescribeTKEEdgeClusterCredential请求参数结构体",
       "members": [
@@ -15855,7 +15905,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的路径",
-          "example": "/api/v1/namespaces",
+          "example": "\"/apis/application.tkestack.io/v1/namespaces/cls-0975tg3b/apps/cbs\"",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -15864,7 +15914,7 @@
         {
           "disabled": false,
           "document": "请求集群addon后允许接收的数据格式",
-          "example": "无",
+          "example": "\"application/json\"",
           "member": "string",
           "name": "Accept",
           "required": false,
@@ -15873,7 +15923,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的数据格式",
-          "example": "无",
+          "example": "\"application/merge-patch+json\"",
           "member": "string",
           "name": "ContentType",
           "required": false,
@@ -15882,7 +15932,7 @@
         {
           "disabled": false,
           "document": "请求集群addon的数据",
-          "example": "无",
+          "example": "\"{\\\"kind\\\":\\\"App\\\",\\\"spec\\\":{\\\"chart\\\":{\\\"chartName\\\":\\\"cbs\\\",\\\"chartVersion\\\":\\\"1.1.2\\\"},\\\"values\\\":{\\\"values\\\":[],\\\"rawValues\\\":\\\"e30=\\\",\\\"rawValuesType\\\":\\\"json\\\"}}}\"",
           "member": "string",
           "name": "RequestBody",
           "required": false,
@@ -15891,7 +15941,7 @@
         {
           "disabled": false,
           "document": "集群名称，例如cls-1234abcd",
-          "example": "cls-xxxxxxxx",
+          "example": "\"cls-48d3xu4g\"",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -15918,7 +15968,7 @@
           "example": "[]",
           "member": "string",
           "name": "ResponseBody",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18398,6 +18448,60 @@
       ],
       "type": "object"
     },
+    "ModifyClusterRuntimeConfigRequest": {
+      "document": "ModifyClusterRuntimeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID，必填",
+          "example": "cls-o8hjuza0",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景",
+          "example": "1.24.4",
+          "member": "string",
+          "name": "DstK8SVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改集群运行时时填写",
+          "example": "{\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\"}",
+          "member": "RuntimeConfig",
+          "name": "ClusterRuntimeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改节点池运行时时，填需要修改的部分",
+          "example": "[{\"NodePoolId\":\"np-3z37njiu\",\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\",\"NodePoolName\":\"np-test\"}]",
+          "member": "NodePoolRuntime",
+          "name": "NodePoolRuntimeConfig",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterRuntimeConfigResponse": {
+      "document": "ModifyClusterRuntimeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterVirtualNodePoolRequest": {
       "document": "ModifyClusterVirtualNodePool请求参数结构体",
       "members": [
@@ -19331,6 +19435,52 @@
       ],
       "usage": "in"
     },
+    "NodePoolRuntime": {
+      "document": "NodePool的运行时配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RuntimeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点池名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "NodePoolName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OIDCConfigAuthenticationOptions": {
       "document": "OIDC认证相关配置",
       "members": [
@@ -19362,6 +19512,42 @@
           "name": "AutoInstallPodIdentityWebhookAddon",
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OptionalRuntimes": {
+      "document": "可选运行时",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行时类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "containerd",
+          "member": "string",
+          "name": "RuntimeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ \"1.3.4\",\"1.4.3\"]",
+          "member": "string",
+          "name": "RuntimeVersions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该类型的默认运行时版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.3.4",
+          "member": "string",
+          "name": "DefaultVersion",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -22939,6 +23125,32 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuntimeConfig": {
+      "document": "运行时配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行时类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RuntimeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

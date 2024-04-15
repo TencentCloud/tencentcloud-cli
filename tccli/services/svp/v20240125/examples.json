@@ -3,7 +3,7 @@
     "CreateSavingPlanOrder": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSavingPlanOrder\n<公共请求参数>\n\n{\n    \"RegionId\": 47,\n    \"ZoneId\": 470004,\n    \"PrePayType\": \"1\",\n    \"SpecifyEffectTime\": \"2023-10-21 00:00:00\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"y\",\n    \"CommodityCode\": \"svp_common_CYq7cGNk3FaV\",\n    \"PromiseUseAmount\": 10000,\n    \"ClientToken\": \"sp-856f5555-8064-43e9-8b7e-d04c5a9d6a9a,856f5555806443e98b7ed04c5a9d6a9a\"\n}",
+        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSavingPlanOrder\n<公共请求参数>\n\n{\n    \"RegionId\": 47,\n    \"ZoneId\": 470004,\n    \"PrePayType\": \"1\",\n    \"SpecifyEffectTime\": \"2023-10-21 00:00:00\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"y\",\n    \"CommodityCode\": \"svp_common_CYq7cGNk3FaV\",\n    \"PromiseUseAmount\": 10000,\n    \"ClientToken\": \"sp-856f5555\"\n}",
         "output": "{\n    \"Response\": {\n        \"BigDealId\": \"20231020400000764159521\",\n        \"RequestId\": \"7525ef6b-ac63-4fa6-9bd4-d8c3c8b96220\"\n    }\n}",
         "title": "节省计划下单"
       }

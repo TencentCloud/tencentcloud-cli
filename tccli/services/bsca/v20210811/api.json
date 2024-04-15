@@ -534,6 +534,15 @@
           "name": "PURL",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语言，ZH或EN",
+          "example": "ZH",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -547,7 +556,7 @@
           "example": "无",
           "member": "ComponentVulnerabilityUnion",
           "name": "VulnerabilityList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -645,6 +654,15 @@
           "name": "CNNVDID",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "语言，ZH或EN",
+          "example": "ZH",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

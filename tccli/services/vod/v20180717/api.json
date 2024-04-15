@@ -197,9 +197,9 @@
       "status": "online"
     },
     "CreateSubAppId": {
-      "document": "该接口用于创建点播子应用。",
+      "document": "该接口用于创建点播应用。",
       "input": "CreateSubAppIdRequest",
-      "name": "创建子应用",
+      "name": "创建应用",
       "output": "CreateSubAppIdResponse",
       "status": "online"
     },
@@ -736,9 +736,9 @@
       "status": "online"
     },
     "DescribeSubAppIds": {
-      "document": "该接口用于获取当前账号的子应用列表，包含主应用。",
+      "document": "该接口用于获取当前账号的应用列表。",
       "input": "DescribeSubAppIdsRequest",
-      "name": "查询子应用列表",
+      "name": "查询应用列表",
       "output": "DescribeSubAppIdsResponse",
       "status": "online"
     },
@@ -6741,7 +6741,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -10955,7 +10955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子应用名称，长度限制：40个字符。",
+          "document": "应用名称，长度限制：40个字符。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -10964,7 +10964,7 @@
         },
         {
           "disabled": false,
-          "document": "子应用简介，长度限制： 300个字符。",
+          "document": "应用简介，长度限制： 300个字符。",
           "example": "demo",
           "member": "string",
           "name": "Description",
@@ -10979,11 +10979,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "新创建的子应用 ID。",
+          "document": "新创建的应用 ID。",
           "example": "12345",
           "member": "uint64",
           "name": "SubAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11986,7 +11986,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -12638,7 +12638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12693,7 +12693,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12703,7 +12703,7 @@
           "example": "无",
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15736,7 +15736,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1450001234",
           "member": "uint64",
           "name": "SubAppId",
@@ -15754,7 +15754,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedInfrequentStorage：低频存储提前删除量。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n<li>InfrequentRetrieval：低频存储取回量。</li>\n默认值为 TotalStorage。",
+          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedInfrequentStorage：低频存储提前删除量。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。</li>\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n<li>InfrequentRetrieval：低频存储取回量。</li>\n默认值为 TotalStorage。",
           "example": "StandardStorage",
           "member": "string",
           "name": "StorageType",
@@ -15837,7 +15837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子应用名称。",
+          "document": "应用名称。",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -15846,7 +15846,7 @@
         },
         {
           "disabled": false,
-          "document": "标签信息，查询指定标签的子应用列表。",
+          "document": "标签信息，查询指定标签的应用列表。",
           "example": "无",
           "member": "ResourceTag",
           "name": "Tags",
@@ -15879,7 +15879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子应用信息集合。",
+          "document": "应用信息集合。",
           "example": "无",
           "member": "SubAppIdInfo",
           "name": "SubAppIdInfoSet",
@@ -15889,7 +15889,7 @@
         },
         {
           "disabled": false,
-          "document": "子应用总数量。",
+          "document": "应用总数量。",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -29219,7 +29219,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -32003,7 +32003,7 @@
         },
         {
           "disabled": false,
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -32133,7 +32133,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -33611,7 +33611,7 @@
         },
         {
           "disabled": false,
-          "document": "点播应用 ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "0",
           "member": "int64",
           "name": "SubAppId",
@@ -37643,7 +37643,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "125",
           "member": "uint64",
           "name": "SubAppId",

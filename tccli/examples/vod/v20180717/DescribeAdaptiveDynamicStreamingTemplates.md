@@ -24,6 +24,8 @@ Output:
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
                 "DrmType": "",
+                "DrmKeyProvider": "VOD",
+                "SegmentType": "ts",
                 "DisableHigherVideoResolution": 0,
                 "DisableHigherVideoBitrate": 0,
                 "StreamInfos": [
@@ -44,7 +46,9 @@ Output:
                             "FillType": "black",
                             "Bitrate": 12500,
                             "Vcrf": 23,
-                            "Gop": 0
+                            "Gop": 0,
+                            "PreserveHDRSwitch": "OFF",
+                            "CodecTag": "hvc1"
                         },
                         "RemoveAudio": 0,
                         "TEHDConfig": {

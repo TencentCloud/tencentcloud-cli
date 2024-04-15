@@ -12644,6 +12644,7 @@
           "example": "3102001968756",
           "member": "string",
           "name": "ID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12653,6 +12654,7 @@
           "example": "นาย ธนกฤต  บุญโญปกรุณ์",
           "member": "string",
           "name": "ThaiName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12662,42 +12664,7 @@
           "example": "Mr. Thanakit",
           "member": "string",
           "name": "EnFirstName",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "地址",
-          "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
-          "member": "string",
-          "name": "Address",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "出生日期",
-          "example": "14ธ.ค.2509",
-          "member": "string",
-          "name": "Birthday",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "签发日期",
-          "example": "9ธ.ค.2559",
-          "member": "string",
-          "name": "IssueDate",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "到期日期",
-          "example": "13ธ.ค.2567",
-          "member": "string",
-          "name": "ExpirationDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12707,6 +12674,47 @@
           "example": "Boonyopakron",
           "member": "string",
           "name": "EnLastName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "泰文签发日期",
+          "example": "9ธ.ค.2559",
+          "member": "string",
+          "name": "IssueDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "泰文到期日期",
+          "example": "13ธ.ค.2567",
+          "member": "string",
+          "name": "ExpirationDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "泰文出生日期",
+          "example": "14ธ.ค.2509",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12716,6 +12724,7 @@
           "example": "无",
           "member": "string",
           "name": "PortraitImage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

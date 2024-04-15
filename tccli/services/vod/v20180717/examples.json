@@ -313,7 +313,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAppId\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Description\": \"demo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"SubAppId\": 12345\n    }\n}",
-        "title": "创建子应用"
+        "title": "创建应用"
       }
     ],
     "CreateSuperPlayerConfig": [
@@ -620,7 +620,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"Custom\",\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DrmType\": \"\",\n                \"DisableHigherVideoResolution\": 0,\n                \"DisableHigherVideoBitrate\": 0,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 128\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 720,\n                            \"Height\": 1080,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 12500,\n                            \"Vcrf\": 23,\n                            \"Gop\": 0\n                        },\n                        \"RemoveAudio\": 0,\n                        \"TEHDConfig\": {\n                            \"MaxVideoBitrate\": 10000,\n                            \"Type\": \"TEHD-100\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"Custom\",\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DrmType\": \"\",\n                \"DrmKeyProvider\": \"VOD\",\n                \"SegmentType\": \"ts\",\n                \"DisableHigherVideoResolution\": 0,\n                \"DisableHigherVideoBitrate\": 0,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 128\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 720,\n                            \"Height\": 1080,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 12500,\n                            \"Vcrf\": 23,\n                            \"Gop\": 0,\n                            \"PreserveHDRSwitch\": \"OFF\",\n                            \"CodecTag\": \"hvc1\"\n                        },\n                        \"RemoveAudio\": 0,\n                        \"TEHDConfig\": {\n                            \"MaxVideoBitrate\": 10000,\n                            \"Type\": \"TEHD-100\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
       }
     ],
@@ -992,10 +992,10 @@
     ],
     "DescribeSubAppIds": [
       {
-        "document": "查询子应用资源列表",
+        "document": "查询应用资源列表",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeSubAppIds\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"SubAppIdInfoSet\": [\n            {\n                \"SubAppId\": 1451123904,\n                \"Name\": \"子应用1\",\n                \"SubAppIdName\": \"主应用\",\n                \"Description\": \"子应用1简介\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            },\n            {\n                \"SubAppId\": 1251123904,\n                \"Name\": \"主应用\",\n                \"SubAppIdName\": \"主应用\",\n                \"Description\": \"\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "查询子应用资源列表"
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"SubAppIdInfoSet\": [\n            {\n                \"SubAppId\": 1451123904,\n                \"Name\": \"应用1\",\n                \"SubAppIdName\": \"应用1\",\n                \"Description\": \"应用1简介\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            },\n            {\n                \"SubAppId\": 1251123904,\n                \"Name\": \"应用2\",\n                \"SubAppIdName\": \"应用2\",\n                \"Description\": \"应用2简介\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"Status\": \"On\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "查询应用资源列表"
       }
     ],
     "DescribeSuperPlayerConfigs": [
@@ -1475,9 +1475,9 @@
     "ModifySubAppIdInfo": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifySubAppIdInfo\n&SubAppId=1400000001\n&Name=更新子应用名\n&Description=更新子应用简介\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifySubAppIdInfo\n&SubAppId=1400000001\n&Name=更新应用名\n&Description=更新应用简介\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改子应用信息"
+        "title": "修改应用信息"
       }
     ],
     "ModifySubAppIdStatus": [
@@ -1485,7 +1485,7 @@
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=ModifySubAppIdStatus\n&SubAppId=1400000001\n&Status=Off\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "修改子应用状态"
+        "title": "修改应用状态"
       }
     ],
     "ModifySuperPlayerConfig": [

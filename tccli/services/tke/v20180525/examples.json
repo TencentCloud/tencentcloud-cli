@@ -143,7 +143,7 @@
     "CreateClusterRoute": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRoute\r\n&RouteTableName=MANAGED_CLUSTER\r\n&DestinationCidrBlock=10.4.0.0/24\r\n&GatewayIp=10.0.0.3\r\n&<公共请求参数>",
+        "input": "https://tke.tencentcloudapi.com/?Action=CreateClusterRoute\n&RouteTableName=MANAGED_CLUSTER\n&DestinationCidrBlock=10.4.0.0/24\n&GatewayIp=10.0.0.3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
         "title": "创建集群路由"
       }
@@ -1280,6 +1280,14 @@
         "title": "查询路由表冲突列表"
       }
     ],
+    "DescribeSupportedRuntime": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeSupportedRuntime\n&K8sVersion=xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"OptionalRuntimes\": [\n            {\n                \"RuntimeType\": \"docker\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取运行时版本信息"
+      }
+    ],
     "DescribeTKEEdgeClusterCredential": [
       {
         "document": "获取边缘集群的认证信息，其中包含kubeconfig文件",
@@ -1564,6 +1572,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\",\n    \"NodePoolId\": \"np-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
         "title": "编辑节点池"
+      }
+    ],
+    "ModifyClusterRuntimeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterRuntimeConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"clx-o8hjuza0\",\n    \"DstK8SVersion\": \"1.24.4\",\n    \"ClusterRuntimeConfig\": {\n        \"RuntimeType\": \"containerd\",\n        \"RuntimeVersion\": \"1.6.9\"\n    },\n    \"NodePoolRuntimeConfig\": [\n        {\n            \"NodePoolId\": \"np-3z37njiu\",\n            \"RuntimeType\": \"containerd\",\n            \"RuntimeVersion\": \"1.6.9\",\n            \"NodePoolName\": \"np-test\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb370cb6-df57-4077-hjxk-758225788b9b\"\n    }\n}",
+        "title": "修改集群运行时配置"
       }
     ],
     "ModifyClusterVirtualNodePool": [

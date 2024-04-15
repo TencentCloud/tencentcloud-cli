@@ -4415,12 +4415,204 @@
     },
     "CreateOrganizationAuthUrlRequest": {
       "document": "CreateOrganizationAuthUrl请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定授权方式 支持多选:\n1-上传授权书方式\n2- 法人授权方式\n3- 法人身份认证方式",
+          "example": "无",
+          "member": "uint64",
+          "name": "AuthorizationTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业名称\nEndPointType=“H5”或者\"SHORT_H5\"时，该参数必填\n",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "法人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证完成跳转链接",
+          "example": "无",
+          "member": "string",
+          "name": "AutoJumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照企业地址\n示例：xx省xx市xx县/区xx街道",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人手机号",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人证件类型\n支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照的社会信用代码保持一致\nfalse 关闭-默认\ntrue 开启",
+          "example": "无",
+          "member": "bool",
+          "name": "UniformSocialCreditCodeSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "法人姓名保持一致\nfalse 关闭-默认\ntrue 开启",
+          "example": "无",
+          "member": "bool",
+          "name": "LegalNameSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "认证人姓名一致\nfalse 关闭-默认\ntrue 开启\n注意：\n开启后在认证过程前会校验拦截",
+          "example": "无",
+          "member": "bool",
+          "name": "AdminNameSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "认证人居民身份证件号一致\nfalse 关闭-默认\ntrue 开启\n注意：\n开启后在认证过程前会校验拦截",
+          "example": "无",
+          "member": "bool",
+          "name": "AdminIdCardNumberSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "认证人手机号一致\nfalse 关闭-默认\ntrue 开启\n注意：\n开启后在认证过程前会校验拦截",
+          "example": "无",
+          "member": "bool",
+          "name": "AdminMobileSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业名称保持一致\nfalse 关闭-默认\ntrue 开启",
+          "example": "无",
+          "member": "bool",
+          "name": "OrganizationNameSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessLicense",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跳转链接类型：\n\"PC\"-PC端认证链接 \n\"APP\"-全屏或半屏跳转小程序链接\n“H5”-H5页面认证链接 \"SHORT_H5\"- H5认证短链\n\"SHORT_URL\"- 跳转小程序短链\t",
+          "example": "无",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateOrganizationAuthUrlResponse": {
       "document": "CreateOrganizationAuthUrl返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "“H5”-H5长连接\n\"SHORT_H5\"- H5短链\n\"APP\"-小程序\n\"PC\"-PC浏览器\n链接有效期统一30天",
+          "example": "无",
+          "member": "string",
+          "name": "AuthUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

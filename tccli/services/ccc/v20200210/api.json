@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateCompanyApply": {
-      "document": "创建公司资质申请（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
+      "document": "创建公司资质申请（1、首次使用接口，建议先在云联络中心控制台查看各个资料模板:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
       "input": "CreateCompanyApplyRequest",
       "name": "创建公司资质申请",
       "output": "CreateCompanyApplyResponse",
@@ -309,7 +309,7 @@
       "status": "online"
     },
     "ModifyCompanyApply": {
-      "document": "修改公司资质申请，只能修改状态为驳回或待审核的申请单。（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
+      "document": "修改公司资质申请，只能修改状态为驳回或待审核的申请单。（1、首次使用接口，建议先在云联络中心控制台查看各个资料模板:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）",
       "input": "ModifyCompanyApplyRequest",
       "name": "修改公司资质申请",
       "output": "ModifyCompanyApplyResponse",
@@ -1094,7 +1094,7 @@
         },
         {
           "disabled": false,
-          "document": "营业执照扫描件(加盖公章)。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "营业执照扫描件(加盖公章)。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg",
           "member": "string",
           "name": "BusinessIdPicUrl",
@@ -1127,7 +1127,7 @@
         },
         {
           "disabled": false,
-          "document": "法定代表人身份证正反面扫描件。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人身份证正反面扫描件。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CorporationIdPicUrl",
@@ -1149,7 +1149,7 @@
         },
         {
           "disabled": false,
-          "document": "电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "AcceptPicUrl",
@@ -1160,7 +1160,7 @@
         },
         {
           "disabled": false,
-          "document": "电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "NetworkCommitmentPicUrl",
@@ -1171,7 +1171,7 @@
         },
         {
           "disabled": false,
-          "document": "法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CorporationHoldingOnIdPicUrl",
@@ -1204,7 +1204,7 @@
         },
         {
           "disabled": false,
-          "document": "经办人身份证正反面扫描件，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人身份证正反面扫描件，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "OperatorIdPicUrl",
@@ -1215,7 +1215,7 @@
         },
         {
           "disabled": false,
-          "document": "经办人手持身份证照，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "经办人手持身份证照，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "OperatorHoldingOnIdPicUrl",
@@ -1226,7 +1226,7 @@
         },
         {
           "disabled": false,
-          "document": "委托授权书，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模版参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "委托授权书，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://xxxx.com/xxxxx.jpg\t",
           "member": "string",
           "name": "CommissionPicUrl",
@@ -4300,7 +4300,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 时间戳(查询维度仅支持天，比如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
+          "document": "起始时间戳，Unix 时间戳(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
           "example": "0",
           "member": "int64",
           "name": "StartTimeStamp",
@@ -4309,7 +4309,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，比如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
+          "document": "结束时间戳，Unix 时间戳，查询时间范围最大为90天(查询维度仅支持天，例如查询5月1日应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-01 23:59:59\"的时间戳,查5月1日和5月2日的应该传startTime:\"2023-05-01 00:00:00\",\"endTime\":\"2023-05-02 23:59:59\"的时间戳)",
           "example": "0",
           "member": "int64",
           "name": "EndTimeStamp",

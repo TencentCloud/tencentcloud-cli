@@ -14,7 +14,7 @@ tccli svp CreateSavingPlanOrder --cli-unfold-argument  \
     --TimeUnit y \
     --CommodityCode svp_common_CYq7cGNk3FaV \
     --PromiseUseAmount 10000 \
-    --ClientToken sp-856f5555-8064-43e9-8b7e-d04c5a9d6a9a,856f5555806443e98b7ed04c5a9d6a9a
+    --ClientToken sp-856f5555
 ```
 
 Output: 
