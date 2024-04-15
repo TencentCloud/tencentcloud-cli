@@ -1858,6 +1858,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为超级高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuperPackFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

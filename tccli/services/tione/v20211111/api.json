@@ -3211,7 +3211,7 @@
         },
         {
           "disabled": false,
-          "document": "启动命令信息，默认为sh start.sh",
+          "document": "任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数",
           "example": "无",
           "member": "StartCmdInfo",
           "name": "StartCmdInfo",
@@ -3323,6 +3323,15 @@
           "example": "无",
           "member": "PreTrainModel",
           "name": "PreTrainModel",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效",
+          "example": "无",
+          "member": "EncodedStartCmdInfo",
+          "name": "EncodedStartCmdInfo",
           "required": false,
           "type": "object"
         }
@@ -7317,6 +7326,21 @@
         }
       ],
       "usage": "out"
+    },
+    "EncodedStartCmdInfo": {
+      "document": "编码后的启动命令信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的启动命令，以base64格式输入，注意转换时需要完整输入{\"StartCmd\":\"\",\"PsStartCmd\":\"\",\"WorkerStartCmd\":\"\"}",
+          "example": "无",
+          "member": "string",
+          "name": "StartCmdInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EngineVersion": {
       "document": "引擎版本",

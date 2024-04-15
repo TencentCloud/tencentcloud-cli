@@ -572,9 +572,10 @@
         {
           "disabled": false,
           "document": "用户id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -582,9 +583,10 @@
         {
           "disabled": false,
           "document": "用户组id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UserGroupId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -592,9 +594,10 @@
         {
           "disabled": false,
           "document": "文件系统实例id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CfsId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -602,9 +605,10 @@
         {
           "disabled": false,
           "document": "文件系统挂载点id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MountInsId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -612,9 +616,10 @@
         {
           "disabled": false,
           "document": "本地挂载点",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LocalMountDir",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -622,9 +627,10 @@
         {
           "disabled": false,
           "document": "远程挂载点",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RemoteMountDir",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -632,9 +638,10 @@
         {
           "disabled": false,
           "document": "文件系统ip，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IpAddress",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -642,9 +649,10 @@
         {
           "disabled": false,
           "document": "文件系统所在的私有网络id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MountVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -652,9 +660,10 @@
         {
           "disabled": false,
           "document": "文件系统所在私有网络的子网id，配置 cfs 时无需填写。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "MountSubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

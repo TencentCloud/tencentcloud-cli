@@ -42,6 +42,13 @@
       "output": "BalanceRoGroupLoadResponse",
       "status": "online"
     },
+    "CheckMigrateCluster": {
+      "document": "高可用实例一键迁移到集群版校验",
+      "input": "CheckMigrateClusterRequest",
+      "name": "迁移集群版校验",
+      "output": "CheckMigrateClusterResponse",
+      "status": "online"
+    },
     "CloseAuditService": {
       "document": "实例关闭审计服务",
       "input": "CloseAuditServiceRequest",
@@ -411,6 +418,13 @@
       "input": "DescribeCloneListRequest",
       "name": "查询克隆任务列表",
       "output": "DescribeCloneListResponse",
+      "status": "online"
+    },
+    "DescribeClusterInfo": {
+      "document": "本接口(DescribeClusterInfo)用于查询集群版实例信息。",
+      "input": "DescribeClusterInfoRequest",
+      "name": "查询集群版实例信息",
+      "output": "DescribeClusterInfoResponse",
       "status": "online"
     },
     "DescribeCpuExpandStrategy": {
@@ -1319,6 +1333,82 @@
         }
       ],
       "type": "object"
+    },
+    "AddressInfo": {
+      "document": "实例地址信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地址的资源id标识。",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址所在的vpc。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址所在的子网。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址的vip。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址的端口。",
+          "example": "无",
+          "member": "int64",
+          "name": "VPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网地址域名。",
+          "example": "无",
+          "member": "string",
+          "name": "WanDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网地址端口。",
+          "example": "无",
+          "member": "int64",
+          "name": "WanPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AdjustCdbProxyAddressRequest": {
       "document": "AdjustCdbProxyAddress请求参数结构体",
@@ -3719,6 +3809,23 @@
       ],
       "usage": "out"
     },
+    "CheckMigrateClusterRequest": {
+      "document": "CheckMigrateCluster请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckMigrateClusterResponse": {
+      "document": "CheckMigrateCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloneItem": {
       "document": "克隆任务记录。",
       "members": [
@@ -3969,6 +4076,67 @@
         }
       ],
       "type": "object"
+    },
+    "ClusterNodeInfo": {
+      "document": "集群版实例节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点id。",
+          "example": "dbn-xxx",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的角色。",
+          "example": "master/ro",
+          "member": "string",
+          "name": "Role",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所在可用区。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的权重",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ColumnPrivilege": {
       "document": "列权限信息",
@@ -8569,6 +8737,93 @@
           "member": "CloneItem",
           "name": "Items",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInfoRequest": {
+      "document": "DescribeClusterInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id。",
+          "example": "cdb-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterInfoResponse": {
+      "document": "DescribeClusterInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群读写地址信息。",
+          "example": "无",
+          "member": "AddressInfo",
+          "name": "ReadWriteAddress",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群只读地址信息。",
+          "example": "无",
+          "member": "AddressInfo",
+          "name": "ReadOnlyAddress",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群节点列表信息。",
+          "example": "无",
+          "member": "ClusterNodeInfo",
+          "name": "NodeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只读空间保护阈值,单位GB",
+          "example": "无",
+          "member": "int64",
+          "name": "ReadonlyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例节点数。",
+          "example": "无",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -13,7 +13,6 @@ Output:
 ```
 {
     "Response": {
-        "Angel": 359.989990234375,
         "Angle": 359.989990234375,
         "Language": "zh",
         "PdfPageSize": 0,

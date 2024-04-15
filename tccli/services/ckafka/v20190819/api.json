@@ -4644,7 +4644,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-12jncn1nc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4653,7 +4653,7 @@
         {
           "disabled": false,
           "document": "用户名称",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4662,7 +4662,7 @@
         {
           "disabled": false,
           "document": "用户密码",
-          "example": "",
+          "example": "pass",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -4677,9 +4677,10 @@
         {
           "disabled": false,
           "document": "返回的结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5896,7 +5897,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-ocng1iic",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5905,7 +5906,7 @@
         {
           "disabled": false,
           "document": "用户名称",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5920,9 +5921,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7524,7 +7526,7 @@
         {
           "disabled": false,
           "document": "（过滤条件）按照实例 ID 过滤",
-          "example": "",
+          "example": "ckafka-1nnnc1c",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7533,7 +7535,7 @@
         {
           "disabled": false,
           "document": "Kafka 消费分组",
-          "example": "",
+          "example": "groupname",
           "member": "string",
           "name": "Group",
           "required": true,
@@ -7542,7 +7544,7 @@
         {
           "disabled": false,
           "document": "group 订阅的主题名称数组，如果没有该数组，则表示指定的 group 下所有 topic 信息",
-          "example": "",
+          "example": "topicname",
           "member": "string",
           "name": "Topics",
           "required": false,
@@ -7551,7 +7553,7 @@
         {
           "disabled": false,
           "document": "模糊匹配 topicName",
-          "example": "",
+          "example": "word",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -7560,7 +7562,7 @@
         {
           "disabled": false,
           "document": "本次查询的偏移位置，默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7569,7 +7571,7 @@
         {
           "disabled": false,
           "document": "本次返回结果的最大个数，默认为50，最大值为50",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7584,9 +7586,10 @@
         {
           "disabled": false,
           "document": "返回的结果对象",
-          "example": "",
+          "example": "无",
           "member": "GroupOffsetResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8545,7 +8548,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-123nnc1o",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8554,7 +8557,7 @@
         {
           "disabled": false,
           "document": "按照名称过滤",
-          "example": "",
+          "example": "word",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -8563,7 +8566,7 @@
         {
           "disabled": false,
           "document": "偏移",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8572,7 +8575,7 @@
         {
           "disabled": false,
           "document": "本次返回个数",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8587,9 +8590,10 @@
         {
           "disabled": false,
           "document": "返回结果列表",
-          "example": "",
+          "example": "无",
           "member": "UserResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13198,7 +13202,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-1incii1n",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13207,7 +13211,7 @@
         {
           "disabled": false,
           "document": "用户名称",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -13216,7 +13220,7 @@
         {
           "disabled": false,
           "document": "用户当前密码",
-          "example": "",
+          "example": "old pass",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -13225,7 +13229,7 @@
         {
           "disabled": false,
           "document": "用户新密码",
-          "example": "",
+          "example": "new pass",
           "member": "string",
           "name": "PasswordNew",
           "required": true,
@@ -13240,9 +13244,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

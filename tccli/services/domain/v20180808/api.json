@@ -7,6 +7,13 @@
       "output": "BatchModifyDomainInfoResponse",
       "status": "online"
     },
+    "BidPreDomains": {
+      "document": "用户合作商预释放出价",
+      "input": "BidPreDomainsRequest",
+      "name": "合作商预释放域名出价",
+      "output": "BidPreDomainsResponse",
+      "status": "online"
+    },
     "CheckBatchStatus": {
       "document": "本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。",
       "input": "CheckBatchStatusRequest",
@@ -145,6 +152,13 @@
       "input": "DescribePreDomainListRequest",
       "name": "提前获取域释放域名数据",
       "output": "DescribePreDomainListResponse",
+      "status": "online"
+    },
+    "DescribeReservedBidInfo": {
+      "document": "接口用于获取合作商竞价过程中竞价详情数据",
+      "input": "DescribeReservedBidInfoRequest",
+      "name": "合作商查询竞价信息",
+      "output": "DescribeReservedBidInfoResponse",
       "status": "online"
     },
     "DescribeReservedPreDomainInfo": {
@@ -364,6 +378,42 @@
         }
       ],
       "usage": "out"
+    },
+    "BidPreDomainsRequest": {
+      "document": "BidPreDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "价格",
+          "example": "无",
+          "member": "int64",
+          "name": "Price",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BidPreDomainsResponse": {
+      "document": "BidPreDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CertificateInfo": {
       "document": "认证资料信息",
@@ -1821,6 +1871,73 @@
       ],
       "type": "object"
     },
+    "DescribeReservedBidInfoRequest": {
+      "document": "DescribeReservedBidInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "P0011708628496386771",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReservedBidInfoResponse": {
+      "document": "DescribeReservedBidInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "竞价领先价格",
+          "example": "500",
+          "member": "int64",
+          "name": "UpPrice",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求用户当前价格",
+          "example": "100",
+          "member": "int64",
+          "name": "Price",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "领先用户",
+          "example": "无",
+          "member": "string",
+          "name": "UpUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "竞价详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReserveBidInfo",
+          "name": "BidList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReservedPreDomainInfoRequest": {
       "document": "DescribeReservedPreDomainInfo请求参数结构体",
       "members": [
@@ -1835,7 +1952,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，用于筛选，可不填写(1. 预定成功 2. 预定失败（预定失败Reason字段将会被赋值）3. 域名交割中 4. 域名交割完成)",
+          "document": "状态，用于筛选，可不填写(1. 成功 2. 失败（失败Reason字段将会被赋值）3. 域名交割中 4. 域名交割完成 5. 预约 6. 竞价)",
           "example": "无",
           "member": "int64",
           "name": "ReservedStatus",
@@ -3100,6 +3217,52 @@
       ],
       "type": "object"
     },
+    "ReserveBidInfo": {
+      "document": "合作商竞价详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Price",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出价时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BidTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BidStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReservedDomainInfo": {
       "document": "查询预释放预约列表域名详情",
       "members": [
@@ -3235,6 +3398,16 @@
           "example": "R0011706772888979211",
           "member": "string",
           "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "R0011708628496445392",
+          "member": "string",
+          "name": "BusinessId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

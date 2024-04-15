@@ -54,6 +54,14 @@
         "title": "均衡RO组内实例的负载"
       }
     ],
+    "CheckMigrateCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMigrateCluster\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "高可用实例一键迁移到集群版校验"
+      }
+    ],
     "CloseAuditService": [
       {
         "document": "无",
@@ -506,6 +514,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloneList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-9303wd4x\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Items\": [\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 12:34:56\",\n                \"CloneJobId\": 80,\n                \"SrcRegionId\": 0,\n                \"TaskStatus\": \"initial\",\n                \"NewRegionId\": 8,\n                \"RollbackStrategy\": \"test\",\n                \"StartTime\": \"2019-12-26 18:05:42\",\n                \"DstInstanceId\": \"cdb-9ubfzt6x\",\n                \"EndTime\": \"\"\n            },\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 16:13:31\",\n                \"CloneJobId\": 81,\n                \"SrcRegionId\": 4,\n                \"TaskStatus\": \"initial\",\n                \"StartTime\": \"2019-12-26 17:16:58\",\n                \"RollbackStrategy\": \"backupset\",\n                \"NewRegionId\": 0,\n                \"DstInstanceId\": \"cdb-awbsatzq\",\n                \"EndTime\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询克隆列表"
+      }
+    ],
+    "DescribeClusterInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterName\": \"dbname\",\n        \"ReadWriteAddress\": {\n            \"ResourceId\": \"cdb-xxx\",\n            \"UniqVpcId\": \"vpc-xxx\",\n            \"UniqSubnetId\": \"subnet-xxx\",\n            \"Vip\": \"192.168.3.4\",\n            \"VPort\": 3306,\n            \"WanDomain\": \"\",\n            \"WanPort\": 0\n        },\n        \"ReadOnlyAddress\": [\n            {\n                \"ResourceId\": \"cdb-xxx|readonly\",\n                \"UniqVpcId\": \"vpc-xxx\",\n                \"UniqSubnetId\": \"subnet-xxx\",\n                \"Vip\": \"192.168.3.5\",\n                \"VPort\": 3306,\n                \"WanDomain\": \"\",\n                \"WanPort\": 0\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"NodeId\": \"dbn-xxx\",\n                \"Role\": \"master\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            },\n            {\n                \"NodeId\": \"dbn-xxx\",\n                \"Role\": \"slave\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            }\n        ],\n        \"ReadonlyLimit\": 10,\n        \"NodeCount\": 2,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群版实例信息"
       }
     ],
     "DescribeCpuExpandStrategy": [

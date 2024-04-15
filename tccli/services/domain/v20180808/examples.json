@@ -8,6 +8,14 @@
         "title": "批量域名信息修改"
       }
     ],
+    "BidPreDomains": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BidPreDomains\n<公共请求参数>\n\n{\n    \"BusinessId\": \"P0011712825815133328\",\n    \"Price\": 5000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec312415-2f61-4a18-987d-d69e55a2847c\"\n    }\n}",
+        "title": "请求成功示例"
+      }
+    ],
     "CheckBatchStatus": [
       {
         "document": "",
@@ -168,12 +176,26 @@
         "title": "成功示例"
       }
     ],
+    "DescribeReservedBidInfo": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedBidInfo\n<公共请求参数>\n\n{\n    \"BusinessId\": \"P0011712825815133328\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BidList\": [\n            {\n                \"BidStatus\": \"up\",\n                \"BidTime\": \"17:19:30\",\n                \"Price\": 210,\n                \"User\": \"roy***@tencent.com\"\n            },\n            {\n                \"BidStatus\": \"down\",\n                \"BidTime\": \"17:18:45\",\n                \"Price\": 200,\n                \"User\": \"155***@qq.com\"\n            },\n            {\n                \"BidStatus\": \"down\",\n                \"BidTime\": \"17:15:24\",\n                \"Price\": 190,\n                \"User\": \"roy***@tencent.com\"\n            }\n        ],\n        \"Price\": 200,\n        \"RequestId\": \"43271422-1fe8-4af5-99ff-afc140ea35b2\",\n        \"UpPrice\": 210,\n        \"UpUser\": \"roy***@tencent.com\"\n    }\n}",
+        "title": "请求成功示例"
+      }
+    ],
     "DescribeReservedPreDomainInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abc\"\n    ],\n    \"ReservedStatus\": 0,\n    \"ReservedTimeSort\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"Domain\": \"abc\",\n                \"ReservedStatus\": 0,\n                \"FailReason\": \"abc\",\n                \"ChangeOwnerTime\": \"abc\",\n                \"RegTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "成功示例"
+      },
+      {
+        "document": "请求成功获取参数示例",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bd9e77-517f-4fd8-9ee9-f7042b7ae847\",\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"BusinessId\": \"P0011712734968570466\",\n                \"ChangeOwnerTime\": \"2024-03-15 08:40:34\",\n                \"Domain\": \"fdasfasfdsaf.com\",\n                \"ExpireTime\": \"2024-01-14 08:40:34\",\n                \"FailReason\": \"\",\n                \"RegTime\": \"2020-01-14 08:40:34\",\n                \"ReservedStatus\": 6,\n                \"ResourceId\": \"R0011712734968672830\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "请求成功示例"
       }
     ],
     "DescribeTemplate": [

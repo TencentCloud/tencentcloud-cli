@@ -372,14 +372,6 @@
         "title": "CreateHiveTableByDDL"
       }
     ],
-    "CreateInLongAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInLongAgent\n<公共请求参数>\n\n{\n    \"ExecutorGroupId\": \"abc\",\n    \"AgentType\": 1,\n    \"ClusterId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"AgentName\": \"abc\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AgentId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "注册采集器"
-      }
-    ],
     "CreateIntegrationNode": [
       {
         "document": "创建集成节点",
@@ -544,14 +536,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFolder\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"FolderId\": \"670f2048-0cc9-11ed-8909-bc97e105ba60\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b54d36be-2dc5-49ae-8f50-71ffb9ab7ee7\",\n        \"Data\": true\n    }\n}",
         "title": "范例"
-      }
-    ],
-    "DeleteInLongAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInLongAgent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"AgentId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "删除采集器"
       }
     ],
     "DeleteIntegrationNode": [
@@ -808,14 +792,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBelongTo\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "事件管理-所属任务-基线"
-      }
-    ],
-    "DescribeClusterNamespaceList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNamespaceList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Namespaces\": [\n            {\n                \"Status\": \"abc\",\n                \"Name\": \"abc\",\n                \"CreatedAt\": \"abc\"\n            }\n        ]\n    }\n}",
-        "title": "获取集群命名空间列表"
       }
     ],
     "DescribeColumnLineage": [
@@ -1144,38 +1120,6 @@
         "title": "查询函数类型"
       }
     ],
-    "DescribeInLongAgentList": [
-      {
-        "document": "获取采集器列表",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentList\n<公共请求参数>\n\n{\n    \"AgentId\": \"abc\",\n    \"AgentName\": \"abc\",\n    \"AgentType\": 1,\n    \"Status\": \"abc\",\n    \"VpcId\": \"abc\",\n    \"PageIndex\": 1,\n    \"PageSize\": 1,\n    \"ProjectId\": \"abc\",\n    \"Like\": 1,\n    \"AgentTypes\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AgentId\": \"abc\",\n                \"AgentName\": \"abc\",\n                \"Status\": \"abc\",\n                \"StatusDesc\": \"abc\",\n                \"AgentType\": 1,\n                \"Source\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"ExecutorGroupId\": \"abc\",\n                \"ExecutorGroupName\": \"abc\",\n                \"TaskCount\": 1,\n                \"AgentGroupId\": \"abc\",\n                \"CvmAgentStatusList\": [\n                    {\n                        \"Status\": \"abc\",\n                        \"Count\": 1\n                    }\n                ],\n                \"AgentTotal\": 1,\n                \"LifeDays\": 0\n            }\n        ],\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"TotalCount\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "获取采集器列表"
-      }
-    ],
-    "DescribeInLongAgentTaskList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentTaskList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"AgentId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskName\": \"abc\",\n                \"TaskId\": \"abc\",\n                \"TaskStatus\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeInLongAgentTaskList"
-      }
-    ],
-    "DescribeInLongAgentVpcList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongAgentVpcList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"VpcList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeInLongAgentVpcList"
-      }
-    ],
-    "DescribeInLongTkeClusterList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInLongTkeClusterList\n<公共请求参数>\n\n{\n    \"Status\": \"Running\",\n    \"PageIndex\": 1,\n    \"PageSize\": 1,\n    \"ClusterName\": \"\",\n    \"ProjectId\": \"1\",\n    \"HasAgent\": true,\n    \"ClusterType\": \"\",\n    \"TkeRegion\": \"ap-beijing\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PageIndex\": 1,\n        \"PageSize\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"Running\",\n                \"VpcId\": \"vpc-awed345\",\n                \"TkeRegion\": \"ap-beijing\",\n                \"ClusterName\": \"cls-test\",\n                \"HasAgent\": true,\n                \"ClusterId\": \"cls-0u7ofrsl\",\n                \"ClusterType\": \"INDEPENDENT_CLUSTER\",\n                \"AgentId\": \"16878689876877778\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"89add-786986\"\n    }\n}",
-        "title": "获取TKE集群列表"
-      }
-    ],
     "DescribeInstanceByCycle": [
       {
         "document": "周期实例统计",
@@ -1278,14 +1222,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatistics\n<公共请求参数>\n\n{\n    \"QueryDate\": \"2022-01-01\",\n    \"TaskType\": 201,\n    \"ProjectId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalTask\": 0,\n        \"ProdTask\": 0,\n        \"DevTask\": 0,\n        \"TotalReadRecords\": 0,\n        \"TotalWriteRecords\": 0,\n        \"TotalErrorRecords\": 0,\n        \"TotalAlarmEvent\": 0,\n        \"IncreaseReadRecords\": 0,\n        \"IncreaseWriteRecords\": 0,\n        \"IncreaseErrorRecords\": 0,\n        \"IncreaseAlarmEvent\": 0,\n        \"AlarmEvent\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeIntegrationStatistics"
-      }
-    ],
-    "DescribeIntegrationStatisticsAgentStatus": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationStatisticsAgentStatus\n<公共请求参数>\n\n{\n    \"QueryDate\": \"abc\",\n    \"TaskType\": 0,\n    \"ProjectId\": \"abc\",\n    \"ExecutorGroupId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StatusData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeIntegrationStatisticsAgentStatus"
       }
     ],
     "DescribeIntegrationStatisticsInstanceTrend": [
@@ -1816,14 +1752,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSonInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"PageIndex\": 1,\n    \"PageSize\": 100,\n    \"SearchCondition\": {\n        \"Instance\": {\n            \"TaskId\": \"20230313145539749\",\n            \"CurRunDate\": \"2023-03-13 14:55:53\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AvgCostTime\": null,\n                    \"CostMillisecond\": 0,\n                    \"CostTime\": \"00:00:00.000\",\n                    \"CreateTime\": \"2023-03-13 14:57:01\",\n                    \"CurRunDate\": \"2023-03-13 14:55:53\",\n                    \"CycleType\": \"ONEOFF_CYCLE\",\n                    \"DependenceFulfillTime\": \"2023-03-20 21:15:45\",\n                    \"DependencyRel\": null,\n                    \"DoFlag\": 0,\n                    \"EndTime\": \"2023-03-20 21:16:00\",\n                    \"ErrorDesc\": \"Dependency check failed at 2023-03-21T10:35:12.14+08:00 with reason: task 20230313145623119 's parent task instance failed: 20230313145539749 2023-03-13 14:55:53; parent instance failed num:1;relationShip:AND\",\n                    \"ExecutionSpace\": \"CYCLIC\",\n                    \"FirstDependenceFulfillTime\": \"2023-03-20 21:15:45\",\n                    \"FirstRunTime\": null,\n                    \"FirstStartTime\": null,\n                    \"FirstSubmitTime\": null,\n                    \"FolderId\": \"cc31c16e-8743-11ed-8909-bc97e105ba60\",\n                    \"FolderName\": \"stackxchen\",\n                    \"IgnoreEvent\": true,\n                    \"InCharge\": \"stackxchen\",\n                    \"LastLog\": null,\n                    \"LastSchedulerDateTime\": null,\n                    \"LastUpdate\": \"2023-03-21 10:35:14\",\n                    \"MaxCostTime\": null,\n                    \"MinCostTime\": null,\n                    \"NextCurDate\": \"2023-03-13 14:55:53\",\n                    \"ProductName\": \"DATA_DEV\",\n                    \"ProjectId\": \"1460947878944567296\",\n                    \"ProjectIdent\": null,\n                    \"ProjectName\": null,\n                    \"RedoFlag\": 1,\n                    \"ResourceGroup\": \"20221229154930684210\",\n                    \"ResourceInstanceId\": \"any\",\n                    \"RunPriority\": 6,\n                    \"RuntimeBroker\": \"ins-6m3r7n1h\",\n                    \"SchedulerDateTime\": \"2023-03-13 14:55:53\",\n                    \"SchedulerDesc\": \"2023年03月13日 14:55:53执行\",\n                    \"SonList\": null,\n                    \"StartTime\": null,\n                    \"State\": \"EVENT_LISTENING\",\n                    \"TaskId\": \"20230313145623119\",\n                    \"TaskName\": \"son_task\",\n                    \"TaskType\": {\n                        \"TypeDesc\": \"Shell\",\n                        \"TypeId\": 35,\n                        \"TypeSort\": \"数据计算\"\n                    },\n                    \"TenantId\": \"1315051789\",\n                    \"TotalRunNum\": 0,\n                    \"Tries\": 0,\n                    \"TryLimit\": 5,\n                    \"VirtualFlag\": null,\n                    \"WorkflowId\": \"d3398ce9-8743-11ed-8909-bc97e105ba60\",\n                    \"WorkflowName\": \"flow_01\",\n                    \"YarnQueue\": null\n                }\n            ],\n            \"PageCount\": 0,\n            \"PageNumber\": 1,\n            \"PageSize\": 100,\n            \"TotalCount\": 1,\n            \"TotalPage\": 0\n        },\n        \"RequestId\": \"27ae4008-6ce2-47ed-b4e4-d0c2c7fee5e9\"\n    }\n}",
         "title": "获取子实例成功"
-      }
-    ],
-    "DescribeStandardRuleDetailInfoList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandardRuleDetailInfoList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"Type\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"StandardRuleDetailList\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "获取数据标准规则详情"
       }
     ],
     "DescribeStatisticInstanceStatusTrendOps": [
@@ -2624,14 +2552,6 @@
         "title": "测试"
       }
     ],
-    "RestartInLongAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartInLongAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "重启采集器"
-      }
-    ],
     "ResumeIntegrationTask": [
       {
         "document": "mock",
@@ -2818,14 +2738,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "锁定集成任务"
-      }
-    ],
-    "UpdateInLongAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInLongAgent\n<公共请求参数>\n\n{\n    \"AgentName\": \"abc\",\n    \"ExecutorGroupId\": \"abc\",\n    \"AgentId\": \"abc\",\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "更新采集器"
       }
     ],
     "UpdateWorkflowOwner": [

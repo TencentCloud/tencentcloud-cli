@@ -104,3 +104,31 @@ Output:
 }
 ```
 
+**Example 5: 基于RecipientIds 生成他方签署链接**
+
+
+
+Input: 
+
+```
+tccli ess CreateOrganizationBatchSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
+    --Agent.ProxyOrganizationId  \
+    --UserId  \
+    --Name  \
+    --Mobile  \
+    --FlowIds yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4 \
+    --RecipientIds yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1706100107,
+        "RequestId": "s1705495307288609862",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD"
+    }
+}
+```
+

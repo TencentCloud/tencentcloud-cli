@@ -29,7 +29,7 @@
       "status": "online"
     },
     "DescribeCallDetailInfo": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
       "input": "DescribeCallDetailInfoRequest",
       "name": "查询历史用户列表与通话指标",
       "output": "DescribeCallDetailInfoResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeRoomInfo": {
-      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
+      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
       "input": "DescribeRoomInfoRequest",
       "name": "查询历史房间列表",
       "output": "DescribeRoomInfoResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "DescribeUserInfo": {
-      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅监控仪表盘商业套餐包获取此接口调用能力，[仪表盘商业化](https://cloud.tencent.com/document/product/647/81331)说明请见。另外也可通过订阅包月套餐尊享版和旗舰版解锁此接口调用能力，[包月套餐](https://cloud.tencent.com/document/product/647/85386)说明。",
+      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
       "input": "DescribeUserInfoRequest",
       "name": "查询历史用户列表",
       "output": "DescribeUserInfoResponse",
@@ -3098,6 +3098,39 @@
       ],
       "usage": "in"
     },
+    "McuBackgroundCustomRender": {
+      "document": "混流自定义渲染参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义渲染画面的宽度，单位为像素值，需大于0，且不能超过子布局的宽。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义渲染画面的高度，单位为像素值，需大于0，且不能超过子布局的高。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义渲染画面的圆角半径，单位为像素值，不能超过渲染画面Width和Height最小值的一半，不指定默认为0，表示直角。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Radius",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "McuCustomCrop": {
       "document": "混流自定义裁剪参数",
       "members": [
@@ -3285,7 +3318,7 @@
         },
         {
           "disabled": false,
-          "document": "子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。",
+          "document": "子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。",
           "example": "3",
           "member": "uint64",
           "name": "BackgroundRenderMode",
@@ -3300,6 +3333,15 @@
           "name": "TransparentUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。",
+          "example": "BackgroundCustomRender",
+          "member": "McuBackgroundCustomRender",
+          "name": "BackgroundCustomRender",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

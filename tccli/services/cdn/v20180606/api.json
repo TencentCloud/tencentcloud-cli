@@ -10047,7 +10047,7 @@
         {
           "disabled": false,
           "document": "http2 配置开关\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rewrew",
+          "example": "on",
           "member": "string",
           "name": "Http2",
           "output_required": true,
@@ -10058,7 +10058,7 @@
         {
           "disabled": false,
           "document": "OCSP 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "on",
           "member": "string",
           "name": "OcspStapling",
           "output_required": true,
@@ -10069,7 +10069,7 @@
         {
           "disabled": false,
           "document": "客户端证书校验功能\non：开启\noff：关闭\n默认为关闭状态，开启时需要上传客户端证书信息，该配置项目前在灰度中，尚未全量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dsadsa",
+          "example": "on",
           "member": "string",
           "name": "VerifyClient",
           "output_required": true,
@@ -10102,7 +10102,7 @@
         {
           "disabled": false,
           "document": "Spdy 配置开关\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dfdf",
+          "example": "on",
           "member": "string",
           "name": "Spdy",
           "output_required": true,

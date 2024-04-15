@@ -35,6 +35,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateBatchOrganizationRegistrationTasks": {
+      "document": "本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接\n该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业。\n2. 一天同一家企业最多创建8000家企业。\n3. 同一批创建的企业不能重复 其中包括 企业名称，企业统一信用代码\n4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置\n\n注：\n\n1. **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**\n  \n2. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n  \n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| --- | --- | --- |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "input": "CreateBatchOrganizationRegistrationTasksRequest",
+      "name": "创建企业批量认证链接",
+      "output": "CreateBatchOrganizationRegistrationTasksResponse",
+      "status": "online"
+    },
     "CreateBatchQuickSignUrl": {
       "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署。\n**注意：**\n1. 该接口目前仅支持签署人类型是**个人签署方的批量签署场景**(ApproverType=1)。\n2. 该接口可生成批量签署链接的C端签署人**必须仅有手写签名(控件类型为SIGN_SIGNATURE)和时间类型的签署控件**，**不支持填写控件** 。\n3. 请确保C端签署人在批量签署合同中**为待签署状态**，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。\n4. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateBatchQuickSignUrlRequest",
@@ -182,8 +189,15 @@
       "output": "CreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "CreateOrganizationAuthUrl": {
+      "document": "本接口（CreateOrganizationAuthUrl）用于生成创建企业认证链接。\n用于业务方系统自己生成认证链接进行跳转.而不用电子签自带的生成链接\n\n注： **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**",
+      "input": "CreateOrganizationAuthUrlRequest",
+      "name": "创建企业认证链接",
+      "output": "CreateOrganizationAuthUrlResponse",
+      "status": "online"
+    },
     "CreateOrganizationBatchSignUrl": {
-      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。\n- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。\n- 仅支持待签署状态的合同生成签署链接。",
+      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须需作为批量签署合同的签署方，or或签合同的候选人之一。\n- 对于本方企业：如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。\n- 若要生成他发企业签署链接：应传RecipientIds，且制定的合同必须是接口调用方发起的。\n- 支持待签署、待填写状态的合同生成签署链接。",
       "input": "CreateOrganizationBatchSignUrlRequest",
       "name": "获取企业签署合同web页面",
       "output": "CreateOrganizationBatchSignUrlResponse",
@@ -693,7 +707,7 @@
         },
         {
           "disabled": false,
-          "document": "通知签署方经办人的方式,  有以下途径:\n<ul><li>  **sms**  :  (默认)短信</li>\n<li>   **none**   : 不通知</li></ul>\n```\n注意：\n如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信\n```",
+          "document": "通知签署方经办人的方式,  有以下途径:\n<ul><li>  **sms**  :  (默认)短信</li>\n<li>   **none**   : 不通知</li></ul>\n\n注意：\n`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`",
           "example": "sms",
           "member": "string",
           "name": "NotifyType",
@@ -1127,7 +1141,7 @@
         },
         {
           "disabled": false,
-          "document": "开通成功后前端页面跳转的url，此字段的用法场景请联系客户经理确认。\n\n注：`仅支持H5开通场景`, `跳转链接仅支持 https:// , qianapp:// 开头`\n\n跳转场景：\n<ul><li>**贵方H5 -> 腾讯电子签H5 -> 贵方H5** : JumpUrl格式: https://YOUR_CUSTOM_URL/xxxx，只需满足 https:// 开头的正确且合规的网址即可。</li>\n<li>**贵方原生App -> 腾讯电子签H5 -> 贵方原生App** : JumpUrl格式: qianapp://YOUR_CUSTOM_URL，只需满足 qianapp:// 开头的URL即可。`APP实现方，需要拦截Webview地址跳转，发现url是qianapp:// 开头时跳转到原生页面。`APP拦截地址跳转可参考：<a href='https://stackoverflow.com/questions/41693263/android-webview-err-unknown-url-scheme'>Android</a>，<a href='https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/webview/upi-intent-ios/'>IOS</a> </li></ul>\n\n成功结果返回：\n若贵方需要在跳转回时通过链接query参数提示开通成功，JumpUrl中的query应携带如下参数：`appendResult=qian`。这样腾讯电子签H5会在跳转回的url后面会添加query参数提示贵方签署成功，比如 qianapp://YOUR_CUSTOM_URL?action=sign&result=success&from=tencent_ess",
+          "document": "开通成功后前端页面跳转的url，此字段的用法场景请联系客户经理确认。\n\n注：`仅支持H5开通场景`, `跳转链接仅支持 https:// , qianapp:// 开头`\n\n跳转场景：\n<ul><li>**贵方H5 -> 腾讯电子签H5 -> 贵方H5** : JumpUrl格式: https://YOUR_CUSTOM_URL/xxxx，只需满足 https:// 开头的正确且合规的网址即可。</li>\n<li>**贵方原生App -> 腾讯电子签H5 -> 贵方原生App** : JumpUrl格式: qianapp://YOUR_CUSTOM_URL，只需满足 qianapp:// 开头的URL即可。`APP实现方，需要拦截Webview地址跳转，发现url是qianapp:// 开头时跳转到原生页面。`APP拦截地址跳转可参考：<a href='https://stackoverflow.com/questions/41693263/android-webview-err-unknown-url-scheme'>Android</a>，<a href='https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/webview/upi-intent-ios/'>IOS</a> </li></ul>\n\n成功结果返回：\n若贵方需要在跳转回时通过链接query参数提示开通成功，JumpUrl中的query应携带如下参数：`appendResult=qian`。这样腾讯电子签H5会在跳转回的url后面会添加query参数提示贵方签署成功，例如： qianapp://YOUR_CUSTOM_URL?action=sign&result=success&from=tencent_ess",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
@@ -2027,6 +2041,80 @@
           "name": "TaskId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchOrganizationRegistrationTasksRequest": {
+      "document": "CreateBatchOrganizationRegistrationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构注册信息。\n一次最多支持10条认证流",
+          "example": "无",
+          "member": "RegistrationOrganizationInfo",
+          "name": "RegistrationOrganizations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要生成链接的类型, 可以选择的值如下: \n\n<ul>\n<li>(默认)PC: 生成PC端的链接</li>\n<li>SHORT_URL: H5跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>APP：生成小程序跳转链接</li>\n<li>H5：生成H5跳转长链接</li>\n<li>SHORT_H5：生成H5跳转短链</li>\n</ul>",
+          "example": "PC",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchOrganizationRegistrationTasksResponse": {
+      "document": "CreateBatchOrganizationRegistrationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成注册链接的任务Id，\n根据这个id， 调用DescribeBatchOrganizationRegistrationUrls 获取生成的链接，进入认证流程",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量生成企业认证链接的详细错误信息，\n顺序与输入参数保持一致。\n若企业认证均成功生成，则不返回错误信息；\n若存在任何错误，则返回具体的错误描述。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessages",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4325,6 +4413,23 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationAuthUrlRequest": {
+      "document": "CreateOrganizationAuthUrl请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateOrganizationAuthUrlResponse": {
+      "document": "CreateOrganizationAuthUrl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationBatchSignUrlRequest": {
       "document": "CreateOrganizationBatchSignUrl请求参数结构体",
       "members": [
@@ -4381,6 +4486,15 @@
           "name": "Mobile",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。\n您可以通过查询合同接口（DescribeFlowInfo）查询此参数。\n若传了此参数，则可以不传 UserId, Name, Mobile等参数",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8895,7 +9009,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n\n<b>模板发起合同时，该参数为必填项，可以通过[查询模版信息接口](https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFlowTemplates)获得。</b>\n<b>文件发起合同时，该参数无需传值。</b>\n\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n\n<b>模板发起合同时，该参数为必填项，可以通过[查询模板信息接口](https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFlowTemplates)获得。</b>\n<b>文件发起合同时，该参数无需传值。</b>\n\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -11215,6 +11329,102 @@
           "example": "无",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RegistrationOrganizationInfo": {
+      "document": "企业认证信息参数， 需要保证这些参数跟营业执照中的信息一致。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业注册地址。\n请确认该企业注册地址与企业营业执照中注册的地址一致。",
+          "example": "深圳市南山区高新区科技中一路腾讯大厦35层",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n在注册流程中，必须是超管本人进行操作。\n如果法人做为超管管理组织机构,超管姓名就是法人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n1：上传授权书\n2：法人授权超管\n5：授权书+对公打款\n\n\n注:\n`1. 当前仅支持一种认证方式`\n`2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`\n`3. 如果当前操作人是法人,则是法人认证`",
+          "example": "无",
+          "member": "uint64",
+          "name": "AuthorizationTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "认证人身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证人证件类型 \n支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessLicense",
           "required": false,
           "type": "string"
         }

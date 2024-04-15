@@ -1613,11 +1613,20 @@
       "members": [
         {
           "disabled": false,
+          "document": "索引名，需以-AppId结尾",
+          "example": "test-12345678",
+          "member": "string",
+          "name": "IndexName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1626,7 +1635,7 @@
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1635,16 +1644,7 @@
           "example": "subnet-xxxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "索引名，需以-AppId结尾",
-          "example": "test-12345678",
-          "member": "string",
-          "name": "IndexName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

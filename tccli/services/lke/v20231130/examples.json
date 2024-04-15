@@ -1,0 +1,617 @@
+{
+  "actions": {
+    "CheckAttributeLabelExist": [
+      {
+        "document": "检查知识标签是否存在",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAttributeLabelExist\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"LabelName\": \"属性修改\",\n    \"AttributeBizId\": \"208\",\n    \"LastLabelBizId\": \"204\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsExist\": false,\n        \"RequestId\": \"7e2305f5-b348-46e2-a90a-79ebae135103\"\n    }\n}",
+        "title": "检查知识标签是否存在"
+      }
+    ],
+    "CheckAttributeLabelRefer": [
+      {
+        "document": "检查知识标签是否被引用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAttributeLabelRefer\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"LabelBizId\": \"1734549420823662593\",\n    \"AttributeBizId\": [\n        \"1734549420823662592\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsRefer\": false,\n        \"RequestId\": \"2bf7f1f1-9346-4919-9561-e85805017676\"\n    }\n}",
+        "title": "检查知识标签是否被引用"
+      }
+    ],
+    "CreateApp": [
+      {
+        "document": "创建应用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"知识问答\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "创建应用"
+      }
+    ],
+    "CreateAttributeLabel": [
+      {
+        "document": "创建知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttrKey\": \"test\",\n    \"AttrName\": \"诶皮爱标签\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"你好\",\n            \"SimilarLabels\": [\n                \"车型a\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"802c3847-9781-4818-959a-aff3035d22fc\"\n    }\n}",
+        "title": "创建知识标签"
+      }
+    ],
+    "CreateCorp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCorp\n<公共请求参数>\n\n{\n    \"FullName\": \"测试企业\",\n    \"ContactName\": \"王先生\",\n    \"Email\": \"\",\n    \"Telephone\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CorpBizId\": \"1744209203680903168\",\n        \"RequestId\": \"1bab38dd-f17d-4c48-88b6-608ed51edf74\"\n    }\n}",
+        "title": "集成商创建企业"
+      }
+    ],
+    "CreateQA": [
+      {
+        "document": "创建问答",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"Question\": \"q\",\n    \"Answer\": \"a\",\n    \"AttrRange\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"QaBizId\": \"17272310733712383\",\n        \"RequestId\": \"eefbbf48-673a-4fe3-bc0f-5b45693b8962\"\n    }\n}",
+        "title": "创建问答"
+      }
+    ],
+    "CreateQACate": [
+      {
+        "document": "新建QA分类",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"ParentBizId\": \"1733053612030808064\",\n    \"Name\": \"哈哈哈哈\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CanAdd\": true,\n        \"CanDelete\": true,\n        \"CanEdit\": true,\n        \"CateBizId\": \"1734144647474577408\",\n        \"RequestId\": \"39db6689-ceab-4ae7-87a9-f926774255d7\"\n    }\n}",
+        "title": "新建QA分类"
+      }
+    ],
+    "CreateRejectedQuestion": [
+      {
+        "document": "创建新的拒答问题",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"Question\": \"吃饭了吗哥哥\",\n    \"BusinessSource\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52a3bc37-f211-4e15-97cf-00eb36f3e17a\"\n    }\n}",
+        "title": "创建新的拒答问题"
+      }
+    ],
+    "CreateRelease": [
+      {
+        "document": "创建发布",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRelease\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReleaseBizId\": \"1730526803028463616\",\n        \"RequestId\": \"e54a496a-2bff-4017-a1ae-0ce790681779\"\n    }\n}",
+        "title": "创建发布"
+      }
+    ],
+    "DeleteApp": [
+      {
+        "document": "删除应用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "DeleteApp"
+      }
+    ],
+    "DeleteAttributeLabel": [
+      {
+        "document": "删除知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttributeBizIds\": [\n        \"110\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fd0a090-c087-42a8-9689-9fe2153432be\"\n    }\n}",
+        "title": "删除知识标签"
+      }
+    ],
+    "DeleteDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{\n    \"DocBizIds\": [\n        \"1727266196004143104\"\n    ],\n    \"BotBizId\": \"1714970520775950336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e0e00a7-1505-4d4e-9fc2-e88e9c700aa4\"\n    }\n}",
+        "title": "删除文档"
+      }
+    ],
+    "DeleteQA": [
+      {
+        "document": "删除问答",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"QaBizIds\": [\n        \"1728997020814671872\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed65bc68-964a-421b-84c6-9b59745a0620\"\n    }\n}",
+        "title": "删除问答"
+      }
+    ],
+    "DeleteQACate": [
+      {
+        "document": "QA分类删除",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"CateBizId\": \"1734144647474577408\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4478d155-4b10-40d8-a1dd-5ea045259966\"\n    }\n}",
+        "title": "QA分类删除"
+      }
+    ],
+    "DeleteRejectedQuestion": [
+      {
+        "document": "DeleteRejectedQuestion",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"RejectedBizIds\": [\n        \"1732953678087585792\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"930abc66-d4d4-4028-ac0a-162851ce955d\"\n    }\n}",
+        "title": "DeleteRejectedQuestion"
+      }
+    ],
+    "DescribeApp": [
+      {
+        "document": "获取企业下应用详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"45454545464646\",\n        \"AppType\": \"knowledge_qa\",\n        \"BaseConfig\": {\n            \"Name\": \"应用\",\n            \"Avatar\": \"头像\",\n            \"Desc\": \"应用描述\"\n        },\n        \"AppKey\": \"app_key\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "DescribeApp"
+      }
+    ],
+    "DescribeAttributeLabel": [
+      {
+        "document": "查询知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttributeBizId\": \"1734549420823662592\",\n    \"LastLabelBizId\": \"1734549420823662593\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AttrKey\": \"test\",\n        \"AttrName\": \"诶皮爱标签\",\n        \"AttributeBizId\": \"1734549420823662592\",\n        \"LabelNumber\": \"1\",\n        \"Labels\": [],\n        \"RequestId\": \"99ff53c2-120a-4d0a-b54d-760a65852cd6\"\n    }\n}",
+        "title": "查询知识标签"
+      }
+    ],
+    "DescribeCorp": [
+      {
+        "document": "获取企业信息",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCorp\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CorpBizId\": \"18485034430310\",\n        \"FullName\": \"我的企业\",\n        \"RequestId\": \"669edde9-e9ec-40c6-bf31-5e9402fb26fb\",\n        \"RobotQuota\": 10\n    }\n}",
+        "title": "获取企业信息"
+      }
+    ],
+    "DescribeDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"DocBizId\": \"1729099536210460672\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17467eb0-3f01-4bc8-af86-3f3b6b01a40c\",\n        \"IsAllowDelete\": true,\n        \"IsCreatedQa\": false,\n        \"IsDeleted\": false,\n        \"SourceDesc\": \"网页导入\",\n        \"UpdateTime\": \"1701427403\",\n        \"DocBizId\": \"1729099536210460672\",\n        \"DocCharSize\": \"5\",\n        \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n        \"IsAllowEdit\": false,\n        \"IsDeletedQa\": false,\n        \"AttrLabels\": [],\n        \"AttrRange\": 1,\n        \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n        \"IsAllowRefer\": false,\n        \"IsCreatingQa\": false,\n        \"Source\": 1,\n        \"QaNum\": 0,\n        \"Reason\": \"\",\n        \"Status\": 14,\n        \"StatusDesc\": \"学习失败\",\n        \"FileType\": \"docx\",\n        \"IsAllowRestart\": true,\n        \"IsRefer\": false\n    }\n}",
+        "title": "文档详情"
+      }
+    ],
+    "DescribeQA": [
+      {
+        "document": "获取QA详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQA\n<公共请求参数>\n\n{\n    \"QaBizId\": \"162734\",\n    \"BotBizId\": \"1714970520775950336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Answer\": \"我的好毛事12141\",\n        \"AttrLabels\": [],\n        \"AttrRange\": 1,\n        \"CateBizId\": \"0\",\n        \"DocBizId\": \"0\",\n        \"FileName\": \"\",\n        \"FileType\": \"\",\n        \"Highlights\": [],\n        \"IsAllowAccept\": false,\n        \"IsAllowDelete\": true,\n        \"IsAllowEdit\": true,\n        \"OrgData\": \"\",\n        \"PageContent\": \"\",\n        \"QaBizId\": \"162734\",\n        \"Question\": \"你号码\",\n        \"RequestId\": \"9e3ce8ca-6175-4925-b24d-6555c8dc6084\",\n        \"SegmentBizId\": \"0\",\n        \"Source\": 3,\n        \"SourceDesc\": \"手动录入\",\n        \"Status\": 2,\n        \"StatusDesc\": \"待发布\",\n        \"UpdateTime\": \"1701939988\"\n    }\n}",
+        "title": "获取QA详情"
+      }
+    ],
+    "DescribeRefer": [
+      {
+        "document": "查询参考来源详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRefer\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"ReferBizIds\": [\n        \"1694302461379890134\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Answer\": \"\",\n                \"Confidence\": 0.9336649,\n                \"DocName\": \"《深海余烬》.txt\",\n                \"DocType\": 2,\n                \"Highlights\": [],\n                \"Mark\": 1,\n                \"OrgData\": \"《深海余烬》: \\r\\n    没有人会想到异象001有朝一日会出问题，就像没有人考虑过无垠海会不会在某一天干涸。\\r\\n    然而现在看来，这「永恒」的太阳也并不是真的永恒。\\r\\n    先是日出推迟了十五分钟，随后是符文圆环上那个肉眼几乎无法分辨的缺口……这些令人不安的信息都在说明一件事：异象001的寿命竟然是有限的！\\r\\n    邓肯站在橱窗旁边，默默地看着明亮的天光照亮街道，脑海中的纷繁思绪却如风暴一般翻涌着。\\r\\n    注意到太阳异变的绝不只有自己，世界上的聪明人很多，普通人或许不会关注头顶上的变化，但各个城邦当局以及教会肯定有人时刻盯着这个世界上最大的异象，现在，应该就已经有人注意到了太阳的变化……他们会如何想？他们会如何应对？是否有人知道发生了什么？\\r\\n\",\n                \"PageContent\": \"《深海余烬》: \\r\\n    没有人会想到异象001有朝一日会出问题，就像没有人考虑过无垠海会不会在某一天干涸。\\r\\n    然而现在看来，这「永恒」的太阳也并不是真的永恒。\\r\\n    先是日出推迟了十五分钟，随后是符文圆环上那个肉眼几乎无法分辨的缺口……这些令人不安的信息都在说明一件事：异象001的寿命竟然是有限的！\\r\\n    邓肯站在橱窗旁边，默默地看着明亮的天光照亮街道，脑海中的纷繁思绪却如风暴一般翻涌着。\\r\\n    注意到太阳异变的绝不只有自己，世界上的聪明人很多，普通人或许不会关注头顶上的变化，但各个城邦当局以及教会肯定有人时刻盯着这个世界上最大的异象，现在，应该就已经有人注意到了太阳的变化……他们会如何想？他们会如何应对？是否有人知道发生了什么？\\r\\n\",\n                \"Question\": \"\",\n                \"ReferBizId\": \"1694302461379890134\"\n            }\n        ],\n        \"RequestId\": \"73e3226c-b180-4b21-923b-2bfcc47b96bc\"\n    }\n}",
+        "title": "查询参考来源详情"
+      }
+    ],
+    "DescribeRelease": [
+      {
+        "document": "查询最近一次发布详情",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelease\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"ReleaseBizId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1700650168\",\n        \"Description\": \"\",\n        \"RequestId\": \"bba35062-8508-4cb5-b5c7-526370171ab0\",\n        \"Status\": 3,\n        \"StatusDesc\": \"发布成功\"\n    }\n}",
+        "title": "查询发布详情"
+      }
+    ],
+    "DescribeReleaseInfo": [
+      {
+        "document": "拉取发布按钮状态、最后发布时间",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseInfo\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsUpdated\": false,\n        \"LastTime\": \"0\",\n        \"Msg\": \"\",\n        \"RequestId\": \"32e717aa-a9bf-4bd1-b6b9-54e8e16b50e5\",\n        \"Status\": 2\n    }\n}",
+        "title": "拉取发布按钮状态、最后发布时间"
+      }
+    ],
+    "DescribeRobotBizIDByAppKey": [
+      {
+        "document": "通过AppKey查询机器人业务ID",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRobotBizIDByAppKey\n<公共请求参数>\n\n{\n    \"AppKey\": \"xITNfdVe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BotBizId\": \"1751945013419311104\",\n        \"RequestId\": \"ad3d5826-6cda-4f3c-a620-1749608b7aff\"\n    }\n}",
+        "title": "通过AppKey查询机器人业务ID"
+      }
+    ],
+    "DescribeStorageCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorageCredential\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"qidian-qbot-test-1251316161\",\n        \"CorpUin\": \"0\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"AKIDijguNrgnblHncqBKsJBrPV5_J6NCCuklAAvcQlNUiArDzMWbEA97tmXFbydKx839\",\n            \"TmpSecretKey\": \"tI2ka75Gsqj46xx8/TbqhTa2VmUYm11Gi08EkAbkaVQ=\",\n            \"Token\": \"FS9JPHeDJWa1fjOrV6X0l1XXfwsGUpIa929d1959a6973c640f2248598cf6b21fHmvd_Zw5Geld2CGSAdgsme916AxqAdp3fKBhlKEnTUaUeoFAEUxtiAdL2pL29U9hM8vuRyoY5BJJoH17ucJv5nAoXfR9kaf41NTw0nSUd1XI55EfTzPWUiqOQF7nAyASFeKZZnHq6Capdos04TqSfEYW9ZaODqh0Htc1MCl0rue9Vh9muCJQuMXaH8fkrtigvZHh2fX5yyX4xXJ0mcST1TDbFwFTz5cbUmKMeiwNE_DYXg9Qhbv1LaF9MMFbqCU7UMfWEngpcncHcUL2hPkMYvlZqKAMHjo_SsgaQB8Pg_9gudKUqEDtJhRUzMkyyYYpcZQggGYyPmtbUcGumdugaKPz1HUXiYQWQ_bBVBrqR3V0QiVKWTg8xtgxepJL8RLizOd8q0Oj_cAM9EncPpvjJanaO9xGu7tEjMtD770sbnr0YI2mu16WNgNkhFUucE1OEzeWibshpbCnzi--VArAFuwV30N9ChTobLPd_0rq3J3ekRRobQEMkLxHxS6vcUjCDnYawaVLe9aXtVMD-hy8pVOAydvoB2hxMpczOtHkeyQsy0F-OqCnSI0bhs17OOZfqhoNQhWWR7LI9cSvlP0N-g6QeGpqkAkATTN27W5iLGJoMne49llTDFsD1emH-KTpIL4KcrkPLH_NWN0C52PZByDmAq0xwGCZ5xNU0X9JzUzaMpjVSOlluJDf4_fSzdY8EmBOQCf0EaegY1vDyP3bXTOf8xkRF56AGkYXjm_xpl7zEgXuoojr5yGyOq7iNG4kTCcnkAasZvcbw1ZY9-b6Ae-VlkRnGA5nEUe-v5nsw1UQZAm_YKRDtReQ5vRefZpso76YohBocqbgF1ZF15W__8xVHhX6E4zVrZ9w7Um74fzCyc3_uZH45ockrLr2AH0qjdHE-T397390OXmsON1frQCr7u5Dvkqd4YCLQnuHsPSzB9YO9bXNwzHZU7cGsGliCSi53m1sV2JDu2h07a-i7JyocbHAp4jNW8vIbGjcnjz7qPkOnthztgmScAK1GkeVpOge542a-UEEVxMj6GNWD2D7BMJaxEWV4IG5QsHL13pt3jmlKbSqeovee8OXyn2v4y50zXxwHZdD6i9bVkb7ig\"\n        },\n        \"ExpiredTime\": 1701429243,\n        \"FilePath\": \"/corp/137/doc/\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"87d578f9-6de5-4515-906e-d28e56d33fe0\",\n        \"StartTime\": 1701425643,\n        \"Type\": \"cos\"\n    }\n}",
+        "title": "获取对象存储上传密钥"
+      }
+    ],
+    "DescribeUnsatisfiedReplyContext": [
+      {
+        "document": "查看不满意回复上下文",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnsatisfiedReplyContext\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"ReplyBizId\": \"29\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"ea896164-fd4a-4020-9fd0-cc86faaa6f1d\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"3f913f9e-8efb-473a-aea4-2e97268360f9\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"48cb5e24-88e6-46f0-8d2d-75f517686de4\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"2f007448-7af6-420c-a14c-2de23f28f8d2\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"354bac2d-2b27-4dbd-b6bb-c53de9808a4d\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"594c875a-6332-4042-b4a6-3ffeaac6ccde\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"aa86aee5-ee06-4cb1-91f3-33a967b7f437\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"83095ab9-61b5-4392-980b-d76fdf4bcdd8\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"4b152507-04da-44ae-9e39-b8f170a7c58d\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"4158c9a9-724e-447d-9973-f35bfc6af38d\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"265b25a2-95d0-4775-86e3-a9dd3278c747\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"34366c2d-065c-498e-a9f7-c7e06ac82bc5\"\n            },\n            {\n                \"Avatar\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/avatar_penguin01.png\",\n                \"Content\": \"你好\",\n                \"IsVisitor\": true,\n                \"NickName\": \"131****1632\",\n                \"RecordBizId\": \"996d7eff-8345-4858-a290-fe0b8b2b5c87\"\n            },\n            {\n                \"Avatar\": \"https://qbot-1251316161.cos.ap-nanjing.myqcloud.com/avatar.png\",\n                \"Content\": \"您好！有什么我可以帮助您的吗？\",\n                \"IsVisitor\": false,\n                \"NickName\": \"企点智能客服02\",\n                \"RecordBizId\": \"04171ac2-46b0-4371-9983-176ecda6ffc0\"\n            }\n        ],\n        \"RequestId\": \"72e31a2d-59cf-42f6-9fc2-c6b3676971cd\"\n    }\n}",
+        "title": "查看不满意回复上下文"
+      }
+    ],
+    "ExportAttributeLabel": [
+      {
+        "document": "导出知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttributeBizIds\": [\n        \"1734549420823662592\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e19f652-a381-4979-b929-69da4a3a02d1\"\n    }\n}",
+        "title": "导出知识标签"
+      }
+    ],
+    "ExportQAList": [
+      {
+        "document": "导出QA",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportQAList\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"QaBizIds\": [\n        \"162587\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"320dd9e8-a1c5-484b-862a-df15e1b514c8\"\n    }\n}",
+        "title": "导出QA"
+      }
+    ],
+    "ExportUnsatisfiedReply": [
+      {
+        "document": "导出不满意回复",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportUnsatisfiedReply\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"ReplyBizIds\": [\n        \"29\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0bd73939-7b59-4997-a65d-d0d8167dfcd2\"\n    }\n}",
+        "title": "导出不满意回复"
+      }
+    ],
+    "GenerateQA": [
+      {
+        "document": "生成问答",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"DocBizIds\": [\n        \"1729099536210460672\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b580e969-fd9a-4f86-82aa-92905aa684bd\"\n    }\n}",
+        "title": "生成问答"
+      }
+    ],
+    "GetAppKnowledgeCount": [
+      {
+        "document": "获取总数使用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppKnowledgeCount\n<公共请求参数>\n\n{\n    \"AppBizId\": \"\",\n    \"Type\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "GetAppKnowledgeCount"
+      }
+    ],
+    "GetAppSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppSecret\n<公共请求参数>\n\n{\n    \"AppBizId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppKey\": \"\",\n        \"CreateTime\": \"\",\n        \"IsRelease\": false,\n        \"HasPermission\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取应用密钥"
+      }
+    ],
+    "GetDocPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDocPreview\n<公共请求参数>\n\n{\n    \"DocBizId\": \"1681597542412103680\",\n    \"BotBizId\": \"1735129619995951104\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileName\": \"26种病虫害防治方法.docx\",\n        \"FileType\": \"docx\",\n        \"CosUrl\": \"/corp/1681586131361275904/1681597542412103680/doc/E0dQM9X41QmyAWiTQMkC-7807575532.docx\",\n        \"Url\": \"xxx\",\n        \"Bucket\": \"\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取文档预览相关信息"
+      }
+    ],
+    "GetEmbedding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"doc-normal-500-v5.8\",\n    \"Inputs\": [\n        \"你好\"\n    ],\n    \"Online\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取特征向量"
+      }
+    ],
+    "GetMsgRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMsgRecord\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"Count\": 15,\n    \"SessionId\": \"your session id\",\n    \"LastRecordId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"abc\",\n                \"RecordId\": \"abc\",\n                \"RelatedRecordId\": \"abc\",\n                \"IsFromSelf\": true,\n                \"FromName\": \"abc\",\n                \"FromAvatar\": \"abc\",\n                \"Timestamp\": \"abc\",\n                \"HasRead\": true,\n                \"Score\": 1,\n                \"CanRating\": true,\n                \"Type\": 1,\n                \"References\": [\n                    {\n                        \"Id\": \"abc\",\n                        \"Url\": \"abc\",\n                        \"Type\": 1,\n                        \"Name\": \"abc\",\n                        \"DocId\": \"abc\"\n                    }\n                ],\n                \"Reasons\": [\n                    \"abc\"\n                ],\n                \"IsLlmGenerated\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "会话记录"
+      }
+    ],
+    "GetTaskStatus": [
+      {
+        "document": "获取任务状态",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: GetTaskStatus\n      <公共请求参数>\n   \n{\n\t\"TaskId\": \"8\",\n\t\"TaskType\":\"ModifyAttributeLabel\",\n\t\"BotBizId\":\"1767024172536168448\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"Params\": {\n            \"CosPath\": \"\"\n        },\n        \"RequestId\": \"896e8585-8013-446f-a403-0952f9e207e5\",\n        \"Status\": \"SUCCESS\",\n        \"TaskId\": \"8\",\n        \"TaskType\": \"ModifyAttributeLabel\"\n    }\n}",
+        "title": "获取任务状态"
+      }
+    ],
+    "GetWsToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWsToken\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"BotAppKey\": \"c65bf398\",\n    \"VisitorBizId\": \"\",\n    \"VisitorLabels\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"c91a8c01-c543-42e2-ba8a-d119b7cba434\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取ws token"
+      },
+      {
+        "document": "获取 WS Token",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWsToken\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"VisitorLabels\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fa293a5-9d46-4f26-8c0b-95252cfef12f\",\n        \"Token\": \"0457ad8d-2c64-40d9-9f2f-81863f4b0182\"\n    }\n}",
+        "title": "获取 WS Token"
+      }
+    ],
+    "GroupQA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"QaBizIds\": [\n        \"abc\"\n    ],\n    \"CateBizId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "QA分组"
+      },
+      {
+        "document": "分组QA",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"QaBizIds\": [\n        \"162779\"\n    ],\n    \"CateBizId\": \"1734163509413793792\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a86bd37-eeae-427a-baad-c8aa20eb6252\"\n    }\n}",
+        "title": "分组QA"
+      }
+    ],
+    "IgnoreUnsatisfiedReply": [
+      {
+        "document": "忽略不满意回复",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IgnoreUnsatisfiedReply\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"ReplyBizIds\": [\n        \"29\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"631ef23e-d787-47a1-9677-3104e68b1c56\"\n    }\n}",
+        "title": "忽略不满意回复"
+      }
+    ],
+    "IsTransferIntent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsTransferIntent\n<公共请求参数>\n\n{\n    \"Content\": \"转人工\",\n    \"BotAppKey\": \"your botAppKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Hit\": true,\n        \"RequestId\": \"13eec622-226b-47f0-89d7-1a2aa9f8adad\"\n    }\n}",
+        "title": "是否转人工意图"
+      }
+    ],
+    "ListApp": [
+      {
+        "document": "获取企业下应用列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListApp\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"AppType\": \"abc\",\n                \"AppTypeDesc\": \"abc\",\n                \"AppBizId\": \"abc\",\n                \"Name\": \"abc\",\n                \"Avatar\": \"abc\",\n                \"Desc\": \"abc\",\n                \"AppStatus\": 1,\n                \"AppStatusDesc\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Operator\": \"abc\",\n                \"ModelName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ListApp"
+      }
+    ],
+    "ListAppCategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppCategory\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"\",\n                \"Value\": \"\",\n                \"Logo\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取应用类型列表"
+      }
+    ],
+    "ListAttributeLabel": [
+      {
+        "document": "知识标签列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttrKey\": \"test\",\n                \"AttrName\": \"诶皮爱标签\",\n                \"IsUpdating\": false,\n                \"LabelNames\": [\n                    \"你好\"\n                ]\n            }\n        ],\n        \"RequestId\": \"f949f7b3-c7f1-4e46-8049-db0c872dc174\",\n        \"Total\": \"1\"\n    }\n}",
+        "title": "知识标签列表"
+      }
+    ],
+    "ListDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttrLabels\": [],\n                \"AttrRange\": 1,\n                \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n                \"DocBizId\": \"1729099536210460672\",\n                \"DocCharSize\": \"5\",\n                \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n                \"FileType\": \"docx\",\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"IsAllowRefer\": true,\n                \"IsAllowRestart\": true,\n                \"IsCreatedQa\": true,\n                \"IsCreatingQa\": false,\n                \"IsDeleted\": false,\n                \"IsDeletedQa\": false,\n                \"IsRefer\": false,\n                \"QaNum\": 2,\n                \"Reason\": \"生成问答成功\",\n                \"Source\": 1,\n                \"SourceDesc\": \"网页导入\",\n                \"Status\": 12,\n                \"StatusDesc\": \"已发布\",\n                \"WebUrl\": \"\",\n                \"ReferUrlType\": 0,\n                \"UpdateTime\": \"1701425246\"\n            }\n        ],\n        \"RequestId\": \"5526c65b-308d-4e84-b6b3-6b21d5c106b2\",\n        \"Total\": \"1\"\n    }\n}",
+        "title": "文档列表"
+      }
+    ],
+    "ListModel": [
+      {
+        "document": "获取模型列表\n",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListModel\n<公共请求参数>\n\n{\n    \"AppType\": \"knowledge_qa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ModelName\": \"Model-A\",\n                \"ModelDesc\": \"模型A\"\n            },\n            {\n                \"ModelName\": \"Model-B\",\n                \"ModelDesc\": \"模型B\"\n            }\n        ],\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "ListModel"
+      }
+    ],
+    "ListQA": [
+      {
+        "document": "获取问答列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"PageNumber\": 1,\n    \"PageSize\": 50,\n    \"QaBizIds\": [\n        \"162734\",\n        \"162779\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AcceptedTotal\": \"2\",\n        \"List\": [\n            {\n                \"Answer\": \"就叫飞龙在天吧\",\n                \"CreateTime\": \"1701420491\",\n                \"DocBizId\": \"0\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"IsAllowAccept\": false,\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"QaBizId\": \"162779\",\n                \"QaCharSize\": \"14\",\n                \"Question\": \"帮我起一个名字\",\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"Status\": 2,\n                \"StatusDesc\": \"待发布\",\n                \"UpdateTime\": \"1702366925\"\n            },\n            {\n                \"Answer\": \"我的好毛事12141\",\n                \"CreateTime\": \"1701419959\",\n                \"DocBizId\": \"0\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"IsAllowAccept\": false,\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"QaBizId\": \"162734\",\n                \"QaCharSize\": \"13\",\n                \"Question\": \"你号码\",\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"Status\": 2,\n                \"StatusDesc\": \"待发布\",\n                \"UpdateTime\": \"1701939988\"\n            }\n        ],\n        \"NotAcceptedTotal\": \"0\",\n        \"PageNumber\": 1,\n        \"RequestId\": \"b83a51f5-faba-4c2d-9844-fc1a9bd68c26\",\n        \"Total\": \"2\",\n        \"WaitVerifyTotal\": \"0\"\n    }\n}",
+        "title": "获取问答列表"
+      }
+    ],
+    "ListQACate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CanAdd\": true,\n                \"CanDelete\": false,\n                \"CanEdit\": false,\n                \"CateBizId\": \"0\",\n                \"Children\": [\n                    {\n                        \"CanAdd\": false,\n                        \"CanDelete\": false,\n                        \"CanEdit\": false,\n                        \"CateBizId\": \"54554\",\n                        \"Children\": [],\n                        \"Name\": \"未分类\",\n                        \"Total\": 4\n                    }\n                ],\n                \"Name\": \"全部分类\",\n                \"Total\": 4\n            }\n        ],\n        \"RequestId\": \"b6a45aaf-571d-48bd-988d-b0063d5e1a8b\"\n    }\n}",
+        "title": "获取QA分类"
+      }
+    ],
+    "ListRejectedQuestion": [
+      {
+        "document": "获取拒答问题列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IsAllowDelete\": false,\n                \"IsAllowEdit\": false,\n                \"Question\": \"北京天气如何呢\",\n                \"RejectedBizId\": \"0\",\n                \"Status\": 2,\n                \"StatusDesc\": \"发布中\",\n                \"UpdateTime\": \"1698930291\"\n            },\n            {\n                \"IsAllowDelete\": false,\n                \"IsAllowEdit\": false,\n                \"Question\": \"55555569\",\n                \"RejectedBizId\": \"0\",\n                \"Status\": 2,\n                \"StatusDesc\": \"发布中\",\n                \"UpdateTime\": \"1693407323\"\n            },\n            {\n                \"IsAllowDelete\": true,\n                \"IsAllowEdit\": true,\n                \"Question\": \"55555568\",\n                \"RejectedBizId\": \"0\",\n                \"Status\": 1,\n                \"StatusDesc\": \"待发布\",\n                \"UpdateTime\": \"1693407323\"\n            }\n        ],\n        \"RequestId\": \"bdc74947-8606-41e1-9a97-72690bf06bdd\",\n        \"Total\": \"3\"\n    }\n}",
+        "title": "获取拒答问题列表"
+      }
+    ],
+    "ListRejectedQuestionPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRejectedQuestionPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Query\": \"abc\",\n    \"ReleaseBizId\": \"1\",\n    \"Actions\": [\n        1\n    ],\n    \"StartTime\": \"1701566284\",\n    \"EndTime\": \"1701766284\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"1\",\n        \"List\": [\n            {\n                \"Question\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Action\": 1,\n                \"ActionDesc\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发布拒答问题预览"
+      }
+    ],
+    "ListRelease": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRelease\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Desc\": \"测试下发布哈哈哈哈哈哈哈哈\",\n                \"FailCount\": 0,\n                \"Operator\": \"stanwei\",\n                \"Reason\": \"\",\n                \"ReleaseBizId\": \"1730138654150348800\",\n                \"Status\": 3,\n                \"StatusDesc\": \"发布成功\",\n                \"SuccessCount\": 6,\n                \"UpdateTime\": \"1701332268\"\n            }\n        ],\n        \"RequestId\": \"e28f31fe-72a3-459b-9abb-5042a0f35a1b\",\n        \"Total\": \"1\"\n    }\n}",
+        "title": "发布列表"
+      }
+    ],
+    "ListReleaseConfigPreview": [
+      {
+        "document": "获取待发布的配置项",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseConfigPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1747951478630252544\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"应用名称\",\n                \"Content\": \"\",\n                \"LastValue\": \"\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"上博\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"头像\",\n                \"Content\": \"应用图标变更\",\n                \"LastValue\": \"\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"https://cdn.xiaowei.qq.com/lke/assets//static/avatar.png\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"欢迎语\",\n                \"Content\": \"\",\n                \"LastValue\": \"\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"您好，我是客服助手，我将为您提供友好、专业和高效的服务。\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"输出方式\",\n                \"Content\": \"\",\n                \"LastValue\": \"非流式输出\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"流式输出\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"通用模型回复开关\",\n                \"Content\": \"\",\n                \"LastValue\": \"关闭\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"开启\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"默认问题回复\",\n                \"Content\": \"\",\n                \"LastValue\": \"\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"作为一个智能助手，针对您这个问题，我所提供的答案或建议可能会存在不准确的地方。建议您转到人工，由专业顾问为您提供服务。\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"问答最大召回数量\",\n                \"Content\": \"\",\n                \"LastValue\": \"0\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"3\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"回复灵活度\",\n                \"Content\": \"\",\n                \"LastValue\": \"已采纳答案润色回复\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"已采纳答案直接回复\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"知识来源问答配置\",\n                \"Content\": \"\",\n                \"LastValue\": \"关闭\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"开启\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"知识来源任务流程配置\",\n                \"Content\": \"\",\n                \"LastValue\": \"关闭\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"开启\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"文档最大召回数量\",\n                \"Content\": \"\",\n                \"LastValue\": \"0\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"4\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"知识来源文档配置\",\n                \"Content\": \"\",\n                \"LastValue\": \"关闭\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"开启\"\n            },\n            {\n                \"Action\": 2,\n                \"ConfigItem\": \"上下文指代轮次\",\n                \"Content\": \"\",\n                \"LastValue\": \"0\",\n                \"UpdateTime\": \"1709694760\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"RequestId\": \"ac6c9baf-890b-4b63-b1b3-409eb74b0e14\",\n        \"Total\": \"13\"\n    }\n}",
+        "title": "获取待发布的配置项"
+      }
+    ],
+    "ListReleaseDocPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseDocPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"Query\": \"abc\",\n    \"ReleaseBizId\": \"1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"StartTime\": \"1701566219\",\n    \"EndTime\": \"1701766219\",\n    \"Actions\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": \"abc\",\n        \"List\": [\n            {\n                \"FileName\": \"abc\",\n                \"FileType\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Action\": 1,\n                \"ActionDesc\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发布文档预览"
+      }
+    ],
+    "ListReleaseQAPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReleaseQAPreview\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1694921462777761792\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Query\": \"\",\n    \"ReleaseBizId\": \"0\",\n    \"StartTime\": \"0\",\n    \"EndTime\": \"0\",\n    \"Actions\": [],\n    \"ReleaseStatus\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161612\",\n                \"Question\": \"aaaa\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"UpdateTime\": \"1701264450\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161738\",\n                \"Question\": \"问题1\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701422596\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161739\",\n                \"Question\": \"问题2\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701427533\"\n            },\n            {\n                \"Action\": 3,\n                \"ActionDesc\": \"删除\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"161740\",\n                \"Question\": \"qq\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 2,\n                \"SourceDesc\": \"批量导入\",\n                \"UpdateTime\": \"1701670093\"\n            },\n            {\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"FileName\": \"深圳市最低生活保障办法.docx\",\n                \"FileType\": \"docx\",\n                \"Message\": \"\",\n                \"QaBizId\": \"162463\",\n                \"Question\": \"深圳市最低生活保障办法何时开始施行？\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 1,\n                \"SourceDesc\": \"深圳市最低生活保障办法.docx\",\n                \"UpdateTime\": \"1700550874\"\n            },\n            {\n                \"Action\": 1,\n                \"ActionDesc\": \"新增\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"Message\": \"\",\n                \"QaBizId\": \"1731558661913706496\",\n                \"Question\": \"a\",\n                \"ReleaseStatus\": 0,\n                \"Source\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"UpdateTime\": \"1701670760\"\n            }\n        ],\n        \"RequestId\": \"0260ac98-913d-4aab-9276-8a045f627e4e\",\n        \"Total\": \"6\"\n    }\n}",
+        "title": "发布问答预览"
+      }
+    ],
+    "ListSelectDoc": [
+      {
+        "document": "获取文档下拉列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSelectDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"FileName\": \"26\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"26种病虫害防治方法.docx\",\n                \"Value\": \"630\"\n            }\n        ],\n        \"RequestId\": \"0b598870-f2e7-4fcc-ada0-7cf99a8fbc8e\"\n    }\n}",
+        "title": "获取文档下拉列表"
+      }
+    ],
+    "ListUnsatisfiedReply": [
+      {
+        "document": "查询不满意回复列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUnsatisfiedReply\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"PageNumber\": 1,\n    \"PageSize\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"b60ba14e-982f-4d51-a3c0-6d17383f42dc\",\n        \"Total\": \"0\"\n    }\n}",
+        "title": "查询不满意回复列表"
+      }
+    ],
+    "ModifyApp": [
+      {
+        "document": "修改应用",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApp\n<公共请求参数>\n\n{\n    \"AppBizId\": \"45454545464646\",\n    \"AppType\": \"knowledge_qa\",\n    \"BaseConfig\": {\n        \"Name\": \"应用\",\n        \"Avatar\": \"头像\",\n        \"Desc\": \"应用描述\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppBizId\": \"198848848484848\",\n        \"RequestId\": \"dwec-adsdsdsd-sfsfdsfsf\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ],
+    "ModifyAttributeLabel": [
+      {
+        "document": "修改知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"AttributeBizId\": \"208\",\n    \"AttrKey\": \"tb\",\n    \"AttrName\": \"属性修改\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73f925c5-e9c6-476c-ab2f-dc3de7088ed9\"\n    }\n}",
+        "title": "修改知识标签"
+      }
+    ],
+    "ModifyDoc": [
+      {
+        "document": "修改文档",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"DocBizId\": \"1697208584570261504\",\n    \"IsRefer\": true,\n    \"AttrRange\": 1,\n    \"WebUrl\": \"\",\n    \"ReferUrlType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"780fda73-174d-4f81-9dce-80038117fe87\"\n    }\n}",
+        "title": "修改文档"
+      }
+    ],
+    "ModifyDocAttrRange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1742501052613230592\",\n    \"DocBizIds\": [\n        \"1747174616331976704\"\n    ],\n    \"AttrLabels\": [\n        {\n            \"AttributeBizId\": \"1759039436899221504\",\n            \"Source\": 1,\n            \"LabelBizIds\": [\n                \"0\"\n            ]\n        }\n    ],\n    \"AttrRange\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
+        "title": "批量修改文档的适用范围"
+      }
+    ],
+    "ModifyQA": [
+      {
+        "document": "修改问答",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"QaBizId\": \"1728997020814671872\",\n    \"Question\": \"q1\",\n    \"Answer\": \"a\",\n    \"AttrRange\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59f31ba4-688b-4765-91eb-b47d41895036\"\n    }\n}",
+        "title": "修改问答"
+      }
+    ],
+    "ModifyQAAttrRange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1742501052613230592\",\n    \"QaBizIds\": [\n        \"1762058568200880128\"\n    ],\n    \"AttrLabels\": [\n        {\n            \"AttributeBizId\": \"1759039436899221504\",\n            \"Source\": 1,\n            \"LabelBizIds\": [\n                \"1759039436924387328\"\n            ]\n        }\n    ],\n    \"AttrRange\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a81d98f-5fea-450f-8d8d-0ba8a985972f\"\n    }\n}",
+        "title": "批量修改问答适用范围"
+      }
+    ],
+    "ModifyQACate": [
+      {
+        "document": "修改问答分类",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"Name\": \"1733038\",\n    \"CateBizId\": \"1733038348326273024\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f28a91f9-11ec-451c-a09e-3c8552f6fd29\"\n    }\n}",
+        "title": "修改问答分类"
+      }
+    ],
+    "ModifyRejectedQuestion": [
+      {
+        "document": "修改拒答问题",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"Question\": \"吃了什么122222222211111111111\",\n    \"RejectedBizId\": \"1732953678087585792\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1acee7c3-21d2-4aa4-aa46-289928b4bbb0\"\n    }\n}",
+        "title": "修改拒答问题"
+      }
+    ],
+    "ParseDoc": [
+      {
+        "document": "文档解析",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseDoc\n<公共请求参数>\n\n{\n    \"Name\": \"微信城市服务CityID说明文档.docx\",\n    \"Url\": \"https://wximg.qq.com/cityservices/doc/res/cityservices_cityids.docx\",\n    \"TaskId\": \"D78iBBGi\",\n    \"Policy\": \"default\",\n    \"Operate\": \"split\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ea5a507-108f-4b05-add4-b07de8580590\",\n        \"TaskId\": \"D78iBBGi\"\n    }\n}",
+        "title": "文档解析"
+      }
+    ],
+    "QueryParseDocResult": [
+      {
+        "document": "查询文档解析结果",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryParseDocResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"D78iBBGi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\"\n    }\n}",
+        "title": "查询文档解析结果"
+      }
+    ],
+    "QueryRewrite": [
+      {
+        "document": "多轮改写",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRewrite\n<公共请求参数>\n\n{\n    \"Question\": \"国内哪里？\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你家在哪里\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"我家在国内\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"你家在国内哪里？\",\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\"\n    }\n}",
+        "title": "多轮改写"
+      }
+    ],
+    "RateMsgRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RateMsgRecord\n<公共请求参数>\n\n{\n    \"BotAppKey\": \"Nwdwlfw\",\n    \"RecordId\": \"6bafdae2-3c8e-4c89-9674-d0c50a2312a3\",\n    \"Score\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e4cf36f-2e65-452a-83f5-d7a1b53d07b6\"\n    }\n}",
+        "title": "点赞点踩消息"
+      }
+    ],
+    "ResetSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"your session id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76ad8e10-2e25-4702-8b15-1dbbe4ee2c3b\"\n    }\n}",
+        "title": "重置会话"
+      }
+    ],
+    "RetryDocAudit": [
+      {
+        "document": "文档审核重试",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryDocAudit\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"DocBizId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "文档审核重试"
+      }
+    ],
+    "RetryDocParse": [
+      {
+        "document": "文档解析重试",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"DocBizId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "文档解析重试"
+      }
+    ],
+    "RetryRelease": [
+      {
+        "document": "发布重试",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRelease\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"ReleaseBizId\": \"1730138654150348801\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1502bee6-c6ac-44f4-ad37-c4247d03bf5d\"\n    }\n}",
+        "title": "发布重试"
+      }
+    ],
+    "SaveDoc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n    \"ETag\": \"f679b6029cba26d65ef93c4e174b59d8\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"643000\",\n    \"Source\": 1,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DocBizId\": \"1694921462777761792\",\n        \"ErrorMsg\": \"\",\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
+        "title": "保存文档"
+      }
+    ],
+    "StopDocParse": [
+      {
+        "document": "终止文档解析",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"abc\",\n    \"DocBizId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "终止文档解析"
+      }
+    ],
+    "UploadAttributeLabel": [
+      {
+        "document": "上传导入知识标签",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"FileName\": \"99个属性.xlsx\",\n    \"CosUrl\": \"/corp/137/doc/vflu03AWF1qQx7bkoGrA-7113266998.xlsx\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"17544\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c41dfeef-6a60-4b79-bff5-377ffc218223\"\n    }\n}",
+        "title": "上传导入知识标签"
+      }
+    ],
+    "VerifyQA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyQA\n<公共请求参数>\n\n{\n    \"LoginUin\": \"600000562455\",\n    \"LoginSubAccountUin\": \"600000562455\",\n    \"List\": [\n        {\n            \"QaBizId\": \"161707\",\n            \"IsAccepted\": true,\n            \"CateBizId\": \"\",\n            \"Question\": \"\",\n            \"Answer\": \"\"\n        }\n    ],\n    \"BotBizId\": \"1696822786072117248\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ea25595-b37f-4612-b82b-96616bd75c82\"\n    }\n}",
+        "title": "校验问答"
+      }
+    ]
+  },
+  "version": "1.0"
+}

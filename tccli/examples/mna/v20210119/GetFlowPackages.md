@@ -31,7 +31,9 @@ Output:
                 ],
                 "CapacitySize": 20000,
                 "CapacityRemain": 10000,
-                "RenewFlag": true
+                "RenewFlag": true,
+                "ModifyStatus": 0,
+                "TruncFlag": false
             }
         ],
         "RequestId": "1206563f-f13f-4647-aaa8-37fa86954cc4-1"

@@ -909,7 +909,7 @@
         },
         {
           "disabled": false,
-          "document": "开通成功后前端页面跳转的url，此字段的用法场景请联系客户经理确认。\n\n注：`仅支持H5开通场景`, `跳转链接仅支持 https:// , qianapp:// 开头`\n\n跳转场景：\n<ul><li>**贵方H5 -> 腾讯电子签H5 -> 贵方H5** : JumpUrl格式: https://YOUR_CUSTOM_URL/xxxx，只需满足 https:// 开头的正确且合规的网址即可。</li>\n<li>**贵方原生App -> 腾讯电子签H5 -> 贵方原生App** : JumpUrl格式: qianapp://YOUR_CUSTOM_URL，只需满足 qianapp:// 开头的URL即可。`APP实现方，需要拦截Webview地址跳转，发现url是qianapp:// 开头时跳转到原生页面。`APP拦截地址跳转可参考：<a href='https://stackoverflow.com/questions/41693263/android-webview-err-unknown-url-scheme'>Android</a>，<a href='https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/webview/upi-intent-ios/'>IOS</a> </li></ul>\n\n成功结果返回：\n若贵方需要在跳转回时通过链接query参数提示开通成功，JumpUrl中的query应携带如下参数：`appendResult=qian`。这样腾讯电子签H5会在跳转回的url后面会添加query参数提示贵方签署成功，比如 qianapp://YOUR_CUSTOM_URL?action=sign&result=success&from=tencent_ess",
+          "document": "开通成功后前端页面跳转的url，此字段的用法场景请联系客户经理确认。\n\n注：`仅支持H5开通场景`, `跳转链接仅支持 https:// , qianapp:// 开头`\n\n跳转场景：\n<ul><li>**贵方H5 -> 腾讯电子签H5 -> 贵方H5** : JumpUrl格式: https://YOUR_CUSTOM_URL/xxxx，只需满足 https:// 开头的正确且合规的网址即可。</li>\n<li>**贵方原生App -> 腾讯电子签H5 -> 贵方原生App** : JumpUrl格式: qianapp://YOUR_CUSTOM_URL，只需满足 qianapp:// 开头的URL即可。`APP实现方，需要拦截Webview地址跳转，发现url是qianapp:// 开头时跳转到原生页面。`APP拦截地址跳转可参考：<a href='https://stackoverflow.com/questions/41693263/android-webview-err-unknown-url-scheme'>Android</a>，<a href='https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/webview/upi-intent-ios/'>IOS</a> </li></ul>\n\n成功结果返回：\n若贵方需要在跳转回时通过链接query参数提示开通成功，JumpUrl中的query应携带如下参数：`appendResult=qian`。这样腾讯电子签H5会在跳转回的url后面会添加query参数提示贵方签署成功，例如：qianapp://YOUR_CUSTOM_URL?action=sign&result=success&from=tencent_ess",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
@@ -4056,7 +4056,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n<li>**NoAuthSign**: 形式签</li>\n</ul>",
+          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
           "example": "CloudEnterprise",
           "member": "string",
           "name": "QuotaType",

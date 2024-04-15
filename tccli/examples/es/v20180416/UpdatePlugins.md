@@ -1,13 +1,13 @@
-**Example 1: 批量安装插件**
+**Example 1: 批量卸载插件**
 
-批量安装插件
+批量卸载插件
 
 Input: 
 
 ```
 tccli es UpdatePlugins --cli-unfold-argument  \
     --InstanceId es-xxxxxxxx \
-    --InstallPluginList analysis-qq sql
+    --RemovePluginList analysis-qq sql
 ```
 
 Output: 
@@ -19,16 +19,16 @@ Output:
 }
 ```
 
-**Example 2: 批量卸载插件**
+**Example 2: 批量安装插件**
 
-批量卸载插件
+批量安装插件
 
 Input: 
 
 ```
 tccli es UpdatePlugins --cli-unfold-argument  \
     --InstanceId es-xxxxxxxx \
-    --RemovePluginList analysis-qq sql
+    --InstallPluginList analysis-qq sql
 ```
 
 Output: 

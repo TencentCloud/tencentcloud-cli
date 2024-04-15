@@ -62,7 +62,7 @@ Output:
 }
 ```
 
-**Example 3: 请求成功示例**
+**Example 3: 流式请求成功示例**
 
 
 
@@ -71,6 +71,7 @@ Input:
 ```
 tccli hunyuan ChatStd --cli-unfold-argument  \
     --TopP 0 \
+    --Stream True \
     --Temperature 0 \
     --Messages.0.Role user \
     --Messages.0.Content 计算1+1
@@ -97,5 +98,43 @@ data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除
 data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"FinishReason":"","Delta":{"Role":"assistant","Content":"2"}}],"Created":1700549760,"Id":"148b89ef-14e1-489f-8e70-b767e5b27d56","Usage":{"PromptTokens":4,"CompletionTokens":5,"TotalTokens":9}}
 
 data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"FinishReason":"stop","Delta":{"Role":"assistant","Content":""}}],"Created":1700549760,"Id":"148b89ef-14e1-489f-8e70-b767e5b27d56","Usage":{"PromptTokens":4,"CompletionTokens":5,"TotalTokens":9}}
+```
+
+**Example 4: 非流式请求成功示例**
+
+
+
+Input: 
+
+```
+tccli hunyuan ChatStd --cli-unfold-argument  \
+    --TopP 0 \
+    --Stream False \
+    --Temperature 0 \
+    --Messages.0.Role user \
+    --Messages.0.Content 你好呀！
+```
+
+Output: 
+```
+{
+    "Note": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+    "Choices": [
+        {
+            "FinishReason": "stop",
+            "Message": {
+                "Role": "assistant",
+                "Content": "你好！很高兴为您提供帮助。请问有什么问题我可以帮助您解决？"
+            }
+        }
+    ],
+    "Created": 1710902312,
+    "Id": "e4657570-94a5-45f1-896c-a00ac3471d51",
+    "Usage": {
+        "PromptTokens": 3,
+        "CompletionTokens": 14,
+        "TotalTokens": 17
+    }
+}
 ```
 

@@ -3105,6 +3105,16 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警分级阈值配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmHierarchicalValue",
+          "name": "HierarchicalValue",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13220,52 +13230,62 @@
         {
           "disabled": false,
           "document": "告警通知频率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AlarmNotifyPeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "重复通知策略预定义（0 - 只告警一次， 1 - 指数告警，2 - 连接告警）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AlarmNotifyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事件ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EventID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件展示名称（对外）",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EventDisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CpuUsage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

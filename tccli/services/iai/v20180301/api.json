@@ -2345,95 +2345,95 @@
       "usage": "out"
     },
     "FaceShape": {
-      "document": "五官定位（人脸关键点）具体信息。",
+      "document": "五官定位（人脸关键点）具体信息。\n![image](https://iai-face-demo-default-1254418846.cos.ap-guangzhou.myqcloud.com/130pts.jpg)",
       "members": [
         {
           "disabled": false,
           "document": "描述脸型轮廓的 21 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "FaceProfile",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述左侧眼睛轮廓的 8 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "LeftEye",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述右侧眼睛轮廓的 8 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "RightEye",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述左侧眉毛轮廓的 8 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "LeftEyeBrow",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述右侧眉毛轮廓的 8 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "RightEyeBrow",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述嘴巴轮廓的 22 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "Mouth",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述鼻子轮廓的 13 点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "Nose",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "左瞳孔轮廓的 1 个点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "LeftPupil",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "右瞳孔轮廓的 1 个点。",
-          "example": "",
+          "example": "无",
           "member": "Point",
           "name": "RightPupil",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
