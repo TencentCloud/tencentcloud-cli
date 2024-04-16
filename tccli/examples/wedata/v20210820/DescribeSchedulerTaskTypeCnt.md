@@ -1,37 +1,13 @@
-**Example 1: 1**
+**Example 1: 运维大屏-任务状态分布示例**
 
-1
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerTaskTypeCnt --cli-unfold-argument  \
-    --ProjectId 1 \
-    --InCharge 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "UnknownParameter",
-            "Message": "The parameter `InCharge` is not recognized."
-        },
-        "RequestId": "11beba5a-ce1f-4347-a64e-29e60cb9955d"
-    }
-}
-```
-
-**Example 2: 示例一**
-
-示例一
+运维大屏-任务状态分布
 
 Input: 
 
 ```
 tccli wedata DescribeSchedulerTaskTypeCnt --cli-unfold-argument  \
-    --ProjectId 1460947878944567296
+    --ProjectId 15316096965952 \
+    --InCharge allenbguo
 ```
 
 Output: 
@@ -40,22 +16,22 @@ Output:
     "Response": {
         "Data": [
             {
-                "Number": "26",
-                "TaskType": "35",
-                "TypeName": "Shell"
+                "Number": null,
+                "TaskType": "26",
+                "TypeName": "离线同步"
             },
             {
-                "Number": "5",
+                "Number": null,
                 "TaskType": "34",
                 "TypeName": "Hive SQL"
             },
             {
-                "Number": "1",
-                "TaskType": "30",
-                "TypeName": "Python"
+                "Number": null,
+                "TaskType": "35",
+                "TypeName": "Shell"
             }
         ],
-        "RequestId": "5a95de10-2d07-4c4b-ad03-fcc8e1c5c1f7"
+        "RequestId": "742ab36d-d56c-457e-b42a-b721d2a6b091"
     }
 }
 ```

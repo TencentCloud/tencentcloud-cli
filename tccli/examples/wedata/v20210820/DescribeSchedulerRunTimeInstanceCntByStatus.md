@@ -1,36 +1,6 @@
-**Example 1: 1**
+**Example 1: 实例运行时长排行示例**
 
-1
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerRunTimeInstanceCntByStatus --cli-unfold-argument  \
-    --ProjectId 1 \
-    --CycleUnit 1 \
-    --TimeUnit 1 \
-    --StartTime 1 \
-    --EndTime 1 \
-    --TaskType 1 \
-    --InCharge 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "UnauthorizedOperation",
-            "Message": "未授权操作"
-        },
-        "RequestId": "23a27e89-4bc1-4572-8efb-7a77f155d743"
-    }
-}
-```
-
-**Example 2: 示例1**
-
-Demo
+实例运行时长排行示例
 
 Input: 
 

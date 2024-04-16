@@ -1,3 +1,187 @@
+# Release 3.0.977.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 78 次发布
+
+发布时间：2024-04-17 01:13:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SlowQueriesItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SlowQueriesItem)
+
+	* 新增成员：SyncReadCountRemote, SyncReadBytesRemote, SyncReadTimeRemote, SyncWriteCountRemote, SyncWriteBytesRemote, SyncWriteTimeRemote, TrxCommitDelay
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 80 次发布
+
+发布时间：2024-04-17 01:16:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillUsage](http://document.tencentcloudapi.woa.com/document/product/1668/83735)
+
+新增数据结构：
+
+* [OrgBillSummary](http://document.tencentcloudapi.woa.com/document/product/1668/79360#OrgBillSummary)
+* [SubOrgBillSummary](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SubOrgBillSummary)
+* [SubOrgBillUsage](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SubOrgBillUsage)
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 24 次发布
+
+发布时间：2024-04-17 01:16:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDomain](http://document.tencentcloudapi.woa.com/document/product/608/36991)
+
+	* 新增入参：IsDefaultServer
+
+* [ModifyDomain](http://document.tencentcloudapi.woa.com/document/product/608/36984)
+
+	* 新增入参：IsDefaultServer
+
+
+修改数据结构：
+
+* [DomainRuleSet](http://document.tencentcloudapi.woa.com/document/product/608/37023#DomainRuleSet)
+
+	* 新增成员：IsDefaultServer
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 31 次发布
+
+发布时间：2024-04-17 01:18:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83742)
+* [DescribeCloudStorageAIServiceCallback](http://document.tencentcloudapi.woa.com/document/product/1081/83741)
+* [DescribeCloudStorageAIServiceTasks](http://document.tencentcloudapi.woa.com/document/product/1081/83740)
+* [DescribeProductCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83739)
+* [ModifyCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83738)
+* [ModifyCloudStorageAIServiceCallback](http://document.tencentcloudapi.woa.com/document/product/1081/83737)
+* [ModifyProductCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83736)
+
+新增数据结构：
+
+* [CloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageAIServiceTask)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 33 次发布
+
+发布时间：2024-04-17 01:22:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AttachPolicy](http://document.tencentcloudapi.woa.com/document/product/850/83755)
+* [CreatePolicy](http://document.tencentcloudapi.woa.com/document/product/850/83754)
+* [DeletePolicy](http://document.tencentcloudapi.woa.com/document/product/850/83753)
+* [DescribePolicy](http://document.tencentcloudapi.woa.com/document/product/850/83752)
+* [DescribePolicyConfig](http://document.tencentcloudapi.woa.com/document/product/850/83751)
+* [DetachPolicy](http://document.tencentcloudapi.woa.com/document/product/850/83750)
+* [DisablePolicyType](http://document.tencentcloudapi.woa.com/document/product/850/83749)
+* [EnablePolicyType](http://document.tencentcloudapi.woa.com/document/product/850/83748)
+* [ListPolicies](http://document.tencentcloudapi.woa.com/document/product/850/83747)
+* [ListPoliciesForTarget](http://document.tencentcloudapi.woa.com/document/product/850/83746)
+* [ListTargetsForPolicy](http://document.tencentcloudapi.woa.com/document/product/850/83745)
+* [UpdatePolicy](http://document.tencentcloudapi.woa.com/document/product/850/83744)
+
+新增数据结构：
+
+* [ListPoliciesForTarget](http://document.tencentcloudapi.woa.com/document/product/850/67060#ListPoliciesForTarget)
+* [ListPolicyNode](http://document.tencentcloudapi.woa.com/document/product/850/67060#ListPolicyNode)
+* [ListTargetsForPolicyNode](http://document.tencentcloudapi.woa.com/document/product/850/67060#ListTargetsForPolicyNode)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 59 次发布
+
+发布时间：2024-04-17 01:28:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEngine](http://document.tencentcloudapi.woa.com/document/product/1364/74907)
+
+	* 新增入参：StorageType, StorageCapacity, StorageOption
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 46 次发布
+
+发布时间：2024-04-17 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeOperateOpsTaskDatasource
+* DescribeOperateOpsTaskDatasourceType
+
+修改接口：
+
+* [DescribeOperateOpsTasks](http://document.tencentcloudapi.woa.com/document/product/1607/81360)
+
+	* 新增入参：KeyWord
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DatasourceTypeByTaskType
+* SimpleDataSourceInfo
+
+
+
 # Release 3.0.976.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

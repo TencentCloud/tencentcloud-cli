@@ -6,19 +6,9 @@ Input:
 
 ```
 tccli wedata DescribeOpsWorkflows --cli-unfold-argument  \
-    --ProjectId abc \
-    --ProductNameList abc \
-    --FolderIdList abc \
-    --WorkFlowIdList abc \
-    --WorkFlowNameList abc \
-    --TaskNameList abc \
-    --TaskIdList abc \
-    --StatusList abc \
-    --InChargeList abc \
+    --ProjectId 1531609696090365852 \
     --PageNumber 1 \
-    --PageSize 1 \
-    --SortItem abc \
-    --SortType abc
+    --PageSize 10
 ```
 
 Output: 
@@ -26,27 +16,27 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 1,
             "Items": [
                 {
-                    "TaskCount": 1,
-                    "FolderName": "abc",
-                    "WorkFlowId": "abc",
-                    "Owner": "abc",
-                    "OwnerId": "abc",
-                    "ProjectId": "abc",
-                    "ProjectIdent": "abc",
-                    "ProjectName": "abc",
-                    "WorkFlowDesc": "abc",
-                    "WorkFlowName": "abc",
-                    "FolderId": "abc",
-                    "Status": "abc",
-                    "CreateTime": "abc",
-                    "ModifyTime": "abc"
+                    "CreateTime": "2024-03-13 20:07:03",
+                    "FolderId": "14ac5d0f-e132-11ee-8d13-a4ae120f8272",
+                    "FolderName": "0sasha",
+                    "ModifyTime": "2024-03-13 20:07:03",
+                    "Owner": ";AUTO_TEST;",
+                    "OwnerId": ";100029411056;",
+                    "ProjectId": "1531609696090365952",
+                    "ProjectIdent": null,
+                    "ProjectName": "project_wedata",
+                    "Status": "ALL_RUNNING",
+                    "TaskCount": 3,
+                    "WorkFlowDesc": "",
+                    "WorkFlowId": "1a791878-e132-11ee-8d13-a4ae120f8272",
+                    "WorkFlowName": "saflow"
                 }
-            ]
+            ],
+            "TotalCount": 1
         },
-        "RequestId": "abc"
+        "RequestId": "80f565cd-e63a-427a-98e5-c729d7e0e3f2"
     }
 }
 ```

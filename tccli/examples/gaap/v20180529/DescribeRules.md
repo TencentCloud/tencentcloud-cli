@@ -13,100 +13,85 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "DomainRuleSet": [
             {
-                "GaapCertificateAlias": "xx",
-                "Http3Supported": 0,
-                "Domain": "xx",
-                "CertificateId": "xx",
-                "PolyRealServerCertificateAliasInfo": [
-                    {
-                        "CertificateId": "xx",
-                        "CertificateAlias": "xx"
-                    }
-                ],
-                "RealServerCertificateId": "xx",
-                "BanStatus": "xx",
-                "CertificateAlias": "xx",
-                "ClientCertificateId": "xx",
-                "GaapCertificateId": "xx",
-                "BasicAuth": 1,
-                "BasicAuthConfAlias": "xx",
-                "BasicAuthConfId": "xx",
-                "RealServerCertificateAlias": "xx",
+                "Domain": "abc",
                 "RuleSet": [
                     {
-                        "BindStatus": 1,
-                        "Domain": "xx",
-                        "RealServerType": "xx",
-                        "ForwardHost": "xx",
-                        "RuleId": "xx",
+                        "RuleId": "abc",
+                        "ListenerId": "abc",
+                        "Domain": "abc",
+                        "Path": "abc",
+                        "RealServerType": "abc",
+                        "Scheduler": "abc",
                         "HealthCheck": 1,
-                        "ServerNameIndication": "xx",
-                        "ListenerId": "xx",
-                        "CheckParams": {
-                            "Domain": "xx",
-                            "ConnectTimeout": 1,
-                            "BlockInter": 1,
-                            "FailedThreshold": 1,
-                            "Path": "xx",
-                            "FailedCountInter": 1,
-                            "Method": "xx",
-                            "DelayLoop": 1,
-                            "StatusCode": [
-                                1,
-                                1,
-                                1,
-                                1,
-                                1
-                            ]
-                        },
-                        "ForcedRedirect": "1",
-                        "Scheduler": "xx",
-                        "Path": "xx",
                         "RuleStatus": 1,
-                        "ServerNameIndicationSwitch": "xx",
+                        "CheckParams": {
+                            "DelayLoop": 1,
+                            "ConnectTimeout": 1,
+                            "Path": "abc",
+                            "Method": "abc",
+                            "StatusCode": [
+                                1
+                            ],
+                            "Domain": "abc",
+                            "FailedCountInter": 1,
+                            "FailedThreshold": 1,
+                            "BlockInter": 1
+                        },
                         "RealServerSet": [
                             {
+                                "RealServerId": "abc",
+                                "RealServerIP": "abc",
+                                "RealServerWeight": 0,
                                 "RealServerStatus": 0,
-                                "RealServerPort": 234,
-                                "RealServerId": "xx",
-                                "RealServerFailoverRole": "xx",
+                                "RealServerPort": 0,
                                 "DownIPList": [
-                                    "xx"
+                                    "abc"
                                 ],
-                                "RealServerWeight": 1,
-                                "RealServerIP": "xx"
-                            },
-                            {
-                                "RealServerStatus": 0,
-                                "RealServerPort": 424,
-                                "RealServerId": "xx",
-                                "RealServerWeight": 1,
-                                "RealServerFailoverRole": "xx",
-                                "DownIPList": [
-                                    "xx"
-                                ],
-                                "RealServerIP": "xx"
+                                "RealServerFailoverRole": "abc"
                             }
-                        ]
+                        ],
+                        "BindStatus": 1,
+                        "ForwardHost": "abc",
+                        "ServerNameIndicationSwitch": "abc",
+                        "ServerNameIndication": "abc",
+                        "ForcedRedirect": "abc"
                     }
                 ],
+                "CertificateId": "abc",
+                "CertificateAlias": "abc",
+                "ClientCertificateId": "abc",
+                "ClientCertificateAlias": "abc",
+                "BasicAuthConfId": "abc",
+                "BasicAuth": 0,
+                "BasicAuthConfAlias": "abc",
+                "RealServerCertificateId": "abc",
+                "RealServerAuth": 0,
+                "RealServerCertificateAlias": "abc",
+                "GaapCertificateId": "abc",
+                "GaapAuth": 0,
+                "GaapCertificateAlias": "abc",
+                "RealServerCertificateDomain": "abc",
                 "PolyClientCertificateAliasInfo": [
                     {
-                        "CertificateId": "xx",
-                        "CertificateAlias": "xx"
+                        "CertificateId": "abc",
+                        "CertificateAlias": "abc"
                     }
                 ],
-                "GaapAuth": 1,
-                "ClientCertificateAlias": "xx",
-                "RealServerAuth": 1,
-                "RealServerCertificateDomain": "xx",
-                "DomainStatus": 1
+                "PolyRealServerCertificateAliasInfo": [
+                    {
+                        "CertificateId": "abc",
+                        "CertificateAlias": "abc"
+                    }
+                ],
+                "DomainStatus": 1,
+                "BanStatus": "abc",
+                "Http3Supported": 0
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

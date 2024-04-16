@@ -1,28 +1,4 @@
-**Example 1: sadfa**
-
-asdfa
-
-Input: 
-
-```
-tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
-    --ProjectId 1470561602745229312
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "AuthFailure.SignatureFailure",
-            "Message": "请求签名验证失败，请检查您的签名计算是否正确。"
-        },
-        "RequestId": "1bb6a9d0-3182-429a-b030-1a01b55d40cd"
-    }
-}
-```
-
-**Example 2: 失败示例**
+**Example 1: 失败示例**
 
 失败示例
 
@@ -46,7 +22,7 @@ Output:
 }
 ```
 
-**Example 3: 任务列表查询**
+**Example 2: 任务列表查询**
 
 任务列表查询
 
@@ -54,27 +30,9 @@ Input:
 
 ```
 tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
-    --FolderIdList abc \
-    --WorkFlowIdList abc \
-    --WorkFlowNameList abc \
-    --TaskNameList abc \
-    --TaskIdList abc \
-    --PageNumber abc \
-    --PageSize abc \
-    --SortItem abc \
-    --SortType abc \
-    --InChargeList abc \
-    --TaskTypeIdList abc \
-    --StatusList abc \
-    --TaskCycleUnitList abc \
-    --ProjectId abc \
-    --ProductNameList abc \
-    --SourceServiceId abc \
-    --SourceServiceType abc \
-    --TargetServiceId abc \
-    --TargetServiceType abc \
-    --AlarmType abc \
-    --ExecutorGroupIdList abc
+    --WorkFlowIdList 1282d8d2-68e0-11ee-8d13-a411120f8272 \
+    --TaskIdList 20231220103934257 \
+    --ProjectId 1531609696110365952
 ```
 
 Output: 
@@ -82,113 +40,99 @@ Output:
 {
     "Response": {
         "Data": {
-            "PageNumber": 1,
-            "PageSize": 1,
             "Items": [
                 {
-                    "TaskId": "abc",
-                    "VirtualTaskId": "abc",
-                    "VirtualFlag": true,
-                    "TaskName": "abc",
-                    "WorkflowId": "abc",
-                    "RealWorkflowId": "abc",
-                    "WorkflowName": "abc",
-                    "FolderId": "abc",
-                    "FolderName": "abc",
-                    "CreateTime": "abc",
-                    "LastUpdate": "abc",
-                    "Status": "abc",
-                    "InCharge": "abc",
-                    "InChargeId": "abc",
-                    "StartTime": "abc",
-                    "EndTime": "abc",
-                    "ExecutionStartTime": "abc",
-                    "ExecutionEndTime": "abc",
-                    "CycleType": "abc",
-                    "CycleStep": 1,
-                    "CrontabExpression": "abc",
-                    "DelayTime": 1,
-                    "StartupTime": 1,
-                    "RetryWait": 1,
+                    "BrokerIp": null,
+                    "ClusterId": null,
+                    "CreateTime": "2023-12-20 20:40:59",
+                    "Creator": "MaksimGuo",
+                    "Crontab": null,
+                    "CrontabExpression": null,
+                    "CycleNum": 1,
+                    "CycleStep": null,
+                    "CycleType": null,
+                    "CycleUnit": "D",
+                    "DelayTime": 0,
+                    "DependencyRel": null,
+                    "DependencyWorkflow": null,
+                    "EndDate": "2099-12-31 23:59:59",
+                    "EndTime": null,
+                    "EventListenerConfig": null,
+                    "EventPublisherConfig": null,
+                    "ExecutionEndTime": null,
+                    "ExecutionStartTime": null,
+                    "ExecutionTTL": -1,
+                    "ExecutorGroupId": null,
+                    "ExecutorGroupName": null,
+                    "FirstRunTime": "2023-10-12 17:18:45",
+                    "FirstSubmitTime": "2023-12-21 21:06:36",
+                    "FolderId": "0ab0ffbd-68e0-11ee-8d13-a4ae120f8272",
+                    "FolderName": "jianweisong",
+                    "InCharge": "MaksimGuo",
+                    "InChargeId": null,
+                    "InitStrategy": "T+0",
+                    "InstanceInitStrategy": null,
+                    "LastSchedulerCommitTime": "2023-12-21 21:06:36",
+                    "LastUpdate": null,
+                    "Layer": null,
+                    "LeftCoordinate": 367,
+                    "MaxDateTime": null,
+                    "MinDateTime": null,
+                    "NormalizedJobStartTime": null,
+                    "Notes": null,
+                    "OwnId": null,
+                    "ProductName": null,
+                    "ProjectId": "1531609696090365952",
+                    "ProjectIdent": "project_wedata",
+                    "ProjectName": "project_wedata",
+                    "RealWorkflowId": null,
+                    "ResourceGroup": null,
                     "RetryAble": 1,
-                    "TaskAction": "abc",
-                    "TryLimit": 1,
-                    "RunPriority": 1,
-                    "TaskType": {
-                        "TypeDesc": "abc",
-                        "TypeId": 0,
-                        "TypeSort": "abc"
-                    },
-                    "BrokerIp": "abc",
-                    "ClusterId": "abc",
-                    "MinDateTime": "abc",
-                    "MaxDateTime": "abc",
-                    "ExecutionTTL": 0,
-                    "SelfDepend": "abc",
-                    "LeftCoordinate": 0,
-                    "TopCoordinate": 0,
-                    "Notes": "abc",
-                    "InstanceInitStrategy": "abc",
-                    "YarnQueue": "abc",
-                    "LastSchedulerCommitTime": "abc",
-                    "NormalizedJobStartTime": "abc",
-                    "SchedulerDesc": "abc",
-                    "ResourceGroup": "abc",
-                    "Creator": "abc",
-                    "DependencyRel": "abc",
-                    "DependencyWorkflow": "abc",
-                    "EventListenerConfig": "abc",
-                    "EventPublisherConfig": "abc",
-                    "VirtualTaskStatus": "abc",
-                    "TaskLinkInfo": {
-                        "Id": "abc",
-                        "LinkKey": "abc",
-                        "TaskFrom": "abc",
-                        "TaskTo": "abc",
-                        "InCharge": "abc",
-                        "LinkDependencyType": "abc",
-                        "Offset": "abc",
-                        "LinkType": "abc",
-                        "WorkflowId": "abc"
-                    },
-                    "ProductName": "abc",
-                    "ProjectId": "abc",
-                    "ProjectIdent": "abc",
-                    "ProjectName": "abc",
-                    "OwnId": "abc",
-                    "UserId": "abc",
-                    "TenantId": "abc",
-                    "UpdateUser": "abc",
-                    "UpdateTime": "abc",
-                    "UpdateUserId": "abc",
-                    "TaskTypeId": 0,
-                    "TaskTypeDesc": "abc",
-                    "ShowWorkflow": true,
-                    "FirstSubmitTime": "abc",
-                    "FirstRunTime": "abc",
-                    "ScheduleDesc": "abc",
-                    "CycleNum": 0,
-                    "Crontab": "abc",
-                    "StartDate": "abc",
-                    "EndDate": "abc",
-                    "CycleUnit": "abc",
-                    "InitStrategy": "abc",
-                    "Layer": "abc",
-                    "SourceServiceId": "abc",
-                    "SourceServiceType": "abc",
-                    "TargetServiceId": "abc",
-                    "TargetServiceType": "abc",
-                    "TasksStr": "abc",
-                    "Submit": true,
-                    "ExecutorGroupId": "abc",
-                    "ExecutorGroupName": "abc"
+                    "RetryWait": 5,
+                    "RunPriority": 6,
+                    "ScheduleDesc": "每天00:00执行一次",
+                    "SchedulerDesc": null,
+                    "SelfDepend": "serial",
+                    "ShowWorkflow": false,
+                    "SourceServiceId": null,
+                    "SourceServiceType": null,
+                    "StartDate": "2023-10-12 17:18:45",
+                    "StartTime": null,
+                    "StartupTime": null,
+                    "Status": "F",
+                    "TargetServiceId": null,
+                    "TargetServiceType": null,
+                    "TaskAction": "",
+                    "TaskId": "20231220203934257",
+                    "TaskLinkInfo": null,
+                    "TaskName": "1111asdasdadsd",
+                    "TaskType": null,
+                    "TaskTypeDesc": "MapReduce",
+                    "TaskTypeId": 92,
+                    "TenantId": "1315051789",
+                    "TopCoordinate": 227,
+                    "TryLimit": 5,
+                    "UpdateTime": null,
+                    "UpdateUser": "MaksimGuo",
+                    "UpdateUserId": "100029483142",
+                    "UserId": "100029483142",
+                    "VirtualFlag": false,
+                    "VirtualTaskId": null,
+                    "VirtualTaskStatus": null,
+                    "WorkflowId": "1282d8d2-68e0-11ee-8d13-a4ae120f8272",
+                    "WorkflowName": "1002",
+                    "YarnQueue": null,
+                    "TasksStr": "testss",
+                    "Submit": true
                 }
             ],
-            "TotalPage": 1,
             "PageCount": 1,
-            "TotalCount": 1
+            "PageNumber": 1,
+            "PageSize": 10,
+            "TotalCount": 1,
+            "TotalPage": 1
         },
-        "RequestId": "abc"
+        "RequestId": "ce9d691e-47fc-4378-92db-3fa248e84166"
     }
 }
 ```

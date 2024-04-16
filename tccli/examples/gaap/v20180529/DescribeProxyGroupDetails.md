@@ -13,42 +13,49 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "ProxyGroupDetail": {
+            "CreateTime": 0,
+            "ProjectId": 0,
+            "ProxyNum": 0,
             "Status": 0,
-            "Http3Supported": 0,
-            "Domain": "xx",
+            "OwnerUin": "abc",
+            "CreateUin": "abc",
+            "GroupName": "abc",
+            "DnsDefaultIp": "abc",
+            "Domain": "abc",
+            "RealServerRegionInfo": {
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
+                "FeatureBitmap": 1,
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
+            },
+            "IsOldGroup": true,
+            "GroupId": "abc",
+            "TagSet": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
+            ],
+            "PolicyId": "abc",
+            "Version": "abc",
             "ClientIPMethod": [
                 0
             ],
-            "RealServerRegionInfo": {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            "TagSet": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "ProxyNum": 0,
-            "CreateUin": "xx",
-            "PackageType": "xx",
-            "OwnerUin": "xx",
-            "GroupId": "xx",
-            "GroupName": "xx",
-            "Version": "xx",
-            "PolicyId": "xx",
-            "IsOldGroup": false,
-            "ProjectId": 0,
-            "IPAddressVersion": "xx",
-            "CreateTime": 1552978237,
-            "DnsDefaultIp": "xx"
-        }
+            "IPAddressVersion": "abc",
+            "PackageType": "abc",
+            "Http3Supported": 0,
+            "FeatureBitmap": 0,
+            "IsSupportTLSChoice": 1
+        },
+        "RequestId": "abc"
     }
 }
 ```

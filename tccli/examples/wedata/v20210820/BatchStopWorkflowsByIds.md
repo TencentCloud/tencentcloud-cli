@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata BatchStopWorkflowsByIds --cli-unfold-argument  \
-    --WorkflowIds abc \
-    --ProjectId abc
+    --WorkflowIds 1520b2bc-f0f4-11ee-2d13-a4ae120f8272 \
+    --ProjectId 1531609696090362952
 ```
 
 Output: 
@@ -16,11 +16,11 @@ Output:
     "Response": {
         "Data": {
             "Result": true,
-            "ResultMsg": "abc",
-            "ErrorId": "abc",
-            "ErrorDesc": "abc"
+            "ResultMsg": "",
+            "ErrorId": "",
+            "ErrorDesc": ""
         },
-        "RequestId": "abc"
+        "RequestId": "46db9784-4083-44fc-99f3-f942babc1b93"
     }
 }
 ```

@@ -1,59 +1,4 @@
-**Example 1: 1**
-
-1
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerInstanceStatus --cli-unfold-argument  \
-    --ProjectId abc \
-    --TaskTypeId abc \
-    --ExecutionGroupId abc \
-    --ExecutionGroupName abc \
-    --StartTime abc \
-    --EndTime abc \
-    --InCharge abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "UnauthorizedOperation",
-            "Message": "未授权操作"
-        },
-        "RequestId": "72dd1900-2555-4298-89a4-680fb1c3993c"
-    }
-}
-```
-
-**Example 2: 测试**
-
-测试
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerInstanceStatus --cli-unfold-argument  \
-    --ProjectId 1470561602745229312 \
-    --StartTime 2023-07-30 23:59:59
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "AuthFailure.SignatureFailure",
-            "Message": "The provided credentials could not be validated. Please check your signature is correct."
-        },
-        "RequestId": "dc00c9b3-faec-404b-a2da-da2653ba026b"
-    }
-}
-```
-
-**Example 3: 示例1**
+**Example 1: 实例状态分布示例**
 
 实例状态分布
 
@@ -70,18 +15,18 @@ Output:
     "Response": {
         "Data": [
             {
-                "CountTag": 1,
-                "TotalNum": 1,
-                "RunningNum": 1,
-                "WaitRunningNum": 1,
-                "DependencyNum": 1,
-                "WaitEventNum": "abc",
-                "StoppingNum": 1,
-                "SucceedNum": 1,
-                "FailedNum": 1
+                "CountTag": 0,
+                "DependencyNum": 0,
+                "FailedNum": 5540,
+                "RunningNum": 0,
+                "StoppingNum": 0,
+                "SucceedNum": 1425,
+                "TotalNum": 6965,
+                "WaitEventNum": "0",
+                "WaitRunningNum": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "851a90c2-5c3e-4931-818d-66155133784b"
     }
 }
 ```

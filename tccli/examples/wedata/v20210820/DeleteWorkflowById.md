@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DeleteWorkflowById --cli-unfold-argument  \
-    --WorkflowId abc \
-    --ProjectId abc \
+    --WorkflowId 1520b2bc-f0f4-11ee-8s13-a4ae120f8272 \
+    --ProjectId 1531609692220365952 \
     --DeleteMode True \
     --EnableNotify True
 ```
@@ -18,11 +18,11 @@ Output:
     "Response": {
         "Data": {
             "Result": true,
-            "ResultMsg": "abc",
-            "ErrorId": "abc",
-            "ErrorDesc": "abc"
+            "ResultMsg": null,
+            "ErrorId": null,
+            "ErrorDesc": null
         },
-        "RequestId": "abc"
+        "RequestId": "46db9784-4083-44fc-99f3-f942babc1b93"
     }
 }
 ```
