@@ -40,6 +40,14 @@
         "title": "添加共享单元资源"
       }
     ],
+    "AttachPolicy": [
+      {
+        "document": "绑定策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachPolicy\n<公共请求参数>\n\n{\n    \"TargetId\": 10001,\n    \"TargetType\": \"NODE\",\n    \"PolicyId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "绑定策略"
+      }
+    ],
     "BindOrganizationMemberAuthAccount": [
       {
         "document": "",
@@ -112,6 +120,14 @@
         "title": "创建组织成员访问策略"
       }
     ],
+    "CreatePolicy": [
+      {
+        "document": "创建策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"Content\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"*\\\",\\\"resource\\\":\\\"*\\\"}]}\",\n    \"Description\": \"FullAccessPolicy\",\n    \"Name\": \"FullAccessPolicy\",\n    \"Type\": \"SERVICE_CONTROL_POLICY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 100001,\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "创建策略"
+      }
+    ],
     "DeleteAccount": [
       {
         "document": "删除成员账号",
@@ -166,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationNodes\n<公共请求参数>\n\n{\n    \"NodeId\": [\n        1001\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "批量删除企业组织节点"
+      }
+    ],
+    "DeletePolicy": [
+      {
+        "document": "删除策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "删除策略"
       }
     ],
     "DeleteShareUnit": [
@@ -280,6 +304,22 @@
         "title": "获取节点列表"
       }
     ],
+    "DescribePolicy": [
+      {
+        "document": "查看一个策略的详情",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 1001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"152482ca-5968-4557-ac1d-1e7ac28ce0da\",\n        \"AddTime\": \"2022-08-04 16:04:17\",\n        \"Description\": \"test\",\n        \"PolicyDocument\": \"{\\\"strategyInfo\\\":{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"*\\\",\\\"resource\\\":\\\"qcs::cam::*:*\\\"}]},\\\"version\\\":\\\"2.0\\\"}\",\n        \"PolicyId\": 1001,\n        \"PolicyName\": \"test-1\",\n        \"Type\": 3,\n        \"UpdateTime\": \"2022-08-04 17:04:17\"\n    }\n}",
+        "title": "查看一个策略的详情"
+      }
+    ],
+    "DescribePolicyConfig": [
+      {
+        "document": "查看企业组织策略配置",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyConfig\n<公共请求参数>\n\n{\n    \"OrganizationId\": 80001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20678896-12d1-11ed-a2cd-525400fed39d\",\n        \"Status\": 1,\n        \"Type\": \"SERVICE_CONTROL_POLICY\"\n    }\n}",
+        "title": "查看企业组织策略配置"
+      }
+    ],
     "DescribeShareAreas": [
       {
         "document": "",
@@ -312,12 +352,60 @@
         "title": "获取共享单元列表"
       }
     ],
+    "DetachPolicy": [
+      {
+        "document": "解绑策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachPolicy\n<公共请求参数>\n\n{\n    \"TargetId\": 10001,\n    \"TargetType\": \"NODE\",\n    \"PolicyId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "解绑策略"
+      }
+    ],
+    "DisablePolicyType": [
+      {
+        "document": "禁用策略类型",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisablePolicyType\n<公共请求参数>\n\n{\n    \"OrganizationId\": 80001,\n    \"PolicyType\": \"SERVICE_CONTROL_POLICY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "禁用策略类型"
+      }
+    ],
+    "EnablePolicyType": [
+      {
+        "document": "启用策略类型",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePolicyType\n<公共请求参数>\n\n{\n    \"OrganizationId\": 80001,\n    \"PolicyType\": \"SERVICE_CONTROL_POLICY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "启用策略类型"
+      }
+    ],
     "ListOrganizationIdentity": [
       {
         "document": "获取组织成员访问身份列表",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOrganizationIdentity\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"IdentityId\": 1,\n                \"IdentityAliasName\": \"test\",\n                \"Description\": \"\",\n                \"IdentityPolicy\": [\n                    {\n                        \"PolicyId\": 1,\n                        \"PolicyName\": \"AdministratorAccess\"\n                    }\n                ],\n                \"IdentityType\": 1,\n                \"UpdateTime\": \"2021-07-15 21:08:38\"\n            }\n        ],\n        \"RequestId\": \"1d744bef-fa56-40e9-8e3b-5a88b122ad5e\",\n        \"Total\": 1\n    }\n}",
         "title": "获取组织成员访问身份列表"
+      }
+    ],
+    "ListPolicies": [
+      {
+        "document": "查看策略列表数据",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPolicies\n<公共请求参数>\n\n{\n    \"Scope\": \"Local\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AddTime\": \"2022-08-04 16:04:17\",\n                \"AttachedTimes\": 0,\n                \"Description\": \"test\",\n                \"PolicyId\": 133766838,\n                \"PolicyName\": \"test-1\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2022-08-04 16:04:17\"\n            },\n            {\n                \"AddTime\": \"2022-08-04 15:06:07\",\n                \"AttachedTimes\": 0,\n                \"Description\": \"test-c\",\n                \"PolicyId\": 133760482,\n                \"PolicyName\": \"test-3\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2022-08-04 16:03:53\"\n            }\n        ],\n        \"RequestId\": \"152482ca-5968-4557-ac1d-1e7ac28ce0da\",\n        \"TotalNum\": 2\n    }\n}",
+        "title": "查看策略列表数据"
+      }
+    ],
+    "ListPoliciesForTarget": [
+      {
+        "document": "查询目标关联的策略列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesForTarget\n<公共请求参数>\n\n{\n    \"TargetId\": 111111111111\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"StrategyId\": 134173928,\n                \"StrategyName\": \"policy-test-1\",\n                \"AddTime\": \"2022-08-07 20:20:09\",\n                \"UpdateTime\": \"2022-08-07 20:20:09\",\n                \"AttachTime\": \"2022-08-08 14:49:59\",\n                \"Type\": 2,\n                \"Remark\": \"test1\",\n                \"Uin\": 111111111111,\n                \"Name\": \"test\"\n            },\n            {\n                \"StrategyId\": 1000,\n                \"StrategyName\": \"FullQcloudAccess\",\n                \"AddTime\": \"2022-08-08 14:45:50\",\n                \"UpdateTime\": \"2022-08-08 14:49:59\",\n                \"AttachTime\": \"2022-08-08 14:49:59\",\n                \"Type\": 2,\n                \"Remark\": \"允许授权所有操作，用于企业组织服务控制策略。\",\n                \"Uin\": 111111111111,\n                \"Name\": \"test\"\n            }\n        ],\n        \"TotalNum\": 2,\n        \"RequestId\": \"2f76e3a5-225f-4deb-8d98-4efb0f1ae0ea\"\n    }\n}",
+        "title": "查询目标关联的策略列表"
+      }
+    ],
+    "ListTargetsForPolicy": [
+      {
+        "document": "查询某个指定策略关联的目标列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTargetsForPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"134173928\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AddTime\": \"2022-08-09 17:08:35\",\n                \"Name\": \"T0\",\n                \"RelatedType\": 1,\n                \"Uin\": 222222222222\n            },\n            {\n                \"AddTime\": \"2022-08-09 17:11:54\",\n                \"Name\": \"33\",\n                \"RelatedType\": 2,\n                \"Uin\": 111111111111\n            }\n        ],\n        \"RequestId\": \"676ed1a2-8a98-4834-8d7a-19538980ad0e\",\n        \"TotalNum\": 5\n    }\n}",
+        "title": "查询某个指定策略关联的目标列表"
       }
     ],
     "MoveOrganizationNodeMembers": [
@@ -366,6 +454,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationNode\n<公共请求参数>\n\n{\n    \"NodeId\": 1001,\n    \"Name\": \"name\",\n    \"Remark\": \"remark\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新企业组织节点"
+      }
+    ],
+    "UpdatePolicy": [
+      {
+        "document": "编辑策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePolicy\n<公共请求参数>\n\n{\n    \"Content\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":\\\"*\\\",\\\"resource\\\":\\\"*\\\"}]}\",\n    \"Description\": \"FullAccessPolicy\",\n    \"Name\": \"FullAccessPolicy\",\n    \"PolicyId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
+        "title": "编辑策略"
       }
     ],
     "UpdateShareUnit": [

@@ -1,73 +1,46 @@
 **Example 1: 范例**
 
 修改任务信息
-POST / HTTP/1.1
-Host: wedata.tencentcloudapi.com
-Content-Type: application/json
-X-TC-Action: ModifyTaskInfo
-<公共请求参数>
 
 Input: 
 
 ```
 tccli wedata ModifyTaskInfo --cli-unfold-argument  \
-    --ProjectId abc \
-    --TaskId abc \
-    --DelayTime 0 \
+    --ProjectId 1492511691706699776 \
+    --TaskId 20240307211852581 \
+    --DelayTime 600 \
     --StartupTime 0 \
     --SelfDepend 0 \
-    --StartTime abc \
-    --EndTime abc \
-    --TaskAction abc \
-    --CycleType 0 \
-    --CycleStep 0 \
-    --CrontabExpression abc \
-    --ExecutionStartTime abc \
-    --ExecutionEndTime abc \
-    --TaskName abc \
-    --RetryWait 0 \
-    --TryLimit 0 \
-    --Retriable 0 \
-    --RunPriority 0 \
-    --TaskExt.0.Key abc \
-    --TaskExt.0.Value abc \
-    --ResourceGroup abc \
-    --YarnQueue abc \
-    --BrokerIp abc \
-    --InCharge abc \
-    --Notes abc \
-    --TaskParamInfos.0.ParamKey abc \
-    --TaskParamInfos.0.ParamValue abc \
-    --SourceServer abc \
-    --TargetServer abc \
-    --DependencyWorkflow abc \
-    --DependencyConfigDTOs.0.ParentTask.TaskId abc \
-    --DependencyConfigDTOs.0.ParentTask.VirtualTaskId abc \
-    --DependencyConfigDTOs.0.ParentTask.VirtualFlag True \
-    --DependencyConfigDTOs.0.ParentTask.TaskName abc \
-    --DependencyConfigDTOs.0.ParentTask.WorkflowId abc \
-    --DependencyConfigDTOs.0.ParentTask.RealWorkflowId abc \
-    --DependencyConfigDTOs.0.ParentTask.CycleType 0 \
-    --DependencyConfigDTOs.0.SonTask.TaskId abc \
-    --DependencyConfigDTOs.0.SonTask.VirtualTaskId abc \
-    --DependencyConfigDTOs.0.SonTask.VirtualFlag True \
-    --DependencyConfigDTOs.0.SonTask.TaskName abc \
-    --DependencyConfigDTOs.0.SonTask.WorkflowId abc \
-    --DependencyConfigDTOs.0.SonTask.RealWorkflowId abc \
-    --DependencyConfigDTOs.0.SonTask.CycleType 0 \
-    --DependencyConfigDTOs.0.DependConfType abc \
-    --DependencyConfigDTOs.0.SubordinateCyclicType abc \
-    --DependencyConfigDTOs.0.DependencyStrategy abc \
-    --ExecutionTTL 0 \
-    --ScriptChange True
+    --StartTime 2024-03-28 00:00:00 \
+    --EndTime 2024-03-29 00:00:00 \
+    --TaskAction  \
+    --CycleType 3 \
+    --CycleStep 1 \
+    --ExecutionStartTime 00:00 \
+    --ExecutionEndTime 23:59 \
+    --TaskName python_task_failed \
+    --RetryWait 5 \
+    --TryLimit 5 \
+    --Retriable 1 \
+    --RunPriority 6 \
+    --TaskExt.0.Key python_type \
+    --TaskExt.0.Value python3 \
+    --ResourceGroup 20221229172428663695 \
+    --BrokerIp ins-g8j6pv4f \
+    --InCharge micofywang \
+    --Notes test \
+    --TaskParamInfos.0.ParamKey a \
+    --TaskParamInfos.0.ParamValue 3 \
+    --DependencyWorkflow no \
+    --InChargeIds 100033435965
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2e409eea-c8c8-4d3e-98b3-d8fdc960b631",
-        "Data": true
+        "Data": true,
+        "RequestId": "d7f6c6d3-d483-4485-b600-c665c9aea28b"
     }
 }
 ```

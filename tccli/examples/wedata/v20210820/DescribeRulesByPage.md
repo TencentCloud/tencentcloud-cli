@@ -9,7 +9,7 @@ tccli wedata DescribeRulesByPage --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 1 \
     --Filters.0.Name tableId \
-    --Filters.0.Values 79tugiojbhkrfvdesc \
+    --Filters.0.Values 79tugiojbfvdesc \
     --OrderFields.0.Name id \
     --OrderFields.0.Direction asc \
     --ProjectId 5346789087654
@@ -58,12 +58,12 @@ Output:
                     "AlarmLevel": 1,
                     "Description": "描述",
                     "Operator": "zhangsan",
-                    "TargetDatabaseId": "70afsdfaasdgrthy8tyighb",
+                    "TargetDatabaseId": "70afsdfaasyighb",
                     "TargetDatabaseName": "dbName",
                     "TargetTableId": "8y9uhojt79u",
                     "TargetTableName": "test",
-                    "TargetConditionExpr": "expr",
-                    "RelConditionExpr": "expr",
+                    "TargetConditionExpr": "0",
+                    "RelConditionExpr": "sourceTable.id = targetTable.id",
                     "FieldConfig": {
                         "WhereConfig": [
                             {
@@ -76,7 +76,7 @@ Output:
                             {
                                 "DatabaseId": "7p9gyuih78tgy",
                                 "DatabaseName": "dbTest",
-                                "TableId": "7t8ygihb8t670ygo",
+                                "TableId": "7t8ygihb670ygo",
                                 "TableName": "test",
                                 "TableKey": "asdfsdf",
                                 "FieldConfig": [
@@ -117,12 +117,12 @@ Output:
                         ],
                         "StartTime": "2023-10-01",
                         "EndTime": "2023-10-01",
-                        "CycleType": "abc",
+                        "CycleType": "D",
                         "DelayTime": 1,
                         "CycleStep": 1,
                         "TaskAction": "abc",
-                        "ExecEngineType": "abc",
-                        "ExecPlan": "abc",
+                        "ExecEngineType": "HIVE",
+                        "ExecPlan": "2024-04-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次",
                         "RuleId": 1,
                         "RuleName": "规则1"
                     },
@@ -140,7 +140,7 @@ Output:
                         "WebHooks": [
                             {
                                 "HookType": "1",
-                                "HookAddress": "www.baidu.com"
+                                "HookAddress": "http://www.test.com"
                             }
                         ],
                         "RuleId": 1,
@@ -148,13 +148,13 @@ Output:
                     },
                     "CreateTime": "2023-10-01",
                     "DatasourceId": 1,
-                    "DatabaseId": "abc",
+                    "DatabaseId": "ssddyhhjj-daskk",
                     "MonitorStatus": 0,
-                    "TriggerCondition": "abc"
+                    "TriggerCondition": "固定值 小于 2"
                 }
             ]
         },
-        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
+        "RequestId": "0ff4e8ab68e69"
     }
 }
 ```

@@ -12,7 +12,7 @@ tccli wedata DescribeRuleTemplatesByPage --cli-unfold-argument  \
     --Filters.0.Values t678yuh987tgui \
     --PageNumber 1 \
     --PageSize 1 \
-    --ProjectId abc
+    --ProjectId 1
 ```
 
 Output: 
@@ -46,7 +46,7 @@ Output:
                     "ResolvedSqlExpression": {
                         "TableExpressions": [
                             {
-                                "TableExpression": "abc",
+                                "TableExpression": "table1",
                                 "ColumnExpression": [
                                     "expr"
                                 ]

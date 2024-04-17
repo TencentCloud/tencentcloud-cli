@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationStatisticsTaskStatus --cli-unfold-argument  \
-    --QueryDate abc \
-    --TaskType 0 \
-    --ProjectId abc \
-    --ExecutorGroupId abc
+    --QueryDate 2022-01-01 \
+    --TaskType 201 \
+    --ProjectId 11022568003970304 \
+    --ExecutorGroupId 14323212
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "StatusData": "{\"running\":0}",
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

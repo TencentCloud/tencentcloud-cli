@@ -35,14 +35,14 @@ tccli wedata CreateIntegrationNode --cli-unfold-argument  \
     --NodeInfo.OperatorUin 100006386235 \
     --NodeInfo.Name name \
     --ProjectId 17865298918277529 \
-    --TaskType 1
+    --TaskType 201
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": "134",
+        "Id": "134321",
         "TaskId": "015235-2adc2d-372dasd-5274",
         "RequestId": "1234-adfasd-2342-ssd"
     }

@@ -2444,6 +2444,30 @@
       ],
       "usage": "out"
     },
+    "CloudResourceItem": {
+      "document": "云数据库资源项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源所处地域。",
+          "example": "ap-guangzhou\t",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t云上资源列表。",
+          "example": "无",
+          "member": "DspaCloudResourceMeta",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ComplianceGroupDetail": {
       "document": "模板详情",
       "members": [
@@ -2667,6 +2691,30 @@
         }
       ],
       "usage": "out"
+    },
+    "CosBucketItem": {
+      "document": "cos桶资源项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源所处地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS桶列表。",
+          "example": "无",
+          "member": "string",
+          "name": "Buckets",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "CosResourceItem": {
       "document": "COS资源的桶信息",
@@ -3545,15 +3593,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源所处地域。",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "ResourceRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "DSPA实例ID。",
           "example": "dspa-xxxxxxxx",
           "member": "string",
@@ -3562,12 +3601,30 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
+          "document": "资源所处地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
           "document": "COS桶列表",
           "example": "无",
           "member": "string",
           "name": "Buckets",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "必填，COS资源列表",
+          "example": "无",
+          "member": "CosBucketItem",
+          "name": "CosBucketItems",
+          "required": false,
           "type": "list"
         }
       ],
@@ -3607,39 +3664,48 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "资源所处地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。",
           "example": "continue",
           "member": "string",
           "name": "UpdateStatus",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "本次更新的ID号，用来标记一次完整的更新过程。",
           "example": "无",
           "member": "string",
           "name": "UpdateId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "云上资源列表。",
           "example": "无",
           "member": "DspaCloudResourceMeta",
           "name": "Items",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "必填，云数据库资源列表。",
+          "example": "无",
+          "member": "CloudResourceItem",
+          "name": "CloudResourceItems",
+          "required": false,
           "type": "list"
         }
       ],
@@ -3649,11 +3715,12 @@
       "document": "CreateDSPADbMetaResources返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "本次更新的ID号，用来标记一次完整的更新过程。",
           "example": "无",
           "member": "string",
           "name": "UpdateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3663,6 +3730,7 @@
           "example": "无",
           "member": "string",
           "name": "MetaType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3672,15 +3740,17 @@
           "example": "无",
           "member": "string",
           "name": "DspaId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "资源所处地域。",
           "example": "无",
           "member": "string",
           "name": "ResourceRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

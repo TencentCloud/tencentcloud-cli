@@ -306,6 +306,30 @@
         "title": "获取设备云存服务详情"
       }
     ],
+    "DescribeCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询设备云存AI服务"
+      }
+    ],
+    "DescribeCloudStorageAIServiceCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceCallback\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"http\",\n        \"CallbackUrl\": \"https://yourdomain.com/api\",\n        \"CallbackToken\": \"your-token\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询云存AI分析回调配置"
+      }
+    ],
+    "DescribeCloudStorageAIServiceTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                \"ProductId\": \"TQBDY6RPI9\",\n                \"DeviceName\": \"cs_112114601_2\",\n                \"ChannelId\": 0,\n                \"ServiceType\": \"PackageDetect\",\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Status\": 3,\n                \"Result\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n                \"CreateTime\": 1710490000,\n                \"UpdateTime\": 1710490000\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询设备云存 AI 分析任务列表"
+      }
+    ],
     "DescribeCloudStorageDate": [
       {
         "document": "",
@@ -554,6 +578,14 @@
         "title": "获取围栏列表"
       }
     ],
+    "DescribeProductCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"Available\": true,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询指定产品的云存 AI 服务开通状态"
+      }
+    ],
     "DescribeProject": [
       {
         "document": "查询项目详情",
@@ -768,6 +800,22 @@
         "title": "获取Topic列表示例"
       }
     ],
+    "ModifyCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改设备云存AI服务开通状态"
+      }
+    ],
+    "ModifyCloudStorageAIServiceCallback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudStorageAIServiceCallback\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://yourdomain.com/api\",\n    \"CallbackToken\": \"your-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改云存AI分析回调配置"
+      }
+    ],
     "ModifyFenceBind": [
       {
         "document": "更新围栏绑定信息",
@@ -814,6 +862,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPositionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"Id\",\n    \"ProductIdList\": [\n        \"ProductId\"\n    ],\n    \"SpaceName\": \"space\",\n    \"Description\": \"service\",\n    \"Icon\": \"http://www.example.com\",\n    \"AuthorizeType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "更新位置空间"
+      }
+    ],
+    "ModifyProductCloudStorageAIService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProductCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改指定产品的云存 AI 服务开通状态"
       }
     ],
     "ModifyProject": [

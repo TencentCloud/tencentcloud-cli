@@ -1,28 +1,6 @@
-**Example 1: 1**
+**Example 1: 任务状态统计示例**
 
-1
-
-Input: 
-
-```
-tccli wedata DescribeSchedulerTaskCntByStatus --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "AuthFailure.SignatureFailure",
-            "Message": "The provided credentials could not be validated. Please check your signature is correct."
-        },
-        "RequestId": "ffa95942-29bb-4bfd-b207-a23d4c265504"
-    }
-}
-```
-
-**Example 2: 示例1**
-
-demo
+任务状态统计
 
 Input: 
 

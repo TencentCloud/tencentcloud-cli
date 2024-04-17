@@ -6,44 +6,44 @@ Input:
 
 ```
 tccli wedata GetOfflineDIInstanceList --cli-unfold-argument  \
-    --PageIndex 1 \
-    --PageSize 1 \
-    --ProjectId abc \
-    --SearchCondition.Keyword abc \
-    --SearchCondition.Sort abc \
-    --SearchCondition.SortCol abc \
-    --SearchCondition.Instance.ExecutionSpace abc \
-    --SearchCondition.Instance.ProductName abc \
-    --SearchCondition.Instance.ResourceGroup abc
+    --ProjectId 1486446569620893696 \
+    --SearchCondition.Instance.ExecutionSpace DRY_RUN \
+    --SearchCondition.Instance.ProductName DATA_INTEGRATION \
+    --SearchCondition.Instance.ResourceGroup 20240403154937113974 \
+    --SearchCondition.SortCol CurRunDate \
+    --SearchCondition.Sort desc \
+    --SearchCondition.Keyword 20240408130054538 \
+    --PageIndex 0 \
+    --PageSize 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "List": [
             {
-                "CreateUin": "abc",
-                "OperatorUin": "abc",
-                "OwnerUin": "abc",
-                "AppId": "abc",
-                "WorkspaceId": "abc",
-                "TaskId": "abc",
-                "CurRunDate": "abc",
-                "IssueId": "abc",
-                "InlongTaskId": "abc",
-                "ResourceGroup": "abc",
+                "AppId": "1315059999",
+                "CreateTime": "2022-04-10 19:38:23",
+                "CreateUin": "100028649999",
+                "CurRunDate": "2022-04-10T19:38:21+08:00",
+                "EndTime": null,
+                "InlongTaskId": "dev_20220408130054538_1712749111_1712749111",
+                "InstanceKey": "20220408130054538_2022-04-10T19:38:21+08:00",
+                "IssueId": "2022-04-10 19:38:21",
+                "OperatorUin": "100028649999",
+                "OwnerUin": "100028448993",
+                "ResourceGroup": "20240403154937113777",
+                "StartTime": null,
+                "State": "COMPLETED",
+                "TaskId": "20220408130054538",
                 "TaskRunType": 1,
-                "State": "abc",
-                "StartTime": "abc",
-                "EndTime": "abc",
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "InstanceKey": "abc"
+                "UpdateTime": "2022-04-10 19:38:37",
+                "WorkspaceId": "148644656962089399"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "ea9ec716-a23c-4adc-b7e8-cd54f562b9d3",
+        "Total": 4
     }
 }
 ```

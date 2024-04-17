@@ -28,8 +28,8 @@ Input:
 
 ```
 tccli wedata RemoveWorkflowDs --cli-unfold-argument  \
-    --ProjectId 123456 \
-    --WorkflowId 123455
+    --ProjectId 1460947878944567296 \
+    --WorkflowId a09dac50-ed66-11ed-8909-bc97e105ba60
 ```
 
 Output: 

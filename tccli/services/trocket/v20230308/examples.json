@@ -298,14 +298,6 @@
         "title": "查询主题列表"
       }
     ],
-    "DescribeTopicStatsOp": [
-      {
-        "document": "1",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicStats\n<公共请求参数>\n\n{\n    \"Topic\": \"MQ_INST_rocketmq3w4a73aw3bkn_STONE_MQ_ONLINE%TOPIC_BYTEDANCE_INFO\"\n}",
-        "output": "{\n    \"Code\": 20000,\n    \"DataSources\": 0,\n    \"RequestId\": \"915f901a-257b-4a13-8ca5-56e5e09189d9\",\n    \"Response\": {\n        \"RequestId\": \"915f901a-257b-4a13-8ca5-56e5e09389d9\"\n    }\n}",
-        "title": "1"
-      }
-    ],
     "ImportSourceClusterConsumerGroups": [
       {
         "document": "",

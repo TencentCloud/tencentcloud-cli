@@ -2819,7 +2819,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统最大空间限制。单位:GiB",
+          "document": "文件系统空间限制。单位:GiB",
           "example": "50",
           "member": "uint64",
           "name": "SizeLimit",
@@ -2949,7 +2949,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统总容量\n单位:GiB",
+          "document": "文件系统容量规格上限\n单位:GiB",
           "example": "100",
           "member": "uint64",
           "name": "Capacity",

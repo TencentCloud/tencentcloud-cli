@@ -18,101 +18,166 @@ Output:
     "Response": {
         "Nodes": [
             {
-                "Id": "abc",
-                "TaskId": "abc",
-                "Name": "abc",
-                "NodeType": "abc",
-                "DataSourceType": "abc",
-                "Description": "abc",
-                "DatasourceId": "abc",
+                "Id": "130973",
+                "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
+                "Name": "nodeTestName",
+                "NodeType": "INPUT",
+                "DataSourceType": "MYSQL",
+                "Description": "testdesc",
+                "DatasourceId": "914840",
                 "Config": [
                     {
-                        "Name": "abc",
-                        "Value": "abc"
+                        "Name": "Type",
+                        "Value": "MYSQL"
+                    },
+                    {
+                        "Name": "splitPk",
+                        "Value": "id"
+                    },
+                    {
+                        "Name": "Database",
+                        "Value": "databasetestname"
+                    },
+                    {
+                        "Name": "TableNames",
+                        "Value": "tabletestname"
+                    },
+                    {
+                        "Name": "PrimaryKey",
+                        "Value": "id"
+                    },
+                    {
+                        "Name": "isNew",
+                        "Value": "true"
+                    },
+                    {
+                        "Name": "PrimaryKey_INPUT_SYMBOL",
+                        "Value": "input"
+                    },
+                    {
+                        "Name": "splitPk_INPUT_SYMBOL",
+                        "Value": "input"
+                    },
+                    {
+                        "Name": "isClean",
+                        "Value": "0"
+                    },
+                    {
+                        "Name": "encoding",
+                        "Value": "utf-8"
                     }
                 ],
                 "ExtConfig": [
                     {
-                        "Name": "abc",
-                        "Value": "abc"
+                        "Name": "x",
+                        "Value": "300"
+                    },
+                    {
+                        "Name": "y",
+                        "Value": "260"
+                    },
+                    {
+                        "Name": "iconPosition",
+                        "Value": "left"
+                    },
+                    {
+                        "Name": "size",
+                        "Value": "m"
                     }
                 ],
                 "Schema": [
                     {
-                        "Id": "abc",
-                        "Name": "abc",
-                        "Value": "abc",
-                        "Type": "abc",
+                        "Type": "String",
+                        "Alias": "name",
+                        "Comment": "名字",
+                        "Id": "616042880",
+                        "Name": "name",
+                        "Value": "nihao",
                         "Properties": [
                             {
-                                "Name": "abc",
-                                "Value": "abc"
+                                "Name": "exttestname",
+                                "Value": "exttestvalue"
                             }
-                        ],
-                        "Alias": "abc",
-                        "Comment": "abc"
+                        ]
                     }
                 ],
                 "NodeMapping": {
-                    "SourceId": "abc",
-                    "SinkId": "abc",
+                    "SourceId": "130973",
+                    "SinkId": "130972",
                     "SourceSchema": [
                         {
-                            "Id": "abc",
-                            "Name": "abc",
-                            "Value": "abc",
-                            "Type": "abc",
-                            "Alias": "abc",
-                            "Comment": "abc",
+                            "Id": "597853056",
+                            "Name": "name",
+                            "Value": "test",
+                            "Type": "String",
+                            "Alias": "name",
+                            "Comment": "名称",
                             "Properties": [
                                 {
-                                    "Name": "__key__",
-                                    "Value": "abc"
+                                    "Name": "exttestname",
+                                    "Value": "exttestvalue"
                                 }
                             ]
                         }
                     ],
                     "SchemaMappings": [
                         {
-                            "SourceSchemaId": "abc",
-                            "SinkSchemaId": "abc"
+                            "SourceSchemaId": "597853056",
+                            "SinkSchemaId": "616042880"
+                        }
+                    ],
+                    "ExtConfig": [
+                        {
+                            "Name": "Type",
+                            "Value": "MYSQL"
                         }
                     ]
                 },
-                "AppId": "abc",
-                "ProjectId": "abc",
-                "CreatorUin": "abc",
-                "OperatorUin": "abc",
-                "OwnerUin": "abc",
-                "CreateTime": "abc",
-                "UpdateTime": "abc"
+                "AppId": "1315051999",
+                "ProjectId": "1486446569620893696",
+                "CreatorUin": "100028644005",
+                "OperatorUin": "100028644005",
+                "OwnerUin": "100028644005",
+                "CreateTime": "2022-05-07 10:13:21",
+                "UpdateTime": "2022-05-07 10:13:21"
             }
         ],
         "Mappings": [
             {
-                "SourceId": "abc",
-                "SinkId": "abc",
+                "SourceId": "130973",
+                "SinkId": "130972",
                 "SourceSchema": [
                     {
-                        "Id": "abc",
-                        "Name": "abc",
-                        "Value": "abc",
-                        "Type": "abc",
-                        "Alias": "abc",
-                        "Comment": "abc",
-                        "Properties": []
+                        "Id": "597853056",
+                        "Name": "name",
+                        "Value": "test",
+                        "Type": "String",
+                        "Alias": "name",
+                        "Comment": "名称",
+                        "Properties": [
+                            {
+                                "Name": "exttestname",
+                                "Value": "exttestvalue"
+                            }
+                        ]
                     }
                 ],
                 "SchemaMappings": [
                     {
-                        "SourceSchemaId": "abc",
-                        "SinkSchemaId": "abc"
+                        "SourceSchemaId": "597853056",
+                        "SinkSchemaId": "616042880"
+                    }
+                ],
+                "ExtConfig": [
+                    {
+                        "Name": "ext key name",
+                        "Value": "ext key value"
                     }
                 ]
             }
         ],
-        "TaskId": "abc",
-        "RequestId": "abc"
+        "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
+        "RequestId": "ae90b19-209e-4acb-9f62-e2860dd810"
     }
 }
 ```

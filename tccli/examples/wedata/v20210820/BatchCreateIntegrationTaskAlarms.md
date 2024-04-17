@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli wedata BatchCreateIntegrationTaskAlarms --cli-unfold-argument  \
-    --ProjectId abc \
-    --TaskIds 123 124 \
-    --TaskAlarmInfo.AlarmRecipientName abc \
-    --TaskAlarmInfo.TaskId abc \
+    --ProjectId 11022568003970304 \
+    --TaskIds 20220506145218687 20220413105240052 \
+    --TaskAlarmInfo.AlarmRecipientName v_vxbbzhang \
+    --TaskAlarmInfo.TaskId 20220506171453813 \
     --TaskAlarmInfo.EstimatedTime 1 \
-    --TaskAlarmInfo.ProjectId abc \
-    --TaskAlarmInfo.TaskType 1 \
+    --TaskAlarmInfo.ProjectId 11022568003970304 \
+    --TaskAlarmInfo.TaskType 201 \
     --TaskAlarmInfo.AlarmIndicator 1 \
-    --TaskAlarmInfo.Id abc \
-    --TaskAlarmInfo.Creater abc \
-    --TaskAlarmInfo.RegularId abc \
-    --TaskAlarmInfo.RegularName abc \
+    --TaskAlarmInfo.Id 1 \
+    --TaskAlarmInfo.Creater tom \
+    --TaskAlarmInfo.RegularId 371 \
+    --TaskAlarmInfo.RegularName 测试超时告警 \
     --TaskAlarmInfo.TriggerType 1 \
-    --TaskAlarmInfo.AlarmRecipientId abc \
-    --TaskAlarmInfo.AlarmWay abc \
+    --TaskAlarmInfo.AlarmRecipientId 100022187073 \
+    --TaskAlarmInfo.AlarmWay 1 \
     --TaskAlarmInfo.AlarmLevel 1 \
     --TaskAlarmInfo.RegularStatus 1
 ```
@@ -32,7 +32,7 @@ Output:
         "SuccessCount": 1,
         "FailedCount": 1,
         "TotalCount": 2,
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

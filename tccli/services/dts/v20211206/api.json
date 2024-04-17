@@ -500,7 +500,7 @@
   },
   "metadata": {
     "apiVersion": "2021-12-06",
-    "api_brief": "介绍如何使用API对数据传输服务进行数据迁移、数据同步、数据订阅操作。",
+    "api_brief": "介绍如何快速使用API对数据传输服务进行数据迁移、数据同步、数据订阅操作。",
     "serviceNameCN": "数据传输服务",
     "serviceShortName": "dts"
   },
@@ -1662,6 +1662,7 @@
           "example": "noCheck",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

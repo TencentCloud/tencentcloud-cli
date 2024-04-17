@@ -15,13 +15,13 @@ Output:
     "Response": {
         "Data": {
             "TableInfo": {
-                "TableId": "896rtfyoghuibasd",
+                "TableId": "896rtfyogbasd",
                 "TableName": "teste",
-                "InstanceId": "5679t8ygihub",
+                "InstanceId": "5679t8yihub",
                 "DatasourceId": "6789",
-                "DatasourceName": "hive-uibgj97ug",
+                "DatasourceName": "hive-uij97ug",
                 "DatasourceType": 0,
-                "DatabaseId": "7tyg89i978yuh",
+                "DatabaseId": "7tyg89i8yuh",
                 "DatabaseName": "dbName",
                 "ProjectId": 0,
                 "UserId": 0
@@ -32,14 +32,14 @@ Output:
                     "MonitorType": 0,
                     "StartTime": "2023-10-01",
                     "EndTime": "2023-10-01",
-                    "CycleType": "10",
-                    "CycleStep": 0,
-                    "CycleDesc": "abc",
-                    "TaskAction": "abc",
+                    "CycleType": "D",
+                    "CycleStep": 1,
+                    "CycleDesc": "3",
+                    "TaskAction": "1",
                     "DelayTime": 0,
-                    "CycleTaskId": "abc",
+                    "CycleTaskId": "20240307109",
                     "AssociateTaskIds": [
-                        "abc"
+                        "2024007195414609"
                     ]
                 }
             ],
@@ -48,7 +48,7 @@ Output:
                     "RuleGroupId": 1,
                     "Receivers": [
                         {
-                            "ReceiverUserId": 1,
+                            "ReceiverUserId": 12738273899,
                             "ReceiverName": "zhangan"
                         }
                     ],
@@ -66,7 +66,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"
+        "RequestId": "0ff4e8ae-ec4b68e69"
     }
 }
 ```

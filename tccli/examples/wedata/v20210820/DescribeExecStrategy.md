@@ -32,9 +32,9 @@ Output:
             "CycleType": "abc",
             "DelayTime": 1,
             "CycleStep": 1,
-            "TaskAction": "abc",
-            "ExecEngineType": "abc",
-            "ExecPlan": "plan",
+            "TaskAction": "2",
+            "ExecEngineType": "HIVE",
+            "ExecPlan": "2024-03-07 00:00:00 ~ 2099-12-31 23:59:59，每间隔10分钟执行一次",
             "RuleId": 1,
             "RuleName": "规则1"
         },

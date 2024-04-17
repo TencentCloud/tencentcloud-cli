@@ -1,13 +1,13 @@
-**Example 1: 锁定集成任务**
+**Example 1: 解锁集成任务**
 
-锁定集成任务
+
 
 Input: 
 
 ```
 tccli wedata UnlockIntegrationTask --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc
+    --TaskId a64893b7dff394c3f89ae305796ba2 \
+    --ProjectId 1102250839970304
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "bhy893-bc394c3-f89av79-6obah"
     }
 }
 ```

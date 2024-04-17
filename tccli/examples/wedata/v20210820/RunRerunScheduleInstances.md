@@ -1,18 +1,20 @@
-**Example 1: 1**
+**Example 1: 实例批量重跑**
 
-1
+实例批量重跑
+
+
 
 Input: 
 
 ```
 tccli wedata RunRerunScheduleInstances --cli-unfold-argument  \
-    --Instances.0.TaskId  \
+    --Instances.0.TaskId 20240307215220701 \
+    --Instances.0.CurRunDate 2024-04-10 00:00:00 \
     --Instances.0.TaskName  \
     --Instances.0.WorkflowId  \
     --Instances.0.WorkflowName  \
     --Instances.0.InCharge  \
     --Instances.0.CycleType  \
-    --Instances.0.CurRunDate  \
     --Instances.0.NextCurDate  \
     --Instances.0.State  \
     --Instances.0.DependenceFulfillTime  \
@@ -38,25 +40,28 @@ tccli wedata RunRerunScheduleInstances --cli-unfold-argument  \
     --Instances.0.SchedulerDesc  \
     --Instances.0.FirstSubmitTime  \
     --Instances.0.FirstRunTime  \
-    --Instances.0.ProjectId  \
+    --Instances.0.ProjectId 127890865433555 \
     --Instances.0.ProjectIdent  \
     --Instances.0.ProjectName  \
     --Instances.0.TenantId  \
     --Instances.0.InstanceKey  \
-    --RerunType  \
-    --DependentWay  \
-    --SonInstanceType 
+    --CheckFather True \
+    --RerunType 2 \
+    --SkipEventListening True \
+    --DependentWay 1 \
+    --SonInstanceType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "JSON parse error: Cannot deserialize value of type `com.tencent.tbds.guldan.api.store.service.api.utils.TaskCycleType` from String \"\": not one of the values accepted for Enum class: [ONEOFF_CYCLE, ELASTICITY_WEEK_CYCLE, DAY_CYCLE, YEAR_CYCLE, USER_DRIVE, MONTH_CYCLE, ELASTICITY_YUE_CYCLE, HOUR_CYCLE, CRONTAB_CYCLE, INSTANT, WEEK_CYCLE, MINUTE_CYCLE]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.tencent.tbds.guldan.api.store.service.api.utils.TaskCycleType` from String \"\": not one of the values accepted for Enum class: [ONEOFF_CYCLE, ELASTICITY_WEEK_CYCLE, DAY_CYCLE, YEAR_CYCLE, USER_DRIVE, MONTH_CYCLE, ELASTICITY_YUE_CYCLE, HOUR_CYCLE, CRONTAB_CYCLE, INSTANT, WEEK_CYCLE, MINUTE_CYCLE]\n at [Source: (PushbackInputStream); line: 1, column: 102] (through reference chain: com.tencent.wedata.ai.ops.api.web.request.InstanceOpsRequest[\"Instances\"]->java.util.ArrayList[0]->com.tencent.wedata.ai.ops.commons.dto.scheduler.InstanceOpsDto[\"CycleType\"])"
+        "Data": {
+            "ErrorDesc": null,
+            "ErrorId": null,
+            "Result": true
         },
-        "RequestId": "6896b274-816f-4523-a417-5555464a9e18"
+        "RequestId": "1d287884-1214-4b75-b4e8-383ee8e57918"
     }
 }
 ```

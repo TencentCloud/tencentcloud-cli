@@ -3202,18 +3202,16 @@
           "member": "string",
           "name": "ClusterOs",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "集群版本,默认值为1.10.5",
-          "example": "v1.18.4",
+          "example": "1.18.4",
           "member": "string",
           "name": "ClusterVersion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3222,8 +3220,7 @@
           "member": "string",
           "name": "ClusterName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3232,8 +3229,7 @@
           "member": "string",
           "name": "ClusterDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3242,8 +3238,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3252,8 +3247,7 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3262,8 +3256,7 @@
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3272,8 +3265,7 @@
           "member": "string",
           "name": "OsCustomizeType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3282,8 +3274,7 @@
           "member": "bool",
           "name": "NeedWorkSecurityGroup",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -3292,8 +3283,7 @@
           "member": "string",
           "name": "SubnetId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3302,8 +3292,7 @@
           "member": "string",
           "name": "ClusterLevel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3312,8 +3301,7 @@
           "member": "AutoUpgradeClusterLevel",
           "name": "AutoUpgradeClusterLevel",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -19264,6 +19252,16 @@
           "name": "DesiredNodesNum",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"RuntimeType\":\"\",\"RuntimeVersion\":\"\"}",
+          "member": "RuntimeConfig",
+          "name": "RuntimeConfig",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {

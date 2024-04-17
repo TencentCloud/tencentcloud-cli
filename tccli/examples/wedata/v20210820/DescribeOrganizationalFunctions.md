@@ -30,7 +30,7 @@ Output:
                 "FuncId": "d65df5af-28b4-4171-9a24-ce96fc4e83fa",
                 "ParamDesc": "test",
                 "Example": "",
-                "ClassName": "cccc",
+                "ClassName": "demoClass",
                 "ResourceList": [
                     {
                         "Comment": "test",
@@ -57,7 +57,7 @@ Output:
                 "Description": "test"
             }
         ],
-        "ErrorMessage": "ces",
+        "ErrorMessage": null,
         "RequestId": "ef431542-96ae-467c-b821-f594df8ac83c"
     }
 }

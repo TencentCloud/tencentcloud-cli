@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeOpsInstanceLogList --cli-unfold-argument  \
-    --TaskId abc \
-    --CurRunDate abc
+    --TaskId 201234567889999 \
+    --CurRunDate 2024-04-06 00:00:00
 ```
 
 Output: 
@@ -16,21 +16,21 @@ Output:
     "Response": {
         "Data": [
             {
-                "TaskId": "abc",
-                "CurRunDate": "abc",
-                "Tries": "abc",
-                "LastUpdate": "abc",
-                "BrokerIp": "abc",
-                "FileSize": "abc",
-                "OriginFileName": "abc",
-                "CreateTime": "abc",
-                "InstanceLogType": "abc",
-                "TaskName": "abc",
-                "CostTime": "abc",
+                "TaskId": "1234567889999",
+                "CurRunDate": "2024-04-09 00:00:00",
+                "Tries": "1",
+                "LastUpdate": "2024-04-09 00:00:00",
+                "BrokerIp": "ins-841jqgbx",
+                "FileSize": "10",
+                "OriginFileName": "201234567889999-9-all-log-0.20240410203512.log",
+                "CreateTime": "2024-02-09 00:00:00",
+                "InstanceLogType": "run",
+                "TaskName": "test_task_0",
+                "CostTime": "00:05",
                 "InstanceStatus": "RUNNING"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     }
 }
 ```

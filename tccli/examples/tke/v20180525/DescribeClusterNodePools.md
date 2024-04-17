@@ -71,6 +71,10 @@ Output:
                 "NodePoolOs": "tlinux_xxx",
                 "OsCustomizeType": "GENERAL",
                 "PreStartUserScript": "#!/bin/sh\ntouch /tmp/before",
+                "RuntimeConfig": {
+                    "RuntimeType": "containerd",
+                    "RuntimeVersion": "1.6.x"
+                },
                 "Tags": null,
                 "Taints": [],
                 "Unschedulable": 0,

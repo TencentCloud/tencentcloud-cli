@@ -28,7 +28,7 @@ Output:
                 "StatisticType": "typeA"
             }
         ],
-        "RequestId": "ABC"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

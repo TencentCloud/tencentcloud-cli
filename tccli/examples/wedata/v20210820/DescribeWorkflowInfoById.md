@@ -1,13 +1,13 @@
-**Example 1: 通过工作流id，查询工作流详情**
+**Example 1: 工作流详情demo**
 
-通过工作流id，查询工作流详情
+工作流详情demo
 
 Input: 
 
 ```
 tccli wedata DescribeWorkflowInfoById --cli-unfold-argument  \
-    --WorkflowId abc \
-    --ProjectId abc
+    --WorkflowId 3db9f4ad-e0e2-11ee-8ec8-b8599f277de5 \
+    --ProjectId 1470547050521227264
 ```
 
 Output: 
@@ -15,28 +15,28 @@ Output:
 {
     "Response": {
         "Data": {
-            "CreateTime": "abc",
-            "Creator": "abc",
-            "ModifyTime": "abc",
-            "DelayTime": 1,
-            "StartupTime": 1,
-            "SelfDepend": "abc",
-            "StartTime": "abc",
-            "EndTime": "abc",
-            "TaskAction": "abc",
-            "CycleType": "abc",
+            "CreateTime": null,
+            "Creator": null,
+            "CrontabExpression": null,
             "CycleStep": 1,
-            "CrontabExpression": "abc",
-            "ExecutionStartTime": "abc",
-            "ExecutionEndTime": "abc",
-            "InstanceInitStrategy": "abc",
-            "WorkflowId": "abc",
-            "DependencyWorkflow": "abc",
-            "SchedulerDesc": "abc",
-            "FirstSubmitTime": "abc",
-            "LatestSubmitTime": "abc"
+            "CycleType": "DAY_CYCLE",
+            "DelayTime": 0,
+            "DependencyWorkflow": "no",
+            "EndTime": "2099-12-31 23:59:59",
+            "ExecutionEndTime": null,
+            "ExecutionStartTime": null,
+            "FirstSubmitTime": null,
+            "InstanceInitStrategy": "T_PLUS_0",
+            "LatestSubmitTime": null,
+            "ModifyTime": null,
+            "SchedulerDesc": "每天00:00执行一次",
+            "SelfDepend": "serial",
+            "StartTime": "2024-04-10 16:31:55",
+            "StartupTime": 0,
+            "TaskAction": "",
+            "WorkflowId": "3db9f4ad-e0e2-11ee-8ec8-b8599f277de5"
         },
-        "RequestId": "abc"
+        "RequestId": "b91acd1a-1ca9-4d94-9647-e032924ac6bc"
     }
 }
 ```

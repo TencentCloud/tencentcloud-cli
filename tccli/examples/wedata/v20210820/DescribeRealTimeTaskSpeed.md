@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskSpeed --cli-unfold-argument  \
-    --TaskId abc \
-    --StartTime 1 \
-    --EndTime 1 \
+    --TaskId 123 \
+    --StartTime 1712803796000 \
+    --EndTime 1712803996000 \
     --Granularity 1 \
-    --ProjectId abc
+    --ProjectId 1
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
     "Response": {
         "RecordsSpeedList": [
             {
-                "NodeType": "abc",
-                "NodeName": "abc",
+                "NodeType": "INPUT",
+                "NodeName": "1",
                 "Values": [
                     {
                         "Time": 1,
@@ -31,8 +31,8 @@ Output:
         ],
         "BytesSpeedList": [
             {
-                "NodeType": "abc",
-                "NodeName": "abc",
+                "NodeType": "INPUT",
+                "NodeName": "1",
                 "Values": [
                     {
                         "Time": 1,
@@ -44,8 +44,8 @@ Output:
         "Data": {
             "RecordsSpeedList": [
                 {
-                    "NodeType": "abc",
-                    "NodeName": "abc",
+                    "NodeType": "INPUT",
+                    "NodeName": "1",
                     "Values": [
                         {
                             "Time": 1,
@@ -62,12 +62,12 @@ Output:
                             "Time": 1
                         }
                     ],
-                    "NodeType": "abc",
-                    "NodeName": "abc"
+                    "NodeType": "INPUT",
+                    "NodeName": "1"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

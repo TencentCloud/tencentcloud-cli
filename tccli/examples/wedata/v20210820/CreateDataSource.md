@@ -8,18 +8,18 @@ Input:
 tccli wedata CreateDataSource --cli-unfold-argument  \
     --BizParams string \
     --Category DB \
-    --DatabaseName string \
+    --DatabaseName db \
     --Description string \
-    --Display string \
-    --Name string \
+    --Display saga \
+    --Name striaasdgng \
     --Params string \
-    --ClusterId string \
+    --ClusterId cdb-xxasfsdg6d \
     --Status 1 \
     --Type CLICKHOUSE \
-    --Collect string \
-    --OwnerProjectId string \
-    --OwnerProjectName string \
-    --OwnerProjectIdent string \
+    --Collect 1 \
+    --OwnerProjectId 100265651 \
+    --OwnerProjectName pprasf \
+    --OwnerProjectIdent striasdgang \
     --COSBucket string \
     --COSRegion string
 ```

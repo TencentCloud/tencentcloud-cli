@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DeleteRuleTemplate --cli-unfold-argument  \
-    --ProjectId abc \
+    --ProjectId 153160990365952 \
     --Ids 1
 ```
 

@@ -15,38 +15,38 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "7cb20a58-a110-48ed-b539-0807e9af05d6",
         "Data": {
-            "CompositeScore": 17.76,
-            "TotalTableNumber": 1,
+            "CompositeScore": 13.64,
             "ScoringDistribution": [
                 {
                     "Level": 1,
-                    "TableNumber": 1,
-                    "Scale": 0
+                    "Scale": 0,
+                    "TableNumber": 0
                 },
                 {
                     "Level": 2,
-                    "TableNumber": 1,
-                    "Scale": 0
+                    "Scale": 0,
+                    "TableNumber": 0
                 },
                 {
                     "Level": 3,
-                    "TableNumber": 0,
-                    "Scale": 0
+                    "Scale": 0,
+                    "TableNumber": 0
                 },
                 {
                     "Level": 4,
-                    "TableNumber": 0,
-                    "Scale": 0
+                    "Scale": 0,
+                    "TableNumber": 0
                 },
                 {
                     "Level": 5,
-                    "TableNumber": 1,
-                    "Scale": 100
+                    "Scale": 100,
+                    "TableNumber": 1
                 }
-            ]
-        }
+            ],
+            "TotalTableNumber": 1
+        },
+        "RequestId": "2085cb56-c8ef-42d6-8e3a-5854aa3ce46c"
     }
 }
 ```

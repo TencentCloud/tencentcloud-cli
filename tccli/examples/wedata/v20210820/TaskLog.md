@@ -1,4 +1,4 @@
-**Example 1: 查询管控日志**
+**Example 1: 查询实时任务日志接口**
 
 
 
@@ -11,7 +11,7 @@ tccli wedata TaskLog --cli-unfold-argument  \
     --EndTime 1659345287409 \
     --Limit 100 \
     --OrderType desc \
-    --TaskId ** \
+    --TaskId a9d94710bfa8f80437a217 \
     --TaskType 201
 ```
 
@@ -22,11 +22,11 @@ Output:
         "LogContentList": [
             {
                 "Time": 1,
-                "PkgId": "abc",
-                "Log": "abc"
+                "PkgId": "a2b142c",
+                "Log": "test log content "
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "bd947vbf-a8fer80-4u782-17"
     }
 }
 ```

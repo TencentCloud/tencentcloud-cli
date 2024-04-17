@@ -16154,7 +16154,7 @@
           "example": "lobo5",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16164,7 +16164,7 @@
           "example": "topic-k3pn5gfm",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16174,7 +16174,7 @@
           "example": "6",
           "member": "int64",
           "name": "PartitionNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16184,7 +16184,7 @@
           "example": "2",
           "member": "int64",
           "name": "ReplicaNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16194,7 +16194,7 @@
           "example": "test",
           "member": "string",
           "name": "Note",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16204,7 +16204,7 @@
           "example": "1627540967",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16214,7 +16214,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableWhiteList",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16224,7 +16224,7 @@
           "example": "0",
           "member": "int64",
           "name": "IpWhiteListCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16234,7 +16234,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ForwardCosBucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16244,7 +16244,7 @@
           "example": "1",
           "member": "int64",
           "name": "ForwardStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16254,27 +16254,27 @@
           "example": "0",
           "member": "int64",
           "name": "ForwardInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Config: {Retention: 86400000, MinInsyncReplicas: 1, CleanUpPolic",
+          "example": "Config: {Retention: 86400000, MinInsyncReplicas: 1, CleanUpPolicy: \"delete\"}",
           "member": "Config",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息保留时间配置(用于动态配置变更记录)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RetentionTimeConfig: {Expect: 1440, Current: 1440, ModTimeStamp:",
+          "example": "RetentionTimeConfig: {Expect: 1440, Current: 1440, ModTimeStamp: 1713252318 }",
           "member": "TopicRetentionTimeConfigRsp",
           "name": "RetentionTimeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16284,7 +16284,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16294,7 +16294,7 @@
           "example": "0",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

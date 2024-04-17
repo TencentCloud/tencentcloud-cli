@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskInstanceNodeInfo --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc
+    --TaskId 20220506145218687 \
+    --ProjectId 11022568003970304
 ```
 
 Output: 
@@ -15,17 +15,17 @@ Output:
 {
     "Response": {
         "RealTimeTaskInstanceNodeInfo": {
-            "TaskName": "abc",
-            "TaskId": "abc",
+            "TaskName": "task1",
+            "TaskId": "1",
             "InstanceNodeInfoList": [
                 {
-                    "NodeType": "abc",
-                    "NodeId": "abc",
-                    "NodeName": "abc"
+                    "NodeType": "INPUT",
+                    "NodeId": "3039",
+                    "NodeName": "1"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

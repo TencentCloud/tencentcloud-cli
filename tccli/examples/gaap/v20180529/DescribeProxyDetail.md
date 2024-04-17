@@ -14,74 +14,86 @@ Output:
 {
     "Response": {
         "ProxyDetail": {
-            "AccessRegionInfo": {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            "RelatedGlobalDomains": [
-                "xx"
-            ],
-            "Version": "xx",
-            "PolicyId": "xx",
-            "Scalarable": 1,
-            "IPList": [
-                {
-                    "IP": "xx",
-                    "Bandwidth": 0,
-                    "Provider": "xx"
-                }
-            ],
-            "Status": "xx",
-            "ProxyType": 1,
-            "ForwardIP": "xx",
-            "ProxyId": "xx",
-            "RealServerRegion": "xx",
-            "Concurrent": 2,
-            "RealServerRegionInfo": {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
-                "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
-            },
-            "IP": "xx",
-            "Http3Supported": 0,
-            "InBanBlacklist": 0,
-            "AccessRegion": "xx",
-            "ProjectId": 0,
-            "BillingType": 0,
-            "SupportProtocols": [
-                "TCP",
-                "UDP"
-            ],
-            "PackageType": "xx",
-            "Domain": "xx",
-            "IPAddressVersion": "xx",
-            "BanStatus": "xx",
+            "InstanceId": "abc",
             "CreateTime": 1,
-            "InstanceId": "xx",
-            "Bandwidth": 10,
-            "SupportSecurity": 1,
+            "ProjectId": 0,
+            "ProxyName": "abc",
+            "AccessRegion": "abc",
+            "RealServerRegion": "abc",
+            "Bandwidth": 0,
+            "Concurrent": 0,
+            "Status": "abc",
+            "Domain": "abc",
+            "IP": "abc",
+            "Version": "abc",
+            "ProxyId": "abc",
+            "Scalarable": 0,
+            "SupportProtocols": [
+                "abc"
+            ],
+            "GroupId": "abc",
+            "PolicyId": "abc",
+            "AccessRegionInfo": {
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
+                "FeatureBitmap": 1,
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
+            },
+            "RealServerRegionInfo": {
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
+                "FeatureBitmap": 1,
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
+            },
+            "ForwardIP": "abc",
             "TagSet": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "TagKey": "abc",
+                    "TagValue": "abc"
                 }
             ],
+            "SupportSecurity": 0,
+            "BillingType": 0,
+            "RelatedGlobalDomains": [
+                "abc"
+            ],
+            "ModifyConfigTime": 1,
+            "ProxyType": 1,
             "ClientIPMethod": [
                 0
             ],
-            "ProxyName": "xx",
-            "NetworkType": "xx",
-            "ModifyConfigTime": 1,
-            "GroupId": "xx"
+            "IPAddressVersion": "abc",
+            "NetworkType": "abc",
+            "PackageType": "abc",
+            "BanStatus": "abc",
+            "IPList": [
+                {
+                    "IP": "abc",
+                    "Provider": "abc",
+                    "Bandwidth": 0
+                }
+            ],
+            "Http3Supported": 0,
+            "InBanBlacklist": 0,
+            "FeatureBitmap": 0,
+            "IsAutoScaleProxy": 0,
+            "IsSupportTLSChoice": 0
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
@@ -101,71 +113,87 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "fe6deb4c-3bf9-4b92-9bec-047d44d8d7c4",
         "ProxyDetail": {
-            "InstanceId": "link-4m6fx36h",
-            "ProxyId": "link-4m6fx36h",
-            "CreateTime": 1646712299,
+            "InstanceId": "abc",
+            "CreateTime": 1,
             "ProjectId": 0,
-            "ProxyName": "test8",
-            "ProxyType": 100,
-            "AccessRegion": "Guangzhou",
-            "RealServerRegion": "Shanghai",
-            "Bandwidth": 10,
-            "NetworkType": "normal",
-            "Concurrent": 2,
-            "Status": "RUNNING",
-            "Domain": "link-4m6fx36h.gaapacc.com.cn",
-            "IP": "1.14.225.21",
-            "IPList": [
-                {
-                    "IP": "1.14.225.21",
-                    "Provider": "BGP",
-                    "Bandwidth": 10
-                }
+            "ProxyName": "abc",
+            "AccessRegion": "abc",
+            "RealServerRegion": "abc",
+            "Bandwidth": 0,
+            "Concurrent": 0,
+            "Status": "abc",
+            "Domain": "abc",
+            "IP": "abc",
+            "Version": "abc",
+            "ProxyId": "abc",
+            "Scalarable": 0,
+            "SupportProtocols": [
+                "abc"
             ],
+            "GroupId": "abc",
+            "PolicyId": "abc",
             "AccessRegionInfo": {
-                "RegionId": "Guangzhou",
-                "RegionName": "广州（原中国大陆-华南大区）",
-                "RegionArea": "SouthChina",
-                "RegionAreaName": "SouthChina",
-                "IDCType": "dc",
-                "FeatureBitmap": 79
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
+                "FeatureBitmap": 1,
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
             },
             "RealServerRegionInfo": {
-                "RegionId": "Shanghai",
-                "RegionName": "上海（原中国大陆-华东大区）",
-                "RegionArea": "EastChina",
-                "RegionAreaName": "EastChina",
-                "IDCType": "dc",
-                "FeatureBitmap": 79
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
+                "FeatureBitmap": 1,
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
             },
-            "TagSet": [],
-            "ModifyConfigTime": 1646712299,
-            "IPAddressVersion": "IPv4",
-            "PackageType": "Thunder",
-            "BanStatus": "RECOVER",
-            "Http3Supported": 0,
-            "InBanBlacklist": 0,
-            "ClientIPMethod": [
-                0,
-                1
+            "ForwardIP": "abc",
+            "TagSet": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
             ],
-            "GroupId": null,
-            "PolicyId": "sp-nahrld9t",
-            "Version": "3.0",
-            "SupportProtocols": [
-                "TCP",
-                "UDP"
-            ],
-            "Scalarable": 1,
-            "SupportSecurity": 1,
+            "SupportSecurity": 0,
             "BillingType": 0,
             "RelatedGlobalDomains": [
-                "gd-rv1p5ak9.gaapacc.com.cn"
+                "abc"
             ],
-            "ForwardIP": "124.222.196.15;124.221.127.42;"
-        }
+            "ModifyConfigTime": 1,
+            "ProxyType": 1,
+            "ClientIPMethod": [
+                0
+            ],
+            "IPAddressVersion": "abc",
+            "NetworkType": "abc",
+            "PackageType": "abc",
+            "BanStatus": "abc",
+            "IPList": [
+                {
+                    "IP": "abc",
+                    "Provider": "abc",
+                    "Bandwidth": 0
+                }
+            ],
+            "Http3Supported": 0,
+            "InBanBlacklist": 0,
+            "FeatureBitmap": 0,
+            "IsAutoScaleProxy": 0,
+            "IsSupportTLSChoice": 0
+        },
+        "RequestId": "abc"
     }
 }
 ```

@@ -9,18 +9,18 @@ tccli wedata ModifyDataSource --cli-unfold-argument  \
     --ID 1 \
     --BizParams string \
     --Category DB \
-    --DatabaseName string \
-    --Description string \
-    --Display string \
-    --Name string \
+    --DatabaseName default \
+    --Description desc \
+    --Display test \
+    --Name mysql1 \
     --Params string \
     --ClusterId string \
     --Status 1 \
     --Type CLICKHOUSE \
     --Collect string \
-    --OwnerProjectId string \
-    --OwnerProjectName string \
-    --OwnerProjectIdent string \
+    --OwnerProjectId 106659848354 \
+    --OwnerProjectName project1 \
+    --OwnerProjectIdent pppp \
     --COSBucket string \
     --COSRegion string
 ```

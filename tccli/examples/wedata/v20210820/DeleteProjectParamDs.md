@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DeleteProjectParamDs --cli-unfold-argument  \
-    --ParamKey abc \
-    --ProjectId abc
+    --ParamKey projectKey \
+    --ProjectId 1470547050521227269
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "f194343a-4373-429b-9287-02f4c2daa12a"
     }
 }
 ```

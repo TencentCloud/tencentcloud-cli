@@ -1,21 +1,28 @@
-**Example 1: 1**
+**Example 1: 实例批量置成功**
 
-1
+实例运维-实例批量置成功
 
 Input: 
 
 ```
-tccli wedata RunForceSucScheduleInstances --cli-unfold-argument ```
+tccli wedata RunForceSucScheduleInstances --cli-unfold-argument  \
+    --ProjectId 148541567890667712 \
+    --Instances.0.TaskId 20240307215220701 \
+    --Instances.0.CurRunDate 2024-04-09 00:00:00 \
+    --Instances.1.TaskId 20240307221158488 \
+    --Instances.1.CurRunDate 2024-04-09 00:00:00
+```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "[500] during [POST] to [http://scheduler-gateway-service/api/taskScheduler/instance/batchForceSuc] [ScheduleOpsApi#batchForceSuc(InstanceRequest)]: [{\"timestamp\":\"2023-08-28T08:40:41.514+0000\",\"status\":500,\"error\":\"Internal Server Error\",\"message\":\"获取当前用户选择的项目信息为空，请先选择或者创建项目！\",\"path\":\"/api/taskScheduler/instance/batchForceSuc\"}]"
+        "Data": {
+            "ErrorDesc": null,
+            "ErrorId": null,
+            "Result": true
         },
-        "RequestId": "7f5215ed-d304-4feb-895a-449dcfe0576a"
+        "RequestId": "1d287884-1214-4b75-b4e8-383ee8e57918"
     }
 }
 ```

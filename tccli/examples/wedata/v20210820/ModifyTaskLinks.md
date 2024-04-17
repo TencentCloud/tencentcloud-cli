@@ -1,24 +1,24 @@
-**Example 1: 范例**
+**Example 1: 添加父任务依赖**
 
-
+添加父任务依赖
 
 Input: 
 
 ```
 tccli wedata ModifyTaskLinks --cli-unfold-argument  \
-    --ProjectId 1 \
-    --WorkflowId 9e993c1d-0cd9-11ed-8909-bc97e105ba60 \
-    --TaskTo 20220729142629819 \
-    --RealFromWorkflowId 9e993c1d-0cd9-11ed-8909-bc97e105ba60 \
-    --TaskFrom 20220729130936366
+    --ProjectId 1492511691706699776 \
+    --TaskFrom 20240307211633923 \
+    --TaskTo 20240307211852581 \
+    --WorkflowId ca1253e8-dc84-11ee-8d13-a4ae120f8272 \
+    --RealFromWorkflowId ca1253e8-dc84-11ee-8d13-a4ae120f8272
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "afa1f6bf-7a86-410c-a214-006726d11957",
-        "Data": true
+        "Data": true,
+        "RequestId": "2dd59176-0b25-428c-b4ec-bb7ab2876147"
     }
 }
 ```

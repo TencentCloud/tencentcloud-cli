@@ -1,6 +1,6 @@
-**Example 1: 测试**
+**Example 1: 获取实例列表示例**
 
-测试
+获取实例列表
 
 Input: 
 
@@ -62,6 +62,8 @@ Output:
                     "State": "EXPIRED",
                     "TaskId": "20230101114142907",
                     "TaskName": "retry_hive",
+                    "TotalRunNum": 2,
+                    "InstanceKey": "your InstanceKey",
                     "TaskType": {
                         "TypeDesc": "Hive SQL",
                         "TypeId": 34,
@@ -118,6 +120,8 @@ Output:
                     "State": "EXPIRED",
                     "TaskId": "20230101114142907",
                     "TaskName": "retry_hive",
+                    "TotalRunNum": 2,
+                    "InstanceKey": "your InstanceKey",
                     "TaskType": {
                         "TypeDesc": "Hive SQL",
                         "TypeId": 34,
@@ -174,6 +178,8 @@ Output:
                     "State": "EXPIRED",
                     "TaskId": "20230101114142907",
                     "TaskName": "retry_hive",
+                    "TotalRunNum": 2,
+                    "InstanceKey": "your InstanceKey",
                     "TaskType": {
                         "TypeDesc": "Hive SQL",
                         "TypeId": 34,

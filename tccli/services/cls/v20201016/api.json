@@ -1602,20 +1602,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调时的Body",
+          "document": "回调时的Body。\n可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。\n如下示例：\n\n```\n{\n\"TopicId\": \"{{ .QueryLog[0][0].topicId }}\",\n\"key\": \"{{.Alarm}}\",\n\"time\": \"{{ .QueryLog[0][0].time }}\",\n\"log\": \"{{ .QueryLog[0][0].content.__CONTENT__ }}\",\n\"namespace\": \"{{ .QueryLog[0][0].content.__TAG__.namespace }}\"\n}\n```",
           "example": "无",
           "member": "string",
           "name": "Body",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调时的Headers\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调时的HTTP请求头部字段。\n例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。\n```\n\"Content-Type: application/json\"\n```\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Headers",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3741,7 +3743,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的云函数名字",
+          "document": "投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）",
           "example": "test-report-es",
           "member": "string",
           "name": "FunctionName",

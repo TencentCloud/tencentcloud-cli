@@ -2052,6 +2052,15 @@
           "name": "Http3Supported",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否作为默认域名，默认为“否”",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefaultServer",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5115,7 +5124,7 @@
           "example": "无",
           "member": "ProxyInfo",
           "name": "ProxyDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5152,7 +5161,7 @@
           "example": "无",
           "member": "ProxyGroupDetail",
           "name": "ProxyGroupDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5940,7 +5949,7 @@
           "example": "无",
           "member": "DomainRuleSet",
           "name": "DomainRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5950,7 +5959,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6777,7 +6786,7 @@
           "example": "xx",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6787,7 +6796,7 @@
           "example": "[]",
           "member": "RuleInfo",
           "name": "RuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6797,7 +6806,7 @@
           "example": "xx",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6807,7 +6816,7 @@
           "example": "xx",
           "member": "string",
           "name": "CertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6817,7 +6826,7 @@
           "example": "xx",
           "member": "string",
           "name": "ClientCertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6827,7 +6836,7 @@
           "example": "xx",
           "member": "string",
           "name": "ClientCertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6837,7 +6846,7 @@
           "example": "xx",
           "member": "string",
           "name": "BasicAuthConfId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6847,7 +6856,7 @@
           "example": "0",
           "member": "int64",
           "name": "BasicAuth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6857,7 +6866,7 @@
           "example": "xx",
           "member": "string",
           "name": "BasicAuthConfAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6867,7 +6876,7 @@
           "example": "xx",
           "member": "string",
           "name": "RealServerCertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6877,7 +6886,7 @@
           "example": "0",
           "member": "int64",
           "name": "RealServerAuth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6887,7 +6896,7 @@
           "example": "xx",
           "member": "string",
           "name": "RealServerCertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6897,7 +6906,7 @@
           "example": "xx",
           "member": "string",
           "name": "GaapCertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6907,7 +6916,7 @@
           "example": "0",
           "member": "int64",
           "name": "GaapAuth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6917,7 +6926,7 @@
           "example": "xx",
           "member": "string",
           "name": "GaapCertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6927,7 +6936,7 @@
           "example": "xx",
           "member": "string",
           "name": "RealServerCertificateDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6937,7 +6946,7 @@
           "example": "无",
           "member": "CertificateAliasInfo",
           "name": "PolyClientCertificateAliasInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6947,7 +6956,7 @@
           "example": "无",
           "member": "CertificateAliasInfo",
           "name": "PolyRealServerCertificateAliasInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6957,7 +6966,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DomainStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6967,7 +6976,7 @@
           "example": "RECOVER",
           "member": "string",
           "name": "BanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6977,8 +6986,18 @@
           "example": "0",
           "member": "int64",
           "name": "Http3Supported",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为默认域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefaultServer",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -7877,6 +7896,15 @@
           "name": "PolyClientCertificateIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否作为默认域名，默认为“否”",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDefaultServer",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10348,7 +10376,7 @@
           "example": "xx",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10358,7 +10386,7 @@
           "example": "xx",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10368,7 +10396,7 @@
           "example": "xx",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10378,7 +10406,7 @@
           "example": "xx",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10388,7 +10416,7 @@
           "example": "xx",
           "member": "string",
           "name": "RealServerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10398,7 +10426,7 @@
           "example": "xx",
           "member": "string",
           "name": "Scheduler",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10408,7 +10436,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10418,7 +10446,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RuleStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10428,7 +10456,7 @@
           "example": "无",
           "member": "RuleCheckParams",
           "name": "CheckParams",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10438,7 +10466,7 @@
           "example": "无",
           "member": "BindRealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10448,7 +10476,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10458,7 +10486,7 @@
           "example": "xx",
           "member": "string",
           "name": "ForwardHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10468,7 +10496,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServerNameIndicationSwitch",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10478,7 +10506,7 @@
           "example": "xx",
           "member": "string",
           "name": "ServerNameIndication",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10488,7 +10516,7 @@
           "example": "https:",
           "member": "string",
           "name": "ForcedRedirect",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

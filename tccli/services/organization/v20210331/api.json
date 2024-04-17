@@ -35,6 +35,13 @@
       "output": "AddShareUnitResourcesResponse",
       "status": "online"
     },
+    "AttachPolicy": {
+      "document": "绑定策略",
+      "input": "AttachPolicyRequest",
+      "name": "绑定策略",
+      "output": "AttachPolicyResponse",
+      "status": "online"
+    },
     "BindOrganizationMemberAuthAccount": {
       "document": "绑定组织成员和组织管理员子账号的授权关系",
       "input": "BindOrganizationMemberAuthAccountRequest",
@@ -98,6 +105,13 @@
       "output": "CreateOrganizationMembersPolicyResponse",
       "status": "online"
     },
+    "CreatePolicy": {
+      "document": "创建一个特殊类型的策略，你可以关联到企业组织Root节点、企业单元或者企业的成员账号。",
+      "input": "CreatePolicyRequest",
+      "name": "创建策略",
+      "output": "CreatePolicyResponse",
+      "status": "online"
+    },
     "DeleteAccount": {
       "document": "删除成员账号",
       "input": "DeleteAccountRequest",
@@ -145,6 +159,13 @@
       "input": "DeleteOrganizationNodesRequest",
       "name": "批量删除企业组织节点",
       "output": "DeleteOrganizationNodesResponse",
+      "status": "online"
+    },
+    "DeletePolicy": {
+      "document": "删除策略",
+      "input": "DeletePolicyRequest",
+      "name": "删除策略",
+      "output": "DeletePolicyResponse",
       "status": "online"
     },
     "DeleteShareUnit": {
@@ -245,6 +266,20 @@
       "output": "DescribeOrganizationNodesResponse",
       "status": "online"
     },
+    "DescribePolicy": {
+      "document": "本接口（DescribePolicy）可用于查询查看策略详情。",
+      "input": "DescribePolicyRequest",
+      "name": "查看策略详情",
+      "output": "DescribePolicyResponse",
+      "status": "online"
+    },
+    "DescribePolicyConfig": {
+      "document": "本接口（DescribePolicyConfig）可用于查询企业组织策略配置",
+      "input": "DescribePolicyConfigRequest",
+      "name": "查看企业组织策略配置",
+      "output": "DescribePolicyConfigResponse",
+      "status": "online"
+    },
     "DescribeShareAreas": {
       "document": "获取可共享地域列表",
       "input": "DescribeShareAreasRequest",
@@ -273,11 +308,53 @@
       "output": "DescribeShareUnitsResponse",
       "status": "online"
     },
+    "DetachPolicy": {
+      "document": "解绑策略",
+      "input": "DetachPolicyRequest",
+      "name": "解绑策略",
+      "output": "DetachPolicyResponse",
+      "status": "online"
+    },
+    "DisablePolicyType": {
+      "document": "禁用策略类型",
+      "input": "DisablePolicyTypeRequest",
+      "name": "禁用策略类型",
+      "output": "DisablePolicyTypeResponse",
+      "status": "online"
+    },
+    "EnablePolicyType": {
+      "document": "启用策略类型",
+      "input": "EnablePolicyTypeRequest",
+      "name": "启用策略类型",
+      "output": "EnablePolicyTypeResponse",
+      "status": "online"
+    },
     "ListOrganizationIdentity": {
       "document": "获取组织成员访问身份列表",
       "input": "ListOrganizationIdentityRequest",
       "name": "获取组织成员访问身份列表",
       "output": "ListOrganizationIdentityResponse",
+      "status": "online"
+    },
+    "ListPolicies": {
+      "document": "本接口（ListPolicies）可用于查询查看策略列表数据",
+      "input": "ListPoliciesRequest",
+      "name": "查看策略列表数据",
+      "output": "ListPoliciesResponse",
+      "status": "online"
+    },
+    "ListPoliciesForTarget": {
+      "document": "本接口（ListPoliciesForTarget）查询目标关联的策略列表",
+      "input": "ListPoliciesForTargetRequest",
+      "name": "查询目标关联的策略列表",
+      "output": "ListPoliciesForTargetResponse",
+      "status": "online"
+    },
+    "ListTargetsForPolicy": {
+      "document": "本接口（ListTargetsForPolicy）查询某个指定策略关联的目标列表",
+      "input": "ListTargetsForPolicyRequest",
+      "name": "查询某个指定策略关联的目标列表",
+      "output": "ListTargetsForPolicyResponse",
       "status": "online"
     },
     "MoveOrganizationNodeMembers": {
@@ -320,6 +397,13 @@
       "input": "UpdateOrganizationNodeRequest",
       "name": "更新企业组织节点",
       "output": "UpdateOrganizationNodeResponse",
+      "status": "online"
+    },
+    "UpdatePolicy": {
+      "document": "编辑策略",
+      "input": "UpdatePolicyRequest",
+      "name": "编辑策略",
+      "output": "UpdatePolicyResponse",
       "status": "online"
     },
     "UpdateShareUnit": {
@@ -601,6 +685,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPolicyRequest": {
+      "document": "AttachPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定策略目标ID。成员Uin或部门ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "example": "NODE",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPolicyResponse": {
+      "document": "AttachPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1157,6 +1295,70 @@
       ],
       "type": "object"
     },
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名。\n长度为1~128个字符，可以包含汉字、英文字母、数字和下划线（_）",
+          "example": "FullAccessPolicy",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略内容。参考CAM策略语法",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。",
+          "example": "全读写权限",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAccountRequest": {
       "document": "DeleteAccount请求参数结构体",
       "members": [
@@ -1335,6 +1537,42 @@
     },
     "DeleteOrganizationResponse": {
       "document": "DeleteOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的策略ID。可以调用[ListPolicies](https://tcloud4api.woa.com/document/product/1128/79356?!preview&!document=1)获取\n",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1829,7 +2067,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)",
+          "document": "策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取",
           "example": "11",
           "member": "int64",
           "name": "PolicyId",
@@ -2480,6 +2718,161 @@
       ],
       "type": "object"
     },
+    "DescribePolicyConfigRequest": {
+      "document": "DescribePolicyConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业组织Id。可以调用[DescribeOrganization](https://cloud.tencent.com/document/product/850/67059)获取",
+          "example": "80001",
+          "member": "uint64",
+          "name": "OrganizationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值0，取值范围：0-服务控制策略、1-标签策略",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyConfigResponse": {
+      "document": "DescribePolicyConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启状态。0-未开启、1-开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRequest": {
+      "document": "DescribePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id。",
+          "example": "133495775",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyResponse": {
+      "document": "DescribePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id。",
+          "example": "10098",
+          "member": "uint64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_policy",
+          "member": "string",
+          "name": "PolicyName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。1-自定义 2-预设策略",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试权限",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name\\",
+          "member": "string",
+          "name": "PolicyDocument",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-29 21:18:40",
+          "member": "string",
+          "name": "UpdateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-07-29 21:18:40",
+          "member": "string",
+          "name": "AddTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeShareAreasRequest": {
       "document": "DescribeShareAreas请求参数结构体",
       "members": [
@@ -2558,7 +2951,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字。支持成员uin搜索。",
+          "document": "搜索关键字。支持成员Uin搜索。",
           "example": "333333333333",
           "member": "string",
           "name": "SearchKey",
@@ -2766,6 +3159,132 @@
       ],
       "type": "object"
     },
+    "DetachPolicyRequest": {
+      "document": "DetachPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解绑策略目标ID。成员Uin或部门ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标类型。取值范围：NODE-部门、MEMBER-成员",
+          "example": "NODE",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachPolicyResponse": {
+      "document": "DetachPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisablePolicyTypeRequest": {
+      "document": "DisablePolicyType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业组织Id。可以调用[DescribeOrganization](https://cloud.tencent.com/document/product/850/67059)获取",
+          "example": "80001",
+          "member": "uint64",
+          "name": "OrganizationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisablePolicyTypeResponse": {
+      "document": "DisablePolicyType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnablePolicyTypeRequest": {
+      "document": "EnablePolicyType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业组织Id。可以调用[DescribeOrganization](https://cloud.tencent.com/document/product/850/67059)获取",
+          "example": "80001",
+          "member": "uint64",
+          "name": "OrganizationId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnablePolicyTypeResponse": {
+      "document": "EnablePolicyType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IdentityPolicy": {
       "document": "组织身份策略",
       "members": [
@@ -2887,6 +3406,476 @@
           "member": "OrgIdentity",
           "name": "Items",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesForTarget": {
+      "document": "查询目标关联的SCP策略列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "1000",
+          "member": "uint64",
+          "name": "StrategyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "FullQcloudAccess",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自测专用",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的账号或节点",
+          "example": "15440611",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联类型 1-节点 2-用户",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-08 14:49:59",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-08 14:49:59",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "二级部门",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略绑定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-08 14:49:59",
+          "member": "string",
+          "name": "AttachTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListPoliciesForTargetRequest": {
+      "document": "ListPoliciesForTarget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号uin或者节点id。",
+          "example": "10083",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量。默认值是 20，必须大于 0 且小于或等于 200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码。默认值是 1，从 1开始，不能大于 200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字。按照策略名称搜索",
+          "example": "testName",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesForTargetResponse": {
+      "document": "ListPoliciesForTarget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标关联的策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListPoliciesForTarget",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesRequest": {
+      "document": "ListPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量。默认值是 20，必须大于 0 且小于或等于 200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码。默认值是 1，从 1开始，不能大于 200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询范围。取值范围： All-获取所有策略、QCS-只获取预设策略、Local-只获取自定义策略，默认值：All",
+          "example": "All",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字。按照策略名搜索",
+          "example": "test_name",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPoliciesResponse": {
+      "document": "ListPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略总数",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListPolicyNode",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPolicyNode": {
+      "document": "企业组织策略列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 19:40:09",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略绑定次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "AttachedTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试策略1",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "test_bind",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略Id",
+          "example": "12307",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-02 19:40:09",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型 1-自定义 2-预设",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTargetsForPolicyNode": {
+      "document": "查询某个指定SCP策略关联的目标列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "scp账号uin或节点Id",
+          "example": "100022242314",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联类型 1-节点关联 2-用户关联",
+          "example": "2",
+          "member": "uint64",
+          "name": "RelatedType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号或者节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T1-Node",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定时间",
+          "example": "2022-08-09 17:11:54",
+          "member": "string",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTargetsForPolicyRequest": {
+      "document": "ListTargetsForPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id。",
+          "example": "10083",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量。默认值是 20，必须大于 0 且小于或等于 200",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码。默认值是 1，从 1开始，不能大于 200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。取值范围：All-全部、User-用户、Node-节点",
+          "example": "All",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "PolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照多个策略id搜索，空格隔开。",
+          "example": "831 832",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTargetsForPolicyResponse": {
+      "document": "ListTargetsForPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定SCP策略关联目标列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListTargetsForPolicyNode",
+          "name": "List",
           "type": "list",
           "value_allowed_null": true
         },
@@ -4395,6 +5384,69 @@
     },
     "UpdateOrganizationNodeResponse": {
       "document": "UpdateOrganizationNode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要编辑的策略ID。可以调用[ListPolicies](https://tcloud4api.woa.com/document/product/1128/79356?!preview&!document=1)获取",
+          "example": "100001",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。",
+          "example": "全读写权限",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略内容。参考CAM策略语法",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名。长度为1~128个字符，可以包含汉字、英文字母、数字和下划线（_）",
+          "example": "FullAccessPolicy",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "example": "SERVICE_CONTROL_POLICY",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

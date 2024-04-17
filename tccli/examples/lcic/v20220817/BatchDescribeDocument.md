@@ -40,7 +40,9 @@ Output:
                 "Width": 1,
                 "Height": 1,
                 "Cover": "abc",
-                "Preview": "abc"
+                "Preview": "abc",
+                "Resolution": "1280*720",
+                "MinScaleResolution": "1280*720"
             }
         ],
         "RequestId": "abc"

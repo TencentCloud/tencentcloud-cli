@@ -1,4 +1,4 @@
-**Example 1: 待消费**
+**Example 1: 查找事件实例**
 
 
 
@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli wedata DescribeEventCases --cli-unfold-argument  \
-    --ProjectId abc \
-    --Category abc \
+    --ProjectId 1253824234232 \
+    --Category  \
     --PageNumber 1 \
-    --PageSize 1 \
-    --EventName abc \
-    --EventType abc \
-    --EventSubType abc \
-    --EventBroadcastType abc \
-    --Status abc \
-    --CreationTimeStart abc \
-    --CreationTimeEnd abc \
-    --EventTriggeredTimeStart abc \
-    --EventTriggeredTimeEnd abc \
-    --LogTimeStart abc \
-    --LogTimeEnd abc \
-    --Dimension abc
+    --PageSize 10 \
+    --EventName test_day_event \
+    --EventType  \
+    --EventSubType  \
+    --EventBroadcastType  \
+    --Status  \
+    --CreationTimeStart  \
+    --CreationTimeEnd  \
+    --EventTriggeredTimeStart  \
+    --EventTriggeredTimeEnd  \
+    --LogTimeStart  \
+    --LogTimeEnd  \
+    --Dimension 
 ```
 
 Output: 
@@ -29,56 +29,29 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 1,
-            "TotalPage": 1,
-            "PageCount": 1,
-            "PageNumber": 1,
-            "PageSize": 1,
             "Items": [
                 {
-                    "CaseId": "abc",
-                    "EventName": "abc",
-                    "EventType": "abc",
-                    "EventSubType": "abc",
-                    "EventBroadcastType": "abc",
-                    "TTL": 1,
-                    "TimeUnit": "abc",
-                    "Dimension": "abc",
-                    "Status": "abc",
-                    "EventTriggerTimestamp": "abc",
-                    "LogTimestamp": "abc",
-                    "Description": "abc"
+                    "CaseId": "7b55e80c3a7949428c34b02ab82b09b7",
+                    "Description": null,
+                    "Dimension": "20240409",
+                    "EventBroadcastType": null,
+                    "EventName": "test_event_mico",
+                    "EventSubType": "DAY",
+                    "EventTriggerTimestamp": "2024-04-11T06:45:06.198Z",
+                    "EventType": "TIME_SERIES",
+                    "LogTimestamp": "2024-04-11T07:37:40.410Z",
+                    "Status": "CONSUMING",
+                    "TTL": 30,
+                    "TimeUnit": "DAYS"
                 }
-            ]
+            ],
+            "PageCount": 1,
+            "PageNumber": 1,
+            "PageSize": 20,
+            "TotalCount": 1,
+            "TotalPage": 1
         },
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 获取事件**
-
-获取事件
-
-Input: 
-
-```
-tccli wedata DescribeEventCases --cli-unfold-argument  \
-    --ProjectId 1460947878944567296 \
-    --Category all \
-    --PageNumber 1 \
-    --PageSize 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "获取事件实例出错"
-        },
-        "RequestId": "dd4c9f45-1b85-488f-8fcd-73ae8c1fa37d"
+        "RequestId": "ed042b6e-e2de-4425-9868-b994d5d18fd8"
     }
 }
 ```

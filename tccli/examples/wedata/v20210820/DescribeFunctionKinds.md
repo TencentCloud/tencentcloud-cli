@@ -13,12 +13,22 @@ Output:
     "Response": {
         "Kinds": [
             {
-                "Name": "日期函数",
-                "EnName": "dateFunction",
-                "ZhName": "日期函数"
+                "EnName": "analytical functions",
+                "Name": "ANALYSIS",
+                "ZhName": "分析函数"
+            },
+            {
+                "EnName": "encryption function",
+                "Name": "ENCRYPTION",
+                "ZhName": "加密函数"
+            },
+            {
+                "EnName": "aggregate function",
+                "Name": "AGGREGATE",
+                "ZhName": "聚合函数"
             }
         ],
-        "ErrorMessage": "查询失败",
+        "ErrorMessage": null,
         "RequestId": "87b71fd5-190f-4bea-87ad-b5c0891c74a3"
     }
 }

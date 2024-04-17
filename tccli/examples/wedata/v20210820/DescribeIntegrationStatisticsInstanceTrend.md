@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationStatisticsInstanceTrend --cli-unfold-argument  \
-    --QueryDate abc \
+    --QueryDate 2024-01-01 \
     --TaskType 0 \
-    --ProjectId abc \
-    --ExecutorGroupId abc
+    --ProjectId 14324123 \
+    --ExecutorGroupId 509e340a1cba617b679bd4b5001
 ```
 
 Output: 
@@ -19,15 +19,17 @@ Output:
         "TrendsData": [
             {
                 "StatisticName": [
-                    "abc"
+                    "a",
+                    "b"
                 ],
                 "StatisticValue": [
-                    0
+                    2,
+                    3
                 ],
-                "StatisticType": "abc"
+                "StatisticType": "FAILED"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

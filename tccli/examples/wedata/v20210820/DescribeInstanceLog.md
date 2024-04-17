@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli wedata DescribeInstanceLog --cli-unfold-argument  \
-    --TaskId abc \
-    --CurRunDate abc \
-    --BrokerIp abc \
-    --OriginFileName abc
+    --TaskId 20220408130054538 \
+    --CurRunDate 2022-04-10 19:38:37 \
+    --BrokerIp 172.168.0.1 \
+    --OriginFileName ins-1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "abc",
+        "Data": "true",
         "InstanceLogInfo": {
-            "LogInfo": "abc"
+            "LogInfo": "日志记录"
         },
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

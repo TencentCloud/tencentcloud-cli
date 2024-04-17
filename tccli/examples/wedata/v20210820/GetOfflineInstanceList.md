@@ -6,44 +6,44 @@ Input:
 
 ```
 tccli wedata GetOfflineInstanceList --cli-unfold-argument  \
-    --ProjectId xx \
-    --PageIndex xx \
-    --SearchCondition.Sort xx \
-    --SearchCondition.Instance.ResourceGroup 1 \
-    --SearchCondition.Instance.ExecutionSpace 1 \
-    --SearchCondition.Instance.ProductName 1 \
-    --SearchCondition.SortCol xx \
-    --SearchCondition.Keyword xx \
-    --PageSize 1
+    --ProjectId 1486446569620893696 \
+    --SearchCondition.Instance.ExecutionSpace DRY_RUN \
+    --SearchCondition.Instance.ProductName DATA_INTEGRATION \
+    --SearchCondition.Instance.ResourceGroup 20240403154937116000 \
+    --SearchCondition.SortCol CurRunDate \
+    --SearchCondition.Sort desc \
+    --SearchCondition.Keyword 20220408130054538 \
+    --PageIndex 1 \
+    --PageSize 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "List": [
             {
-                "UpdateTime": "xx",
-                "OwnerUin": "xx",
-                "OperatorUin": "xx",
-                "IssueId": "xx",
-                "CurRunDate": "xx",
-                "CreateUin": "xx",
-                "InlongTaskId": "xx",
-                "InstanceKey": "xx",
-                "ResourceGroup": "xx",
-                "State": "xx",
-                "WorkspaceId": "xx",
-                "StartTime": "xx",
-                "AppId": "xx",
-                "TaskId": "xx",
-                "EndTime": "xx",
-                "CreateTime": "xx",
-                "TaskRunType": 1
+                "AppId": "1315059999",
+                "CreateTime": "2022-04-10 19:38:23",
+                "CreateUin": "100028649999",
+                "CurRunDate": "2022-04-10T19:38:21+08:00",
+                "EndTime": null,
+                "InlongTaskId": "dev_20220408130054538_1712749111_1712749111",
+                "InstanceKey": "20220408130054538_2022-04-10T19:38:21+08:00",
+                "IssueId": "2022-04-10 19:38:21",
+                "OperatorUin": "100028649999",
+                "OwnerUin": "100028448993",
+                "ResourceGroup": "20220403154937113777",
+                "StartTime": null,
+                "State": "COMPLETED",
+                "TaskId": "20220408130054538",
+                "TaskRunType": 1,
+                "UpdateTime": "2022-04-10 19:38:37",
+                "WorkspaceId": "148644656962089399"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "ea9ec716-a23c-4adc-b7e8-cd54f562b9d3",
+        "Total": 4
     }
 }
 ```

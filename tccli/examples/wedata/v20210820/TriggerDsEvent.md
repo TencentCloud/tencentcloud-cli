@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata TriggerDsEvent --cli-unfold-argument  \
-    --ProjectId 1 \
+    --ProjectId 1470547050521227264 \
     --EventCaseList.0.Name myTest \
     --EventCaseList.0.Dimension 20220729 \
     --EventCaseList.0.Description 手动触发

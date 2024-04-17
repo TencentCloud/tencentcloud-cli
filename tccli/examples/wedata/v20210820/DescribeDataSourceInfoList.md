@@ -20,19 +20,20 @@ Output:
         "DatasourceSet": [
             {
                 "DatabaseNames": [
-                    "abc"
+                    "default"
                 ],
-                "Description": "abc",
+                "Description": "备注",
                 "ID": 1,
-                "Instance": "abc",
-                "Name": "abc",
-                "Region": "abc",
-                "Type": "abc",
-                "ClusterId": "abc",
-                "Version": "abc"
+                "Instance": "cdb-sd56gs51",
+                "Name": "myst_test",
+                "Region": "ap-beijing",
+                "Type": "mysql",
+                "ClusterId": "cdb-sf78f",
+                "Version": "5.2.3",
+                "ParamsString": "string"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "asdg15-asgg48as-sdg4861-516"
     }
 }
 ```

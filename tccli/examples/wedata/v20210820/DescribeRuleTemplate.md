@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeRuleTemplate --cli-unfold-argument  \
-    --ProjectId 567890 \
+    --ProjectId 153161111111111111 \
     --TemplateId 1
 ```
 
@@ -16,14 +16,14 @@ Output:
     "Response": {
         "Data": {
             "RuleTemplateId": 1,
-            "Name": "abc",
+            "Name": "表行数",
             "Description": "描述",
             "Type": 1,
             "SourceObjectType": 1,
             "SourceObjectDataType": 1,
-            "SourceContent": "abc",
+            "SourceContent": "",
             "SourceEngineTypes": [
-                1
+                2
             ],
             "QualityDim": 1,
             "CompareType": 1,
@@ -33,23 +33,23 @@ Output:
             "UpdateTime": "2023-10-01",
             "WhereFlag": true,
             "MultiSourceFlag": true,
-            "SqlExpression": "sql",
+            "SqlExpression": "select count(*) from table",
             "SubQualityDim": 1,
             "ResolvedSqlExpression": {
                 "TableExpressions": [
                     {
-                        "TableExpression": "expr",
+                        "TableExpression": "table_2.column_2",
                         "ColumnExpression": [
-                            "expr"
+                            "column_1"
                         ]
                     }
                 ],
                 "ParamExpressions": [
-                    "exp"
+                    "param_1"
                 ]
             },
             "DatasourceTypes": [
-                0
+                2
             ]
         },
         "RequestId": "0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69"

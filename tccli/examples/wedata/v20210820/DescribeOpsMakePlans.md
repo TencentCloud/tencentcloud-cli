@@ -1,6 +1,6 @@
-**Example 1: 成功获取补录计划**
+**Example 1: 获取补录计划**
 
-成功获取补录计划
+数据补录-获取补录计划
 
 Input: 
 
@@ -16,6 +16,11 @@ Output:
 {
     "Response": {
         "Data": {
+            "TotalCount": 0,
+            "TotalPage": 0,
+            "PageCount": 0,
+            "PageNumber": 0,
+            "PageSize": 0,
             "Items": [
                 {
                     "CheckParent": false,
@@ -48,15 +53,14 @@ Output:
                     "TaskCount": 1,
                     "TaskIdList": [
                         "2023052809431xxxx"
-                    ]
+                    ],
+                    "SchedulerResourceGroupName": null,
+                    "IntegrationResourceGroupName": null,
+                    "CheckParentType": null
                 }
-            ],
-            "PageNumber": 1,
-            "PageSize": 1,
-            "TotalCount": 110,
-            "TotalPage": 110
+            ]
         },
-        "RequestId": "3a3ae26c-20e0-4a71-9702-b624d69axxxx"
+        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     }
 }
 ```

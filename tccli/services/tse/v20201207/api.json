@@ -4520,10 +4520,19 @@
         },
         {
           "disabled": false,
-          "document": "跨地域部署的引擎地域配置详情",
+          "document": "跨地域部署的引擎地域配置详情\nzk标准版没有跨地域部署，请不要填写",
           "example": "[{\"EngineRegion\":\"ap-guangzhou\",\"Replica\":2,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]},{\"EngineRegion\":\"ap-beijing\",\"Replica\":1,\"SpecId\":\"1C2G\",\"VpcInfos\":[{\"VpcId\":\"vpc-XXX\",\"SubnetId\":\"subnet-XXX\"}]}]",
           "member": "EngineRegionInfo",
           "name": "EngineRegionInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "zk专业版至多有两个盘，且磁盘的容量在50-3200之间\n如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
           "required": false,
           "type": "list"
         }

@@ -6,21 +6,19 @@ Input:
 
 ```
 tccli wedata DeleteCustomFunction --cli-unfold-argument  \
-    --ClusterIdentifier sdf \
-    --FunctionId sdfsdf \
-    --ProjectId sdfsdf \
-    --FunctionName sdfsdf
+    --ProjectId 1470575647377821696 \
+    --ClusterIdentifier emr-demo \
+    --FunctionId 217377ce-bcc0-446e-afd9-64ef4b707777 \
+    --FunctionType HIVE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "系统内部异常：NumberFormatException: For input string: \"sdfsdf\""
-        },
-        "RequestId": "fde6b682-e482-44d9-b774-9d97b30446f5"
+        "ErrorMessage": null,
+        "FunctionId": "217377ce-bcc0-446e-afd9-64ef4b707391",
+        "RequestId": "3dfeffd0-74b1-4d5d-bcbd-247de85c9815"
     }
 }
 ```

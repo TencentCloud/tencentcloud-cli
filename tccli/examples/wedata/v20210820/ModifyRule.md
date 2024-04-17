@@ -29,19 +29,19 @@ tccli wedata ModifyRule --cli-unfold-argument  \
     --Description 规则1 \
     --TargetDatabaseId 97yghbj9ik \
     --TargetTableId 56yujhr57ftuvgjb 78u \
-    --TargetConditionExpr <10 \
-    --RelConditionExpr abc \
-    --FieldConfig.WhereConfig.0.FieldKey id \
+    --TargetConditionExpr ct='${yyyy-mm-dd-1}' \
+    --RelConditionExpr sourceTable.id=targetTable.id \
+    --FieldConfig.WhereConfig.0.FieldKey param_1 \
     --FieldConfig.WhereConfig.0.FieldValue 10 \
-    --FieldConfig.WhereConfig.0.FieldDataType int \
+    --FieldConfig.WhereConfig.0.FieldDataType id \
     --FieldConfig.TableConfig.0.DatabaseId 78ughibj8t6ygihb \
     --FieldConfig.TableConfig.0.DatabaseName dbName \
     --FieldConfig.TableConfig.0.TableId 8iuyhbf2we9fu \
     --FieldConfig.TableConfig.0.TableName test \
-    --FieldConfig.TableConfig.0.TableKey abc \
-    --FieldConfig.TableConfig.0.FieldConfig.0.FieldKey name \
-    --FieldConfig.TableConfig.0.FieldConfig.0.FieldValue 123 \
-    --FieldConfig.TableConfig.0.FieldConfig.0.FieldDataType string \
+    --FieldConfig.TableConfig.0.TableKey table_1 \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldKey table_1.column_1 \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldValue id \
+    --FieldConfig.TableConfig.0.FieldConfig.0.FieldDataType int \
     --TargetObjectValue 表 \
     --SourceEngineTypes 1
 ```

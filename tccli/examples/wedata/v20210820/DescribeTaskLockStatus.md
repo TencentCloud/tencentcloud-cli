@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata DescribeTaskLockStatus --cli-unfold-argument  \
-    --TaskId abc \
-    --ProjectId abc \
-    --TaskType 1
+    --TaskId 20220506145218687 \
+    --ProjectId 20220506145218687 \
+    --TaskType 201
 ```
 
 Output: 
@@ -16,12 +16,12 @@ Output:
 {
     "Response": {
         "TaskLockStatus": {
-            "TaskId": "abc",
-            "Locker": "abc",
+            "TaskId": "20220506145218687",
+            "Locker": "Locker",
             "IsLocker": 0,
             "IsRob": 0
         },
-        "RequestId": "abc"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```
