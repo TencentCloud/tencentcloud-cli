@@ -3968,6 +3968,15 @@
           "name": "Tag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示信息待补充字段",
+          "example": "false",
+          "member": "bool",
+          "name": "MessageCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

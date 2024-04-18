@@ -21,6 +21,13 @@
       "output": "DescribeBillDetailResponse",
       "status": "online"
     },
+    "DescribeBillDownloadUrl": {
+      "document": "用于子客下载账单文件，返回账单文件url",
+      "input": "DescribeBillDownloadUrlRequest",
+      "name": "子客下载账单文件链接",
+      "output": "DescribeBillDownloadUrlResponse",
+      "status": "online"
+    },
     "DescribeBillSummaryByPayMode": {
       "document": "通过API获取子客账单付费模式汇总值",
       "input": "DescribeBillSummaryByPayModeRequest",
@@ -1178,6 +1185,52 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillDownloadUrlRequest": {
+      "document": "DescribeBillDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账单所属月份,格式为：YYYY-MM；可以查询的最早月份是2022年6月。 当月的账单数据可能不准确，请在次月5日1:00生成当月账单后下载当月账单。",
+          "example": "2023-02",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单类型，取值：L2 或 L3",
+          "example": "L3",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillDownloadUrlResponse": {
+      "document": "DescribeBillDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载地址",
+          "example": "https://xxxx.cos.ap-singapore.myqcloud.com/L3-bill_details.csv",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

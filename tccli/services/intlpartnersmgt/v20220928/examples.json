@@ -24,6 +24,14 @@
         "title": "DescribeBillDetail"
       }
     ],
+    "DescribeBillDownloadUrl": [
+      {
+        "document": "用于子客下载账单文件，返回账单文件url\n\n\t\nPOST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2023-10\",\n    \"FileType\": \"L3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://xxxx.cos.ap-singapore.myqcloud.com/L3-bill_details.csv\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeBillDownloadUrl"
+      }
+    ],
     "DescribeBillSummaryByPayMode": [
       {
         "document": "通过API获取子客账单付费模式汇总值",

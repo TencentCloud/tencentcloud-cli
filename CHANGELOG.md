@@ -1,3 +1,213 @@
+# Release 3.0.979.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 56 次发布
+
+发布时间：2024-04-19 01:07:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterTransRegionFlag
+
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：TransRegionFlag
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 46 次发布
+
+发布时间：2024-04-19 01:10:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExpandCfwVertical](http://document.tencentcloudapi.woa.com/document/product/1132/54258)
+
+	* 新增入参：ElasticSwitch, ElasticBandwidth, Tags
+
+
+新增数据结构：
+
+* [TagInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TagInfo)
+
+修改数据结构：
+
+* [NatInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatInstanceInfo)
+
+	* 新增成员：ReserveTime, ReserveVersion, ReserveVersionState, ElasticSwitch, ElasticBandwidth, IsFirstAfterPay
+
+* [VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo)
+
+	* 新增成员：ReserveTime, ReserveVersion, ReserveVersionState, ElasticSwitch, ElasticBandwidth, IsFirstAfterPay
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 28 次发布
+
+发布时间：2024-04-19 01:14:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplateList](http://document.tencentcloudapi.woa.com/document/product/242/48940)
+
+	* 新增入参：MessageCheck
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 12 次发布
+
+发布时间：2024-04-19 01:17:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/83762)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 59 次发布
+
+发布时间：2024-04-19 01:18:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78039)
+
+	* 新增入参：AiQualityControl
+
+* [ModifyLiveStreamMonitor](http://document.tencentcloudapi.woa.com/document/product/267/78034)
+
+	* 新增入参：AiQualityControl
+
+
+修改数据结构：
+
+* [LiveStreamMonitorInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorInfo)
+
+	* 新增成员：AiQualityControl
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 76 次发布
+
+发布时间：2024-04-19 01:19:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusTargetsTMP](http://document.tencentcloudapi.woa.com/document/product/248/76998)
+
+	* 新增入参：Offset, Limit
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 21 次发布
+
+发布时间：2024-04-19 01:21:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1597/75202)
+
+	* 新增入参：LoadType
+
+
+修改数据结构：
+
+* [Load](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Load)
+
+	* 新增成员：DevCloudLoadDistribution
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 40 次发布
+
+发布时间：2024-04-19 01:21:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/239/20026)
+
+	* 新增入参：AlarmPolicyList
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 46 次发布
+
+发布时间：2024-04-19 01:22:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CfsInsInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#CfsInsInfo)
+
+	* 新增成员：CfsRegion
+
+
+
+
 # Release 3.0.978.1
 
 ## 域名注册(domain) 版本：2018-08-08

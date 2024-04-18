@@ -389,7 +389,7 @@
         },
         {
           "disabled": false,
-          "document": "文生图引擎，默认使用engine1。 \n取值：  \nengine1  \nengine2",
+          "document": "文生图模型，默认使用engine1。\nengine1：文生图（高级版）-混元\nengine2：文生图（高级版）",
           "example": "无",
           "member": "string",
           "name": "Engine",
