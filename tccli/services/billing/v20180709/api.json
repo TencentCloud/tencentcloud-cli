@@ -20679,7 +20679,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20689,7 +20689,7 @@
           "example": "无",
           "member": "string",
           "name": "VoucherName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20699,7 +20699,7 @@
           "example": "无",
           "member": "string",
           "name": "VoucherId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20709,7 +20709,7 @@
           "example": "无",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20719,7 +20719,7 @@
           "example": "无",
           "member": "int64",
           "name": "Amount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20729,7 +20729,7 @@
           "example": "无",
           "member": "int64",
           "name": "LeftAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20739,7 +20739,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20749,7 +20749,7 @@
           "example": "无",
           "member": "string",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20759,7 +20759,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20769,7 +20769,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20779,7 +20779,7 @@
           "example": "无",
           "member": "string",
           "name": "BatchCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20789,7 +20789,7 @@
           "example": "无",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20799,7 +20799,7 @@
           "example": "无",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20809,7 +20809,7 @@
           "example": "无",
           "member": "string",
           "name": "ActivityName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20819,7 +20819,7 @@
           "example": "无",
           "member": "string",
           "name": "CodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20829,7 +20829,7 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20839,7 +20839,7 @@
           "example": "无",
           "member": "int64",
           "name": "UsedAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20849,7 +20849,7 @@
           "example": "无",
           "member": "string",
           "name": "PayScene",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20859,7 +20859,7 @@
           "example": "无",
           "member": "string",
           "name": "CouponType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20869,7 +20869,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductDefine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20879,7 +20879,7 @@
           "example": "无",
           "member": "string",
           "name": "MinPayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20889,7 +20889,7 @@
           "example": "无",
           "member": "string",
           "name": "MaxPayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20899,7 +20899,7 @@
           "example": "无",
           "member": "string",
           "name": "UseDeadLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20909,7 +20909,7 @@
           "example": "无",
           "member": "bool",
           "name": "Available",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -20919,7 +20919,7 @@
           "example": "无",
           "member": "int64",
           "name": "BaseAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20929,7 +20929,7 @@
           "example": "无",
           "member": "int64",
           "name": "UnavailableReason",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -20939,7 +20939,7 @@
           "example": "无",
           "member": "string",
           "name": "GoodsTypeInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20949,7 +20949,7 @@
           "example": "无",
           "member": "string",
           "name": "GoodsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20959,7 +20959,7 @@
           "example": "无",
           "member": "int64",
           "name": "Reusable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20969,7 +20969,7 @@
           "example": "无",
           "member": "string",
           "name": "ExcludedProduct",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20979,7 +20979,7 @@
           "example": "无",
           "member": "string",
           "name": "VoucherMainType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20989,7 +20989,7 @@
           "example": "无",
           "member": "string",
           "name": "VoucherSubType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20999,7 +20999,7 @@
           "example": "无",
           "member": "string",
           "name": "DiscountRate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

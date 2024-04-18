@@ -259,6 +259,13 @@
       "output": "CreateTaskVersionDsResponse",
       "status": "online"
     },
+    "CreateWorkflowDs": {
+      "document": "创建工作流",
+      "input": "CreateWorkflowDsRequest",
+      "name": "创建工作流",
+      "output": "CreateWorkflowDsResponse",
+      "status": "online"
+    },
     "DagInstances": {
       "document": "拉取dag实例",
       "input": "DagInstancesRequest",
@@ -593,13 +600,6 @@
       "input": "DescribeInstanceByCycleRequest",
       "name": "周期实例统计",
       "output": "DescribeInstanceByCycleResponse",
-      "status": "online"
-    },
-    "DescribeInstanceByCycleReport": {
-      "document": "实例状态周期增长趋势",
-      "input": "DescribeInstanceByCycleReportRequest",
-      "name": "实例状态周期增长趋势",
-      "output": "DescribeInstanceByCycleReportResponse",
       "status": "online"
     },
     "DescribeInstanceLastLog": {
@@ -1071,13 +1071,6 @@
       "output": "DescribeTaskByStatusReportResponse",
       "status": "online"
     },
-    "DescribeTaskDetail": {
-      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n查询任务具体详情",
-      "input": "DescribeTaskDetailRequest",
-      "name": "查询任务具体详情【Beta版本】",
-      "output": "DescribeTaskDetailResponse",
-      "status": "online"
-    },
     "DescribeTaskLockStatus": {
       "document": "查看任务锁状态信息",
       "input": "DescribeTaskLockStatusRequest",
@@ -1097,13 +1090,6 @@
       "input": "DescribeTaskScriptRequest",
       "name": "查询任务脚本",
       "output": "DescribeTaskScriptResponse",
-      "status": "online"
-    },
-    "DescribeTasksByPage": {
-      "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n根据工作流分页查询任务",
-      "input": "DescribeTasksByPageRequest",
-      "name": "根据工作流分页查询任务【Beta版本】",
-      "output": "DescribeTasksByPageResponse",
       "status": "online"
     },
     "DescribeTemplateDimCount": {
@@ -1167,6 +1153,13 @@
       "input": "DescribeWorkflowTaskCountRequest",
       "name": "查询工作流任务数",
       "output": "DescribeWorkflowTaskCountResponse",
+      "status": "online"
+    },
+    "DiagnosePro": {
+      "document": "实例诊断",
+      "input": "DiagnoseProRequest",
+      "name": "实例诊断信息-新",
+      "output": "DiagnoseProResponse",
       "status": "online"
     },
     "DryRunDIOfflineTask": {
@@ -4833,6 +4826,150 @@
       ],
       "usage": "out"
     },
+    "ColumnData": {
+      "document": "ColumnItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ColumnName1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ColumnName1",
+          "member": "string",
+          "name": "EventName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ColumnName1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ColumnName1",
+          "member": "string",
+          "name": "EventProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CurRunDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_task",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dev_pro",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ColumnItem": {
+      "document": "ColumnItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ColumnName1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ColumnName1",
+          "member": "string",
+          "name": "ColumnName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ColumnName1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ColumnName1",
+          "member": "string",
+          "name": "ColumnRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ColumnLineageInfo": {
       "document": "血缘字段信息",
       "members": [
@@ -5654,6 +5791,78 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Content": {
+      "document": "Content",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务id",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务名称",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "诊断",
+          "member": "string",
+          "name": "Diagnose",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "理由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "理由",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "操作",
+          "member": "string",
+          "name": "Operation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "链接",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7319,6 +7528,70 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkflowDsRequest": {
+      "document": "CreateWorkflowDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1460947878944567296",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称",
+          "example": "workflow",
+          "member": "string",
+          "name": "WorkflowName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹ID",
+          "example": "73b1347e-ef81-448d-83dc-e159ca906647",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流描述",
+          "example": "ETL",
+          "member": "string",
+          "name": "WorkflowDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkflowDsResponse": {
+      "document": "CreateWorkflowDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "73b1347e-ef81-448d-83dc-e159ca906647",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12270,69 +12543,6 @@
           "name": "ErrorMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInstanceByCycleReportRequest": {
-      "document": "DescribeInstanceByCycleReport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "周期类型",
-          "example": "1d",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "项目ID",
-          "example": "1",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始日期",
-          "example": "2023-03-01",
-          "member": "string",
-          "name": "StartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束日期",
-          "example": "2023-03-23",
-          "member": "string",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeInstanceByCycleReportResponse": {
-      "document": "DescribeInstanceByCycleReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例周期统计\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TaskByStatus",
-          "name": "Data",
-          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -17820,61 +18030,6 @@
       ],
       "type": "object"
     },
-    "DescribeTaskDetailRequest": {
-      "document": "DescribeTaskDetail请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目Id",
-          "example": "无",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "无",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "任务告警状态",
-          "example": "无",
-          "member": "int64",
-          "name": "TaskAlarmStatus",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTaskDetailResponse": {
-      "document": "DescribeTaskDetail返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务详情1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TaskInfoData",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeTaskLockStatusRequest": {
       "document": "DescribeTaskLockStatus请求参数结构体",
       "members": [
@@ -18028,70 +18183,6 @@
           "member": "TaskScriptContent",
           "name": "Data",
           "output_required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTasksByPageRequest": {
-      "document": "DescribeTasksByPage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目Id",
-          "example": "无",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "工作流ID",
-          "example": "无",
-          "member": "string",
-          "name": "WorkflowId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "页码，默认1",
-          "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "页大小，默认10",
-          "example": "无",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTasksByPageResponse": {
-      "document": "DescribeTasksByPage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "无1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TaskInfoDataPage",
-          "name": "Data",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18544,6 +18635,224 @@
         }
       ],
       "type": "object"
+    },
+    "DiagnoseProRequest": {
+      "document": "DiagnosePro请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "无",
+          "member": "InstanceOpsDto",
+          "name": "Instances",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检查父任务类型, true: 检查父任务; false: 不检查父任务 ",
+          "example": "无",
+          "member": "bool",
+          "name": "CheckFather",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "重跑类型, 1: 自身; 3: 孩子; 2: 自身以及孩子 ",
+          "example": "无",
+          "member": "string",
+          "name": "RerunType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例依赖方式, 1: 自依赖; 2: 任务依赖; 3: 自依赖及父子依赖 ",
+          "example": "无",
+          "member": "string",
+          "name": "DependentWay",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重跑忽略事件监听与否 ",
+          "example": "无",
+          "member": "bool",
+          "name": "SkipEventListening",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "下游实例范围 1: 所在工作流 2: 所在项目 3: 所有跨工作流依赖的项目",
+          "example": "无",
+          "member": "string",
+          "name": "SonInstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）",
+          "example": "{\"Instance\":{\"TaskId\":\"20231221111821390\",\"CurRunDate\":\"2024-04-1105:00:00\"}}",
+          "member": "InstanceApiOpsRequest",
+          "name": "SearchCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "访问类型",
+          "example": "无",
+          "member": "string",
+          "name": "OptType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者名称",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作者id",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "\"155477816885681\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目标志",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectIdent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "基础请求信息",
+          "example": "无",
+          "member": "ProjectBaseInfoOpsRequest",
+          "name": "RequestBaseInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否计算总数",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCount",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagnoseProResponse": {
+      "document": "DiagnosePro返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "{\"Content\":{\"Diagnose\":\"\",\"Operation\":\"\",\"Reason\":\"\",\"TaskId\":\"20231227152818068\",\"TaskName\":\"任务类型覆盖_离线同步_copy\",\"Url\":\"\"},\"Table\":{\"Column\":[],\"Data\":[]}}",
+          "member": "DiagnoseRep",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DiagnoseRep": {
+      "document": "DiagnoseRep",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断信息内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Content\":{\"Diagnose\":\"\",\"Operation\":\"\",\"Reason\":\"\",\"TaskId\":\"20231227152818068\",\"TaskName\":\"任务类型覆盖_离线同步_copy\",\"Url\":\"\"}",
+          "member": "Content",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断结果相关信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Column\":[],\"Data\":[]}}",
+          "member": "Table",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DimensionCount": {
       "document": "维度统计业务视图",
@@ -26756,8 +27065,8 @@
         },
         {
           "disabled": false,
-          "document": "父子任务之间的依赖关系\n    /** 正常的依赖父任务全部实例  启用**/\n    normal_all(1),\n    normal_first_one(2),// 正常的依赖父任务 第一个\n    normal_last_one(3),// 正常的依赖父任务 最后一个\n    normal_any_one(4),// 正常的依赖父任务 任意一个\n    normal_specific_one(5),// 正常的依赖父任务 指定的一个\n    self(6),// 自身依赖，可能用不到\n\n    /** // 非正常的依赖父任务全部实例  启用（向前依赖  明天）**/\n    non_normal_all_forward(11),\n    non_normal_first_one_forward(12),// 非正常的依赖父任务 第一个\n    non_normal_last_one_forward(13),// 非正常的依赖父任务 最后一个\n    non_normal_any_one_forward(14),// 非正常的依赖父任务 任意一个\n    non_normal_specific_one_forward(15),// 非正常的依赖父任务 指定一个\n\n    /** // 非正常的依赖父任务全部实例  启用（向后依赖 昨天） **/\n    non_normal_all_backward(21),\n    non_normal_first_one_backward(22),// 非正常的依赖父任务 第一个\n    non_normal_last_one_backward(23),// 非正常的依赖父任务 最后一个\n    non_normal_any_one_backward(24),// 非正常的依赖父任务 任意一个\n    non_normal_specific_one_backward(25);// 非正常的依赖父任务 指定一个\n\n",
-          "example": "\"real_real\"",
+          "document": "父子任务之间的依赖关系",
+          "example": "\"normal_all\"",
           "member": "string",
           "name": "LinkDependencyType",
           "required": false,
@@ -34885,6 +35194,34 @@
       ],
       "type": "object"
     },
+    "Table": {
+      "document": "Table",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ColumnItem",
+          "name": "Column",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "ColumnData",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TableBaseInfo": {
       "document": "建dlc表所需信息",
       "members": [
@@ -37214,618 +37551,6 @@
         }
       ],
       "usage": "both"
-    },
-    "TaskInfoData": {
-      "document": "任务信息数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"111\"",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"周期任务\"",
-          "member": "string",
-          "name": "TaskName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxxxx-yyyy\"",
-          "member": "string",
-          "name": "WorkflowId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"工作流名称\"",
-          "member": "string",
-          "name": "WorkflowName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"项目名称\"",
-          "member": "string",
-          "name": "ProjectName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "项目标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"项目标识\"",
-          "member": "string",
-          "name": "ProjectIdent",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务状态，'Y','F','O','T','INVALID' 分别表示调度中、已停止、已暂停、停止中、已失效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"Y\"",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"12\"",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "文件夹名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"测试文件夹\"",
-          "member": "string",
-          "name": "FolderName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "文件夹id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"12\"",
-          "member": "string",
-          "name": "FolderId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "负责人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "wang;ling;",
-          "member": "string",
-          "name": "InCharge",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "跨工作流虚拟任务标识；true标识跨工作流任务；false标识本工作流任务\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "bool",
-          "name": "VirtualFlag",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "延时实例生成时间(延时调度)，转换为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "uint64",
-          "name": "DelayTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "crontab表达式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"* * * * 1/3 ?\"",
-          "member": "string",
-          "name": "CrontabExpression",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "LastUpdate",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "结束日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "执行时间左闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ExecutionStartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "执行时间右闭区间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ExecutionEndTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "CycleType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "CycleStep",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "延时执行时间（延时执行) 对应为 开始时间 状态为分钟\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "StartupTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "重试等待时间,单位分钟\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "RetryWait",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否可重试\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Retriable",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "调度扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TaskAction",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "运行次数限制\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TryLimit",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "运行优先级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "RunPriority",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TaskType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "指定的运行节点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "BrokerIp",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "集群\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最小数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MinDateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最大数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MaxDateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否自身依赖 是1 否2 并行3\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "SelfDepend",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无--复杂类型",
-          "member": "TaskExtInfo",
-          "name": "TaskExt",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Notes",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "队列\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "YarnQueue",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务版本是否已提交\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "bool",
-          "name": "Submit",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最新调度计划变更时间 仅生产态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "LastSchedulerCommitTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "仅生产态存储于生产态序列化任务信息, 减少base CPU重复密集计算\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "NormalizedJobStartTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "源数据源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "SourceServer",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Creater",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "分支，依赖关系，and/or, 默认and\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "DependencyRel",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否支持工作流依赖 yes / no 默认 no\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "DependencyWorkflow",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ParamInfo",
-          "name": "Params",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最后修改的人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateUser",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最后修改的时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最后修改的人Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateUserId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "调度计划\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "SchedulerDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "资源组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceGroup",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "版本提交说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VersionDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "真实工作流Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "RealWorkflowId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "目标数据源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "TargetServer",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "依赖配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DependencyConfig",
-          "name": "DependencyConfigs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "虚拟任务状态1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VirtualTaskStatus",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "虚拟任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VirtualTaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "TaskInfoDataPage": {
-      "document": "任务分页数据查询",
-      "members": [
-        {
-          "disabled": false,
-          "document": "页号",
-          "example": "1",
-          "member": "uint64",
-          "name": "PageNumber",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "页大小",
-          "example": "15",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务集合信息",
-          "example": "无",
-          "member": "TaskInfoData",
-          "name": "Items",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总页数1",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "TaskInnerInfo": {
       "document": "任务属性",

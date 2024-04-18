@@ -314,6 +314,14 @@
         "title": "成功"
       }
     ],
+    "CreateWorkflowDs": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkflowDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowName\": \"workflow_2\",\n    \"FolderId\": \"37db1991-ed4d-11ed-8909-bc97e105ba60\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"1d4977d8-ed50-11ed-8909-bc97e105ba60\",\n        \"RequestId\": \"9053d40c-7576-41a4-b30d-2e220bb03629\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DagInstances": [
       {
         "document": "拉取dag实例",
@@ -731,14 +739,6 @@
         "document": "周期实例统计",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByCycle\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Number\": 445,\n                \"CycleUnit\": \"I\",\n                \"ProjectId\": \"1460947878944567296\"\n            }\n        ],\n        \"RequestId\": \"d197a658-411e-4d82-a3f6-35b11e5c9c44\"\n    }\n}",
-        "title": "样例"
-      }
-    ],
-    "DescribeInstanceByCycleReport": [
-      {
-        "document": "实例状态1d增长趋势",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByCycleReport\n<公共请求参数>\n\n{\n    \"Type\": \"1d\",\n    \"ProjectId\": \"1460947878944567296\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"DescribeInstanceByCycleReport\"\n    }\n}",
         "title": "样例"
       }
     ],
@@ -1308,14 +1308,6 @@
         "title": "任务状态趋势示例"
       }
     ],
-    "DescribeTaskDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskDetail\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b3a6016-96d1-4832-8376-afb191a21a6a\",\n        \"Data\": {\n            \"TaskId\": \"20220727140613327\",\n            \"VirtualTaskId\": null,\n            \"VirtualFlag\": false,\n            \"TaskName\": \"task2\",\n            \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n            \"RealWorkflowId\": null,\n            \"WorkflowName\": \"work1\",\n            \"FolderId\": null,\n            \"FolderName\": null,\n            \"CreateTime\": \"2022-07-27 14:06:13\",\n            \"LastUpdate\": \"2022-07-27 17:40:31\",\n            \"Status\": \"NS\",\n            \"InCharge\": \"TBDS\",\n            \"StartTime\": \"2022-09-03 11:00:00\",\n            \"EndTime\": \"2099-12-31 23:59:59\",\n            \"ExecutionStartTime\": null,\n            \"ExecutionEndTime\": null,\n            \"ProjectId\": \"1\",\n            \"ProjectIdent\": \"test_dev_all\",\n            \"ProjectName\": \"test_dev_all\",\n            \"CycleType\": 1,\n            \"CycleStep\": 10,\n            \"CrontabExpression\": null,\n            \"DelayTime\": 10,\n            \"StartupTime\": 0,\n            \"RetryWait\": 1,\n            \"Retriable\": 1,\n            \"TaskAction\": \"\",\n            \"TryLimit\": 3,\n            \"RunPriority\": 4,\n            \"TaskType\": 35,\n            \"BrokerIp\": \"any\",\n            \"ClusterId\": null,\n            \"MinDateTime\": null,\n            \"MaxDateTime\": null,\n            \"SelfDepend\": 1,\n            \"Notes\": \"\",\n            \"YarnQueue\": null,\n            \"Submit\": false,\n            \"LastSchedulerCommitTime\": null,\n            \"NormalizedJobStartTime\": null,\n            \"SourceServer\": null,\n            \"TargetServer\": \"11\",\n            \"Creater\": \"TBDS\",\n            \"DependencyRel\": \"and\",\n            \"DependencyWorkflow\": \"yes\",\n            \"DependencyConfigs\": null,\n            \"VirtualTaskStatus\": null,\n            \"Params\": null,\n            \"TaskExt\": [\n                {\n                    \"Key\": \"aa\",\n                    \"Value\": \"bb\"\n                },\n                {\n                    \"Key\": \"bucket\",\n                    \"Value\": \"wedata-fusion-dev-1257305158\"\n                },\n                {\n                    \"Key\": \"python_type\",\n                    \"Value\": \"python2\"\n                },\n                {\n                    \"Key\": \"ftp.file.name\",\n                    \"Value\": \"https://wedata-fusion-dev-1257305158.cos.ap-nanjing.myqcloud.com/datastudio/project/1/wb555/work1/task2.sh\"\n                },\n                {\n                    \"Key\": \"region\",\n                    \"Value\": \"ap-nanjing\"\n                },\n                {\n                    \"Key\": \"extraInfo\",\n                    \"Value\": \"{}\"\n                }\n            ],\n            \"UpdateUser\": \"fe\",\n            \"UpdateTime\": \"2022-07-27 17:40:31\",\n            \"UpdateUserId\": \"100022256608\",\n            \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n            \"ResourceGroup\": \"20220420160541973718\",\n            \"VersionDesc\": null\n        }\n    }\n}",
-        "title": "范例"
-      }
-    ],
     "DescribeTaskLockStatus": [
       {
         "document": "查看任务锁状态信息",
@@ -1338,14 +1330,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskScript\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3100df93-5da5-45d1-b06b-dd08612f8224\",\n        \"Data\": {\n            \"ScriptContent\": \"#!/bin/bash\\n#******************************************************************#\\n##author: TBDS\\n##create time: 2022-07-27 14:06:13\\n#******************************************************************#\\necho \\\"222\\\"\"\n        }\n    }\n}",
         "title": "查询任务脚本范例"
-      }
-    ],
-    "DescribeTasksByPage": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75164e96-e1aa-45b3-be14-aac909d67b11\",\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"Items\": [\n                {\n                    \"TaskId\": \"20220727140613327\",\n                    \"VirtualTaskId\": null,\n                    \"VirtualFlag\": false,\n                    \"TaskName\": \"task2\",\n                    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n                    \"RealWorkflowId\": null,\n                    \"WorkflowName\": \"work1\",\n                    \"FolderId\": null,\n                    \"FolderName\": null,\n                    \"CreateTime\": \"2022-07-27 14:06:13\",\n                    \"LastUpdate\": \"2022-07-27 17:40:31\",\n                    \"Status\": \"NS\",\n                    \"InCharge\": \"TBDS\",\n                    \"StartTime\": \"2022-09-03 11:00:00\",\n                    \"EndTime\": \"2099-12-31 23:59:59\",\n                    \"ExecutionStartTime\": null,\n                    \"ExecutionEndTime\": null,\n                    \"ProjectId\": \"1\",\n                    \"ProjectIdent\": null,\n                    \"ProjectName\": null,\n                    \"CycleType\": 1,\n                    \"CycleStep\": 10,\n                    \"CrontabExpression\": null,\n                    \"DelayTime\": 10,\n                    \"StartupTime\": 0,\n                    \"RetryWait\": 1,\n                    \"Retriable\": 1,\n                    \"TaskAction\": \"\",\n                    \"TryLimit\": 3,\n                    \"RunPriority\": 4,\n                    \"TaskType\": 35,\n                    \"BrokerIp\": \"any\",\n                    \"ClusterId\": null,\n                    \"MinDateTime\": null,\n                    \"MaxDateTime\": null,\n                    \"SelfDepend\": 1,\n                    \"Notes\": \"\",\n                    \"YarnQueue\": null,\n                    \"Submit\": false,\n                    \"LastSchedulerCommitTime\": null,\n                    \"NormalizedJobStartTime\": null,\n                    \"SourceServer\": null,\n                    \"TargetServer\": \"11\",\n                    \"Creater\": \"TBDS\",\n                    \"DependencyRel\": \"and\",\n                    \"DependencyWorkflow\": \"yes\",\n                    \"DependencyConfigs\": null,\n                    \"VirtualTaskStatus\": null,\n                    \"Params\": null,\n                    \"TaskExt\": null,\n                    \"UpdateUser\": \"fe\",\n                    \"UpdateTime\": \"2022-07-27 17:40:31\",\n                    \"UpdateUserId\": \"100022256608\",\n                    \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n                    \"ResourceGroup\": \"20220420160541973718\",\n                    \"VersionDesc\": null\n                }\n            ]\n        }\n    }\n}",
-        "title": "范例"
       }
     ],
     "DescribeTemplateDimCount": [
@@ -1418,6 +1402,20 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkflowTaskCount\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1531609690365952\",\n    \"WorkflowId\": \"92b97aae-699a-11ee-8d13-a4ae120f8272\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 7,\n            \"CycleCount\": [\n                {\n                    \"Key\": \"D\",\n                    \"Value\": \"4\"\n                },\n                {\n                    \"Key\": \"I\",\n                    \"Value\": \"1\"\n                },\n                {\n                    \"Key\": \"O\",\n                    \"Value\": \"2\"\n                }\n            ],\n            \"TypeCount\": [\n                {\n                    \"Key\": \"离线同步\",\n                    \"Value\": \"1\"\n                },\n                {\n                    \"Key\": \"Shell\",\n                    \"Value\": \"4\"\n                },\n                {\n                    \"Key\": \"JDBC SQL\",\n                    \"Value\": \"2\"\n                }\n            ]\n        },\n        \"RequestId\": \"44d59b5b-a3a7-40d5-a2ef-edb0c3ba0f0a\"\n    }\n}",
         "title": "查询工作流任务数"
+      }
+    ],
+    "DiagnosePro": [
+      {
+        "document": "实例运维-实例诊断",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DiagnosePro\n<公共请求参数>\n\n{\n    \"ProjectId\": \"155477816884\",\n    \"SearchCondition\": {\n        \"Instance\": {\n            \"TaskId\": \"20240228175802766\",\n            \"CurRunDate\": \"2024-04-11 05:00:00\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": {\n                \"Diagnose\": \"任务并发判断不通过，实例：20240228175802766_2024-04-11 11:35:00\",\n                \"Operation\": \"一般不用处理，等待平台自行调度处理。\",\n                \"Reason\": \"当任务自依赖属性设置为无序串行时，任务实例只是无序的一个个处理，其他实例会排队等待\",\n                \"TaskId\": \"20240228175802766\",\n                \"TaskName\": \"geehivesql\",\n                \"Url\": \"\"\n            },\n            \"Table\": {\n                \"Column\": [],\n                \"Data\": []\n            }\n        },\n        \"RequestId\": \"c7083b20-a691-4aa3-bb5c-d2a6ef2bd45e\"\n    }\n}",
+        "title": "实例诊断"
+      },
+      {
+        "document": "实例诊断",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DiagnosePro\n<公共请求参数>\n\n{\n    \"SearchCondition\": {\n        \"Instance\": {\n            \"TaskId\": \"20240307211852581\",\n            \"CurRunDate\": \"2024-04-10 00:00:00\"\n        }\n    },\n    \"ProjectId\": \"1492511691706699776\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": {\n                \"Diagnose\": \"该实例执行失败\",\n                \"Operation\": \"结合运行日志排查失败原因\",\n                \"Reason\": \"用户代码和执行环境存在异常\",\n                \"TaskId\": \"20240307211852581\",\n                \"TaskName\": \"python_task_failed\",\n                \"Url\": \"\"\n            },\n            \"Table\": {\n                \"Column\": [],\n                \"Data\": []\n            }\n        },\n        \"RequestId\": \"cf111dff-a9c3-407d-83b5-d9424da7af12\"\n    }\n}",
+        "title": "实例诊断示例"
       }
     ],
     "DryRunDIOfflineTask": [

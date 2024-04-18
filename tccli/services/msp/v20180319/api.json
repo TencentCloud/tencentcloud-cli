@@ -14,6 +14,20 @@
       "output": "DescribeMigrationTaskResponse",
       "status": "online"
     },
+    "DescribeSurveyTasks": {
+      "document": "基于内部用户信息查询调研任务列表",
+      "input": "DescribeSurveyTasksRequest",
+      "name": "调研计划查询",
+      "output": "DescribeSurveyTasksResponse",
+      "status": "online"
+    },
+    "DescribeUrpJobFileLink": {
+      "document": "基于用户及其匹配的调研计划获取调研计划的附件信息",
+      "input": "DescribeUrpJobFileLinkRequest",
+      "name": "获取资源扫描附件地址",
+      "output": "DescribeUrpJobFileLinkResponse",
+      "status": "online"
+    },
     "ListMigrationProject": {
       "document": "获取迁移项目名称列表",
       "input": "ListMigrationProjectRequest",
@@ -110,6 +124,144 @@
           "name": "TaskStatus",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSurveyTasksRequest": {
+      "document": "DescribeSurveyTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前登录人企微英文名",
+          "example": "divewang",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数，不可小于1",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "基于PlanID快速过滤数据",
+          "example": "[\"plan-1\",\"plan-2\"]",
+          "member": "string",
+          "name": "PlanIDSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跳过校验Account与计划的关联，用于白名单场景",
+          "example": "false",
+          "member": "bool",
+          "name": "PermissionSkip",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSurveyTasksResponse": {
+      "document": "DescribeSurveyTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调研任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurveyTask",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUrpJobFileLinkRequest": {
+      "document": "DescribeUrpJobFileLink请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业微信英文名",
+          "example": "divewang",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调研任务ID",
+          "example": "plan-demoid",
+          "member": "string",
+          "name": "PlanID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跳过账号与计划的匹配权限校验，配合白名单使用",
+          "example": "false",
+          "member": "bool",
+          "name": "PermissionSkip",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUrpJobFileLinkResponse": {
+      "document": "DescribeUrpJobFileLink返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载预签名地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.xx.xxx",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -558,6 +710,78 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SurveyTask": {
+      "document": "调研任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "plan-yUDE9XMR",
+          "member": "string",
+          "name": "PlanID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Manual_import_rf",
+          "member": "string",
+          "name": "PlanName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-03-26 12:53:45",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-03-26 12:53:45",
+          "member": "string",
+          "name": "CompleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调研类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "在线调研",
+          "member": "string",
+          "name": "JobSrc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调研精度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "调研中",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

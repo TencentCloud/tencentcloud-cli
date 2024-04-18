@@ -2042,6 +2042,7 @@
           "example": "noCheck",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

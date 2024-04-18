@@ -16,6 +16,28 @@
         "title": "获取指定迁移任务详情"
       }
     ],
+    "DescribeSurveyTasks": [
+      {
+        "document": "基于账号成功查询到到相关的任务信息列表",
+        "input": "POST / HTTP/1.1\nHost: msp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSurveyTasks\n<公共请求参数>\n\n{\n    \"Account\": \"divewang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CompleteTime\": \"\",\n                \"JobSrc\": \"在线调研\",\n                \"JobStatus\": \"调研完成\",\n                \"PlanID\": \"plan-lhgqFY2z\",\n                \"PlanName\": \"dive-dev-0408-1\",\n                \"StartTime\": \"2024-04-08 11:40:28\"\n            }\n        ],\n        \"RequestId\": \"316d5b44-a445-45be-b91e-d9bc1939f27c\",\n        \"Total\": 1\n    }\n}",
+        "title": "调用成功"
+      },
+      {
+        "document": "无匹配信息总数返回0",
+        "input": "POST / HTTP/1.1\nHost: msp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSurveyTasks\n<公共请求参数>\n\n{\n    \"Account\": \"janicejzhu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"66049915-6cce-4405-84ec-fc1e47b4c7cc\",\n        \"Total\": 0\n    }\n}",
+        "title": "无匹配信息"
+      }
+    ],
+    "DescribeUrpJobFileLink": [
+      {
+        "document": "成功获得下载地址",
+        "input": "POST / HTTP/1.1\nHost: msp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUrpJobFileLink\n<公共请求参数>\n\n{\n    \"Account\": \"divewang\",\n    \"PlanID\": \"plan-lhgqFY2z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadURL\": \"https://cpt-msp-dev-1258344699.cos.ap-shanghai.myqcloud.com/%2Ftest/console/1254098721/urp-Ye0I6J3c/urp-Ye0I6J3c_scan.xlsx?x-cos-security-token=hUfFTkpPGfP9i1ULqopJpJs4WTFfbp2ae68d3777a58766d37484fdf29b7b26a1B1DUlSIogJV60u4o5YDkrZjzQ9JdJK3q_H91Vkf7GmXAerCUBbrbUN3IlqLirlDJok6PaC9Fkx8ythtPlWHv3Np4Cvf85LXaLxF8ti9_zO2qw5eRpYNdPDkqPU4P4lVIgSGy-rPr8U2ufEIaJvE0p-c_GbwU0QMlwhhweXlve1pUovb8RbthFMvhebWP0RiCWiEq6dJBNNaCrj_5K3TLknnht2FbhEBGp27sCbI4nngXJkS1MtrzLka6V3EESYxMtTz1mZ2wH_oZlMdQm05XGvmZPFoupO6G5Fer1-S6WnM&q-sign-algorithm=sha1&q-ak=AKIDGu3ahh-0jkBECql8p0OsgNkuHpV_DzqTmlCtvI3OdQq2HxSTchgkZ4axnHlgt4U5&q-sign-time=1712647608%3B1712651208&q-key-time=1712647608%3B1712651208&q-header-list=host&q-url-param-list=x-cos-security-token&q-signature=1f3d5b339c3652c70295d17a733d3acd5cbd89a0\",\n        \"RequestId\": \"db2b4bb3-f70d-45f9-8f8d-1cb56786847c\"\n    }\n}",
+        "title": "请求成功"
+      }
+    ],
     "ListMigrationProject": [
       {
         "document": "获取迁移项目名称列表",

@@ -1,3 +1,128 @@
+# Release 3.0.978.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 27 次发布
+
+发布时间：2024-04-18 01:15:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReservedBidInfo](http://document.tencentcloudapi.woa.com/document/product/242/83725)
+
+	* 新增出参：BidEndTime, IsUp, NextPrice, Status
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 14 次发布
+
+发布时间：2024-04-18 01:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1359/67704#Tag)
+
+修改数据结构：
+
+* [Event](http://document.tencentcloudapi.woa.com/document/product/1359/67704#Event)
+
+	* 新增成员：Region, Status, Id, TagList
+
+
+
+
+## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 2 次发布
+
+发布时间：2024-04-18 01:21:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSurveyTasks](http://document.tencentcloudapi.woa.com/document/product/659/83760)
+* [DescribeUrpJobFileLink](http://document.tencentcloudapi.woa.com/document/product/659/83759)
+
+新增数据结构：
+
+* [SurveyTask](http://document.tencentcloudapi.woa.com/document/product/659/18606#SurveyTask)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 13 次发布
+
+发布时间：2024-04-18 01:27:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeTopicStatsOp
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 48 次发布
+
+发布时间：2024-04-18 15:11:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeInstanceByCycleReport
+* DescribeTaskDetail
+* DescribeTasksByPage
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* TaskInfoData
+* TaskInfoDataPage
+
+### 第 47 次发布
+
+发布时间：2024-04-18 01:29:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateWorkflowDs](http://document.tencentcloudapi.woa.com/document/product/1607/83201)
+* [DiagnosePro](http://document.tencentcloudapi.woa.com/document/product/1607/83761)
+
+新增数据结构：
+
+* [ColumnData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ColumnData)
+* [ColumnItem](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ColumnItem)
+* [Content](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Content)
+* [DiagnoseRep](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DiagnoseRep)
+* [Table](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Table)
+
+
+
 # Release 3.0.977.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
