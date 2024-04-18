@@ -742,14 +742,6 @@
         "title": "样例"
       }
     ],
-    "DescribeInstanceByCycleReport": [
-      {
-        "document": "实例状态1d增长趋势",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByCycleReport\n<公共请求参数>\n\n{\n    \"Type\": \"1d\",\n    \"ProjectId\": \"1460947878944567296\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"DescribeInstanceByCycleReport\"\n    }\n}",
-        "title": "样例"
-      }
-    ],
     "DescribeInstanceLastLog": [
       {
         "document": "",
@@ -1316,14 +1308,6 @@
         "title": "任务状态趋势示例"
       }
     ],
-    "DescribeTaskDetail": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskDetail\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b3a6016-96d1-4832-8376-afb191a21a6a\",\n        \"Data\": {\n            \"TaskId\": \"20220727140613327\",\n            \"VirtualTaskId\": null,\n            \"VirtualFlag\": false,\n            \"TaskName\": \"task2\",\n            \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n            \"RealWorkflowId\": null,\n            \"WorkflowName\": \"work1\",\n            \"FolderId\": null,\n            \"FolderName\": null,\n            \"CreateTime\": \"2022-07-27 14:06:13\",\n            \"LastUpdate\": \"2022-07-27 17:40:31\",\n            \"Status\": \"NS\",\n            \"InCharge\": \"TBDS\",\n            \"StartTime\": \"2022-09-03 11:00:00\",\n            \"EndTime\": \"2099-12-31 23:59:59\",\n            \"ExecutionStartTime\": null,\n            \"ExecutionEndTime\": null,\n            \"ProjectId\": \"1\",\n            \"ProjectIdent\": \"test_dev_all\",\n            \"ProjectName\": \"test_dev_all\",\n            \"CycleType\": 1,\n            \"CycleStep\": 10,\n            \"CrontabExpression\": null,\n            \"DelayTime\": 10,\n            \"StartupTime\": 0,\n            \"RetryWait\": 1,\n            \"Retriable\": 1,\n            \"TaskAction\": \"\",\n            \"TryLimit\": 3,\n            \"RunPriority\": 4,\n            \"TaskType\": 35,\n            \"BrokerIp\": \"any\",\n            \"ClusterId\": null,\n            \"MinDateTime\": null,\n            \"MaxDateTime\": null,\n            \"SelfDepend\": 1,\n            \"Notes\": \"\",\n            \"YarnQueue\": null,\n            \"Submit\": false,\n            \"LastSchedulerCommitTime\": null,\n            \"NormalizedJobStartTime\": null,\n            \"SourceServer\": null,\n            \"TargetServer\": \"11\",\n            \"Creater\": \"TBDS\",\n            \"DependencyRel\": \"and\",\n            \"DependencyWorkflow\": \"yes\",\n            \"DependencyConfigs\": null,\n            \"VirtualTaskStatus\": null,\n            \"Params\": null,\n            \"TaskExt\": [\n                {\n                    \"Key\": \"aa\",\n                    \"Value\": \"bb\"\n                },\n                {\n                    \"Key\": \"bucket\",\n                    \"Value\": \"wedata-fusion-dev-1257305158\"\n                },\n                {\n                    \"Key\": \"python_type\",\n                    \"Value\": \"python2\"\n                },\n                {\n                    \"Key\": \"ftp.file.name\",\n                    \"Value\": \"https://wedata-fusion-dev-1257305158.cos.ap-nanjing.myqcloud.com/datastudio/project/1/wb555/work1/task2.sh\"\n                },\n                {\n                    \"Key\": \"region\",\n                    \"Value\": \"ap-nanjing\"\n                },\n                {\n                    \"Key\": \"extraInfo\",\n                    \"Value\": \"{}\"\n                }\n            ],\n            \"UpdateUser\": \"fe\",\n            \"UpdateTime\": \"2022-07-27 17:40:31\",\n            \"UpdateUserId\": \"100022256608\",\n            \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n            \"ResourceGroup\": \"20220420160541973718\",\n            \"VersionDesc\": null\n        }\n    }\n}",
-        "title": "范例"
-      }
-    ],
     "DescribeTaskLockStatus": [
       {
         "document": "查看任务锁状态信息",
@@ -1346,14 +1330,6 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskScript\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3100df93-5da5-45d1-b06b-dd08612f8224\",\n        \"Data\": {\n            \"ScriptContent\": \"#!/bin/bash\\n#******************************************************************#\\n##author: TBDS\\n##create time: 2022-07-27 14:06:13\\n#******************************************************************#\\necho \\\"222\\\"\"\n        }\n    }\n}",
         "title": "查询任务脚本范例"
-      }
-    ],
-    "DescribeTasksByPage": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksByPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75164e96-e1aa-45b3-be14-aac909d67b11\",\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"Items\": [\n                {\n                    \"TaskId\": \"20220727140613327\",\n                    \"VirtualTaskId\": null,\n                    \"VirtualFlag\": false,\n                    \"TaskName\": \"task2\",\n                    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n                    \"RealWorkflowId\": null,\n                    \"WorkflowName\": \"work1\",\n                    \"FolderId\": null,\n                    \"FolderName\": null,\n                    \"CreateTime\": \"2022-07-27 14:06:13\",\n                    \"LastUpdate\": \"2022-07-27 17:40:31\",\n                    \"Status\": \"NS\",\n                    \"InCharge\": \"TBDS\",\n                    \"StartTime\": \"2022-09-03 11:00:00\",\n                    \"EndTime\": \"2099-12-31 23:59:59\",\n                    \"ExecutionStartTime\": null,\n                    \"ExecutionEndTime\": null,\n                    \"ProjectId\": \"1\",\n                    \"ProjectIdent\": null,\n                    \"ProjectName\": null,\n                    \"CycleType\": 1,\n                    \"CycleStep\": 10,\n                    \"CrontabExpression\": null,\n                    \"DelayTime\": 10,\n                    \"StartupTime\": 0,\n                    \"RetryWait\": 1,\n                    \"Retriable\": 1,\n                    \"TaskAction\": \"\",\n                    \"TryLimit\": 3,\n                    \"RunPriority\": 4,\n                    \"TaskType\": 35,\n                    \"BrokerIp\": \"any\",\n                    \"ClusterId\": null,\n                    \"MinDateTime\": null,\n                    \"MaxDateTime\": null,\n                    \"SelfDepend\": 1,\n                    \"Notes\": \"\",\n                    \"YarnQueue\": null,\n                    \"Submit\": false,\n                    \"LastSchedulerCommitTime\": null,\n                    \"NormalizedJobStartTime\": null,\n                    \"SourceServer\": null,\n                    \"TargetServer\": \"11\",\n                    \"Creater\": \"TBDS\",\n                    \"DependencyRel\": \"and\",\n                    \"DependencyWorkflow\": \"yes\",\n                    \"DependencyConfigs\": null,\n                    \"VirtualTaskStatus\": null,\n                    \"Params\": null,\n                    \"TaskExt\": null,\n                    \"UpdateUser\": \"fe\",\n                    \"UpdateTime\": \"2022-07-27 17:40:31\",\n                    \"UpdateUserId\": \"100022256608\",\n                    \"SchedulerDesc\": \"从2022年09月03日 11:10:00开始，每间隔10分钟执行一次\",\n                    \"ResourceGroup\": \"20220420160541973718\",\n                    \"VersionDesc\": null\n                }\n            ]\n        }\n    }\n}",
-        "title": "范例"
       }
     ],
     "DescribeTemplateDimCount": [

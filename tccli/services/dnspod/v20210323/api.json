@@ -1092,6 +1092,7 @@
           "example": "11",
           "member": "int64",
           "name": "DomainAliasId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

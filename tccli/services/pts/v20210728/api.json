@@ -3254,7 +3254,17 @@
     },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "通过该参数指定不同压测网络环境，在不同网络环境下，PTS可用的地域不一样",
+          "example": "0: 公网压测可用地域， 1: VPC私有网络压测可用地域，2: DevCloud环境可用地域",
+          "member": "uint64",
+          "name": "LoadType",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegionsResponse": {
@@ -3266,7 +3276,7 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "RegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5207,6 +5217,7 @@
           "example": "无",
           "member": "LoadSpec",
           "name": "LoadSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5217,16 +5228,18 @@
           "example": "无",
           "member": "VpcLoadDistribution",
           "name": "VpcLoadDistribution",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "压力分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多地域压力分布\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GeoRegionsLoadItem",
           "name": "GeoRegionsLoadDistribution",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

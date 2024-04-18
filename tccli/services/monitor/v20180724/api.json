@@ -12418,12 +12418,30 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，当前支持\nName=state\nValue=up, down, unknown",
-          "example": "Name=xxx",
+          "document": "过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址",
+          "example": "[{\"Name\": \"RawJob\",\"Values\": [\"eks-network\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "targets偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "targets返回数量，默认为20，最大值200",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

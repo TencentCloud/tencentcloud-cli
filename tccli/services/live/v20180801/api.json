@@ -3688,6 +3688,15 @@
           "name": "AiFormatDiagnose",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启内容质检。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiQualityControl",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3701,6 +3710,7 @@
           "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
           "member": "string",
           "name": "MonitorId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11721,6 +11731,7 @@
           "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
           "member": "string",
           "name": "MonitorId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11731,6 +11742,7 @@
           "example": "ExampleMonitorName",
           "member": "string",
           "name": "MonitorName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11741,6 +11753,7 @@
           "example": " output_info",
           "member": "LiveStreamMonitorOutputInfo",
           "name": "OutputInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11751,6 +11764,7 @@
           "example": " input_list",
           "member": "LiveStreamMonitorInputInfo",
           "name": "InputList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11761,6 +11775,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11771,6 +11786,7 @@
           "example": "1640763135",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11781,6 +11797,7 @@
           "example": "1640763135",
           "member": "uint64",
           "name": "StopTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11791,6 +11808,7 @@
           "example": "1640763135",
           "member": "uint64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11801,6 +11819,7 @@
           "example": "1640763135",
           "member": "uint64",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11811,6 +11830,7 @@
           "example": "无",
           "member": "LiveStreamMonitorNotifyPolicy",
           "name": "NotifyPolicy",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11821,6 +11841,7 @@
           "example": "[1]",
           "member": "uint64",
           "name": "AudibleInputIndexList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11831,6 +11852,7 @@
           "example": "[1]",
           "member": "uint64",
           "name": "AiAsrInputIndexList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11841,6 +11863,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CheckStreamBroken",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11851,6 +11874,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CheckStreamLowFrameRate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11861,6 +11885,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AsrLanguage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11871,6 +11896,7 @@
           "example": "0",
           "member": "uint64",
           "name": "OcrLanguage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11881,6 +11907,7 @@
           "example": "[1]",
           "member": "uint64",
           "name": "AiOcrInputIndexList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -11891,6 +11918,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AllowMonitorReport",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11901,6 +11929,18 @@
           "example": "0",
           "member": "uint64",
           "name": "AiFormatDiagnose",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启内容质检。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiQualityControl",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -13206,6 +13246,15 @@
           "example": "0",
           "member": "uint64",
           "name": "AiFormatDiagnose",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启内容质检。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AiQualityControl",
           "required": false,
           "type": "int"
         }

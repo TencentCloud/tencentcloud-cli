@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli pts DescribeRegions --cli-unfold-argument ```
+tccli pts DescribeRegions --cli-unfold-argument  \
+    --LoadType 0
+```
 
 Output: 
 ```
@@ -33,7 +35,7 @@ Output:
                 "Area": "华南地区"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

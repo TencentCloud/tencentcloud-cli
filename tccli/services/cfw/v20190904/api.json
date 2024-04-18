@@ -7993,6 +7993,33 @@
           "name": "CfwInstance",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性开关 1打开 0 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽上限，单位Mbps",
+          "example": "100",
+          "member": "int64",
+          "name": "ElasticBandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按量计费标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10973,6 +11000,66 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎预约升级时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-09 11:56:58",
+          "member": "string",
+          "name": "ReserveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎预约升级版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_3.8.0.888",
+          "member": "string",
+          "name": "ReserveVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎预约升级版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "stable",
+          "member": "string",
+          "name": "ReserveVersionState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性开关\n1 打开\n0 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "ElasticBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否首次开通按量付费\n1 是\n0 不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFirstAfterPay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13077,6 +13164,30 @@
       ],
       "usage": "out"
     },
+    "TagInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标key",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标值",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "TemplateListInfo": {
       "document": "地址模板列表数据",
       "members": [
@@ -13923,6 +14034,72 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎预约升级时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-09 11:56:58",
+          "member": "string",
+          "name": "ReserveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预约引擎升级版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_3.8.0.888",
+          "member": "string",
+          "name": "ReserveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎预约升级版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "stable",
+          "member": "string",
+          "name": "ReserveVersionState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性开关 1打开 0关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "ElasticBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否首次开通按量付费\n1 是\n0 不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFirstAfterPay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

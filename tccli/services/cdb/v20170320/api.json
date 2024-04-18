@@ -1107,7 +1107,7 @@
       "status": "online"
     },
     "UpgradeDBInstance": {
-      "document": "本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。",
+      "document": "本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。如果进行迁移业务，请一定填写实例规格（CPU、内存），不然系统会默认以最小允许规格传参。",
       "input": "UpgradeDBInstanceRequest",
       "name": "调整云数据库实例的配置",
       "output": "UpgradeDBInstanceResponse",
@@ -19644,7 +19644,7 @@
         },
         {
           "disabled": false,
-          "document": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可升级的内存规格。",
+          "document": "升级后的内存大小，单位：MB，为保证传入 Memory 值有效，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口获取可升级的内存规格。\n说明：如果进行迁移业务，请一定填写实例规格（CPU、内存），不然系统会默认以最小允许规格传参。",
           "example": "8000",
           "member": "int64",
           "name": "Memory",
@@ -19734,7 +19734,7 @@
         },
         {
           "disabled": false,
-          "document": "升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。",
+          "document": "升级后的实例cpu核数，如果不传将根据 Memory 指定的内存值自动填充最小允许规格的cpu值。\n说明：如果进行迁移业务，请一定填写实例规格（CPU、内存），不然系统会默认以最小允许规格传参。",
           "example": "1",
           "member": "int64",
           "name": "Cpu",

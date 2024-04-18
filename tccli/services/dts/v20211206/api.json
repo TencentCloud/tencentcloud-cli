@@ -185,7 +185,7 @@
     "DescribeSubscribeCheckJob": {
       "document": "本接口(DescribeSubscribeCheckJob)用于查询订阅校验任务结果。",
       "input": "DescribeSubscribeCheckJobRequest",
-      "name": "查看校验结果",
+      "name": "查询订阅校验结果",
       "output": "DescribeSubscribeCheckJobResponse",
       "status": "online"
     },
@@ -416,7 +416,7 @@
     "ResumeSubscribe": {
       "document": "本接口(ResumeSubscribe) 用于恢复报错的订阅任务。当订阅任务的状态为error时，可通过本接口尝试对任务进行恢复。",
       "input": "ResumeSubscribeRequest",
-      "name": "恢复订阅任务",
+      "name": "重试订阅任务",
       "output": "ResumeSubscribeResponse",
       "status": "online"
     },

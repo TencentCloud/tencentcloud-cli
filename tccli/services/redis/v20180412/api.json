@@ -1947,6 +1947,15 @@
           "name": "RedisClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略 ID 数组。\n\n- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。\n- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。",
+          "example": "[\"policy-6e6wodv4\"]",
+          "member": "string",
+          "name": "AlarmPolicyList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1960,6 +1969,7 @@
           "example": "199878234",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1969,6 +1979,7 @@
           "example": "crs-3sz5wdav",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

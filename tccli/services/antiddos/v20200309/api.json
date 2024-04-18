@@ -1861,6 +1861,16 @@
         },
         {
           "disabled": false,
+          "document": "是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TransRegionFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "是否为超级高防包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
@@ -7053,6 +7063,15 @@
           "example": "1",
           "member": "uint64",
           "name": "FilterPlanCntFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterTransRegionFlag",
           "required": false,
           "type": "int"
         }
