@@ -78,14 +78,14 @@
       "status": "online"
     },
     "DeleteMQTTInstance": {
-      "document": "删除实例",
+      "document": "删除MQTT实例",
       "input": "DeleteMQTTInstanceRequest",
       "name": "删除MQTT实例",
       "output": "DeleteMQTTInstanceResponse",
       "status": "online"
     },
     "DeleteMQTTTopic": {
-      "document": "删除主题",
+      "document": "删除MQTT主题",
       "input": "DeleteMQTTTopicRequest",
       "name": "删除MQTT主题",
       "output": "DeleteMQTTTopicResponse",
@@ -197,7 +197,7 @@
       "status": "online"
     },
     "DescribeMQTTProductSKUList": {
-      "document": "非对外接口，获取产品售卖规格",
+      "document": "获取产品售卖规格",
       "input": "DescribeMQTTProductSKUListRequest",
       "name": "获取MQTT产品售卖规格",
       "output": "DescribeMQTTProductSKUListResponse",
@@ -274,7 +274,7 @@
       "status": "online"
     },
     "ModifyMQTTInsPublicEndpoint": {
-      "document": "为MQTT实例创建公网接入点",
+      "document": "更新MQTT实例公网接入点",
       "input": "ModifyMQTTInsPublicEndpointRequest",
       "name": "更新MQTT实例公网接入点",
       "output": "ModifyMQTTInsPublicEndpointResponse",
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "带宽",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -664,7 +664,7 @@
         {
           "disabled": false,
           "document": "公网访问规则",
-          "example": "无",
+          "example": "[ \t\t{ \t\t\t\"IpRule\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"remark\" \t\t} \t]",
           "member": "PublicAccessRule",
           "name": "Rules",
           "required": false,
@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "商品规格，可用规格如下：\nexperiment_500,\nbasic_1k,\nbasic_2k,\nbasic_4k,\nbasic_6k,\npro_4k,\npro_6k,\npro_1w,\npro_2w,\npro_3w,\npro_4w,\npro_5w,\nplatinum_6k,\nplatinum_1w,\nplatinum_2w,\nplatinum_4w,\nplatinum_10w,\nplatinum_15w,\nplatinum_20w,\nplatinum_40w,\nplatinum_60w,\nplatinum_100w",
-          "example": "无",
+          "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
           "required": true,
@@ -718,7 +718,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -727,7 +727,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "TagList",
           "required": false,
@@ -736,7 +736,7 @@
         {
           "disabled": false,
           "document": "实例绑定的VPC信息",
-          "example": "无",
+          "example": " [ \t\t{ \t\t\t\"VpcId\": \"vpc-9a5wnirv\", \t\t\t\"SubnetId\": \"subnet-0tw6tlfi\" \t\t} \t]",
           "member": "VpcInfo",
           "name": "VpcList",
           "required": false,
@@ -745,7 +745,7 @@
         {
           "disabled": false,
           "document": "是否开启公网",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnablePublic",
           "required": false,
@@ -754,7 +754,7 @@
         {
           "disabled": false,
           "document": "公网带宽（单位：兆）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
@@ -763,7 +763,7 @@
         {
           "disabled": false,
           "document": "公网访问白名单",
-          "example": "无",
+          "example": "[ \t\t{ \t\t\t\"Ip\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"11111111\" \t\t} \t]",
           "member": "IpRule",
           "name": "IpRules",
           "required": false,
@@ -772,7 +772,7 @@
         {
           "disabled": false,
           "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "required": false,
@@ -781,7 +781,7 @@
         {
           "disabled": false,
           "document": "购买时长（单位：月）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
           "required": false,
@@ -836,7 +836,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -851,7 +851,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "mqtt-1234",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -861,7 +861,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Topic",
           "output_required": true,
@@ -892,7 +892,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -901,7 +901,7 @@
         {
           "disabled": false,
           "document": "是否开启生产权限",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PermWrite",
           "required": true,
@@ -910,7 +910,7 @@
         {
           "disabled": false,
           "document": "是否开启消费权限",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "PermRead",
           "required": true,
@@ -919,7 +919,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -928,7 +928,7 @@
         {
           "disabled": false,
           "document": "密码，该字段为空时候则后端会默认生成",
-          "example": "无",
+          "example": "pwd",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1119,7 +1119,7 @@
         {
           "disabled": false,
           "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "key1",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -1130,7 +1130,7 @@
         {
           "disabled": false,
           "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "value1",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -2014,7 +2014,7 @@
         {
           "disabled": false,
           "document": "客户端详情",
-          "example": "无",
+          "example": "client1",
           "member": "string",
           "name": "ClientId",
           "required": true,
@@ -2109,11 +2109,41 @@
         {
           "disabled": false,
           "document": "客户端的订阅列表",
-          "example": "无",
+          "example": "[       {         \"Qos\": 1,         \"TopicFilter\": \"home/sun/+/\"       },       {         \"Qos\": 1,         \"TopicFilter\": \"home/temp/+/\"       },       {         \"Qos\": 0,         \"TopicFilter\": \"home/humidity/+/\"       },       {         \"Qos\": 2,         \"TopicFilter\": \"home/person/+/\"       }     ]",
           "member": "MQTTClientSubscription",
           "name": "MQTTClientSubscriptions",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端到客户端的流量统计",
+          "example": " {       \"Bytes\": 16,       \"PacketQos0\": 4,       \"PacketQos1\": 0,       \"PacketQos2\": 0,       \"PacketTotal\": 4     }",
+          "member": "StatisticsReport",
+          "name": "Inbound",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端到服务端的流量统计",
+          "example": " {       \"Bytes\": 16,       \"PacketQos0\": 4,       \"PacketQos1\": 0,       \"PacketQos2\": 0,       \"PacketTotal\": 4     }",
+          "member": "StatisticsReport",
+          "name": "OutBound",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cleansession标志",
+          "example": "true",
+          "member": "bool",
+          "name": "CleanSession",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -2146,7 +2176,7 @@
         {
           "disabled": false,
           "document": "接入点",
-          "example": "无",
+          "example": "[                     {                         \"Type\": \"mqtt-tcp\",                         \"Url\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com:1883\",                         \"VpcId\": null,                         \"SubnetId\": null,                         \"Host\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com\",                         \"Port\": 1883                     },                     {                         \"Type\": \"mqtt-ws\",                         \"Url\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com:8888\",                         \"VpcId\": null,                         \"SubnetId\": null,                         \"Host\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com\",                         \"Port\": 8888                     }                 ]",
           "member": "MQTTEndpointItem",
           "name": "Endpoints",
           "output_required": false,
@@ -2166,7 +2196,7 @@
         {
           "disabled": false,
           "document": "带宽",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Bandwidth",
           "output_required": false,
@@ -2176,11 +2206,21 @@
         {
           "disabled": false,
           "document": "公网访问规则",
-          "example": "无",
+          "example": "[                     {                         \"IpRule\": \"127.0.0.1\",                         \"Allow\": true,                         \"Remark\": null                     }                 ]",
           "member": "PublicAccessRule",
           "name": "Rules",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网状态：\n    NORMAL-正常\n    CLOSING-关闭中\n    MODIFYING-修改中\n    CREATING-开启中\n    CLOSE-关闭",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2213,7 +2253,7 @@
         {
           "disabled": false,
           "document": "接入点",
-          "example": "无",
+          "example": " [ \t\t\t{ \t\t\t\t\"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\", \t\t\t\t\"Port\": 1883, \t\t\t\t\"SubnetId\": null, \t\t\t\t\"Type\": \"mqtt-tcp\", \t\t\t\t\"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:1883\", \t\t\t\t\"VpcId\": null \t\t\t}, \t\t\t{ \t\t\t\t\"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\", \t\t\t\t\"Port\": 8888, \t\t\t\t\"SubnetId\": null, \t\t\t\t\"Type\": \"mqtt-ws\", \t\t\t\t\"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:8888\", \t\t\t\t\"VpcId\": null \t\t\t} \t\t]",
           "member": "MQTTEndpointItem",
           "name": "Endpoints",
           "output_required": false,
@@ -2250,7 +2290,7 @@
         {
           "disabled": false,
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mqtt-mwmdg9dm",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -2260,7 +2300,7 @@
         {
           "disabled": false,
           "document": "服务端证书id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "certified",
           "member": "string",
           "name": "SSLServerCertId",
           "output_required": false,
@@ -2270,7 +2310,7 @@
         {
           "disabled": false,
           "document": "CA证书id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lacertid",
           "member": "string",
           "name": "SSLCaCertId",
           "output_required": false,
@@ -2335,7 +2375,7 @@
         {
           "disabled": false,
           "document": "实例列表",
-          "example": "无",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1, \t\t\t\t\"CreateTime\": 1705565760, \t\t\t\t\"InstanceId\": \"mqtt-wjgxr8jg\", \t\t\t\t\"InstanceName\": \"su-0118-no-pub\", \t\t\t\t\"InstanceStatus\": \"CREATE_FAILURE\", \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"Remark\": \"\", \t\t\t\t\"SkuCode\": \"mqtt_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1, \t\t\t\t\"TopicNum\": 0, \t\t\t\t\"TopicNumLimit\": 1, \t\t\t\t\"TpsLimit\": 1, \t\t\t\t\"Version\": \"1\" \t\t\t}, \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1000, \t\t\t\t\"CreateTime\": 1705391046, \t\t\t\t\"InstanceId\": \"mqtt-47ka4rdr\", \t\t\t\t\"InstanceName\": \"sun-0116\", \t\t\t\t\"InstanceStatus\": \"RUNNING\", \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"Remark\": \"\", \t\t\t\t\"SkuCode\": \"basic_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1000, \t\t\t\t\"TopicNum\": 25, \t\t\t\t\"TopicNumLimit\": 25, \t\t\t\t\"TpsLimit\": 1000, \t\t\t\t\"Version\": \"1\" \t\t\t} \t\t]",
           "member": "MQTTInstanceItem",
           "name": "Data",
           "output_required": true,
@@ -2382,7 +2422,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "mqtt-mwmdg9dm",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -2392,7 +2432,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -2402,7 +2442,7 @@
         {
           "disabled": false,
           "document": "主题数量",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TopicNum",
           "output_required": true,
@@ -2412,7 +2452,7 @@
         {
           "disabled": false,
           "document": "实例最大主题数量",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "TopicNumLimit",
           "output_required": true,
@@ -2422,7 +2462,7 @@
         {
           "disabled": false,
           "document": "TPS限流值",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "TpsLimit",
           "output_required": true,
@@ -2432,7 +2472,7 @@
         {
           "disabled": false,
           "document": "创建时间，秒为单位",
-          "example": "无",
+          "example": "1711955420",
           "member": "int64",
           "name": "CreatedTime",
           "output_required": true,
@@ -2442,7 +2482,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -2452,7 +2492,7 @@
         {
           "disabled": false,
           "document": "实例状态",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -2462,7 +2502,7 @@
         {
           "disabled": false,
           "document": "实例规格",
-          "example": "无",
+          "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
           "output_required": true,
@@ -2472,7 +2512,7 @@
         {
           "disabled": false,
           "document": "订阅数上限",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "SubscriptionNumLimit",
           "output_required": true,
@@ -2482,7 +2522,7 @@
         {
           "disabled": false,
           "document": "客户端数量上限",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "ClientNumLimit",
           "output_required": true,
@@ -2522,7 +2562,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1712025623202",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -2531,7 +2571,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "1712112023202",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -2540,7 +2580,7 @@
         {
           "disabled": false,
           "document": "请求任务id",
-          "example": "无",
+          "example": "dcfefe36-829d-4dd8-a436-e622c6ecab8f",
           "member": "string",
           "name": "TaskRequestId",
           "required": true,
@@ -2583,7 +2623,7 @@
         {
           "disabled": false,
           "document": "消息记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[                     {                         \"MsgId\": \"0B8D67D3003505C29BFD077EC81A0005\",                         \"SubTopic\": \"/humidity/room1/\",                         \"Qos\": \"2\",                         \"Tags\": \"MQTT_COMMON\",                         \"Keys\": null,                         \"ProducerAddr\": \"11.176.16.153:26866\",                         \"ProduceTime\": \"2024-04-02 10:55:49\",                         \"DeadLetterResendTimes\": null,                         \"DeadLetterResendSuccessTimes\": null                     },                     {                         \"MsgId\": \"0B8D67D3003505C29BFD077EC65B0002\",                         \"SubTopic\": \"/humidity/room0/\",                         \"Qos\": \"2\",                         \"Tags\": \"MQTT_COMMON\",                         \"Keys\": null,                         \"ProducerAddr\": \"11.176.16.153:26866\",                         \"ProduceTime\": \"2024-04-02 10:55:48\",                         \"DeadLetterResendTimes\": null,                         \"DeadLetterResendSuccessTimes\": null                     }                 ]",
           "member": "MQTTMessageItem",
           "name": "Data",
           "output_required": true,
@@ -2593,7 +2633,7 @@
         {
           "disabled": false,
           "document": "请求任务id",
-          "example": "无",
+          "example": "dcfefe36-829d-4dd8-a436-e622c6ecab8f",
           "member": "string",
           "name": "TaskRequestId",
           "output_required": false,
@@ -2633,7 +2673,7 @@
         {
           "disabled": false,
           "document": "消息ID",
-          "example": "无",
+          "example": "0B8D67D3003505C29BFD077EC65B0002",
           "member": "string",
           "name": "MsgId",
           "required": true,
@@ -2648,7 +2688,7 @@
         {
           "disabled": false,
           "document": "消息体",
-          "example": "无",
+          "example": "body",
           "member": "string",
           "name": "Body",
           "output_required": true,
@@ -2658,7 +2698,7 @@
         {
           "disabled": false,
           "document": "详情参数",
-          "example": "无",
+          "example": "[                     {                         \"Key\": \"TRACE_ON\",                         \"Value\": \"true\"                     },                     {                         \"Key\": \"originMqttTopic\",                         \"Value\": \"mqtt-mwmdg9dm%home/humidity/room0\"                     },                     {                         \"Key\": \"INNER_MULTI_DISPATCH\",                         \"Value\": \"%LMQ%mqtt-mwmdg9dm%home%humidity%+%,%LMQ%mqtt-mwmdg9dm%home%humidity%room0%\"                     },                     {                         \"Key\": \"IS_EMPTY_MSG\",                         \"Value\": \"false\"                     },                     {                         \"Key\": \"INNER_MULTI_QUEUE_OFFSET\",                         \"Value\": \"30,40\"                     },                     {                         \"Key\": \"retryTimes\",                         \"Value\": \"0\"                     },                     {                         \"Key\": \"extData\",                         \"Value\": \"{\\\"qosLevel\\\":\\\"2\\\"}\"                     },                     {                         \"Key\": \"MSG_REGION\",                         \"Value\": \"cd\"                     },                     {                         \"Key\": \"qosLevel\",                         \"Value\": \"2\"                     },                     {                         \"Key\": \"UNIQ_KEY\",                         \"Value\": \"0B8D67D3003505C29BFD077EC65B0002\"                     },                     {                         \"Key\": \"CLUSTER\",                         \"Value\": \"rmqbk-mqtt\"                     },                     {                         \"Key\": \"TAGS\",                         \"Value\": \"MQTT_COMMON\"                     },                     {                         \"Key\": \"__CLIENT_HOST\",                         \"Value\": \"11.176.16.153:26866\"                     }                 ]",
           "member": "CustomMapEntry",
           "name": "Properties",
           "output_required": true,
@@ -2668,7 +2708,7 @@
         {
           "disabled": false,
           "document": "生产时间",
-          "example": "无",
+          "example": "2024-04-02 10:55:48",
           "member": "string",
           "name": "ProduceTime",
           "output_required": true,
@@ -2678,7 +2718,7 @@
         {
           "disabled": false,
           "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0B8D67D3003505C29BFD077EC65B0002",
           "member": "string",
           "name": "MessageId",
           "output_required": true,
@@ -2688,7 +2728,7 @@
         {
           "disabled": false,
           "document": "生产者地址",
-          "example": "无",
+          "example": "127.0.0.1:8888",
           "member": "string",
           "name": "ProducerAddr",
           "output_required": true,
@@ -2698,7 +2738,7 @@
         {
           "disabled": false,
           "document": "Topic",
-          "example": "无",
+          "example": "topic1",
           "member": "string",
           "name": "ShowTopicName",
           "output_required": true,
@@ -2735,7 +2775,7 @@
         {
           "disabled": false,
           "document": "mqtt商品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 2, \t\t\t\t\"ProxySpecCount\": 1, \t\t\t\t\"ProxySpecMemory\": 4, \t\t\t\t\"SkuCode\": \"mqtt_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1, \t\t\t\t\"TopicNumLimit\": 1, \t\t\t\t\"TpsLimit\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1000, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 1, \t\t\t\t\"ProxySpecCount\": 2, \t\t\t\t\"ProxySpecMemory\": 2, \t\t\t\t\"SkuCode\": \"basic_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1000, \t\t\t\t\"TopicNumLimit\": 25, \t\t\t\t\"TpsLimit\": 1000 \t\t\t} \t\t]",
           "member": "MQTTProductSkuItem",
           "name": "MQTTProductSkuList",
           "output_required": true,
@@ -2809,7 +2849,7 @@
         {
           "disabled": false,
           "document": "主题列表",
-          "example": "无",
+          "example": "[                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"2222\",                         \"Remark\": \"\"                     },                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"home\",                         \"Remark\": \"\"                     }                 ]",
           "member": "MQTTTopicItem",
           "name": "Data",
           "output_required": true,
@@ -2855,7 +2895,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "mqtt-mwmdg9dm",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -2865,7 +2905,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "无",
+          "example": "topic1",
           "member": "string",
           "name": "Topic",
           "output_required": true,
@@ -2875,7 +2915,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -2885,7 +2925,7 @@
         {
           "disabled": false,
           "document": "创建时间，秒为单位",
-          "example": "无",
+          "example": "1712049671",
           "member": "int64",
           "name": "CreatedTime",
           "output_required": true,
@@ -2959,7 +2999,7 @@
         {
           "disabled": false,
           "document": "角色信息列表",
-          "example": "无",
+          "example": "[ \t\t\t{ \t\t\t\t\"CreatedTime\": 1705392159000, \t\t\t\t\"ModifiedTime\": 1705392159000, \t\t\t\t\"Password\": \"sunjianxiong\", \t\t\t\t\"PermRead\": true, \t\t\t\t\"PermWrite\": true, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Username\": \"user1\" \t\t\t} \t\t]",
           "member": "MQTTUserItem",
           "name": "Data",
           "output_required": true,
@@ -3649,6 +3689,7 @@
           "example": "0.0.0.0",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3656,9 +3697,10 @@
         {
           "disabled": false,
           "document": "是否允许放行",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Allow",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -3666,9 +3708,10 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3719,7 +3762,7 @@
         {
           "disabled": false,
           "document": "接入点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com:1883",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -3752,7 +3795,7 @@
         {
           "disabled": false,
           "document": "主机\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com",
           "member": "string",
           "name": "Host",
           "output_required": false,
@@ -3763,12 +3806,23 @@
         {
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1883",
           "member": "int64",
           "name": "Port",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3810,7 +3864,7 @@
         {
           "disabled": false,
           "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
-          "example": "无",
+          "example": "EXPERIMENT",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -3820,7 +3874,7 @@
         {
           "disabled": false,
           "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -3850,7 +3904,7 @@
         {
           "disabled": false,
           "document": "主题数量",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TopicNum",
           "output_required": true,
@@ -3870,7 +3924,7 @@
         {
           "disabled": false,
           "document": "弹性TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "TpsLimit",
           "output_required": false,
@@ -3880,7 +3934,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1713164969433",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
@@ -3890,7 +3944,7 @@
         {
           "disabled": false,
           "document": "订阅关系上限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "SubscriptionNumLimit",
           "output_required": false,
@@ -3900,7 +3954,7 @@
         {
           "disabled": false,
           "document": "客户端连接数上线\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "ClientNumLimit",
           "output_required": false,
@@ -3926,7 +3980,7 @@
         {
           "disabled": false,
           "document": "消息tag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tag1",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -3936,7 +3990,7 @@
         {
           "disabled": false,
           "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "value1",
           "member": "string",
           "name": "Keys",
           "output_required": true,
@@ -3946,7 +4000,7 @@
         {
           "disabled": false,
           "document": "客户端地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ProducerAddr",
           "output_required": true,
@@ -3956,7 +4010,7 @@
         {
           "disabled": false,
           "document": "消息发送时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1713164969433",
           "member": "string",
           "name": "ProduceTime",
           "output_required": true,
@@ -3966,7 +4020,7 @@
         {
           "disabled": false,
           "document": "死信重发次数\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DeadLetterResendTimes",
           "output_required": true,
@@ -3976,7 +4030,7 @@
         {
           "disabled": false,
           "document": "死信重发成功次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DeadLetterResendSuccessTimes",
           "output_required": true,
@@ -3986,7 +4040,7 @@
         {
           "disabled": false,
           "document": "子topic\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subtopic",
           "member": "string",
           "name": "SubTopic",
           "output_required": false,
@@ -3996,7 +4050,7 @@
         {
           "disabled": false,
           "document": "消息质量等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Qos",
           "output_required": false,
@@ -4082,7 +4136,7 @@
         {
           "disabled": false,
           "document": "代理核\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ProxySpecCore",
           "output_required": false,
@@ -4092,7 +4146,7 @@
         {
           "disabled": false,
           "document": "代理内存\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ProxySpecMemory",
           "output_required": false,
@@ -4102,7 +4156,7 @@
         {
           "disabled": false,
           "document": "代理总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ProxySpecCount",
           "output_required": false,
@@ -4138,7 +4192,7 @@
         {
           "disabled": false,
           "document": "主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -4154,7 +4208,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "Username",
           "output_required": true,
@@ -4164,7 +4218,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "无",
+          "example": "pd",
           "member": "string",
           "name": "Password",
           "output_required": true,
@@ -4174,7 +4228,7 @@
         {
           "disabled": false,
           "document": "是否开启消费",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PermRead",
           "output_required": true,
@@ -4184,7 +4238,7 @@
         {
           "disabled": false,
           "document": "是否开启生产",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PermWrite",
           "output_required": true,
@@ -4194,7 +4248,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "remark1",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -4204,7 +4258,7 @@
         {
           "disabled": false,
           "document": "创建时间，秒为单位",
-          "example": "无",
+          "example": "1712739629775",
           "member": "int64",
           "name": "CreatedTime",
           "output_required": true,
@@ -4214,7 +4268,7 @@
         {
           "disabled": false,
           "document": "修改时间，秒为单位",
-          "example": "无",
+          "example": "1712739629775",
           "member": "int64",
           "name": "ModifiedTime",
           "output_required": true,
@@ -4401,7 +4455,7 @@
         {
           "disabled": false,
           "document": "带宽",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Bandwidth",
           "required": true,
@@ -4410,7 +4464,7 @@
         {
           "disabled": false,
           "document": "公网访问规则",
-          "example": "无",
+          "example": "[ \t\t{ \t\t\t\"IpRule\": \"2.2.2.2\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"555\" \t\t} \t]",
           "member": "PublicAccessRule",
           "name": "Rules",
           "required": true,
@@ -4446,7 +4500,7 @@
         {
           "disabled": false,
           "document": "服务端证书id",
-          "example": "无",
+          "example": "serverCertId",
           "member": "string",
           "name": "SSLServerCertId",
           "required": true,
@@ -4455,7 +4509,7 @@
         {
           "disabled": false,
           "document": "CA证书id",
-          "example": "无",
+          "example": "caId",
           "member": "string",
           "name": "SSLCaCertId",
           "required": true,
@@ -4491,7 +4545,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "instance1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4500,7 +4554,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4581,7 +4635,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -4590,7 +4644,7 @@
         {
           "disabled": false,
           "document": "是否开启消费",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PermRead",
           "required": true,
@@ -4599,7 +4653,7 @@
         {
           "disabled": false,
           "document": "是否开启生产",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "PermWrite",
           "required": true,
@@ -4608,7 +4662,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4754,6 +4808,42 @@
         }
       ],
       "type": "object"
+    },
+    "PacketStatistics": {
+      "document": "MQTT客户端监控",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONNECT",
+          "member": "string",
+          "name": "MessageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务质量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Qos",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PublicAccessRule": {
       "document": "公网访问安全规则",
@@ -5024,6 +5114,32 @@
       ],
       "usage": "both"
     },
+    "StatisticsReport": {
+      "document": "MQTT客户端数据流量统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PacketStatistics",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SubscriptionData": {
       "document": "主题与消费组的订阅关系数据",
       "members": [
@@ -5189,6 +5305,7 @@
           "example": "123",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5196,9 +5313,10 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

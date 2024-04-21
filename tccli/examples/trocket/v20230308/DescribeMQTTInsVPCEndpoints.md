@@ -1,12 +1,12 @@
-**Example 1: 示例**
+**Example 1: 样例**
 
-示例
+样例
 
 Input: 
 
 ```
 tccli trocket DescribeMQTTInsVPCEndpoints --cli-unfold-argument  \
-    --InstanceId mqtt-47ka4rdr
+    --InstanceId mqtt-25zqb75a
 ```
 
 Output: 
@@ -17,23 +17,25 @@ Output:
     "Response": {
         "Endpoints": [
             {
-                "Host": "mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com",
+                "Host": "mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com",
+                "Ip": "10.0.0.25",
                 "Port": 1883,
-                "SubnetId": null,
+                "SubnetId": "subnet-fr9ez60m",
                 "Type": "mqtt-tcp",
-                "Url": "mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:1883",
-                "VpcId": null
+                "Url": "mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com:1883",
+                "VpcId": "vpc-35wk4c6h"
             },
             {
-                "Host": "mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com",
+                "Host": "mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com",
+                "Ip": "10.0.0.25",
                 "Port": 8888,
-                "SubnetId": null,
+                "SubnetId": "subnet-fr9ez60m",
                 "Type": "mqtt-ws",
-                "Url": "mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:8888",
-                "VpcId": null
+                "Url": "mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com:8888",
+                "VpcId": "vpc-35wk4c6h"
             }
         ],
-        "RequestId": "31911506-4e35-45b6-8261-a51bf3d85bd5"
+        "RequestId": "4313484d-47c1-4fc8-b402-f997d2ba7256"
     }
 }
 ```

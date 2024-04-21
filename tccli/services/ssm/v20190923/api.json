@@ -1180,7 +1180,7 @@
           "example": "test",
           "member": "string",
           "name": "SecretName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

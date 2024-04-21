@@ -1355,6 +1355,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自适应转码模板类型：\nCommon：音视频类型\nPureAudio：纯音频类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Common",
+          "member": "string",
+          "name": "DefinitionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1365,102 +1376,112 @@
         {
           "disabled": false,
           "document": "转自适应码流模板唯一标识。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转自适应码流模板名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转自适应码流模板描述信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转自适应码流格式，取值范围：\n<li>HLS，</li>\n<li>MPEG-DASH。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转自适应码流输入流参数信息，最多输入10路流。",
-          "example": "",
+          "example": "无",
           "member": "AdaptiveStreamTemplate",
           "name": "StreamInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否禁止视频低码率转高码率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoBitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否禁止视频分辨率转高分辨率，取值范围：\n<li>0：否，</li>\n<li>1：是。</li>",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "DisableHigherVideoResolution",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为纯音频，0表示视频，1表示纯音频\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PureAudio",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1470,10 +1491,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频参数信息。",
+          "document": "音频参数信息。",
           "example": "null",
-          "member": "VideoTemplateInfo",
-          "name": "Video",
+          "member": "AudioTemplateInfo",
+          "name": "Audio",
           "output_required": true,
           "required": true,
           "type": "object",
@@ -1481,12 +1502,12 @@
         },
         {
           "disabled": false,
-          "document": "音频参数信息。",
+          "document": "视频参数信息。",
           "example": "null",
-          "member": "AudioTemplateInfo",
-          "name": "Audio",
+          "member": "VideoTemplateInfo",
+          "name": "Video",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7747,6 +7768,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为纯音频，0表示视频模版，1表示纯音频模版\n当值为1：\n1. StreamInfos.N.RemoveVideo=1\n2. StreamInfos.N.RemoveAudio=0\n3. StreamInfos.N.Video.Codec=copy\n\n当值为0：\n\n1. StreamInfos.N.Video.Codec不能为copy\n2. StreamInfos.N.Video.Fps不能为null",
+          "example": "0",
+          "member": "uint64",
+          "name": "PureAudio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7760,7 +7790,7 @@
           "example": "30018",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10314,6 +10344,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为纯音频，0表示视频，1表示纯音频",
+          "example": "0",
+          "member": "uint64",
+          "name": "PureAudio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10327,7 +10366,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10337,7 +10376,7 @@
           "example": "无",
           "member": "AdaptiveDynamicStreamingTemplate",
           "name": "AdaptiveDynamicStreamingTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18777,120 +18816,120 @@
         {
           "disabled": false,
           "document": "转码后文件的目标存储。",
-          "example": "",
+          "example": "null",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转码后的视频文件路径。",
-          "example": "",
+          "example": "/output/test.mp4",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转码规格 ID，参见[转码参数模板](https://cloud.tencent.com/document/product/862/37042)。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流码率平均值与音频流码率平均值之和， 单位：bps。",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流高度的最大值，单位：px。",
-          "example": "",
+          "example": "1080",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流宽度的最大值，单位：px。",
-          "example": "",
+          "example": "1920",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件总大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。",
-          "example": "",
+          "example": "20000",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长，单位：秒。",
-          "example": "",
+          "example": "15",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "容器类型，例如 m4a，mp4 等。",
-          "example": "",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频的 md5 值。",
-          "example": "",
+          "example": "xxxx",
           "member": "string",
           "name": "Md5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频流信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaAudioStreamItem",
           "name": "AudioStreamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -19248,6 +19287,15 @@
           "name": "Comment",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为纯音频，0表示视频模版，1表示纯音频模版\n当值为1：\n1. StreamInfos.N.RemoveVideo=1\n2. StreamInfos.N.RemoveAudio=0\n3. StreamInfos.N.Video.Codec=copy\n\n当值为0：\n\n1. StreamInfos.N.Video.Codec不能为copy\n2. StreamInfos.N.Video.Fps不能为null",
+          "example": "0",
+          "member": "uint64",
+          "name": "PureAudio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -22549,9 +22597,10 @@
         {
           "disabled": false,
           "document": "封装格式，可选值：mp4、flv、hls、mp3、flac、ogg、m4a。其中，mp3、flac、ogg、m4a 为纯音频文件。",
-          "example": "",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -22559,9 +22608,10 @@
         {
           "disabled": false,
           "document": "是否去除视频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -22569,9 +22619,10 @@
         {
           "disabled": false,
           "document": "是否去除音频数据，取值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -22579,9 +22630,10 @@
         {
           "disabled": false,
           "document": "视频流配置参数，当 RemoveVideo 为 0，该字段必填。",
-          "example": "",
+          "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -22589,9 +22641,10 @@
         {
           "disabled": false,
           "document": "音频流配置参数，当 RemoveAudio 为 0，该字段必填。",
-          "example": "",
+          "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -22599,9 +22652,10 @@
         {
           "disabled": false,
           "document": "极速高清转码参数。",
-          "example": "",
+          "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -24875,19 +24929,21 @@
         {
           "disabled": false,
           "document": "字体类型，目前可以支持两种：\n<li>simkai.ttf：可以支持中文和英文；</li>\n<li>arial.ttf：仅支持英文。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FontType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "字体大小，格式：Npx，N 为数值。",
-          "example": "",
+          "document": "字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]",
+          "example": "无",
           "member": "string",
           "name": "FontSize",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24895,9 +24951,10 @@
         {
           "disabled": false,
           "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FontColor",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24905,12 +24962,24 @@
         {
           "disabled": false,
           "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>\n默认值：1。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "FontAlpha",
+          "output_required": true,
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文字内容，长度不超过100个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TextContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -24921,42 +24990,47 @@
         {
           "disabled": false,
           "document": "字体类型，目前可以支持两种：\n<li>simkai.ttf：可以支持中文和英文；</li>\n<li>arial.ttf：仅支持英文。</li>",
-          "example": "",
+          "example": "simkai.ttf",
           "member": "string",
           "name": "FontType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "字体大小，格式：Npx，N 为数值。",
-          "example": "",
+          "document": "字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]",
+          "example": "10px",
           "member": "string",
           "name": "FontSize",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。",
-          "example": "",
+          "example": "0xFFFFFF",
           "member": "string",
           "name": "FontColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>",
-          "example": "",
+          "example": "1",
           "member": "float",
           "name": "FontAlpha",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "文字内容，长度不超过100个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -25828,7 +25902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
+          "document": "视频流的编码格式，可选值：\n<li>copy：纯音频模版</li>\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n注意：av1 编码容器目前只支持 mp4 。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -26081,6 +26155,7 @@
           "example": "NULL",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -26091,6 +26166,7 @@
           "example": "NULL",
           "member": "RawWatermarkParameter",
           "name": "RawParameter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -26101,6 +26177,7 @@
           "example": "NULL",
           "member": "string",
           "name": "TextContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -26111,26 +26188,29 @@
           "example": "NULL",
           "member": "string",
           "name": "SvgContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。\n<li>不填或填0，表示水印从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>",
+          "document": "水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。\n<li>不填或填0，表示水印从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>\n注：只用于视频场景，截图不支持。",
           "example": "NULL",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印的结束时间偏移，单位：秒。\n<li>不填或填0，表示水印持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>",
+          "document": "水印的结束时间偏移，单位：秒。\n<li>不填或填0，表示水印持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>\n注：只用于视频场景，截图不支持。",
           "example": "NULL",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -26474,7 +26554,7 @@
           "example": "NULL",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26484,7 +26564,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26494,7 +26574,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26504,7 +26584,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26514,7 +26594,7 @@
           "example": "NULL",
           "member": "MediaInputInfo",
           "name": "InputInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -26524,7 +26604,7 @@
           "example": "NULL",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -26534,7 +26614,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26544,7 +26624,7 @@
           "example": "NULL",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26554,7 +26634,7 @@
           "example": "NULL",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26564,7 +26644,7 @@
           "example": "NULL",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26574,7 +26654,7 @@
           "example": "NULL",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

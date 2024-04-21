@@ -189,6 +189,13 @@
       "output": "DeleteShareUnitResourcesResponse",
       "status": "online"
     },
+    "DescribeEffectivePolicy": {
+      "document": "查询目标关联的有效策略",
+      "input": "DescribeEffectivePolicyRequest",
+      "name": "查询目标关联的有效策略",
+      "output": "DescribeEffectivePolicyResponse",
+      "status": "online"
+    },
     "DescribeOrganization": {
       "document": "获取企业组织信息",
       "input": "DescribeOrganizationRequest",
@@ -327,6 +334,13 @@
       "input": "EnablePolicyTypeRequest",
       "name": "启用策略类型",
       "output": "EnablePolicyTypeResponse",
+      "status": "online"
+    },
+    "ListNonCompliantResource": {
+      "document": "获取成员标签检测不合规资源列表",
+      "input": "ListNonCompliantResourceRequest",
+      "name": "获取成员标签检测不合规资源列表",
+      "output": "ListNonCompliantResourceResponse",
       "status": "online"
     },
     "ListOrganizationIdentity": {
@@ -1700,6 +1714,42 @@
     "DeleteShareUnitResponse": {
       "document": "DeleteShareUnit返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEffectivePolicyRequest": {
+      "document": "DescribeEffectivePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号uin或者节点id。",
+          "example": "10083",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEffectivePolicyResponse": {
+      "document": "DescribeEffectivePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EffectivePolicy",
+          "name": "EffectivePolicy",
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3249,6 +3299,42 @@
       ],
       "type": "object"
     },
+    "EffectivePolicy": {
+      "document": "有效策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标ID。",
+          "example": "111111111111",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效策略内容。",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效策略更新时间。",
+          "example": "1668394639",
+          "member": "uint64",
+          "name": "LastUpdatedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EnablePolicyTypeRequest": {
       "document": "EnablePolicyType请求参数结构体",
       "members": [
@@ -3334,6 +3420,80 @@
         }
       ],
       "usage": "both"
+    },
+    "ListNonCompliantResourceRequest": {
+      "document": "ListNonCompliantResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~50。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "成员Uin。",
+          "example": "111111111111",
+          "member": "uint64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PaginationToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListNonCompliantResourceResponse": {
+      "document": "ListNonCompliantResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源及标签合规信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceTagMapping",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取的下一页的Token值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PaginationToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListOrganizationIdentityRequest": {
       "document": "ListOrganizationIdentity请求参数结构体",
@@ -4979,6 +5139,42 @@
       ],
       "type": "object"
     },
+    "ResourceTagMapping": {
+      "document": "资源及关联的标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源六段式。腾讯云使用资源六段式描述一个资源。\n例如：qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagComplianceDetails",
+          "name": "ComplianceDetails",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ShareArea": {
       "document": "共享地域",
       "members": [
@@ -5155,6 +5351,68 @@
           "name": "ShareManagerUin",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagComplianceDetails": {
+      "document": "标签合规信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合规状态。true-合规，false-不合规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ComplianceStatus",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值不合规的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "KeysWithNonCompliantValues",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "键不合规的标签键列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "NonCompliantKeys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tags": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

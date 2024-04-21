@@ -4883,6 +4883,15 @@
         },
         {
           "disabled": false,
+          "document": "验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。\n\n枚举值：0（简版），1（详版）。默认值为0。",
+          "example": "0",
+          "member": "string",
+          "name": "VerifyMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href=\"https://cloud.tencent.com/document/product/1007/47180\">数据加密</a> 文档。",
           "example": "iyuhfafhsad72bd",
           "member": "string",
@@ -4920,7 +4929,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4930,7 +4939,7 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4940,7 +4949,17 @@
           "example": "移动",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务结果详细信息。（当VerifyMode配置\"详版\"，且Result为\"-4: 三要素信息不一致\"时返回）\n\n枚举值：\n\n手机号码与姓名一致，与身份证号不一致；\n\n手机号码身份证号一致，与姓名不一致；\n\n手机号码与姓名和身份证号均不一致；\n\n姓名和身份证号不一致；\n\n其他不一致。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultDetail",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

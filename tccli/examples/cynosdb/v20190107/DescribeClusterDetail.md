@@ -50,7 +50,8 @@ Output:
                 "IsSupportSlaveZone": "abc",
                 "NonsupportSlaveZoneReason": "abc",
                 "IsSupportRo": "abc",
-                "NonsupportRoReason": "abc"
+                "NonsupportRoReason": "abc",
+                "IsSupportManualSnapshot": "yes"
             },
             "CynosVersion": "abc",
             "BusinessType": "abc",
@@ -110,7 +111,13 @@ Output:
                 }
             ],
             "RenewFlag": 0,
-            "NetworkType": "abc"
+            "NetworkType": "abc",
+            "SlaveZoneAttr": [
+                {
+                    "Zone": "ap-guangzhou-5",
+                    "BinlogSyncWay": "async"
+                }
+            ]
         },
         "RequestId": "abc"
     }

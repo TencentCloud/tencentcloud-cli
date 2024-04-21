@@ -67,7 +67,7 @@
     "CreateAdaptiveDynamicStreamingTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAdaptiveDynamicStreamingTemplate\n&Name=转自适应码流模板1\n&Format=HLS\n&StreamInfos.0.Video.Codec=libx264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=2000\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAdaptiveDynamicStreamingTemplate\n&Name=转自适应码流模板1\n&Format=HLS\n&StreamInfos.0.Video.Codec=h264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=2000\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30018,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转自适应码流模板"
       }
@@ -719,7 +719,7 @@
     "ModifyAdaptiveDynamicStreamingTemplate": [
       {
         "document": "",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAdaptiveDynamicStreamingTemplate\n&Definition=10038\n&Name=转自适应码流模板2\n&Format=HLS\n&StreamInfos.0.Video.Codec=libx264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=25\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAdaptiveDynamicStreamingTemplate\n&Definition=10038\n&Name=转自适应码流模板2\n&Format=HLS\n&StreamInfos.0.Video.Codec=h264\n&StreamInfos.0.Video.Bitrate=2000\n&StreamInfos.0.Video.Fps=25\n&StreamInfos.0.Audio.Codec=flac\n&StreamInfos.0.Audio.SampleRate=44100\n&StreamInfos.0.Audio.Bitrate=200\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改转自适应码流模板"
       }

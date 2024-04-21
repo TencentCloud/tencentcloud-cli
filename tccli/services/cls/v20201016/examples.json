@@ -277,8 +277,8 @@
     "DeleteKafkaRecharge": [
       {
         "document": "删除Kafka导入配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"TopicId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"06bdb6f6-ae6e-41f6-9e7b-fcab91cb0895\",\n    \"TopicId\": \"1014cc79-f006-48e4-8820-1dc727054111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00a1e648-bea8-4f85-8a7c-71f84169f207\"\n    }\n}",
         "title": "删除Kafka导入配置"
       }
     ],
@@ -649,8 +649,8 @@
     "ModifyKafkaRecharge": [
       {
         "document": "修改Kafka导入配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"xxx-xxx-xx\",\n    \"TopicId\": \"abc\",\n    \"Name\": \"abc\",\n    \"ServerAddr\": \"abc\",\n    \"IsEncryptionAddr\": true,\n    \"UserKafkaTopics\": \"abc\",\n    \"ConsumerGroupName\": \"abc\",\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"TimeKey\": \"abc\",\n        \"TimeFormat\": \"abc\",\n        \"LogRegex\": \"abc\",\n        \"UnMatchLogSwitch\": true,\n        \"DefaultTimeSwitch\": true,\n        \"UnMatchLogKey\": \"abc\",\n        \"EncodingFormat\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"1014cc79-f006-48e4-8820-1dc7270540c0\",\n    \"TopicId\": \"06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111\",\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-2vrgxbxa\",\n    \"ServerAddr\": \"\",\n    \"IsEncryptionAddr\": false,\n    \"Protocol\": {\n        \"Protocol\": \"\",\n        \"Mechanism\": \"\",\n        \"UserName\": \"\",\n        \"Password\": \"\"\n    },\n    \"UserKafkaTopics\": \"topic-subs-0px4qkvu32-cdb-5zi7jf11\",\n    \"ConsumerGroupName\": \"\",\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"LogRegex\": \"\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"LogParseFailure\",\n        \"UnMatchLogTimeSrc\": 0,\n        \"EncodingFormat\": 0,\n        \"DefaultTimeSwitch\": true,\n        \"DefaultTimeSrc\": 1,\n        \"TimeKey\": \"\",\n        \"TimeRegex\": \"\",\n        \"TimeFormat\": \"\",\n        \"TimeZone\": \"UTC+08:00\",\n        \"Metadata\": [\n            \"kafka_topic\",\n            \"kafka_partition\",\n            \"kafka_offset\",\n            \"kafka_timestamp\"\n        ],\n        \"Keys\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0813f2a8-666f-47d4-886b-bf63bdcbc8d3\"\n    }\n}",
         "title": "修改Kafka导入配置"
       }
     ],
@@ -704,10 +704,16 @@
     ],
     "PreviewKafkaRecharge": [
       {
-        "document": "Kafka导入数据预览",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 1,\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"test.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false,\n    \"UserKafkaTopics\": \"topic1,topic2\",\n    \"Offset\": -1,\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"json_log\",\n        \"TimeKey\": \"abc\",\n        \"TimeFormat\": \"abc\",\n        \"LogRegex\": \"abc\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"abc\",\n        \"EncodingFormat\": 0,\n        \"DefaultTimeSwitch\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"LogData\": \"xxxxxxx\",\n        \"LogSample\": \"abc\"\n    }\n}",
+        "document": "源数据预览",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewKafkaRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 1,\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-k9m5vj75\",\n    \"UserKafkaTopics\": \"topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111\",\n    \"ConsumerGroupName\": \"\",\n    \"Offset\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"LogData\": \"rmap[AvailIndexTraffic:0 AvailStore:0 ClusterAvailableTrafficCapacity:0...\",\n        \"LogSample\": \"\"\n    }\n}",
         "title": "Kafka导入数据预览"
+      },
+      {
+        "document": "导出结果预览",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewKafkaRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 2,\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-l4rped7z\",\n    \"UserKafkaTopics\": \"topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111\",\n    \"ConsumerGroupName\": \"\",\n    \"Offset\": -2,\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"minimalist_log\",\n        \"LogRegex\": \"\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"LogParseFailure\",\n        \"UnMatchLogTimeSrc\": 0,\n        \"EncodingFormat\": 0,\n        \"DefaultTimeSwitch\": true,\n        \"DefaultTimeSrc\": 0,\n        \"TimeKey\": \"\",\n        \"TimeRegex\": \"\",\n        \"TimeFormat\": \"\",\n        \"TimeZone\": \"UTC+08:00\",\n        \"Metadata\": [\n            \"kafka_topic\",\n            \"kafka_partition\",\n            \"kafka_offset\",\n            \"kafka_timestamp\"\n        ],\n        \"Keys\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LogSample\": \"{\\\"x-intranet-proxy-region\\\":\\\"sh\\\",\\\"x-intranet-proxy-socket-local-address\\\":\\\"::ffff:11.179.111.111\\\",\\\"x-intranet-proxy-socket-local-port\\\":\\\"8443\\\"\",\n        \"LogData\": \"{\\\"__CONTENT__\\\":\\\"{\\\\\\\"x-intranet-proxy-region\\\\\\\":\\\\\\\"sh\\\\\\\",\\\\\\\"x-intranet-proxy-socket-local-address\\\\\\\":\\\\\\\"::ffff:11.179.111.111\\\\\\\",\\\\\\\"x-intranet-proxy-socket-local-port\\\\\\\":\\\\\\\"8443\\\\\\\"\",\n        \"RequestId\": \"d3218ba6-4d98-480a-a97b-8db0ae87ef31\"\n    }\n}",
+        "title": "Kafaka导入数据预览"
       }
     ],
     "QueryMetric": [

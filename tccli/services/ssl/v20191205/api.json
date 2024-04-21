@@ -147,6 +147,13 @@
       "output": "DescribeCompaniesResponse",
       "status": "online"
     },
+    "DescribeDeleteCertificatesTaskResult": {
+      "document": "查询批量删除任务结果",
+      "input": "DescribeDeleteCertificatesTaskResultRequest",
+      "name": "查询批量删除任务结果",
+      "output": "DescribeDeleteCertificatesTaskResultResponse",
+      "status": "online"
+    },
     "DescribeDeployedResources": {
       "document": "证书查询关联资源， 最新查询接口请使用CreateCertificateBindResourceSyncTask， 可以查询更多支持的云资源",
       "input": "DescribeDeployedResourcesRequest",
@@ -2513,6 +2520,72 @@
       ],
       "type": "object"
     },
+    "DeleteTaskResult": {
+      "document": "批量删除证书异步任务结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步查询结果： 0表示任务进行中、 1表示任务成功、 2表示任务失败、3表示未授权服务角色导致任务失败、4表示有未解绑的云资源导致任务失败、5表示查询关联云资源超时导致任务失败",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前结果缓存时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CacheTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DeployCertificateInstanceRequest": {
       "document": "DeployCertificateInstance请求参数结构体",
       "members": [
@@ -4392,6 +4465,43 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeleteCertificatesTaskResultRequest": {
+      "document": "DescribeDeleteCertificatesTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DeleteCertificates接口返回的任务ID， 最大支持100个",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeleteCertificatesTaskResultResponse": {
+      "document": "DescribeDeleteCertificatesTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量删除证书异步任务结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeleteTaskResult",
+          "name": "DeleteTaskResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

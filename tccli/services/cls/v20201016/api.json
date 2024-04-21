@@ -1695,7 +1695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "document": "导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -1722,7 +1722,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接",
+          "document": "ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -1731,7 +1731,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。IsEncryptionAddr参数为true时必填",
+          "document": "加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -4023,8 +4023,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
-          "example": "无",
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。",
+          "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
           "required": false,
@@ -4032,7 +4032,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址，KafkaType为1时必填",
+          "document": "服务地址，KafkaType为1时必填。",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -4041,7 +4041,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接，KafkaType为1时必填",
+          "document": "ServerAddr是否为加密连接，KafkaType为1时必填。",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -4050,7 +4050,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填",
+          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填。",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -4075,7 +4075,7 @@
         {
           "disabled": false,
           "document": "Kafka导入配置ID",
-          "example": "xxx-xxx-xxx",
+          "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -4413,8 +4413,8 @@
         },
         {
           "disabled": false,
-          "document": "创建的投递规则投递的bucket",
-          "example": "bucketName-appid",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -4422,8 +4422,8 @@
         },
         {
           "disabled": false,
-          "document": "创建的投递规则投递目录的前缀",
-          "example": "无",
+          "document": "投递规则投递的新的目录前缀。\n- 仅支持0-9A-Za-z-_/\n- 最大支持256个字符",
+          "example": "var/xxx",
           "member": "string",
           "name": "Prefix",
           "required": true,
@@ -4441,7 +4441,7 @@
         {
           "disabled": false,
           "document": "投递的时间间隔，单位 秒，默认300，范围 300-900",
-          "example": "60",
+          "example": "300",
           "member": "uint64",
           "name": "Interval",
           "required": false,
@@ -4503,8 +4503,8 @@
         },
         {
           "disabled": false,
-          "document": "投递数据范围的开始时间点，不能超出日志主题的生命周期起点。如果用户不填写，默认为用户新建投递任务的时间。",
-          "example": "0",
+          "document": "投递数据范围的开始时间点（秒级时间戳），不能超出日志主题的生命周期起点。\n如果用户不填写，默认为用户新建投递任务的时间。",
+          "example": "1713410880",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -4512,8 +4512,8 @@
         },
         {
           "disabled": false,
-          "document": "投递数据范围的结束时间点，不能填写未来时间。如果用户不填写，默认为持续投递，即无限。",
-          "example": "0",
+          "document": "投递数据范围的结束时间点（秒级时间戳），不能填写未来时间。\n如果用户不填写，默认为持续投递，即无限。",
+          "example": "1713497280",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -4521,7 +4521,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶存储类型",
+          "document": "cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。\n\n1. STANDARD_IA：低频存储；\n2. ARCHIVE：归档存储；\n3. DEEP_ARCHIVE：深度归档存储；\n4. STANDARD：标准存储；\n5. MAZ_STANDARD：标准存储（多 AZ）；\n6. MAZ_STANDARD_IA：低频存储（多 AZ）；\n7. INTELLIGENT_TIERING：智能分层存储。",
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -5334,7 +5334,7 @@
         {
           "disabled": false,
           "document": "Kafka导入配置ID",
-          "example": "无",
+          "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0895",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -5343,7 +5343,7 @@
         {
           "disabled": false,
           "document": "导入CLS目标topic ID",
-          "example": "无",
+          "example": "1014cc79-f006-48e4-8820-1dc727054111",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -10334,7 +10334,7 @@
         {
           "disabled": false,
           "document": "Kafka导入配置ID",
-          "example": "无",
+          "example": "1014cc79-f006-48e4-8820-1dc7270540c0",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10343,7 +10343,7 @@
         {
           "disabled": false,
           "document": "导入CLS目标topic ID",
-          "example": "无",
+          "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -10360,7 +10360,7 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "document": "导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -10369,8 +10369,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
-          "example": "无",
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。",
+          "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
           "required": false,
@@ -10378,7 +10378,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址",
+          "document": "服务地址，KafkaType为1时必填。",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -10387,7 +10387,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接",
+          "document": "ServerAddr是否为加密连接，KafkaType为1时必填。",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -10396,7 +10396,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "document": "加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -10406,7 +10406,7 @@
         {
           "disabled": false,
           "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
-          "example": "topic1,topic2",
+          "example": "topic-subs-0px4qkvu32-cdb-5zi7jf11",
           "member": "string",
           "name": "UserKafkaTopics",
           "required": false,
@@ -10432,8 +10432,8 @@
         },
         {
           "disabled": false,
-          "document": "导入控制，1：暂停，2：继续",
-          "example": "无",
+          "document": "导入控制，1：暂停；2：继续。",
+          "example": "1",
           "member": "uint64",
           "name": "StatusControl",
           "required": false,
@@ -10738,8 +10738,8 @@
         },
         {
           "disabled": false,
-          "document": "投递规则投递的新的bucket",
-          "example": "bucketName-appid",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
           "required": false,
@@ -10747,8 +10747,8 @@
         },
         {
           "disabled": false,
-          "document": "投递规则投递的新的目录前缀",
-          "example": "无",
+          "document": "投递规则投递的新的目录前缀。\n- 仅支持0-9A-Za-z-_/\n- 最大支持256个字符",
+          "example": "var/xxx",
           "member": "string",
           "name": "Prefix",
           "required": false,
@@ -10756,7 +10756,7 @@
         },
         {
           "disabled": false,
-          "document": "投递规则的开关状态",
+          "document": "投递规则的开关状态。true：开启投递任务；false：关闭投递任务。",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -10828,7 +10828,7 @@
         },
         {
           "disabled": false,
-          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名。",
           "example": "0",
           "member": "uint64",
           "name": "FilenameMode",
@@ -10837,7 +10837,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶类型",
+          "document": "cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。\n\n1. STANDARD_IA：低频存储；\n2. ARCHIVE：归档存储；\n3. DEEP_ARCHIVE：深度归档存储；\n4. STANDARD：标准存储；\n5. MAZ_STANDARD：标准存储（多 AZ）；\n6. MAZ_STANDARD_IA：低频存储（多 AZ）；\n7. INTELLIGENT_TIERING：智能分层存储。",
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -11336,7 +11336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预览类型，1:源数据预览，2:导出结果预览",
+          "document": "预览类型，1：源数据预览；2：导出结果预览。",
           "example": "1",
           "member": "uint64",
           "name": "PreviewType",
@@ -11345,8 +11345,8 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
-          "example": "无",
+          "document": "导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。",
+          "example": "1",
           "member": "uint64",
           "name": "KafkaType",
           "required": true,
@@ -11354,8 +11354,8 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。",
-          "example": "topic1,topic2",
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。\n最多支持100个。",
+          "example": "topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111",
           "member": "string",
           "name": "UserKafkaTopics",
           "required": true,
@@ -11363,7 +11363,7 @@
         },
         {
           "disabled": false,
-          "document": "导入数据位置，-2:最早（默认），-1：最晚",
+          "document": "导入数据位置，-2：最早；-1：最晚。",
           "example": "-1",
           "member": "int64",
           "name": "Offset",
@@ -11372,8 +11372,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID。\nKafkaType为0时KafkaInstance必填",
-          "example": "无",
+          "document": "腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。",
+          "example": "ckafka-k9m5vj11",
           "member": "string",
           "name": "KafkaInstance",
           "required": false,
@@ -11381,7 +11381,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址。\nKafkaType为1时ServerAddr必填",
+          "document": "服务地址。\nKafkaType为1时ServerAddr必填。",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -11399,7 +11399,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填",
+          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填。",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",

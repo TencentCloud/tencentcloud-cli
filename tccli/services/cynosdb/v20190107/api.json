@@ -1165,6 +1165,15 @@
           "name": "SlaveZone",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "binlog同步方式。默认值：async。可选值：sync、semisync、async",
+          "example": "async",
+          "member": "string",
+          "name": "BinlogSyncWay",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3228,6 +3237,26 @@
           "member": "string",
           "name": "NewSlaveZone",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新从可用区属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Zone\":\"ap-guangzhou-5\",\"BinlogSyncWay\":\"async\"}]",
+          "member": "SlaveZoneAttrItem",
+          "name": "NewSlaveZoneAttr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧可用区属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Zone\":\"ap-guangzhou-5\",\"BinlogSyncWay\":\"async\"}]",
+          "member": "SlaveZoneAttrItem",
+          "name": "OldSlaveZoneAttr",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -5583,6 +5612,16 @@
           "name": "NetworkType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlaveZoneAttrItem",
+          "name": "SlaveZoneAttr",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -13296,6 +13335,15 @@
           "name": "NewSlaveZone",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "binlog同步方式。默认值：async。可选值：sync、semisync、async",
+          "example": "async",
+          "member": "string",
+          "name": "BinlogSyncWay",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17930,6 +17978,32 @@
         }
       ],
       "type": "object"
+    },
+    "SlaveZoneAttrItem": {
+      "document": "可用区属性项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "binlog同步方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "async",
+          "member": "string",
+          "name": "BinlogSyncWay",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SlaveZoneStockInfo": {
       "document": "备可用区库存信息",

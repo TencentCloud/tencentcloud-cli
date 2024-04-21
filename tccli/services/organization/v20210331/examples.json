@@ -216,6 +216,14 @@
         "title": "删除共享单元资源"
       }
     ],
+    "DescribeEffectivePolicy": [
+      {
+        "document": "查询目标关联的有效策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEffectivePolicy\n<公共请求参数>\n\n{\n    \"TargetId\": 111111111111\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectivePolicy\": {\n            \"TargetId\": 111111111111,\n            \"PolicyContent\": \"{\\\"tags\\\":{\\\"aaa\\\":{\\\"tag_key\\\":\\\"aaa\\\",\\\"tag_value\\\":[\\\"111\\\",\\\"222\\\"],\\\"resource_type_scope\\\":[\\\"cvm:instance\\\",\\\"cvm:volume\\\",\\\"cvm:keypair\\\",\\\"cvm:image\\\"]},\\\"bbb\\\":{\\\"tag_key\\\":\\\"bbb\\\",\\\"tag_value\\\":[\\\"333\\\"]}}}\",\n            \"LastUpdatedTimestamp\": 1668394639\n        },\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "查询目标关联的有效策略"
+      }
+    ],
     "DescribeOrganization": [
       {
         "document": "",
@@ -374,6 +382,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePolicyType\n<公共请求参数>\n\n{\n    \"OrganizationId\": 80001,\n    \"PolicyType\": \"SERVICE_CONTROL_POLICY\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd498970-3ffb-440e-a3bf-f6faa43eeb08\"\n    }\n}",
         "title": "启用策略类型"
+      }
+    ],
+    "ListNonCompliantResource": [
+      {
+        "document": "获取成员标签检测不合规资源列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListNonCompliantResource\n<公共请求参数>\n\n{\n    \"MaxResults\": \"10\",\n    \"PaginationToken\": \"\",\n    \"MemberUin\": 1111111111\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Resource\": \"qcs::vpc::uin/1111111111:subnet/subnet-test1\",\n                \"ComplianceDetails\": {\n                    \"ComplianceStatus\": true,\n                    \"KeysWithNonCompliantValues\": [\n                        \"abc\"\n                    ],\n                    \"NonCompliantKeys\": [\n                        \"abc\"\n                    ]\n                },\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"PaginationToken\": \"fgh363\",\n        \"RequestId\": \"242effbd-5220-4776-9cc2-87afbdcb68db\"\n    }\n}",
+        "title": "获取成员标签检测不合规资源列表"
       }
     ],
     "ListOrganizationIdentity": [

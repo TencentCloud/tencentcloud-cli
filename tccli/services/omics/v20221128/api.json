@@ -2243,7 +2243,7 @@
         },
         {
           "disabled": false,
-          "document": "工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)",
+          "document": "工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。",
           "example": "无",
           "member": "string",
           "name": "WorkDir",
@@ -2258,6 +2258,15 @@
           "name": "AccessMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2938,12 +2947,21 @@
         },
         {
           "disabled": false,
-          "document": "工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)",
+          "document": "工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。",
           "example": "无",
           "member": "string",
           "name": "WorkDir",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。",
+          "example": "无",
+          "member": "string",
+          "name": "VolumeIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
