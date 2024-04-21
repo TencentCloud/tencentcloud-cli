@@ -1,13 +1,13 @@
-**Example 1: 示例**
+**Example 1: 样例**
 
-示例
+样例
 
 Input: 
 
 ```
 tccli trocket DescribeMQTTClient --cli-unfold-argument  \
-    --InstanceId mqtt-47ka4rdr \
-    --ClientId subscribe_client
+    --InstanceId mqtt-2vnk55xv \
+    --ClientId sub_client2
 ```
 
 Output: 
@@ -16,66 +16,74 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "ClientAddress": "11.176.16.153:37360",
-        "ClientId": "subscribe_client",
-        "ConnectTime": 1705632841108,
+        "CleanSession": true,
+        "ClientAddress": "11.176.16.153:23354",
+        "ClientId": "sub_client2",
+        "ConnectTime": 1711444795304,
         "ConnectionStatus": "CONNECTED",
-        "CreateTime": 1705632841106,
+        "CreateTime": 1711443908331,
         "DisconnectTime": 0,
-        "Keepalive": 60,
-        "MQTTClientSubscriptions": [
-            {
-                "Qos": 0,
-                "TopicFilter": "mqtt-47ka4rdr%topic24"
-            }
-        ],
-        "ProtocolVersion": 4,
-        "RequestId": "4ec9c58c-e6ac-4149-9673-b8f0d526a6aa"
-    }
-}
-```
-
-**Example 2: 标准请求**
-
-标准请求
-
-Input: 
-
-```
-tccli trocket DescribeMQTTClient --cli-unfold-argument  \
-    --InstanceId mqtt-25m2jz9j \
-    --ClientId recv01
-```
-
-Output: 
-```
-{
-    "Error": null,
-    "RequestId": null,
-    "Response": {
-        "ClientAddress": "/11.176.16.157:43440",
-        "ClientId": "recv01",
-        "ConnectTime": 1703581008199,
-        "ConnectionStatus": "CONNECTED",
-        "CreateTime": 1703581008198,
-        "DisconnectTime": 0,
+        "Inbound": {
+            "Bytes": 40,
+            "Items": [
+                {
+                    "Count": 1,
+                    "MessageType": "SUBACK",
+                    "Qos": 0
+                },
+                {
+                    "Count": 1,
+                    "MessageType": "CONNACK",
+                    "Qos": 0
+                },
+                {
+                    "Count": 14,
+                    "MessageType": "PINGRESP",
+                    "Qos": 0
+                }
+            ]
+        },
         "Keepalive": 60,
         "MQTTClientSubscriptions": [
             {
                 "Qos": 1,
-                "TopicFilter": "mqtt-25m2jz9j%111/r1/"
+                "TopicFilter": "home/sun/+/"
             },
             {
                 "Qos": 1,
-                "TopicFilter": "mqtt-25m2jz9j%111/r/+/"
+                "TopicFilter": "home/temp/+/"
+            },
+            {
+                "Qos": 0,
+                "TopicFilter": "home/humidity/+/"
             },
             {
                 "Qos": 2,
-                "TopicFilter": "mqtt-25m2jz9j%111/r2/"
+                "TopicFilter": "home/person/+/"
             }
         ],
+        "OutBound": {
+            "Bytes": 134,
+            "Items": [
+                {
+                    "Count": 1,
+                    "MessageType": "CONNECT",
+                    "Qos": 0
+                },
+                {
+                    "Count": 1,
+                    "MessageType": "SUBSCRIBE",
+                    "Qos": 1
+                },
+                {
+                    "Count": 14,
+                    "MessageType": "PINGREQ",
+                    "Qos": 0
+                }
+            ]
+        },
         "ProtocolVersion": 4,
-        "RequestId": "b0f34768-130d-4a15-89d3-d3ca1976b4b7"
+        "RequestId": "b59aa63c-6cc6-418a-92c7-c205cb30d4cd"
     }
 }
 ```

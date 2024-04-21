@@ -1174,6 +1174,15 @@
           "name": "SecretName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启凭据时的辅助信息",
+          "example": "{\"AccountHost\": \"%\"// 凭据类型为 5 时此参数必传   }",
+          "member": "string",
+          "name": "AdditionalConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1187,7 +1196,7 @@
           "example": "test",
           "member": "string",
           "name": "SecretName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

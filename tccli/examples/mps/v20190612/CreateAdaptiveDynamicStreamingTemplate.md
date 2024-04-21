@@ -8,7 +8,7 @@ Input:
 tccli mps CreateAdaptiveDynamicStreamingTemplate --cli-unfold-argument  \
     --Name 转自适应码流模板1 \
     --Format HLS \
-    --StreamInfos.0.Video.Codec libx264 \
+    --StreamInfos.0.Video.Codec h264 \
     --StreamInfos.0.Video.Bitrate 2000 \
     --StreamInfos.0.Video.Fps 2000 \
     --StreamInfos.0.Audio.Codec flac \

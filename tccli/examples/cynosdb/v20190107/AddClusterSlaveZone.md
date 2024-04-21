@@ -7,7 +7,8 @@ Input:
 ```
 tccli cynosdb AddClusterSlaveZone --cli-unfold-argument  \
     --ClusterId cynosdbmysql-asd \
-    --SlaveZone ap-guangzhou-4
+    --SlaveZone ap-guangzhou-4 \
+    --BinlogSyncWay async
 ```
 
 Output: 

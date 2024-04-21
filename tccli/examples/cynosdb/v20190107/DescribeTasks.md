@@ -110,6 +110,18 @@ Output:
                     "NewMasterZone": "abc",
                     "NewSlaveZone": [
                         "abc"
+                    ],
+                    "NewSlaveZoneAttr": [
+                        {
+                            "Zone": "ap-guangzhou-4",
+                            "BinlogSyncWay": "sync"
+                        }
+                    ],
+                    "OldSlaveZoneAttr": [
+                        {
+                            "Zone": "ap-guangzhou-5",
+                            "BinlogSyncWay": "async"
+                        }
                     ]
                 },
                 "SwitchClusterLogBin": {

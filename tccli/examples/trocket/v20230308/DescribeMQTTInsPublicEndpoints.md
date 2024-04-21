@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trocket DescribeMQTTInsPublicEndpoints --cli-unfold-argument  \
-    --InstanceId mqtt-47ka4rdr
+    --InstanceId mqtt-gn8qoq3z
 ```
 
 Output: 
@@ -15,11 +15,43 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "Bandwidth": 0,
-        "Endpoints": [],
-        "InstanceId": "mqtt-47ka4rdr",
-        "RequestId": "2cbe9dbc-57a3-4624-9ab8-30d25b54c70b",
-        "Rules": []
+        "Bandwidth": 2,
+        "Endpoints": [
+            {
+                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
+                "Port": 22,
+                "SubnetId": null,
+                "Type": "mqtt-ws",
+                "Url": null,
+                "VpcId": null
+            },
+            {
+                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
+                "Port": 11,
+                "SubnetId": null,
+                "Type": "mqtt-tcp",
+                "Url": null,
+                "VpcId": null
+            },
+            {
+                "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
+                "Port": 33,
+                "SubnetId": null,
+                "Type": "mqtt-tls",
+                "Url": null,
+                "VpcId": null
+            }
+        ],
+        "InstanceId": "mqtt-gn8qoq3z",
+        "RequestId": "3891d712-94f7-4d03-9420-fae4fa3a61ea",
+        "Rules": [
+            {
+                "Allow": true,
+                "IpRule": "0.0.0.0/0",
+                "Remark": ""
+            }
+        ],
+        "Status": "NORMAL"
     }
 }
 ```

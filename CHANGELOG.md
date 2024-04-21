@@ -1,3 +1,300 @@
+# Release 3.0.980.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 51 次发布
+
+发布时间：2024-04-22 01:08:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGoodsVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76445)
+
+	* 新增出参：ProductVisibleCount
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 79 次发布
+
+发布时间：2024-04-22 01:14:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddClusterSlaveZone](http://document.tencentcloudapi.woa.com/document/product/1003/75706)
+
+	* 新增入参：BinlogSyncWay
+
+* [ModifyClusterSlaveZone](http://document.tencentcloudapi.woa.com/document/product/1003/75705)
+
+	* 新增入参：BinlogSyncWay
+
+
+新增数据结构：
+
+* [SlaveZoneAttrItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SlaveZoneAttrItem)
+
+修改数据结构：
+
+* [ClusterSlaveData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterSlaveData)
+
+	* 新增成员：NewSlaveZoneAttr, OldSlaveZoneAttr
+
+* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
+
+	* 新增成员：SlaveZoneAttr
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 136 次发布
+
+发布时间：2024-04-22 01:18:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：TopNavigationStatus
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 58 次发布
+
+发布时间：2024-04-22 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [PhoneVerification](http://document.tencentcloudapi.woa.com/document/product/1007/39765)
+
+	* 新增入参：VerifyMode
+
+	* 新增出参：ResultDetail
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 60 次发布
+
+发布时间：2024-04-22 01:21:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56242)
+
+	* 新增入参：BackupVodUrl
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 48 次发布
+
+发布时间：2024-04-22 01:23:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAdaptiveDynamicStreamingTemplate](http://document.tencentcloudapi.woa.com/document/product/862/45749)
+
+	* 新增入参：PureAudio
+
+* [DescribeAdaptiveDynamicStreamingTemplates](http://document.tencentcloudapi.woa.com/document/product/862/45747)
+
+	* 新增入参：PureAudio
+
+* [ModifyAdaptiveDynamicStreamingTemplate](http://document.tencentcloudapi.woa.com/document/product/862/45746)
+
+	* 新增入参：PureAudio
+
+
+修改数据结构：
+
+* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+
+	* 新增成员：DefinitionType
+
+* [AdaptiveDynamicStreamingTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTemplate)
+
+	* 新增成员：PureAudio
+
+* [AdaptiveStreamTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveStreamTemplate)
+
+	* <font color="#dd0000">**修改成员**：</font>Video
+
+* [TextWatermarkTemplateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#TextWatermarkTemplateInput)
+
+	* 新增成员：TextContent
+
+* [TextWatermarkTemplateInputForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#TextWatermarkTemplateInputForUpdate)
+
+	* 新增成员：TextContent
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 12 次发布
+
+发布时间：2024-04-22 01:23:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
+
+	* 新增入参：VolumeIds
+
+* [RunWorkflow](http://document.tencentcloudapi.woa.com/document/product/1725/82465)
+
+	* 新增入参：VolumeIds
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 34 次发布
+
+发布时间：2024-04-22 01:23:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEffectivePolicy](http://document.tencentcloudapi.woa.com/document/product/850/83764)
+* [ListNonCompliantResource](http://document.tencentcloudapi.woa.com/document/product/850/83763)
+
+新增数据结构：
+
+* [EffectivePolicy](http://document.tencentcloudapi.woa.com/document/product/850/67060#EffectivePolicy)
+* [ResourceTagMapping](http://document.tencentcloudapi.woa.com/document/product/850/67060#ResourceTagMapping)
+* [TagComplianceDetails](http://document.tencentcloudapi.woa.com/document/product/850/67060#TagComplianceDetails)
+* [Tags](http://document.tencentcloudapi.woa.com/document/product/850/67060#Tags)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 55 次发布
+
+发布时间：2024-04-22 01:26:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDeleteCertificatesTaskResult](http://document.tencentcloudapi.woa.com/document/product/400/83765)
+
+新增数据结构：
+
+* [DeleteTaskResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#DeleteTaskResult)
+
+
+
+## 凭据管理系统(ssm) 版本：2019-09-23
+
+### 第 10 次发布
+
+发布时间：2024-04-22 01:26:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [EnableSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40524)
+
+	* 新增入参：AdditionalConfig
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 14 次发布
+
+发布时间：2024-04-22 01:30:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMQTTClient](http://document.tencentcloudapi.woa.com/document/product/1739/82998)
+
+	* 新增出参：Inbound, OutBound, CleanSession
+
+* [DescribeMQTTInsPublicEndpoints](http://document.tencentcloudapi.woa.com/document/product/1739/82997)
+
+	* 新增出参：Status
+
+
+新增数据结构：
+
+* [PacketStatistics](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PacketStatistics)
+* [StatisticsReport](http://document.tencentcloudapi.woa.com/document/product/1739/81437#StatisticsReport)
+
+修改数据结构：
+
+* [MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MQTTEndpointItem)
+
+	* 新增成员：Ip
+
+
+
+
 # Release 3.0.979.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
