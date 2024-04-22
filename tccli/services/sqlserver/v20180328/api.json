@@ -399,6 +399,13 @@
       "output": "DescribeDatabasesNormalResponse",
       "status": "online"
     },
+    "DescribeDbTknResource": {
+      "document": "本接口（DescribeUpgradeInstanceCheck）用于在实例变配前，预检查实例变配的影响情况等。",
+      "input": "DescribeDbTknResourceRequest",
+      "name": "查询账号等信息是否符合规则",
+      "output": "DescribeDbTknResourceResponse",
+      "status": "online"
+    },
     "DescribeFlowStatus": {
       "document": "本接口(DescribeFlowStatus)用于查询流程状态。",
       "input": "DescribeFlowStatusRequest",
@@ -936,6 +943,13 @@
       "input": "ResetAccountPasswordRequest",
       "name": "重置账户密码",
       "output": "ResetAccountPasswordResponse",
+      "status": "online"
+    },
+    "ResetInstancePassword": {
+      "document": "本接口（ResetAccountPassword）用于重置实例的账号密码。",
+      "input": "ResetInstancePasswordRequest",
+      "name": "重置CAM验证账户密码",
+      "output": "ResetInstancePasswordResponse",
       "status": "online"
     },
     "RestartDBInstance": {
@@ -8376,6 +8390,99 @@
           "name": "DBInstances",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceRequest": {
+      "document": "DescribeDbTknResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户",
+          "example": "a",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库实例ID，形如mssql-njj2mtpl",
+          "example": "mssql-dj5i29c5n",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品类型",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户对应的host，sqlserver非必填",
+          "example": "无",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceResponse": {
+      "document": "DescribeDbTknResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前是否开启了密码轮转",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有在实例存在且状态为正常运行时才返回成功",
+          "example": "ok",
+          "member": "string",
+          "name": "ResourceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有实例账户如 root 状态为正常使用时才返回成功，如果账号不存在或账号被锁定等则认为异常",
+          "example": "ok",
+          "member": "string",
+          "name": "AccountStatus",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16010,6 +16117,98 @@
           "example": "30457",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户 APPID，产品侧需要做校验",
+          "example": "无",
+          "member": "int64",
+          "name": "UserAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源 ID，产品侧需要做校验",
+          "example": "无",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源所处的地域",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被重置的密码，即希望刷新到实例中的新密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户对应的主机host，sqlserver非必填",
+          "example": "无",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重置密码耗时，毫秒维度",
+          "example": "30457",
+          "member": "int64",
+          "name": "TimeCost",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品侧重置密码成功时的时间戳，按照毫秒时间戳返回",
+          "example": "无",
+          "member": "int64",
+          "name": "ResetTimestamp",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

@@ -3533,7 +3533,7 @@
         {
           "disabled": false,
           "document": "任务数量",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "output_required": true,

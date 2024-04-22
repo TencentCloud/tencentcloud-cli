@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc DisableVpnGatewaySslClientCert --cli-unfold-argument  \
-    --SslVpnClientId vpnc-xxxx
+    --SslVpnClientId vpnc-04ubidcy
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "aeabeab6-f74b-453a-b25d-d7b460193c3b",
-        "TaskId": 123
+        "TaskId": 315123
     }
 }
 ```

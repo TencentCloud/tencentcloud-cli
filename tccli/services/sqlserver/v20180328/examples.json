@@ -480,6 +480,14 @@
         "title": "查询数据库详细配置信息"
       }
     ],
+    "DescribeDbTknResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"ResourceAccount\": \"abc\",\n    \"UserResourceId\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"InstanceType\": \"abc\",\n    \"AccountHost\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"ResourceStatus\": \"abc\",\n        \"AccountStatus\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeUpgradeInstanceCheck"
+      }
+    ],
     "DescribeFlowStatus": [
       {
         "document": "",
@@ -1106,6 +1114,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ResetAccountPassword\n&InstanceId=mssql-njj2mtpl\n&Accounts.0.UserName=test_user_4\n&Accounts.0.Password=1234qwer()\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa77bb20-7522-4b1e-bc0f-ad5d82790b17\",\n        \"FlowId\": 30457\n    }\n}",
         "title": "重置mssql-njj2mtpl的账户密码"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserAppId\": 0,\n    \"UserResourceId\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"ResourceAccount\": \"abc\",\n    \"Password\": \"abc\",\n    \"AccountHost\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TimeCost\": 0,\n        \"ResetTimestamp\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ResetAccountPassword"
       }
     ],
     "RestartDBInstance": [

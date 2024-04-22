@@ -1,3 +1,229 @@
+# Release 3.0.981.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 52 次发布
+
+发布时间：2024-04-23 01:10:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyStaffPassword](http://document.tencentcloudapi.woa.com/document/product/679/83766)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 93 次发布
+
+发布时间：2024-04-23 01:10:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77510)
+
+	* 新增入参：ProxyVersion
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 32 次发布
+
+发布时间：2024-04-23 01:13:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlertList](http://document.tencentcloudapi.woa.com/document/product/1726/83767)
+
+新增数据结构：
+
+* [AlertExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertExtraInfo)
+* [AlertInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AlertInfo)
+* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/1726/80814#KeyValue)
+* [RelatedEvent](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RelatedEvent)
+* [RoleInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RoleInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 80 次发布
+
+发布时间：2024-04-23 01:15:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyInstanceUpgradeLimitDays](http://document.tencentcloudapi.woa.com/document/product/1003/83768)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 93 次发布
+
+发布时间：2024-04-23 01:16:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNotebookSessionStatementSqlResult](http://document.tencentcloudapi.woa.com/document/product/1342/77041)
+
+	* 新增出参：UseTime, AffectRows, DataAmount
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 13 次发布
+
+发布时间：2024-04-23 01:20:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillSummary](http://document.tencentcloudapi.woa.com/document/product/1724/83769)
+
+新增数据结构：
+
+* [BusinessInfo](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BusinessInfo)
+* [SummaryDetails](http://document.tencentcloudapi.woa.com/document/product/1724/80754#SummaryDetails)
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 6 次发布
+
+发布时间：2024-04-23 01:22:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetEmbedding](http://document.tencentcloudapi.woa.com/document/product/1759/83703)
+
+	* 新增出参：Usage
+
+* [ParseDoc](http://document.tencentcloudapi.woa.com/document/product/1759/83702)
+
+* [QueryParseDocResult](http://document.tencentcloudapi.woa.com/document/product/1759/83701)
+
+	* 新增出参：Usage
+
+* [QueryRewrite](http://document.tencentcloudapi.woa.com/document/product/1759/83700)
+
+	* 新增出参：Usage
+
+
+新增数据结构：
+
+* [Usage](http://document.tencentcloudapi.woa.com/document/product/1759/83593#Usage)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 38 次发布
+
+发布时间：2024-04-23 01:27:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDbTknResource](http://document.tencentcloudapi.woa.com/document/product/238/83771)
+* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/238/83770)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 56 次发布
+
+发布时间：2024-04-23 01:27:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHostCosInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77803)
+
+	* 新增入参：OldCertificateId, Offset, Limit, AsyncCache
+
+	* <font color="#dd0000">**修改入参**：</font>CertificateId, ResourceType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 46 次发布
+
+发布时间：2024-04-23 01:31:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeWebRecord](http://document.tencentcloudapi.woa.com/document/product/647/83551)
+
+	* 新增出参：TaskId, RecordId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 132 次发布
+
+发布时间：2024-04-23 01:32:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGatewayFlowMonitorDetail](http://document.tencentcloudapi.woa.com/document/product/215/33424)
+
+	* 新增入参：PrivateIpAddress
+
+
+
+
 # Release 3.0.980.1
 
 ## 费用中心(billing) 版本：2018-07-09

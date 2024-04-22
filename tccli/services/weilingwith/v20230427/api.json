@@ -2861,7 +2861,7 @@
         {
           "disabled": false,
           "document": "设备分组的id",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -2870,7 +2870,7 @@
         {
           "disabled": false,
           "document": "工作空间的id",
-          "example": "无",
+          "example": "1016",
           "member": "int64",
           "name": "WorkspaceId",
           "required": true,
@@ -2879,7 +2879,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5248,7 +5248,7 @@
         {
           "disabled": false,
           "document": "分组父级ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ParentId",
           "output_required": false,
@@ -10171,7 +10171,7 @@
         {
           "disabled": false,
           "document": "分组名称",
-          "example": "无",
+          "example": "云API分组",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -10180,7 +10180,7 @@
         {
           "disabled": false,
           "document": "分组描述",
-          "example": "无",
+          "example": "云API分组描述",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -10189,7 +10189,7 @@
         {
           "disabled": false,
           "document": "空间id",
-          "example": "无",
+          "example": "1016",
           "member": "int64",
           "name": "WorkspaceId",
           "required": true,
@@ -10198,7 +10198,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -10207,7 +10207,7 @@
         {
           "disabled": false,
           "document": "分组id, 携带则为修改, 不携带则为新增",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Id",
           "required": false,
@@ -10216,7 +10216,7 @@
         {
           "disabled": false,
           "document": "分组父级id",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ParentId",
           "required": false,
@@ -10231,7 +10231,7 @@
         {
           "disabled": false,
           "document": "保存or修改设备分组回包信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "output_required": false,

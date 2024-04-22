@@ -33,7 +33,9 @@ Output:
         ],
         "NextToken": "abc",
         "OutputPath": "abc",
-        "RequestId": "abc"
+        "RequestId": "abc",
+        "UseTime": 10,
+        "AffectRows": 10
     }
 }
 ```
