@@ -192,7 +192,7 @@
     "DescribeChatMessages": {
       "document": "获取指定服务记录文本聊天内容，需要先使用查询在线客服记录（DescribeIMCdrs） API 获取服务记录 SessionId。\n\n文本聊天记录只保存了 1 年内的，1 年之前会自动清理。",
       "input": "DescribeChatMessagesRequest",
-      "name": "查询服务的聊天记录",
+      "name": "查询指定会话（SessionId）的聊天记录",
       "output": "DescribeChatMessagesResponse",
       "status": "online"
     },
@@ -3003,7 +3003,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务记录ID（废弃）",
           "example": "13503",
           "member": "string",
@@ -3040,7 +3040,7 @@
         },
         {
           "disabled": false,
-          "document": "服务记录 SessionID（必填）",
+          "document": "服务记录 SessionID",
           "example": "d6253538-7c28-477b-998a-919059801899",
           "member": "string",
           "name": "SessionId",

@@ -67,10 +67,11 @@ Output:
                 "Zone": "ap-guangzhou-1",
                 "ResourceTags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "name",
+                        "TagValue": "liu"
                     }
-                ]
+                ],
+                "DbVersionId": "8.0"
             }
         ],
         "RequestId": "66c4d0c5-bdef-45bd-aa5b-05642802d034",

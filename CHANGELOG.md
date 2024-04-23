@@ -1,3 +1,194 @@
+# Release 3.0.982.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 5 次发布
+
+发布时间：2024-04-24 01:07:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryDrawPortraitJob](http://document.tencentcloudapi.woa.com/document/product/1728/83777)
+* [QueryTrainPortraitModelJob](http://document.tencentcloudapi.woa.com/document/product/1728/83776)
+* [SubmitDrawPortraitJob](http://document.tencentcloudapi.woa.com/document/product/1728/83775)
+* [SubmitTrainPortraitModelJob](http://document.tencentcloudapi.woa.com/document/product/1728/83774)
+* [UploadTrainPortraitImages](http://document.tencentcloudapi.woa.com/document/product/1728/83773)
+
+新增数据结构：
+
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1728/80844#Filter)
+
+
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 12 次发布
+
+发布时间：2024-04-24 01:08:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckUinInfo](http://document.tencentcloudapi.woa.com/document/product/1707/83778)
+
+新增数据结构：
+
+* [CheckUinInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#CheckUinInfo)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 52 次发布
+
+发布时间：2024-04-24 01:08:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#BillDetail)
+
+	* 新增成员：RegionType, RegionTypeName, ReserveDetail
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 53 次发布
+
+发布时间：2024-04-24 01:09:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeChatMessages](http://document.tencentcloudapi.woa.com/document/product/679/49676)
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 43 次发布
+
+发布时间：2024-04-24 01:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDCDBInstances](http://document.tencentcloudapi.woa.com/document/product/557/16140)
+
+	* 新增入参：Tags
+
+* [SwitchDBInstanceHA](http://document.tencentcloudapi.woa.com/document/product/557/68111)
+
+	* 新增入参：ShardInstanceIds
+
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/557/16142#Tag)
+
+
+
+## 轻量数据库服务LighthouseDB(lighthousedb) 版本：2021-04-20
+
+### 第 3 次发布
+
+发布时间：2024-04-24 01:19:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAccounts](http://document.tencentcloudapi.woa.com/document/product/1684/83781)
+* [DeleteAccounts](http://document.tencentcloudapi.woa.com/document/product/1684/83780)
+* [DescribeBackupList](http://document.tencentcloudapi.woa.com/document/product/1684/83784)
+* [DescribeBinlogs](http://document.tencentcloudapi.woa.com/document/product/1684/83783)
+
+新增数据结构：
+
+* [BackupFileInfo](http://document.tencentcloudapi.woa.com/document/product/1684/83734#BackupFileInfo)
+* [BinlogItem](http://document.tencentcloudapi.woa.com/document/product/1684/83734#BinlogItem)
+* [InputAccount](http://document.tencentcloudapi.woa.com/document/product/1684/83734#InputAccount)
+* [NewAccount](http://document.tencentcloudapi.woa.com/document/product/1684/83734#NewAccount)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 38 次发布
+
+发布时间：2024-04-24 01:20:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+	* 新增出参：ProxyVersion
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/237/16184)
+
+	* 新增入参：Tags
+
+
+新增数据结构：
+
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/237/16191#Tag)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 97 次发布
+
+发布时间：2024-04-24 01:25:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRabbitMQChaosTask](http://document.tencentcloudapi.woa.com/document/product/1179/83787)
+* [DescribeRabbitMQChaosTask](http://document.tencentcloudapi.woa.com/document/product/1179/83786)
+* [RestoreRabbitMQCluster](http://document.tencentcloudapi.woa.com/document/product/1179/83785)
+
+修改接口：
+
+* [CreateRabbitMQVirtualHost](http://document.tencentcloudapi.woa.com/document/product/1179/77760)
+
+	* 新增入参：MirrorQueuePolicyFlag
+
+* [DescribeRabbitMQQueueDetail](http://document.tencentcloudapi.woa.com/document/product/1179/82450)
+
+	* 新增出参：DeadLetterStrategy, QueueLeaderLocator, QuorumInitialGroupSize
+
+
+
+
 # Release 3.0.981.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

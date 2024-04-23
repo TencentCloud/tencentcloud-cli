@@ -1,10 +1,38 @@
 {
   "actions": {
+    "CreateAccounts": {
+      "document": "创建账号",
+      "input": "CreateAccountsRequest",
+      "name": "创建账号",
+      "output": "CreateAccountsResponse",
+      "status": "online"
+    },
     "CreateClusters": {
       "document": "创建集群",
       "input": "CreateClustersRequest",
       "name": "创建集群",
       "output": "CreateClustersResponse",
+      "status": "online"
+    },
+    "DeleteAccounts": {
+      "document": "删除账号",
+      "input": "DeleteAccountsRequest",
+      "name": "删除账号",
+      "output": "DeleteAccountsResponse",
+      "status": "online"
+    },
+    "DescribeBackupList": {
+      "document": "查询备份文件列表",
+      "input": "DescribeBackupListRequest",
+      "name": "查询备份文件列表",
+      "output": "DescribeBackupListResponse",
+      "status": "online"
+    },
+    "DescribeBinlogs": {
+      "document": "此接口（DescribeBinlogs）用来查询集群Binlog日志列表。",
+      "input": "DescribeBinlogsRequest",
+      "name": "查询Binlog列表",
+      "output": "DescribeBinlogsResponse",
       "status": "online"
     },
     "DescribeRenewResourceParams": {
@@ -36,6 +64,188 @@
     "serviceShortName": "lighthousedb"
   },
   "objects": {
+    "BackupFileInfo": {
+      "document": "备份文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照文件ID，已废弃，请使用BackupId",
+          "example": "无",
+          "member": "uint64",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份完成时间",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
+          "example": "无",
+          "member": "string",
+          "name": "BackupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式：auto，自动备份；manual，手动备份",
+          "example": "无",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
+          "example": "无",
+          "member": "string",
+          "name": "BackupStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件时间",
+          "example": "无",
+          "member": "string",
+          "name": "SnapshotTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SnapShotType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BinlogItem": {
+      "document": "Binlog描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Binlog文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位：字节",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事务最早时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事务最晚时间",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog文件ID",
+          "example": "无",
+          "member": "int64",
+          "name": "BinlogId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterParam": {
       "document": "数据库参数",
       "members": [
@@ -61,6 +271,42 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateAccountsRequest": {
+      "document": "CreateAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "lhdbmysql-00000000",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新账户列表",
+          "example": "无",
+          "member": "NewAccount",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountsResponse": {
+      "document": "CreateAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateClustersRequest": {
       "document": "CreateClusters请求参数结构体",
@@ -207,6 +453,280 @@
       ],
       "type": "object"
     },
+    "DeleteAccountsRequest": {
+      "document": "DeleteAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-ixgbd0di",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号数组，包含account和host",
+          "example": "无",
+          "member": "InputAccount",
+          "name": "Accounts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountsResponse": {
+      "document": "DeleteAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupListRequest": {
+      "document": "DescribeBackupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "lhdbmysql-ilgo90hu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件列表大小，取值范围(0,100]",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件列表偏移，取值范围[0,INF)",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型，取值范围: \n<li> MYSQL </li>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份ID",
+          "example": "无",
+          "member": "int64",
+          "name": "BackupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备份类型，可选值：snapshot，快照备份； logic，逻辑备份",
+          "example": "snapshot",
+          "member": "string",
+          "name": "BackupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份方式，可选值：auto，自动备份；manual，手动备",
+          "example": "auto",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照类型，可选值：full，全量；increment，增量",
+          "example": "full",
+          "member": "string",
+          "name": "SnapShotType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份结束时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份文件名，模糊查询",
+          "example": "无",
+          "member": "string",
+          "name": "FileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备份备注名，模糊查询",
+          "example": "无",
+          "member": "string",
+          "name": "BackupNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "快照备份Id列表",
+          "example": "无",
+          "member": "int64",
+          "name": "SnapshotIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupListResponse": {
+      "document": "DescribeBackupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总共备份文件个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件列表",
+          "example": "无",
+          "member": "BackupFileInfo",
+          "name": "BackupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogsRequest": {
+      "document": "DescribeBinlogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "lhdbmysql-123",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-01-01 14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBinlogsResponse": {
+      "document": "DescribeBinlogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总条数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Binlog列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BinlogItem",
+          "name": "Binlogs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRenewResourceParamsRequest": {
       "document": "DescribeRenewResourceParams请求参数结构体",
       "members": [
@@ -261,6 +781,83 @@
         }
       ],
       "type": "object"
+    },
+    "InputAccount": {
+      "document": "账号，包含accountName和host",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机，默认‘%’",
+          "example": "",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "NewAccount": {
+      "document": "新创建的账号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16",
+          "example": "0",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，密码长度范围为8到64个字符",
+          "example": "0",
+          "member": "string",
+          "name": "AccountPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主机",
+          "example": "0",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "0",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户最大连接数，不能大于10240",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxUserConnections",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "OffLineClusterRequest": {
       "document": "OffLineCluster请求参数结构体",

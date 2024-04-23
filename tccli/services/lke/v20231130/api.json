@@ -8550,7 +8550,7 @@
         {
           "disabled": false,
           "document": "模型名称",
-          "example": "normal",
+          "example": "cs-rewrite",
           "member": "string",
           "name": "Model",
           "required": false,

@@ -1,11 +1,43 @@
 {
   "actions": {
+    "CreateAccounts": [
+      {
+        "document": "",
+        "input": "https://lighthousedb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=lhdbmysql-00000000\n&Accounts.0.AccountName=test\n&Accounts.0.AccountPassword=password\n&Accounts.0.Description=desc\n&Accounts.0.Host=%\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
+        "title": "创建新账号"
+      }
+    ],
     "CreateClusters": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"123\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建集群"
+      }
+    ],
+    "DeleteAccounts": [
+      {
+        "document": "删除账号",
+        "input": "https://lighthousedb.tencentcloudapi.com/?Action=DeleteAccounts\n&ClusterId=lhdbmysql-ixgbd0di\n&Accounts.0.AccountName=admin\n&Accounts.0.Host=myHost\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"120440\"\n    }\n}",
+        "title": "删除账号"
+      }
+    ],
+    "DescribeBackupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"ClusterId\": \"lhdbmysql-ilgo90hu\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"20200204\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\",\n                \"SnapShotType\": \"full\",\n                \"BackupName\": \"desc123\",\n                \"BackupId\": 100\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "查询备份文件列表"
+      }
+    ],
+    "DescribeBinlogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBinlogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"lhdbmysql-12345678\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 23:59:59\",\n    \"Limit\": 100,\n    \"Offset\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\",\n        \"Binlogs\": [\n            {\n                \"BinlogId\": 10782259,\n                \"FileName\": \"00000002_0010782259_mysql-bin.001002\",\n                \"FileSize\": 479,\n                \"FinishTime\": \"2022-06-16 18:36:14\",\n                \"StartTime\": \"2022-06-15 17:19:19\"\n            }\n        ]\n    }\n}",
+        "title": "查询集群Binlog日志列表"
       }
     ],
     "DescribeRenewResourceParams": [

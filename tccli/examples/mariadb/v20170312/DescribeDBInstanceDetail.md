@@ -93,7 +93,8 @@ Output:
         ],
         "IsPhysicalReplicationSupported": true,
         "IsDcnStrongSyncSupported": 1,
-        "IsDcnSwitchSupported": 1
+        "IsDcnSwitchSupported": 1,
+        "ProxyVersion": "proxy-22.1.7"
     }
 }
 ```

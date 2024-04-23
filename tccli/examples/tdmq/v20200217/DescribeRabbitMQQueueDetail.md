@@ -6,40 +6,43 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQQueueDetail --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j \
-    --VirtualHost test \
-    --QueueName xx
+    --InstanceId abc \
+    --VirtualHost abc \
+    --QueueName abc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "InstanceId": "abc",
+        "VirtualHost": "abc",
+        "QueueName": "abc",
+        "QueueType": "abc",
         "Consumers": 0,
         "Durable": true,
-        "LazyMode": true,
-        "QueueName": "xx",
-        "QueueType": "xx",
-        "VirtualHost": "xx",
-        "InstanceId": "xx",
-        "AutoExpire": 0,
-        "MaxInMemoryLength": 0,
-        "MaxLengthBytes": 0,
-        "MessageTTL": 0,
-        "SingleActiveConsumer": true,
-        "Remark": "xx",
         "AutoDelete": true,
-        "DeadLetterExchange": "xx",
-        "DeliveryLimit": 0,
-        "RequestId": "xx",
-        "OverflowBehaviour": "xx",
-        "MasterLocator": "xx",
-        "MaxInMemoryBytes": 0,
-        "MaximumPriority": 0,
-        "DeadLetterRoutingKey": "xx",
+        "Remark": "abc",
+        "MessageTTL": 0,
+        "AutoExpire": 0,
         "MaxLength": 0,
-        "Node": "xx",
-        "CreateTime": 1669174535
+        "MaxLengthBytes": 0,
+        "DeliveryLimit": 0,
+        "OverflowBehaviour": "abc",
+        "DeadLetterExchange": "abc",
+        "DeadLetterRoutingKey": "abc",
+        "SingleActiveConsumer": true,
+        "MaximumPriority": 0,
+        "LazyMode": true,
+        "MasterLocator": "abc",
+        "MaxInMemoryLength": 0,
+        "MaxInMemoryBytes": 0,
+        "CreateTime": 0,
+        "Node": "abc",
+        "DeadLetterStrategy": "abc",
+        "QueueLeaderLocator": "abc",
+        "QuorumInitialGroupSize": 0,
+        "RequestId": "abc"
     }
 }
 ```

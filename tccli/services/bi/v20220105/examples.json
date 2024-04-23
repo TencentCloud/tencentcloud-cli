@@ -8,6 +8,14 @@
         "title": "申请Token延期接口实例"
       }
     ],
+    "CheckUinInfo": [
+      {
+        "document": "查询uin是否有效",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUinInfo\n<公共请求参数>\n\n{\n    \"PartnerUin\": \"123\",\n    \"PartnerSubUin\": \"123\",\n    \"CustomerUin\": \"456\",\n    \"CustomerId\": \"123\",\n    \"CustomerName\": \"机构1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"Uin 错误\",\n        \"RequestId\": \"123\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
+        "title": "查询uin是否有效"
+      }
+    ],
     "CreateDatasource": [
       {
         "document": "创建数据源",
