@@ -21,6 +21,13 @@
       "output": "DescribeApmInstancesResponse",
       "status": "online"
     },
+    "DescribeGeneralApmApplicationConfig": {
+      "document": "查询应用配置信息",
+      "input": "DescribeGeneralApmApplicationConfigRequest",
+      "name": "查询应用配置信息",
+      "output": "DescribeGeneralApmApplicationConfigResponse",
+      "status": "online"
+    },
     "DescribeGeneralMetricData": {
       "document": "获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求的数据点数限制为1440个。",
       "input": "DescribeGeneralMetricDataRequest",
@@ -49,11 +56,25 @@
       "output": "DescribeServiceOverviewResponse",
       "status": "online"
     },
+    "DescribeTagValues": {
+      "document": "根据维度名和过滤条件，查询维度数据.",
+      "input": "DescribeTagValuesRequest",
+      "name": "查询 Tag 数据",
+      "output": "DescribeTagValuesResponse",
+      "status": "online"
+    },
     "ModifyApmInstance": {
       "document": "修改APM实例接口",
       "input": "ModifyApmInstanceRequest",
       "name": "修改APM实例",
       "output": "ModifyApmInstanceResponse",
+      "status": "online"
+    },
+    "ModifyGeneralApmApplicationConfig": {
+      "document": "对外开放的openApi，客户可以灵活的指定需要修改的字段，再加入需要修改的服务列表.",
+      "input": "ModifyGeneralApmApplicationConfigRequest",
+      "name": "修改应用配置信息",
+      "output": "ModifyGeneralApmApplicationConfigResponse",
       "status": "online"
     },
     "TerminateApmInstance": {
@@ -188,6 +209,221 @@
         }
       ],
       "usage": "out"
+    },
+    "ApmApplicationConfigView": {
+      "document": "应用相关的配置列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID\t",
+          "example": "1o8yMC47u\t",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名\t",
+          "example": "java-order-service\t",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口过滤",
+          "example": "RPCServer/market.MarketService2/(.*?)",
+          "member": "string",
+          "name": "OperationNameFilter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常过滤",
+          "example": "io.grpc.StatusRuntimeException,java.sql.(.*?)\t",
+          "member": "string",
+          "name": "ExceptionFilter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码过滤\t",
+          "example": "400,500\t",
+          "member": "string",
+          "name": "ErrorCodeFilter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用诊断开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EventEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "URL收敛开关 0 关 1 开",
+          "example": "1",
+          "member": "int64",
+          "name": "UrlConvergenceSwitch",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL收敛阈值\t",
+          "example": "50",
+          "member": "int64",
+          "name": "UrlConvergenceThreshold",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL收敛规则正则\t",
+          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS\t",
+          "member": "string",
+          "name": "UrlConvergence",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL排除规则正则",
+          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS\t",
+          "member": "string",
+          "name": "UrlExclude",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启日志 0 关 1 开",
+          "example": "1",
+          "member": "int64",
+          "name": "IsRelatedLog",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志来源\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLS",
+          "member": "string",
+          "name": "LogSource",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集 ",
+          "example": "postgres",
+          "member": "string",
+          "name": "LogSet",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "032f3078-10b6-46a0-978f-1696e8e79696",
+          "member": "string",
+          "name": "LogTopicID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线程剖析开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SnapshotEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线程剖析超时阈值\t",
+          "example": "2000",
+          "member": "int64",
+          "name": "SnapshotTimeout",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针开启开关",
+          "example": "true",
+          "member": "bool",
+          "name": "AgentEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件列表开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Name\":\"dubbo\",\"Enable\":true},{\"Name\":\"googlehttpclient\",\"Enable\":true},{\"Name\":\"grpc\",\"Enable\":true},{\"Name\":\"httpclient3\",\"Enable\":true},{\"Name\":\"httpclient4\",\"Enable\":true},{\"Name\":\"hystrix\",\"Enable\":true},{\"Name\":\"lettuce\",\"Enable\":true},{\"Name\":\"mongodb\",\"Enable\":true},{\"Name\":\"mybatis\",\"Enable\":true},{\"Name\":\"mysql\",\"Enable\":true},{\"Name\":\"okhttp\",\"Enable\":true},{\"Name\":\"redis\",\"Enable\":true},{\"Name\":\"rxjava\",\"Enable\":true},{\"Name\":\"spring-webmvc\",\"Enable\":true},{\"Name\":\"tomcat\",\"Enable\":true}]",
+          "member": "Instrument",
+          "name": "InstrumentList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "链路压缩开关",
+          "example": "true",
+          "member": "bool",
+          "name": "TraceSquash",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ApmField": {
       "document": "指标维度信息",
@@ -830,6 +1066,52 @@
       ],
       "type": "object"
     },
+    "DescribeGeneralApmApplicationConfigRequest": {
+      "document": "DescribeGeneralApmApplicationConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "profile-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "apm-059oXBfTL",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralApmApplicationConfigResponse": {
+      "document": "DescribeGeneralApmApplicationConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用配置项",
+          "example": "{\"InstanceKey\":\"apm-059oXBfTL\",\"ServiceName\":\"profile-service\",\"IgnoreOperationName\":\"\",\"IgnoreException\":\"\",\"ErrorCodeFilter\":\"\",\"EventEnable\":false,\"UrlConvergenceSwitch\":1,\"UrlConvergenceThreshold\":500,\"UrlConvergence\":\"RPCServer/market.MarketService2/(.*?)\",\"UrlExclude\":\"\",\"IsRelatedLog\":0,\"LogSource\":\"CLS\",\"LogSet\":\"\",\"LogTopicID\":\"\",\"SnapshotEnable\":true,\"SnapshotTimeout\":2000,\"AgentEnable\":true,\"InstrumentList\":[{\"Name\":\"dubbo\",\"Enable\":true},{\"Name\":\"googlehttpclient\",\"Enable\":true},{\"Name\":\"grpc\",\"Enable\":true},{\"Name\":\"httpclient3\",\"Enable\":true},{\"Name\":\"httpclient4\",\"Enable\":true},{\"Name\":\"hystrix\",\"Enable\":true},{\"Name\":\"lettuce\",\"Enable\":true},{\"Name\":\"mongodb\",\"Enable\":true},{\"Name\":\"mybatis\",\"Enable\":true},{\"Name\":\"mysql\",\"Enable\":true},{\"Name\":\"okhttp\",\"Enable\":true},{\"Name\":\"redis\",\"Enable\":true},{\"Name\":\"rxjava\",\"Enable\":true},{\"Name\":\"spring-webmvc\",\"Enable\":true},{\"Name\":\"tomcat\",\"Enable\":true}],\"TraceSquash\":true}",
+          "member": "ApmApplicationConfigView",
+          "name": "ApmApplicationConfigView",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGeneralMetricDataRequest": {
       "document": "DescribeGeneralMetricData请求参数结构体",
       "members": [
@@ -1322,6 +1604,97 @@
       ],
       "type": "object"
     },
+    "DescribeTagValuesRequest": {
+      "document": "DescribeTagValues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度名",
+          "example": "service.name",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1111",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1111",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Or过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "OrFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用类型",
+          "example": "agentConfig",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagValuesResponse": {
+      "document": "DescribeTagValues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度值列表",
+          "example": "[\"sso-api\", \"auth-api\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询过滤参数",
       "members": [
@@ -1383,6 +1756,34 @@
         }
       ],
       "usage": "in"
+    },
+    "Instrument": {
+      "document": "组件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Redis",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Line": {
       "document": "指标曲线数据",
@@ -1611,6 +2012,61 @@
     "ModifyApmInstanceResponse": {
       "document": "ModifyApmInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGeneralApmApplicationConfigRequest": {
+      "document": "ModifyGeneralApmApplicationConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "apm-059oXBfTL",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的字段key value分别指定字段名、字段值",
+          "example": "\"Tags\":[{\"Key\":\"UrlConvergence\",\"Value\":\"RPCServer/market.MarketServiceleetcode9(.*?)\"},{\"Key\":\"UrlConvergenceThreshold\",\"Value\":\"600\"},{\"Key\":\"UrlConvergenceSwitch\",\"Value\":\"1\"},{\"Key\":\"AgentEnable\",\"Value\":\"true\"}]\t",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改配置的服务列表名称\t",
+          "example": "\"ServiceNames\":[\"stock-service\",\"profile-service28\",\"profile-service08\"],\t",
+          "member": "string",
+          "name": "ServiceNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGeneralApmApplicationConfigResponse": {
+      "document": "ModifyGeneralApmApplicationConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值描述",
+          "example": "Success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

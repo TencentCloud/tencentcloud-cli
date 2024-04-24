@@ -2260,7 +2260,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2269,7 +2269,7 @@
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2334,6 +2334,15 @@
           "name": "JumpToDetail",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。\t",
+          "example": "无",
+          "member": "FlowBatchUrlInfo",
+          "name": "FlowBatchUrlInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9126,6 +9135,45 @@
         }
       ],
       "usage": "out"
+    },
+    "FlowBatchApproverInfo": {
+      "document": "批量签署合同相关信息，指定批量签署合同和签署方的信息，用于补充动态签署人。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署节点ID，用于生成动态签署人链接完成领取。注：`生成动态签署人补充链接时必传。`",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowBatchUrlInfo": {
+      "document": "批量签署合同相关信息，指定批量签署合同和签署方的信息，用于补充动态签署人。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署合同和签署方的信息，用于补充动态签署人。",
+          "example": "无",
+          "member": "FlowBatchApproverInfo",
+          "name": "FlowBatchApproverInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "FlowBrief": {
       "document": "合同流程的基础信息",

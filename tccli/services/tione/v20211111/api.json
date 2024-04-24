@@ -3658,6 +3658,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来自本地磁盘的信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LocalDisk",
+          "name": "LocalDiskSource",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8571,6 +8582,23 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LocalDisk": {
+      "document": "本地磁盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -2803,6 +2803,15 @@
           "name": "Resolution",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInternal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5093,6 +5102,15 @@
           "name": "EndTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取内网地址",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5685,6 +5703,15 @@
           "example": "false",
           "member": "bool",
           "name": "IsRespActualTime",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternal",
           "required": false,
           "type": "bool"
         }
@@ -7845,6 +7872,15 @@
           "name": "Resolution",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInternal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

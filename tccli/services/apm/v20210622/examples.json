@@ -24,6 +24,14 @@
         "title": "拉取APM实例列表"
       }
     ],
+    "DescribeGeneralApmApplicationConfig": [
+      {
+        "document": "查询指定实例下应用的配置信息",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGeneralApmApplicationConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-6xYKFXYxo\",\n    \"ServiceName\": \"java-order-service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmApplicationConfigView\": {\n            \"InstanceKey\": \"apm-059oXBfTL\",\n            \"ServiceName\": \"profile-service\",\n            \"OperationNameFilter\": \"\",\n            \"ExceptionFilter\": \"\",\n            \"ErrorCodeFilter\": \"\",\n            \"EventEnable\": false,\n            \"UrlConvergenceSwitch\": 1,\n            \"UrlConvergenceThreshold\": 500,\n            \"UrlConvergence\": \"RPCServer/market.MarketService2/(.*?)\",\n            \"UrlExclude\": \"\",\n            \"IsRelatedLog\": 0,\n            \"LogSource\": \"CLS\",\n            \"LogSet\": \"\",\n            \"LogTopicID\": \"\",\n            \"SnapshotEnable\": true,\n            \"SnapshotTimeout\": 2000,\n            \"AgentEnable\": true,\n            \"InstrumentList\": [\n                {\n                    \"Name\": \"dubbo\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"googlehttpclient\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"grpc\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"httpclient3\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"httpclient4\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"hystrix\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"lettuce\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"mongodb\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"mybatis\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"mysql\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"okhttp\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"redis\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"rxjava\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"spring-webmvc\",\n                    \"Enable\": true\n                },\n                {\n                    \"Name\": \"tomcat\",\n                    \"Enable\": true\n                }\n            ],\n            \"TraceSquash\": true\n        },\n        \"RequestId\": \"test-test-test0980990\"\n    }\n}",
+        "title": "查询应用配置信息"
+      }
+    ],
     "DescribeGeneralMetricData": [
       {
         "document": "该示例查询实例为apm-ylTJfTSbn，按照service.name（服务名）为维度过滤，以service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的service_gc_full_count（Full GC）的指标数据。",
@@ -92,12 +100,28 @@
         "title": "获取服务概览数据"
       }
     ],
+    "DescribeTagValues": [
+      {
+        "document": "根据维度列名和过滤条件，查询维度值",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagValues\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"service.instance\",\n            \"Type\": \"=\",\n            \"Value\": \"127.0.0.1\"\n        }\n    ],\n    \"TagKey\": \"servier.name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"apz12zicapy-eqixuc-uehq346v59c62\",\n        \"Values\": [\n            \"sso-api\",\n            \"auth-api\"\n        ]\n    }\n}",
+        "title": "查询维度数据"
+      }
+    ],
     "ModifyApmInstance": [
       {
         "document": "修改APM Instance参数",
         "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Tags\": [],\n    \"Description\": \"abc\",\n    \"TraceDuration\": 0,\n    \"Name\": \"abc\",\n    \"OpenBilling\": true,\n    \"SpanDailyCounters\": 1,\n    \"ErrRateThreshold\": 5,\n    \"SampleRate\": 50,\n    \"ErrorSample\": 1,\n    \"SlowRequestSavedThreshold\": 500,\n    \"IsRelatedLog\": 0,\n    \"LogRegion\": \"\",\n    \"LogTopicID\": \"\",\n    \"LogSet\": \"\",\n    \"LogSource\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "成功事例"
+      }
+    ],
+    "ModifyGeneralApmApplicationConfig": [
+      {
+        "document": "客户希望可以通过Api批量修改应用的配置信息",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGeneralApmApplicationConfig\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"UrlConvergence\",\n            \"Value\": \"RPCServer/market.MarketServiceleetcode9(.*?)\"\n        },\n        {\n            \"Key\": \"UrlConvergenceThreshold\",\n            \"Value\": \"600\"\n        },\n        {\n            \"Key\": \"UrlConvergenceSwitch\",\n            \"Value\": \"1\"\n        },\n        {\n            \"Key\": \"AgentEnable\",\n            \"Value\": \"true\"\n        }\n    ],\n    \"ServiceNames\": [\n        \"stock-service\",\n        \"profile-service28\",\n        \"profile-service08\"\n    ],\n    \"InstanceId\": \"apm-059oXBfTL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-test-test0980990\"\n    }\n}",
+        "title": "修改应用配置信息"
       }
     ],
     "TerminateApmInstance": [

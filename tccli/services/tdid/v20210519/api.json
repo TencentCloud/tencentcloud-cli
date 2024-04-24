@@ -92,9 +92,9 @@
       "status": "online"
     },
     "QueryCPT": {
-      "document": "查询凭证模版内容",
+      "document": "查询凭证模板内容",
       "input": "QueryCPTRequest",
-      "name": "查询凭证模版内容",
+      "name": "查询凭证模板内容",
       "output": "QueryCPTResponse",
       "status": "online"
     },

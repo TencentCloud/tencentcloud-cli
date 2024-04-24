@@ -760,6 +760,16 @@
         },
         {
           "disabled": false,
+          "document": "域名证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccelerationDomainCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "HTTP回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "uint64",
@@ -834,16 +844,6 @@
           "example": "无",
           "member": "OwnershipVerification",
           "name": "OwnershipVerification",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "域名证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AccelerationDomainCertificate",
-          "name": "Certificate",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12029,7 +12029,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n <li>VODEO：云点播（混合云版）；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n<li>VODEO：云点播（混合云版）；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
           "example": "ip_domain",
           "member": "string",
           "name": "OriginType",
@@ -12039,7 +12039,7 @@
         },
         {
           "disabled": false,
-          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>\n<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 \"all-buckets-in-vodeo-application\"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>\n",
+          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>\n<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 \"all-buckets-in-vodeo-application\"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>",
           "example": "qq.com",
           "member": "string",
           "name": "Origin",
@@ -12079,7 +12079,7 @@
         },
         {
           "disabled": false,
-          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>\n不填写，默认值为off。",
+          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>\n不填写，默认值为 off。",
           "example": "on",
           "member": "string",
           "name": "PrivateAccess",
@@ -12109,7 +12109,7 @@
         },
         {
           "disabled": false,
-          "document": "MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>\t",
+          "document": "MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>",
           "example": "无",
           "member": "string",
           "name": "VodeoDistributionRange",

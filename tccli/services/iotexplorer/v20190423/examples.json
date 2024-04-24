@@ -458,6 +458,14 @@
         "title": "获取设备固件信息"
       }
     ],
+    "DescribeDeviceFirmwares": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceFirmwares\n<公共请求参数>\n\n{\n    \"ProductId\": \"xx\",\n    \"DeviceName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef9ec631-7337-481b-a6c3-59a34b5f8502\",\n        \"Firmwares\": [\n            {\n                \"UpdateTime\": 1653893719,\n                \"FwType\": \"mcu\",\n                \"Version\": \"mm_3.0\"\n            },\n            {\n                \"UpdateTime\": 1653893651,\n                \"FwType\": \"module\",\n                \"Version\": \"module_v1.0.3\"\n            }\n        ]\n    }\n}",
+        "title": "获取设备固件信息"
+      }
+    ],
     "DescribeDeviceLocationSolve": [
       {
         "document": "获取实时位置解析",

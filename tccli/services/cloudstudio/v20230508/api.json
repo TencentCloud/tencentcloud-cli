@@ -239,7 +239,7 @@
         },
         {
           "disabled": false,
-          "document": "token 授权策略，可选值为 workspace-run-only, all。默认为 all",
+          "document": "token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only",
           "example": "[\"workspace-run-only\"]",
           "member": "string",
           "name": "Policies",

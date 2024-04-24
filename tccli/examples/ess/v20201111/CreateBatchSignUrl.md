@@ -92,3 +92,31 @@ Output:
 }
 ```
 
+**Example 4: 生成动态签署人批量领取链接**
+
+按照合同发起时候返回的合同信息生成批量签署链接，通过FlowIds参数对用户可以批签的合同进行限制，并指定批量领取的动态签署方。
+
+Input: 
+
+```
+tccli ess CreateBatchSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2******uO4zjEwg0vjoimj \
+    --FlowIds yDwFdUUckpsw******yQ0af8bHosXQtb yDR1AUUgygj******uO4zjE8gTG7xvgH \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFdUUckpsw******yQ0af8bHosXQtb \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDC5SUUckp******sumxxsjT3EEMVG \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDR1AUUgygj******uO4zjE8gTG7xvgH \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDC5SUUckp*****sumxEeTQ3Xcn0B
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1714533495,
+        "MiniAppPath": "pages/guide/index?shortKey=yDC5tUf****tMb93lb5",
+        "RequestId": "s1713928695416440124",
+        "SignUrl": "https://test.essurl.cn/uBS****do7"
+    }
+}
+```
+
