@@ -8696,7 +8696,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN-SERVER 实例ID。",
-          "example": "vpngwSslServer-123456",
+          "example": "vpns-5au854w1",
           "member": "string",
           "name": "SslVpnServerId",
           "required": true,
@@ -8732,6 +8732,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8741,6 +8742,7 @@
           "example": "vpnc-f5yln4n3",
           "member": "string",
           "name": "SslVpnClientId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12598,6 +12600,15 @@
           "name": "OrderDirection",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC内部IPv4地址，精确匹配",
+          "example": "10.0.1.2",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12611,6 +12622,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12620,6 +12632,7 @@
           "example": "无",
           "member": "GatewayFlowMonitorDetail",
           "name": "GatewayFlowMonitorDetailSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17291,7 +17304,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN-CLIENT 实例ID。不可和SslVpnClientIds同时使用。",
-          "example": "vpngc-123456",
+          "example": "vpnc-04ubidcy",
           "member": "string",
           "name": "SslVpnClientId",
           "required": false,
@@ -17300,7 +17313,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN-CLIENT 实例ID列表。批量禁用时使用。不可和SslVpnClientId同时使用。",
-          "example": "[\"vpngc-123456\"]",
+          "example": "[\"vpnc-04ubidcy\"]",
           "member": "string",
           "name": "SslVpnClientIds",
           "required": false,
@@ -17318,6 +17331,7 @@
           "example": "1234",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17615,7 +17629,7 @@
         },
         {
           "disabled": false,
-          "document": "对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。",
+          "document": "对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17517)获取。",
           "example": "{     \"Platform\":\"comware\",     \"SoftwareVersion\":\"V1.0\",     \"VendorName\":\"h3c\" }",
           "member": "CustomerGatewayVendor",
           "name": "CustomerGatewayVendor",
@@ -17643,6 +17657,7 @@
           "example": "# VPC utilizes unique identifiers to manipulate the configuration of\\r\\n# a VPN Connection. Each VPN Connection is assigned an identifier and is\\r\\n# associated with Virtual Private Gateway ...",
           "member": "string",
           "name": "CustomerGatewayConfiguration",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22814,7 +22829,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的状态。\n 'PENDING'：生产中，'DELETING'：删除中，'AVAILABLE'：运行中，'UPDATING'：升级中，\n‘FAILED’：失败。",
+          "document": "NAT网关的状态。\n 'PENDING'：生产中，'DELETING'：删除中/子实例关闭中，'AVAILABLE'：运行中，'UPDATING'：升级中，\n‘PENDFAILURE’：创建失败，‘DELETEFAILURE：删除失败，‘DENIED’：子实例关闭中",
           "example": "\"AVAILABLE\"",
           "member": "string",
           "name": "State",

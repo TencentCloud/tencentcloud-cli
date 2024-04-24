@@ -14349,7 +14349,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别",
+          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别\nCarInsurance -- 车险保单",
           "example": "无",
           "member": "string",
           "name": "ConfigId",

@@ -4969,6 +4969,15 @@
           "name": "ConnectionPoolLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。",
+          "example": "1.4.1",
+          "member": "string",
+          "name": "ProxyVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

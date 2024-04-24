@@ -18,7 +18,12 @@ Output:
 {
     "Response": {
         "Content": "你家在国内哪里？",
-        "RequestId": "4de60215-13cd-4f90-afc4-9fe4ef63e245"
+        "RequestId": "4de60215-13cd-4f90-afc4-9fe4ef63e245",
+        "Usage": {
+            "InputTokens": 45,
+            "OutputTokens": 6,
+            "TotalTokens": 51
+        }
     }
 }
 ```

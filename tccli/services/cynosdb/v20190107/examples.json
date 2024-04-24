@@ -816,6 +816,14 @@
         "title": "修改实例参数"
       }
     ],
+    "ModifyInstanceUpgradeLimitDays": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceUpgradeLimitDays\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"InstanceId\": \"abc\",\n    \"UpgradeLimitDays\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改实例小版本升级限制时间"
+      }
+    ],
     "ModifyMaintainPeriodConfig": [
       {
         "document": "",

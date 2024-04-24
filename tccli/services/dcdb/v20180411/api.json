@@ -5017,6 +5017,15 @@
         },
         {
           "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "实例类型过滤，1-独享实例，2-主实例，3-灾备实例，多个按逗号分隔",
           "example": "无",
           "member": "string",
@@ -5054,7 +5063,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5064,7 +5073,7 @@
           "example": "无",
           "member": "DCDBInstanceInfo",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8916,6 +8925,15 @@
           "name": "Zone",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定分片实例id进行切换",
+          "example": "[\"shard-aq0o9glh\"]",
+          "member": "string",
+          "name": "ShardInstanceIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8929,7 +8947,7 @@
           "example": "无",
           "member": "uint64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9000,6 +9018,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "name",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "liu",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

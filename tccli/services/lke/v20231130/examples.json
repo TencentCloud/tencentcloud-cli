@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"doc-normal-500-v5.8\",\n    \"Inputs\": [\n        \"你好\"\n    ],\n    \"Online\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
         "title": "获取特征向量"
       }
     ],
@@ -528,7 +528,7 @@
       {
         "document": "查询文档解析结果",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryParseDocResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"D78iBBGi\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\",\n        \"Usage\": {\n            \"TotalPages\": 1\n        }\n    }\n}",
         "title": "查询文档解析结果"
       }
     ],
@@ -536,7 +536,7 @@
       {
         "document": "多轮改写",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRewrite\n<公共请求参数>\n\n{\n    \"Question\": \"国内哪里？\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你家在哪里\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"我家在国内\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Content\": \"你家在国内哪里？\",\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"你家在国内哪里？\",\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\",\n        \"Usage\": {\n            \"InputTokens\": 45,\n            \"OutputTokens\": 6,\n            \"TotalTokens\": 51\n        }\n    }\n}",
         "title": "多轮改写"
       }
     ],

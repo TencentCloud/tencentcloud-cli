@@ -4909,16 +4909,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型 cos",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -4938,6 +4929,51 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型 cos",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID\t",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。\t",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步\t",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncCache",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4951,6 +4987,7 @@
           "example": "无",
           "member": "CosInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4960,6 +4997,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4969,6 +5007,7 @@
           "example": "无",
           "member": "int64",
           "name": "AsyncTotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4978,6 +5017,7 @@
           "example": "无",
           "member": "int64",
           "name": "AsyncOffset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4987,6 +5027,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncCacheTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

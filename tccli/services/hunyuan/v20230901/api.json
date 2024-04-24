@@ -324,7 +324,7 @@
         {
           "disabled": false,
           "document": "角色名称。",
-          "example": "无",
+          "example": "assistant",
           "member": "string",
           "name": "Role",
           "output_required": false,
@@ -334,7 +334,7 @@
         {
           "disabled": false,
           "document": "内容详情。",
-          "example": "无",
+          "example": "你好！请问有什么我可以帮助你的吗？",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -381,12 +381,12 @@
       "usage": "out"
     },
     "EmbeddingUsage": {
-      "document": "token 使用计数。",
+      "document": "Token 使用计数。",
       "members": [
         {
           "disabled": false,
-          "document": "输入Token数。",
-          "example": "无",
+          "document": "输入 Token 数。",
+          "example": "8",
           "member": "int64",
           "name": "PromptTokens",
           "output_required": false,
@@ -395,8 +395,8 @@
         },
         {
           "disabled": false,
-          "document": "总Token数。",
-          "example": "无",
+          "document": "总 Token 数。",
+          "example": "8",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,
@@ -565,12 +565,12 @@
       "usage": "both"
     },
     "Usage": {
-      "document": "token 数量",
+      "document": "Token 数量",
       "members": [
         {
           "disabled": false,
-          "document": "输入 token 数量。",
-          "example": "无",
+          "document": "输入 Token 数量。",
+          "example": "8",
           "member": "int64",
           "name": "PromptTokens",
           "output_required": false,
@@ -579,8 +579,8 @@
         },
         {
           "disabled": false,
-          "document": "输出 token 数量。",
-          "example": "无",
+          "document": "输出 Token 数量。",
+          "example": "20",
           "member": "int64",
           "name": "CompletionTokens",
           "output_required": false,
@@ -589,8 +589,8 @@
         },
         {
           "disabled": false,
-          "document": "总 token 数量。",
-          "example": "无",
+          "document": "总 Token 数量。",
+          "example": "28",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,

@@ -376,6 +376,14 @@
         "title": "修改客服示例"
       }
     ],
+    "ModifyStaffPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStaffPassword\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600000000,\n    \"Email\": \"a@qq.com\",\n    \"Password\": \"foobar\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改密码"
+      }
+    ],
     "PausePredictiveDialingCampaign": [
       {
         "document": "暂停预测式外呼任务",

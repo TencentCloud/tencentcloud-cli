@@ -1939,8 +1939,8 @@
     "DisableVpnGatewaySslClientCert": [
       {
         "document": "禁用SSL-VPN-CLIENT 证书",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DisableVpnGatewaySslClientCert\n&SslVpnClientId=vpnc-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DisableVpnGatewaySslClientCert\n&SslVpnClientId=vpnc-04ubidcy\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 315123\n    }\n}",
         "title": "禁用SSL-VPN-CLIENT 证书"
       }
     ],

@@ -4135,6 +4135,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "international",
+          "member": "string",
+          "name": "RegionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际：资源所属区域类型（国内、国际）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "International",
+          "member": "string",
+          "name": "RegionTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "优惠生效单号：T2024041930694; 本条账单类型：调账-重出单; ",
+          "member": "string",
+          "name": "ReserveDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
