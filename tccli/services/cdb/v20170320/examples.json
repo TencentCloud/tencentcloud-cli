@@ -666,6 +666,14 @@
         "title": "查询数据库"
       }
     ],
+    "DescribeDbTknResource": [
+      {
+        "document": "查询资源是否开启密码轮转",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cdb-7qmr5idl\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ssmtest1\",\n    \"InstanceType\": \"mysql\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源是否开启密码轮转"
+      }
+    ],
     "DescribeDefaultParams": [
       {
         "document": "查询默认的可设置参数列表",
@@ -1230,6 +1238,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": \"12\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "指定密码进行轮转密码刷新",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cdb-7qmr5idl\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"ssmtest1\",\n    \"Password\": \"123456abcd1\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0\"\n    }\n}",
+        "title": "指定密码进行轮转密码刷新"
       }
     ],
     "ResetRootAccount": [

@@ -1,3 +1,215 @@
+# Release 3.0.983.1
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 11 次发布
+
+发布时间：2024-04-25 01:07:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGeneralApmApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1463/83790)
+* [DescribeTagValues](http://document.tencentcloudapi.woa.com/document/product/1463/83788)
+* [ModifyGeneralApmApplicationConfig](http://document.tencentcloudapi.woa.com/document/product/1463/83789)
+
+新增数据结构：
+
+* [ApmApplicationConfigView](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmApplicationConfigView)
+* [Instrument](http://document.tencentcloudapi.woa.com/document/product/1463/64927#Instrument)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 94 次发布
+
+发布时间：2024-04-25 01:09:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDbTknResource](http://document.tencentcloudapi.woa.com/document/product/236/83792)
+* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/236/83791)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 81 次发布
+
+发布时间：2024-04-25 01:16:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81950)
+
+	* 新增入参：FlowBatchUrlInfo
+
+	* <font color="#dd0000">**修改入参**：</font>Name, Mobile
+
+
+新增数据结构：
+
+* [FlowBatchApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowBatchApproverInfo)
+* [FlowBatchUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowBatchUrlInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 137 次发布
+
+发布时间：2024-04-25 01:16:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：FlowBatchUrlInfo
+
+	* <font color="#dd0000">**修改入参**：</font>Name, Mobile
+
+
+新增数据结构：
+
+* [FlowBatchApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowBatchApproverInfo)
+* [FlowBatchUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowBatchUrlInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 32 次发布
+
+发布时间：2024-04-25 01:17:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDeviceFirmwares](http://document.tencentcloudapi.woa.com/document/product/1081/83793)
+
+新增数据结构：
+
+* [DeviceFirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DeviceFirmwareInfo)
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 15 次发布
+
+发布时间：2024-04-25 01:18:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ControlDeviceStream](http://document.tencentcloudapi.woa.com/document/product/1740/81563)
+
+	* 新增入参：IsInternal
+
+* [DescribeRecordPlaybackUrl](http://document.tencentcloudapi.woa.com/document/product/1740/81553)
+
+	* 新增入参：IsInternal
+
+* [DescribeVideoDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1740/81552)
+
+	* 新增入参：IsInternal
+
+* [PlayRecord](http://document.tencentcloudapi.woa.com/document/product/1740/81551)
+
+	* 新增入参：IsInternal
+
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 7 次发布
+
+发布时间：2024-04-25 01:19:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ParseDoc
+* QueryParseDocResult
+
+
+
+## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 3 次发布
+
+发布时间：2024-04-25 01:20:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SurveyTask](http://document.tencentcloudapi.woa.com/document/product/659/18606#SurveyTask)
+
+	* 新增成员：Progress, JobType
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 57 次发布
+
+发布时间：2024-04-25 01:25:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [LocalDisk](http://document.tencentcloudapi.woa.com/document/product/851/74915#LocalDisk)
+
+修改数据结构：
+
+* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+
+	* 新增成员：LocalDiskSource
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.982.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

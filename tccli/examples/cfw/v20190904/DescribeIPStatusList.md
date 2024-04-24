@@ -15,13 +15,13 @@ Output:
     "Response": {
         "StatusList": [
             {
-                "Status": 0,
-                "IP": "xx"
+                "IP": "abc",
+                "Status": 0
             }
         ],
         "ReturnCode": 0,
-        "ReturnMsg": "Success",
-        "RequestId": "xx"
+        "ReturnMsg": "abc",
+        "RequestId": "abc"
     }
 }
 ```

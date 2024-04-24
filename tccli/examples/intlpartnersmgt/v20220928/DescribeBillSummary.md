@@ -1,6 +1,6 @@
 **Example 1: DescribeBillSummary 标签维度统计**
 
-子客计费中心L1账单的api, tag维度统计
+该示例用于子客计费中心L1账单的api, tag维度统计
 
 POST / HTTP/1.1
 Host: intlpartnersmgt.tencentcloudapi.com
@@ -27,7 +27,7 @@ Output:
                     {
                         "BusinessCodeName": "CVM Dedicated Host",
                         "BusinessCode": "p_cdh",
-                        "OriginalCost": "abc",
+                        "OriginalCost": "12.11",
                         "VoucherPayAmount": "1.1",
                         "RICost": "0.1",
                         "TotalCost": "12.1"
@@ -37,7 +37,7 @@ Output:
                 "VoucherPayAmount": "1.1",
                 "RICost": "1.1",
                 "TotalCost": "2.2",
-                "GroupKey": "0",
+                "GroupKey": "abc",
                 "GroupValue": "default"
             }
         ],
@@ -48,7 +48,7 @@ Output:
 
 **Example 2: DescribeBillSummary 项目维度统计**
 
-子客计费中心L1账单的api, project维度统计
+该示例用于子客计费中心L1账单的api, project维度统计
 
 POST / HTTP/1.1
 Host: intlpartnersmgt.tencentcloudapi.com
@@ -95,7 +95,7 @@ Output:
 
 **Example 3: DescribeBillSummary 产品维度统计**
 
-子客计费中心L1账单的api, product维度统计
+该示例用于子客计费中心L1账单的api, product维度统计
 
 POST / HTTP/1.1
 Host: intlpartnersmgt.tencentcloudapi.com
