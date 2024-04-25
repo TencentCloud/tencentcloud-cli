@@ -1,3 +1,196 @@
+# Release 3.0.984.1
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 5 次发布
+
+发布时间：2024-04-26 01:11:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateWorkspace](http://document.tencentcloudapi.woa.com/document/product/1640/78593)
+
+	* 新增入参：TenantAppId, TenantUin, TenantUniqVpcId, TenantSubnetId, Region
+
+	* <font color="#dd0000">**删除入参**：</font>AppId, Uin, UniqVpcId, SubnetId
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 59 次发布
+
+发布时间：2024-04-26 01:11:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CosRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CosRechargeInfo)
+
+	* 新增成员：TaskType, Metadata
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 81 次发布
+
+发布时间：2024-04-26 01:13:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeChangedParamsAfterUpgrade](http://document.tencentcloudapi.woa.com/document/product/1003/83795)
+* [DescribeDbTknPwdRules](http://document.tencentcloudapi.woa.com/document/product/1003/83794)
+
+新增数据结构：
+
+* [ParamItemInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemInfo)
+* [PasswordComplexityRule](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PasswordComplexityRule)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 59 次发布
+
+发布时间：2024-04-26 01:17:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFaceIdResult](http://document.tencentcloudapi.woa.com/document/product/1007/49199)
+
+	* 新增出参：LivenessInfoTag, DeviceInfoLevel
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 10 次发布
+
+发布时间：2024-04-26 01:20:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataSourceList](http://document.tencentcloudapi.woa.com/document/product/1599/75491)
+
+	* 新增入参：DatabaseTableNames, QuerySystemModel
+
+
+修改数据结构：
+
+* [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
+
+	* 新增成员：PreviewTableName, PublishedTableName
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 49 次发布
+
+发布时间：2024-04-26 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ParseLiveStreamProcessNotification](http://document.tencentcloudapi.woa.com/document/product/862/39229)
+
+	* 新增出参：LiveRecordResultInfo
+
+
+新增数据结构：
+
+* [LiveStreamRecordResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamRecordResultInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 32 次发布
+
+发布时间：2024-04-26 01:26:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/83394)
+
+	* 新增入参：LogFormat
+
+* [ModifyRealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/83391)
+
+	* 新增入参：LogFormat
+
+
+新增数据结构：
+
+* [LogFormat](http://document.tencentcloudapi.woa.com/document/product/1738/81211#LogFormat)
+
+修改数据结构：
+
+* [RealtimeLogDeliveryTask](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RealtimeLogDeliveryTask)
+
+	* 新增成员：LogFormat
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 47 次发布
+
+发布时间：2024-04-26 01:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RecordParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecordParams)
+
+	* 新增成员：FillType
+
+
+
+
 # Release 3.0.983.1
 
 ## 应用性能监控(apm) 版本：2021-06-22

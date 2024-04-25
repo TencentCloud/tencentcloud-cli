@@ -301,6 +301,13 @@
       "output": "DescribeBinlogsResponse",
       "status": "online"
     },
+    "DescribeChangedParamsAfterUpgrade": {
+      "document": "本接口（DescribeChangedParamsAfterUpgrade）用于查询升降配运行参数对比",
+      "input": "DescribeChangedParamsAfterUpgradeRequest",
+      "name": "升降配运行参数对比",
+      "output": "DescribeChangedParamsAfterUpgradeResponse",
+      "status": "online"
+    },
     "DescribeClusterDatabases": {
       "document": "获取集群数据库列表",
       "input": "DescribeClusterDatabasesRequest",
@@ -369,6 +376,13 @@
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组信息",
       "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDbTknPwdRules": {
+      "document": "本接口（DescribeDbTknPwdRules）用于查看 Dbtkn 数据库实例的密码规则",
+      "input": "DescribeDbTknPwdRulesRequest",
+      "name": "查询 Dbtkn 数据库实例的密码规则",
+      "output": "DescribeDbTknPwdRulesResponse",
       "status": "online"
     },
     "DescribeDbTknResource": {
@@ -4724,7 +4738,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组节点个数",
+          "document": "数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)",
           "example": "2",
           "member": "int64",
           "name": "ProxyCount",
@@ -4778,7 +4792,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库节点信息",
+          "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
           "example": "无",
           "member": "ProxyZone",
           "name": "ProxyZones",
@@ -8897,6 +8911,71 @@
       ],
       "type": "object"
     },
+    "DescribeChangedParamsAfterUpgradeRequest": {
+      "document": "DescribeChangedParamsAfterUpgrade请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-1xcycbu8",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变配后的CPU",
+          "example": "1",
+          "member": "int64",
+          "name": "DstCpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变配后的MEM，单位G",
+          "example": "1",
+          "member": "int64",
+          "name": "DstMem",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangedParamsAfterUpgradeResponse": {
+      "document": "DescribeChangedParamsAfterUpgrade返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamItemInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterDatabasesRequest": {
       "document": "DescribeClusterDatabases请求参数结构体",
       "members": [
@@ -9575,6 +9654,80 @@
           "name": "Groups",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesRequest": {
+      "document": "DescribeDbTknPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型，产品侧需要做校验",
+          "example": "cynosdb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户资源",
+          "example": "cynosdbmysql-cp6g5zlb",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源所处的地域，产品侧需要做校验，这里的地域取值可能是产品侧自定义的取值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号，产品侧需要做校验",
+          "example": "root",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesResponse": {
+      "document": "DescribeDbTknPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则信息",
+          "example": "无",
+          "member": "PasswordComplexityRule",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最终要求的密码长度，这里为了逻辑上的简单，按照某一个确定长度来输出，目前暂时不支持长度范围如 [16--32],被调方按照允许的密码长度的最大值来给即可，",
+          "example": "32",
+          "member": "int64",
+          "name": "RequiredLength",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -16574,6 +16727,52 @@
       ],
       "usage": "out"
     },
+    "ParamItemInfo": {
+      "document": "参数变化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数新值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NewValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数旧值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数公式\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValueFunction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ParamTemplateListInfo": {
       "document": "参数模板信息",
       "members": [
@@ -16635,6 +16834,52 @@
           "name": "ParamInfoSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PasswordComplexityRule": {
+      "document": "密码规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uppercase",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "member": "string",
+          "name": "Choices",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "MinimumLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码是否必须以这种字符开头，被调方在返回时需要确保多种字符类型中最多只能有一种字符要求必须以某种字符开头，可以全部为 False，表示开头的字符不做要求，SSM 读取时默认按照最后一个出现的标记为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

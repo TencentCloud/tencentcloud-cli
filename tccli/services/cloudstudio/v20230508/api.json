@@ -151,7 +151,7 @@
           "document": "应用名称",
           "example": "1303697168",
           "member": "int64",
-          "name": "AppId",
+          "name": "TenantAppId",
           "required": false,
           "type": "int"
         },
@@ -160,7 +160,7 @@
           "document": "用户UIN",
           "example": "100015915015",
           "member": "string",
-          "name": "Uin",
+          "name": "TenantUin",
           "required": false,
           "type": "string"
         },
@@ -169,7 +169,7 @@
           "document": "VPCID",
           "example": "vpc-rdfkabjj",
           "member": "string",
-          "name": "UniqVpcId",
+          "name": "TenantUniqVpcId",
           "required": false,
           "type": "string"
         },
@@ -178,7 +178,16 @@
           "document": "子网ID",
           "example": "subnet-bx88somq",
           "member": "string",
-          "name": "SubnetId",
+          "name": "TenantSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
           "required": false,
           "type": "string"
         }

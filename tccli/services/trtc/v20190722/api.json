@@ -5097,6 +5097,15 @@
           "name": "MediaId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "上行视频停止时，录制的补帧类型，0：补最后一帧 1：补黑帧",
+          "example": "0",
+          "member": "uint64",
+          "name": "FillType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
