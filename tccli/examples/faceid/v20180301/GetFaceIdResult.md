@@ -23,7 +23,9 @@ Output:
         "VideoBase64": "",
         "BestFrameBase64": "",
         "DeviceInfoTag": "01",
-        "RiskInfoTag": "02"
+        "RiskInfoTag": "02",
+        "LivenessInfoTag": "01",
+        "DeviceInfoLevel": "1"
     }
 }
 ```

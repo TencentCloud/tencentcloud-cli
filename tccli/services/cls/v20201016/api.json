@@ -2657,7 +2657,7 @@
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2667,7 +2667,7 @@
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2677,7 +2677,7 @@
           "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2687,7 +2687,7 @@
           "example": "xxx任务导入",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2697,7 +2697,7 @@
           "example": "bucket1",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2707,7 +2707,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2717,7 +2717,7 @@
           "example": "/var/test",
           "member": "string",
           "name": "Prefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2727,7 +2727,7 @@
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2737,7 +2737,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2747,7 +2747,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2757,7 +2757,7 @@
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2767,7 +2767,7 @@
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2777,7 +2777,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2787,7 +2787,7 @@
           "example": "gzip",
           "member": "string",
           "name": "Compress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2797,8 +2797,28 @@
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "COS导入任务类型。1：一次性导入任务；2：持续性导入任务。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据。支持 bucket，object。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"bucket\",\"object\"]",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4910,7 +4930,7 @@
         {
           "disabled": false,
           "document": "数据加工任务名称",
-          "example": "xxx",
+          "example": "test_name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -4920,7 +4940,7 @@
         {
           "disabled": false,
           "document": "数据加工任务id",
-          "example": "taskid_xx",
+          "example": "96562452-58da-458c-9d2b-0b94e379c917",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4950,7 +4970,7 @@
         {
           "disabled": false,
           "document": "源日志主题",
-          "example": "xxxx",
+          "example": "c6404313-dc28-402c-970d-9654afd08b1f",
           "member": "string",
           "name": "SrcTopicId",
           "output_required": true,
@@ -4970,7 +4990,7 @@
         {
           "disabled": false,
           "document": "加工任务创建时间",
-          "example": "xx-xx",
+          "example": "2022-12-08 21:00:35",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -4980,7 +5000,7 @@
         {
           "disabled": false,
           "document": "最近修改时间",
-          "example": "xx-xx",
+          "example": "2024-03-20 15:51:01",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -4990,7 +5010,7 @@
         {
           "disabled": false,
           "document": "最后启用时间，如果需要重建集群，修改该时间",
-          "example": "xx-xx",
+          "example": "2024-03-20 15:50:00",
           "member": "string",
           "name": "LastEnableTime",
           "output_required": true,
@@ -5029,8 +5049,8 @@
         },
         {
           "disabled": false,
-          "document": "加工逻辑函数",
-          "example": "xxxx",
+          "document": "加工逻辑函数。",
+          "example": "fields_set(\\\\\"111\\\\\",\\\\\"111\\\\\")",
           "member": "string",
           "name": "EtlContent",
           "output_required": true,
@@ -6204,7 +6224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<br><li> taskName\n\n按照【加工任务名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskId\n\n按照【加工任务id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> srctopicId\n\n按照【源topicId】进行过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li> taskName\n\n按照【加工任务名称】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskId\n\n按照【加工任务id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> topicId\n\n按照【源topicId】进行过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6259,6 +6279,7 @@
           "example": "无",
           "member": "DataTransformTaskInfo",
           "name": "DataTransformTaskInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6268,6 +6289,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7679,7 +7701,7 @@
         },
         {
           "disabled": false,
-          "document": "增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。\n注意：\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-1",
           "member": "int64",
           "name": "Backtracking",
@@ -7690,7 +7712,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为Gbk编码.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为Gbk编码。 0：否；1：是。\n注意：\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsGBK",
@@ -7701,7 +7723,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为标准json.   0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为标准json。  0：否； 1：是。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "JsonStandard",
@@ -7712,7 +7734,7 @@
         },
         {
           "disabled": false,
-          "document": "syslog传输协议，取值为tcp或者udp。\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog传输协议，取值为tcp或者udp。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -7723,7 +7745,7 @@
         },
         {
           "disabled": false,
-          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:9000",
           "member": "string",
           "name": "Address",
@@ -7734,7 +7756,7 @@
         },
         {
           "disabled": false,
-          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议\n该字段适用于：创建采集规则配置、修改采集规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RFC3164",
           "member": "string",
           "name": "ParseProtocol",
@@ -7745,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，",
+          "document": "元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。\n注意：\n- COS导入不支持此字段。",
           "example": "0",
           "member": "int64",
           "name": "MetadataType",
@@ -7756,7 +7778,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置路径正则表达式，MetadataType为3时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集配置路径正则表达式。\n注意：\n- MetadataType为3时必填。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PathRegex",
@@ -7767,7 +7789,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义元数据信息，MetadataType为2时必填",
+          "document": "用户自定义元数据信息。\n注意：\n- MetadataType为2时必填。\n- COS导入不支持此字段。",
           "example": "无",
           "member": "MetaTagInfo",
           "name": "MetaTags",
@@ -7778,7 +7800,7 @@
         },
         {
           "disabled": false,
-          "document": "Windows事件日志采集",
+          "document": "Windows事件日志采集。\n注意：\n- COS导入不支持此字段。",
           "example": "无",
           "member": "EventLog",
           "name": "EventLogRules",
@@ -9297,7 +9319,7 @@
         },
         {
           "disabled": false,
-          "document": "合并的PartitionId",
+          "document": "合并的PartitionId（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等，且找到的分区必须是读写分区（Staus:readwrite），入参PartitionId与找到的PartitionId设置为只读分区（Status:readonly）,再新建一个新的读写分区） 。[获取分区列表](https://cloud.tencent.com/document/product/614/56469)\n\n1. 入参PartitionId只能是读写分区（Status的值有readonly，readwrite），且能找到入参PartitionId的下一个可读写分区（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等）；\n2. 入参PartitionId不能是最后一个分区（PartitionId的ExclusiveEndKey不能是ffffffffffffffffffffffffffffffff）；\n3. topic的分区数量是有限制的（默认50个），合并之后不能超过最大分区，否则不能合并。",
           "example": "2",
           "member": "int64",
           "name": "PartitionId",
@@ -9316,7 +9338,7 @@
           "example": "无",
           "member": "PartitionInfo",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10972,10 +10994,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "可选值：\n<br><li> Period - 周期执行\n<br><li> Fixed - 定期执行",
-          "example": "",
+          "document": "执行周期， 可选值：Period；Fixed。\n\n- Period：固定频率\n- Fixed：固定时间",
+          "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10983,9 +11006,10 @@
         {
           "disabled": false,
           "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Time",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11172,8 +11196,8 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
-          "example": "1",
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0",
+          "example": "0",
           "member": "int64",
           "name": "Compression",
           "required": false,
@@ -12150,7 +12174,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩模式:   \"\", \"gzip\", \"lzop\", \"snappy”;   默认\"\"",
+          "document": "压缩模式:   \"\", \"gzip\", \"lzop\", \"snappy\";   默认\"\"",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -12335,7 +12359,7 @@
         },
         {
           "disabled": false,
-          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。",
+          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -12344,7 +12368,7 @@
         },
         {
           "disabled": false,
-          "document": "- 要检索分析的日志主题列表，最大支持20个日志主题。\n- 检索单个日志主题时请使用TopicId。\n- 不能同时使用TopicId和Topics。",
+          "document": "- 要检索分析的日志主题列表，最大支持20个日志主题。\n- 检索单个日志主题时请使用TopicId。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
           "example": "无",
           "member": "MultiTopicSearchInformation",
           "name": "Topics",

@@ -16782,6 +16782,32 @@
       ],
       "usage": "out"
     },
+    "LiveStreamRecordResultInfo": {
+      "document": "直播流录制结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制是否结束。\n0：录制未结束，返回单个文件结果\n1：录制结束，返回所有录制文件结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordOver",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveRecordFile",
+          "name": "FileResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LiveStreamTagRecognitionResult": {
       "document": "直播 AI 打点识别结果",
       "members": [
@@ -21045,10 +21071,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
+          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>LiveRecordResult：直播录制结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
           "example": "ProcessEof",
           "member": "string",
           "name": "NotificationType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21058,6 +21085,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21067,6 +21095,7 @@
           "example": "无",
           "member": "LiveStreamProcessErrorInfo",
           "name": "ProcessEofInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21076,6 +21105,7 @@
           "example": "无",
           "member": "LiveStreamAiReviewResultInfo",
           "name": "AiReviewResultInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21085,6 +21115,7 @@
           "example": "无",
           "member": "LiveStreamAiRecognitionResultInfo",
           "name": "AiRecognitionResultInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21094,6 +21125,7 @@
           "example": "无",
           "member": "LiveStreamAiAnalysisResultInfo",
           "name": "AiAnalysisResultInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21103,6 +21135,17 @@
           "example": "无",
           "member": "LiveStreamAiQualityControlResultInfo",
           "name": "AiQualityControlResultInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制结果，当 NotificationType 为 LiveRecordResult 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveStreamRecordResultInfo",
+          "name": "LiveRecordResultInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21112,6 +21155,7 @@
           "example": "xx",
           "member": "string",
           "name": "SessionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21121,6 +21165,7 @@
           "example": "xx",
           "member": "string",
           "name": "SessionContext",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

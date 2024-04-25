@@ -280,6 +280,13 @@
       "output": "DescribeBinlogsResponse",
       "status": "online"
     },
+    "DescribeChangedParamsAfterUpgrade": {
+      "document": "本接口（DescribeChangedParamsAfterUpgrade）用于查询升降配运行参数对比",
+      "input": "DescribeChangedParamsAfterUpgradeRequest",
+      "name": "升降配运行参数对比",
+      "output": "DescribeChangedParamsAfterUpgradeResponse",
+      "status": "online"
+    },
     "DescribeClusterDatabases": {
       "document": "获取集群数据库列表",
       "input": "DescribeClusterDatabasesRequest",
@@ -4476,7 +4483,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组节点个数",
+          "document": "数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)",
           "example": "2",
           "member": "int64",
           "name": "ProxyCount",
@@ -4530,7 +4537,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库节点信息",
+          "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
           "example": "无",
           "member": "ProxyZone",
           "name": "ProxyZones",
@@ -8541,6 +8548,71 @@
           "member": "BinlogItem",
           "name": "Binlogs",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangedParamsAfterUpgradeRequest": {
+      "document": "DescribeChangedParamsAfterUpgrade请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-1xcycbu8",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变配后的CPU",
+          "example": "1",
+          "member": "int64",
+          "name": "DstCpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变配后的MEM，单位G",
+          "example": "1",
+          "member": "int64",
+          "name": "DstMem",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangedParamsAfterUpgradeResponse": {
+      "document": "DescribeChangedParamsAfterUpgrade返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数个数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamItemInfo",
+          "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15734,6 +15806,52 @@
           "member": "string",
           "name": "Func",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamItemInfo": {
+      "document": "参数变化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数新值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NewValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数旧值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数公式\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValueFunction",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

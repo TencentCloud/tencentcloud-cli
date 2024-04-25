@@ -61,7 +61,10 @@ Output:
                             "Width": 769.9824,
                             "Height": 769.98254,
                             "Rotate": 0
-                        }
+                        },
+                        "SubLabel": "abc",
+                        "GroupId": "abc",
+                        "ObjectId": "abc"
                     }
                 ]
             }

@@ -2768,7 +2768,7 @@
         },
         {
           "disabled": false,
-          "document": "设备风险标签，仅错误码返回1007（设备疑似被劫持）时返回风险标签。标签说明：\n202、5001：设备疑似被Root\n203、5004：设备疑似被注入\n205：设备疑似被Hook\n206：设备疑似虚拟运行环境\n5007、1005：设备疑似摄像头被劫持\n8000：设备疑似存在异常篡改行为\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "plus版：描述当前请求所在设备的风险标签，详情如下：\n01-设备疑似被Root/设备疑似越狱\n02-设备疑似被注入\n03-设备疑似为模拟器\n04-设备疑似存在风险操作\n05-摄像头疑似被劫持\n06-疑似黑产设备\nnull-无设备风险\n增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "01",
           "member": "string",
           "name": "DeviceInfoTag",
@@ -2782,6 +2782,26 @@
           "example": "02",
           "member": "string",
           "name": "RiskInfoTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因，详情如下：\n01-用户全程闭眼\n02-用户未完成指定动作\n03-疑似翻拍攻击\n04-疑似合成图片\n05-疑似合成视频\n06-疑似合成动作\n07-疑似黑产模版\n08-疑似存在水印\n09-反光校验未通过\n10-最佳帧校验未通过\n11-人脸质量过差\n12-人脸距离不匹配\n13-疑似对抗样本攻击\nnull-无\n增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01",
+          "member": "string",
+          "name": "LivenessInfoTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "plus版：描述当前请求所在设备的风险等级，共4级，详情如下：\n1 - 安全\n2 - 低风险\n3 - 中风险\n4 - 高危\nnull - 未获取到风险等级\n增强版：此字段不生效，默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DeviceInfoLevel",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

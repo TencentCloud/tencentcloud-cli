@@ -409,7 +409,7 @@
     "DescribeIpAccessControl": {
       "document": "Waf ip黑白名单查询",
       "input": "DescribeIpAccessControlRequest",
-      "name": "Waf ip黑白名单查询",
+      "name": "Waf IP黑白名单查询",
       "output": "DescribeIpAccessControlResponse",
       "status": "online"
     },
@@ -14637,7 +14637,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB 安全模块开关，0或1",
+          "document": "Web 安全模块开关，0或1",
           "example": "1",
           "member": "uint64",
           "name": "WebSecurity",

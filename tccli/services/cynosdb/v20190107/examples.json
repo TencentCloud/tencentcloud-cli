@@ -338,6 +338,14 @@
         "title": "查询集群Binlog日志列表"
       }
     ],
+    "DescribeChangedParamsAfterUpgrade": [
+      {
+        "document": "查询升降配运行参数对比",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangedParamsAfterUpgrade\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-p8dst5v9\",\n    \"DstCpu\": 1,\n    \"DstMem\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7613eed6-5eb5-4d17-ae69-dd93c44d7ad4\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"ParamName\": \"demoString\",\n                \"NewValue\": \"demoString\",\n                \"OldValue\": \"demoString\",\n                \"ValueFunction\": \"demoString\"\n            }\n        ]\n    }\n}",
+        "title": "查询升降配运行参数对比"
+      }
+    ],
     "DescribeClusterDatabases": [
       {
         "document": "",

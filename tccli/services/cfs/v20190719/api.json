@@ -404,7 +404,7 @@
         },
         {
           "disabled": false,
-          "document": "帐号ID",
+          "document": "账号ID",
           "example": "122445",
           "member": "uint64",
           "name": "AppId",
@@ -1180,7 +1180,7 @@
         },
         {
           "disabled": false,
-          "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
           "example": "root_squash",
           "member": "string",
           "name": "UserPermission",
@@ -1199,7 +1199,7 @@
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1209,7 +1209,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1219,7 +1219,7 @@
           "example": "10.1.1.10",
           "member": "string",
           "name": "AuthClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1229,7 +1229,7 @@
           "example": "rw",
           "member": "string",
           "name": "RWPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1239,7 +1239,7 @@
           "example": "root_squash",
           "member": "string",
           "name": "UserPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1249,7 +1249,7 @@
           "example": "9",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3578,50 +3578,50 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "允许访问的客户端IP",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AuthClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读写权限, ro为只读，rw为读写",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RWPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。",
-          "example": "",
+          "document": "all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
+          "example": "无",
           "member": "string",
           "name": "UserPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3869,7 +3869,7 @@
         },
         {
           "disabled": false,
-          "document": "帐号ID",
+          "document": "账号ID",
           "example": "21211",
           "member": "uint64",
           "name": "AppId",
@@ -4533,7 +4533,7 @@
         },
         {
           "disabled": false,
-          "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。不填默认为root_squash。",
+          "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
           "example": "no_root_squash",
           "member": "string",
           "name": "UserPermission",
@@ -4561,7 +4561,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4571,7 +4571,7 @@
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4581,7 +4581,7 @@
           "example": "10.0.0.10",
           "member": "string",
           "name": "AuthClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4591,7 +4591,7 @@
           "example": "rw",
           "member": "string",
           "name": "RWPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4601,7 +4601,7 @@
           "example": "no_root_squash",
           "member": "string",
           "name": "UserPermission",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4611,7 +4611,7 @@
           "example": "7",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

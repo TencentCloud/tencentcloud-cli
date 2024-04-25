@@ -1841,7 +1841,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -1896,7 +1896,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

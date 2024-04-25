@@ -390,7 +390,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPStatusList\n<公共请求参数>\n\n{\n    \"IPList\": [\n        \"1.2.3.4\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"StatusList\": [\n            {\n                \"Status\": 0,\n                \"IP\": \"xx\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"Success\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusList\": [\n            {\n                \"IP\": \"abc\",\n                \"Status\": 0\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "告警中心-资产安全事件统计-资产详情"
       }
     ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli teo DescribeRealtimeLogDeliveryTasks --cli-unfold-argument  \
-    --ZoneId zone-2o7b38ba1hvr \
+    --ZoneId zone-2ur49nglp1a2 \
     --Offset 0 \
     --Limit 1000
 ```
@@ -15,38 +15,59 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "RealtimeLogDeliveryTasks": [
             {
-                "TaskId": "57f6ebaa-f952-4ebf-8105-8071d1c59dde",
-                "TaskName": "test_log_task",
-                "DeliveryStatus": "enabled",
-                "TaskType": "cls",
-                "EntityList": [
-                    "domain.example.com"
-                ],
-                "LogType": "domain",
                 "Area": "overseas",
+                "CLS": {
+                    "LogSetId": "980611e5-3eb2-430f-a0cc-e1c4e84a9e40",
+                    "LogSetRegion": "ap-guangzhou",
+                    "TopicId": "d258c060-dc6e-4586-8b7c-6a951667fa7a"
+                },
+                "CreateTime": "2024-03-26T03:00:39+08:00",
+                "CustomEndpoint": null,
+                "CustomFields": [],
+                "DeliveryConditions": [],
+                "DeliveryStatus": "enabled",
+                "EntityList": [
+                    "qqqq.loliyu.com"
+                ],
                 "Fields": [
                     "RequestID",
                     "ClientIP",
-                    "ClientRegion"
+                    "ClientRegion",
+                    "RequestTime",
+                    "RequestHost",
+                    "RequestBytes",
+                    "RequestMethod",
+                    "RequestUrl",
+                    "RequestUrlQueryString",
+                    "RequestUA",
+                    "RequestRange",
+                    "RequestReferer",
+                    "RequestProtocol",
+                    "RemotePort",
+                    "EdgeCacheStatus",
+                    "EdgeResponseStatusCode",
+                    "EdgeResponseBytes",
+                    "EdgeResponseTime",
+                    "EdgeInternalTime",
+                    "ClientState",
+                    "ClientISP",
+                    "EdgeServerID",
+                    "EdgeServerIP"
                 ],
-                "CustomFields": [],
-                "DeliveryConditions": [],
-                "Sample": 1000,
-                "CLS": {
-                    "LogSetId": "288f187c-c3ef-4479-a086-b9465a1243cb",
-                    "LogSetRegion": "ap-guangzhou",
-                    "TopicId": "0e23008b-c0ed-4d98-a77c-bdc65dfe3731"
-                },
-                "CustomEndpoint": null,
+                "LogFormat": null,
+                "LogType": "domain",
                 "S3": null,
-                "CreateTime": "2023-12-22T15:27:53+00:00",
-                "UpdateTime": "2023-12-22T15:30:07+00:00"
+                "Sample": 0,
+                "TaskId": "f0e1686a-1c4e-4f15-967b-5afb2a0803ea",
+                "TaskName": "ccc",
+                "TaskType": "cls",
+                "UpdateTime": "2024-03-26T03:10:13+08:00"
             }
         ],
-        "RequestId": "f025c1f0-cb83-41b1-bb7d-565af7e28479"
+        "RequestId": "05205d07-f582-444d-b558-b338a3f68857",
+        "TotalCount": 1
     }
 }
 ```

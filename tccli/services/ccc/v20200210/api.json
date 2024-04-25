@@ -2799,7 +2799,7 @@
         },
         {
           "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "document": "应用 ID，可以查看 https://console.cloud.tencent.com/ccc",
           "example": "1400000000",
           "member": "int64",
           "name": "SdkAppId",

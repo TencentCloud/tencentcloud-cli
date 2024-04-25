@@ -4085,6 +4085,15 @@
         },
         {
           "disabled": false,
+          "document": "日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：\n<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>\n<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。",
+          "example": "无",
+          "member": "LogFormat",
+          "name": "LogFormat",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "CLS 的配置信息。当 TaskType 取值为 cls 时，该参数必填。",
           "example": "无",
           "member": "CLSTopic",
@@ -4703,7 +4712,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中国大陆地区独立 DDoS 防护的规格。详情请参考 [独立 DDoS 防护相关费用](https://cloud.tencent.com/document/product/1552/94162)\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>BASE30_MAX300：开启独立 DDoS 防护，提供 30 Gbps 保底防护带宽，可配置最高 300 Gpbs 弹性防护带宽；</li>\n<li>BASE60_MAX600：开启独立 DDoS 防护，提供 60 Gbps 保底防护带宽，可配置最高 600 Gpbs 弹性防护带宽。</li>不填写参数时，取默认值 PLATFORM。",
+          "document": "中国大陆地区独立 DDoS 防护的规格。详情请参考 [独立 DDoS 防护相关费用](https://cloud.tencent.com/document/product/1552/94162)\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>BASE30_MAX300：开启独立 DDoS 防护，提供 30 Gbps 保底防护带宽以及 300 Gbps 弹性防护带宽；</li>\n<li>BASE60_MAX600：开启独立 DDoS 防护，提供 60 Gbps 保底防护带宽以及 600 Gbps 弹性防护带宽。</li>不填写参数时，取默认值 PLATFORM。",
           "example": "PLATFORM",
           "member": "string",
           "name": "LevelMainland",
@@ -4725,7 +4734,7 @@
         },
         {
           "disabled": false,
-          "document": "全球（除中国大陆以外）地区独立 DDoS 防护的规格。\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>ANYCAST300：开启独立 DDoS 防护，提供合计最大 300 Gbps 防护带宽；</li>\n<li>ANYCAST_ALLIN：开启独立 DDoS 防护，使用全部可用防护资源进行防护。</li>不填写参数时，取默认值 PLATFORM。",
+          "document": "全球（除中国大陆以外）地区独立 DDoS 防护的规格。\n<li>PLATFORM：平台默认防护，即不开启独立 DDoS 防护；</li>\n<li>ANYCAST300：开启独立 DDoS 防护，提供 300 Gbps 防护带宽；</li>\n<li>ANYCAST_ALLIN：开启独立 DDoS 防护，使用全部可用防护资源进行防护。</li>不填写参数时，取默认值 PLATFORM。",
           "example": "ANYCAST_ALLIN",
           "member": "string",
           "name": "LevelOverseas",
@@ -10377,6 +10386,89 @@
       ],
       "usage": "out"
     },
+    "LogFormat": {
+      "document": "实时日志投递的输出格式。您可以直接通过 FormatType 参数使用指定预设日志输出格式（JSON Lines / csv），也可以在预设日志输出格式基础上，通过其他参数来自定义变体输出格式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志投递的预设输出格式类型，取值有：\n<li>json：使用预设日志输出格式 JSON Lines，单条日志中的字段以键值对方式呈现；</li>\n<li>csv：使用预设日志输出格式 csv，单条日志中仅呈现字段值，不呈现字段名称。</li>",
+          "example": "json",
+          "member": "string",
+          "name": "FormatType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在每个日志投递批次之前添加的字符串。每个日志投递批次可能包含多条日志记录。",
+          "example": "{\"events\":[",
+          "member": "string",
+          "name": "BatchPrefix",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在每个日志投递批次后附加的字符串。",
+          "example": "]}",
+          "member": "string",
+          "name": "BatchSuffix",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在每条日志记录之前添加的字符串。",
+          "example": "{",
+          "member": "string",
+          "name": "RecordPrefix",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在每条日志记录后附加的字符串。",
+          "example": "}",
+          "member": "string",
+          "name": "RecordSuffix",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插入日志记录之间作为分隔符的字符串，取值有：\n<li>\\n：换行符；</li>\n<li>\\t：制表符；</li>\n<li>，：半角逗号。</li>",
+          "example": ",",
+          "member": "string",
+          "name": "RecordDelimiter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单条日志记录内，插入字段之间作为分隔符的字符串，取值有：\n<li>\\t：制表符；</li>\n<li>，：半角逗号；</li>\n<li>;：半角分号。</li>",
+          "example": ",",
+          "member": "string",
+          "name": "FieldDelimiter",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MaxAge": {
       "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态",
       "members": [
@@ -11368,6 +11460,15 @@
           "name": "Sample",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志投递的输出格式。不填保持原有配置。",
+          "example": "无",
+          "member": "LogFormat",
+          "name": "LogFormat",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -13335,6 +13436,16 @@
         },
         {
           "disabled": false,
+          "document": "日志投递的输出格式。出参为 null 时表示为默认格式，默认格式逻辑如下：\n<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>\n<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogFormat",
+          "name": "LogFormat",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "CLS 的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CLSTopic",
@@ -14857,17 +14968,7 @@
           "example": "20g9wz8m9mgx",
           "member": "string",
           "name": "JobId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态。",
-          "example": "状态",
-          "member": "string",
-          "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14877,7 +14978,7 @@
           "example": "http://www.qq.com",
           "member": "string",
           "name": "Target",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14887,7 +14988,17 @@
           "example": "purge_url",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。取值有：\n<li>processing：处理中；</li>\n<li>success：成功；</li>\n<li> failed：失败；</li>\n<li>timeout：超时。</li>",
+          "example": "状态",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14897,7 +15008,7 @@
           "example": "2022-02-09T02:28:43Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14907,7 +15018,7 @@
           "example": "2022-02-09T02:28:43Z",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

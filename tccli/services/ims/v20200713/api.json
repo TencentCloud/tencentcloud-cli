@@ -188,6 +188,7 @@
           "example": "1",
           "member": "int64",
           "name": "HitFlag",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -197,6 +198,7 @@
           "example": "Block",
           "member": "string",
           "name": "Suggestion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -206,6 +208,7 @@
           "example": "Porn",
           "member": "string",
           "name": "Label",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -215,6 +218,7 @@
           "example": "SexBehavior",
           "member": "string",
           "name": "SubLabel",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -224,6 +228,7 @@
           "example": "90",
           "member": "int64",
           "name": "Score",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -233,6 +238,7 @@
           "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -242,6 +248,7 @@
           "example": "无",
           "member": "ObjectResult",
           "name": "ObjectResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -251,6 +258,7 @@
           "example": "无",
           "member": "OcrResult",
           "name": "OcrResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -260,6 +268,7 @@
           "example": "无",
           "member": "LibResult",
           "name": "LibResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -269,6 +278,7 @@
           "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -278,6 +288,7 @@
           "example": "test_1001",
           "member": "string",
           "name": "BizType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -287,6 +298,7 @@
           "example": "无",
           "member": "string",
           "name": "Extra",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -296,6 +308,7 @@
           "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
