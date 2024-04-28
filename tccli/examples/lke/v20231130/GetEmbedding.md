@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lke GetEmbedding --cli-unfold-argument  \
-    --Model doc-normal-500-v5.8 \
+    --Model lke-text-embedding-v1 \
     --Inputs 你好 \
     --Online False
 ```

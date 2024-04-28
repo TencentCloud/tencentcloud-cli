@@ -1701,6 +1701,7 @@
           "example": "1560355200",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1711,6 +1712,7 @@
           "example": "1601196327",
           "member": "uint64",
           "name": "EndTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1721,6 +1723,7 @@
           "example": "/100008401725/AQTV2839QJ/sp01_328202375/events/123.jpg",
           "member": "string",
           "name": "Thumbnail",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1731,9 +1734,21 @@
           "example": "low_power",
           "member": "string",
           "name": "EventId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Finished",
+          "member": "string",
+          "name": "UploadStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

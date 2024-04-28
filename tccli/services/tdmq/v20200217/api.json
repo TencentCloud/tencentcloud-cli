@@ -6665,7 +6665,7 @@
           "example": "test",
           "member": "string",
           "name": "Properties",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6675,7 +6675,7 @@
           "example": "i just a10 testing!",
           "member": "string",
           "name": "Body",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6685,7 +6685,7 @@
           "example": "1",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6695,7 +6695,7 @@
           "example": "2020-08-18 18:47:41",
           "member": "string",
           "name": "ProduceTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6705,7 +6705,7 @@
           "example": "16836:8:-1",
           "member": "string",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6715,7 +6715,7 @@
           "example": "fisrtProducer",
           "member": "string",
           "name": "ProducerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

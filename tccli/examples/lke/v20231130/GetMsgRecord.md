@@ -41,7 +41,10 @@ Output:
                 "Reasons": [
                     "abc"
                 ],
-                "IsLlmGenerated": true
+                "IsLlmGenerated": true,
+                "ImageUrls": [
+                    ""
+                ]
             }
         ],
         "RequestId": "abc"

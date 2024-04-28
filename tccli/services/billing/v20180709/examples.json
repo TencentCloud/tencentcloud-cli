@@ -490,6 +490,20 @@
         "title": "查询uin是否在白名单列表"
       }
     ],
+    "DescribePrivilege": [
+      {
+        "document": "响应中IsTopPriorityPrivilegeUin为false，说明该uin不是最高优先级特权用户；因入参StopIfNotTopPriorityPrivilegeUin设置为true，则不会返回特权信息。",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivilege\n<公共请求参数>\n\n{\n    \"PrivilegeKeyList\": [\n        \"fallback_guarantee\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsTopPriorityPrivilegeUin\": false,\n        \"PrivilegeKeyItemList\": [],\n        \"RequestId\": \"7c140555-a07b-454c-83d1-066dbea3a51d\"\n    }\n}",
+        "title": "uin不是最高优先级特权用户"
+      },
+      {
+        "document": "响应中IsTopPriorityPrivilegeUin为true，说明该uin是最高优先级特权用户；入参StopIfNotTopPriorityPrivilegeUin无效，返回特权的兜底特权状态为打开。",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivilege\n<公共请求参数>\n\n{\n    \"PrivilegeKeyList\": [\n        \"fallback_guarantee\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsTopPriorityPrivilegeUin\": true,\n        \"PrivilegeKeyItemList\": [\n            {\n                \"PrivilegeKey\": \"fallback_guarantee\",\n                \"Status\": 3\n            }\n        ],\n        \"RequestId\": \"fe4c010a-8f84-40c9-92a7-e7a0465e044b\"\n    }\n}",
+        "title": "uin是最高优先级特权用户"
+      }
+    ],
     "DescribeSalesPolicy": [
       {
         "document": "根据uin查询用户零预付模式开关",
@@ -560,6 +574,26 @@
         "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherUsageDetails\n&Limit=10\n&Offset=1\n&VoucherId=\"abc\"\n&Operator=\"abc\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": \"1\",\n        \"TotalUsedAmount\": 18000000000,\n        \"UsageRecords\": [\n            {\n                \"UsedAmount\": 18000000000,\n                \"UsedTime\": \"2021-01-01 00:00:00\",\n                \"UsageDetails\": [\n                    {\n                        \"ProductName\": \"轻量应用服务器\",\n                        \"SubProductName\": \"轻量应用服务器 (通用型-2核2G-50G-500G)\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"76cf663e-f683-41b9-b44d-849123783bf4\"\n    }\n}",
         "title": "获取代金券使用记录"
+      }
+    ],
+    "GrantDefaultPrivilege": [
+      {
+        "document": "uin是最高优先级特权用户，并且相关特权开通成功",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantDefaultPrivilege\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTopPriorityPrivilegeUin\": true,\n        \"RequestId\": \"eced27f1-ff1c-4889-a195-f0354eb86e9d\",\n        \"Status\": \"success\"\n    }\n}",
+        "title": "uin是最高优先级特权用户，开通成功"
+      },
+      {
+        "document": "uin是最高优先级特权用户，开通失败，已提交重试",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantDefaultPrivilege\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTopPriorityPrivilegeUin\": true,\n        \"RequestId\": \"c2892b58-15b0-40e7-bdea-05aa72551a2b\",\n        \"Status\": \"retrying\"\n    }\n}",
+        "title": "uin是最高优先级特权用户，开通失败，已提交重试"
+      },
+      {
+        "document": "uin是否是最高优先级特权用户状态未知，开通失败，已提交重试",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GrantDefaultPrivilege\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsTopPriorityPrivilegeUin\": null,\n        \"RequestId\": \"03e2b54f-7dfa-4b1b-b748-261757d80155\",\n        \"Status\": \"retrying\"\n    }\n}",
+        "title": "uin是否是最高优先级特权用户状态未知，开通失败，已提交重试"
       }
     ],
     "ModifyMeasureResourceAlarmThreshold": [

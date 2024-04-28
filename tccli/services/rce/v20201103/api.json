@@ -684,41 +684,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回码。0表示成功，非0标识失败错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误码，0 表示成功，非0表示失败错误码。\n0：成功\n1：错误\n1002：参数错误\n4300：未开通服务\n4301：后端未创建对应产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "UTF-8编码，出错消息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "业务详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "OutputManageMarketingRiskValue",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "控制台显示的req_id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

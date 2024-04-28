@@ -1,3 +1,283 @@
+# Release 3.0.985.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 53 次发布
+
+发布时间：2024-04-29 01:08:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePrivilege](http://document.tencentcloudapi.woa.com/document/product/555/83797)
+* [GrantDefaultPrivilege](http://document.tencentcloudapi.woa.com/document/product/555/83796)
+
+新增数据结构：
+
+* [PrivilegeKeyItemVo](http://document.tencentcloudapi.woa.com/document/product/555/19183#PrivilegeKeyItemVo)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 60 次发布
+
+发布时间：2024-04-29 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77237)
+
+	* 新增入参：TaskType, Metadata
+
+* [ModifyCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77235)
+
+	* 新增入参：Bucket, BucketRegion, Prefix, LogType, Compress, ExtractRuleInfo, TaskType, Metadata
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 94 次发布
+
+发布时间：2024-04-29 01:15:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SparkJobInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkJobInfo)
+
+	* 新增成员：EngineTypeDetail
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 29 次发布
+
+发布时间：2024-04-29 01:15:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyTemplate](http://document.tencentcloudapi.woa.com/document/product/242/83798)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 82 次发布
+
+发布时间：2024-04-29 01:17:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBatchOrganizationRegistrationUrls](http://document.tencentcloudapi.woa.com/document/product/1668/83799)
+
+新增数据结构：
+
+* [OrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79360#OrganizationAuthUrl)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 25 次发布
+
+发布时间：2024-04-29 01:19:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1131/75389#CloudStorageEvent)
+
+	* 新增成员：UploadStatus
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 8 次发布
+
+发布时间：2024-04-29 01:20:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ParseDoc](http://document.tencentcloudapi.woa.com/document/product/1759/83702)
+* [QueryParseDocResult](http://document.tencentcloudapi.woa.com/document/product/1759/83701)
+
+修改接口：
+
+* [DescribeApp](http://document.tencentcloudapi.woa.com/document/product/1759/83609)
+
+	* 新增出参：AppStatus, AppStatusDesc
+
+* [DescribeStorageCredential](http://document.tencentcloudapi.woa.com/document/product/1759/83676)
+
+	* 新增入参：FileType, IsPublic
+
+	* 新增出参：UploadPath
+
+* [GetMsgRecord](http://document.tencentcloudapi.woa.com/document/product/1759/83709)
+
+	* 新增入参：Scene
+
+	* 新增出参：SessionDisassociatedTimestamp
+
+* [ResetSession](http://document.tencentcloudapi.woa.com/document/product/1759/83705)
+
+	* 新增入参：IsOnlyEmptyTheDialog
+
+
+新增数据结构：
+
+* [Procedure](http://document.tencentcloudapi.woa.com/document/product/1759/83593#Procedure)
+* [TokenStat](http://document.tencentcloudapi.woa.com/document/product/1759/83593#TokenStat)
+
+修改数据结构：
+
+* [ClassifyConfig](http://document.tencentcloudapi.woa.com/document/product/1759/83593#ClassifyConfig)
+
+	* 新增成员：Greeting
+
+* [KnowledgeQaOutput](http://document.tencentcloudapi.woa.com/document/product/1759/83593#KnowledgeQaOutput)
+
+	* 新增成员：ShowQuestionClarify, UseQuestionClarify, QuestionClarifyKeywords
+
+* [MsgRecord](http://document.tencentcloudapi.woa.com/document/product/1759/83593#MsgRecord)
+
+	* 新增成员：ImageUrls, TokenStat
+
+* [SummaryConfig](http://document.tencentcloudapi.woa.com/document/product/1759/83593#SummaryConfig)
+
+	* 新增成员：Greeting
+
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 9 次发布
+
+发布时间：2024-04-29 01:27:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AnswerQuestion](http://document.tencentcloudapi.woa.com/document/product/1124/83800)
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 48 次发布
+
+发布时间：2024-04-29 01:27:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebRecordVideoParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#WebRecordVideoParams)
+
+	* 新增成员：MaxMediaFileDuration
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 60 次发布
+
+发布时间：2024-04-29 01:27:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEngine](http://document.tencentcloudapi.woa.com/document/product/1364/74907)
+
+	* 新增入参：AffinityConstraint
+
+
+新增数据结构：
+
+* [AccurateQpsThreshold](http://document.tencentcloudapi.woa.com/document/product/1364/54942#AccurateQpsThreshold)
+
+修改数据结构：
+
+* [LimitRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#LimitRule)
+
+	* 新增成员：AccurateQpsThresholds
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 133 次发布
+
+发布时间：2024-04-29 01:28:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/17521)
+
+	* 新增入参：IsPrivate, SubnetId
+
+
+
+
 # Release 3.0.984.1
 
 ## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08

@@ -7983,7 +7983,7 @@
       "usage": "in"
     },
     "WebRecordVideoParams": {
-      "document": "页面录制视频参数",
+      "document": "页面录制控制参数",
       "members": [
         {
           "disabled": false,
@@ -8011,6 +8011,15 @@
           "name": "Format",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】\nHls 格式录制此参数不生效。\n示例值：1440",
+          "example": "1440",
+          "member": "int64",
+          "name": "MaxMediaFileDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

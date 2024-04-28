@@ -7,7 +7,7 @@ Input:
 ```
 tccli dlc CreateSparkSessionBatchSQL --cli-unfold-argument  \
     --DataEngineName data_engine_1 \
-    --ExecuteSQL select 1 \
+    --ExecuteSQL c2VsZWN0IDE= \
     --DriverSize small \
     --ExecutorSize small \
     --ExecutorNumbers 1 \

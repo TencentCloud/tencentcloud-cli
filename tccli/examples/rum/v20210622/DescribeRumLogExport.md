@@ -31,11 +31,11 @@ Input:
 
 ```
 tccli rum DescribeRumLogExport --cli-unfold-argument  \
-    --Name xx \
-    --Fields xx \
-    --StartTime xx \
-    --Query xx \
-    --EndTime xx \
+    --Name logDemo \
+    --Fields date \
+    --StartTime 1714103013 \
+    --Query * \
+    --EndTime 1714103013 \
     --ID 0
 ```
 
@@ -43,7 +43,7 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
+        "Result": "Traceback (most recent call last):\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 1763, in _execute\n    result = self.prepare()\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 2538, in prepare\n    raise HTTPError(self._status_code)\ntornado.web.HTTPError: HTTP 404: Not Found\n",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

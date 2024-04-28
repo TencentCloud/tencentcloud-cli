@@ -350,6 +350,13 @@
       "output": "DescribeMeasureWhiteUinListResponse",
       "status": "online"
     },
+    "DescribePrivilege": {
+      "document": "查询特权信息",
+      "input": "DescribePrivilegeRequest",
+      "name": "查询特权信息",
+      "output": "DescribePrivilegeResponse",
+      "status": "online"
+    },
     "DescribeSalesPolicy": {
       "document": "根据uin查询用户零预付模式开关",
       "input": "DescribeSalesPolicyRequest",
@@ -411,6 +418,13 @@
       "input": "DescribeVoucherUsageDetailsRequest",
       "name": "获取代金券使用记录",
       "output": "DescribeVoucherUsageDetailsResponse",
+      "status": "online"
+    },
+    "GrantDefaultPrivilege": {
+      "document": "根据用户角色给用户开通默认特权",
+      "input": "GrantDefaultPrivilegeRequest",
+      "name": "用户开通默认特权",
+      "output": "GrantDefaultPrivilegeResponse",
       "status": "online"
     },
     "ModifyMeasureResourceAlarmThreshold": {
@@ -15907,6 +15921,71 @@
       ],
       "type": "object"
     },
+    "DescribePrivilegeRequest": {
+      "document": "DescribePrivilege请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "如果不是最高优先级特权uin，是否停止查询特权，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "StopIfNotTopPriorityPrivilegeUin",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否关注信用账户状态，默认为false，受信用账户影响的特权key包括：nonfreeze_post，UserPrivilege_postPay，UserPrivilege_prePay。",
+          "example": "false",
+          "member": "bool",
+          "name": "ShouldCheckCreditStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询的特权列表，为空则查询所有特权，目前支持的特权key以及含义如下。\nfallback_guarantee：兜底保障；\nvoucher_staff：腾讯员工代金券特权；\nrefund_vip：退费按天折算特权；\nself_refund_controller：控制台自助退货特权(已作废)；\nnonfreeze_post：后付费不冻结特权；\nvoucher_post：后付费同时使用多张代金券特权；\nvoucher_pre：预付费同时使用多张代金券特权；\nUserPrivilege_SVIP：超级预付费不停服特权；\nUserPrivilege_postPay：后付费不停服特权；\nUserPrivilege_prePay：普通预付费不停服特权；\ncloudsec：KA客户未备案放行特权。",
+          "example": "[]",
+          "member": "string",
+          "name": "PrivilegeKeyList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivilegeResponse": {
+      "document": "DescribePrivilege返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTopPriorityPrivilegeUin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "特权开通信息列表",
+          "example": "无",
+          "member": "PrivilegeKeyItemVo",
+          "name": "PrivilegeKeyItemList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceDetailsData": {
       "document": "DescribeResourceDetails正常出参",
       "members": [
@@ -17920,6 +17999,53 @@
       ],
       "usage": "both"
     },
+    "GrantDefaultPrivilegeRequest": {
+      "document": "GrantDefaultPrivilege请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "uin对应的用户cid",
+          "example": "无",
+          "member": "string",
+          "name": "Cid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantDefaultPrivilegeResponse": {
+      "document": "GrantDefaultPrivilege返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否是最高优先级的特权uin，这批用户会默认开通部分特权（兜底保障）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTopPriorityPrivilegeUin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "特权开通结果，如果同步开通成功，返回success，同步开通失败，会提交异步重试任务，返回retrying",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InnerFactoryFailedResources": {
       "document": "Inner资源操作结果",
       "members": [
@@ -19493,6 +19619,34 @@
         }
       ],
       "usage": "out"
+    },
+    "PrivilegeKeyItemVo": {
+      "document": "特权开通信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特权key",
+          "example": "fallback_guarantee",
+          "member": "string",
+          "name": "PrivilegeKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特权状态，取值以及含义如下。1：受信用账户影响的特权，并且当前查询uin是信用账户；2：关闭；3：开通。",
+          "example": "3",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ProductInfo": {
       "document": "商品详细信息",

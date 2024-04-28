@@ -109,8 +109,8 @@
     "CreateCosRecharge": [
       {
         "document": "创建cos导入任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"LogsetId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"ae13f7db-00b5-41ac-916e-407802axxxxx\",\n    \"LogsetId\": \"0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"ca092608-98e8-4ad9-83c5-a6b3bbexxxxx\",\n        \"RequestId\": \"dc78ee34-237b-41c7-8fcd-601a99b271f6\"\n    }\n}",
         "title": "创建cos导入任务"
       }
     ],
@@ -649,8 +649,8 @@
     "ModifyCosRecharge": [
       {
         "document": "修改cos导入任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"1\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"ca092608-98e8-4ad9-83c5-a6b3bbexxxxx\",\n    \"TopicId\": \"ae13f7db-00b5-41ac-916e-407802axxxxx\",\n    \"Name\": \"test_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc78ee34-237b-41c7-8fcd-601a99bxxxxx\"\n    }\n}",
         "title": "修改cos导入任务"
       }
     ],
