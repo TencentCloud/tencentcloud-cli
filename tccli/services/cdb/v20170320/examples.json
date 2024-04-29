@@ -666,6 +666,14 @@
         "title": "查询数据库"
       }
     ],
+    "DescribeDbTknPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknPwdRules\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"testUserResourceId\",\n    \"ResourceRegion\": \"testResourceRegion\",\n    \"ResourceAccount\": \"testResourceAccount\",\n    \"InstanceType\": \"testInstanceType\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"CharacterType\": \"abc\",\n                \"Choices\": \"abc\",\n                \"MinimumLength\": 0,\n                \"MustStart\": true\n            }\n        ],\n        \"RequiredLength\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询轮转密码规则"
+      }
+    ],
     "DescribeDbTknResource": [
       {
         "document": "查询资源是否开启密码轮转",

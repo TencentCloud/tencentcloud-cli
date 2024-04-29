@@ -2841,6 +2841,7 @@
           "example": "https://t.notebook.gz.ti.tencentcs.com/auth?authToken=XX",
           "member": "string",
           "name": "AuthorizedUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6675,6 +6676,7 @@
           "example": "无",
           "member": "string",
           "name": "Kernels",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

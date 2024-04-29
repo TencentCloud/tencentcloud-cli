@@ -2387,6 +2387,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认情况下，模式位用于为已创建的文件设置权限。 必须是 0000 到 0777 之间的八进制值或 0 到 511 之间的十进制值。 YAML 既接受八进制值也接受十进制值，JSON 针对模式位需要十进制值。此字段默认为 0644。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0777",
+          "member": "int64",
+          "name": "DefaultMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

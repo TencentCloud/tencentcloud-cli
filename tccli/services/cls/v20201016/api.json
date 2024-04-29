@@ -91,6 +91,13 @@
       "output": "CreateDashboardResponse",
       "status": "online"
     },
+    "CreateDashboardSubscribe": {
+      "document": "此接口用于创建仪表盘订阅",
+      "input": "CreateDashboardSubscribeRequest",
+      "name": "创建仪表盘订阅",
+      "output": "CreateDashboardSubscribeResponse",
+      "status": "online"
+    },
     "CreateDataTransform": {
       "document": "本接口用于创建数据加工任务。",
       "input": "CreateDataTransformRequest",
@@ -215,6 +222,13 @@
       "input": "DeleteDashboardRequest",
       "name": "删除仪表盘",
       "output": "DeleteDashboardResponse",
+      "status": "online"
+    },
+    "DeleteDashboardSubscribe": {
+      "document": "此接口用于删除仪表盘订阅",
+      "input": "DeleteDashboardSubscribeRequest",
+      "name": "删除仪表盘订阅",
+      "output": "DeleteDashboardSubscribeResponse",
       "status": "online"
     },
     "DeleteDataTransform": {
@@ -348,6 +362,13 @@
       "input": "DescribeCosRechargesRequest",
       "name": "获取cos导入配置",
       "output": "DescribeCosRechargesResponse",
+      "status": "online"
+    },
+    "DescribeDashboardSubscribes": {
+      "document": " 本接口用于获取仪表盘订阅列表，支持分页",
+      "input": "DescribeDashboardSubscribesRequest",
+      "name": "获取仪表盘订阅列表",
+      "output": "DescribeDashboardSubscribesResponse",
       "status": "online"
     },
     "DescribeDashboards": {
@@ -553,6 +574,13 @@
       "output": "ModifyDashboardResponse",
       "status": "online"
     },
+    "ModifyDashboardSubscribe": {
+      "document": "此接口用于修改仪表盘订阅",
+      "input": "ModifyDashboardSubscribeRequest",
+      "name": "修改仪表盘订阅",
+      "output": "ModifyDashboardSubscribeResponse",
+      "status": "online"
+    },
     "ModifyDataTransform": {
       "document": "本接口用于修改数据加工任务",
       "input": "ModifyDataTransformRequest",
@@ -656,6 +684,13 @@
       "input": "SearchCosRechargeInfoRequest",
       "name": "预览cos导入信息",
       "output": "SearchCosRechargeInfoResponse",
+      "status": "online"
+    },
+    "SearchDashboardSubscribe": {
+      "document": "此接口用于预览仪表盘订阅",
+      "input": "SearchDashboardSubscribeRequest",
+      "name": "预览仪表盘订阅",
+      "output": "SearchDashboardSubscribeResponse",
       "status": "online"
     },
     "SearchLog": {
@@ -3756,6 +3791,70 @@
       ],
       "type": "object"
     },
+    "CreateDashboardSubscribeRequest": {
+      "document": "CreateDashboardSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。\n<br><li>{秒数} 取值范围： 0 ~ 59 \n<br><li>{分钟} 取值范围： 0 ~ 59  \n<br><li>{小时} 取值范围： 0 ~ 23  \n<br><li>{日期} 取值范围： 1 ~ 31 AND (dayOfMonth最后一天： L) \n<br><li>{月份} 取值范围： 1 ~ 12 \n<br><li>{星期} 取值范围： 0 ~ 6 【0:星期日， 6星期六】",
+          "example": "\"0 0 10 L * ?\"",
+          "member": "string",
+          "name": "Cron",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDashboardSubscribeResponse": {
+      "document": "CreateDashboardSubscribe返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDataTransformRequest": {
       "document": "CreateDataTransform请求参数结构体",
       "members": [
@@ -3788,8 +3887,8 @@
         },
         {
           "disabled": false,
-          "document": "加工语句",
-          "example": "xxx",
+          "document": "加工语句。[创建加工任务](https://cloud.tencent.com/document/product/614/63940)  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
+          "example": "fields_drop(\"message\")",
           "member": "string",
           "name": "EtlContent",
           "required": true,
@@ -4295,7 +4394,7 @@
         },
         {
           "disabled": false,
-          "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
+          "document": "创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -4313,7 +4412,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启机器组自动更新",
+          "document": "是否开启机器组自动更新。默认false",
           "example": "true",
           "member": "bool",
           "name": "AutoUpdate",
@@ -4340,7 +4439,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false",
           "example": "true",
           "member": "bool",
           "name": "ServiceLogging",
@@ -4349,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器离线清理时间",
+          "document": "机器组中机器离线清理时间。单位：天",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -4997,6 +5096,266 @@
       ],
       "usage": "out"
     },
+    "DashboardNoticeMode": {
+      "document": "仪表盘订阅通知方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘通知方式。\n<br><li> Uin：腾讯云用户\n<br><li> Group：腾讯云用户组 \n<br><li> Email：自定义Email\n<br><li> WeCom: 企业微信回调",
+          "example": "Email",
+          "member": "string",
+          "name": "ReceiverType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘通知方式对应的值。\n<br><li> 当ReceiverType不是 Wecom 时，Values必填。",
+          "example": "[\"168053\",\"12345\"]",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘通知渠道。\n<br><li> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]",
+          "member": "string",
+          "name": "ReceiverChannels",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回调Url。\n<br><li> 当ReceiverType是 Wecom 时，Url必填。\n<br><li> 当ReceiverType不是 Wecom 时，Url不能填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DashboardSubscribeData": {
+      "document": "仪表盘订阅相关数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅通知方式。",
+          "example": "无",
+          "member": "DashboardNoticeMode",
+          "name": "NoticeModes",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅时间，为空标识取仪表盘默认的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"now-5m\",\"now\"]",
+          "member": "string",
+          "name": "DashboardTime",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘样式布局。0：网格布局，1：单列布局。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StyleLayout",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅模板变量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DashboardTemplateVariable",
+          "name": "TemplateVariables",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "Timezone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言。 zh 中文、en`英文。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zh",
+          "member": "string",
+          "name": "SubscribeLanguage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DashboardSubscribeInfo": {
+      "document": "仪表盘订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅id。",
+          "example": "11",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "xxx-日报",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxxx-xxxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅时间。",
+          "example": "\"0 0 10 L * ?\"",
+          "member": "string",
+          "name": "Cron",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录创建时间。",
+          "example": "2022-03-18 22:47:06",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录更新时间。",
+          "example": "2022-03-18 22:47:06",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录最后一次发送成功时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-03-19 22:47:06",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云主账号Id。",
+          "example": "277001",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云主账号下的子账号Id。",
+          "example": "277001",
+          "member": "uint64",
+          "name": "SubUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录最后一次发送的状态。success：全部发送成功，fail：未发送， partialSuccess：部分发送成功。",
+          "example": "\"ok\"",
+          "member": "string",
+          "name": "LastStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DashboardTemplateVariable": {
+      "document": "仪表盘订阅模板变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key的值",
+          "example": "TopicId",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key对应的values取值values",
+          "example": "[\"xxxx-xxxx-xxxx-xxxx\",\"123414-12341234-12345-3456\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DashboardTopicInfo": {
       "document": "仪表盘关联的topic信息",
       "members": [
@@ -5429,6 +5788,33 @@
     },
     "DeleteDashboardResponse": {
       "document": "DeleteDashboard返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDashboardSubscribeRequest": {
+      "document": "DeleteDashboardSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录id。",
+          "example": "id",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDashboardSubscribeResponse": {
+      "document": "DeleteDashboardSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6307,6 +6693,71 @@
           "name": "Data",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardSubscribesRequest": {
+      "document": "DescribeDashboardSubscribes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<br><li> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li> 每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardSubscribesResponse": {
+      "document": "DescribeDashboardSubscribes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅列表",
+          "example": "无",
+          "member": "DashboardSubscribeInfo",
+          "name": "DashboardSubscribeInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7371,7 +7822,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间戳，支持最近3天的查询， 毫秒",
+          "document": "查询的开始时间戳，支持最近3天的查询， 毫秒。\nStartTime必须小于EndTime",
           "example": "978653222",
           "member": "int64",
           "name": "StartTime",
@@ -7380,7 +7831,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间戳， 毫秒",
+          "document": "查询的结束时间戳， 毫秒。\nStartTime必须小于EndTime",
           "example": "978653222",
           "member": "int64",
           "name": "EndTime",
@@ -7399,7 +7850,7 @@
           "example": "无",
           "member": "ShipperTaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8109,6 +8560,7 @@
           "example": "false",
           "member": "bool",
           "name": "CaseSensitive",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -8116,9 +8568,10 @@
         {
           "disabled": false,
           "document": "全文索引的分词符，其中的每个字符代表一个分词符；\n仅支持英文符号、\\n\\t\\r及转义符\\；\n注意：\\n\\t\\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\\n\\t\\r被重复转义",
-          "example": "xxx",
+          "example": "@&?|#()='\",;:<>[]{}/ \\n\\t\\r\\\\",
           "member": "string",
           "name": "Tokenizer",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8129,6 +8582,7 @@
           "example": "false",
           "member": "bool",
           "name": "ContainZH",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -9440,7 +9894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组类型，ip表示该机器组Values中存的是采集机器的IP地址，label表示该机器组Values中存储的是机器的标签",
+          "document": "机器组类型。支持 ip 和 label。\n- ip：表示该机器组Values中存的是采集机器的ip地址\n- label：表示该机器组Values中存储的是机器的标签",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -9451,7 +9905,7 @@
         },
         {
           "disabled": false,
-          "document": "机器描述列表",
+          "document": "机器描述列表。",
           "example": "无",
           "member": "string",
           "name": "Values",
@@ -10550,6 +11004,79 @@
       ],
       "type": "object"
     },
+    "ModifyDashboardSubscribeRequest": {
+      "document": "ModifyDashboardSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。",
+          "example": "\"0 0 10 L * ?\"",
+          "member": "string",
+          "name": "Cron",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDashboardSubscribeResponse": {
+      "document": "ModifyDashboardSubscribe返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDataTransformRequest": {
       "document": "ModifyDataTransform请求参数结构体",
       "members": [
@@ -10942,7 +11469,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组类型",
+          "document": "机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -10996,7 +11523,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器定期离线清理时间",
+          "document": "机器组中机器定期离线清理时间。单位：天",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -12645,6 +13172,60 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDashboardSubscribeRequest": {
+      "document": "SearchDashboardSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅Id。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDashboardSubscribeResponse": {
+      "document": "SearchDashboardSubscribe返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

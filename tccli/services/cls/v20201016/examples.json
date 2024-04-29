@@ -122,6 +122,14 @@
         "title": "创建仪表盘"
       }
     ],
+    "CreateDashboardSubscribe": [
+      {
+        "document": "创建仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"每月最后一天早晨10点\",\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n    \"Cron\": \"0 0 10 L * ?\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"2022-05-01T00:00:00.000\",\n            \"2022-05-31T23:59:59.999\"\n        ],\n        \"StyleLayout\": 1,\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"topic_id\"\n            },\n            {\n                \"Key\": \"variable_1\"\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"Id\": 1\n    }\n}",
+        "title": "创建仪表盘订阅"
+      }
+    ],
     "CreateDataTransform": [
       {
         "document": "数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。\n",
@@ -264,6 +272,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboard\n<公共请求参数>\n\n{\n    \"DashboardId\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除仪表盘"
+      }
+    ],
+    "DeleteDashboardSubscribe": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建仪表盘订阅"
       }
     ],
     "DeleteDataTransform": [
@@ -416,6 +432,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Status\": 0,\n    \"Enable\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": 3,\n                \"TopicId\": \"5590efdf-cae5-4703-8d00-2a813xxxxx\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"Enable\": 1,\n                \"Name\": \"test\",\n                \"Progress\": 1,\n                \"Compress\": \"gzip\",\n                \"Bucket\": \"xxxxx-1254xxxx\",\n                \"UpdateTime\": \"2023-03-08 14:51:14\",\n                \"Id\": \"0333114e-2e93-42d8-8a2f-a55de8474\",\n                \"LogType\": \"minimalist_log\",\n                \"Prefix\": \"xxx/2023/03/07/16/202303071600_000_1030.gz\",\n                \"LogsetId\": \"03efb75a-0f89-41b0-8cc6-9049a51fexxxx\",\n                \"CreateTime\": \"2023-03-08 15:29:55\",\n                \"ExtractRuleInfo\": {\n                    \"LogRegex\": \"\",\n                    \"Keys\": [\n                        \"@time\"\n                    ],\n                    \"TimeKey\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Delimiter\": \",\",\n                    \"TimeFormat\": \"\",\n                    \"UnMatchLogKey\": \"fieldName\",\n                    \"Backtracking\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"xx-xx-xx-xx\"\n    }\n}",
         "title": "获取cos导入配置"
+      }
+    ],
+    "DescribeDashboardSubscribes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardSubscribes\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DashboardSubscribeInfos\": [\n            {\n                \"Name\": \"每月最后一天早晨10点\",\n                \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n                \"Cron\": \"0 0 10 L * ?\",\n                \"SubscribeData\": {\n                    \"DashboardTime\": [\n                        \"2022-05-01T00:00:00.000\",\n                        \"2022-05-31T23:59:59.999\"\n                    ],\n                    \"StyleLayout\": 1,\n                    \"TemplateVariables\": [\n                        {\n                            \"Key\": \"topic_id\"\n                        },\n                        {\n                            \"Key\": \"variable_1\"\n                        }\n                    ],\n                    \"NoticeModes\": [\n                        {\n                            \"ReceiverType\": \"Uin\",\n                            \"Values\": [\n                                \"168053\"\n                            ],\n                            \"ReceiverChannels\": [\n                                \"Sms\"\n                            ]\n                        },\n                        {\n                            \"ReceiverType\": \"Group\",\n                            \"Values\": [\n                                \"10721522\",\n                                \"9553840\"\n                            ],\n                            \"ReceiverChannels\": [\n                                \"Sms\"\n                            ]\n                        },\n                        {\n                            \"ReceiverType\": \"Email\",\n                            \"Values\": [\n                                \"3333@qq.com\",\n                                \"xxx@163.com\"\n                            ],\n                            \"ReceiverChannels\": []\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取仪表盘订阅列表"
       }
     ],
     "DescribeDashboards": [
@@ -662,6 +686,14 @@
         "title": "修改仪表盘"
       }
     ],
+    "ModifyDashboardSubscribe": [
+      {
+        "document": "修改仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"每月最后一天早晨10点\",\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n    \"Cron\": \"0 0 10 L * ?\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"2022-05-01T00:00:00.000\",\n            \"2022-05-31T23:59:59.999\"\n        ],\n        \"StyleLayout\": 1,\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"topic_id\"\n            },\n            {\n                \"Key\": \"variable_1\"\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\",\n        \"Id\": 1\n    }\n}",
+        "title": "修改仪表盘订阅"
+      }
+    ],
     "ModifyDataTransform": [
       {
         "document": "数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。\n",
@@ -786,6 +818,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCosRechargeInfo\n<公共请求参数>\n\n{\n    \"TopicId\": \"e6a94ed2-8191-49ac-ab67-90e33d2f1111\",\n    \"LogsetId\": \"11114ed2-8191-49ac-ab67-90e33d2f3974\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"Compress\": \"gzip\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"\",\n        \"Status\": 0,\n        \"Data\": [\n            \"2021-11-09 20:16:29.038 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.039 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.040 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.041 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.042 INFO    apis/report.go:108      report data success, size 1\"\n        ],\n        \"Sum\": 10000,\n        \"Path\": \"https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz\",\n        \"RequestId\": \"e6a94ed2-8191-49ac-ab67-90e33d2f3974\"\n    }\n}",
         "title": "预览cos导入信息"
+      }
+    ],
+    "SearchDashboardSubscribe": [
+      {
+        "document": "预览仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"每月最后一天早晨10点\",\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxxx-xxxxxxxx\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"2022-05-01T00:00:00.000\",\n            \"2022-05-31T23:59:59.999\"\n        ],\n        \"StyleLayout\": 1,\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"topic_id\"\n            },\n            {\n                \"Key\": \"variable_1\"\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "预览仪表盘订阅"
       }
     ],
     "SearchLog": [

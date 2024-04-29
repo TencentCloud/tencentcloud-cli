@@ -1,3 +1,120 @@
+# Release 3.0.986.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 30 次发布
+
+发布时间：2024-04-30 01:10:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CampConfiguration](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CampConfiguration)
+
+	* 新增成员：DefaultMode
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 95 次发布
+
+发布时间：2024-04-30 01:10:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDbTknPwdRules](http://document.tencentcloudapi.woa.com/document/product/236/83801)
+
+新增数据结构：
+
+* [RotationPasswordRule](http://document.tencentcloudapi.woa.com/document/product/236/15878#RotationPasswordRule)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 61 次发布
+
+发布时间：2024-04-30 01:12:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDashboardSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/83807)
+* [DeleteDashboardSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/83806)
+* [DescribeDashboardSubscribes](http://document.tencentcloudapi.woa.com/document/product/614/83805)
+* [ModifyDashboardSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/83804)
+* [SearchDashboardSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/83803)
+
+新增数据结构：
+
+* [DashboardNoticeMode](http://document.tencentcloudapi.woa.com/document/product/614/56471#DashboardNoticeMode)
+* [DashboardSubscribeData](http://document.tencentcloudapi.woa.com/document/product/614/56471#DashboardSubscribeData)
+* [DashboardSubscribeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DashboardSubscribeInfo)
+* [DashboardTemplateVariable](http://document.tencentcloudapi.woa.com/document/product/614/56471#DashboardTemplateVariable)
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 11 次发布
+
+发布时间：2024-04-30 01:20:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueryWhere](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QueryWhere)
+
+	* 新增成员：ValueType
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 33 次发布
+
+发布时间：2024-04-30 01:25:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePlan](http://document.tencentcloudapi.woa.com/document/product/1738/83813)
+* [DestroyPlan](http://document.tencentcloudapi.woa.com/document/product/1738/83812)
+* [IncreasePlanQuota](http://document.tencentcloudapi.woa.com/document/product/1738/83811)
+* [ModifyPlan](http://document.tencentcloudapi.woa.com/document/product/1738/83810)
+* [RenewPlan](http://document.tencentcloudapi.woa.com/document/product/1738/83809)
+* [UpgradePlan](http://document.tencentcloudapi.woa.com/document/product/1738/83808)
+
+新增数据结构：
+
+* [PrepaidPlanParam](http://document.tencentcloudapi.woa.com/document/product/1738/81211#PrepaidPlanParam)
+* [RenewFlag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RenewFlag)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.985.1
 
 ## 费用中心(billing) 版本：2018-07-09

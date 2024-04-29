@@ -128,6 +128,20 @@
         "title": "创建源站组"
       }
     ],
+    "CreatePlan": [
+      {
+        "document": "创建个人版计费套餐，套餐时长 1 个月，且设置不自动续费。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlan\n<公共请求参数>\n\n{\n    \"PlanType\": \"personal\",\n    \"PrepaidPlanParam\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"off\"\n    },\n    \"AutoUseVoucher\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\",\n        \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n        \"DealName\": \"20240312347001004723731\"\n    }\n}",
+        "title": "创建个人版计费套餐"
+      },
+      {
+        "document": "创建企业版套餐。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlan\n<公共请求参数>\n\n{\n    \"PlanType\": \"enterprise\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\",\n        \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n        \"DealName\": \"20240312347001004723731\"\n    }\n}",
+        "title": "创建企业版套餐"
+      }
+    ],
     "CreatePlanForZone": [
       {
         "document": "为站点创建套餐",
@@ -740,6 +754,14 @@
         "title": "查询用户站点信息列表"
       }
     ],
+    "DestroyPlan": [
+      {
+        "document": "销毁计费套餐 edgeone-2wdo315m2y4c。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2wdo315m2y4c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "销毁计费套餐"
+      }
+    ],
     "DownloadL4Logs": [
       {
         "document": "",
@@ -762,6 +784,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IdentifyZone\n<公共请求参数>\n\n{\n    \"ZoneName\": \"example.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ascription\": {\n            \"Subdomain\": \"edgeonereclaim\",\n            \"RecordType\": \"TXT\",\n            \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n        },\n        \"FileAscription\": {\n            \"IdentifyPath\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\",\n            \"IdentifyContent\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\"\n        },\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
         "title": "认证站点"
+      }
+    ],
+    "IncreasePlanQuota": [
+      {
+        "document": "为套餐 edgeone-2unuvzjmmn2q 增购 10 个站点数配额。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlanQuota\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"QuotaType\": \"site\",\n    \"QuotaNumber\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20240312347001004723731\",\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "为套餐增购站点数配额"
+      },
+      {
+        "document": "为套餐 edgeone-2unuvzjmmn2q 增购 10 个 Web 防护 - 自定义规则 - 精准匹配策略的规则配额。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlanQuota\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"QuotaType\": \"precise_access_control_rule\",\n    \"QuotaNumber\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20240312347001004723731\",\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "为套餐增购自定义规则配额"
       }
     ],
     "ModifyAccelerationDomain": [
@@ -888,6 +924,14 @@
         "title": "修改源站组记录"
       }
     ],
+    "ModifyPlan": [
+      {
+        "document": "开启预付费套餐 edgeone-2unuvzjmmn2q 的自动续费功能。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlanRenewFlag\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"RenewFlag\": {\n        \"Switch\": \"on\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "修改预付费套餐自动续费标签"
+      }
+    ],
     "ModifyRealtimeLogDeliveryTask": [
       {
         "document": "修改某个已经创建成功的实时日志投递任务配置，关闭其日志采样功能。修改前，日志采样比例为 60.5%；修改后，不再进行日志采样，将投递 100% 数量的日志至目的地。",
@@ -984,6 +1028,22 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneStatus\n<公共请求参数>\n\n{\n    \"Paused\": true,\n    \"ZoneId\": \"zone-27q0p0bali16\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7sd20b24-7dc5-98f4-96ce-95825dcd34sa\"\n    }\n}",
         "title": "切换站点状态"
+      }
+    ],
+    "RenewPlan": [
+      {
+        "document": "续费套餐 edgeone-2unuvzjmmn2q 时长 3 个月，且不自动使用代金券。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"Period\": 3,\n    \"AutoUseVoucher\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20240312347001004723731\",\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "续费套餐三个月"
+      }
+    ],
+    "UpgradePlan": [
+      {
+        "document": "将预付费套餐 edgeone-2unuvzjmmn2q 升级至标准版，且不使用代金券。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradePlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"PlanType\": \"standard\",\n    \"AutoUseVoucher\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20240312347001004723731\",\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
+        "title": "将预付费套餐升级至标准版"
       }
     ],
     "VerifyOwnership": [

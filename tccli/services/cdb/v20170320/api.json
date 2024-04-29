@@ -546,6 +546,13 @@
       "output": "DescribeDatabasesResponse",
       "status": "online"
     },
+    "DescribeDbTknPwdRules": {
+      "document": "查询轮转密码规则",
+      "input": "DescribeDbTknPwdRulesRequest",
+      "name": "查询密码规则",
+      "output": "DescribeDbTknPwdRulesResponse",
+      "status": "online"
+    },
     "DescribeDbTknResource": {
       "document": "查询资源是否开启密码轮转",
       "input": "DescribeDbTknResourceRequest",
@@ -10519,6 +10526,80 @@
       ],
       "type": "object"
     },
+    "DescribeDbTknPwdRulesRequest": {
+      "document": "DescribeDbTknPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "无",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源所处的地域",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源账户名称",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，默认cdb",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesResponse": {
+      "document": "DescribeDbTknPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "[]",
+          "example": "无",
+          "member": "RotationPasswordRule",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "64",
+          "example": "最终要求的密码长度",
+          "member": "int64",
+          "name": "RequiredLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDbTknResourceRequest": {
       "document": "DescribeDbTknResource请求参数结构体",
       "members": [
@@ -19051,6 +19132,56 @@
         }
       ],
       "usage": "out"
+    },
+    "RotationPasswordRule": {
+      "document": "轮转密码规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Choices",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinimumLength",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码是否必须以这种字符开头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Route": {
       "document": "路由信息",
