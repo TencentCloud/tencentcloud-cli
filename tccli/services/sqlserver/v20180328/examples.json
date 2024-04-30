@@ -480,6 +480,14 @@
         "title": "查询数据库详细配置信息"
       }
     ],
+    "DescribeDbTknPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknPwdRules\n<公共请求参数>\n\n{\n    \"ResourceAccount\": \"abc\",\n    \"UserResourceId\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"InstanceType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"CharacterType\": \"abc\",\n                \"Choices\": \"abc\",\n                \"MinimumLength\": 0,\n                \"MustStart\": true\n            }\n        ],\n        \"RequiredLength\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeDbTknPwdRules"
+      }
+    ],
     "DescribeDbTknResource": [
       {
         "document": "",

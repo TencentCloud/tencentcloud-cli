@@ -1,3 +1,44 @@
+# Release 3.0.987.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 62 次发布
+
+发布时间：2024-05-01 01:11:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DashboardSubscribeData](http://document.tencentcloudapi.woa.com/document/product/614/56471#DashboardSubscribeData)
+
+	* 新增成员：JumpDomain, JumpUrl
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 39 次发布
+
+发布时间：2024-05-01 01:22:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDbTknPwdRules](http://document.tencentcloudapi.woa.com/document/product/238/83814)
+
+新增数据结构：
+
+* [Rules](http://document.tencentcloudapi.woa.com/document/product/238/19976#Rules)
+
+
+
 # Release 3.0.986.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

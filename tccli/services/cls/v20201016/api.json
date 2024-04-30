@@ -5101,40 +5101,44 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘通知方式。\n<br><li> Uin：腾讯云用户\n<br><li> Group：腾讯云用户组 \n<br><li> Email：自定义Email\n<br><li> WeCom: 企业微信回调",
+          "document": "仪表盘通知方式。<br>\n<li/>Uin：腾讯云用户<br>\n<li/>Group：腾讯云用户组<br>\n<li/>Email：自定义Email<br>\n<li/>WeCom: 企业微信回调",
           "example": "Email",
           "member": "string",
           "name": "ReceiverType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仪表盘通知方式对应的值。\n<br><li> 当ReceiverType不是 Wecom 时，Values必填。",
+          "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。",
           "example": "[\"168053\",\"12345\"]",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仪表盘通知渠道。\n<br><li> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仪表盘通知渠道。\n<br><li/> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]",
           "member": "string",
           "name": "ReceiverChannels",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "回调Url。\n<br><li> 当ReceiverType是 Wecom 时，Url必填。\n<br><li> 当ReceiverType不是 Wecom 时，Url不能填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调Url。\n<br><li/> 当ReceiverType是 Wecom 时，Url必填。\n<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://xxx",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5207,6 +5211,28 @@
           "member": "string",
           "name": "SubscribeLanguage",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "JumpDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义跳转链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.xxx.com/getxxx",
+          "member": "string",
+          "name": "JumpUrl",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5339,6 +5365,7 @@
           "example": "TopicId",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5349,6 +5376,7 @@
           "example": "[\"xxxx-xxxx-xxxx-xxxx\",\"123414-12341234-12345-3456\"]",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false

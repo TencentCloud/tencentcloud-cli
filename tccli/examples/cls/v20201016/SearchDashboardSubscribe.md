@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cls SearchDashboardSubscribe --cli-unfold-argument  \
-    --Name 每月最后一天早晨10点 \
-    --DashboardId xxx-xxxxxx-xxxxxxx-xxxxxxxx \
-    --SubscribeData.DashboardTime 2022-05-01T00:00:00.000 2022-05-31T23:59:59.999 \
+    --DashboardId xxx-xxxxxx-xxxxxx-xxxx \
+    --Name 仪表盘-CLS-日报 \
+    --SubscribeData.DashboardTime now-5m now \
     --SubscribeData.StyleLayout 1 \
-    --SubscribeData.TemplateVariables.0.Key topic_id \
-    --SubscribeData.TemplateVariables.1.Key variable_1 \
+    --SubscribeData.TemplateVariables.0.Key name \
+    --SubscribeData.TemplateVariables.0.Values abc \
     --SubscribeData.NoticeModes.0.ReceiverType Uin \
     --SubscribeData.NoticeModes.0.Values 168053 \
     --SubscribeData.NoticeModes.0.ReceiverChannels Sms \
@@ -19,7 +19,10 @@ tccli cls SearchDashboardSubscribe --cli-unfold-argument  \
     --SubscribeData.NoticeModes.1.Values 10721522 9553840 \
     --SubscribeData.NoticeModes.1.ReceiverChannels Sms \
     --SubscribeData.NoticeModes.2.ReceiverType Email \
-    --SubscribeData.NoticeModes.2.Values 3333@qq.com xxx@163.com
+    --SubscribeData.NoticeModes.2.Values 3333@qq.com xxx@163.com \
+    --SubscribeData.Timezone Asia/Shanghai \
+    --SubscribeData.SubscribeLanguage zh \
+    --SubscribeData.JumpDomain https://console.cloud.tencent.com
 ```
 
 Output: 
