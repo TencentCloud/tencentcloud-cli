@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AnswerQuestion": {
+      "document": "\"AIGC代答\"产品帮助客户在其AIGC场景下，对于敏感类的问题，不是由客户的大模型机器人来回答，而是我们来进行代答，尽最大可能帮助客户规避风险。",
+      "input": "AnswerQuestionRequest",
+      "name": "AIGC代答",
+      "output": "AnswerQuestionResponse",
+      "status": "online"
+    },
     "ModerateText": {
       "document": "天御文本内容安全定制标签文本审核接口为定制接口，会按照客户定制标签输出审核结果，如需使用请联系商务经理或[在线客服](https://cloud.tencent.com/online-service?from=doc_1125)咨询。",
       "input": "ModerateTextRequest",
@@ -22,6 +29,43 @@
     "serviceShortName": "tms"
   },
   "objects": {
+    "AnswerQuestionRequest": {
+      "document": "AnswerQuestion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户问题",
+          "example": "无",
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AnswerQuestionResponse": {
+      "document": "AnswerQuestion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配到的答案",
+          "example": "无",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailResults": {
       "document": "文本审核返回的详细结果",
       "members": [

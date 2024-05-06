@@ -91,6 +91,13 @@
       "output": "CreateOriginGroupResponse",
       "status": "online"
     },
+    "CreatePlan": {
+      "document": "若您需要使用 Edgeone 产品，您需要通过此接口创建计费套餐。\n> 创建套餐后，您需要通过 [CreateZone](https://cloud.tencent.com/document/product/1552/80719) 完成创建站点，绑定套餐的流程，Edgeone 才能正常提供服务。",
+      "input": "CreatePlanRequest",
+      "name": "创建套餐",
+      "output": "CreatePlanResponse",
+      "status": "online"
+    },
     "CreatePlanForZone": {
       "document": "为未购买套餐的站点购买套餐",
       "input": "CreatePlanForZoneRequest",
@@ -490,6 +497,13 @@
       "output": "DescribeZonesResponse",
       "status": "online"
     },
+    "DestroyPlan": {
+      "document": "当您需要停止 Edgeone 套餐的计费，可以通过该接口销毁计费套餐。\n> 销毁计费套餐需要满足以下条件：\n    1.套餐已过期（企业版套餐除外）；\n    2.套餐下所有站点均已关闭或删除。\n\n> 站点状态可以通过 [查询站点列表](https://cloud.tencent.com/document/product/1552/80713) 接口进行查询\n停用站点可以通过 [切换站点状态](https://cloud.tencent.com/document/product/1552/80707) 接口将站点切换至关闭状态\n删除站点可以通过 [删除站点](https://cloud.tencent.com/document/product/1552/80717) 接口将站点删除",
+      "input": "DestroyPlanRequest",
+      "name": "销毁套餐",
+      "output": "DestroyPlanResponse",
+      "status": "online"
+    },
     "DownloadL4Logs": {
       "document": "本接口（DownloadL4Logs）用于下载四层离线日志。",
       "input": "DownloadL4LogsRequest",
@@ -509,6 +523,13 @@
       "input": "IdentifyZoneRequest",
       "name": "认证站点",
       "output": "IdentifyZoneResponse",
+      "status": "online"
+    },
+    "IncreasePlanQuota": {
+      "document": "当您的套餐绑定的站点数，或配置的 Web 防护 - 自定义规则 - 精准匹配策略的规则数，或 Web 防护 - 速率限制 - 精准速率限制模块的规则数达到套餐允许的配额上限，可以通过该接口增购对应配额。\n> 该接口该仅支持企业版套餐。",
+      "input": "IncreasePlanQuotaRequest",
+      "name": "增购套餐配额",
+      "output": "IncreasePlanQuotaResponse",
       "status": "online"
     },
     "ModifyAccelerationDomain": {
@@ -609,6 +630,13 @@
       "output": "ModifyOriginGroupResponse",
       "status": "online"
     },
+    "ModifyPlan": {
+      "document": "修改套餐配置。目前仅支持修改预付费套餐的自动续费开关。",
+      "input": "ModifyPlanRequest",
+      "name": "修改套餐配置",
+      "output": "ModifyPlanResponse",
+      "status": "online"
+    },
     "ModifyRealtimeLogDeliveryTask": {
       "document": "通过本接口修改实时日志投递任务配置。本接口有如下限制：<li>不支持修改实时日志投递任务目的地类型（TaskType）；</li><li>不支持修改数据投递类型（LogType）</li><li>不支持修改数据投递区域（Area）</li><li>当原实时日志投递任务的目的地为腾讯云 CLS 时，不支持修改目的地详细配置，如日志集、日志主题。</li>",
       "input": "ModifyRealtimeLogDeliveryTaskRequest",
@@ -656,6 +684,20 @@
       "input": "ModifyZoneStatusRequest",
       "name": "切换站点状态",
       "output": "ModifyZoneStatusResponse",
+      "status": "online"
+    },
+    "RenewPlan": {
+      "document": "当您的套餐需要延长有效期，可以通过该接口进行续费。套餐续费仅支持个人版，基础版，标准版套餐。\n> 费用详情可参考 [套餐费用](https://cloud.tencent.com/document/product/1552/94158)",
+      "input": "RenewPlanRequest",
+      "name": "续费套餐",
+      "output": "RenewPlanResponse",
+      "status": "online"
+    },
+    "UpgradePlan": {
+      "document": "当您需要使用高等级套餐才拥有的功能，可以通过本接口升级套餐，仅支持个人版，基础版套餐进行升级。\n> 不同类型 Edgeone 计费套餐区别参考 [Edgeone计费套餐选型对比](https://cloud.tencent.com/document/product/1552/94165)\n计费套餐升级规则以及资费详情参考 [Edgeone计费套餐升配说明](https://cloud.tencent.com/document/product/1552/95291)\n如果需要将套餐升级至企业版，请 [联系我们](https://cloud.tencent.com/online-service)",
+      "input": "UpgradePlanRequest",
+      "name": "升级套餐",
+      "output": "UpgradePlanResponse",
       "status": "online"
     },
     "VerifyOwnership": {
@@ -3833,6 +3875,71 @@
       ],
       "type": "object"
     },
+    "CreatePlanRequest": {
+      "document": "CreatePlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅的套餐类型，取值有：<li> personal：个人版套餐，预付费套餐；</li><li> basic：基础版套餐，预付费套餐；</li><li> standard：标准版套餐，预付费套餐；</li><li> enterprise：企业版套餐，后付费套餐。</li>订阅预付费套餐时，请确保账号内有足够余额，余额不足会产生一个待支付的订单。\n计费概述参考 [Edgeone计费概述](https://cloud.tencent.com/document/product/1552/94156)\n不同套餐区别参考 [Edgeone计费套餐选型对比](https://cloud.tencent.com/document/product/1552/94165)",
+          "example": "无",
+          "member": "string",
+          "name": "PlanType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动使用代金券，取值有：<li> true：是；</li><li> false：否。</li>该参数仅在 PlanType 为 personal, basic, standard 时有效。\n不填写使用默认值 false。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoUseVoucher",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅预付费套餐参数，PlanType 为 personal, basic, standard 时，可以选填该参数，用于传入套餐的订阅时长和是否开启自动续费。\n不填该参数时，默认开通套餐时长为 1 个月，不开启自动续费。",
+          "example": "无",
+          "member": "PrepaidPlanParam",
+          "name": "PrepaidPlanParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePlanResponse": {
+      "document": "CreatePlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID，形如 edgeone-2unuvzjmmn2q。",
+          "example": "edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "2024123412312312",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrefetchTaskRequest": {
       "document": "CreatePrefetchTask请求参数结构体",
       "members": [
@@ -5307,7 +5414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志过滤条件，详细的过滤条件如下：\n<li>EdgeResponseStatusCode：按照 EdgeOne 节点响应返回给客户端的状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 0 的整数</li>\n<li>OriginResponseStatusCode：按照源站响应状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 -1 的整数</li>\n<li>SecurityAction：按照请求命中安全规则后的最终处置动作进行过滤。<br>   支持运算符：equal<br>   可选项如下：<br>   -：未知/未命中<br>   Monitor：观察<br>   JSChallenge：JavaScript 挑战<br>   Deny：拦截<br>   Allow：放行<br>   BlockIP：IP 封禁<br>   Redirect：重定向<br>   ReturnCustomPage：返回自定义页面<br>   ManagedChallenge：托管挑战<br>   Silence：静默<br>   LongDelay：长时间等待后响应<br>   ShortDelay：短时间等待后响应</li>",
+          "document": "日志过滤条件，详细的过滤条件如下：\n<li>EdgeResponseStatusCode：按照 EdgeOne 节点响应返回给客户端的状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 0 的整数</li>\n<li>OriginResponseStatusCode：按照源站响应状态码进行过滤。<br>   支持运算符：equal、great、less、great_equal、less_equal<br>   取值范围：任意大于等于 -1 的整数</li>\n<li>SecurityAction：按照请求命中安全规则后的最终处置动作进行过滤。<br>   支持运算符：equal<br>   可选项如下：<br>   -：未知/未命中<br>   Monitor：观察<br>   JSChallenge：JavaScript 挑战<br>   Deny：拦截<br>   Allow：放行<br>   BlockIP：IP 封禁<br>   Redirect：重定向<br>   ReturnCustomPage：返回自定义页面<br>   ManagedChallenge：托管挑战<br>   Silence：静默<br>   LongDelay：长时间等待后响应<br>   ShortDelay：短时间等待后响应</li>\n<li>SecurityModule：按照最终处置请求的安全模块名称进行过滤。<br>   支持运算符：equal<br>   可选项如下：<br>   -：未知/未命中<br>   CustomRule：Web防护 - 自定义规则<br>   RateLimitingCustomRule：Web防护 - 速率限制规则<br>   ManagedRule：Web防护 - 托管规则<br>   L7DDoS：Web防护 - CC攻击防护<br>   BotManagement：Bot管理 - Bot基础管理<br>   BotClientReputation：Bot管理 - 客户端画像分析<br>   BotBehaviorAnalysis：Bot管理 - Bot智能分析<br>   BotCustomRule：Bot管理 - 自定义Bot规则<br>   BotActiveDetection：Bot管理 - 主动特征识别</li>",
           "example": "无",
           "member": "QueryCondition",
           "name": "Conditions",
@@ -8230,6 +8337,33 @@
       ],
       "type": "object"
     },
+    "DestroyPlanRequest": {
+      "document": "DestroyPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID，形如 edgeone-2wdo315m2y4c。",
+          "example": "edgeone-edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPlanResponse": {
+      "document": "DestroyPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailHost": {
       "document": "域名配置信息",
       "members": [
@@ -9746,6 +9880,61 @@
         }
       ],
       "usage": "both"
+    },
+    "IncreasePlanQuotaRequest": {
+      "document": "IncreasePlanQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID, 形如 edgeone-2unuvzjmmn2q。",
+          "example": "edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增的套餐配额类型，取值有：<li> site：站点数；</li><li> precise_access_control_rule：Web 防护 - 自定义规则 - 精准匹配策略的规则配额；</li><li> rate_limiting_rule：Web 防护 - 速率限制 - 精准速率限制模块的规则配额。</li>",
+          "example": "zone",
+          "member": "string",
+          "name": "QuotaType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增的配额个数。单次新增的配额个数上限为 100。",
+          "example": "1",
+          "member": "int64",
+          "name": "QuotaNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "IncreasePlanQuotaResponse": {
+      "document": "IncreasePlanQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20240312347001004723731",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "IntelligenceRule": {
       "document": "智能分析规则",
@@ -11377,6 +11566,42 @@
       ],
       "type": "object"
     },
+    "ModifyPlanRequest": {
+      "document": "ModifyPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID，形如 edgeone-2unuvzjmmn2q。",
+          "example": "edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预付费套餐自动续费配置。若开启了自动续费，则会在套餐到期前一天自动续费，仅支持个人版，基础版，标准版套餐。不填写表示保持原有配置。",
+          "example": "无",
+          "member": "RenewFlag",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPlanResponse": {
+      "document": "ModifyPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRealtimeLogDeliveryTaskRequest": {
       "document": "ModifyRealtimeLogDeliveryTask请求参数结构体",
       "members": [
@@ -12763,6 +12988,30 @@
       ],
       "usage": "both"
     },
+    "PrepaidPlanParam": {
+      "document": "预付费套餐计费参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅预付费套餐的周期，单位：月，取值有：1，2，3，4，5，6，7，8，9，10，11，12，24，36。\n\n不填写使用默认值 1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预付费套餐的自动续费标志，取值有：\n<li> on：开启自动续费；</li>\n<li> off：不开启自动续费。</li>\n不填写使用默认值 off，自动续费时，默认续费1个月。",
+          "example": "on",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PrivateParameter": {
       "document": "对象存储源站私有鉴权参数",
       "members": [
@@ -13496,6 +13745,76 @@
         }
       ],
       "usage": "out"
+    },
+    "RenewFlag": {
+      "document": "预付费套餐自动续费配置项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费套餐的自动续费标志，取值有：\n<li> on：开启自动续费；</li>\n<li> off：不开启自动续费。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RenewPlanRequest": {
+      "document": "RenewPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID，形如 edgeone-2unuvzjmmn2q。",
+          "example": "edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费套餐的时长，单位：月，取值有：1，2，3，4，5，6，7，8，9，10，11，12，24，36。",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动使用代金券，取值有：<li> true：是；</li><li> false：否。</li>不填写使用默认值 false。",
+          "example": "true",
+          "member": "string",
+          "name": "AutoUseVoucher",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewPlanResponse": {
+      "document": "RenewPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20240312347001004723731",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Resource": {
       "document": "计费资源",
@@ -15290,6 +15609,61 @@
         }
       ],
       "usage": "out"
+    },
+    "UpgradePlanRequest": {
+      "document": "UpgradePlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID，形如 edgeone-2unuvzjmmn2q。",
+          "example": "edgeone-2unuvzjmmn2q",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要升级到的目标套餐版本，取值有：<li> basic：基础版套餐；</li><li> standard：标准版套餐。</li>",
+          "example": "basic",
+          "member": "string",
+          "name": "PlanType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动使用代金券，取值有：<li> true：是；</li><li> false：否。</li>不填写使用默认值 false。",
+          "example": "true",
+          "member": "string",
+          "name": "AutoUseVoucher",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradePlanResponse": {
+      "document": "UpgradePlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20240312347001004723731",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpstreamHttp2": {
       "document": "Http2回源配置",

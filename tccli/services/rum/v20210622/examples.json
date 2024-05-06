@@ -42,7 +42,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWhitelist\n<公共请求参数>\n\n{\n    \"InstanceID\": \"taw-123\",\n    \"Aid\": \"222\",\n    \"Remark\": \"备注\",\n    \"WhitelistUin\": \"1123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"ID\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"ID\": 1,\n        \"RequestId\": \"d61a85dc-d9d6-431e-812d-095eb4e129db\"\n    }\n}",
         "title": "创建白名单"
       }
     ],
@@ -359,8 +359,8 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\",\n    \"Page\": \"1\",\n    \"GroupField\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumGroupLog\n<公共请求参数>\n\n{\n    \"OrderBy\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"*\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\",\n    \"Page\": \"1\",\n    \"GroupField\": \"date\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Traceback (most recent call last):\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 1763, in _execute\\n    result = self.prepare()\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 2538, in prepare\\n    raise HTTPError(self._status_code)\\ntornado.web.HTTPError: HTTP 404: Not Found\\n\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
       }
     ],
@@ -373,8 +373,8 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Fields\": [\n        \"xx\"\n    ],\n    \"StartTime\": \"xx\",\n    \"Query\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"ID\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExport\n<公共请求参数>\n\n{\n    \"Name\": \"logDemo\",\n    \"Fields\": [\n        \"date\"\n    ],\n    \"StartTime\": \"1714103013\",\n    \"Query\": \"*\",\n    \"EndTime\": \"1714103013\",\n    \"ID\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Traceback (most recent call last):\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 1763, in _execute\\n    result = self.prepare()\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 2538, in prepare\\n    raise HTTPError(self._status_code)\\ntornado.web.HTTPError: HTTP 404: Not Found\\n\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
       }
     ],
@@ -415,8 +415,8 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumStatsLogList\n<公共请求参数>\n\n{\n    \"StartTime\": \"\\\"1\\\"\",\n    \"Limit\": \"10\",\n    \"Query\": \"\\\"*\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Traceback (most recent call last):\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 1763, in _execute\\n    result = self.prepare()\\n  File \\\"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\\\", line 2538, in prepare\\n    raise HTTPError(self._status_code)\\ntornado.web.HTTPError: HTTP 404: Not Found\\n\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
       }
     ],

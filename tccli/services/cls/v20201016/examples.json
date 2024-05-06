@@ -109,9 +109,17 @@
     "CreateCosRecharge": [
       {
         "document": "创建cos导入任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"LogsetId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"ae13f7db-00b5-41ac-916e-407802axxxxx\",\n    \"LogsetId\": \"0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"LogType\": \"minimalist_log\",\n    \"Compress\": \"gzip\",\n    \"ExtractRuleInfo\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"ca092608-98e8-4ad9-83c5-a6b3bbexxxxx\",\n        \"RequestId\": \"dc78ee34-237b-41c7-8fcd-601a99b271f6\"\n    }\n}",
         "title": "创建cos导入任务"
+      }
+    ],
+    "CreateDashboardSubscribe": [
+      {
+        "document": "创建仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建仪表盘订阅"
       }
     ],
     "CreateDataTransform": [
@@ -248,6 +256,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
         "title": "删除投递配置"
+      }
+    ],
+    "DeleteDashboardSubscribe": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建仪表盘订阅"
       }
     ],
     "DeleteDataTransform": [
@@ -400,6 +416,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Status\": 0,\n    \"Enable\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": 3,\n                \"TopicId\": \"5590efdf-cae5-4703-8d00-2a813xxxxx\",\n                \"BucketRegion\": \"ap-guangzhou\",\n                \"Enable\": 1,\n                \"Name\": \"test\",\n                \"Progress\": 1,\n                \"Compress\": \"gzip\",\n                \"Bucket\": \"xxxxx-1254xxxx\",\n                \"UpdateTime\": \"2023-03-08 14:51:14\",\n                \"Id\": \"0333114e-2e93-42d8-8a2f-a55de8474\",\n                \"LogType\": \"minimalist_log\",\n                \"Prefix\": \"xxx/2023/03/07/16/202303071600_000_1030.gz\",\n                \"LogsetId\": \"03efb75a-0f89-41b0-8cc6-9049a51fexxxx\",\n                \"CreateTime\": \"2023-03-08 15:29:55\",\n                \"ExtractRuleInfo\": {\n                    \"LogRegex\": \"\",\n                    \"Keys\": [\n                        \"@time\"\n                    ],\n                    \"TimeKey\": \"\",\n                    \"BeginRegex\": \"\",\n                    \"UnMatchUpLoadSwitch\": true,\n                    \"Delimiter\": \",\",\n                    \"TimeFormat\": \"\",\n                    \"UnMatchLogKey\": \"fieldName\",\n                    \"Backtracking\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"xx-xx-xx-xx\"\n    }\n}",
         "title": "获取cos导入配置"
+      }
+    ],
+    "DescribeDashboardSubscribes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardSubscribes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取仪表盘订阅列表"
       }
     ],
     "DescribeDashboards": [
@@ -617,9 +641,17 @@
     "ModifyCosRecharge": [
       {
         "document": "修改cos导入任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"1\",\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"ca092608-98e8-4ad9-83c5-a6b3bbexxxxx\",\n    \"TopicId\": \"ae13f7db-00b5-41ac-916e-407802axxxxx\",\n    \"Name\": \"test_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc78ee34-237b-41c7-8fcd-601a99bxxxxx\"\n    }\n}",
         "title": "修改cos导入任务"
+      }
+    ],
+    "ModifyDashboardSubscribe": [
+      {
+        "document": "修改仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDashboardSubscribe\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "修改仪表盘订阅"
       }
     ],
     "ModifyDataTransform": [
@@ -746,6 +778,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCosRechargeInfo\n<公共请求参数>\n\n{\n    \"TopicId\": \"e6a94ed2-8191-49ac-ab67-90e33d2f1111\",\n    \"LogsetId\": \"11114ed2-8191-49ac-ab67-90e33d2f3974\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"examplebucket-1-1250000000\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"Prefix\": \"text_prefix\",\n    \"Compress\": \"gzip\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"\",\n        \"Status\": 0,\n        \"Data\": [\n            \"2021-11-09 20:16:29.038 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.039 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.040 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.041 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.042 INFO    apis/report.go:108      report data success, size 1\"\n        ],\n        \"Sum\": 10000,\n        \"Path\": \"https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz\",\n        \"RequestId\": \"e6a94ed2-8191-49ac-ab67-90e33d2f3974\"\n    }\n}",
         "title": "预览cos导入信息"
+      }
+    ],
+    "SearchDashboardSubscribe": [
+      {
+        "document": "预览仪表盘订阅",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDashboardSubscribe\n<公共请求参数>\n\n{\n    \"DashboardId\": \"xxx-xxxxxx-xxxxxx-xxxx\",\n    \"Name\": \"仪表盘-CLS-日报\",\n    \"SubscribeData\": {\n        \"DashboardTime\": [\n            \"now-5m\",\n            \"now\"\n        ],\n        \"TemplateVariables\": [\n            {\n                \"Key\": \"name\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"NoticeModes\": [\n            {\n                \"ReceiverType\": \"Uin\",\n                \"Values\": [\n                    \"168053\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Group\",\n                \"Values\": [\n                    \"10721522\",\n                    \"9553840\"\n                ],\n                \"ReceiverChannels\": [\n                    \"Sms\"\n                ]\n            },\n            {\n                \"ReceiverType\": \"Email\",\n                \"Values\": [\n                    \"3333@qq.com\",\n                    \"xxx@163.com\"\n                ],\n                \"ReceiverChannels\": []\n            }\n        ],\n        \"Timezone\": \"Asia/Shanghai\",\n        \"SubscribeLanguage\": \"zh\",\n        \"JumpDomain\": \"https://console.cloud.tencent.com\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "预览仪表盘订阅"
       }
     ],
     "SearchLog": [

@@ -446,6 +446,14 @@
         "title": "通用票据识别（高级版）"
       }
     ],
+    "RecognizeGeneralTextImageWarn": [
+      {
+        "document": "通用文本图像告警示例",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeGeneralTextImageWarn\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xx/a.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Blur\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"SpecificMatter\": \"\"\n        },\n        \"BorderIncomplete\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"SpecificMatter\": \"\"\n        },\n        \"Copy\": {\n            \"IsWarn\": true,\n            \"Polygon\": [\n                {\n                    \"LeftBottom\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"LeftTop\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"RightBottom\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"RightTop\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    }\n                }\n            ],\n            \"SpecificMatter\": \"\"\n        },\n        \"Reflection\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"SpecificMatter\": \"\"\n        },\n        \"Reprint\": {\n            \"IsWarn\": true,\n            \"Polygon\": [\n                {\n                    \"LeftBottom\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"LeftTop\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"RightBottom\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    },\n                    \"RightTop\": {\n                        \"X\": 0,\n                        \"Y\": 0\n                    }\n                }\n            ],\n            \"SpecificMatter\": \"\"\n        },\n        \"RequestId\": \"d8b2bf40-091e-43f1-a075-d98a5c9b2e1e\"\n    }\n}",
+        "title": "通用文本图像告警示例代码"
+      }
+    ],
     "RecognizeHealthCodeOCR": [
       {
         "document": "健康码识别",

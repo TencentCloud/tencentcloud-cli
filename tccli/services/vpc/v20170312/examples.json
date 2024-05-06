@@ -1829,7 +1829,7 @@
     "DescribeVpnGatewayRoutes": [
       {
         "document": "查询VPN网关目的路由",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpnGatewayRoutes\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-7lhl5331\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpnGatewayRoutes\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-7lhl5331\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"RouteId\": \"vpnr-h53fo5tv\",\n                \"DestinationCidrBlock\": \"10.0.0.0/16\",\n                \"Status\": \"ENABLE\",\n                \"InstanceId\": \"vpnx-f99clft2\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 0,\n                \"Type\": \"Static\",\n                \"CreateTime\": \"2022-12-05 11:02:44\",\n                \"UpdateTime\": \"2022-12-05 11:02:44\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"cf5ec1b0-ec85-4e28-bc05-763c617b57a0\"\n    }\n}",
         "title": "查询VPN网关目的路由"
       }
@@ -2613,8 +2613,8 @@
     "ModifyVpnGatewayRoutes": [
       {
         "document": "禁用某条VPN网关路由",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewayRoutes\n&VpnGatewayId=vpn-ngenl4az\n&Routes.0.RouteId=vpnr-7t3tknmg\n&Routes.0.Status=DISABLE\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"DestinationCidrBlock\": \"192.241.0.0/24\",\n                \"Status\": \"ENABLE\",\n                \"InstanceId\": \"vpnx-ng2asdew\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 100\n            }\n        ],\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewayRoutes\n&VpnGatewayId=vpngw-ngenl4az\n&Routes.0.RouteId=vpnr-7t3tknmg\n&Routes.0.Status=DISABLE\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Routes\": [\n            {\n                \"RouteId\": \"vpnr-7t3tknmg\",\n                \"DestinationCidrBlock\": \"10.11.0.0/16\",\n                \"Status\": \"DISABLE\",\n                \"InstanceId\": \"vpnx-ng2asdew\",\n                \"InstanceType\": \"VPNCONN\",\n                \"Priority\": 0,\n                \"Type\": \"Static\",\n                \"CreateTime\": \"2023-03-21 07:08:13\",\n                \"UpdateTime\": \"2023-04-28 17:02:43\"\n            }\n        ],\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "禁用VPN网关路由"
       }
     ],

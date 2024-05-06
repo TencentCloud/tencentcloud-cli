@@ -254,6 +254,14 @@
         "title": "修改自定义DNS"
       }
     ],
+    "ModifyTemplate": [
+      {
+        "document": "",
+        "input": "https://domain.tencentcloudapi.com/?Action=ModifyTemplate\n&TemplateId=字符串\n&CertificateInfo.CertificateCode=字符串\n&CertificateInfo.CertificateType=字符串\n&CertificateInfo.ImgUrl=字符串\n&ContactInfo.OrganizationNameCN=字符串\n&ContactInfo.OrganizationName=字符串\n&ContactInfo.RegistrantNameCN=字符串\n&ContactInfo.RegistrantName=字符串\n&ContactInfo.ProvinceCN=字符串\n&ContactInfo.Province=字符串\n&ContactInfo.CityCN=字符串\n&ContactInfo.City=字符串\n&ContactInfo.StreetCN=字符串\n&ContactInfo.Street=字符串\n&ContactInfo.CountryCN=字符串\n&ContactInfo.Country=字符串\n&ContactInfo.Telephone=字符串\n&ContactInfo.Email=字符串\n&ContactInfo.ZipCode=字符串\n&ContactInfo.RegistrantType=字符串\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9308288-2016-4197-bba1-baf0a9ea0a6f\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"UpdatedOn\": \"2020-07-30 16:44:04\",\n            \"AuditStatus\": \"InAudit\",\n            \"CreatedOn\": \"2020-07-30 16:44:04\",\n            \"InvalidReason\": \"\",\n            \"CertificateInfo\": {\n                \"CertificateType\": \"YYZZ\",\n                \"CertificateCode\": \"441900000553075\",\n                \"ImgUrl\": \"https://wss-10039692.cos.ap-shanghai.myqcloudXj\"\n            },\n            \"TemplateId\": \"tmpl-3mm9fxug\",\n            \"UserUin\": \"1213059621\",\n            \"ContactInfo\": {\n                \"Province\": \"shen zhen shi\",\n                \"RegistrantType\": \"E\",\n                \"OrganizationName\": \"niubihonghong\",\n                \"OrganizationNameCN\": \"牛逼哄哄\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"niubihonghong\",\n                \"ZipCode\": \"100011\",\n                \"Email\": \"1213059621@qq.com\",\n                \"City\": \"nan shan qu\",\n                \"RegistrantNameCN\": \"牛逼哄哄\",\n                \"StreetCN\": \"万利达大厦\",\n                \"Street\": \"wanlidadasha\",\n                \"ProvinceCN\": \"深圳市\",\n                \"CountryCN\": \"中国\",\n                \"CityCN\": \"南山区\",\n                \"Telephone\": \"13600147752\"\n            },\n            \"IsDefault\": \"no\"\n        }\n    }\n}",
+        "title": "修改模板"
+      }
+    ],
     "RenewDomainBatch": [
       {
         "document": "批量域名续费",

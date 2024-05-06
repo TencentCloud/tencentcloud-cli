@@ -689,7 +689,7 @@
     "DescribeClusters": {
       "document": "查询集群列表",
       "input": "DescribeClustersRequest",
-      "name": "查询集群列表",
+      "name": "查询TKE集群列表",
       "output": "DescribeClustersResponse",
       "status": "online"
     },
@@ -1149,7 +1149,7 @@
       "status": "online"
     },
     "EnableEncryptionProtection": {
-      "document": "开启加密数据保护",
+      "document": "开启加密数据保护，需要先开启KMS能力，完成KMS授权",
       "input": "EnableEncryptionProtectionRequest",
       "name": "开启加密数据保护",
       "output": "EnableEncryptionProtectionResponse",
@@ -1205,7 +1205,7 @@
       "status": "online"
     },
     "GetUpgradeInstanceProgress": {
-      "document": "获得节点升级当前的进度",
+      "document": "获得节点升级当前的进度，若集群未处于节点升级状态，则接口会报错：任务未找到。",
       "input": "GetUpgradeInstanceProgressRequest",
       "name": "获得节点升级当前的进度",
       "output": "GetUpgradeInstanceProgressResponse",
@@ -1415,7 +1415,7 @@
       "status": "online"
     },
     "ScaleInClusterMaster": {
-      "document": "缩容独立集群master节点",
+      "document": "缩容独立集群master节点，本功能为内测能力，使用之前请先提单联系我们。",
       "input": "ScaleInClusterMasterRequest",
       "name": "缩容独立集群master节点",
       "output": "ScaleInClusterMasterResponse",
@@ -2415,8 +2415,8 @@
         },
         {
           "disabled": false,
-          "document": "升级类型",
-          "example": "\"\"",
+          "document": "升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)",
+          "example": "\"reset\"",
           "member": "string",
           "name": "UpgradeType",
           "required": false,
@@ -2461,6 +2461,7 @@
           "example": "1.20.6",
           "member": "string",
           "name": "ClusterVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2470,6 +2471,7 @@
           "example": "1.22.5",
           "member": "string",
           "name": "LatestVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2479,6 +2481,7 @@
           "example": "无",
           "member": "UpgradeAbleInstancesItem",
           "name": "UpgradeAbleInstances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2488,6 +2491,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2497,6 +2501,7 @@
           "example": "无",
           "member": "UnavailableReason",
           "name": "UnavailableVersionReason",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2765,8 +2770,7 @@
           "member": "bool",
           "name": "IPVS",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2775,8 +2779,7 @@
           "member": "bool",
           "name": "AsEnabled",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2785,8 +2788,7 @@
           "member": "string",
           "name": "ContainerRuntime",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2795,8 +2797,7 @@
           "member": "string",
           "name": "NodeNameType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2805,8 +2806,7 @@
           "member": "ClusterExtraArgs",
           "name": "ExtraArgs",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2815,8 +2815,7 @@
           "member": "string",
           "name": "NetworkType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2825,8 +2824,7 @@
           "member": "bool",
           "name": "IsNonStaticIpMode",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2835,8 +2833,7 @@
           "member": "bool",
           "name": "DeletionProtection",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2845,8 +2842,7 @@
           "member": "string",
           "name": "KubeProxyMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2855,8 +2851,7 @@
           "member": "bool",
           "name": "AuditEnabled",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2865,8 +2860,7 @@
           "member": "string",
           "name": "AuditLogsetId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2875,8 +2869,7 @@
           "member": "string",
           "name": "AuditLogTopicId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2885,8 +2878,7 @@
           "member": "string",
           "name": "VpcCniType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2895,8 +2887,7 @@
           "member": "string",
           "name": "RuntimeVersion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2905,8 +2896,7 @@
           "member": "bool",
           "name": "EnableCustomizedPodCIDR",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2915,8 +2905,7 @@
           "member": "int64",
           "name": "BasePodNumber",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2925,8 +2914,7 @@
           "member": "string",
           "name": "CiliumMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2935,8 +2923,7 @@
           "member": "bool",
           "name": "IsDualStack",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2945,8 +2932,7 @@
           "member": "bool",
           "name": "QGPUShareEnable",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -6682,7 +6668,7 @@
         {
           "disabled": false,
           "document": "k8s版本号",
-          "example": "1.12.4",
+          "example": "1.22.5",
           "member": "string",
           "name": "K8SVersion",
           "required": true,
@@ -6826,6 +6812,7 @@
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8201,7 +8188,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 Id",
+          "document": "集群 Id。若只查询某个集群可升级的版本，需填写此项。",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -8210,7 +8197,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 Id 列表",
+          "document": "集群 Id 列表。若查询多个集群可升级的版本，需填写此项。",
           "example": "[\"cls-7ph3twqe\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -8229,6 +8216,7 @@
           "example": "[\"1.22.5\"]",
           "member": "string",
           "name": "Versions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8238,6 +8226,7 @@
           "example": "无",
           "member": "ClusterVersion",
           "name": "Clusters",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9239,7 +9228,7 @@
         },
         {
           "disabled": false,
-          "document": "·  NodePoolsName\n    按照【节点池名】进行过滤。\n    类型：String\n    必选：否\n\n·  NodePoolsId\n    按照【节点池id】进行过滤。\n    类型：String\n    必选：否\n\n·  tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "document": "· \"Name\":\"NodePoolsName\",\"Values\": [\"test\"]\n    按照【节点池名】进行过滤。\n    类型：String\n    必选：否\n\n·  \"Name\":\"NodePoolsId\",\"Values\": [\"np-d2mb2zb\"]\n    按照【节点池id】进行过滤。\n    类型：String\n    必选：否\n\n·  \"Name\":\"Tags\",\"Values\": [\"abc:1\"]\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10017,7 +10006,7 @@
         },
         {
           "disabled": false,
-          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterType\n    按照【集群类型】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterStatus\n    按照【集群状态】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "document": "· \"Name\":\"ClusterName\",\"Values\": [\"test\"] 按照【集群名】进行过滤。 类型：String 必选：否 · \"Name\":\"ClusterType\",\"Values\": [\"MANAGED_CLUSTER\"] 按照【集群类型】进行过滤。 类型：String 必选：否 · \"Name\":\"ClusterStatus\",\"Values\": [\"Running\"] 按照【集群状态】进行过滤。 类型：String 必选：否 · \"Name\":\"ClusterStatus\",\"Values\": [\"Running\"] 按照【集群状态】进行过滤。 类型：String 必选：否 · \"Name\":\"vpc-id\",\"Values\": [\"vpc-123qajzs\"] 按照【VPC】进行过滤。 类型：String 必选：否 · \"Name\":\"tag-key\",\"Values\": [\"testKey\"] 按照【标签键】进行过滤。 类型：String 必选：否 · \"Name\":\"tag-value\",\"Values\": [\"testValue\"] 按照【标签值】进行过滤。 类型：String 必选：否 · \"Name\":\"Tags\",\"Values\": [\"abc:1\"] 按照【标签键值对】进行过滤。 类型：String 必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -10045,7 +10034,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10055,7 +10044,7 @@
           "example": "无",
           "member": "Cluster",
           "name": "Clusters",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15633,8 +15622,7 @@
           "member": "string",
           "name": "NodeRole",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -15643,8 +15631,7 @@
           "member": "ExistedInstancesPara",
           "name": "ExistedInstancesPara",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -15653,8 +15640,7 @@
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettingsOverride",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -15663,8 +15649,7 @@
           "member": "int64",
           "name": "DesiredPodNumbers",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -15675,62 +15660,56 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "实例额外需要设置参数信息",
-          "example": "",
+          "document": "实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）",
+          "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
-          "example": "",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "节点登录信息（目前仅支持使用Password或者单个KeyIds）",
-          "example": "",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 DescribeSecurityGroups 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "重装系统时，可以指定修改实例的HostName(集群为HostName模式时，此参数必传，规则名称除不支持大写字符外与[CVM创建实例](https://cloud.tencent.com/document/product/213/15730)接口HostName一致)",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "HostName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -16225,6 +16204,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16234,6 +16214,7 @@
           "example": "3",
           "member": "int64",
           "name": "Done",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16243,6 +16224,7 @@
           "example": "done",
           "member": "string",
           "name": "LifeState",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16252,6 +16234,7 @@
           "example": "{}",
           "member": "InstanceUpgradeProgressItem",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16261,6 +16244,7 @@
           "example": "{}",
           "member": "InstanceUpgradeClusterStatus",
           "name": "ClusterStatus",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17173,60 +17157,60 @@
         {
           "disabled": false,
           "document": "节点instanceID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务生命周期\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消\npending 还未开始",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LifeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "升级开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "StartAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "升级结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EndAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "升级前检查结果",
-          "example": "",
+          "example": "无",
           "member": "InstanceUpgradePreCheckResult",
           "name": "CheckResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "升级步骤详情",
-          "example": "",
+          "example": "无",
           "member": "TaskStepInfo",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -18639,7 +18623,7 @@
         },
         {
           "disabled": false,
-          "document": "机型列表",
+          "document": "机型列表，主实例机型不支持修改",
           "example": "[\"ins-xxx\\n\"]",
           "member": "string",
           "name": "InstanceTypes",
@@ -23195,7 +23179,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-xxxxxxxx",
+          "example": "ins-0xab1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -23214,7 +23198,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的保留模式",
+          "document": "实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
           "example": "retain",
           "member": "string",
           "name": "InstanceDeleteMode",

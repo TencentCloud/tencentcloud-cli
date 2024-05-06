@@ -16246,6 +16246,7 @@
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16255,6 +16256,7 @@
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -22599,6 +22601,7 @@
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

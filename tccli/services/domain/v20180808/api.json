@@ -217,6 +217,13 @@
       "output": "ModifyIntlCustomDnsHostResponse",
       "status": "online"
     },
+    "ModifyTemplate": {
+      "document": "修改模板信息",
+      "input": "ModifyTemplateRequest",
+      "name": "修改模板",
+      "output": "ModifyTemplateResponse",
+      "status": "online"
+    },
     "RenewDomainBatch": {
       "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n",
       "input": "RenewDomainBatchRequest",
@@ -3044,6 +3051,61 @@
           "name": "LogId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTemplateRequest": {
+      "document": "ModifyTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证件信息",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "CertificateInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "联系人信息",
+          "example": "无",
+          "member": "ContactInfo",
+          "name": "ContactInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板ID",
+          "example": "字符串",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTemplateResponse": {
+      "document": "ModifyTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板信息",
+          "example": "无",
+          "member": "TemplateInfo",
+          "name": "Template",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

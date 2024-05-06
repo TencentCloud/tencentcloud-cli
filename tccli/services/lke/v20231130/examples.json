@@ -267,7 +267,7 @@
     "GetEmbedding": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"doc-normal-500-v5.8\",\n    \"Inputs\": [\n        \"你好\"\n    ],\n    \"Online\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ],\n    \"Online\": false\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
         "title": "获取特征向量"
       }
@@ -276,7 +276,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMsgRecord\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"Count\": 15,\n    \"SessionId\": \"your session id\",\n    \"LastRecordId\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"abc\",\n                \"RecordId\": \"abc\",\n                \"RelatedRecordId\": \"abc\",\n                \"IsFromSelf\": true,\n                \"FromName\": \"abc\",\n                \"FromAvatar\": \"abc\",\n                \"Timestamp\": \"abc\",\n                \"HasRead\": true,\n                \"Score\": 1,\n                \"CanRating\": true,\n                \"Type\": 1,\n                \"References\": [\n                    {\n                        \"Id\": \"abc\",\n                        \"Url\": \"abc\",\n                        \"Type\": 1,\n                        \"Name\": \"abc\",\n                        \"DocId\": \"abc\"\n                    }\n                ],\n                \"Reasons\": [\n                    \"abc\"\n                ],\n                \"IsLlmGenerated\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Content\": \"abc\",\n                \"RecordId\": \"abc\",\n                \"RelatedRecordId\": \"abc\",\n                \"IsFromSelf\": true,\n                \"FromName\": \"abc\",\n                \"FromAvatar\": \"abc\",\n                \"Timestamp\": \"abc\",\n                \"HasRead\": true,\n                \"Score\": 1,\n                \"CanRating\": true,\n                \"Type\": 1,\n                \"References\": [\n                    {\n                        \"Id\": \"abc\",\n                        \"Url\": \"abc\",\n                        \"Type\": 1,\n                        \"Name\": \"abc\",\n                        \"DocId\": \"abc\"\n                    }\n                ],\n                \"Reasons\": [\n                    \"abc\"\n                ],\n                \"IsLlmGenerated\": true,\n                \"ImageUrls\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "会话记录"
       }
     ],
@@ -514,6 +514,22 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"Question\": \"吃了什么122222222211111111111\",\n    \"RejectedBizId\": \"1732953678087585792\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1acee7c3-21d2-4aa4-aa46-289928b4bbb0\"\n    }\n}",
         "title": "修改拒答问题"
+      }
+    ],
+    "ParseDoc": [
+      {
+        "document": "文档解析",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseDoc\n<公共请求参数>\n\n{\n    \"Name\": \"微信城市服务CityID说明文档.docx\",\n    \"Url\": \"https://wximg.qq.com/cityservices/doc/res/cityservices_cityids.docx\",\n    \"TaskId\": \"D78iBBGi\",\n    \"Policy\": \"default\",\n    \"Operate\": \"split\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ea5a507-108f-4b05-add4-b07de8580590\",\n        \"TaskId\": \"D78iBBGi\"\n    }\n}",
+        "title": "文档解析"
+      }
+    ],
+    "QueryParseDocResult": [
+      {
+        "document": "查询文档解析结果",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryParseDocResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"D78iBBGi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\",\n        \"Usage\": {\n            \"TotalPages\": 1\n        }\n    }\n}",
+        "title": "查询文档解析结果"
       }
     ],
     "QueryRewrite": [

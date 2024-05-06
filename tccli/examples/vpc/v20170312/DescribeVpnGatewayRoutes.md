@@ -7,7 +7,8 @@ Input:
 ```
 tccli vpc DescribeVpnGatewayRoutes --cli-unfold-argument  \
     --VpnGatewayId vpngw-7lhl5331 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 20
 ```
 
 Output: 

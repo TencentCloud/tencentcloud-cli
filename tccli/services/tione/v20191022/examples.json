@@ -171,7 +171,7 @@
         "document": "",
         "input": "https://tione.tencentcloudapi.com/?Action=UpdateCodeRepository\r\n&CodeRepositoryName=private\r\n&GitSecret.Secret={\"UserName\":\"xxx\", \"Password\":\"xxx\"}\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"15837643767558277241\",\n        \"CodeRepositoryName\": \"private\"\n    }\n}",
-        "title": "更新存储库秘钥"
+        "title": "更新存储库密钥"
       }
     ],
     "UpdateNotebookInstance": [

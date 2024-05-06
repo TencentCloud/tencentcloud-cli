@@ -92,10 +92,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "655c67aad32b0f48f52b89b0",
+        "RequestId": "188cc996-ab09-49a7-aa9f-1df88f11c6b4",
         "Error": {
             "Code": "InvalidParameter",
-            "Message": "The value of Temperature should be within the range [0.0, 2.0]: 4.800000 "
+            "Message": "Temperature must be 2 or less"
         }
     }
 }

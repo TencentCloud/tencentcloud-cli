@@ -644,7 +644,7 @@
         },
         {
           "disabled": false,
-          "document": "每天数据上报量",
+          "document": "每天数据上报量，（不作量级限制）",
           "example": "100",
           "member": "string",
           "name": "CountNum",
@@ -708,6 +708,7 @@
           "example": "taw-12345678",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -717,6 +718,7 @@
           "example": "20211011688006794751081",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -743,7 +745,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "备注（暂未作字节数限制）",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -780,7 +782,7 @@
           "example": "无",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -790,7 +792,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1588,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -1606,7 +1608,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -1670,7 +1672,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2067,7 +2069,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -2149,7 +2151,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2320,7 +2322,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -2384,7 +2386,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2555,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -2646,7 +2648,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2872,7 +2874,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -2918,7 +2920,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3062,7 +3064,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -3153,7 +3155,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3324,7 +3326,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -3370,7 +3372,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3541,7 +3543,7 @@
         },
         {
           "disabled": false,
-          "document": "显示是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -3895,7 +3897,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -3959,7 +3961,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4130,7 +4132,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -4194,7 +4196,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4365,7 +4367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -4429,7 +4431,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4600,7 +4602,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -4664,7 +4666,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4835,7 +4837,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -4890,7 +4892,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5354,7 +5356,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5436,7 +5438,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5654,7 +5656,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

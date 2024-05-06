@@ -785,6 +785,34 @@
     "serviceShortName": "tse"
   },
   "objects": {
+    "AccurateQpsThreshold": {
+      "document": "云原生网关限流插件参数限流的精确Qps阈值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
+          "example": "second、minute、hour、day、month、year",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局配置ID",
+          "example": "aa2090e1-0117-404f-b73f-69b662b6834f",
+          "member": "string",
+          "name": "GlobalConfigId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApolloEnvParam": {
       "document": "Apollo 环境配置参数",
       "members": [
@@ -4535,6 +4563,15 @@
           "name": "StorageOption",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束",
+          "example": "STRICT",
+          "member": "string",
+          "name": "AffinityConstraint",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9573,7 +9610,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为主地域",
+          "document": "Polaris: 是否为主地域\nZookeeper: 是否为Leader固定地域",
           "example": "true",
           "member": "bool",
           "name": "MainRegion",
@@ -12521,6 +12558,17 @@
           "example": "[                     {                         \"Unit\": \"second\",                         \"Max\": 10000                     }                 ]",
           "member": "QpsThreshold",
           "name": "QpsThresholds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "精确限流阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccurateQpsThreshold",
+          "name": "AccurateQpsThresholds",
           "output_required": false,
           "required": false,
           "type": "list",

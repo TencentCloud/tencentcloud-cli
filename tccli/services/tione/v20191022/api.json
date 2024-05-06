@@ -1991,23 +1991,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "无秘钥，默认选项",
-          "example": "",
+          "document": "无密钥，默认选项",
+          "example": "无",
           "member": "bool",
           "name": "NoSecret",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "Git用户名密码base64编码后的字符串\n编码前的内容应为Json字符串，如\n{\"UserName\": \"用户名\", \"Password\":\"密码\"}",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Secret",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2598,6 +2596,7 @@
           "example": "",
           "member": "string",
           "name": "CodeRepositoryName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

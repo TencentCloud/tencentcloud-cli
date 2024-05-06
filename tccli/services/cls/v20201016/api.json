@@ -84,6 +84,13 @@
       "output": "CreateCosRechargeResponse",
       "status": "online"
     },
+    "CreateDashboardSubscribe": {
+      "document": "此接口用于创建仪表盘订阅",
+      "input": "CreateDashboardSubscribeRequest",
+      "name": "创建仪表盘订阅",
+      "output": "CreateDashboardSubscribeResponse",
+      "status": "online"
+    },
     "CreateDataTransform": {
       "document": "本接口用于创建数据加工任务。",
       "input": "CreateDataTransformRequest",
@@ -201,6 +208,13 @@
       "input": "DeleteConsumerRequest",
       "name": "删除投递配置",
       "output": "DeleteConsumerResponse",
+      "status": "online"
+    },
+    "DeleteDashboardSubscribe": {
+      "document": "此接口用于删除仪表盘订阅",
+      "input": "DeleteDashboardSubscribeRequest",
+      "name": "删除仪表盘订阅",
+      "output": "DeleteDashboardSubscribeResponse",
       "status": "online"
     },
     "DeleteDataTransform": {
@@ -334,6 +348,13 @@
       "input": "DescribeCosRechargesRequest",
       "name": "获取cos导入配置",
       "output": "DescribeCosRechargesResponse",
+      "status": "online"
+    },
+    "DescribeDashboardSubscribes": {
+      "document": " 本接口用于获取仪表盘订阅列表，支持分页",
+      "input": "DescribeDashboardSubscribesRequest",
+      "name": "获取仪表盘订阅列表",
+      "output": "DescribeDashboardSubscribesResponse",
       "status": "online"
     },
     "DescribeDashboards": {
@@ -518,6 +539,13 @@
       "output": "ModifyCosRechargeResponse",
       "status": "online"
     },
+    "ModifyDashboardSubscribe": {
+      "document": "此接口用于修改仪表盘订阅",
+      "input": "ModifyDashboardSubscribeRequest",
+      "name": "修改仪表盘订阅",
+      "output": "ModifyDashboardSubscribeResponse",
+      "status": "online"
+    },
     "ModifyDataTransform": {
       "document": "本接口用于修改数据加工任务",
       "input": "ModifyDataTransformRequest",
@@ -621,6 +649,13 @@
       "input": "SearchCosRechargeInfoRequest",
       "name": "预览cos导入信息",
       "output": "SearchCosRechargeInfoResponse",
+      "status": "online"
+    },
+    "SearchDashboardSubscribe": {
+      "document": "此接口用于预览仪表盘订阅",
+      "input": "SearchDashboardSubscribeRequest",
+      "name": "预览仪表盘订阅",
+      "output": "SearchDashboardSubscribeResponse",
       "status": "online"
     },
     "SearchLog": {
@@ -3546,7 +3581,7 @@
         {
           "disabled": false,
           "document": "日志主题 ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -3555,7 +3590,7 @@
         {
           "disabled": false,
           "document": "日志集ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -3623,6 +3658,24 @@
           "name": "ExtractRuleInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "元数据。",
+          "example": "[\"bucket\",\"object\"]",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3632,14 +3685,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos_recharge记录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "COS导入任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDashboardSubscribeRequest": {
+      "document": "CreateDashboardSubscribe请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDashboardSubscribeResponse": {
+      "document": "CreateDashboardSubscribe返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3681,8 +3751,8 @@
         },
         {
           "disabled": false,
-          "document": "加工语句",
-          "example": "xxx",
+          "document": "加工语句。[创建加工任务](https://cloud.tencent.com/document/product/614/63940)  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
+          "example": "fields_drop(\"message\")",
           "member": "string",
           "name": "EtlContent",
           "required": true,
@@ -4170,7 +4240,7 @@
         },
         {
           "disabled": false,
-          "document": "创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组",
+          "document": "创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -4188,7 +4258,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启机器组自动更新",
+          "document": "是否开启机器组自动更新。默认false",
           "example": "true",
           "member": "bool",
           "name": "AutoUpdate",
@@ -4215,7 +4285,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false",
           "example": "true",
           "member": "bool",
           "name": "ServiceLogging",
@@ -4224,7 +4294,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器离线清理时间",
+          "document": "机器组中机器离线清理时间。单位：天",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -4872,6 +4942,167 @@
       ],
       "usage": "out"
     },
+    "DashboardNoticeMode": {
+      "document": "仪表盘订阅通知方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘通知方式。<br>\n<li/>Uin：腾讯云用户<br>\n<li/>Group：腾讯云用户组<br>\n<li/>Email：自定义Email<br>\n<li/>WeCom: 企业微信回调",
+          "example": "Email",
+          "member": "string",
+          "name": "ReceiverType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。",
+          "example": "[\"168053\",\"12345\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘通知渠道。\n<br><li/> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]",
+          "member": "string",
+          "name": "ReceiverChannels",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回调Url。\n<br><li/> 当ReceiverType是 Wecom 时，Url必填。\n<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DashboardSubscribeData": {
+      "document": "仪表盘订阅相关数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅通知方式。",
+          "example": "无",
+          "member": "DashboardNoticeMode",
+          "name": "NoticeModes",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅时间，为空标识取仪表盘默认的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"now-5m\",\"now\"]",
+          "member": "string",
+          "name": "DashboardTime",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅模板变量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DashboardTemplateVariable",
+          "name": "TemplateVariables",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "Timezone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言。 zh 中文、en`英文。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zh",
+          "member": "string",
+          "name": "SubscribeLanguage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://console.cloud.tencent.com",
+          "member": "string",
+          "name": "JumpDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义跳转链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.xxx.com/getxxx",
+          "member": "string",
+          "name": "JumpUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DashboardTemplateVariable": {
+      "document": "仪表盘订阅模板变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key的值",
+          "example": "TopicId",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key对应的values取值values",
+          "example": "[\"xxxx-xxxx-xxxx-xxxx\",\"123414-12341234-12345-3456\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DashboardTopicInfo": {
       "document": "仪表盘关联的topic信息",
       "members": [
@@ -5257,6 +5488,23 @@
     },
     "DeleteConsumerResponse": {
       "document": "DeleteConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDashboardSubscribeRequest": {
+      "document": "DeleteDashboardSubscribe请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteDashboardSubscribeResponse": {
+      "document": "DeleteDashboardSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6136,6 +6384,23 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDashboardSubscribesRequest": {
+      "document": "DescribeDashboardSubscribes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDashboardSubscribesResponse": {
+      "document": "DescribeDashboardSubscribes返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7171,7 +7436,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间戳，支持最近3天的查询， 毫秒",
+          "document": "查询的开始时间戳，支持最近3天的查询， 毫秒。\nStartTime必须小于EndTime",
           "example": "978653222",
           "member": "int64",
           "name": "StartTime",
@@ -7180,7 +7445,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间戳， 毫秒",
+          "document": "查询的结束时间戳， 毫秒。\nStartTime必须小于EndTime",
           "example": "978653222",
           "member": "int64",
           "name": "EndTime",
@@ -7199,7 +7464,7 @@
           "example": "无",
           "member": "ShipperTaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7909,6 +8174,7 @@
           "example": "false",
           "member": "bool",
           "name": "CaseSensitive",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -7916,9 +8182,10 @@
         {
           "disabled": false,
           "document": "全文索引的分词符，其中的每个字符代表一个分词符；\n仅支持英文符号、\\n\\t\\r及转义符\\；\n注意：\\n\\t\\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\\n\\t\\r被重复转义",
-          "example": "xxx",
+          "example": "@&?|#()='\",;:<>[]{}/ \\n\\t\\r\\\\",
           "member": "string",
           "name": "Tokenizer",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7929,6 +8196,7 @@
           "example": "false",
           "member": "bool",
           "name": "ContainZH",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -9186,7 +9454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组类型，ip表示该机器组Values中存的是采集机器的IP地址，label表示该机器组Values中存储的是机器的标签",
+          "document": "机器组类型。支持 ip 和 label。\n- ip：表示该机器组Values中存的是采集机器的ip地址\n- label：表示该机器组Values中存储的是机器的标签",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -9197,7 +9465,7 @@
         },
         {
           "disabled": false,
-          "document": "机器描述列表",
+          "document": "机器描述列表。",
           "example": "无",
           "member": "string",
           "name": "Values",
@@ -10121,8 +10389,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS导入配置ID",
-          "example": "03efb75a-0f89-41b0-8cc6-90xxxxxxxxx",
+          "document": "COS导入配置Id",
+          "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10131,7 +10399,7 @@
         {
           "disabled": false,
           "document": "日志主题Id",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -10148,18 +10416,107 @@
         },
         {
           "disabled": false,
-          "document": "是否启用:   0： 未启用  ， 1：启用",
+          "document": "任务状态   0： 停用 ， 1：启用",
           "example": "1",
           "member": "uint64",
           "name": "Enable",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t",
+          "example": "examplebucket-1250000000",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS存储桶所在地域，详见产品支持的[地域列表](https://cloud.tencent.com/document/product/436/6224)。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS文件所在文件夹的前缀",
+          "example": "var/xxx",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文； 默认为minimalist_log",
+          "example": "minimalist_log",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解析格式。supported: \"\", \"gzip\", \"lzop\", \"snappy\"; 默认空",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "example": "无",
+          "member": "ExtractRuleInfo",
+          "name": "ExtractRuleInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "COS导入任务类型。1：一次性导入任务；2：持续性导入任务。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "元数据。支持 bucket，object。",
+          "example": "[\"bucket\",\"object\"]",
+          "member": "string",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
     },
     "ModifyCosRechargeResponse": {
       "document": "ModifyCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDashboardSubscribeRequest": {
+      "document": "ModifyDashboardSubscribe请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyDashboardSubscribeResponse": {
+      "document": "ModifyDashboardSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10544,7 +10901,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组类型",
+          "document": "机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -10598,7 +10955,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器定期离线清理时间",
+          "document": "机器组中机器定期离线清理时间。单位：天",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -12237,6 +12594,60 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDashboardSubscribeRequest": {
+      "document": "SearchDashboardSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "DashboardId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅Id。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "仪表盘-CLS-日报",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDashboardSubscribeResponse": {
+      "document": "SearchDashboardSubscribe返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

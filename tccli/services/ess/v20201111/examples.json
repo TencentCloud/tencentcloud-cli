@@ -1080,6 +1080,14 @@
         "title": "撤销印章授权"
       }
     ],
+    "DescribeBatchOrganizationRegistrationUrls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchOrganizationRegistrationUrls\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDSxSUUxxxxxxxx21JXBlJZsaj\"\n    },\n    \"Agent\": {},\n    \"TaskId\": \"yDSxSUUxxxxxxxx21JXBlJZsaj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrganizationAuthUrls\": [\n            {\n                \"AuthUrl\": \"https://test.qian.tencent.cn/console/batch-register?token=yDxxxxxxxxxgENliu9LD&orgName=典子谦批量认证企业\",\n                \"ErrorMessage\": \"\"\n            }\n        ],\n        \"RequestId\": \"s1702447767875624775\"\n    }\n}",
+        "title": "查询批量企业认证"
+      }
+    ],
     "DescribeBillUsage": [
       {
         "document": "",

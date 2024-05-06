@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cls CreateCosRecharge --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx \
-    --LogsetId xxx-xxx-xxx-xxx \
+    --TopicId ae13f7db-00b5-41ac-916e-407802axxxxx \
+    --LogsetId 0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx \
     --Name test_name \
     --Bucket examplebucket-1250000000 \
     --BucketRegion ap-guangzhou \
@@ -31,8 +31,8 @@ Output:
 ```
 {
     "Response": {
-        "Id": "abc-dec-ff-ee",
-        "RequestId": "xxx-x-xx-xx"
+        "Id": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
+        "RequestId": "dc78ee34-237b-41c7-8fcd-601a99b271f6"
     }
 }
 ```

@@ -9,6 +9,9 @@ tccli tke ModifyClusterAuthenticationOptions --cli-unfold-argument  \
     --ServiceAccounts.JWKSURI https://cls-7ph3twqe.ccs.tencent-cloud.com/openid/v1/jwks \
     --ServiceAccounts.Issuer https://cls-7ph3twqe.ccs.tencent-cloud.com \
     --ServiceAccounts.AutoCreateDiscoveryAnonymousAuth True \
+    --OIDCConfig.AutoCreateOIDCConfig True \
+    --OIDCConfig.AutoCreateClientId sts \
+    --OIDCConfig.AutoInstallPodIdentityWebhookAddon True \
     --ClusterId cls-7ph3twqe
 ```
 
