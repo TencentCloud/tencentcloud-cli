@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeTaskLogURL --cli-unfold-argument  \
+    --MemberId abc \
     --ReportItemKeyList.0.TaskLogList abc \
     --Type 0 \
     --ReportTaskIdList.0.AppId abc \

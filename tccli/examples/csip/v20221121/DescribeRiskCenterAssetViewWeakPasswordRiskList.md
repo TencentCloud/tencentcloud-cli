@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeRiskCenterAssetViewWeakPasswordRiskList --cli-unfold-argument  \
+    --MemberId abc \
     --Filter.Limit 0 \
     --Filter.Offset 0 \
     --Filter.Order abc \

@@ -86,6 +86,14 @@
         "title": "关闭数据代理地址"
       }
     ],
+    "CloseSSL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx\",\n        \"AsyncRequestId\": \"xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "关闭SSL"
+      }
+    ],
     "CloseWanService": [
       {
         "document": "",
@@ -794,6 +802,14 @@
         "title": "查询回档任务详情"
       }
     ],
+    "DescribeSSLStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSLStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"ON\",\n        \"Url\": \"http://test\",\n        \"RequestId\": \"xxxx-xxxx-xxxxxx\"\n    }\n}",
+        "title": "获取SSL开通情况以及证书下载链接"
+      }
+    ],
     "DescribeSlowLogData": [
       {
         "document": "",
@@ -1166,6 +1182,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenDBInstanceGTID\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"e48eb1e9-0ca0ecae-c0dac9c7-60d12864\"\n    }\n}",
         "title": "开启实例的GTID"
+      }
+    ],
+    "OpenSSL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx\",\n        \"AsyncRequestId\": \"xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "开启SSL连接功能。"
       }
     ],
     "OpenWanService": [

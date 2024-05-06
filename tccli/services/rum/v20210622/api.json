@@ -1916,7 +1916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，示例值：1625454840",
           "example": "1625444040",
           "member": "int64",
           "name": "StartTime",
@@ -1934,7 +1934,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，示例值：1625454840",
           "example": "1625454840",
           "member": "int64",
           "name": "EndTime",
@@ -1988,7 +1988,7 @@
         },
         {
           "disabled": false,
-          "document": "日志等级",
+          "document": "日志等级（1表示白名单日志，2表示一般日志，4表示错误日志，8表示Promise 错误，16表示Ajax 请求异常，32表示JS 加载异常，64表示图片加载异常，128表示css 加载异常，256表示console.error，512表示音视频资源异常，1024表示retcode 异常，2048表示aegis report，4096表示PV日志，8192表示自定义事件，16384表示小程序 页面不存在，32768表示websocket错误，65536表示js bridge错误）",
           "example": "1",
           "member": "string",
           "name": "Level",
@@ -2051,7 +2051,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -3652,7 +3652,7 @@
         },
         {
           "disabled": false,
-          "document": "上报类型",
+          "document": "上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）",
           "example": "custom",
           "member": "string",
           "name": "ReportType",
@@ -3680,7 +3680,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4051,7 +4051,7 @@
         },
         {
           "disabled": false,
-          "document": "日志等级",
+          "document": "日志等级（1表示白名单日志，2表示一般日志，4表示错误日志，8表示Promise 错误，16表示Ajax 请求异常，32表示JS 加载异常，64表示图片加载异常，128表示css 加载异常，256表示console.error，512表示音视频资源异常，1024表示retcode 异常，2048表示aegis report，4096表示PV日志，8192表示自定义事件，16384表示小程序 页面不存在，32768表示websocket错误，65536表示js bridge错误）",
           "example": "1",
           "member": "string",
           "name": "Level",
@@ -4114,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
           "example": "2",
           "member": "string",
           "name": "NetType",

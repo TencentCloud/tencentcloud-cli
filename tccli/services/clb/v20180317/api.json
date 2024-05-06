@@ -2748,6 +2748,15 @@
           "name": "IdleConnectTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SNAT。",
+          "example": "False",
+          "member": "bool",
+          "name": "SnatEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8769,6 +8778,15 @@
           "name": "IdleConnectTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SNAT。",
+          "example": "False",
+          "member": "bool",
+          "name": "SnatEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

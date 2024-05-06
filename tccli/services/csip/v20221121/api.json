@@ -4515,6 +4515,15 @@
         },
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "扫描资产信息列表",
           "example": "无",
           "member": "TaskAssetObject",
@@ -5142,6 +5151,15 @@
           "member": "TaskIdListKey",
           "name": "TaskIdList",
           "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
           "type": "list"
         }
       ],
@@ -6300,6 +6318,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6416,6 +6443,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6520,6 +6556,15 @@
     "DescribeRiskCenterAssetViewVULRiskListRequest": {
       "document": "DescribeRiskCenterAssetViewVULRiskList请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "过滤内容",
@@ -6628,6 +6673,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6734,6 +6788,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6820,6 +6883,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6884,6 +6956,15 @@
     "DescribeRiskCenterVULViewVULRiskListRequest": {
       "document": "DescribeRiskCenterVULViewVULRiskList请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "过滤内容",
@@ -6970,6 +7051,15 @@
     "DescribeRiskCenterWebsiteRiskListRequest": {
       "document": "DescribeRiskCenterWebsiteRiskList请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "过滤内容",
@@ -7068,6 +7158,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "列表过滤条件",
           "example": "无",
           "member": "Filter",
@@ -7120,6 +7219,15 @@
     "DescribeScanTaskListRequest": {
       "document": "DescribeScanTaskList请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "过滤内容",
@@ -7342,6 +7450,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -7415,6 +7532,15 @@
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8942,6 +9068,15 @@
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9005,6 +9140,15 @@
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9890,7 +10034,7 @@
         {
           "disabled": false,
           "document": "风险ID",
-          "example": "x",
+          "example": "abc",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -9899,7 +10043,7 @@
         {
           "disabled": false,
           "document": "公网IP/域名",
-          "example": "x",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIPDomain",
           "required": false,
@@ -9908,7 +10052,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "x",
+          "example": "ins-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -9917,7 +10061,7 @@
         {
           "disabled": false,
           "document": "APP ID",
-          "example": "x",
+          "example": "12345",
           "member": "string",
           "name": "AppId",
           "required": false,
@@ -11033,6 +11177,15 @@
           "member": "TaskIdListKey",
           "name": "TaskIdList",
           "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
           "type": "list"
         }
       ],

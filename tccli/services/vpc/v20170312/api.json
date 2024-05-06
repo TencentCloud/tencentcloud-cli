@@ -764,7 +764,7 @@
       "status": "online"
     },
     "DeleteVpnGateway": {
-      "document": "本接口（DeleteVpnGateway）用于删除VPN网关。目前只支持删除运行中的按量计费的IPSEC网关实例。",
+      "document": "本接口（DeleteVpnGateway）用于删除VPN网关。",
       "input": "DeleteVpnGatewayRequest",
       "name": "删除VPN网关",
       "output": "DeleteVpnGatewayResponse",
@@ -1611,7 +1611,7 @@
       "status": "online"
     },
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": {
-      "document": "本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）调整VPN网关带宽上限询价。",
+      "document": "本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限询价。",
       "input": "InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest",
       "name": "调整VPN网关带宽上限询价",
       "output": "InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse",
@@ -8832,7 +8832,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持压缩。当前仅支持不支持压缩，默认False。",
+          "document": "是否支持压缩。当前不支持压缩，默认False。",
           "example": "False",
           "member": "bool",
           "name": "Compress",
@@ -8841,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSO认证。默认为False",
+          "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
           "example": "False",
           "member": "bool",
           "name": "SsoEnabled",
@@ -8860,7 +8860,7 @@
         {
           "disabled": false,
           "document": "SAML-DATA，开启SSO时传。",
-          "example": "xxxxx",
+          "example": "无",
           "member": "string",
           "name": "SamlData",
           "required": false,
@@ -10585,7 +10585,7 @@
         {
           "disabled": false,
           "document": "VPN网关实例ID。",
-          "example": "",
+          "example": "vpngw-ox3thdg1",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -16373,8 +16373,8 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN-SERVER实例ID。形如：vpngwSslServer-12345678。每次请求的实例的上限为100。参数不支持同时指定SslVpnServerIds和Filters。",
-          "example": "['vpngwSslServer-12345']",
+          "document": "SSL-VPN-SERVER实例ID。形如：vpns-0p4rj60。每次请求的实例的上限为100。参数不支持同时指定SslVpnServerIds和Filters。",
+          "example": "['vpns-0p4rj60r']",
           "member": "string",
           "name": "SslVpnServerIds",
           "required": false,
@@ -16410,6 +16410,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16419,6 +16420,7 @@
           "example": "无",
           "member": "SslVpnSever",
           "name": "SslVpnSeverSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19175,7 +19177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
+          "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。",
           "example": "5",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -19202,7 +19204,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。",
+          "document": "SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。",
           "example": "5",
           "member": "uint64",
           "name": "MaxConnection",
@@ -19211,7 +19213,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。",
+          "document": "查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。",
           "example": "IPSEC",
           "member": "string",
           "name": "Type",
@@ -19230,7 +19232,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19293,7 +19295,7 @@
         {
           "disabled": false,
           "document": "VPN网关实例ID。",
-          "example": "",
+          "example": "vpngw-kjllekna",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -19301,8 +19303,8 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。",
-          "example": "",
+          "document": "公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：Mbps。",
+          "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -19316,10 +19318,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品价格。",
-          "example": "",
+          "document": "商品价格。仅支持未过期的预付费网关。",
+          "example": "{\"InstancePrice\":{\"OriginalPrice\":1717.86,\"DiscountPrice\":1717.86,\"UnitPrice\":0,\"ChargeUnit\":\"\"},\"BandwidthPrice\":{\"OriginalPrice\":0,\"DiscountPrice\":0,\"UnitPrice\":0,\"ChargeUnit\":\"\"}}",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object"
         },
         {
@@ -22546,8 +22549,8 @@
         },
         {
           "disabled": false,
-          "document": "云联网路由（IDC网段）列表。",
-          "example": "[     {       \"RouteId\": \"dcr-6t3tknmg\",       \"Status\": \"ENABLE\",       \"DestinationCidrBlock\": \"172.2.9.6/32\"     }   ]",
+          "document": "云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 ",
+          "example": "[     {       \"RouteId\": \"vpnr-66c7ihas\",       \"Status\": \"ENABLE\",       \"DestinationCidrBlock\": \"172.2.9.6/32\"     }   ]",
           "member": "VpngwCcnRoutes",
           "name": "Routes",
           "required": true,
@@ -22656,7 +22659,7 @@
         {
           "disabled": false,
           "document": "SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP",
-          "example": "TCP",
+          "example": "UDP",
           "member": "string",
           "name": "SslVpnProtocol",
           "required": false,
@@ -22691,7 +22694,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持压缩。当前仅支持不支持压缩。默认False",
+          "document": "是否支持压缩。当前不支持压缩。默认False。",
           "example": "False",
           "member": "bool",
           "name": "Compress",
@@ -22700,7 +22703,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSO认证，默认False",
+          "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
           "example": "False",
           "member": "bool",
           "name": "SsoEnabled",
@@ -26804,7 +26807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。",
+          "document": "VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取，只能选择包年包月的VPN实例。",
           "example": "['vpngw-m6hhy6or']",
           "member": "string",
           "name": "VpnGatewayIds",
@@ -27492,6 +27495,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CAM服务提供商Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -116,6 +116,7 @@
           "example": "无",
           "member": "float",
           "name": "Positive",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -125,6 +126,7 @@
           "example": "无",
           "member": "float",
           "name": "Neutral",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -134,6 +136,7 @@
           "example": "无",
           "member": "float",
           "name": "Negative",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -143,6 +146,7 @@
           "example": "无",
           "member": "string",
           "name": "Sentiment",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -346,6 +350,7 @@
           "example": "满园春色",
           "member": "string",
           "name": "TopScroll",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -355,6 +360,7 @@
           "example": "无",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -364,6 +370,7 @@
           "example": "无",
           "member": "string",
           "name": "RandomCause",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -418,6 +425,7 @@
           "example": "阳光",
           "member": "string",
           "name": "Title",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -427,6 +435,7 @@
           "example": "无",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -733,6 +742,7 @@
           "example": "无",
           "member": "float",
           "name": "Similarity",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -916,6 +926,7 @@
           "example": "无",
           "member": "string",
           "name": "WordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1042,6 +1053,7 @@
           "example": "无",
           "member": "Embellish",
           "name": "EmbellishList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1114,6 +1126,7 @@
           "example": "无",
           "member": "Writing",
           "name": "WritingList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

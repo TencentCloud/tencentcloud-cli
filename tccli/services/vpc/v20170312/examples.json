@@ -637,7 +637,7 @@
     "CreateVpnGateway": [
       {
         "document": "创建VPNGW",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGateway\n<公共请求参数>\n\n{\n    \"VpnGatewayName\": \"\\\"test\\\"\",\n    \"VpcId\": \"\\\"vpc-xxxx\\\"\",\n    \"InstanceChargeType\": \"\\\"POSTPAID_BY_HOUR\\\"\",\n    \"InternetMaxBandwidthOut\": \"5\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpnGateway\n<公共请求参数>\n\n{\n    \"VpnGatewayName\": \"\\\"test\\\"\",\n    \"VpcId\": \"\\\"vpc-xxxx\\\"\",\n    \"InstanceChargeType\": \"\\\"POSTPAID_BY_HOUR\\\"\",\n    \"InternetMaxBandwidthOut\": 5\n}",
         "output": "{\n    \"Response\": {\n        \"VpnGateway\": {\n            \"VpnGatewayQuotaSet\": [],\n            \"MaxConnection\": 5,\n            \"VpcId\": \"vpc-test\",\n            \"RenewFlag\": \"\",\n            \"Zone\": \"ap-bangkok-1\",\n            \"VpnGatewayName\": \"test\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"CdcId\": \"\",\n            \"IsAddressBlocked\": true,\n            \"InternetMaxBandwidthOut\": 10,\n            \"State\": \"Pending\",\n            \"Version\": \"\",\n            \"VpnGatewayId\": \"vpngw-xxxxx\",\n            \"PublicIpAddress\": \"12.3.1.3\",\n            \"CreatedTime\": \"2020-09-22 00:00:00\",\n            \"NewPurchasePlan\": \"\",\n            \"ExpiredTime\": \"2020-09-22 00:00:00\",\n            \"Type\": \"IPSEC\",\n            \"NetworkInstanceId\": \"\",\n            \"RestrictState\": \"NORMAL\"\n        },\n        \"RequestId\": \"fa15cd12-e329-1261-c585-3c3ae5c55211\"\n    }\n}",
         "title": "创建VPNGW"
       }
@@ -1007,7 +1007,7 @@
     "DeleteVpnGateway": [
       {
         "document": "删除VPN网关",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGateway\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-12345678\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpnGateway\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-edaft30x\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "删除VPN网关"
       }
@@ -1845,8 +1845,8 @@
     "DescribeVpnGatewaySslServers": [
       {
         "document": "查询SSL-VPN-SERVER",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewaySslServers\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpn-gateway-id\n&Filters.0.Values.0=vpn-123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SslVpnSeverSet\": [\n            {\n                \"VpcId\": \"abc\",\n                \"SslVpnServerId\": \"abc\",\n                \"VpnGatewayId\": \"abc\",\n                \"SslVpnServerName\": \"abc\",\n                \"LocalAddress\": [\n                    \"abc\"\n                ],\n                \"RemoteAddress\": \"abc\",\n                \"MaxConnection\": 1,\n                \"WanIp\": \"abc\",\n                \"SslVpnProtocol\": \"abc\",\n                \"SslVpnPort\": 1,\n                \"EncryptAlgorithm\": \"abc\",\n                \"IntegrityAlgorithm\": \"abc\",\n                \"Compress\": 1,\n                \"CreateTime\": \"abc\",\n                \"State\": 1,\n                \"SsoEnabled\": 1,\n                \"EiamApplicationId\": \"abc\",\n                \"AccessPolicyEnabled\": 1,\n                \"AccessPolicy\": [\n                    {\n                        \"TargetCidr\": \"abc\",\n                        \"VpnGatewayIdSslAccessPolicyId\": \"abc\",\n                        \"ForAllClient\": 1,\n                        \"UserGroupIds\": [\n                            \"abc\"\n                        ],\n                        \"UpdateTime\": \"abc\",\n                        \"Remark\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpnGatewaySslServers\n&Offset=0\n&Limit=2\n&Filters.0.Name=vpn-gateway-id\n&Filters.0.Values.0=vpngw-0zowp2z9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d0c0675-d1cb-4d28-99af-bf093a7d62d2\",\n        \"SslVpnSeverSet\": [\n            {\n                \"VpcId\": \"vpc-1tqv6my1\",\n                \"SslVpnServerId\": \"vpns-fofx7shn\",\n                \"VpnGatewayId\": \"vpngw-0zowp2z9\",\n                \"SslVpnServerName\": \"test\",\n                \"LocalAddress\": [\n                    \"10.17.0.0/24\"\n                ],\n                \"RemoteAddress\": \"10.12.0.0/24\",\n                \"MaxConnection\": 5,\n                \"WanIp\": \"1.14.55.188\",\n                \"SslVpnProtocol\": \"UDP\",\n                \"SslVpnPort\": 1194,\n                \"EncryptAlgorithm\": \"none\",\n                \"IntegrityAlgorithm\": \"none\",\n                \"Compress\": 0,\n                \"CreateTime\": \"2023-01-11 11:37:41\",\n                \"State\": 6,\n                \"SsoEnabled\": 0,\n                \"SpName\": \"\",\n                \"EiamApplicationId\": \"\",\n                \"AccessPolicyEnabled\": 0,\n                \"AccessPolicy\": []\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询SSL-VPN-SERVER"
       }
     ],
@@ -2126,13 +2126,13 @@
     ],
     "InquiryPriceCreateVpnGateway": [
       {
-        "document": "",
+        "document": "包年包月询价时输入",
         "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceCreateVpnGateway\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&InternetMaxBandwidthOut=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 380,\n                \"DiscountPrice\": 380\n            }\n        },\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 380,\n                \"DiscountPrice\": 380,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            }\n        },\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "包年包月询价输入"
       },
       {
-        "document": "",
+        "document": "按量计费询价时输入",
         "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceCreateVpnGateway\n&InstanceChargeType=POSTPAID_BY_HOUR\n&InternetMaxBandwidthOut=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.48,\n                \"ChargeUnit\": \"HOUR\"\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\"\n            }\n        },\n        \"RequestId\": \"e87327cd-f8fa-4340-9959-58ebe8f11f6b\"\n    }\n}",
         "title": "按量计费询价输入"
@@ -2148,9 +2148,9 @@
     ],
     "InquiryPriceResetVpnGatewayInternetMaxBandwidth": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceResetVpnGatewayInternetMaxBandwidth\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InternetMaxBandwidthOut=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 460.27,\n                \"DiscountPrice\": 460.27\n            }\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "document": "本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetVpnGatewayInternetMaxBandwidth\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-a4wta21x\",\n    \"InternetMaxBandwidthOut\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 1717.86,\n                \"DiscountPrice\": 1717.86,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            }\n        },\n        \"RequestId\": \"e13643de-b578-42b0-8ad3-86b732067292\"\n    }\n}",
         "title": "调整VPN网关带宽上限询价"
       }
     ],
@@ -2605,7 +2605,7 @@
     "ModifyVpnGatewayCcnRoutes": [
       {
         "document": "修改VPN网关云联网路由",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnGatewayCcnRoutes\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-qol17bjo\",\n    \"Routes\": [\n        {\n            \"RouteId\": \"dcr-7t3tknmp\",\n            \"Status\": \"ENABLE\",\n            \"DestinationCidrBlock\": \"172.2.9.3/32\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnGatewayCcnRoutes\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-qol17bjo\",\n    \"Routes\": [\n        {\n            \"RouteId\": \"vpnr-66c7ihas\",\n            \"Status\": \"ENABLE\",\n            \"DestinationCidrBlock\": \"172.2.9.3/32\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e446c86-d8c9-4981-9b33-d10956585058\"\n    }\n}",
         "title": "修改VPN网关云联网路由"
       }

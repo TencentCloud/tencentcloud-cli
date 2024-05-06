@@ -4007,7 +4007,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4017,7 +4017,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4027,7 +4027,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4037,7 +4037,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4047,7 +4047,7 @@
           "example": "1",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4057,7 +4057,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4067,7 +4067,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterCIDR",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4077,7 +4077,7 @@
           "example": "1",
           "member": "float",
           "name": "ClusterTotalCpu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4087,7 +4087,7 @@
           "example": "1",
           "member": "float",
           "name": "ClusterTotalMem",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4097,7 +4097,7 @@
           "example": "1",
           "member": "float",
           "name": "ClusterUsedCpu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4107,7 +4107,7 @@
           "example": "1",
           "member": "float",
           "name": "ClusterUsedMem",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4117,7 +4117,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4127,7 +4127,7 @@
           "example": "1",
           "member": "int64",
           "name": "RunInstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4137,7 +4137,7 @@
           "example": "1",
           "member": "int64",
           "name": "NormalInstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4147,7 +4147,7 @@
           "example": "false",
           "member": "bool",
           "name": "DeleteFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4157,7 +4157,7 @@
           "example": "1",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4167,7 +4167,7 @@
           "example": "1",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4177,7 +4177,7 @@
           "example": "1",
           "member": "string",
           "name": "TsfRegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4187,7 +4187,7 @@
           "example": "1",
           "member": "string",
           "name": "TsfRegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4197,7 +4197,7 @@
           "example": "1",
           "member": "string",
           "name": "TsfZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4207,7 +4207,7 @@
           "example": "1",
           "member": "string",
           "name": "TsfZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4217,7 +4217,7 @@
           "example": "1",
           "member": "string",
           "name": "DeleteFlagReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4227,7 +4227,7 @@
           "example": "1",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4237,7 +4237,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterLimitCpu",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4247,7 +4247,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterLimitMem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4257,7 +4257,7 @@
           "example": "1",
           "member": "int64",
           "name": "RunServiceInstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4267,7 +4267,7 @@
           "example": "无",
           "member": "OperationInfo",
           "name": "OperationInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4277,7 +4277,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4287,7 +4287,7 @@
           "example": "1",
           "member": "uint64",
           "name": "GroupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4297,7 +4297,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RunGroupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4307,7 +4307,7 @@
           "example": "1",
           "member": "uint64",
           "name": "StopGroupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4317,7 +4317,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AbnormalGroupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4327,7 +4327,7 @@
           "example": "1",
           "member": "string",
           "name": "ClusterRemarkName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4337,7 +4337,7 @@
           "example": "1",
           "member": "string",
           "name": "KuberneteApiServer",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4347,7 +4347,7 @@
           "example": "1",
           "member": "string",
           "name": "KuberneteNativeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4357,8 +4357,18 @@
           "example": "1",
           "member": "string",
           "name": "KuberneteNativeSecret",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启cls日志功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableLogCollection",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -6893,6 +6903,15 @@
           "name": "ProgramIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启cls日志功能",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableLogCollection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6906,7 +6925,7 @@
           "example": "1",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21781,7 +21800,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -21790,7 +21809,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -21799,7 +21818,7 @@
         {
           "disabled": false,
           "document": "集群描述信息",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "ClusterDesc",
           "required": false,
@@ -21808,11 +21827,29 @@
         {
           "disabled": false,
           "document": "备注名",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "ClusterRemarkName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启cls日志功能",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableLogCollection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否修复cls日志功能",
+          "example": "false",
+          "member": "bool",
+          "name": "RepairLog",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -21823,9 +21860,10 @@
         {
           "disabled": false,
           "document": "更新集群详情操作是否成功。\ntrue： 操作成功。\nfalse：操作失败。",
-          "example": "",
+          "example": "1",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

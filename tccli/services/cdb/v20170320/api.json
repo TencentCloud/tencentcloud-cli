@@ -70,6 +70,13 @@
       "output": "CloseCdbProxyAddressResponse",
       "status": "online"
     },
+    "CloseSSL": {
+      "document": "关闭SSL连接功能。",
+      "input": "CloseSSLRequest",
+      "name": "关闭SSL",
+      "output": "CloseSSLResponse",
+      "status": "online"
+    },
     "CloseWanService": {
       "document": "本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。",
       "input": "CloseWanServiceRequest",
@@ -658,6 +665,13 @@
       "output": "DescribeRollbackTaskDetailResponse",
       "status": "online"
     },
+    "DescribeSSLStatus": {
+      "document": "查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。",
+      "input": "DescribeSSLStatusRequest",
+      "name": "查询 SSL 开通情况",
+      "output": "DescribeSSLStatusResponse",
+      "status": "online"
+    },
     "DescribeSlowLogData": {
       "document": "条件检索实例的慢日志。只允许查看一个月之内的慢日志。\n使用时需要注意：可能存在单条慢日志太大，导致整个http请求的回包太大，进而引发接口超时。一旦发生超时，建议您缩小查询时的Limit参数值，从而降低包的大小，让接口能够及时返回内容。",
       "input": "DescribeSlowLogDataRequest",
@@ -978,6 +992,13 @@
       "input": "OpenDBInstanceGTIDRequest",
       "name": "开启实例的GTID",
       "output": "OpenDBInstanceGTIDResponse",
+      "status": "online"
+    },
+    "OpenSSL": {
+      "document": "开启SSL连接功能。",
+      "input": "OpenSSLRequest",
+      "name": "开启SSL",
+      "output": "OpenSSLResponse",
       "status": "online"
     },
     "OpenWanService": {
@@ -4031,6 +4052,52 @@
     "CloseCdbProxyAddressResponse": {
       "document": "CloseCdbProxyAddress返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseSSLRequest": {
+      "document": "CloseSSL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。只读组 ID为空时必填。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读组 ID。实例 ID为空时必填。",
+          "example": "cdbrg-test",
+          "member": "string",
+          "name": "RoGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseSSLResponse": {
+      "document": "CloseSSL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步请求 ID。",
+          "example": "123asd21-2dasdasd-123qcsdw-313213",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11507,6 +11574,62 @@
       ],
       "type": "object"
     },
+    "DescribeSSLStatusRequest": {
+      "document": "DescribeSSLStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。只读组 ID为空时必填。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读组 ID。实例 ID为空时必填。",
+          "example": "cdbrg-test",
+          "member": "string",
+          "name": "RoGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSSLStatusResponse": {
+      "document": "DescribeSSLStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书下载链接。",
+          "example": "http://testdownload.url",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSlowLogDataRequest": {
       "document": "DescribeSlowLogData请求参数结构体",
       "members": [
@@ -16078,6 +16201,52 @@
           "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
           "example": "e48eb1e9-0ca0ecae-c0dac9c7-60d12864",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenSSLRequest": {
+      "document": "OpenSSL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读组 ID。",
+          "example": "cdbrg-test",
+          "member": "string",
+          "name": "RoGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenSSLResponse": {
+      "document": "OpenSSL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步请求 ID。",
+          "example": "123asd21-2dasdasd-123qcsdw-313213",
           "member": "string",
           "name": "AsyncRequestId",
           "required": true,

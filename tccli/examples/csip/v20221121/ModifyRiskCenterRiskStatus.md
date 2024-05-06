@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip ModifyRiskCenterRiskStatus --cli-unfold-argument  \
+    --MemberId abc \
     --RiskStatusKeys.0.Id abc \
     --RiskStatusKeys.0.PublicIPDomain abc \
     --RiskStatusKeys.0.InstanceId abc \

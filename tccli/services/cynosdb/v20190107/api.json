@@ -7705,7 +7705,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量。默认值为30，最大值为 20000。",
+          "document": "单次请求返回的数量。默认值为30，最大值为 100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",

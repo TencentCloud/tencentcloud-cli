@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc ModifyVpnGatewayCcnRoutes --cli-unfold-argument  \
     --VpnGatewayId vpngw-qol17bjo \
-    --Routes.0.RouteId dcr-7t3tknmp \
+    --Routes.0.RouteId vpnr-66c7ihas \
     --Routes.0.Status ENABLE \
     --Routes.0.DestinationCidrBlock 172.2.9.3/32
 ```

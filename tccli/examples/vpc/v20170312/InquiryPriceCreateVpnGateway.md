@@ -1,6 +1,6 @@
 **Example 1: 包年包月询价输入**
 
-
+包年包月询价时输入
 
 Input: 
 
@@ -18,7 +18,15 @@ Output:
         "Price": {
             "InstancePrice": {
                 "OriginalPrice": 380,
-                "DiscountPrice": 380
+                "DiscountPrice": 380,
+                "UnitPrice": 0,
+                "ChargeUnit": ""
+            },
+            "BandwidthPrice": {
+                "OriginalPrice": 0,
+                "DiscountPrice": 0,
+                "UnitPrice": 0,
+                "ChargeUnit": ""
             }
         },
         "RequestId": "1b2534de-3f38-4913-921a-af5ff1a9cb73"
@@ -28,7 +36,7 @@ Output:
 
 **Example 2: 按量计费询价输入**
 
-
+按量计费询价时输入
 
 Input: 
 

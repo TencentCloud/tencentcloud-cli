@@ -237,7 +237,7 @@
     "DeleteConfigExtra": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"xxxxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"00903f17-3e27-4f32-b1f5-489cf6e5bf08\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除特殊采集规则配置"
       }

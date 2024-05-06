@@ -2873,7 +2873,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型。可选值：\n<li> Trigger - 告警触发 </li>\n<li> Recovery - 告警恢复</li>\n<li> All - 告警触发和告警恢复</li>",
+          "document": "通知类型。可选值：\n- Trigger - 告警触发\n- Recovery - 告警恢复\n- All - 告警触发和告警恢复\n\n\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -2882,7 +2882,7 @@
         },
         {
           "disabled": false,
-          "document": "通知接收对象。",
+          "document": "通知接收对象。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
@@ -2891,7 +2891,7 @@
         },
         {
           "disabled": false,
-          "document": "接口回调信息（包括企业微信）。",
+          "document": "接口回调信息（包括企业微信）。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -2900,7 +2900,7 @@
         },
         {
           "disabled": false,
-          "document": "通知规则。\n\n 注意:  \n\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。\n\n",
+          "document": "通知规则。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。\n\n",
           "example": "无",
           "member": "NoticeRule",
           "name": "NoticeRules",
@@ -2916,7 +2916,7 @@
         {
           "disabled": false,
           "document": "告警模板ID",
-          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "notice-f0454407-1bb2-48c7-b224-653d4b236d14",
           "member": "string",
           "name": "AlarmNoticeId",
           "output_required": true,
@@ -3435,7 +3435,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径,包含文件名",
+          "document": "日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填",
           "example": "/data/nginx/log/**/access.log",
           "member": "string",
           "name": "Path",
@@ -5386,8 +5386,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集规则扩展配置ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "特殊采集规则扩展配置ID",
+          "example": "00903f17-3e27-4f32-b1f5-489cf6e5bf08",
           "member": "string",
           "name": "ConfigExtraId",
           "required": true,
@@ -6102,7 +6102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的key： topicId,name, configExtraId, machineGroupId",
+          "document": "name\n- 按照【特殊采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n\nconfigExtraId\n- 按照【特殊采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7955,7 +7955,7 @@
         },
         {
           "disabled": false,
-          "document": "失败日志的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败日志的key，当UnMatchUpLoadSwitch为true时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testlog",
           "member": "string",
           "name": "UnMatchLogKey",
@@ -7977,7 +7977,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为Gbk编码。 0：否；1：是。\n注意：\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为Gbk编码。 0：否；1：是。\n注意\n- 目前取0值时，表示UTF-8编码\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsGBK",
@@ -7988,7 +7988,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为标准json。  0：否； 1：是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为标准json。  0：否； 1：是。\n注\n- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "JsonStandard",
@@ -7999,7 +7999,7 @@
         },
         {
           "disabled": false,
-          "document": "syslog传输协议，取值为tcp或者udp。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
@@ -8010,7 +8010,7 @@
         },
         {
           "disabled": false,
-          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "127.0.0.1:9000",
           "member": "string",
           "name": "Address",
@@ -8021,7 +8021,7 @@
         },
         {
           "disabled": false,
-          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rfc3164：指定系统日志采集使用RFC3164协议解析日志。\nrfc5424：指定系统日志采集使用RFC5424协议解析日志。\nauto：自动匹配rfc3164或者rfc5424其中一种协议。\n只有在LogType为service_syslog时生效，其余类型无需填写。\n注意：\n- 该字段适用于：创建采集规则配置、修改采集规则配置\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RFC3164",
           "member": "string",
           "name": "ParseProtocol",
@@ -8065,7 +8065,7 @@
         },
         {
           "disabled": false,
-          "document": "Windows事件日志采集。\n注意：\n- COS导入不支持此字段。",
+          "document": "Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。",
           "example": "无",
           "member": "EventLog",
           "name": "EventLogRules",
@@ -11433,7 +11433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接受者类型。可选值：\n<br><li> Uin - 用户ID\n<br><li> Group - 用户组ID\n暂不支持其余接收者类型。",
+          "document": "接受者类型。可选值：\n-  Uin - 用户ID\n- Group - 用户组ID\n暂不支持其余接收者类型。",
           "example": "Group",
           "member": "string",
           "name": "ReceiverType",
@@ -11444,8 +11444,8 @@
         },
         {
           "disabled": false,
-          "document": "接收者。",
-          "example": "[0]",
+          "document": "接收者。\n当ReceiverType为Uin时，ReceiverIds的值为用户id。[子用户信息查询](https://cloud.tencent.com/document/product/598/36258)\n当ReceiverType为Group时，ReceiverIds的值为用户组id。[CAM用户组](https://cloud.tencent.com/document/product/598/14985)",
+          "example": "[1234,2345]",
           "member": "int64",
           "name": "ReceiverIds",
           "output_required": true,
@@ -11455,7 +11455,7 @@
         },
         {
           "disabled": false,
-          "document": "通知接收渠道。\n<br><li> Email - 邮件\n<br><li> Sms - 短信\n<br><li> WeChat - 微信\n<br><li> Phone - 电话",
+          "document": "通知接收渠道。\n- Email - 邮件\n- Sms - 短信\n- WeChat - 微信\n- Phone - 电话",
           "example": "['Sms']",
           "member": "string",
           "name": "ReceiverChannels",
@@ -11488,7 +11488,7 @@
         },
         {
           "disabled": false,
-          "document": "位序",
+          "document": "位序。\n\n- 入参无效。\n- 出参时有效。",
           "example": "1",
           "member": "int64",
           "name": "Index",
@@ -11527,8 +11527,8 @@
         },
         {
           "disabled": false,
-          "document": "匹配规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "匹配规则 JSON串。\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1,2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}\n`\n以上示例表示：\n规则：\n通知类型属于告警通知,恢复通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1,2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}",
           "member": "string",
           "name": "Rule",
           "output_required": false,
@@ -13670,8 +13670,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调地址。",
-          "example": "无",
+          "document": "回调地址。最大支持1024个字节数。",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2525c9e890",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -13681,7 +13681,7 @@
         },
         {
           "disabled": false,
-          "document": "回调的类型。可选值：\n<li> WeCom\n<li> Http",
+          "document": "回调的类型。可选值：\n- WeCom\n- Http\n- DingTalk\n- Lark",
           "example": "WeCom",
           "member": "string",
           "name": "CallbackType",
@@ -13692,7 +13692,7 @@
         },
         {
           "disabled": false,
-          "document": "回调方法。可选值：\n<li> POST\n<li> PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调方法。可选值：\n- POST\n- PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POST",
           "member": "string",
           "name": "Method",
@@ -13725,7 +13725,7 @@
         },
         {
           "disabled": false,
-          "document": "序号",
+          "document": "序号。\n- 入参无效。\n- 出参有效。",
           "example": "1",
           "member": "int64",
           "name": "Index",

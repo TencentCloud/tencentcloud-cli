@@ -2624,6 +2624,315 @@
       ],
       "usage": "both"
     },
+    "BaseClusterInfo": {
+      "document": "集群基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "43453434sdsd",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，EMR/CDW等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testcluster",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京",
+          "member": "string",
+          "name": "RegionCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "RegionEn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "RegionArea",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群是否使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Used",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "StatusInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群计算类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ComputeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群资源量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterResource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群付费方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-09-22T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExtraConf",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ranger账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "RangerUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdw账号（用于展示）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata",
+          "member": "string",
+          "name": "CdwUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BaseTenant": {
+      "document": "租户基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100010",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testtenant",
+          "member": "string",
+          "name": "TenantName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户显示名称，一般是中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试租户",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试租户备注",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12343445",
+          "member": "string",
+          "name": "OwnerUserId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户的额外配置参数, json格式字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Params",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BaseUser": {
+      "document": "基础用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有云的UIN，全局唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户全局唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "u100019933",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户显示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xiaoming",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18888888888",
+          "member": "string",
+          "name": "PhoneNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test@test.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BatchCreateIntegrationTaskAlarmsRequest": {
       "document": "BatchCreateIntegrationTaskAlarms请求参数结构体",
       "members": [
@@ -14706,6 +15015,16 @@
     "DescribeProjectResponse": {
       "document": "DescribeProject返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "项目信息",
+          "example": "无",
+          "member": "Project",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -28954,6 +29273,152 @@
         }
       ],
       "usage": "both"
+    },
+    "Project": {
+      "document": "项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目的所在租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目标识，英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testpj",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目显示名称，可以为中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "项目a",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseUser",
+          "name": "Creator",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseTenant",
+          "name": "Tenant",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目的管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseUser",
+          "name": "AdminUsers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目关联的集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseClusterInfo",
+          "name": "Clusters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目的额外配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "Params",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目状态：0：禁用，1：启用，-3:禁用中，2：启用中",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目类型，SIMPLE：简单模式 STANDARD：标准模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ProjectBaseInfoOpsRequest": {
       "document": "基础信息",

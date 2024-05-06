@@ -531,7 +531,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。",
+          "document": "证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。",
           "example": "无",
           "member": "string",
           "name": "PackageType",
@@ -558,7 +558,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期，默认12个月，目前仅支持12个月。",
+          "document": "有效期，默认3个月，目前仅支持3个月。",
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",

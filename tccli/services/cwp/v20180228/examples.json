@@ -982,14 +982,6 @@
         "title": "网络攻击检测列表"
       }
     ],
-    "DescribeAttackLogInfo": [
-      {
-        "document": "网络攻击日志详情",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackLogInfo\n<公共请求参数>\n\n{\n    \"Id\": \"1023\"\n}",
-        "output": "{\n    \"Response\": {\n        \"HttpParam\": \"xx\",\n        \"DstIp\": \"xx\",\n        \"HttpCgi\": \"xx\",\n        \"VulType\": \"xx\",\n        \"CreatedAt\": \"xx\",\n        \"SrcPort\": 1,\n        \"HttpHead\": \"xx\",\n        \"HttpUserAgent\": \"xx\",\n        \"HttpMethod\": \"xx\",\n        \"Quuid\": \"xx\",\n        \"HttpReferer\": \"xx\",\n        \"SrcIp\": \"xx\",\n        \"DstPort\": 1,\n        \"HttpContent\": \"xx\",\n        \"Id\": 1,\n        \"HttpHost\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "网络攻击日志详情"
-      }
-    ],
     "DescribeAttackLogs": [
       {
         "document": "网络攻击日志列表",
