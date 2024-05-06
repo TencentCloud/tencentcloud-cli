@@ -9,51 +9,41 @@ tccli vpc DescribeVpnGatewaySslServers --cli-unfold-argument  \
     --Offset 0 \
     --Limit 2 \
     --Filters.0.Name vpn-gateway-id \
-    --Filters.0.Values vpn-123456
+    --Filters.0.Values vpngw-0zowp2z9
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "1d0c0675-d1cb-4d28-99af-bf093a7d62d2",
         "SslVpnSeverSet": [
             {
-                "VpcId": "abc",
-                "SslVpnServerId": "abc",
-                "VpnGatewayId": "abc",
-                "SslVpnServerName": "abc",
+                "VpcId": "vpc-1tqv6my1",
+                "SslVpnServerId": "vpns-fofx7shn",
+                "VpnGatewayId": "vpngw-0zowp2z9",
+                "SslVpnServerName": "test",
                 "LocalAddress": [
-                    "abc"
+                    "10.17.0.0/24"
                 ],
-                "RemoteAddress": "abc",
-                "MaxConnection": 1,
-                "WanIp": "abc",
-                "SslVpnProtocol": "abc",
-                "SslVpnPort": 1,
-                "EncryptAlgorithm": "abc",
-                "IntegrityAlgorithm": "abc",
-                "Compress": 1,
-                "CreateTime": "abc",
-                "State": 1,
-                "SsoEnabled": 1,
-                "EiamApplicationId": "abc",
-                "AccessPolicyEnabled": 1,
-                "AccessPolicy": [
-                    {
-                        "TargetCidr": "abc",
-                        "VpnGatewayIdSslAccessPolicyId": "abc",
-                        "ForAllClient": 1,
-                        "UserGroupIds": [
-                            "abc"
-                        ],
-                        "UpdateTime": "abc",
-                        "Remark": "abc"
-                    }
-                ]
+                "RemoteAddress": "10.12.0.0/24",
+                "MaxConnection": 5,
+                "WanIp": "1.14.55.188",
+                "SslVpnProtocol": "UDP",
+                "SslVpnPort": 1194,
+                "EncryptAlgorithm": "none",
+                "IntegrityAlgorithm": "none",
+                "Compress": 0,
+                "CreateTime": "2023-01-11 11:37:41",
+                "State": 6,
+                "SsoEnabled": 0,
+                "SpName": "",
+                "EiamApplicationId": "",
+                "AccessPolicyEnabled": 0,
+                "AccessPolicy": []
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

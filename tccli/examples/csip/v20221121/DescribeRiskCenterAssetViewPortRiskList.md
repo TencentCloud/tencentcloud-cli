@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeRiskCenterAssetViewPortRiskList --cli-unfold-argument  \
+    --MemberId xx \
     --Tags.0.TagKey abc \
     --Tags.0.TagValue abc \
     --Filter.Limit 0 \

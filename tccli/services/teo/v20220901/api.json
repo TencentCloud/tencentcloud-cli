@@ -7570,7 +7570,7 @@
           "example": "无",
           "member": "RulesSettingAction",
           "name": "Actions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

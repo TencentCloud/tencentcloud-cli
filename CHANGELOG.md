@@ -1,3 +1,274 @@
+# Release 3.0.988.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 96 次发布
+
+发布时间：2024-05-07 01:10:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseSSL](http://document.tencentcloudapi.woa.com/document/product/236/83818)
+* [DescribeSSLStatus](http://document.tencentcloudapi.woa.com/document/product/236/83817)
+* [OpenSSL](http://document.tencentcloudapi.woa.com/document/product/236/83816)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 64 次发布
+
+发布时间：2024-05-07 01:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateListener](http://document.tencentcloudapi.woa.com/document/product/214/30693)
+
+	* 新增入参：SnatEnable
+
+* [ModifyListener](http://document.tencentcloudapi.woa.com/document/product/214/30681)
+
+	* 新增入参：SnatEnable
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 33 次发布
+
+发布时间：2024-05-07 01:13:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/80809)
+
+	* 新增入参：MemberId
+
+* [DeleteRiskScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/81983)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterAssetViewCFGRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81990)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterAssetViewPortRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/80796)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterAssetViewVULRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/80795)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterAssetViewWeakPasswordRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81989)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterPortViewPortRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82358)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterServerRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81988)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterVULViewVULRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82357)
+
+	* 新增入参：MemberId
+
+* [DescribeRiskCenterWebsiteRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81987)
+
+	* 新增入参：MemberId
+
+* [DescribeScanReportList](http://document.tencentcloudapi.woa.com/document/product/1726/80794)
+
+	* 新增入参：MemberId
+
+* [DescribeScanTaskList](http://document.tencentcloudapi.woa.com/document/product/1726/81771)
+
+	* 新增入参：MemberId
+
+* [DescribeTaskLogList](http://document.tencentcloudapi.woa.com/document/product/1726/81770)
+
+	* 新增入参：MemberId
+
+* [DescribeTaskLogURL](http://document.tencentcloudapi.woa.com/document/product/1726/81769)
+
+	* 新增入参：MemberId
+
+* [ModifyRiskCenterRiskStatus](http://document.tencentcloudapi.woa.com/document/product/1726/82356)
+
+	* 新增入参：MemberId
+
+* [ModifyRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/82980)
+
+	* 新增入参：MemberId
+
+* [StopRiskCenterTask](http://document.tencentcloudapi.woa.com/document/product/1726/81982)
+
+	* 新增入参：MemberId
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 73 次发布
+
+发布时间：2024-05-07 01:13:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceStatus](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceStatus)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstanceState
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 87 次发布
+
+发布时间：2024-05-07 01:14:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAttackLogInfo
+
+
+
+## 服务网格(tcm) 版本：2021-04-13
+
+### 第 18 次发布
+
+发布时间：2024-05-07 01:25:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIstioGatewayList](http://document.tencentcloudapi.woa.com/document/product/1593/83820)
+* [ModifyGatewayCert](http://document.tencentcloudapi.woa.com/document/product/1593/83819)
+
+新增数据结构：
+
+* [GatewayWrapper](http://document.tencentcloudapi.woa.com/document/product/1593/75052#GatewayWrapper)
+* [Server](http://document.tencentcloudapi.woa.com/document/product/1593/75052#Server)
+* [ServerPort](http://document.tencentcloudapi.woa.com/document/product/1593/75052#ServerPort)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 43 次发布
+
+发布时间：2024-05-07 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/649/36049)
+
+	* 新增入参：EnableLogCollection
+
+* [ModifyCluster](http://document.tencentcloudapi.woa.com/document/product/649/76973)
+
+	* 新增入参：EnableLogCollection, RepairLog
+
+
+修改数据结构：
+
+* [ClusterV2](http://document.tencentcloudapi.woa.com/document/product/649/36099#ClusterV2)
+
+	* 新增成员：EnableLogCollection
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 134 次发布
+
+发布时间：2024-05-07 01:29:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SslVpnSever](http://document.tencentcloudapi.woa.com/document/product/215/15824#SslVpnSever)
+
+	* 新增成员：SpName
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 49 次发布
+
+发布时间：2024-05-07 01:30:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProject](http://document.tencentcloudapi.woa.com/document/product/1607/77692)
+
+	* 新增出参：Data
+
+
+新增数据结构：
+
+* [BaseClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BaseClusterInfo)
+* [BaseTenant](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BaseTenant)
+* [BaseUser](http://document.tencentcloudapi.woa.com/document/product/1607/77747#BaseUser)
+* [ComputeResourceUsedData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ComputeResourceUsedData)
+* [DescribeProjectResourcePoolsData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DescribeProjectResourcePoolsData)
+* [ExecutorGroupAvailable](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExecutorGroupAvailable)
+* [ExecutorInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#ExecutorInfo)
+* [MetaCount](http://document.tencentcloudapi.woa.com/document/product/1607/77747#MetaCount)
+* [OrgNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrgNodeInfo)
+* [Project](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Project)
+* [SchedulerExecutorGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SchedulerExecutorGroupInfo)
+* [StorageResourceUsedData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#StorageResourceUsedData)
+
+
+
 # Release 3.0.987.1
 
 ## 日志服务(cls) 版本：2020-10-16

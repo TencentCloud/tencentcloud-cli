@@ -1,14 +1,13 @@
 **Example 1: 调整VPN网关带宽上限询价**
 
-
+本接口（InquiryPriceResetVpnGatewayInternetMaxBandwidth）用于调整VPN网关带宽上限询价。
 
 Input: 
 
 ```
 tccli vpc InquiryPriceResetVpnGatewayInternetMaxBandwidth --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --VpnGatewayId vpngw-lazly92z \
-    --InternetMaxBandwidthOut 10
+    --VpnGatewayId vpngw-a4wta21x \
+    --InternetMaxBandwidthOut 100
 ```
 
 Output: 
@@ -17,11 +16,19 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalPrice": 460.27,
-                "DiscountPrice": 460.27
+                "OriginalPrice": 1717.86,
+                "DiscountPrice": 1717.86,
+                "UnitPrice": 0,
+                "ChargeUnit": ""
+            },
+            "BandwidthPrice": {
+                "OriginalPrice": 0,
+                "DiscountPrice": 0,
+                "UnitPrice": 0,
+                "ChargeUnit": ""
             }
         },
-        "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
+        "RequestId": "e13643de-b578-42b0-8ad3-86b732067292"
     }
 }
 ```

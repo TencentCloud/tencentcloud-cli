@@ -56,6 +56,13 @@
       "output": "DescribeIngressGatewayListResponse",
       "status": "online"
     },
+    "DescribeIstioGatewayList": {
+      "document": "修改 Istio Gateway 证书",
+      "input": "DescribeIstioGatewayListRequest",
+      "name": "获取 Istio Gateway 列表",
+      "output": "DescribeIstioGatewayListResponse",
+      "status": "online"
+    },
     "DescribeIstioResource": {
       "document": "获取网格中生效的Istio资源",
       "input": "DescribeIstioResourceRequest",
@@ -103,6 +110,13 @@
       "input": "ModifyAccessLogConfigRequest",
       "name": "修改访问日志配置",
       "output": "ModifyAccessLogConfigResponse",
+      "status": "online"
+    },
+    "ModifyGatewayCert": {
+      "document": "修改 Istio Gateway 证书",
+      "input": "ModifyGatewayCertRequest",
+      "name": "修改 Istio Gateway 证书",
+      "output": "ModifyGatewayCertResponse",
       "status": "online"
     },
     "ModifyIngressGateway": {
@@ -1285,6 +1299,53 @@
       ],
       "type": "object"
     },
+    "DescribeIstioGatewayListRequest": {
+      "document": "DescribeIstioGatewayList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIstioGatewayListResponse": {
+      "document": "DescribeIstioGatewayList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Gateway 总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gateway 列表",
+          "example": "无",
+          "member": "GatewayWrapper",
+          "name": "GatewayList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIstioResourceRequest": {
       "document": "DescribeIstioResource请求参数结构体",
       "members": [
@@ -1592,6 +1653,45 @@
         }
       ],
       "usage": "in"
+    },
+    "GatewayWrapper": {
+      "document": "Gateway 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Gateway 命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayNamespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Gateway 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Server 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Server",
+          "name": "GatewayServers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GrafanaInfo": {
       "document": "Grafana信息",
@@ -2653,6 +2753,78 @@
       ],
       "type": "object"
     },
+    "ModifyGatewayCertRequest": {
+      "document": "ModifyGatewayCert请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的网格 ID",
+          "example": "mesh-xxxxxxxx",
+          "member": "string",
+          "name": "MeshID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的 Gateway 名称",
+          "example": "gw-name",
+          "member": "string",
+          "name": "GatewayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的 Gateway 命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "GatewayNamespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的 Gateway 端口名称",
+          "example": "HTTPS-444-j9g8",
+          "member": "string",
+          "name": "PortName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的 Cert ID",
+          "example": "7XM5bjSh",
+          "member": "string",
+          "name": "NewCertID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧的 Cert ID",
+          "example": "8OdArpvC",
+          "member": "string",
+          "name": "OldCertID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGatewayCertResponse": {
+      "document": "ModifyGatewayCert返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyIngressGatewayRequest": {
       "document": "ModifyIngressGateway请求参数结构体",
       "members": [
@@ -3229,6 +3401,117 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Server": {
+      "document": "Server 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Server 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Server 监听\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerPort",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Host 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Hosts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServerPort": {
+      "document": "Server 端口配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Number",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

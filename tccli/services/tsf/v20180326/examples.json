@@ -108,7 +108,7 @@
       {
         "document": "创建集群",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCluster\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxxx\",\n    \"ClusterName\": \"DEMO-DOCKER\",\n    \"TsfZoneId\": \"100004\",\n    \"ClusterType\": \"C\",\n    \"ClusterCIDR\": \"172.16.0.0/16\",\n    \"TsfRegionId\": \"ap-guangzhou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c33a0bd5-f41a-4ac5-8480-e31fa972ec7e\",\n        \"Result\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建集群"
       }
     ],

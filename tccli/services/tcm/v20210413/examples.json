@@ -64,6 +64,14 @@
         "title": "DescribeIngressGatewayList"
       }
     ],
+    "DescribeIstioGatewayList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIstioGatewayList\n<公共请求参数>\n\n{\n    \"MeshID\": \"mesh-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"GatewayList\": [\n            {\n                \"GatewayNamespace\": \"namespace\",\n                \"GatewayName\": \"name\",\n                \"GatewayServers\": [\n                    {\n                        \"Name\": \"gs-name\",\n                        \"Bind\": \"xxxx\",\n                        \"CertID\": \"xxxx\",\n                        \"Port\": {\n                            \"Number\": 80,\n                            \"Protocol\": \"HTTP\",\n                            \"Name\": \"p-name\",\n                            \"TargetPort\": 8080\n                        }\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xxxxxxx\"\n    }\n}",
+        "title": "查询 Gateway 列表"
+      }
+    ],
     "DescribeIstioResource": [
       {
         "document": "",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccessLogConfig\n<公共请求参数>\n\n{\n    \"EnableStdout\": \"true\",\n    \"Template\": \"\\\"istio\\\"\",\n    \"MeshId\": \"\\\"mesh-xxx\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
         "title": "修改AccessLog配置"
+      }
+    ],
+    "ModifyGatewayCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayCert\n<公共请求参数>\n\n{\n    \"MeshID\": \"abc\",\n    \"GatewayName\": \"abc\",\n    \"GatewayNamespace\": \"abc\",\n    \"PortName\": \"abc\",\n    \"NewCertID\": \"abc\",\n    \"OldCertID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改 Gateway 证书"
       }
     ],
     "ModifyIngressGateway": [

@@ -18,8 +18,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c33a0bd5-f41a-4ac5-8480-e31fa972ec7e",
-        "Result": true
+        "Result": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -549,7 +549,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountRemark\n<公共请求参数>\n\n{\n    \"UserName\": \"test\",\n    \"Remark\": \"testModifyRemark\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "修改帐号备注"
+        "title": "修改账号备注"
       }
     ],
     "ModifyBackupDownloadRestriction": [

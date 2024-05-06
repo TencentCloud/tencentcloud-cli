@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip CreateRiskCenterScanTask --cli-unfold-argument  \
+    --MemberId abc \
     --TaskName abc \
     --Assets.0.AssetName abc \
     --Assets.0.InstanceType abc \
