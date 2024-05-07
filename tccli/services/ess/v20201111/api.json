@@ -11942,6 +11942,15 @@
           "name": "ApproverSignRole",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSignSealId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

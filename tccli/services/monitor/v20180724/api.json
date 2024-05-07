@@ -15779,20 +15779,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称",
-          "example": "my-prom-gg",
-          "member": "string",
-          "name": "InstanceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "实例 ID",
           "example": "prom-2rsas2",
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "my-prom-gg",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
           "type": "string"
         },
         {
@@ -17144,7 +17144,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -17430,7 +17430,7 @@
           "example": "prom-123456",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17440,7 +17440,7 @@
           "example": "test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17450,7 +17450,7 @@
           "example": "2",
           "member": "int64",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17460,7 +17460,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17470,7 +17470,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17480,7 +17480,7 @@
           "example": "vpc-123456",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17490,7 +17490,7 @@
           "example": "subnet-123456",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17500,7 +17500,7 @@
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17510,7 +17510,7 @@
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17520,7 +17520,7 @@
           "example": "https://url",
           "member": "string",
           "name": "GrafanaURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17530,7 +17530,7 @@
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17540,7 +17540,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableGrafana",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17550,7 +17550,7 @@
           "example": "192.168.1.2",
           "member": "string",
           "name": "IPv4Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17560,7 +17560,7 @@
           "example": "null",
           "member": "PrometheusTag",
           "name": "TagSpecification",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17570,7 +17570,7 @@
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17580,7 +17580,7 @@
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17590,17 +17590,17 @@
           "example": "基础1",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</ii>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标记\n<ul>\n<li>0：不自动续费</li>\n<li>1：开启自动续费</li>\n<li>2：禁止自动续费</li>\n<li>-1：无效</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17610,7 +17610,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsNearExpire",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17620,7 +17620,7 @@
           "example": "token",
           "member": "string",
           "name": "AuthToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17630,7 +17630,7 @@
           "example": "http://url",
           "member": "string",
           "name": "RemoteWrite",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17640,7 +17640,7 @@
           "example": "http://url",
           "member": "string",
           "name": "ApiRootPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17650,7 +17650,7 @@
           "example": "http://url",
           "member": "string",
           "name": "ProxyAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17660,7 +17660,7 @@
           "example": "2",
           "member": "int64",
           "name": "GrafanaStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17670,7 +17670,7 @@
           "example": "192.168.1.2",
           "member": "string",
           "name": "GrafanaIpWhiteList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17680,7 +17680,7 @@
           "example": "null",
           "member": "PrometheusInstanceGrantInfo",
           "name": "Grant",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17690,7 +17690,7 @@
           "example": "grafana-xxxx",
           "member": "string",
           "name": "GrafanaInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17700,7 +17700,7 @@
           "example": "150",
           "member": "int64",
           "name": "AlertRuleLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17710,7 +17710,7 @@
           "example": "150",
           "member": "int64",
           "name": "RecordingRuleLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17720,7 +17720,7 @@
           "example": "1",
           "member": "int64",
           "name": "MigrationType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

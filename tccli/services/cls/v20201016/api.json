@@ -1804,9 +1804,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 Vip",
-          "example": "“10.123.123.123”",
+          "example": "10.10.2.42",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1814,9 +1815,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 Vport",
-          "example": "“8888”",
+          "example": "9092",
           "member": "string",
           "name": "Vport",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1824,9 +1826,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 InstanceId",
-          "example": "“xxxxxx”",
+          "example": "ckafka-8j4rotest",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1834,9 +1837,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 InstanceName",
-          "example": "\"myname\"",
+          "example": "kafka协议消费监控用",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1844,9 +1848,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 TopicId",
-          "example": "\"xxxxxxxx\"",
+          "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1854,9 +1859,10 @@
         {
           "disabled": false,
           "document": "Ckafka 的 TopicName",
-          "example": "\"xxxxxxxx\"",
+          "example": "mrxy-business",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2873,7 +2879,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型。可选值：\n- Trigger - 告警触发\n- Recovery - 告警恢复\n- All - 告警触发和告警恢复\n\n\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
+          "document": "通知类型。可选值：\n- Trigger - 告警触发\n- Recovery - 告警恢复\n- All - 告警触发和告警恢复\n\n\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组rule配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空；NoticeRules是另一组rule配置，其中rule不许为空\n- 2组rule配置互斥\n- rule配置 与 deliver配置（DeliverStatus与DeliverConfig）至少填写一组配置",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -2882,7 +2888,7 @@
         },
         {
           "disabled": false,
-          "document": "通知接收对象。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
+          "document": "通知接收对象。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组rule配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空；NoticeRules是另一组rule配置，其中rule不许为空\n- 2组rule配置互斥\n- rule配置 与 deliver配置（DeliverStatus与DeliverConfig）至少填写一组配置",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
@@ -2891,7 +2897,7 @@
         },
         {
           "disabled": false,
-          "document": "接口回调信息（包括企业微信）。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。",
+          "document": "接口回调信息（包括企业微信）。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组rule配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空；NoticeRules是另一组rule配置，其中rule不许为空\n- 2组rule配置互斥\n- rule配置 与 deliver配置（DeliverStatus与DeliverConfig）至少填写一组配置",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
@@ -2900,7 +2906,7 @@
         },
         {
           "disabled": false,
-          "document": "通知规则。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。\n- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。\n\n",
+          "document": "通知规则。\n 注意:  \n- Type、NoticeReceivers和WebCallbacks是一组rule配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空；NoticeRules是另一组rule配置，其中rule不许为空\n- 2组rule配置互斥\n- rule配置 与 deliver配置（DeliverStatus与DeliverConfig）至少填写一组配置\n\n",
           "example": "无",
           "member": "NoticeRule",
           "name": "NoticeRules",
@@ -3236,7 +3242,7 @@
         },
         {
           "disabled": false,
-          "document": "类型：container_stdout、container_file、host_file",
+          "document": "日志源类型。支持 container_stdout：容器标准输出；container_file：容器文件路径；host_file：节点文件路径。",
           "example": "container_stdout",
           "member": "string",
           "name": "Type",
@@ -3245,7 +3251,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "document": "采集的日志类型，默认为minimalist_log。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）。",
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",
@@ -3254,7 +3260,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置标",
+          "document": "采集配置标记。\n- 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置\n",
           "example": "label_k8s",
           "member": "string",
           "name": "ConfigFlag",
@@ -3290,7 +3296,7 @@
         },
         {
           "disabled": false,
-          "document": "节点文件配置信息",
+          "document": "节点文件路径类型配置。",
           "example": "无",
           "member": "HostFileInfo",
           "name": "HostFile",
@@ -3299,7 +3305,7 @@
         },
         {
           "disabled": false,
-          "document": "容器文件路径信息",
+          "document": "容器文件路径类型配置。",
           "example": "无",
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
@@ -3308,7 +3314,7 @@
         },
         {
           "disabled": false,
-          "document": "容器标准输出信息",
+          "document": "容器标准输出类型配置。",
           "example": "无",
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
@@ -3317,7 +3323,7 @@
         },
         {
           "disabled": false,
-          "document": "日志格式化方式",
+          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
           "example": "无",
           "member": "string",
           "name": "LogFormat",
@@ -3344,7 +3350,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义采集规则，Json格式序列化的字符串",
+          "document": "组合解析采集规则，用于复杂场景下的日志采集。\n- 取值参考：[使用组合解析提取模式采集日志\n](https://cloud.tencent.com/document/product/614/61310)",
           "example": "无",
           "member": "string",
           "name": "UserDefineRule",
@@ -3380,8 +3386,8 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
-          "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n- ClsAgentDefault(自定义默认值，无特殊含义，用于清空其他选项)，建议取值0\n",
+          "example": "{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}",
           "member": "string",
           "name": "AdvancedConfig",
           "required": false,
@@ -3396,7 +3402,7 @@
         {
           "disabled": false,
           "document": "采集配置扩展信息ID",
-          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "ConfigExtraId",
           "output_required": true,
@@ -3751,7 +3757,7 @@
         },
         {
           "disabled": false,
-          "document": "加工语句。[创建加工任务](https://cloud.tencent.com/document/product/614/63940)  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
+          "document": "加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) \n\n其他参考文档：\n\n- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) \n-  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
           "example": "fields_drop(\"message\")",
           "member": "string",
           "name": "EtlContent",
@@ -3803,7 +3809,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "xxxxx",
+          "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4240,7 +4246,7 @@
         },
         {
           "disabled": false,
-          "document": "创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。",
+          "document": "创建机器组类型。取值如下：\n- Type：ip，Values中为ip字符串列表创建机器组\n- Type：label，Values中为标签字符串列表创建机器组",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -4312,7 +4318,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型，默认0，0：Linux，1: Windows",
+          "document": "系统类型，取值如下：\n- 0：Linux （默认值）\n- 1：Windows",
           "example": "0",
           "member": "uint64",
           "name": "OSType",
@@ -5521,7 +5527,7 @@
         {
           "disabled": false,
           "document": "数据加工任务id",
-          "example": "xxx",
+          "example": "4c216645-01f2-414d-8a87-719b97ba205a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6102,7 +6108,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "name\n- 按照【特殊采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n\nconfigExtraId\n- 按照【特殊采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "过滤器，支持如下选项：\nname\n- 按照【特殊采集配置名称】进行模糊匹配过滤。\n- 类型：String\n\nconfigExtraId\n- 按照【特殊采集配置ID】进行过滤。\n- 类型：String\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7988,7 +7994,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为标准json。  0：否； 1：是。\n注\n- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为标准json。  0：否； 1：是。\n- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "JsonStandard",
@@ -10039,7 +10045,7 @@
         {
           "disabled": false,
           "document": "采集配置扩展信息id",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "ConfigExtraId",
           "required": true,
@@ -10057,7 +10063,7 @@
         {
           "disabled": false,
           "document": "日志主题id",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "TopicId",
           "required": false,
@@ -10074,7 +10080,7 @@
         },
         {
           "disabled": false,
-          "document": "容器文件路径信息",
+          "document": "采集配置标记。\n- 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置",
           "example": "无",
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
@@ -10092,7 +10098,7 @@
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
+          "document": "采集的日志类型，默认为minimalist_log。支持以下类型：\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）。",
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",
@@ -10101,7 +10107,7 @@
         },
         {
           "disabled": false,
-          "document": "日志格式化方式",
+          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
           "example": "无",
           "member": "string",
           "name": "LogFormat",
@@ -10128,7 +10134,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义采集规则，Json格式序列化的字符串",
+          "document": "组合解析采集规则，用于复杂场景下的日志采集。\n- 取值参考：[使用组合解析提取模式采集日志\n](https://cloud.tencent.com/document/product/614/61310)",
           "example": "无",
           "member": "string",
           "name": "UserDefineRule",
@@ -10147,7 +10153,7 @@
         {
           "disabled": false,
           "document": "机器组ID",
-          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -10165,7 +10171,7 @@
         {
           "disabled": false,
           "document": "日志集ID",
-          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -10174,7 +10180,7 @@
         {
           "disabled": false,
           "document": "日志集name",
-          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "example": "test-logset",
           "member": "string",
           "name": "LogsetName",
           "required": false,
@@ -10183,7 +10189,7 @@
         {
           "disabled": false,
           "document": "日志主题name",
-          "example": "xxxxx-925b-4cb1-b386-12740a189961",
+          "example": "test-topic",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -10191,8 +10197,8 @@
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
-          "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n- ClsAgentDefault(自定义默认值，无特殊含义，用于清空其他选项)，建议取值0\n",
+          "example": "{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}",
           "member": "string",
           "name": "AdvancedConfig",
           "required": false,
@@ -10533,7 +10539,7 @@
         {
           "disabled": false,
           "document": "加工任务id",
-          "example": "xxxx",
+          "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -10550,8 +10556,8 @@
         },
         {
           "disabled": false,
-          "document": "加工语句",
-          "example": "xxx",
+          "document": "加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) \n\n其他参考文档：\n\n- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) \n-  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
+          "example": "fields_drop(\"message\")",
           "member": "string",
           "name": "EtlContent",
           "required": false,
@@ -11466,7 +11472,7 @@
         },
         {
           "disabled": false,
-          "document": "允许接收信息的开始时间。",
+          "document": "允许接收信息的开始时间。格式：`15:04:05`，必填。",
           "example": "10:04:05",
           "member": "string",
           "name": "StartTime",
@@ -11477,7 +11483,7 @@
         },
         {
           "disabled": false,
-          "document": "允许接收信息的结束时间。",
+          "document": "允许接收信息的结束时间。格式：`15:04:05`，必填。",
           "example": "20:04:05",
           "member": "string",
           "name": "EndTime",
@@ -11488,7 +11494,7 @@
         },
         {
           "disabled": false,
-          "document": "位序。\n\n- 入参无效。\n- 出参时有效。",
+          "document": "位序。\n\n- 入参时无效。\n- 出参时有效。",
           "example": "1",
           "member": "int64",
           "name": "Index",
@@ -11527,7 +11533,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配规则 JSON串。\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1,2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}\n`\n以上示例表示：\n规则：\n通知类型属于告警通知,恢复通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配规则 JSON串。\n**rule格式为如下嵌套结构体JSON字符串**\n```\n{\n    \"Value\": \"AND\",\n    \"Type\": \"Operation\",\n    \"Children\": [\n        {\n            \"Value\": \"OR\",\n            \"Type\": \"Operation\",\n            \"Children\": [\n                {\n                    \"Type\": \"Condition\",\n                    \"Value\": \"Level\",\n                    \"Children\": [\n                        {\n                            \"Value\": \"In\",\n                            \"Type\": \"Compare\"\n                        },\n                        {\n                            \"Value\": \"[1,0]\",\n                            \"Type\": \"Value\"\n                        }\n                    ]\n                },\n                {\n                    \"Type\": \"Condition\",\n                    \"Value\": \"Level\",\n                    \"Children\": [\n                        {\n                            \"Value\": \"NotIn\",\n                            \"Type\": \"Compare\"\n                        },\n                        {\n                            \"Value\": \"[2]\",\n                            \"Type\": \"Value\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}\n```\n**rule规则树限制规则如下**：\n- 顶层rule中Type可取值：`Condition`，`Operation`\n- Type为`Operation`的子节点支持的Type可取值：`Condition`，`Operation`\n- Type为`Condition`的子节点支持的Type可取值：`String`，`Compare`，`Array`，`TimeRange`，`Value`，`Key`\n- 其他Type无子节点\n- 当rule Type为`Operation`时，value可取值：`AND`，`OR`\n- 当rule Type为`Condition`时，value不可为空，子节点个数不能小于2\n    - 当子节点Type为  `Compare` 时，value可取值：`>`，`<`，`>=`，`<=`，`=`，`!=`，`Between`，`NotBetween`，`=~`，`!=~`，`In`，`NotIn`\n    - value为`Between`，`NotBetween`时，下一个子节点value必须是长度为2的数组\n    - value为`=~`，`!=~`时，下一个子节点value必须是一个正则表达式\n    - value为`In`，`NotIn`时， 下一个子节点value必须是一个数组\n\n**业务参数含义**：\n- Type：Condition 表示是规则条件，Value：Level 表示告警等级\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：0（警告），1（提醒），2 （紧急）\n以下示例表示：告警等级属于提醒\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Level\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}\n`\n\n- Type：Condition 表示是规则条件，Value：NotifyType 表示通知类型\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：1（告警通知），2 （恢复通知）\n以下示例表示：通知类型属于告警通知或通知类型不属于恢复通知\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\n`\n\n- Type：Condition 表示是规则条件，Value：AlarmID 表示告警策略\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：告警策略id数组\n以下示例表示：告警策略属于alarm-53af048c-254b-4c73-bb48-xxx,alarm-6dfa8bc5-08da-4d64-b6cb-xxx或告警策略不属于alarm-1036314c-1e49-4cee-a8fb-xxx\n`\"{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-53af048c-254b-4c73-bb48-xxx\\\\\\\",\\\\\\\"alarm-6dfa8bc5-08da-4d64-b6cb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-1036314c-1e49-4cee-a8fb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\"\n`\n\n- Type：Condition 表示是规则条件，Value：AlarmName 表示告警策略名称\n    - 子节点Type支持`Compare`，Value支持`=~`，`!=~`\n    - 下一个子节点value支持的值：必须是正则表达式\n以下示例表示：告警策略名称正则匹配^test$或告警策略名称正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\n`\n\n- Type：Condition 表示是规则条件，Value：Label 表示告警分类字段\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`，`=~`，`!=~`\n    - 下一个子节点value支持的值：`In`，`NotIn` 时value是数组，`=~`，`!=~`时value是正则表达式\n以下示例表示：告警分类字段key1属于v1或告警分类字段key2不属于v2或告警分类字段key3正则匹配^test$或告警分类字段key4正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key1\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v1\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key2\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v2\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key3\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key4\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\n`\n\n- Type：Condition 表示是规则条件，Value：NotifyTime 表示通知时间\n    - 子节点Type支持`Compare`，Value支持`Between `，`NotBetween `\n    - 下一个子节点value支持的值：长度为2，格式为`14:20:36`的字符串数组\n以下示例表示：通知时间在指定范围内14:18:36至14:33:36或通知时间不在指定范围内14:20:36至14:30:36\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"Between\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:18:36\\\\\\\",\\\\\\\"14:33:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotBetween\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:20:36\\\\\\\",\\\\\\\"14:30:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\n`\n\n- Type：Condition 表示是规则条件，Value：Duration 表示告警持续时间\n    - 子节点Type支持`Compare`，Value支持`>`，`<`，`>=`，`<=`\n    - 下一个子节点value支持的值：整型值单位分钟\n以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":1,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":2,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":3,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":4,\\\"Type\\\":\\\"Value\\\"}]}]}]}\n`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1,2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}",
           "member": "string",
           "name": "Rule",
@@ -11846,19 +11852,21 @@
         {
           "disabled": false,
           "document": "日志内容",
-          "example": "xxxx",
+          "example": "{\\\"AgentStartTime\\\":\\\"6557160\\\",\\\"AvailConnNum\\\":\\\"1\\\",\\\"AvgReqSize\\\":\\\"0\\\",\\\"ConfigMinVer\\\":\\\"1715073167340919\\\",\\\"CpuMax\\\":\\\"0\\\",\\\"CpuUsage\\\":\\\"5\\\",\\\"DirMax\\\":\\\"5000\\\",\\\"FileMax\\\":\\\"15000\\\",\\\"IP\\\":\\\"9.135.76.114\\\",\\\"InstanceId\\\":\\\"loglistener-24bf21cb-0327-fc1d-be4e-5e056dadxxx\\\",\\\"Label\\\":\\\"\\\",\\\"LogConfigCnt\\\":\\\"5000\\\",\\\"MemMax\\\":\\\"2097152000\\\",\\\"MemoryUsed\\\":\\\"66678784\\\",\\\"MonitorDirs\\\":\\\"4\\\",\\\"MonitorFiles\\\":\\\"0\\\",\\\"OpenFiles\\\":\\\"0\\\",\\\"ParseFailureLogCount\\\":\\\"0\\\",\\\"QueueSize\\\":\\\"0\\\",\\\"ReadEventCnt\\\":\\\"188\\\",\\\"ResendCnt\\\":\\\"0\\\",\\\"SendAvgCost\\\":\\\"0\\\",\\\"SendFailureLogCount\\\":\\\"0\\\",\\\"SendFailureLogSize\\\":\\\"0\\\",\\\"SendFailureReqs\\\":\\\"0\\\",\\\"SendSuccessLogCount\\\":\\\"0\\\",\\\"SendSuccessLogSize\\\":\\\"0\\\",\\\"SendSuccessReqs\\\":\\\"0\\\",\\\"SendTimeoutLogCount\\\":\\\"0\\\",\\\"SendTimeoutLogSize\\\":\\\"0\\\",\\\"SendTimeoutReqs\\\":\\\"0\\\",\\\"Status\\\":\\\"22\\\",\\\"TotalFinishRsps\\\":\\\"0\\\",\\\"TotalParseLogCount\\\":\\\"0\\\",\\\"TotalSendLogCount\\\":\\\"0\\\",\\\"TotalSendLogSize\\\":\\\"0\\\",\\\"TotalSendReqs\\\":\\\"0\\\",\\\"TotalSuccessFromStart\\\":\\\"0\\\",\\\"Version\\\":\\\"2.9.0\\\",\\\"__FILENAME__\\\":\\\"status\\\",\\\"__SOURCE__\\\":\\\"9.135.76.114\\\"}",
           "member": "string",
           "name": "LogContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "行号",
-          "example": "1",
+          "document": "行号。从0开始",
+          "example": "0",
           "member": "int64",
           "name": "LineNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11866,39 +11874,43 @@
         {
           "disabled": false,
           "document": "目标日志主题",
-          "example": "topic-xx",
+          "example": "4c216645-01f2-414d-8a87-719b97baxxx",
           "member": "string",
           "name": "DstTopicId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败错误码， 空字符串\"\"表示正常",
+          "document": "失败错误信息， 空字符串\"\"表示正常",
           "example": "error",
           "member": "string",
           "name": "FailReason",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志时间戳",
-          "example": "xx-xx",
+          "document": "日志时间，格式：`2024-05-07 17:13:17.105`\n\n- 入参时无效\n- 出参时有效，为日志中的时间格式",
+          "example": "2024-05-07 17:13:17.105",
           "member": "string",
           "name": "Time",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "目标topic-name\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Name",
           "member": "string",
           "name": "DstTopicName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12466,6 +12478,16 @@
           "member": "uint64",
           "name": "SyntaxRule",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -13692,7 +13714,7 @@
         },
         {
           "disabled": false,
-          "document": "回调方法。可选值：\n- POST\n- PUT\n默认值为POST。CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调方法。可选值：\n- POST（默认值）\n- PUT\n\n注意：\n- 参数CallbackType为Http时为必选。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "POST",
           "member": "string",
           "name": "Method",

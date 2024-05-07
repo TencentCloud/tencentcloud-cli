@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DeleteDataTransform --cli-unfold-argument  \
-    --TaskId e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af
+    --TaskId 4c216645-01f2-414d-8a87-719b97ba205a
 ```
 
 Output: 

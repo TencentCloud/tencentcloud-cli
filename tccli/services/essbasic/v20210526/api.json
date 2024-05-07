@@ -10649,7 +10649,7 @@
       "usage": "in"
     },
     "ReleasedApprover": {
-      "document": "解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>\n`注意`:\n - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。\n\n如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：\n`ApproverNumber`, `OrganizationName`, `ApproverType`必传。</br>\n对于其他身份标识：\n- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；\n- **非子客企业经办人**：Name、Mobile必传。",
+      "document": "解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>\n`注意`:\n - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。\n\n如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：\n(`ApproverNumber`, `ReleasedApproverRecipientId`这两个二选一), `OrganizationName`, `ApproverType`必传。</br>\n对于其他身份标识：\n- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；\n- **非子客企业经办人**：Name、Mobile必传。",
       "members": [
         {
           "disabled": false,
@@ -10667,6 +10667,15 @@
           "member": "string",
           "name": "ApproverType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人在原合同中的RecipientId，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo\" target=\"_blank\">DescribeFlowDetailInfo</a>接口查看原流程中的签署人信息，可参考返回结构体<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#flowapproverdetail\" target=\"_blank\">FlowApproverDetail</a>中的RecipientId。\n**注意**：当指定了此参数后，ApproverNumber即失效，会以本参数作为原合同参与人的选取。与ApproverNumber二选一。",
+          "example": "yDCb7UUckpwm3x62UEXHVn8B2hB9q8hT",
+          "member": "string",
+          "name": "ReleasedApproverRecipientId",
+          "required": false,
           "type": "string"
         },
         {
@@ -10747,6 +10756,15 @@
           "example": "供应商",
           "member": "string",
           "name": "ApproverSignRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverSignSealId",
           "required": false,
           "type": "string"
         }

@@ -13896,7 +13896,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "异常信息",
           "member": "string",
           "name": "ExceptionInformation",
@@ -13932,6 +13932,26 @@
           "name": "MirrorQueuePolicyFlag",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每秒消费消息数 单位：条/秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "MessageConsumeRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.8.30",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14258,6 +14278,86 @@
           "name": "ModifyTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列是否持久化，true 为持久化，false 为非持久化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Durable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列是否为自动删除队列，true 为自动删除，false 为非自动删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoDelete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列所属实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列所属虚拟主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "VirtualHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列所在主节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rabbit@amqp-xxx.rabbitmq-broker-0",
+          "member": "string",
+          "name": "Node",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效的策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-policy",
+          "member": "string",
+          "name": "Policy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数 key-value 对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "Arguments",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否独占队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Exclusive",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -14646,6 +14746,16 @@
           "name": "MessageRateOut",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否存在镜像队列策略，true 为存在，false 为不存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "MirrorQueuePolicyFlag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

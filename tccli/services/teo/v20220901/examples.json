@@ -616,6 +616,14 @@
         "title": "DescribeRulesSetting"
       }
     ],
+    "DescribeSecurityIPGroup": [
+      {
+        "document": "查询指定站点中，安全 IP 分组的配置信息。",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IPGroups\": [\n            {\n                \"GroupId\": 123,\n                \"Name\": \"ExampleIpGroup\",\n                \"Content\": [\n                    \"2.2.2.2\",\n                    \"23.23.23.0/24\"\n                ]\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询安全 IP 分组的配置信息"
+      }
+    ],
     "DescribeSecurityIPGroupInfo": [
       {
         "document": "查询指定站点的 IP 分组配置信息，并按每页 10 条返回第 1 页内容。",

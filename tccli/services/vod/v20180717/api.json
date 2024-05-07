@@ -13238,7 +13238,7 @@
         {
           "disabled": false,
           "document": "获取日志起始时间点，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
-          "example": "2018-12-0116:00:00Z",
+          "example": "2018-12-01T16:00:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -13247,7 +13247,7 @@
         {
           "disabled": false,
           "document": "结束时间需大于起始时间；使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
-          "example": "2018-12-0316:00:00Z",
+          "example": "2018-12-03T16:00:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,

@@ -676,7 +676,7 @@
       "type": "object"
     },
     "Message": {
-      "document": "单条消息",
+      "document": "会话内容",
       "members": [
         {
           "disabled": false,
@@ -696,7 +696,7 @@
           "member": "string",
           "name": "Content",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

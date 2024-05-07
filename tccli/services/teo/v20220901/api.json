@@ -434,10 +434,17 @@
       "output": "DescribeRulesSettingResponse",
       "status": "online"
     },
+    "DescribeSecurityIPGroup": {
+      "document": "查询安全 IP 组的配置信息，包括安全 IP 组的 ID、名称和内容。",
+      "input": "DescribeSecurityIPGroupRequest",
+      "name": "查询安全 IP 组",
+      "output": "DescribeSecurityIPGroupResponse",
+      "status": "online"
+    },
     "DescribeSecurityIPGroupInfo": {
-      "document": "查询 IP 组的配置信息，包括 IP 组名称、 IP 组内容、 IP 组归属站点。",
+      "document": "接口已废弃，将于 2024 年 6 月 30 日停止服务。请使用 [查询安全 IP 组\n](https://cloud.tencent.com/document/product/1552/105866) 接口。\n\n查询 IP 组的配置信息，包括 IP 组名称、 IP 组内容、 IP 组归属站点。",
       "input": "DescribeSecurityIPGroupInfoRequest",
-      "name": "查询 IP 组配置信息",
+      "name": "查询安全 IP 组（已废弃）",
       "output": "DescribeSecurityIPGroupInfoResponse",
       "status": "online"
     },
@@ -7627,6 +7634,52 @@
           "member": "IPGroup",
           "name": "IPGroups",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupRequest": {
+      "document": "DescribeSecurityIPGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID ，用于指定查询的站点范围。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定安全 IP 组 ID。\n<li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li>\n<li>不传递参数时，返回站点下所有安全 IP 组信息。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupResponse": {
+      "document": "DescribeSecurityIPGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全 IP 组的详细配置信息。包含每个安全 IP 组的 ID 、名称和 IP / 网段列表信息。",
+          "example": "{         \"GroupId\": 123,         \"Name\": \"ExampleIpGroup\",         \"Content\": [           \"2.2.2.2\",           \"23.23.23.0/24\"         ]       }",
+          "member": "IPGroup",
+          "name": "IPGroups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
