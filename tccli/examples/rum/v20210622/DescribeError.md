@@ -7,7 +7,7 @@ Input:
 ```
 tccli rum DescribeError --cli-unfold-argument  \
     --ID 1 \
-    --Date 20210520
+    --Date "20210520"
 ```
 
 Output: 

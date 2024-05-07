@@ -398,7 +398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的项目名(不为空且最长为 200)",
+          "document": "应用名称(不为空且最长为 200)",
           "example": "测试项目名",
           "member": "string",
           "name": "Name",
@@ -461,7 +461,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的项目描述(可选，最长为 1000)",
+          "document": "应用描述(可选，最长为 1000)",
           "example": "这是项目描述",
           "member": "string",
           "name": "Desc",
@@ -480,6 +480,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ID",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -489,6 +490,7 @@
           "example": "RlOmCVbPrKd4",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -580,6 +582,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -863,6 +866,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -945,6 +949,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2420,7 +2425,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，count40x：40X视图，count50x：50X视图，count5xand4x：40∑50视图，top：资源top视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "allcount：性能视图，pagepv：pv视图，day：14天数据，count40x：40X视图，count50x：50X视图，count5xand4x：40∑50视图，top：资源top视图，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -2972,7 +2977,7 @@
         },
         {
           "disabled": false,
-          "document": "pagepv：性能视图，allcount：性能视图，falls：页面加载瀑布图，samp：首屏时间，day：14天数据，nettype：网络/平台视图，performance：页面性能TOP视图，version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：ISP视图/地区视图/浏览器视图等",
+          "document": "pagepv：pv视图，allcount：性能视图，falls：页面加载瀑布图，samp：首屏时间，day：14天数据，nettype：网络/平台视图，performance：页面性能TOP视图，version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：ISP视图/地区视图/浏览器视图等",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -4945,7 +4950,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4955,7 +4960,7 @@
           "example": "1",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4965,7 +4970,7 @@
           "example": "20210520",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5039,6 +5044,7 @@
           "example": "无",
           "member": "ProjectLimit",
           "name": "ProjectLimitSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5102,6 +5108,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5111,6 +5118,7 @@
           "example": "无",
           "member": "RumProject",
           "name": "ProjectSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5201,7 +5209,7 @@
         },
         {
           "disabled": false,
-          "document": "bucket类型，不填默认web，2:app",
+          "document": "bucket类型，不填默认1:web，2:app",
           "example": "2",
           "member": "int64",
           "name": "FileType",
@@ -5220,6 +5228,7 @@
           "example": "sfdgfgfgfdf",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5229,6 +5238,7 @@
           "example": "dfdfdfdgfgfbf",
           "member": "string",
           "name": "SecretID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5238,6 +5248,7 @@
           "example": "asdfdsfdsgg",
           "member": "string",
           "name": "SessionToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5247,6 +5258,7 @@
           "example": "123787043",
           "member": "int64",
           "name": "StartTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5256,6 +5268,7 @@
           "example": "23435436565",
           "member": "int64",
           "name": "ExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5764,7 +5777,7 @@
           "example": "无",
           "member": "ScoreInfo",
           "name": "ScoreSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6236,7 +6249,7 @@
         },
         {
           "disabled": false,
-          "document": "项目名(可选，不为空且最长为 200)",
+          "document": "应用名称(可选，不为空且最长为 200字符)",
           "example": "测试项目名",
           "member": "string",
           "name": "Name",
@@ -6299,7 +6312,7 @@
         },
         {
           "disabled": false,
-          "document": "项目描述(可选，最长为 1000)",
+          "document": "应用描述(可选，最长为 1000字符)",
           "example": "这是项目描述",
           "member": "string",
           "name": "Desc",
@@ -6318,6 +6331,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6327,6 +6341,7 @@
           "example": "6",
           "member": "uint64",
           "name": "ID",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cls ModifyConfigExtra --cli-unfold-argument  \
-    --ConfigExtraId xxxx-xx-xx-xx-xxxxxxxx \
+    --ConfigExtraId 6ef60bec-0242-43af-bb20-270359fb54a8 \
     --Name testname \
-    --TopicId xxx-xxx-xxx \
+    --TopicId 6ef60bec-0242-43af-bb20-270359fb54a8 \
     --Type host_file \
     --HostFile.LogPath /var/log/tmep \
     --HostFile.FilePattern *.log \

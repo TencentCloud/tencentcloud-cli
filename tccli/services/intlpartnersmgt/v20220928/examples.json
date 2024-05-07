@@ -116,6 +116,14 @@
         "title": "获取国家、地区代码"
       }
     ],
+    "ModifyClientRemark": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClientRemark\n<公共请求参数>\n\n{\n    \"ClientUin\": \"11\",\n    \"Remark\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientRemark\": \"sss\",\n        \"RequestId\": \"string\"\n    }\n}",
+        "title": "修改代客备注"
+      }
+    ],
     "QueryAccountVerificationStatus": [
       {
         "document": "查询账户验证状态",

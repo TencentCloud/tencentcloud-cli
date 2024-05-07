@@ -4605,7 +4605,17 @@
     },
     "DescribeZonesRequest": {
       "document": "DescribeZones请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li><strong>operation</strong></li> <p style=\"padding-left: 30px;\">过滤用户不在可用区白名单但是有CVM实例的可用区。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：QueryWithUserInstances</p>",
+          "example": "[{\"Name\": \"operation\"， \"Values\": [\"QueryWithUserInstances\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeZonesResponse": {
@@ -4617,6 +4627,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4626,6 +4637,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

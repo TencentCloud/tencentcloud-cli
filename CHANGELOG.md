@@ -1,3 +1,189 @@
+# Release 3.0.989.1
+
+## 智能语音(aai) 版本：2018-05-22
+
+### 第 4 次发布
+
+发布时间：2024-05-08 01:07:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* SimultaneousInterpreting
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 63 次发布
+
+发布时间：2024-05-08 01:29:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PreviewLogStatistic](http://document.tencentcloudapi.woa.com/document/product/614/56471#PreviewLogStatistic)
+
+* [ScheduledSqlTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlTaskInfo)
+
+	* 新增成员：HasServicesLog
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 74 次发布
+
+发布时间：2024-05-08 01:32:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeZones](http://document.tencentcloudapi.woa.com/document/product/213/15707)
+
+	* 新增入参：Filters
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 83 次发布
+
+发布时间：2024-05-08 01:51:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ReleasedApprover)
+
+	* 新增成员：ApproverSignSealId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 138 次发布
+
+发布时间：2024-05-08 01:52:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
+
+	* 新增成员：ReleasedApproverRecipientId, ApproverSignSealId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 14 次发布
+
+发布时间：2024-05-08 01:58:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyClientRemark](http://document.tencentcloudapi.woa.com/document/product/1724/83821)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 77 次发布
+
+发布时间：2024-05-08 02:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyPrometheusInstanceAttributes](http://document.tencentcloudapi.woa.com/document/product/248/75019)
+
+	* <font color="#dd0000">**修改入参**：</font>InstanceName
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 98 次发布
+
+发布时间：2024-05-08 02:35:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RabbitMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterInfo)
+
+	* 新增成员：MessageConsumeRate, ClusterVersion
+
+* [RabbitMQQueueListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQQueueListInfo)
+
+	* 新增成员：Durable, AutoDelete, InstanceId, VirtualHost, Node, Policy, Arguments, Exclusive
+
+* [RabbitMQVirtualHostInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVirtualHostInfo)
+
+	* 新增成员：MirrorQueuePolicyFlag
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 34 次发布
+
+发布时间：2024-05-08 02:37:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSecurityIPGroup](http://document.tencentcloudapi.woa.com/document/product/1738/83822)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.988.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
