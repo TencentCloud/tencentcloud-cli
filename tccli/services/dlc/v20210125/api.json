@@ -4084,6 +4084,15 @@
           "name": "DataEngineName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标准spark执行任务resourceGroupName",
+          "example": "ResourceGroup01",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4211,6 +4220,15 @@
           "example": "shared_presto",
           "member": "string",
           "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spark集群资源组名称",
+          "example": "resourceGroup01",
+          "member": "string",
+          "name": "ResourceGroupName",
           "required": false,
           "type": "string"
         }
@@ -5806,6 +5824,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准引擎关联的资源组个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineResourceGroupCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎当前使用量（Cu）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineResourceUsedCU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7477,7 +7517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎类型：SQL、SparkBatch",
+          "document": "引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto",
           "example": "SQL",
           "member": "string",
           "name": "EngineType",
@@ -9629,6 +9669,15 @@
           "example": "shared_presto",
           "member": "string",
           "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spark引擎资源组名称",
+          "example": "ResourceGroupName1",
+          "member": "string",
+          "name": "ResourceGroupName",
           "required": false,
           "type": "string"
         }
@@ -15945,6 +15994,26 @@
           "example": "csv",
           "member": "string",
           "name": "ResultFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark引擎资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ResourceGroupName1",
+          "member": "string",
+          "name": "ResourceGroupName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

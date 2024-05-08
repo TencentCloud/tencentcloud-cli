@@ -70,6 +70,13 @@
       "output": "CreateHostResponse",
       "status": "online"
     },
+    "CreateIpAccessControl": {
+      "document": "Waf IP黑白名单新增接口",
+      "input": "CreateIpAccessControlRequest",
+      "name": "Waf IP黑白名单新增接口",
+      "output": "CreateIpAccessControlResponse",
+      "status": "online"
+    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -152,6 +159,13 @@
       "input": "DeleteIpAccessControlRequest",
       "name": "Waf IP黑白名单Delete接口",
       "output": "DeleteIpAccessControlResponse",
+      "status": "online"
+    },
+    "DeleteIpAccessControlV2": {
+      "document": "Waf IP黑白名单最新版本删除接口",
+      "input": "DeleteIpAccessControlV2Request",
+      "name": "Waf IP黑白名单删除接口",
+      "output": "DeleteIpAccessControlV2Response",
       "status": "online"
     },
     "DeleteSession": {
@@ -609,6 +623,13 @@
       "output": "GetInstanceQpsLimitResponse",
       "status": "online"
     },
+    "ImportIpAccessControl": {
+      "document": "导入IP黑白名单",
+      "input": "ImportIpAccessControlRequest",
+      "name": "导入IP黑白名单",
+      "output": "ImportIpAccessControlResponse",
+      "status": "online"
+    },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限等字段信息",
       "input": "ModifyAccessPeriodRequest",
@@ -789,6 +810,13 @@
       "input": "ModifyInstanceRenewFlagRequest",
       "name": "修改实例的自动续费开关",
       "output": "ModifyInstanceRenewFlagResponse",
+      "status": "online"
+    },
+    "ModifyIpAccessControl": {
+      "document": "Waf IP黑白名单编辑接口",
+      "input": "ModifyIpAccessControlRequest",
+      "name": "Waf IP黑白名单编辑接口",
+      "output": "ModifyIpAccessControlResponse",
       "status": "online"
     },
     "ModifyModuleStatus": {
@@ -4045,6 +4073,106 @@
       ],
       "type": "object"
     },
+    "CreateIpAccessControlRequest": {
+      "document": "CreateIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "具体域名如：test.qcloudwaf.com\n全局域名为：global",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip参数列表",
+          "example": "[\"192.16.8.1.1\",\"192.168.2.1\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "42为黑名单，40为白名单",
+          "example": "42",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））",
+          "example": "1680570420",
+          "member": "int64",
+          "name": "ValidTS",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "waf_2kxq5hru00n2dxmx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIpAccessControlResponse": {
+      "document": "CreateIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增的规则对应的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "55211245",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DealData": {
       "document": "计费下单响应实体",
       "members": [
@@ -4609,6 +4737,79 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpAccessControlV2Request": {
+      "document": "DeleteIpAccessControlV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表，支持批量删除",
+          "example": "[552091011,552091010]",
+          "member": "uint64",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "batch表示为批量防护的IP黑白名单",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP黑白名单类型，40为IP白名单，42为IP黑名单",
+          "example": "42",
+          "member": "uint64",
+          "name": "ActionType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIpAccessControlV2Response": {
+      "document": "DeleteIpAccessControlV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在批量删除的时候表示删除失败的条数",
+          "example": "10",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11883,6 +12084,60 @@
       ],
       "usage": "both"
     },
+    "ImportIpAccessControlRequest": {
+      "document": "ImportIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入的IP黑白名单列表",
+          "example": "无",
+          "member": "IpAccessControlParam",
+          "name": "Data",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "具体域名如：test.qcloudwaf.com\n全局域名为：global",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "waf_2kxq5hru00n2dxmx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportIpAccessControlResponse": {
+      "document": "ImportIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
       "members": [
@@ -12438,6 +12693,48 @@
         }
       ],
       "usage": "out"
+    },
+    "IpAccessControlParam": {
+      "document": "IP黑白名单参数结构体，主要用于IP黑白名单的导入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP列表",
+          "example": "[\"192.168.1.1\",\"192.168.1.2\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））",
+          "example": "1680570420",
+          "member": "uint64",
+          "name": "ValidTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "42为黑名单，40为白名单",
+          "example": "42",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "IpHitItem": {
       "document": "ip封堵状态数据",
@@ -14613,6 +14910,105 @@
     },
     "ModifyInstanceRenewFlagResponse": {
       "document": "ModifyInstanceRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpAccessControlRequest": {
+      "document": "ModifyIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "具体域名如：test.qcloudwaf.com\n全局域名为：global",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip参数列表",
+          "example": "[\"192.16.8.1.1\",\"192.168.2.1\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "42为黑名单，40为白名单",
+          "example": "42",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "valid_ts为有效日期，值为秒级时间戳（（如1680570420代表2023-04-04 09:07:00））",
+          "example": "1680570420",
+          "member": "int64",
+          "name": "ValidTS",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "551014389",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "waf_2kxq5hru00n2dxmx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空",
+          "example": "batch",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIpAccessControlResponse": {
+      "document": "ModifyIpAccessControl返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

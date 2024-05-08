@@ -7477,7 +7477,7 @@
         },
         {
           "disabled": false,
-          "document": "文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)",
+          "document": "文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问",
           "example": "https://file.download.com/产品说明.docx",
           "member": "string",
           "name": "Url",

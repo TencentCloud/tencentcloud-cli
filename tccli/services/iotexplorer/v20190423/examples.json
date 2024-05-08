@@ -170,6 +170,14 @@
         "title": "新建产品"
       }
     ],
+    "CreateTRTCSignaturesWithRoomId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTRTCSignaturesWithRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"test1\"\n    ],\n    \"RoomId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"keyixie_38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\",\n        \"TRTCParamList\": [\n            {\n                \"SdkAppId\": 111111,\n                \"UserId\": \"test1\",\n                \"UserSig\": \"eJwszcvOgjAQBe123213131321313QRN5AbRVR6U2dIK3*O4mwPY7Oed8oF7vEvcM1DkweaYR-wci6zzTkVwHBthFFjAG0V6bEMiCERpR1232132132133xio-CtUdsOqx*WlYb8-z95-BcsYtyVa2RYrcbjd6adadsadsadvmo-XAtE4TvLwAA--*MzTGH\",\n                \"StrRoomId\": \"gl-40badb65asdsadasdsad40b2192f948845\",\n                \"PrivateKey\": \"eJw0j19PszAUxr-LuX3fjFJahk12UaxUzVplwha4c2nHCtlC*KPbjN-dOObv8ndynjzPF2TLt5k9ta6zwKKQIPT-qpyxx8HtnO2AwWD7wYfp0JvmvW2dAeYThAgJg7vbS*8qYNALlMdbj*5THev546k4yvu5RkRG-0wbea-Pm2rs6mVdoABT3li5PpiRJLZFcb8F5loRwvOufD4RFfiz0GL2BWbldN17peHgqrLAyrleq*xwkrkROMUKfl0VllzLusGvYgK6XTxV*XjuhfPEHz-BAAA--9iV1Mr\"\n            }\n        ]\n    }\n}",
+        "title": "成功示例 "
+      }
+    ],
     "CreateTopicPolicy": [
       {
         "document": "",
@@ -322,11 +330,19 @@
         "title": "查询云存AI分析回调配置"
       }
     ],
+    "DescribeCloudStorageAIServiceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b490930-d119-4ee2-963c-c58973a1ebe6\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1714240802,\n            \"DeviceName\": \"dev001\",\n            \"EndTime\": 1714233600,\n            \"Files\": [\n                \"output.mp4\"\n            ],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"Highlight\",\n            \"StartTime\": 1714147200,\n            \"Status\": 3,\n            \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n            \"UpdateTime\": 1714240802\n        }\n    }\n}",
+        "title": "查询指定的云存 AI 分析任务"
+      }
+    ],
     "DescribeCloudStorageAIServiceTasks": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIServiceTasks\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"PackageDetect\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                \"ProductId\": \"TQBDY6RPI9\",\n                \"DeviceName\": \"cs_112114601_2\",\n                \"ChannelId\": 0,\n                \"ServiceType\": \"PackageDetect\",\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Status\": 3,\n                \"Result\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n                \"CreateTime\": 1710490000,\n                \"UpdateTime\": 1710490000\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                \"ProductId\": \"TQBDY6RPI9\",\n                \"DeviceName\": \"cs_112114601_2\",\n                \"ChannelId\": 0,\n                \"ServiceType\": \"PackageDetect\",\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Status\": 3,\n                \"Result\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n                \"Files\": [\n                    \"output.mp4\"\n                ],\n                \"CreateTime\": 1710490000,\n                \"UpdateTime\": 1710490000\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存 AI 分析任务列表"
       }
     ],
@@ -650,6 +666,14 @@
         "title": "禁用规则"
       }
     ],
+    "DismissRoomByStrRoomIdFromTRTC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DismissRoomByStrRoomIdFromTRTC\n<公共请求参数>\n\n{\n    \"RoomId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "EnableTopicRule": [
       {
         "document": "",
@@ -664,6 +688,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenSingleDeviceSignatureOfPublic\n<公共请求参数>\n\n{\n    \"DeviceName\": \"dev001\",\n    \"Expire\": 86400,\n    \"ProductId\": \"H4EAI7TIZR\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeviceSignature\": {\n            \"DeviceName\": \"dev001\",\n            \"DeviceSignature\": \"fbaba57679644f29adee486528644a5a\"\n        },\n        \"RequestId\": \"8bbbaa15-9918-4fd9-a70c-dbb47deac0ca\"\n    }\n}",
         "title": "生成单个设备绑定的签名"
+      }
+    ],
+    "GenerateCloudStorageAIServiceTaskFileURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateCloudStorageAIServiceTaskFileURL\n<公共请求参数>\n\n{\n    \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n    \"FileName\": \"output.mp4\",\n    \"ExpireTime\": 1710487898\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"FileURL\": \"https://example.com/output.mp4\",\n        \"ExpireTime\": 1710487898\n    }\n}",
+        "title": "获取云存 AI 分析任务输出文件的下载地址"
       }
     ],
     "GenerateSignedVideoURL": [
@@ -956,6 +988,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=ReleaseStudioProduct\n&ProductId=BJQM4UXMKN\n&DevStatus=released\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5237ed7d-4b7c-4f09-9d7c-e0d46abf3614\"\n    }\n}",
         "title": "发布产品"
+      }
+    ],
+    "RemoveUserByRoomIdFromTRTC": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TRTCRemoveUserByRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"test1\"\n    ],\n    \"RoomId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "ResetCloudStorage": [

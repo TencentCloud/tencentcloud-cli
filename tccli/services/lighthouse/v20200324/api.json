@@ -22,7 +22,7 @@
       "status": "online"
     },
     "AssociateInstancesKeyPairs": {
-      "document": "本接口（AssociateInstancesKeyPairs）用于绑定用户指定密钥对到实例。\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后绑定。\n* 将密钥的公钥写入到实例的 SSH 配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为 100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（AssociateInstancesKeyPairs）用于绑定用户指定密钥对到实例。\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后绑定。\n* 将密钥的公钥写入到实例的 SSH 配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为 100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "AssociateInstancesKeyPairsRequest",
       "name": "绑定密钥对",
       "output": "AssociateInstancesKeyPairsResponse",
@@ -456,7 +456,7 @@
       "status": "online"
     },
     "DisassociateInstancesKeyPairs": {
-      "document": "本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。\n\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 ResetInstancesPassword 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（DisassociateInstancesKeyPairs）用于解除实例与指定密钥对的绑定关系。\n\n* 只支持 [RUNNING, STOPPED] 状态的 LINUX_UNIX 操作系统的实例。处于 RUNNING 状态的实例会强制关机，然后解绑。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 SSH 登录。可以调用 <a href=\"https://cloud.tencent.com/document/product/1207/55546\" target=\"_blank\">ResetInstancesPassword</a> 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "DisassociateInstancesKeyPairsRequest",
       "name": "解绑密钥对",
       "output": "DisassociateInstancesKeyPairsResponse",
@@ -512,7 +512,7 @@
       "status": "online"
     },
     "IsolateInstances": {
-      "document": "本接口(IsolateInstances)用于退还一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING 或 STOPPED 的实例才可以进行此操作。\n* 接口调用成功后，实例会进入SHUTDOWN 状态。\n* 支持批量操作。每次请求批量资源（包括实例与数据盘）的上限为 20。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口(IsolateInstances)用于退还一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING 或 STOPPED 的实例才可以进行此操作。\n* 接口调用成功后，实例会进入SHUTDOWN 状态。\n* 支持批量操作。每次请求批量资源（包括实例与数据盘）的上限为 20。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "IsolateInstancesRequest",
       "name": "隔离实例",
       "output": "IsolateInstancesResponse",
@@ -554,7 +554,7 @@
       "status": "online"
     },
     "ModifyDockerContainer": {
-      "document": "修改实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。\n请注意：本接口会重新创建并运行实例内的Docker容器。",
+      "document": "修改实例内的Docker容器，之后可以通过返回的ActivityId调用<a href=\"https://cloud.tencent.com/document/product/1207/95476\" target=\"_blank\">DescribeDockerActivities</a>接口查询重建情况。\n请注意：本接口会重新创建并运行实例内的Docker容器。",
       "input": "ModifyDockerContainerRequest",
       "name": "修改实例内的Docker容器",
       "output": "ModifyDockerContainerResponse",
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "ModifyInstancesBundle": {
-      "document": "本接口(ModifyInstancesBundle)用于变更一个或多个轻量应用服务器实例套餐。\n* 只有状态为 RUNNING，STOPPED的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 30。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口(ModifyInstancesBundle)用于变更一个或多个轻量应用服务器实例套餐。\n* 只有状态为 RUNNING，STOPPED的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 30。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesBundleRequest",
       "name": "变更实例套餐",
       "output": "ModifyInstancesBundleResponse",
@@ -617,7 +617,7 @@
       "status": "online"
     },
     "RebootInstances": {
-      "document": "本接口（RebootInstances）用于重启实例。\n\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 REBOOTING 状态；重启实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作，每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（RebootInstances）用于重启实例。\n\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 REBOOTING 状态；重启实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作，每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "RebootInstancesRequest",
       "name": "重启实例",
       "output": "RebootInstancesResponse",
@@ -645,7 +645,7 @@
       "status": "online"
     },
     "RenewInstances": {
-      "document": "本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING，STOPPED 或 SHUTDOWN 的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。\n* 只有状态为 RUNNING，STOPPED 或 SHUTDOWN 的实例才可以进行此操作。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "RenewInstancesRequest",
       "name": "续费实例",
       "output": "RenewInstancesResponse",
@@ -680,14 +680,14 @@
       "status": "online"
     },
     "ResetInstance": {
-      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstanceRequest",
       "name": "重装系统",
       "output": "ResetInstanceResponse",
       "status": "online"
     },
     "ResetInstancesPassword": {
-      "document": "本接口（ResetInstancesPassword）用于将实例操作系统的密码重置为用户指定的密码。\n* 只修改管理员账号的密码。实例的操作系统不同，管理员账号也会不一样（Windows 为 Administrator，Ubuntu 为 ubuntu ，其它系统为 root）。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为 100。\n* 建议对运行中的实例先手动关机，然后再进行密码重置。如实例处于运行中状态，本接口操作过程中会对实例进行关机操作，尝试正常关机失败后进行强制关机。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。\n注意：强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏。",
+      "document": "本接口（ResetInstancesPassword）用于将实例操作系统的密码重置为用户指定的密码。\n* 只修改管理员账号的密码。实例的操作系统不同，管理员账号也会不一样（Windows 为 Administrator，Ubuntu 为 ubuntu ，其它系统为 root）。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为 100。\n* 建议对运行中的实例先手动关机，然后再进行密码重置。如实例处于运行中状态，本接口操作过程中会对实例进行关机操作，尝试正常关机失败后进行强制关机。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。\n注意：强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏。",
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
       "output": "ResetInstancesPasswordResponse",
@@ -708,7 +708,7 @@
       "status": "online"
     },
     "RunDockerContainers": {
-      "document": "创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用DescribeDockerActivities接口查询创建情况。",
+      "document": "创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用<a href=\"https://cloud.tencent.com/document/product/1207/95476\" target=\"_blank\">DescribeDockerActivities</a>接口查询创建情况。",
       "input": "RunDockerContainersRequest",
       "name": "创建并运行Docker容器",
       "output": "RunDockerContainersResponse",
@@ -729,7 +729,7 @@
       "status": "online"
     },
     "StartInstances": {
-      "document": "本接口（StartInstances）用于启动一个或多个实例。\n\n* 只有状态为 STOPPED 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STARTING 状态；启动实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（StartInstances）用于启动一个或多个实例。\n\n* 只有状态为 STOPPED 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STARTING 状态；启动实例成功时，实例会进入 RUNNING 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "StartInstancesRequest",
       "name": "启动实例",
       "output": "StartInstancesResponse",
@@ -743,7 +743,7 @@
       "status": "online"
     },
     "StopInstances": {
-      "document": "本接口（StopInstances）用于关闭一个或多个实例。\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STOPPING 状态；关闭实例成功时，实例会进入 STOPPED 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（StopInstances）用于关闭一个或多个实例。\n* 只有状态为 RUNNING 的实例才可以进行此操作。\n* 接口调用成功时，实例会进入 STOPPING 状态；关闭实例成功时，实例会进入 STOPPED 状态。\n* 支持批量操作。每次请求批量实例的上限为 100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
       "input": "StopInstancesRequest",
       "name": "关闭实例",
       "output": "StopInstancesResponse",
@@ -757,7 +757,7 @@
       "status": "online"
     },
     "TerminateInstances": {
-      "document": "本接口 (TerminateInstances) 用于销毁实例。\n\n* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态 (LatestOperationState) 为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (TerminateInstances) 用于销毁实例。\n\n* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态 (LatestOperationState) 为“SUCCESS”，则代表操作成功。",
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
@@ -2088,7 +2088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
+          "document": "套餐ID。可以通过调用 [DescribeBundles](https://cloud.tencent.com/document/api/1207/47575) 接口获取。",
           "example": "bundle_gen_03",
           "member": "string",
           "name": "BundleId",
@@ -2097,7 +2097,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
+          "document": "镜像ID。可以通过调用 [DescribeBlueprints](https://cloud.tencent.com/document/api/1207/47689) 接口获取。",
           "example": "lhbp-g0tn7djh",
           "member": "string",
           "name": "BlueprintId",
@@ -2534,8 +2534,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要删除的快照 ID 列表，可通过 DescribeSnapshots 查询。",
-          "example": "[\"lhsnap-nv6aqcv6\\n\"]",
+          "document": "要删除的快照 ID 列表，可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a>查询。",
+          "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": true,
@@ -2938,8 +2938,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点 ID 列表, 可通过 DescribeDiskBackups 接口查询。",
-          "example": "[\"lhbak-nuen5foj\\n\"] ",
+          "document": "云硬盘备份点 ID 列表, 可通过<a href=\"https://cloud.tencent.com/document/product/1207/84379\" target=\"_blank\">DescribeDiskBackups</a>接口查询。",
+          "example": "[\"lhbak-nuen5foj\"] ",
           "member": "string",
           "name": "DiskBackupIds",
           "required": true,
@@ -2957,7 +2957,7 @@
           "example": "无",
           "member": "DiskBackupDeniedActions",
           "name": "DiskBackupDeniedActionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3084,7 +3084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘类型, 取值: \"CLOUD_PREMIUM\"。",
+          "document": "云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
@@ -3121,6 +3121,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3130,6 +3131,7 @@
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4127,7 +4129,7 @@
           "example": "无",
           "member": "InstanceDeniedActions",
           "name": "InstanceDeniedActionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4720,8 +4722,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照 ID 列表, 可通过 DescribeSnapshots 查询。",
-          "example": "[\"lhsnap-nv6aqcv6\\n\"]",
+          "document": "快照 ID 列表, 可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a> 查询。",
+          "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": true,
@@ -4739,7 +4741,7 @@
           "example": "无",
           "member": "SnapshotDeniedActions",
           "name": "SnapshotDeniedActionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8122,7 +8124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照 ID, 可通过 DescribeSnapshots 查询。",
+          "document": "快照 ID, 可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 查询。",
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
@@ -8817,7 +8819,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\n`LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li>\n`WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：</br> `LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：</br> <li>小写字母：[a-z]</br></li> <li>大写字母：[A-Z]</br></li> <li>数字：0-9</br></li> <li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li></br> `WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符</br> <li>小写字母：[a-z]</br></li> <li>大写字母：[A-Z]</br></li> <li>数字： 0-9</br></li> <li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</br></li> <li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。</li>",
           "example": "xxxxxxxxxxx",
           "member": "string",
           "name": "Password",
@@ -9561,7 +9563,7 @@
         {
           "disabled": false,
           "document": "实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

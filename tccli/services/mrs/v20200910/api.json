@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DrugInstructionObject": {
+      "document": "药品说明书PDF文件结构化",
+      "input": "DrugInstructionObjectRequest",
+      "name": "药品说明书结构化接口",
+      "output": "DrugInstructionObjectResponse",
+      "status": "online"
+    },
     "ImageMask": {
       "document": "医疗报告图片脱敏接口",
       "input": "ImageMaskRequest",
@@ -441,6 +448,442 @@
           "name": "Order",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfo": {
+      "document": "预防用生物制品说明书",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品名称，包括通用名和商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoName",
+          "name": "Name",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成份和性状\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoIngredientAndAppearance",
+          "name": "IngredientAndAppearance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接种对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoVaccinationTarget",
+          "name": "VaccinationTarget",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作用与用途\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoIndications",
+          "name": "Indications",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoBrochure",
+          "name": "Brochure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "免疫程序和剂量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoDosage",
+          "name": "Dosage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不良反应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoAdverseReaction",
+          "name": "AdverseReaction",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁忌情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoContraindications",
+          "name": "Contraindications",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注意事项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoPrecautions",
+          "name": "Precautions",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "储存条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoStorage",
+          "name": "Storage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包装信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoPackaging",
+          "name": "Packaging",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoValidityPeriod",
+          "name": "ValidityPeriod",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行标准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoExecutiveStandards",
+          "name": "ExecutiveStandards",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批准文号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoApproval",
+          "name": "Approval",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产企业名称和地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfoManufacturer",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoAdverseReaction": {
+      "document": "不良反应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoApproval": {
+      "document": "批准文号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoBrochure": {
+      "document": "规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoContraindications": {
+      "document": "禁忌情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoDosage": {
+      "document": "免疫程序和剂量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoExecutiveStandards": {
+      "document": "执行标准",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoIndications": {
+      "document": "作用与用途",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoIngredientAndAppearance": {
+      "document": "成份和性状",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoManufacturer": {
+      "document": "生产企业名称和地址",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoName": {
+      "document": "药品名称，包括通用名和商品名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GenericName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "品牌名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BarndName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拼音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Pinyin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoPackaging": {
+      "document": "包装信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoPrecautions": {
+      "document": "注意事项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoStorage": {
+      "document": "储存条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoVaccinationTarget": {
+      "document": "接种对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BiologicalProductInfoValidityPeriod": {
+      "document": "有效期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1263,6 +1706,750 @@
           "name": "BlockTitle",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfo": {
+      "document": "药品说明书消息定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品名称，包括通用名和商品名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoName",
+          "name": "Name",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoActiveIngredient",
+          "name": "ActiveIngredient",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性状\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoAppearance",
+          "name": "Appearance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "适应症描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoIndications",
+          "name": "Indications",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoBrochure",
+          "name": "Brochure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用法用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoDosage",
+          "name": "Dosage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不良反应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoAdverseReaction",
+          "name": "AdverseReaction",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁忌情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoContraindications",
+          "name": "Contraindications",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注意事项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPrecautions",
+          "name": "Precautions",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "孕妇及哺乳期妇女用药\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPregnancyLactationUse",
+          "name": "PregnancyLactationUse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "儿童用药\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPediatricUse",
+          "name": "PediatricUse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "老年用药\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoGeriatricUse",
+          "name": "GeriatricUse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "药品的药物相互作用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoInteractions",
+          "name": "Interactions",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "药物过量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoOverdose",
+          "name": "Overdose",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "临床试验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoClinicalTrial",
+          "name": "ClinicalTrial",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "药理毒理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPharmacologyToxicology",
+          "name": "PharmacologyToxicology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "药代动力学\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPharmacokinetics",
+          "name": "Pharmacokinetics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "储存条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoStorage",
+          "name": "Storage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包装信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoPackaging",
+          "name": "Packaging",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoValidityPeriod",
+          "name": "ValidityPeriod",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行标准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoExecutiveStandards",
+          "name": "ExecutiveStandards",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批准文号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoApproval",
+          "name": "Approval",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产企业名称和地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfoManufacturer",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoActiveIngredient": {
+      "document": "活性成份消息定义，如果是复方制剂，可以不列出每个活性成份的详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活性成份的化学名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChemicalName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活性成份的化学结构式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChemicalFormula",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活性成份的分子式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MolecularFormula",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活性成份的分子量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MolecularWeight",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoAdverseReaction": {
+      "document": "不良反应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoAppearance": {
+      "document": "性状",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoApproval": {
+      "document": "批准文号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoBrochure": {
+      "document": "规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoClinicalTrial": {
+      "document": "临床试验",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoContraindications": {
+      "document": "禁忌情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoDosage": {
+      "document": "用法用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoExecutiveStandards": {
+      "document": "执行标准",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoGeriatricUse": {
+      "document": "老年用药",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoIndications": {
+      "document": "适应症描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoInteractions": {
+      "document": "药品的药物相互作用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoManufacturer": {
+      "document": "生产企业名称和地址",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮政编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PostalCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话，包含区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "传真，包含区号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Fax",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网址，如无则不填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Website",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoName": {
+      "document": "药品名称，包括通用名和商品名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GenericName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "品牌名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BarndName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拼音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Pinyin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoOverdose": {
+      "document": "药物过量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPackaging": {
+      "document": "包装信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPediatricUse": {
+      "document": "儿童用药",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPharmacokinetics": {
+      "document": "药代动力学",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPharmacologyToxicology": {
+      "document": "药理毒理",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPrecautions": {
+      "document": "注意事项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoPregnancyLactationUse": {
+      "document": "孕妇及哺乳期妇女用药",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoStorage": {
+      "document": "储存条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChemicalProductInfoValidityPeriod": {
+      "document": "有效期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2405,6 +3592,53 @@
         }
       ],
       "usage": "out"
+    },
+    "DrugInstructionObjectRequest": {
+      "document": "DrugInstructionObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品说明书PDF文件信息(目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)",
+          "example": "无",
+          "member": "PdfInfo",
+          "name": "PdfInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DrugInstructionObjectResponse": {
+      "document": "DrugInstructionObject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品说明书消息定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChemicalProductInfo",
+          "name": "ChemicalProductInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预防用生物制品说明书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BiologicalProductInfo",
+          "name": "BiologicalProductInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DrugListBlock": {
       "document": "药物史",

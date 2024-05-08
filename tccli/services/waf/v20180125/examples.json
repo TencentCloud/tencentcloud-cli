@@ -104,6 +104,14 @@
         "title": "添加负载均衡型WAF域名"
       }
     ],
+    "CreateIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpsertIpAccessControlV2\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_0xabc\",\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"IpList\": [\n        \"192.168.1.1\",\n        \"192.168.2.1\"\n    ],\n    \"Edition\": \"abc\",\n    \"ValidTS\": 1680570420,\n    \"ActionType\": 42,\n    \"SourceType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": 55201922,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "新增IP黑白名单"
+      }
+    ],
     "DeleteAccessExport": [
       {
         "document": "",
@@ -198,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControl\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Items\": [\n        \"1.2.3.4\"\n    ],\n    \"DeleteAll\": false\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"FailedItems\": \"\",\n        \"RequestId\": \"9fbb7be2-214b-44df-a5b9-6a69ca456409\"\n    }\n}",
         "title": "Waf IP黑白名单Delete接口"
+      }
+    ],
+    "DeleteIpAccessControlV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControlV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"DeleteAll\": true,\n    \"SourceType\": \"log\",\n    \"ActionType\": 1,\n    \"RuleIds\": [\n        55102222,\n        55562222\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除IP黑白名单"
       }
     ],
     "DeleteSession": [
@@ -748,6 +764,14 @@
         "title": "获取qps 弹性默认值"
       }
     ],
+    "ImportIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControlV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"Data\": [\n        {\n            \"IpList\": [\n                \"2.3.4.5\"\n            ],\n            \"ValidTs\": 1709222399,\n            \"ActionType\": 42,\n            \"Note\": \"\"\n        },\n        {\n            \"IpList\": [\n                \"2.3.4.6\"\n            ],\n            \"ValidTs\": 1709222399,\n            \"ActionType\": 42,\n            \"Note\": \"\"\n        }\n    ],\n    \"InstanceId\": \"waf_2kxt4nou00atrvn1\",\n    \"SourceType\": \"custom\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "导入IP黑白名单"
+      }
+    ],
     "ModifyAccessPeriod": [
       {
         "document": "",
@@ -978,6 +1002,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceRenewFlag\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_000000001\",\n    \"RenewFlag\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\"\n    }\n}",
         "title": "修改实例的自动续费开关"
+      }
+    ],
+    "ModifyIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIpAccessControl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_accc\",\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"IpList\": [\n        \"192.168.1.1\",\n        \"192.168.1.2\"\n    ],\n    \"Edition\": \"clb-waf\",\n    \"SourceType\": \"batch\",\n    \"RuleId\": 5512222,\n    \"ActionType\": 42,\n    \"ValidTS\": 0,\n    \"Note\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "编辑IP黑白名单"
       }
     ],
     "ModifyModuleStatus": [

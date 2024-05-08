@@ -112,6 +112,13 @@
       "output": "CreateStudioProductResponse",
       "status": "online"
     },
+    "CreateTRTCSignaturesWithRoomId": {
+      "document": "创建TRTC通话参数",
+      "input": "CreateTRTCSignaturesWithRoomIdRequest",
+      "name": "自定义房间id创建TRTC通话参数",
+      "output": "CreateTRTCSignaturesWithRoomIdResponse",
+      "status": "online"
+    },
     "CreateTopicPolicy": {
       "document": "本接口（CreateTopicPolicy）用于创建一个Topic ",
       "input": "CreateTopicPolicyRequest",
@@ -243,6 +250,13 @@
       "input": "DescribeCloudStorageAIServiceCallbackRequest",
       "name": "查询云存AI分析回调配置",
       "output": "DescribeCloudStorageAIServiceCallbackResponse",
+      "status": "online"
+    },
+    "DescribeCloudStorageAIServiceTask": {
+      "document": "查询指定的云存 AI 分析任务",
+      "input": "DescribeCloudStorageAIServiceTaskRequest",
+      "name": "查询设备云存AI分析任务",
+      "output": "DescribeCloudStorageAIServiceTaskResponse",
       "status": "online"
     },
     "DescribeCloudStorageAIServiceTasks": {
@@ -532,6 +546,13 @@
       "output": "DisableTopicRuleResponse",
       "status": "online"
     },
+    "DismissRoomByStrRoomIdFromTRTC": {
+      "document": "解散TRTC房间",
+      "input": "DismissRoomByStrRoomIdFromTRTCRequest",
+      "name": "解散TRTC房间",
+      "output": "DismissRoomByStrRoomIdFromTRTCResponse",
+      "status": "online"
+    },
     "EnableTopicRule": {
       "document": "启用规则",
       "input": "EnableTopicRuleRequest",
@@ -544,6 +565,13 @@
       "input": "GenSingleDeviceSignatureOfPublicRequest",
       "name": "生成单个设备绑定的签名",
       "output": "GenSingleDeviceSignatureOfPublicResponse",
+      "status": "online"
+    },
+    "GenerateCloudStorageAIServiceTaskFileURL": {
+      "document": "获取云存 AI 分析任务输出文件的下载地址",
+      "input": "GenerateCloudStorageAIServiceTaskFileURLRequest",
+      "name": "获取云存AI分析任务输出文件URL",
+      "output": "GenerateCloudStorageAIServiceTaskFileURLResponse",
       "status": "online"
     },
     "GenerateSignedVideoURL": {
@@ -789,6 +817,13 @@
       "input": "ReleaseStudioProductRequest",
       "name": "发布产品",
       "output": "ReleaseStudioProductResponse",
+      "status": "online"
+    },
+    "RemoveUserByRoomIdFromTRTC": {
+      "document": "TRTC操作，将用户从房间移出",
+      "input": "RemoveUserByRoomIdFromTRTCRequest",
+      "name": "将用户从TRTC房间移出",
+      "output": "RemoveUserByRoomIdFromTRTCResponse",
       "status": "online"
     },
     "ResetCloudStorage": {
@@ -1498,8 +1533,18 @@
         },
         {
           "disabled": false,
+          "document": "云存 AI 服务类型。可能取值：\n\n- `PackageDetect`：包裹检测\n- `Highlight`：视频浓缩",
+          "example": "PackageDetect",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "对应云存视频的起始时间",
-          "example": "1710487888000",
+          "example": "1710487888",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
@@ -1509,7 +1554,7 @@
         {
           "disabled": false,
           "document": "对应云存视频的结束时间",
-          "example": "1710487898000",
+          "example": "1710487898",
           "member": "int64",
           "name": "EndTime",
           "output_required": true,
@@ -1518,7 +1563,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）",
+          "document": "任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）",
           "example": "3",
           "member": "uint64",
           "name": "Status",
@@ -1538,33 +1583,33 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "PackageDetect",
+          "document": "任务输出文件列表",
+          "example": "[\"output.mp4\"]",
           "member": "string",
-          "name": "ServiceType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "name": "Files",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "1711338476",
           "member": "int64",
           "name": "CreateTime",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后更新时间",
           "example": "1711338476",
           "member": "int64",
           "name": "UpdateTime",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2611,6 +2656,52 @@
       ],
       "type": "object"
     },
+    "CreateTRTCSignaturesWithRoomIdRequest": {
+      "document": "CreateTRTCSignaturesWithRoomId请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC进房间的用户名称数组，数组元素不可重复，最长不超过 10 个。",
+          "example": "[\"test123\",\"test1234\"]",
+          "member": "string",
+          "name": "TRTCUserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "房间id",
+          "example": "room1",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTRTCSignaturesWithRoomIdResponse": {
+      "document": "CreateTRTCSignaturesWithRoomId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回参数数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TRTCParams",
+          "name": "TRTCParamList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicPolicyRequest": {
       "document": "CreateTopicPolicy请求参数结构体",
       "members": [
@@ -3405,7 +3496,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：PackageDetect",
+          "document": "云存 AI 服务类型。可选值：\n\n- `PackageDetect`：包裹检测\n- `Highlight`：视频浓缩",
           "example": "PackageDetect",
           "member": "string",
           "name": "ServiceType",
@@ -3457,6 +3548,43 @@
       ],
       "type": "object"
     },
+    "DescribeCloudStorageAIServiceTaskRequest": {
+      "document": "DescribeCloudStorageAIServiceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "c31aa4f2-08c9-4088-9603-186d7311fdd8",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageAIServiceTaskResponse": {
+      "document": "DescribeCloudStorageAIServiceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务信息",
+          "example": "无",
+          "member": "CloudStorageAIServiceTask",
+          "name": "TaskInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudStorageAIServiceTasksRequest": {
       "document": "DescribeCloudStorageAIServiceTasks请求参数结构体",
       "members": [
@@ -3480,7 +3608,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：PackageDetect",
+          "document": "云存 AI 服务类型。可选值：\n- `PackageDetect`：包裹检测\n- `Highlight`：视频浓缩",
           "example": "PackageDetect",
           "member": "string",
           "name": "ServiceType",
@@ -3507,10 +3635,28 @@
         },
         {
           "disabled": false,
-          "document": "任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）",
+          "document": "任务状态。可选值：\n- （不传）：查询全部状态的任务\n- `1`：失败\n- `2`：成功但结果为空\n- `3`：成功且结果非空\n- `4`：执行中",
           "example": "3",
           "member": "uint64",
           "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
           "required": false,
           "type": "int"
         }
@@ -6844,6 +6990,33 @@
       ],
       "type": "object"
     },
+    "DismissRoomByStrRoomIdFromTRTCRequest": {
+      "document": "DismissRoomByStrRoomIdFromTRTC请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间id",
+          "example": "RoomId1",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DismissRoomByStrRoomIdFromTRTCResponse": {
+      "document": "DismissRoomByStrRoomIdFromTRTC返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EnableTopicRuleRequest": {
       "document": "EnableTopicRule请求参数结构体",
       "members": [
@@ -7357,6 +7530,71 @@
           "name": "DeviceSignature",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateCloudStorageAIServiceTaskFileURLRequest": {
+      "document": "GenerateCloudStorageAIServiceTaskFileURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "fb066d7a-baac-4706-acda-058f56f82759",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "output.mp4",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）",
+          "example": "1710487898",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateCloudStorageAIServiceTaskFileURLResponse": {
+      "document": "GenerateCloudStorageAIServiceTaskFileURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载 URL",
+          "example": "https://example.com/output.mp4",
+          "member": "string",
+          "name": "FileURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间 UNIX 时间戳",
+          "example": "1710487898",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9102,7 +9340,7 @@
         },
         {
           "disabled": false,
-          "document": "推送类型。http：HTTP 回调",
+          "document": "推送类型。可选值：\n- `http`：HTTP 回调",
           "example": "http",
           "member": "string",
           "name": "Type",
@@ -9165,7 +9403,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：PackageDetect",
+          "document": "云存 AI 服务类型。可选值：\n- `PackageDetect`：包裹检测\n- `Highlight`：视频浓缩",
           "example": "PackageDetect",
           "member": "string",
           "name": "ServiceType",
@@ -9187,6 +9425,15 @@
           "example": "{}",
           "member": "string",
           "name": "ROI",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存 AI 服务的配置参数",
+          "example": "{\"param1\":\"value1\"}",
+          "member": "string",
+          "name": "Config",
           "required": false,
           "type": "string"
         }
@@ -11051,6 +11298,42 @@
       ],
       "type": "object"
     },
+    "RemoveUserByRoomIdFromTRTCRequest": {
+      "document": "RemoveUserByRoomIdFromTRTC请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间id",
+          "example": "roomId1",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名称数组，数组元素不可重复，最长不超过 10 个。",
+          "example": "[\"test123\",\"test1234\"]",
+          "member": "string",
+          "name": "TRTCUserIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveUserByRoomIdFromTRTCResponse": {
+      "document": "RemoveUserByRoomIdFromTRTC返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetCloudStorageEventRequest": {
       "document": "ResetCloudStorageEvent请求参数结构体",
       "members": [
@@ -11395,6 +11678,62 @@
         }
       ],
       "type": "object"
+    },
+    "TRTCParams": {
+      "document": "TRTC 的参数 可以用来加入房间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC入参: TRTC的实例ID",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC入参: 用户加入房间的ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC入参: 用户的签名用来鉴权",
+          "example": "无",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC入参: 加入的TRTC房间名称",
+          "example": "无",
+          "member": "string",
+          "name": "StrRoomId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TRTC入参: 校验TRTC的KEY",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ThumbnailURLInfoList": {
       "document": "缩略图信息",

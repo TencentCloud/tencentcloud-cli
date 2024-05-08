@@ -28,6 +28,9 @@ Output:
                 "EndTime": 1710487898,
                 "Status": 3,
                 "Result": "{\"param1\":\"value1\"}",
+                "Files": [
+                    "output.mp4"
+                ],
                 "CreateTime": 1710490000,
                 "UpdateTime": 1710490000
             }
