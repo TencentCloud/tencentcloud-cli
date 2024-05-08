@@ -7,13 +7,6 @@
       "output": "DescribeRiskAssessmentResponse",
       "status": "online"
     },
-    "DescribeRiskTrends": {
-      "document": "以图表形式展示三种请求状态的趋势变化",
-      "input": "DescribeRiskTrendsRequest",
-      "name": "风险趋势统计",
-      "output": "DescribeRiskTrendsResponse",
-      "status": "online"
-    },
     "ManageMarketingRisk": {
       "document": "全栈式风控引擎（RiskControlEngine，RCE）是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。",
       "input": "ManageMarketingRiskRequest",
@@ -88,42 +81,6 @@
       ],
       "type": "object"
     },
-    "DescribeRiskTrendsRequest": {
-      "document": "DescribeRiskTrends请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "业务入参",
-          "example": "",
-          "member": "InputFrontRisk",
-          "name": "BusinessSecurityData",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRiskTrendsResponse": {
-      "document": "DescribeRiskTrends返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "业务出参",
-          "example": "",
-          "member": "OutputFrontRiskData",
-          "name": "Data",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "InputCryptoManageMarketingRisk": {
       "document": "全栈式风控引擎入参",
       "members": [
@@ -180,72 +137,6 @@
           "member": "string",
           "name": "FieldValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
-    "InputFrontRisk": {
-      "document": "风险趋势统计--入参",
-      "members": [
-        {
-          "disabled": false,
-          "document": "事件ID",
-          "example": "",
-          "member": "int64",
-          "name": "EventId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "开始时间",
-          "example": "",
-          "member": "string",
-          "name": "StartTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "",
-          "member": "string",
-          "name": "EndTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "趋势类型",
-          "example": "",
-          "member": "int64",
-          "name": "Type",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前开始时间",
-          "example": "",
-          "member": "string",
-          "name": "CurrentStartTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前结束时间",
-          "example": "",
-          "member": "string",
-          "name": "CurrentEndTime",
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -590,94 +481,6 @@
         }
       ],
       "usage": "in"
-    },
-    "OutputFrontRisk": {
-      "document": "风险趋势统计出参，需要为数组",
-      "members": [
-        {
-          "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "参数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "OutputFrontRiskValue",
-          "name": "Value",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputFrontRiskData": {
-      "document": "风险趋势统计--出参",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回码[0：成功；非0：标识失败错误码]。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "int64",
-          "name": "Code",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "出错消息[UTF-8编码]。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "Message",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "返回结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "OutputFrontRisk",
-          "name": "Value",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "OutputFrontRiskValue": {
-      "document": "风险趋势统计--值",
-      "members": [
-        {
-          "disabled": false,
-          "document": "请求次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "int64",
-          "name": "Requests",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "日期标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "Index",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "OutputManageMarketingRisk": {
       "document": "全栈式风控引擎出参",

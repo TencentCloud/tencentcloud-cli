@@ -1,3 +1,231 @@
+# Release 3.0.990.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 31 次发布
+
+发布时间：2024-05-09 01:09:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FeatureTerm](http://document.tencentcloudapi.woa.com/document/product/1609/78009#FeatureTerm)
+
+	* 新增成员：Operator
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 65 次发布
+
+发布时间：2024-05-09 01:11:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
+
+	* 新增入参：TgwGroupName
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 95 次发布
+
+发布时间：2024-05-09 01:14:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTask](http://document.tencentcloudapi.woa.com/document/product/1342/53775)
+
+	* 新增入参：ResourceGroupName
+
+* [CreateTasks](http://document.tencentcloudapi.woa.com/document/product/1342/59274)
+
+	* 新增入参：ResourceGroupName
+
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/1342/53771)
+
+	* 新增入参：ResourceGroupName
+
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：EngineResourceGroupCount, EngineResourceUsedCU
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：EngineTypeDetail, ResourceGroupName
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 33 次发布
+
+发布时间：2024-05-09 01:17:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateTRTCSignaturesWithRoomId](http://document.tencentcloudapi.woa.com/document/product/1081/83827)
+* [DescribeCloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/83824)
+* [DismissRoomByStrRoomIdFromTRTC](http://document.tencentcloudapi.woa.com/document/product/1081/83826)
+* [GenerateCloudStorageAIServiceTaskFileURL](http://document.tencentcloudapi.woa.com/document/product/1081/83823)
+* [RemoveUserByRoomIdFromTRTC](http://document.tencentcloudapi.woa.com/document/product/1081/83825)
+
+修改接口：
+
+* [DescribeCloudStorageAIServiceTasks](http://document.tencentcloudapi.woa.com/document/product/1081/83740)
+
+	* 新增入参：UserId, ChannelId
+
+* [ModifyCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83738)
+
+	* 新增入参：Config
+
+
+新增数据结构：
+
+* [TRTCParams](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TRTCParams)
+
+修改数据结构：
+
+* [CloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageAIServiceTask)
+
+	* 新增成员：Files
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 16 次发布
+
+发布时间：2024-05-09 01:18:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeDomainData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#DescribeDomainData)
+
+	* 新增成员：CertId
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 35 次发布
+
+发布时间：2024-05-09 01:21:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeOrganizationMemberByUin](http://document.tencentcloudapi.woa.com/document/product/850/83828)
+
+新增数据结构：
+
+* [MemberBaseInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#MemberBaseInfo)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 全栈式风控引擎(rce) 版本：2020-11-03
+
+### 第 10 次发布
+
+发布时间：2024-05-09 01:23:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeRiskTrends
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* InputFrontRisk
+* OutputFrontRisk
+* OutputFrontRiskData
+* OutputFrontRiskValue
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 99 次发布
+
+发布时间：2024-05-09 01:26:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRabbitMQQueueDetail](http://document.tencentcloudapi.woa.com/document/product/1179/82450)
+
+	* 新增出参：Exclusive, Policy, Arguments
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 52 次发布
+
+发布时间：2024-05-09 01:29:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateIpAccessControl](http://document.tencentcloudapi.woa.com/document/product/627/83832)
+* [DeleteIpAccessControlV2](http://document.tencentcloudapi.woa.com/document/product/627/83831)
+* [ImportIpAccessControl](http://document.tencentcloudapi.woa.com/document/product/627/83830)
+* [ModifyIpAccessControl](http://document.tencentcloudapi.woa.com/document/product/627/83829)
+
+新增数据结构：
+
+* [IpAccessControlParam](http://document.tencentcloudapi.woa.com/document/product/627/53609#IpAccessControlParam)
+
+
+
 # Release 3.0.989.1
 
 ## 智能语音(aai) 版本：2018-05-22

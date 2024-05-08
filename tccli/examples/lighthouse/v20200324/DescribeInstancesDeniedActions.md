@@ -1,12 +1,12 @@
 **Example 1: 查看实例操作限制列表**
 
-
+查看实例操作限制列表
 
 Input: 
 
 ```
 tccli lighthouse DescribeInstancesDeniedActions --cli-unfold-argument  \
-    --InstanceIds lhins-ruy9d2tw
+    --InstanceIds lhins-pcynd6zp
 ```
 
 Output: 
@@ -15,17 +15,22 @@ Output:
     "Response": {
         "InstanceDeniedActionSet": [
             {
-                "InstanceId": "lhins-ruy9d2tw",
                 "DeniedActions": [
                     {
                         "Action": "StartInstances",
                         "Code": "UnsupportedOperation.InvalidInstanceState",
-                        "Message": "The request does not support the instance `lhins-ruy9d2tw` which is in the state of `RUNNING`."
+                        "Message": "实例 `lhins-pcynd6zp` 处于 `运行中` 状态中，不支持该操作。"
+                    },
+                    {
+                        "Action": "ExitRescueMode",
+                        "Code": "UnsupportedOperation.InvalidInstanceState",
+                        "Message": "实例 `lhins-pcynd6zp` 处于 `运行中` 状态中，不支持该操作。"
                     }
-                ]
+                ],
+                "InstanceId": "lhins-pcynd6zp"
             }
         ],
-        "RequestId": "ccfc8767-94e4-410a-a062-927e6ea79f0f"
+        "RequestId": "aa7e11d1-4fb5-421a-a1b6-608abcbf75bb"
     }
 }
 ```

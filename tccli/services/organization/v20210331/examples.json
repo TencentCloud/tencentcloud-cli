@@ -288,6 +288,14 @@
         "title": "获取组织成员可被管理的身份列表"
       }
     ],
+    "DescribeOrganizationMemberByUin": [
+      {
+        "document": "根据Uin查询组织成员信息",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationMemberByUin\n<公共请求参数>\n\n{\n    \"MemberUins\": [\n        1111111111111\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MemberList\": [\n            {\n                \"MemberUin\": 1111111111111,\n                \"OrgId\": 123,\n                \"HostUin\": 2222222222222,\n                \"Remark\": \"成员1\"\n            }\n        ],\n        \"RequestId\": \"89401b83-e6f9-4f90-b7e6-d2a3090aae8c\"\n    }\n}",
+        "title": "根据Uin查询组织成员信息"
+      }
+    ],
     "DescribeOrganizationMemberEmailBind": [
       {
         "document": "",
