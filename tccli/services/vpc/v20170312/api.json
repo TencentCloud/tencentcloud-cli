@@ -4078,6 +4078,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "标识CVM实例的唯一 ID。CVM 唯一 ID 形如：`ins-11112222`。",
           "example": "ins-11112222",
           "member": "string",
@@ -4106,6 +4115,7 @@
           "example": "5513621",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

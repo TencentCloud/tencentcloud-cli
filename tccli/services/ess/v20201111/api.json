@@ -273,6 +273,13 @@
       "output": "CreateUserAutoSignSealUrlResponse",
       "status": "online"
     },
+    "CreateUserVerifyUrl": {
+      "document": "客户可以主动调用生成实名链接去做C端用户实名，会对实名的用户进行打标记为调用链接客户的用户\n使用场景：\n用户集成场景\n使用限制：\n此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估",
+      "input": "CreateUserVerifyUrlRequest",
+      "name": "获取c端用户实名链接",
+      "output": "CreateUserVerifyUrlResponse",
+      "status": "online"
+    },
     "CreateWebThemeConfig": {
       "document": "用来设置本企业嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），设置后获取的web签署界面都会使用此配置进行展示。\n\n如果多次调用，会以最后一次的配置为准",
       "input": "CreateWebThemeConfigRequest",
@@ -6186,6 +6193,117 @@
           "member": "string",
           "name": "QrCode",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserVerifyUrlRequest": {
+      "document": "CreateUserVerifyUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的身份证号码，\n身份证号码如果有x的话，统一传大写X",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件类型，目前只支持身份证类型：ID_CARD",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的手机号，兼容带+86的格式",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型\n\n- HTTP：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型 ，此时返回长链 (默认类型)\n\n- HTTP_SHORT_URL：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型，此时返回短链\n\n- APP：\n第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型",
+          "example": "APP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 实名完成不会自动跳转回来(默认)</li><li>true：是, 实名完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（电子签小程序跳转贵方小程序）场景</font> 的实名链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必需用户手动点击完成按钮（微信的限制）</font> ",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoJumpBack",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserVerifyUrlResponse": {
+      "document": "CreateUserVerifyUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参加接口描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n\n注： 生成的链路后面不能再增加参数\n示例值：https://essurl.cn/2n**42Nd",
+          "example": "无",
+          "member": "string",
+          "name": "UserVerifyUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序appid，用于半屏拉起电子签小程序",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

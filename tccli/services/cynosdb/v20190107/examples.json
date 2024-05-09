@@ -538,6 +538,14 @@
         "title": "查询维护时间窗"
       }
     ],
+    "DescribeMaxResourcePackagesCanBound": [
+      {
+        "document": "查询cynos集群最大可绑定资源包个数",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaxResourcePackagesCanBound\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"MaxResourcePackagesCanBound\": 10,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询cynos集群最大可绑定资源包个数"
+      }
+    ],
     "DescribeParamTemplateDetail": [
       {
         "document": "查询参数模板详情",
@@ -694,6 +702,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportInstanceSlowQueries\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-xxxxxxxx\",\n    \"StartTime\": \"2022-01-01 00:00:00\",\n    \"EndTime\": \"2022-01-01 23:59:59\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Username\": \"root\",\n    \"Database\": \"db\",\n    \"FileType\": \"csv\"\n}",
         "output": "{\n    \"Response\": {\n        \"FileContent\": \"xxxx\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
         "title": "导出实例慢日志"
+      }
+    ],
+    "ExportResourcePackageDeductDetails": [
+      {
+        "document": "资源包使用明细导出",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportResourcePackageDeductDetails\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"ClusterIds\": [\n        \"cynosdbmysql-bcdz3214\"\n    ],\n    \"OrderBy\": \"createTime\",\n    \"OrderByType\": \"desc\",\n    \"StartTime\": \"2022-01-01 01:01:01\",\n    \"EndTime\": \"2024-01-01 01:01:01\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileContent\": \"2022-01-01 01:01:01,package-abcd1234,200.00,1298.98,cynosdbmysql-cdba4312\\n2022-01-01 01:02:01,package-abcd1234,200.00,1498.98,cynosdbmysql-cdba4354\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ExportResourcePackageDeductDetails"
       }
     ],
     "GrantAccountPrivileges": [
@@ -950,6 +966,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySourcePackageName\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"PackageName\": \"自定义资源包名称-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改资源包名称"
+      }
+    ],
+    "ModifyResourcePackagesDeductionPriority": [
+      {
+        "document": "修改已绑定资源包抵扣优先级",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackagesDeductionPriority\n<公共请求参数>\n\n{\n    \"PackageType\": \"CCU\",\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"DeductionPriorities\": [\n        {\n            \"PackageId\": \"package-abcd1234\",\n            \"DeductionPriority\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyResourcePackagesDeductionPriority"
       }
     ],
     "ModifyVipVport": [

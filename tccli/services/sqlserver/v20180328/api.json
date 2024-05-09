@@ -16216,15 +16216,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "租户 APPID，产品侧需要做校验",
-          "example": "无",
-          "member": "int64",
-          "name": "UserAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "租户资源 ID，产品侧需要做校验",
           "example": "无",
           "member": "string",
@@ -16258,6 +16249,15 @@
           "name": "Password",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户 APPID，产品侧需要做校验",
+          "example": "无",
+          "member": "int64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,

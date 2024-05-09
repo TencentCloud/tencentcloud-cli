@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateSyncApplication": {
+      "document": "发起异步审批流申请",
+      "input": "CreateSyncApplicationRequest",
+      "name": "发起异步审批流申请",
+      "output": "CreateSyncApplicationResponse",
+      "status": "online"
+    },
     "GetBpaasApplicationList": {
       "document": "获取申请列表",
       "input": "GetBpaasApplicationListRequest",
@@ -252,6 +259,78 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateSyncApplicationRequest": {
+      "document": "CreateSyncApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审批流模板唯一id",
+          "example": "111",
+          "member": "uint64",
+          "name": "UniqueId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "申请的表单参数列表",
+          "example": "[\"key\":\"***\",\"Name\":\"多行文本\",\"Value\":[\"a\"]]",
+          "member": "ApplyParam",
+          "name": "ApplicationParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "申请原因",
+          "example": "test",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询实例id,字符长度限制:1-100,不包含中文字符",
+          "example": "'test'",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联接口名,字符长度限制:0-100",
+          "example": "‘test’",
+          "member": "string",
+          "name": "AssociateAction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSyncApplicationResponse": {
+      "document": "CreateSyncApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请id",
+          "example": "11",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetBpaasApplicationListRequest": {
       "document": "GetBpaasApplicationList请求参数结构体",

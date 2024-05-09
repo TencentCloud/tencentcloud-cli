@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateSyncApplication": [
+      {
+        "document": "发起异步审批流申请",
+        "input": "POST / HTTP/1.1\nHost: bpaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSyncApplication\n<公共请求参数>\n\n{\n    \"UniqueId\": 1111,\n    \"ApplicationParams\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": [\n                \"test\"\n            ],\n            \"Name\": \"test\"\n        }\n    ],\n    \"Reason\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-90787*****03\"\n    }\n}",
+        "title": "发起异步审批流申请"
+      }
+    ],
     "GetBpaasApplicationList": [
       {
         "document": "",

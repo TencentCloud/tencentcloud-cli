@@ -155,7 +155,7 @@
       "status": "online"
     },
     "DeleteSnapshots": {
-      "document": "本接口（DeleteSnapshots）用于删除快照。\n快照必须处于 NORMAL 状态，快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。",
+      "document": "本接口（DeleteSnapshots）用于删除快照。\n快照必须处于 NORMAL 状态，快照状态可以通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a> 接口查询，见输出参数中 SnapshotState 字段解释。",
       "input": "DeleteSnapshotsRequest",
       "name": "删除快照",
       "output": "DeleteSnapshotsResponse",
@@ -3868,7 +3868,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘大小。",
+          "document": "云硬盘大小, 单位: GB。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",

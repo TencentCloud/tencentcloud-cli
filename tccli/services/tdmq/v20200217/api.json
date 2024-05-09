@@ -10782,7 +10782,7 @@
           "example": "test",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10792,7 +10792,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10802,7 +10802,7 @@
           "example": "2",
           "member": "int64",
           "name": "MsgTTL",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10812,7 +10812,7 @@
           "example": "2020-02-17 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10822,7 +10822,7 @@
           "example": "2020-02-17 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10832,7 +10832,7 @@
           "example": "test",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10842,7 +10842,7 @@
           "example": "test",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10852,7 +10852,7 @@
           "example": "2",
           "member": "int64",
           "name": "TopicNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10862,7 +10862,7 @@
           "example": "无",
           "member": "RetentionPolicy",
           "name": "RetentionPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10872,7 +10872,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoSubscriptionCreation",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }

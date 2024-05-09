@@ -1,3 +1,285 @@
+# Release 3.0.991.1
+
+## 商业流程服务(bpaas) 版本：2018-12-17
+
+### 第 3 次发布
+
+发布时间：2024-05-10 01:09:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSyncApplication](http://document.tencentcloudapi.woa.com/document/product/1628/83833)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 34 次发布
+
+发布时间：2024-05-10 01:13:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
+
+	* 新增出参：PublicPrivateAttr
+
+* [DescribeDbAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80802)
+
+	* 新增入参：MemberId
+
+	* 新增出参：PublicPrivateAttr
+
+* [DescribeOrganizationUserInfo](http://document.tencentcloudapi.woa.com/document/product/1726/82836)
+
+	* 新增入参：MemberId
+
+	* 新增出参：JoinTypeLst, CloudTypeLst
+
+
+修改数据结构：
+
+* [OrganizationUserInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrganizationUserInfo)
+
+	* 新增成员：SubUserCount, JoinTypeInfo
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 88 次发布
+
+发布时间：2024-05-10 01:13:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)
+
+	* 新增成员：CategoryId
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 82 次发布
+
+发布时间：2024-05-10 01:14:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMaxResourcePackagesCanBound](http://document.tencentcloudapi.woa.com/document/product/1003/83836)
+* [ExportResourcePackageDeductDetails](http://document.tencentcloudapi.woa.com/document/product/1003/83835)
+* [ModifyResourcePackagesDeductionPriority](http://document.tencentcloudapi.woa.com/document/product/1003/83834)
+
+新增数据结构：
+
+* [PackagePriority](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PackagePriority)
+
+修改数据结构：
+
+* [ResourcePackage](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ResourcePackage)
+
+	* 新增成员：DeductionPriority
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 84 次发布
+
+发布时间：2024-05-10 01:18:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 60 次发布
+
+发布时间：2024-05-10 01:18:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [MacaoIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MacaoIDCard)
+* [MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard)
+
+修改数据结构：
+
+* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+
+	* 新增成员：MacaoIDCard, MainlandIDCard
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+
+	* 新增成员：IsEdit
+
+
+
+
+## 图片瘦身(ic) 版本：2019-03-07
+
+### 第 4 次发布
+
+发布时间：2024-05-10 01:19:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* PayForExtendData
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* RenewCards
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ResOrderIds
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 40 次发布
+
+发布时间：2024-05-10 01:25:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/238/83770)
+
+	* <font color="#dd0000">**修改入参**：</font>UserAppId
+
+
+
+
+## 凭据管理系统(ssm) 版本：2019-09-23
+
+### 第 11 次发布
+
+发布时间：2024-05-10 01:26:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RotateProductSecret](http://document.tencentcloudapi.woa.com/document/product/1140/58262)
+
+	* 新增入参：AdditionalConfig
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 100 次发布
+
+发布时间：2024-05-10 01:28:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
+
+	* <font color="#dd0000">**修改成员**：</font>AutoSubscriptionCreation
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 35 次发布
+
+发布时间：2024-05-10 01:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePurgeTask](http://document.tencentcloudapi.woa.com/document/product/1738/81209)
+
+	* 新增入参：CacheTag
+
+
+新增数据结构：
+
+* [CacheTag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheTag)
+
+修改数据结构：
+
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Task)
+
+	* 新增成员：Method
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 135 次发布
+
+发布时间：2024-05-10 01:31:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AdjustPublicAddress](http://document.tencentcloudapi.woa.com/document/product/215/75006)
+
+	* 新增入参：RequestSourceInternal
+
+
+
+
 # Release 3.0.990.1
 
 ## 应用管理平台(camp) 版本：2022-09-20
