@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "ResultImage": "/asjdioajsdoi",
+        "ResultImage": "/asjdioajsoi",
         "RequestId": "301bfc25-61ca-4ece-b03e-f6aefb547969"
     }
 }

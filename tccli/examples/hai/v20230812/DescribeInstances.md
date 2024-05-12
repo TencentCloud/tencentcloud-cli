@@ -43,14 +43,15 @@ Output:
                 "LatestOperation": "RunInstances",
                 "LatestOperationState": "SUCCESS",
                 "CreateTime": "2023-08-01 00:00:00",
-                "MaxOutBandwidth": "5Mbps",
+                "MaxOutBandwidth": "10Mbps",
                 "MaxFreeTraffic": "1000GB",
                 "ConfigurationEnvironment": "cuda 10 | pytorch | tensorflow",
                 "LoginServices": [
                     {
                         "ServiceName": "jupyter"
                     }
-                ]
+                ],
+                "OSType": "linux"
             }
         ],
         "RequestId": "41fa870d-8592-493c-b794-9fe19f23e800"

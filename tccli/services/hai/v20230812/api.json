@@ -794,8 +794,8 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，默认5Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5Mbps",
+          "document": "公网出带宽上限，默认10Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10Mbps",
           "member": "string",
           "name": "MaxOutBandwidth",
           "output_required": true,

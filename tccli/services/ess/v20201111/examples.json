@@ -1412,6 +1412,14 @@
         "title": "查看个人自动签状态"
       }
     ],
+    "DescribeUserVerifyStatus": [
+      {
+        "document": "通过二要素查询用户是否实名",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserVerifyStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"Name\": \"abc\",\n    \"IdCardNumber\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VerifyStatus\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过二要素查询用户是否实名"
+      }
+    ],
     "DescribeWeWorkSuiteAccessToken": [
       {
         "document": "查看腾讯电子签企微小程序SuiteAccessToken",

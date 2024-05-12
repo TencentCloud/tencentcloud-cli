@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 商业流程服务(bpaas) 版本：2018-12-17
+## 访问管理(cam) 版本：2019-01-16
 
-### 第 3 次发布
+### 第 28 次发布
 
-发布时间：2024-05-10 01:09:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateSyncApplication](http://document.tencentcloudapi.woa.com/document/product/1628/83833)
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 34 次发布
-
-发布时间：2024-05-10 01:13:02
+发布时间：2024-05-13 01:06:39
 
 本次发布包含了以下内容：
 
@@ -28,56 +12,18 @@
 
 修改接口：
 
-* [DescribeCVMAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80805)
+* [RotateDataFlowAuth](http://document.tencentcloudapi.woa.com/document/product/598/83643)
 
-	* 新增出参：PublicPrivateAttr
-
-* [DescribeDbAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80802)
-
-	* 新增入参：MemberId
-
-	* 新增出参：PublicPrivateAttr
-
-* [DescribeOrganizationUserInfo](http://document.tencentcloudapi.woa.com/document/product/1726/82836)
-
-	* 新增入参：MemberId
-
-	* 新增出参：JoinTypeLst, CloudTypeLst
-
-
-修改数据结构：
-
-* [OrganizationUserInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrganizationUserInfo)
-
-	* 新增成员：SubUserCount, JoinTypeInfo
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 88 次发布
-
-发布时间：2024-05-10 01:13:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Item](http://document.tencentcloudapi.woa.com/document/product/296/19867#Item)
-
-	* 新增成员：CategoryId
+	* 新增入参：RotateFreq
 
 
 
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 82 次发布
+### 第 83 次发布
 
-发布时间：2024-05-10 01:14:47
+发布时间：2024-05-13 01:12:13
 
 本次发布包含了以下内容：
 
@@ -85,28 +31,19 @@
 
 新增接口：
 
-* [DescribeMaxResourcePackagesCanBound](http://document.tencentcloudapi.woa.com/document/product/1003/83836)
-* [ExportResourcePackageDeductDetails](http://document.tencentcloudapi.woa.com/document/product/1003/83835)
-* [ModifyResourcePackagesDeductionPriority](http://document.tencentcloudapi.woa.com/document/product/1003/83834)
-
-新增数据结构：
-
-* [PackagePriority](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PackagePriority)
-
-修改数据结构：
-
-* [ResourcePackage](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ResourcePackage)
-
-	* 新增成员：DeductionPriority
-
+* [CreateCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83842)
+* [DeleteCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83841)
+* [DescribeInstanceCLSLogDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83840)
+* [StartCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83839)
+* [StopCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83838)
 
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 84 次发布
+### 第 85 次发布
 
-发布时间：2024-05-10 01:18:14
+发布时间：2024-05-13 01:15:23
 
 本次发布包含了以下内容：
 
@@ -114,15 +51,55 @@
 
 新增接口：
 
-* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
+* [DescribeUserVerifyStatus](http://document.tencentcloudapi.woa.com/document/product/1668/83843)
 
 
 
-## 人脸核身(faceid) 版本：2018-03-01
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 60 次发布
+### 第 50 次发布
 
-发布时间：2024-05-10 01:18:45
+发布时间：2024-05-13 01:18:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：LatestOperationStartedTime
+
+* [InstancePriceDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePriceDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstancePrice, InstancePriceType, DiscountDetail
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 61 次发布
+
+发布时间：2024-05-13 01:19:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLivePadProcessorList](http://document.tencentcloudapi.woa.com/document/product/267/83845)
+* [StopLivePadProcessor](http://document.tencentcloudapi.woa.com/document/product/267/83844)
+
+
+
+## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 9 次发布
+
+发布时间：2024-05-13 01:19:37
 
 本次发布包含了以下内容：
 
@@ -130,153 +107,76 @@
 
 新增数据结构：
 
-* [MacaoIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MacaoIDCard)
-* [MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard)
+* [TaskFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1759/83593#TaskFlowInfo)
 
 修改数据结构：
 
-* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+* [MsgRecord](http://document.tencentcloudapi.woa.com/document/product/1759/83593#MsgRecord)
 
-	* 新增成员：MacaoIDCard, MainlandIDCard
-
-* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
-
-	* 新增成员：IsEdit
+	* 新增成员：SessionId, CanFeedback, ReplyMethod, OptionCards, TaskFlow
 
 
 
 
-## 图片瘦身(ic) 版本：2019-03-07
+## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 4 次发布
+### 第 57 次发布
 
-发布时间：2024-05-10 01:19:35
+发布时间：2024-05-13 01:23:40
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+新增接口：
 
-* PayForExtendData
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* RenewCards
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ResOrderIds
+* [DescribeDownloadCertificateUrl](http://document.tencentcloudapi.woa.com/document/product/400/83846)
 
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 40 次发布
+### 第 3 次发布
 
-发布时间：2024-05-10 01:25:53
+发布时间：2024-05-13 01:27:07
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/238/83770)
-
-	* <font color="#dd0000">**修改入参**：</font>UserAppId
-
-
-
-
-## 凭据管理系统(ssm) 版本：2019-09-23
-
-### 第 11 次发布
-
-发布时间：2024-05-10 01:26:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [RotateProductSecret](http://document.tencentcloudapi.woa.com/document/product/1140/58262)
-
-	* 新增入参：AdditionalConfig
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 100 次发布
-
-发布时间：2024-05-10 01:28:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
-
-	* <font color="#dd0000">**修改成员**：</font>AutoSubscriptionCreation
-
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-09-01
-
-### 第 35 次发布
-
-发布时间：2024-05-10 01:28:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreatePurgeTask](http://document.tencentcloudapi.woa.com/document/product/1738/81209)
-
-	* 新增入参：CacheTag
-
+* [CreateNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83849)
+* [DeleteNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83848)
+* [ModifyNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83847)
 
 新增数据结构：
 
-* [CacheTag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheTag)
+* [AutoUpgradeOptions](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoUpgradeOptions)
+* [CreateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#CreateNativeNodePoolParam)
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/457/74869#DataDisk)
+* [InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceChargePrepaid)
+* [IntOrString](http://document.tencentcloudapi.woa.com/document/product/457/74869#IntOrString)
+* [LifecycleConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#LifecycleConfig)
+* [MachineSetScaling](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineSetScaling)
+* [MachineUpgradeSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineUpgradeSettings)
+* [ManagementConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManagementConfig)
+* [UpdateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#UpdateNativeNodePoolParam)
 
 修改数据结构：
 
-* [Task](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Task)
+* [NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)
 
-	* 新增成员：Method
+	* 新增成员：Scaling, UpgradeSettings, AutoRepair, InstanceChargeType, InstanceChargePrepaid, SystemDisk, KeyIds, Management, HealthCheckPolicyName, HostNamePattern, KubeletArgs, Lifecycle, RuntimeRootDir, EnableAutoscaling, InstanceTypes, Replicas, InternetAccessible, DataDisks
 
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool)
 
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
-
+	* 新增成员：Tags, Unschedulable
 
 
-## 私有网络(vpc) 版本：2017-03-12
 
-### 第 135 次发布
 
-发布时间：2024-05-10 01:31:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AdjustPublicAddress](http://document.tencentcloudapi.woa.com/document/product/215/75006)
-
-	* 新增入参：RequestSourceInternal
-
+## 容器服务(tke) 版本：2018-05-25
 
 
 
@@ -8179,7 +8079,7 @@
 
 新增接口：
 
-* [[CreateSyncApplication](http://document.tencentcloudapi.woa.com/document/product/1628/83833)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateSyncApplication](http://document.tencentcloudapi.woa.com/document/product/1628/83833)
 
 ### 第 2 次发布
 
@@ -8533,6 +8433,21 @@
 
 
 ## 访问管理(cam) 版本：2019-01-16
+
+### 第 28 次发布
+
+发布时间：2024-05-13 01:06:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RotateDataFlowAuth](http://document.tencentcloudapi.woa.com/document/product/598/83643)
+
+	* 新增入参：RotateFreq
+
 
 ### 第 27 次发布
 
@@ -31740,6 +31655,22 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 83 次发布
+
+发布时间：2024-05-13 01:12:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83842)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83841)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstanceCLSLogDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83840)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StartCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83839)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83838)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 82 次发布
 
 发布时间：2024-05-10 01:14:47
@@ -31750,13 +31681,13 @@
 
 新增接口：
 
-* [[DescribeMaxResourcePackagesCanBound](http://document.tencentcloudapi.woa.com/document/product/1003/83836)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ExportResourcePackageDeductDetails](http://document.tencentcloudapi.woa.com/document/product/1003/83835)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyResourcePackagesDeductionPriority](http://document.tencentcloudapi.woa.com/document/product/1003/83834)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeMaxResourcePackagesCanBound](http://document.tencentcloudapi.woa.com/document/product/1003/83836)
+* [ExportResourcePackageDeductDetails](http://document.tencentcloudapi.woa.com/document/product/1003/83835)
+* [ModifyResourcePackagesDeductionPriority](http://document.tencentcloudapi.woa.com/document/product/1003/83834)
 
 新增数据结构：
 
-* [[PackagePriority](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PackagePriority)](http://document.tencentcloudapi.woa.com/document/product/1003/48097#[PackagePriority](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PackagePriority))
+* [PackagePriority](http://document.tencentcloudapi.woa.com/document/product/1003/48097#PackagePriority)
 
 修改数据结构：
 
@@ -44059,6 +43990,18 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 85 次发布
+
+发布时间：2024-05-13 01:15:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUserVerifyStatus](http://document.tencentcloudapi.woa.com/document/product/1668/83843)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 84 次发布
 
 发布时间：2024-05-10 01:18:14
@@ -44069,7 +44012,7 @@
 
 新增接口：
 
-* [[CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
 
 ### 第 83 次发布
 
@@ -48835,8 +48778,8 @@
 
 新增数据结构：
 
-* [[MacaoIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MacaoIDCard)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[MacaoIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MacaoIDCard))
-* [[MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard))
+* [MacaoIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MacaoIDCard)
+* [MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard)
 
 修改数据结构：
 
@@ -57235,6 +57178,25 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 50 次发布
+
+发布时间：2024-05-13 01:18:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：LatestOperationStartedTime
+
+* [InstancePriceDetail](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePriceDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstancePrice, InstancePriceType, DiscountDetail
+
+
 ### 第 49 次发布
 
 发布时间：2024-03-11 01:19:45
@@ -58322,6 +58284,19 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 61 次发布
+
+发布时间：2024-05-13 01:19:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeLivePadProcessorList](http://document.tencentcloudapi.woa.com/document/product/267/83845)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[StopLivePadProcessor](http://document.tencentcloudapi.woa.com/document/product/267/83844)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 60 次发布
 
@@ -59676,6 +59651,25 @@
 
 
 ## 大模型知识引擎(lke) 版本：2023-11-30
+
+### 第 9 次发布
+
+发布时间：2024-05-13 01:19:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[TaskFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1759/83593#TaskFlowInfo)](http://document.tencentcloudapi.woa.com/document/product/1759/83593#[TaskFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1759/83593#TaskFlowInfo))
+
+修改数据结构：
+
+* [MsgRecord](http://document.tencentcloudapi.woa.com/document/product/1759/83593#MsgRecord)
+
+	* 新增成员：SessionId, CanFeedback, ReplyMethod, OptionCards, TaskFlow
+
 
 ### 第 8 次发布
 
@@ -77102,6 +77096,18 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 57 次发布
+
+发布时间：2024-05-13 01:23:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDownloadCertificateUrl](http://document.tencentcloudapi.woa.com/document/product/400/83846)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 56 次发布
 
 发布时间：2024-04-23 01:27:39
@@ -86580,7 +86586,7 @@
 
 新增数据结构：
 
-* [[CacheTag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheTag)](http://document.tencentcloudapi.woa.com/document/product/1738/81211#[CacheTag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheTag))
+* [CacheTag](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheTag)
 
 修改数据结构：
 
@@ -92156,6 +92162,44 @@
 
 
 ## 容器服务(tke) 版本：2022-05-01
+
+### 第 3 次发布
+
+发布时间：2024-05-13 01:27:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83849)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83848)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyNodePool](http://document.tencentcloudapi.woa.com/document/product/457/83847)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AutoUpgradeOptions](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoUpgradeOptions)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[AutoUpgradeOptions](http://document.tencentcloudapi.woa.com/document/product/457/74869#AutoUpgradeOptions))
+* [[CreateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#CreateNativeNodePoolParam)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[CreateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#CreateNativeNodePoolParam))
+* [[DataDisk](http://document.tencentcloudapi.woa.com/document/product/457/74869#DataDisk)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[DataDisk](http://document.tencentcloudapi.woa.com/document/product/457/74869#DataDisk))
+* [[InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceChargePrepaid)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/457/74869#InstanceChargePrepaid))
+* [[IntOrString](http://document.tencentcloudapi.woa.com/document/product/457/74869#IntOrString)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[IntOrString](http://document.tencentcloudapi.woa.com/document/product/457/74869#IntOrString))
+* [[LifecycleConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#LifecycleConfig)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[LifecycleConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#LifecycleConfig))
+* [[MachineSetScaling](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineSetScaling)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[MachineSetScaling](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineSetScaling))
+* [[MachineUpgradeSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineUpgradeSettings)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[MachineUpgradeSettings](http://document.tencentcloudapi.woa.com/document/product/457/74869#MachineUpgradeSettings))
+* [[ManagementConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManagementConfig)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[ManagementConfig](http://document.tencentcloudapi.woa.com/document/product/457/74869#ManagementConfig))
+* [[UpdateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#UpdateNativeNodePoolParam)](http://document.tencentcloudapi.woa.com/document/product/457/74869#[UpdateNativeNodePoolParam](http://document.tencentcloudapi.woa.com/document/product/457/74869#UpdateNativeNodePoolParam))
+
+修改数据结构：
+
+* [NativeNodePoolInfo](http://document.tencentcloudapi.woa.com/document/product/457/74869#NativeNodePoolInfo)
+
+	* 新增成员：Scaling, UpgradeSettings, AutoRepair, InstanceChargeType, InstanceChargePrepaid, SystemDisk, KeyIds, Management, HealthCheckPolicyName, HostNamePattern, KubeletArgs, Lifecycle, RuntimeRootDir, EnableAutoscaling, InstanceTypes, Replicas, InternetAccessible, DataDisks
+
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/74869#NodePool)
+
+	* 新增成员：Tags, Unschedulable
+
 
 ### 第 2 次发布
 
