@@ -105,6 +105,22 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9e24deb-dd6d-4fe5-b0ca-c9292d1f1a9d\",\n        \"TokenCount\": 2,\n        \"CharacterCount\": 3,\n        \"Tokens\": [\n            \"你是\",\n            \"谁\"\n        ]\n    }\n}",
         "title": "调用接口成功案例"
       }
+    ],
+    "QueryHunyuanImageJob": [
+      {
+        "document": "成功查询",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"56b2ecae-46e4-4697-87d2-dc2b3bbbc2c6\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https:/result.jpg\"\n        ],\n        \"RevisedPrompt\": [\n            \"摄影风格，画面主要描述一座雄伟的山峰，山顶覆盖着白雪，阳光照耀下闪耀着光芒，背景是蔚蓝的天空，镜头是全景\"\n        ]\n    }\n}",
+        "title": "成功查询"
+      }
+    ],
+    "SubmitHunyuanImageJob": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雪山\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"test\",\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
+        "title": "调用成功"
+      }
     ]
   },
   "version": "1.0"

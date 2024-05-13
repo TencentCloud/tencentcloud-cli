@@ -202,6 +202,14 @@
         "title": "证书查询关联资源"
       }
     ],
+    "DescribeDownloadCertificateUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDownloadCertificateUrl\n<公共请求参数>\n\n{\n    \"CertificateId\": \"sduwd123\",\n    \"ServiceType\": \"nginx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx-xxx\",\n        \"DownloadCertificateUrl\": \"http://xxx.zip\",\n        \"DownloadFilename\": \"xxx.com_nginx.zip\"\n    }\n}",
+        "title": "返回成功"
+      }
+    ],
     "DescribeHostApiGatewayInstanceList": [
       {
         "document": "查询证书ddos云资源部署实例列表",

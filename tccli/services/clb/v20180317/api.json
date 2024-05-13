@@ -6074,7 +6074,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SourceIpType",

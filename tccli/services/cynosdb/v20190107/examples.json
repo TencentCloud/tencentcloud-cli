@@ -112,6 +112,14 @@
         "title": "创建备份"
       }
     ],
+    "CreateCLSDelivery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSDelivery\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "title": "创建日志投递"
+      }
+    ],
     "CreateClusterDatabase": [
       {
         "document": "创建数据库",
@@ -196,6 +204,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DeleteBackup\n&ClusterId=cynosdbpg-45knmnra\n&SnapshotIdList.0=4928\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "删除备份"
+      }
+    ],
+    "DeleteCLSDelivery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCLSDelivery\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "title": "删除日志投递"
       }
     ],
     "DeleteClusterDatabase": [
@@ -432,6 +448,14 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=DescribeFlow\n&FlowId=123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"186253\"\n    }\n}",
         "title": "查询任务流信息"
+      }
+    ],
+    "DescribeInstanceCLSLogDelivery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceCLSLogDelivery\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "title": "查询实例日志投递信息"
       }
     ],
     "DescribeInstanceDetail": [
@@ -1046,6 +1070,22 @@
         "input": "https://cynosdb.tencentcloudapi.com/?Action=SetRenewFlag\n&ResourceIds.0=cynosdbmysql-xxxxxxx\n&AutoRenewFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"123123123\"\n    }\n}",
         "title": "设置自动续费标志"
+      }
+    ],
+    "StartCLSDelivery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCLSDelivery\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "title": "开启日志投递"
+      }
+    ],
+    "StopCLSDelivery": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCLSDelivery\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "title": "停止日志投递"
       }
     ],
     "SwitchClusterVpc": [

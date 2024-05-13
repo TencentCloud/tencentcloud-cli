@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateNodePool": {
+      "document": "创建 TKE 节点池",
+      "input": "CreateNodePoolRequest",
+      "name": "创建 TKE 节点池",
+      "output": "CreateNodePoolResponse",
+      "status": "online"
+    },
+    "DeleteNodePool": {
+      "document": "删除 TKE 节点池",
+      "input": "DeleteNodePoolRequest",
+      "name": "删除 TKE 节点池",
+      "output": "DeleteNodePoolResponse",
+      "status": "online"
+    },
     "DescribeClusterInstances": {
       "document": "查询集群下节点实例信息",
       "input": "DescribeClusterInstancesRequest",
@@ -12,6 +26,13 @@
       "input": "DescribeNodePoolsRequest",
       "name": "查询 TKE 节点池列表",
       "output": "DescribeNodePoolsResponse",
+      "status": "online"
+    },
+    "ModifyNodePool": {
+      "document": "更新 TKE 节点池",
+      "input": "ModifyNodePoolRequest",
+      "name": "更新 TKE 节点池",
+      "output": "ModifyNodePoolResponse",
       "status": "online"
     }
   },
@@ -44,6 +65,42 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoUpgradeOptions": {
+      "document": "托管节点池运维窗口设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动升级开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24:00",
+          "member": "string",
+          "name": "AutoUpgradeStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动升级持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3h",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运维日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Monday\"]",
+          "member": "string",
+          "name": "WeeklyPeriod",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -93,6 +150,462 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateNativeNodePoolParam": {
+      "document": "原生节点池创建参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池伸缩配置",
+          "example": "无",
+          "member": "MachineSetScaling",
+          "name": "Scaling",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "子网列表",
+          "example": "[\"subnet-xxx\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统盘配置",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "机型列表",
+          "example": "[\"S2.SMALL2\"]",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安全组列表",
+          "example": "[\"sg-xxx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动升级配置",
+          "example": "无",
+          "member": "MachineUpgradeSettings",
+          "name": "UpgradeSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自愈能力",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRepair",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月机型计费配置",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "节点池 Management 参数设置",
+          "example": "无",
+          "member": "ManagementConfig",
+          "name": "Management",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "故障自愈规则名称",
+          "example": "policy1",
+          "member": "string",
+          "name": "HealthCheckPolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池hostName模式串",
+          "example": "aaa{R:3}",
+          "member": "string",
+          "name": "HostNamePattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kubelet 自定义参数",
+          "example": "[]",
+          "member": "string",
+          "name": "KubeletArgs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预定义脚本",
+          "example": "无",
+          "member": "LifecycleConfig",
+          "name": "Lifecycle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "运行时根目录",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "RuntimeRootDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性伸缩",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAutoscaling",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "期望节点数",
+          "example": "10",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽设置",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池数据盘列表",
+          "example": "[]",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点池ssh公钥id数组",
+          "example": "[\"sky-6esd9xe\",\"sky-shjixw8\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateNodePoolRequest": {
+      "document": "CreateNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池名称",
+          "example": "testnodepool",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池类型",
+          "example": "Hosted",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点  Labels",
+          "example": "[]",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点污点",
+          "example": "[]",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点标签",
+          "example": "[]",
+          "member": "TagSpecification",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点是否默认不可调度",
+          "example": "false",
+          "member": "bool",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池创建参数",
+          "example": "无",
+          "member": "CreateNativeNodePoolParam",
+          "name": "Native",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "节点 Annotation 列表",
+          "example": "[]",
+          "member": "Annotation",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNodePoolResponse": {
+      "document": "CreateNodePool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池 ID",
+          "example": "np-xxxxxxxx",
+          "member": "string",
+          "name": "NodePoolId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataDisk": {
+      "document": "描述了k8s节点数据盘相关配置与信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件系统(ext3/ext4/xfs)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ext4",
+          "member": "string",
+          "name": "FileSystem",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云盘大小(G）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动化格式盘并挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoFormatAndMount",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载设备名或分区名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/dev/vdb",
+          "member": "string",
+          "name": "DiskPartition",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "MountTarget",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENCRYPT",
+          "member": "string",
+          "name": "Encrypt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买加密盘时自定义密钥，当传入该参数时, Encrypt入参不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06a83929-0050-11ee-8cbc-5254001955d1",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照ID，如果传入则根据此快照创建云硬盘，快照类型必须为数据盘快照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "snap-2ubk61lh",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘性能，单位：MB/s。使用此参数可给云硬盘购买额外的性能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "ThroughputPerformance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteNodePoolRequest": {
+      "document": "DeleteNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池 ID",
+          "example": "np-xxxxxxxx",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNodePoolResponse": {
+      "document": "DeleteNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeClusterInstancesRequest": {
       "document": "DescribeClusterInstances请求参数结构体",
@@ -260,6 +773,62 @@
         }
       ],
       "type": "object"
+    },
+    "Disk": {
+      "document": "节点系统盘和数据盘配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云盘类型",
+          "example": "CloudPremiumDiskType",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云盘大小(G）",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动化格式盘并挂载",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoFormatAndMount",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统",
+          "example": "xfs",
+          "member": "string",
+          "name": "FileSystem",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载目录",
+          "example": "/var/lib/containerd",
+          "member": "string",
+          "name": "MountTarget",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExternalNodeInfo": {
       "document": "第三方节点",
@@ -551,6 +1120,34 @@
       ],
       "usage": "both"
     },
+    "InstanceChargePrepaid": {
+      "document": "包年包月配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后付费计费周期，单位（月）：\n1，2，3，4，5，，6，7， 8，9，10，11，12，24，36，48，60",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 (默认）\n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不不自动续费\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceExtraArgs": {
       "document": "节点自定义参数",
       "members": [
@@ -562,6 +1159,42 @@
           "name": "Kubelet",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IntOrString": {
+      "document": "数值结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数值类型，0是int,  1是字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Int",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "整数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "IntVal",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20%",
+          "member": "string",
+          "name": "StrVal",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -632,6 +1265,153 @@
       ],
       "usage": "both"
     },
+    "LifecycleConfig": {
+      "document": "节点池自定义脚本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点初始化前自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreInit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点初始化后自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PostInit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MachineSetScaling": {
+      "document": "节点池弹性伸缩配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点池最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点池最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点池扩容策略。ZoneEquality：多可用区打散；ZonePriority：首选可用区优先；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ZoneEquality",
+          "member": "string",
+          "name": "CreatePolicy",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MachineUpgradeSettings": {
+      "document": "托管节点池自动升级配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启自动升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoUpgrade",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运维窗口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoUpgradeOptions",
+          "name": "UpgradeOptions",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"kubelet\",\"kernel\"]",
+          "member": "string",
+          "name": "Components",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级时，最大不可升级的节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntOrString",
+          "name": "MaxUnavailable",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagementConfig": {
+      "document": "托管节点池Management配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "dns 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"nameserver 183.87.111.111\"]",
+          "member": "string",
+          "name": "Nameservers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hosts 配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1 iam.marmotedu.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内核参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"kernel.pid_max=4194304\"]",
+          "member": "string",
+          "name": "KernelArgs",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ManuallyAdded": {
       "document": "手动加入的节点",
       "members": [
@@ -677,6 +1457,114 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyNodePoolRequest": {
+      "document": "ModifyNodePool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池 ID",
+          "example": "np-xxxxxxxx",
+          "member": "string",
+          "name": "NodePoolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点池名称",
+          "example": "testnodepool",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点  Labels",
+          "example": "[]",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点污点",
+          "example": "[]",
+          "member": "Taint",
+          "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点标签",
+          "example": "[]",
+          "member": "TagSpecification",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点是否不可调度",
+          "example": "false",
+          "member": "bool",
+          "name": "Unschedulable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池更新参数",
+          "example": "无",
+          "member": "UpdateNativeNodePoolParam",
+          "name": "Native",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "节点 Annotation 列表",
+          "example": "[]",
+          "member": "Annotation",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNodePoolResponse": {
+      "document": "ModifyNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "NativeNodeInfo": {
       "document": "节点信息",
@@ -909,6 +1797,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "伸缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineSetScaling",
+          "name": "Scaling",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "子网列表",
           "example": "[\"subnet-xxx\"]",
           "member": "string",
@@ -924,6 +1822,176 @@
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动升级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineUpgradeSettings",
+          "name": "UpgradeSettings",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自愈能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRepair",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点计费类型",
+          "example": "PrepaidChargeType",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包年包月机型计费配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统盘配置",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "KeyIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Machine 系统配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagementConfig",
+          "name": "Management",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "故障自愈规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "policy1",
+          "member": "string",
+          "name": "HealthCheckPolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池hostName模式串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa{R:3}",
+          "member": "string",
+          "name": "HostNamePattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kubelet 自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "KubeletArgs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LifecycleConfig",
+          "name": "Lifecycle",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时根目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "RuntimeRootDir",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAutoscaling",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机型列表",
+          "example": "[]",
+          "member": "string",
+          "name": "InstanceTypes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "期望节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Replicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -981,6 +2049,16 @@
         },
         {
           "disabled": false,
+          "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TagSpecification",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "节点污点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "Taint",
@@ -995,6 +2073,16 @@
           "example": "true",
           "member": "bool",
           "name": "DeletionProtection",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点是否不可调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Unschedulable",
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -1456,6 +2544,58 @@
       ],
       "usage": "out"
     },
+    "Tag": {
+      "document": "标签绑定的资源类型，当前支持类型：\"cluster\"",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagSpecification": {
+      "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云主机实例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签绑定的资源类型，当前支持类型：\"cluster\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Taint": {
       "document": "kubernetes Taint",
       "members": [
@@ -1491,6 +2631,183 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateNativeNodePoolParam": {
+      "document": "修改原生节点池参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩配置",
+          "example": "无",
+          "member": "MachineSetScaling",
+          "name": "Scaling",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "子网列表",
+          "example": "[\"subnet-xxx\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安全组列表",
+          "example": "[\"sg-xxx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动升级配置",
+          "example": "无",
+          "member": "MachineUpgradeSettings",
+          "name": "UpgradeSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自愈能力",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRepair",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点计费类型变更\n当前仅支持按量计费转包年包月：\n- PREPAID\n",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月机型计费配置",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "系统盘配置",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Machine 系统配置",
+          "example": "无",
+          "member": "ManagementConfig",
+          "name": "Management",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "故障自愈规则名称",
+          "example": "policy1",
+          "member": "string",
+          "name": "HealthCheckPolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池hostName模式串",
+          "example": "aaa{R:3}",
+          "member": "string",
+          "name": "HostNamePattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kubelet 自定义参数",
+          "example": "[]",
+          "member": "string",
+          "name": "KubeletArgs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预定义脚本",
+          "example": "无",
+          "member": "LifecycleConfig",
+          "name": "Lifecycle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "运行时根目录",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "RuntimeRootDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性伸缩",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAutoscaling",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "机型列表",
+          "example": "[]",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "期望节点数",
+          "example": "10",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘列表",
+          "example": "[]",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ssh公钥id数组",
+          "example": "[\"sky-test\",\"sky-test2\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cwp DescribePublicProxyInstallCommand --cli-unfold-argument  \
-    --Ip xx
+    --Ip 0.0.0.0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "KeepAliveCommand": "xx",
-        "NginxCommand": "xx",
-        "RequestId": "xx"
+        "KeepAliveCommand": "abc",
+        "NginxCommand": "abc",
+        "RequestId": "abc"
     }
 }
 ```

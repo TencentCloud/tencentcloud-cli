@@ -4975,7 +4975,7 @@
         },
         {
           "disabled": false,
-          "document": "业务结果详细信息。（当VerifyMode配置\"详版\"，且Result为\"-4: 三要素信息不一致\"时返回）\n\n枚举值：\n\n手机号码与姓名一致，与身份证号不一致；\n\n手机号码身份证号一致，与姓名不一致；\n\n手机号码与姓名和身份证号均不一致；\n\n姓名和身份证号不一致；\n\n其他不一致。",
+          "document": "业务结果详细信息。（当VerifyMode配置\"详版\"，且Result为\"-4: 三要素信息不一致\"时返回）\n枚举值：\nPhoneIdCardMismatch：手机号码与姓名一致，与身份证号不一致；\nPhoneNameMismatch：手机号码身份证号一致，与姓名不一致；\nPhoneNameIdCardMismatch：手机号码与姓名和身份证号均不一致；\nNameIdCardMismatch：姓名和身份证号不一致；\nOtherMismatch：其他不一致；",
           "example": "无",
           "member": "string",
           "name": "ResultDetail",

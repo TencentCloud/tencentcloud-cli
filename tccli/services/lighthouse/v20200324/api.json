@@ -155,7 +155,7 @@
       "status": "online"
     },
     "DeleteSnapshots": {
-      "document": "本接口（DeleteSnapshots）用于删除快照。\n快照必须处于 NORMAL 状态，快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。",
+      "document": "本接口（DeleteSnapshots）用于删除快照。\n快照必须处于 NORMAL 状态，快照状态可以通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a> 接口查询，见输出参数中 SnapshotState 字段解释。",
       "input": "DeleteSnapshotsRequest",
       "name": "删除快照",
       "output": "DeleteSnapshotsResponse",
@@ -3093,7 +3093,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘大小。",
+          "document": "云硬盘大小, 单位: GB。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -6957,6 +6957,16 @@
         },
         {
           "disabled": false,
+          "document": "实例最新操作的开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-01T06:34:59Z",
+          "member": "datetime_iso",
+          "name": "LatestOperationStartedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
@@ -7201,7 +7211,7 @@
           "example": "lhins-xxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7211,7 +7221,7 @@
           "example": "无",
           "member": "InstancePrice",
           "name": "InstancePrice",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7221,7 +7231,7 @@
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

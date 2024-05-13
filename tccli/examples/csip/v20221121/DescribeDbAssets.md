@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeDbAssets --cli-unfold-argument  \
+    --MemberId abc \
     --Filter.Limit 0 \
     --Filter.Offset 0 \
     --Filter.Order abc \
@@ -74,6 +75,12 @@ Output:
             }
         ],
         "AppIdList": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "PublicPrivateAttr": [
             {
                 "Value": "abc",
                 "Text": "abc"

@@ -2143,8 +2143,8 @@
     "DescribePublicProxyInstallCommand": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicProxyInstallCommand\n<公共请求参数>\n\n{\n    \"Ip\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"KeepAliveCommand\": \"xx\",\n        \"NginxCommand\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicProxyInstallCommand\n<公共请求参数>\n\n{\n    \"Ip\": \"0.0.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeepAliveCommand\": \"abc\",\n        \"NginxCommand\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribePublicProxyInstallCommand"
       }
     ],

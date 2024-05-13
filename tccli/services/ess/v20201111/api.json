@@ -162,7 +162,7 @@
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。创建的员工初始化为未实名，如下图所示。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2bdcc0d91ac3146b5e8c28811a78ffe9.png)\n\n支持以下场景\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号</td>\n<td>发送短信通知员工（短信中带有认证加入企业的链接）   ![image]() </td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，需<font color=\"red\">确保该企微员工在应用的可见范围内</font></td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号，<font color=\"red\">此场景不支持企微</font></td>\n<td>生成认证加入企业的H5链接，贵方可以通过自己的渠道触达到此员工</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n-  <b> 新增员工的手机号、OpenId不能与已加入员工重复</b>， 不管已加入员工的手机号、OpenId是否已经实名\n- <b>若通过手机号发现员工已经创建且信息一致（名字，openId等），则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。\n\n\n\n短信的样式\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b6ad1b79e0adaaa41d282456c72a1ee6.png)",
+      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。创建的员工初始化为未实名，如下图所示。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/2bdcc0d91ac3146b5e8c28811a78ffe9.png)\n\n支持以下场景\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号</td>\n<td>发送短信通知员工（短信中带有认证加入企业的链接）  </td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，需<font color=\"red\">确保该企微员工在应用的可见范围内</font></td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，将Employees中的DisplayName设置员工的名字，Mobile设置成员工的手机号，<font color=\"red\">此场景不支持企微</font></td>\n<td>生成认证加入企业的H5链接，贵方可以通过自己的渠道触达到此员工</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n-  <b> 新增员工的手机号、OpenId不能与已加入员工重复</b>， 不管已加入员工的手机号、OpenId是否已经实名\n- <b>若通过手机号发现员工已经创建且信息一致（名字，openId等），则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。\n\n\n\n短信的样式\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b6ad1b79e0adaaa41d282456c72a1ee6.png)",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -232,7 +232,7 @@
       "status": "online"
     },
     "CreateReleaseFlow": {
-      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均变为已解除状态。</li>\n<li>非原合同企业参与人发起解除协议时，需要有<code>解除合同的权限</code>。</li>\n</ul>",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议签署完毕后，原合同及解除协议均变为已解除状态。</li>\n<li>非原合同企业参与人发起解除协议时，需要有<code>解除合同的权限</code>。</li>\n</ul>",
       "input": "CreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "CreateReleaseFlowResponse",
@@ -271,6 +271,13 @@
       "input": "CreateUserAutoSignSealUrlRequest",
       "name": "获取设置自动签印章小程序链接",
       "output": "CreateUserAutoSignSealUrlResponse",
+      "status": "online"
+    },
+    "CreateUserVerifyUrl": {
+      "document": "客户可以主动调用生成实名链接去做C端用户实名，会对实名的用户进行打标记为调用链接客户的用户\n使用场景：\n用户集成场景\n使用限制：\n此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估",
+      "input": "CreateUserVerifyUrlRequest",
+      "name": "获取c端用户实名链接",
+      "output": "CreateUserVerifyUrlResponse",
       "status": "online"
     },
     "CreateWebThemeConfig": {
@@ -460,6 +467,13 @@
       "input": "DescribeUserAutoSignStatusRequest",
       "name": "获取个人用户自动签的开通状态",
       "output": "DescribeUserAutoSignStatusResponse",
+      "status": "online"
+    },
+    "DescribeUserVerifyStatus": {
+      "document": "用于客户企业在调用生成[C端用户实名链接（CreateUserVerifyUrl）](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)接口之前判断C端用户是否实名，如果已经实名，就不需要再次调用生成C端链接接口去实名\n注意：此接口仅会返回当前员工是否通过[C端用户实名链接（CreateUserVerifyUrl）](https://qian.tencent.com/developers/companyApis/users/CreateUserVerifyUrl)所实名的员工是否实名，并不会返回个人用户自己在电子签进行实名的状况",
+      "input": "DescribeUserVerifyStatusRequest",
+      "name": "查询用户实名状态",
+      "output": "DescribeUserVerifyStatusResponse",
       "status": "online"
     },
     "DisableUserAutoSign": {
@@ -1802,7 +1816,7 @@
         },
         {
           "disabled": false,
-          "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE类型时</font>，可以**ComponentTypeLimit**参数控制签署方式\n<ul><li> <b>HANDWRITE</b> : 手写签名</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`",
+          "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE类型时</font>，可以**ComponentTypeLimit**参数控制签署方式\n<ul><li> <b>HANDWRITE</b> :  需要实时手写的手写签名</li>\n<li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`",
           "example": "无",
           "member": "string",
           "name": "ComponentExtra",
@@ -1971,7 +1985,7 @@
         },
         {
           "disabled": false,
-          "document": "签署控件类型的值(可选)，用与限制签署时印章或者签名的选择范围\n\n1.当ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时可传入企业印章Id（支持多个）\n\n2.当ComponentType 是 SIGN_SIGNATURE 时可传入以下类型（支持多个）\n\n<ul><li>HANDWRITE : 手写签名</li>\n<li>OCR_ESIGN : OCR印章（智慧手写签名）</li>\n<li>ESIGN : 个人印章</li>\n<li>SYSTEM_ESIGN : 系统印章</li></ul>\n\n3.当ComponentType 是 SIGN_LEGAL_PERSON_SEAL 时无需传递此参数。",
+          "document": "签署控件类型的值(可选)，用与限制签署时印章或者签名的选择范围\n\n1.当ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时可传入企业印章Id（支持多个）\n\n2.当ComponentType 是 SIGN_SIGNATURE 时可传入以下类型（支持多个）\n\n<ul><li>HANDWRITE : 需要实时手写的手写签名</li>\n<li>HANDWRITTEN_ESIGN : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li>OCR_ESIGN : OCR印章（智慧手写签名）</li>\n<li>ESIGN : 个人印章</li>\n<li>SYSTEM_ESIGN : 系统印章</li></ul>\n\n3.当ComponentType 是 SIGN_LEGAL_PERSON_SEAL 时无需传递此参数。",
           "example": "无",
           "member": "string",
           "name": "ComponentValue",
@@ -6172,6 +6186,117 @@
       ],
       "type": "object"
     },
+    "CreateUserVerifyUrlRequest": {
+      "document": "CreateUserVerifyUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的身份证号码，\n身份证号码如果有x的话，统一传大写X",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件类型，目前只支持身份证类型：ID_CARD",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要实名的手机号，兼容带+86的格式",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型\n\n- HTTP：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型 ，此时返回长链 (默认类型)\n\n- HTTP_SHORT_URL：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型，此时返回短链\n\n- APP：\n第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型\n\n如果不传递，默认值是 APP",
+          "example": "APP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 实名完成不会自动跳转回来(默认)</li><li>true：是, 实名完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（电子签小程序跳转贵方小程序）场景</font> 的实名链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必需用户手动点击完成按钮（微信的限制）</font> ",
+          "example": "无",
+          "member": "bool",
+          "name": "AutoJumpBack",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserVerifyUrlResponse": {
+      "document": "CreateUserVerifyUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n\n注： 生成的链路后面不能再增加参数\n示例值：https://essurl.cn/2n**42Nd",
+          "example": "无",
+          "member": "string",
+          "name": "UserVerifyUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序appid，用于半屏拉起电子签小程序， 仅在 Endpoint 设置为 APP 的时候返回",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWebThemeConfigRequest": {
       "document": "CreateWebThemeConfig请求参数结构体",
       "members": [
@@ -8373,6 +8498,61 @@
       ],
       "type": "object"
     },
+    "DescribeUserVerifyStatusRequest": {
+      "document": "DescribeUserVerifyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件号，身份证如果有x的话，统一按照大写X传递",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserVerifyStatusResponse": {
+      "document": "DescribeUserVerifyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true:表示已实名\nfalse：表示未实名",
+          "example": "false",
+          "member": "bool",
+          "name": "VerifyStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetectInfoVideoData": {
       "document": "视频认证结果",
       "members": [
@@ -9536,7 +9716,7 @@
         },
         {
           "disabled": false,
-          "document": "当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：\n\n<ul><li> <b>HANDWRITE</b> :手写签名。</li>\n<li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li>\n<li> <b>ESIGN</b> :个人印章类型。</li>\n<li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li>\n<li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul>\n\n各种签名的样式可以参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)",
+          "document": "当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：\n\n<ul><li> <b>HANDWRITE</b> :需要实时手写的手写签名。</li>\n<li> <b>HANDWRITTEN_ESIGN</b> :长效手写签名， 是使用保存到个人中心的印章列表的手写签名。(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li>\n<li> <b>ESIGN</b> :个人印章类型。</li>\n<li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li>\n<li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul>\n\n各种签名的样式可以参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)",
           "example": "无",
           "member": "string",
           "name": "ComponentLimitType",

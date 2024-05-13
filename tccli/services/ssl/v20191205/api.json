@@ -161,6 +161,13 @@
       "output": "DescribeDeployedResourcesResponse",
       "status": "online"
     },
+    "DescribeDownloadCertificateUrl": {
+      "document": "获取下载证书链接",
+      "input": "DescribeDownloadCertificateUrlRequest",
+      "name": "获取下载证书链接",
+      "output": "DescribeDownloadCertificateUrlResponse",
+      "status": "online"
+    },
     "DescribeHostApiGatewayInstanceList": {
       "document": "查询证书apiGateway云资源部署实例列表",
       "input": "DescribeHostApiGatewayInstanceListRequest",
@@ -4547,6 +4554,62 @@
           "name": "DeployedResources",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadCertificateUrlRequest": {
+      "document": "DescribeDownloadCertificateUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "s2dyw1",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载的服务类型: nginx tomcat apache iis jks other root",
+          "example": "nginx",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDownloadCertificateUrlResponse": {
+      "document": "DescribeDownloadCertificateUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载链接",
+          "example": "https://xxxxx.zip",
+          "member": "string",
+          "name": "DownloadCertificateUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载文件的名称",
+          "example": "xxx.com_nginx.zip",
+          "member": "string",
+          "name": "DownloadFilename",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

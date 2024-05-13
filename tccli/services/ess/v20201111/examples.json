@@ -996,6 +996,14 @@
         "title": "错误示例-获取设置自动签印章的小程序链接。"
       }
     ],
+    "CreateUserVerifyUrl": [
+      {
+        "document": "获取c端用户实名链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserVerifyUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"19561039c99fe825a934a132520fde6a\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"Name\": \"典子谦\",\n    \"Endpoint\": \"HTTP_SHORT_URL\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"420101XXXXXXXX4059\",\n    \"Mobile\": \"13200000015\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1713080196,\n        \"MiniAppId\": \"wxa023b292fd19d41d\",\n        \"RequestId\": \"s1712475396892401448\",\n        \"UserVerifyUrl\": \"https://test.essurl.cn/RTo2UBE6X6\"\n    }\n}",
+        "title": "获取c端用户实名链接"
+      }
+    ],
     "CreateWebThemeConfig": [
       {
         "document": "创建主题配置： 展示腾讯电子签的logo，红色主题",
@@ -1402,6 +1410,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"1.2.3.4\",\n        \"UserId\": \"yDRCLUUgygq2xu********Ewg0vjoimj\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"典子谦\",\n        \"IdCardType\": \"ID_CARD\",\n        \"IdCardNumber\": \"620000198802020000\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\"\n}",
         "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684412179,\n        \"LicenseTo\": 1715948179,\n        \"LicenseType\": 0,\n        \"RequestId\": \"5beb5fxxxxx-a97c85196a3e\"\n    }\n}",
         "title": "查看个人自动签状态"
+      }
+    ],
+    "DescribeUserVerifyStatus": [
+      {
+        "document": "通过二要素查询用户是否实名",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserVerifyStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"Name\": \"abc\",\n    \"IdCardNumber\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VerifyStatus\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过二要素查询用户是否实名"
       }
     ],
     "DisableUserAutoSign": [

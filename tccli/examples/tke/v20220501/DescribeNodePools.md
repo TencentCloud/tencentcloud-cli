@@ -66,8 +66,10 @@ Output:
                     "NodePoolOs": "ubuntu20.04x86_64"
                 },
                 "Super": null,
+                "Tags": [],
                 "Taints": [],
-                "Type": "Regular"
+                "Type": "Regular",
+                "Unschedulable": false
             },
             {
                 "Annotations": [],
@@ -102,8 +104,10 @@ Output:
                 "NodePoolId": "np-llfflb19",
                 "Regular": null,
                 "Super": null,
+                "Tags": [],
                 "Taints": [],
-                "Type": "External"
+                "Type": "External",
+                "Unschedulable": false
             },
             {
                 "Annotations": [],
@@ -142,8 +146,10 @@ Output:
                 "NodePoolId": "np-iw0qds8t",
                 "Regular": null,
                 "Super": null,
+                "Tags": [],
                 "Taints": [],
-                "Type": "External"
+                "Type": "External",
+                "Unschedulable": false
             }
         ],
         "RequestId": "354c45c4-0eb2-464d-82f8-3dd55ca88a80",

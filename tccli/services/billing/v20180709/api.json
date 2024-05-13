@@ -1156,7 +1156,7 @@
         },
         {
           "disabled": false,
-          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n-1 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "费用归集类型：费用来源类型，分摊、归集、未分配\n0 - 分摊\n1 - 归集\n2 - 未分配\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "AllocationType",
@@ -9991,7 +9991,7 @@
         },
         {
           "disabled": false,
-          "document": "账单文件下载链接，有效时长为一小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账单文件下载链接，有效时长为一天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DownloadUrl",

@@ -232,7 +232,7 @@
       "status": "online"
     },
     "GetEmbedding": {
-      "document": "获取特征向量\n本接口有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "document": "本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。\n本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "GetEmbeddingRequest",
       "name": "获取特征向量",
       "output": "GetEmbeddingResponse",
@@ -456,7 +456,7 @@
       "status": "online"
     },
     "QueryRewrite": {
-      "document": "多轮改写\n本接口有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "document": "多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。\n本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "QueryRewriteRequest",
       "name": "多轮改写",
       "output": "QueryRewriteResponse",
@@ -7206,6 +7206,16 @@
         },
         {
           "disabled": false,
+          "document": "当前记录所对应的 Session ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "记录ID",
           "example": "无",
           "member": "string",
@@ -7296,6 +7306,16 @@
         },
         {
           "disabled": false,
+          "document": "是否展示反馈按钮\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanFeedback",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "记录类型",
           "example": "无",
           "member": "uint64",
@@ -7350,6 +7370,36 @@
           "example": "无",
           "member": "TokenStat",
           "name": "TokenStat",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回复方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ReplyMethod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项卡, 用于多轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OptionCards",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskFlowInfo",
+          "name": "TaskFlow",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9008,6 +9058,62 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskFlowInfo": {
+      "document": "任务流程信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务流程名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFlowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Query 重写结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "QueryRewrite",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中意图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HitIntent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务流程回复类型\n0: 任务流回复\n1: 任务流静默\n2: 任务流拉回话术\n3: 任务流自定义回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaskParams": {
       "document": "任务参数",

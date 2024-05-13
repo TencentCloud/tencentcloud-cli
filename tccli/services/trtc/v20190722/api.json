@@ -4114,8 +4114,7 @@
           "member": "string",
           "name": "UserId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4124,18 +4123,16 @@
           "member": "string",
           "name": "RoomId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "房间号类型，0为整形房间号，1为字符串房间号。",
+          "document": "房间号类型，0为整型房间号，1为字符串房间号。",
           "example": "1",
           "member": "uint64",
           "name": "RoomIdType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5357,7 +5354,7 @@
         },
         {
           "disabled": false,
-          "document": "主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整形房间号，1为字符串房间号。",
+          "document": "主房间信息RoomType，必须和转推的房间所对应的RoomId类型相同，0为整型房间号，1为字符串房间号。",
           "example": "1",
           "member": "uint64",
           "name": "RoomIdType",

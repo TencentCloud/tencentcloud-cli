@@ -1143,7 +1143,7 @@
         },
         {
           "disabled": false,
-          "document": "证据数据(比如攻击内容等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证据数据(例如攻击内容等)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "EvidenceData",
@@ -1154,7 +1154,7 @@
         },
         {
           "disabled": false,
-          "document": "证据位置(比如协议端口)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证据位置(例如协议端口)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "EvidenceLocation",
@@ -5570,6 +5570,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "公网内网枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "PublicPrivateAttr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5700,6 +5710,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "-",
           "example": "无",
           "member": "Filter",
@@ -5779,6 +5798,16 @@
           "member": "FilterDataObject",
           "name": "AppIdList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网内网枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "PublicPrivateAttr",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6137,6 +6166,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -6176,6 +6214,26 @@
           "member": "OrganizationUserInfo",
           "name": "Data",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加入方式枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "JoinTypeLst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云厂商枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "CloudTypeLst",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9717,6 +9775,26 @@
           "name": "TcMemberType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "SubUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加入方式详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "密钥托管 子账号:xxx",
+          "member": "string",
+          "name": "JoinTypeInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

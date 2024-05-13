@@ -98,6 +98,13 @@
       "output": "CreateBackupResponse",
       "status": "online"
     },
+    "CreateCLSDelivery": {
+      "document": "创建日志投递",
+      "input": "CreateCLSDeliveryRequest",
+      "name": "创建日志投递",
+      "output": "CreateCLSDeliveryResponse",
+      "status": "online"
+    },
     "CreateClusterDatabase": {
       "document": "创建数据库",
       "input": "CreateClusterDatabaseRequest",
@@ -166,6 +173,13 @@
       "input": "DeleteBackupRequest",
       "name": "删除手动备份",
       "output": "DeleteBackupResponse",
+      "status": "online"
+    },
+    "DeleteCLSDelivery": {
+      "document": "删除日志投递",
+      "input": "DeleteCLSDeliveryRequest",
+      "name": "删除日志投递",
+      "output": "DeleteCLSDeliveryResponse",
       "status": "online"
     },
     "DeleteClusterDatabase": {
@@ -362,6 +376,13 @@
       "input": "DescribeFlowRequest",
       "name": "查询任务流信息",
       "output": "DescribeFlowResponse",
+      "status": "online"
+    },
+    "DescribeInstanceCLSLogDelivery": {
+      "document": "查询实例日志投递信息",
+      "input": "DescribeInstanceCLSLogDeliveryRequest",
+      "name": "查询实例日志投递信息",
+      "output": "DescribeInstanceCLSLogDeliveryResponse",
       "status": "online"
     },
     "DescribeInstanceDetail": {
@@ -894,6 +915,20 @@
       "input": "SetRenewFlagRequest",
       "name": "设置自动续费",
       "output": "SetRenewFlagResponse",
+      "status": "online"
+    },
+    "StartCLSDelivery": {
+      "document": "开启日志投递",
+      "input": "StartCLSDeliveryRequest",
+      "name": "开启日志投递",
+      "output": "StartCLSDeliveryResponse",
+      "status": "online"
+    },
+    "StopCLSDelivery": {
+      "document": "停止日志投递",
+      "input": "StopCLSDeliveryRequest",
+      "name": "停止日志投递",
+      "output": "StopCLSDeliveryResponse",
       "status": "online"
     },
     "SwitchClusterVpc": {
@@ -3587,6 +3622,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSDeliveryRequest": {
+      "document": "CreateCLSDelivery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateCLSDeliveryResponse": {
+      "document": "CreateCLSDelivery返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7351,6 +7403,23 @@
       ],
       "type": "object"
     },
+    "DeleteCLSDeliveryRequest": {
+      "document": "DeleteCLSDelivery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteCLSDeliveryResponse": {
+      "document": "DeleteCLSDelivery返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterDatabaseRequest": {
       "document": "DeleteClusterDatabase请求参数结构体",
       "members": [
@@ -9333,6 +9402,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceCLSLogDeliveryRequest": {
+      "document": "DescribeInstanceCLSLogDelivery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceCLSLogDeliveryResponse": {
+      "document": "DescribeInstanceCLSLogDelivery返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16859,6 +16945,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前资源包绑定在当前实例下的抵扣优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DeductionPriority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18396,6 +18493,40 @@
         }
       ],
       "usage": "out"
+    },
+    "StartCLSDeliveryRequest": {
+      "document": "StartCLSDelivery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "StartCLSDeliveryResponse": {
+      "document": "StartCLSDelivery返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCLSDeliveryRequest": {
+      "document": "StopCLSDelivery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "StopCLSDeliveryResponse": {
+      "document": "StopCLSDelivery返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchClusterLogBin": {
       "document": "转换集群log bin开关",

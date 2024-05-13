@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DescribeOrganizationUserInfo --cli-unfold-argument  \
+    --MemberId abc \
     --Filter.Limit 0 \
     --Filter.Offset 0 \
     --Filter.Order abc \
@@ -46,7 +47,17 @@ Output:
                 "IsExpired": true,
                 "PermissionList": [
                     "abc"
-                ]
+                ],
+                "AuthType": 0,
+                "TcMemberType": 0,
+                "SubUserCount": 0,
+                "JoinTypeInfo": "abc"
+            }
+        ],
+        "JoinTypeLst": [
+            {
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "RequestId": "abc"

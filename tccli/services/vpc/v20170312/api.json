@@ -3053,6 +3053,7 @@
           "example": "5513621",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

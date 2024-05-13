@@ -30203,7 +30203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "nginx主机ip列表，逗号分隔",
+          "document": "nginx主机IP列表，逗号分隔",
           "example": "112.16.84.1,112.16.84.12",
           "member": "string",
           "name": "Ip",
@@ -30222,7 +30222,7 @@
           "example": "xx",
           "member": "string",
           "name": "NginxCommand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30232,7 +30232,7 @@
           "example": "xxx",
           "member": "string",
           "name": "KeepAliveCommand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39090,7 +39090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>HostName - string - 是否必填：否 - 主机名</li>\n<li>HostIp - string - 是否必填：否 - 主机IP</li>\n<li>ItemId - String - 是否必填：否 - 检测项Id</li>\n<li>ItemName - String - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态[0:未通过|3:通过|5:检测中]</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开时时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
+          "document": "<li>PolicyId - int64 - 是否必填：否 - 策略Id</li>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>HostId - string - 是否必填：否 - 主机Id</li>\n<li>HostName - string - 是否必填：否 - 主机名</li>\n<li>HostIp - string - 是否必填：否 - 主机IP</li>\n<li>ItemId - String - 是否必填：否 - 检测项Id</li>\n<li>ItemName - String - 是否必填：否 - 项名称</li>\n<li>DetectStatus - int - 是否必填：否 - 检测状态[0:未通过|3:通过|5:检测中]</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>StartTime - string - 是否必填：否 - 开始时间</li>\n<li>EndTime - string - 是否必填：否 - 结束时间</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -39487,7 +39487,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>\n<li>Name- String - 规则名称/li>",
+          "document": "过滤条件。\n<li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>\n<li>Name- String - 规则名称</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -39506,6 +39506,7 @@
           "example": "123456",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -43146,6 +43147,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测项所属分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

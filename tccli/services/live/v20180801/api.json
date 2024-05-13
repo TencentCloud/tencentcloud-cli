@@ -490,6 +490,13 @@
       "output": "DescribeLivePackageInfoResponse",
       "status": "online"
     },
+    "DescribeLivePadProcessorList": {
+      "document": "使用该接口查询垫片流。垫片流状态更新存在一定延迟，可间隔30秒以上查询，避免频繁查询该接口。",
+      "input": "DescribeLivePadProcessorListRequest",
+      "name": "查询垫片流列表",
+      "output": "DescribeLivePadProcessorListResponse",
+      "status": "online"
+    },
     "DescribeLivePadRules": {
       "document": "获取直播垫片规则列表。",
       "input": "DescribeLivePadRulesRequest",
@@ -1027,6 +1034,13 @@
       "input": "StartLiveStreamMonitorRequest",
       "name": "启动直播流监播任务",
       "output": "StartLiveStreamMonitorResponse",
+      "status": "online"
+    },
+    "StopLivePadProcessor": {
+      "document": "使用该接口停止垫片流。",
+      "input": "StopLivePadProcessorRequest",
+      "name": "停止垫片流",
+      "output": "StopLivePadProcessorResponse",
       "status": "online"
     },
     "StopLiveRecord": {
@@ -6842,6 +6856,52 @@
           "name": "FluxPackageBillMode",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadProcessorListRequest": {
+      "document": "DescribeLivePadProcessorList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadProcessorListResponse": {
+      "document": "DescribeLivePadProcessorList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前正在拉取垫片的流名称列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test1\",\"test2\"]",
+          "member": "string",
+          "name": "StreamNameList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -16030,6 +16090,70 @@
     "StartLiveStreamMonitorResponse": {
       "document": "StartLiveStreamMonitor返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLivePadProcessorRequest": {
+      "document": "StopLivePadProcessor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人备注信息。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLivePadProcessorResponse": {
+      "document": "StopLivePadProcessor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处理结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no match processor stream",
+          "member": "string",
+          "name": "ResultMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
