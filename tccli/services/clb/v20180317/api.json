@@ -11023,6 +11023,15 @@
           "name": "LocationId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

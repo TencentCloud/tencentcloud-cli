@@ -323,7 +323,7 @@
     "MLIDCardOCR": [
       {
         "document": "",
-        "input": "https://ocr.tencentcloudapi.com/?Action=MLIDCardOCR\n&ImageUrl=https://xx/a.jpg\n&<公共请求参数>",
+        "input": "https://ocr.tencentcloudapi.com/?Action=MLIDCardOCR &ImageUrl=https://xx/a.jpg &<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Name\": \"KAVIN ONG KHI MN\",\n        \"ID\": \"710716-08-6085\",\n        \"Address\": \"NO 11 PERSIARN PERAJRIT 4 TAMA PERAK 31400 IPOH ERAK\",\n        \"Sex\": \"LEAKI\",\n        \"Birthday\": \"\",\n        \"Warn\": [],\n        \"Image\": \"\",\n        \"AdvancedInfo\": \"{\\\"ID\\\":{\\\"Confidence\\\":\\\"1.0000\\\"},\\\"Name\\\":{\\\"Confidence\\\":\\\"0.9996\\\"},\\\"Address\\\":{\\\"Confidence\\\":\\\"0.9997\\\"},\\\"Sex\\\":{\\\"Confidence\\\":\\\"0.9999\\\"}}\",\n        \"Type\": \"MyKad\",\n        \"RequestId\": \"c969da05-54e3-4d0a-a55d-b3ef90d4ebf5\"\n    }\n}",
         "title": "马来西亚身份证识别示例代码"
       }

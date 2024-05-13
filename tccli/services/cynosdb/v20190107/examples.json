@@ -115,8 +115,8 @@
     "CreateCLSDelivery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSDelivery\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n    \"CLSInfoList\": [\n        {\n            \"TopicId\": \"38b86342-7cb0-4776-9ebd-ff1830035da1\",\n            \"TopicOperation\": \"reuse\",\n            \"GroupId\": \"17de6e2a-efd0-4fc2-ba2e-8845bd4f9895\",\n            \"Region\": \"ap-guangzhou\",\n            \"GroupOperation\": \"reuse\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
         "title": "创建日志投递"
       }
     ],
@@ -209,8 +209,8 @@
     "DeleteCLSDelivery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCLSDelivery\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCLSDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n    \"CLSTopicIds\": [\n        \"83dc6703-f43a-4b95-92ec-267bdf9e48c3\",\n        \"2a289122-0b01-490b-be75-763da79621fe\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
         "title": "删除日志投递"
       }
     ],
@@ -453,8 +453,8 @@
     "DescribeInstanceCLSLogDelivery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceCLSLogDelivery\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceCLSLogDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-o971o62r\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceCLSDeliveryInfos\": [\n            {\n                \"GroupId\": \"a5532aba-506f-4ec4-a293-e0ac34b69a4e\",\n                \"GroupName\": \"cloud_cynos_-test-003_logset\",\n                \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n                \"InstanceName\": \"cynosdbmysql-ins-o971o62r\",\n                \"Region\": \"ap-qingyuan\",\n                \"Status\": \"running\",\n                \"TopicId\": \"2a289122-0b01-490b-be75-763da79621fe\",\n                \"TopicName\": \"cloud_cynos_-test-003_topic\"\n            },\n            {\n                \"GroupId\": \"2f484392-d3f1-491c-82a0-00ceaad9281a\",\n                \"GroupName\": \"cloud_cynos_-test-002_logset\",\n                \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n                \"InstanceName\": \"cynosdbmysql-ins-o971o62r\",\n                \"Region\": \"ap-qingyuan\",\n                \"Status\": \"running\",\n                \"TopicId\": \"83dc6703-f43a-4b95-92ec-267bdf9e48c3\",\n                \"TopicName\": \"cloud_cynos_-test-002_topic\"\n            }\n        ],\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询实例日志投递信息"
       }
     ],
@@ -1075,16 +1075,16 @@
     "StartCLSDelivery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCLSDelivery\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCLSDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n    \"CLSTopicIds\": [\n        \"83dc6703-f43a-4b95-92ec-267bdf9e48c3\",\n        \"2a289122-0b01-490b-be75-763da79621fe\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
         "title": "开启日志投递"
       }
     ],
     "StopCLSDelivery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCLSDelivery\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCLSDelivery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-o971o62r\",\n    \"CLSTopicIds\": [\n        \"83dc6703-f43a-4b95-92ec-267bdf9e48c3\",\n        \"2a289122-0b01-490b-be75-763da79621fe\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\"\n    }\n}",
         "title": "停止日志投递"
       }
     ],

@@ -6,29 +6,37 @@ Input:
 
 ```
 tccli dsgc DescribeDSPACOSDiscoveryTaskResult --cli-unfold-argument  \
-    --DspaId xx \
+    --DspaId abc \
+    --Offset 0 \
     --Limit 0 \
-    --Filters.0.Name BucketName \
-    --Filters.0.Values bucket_1 \
-    --Offset 0
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239",
-        "TotalCount": 1,
         "Items": [
             {
-                "BucketResultId": 3,
-                "TaskId": 28,
-                "TaskName": "898111",
-                "BucketName": "bucket_1",
-                "TotalFiles": 2,
-                "SensitiveDataNums": 6
+                "BucketResultId": 0,
+                "TaskId": 0,
+                "TaskName": "abc",
+                "ResultId": 0,
+                "DataSourceId": "abc",
+                "BucketName": "abc",
+                "TotalFiles": 0,
+                "SensitiveDataNums": 0,
+                "EndTime": "abc",
+                "DataSourceName": "abc",
+                "Status": 0,
+                "ErrorInfo": "abc",
+                "ResourceRegion": "abc",
+                "OverSize": "abc"
             }
-        ]
+        ],
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

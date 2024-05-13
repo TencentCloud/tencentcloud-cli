@@ -1734,7 +1734,7 @@
           "example": "kong-0",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1744,7 +1744,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1754,7 +1754,7 @@
           "example": "无",
           "member": "string",
           "name": "ZoneId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1764,7 +1764,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1774,7 +1774,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1784,7 +1784,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1794,8 +1794,28 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否默认权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDefaultWeight",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -14188,6 +14208,16 @@
           "name": "SubnetIds",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组默认权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DefaultWeight",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

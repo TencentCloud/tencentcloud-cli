@@ -239,7 +239,7 @@
       "status": "online"
     },
     "MLIDCardOCR": {
-      "document": "本接口支持马来西亚身份证识别，识别字段包括身份证号、姓名、性别、地址；具备身份证人像照片的裁剪功能和翻拍、复印件告警功能。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)\n",
+      "document": "本接口支持马来西亚身份证识别，识别字段包括身份证号、姓名、性别、地址；具备身份证人像照片的裁剪功能和翻拍、复印件告警功能。\n本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)",
       "input": "MLIDCardOCRRequest",
       "name": "马来西亚身份证识别",
       "output": "MLIDCardOCRResponse",
@@ -4287,7 +4287,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅数据加密 文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有加密需求的用户，接入传入kms的CiphertextBlob，关于数据加密可查阅[敏感数据加密指引](https://cloud.tencent.com/document/product/866/106048)文档。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CiphertextBlob",
@@ -5822,20 +5822,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否鉴伪。",
-          "example": "true",
-          "member": "bool",
-          "name": "DetectFake",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "是否返回人像照片。",
           "example": "false",
           "member": "bool",
           "name": "ReturnHeadImage",
           "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "是否鉴伪。",
+          "example": "true",
+          "member": "bool",
+          "name": "DetectFake",
+          "required": false,
           "type": "bool"
         },
         {
@@ -5963,7 +5963,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "真假判断。\n0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；\n1：假；\n2：真。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -5983,12 +5983,22 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "多重告警码，当身份证是翻拍、复印件时返回对应告警码。\n-9102：证照复印件告警\n-9103：证照翻拍告警",
           "example": "[-9102,-9103]",
           "member": "int64",
           "name": "WarningCode",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7127,7 +7137,7 @@
           "example": "710716-08-6085",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7137,7 +7147,7 @@
           "example": "KAVIN ONG KHI MN",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7147,7 +7157,7 @@
           "example": "NO 11 PERSIARN PERAJRIT 4 TAMA PERAK 31400 IPOH ERAK",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7157,17 +7167,17 @@
           "example": "LEAKI",
           "member": "string",
           "name": "Sex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警\n-9107       模糊图片告警",
           "example": "[]",
           "member": "int64",
           "name": "Warn",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7177,7 +7187,7 @@
           "example": "无",
           "member": "string",
           "name": "Image",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7187,7 +7197,7 @@
           "example": "{\"ID\":{\"Confidence\":\"1.0000\"},\"Name\":{\"Confidence\":\"0.9996\"},\"Address\":{\"Confidence\":\"0.9997\"},\"Sex\":{\"Confidence\":\"0.9999\"}}",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7197,7 +7207,7 @@
           "example": "MyKad",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7207,8 +7217,18 @@
           "example": "无",
           "member": "string",
           "name": "Birthday",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11662,6 +11682,7 @@
           "example": "360XXXXXX",
           "member": "string",
           "name": "NIK",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11671,6 +11692,7 @@
           "example": "INM",
           "member": "string",
           "name": "Nama",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11680,6 +11702,7 @@
           "example": "JAKARTA 13-01-1987",
           "member": "string",
           "name": "TempatTglLahir",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11689,6 +11712,7 @@
           "example": "LAKEI",
           "member": "string",
           "name": "JenisKelamin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11698,6 +11722,7 @@
           "example": "o",
           "member": "string",
           "name": "GolDarah",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11707,6 +11732,7 @@
           "example": "BANJARSARI",
           "member": "string",
           "name": "Alamat",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11716,6 +11742,7 @@
           "example": "00/000",
           "member": "string",
           "name": "RTRW",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11725,6 +11752,7 @@
           "example": "PAKEMBINANGUN",
           "member": "string",
           "name": "KelDesa",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11734,6 +11762,7 @@
           "example": "LAKEI",
           "member": "string",
           "name": "Kecamatan",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11743,6 +11772,7 @@
           "example": "ATHOLIK",
           "member": "string",
           "name": "Agama",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11752,6 +11782,7 @@
           "example": "KAWFN",
           "member": "string",
           "name": "StatusPerkawinan",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11761,6 +11792,7 @@
           "example": "KARYAWAN",
           "member": "string",
           "name": "Perkerjaan",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11770,6 +11802,7 @@
           "example": "INM",
           "member": "string",
           "name": "KewargaNegaraan",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11779,6 +11812,7 @@
           "example": "SEUMUR",
           "member": "string",
           "name": "BerlakuHingga",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11788,6 +11822,7 @@
           "example": "15-05-2015",
           "member": "string",
           "name": "IssuedDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11797,6 +11832,7 @@
           "example": "无",
           "member": "string",
           "name": "Photo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11806,6 +11842,7 @@
           "example": "无",
           "member": "string",
           "name": "Provinsi",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11815,7 +11852,18 @@
           "example": "无",
           "member": "string",
           "name": "Kota",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12882,6 +12930,16 @@
           "name": "PortraitImage",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

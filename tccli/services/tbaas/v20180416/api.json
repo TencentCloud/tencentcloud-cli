@@ -411,27 +411,27 @@
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易结果码含义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "失败",
+          "example": "Success",
           "member": "string",
           "name": "CodeMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "交易ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "HHHHHHHHHHHHHHHHH、",
+          "example": "9d3c4eabca704b04b9317583a194c5b7163aeb3c44e5418f98f79a4a319efb92",
           "member": "string",
           "name": "TxId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -441,27 +441,27 @@
           "example": "0",
           "member": "int64",
           "name": "GasUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "合约返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "Success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "合约函数返回，base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "dGVzdHRlc3Q=",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -477,27 +477,27 @@
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易结果码含义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "失败",
+          "example": "OK",
           "member": "string",
           "name": "CodeMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "交易ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "HHHHHHHHHHHHHHHHH、",
+          "example": "6ab24544b68643318dd06dc062525e682eeeb9f143294436998127d0f274164d",
           "member": "string",
           "name": "TxId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -507,7 +507,7 @@
           "example": "0",
           "member": "int64",
           "name": "GasUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -517,7 +517,7 @@
           "example": "1",
           "member": "int64",
           "name": "BlockHeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -527,27 +527,27 @@
           "example": "{}",
           "member": "string",
           "name": "ContractEvent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "合约返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "OK",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "交易时间，单位是秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1709261981",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -643,7 +643,7 @@
         {
           "disabled": false,
           "document": "创建时间戳",
-          "example": "无",
+          "example": "2023-08-05 07:44:04",
           "member": "string",
           "name": "CreateTimestamp",
           "output_required": false,
@@ -653,7 +653,7 @@
         {
           "disabled": false,
           "document": "提案组织",
-          "example": "无",
+          "example": "testorg",
           "member": "string",
           "name": "ProposerOrg",
           "output_required": false,

@@ -1050,30 +1050,30 @@
         {
           "disabled": false,
           "document": "AK编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ak",
           "member": "string",
           "name": "AK",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SK编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sk",
           "member": "string",
           "name": "SK",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "URL编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "url",
           "member": "string",
           "name": "URL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1086,20 +1086,20 @@
         {
           "disabled": false,
           "document": "id（可不参考）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "10",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "风险账户\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "admin",
           "member": "string",
           "name": "RiskAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1348,7 +1348,7 @@
         {
           "disabled": false,
           "document": "风险涉及资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "dbName",
           "member": "string",
           "name": "DataSourceName",
           "output_required": true,
@@ -1358,7 +1358,7 @@
         {
           "disabled": false,
           "document": "资产名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "default",
           "member": "string",
           "name": "AssetName",
           "output_required": true,
@@ -1368,7 +1368,7 @@
         {
           "disabled": false,
           "document": "建议使用安全产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "dsgc",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
           "output_required": true,
@@ -1378,7 +1378,7 @@
         {
           "disabled": false,
           "document": "风险类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "api",
           "member": "string",
           "name": "RiskType",
           "output_required": true,
@@ -1388,7 +1388,7 @@
         {
           "disabled": false,
           "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "riskSide",
           "member": "string",
           "name": "RiskSide",
           "output_required": false,
@@ -1398,7 +1398,7 @@
         {
           "disabled": false,
           "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "DataSourceType",
           "output_required": false,
@@ -1684,7 +1684,7 @@
         {
           "disabled": false,
           "document": "待处理各等级风险项信息",
-          "example": "无",
+          "example": "riskcountInfo",
           "member": "RiskCountInfo",
           "name": "RiskCountInfoList",
           "output_required": true,
@@ -1695,7 +1695,7 @@
         {
           "disabled": false,
           "document": "数据源信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "discoveryCondition",
           "member": "DiscoveryCondition",
           "name": "DiscoveryCondition",
           "output_required": true,
@@ -1706,7 +1706,7 @@
         {
           "disabled": false,
           "document": "评估任务失败信息",
-          "example": "无",
+          "example": "errorInfo",
           "member": "string",
           "name": "ErrorInfo",
           "output_required": true,
@@ -1884,7 +1884,7 @@
           "example": "bucket_xxx",
           "member": "string",
           "name": "Bucket",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1894,7 +1894,7 @@
           "example": "cos",
           "member": "string",
           "name": "DataType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1904,7 +1904,7 @@
           "example": "2",
           "member": "int64",
           "name": "FileNums",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1914,27 +1914,27 @@
           "example": "2",
           "member": "int64",
           "name": "SensitiveFileNums",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "敏感分布\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[DistributionData]",
           "member": "Note",
           "name": "DistributionData",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "cos文件的敏感数据个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MatchedNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2057,7 +2057,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -2066,7 +2066,7 @@
         {
           "disabled": false,
           "document": "授权方式，可选：automatic(一键自动授权) 、 account(指定用户名授权)。",
-          "example": "无",
+          "example": "automatic",
           "member": "string",
           "name": "AuthType",
           "required": true,
@@ -2075,7 +2075,7 @@
         {
           "disabled": false,
           "document": "资源类型。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaType",
           "required": true,
@@ -2084,7 +2084,7 @@
         {
           "disabled": false,
           "document": "资源所处地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -2093,7 +2093,7 @@
         {
           "disabled": false,
           "document": "用户授权的账户信息，如果是一键自动授权模式，则不需要填写账户名与密码。",
-          "example": "无",
+          "example": "admin",
           "member": "DspaResourceAccount",
           "name": "ResourcesAccount",
           "required": true,
@@ -2108,20 +2108,20 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "success",
           "member": "DspaTaskResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2292,9 +2292,10 @@
         {
           "disabled": false,
           "document": "数据源Id",
-          "example": "无",
+          "example": "cos-xadsa",
           "member": "string",
           "name": "DataSourceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2302,9 +2303,10 @@
         {
           "disabled": false,
           "document": "桶名",
-          "example": "无",
+          "example": "bucket",
           "member": "string",
           "name": "BucketName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2312,9 +2314,10 @@
         {
           "disabled": false,
           "document": "资源所在地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2348,7 +2351,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "xxx",
+          "example": "rulename",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -2368,7 +2371,7 @@
         {
           "disabled": false,
           "document": "级别名称",
-          "example": "xxx",
+          "example": "高",
           "member": "string",
           "name": "LevelName",
           "output_required": true,
@@ -2398,7 +2401,7 @@
         {
           "disabled": false,
           "document": "别名规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "rulename",
           "member": "string",
           "name": "AliasRuleName",
           "output_required": false,
@@ -2707,7 +2710,7 @@
         {
           "disabled": false,
           "document": "COS桶列表。",
-          "example": "无",
+          "example": "[bucket1]",
           "member": "string",
           "name": "Buckets",
           "required": true,
@@ -2726,28 +2729,25 @@
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "桶所在地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "桶名称。",
-          "example": "无",
+          "example": "bucket-name1",
           "member": "string",
           "name": "ResourceName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2804,7 +2804,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "123",
           "member": "uint64",
           "name": "ReportTaskId",
           "required": true,
@@ -2813,7 +2813,7 @@
         {
           "disabled": false,
           "document": "dspa实例id",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -2828,7 +2828,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "123",
           "member": "uint64",
           "name": "ReportTaskId",
           "output_required": false,
@@ -2838,7 +2838,7 @@
         {
           "disabled": false,
           "document": "提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -2860,7 +2860,7 @@
         {
           "disabled": false,
           "document": "dspa实例id",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -2869,7 +2869,7 @@
         {
           "disabled": false,
           "document": "识别模板id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ComplianceId",
           "required": true,
@@ -2878,7 +2878,7 @@
         {
           "disabled": false,
           "document": "选中资产列表",
-          "example": "无",
+          "example": "[cdb1,es2]",
           "member": "AssetList",
           "name": "AssetList",
           "required": true,
@@ -2893,7 +2893,7 @@
         {
           "disabled": false,
           "document": "报表任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ReportTaskId",
           "output_required": true,
@@ -2903,7 +2903,7 @@
         {
           "disabled": false,
           "document": "提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -2995,7 +2995,7 @@
         {
           "disabled": false,
           "document": "风险等级矩阵",
-          "example": "无",
+          "example": "[rule]",
           "member": "RiskLevelMatrix",
           "name": "RiskLevelRule",
           "required": true,
@@ -3004,7 +3004,7 @@
         {
           "disabled": false,
           "document": "风险等级的描述",
-          "example": "无",
+          "example": "risk-level-desc",
           "member": "string",
           "name": "RiskLevelDescription",
           "required": false,
@@ -3058,7 +3058,7 @@
         {
           "disabled": false,
           "document": "风险id列表",
-          "example": "无",
+          "example": "[123,321]",
           "member": "int64",
           "name": "RiskIdList",
           "required": true,
@@ -3157,7 +3157,7 @@
         {
           "disabled": false,
           "document": "敏感数据扫描数据源条件。",
-          "example": "无",
+          "example": "condition",
           "member": "DiscoveryCondition",
           "name": "DiscoveryCondition",
           "required": false,
@@ -3166,7 +3166,7 @@
         {
           "disabled": false,
           "document": "说明",
-          "example": "无",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3181,7 +3181,7 @@
         {
           "disabled": false,
           "document": "评估任务Id，格式“task-xxxxxxxx”",
-          "example": "task-xxxxxxxx",
+          "example": "task-123",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4173,7 +4173,7 @@
         {
           "disabled": false,
           "document": "Dspa实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -4182,7 +4182,7 @@
         {
           "disabled": false,
           "document": "自建数据库类型。目前支持的自建数据库类型按照协议进行区分，支持两种开源数据库协议：\nmysql_like_proto -- Mysql协议类关系型数据库，\npostgre_like_proto -- Postgre协议类关系型数据库。\n其他闭源协议的数据库如SqlServer、Oracle等暂不支持。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaType",
           "required": true,
@@ -4191,7 +4191,7 @@
         {
           "disabled": false,
           "document": "资源所处地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -4200,7 +4200,7 @@
         {
           "disabled": false,
           "document": "自建云资源ID。",
-          "example": "无",
+          "example": "cdb-a1b2",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4209,7 +4209,7 @@
         {
           "disabled": false,
           "document": "可用于访问自建云资源的IP。",
-          "example": "无",
+          "example": "127.31.41.42",
           "member": "string",
           "name": "ResourceVip",
           "required": true,
@@ -4218,7 +4218,7 @@
         {
           "disabled": false,
           "document": "可用于访问自建云资源的端口。",
-          "example": "无",
+          "example": "2203",
           "member": "uint64",
           "name": "ResourceVPort",
           "required": true,
@@ -4227,7 +4227,7 @@
         {
           "disabled": false,
           "document": "自建云资源的VPC ID。",
-          "example": "无",
+          "example": "127.31.41.43",
           "member": "string",
           "name": "ResourceUniqueVpcId",
           "required": true,
@@ -4236,7 +4236,7 @@
         {
           "disabled": false,
           "document": "自建云资源的Subnet ID。",
-          "example": "无",
+          "example": "4214",
           "member": "string",
           "name": "ResourceUniqueSubnetId",
           "required": true,
@@ -4245,7 +4245,7 @@
         {
           "disabled": false,
           "document": "自建云资源所处的服务类型，可选：\ncvm - 通过云服务器直接访问。\nclb - 通过LB的方式进行访问。",
-          "example": "无",
+          "example": "cvm",
           "member": "string",
           "name": "ResourceAccessType",
           "required": true,
@@ -4254,7 +4254,7 @@
         {
           "disabled": false,
           "document": "账户名。",
-          "example": "无",
+          "example": "admin",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4263,7 +4263,7 @@
         {
           "disabled": false,
           "document": "账户密码。",
-          "example": "无",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -4272,7 +4272,7 @@
         {
           "disabled": false,
           "document": "资源名称，1-60个字符。",
-          "example": "无",
+          "example": "cdb-11am",
           "member": "string",
           "name": "ResourceName",
           "required": false,
@@ -4281,7 +4281,7 @@
         {
           "disabled": false,
           "document": "实例类型\ndatabse\nsid\nserviceName",
-          "example": "无",
+          "example": "database",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -4290,7 +4290,7 @@
         {
           "disabled": false,
           "document": "实例值",
-          "example": "无",
+          "example": "database",
           "member": "string",
           "name": "InstanceValue",
           "required": false,
@@ -4305,7 +4305,7 @@
         {
           "disabled": false,
           "document": "连通性测试情况，success表示可正常访问，failed表示无法访问。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "ConnectivityStatus",
           "output_required": true,
@@ -4315,7 +4315,7 @@
         {
           "disabled": false,
           "document": "连通性描述字段，如果连通性测试失败，这里会返回无法访问的相关信息说明。",
-          "example": "无",
+          "example": "success-desc",
           "member": "string",
           "name": "ConnectivityDescription",
           "output_required": true,
@@ -4400,7 +4400,7 @@
         {
           "disabled": false,
           "document": "别名规则名称",
-          "example": "xx",
+          "example": "rulename",
           "member": "string",
           "name": "AliasRuleName",
           "required": false,
@@ -4425,7 +4425,7 @@
         {
           "disabled": false,
           "document": "别名规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "rulename",
           "member": "string",
           "name": "AliasRuleName",
           "output_required": false,
@@ -4507,9 +4507,10 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "DBName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4517,9 +4518,10 @@
         {
           "disabled": false,
           "document": "数据库Schema",
-          "example": "无",
+          "example": "schema",
           "member": "string",
           "name": "DBSchema",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4533,20 +4535,20 @@
         {
           "disabled": false,
           "document": "COS桶名",
-          "example": "无",
+          "example": "bucket-daba",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "COS桶创建时间",
-          "example": "无",
+          "example": "2020-01-03",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4556,47 +4558,47 @@
           "example": "1",
           "member": "int64",
           "name": "Valid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DSPA为COS资源生成的资源ID",
-          "example": "无",
+          "example": "cos-abc123",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "COS资源所处的地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "COS桶绑定状态",
-          "example": "无",
+          "example": "binded",
           "member": "string",
           "name": "BindStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "COS桶存储量",
-          "example": "无",
+          "example": "20",
           "member": "float",
           "name": "Storage",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -4628,27 +4630,27 @@
           "example": "cdb",
           "member": "string",
           "name": "MetaType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "支持的此元数据类型的地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Regions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "此元数据类型支持的授权类型：\naccount    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；\nautomatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；\n如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "account",
           "member": "string",
           "name": "SupportedAuthTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4891,10 +4893,10 @@
         {
           "disabled": false,
           "document": "DB名称。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "DbName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4904,7 +4906,7 @@
           "example": "binded",
           "member": "string",
           "name": "BindStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4914,7 +4916,7 @@
           "example": "valid",
           "member": "string",
           "name": "ValidStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4927,7 +4929,7 @@
         {
           "disabled": false,
           "document": "DB名称。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -4942,50 +4944,50 @@
         {
           "disabled": false,
           "document": "结果类型。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Result",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结果描述。",
-          "example": "无",
+          "example": "task-desc",
           "member": "string",
           "name": "ResultDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "fail-desc",
           "member": "ErrDescription",
           "name": "ErrDescription",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "无",
+          "example": "cbd-daba",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "database名称。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "DbName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5389,17 +5391,17 @@
           "example": "Success",
           "member": "string",
           "name": "ExportResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "导出文件地址",
-          "example": "无",
+          "example": "http://www.xx.com/exportUrl",
           "member": "string",
           "name": "ExportFileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6084,7 +6086,7 @@
         {
           "disabled": false,
           "document": "dspa实例Id",
-          "example": "dspa-xxx",
+          "example": "dspa-abc213",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -6120,7 +6122,7 @@
         {
           "disabled": false,
           "document": "资产名称，数据源id",
-          "example": "cos-xxx",
+          "example": "cos-adav1",
           "member": "string",
           "name": "DataSourceId",
           "required": false,
@@ -6174,7 +6176,7 @@
         {
           "disabled": false,
           "document": "风险等级筛选",
-          "example": "无",
+          "example": "高",
           "member": "string",
           "name": "RiskLevel",
           "required": false,
@@ -6183,7 +6185,7 @@
         {
           "disabled": false,
           "document": "风险面筛选",
-          "example": "xx",
+          "example": "riskside",
           "member": "string",
           "name": "RiskSide",
           "required": false,
@@ -6207,7 +6209,7 @@
         {
           "disabled": false,
           "document": "最新风险详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[riskLists]",
           "member": "RiskItemInfo",
           "name": "LatestRiskList",
           "output_required": true,
@@ -6797,7 +6799,7 @@
         {
           "disabled": false,
           "document": "风险级别名称",
-          "example": "xx",
+          "example": "risk-name",
           "member": "string",
           "name": "RiskLevelName",
           "output_required": true,
@@ -6807,7 +6809,7 @@
         {
           "disabled": false,
           "document": "风险级别描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx-描述",
+          "example": "risk-desc",
           "member": "string",
           "name": "RiskLevelDescription",
           "output_required": true,
@@ -6817,7 +6819,7 @@
         {
           "disabled": false,
           "document": "分类分级id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IdentifyComplianceId",
           "output_required": true,
@@ -6837,7 +6839,7 @@
         {
           "disabled": false,
           "document": "风险数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1,2,3]",
           "member": "RiskLevelMatrix",
           "name": "RiskLevelMatrix",
           "output_required": true,
@@ -7242,7 +7244,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "xx-模板",
+          "example": "template-name",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -7252,7 +7254,7 @@
         {
           "disabled": false,
           "document": "模板的描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx-模版描述",
+          "example": "template-desc",
           "member": "string",
           "name": "TemplateDescription",
           "output_required": true,
@@ -7272,7 +7274,7 @@
         {
           "disabled": false,
           "document": "风险等级名称",
-          "example": "无",
+          "example": "高",
           "member": "string",
           "name": "RiskLevelName",
           "output_required": true,
@@ -7282,7 +7284,7 @@
         {
           "disabled": false,
           "document": "脆弱项配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[riskitem1,riskitem2]",
           "member": "AssessmentRiskItem",
           "name": "RiskItemList",
           "output_required": true,
@@ -7292,7 +7294,7 @@
         {
           "disabled": false,
           "document": "脆弱项配置条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -7302,7 +7304,7 @@
         {
           "disabled": false,
           "document": "被任务引用次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TaskCitations",
           "output_required": true,
@@ -7369,7 +7371,7 @@
         {
           "disabled": false,
           "document": "风险面",
-          "example": "无",
+          "example": "riskSide",
           "member": "string",
           "name": "RiskSide",
           "required": false,
@@ -7384,7 +7386,7 @@
         {
           "disabled": false,
           "document": "脆弱项列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[riskItem]",
           "member": "AssessmentRiskItem",
           "name": "RiskItemList",
           "output_required": true,
@@ -8005,7 +8007,7 @@
         {
           "disabled": false,
           "document": "Array of Filter\t此参数对外不可见。过滤数组。支持的Name：\nBucketName 对象桶名\nTaskID 任务ID，\nTaskName 任务名，\nDataSourceId：数据源ID，\nResourceRegion：资源所在地域\n每项过滤条件最多支持5个。",
-          "example": "无",
+          "example": "[filter]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8020,20 +8022,20 @@
         {
           "disabled": false,
           "document": "扫描任务结果项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[item]",
           "member": "DspaCOSDiscoveryTaskResult",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "符合条件的数据结果数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8489,10 +8491,10 @@
         {
           "disabled": false,
           "document": "分类树json\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "result",
           "member": "string",
           "name": "ResultJson",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9271,7 +9273,7 @@
         {
           "disabled": false,
           "document": "db名称",
-          "example": "xx",
+          "example": "dbname1",
           "member": "string",
           "name": "DbName",
           "required": false,
@@ -9286,7 +9288,7 @@
         {
           "disabled": false,
           "document": "分类分级扫描表集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[item]",
           "member": "DSPATableInfo",
           "name": "Items",
           "output_required": true,
@@ -9335,7 +9337,7 @@
         {
           "disabled": false,
           "document": "数据源类型",
-          "example": "无",
+          "example": "es",
           "member": "string",
           "name": "DataSourceType",
           "required": false,
@@ -9350,7 +9352,7 @@
         {
           "disabled": false,
           "document": "概览统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[data]",
           "member": "ESDataAssetCountDto",
           "name": "Stats",
           "output_required": false,
@@ -9488,7 +9490,7 @@
         {
           "disabled": false,
           "document": "数据样本列表，最多10条数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "item",
           "member": "string",
           "name": "Items",
           "output_required": true,
@@ -10026,7 +10028,7 @@
         {
           "disabled": false,
           "document": "dspa实例id",
-          "example": "无",
+          "example": "dspa-xx",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -10035,7 +10037,7 @@
         {
           "disabled": false,
           "document": "导出任务id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ExportTaskId",
           "required": true,
@@ -10050,18 +10052,20 @@
         {
           "disabled": false,
           "document": "导出任务结果",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "ExportResult",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "导出文件地址",
-          "example": "无",
+          "example": "http://www.xxxxx.com/exportUrl",
           "member": "string",
           "name": "ExportFileUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10241,7 +10245,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ReportTaskId",
           "required": true,
@@ -10250,7 +10254,7 @@
         {
           "disabled": false,
           "document": "dspa实例id",
-          "example": "无",
+          "example": "dsap-asada",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -10259,7 +10263,7 @@
         {
           "disabled": false,
           "document": "是否同时下载敏感资产详情报告",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsWithSensitiveDetailReport",
           "required": false,
@@ -10274,7 +10278,7 @@
         {
           "disabled": false,
           "document": "下载链接集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[htpp://www.xxx.com/url]",
           "member": "string",
           "name": "DownloadUrlSet",
           "output_required": false,
@@ -10296,7 +10300,7 @@
         {
           "disabled": false,
           "document": "dspa实例id",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -10305,7 +10309,7 @@
         {
           "disabled": false,
           "document": "分页大小",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -10314,7 +10318,7 @@
         {
           "disabled": false,
           "document": "分页偏移量",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -10323,7 +10327,7 @@
         {
           "disabled": false,
           "document": "报表名称",
-          "example": "无",
+          "example": "report-nam1",
           "member": "string",
           "name": "ReportName",
           "required": false,
@@ -10338,7 +10342,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
@@ -10348,7 +10352,7 @@
         {
           "disabled": false,
           "document": "报表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[data1]",
           "member": "ReportInfo",
           "name": "ItemSet",
           "output_required": false,
@@ -10566,7 +10570,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-ab21",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -10575,7 +10579,7 @@
         {
           "disabled": false,
           "document": "资源类型。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaType",
           "required": true,
@@ -10584,7 +10588,7 @@
         {
           "disabled": false,
           "document": "资源所处地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -10593,7 +10597,7 @@
         {
           "disabled": false,
           "document": "用户云资源ID列表。",
-          "example": "无",
+          "example": "cbd-a1b2c3",
           "member": "string",
           "name": "ResourceIDs",
           "required": true,
@@ -10608,20 +10612,20 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[result]",
           "member": "DspaTaskResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10690,22 +10694,20 @@
         {
           "disabled": false,
           "document": "过滤类型。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤类型的值。",
-          "example": "无",
+          "example": "value",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -10982,7 +10984,7 @@
         {
           "disabled": false,
           "document": "分类路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "个人基础信息/个人身份信息",
           "member": "string",
           "name": "CategoryFullPath",
           "output_required": true,
@@ -11018,80 +11020,80 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "无",
+          "example": "task-name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务描述",
-          "example": "无",
+          "example": "task-desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行周期，0单次 1每天 2每周 3每月",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行计划，0立即 1定时",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务开关；1 打开，0 关闭",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据源对象信息",
-          "example": "无",
+          "example": "data",
           "member": "DspaCOSDiscoveryTaskDataSourceInfo",
           "name": "DataSourceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通用规则集开关，0 关闭，1 启用",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "GeneralRuleSetEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务最新的一次执行结果信息，该字段用于查询任务列表接口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "success",
           "member": "ScanTaskResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11101,7 +11103,7 @@
           "example": "2021-12-1212:12:12",
           "member": "string",
           "name": "TimingStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11111,7 +11113,7 @@
           "example": "true",
           "member": "bool",
           "name": "ComplianceUpdate",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -11180,60 +11182,60 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "无",
+          "example": "task-name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务描述",
-          "example": "无",
+          "example": "task-desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行周期，0单次 1每天 2每周 3每月",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行计划，0立即 1定时",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务开关；1 打开，0 关闭",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据源对象信息",
-          "example": "无",
+          "example": "datasource",
           "member": "DspaCOSDiscoveryTaskDataSourceInfo",
           "name": "DataSourceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11243,27 +11245,27 @@
           "example": "1",
           "member": "int64",
           "name": "GeneralRuleSetEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[default]",
           "member": "ScanTaskComplianceInfo",
           "name": "DefaultComplianceInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该任务中用户选择的合规组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[default]",
           "member": "ScanTaskComplianceInfo",
           "name": "CustomComplianceInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11273,7 +11275,7 @@
           "example": "2021-12-1212:12:12",
           "member": "string",
           "name": "TimingStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11441,7 +11443,7 @@
         {
           "disabled": false,
           "document": "资源名称。",
-          "example": "无",
+          "example": "cdb-name",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -11468,7 +11470,7 @@
         {
           "disabled": false,
           "document": "资源被创建时间。",
-          "example": "无",
+          "example": "2024-09-13",
           "member": "string",
           "name": "ResourceCreateTime",
           "required": true,
@@ -11547,22 +11549,20 @@
         {
           "disabled": false,
           "document": "过滤类型。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤类型的值。",
-          "example": "无",
+          "example": "value",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -12468,8 +12468,8 @@
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cbd",
           "member": "string",
           "name": "DataSourceType",
           "output_required": false,
@@ -12641,90 +12641,90 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "无",
+          "example": "task-name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "task-desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "执行周期，0单次 1每天 2每周 3每月",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行计划，0立即 1定时",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务开关；1 打开，0 关闭",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "元数据对象信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb",
           "member": "DspaDiscoveryTaskDataSource",
           "name": "DataSourceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通用规则集开关，0 关闭，1 启用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "GeneralRuleSetEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "ScanTaskComplianceInfo",
           "name": "DefaultComplianceInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该任务中用户选择的合规组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "ScanTaskComplianceInfo",
           "name": "CustomComplianceInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12734,7 +12734,7 @@
           "example": "2021-12-1212:12:12",
           "member": "string",
           "name": "TimingStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12750,7 +12750,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12760,7 +12760,7 @@
           "example": "1",
           "member": "int64",
           "name": "FieldResultId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12770,7 +12770,7 @@
           "example": "table1",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12780,7 +12780,7 @@
           "example": "name",
           "member": "string",
           "name": "FieldName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12790,7 +12790,7 @@
           "example": "1",
           "member": "int64",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12800,7 +12800,7 @@
           "example": "个人基本信息",
           "member": "string",
           "name": "CategoryName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12810,7 +12810,7 @@
           "example": "10000",
           "member": "int64",
           "name": "LevelId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12820,7 +12820,7 @@
           "example": "高",
           "member": "string",
           "name": "LevelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12830,7 +12830,7 @@
           "example": "姓名",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12840,7 +12840,7 @@
           "example": "1",
           "member": "int64",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12850,27 +12850,27 @@
           "example": "1",
           "member": "int64",
           "name": "LevelRiskScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "保护措施\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "DspaSafeGuard",
           "name": "SafeGuard",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分类路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "个人身份信息/个人基础身份信息",
           "member": "string",
           "name": "CategoryFullPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -13321,7 +13321,7 @@
         {
           "disabled": false,
           "document": "保护措施\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "safeGuard",
           "member": "DspaSafeGuard",
           "name": "SafeGuard",
           "output_required": true,
@@ -13331,7 +13331,7 @@
         {
           "disabled": false,
           "document": "分类路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "个人信息/个人身份信息",
           "member": "string",
           "name": "CategoryFullPath",
           "output_required": true,
@@ -13377,9 +13377,10 @@
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "无",
+          "example": "cdb-a1cb2",
           "member": "string",
           "name": "ResourceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13387,9 +13388,10 @@
         {
           "disabled": false,
           "document": "用户名。",
-          "example": "无",
+          "example": "admin",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13397,9 +13399,10 @@
         {
           "disabled": false,
           "document": "密码。",
-          "example": "无",
+          "example": "pass",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13442,37 +13445,37 @@
           "example": "success",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结果描述。",
-          "example": "无",
+          "example": "resultDesc",
           "member": "string",
           "name": "ResultDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源类型。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -13920,7 +13923,7 @@
         {
           "disabled": false,
           "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "字段id",
           "member": "int64",
           "name": "FieldResultId",
           "output_required": false,
@@ -13970,7 +13973,7 @@
         {
           "disabled": false,
           "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "es-a",
           "member": "string",
           "name": "IndexName",
           "output_required": true,
@@ -13980,7 +13983,7 @@
         {
           "disabled": false,
           "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "result",
           "member": "string",
           "name": "FieldName",
           "output_required": true,
@@ -14000,7 +14003,7 @@
         {
           "disabled": false,
           "document": "分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "名称",
           "member": "string",
           "name": "CategoryName",
           "output_required": false,
@@ -14010,7 +14013,7 @@
         {
           "disabled": false,
           "document": "分类路径数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[个人身份信息]",
           "member": "string",
           "name": "CategoryArr",
           "output_required": false,
@@ -14020,7 +14023,7 @@
         {
           "disabled": false,
           "document": "等级id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "高",
           "member": "int64",
           "name": "LevelId",
           "output_required": false,
@@ -14070,7 +14073,7 @@
         {
           "disabled": false,
           "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "省",
           "member": "string",
           "name": "RuleName",
           "output_required": false,
@@ -14080,7 +14083,7 @@
         {
           "disabled": false,
           "document": "0系统识别，1人工打标",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IdentifyType",
           "output_required": false,
@@ -14090,7 +14093,7 @@
         {
           "disabled": false,
           "document": "0未核查，1已核查",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "CheckStatus",
           "output_required": false,
@@ -14177,7 +14180,7 @@
         {
           "disabled": false,
           "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "field-1",
           "member": "string",
           "name": "FieldName",
           "output_required": true,
@@ -14227,7 +14230,7 @@
         {
           "disabled": false,
           "document": "多级分类的路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "个人基础信息/个人身份信息",
           "member": "string",
           "name": "CategoryArr",
           "output_required": false,
@@ -14354,20 +14357,20 @@
         {
           "disabled": false,
           "document": "错误码。",
-          "example": "无",
+          "example": "2131",
           "member": "string",
           "name": "ErrCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "具体错误信息。",
-          "example": "无",
+          "example": "参数错误",
           "member": "string",
           "name": "ErrMessage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14589,7 +14592,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -14604,7 +14607,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b2c3",
           "member": "string",
           "name": "DspaId",
           "output_required": true,
@@ -14614,7 +14617,7 @@
         {
           "disabled": false,
           "document": "用户购买的DB配额。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "DbTotalQuota",
           "output_required": true,
@@ -14624,7 +14627,7 @@
         {
           "disabled": false,
           "document": "用户购买的COS存储量配额。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "CosTotalQuota",
           "output_required": true,
@@ -14634,7 +14637,7 @@
         {
           "disabled": false,
           "document": "用户可用的DB配额。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "DbRemainQuota",
           "output_required": true,
@@ -14644,7 +14647,7 @@
         {
           "disabled": false,
           "document": "用户可用的COS存储量配额。",
-          "example": "无",
+          "example": "10",
           "member": "float",
           "name": "CosRemainQuota",
           "output_required": true,
@@ -14654,7 +14657,7 @@
         {
           "disabled": false,
           "document": "COS存储量单位，例如TB。",
-          "example": "无",
+          "example": "5TB",
           "member": "string",
           "name": "CosQuotaUnit",
           "output_required": true,
@@ -14664,7 +14667,7 @@
         {
           "disabled": false,
           "document": "db月解绑次数",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "DBUnbindNum",
           "output_required": false,
@@ -14674,7 +14677,7 @@
         {
           "disabled": false,
           "document": "cos月解绑次数",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "COSUnbindNum",
           "output_required": false,
@@ -14766,7 +14769,7 @@
         {
           "disabled": false,
           "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "risk-1",
           "member": "string",
           "name": "RiskSide",
           "output_required": false,
@@ -15240,7 +15243,7 @@
         {
           "disabled": false,
           "document": "风险等级名称",
-          "example": "无",
+          "example": "riskLevel",
           "member": "string",
           "name": "RiskLevelName",
           "required": true,
@@ -15249,7 +15252,7 @@
         {
           "disabled": false,
           "document": "风险的描述",
-          "example": "无",
+          "example": "rislDesc",
           "member": "string",
           "name": "RiskLevelDescription",
           "required": true,
@@ -15267,7 +15270,7 @@
         {
           "disabled": false,
           "document": "需要修改的风险列表",
-          "example": "无",
+          "example": "[item]",
           "member": "RiskLevelMatrix",
           "name": "ModifyRiskItem",
           "required": false,
@@ -15357,7 +15360,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "xx",
+          "example": "template-1",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -15366,7 +15369,7 @@
         {
           "disabled": false,
           "document": "模板的描述",
-          "example": "xxx",
+          "example": "tmplate-desc",
           "member": "string",
           "name": "TemplateDescription",
           "required": true,
@@ -15375,7 +15378,7 @@
         {
           "disabled": false,
           "document": "模板id",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -15393,7 +15396,7 @@
         {
           "disabled": false,
           "document": "脆弱项列表",
-          "example": "无",
+          "example": "[1,2,3]",
           "member": "int64",
           "name": "RiskIdList",
           "required": false,
@@ -16932,9 +16935,10 @@
         {
           "disabled": false,
           "document": "数据源Id",
-          "example": "无",
+          "example": "cbd-a1b2",
           "member": "string",
           "name": "DataSourceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16942,9 +16946,10 @@
         {
           "disabled": false,
           "document": "cdb, dcdb, mariadb, postgres, cynosdbpg, cynosdbmysql, cos, mysql_like_proto, postgre_like_proto",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "DataSourceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16952,9 +16957,10 @@
         {
           "disabled": false,
           "document": "资源所在地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16962,9 +16968,10 @@
         {
           "disabled": false,
           "document": "若未来扩展到DBName粒度，可采用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "DBStatements",
           "name": "DBs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -16978,7 +16985,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": false,
@@ -16988,7 +16995,7 @@
         {
           "disabled": false,
           "document": "报告名称",
-          "example": "无",
+          "example": "report-name",
           "member": "string",
           "name": "ReportName",
           "output_required": false,
@@ -16998,7 +17005,7 @@
         {
           "disabled": false,
           "document": "报告类型（AssetSorting:资产梳理）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "AssetSorting",
           "member": "string",
           "name": "ReportType",
           "output_required": false,
@@ -17008,7 +17015,7 @@
         {
           "disabled": false,
           "document": "报告周期（0单次 1每天 2每周 3每月）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ReportPeriod",
           "output_required": false,
@@ -17018,7 +17025,7 @@
         {
           "disabled": false,
           "document": "执行计划 （0:单次报告 1:定时报告）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ReportPlan",
           "output_required": false,
@@ -17028,7 +17035,7 @@
         {
           "disabled": false,
           "document": "报告导出状态（Success 成功, Failed 失败, InProgress 进行中）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "ReportStatus",
           "output_required": false,
@@ -17038,7 +17045,7 @@
         {
           "disabled": false,
           "document": "任务下次启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-02",
           "member": "string",
           "name": "TimingStartTime",
           "output_required": false,
@@ -17048,7 +17055,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-02",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -17058,7 +17065,7 @@
         {
           "disabled": false,
           "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-02-02",
           "member": "string",
           "name": "FinishedTime",
           "output_required": false,
@@ -17068,7 +17075,7 @@
         {
           "disabled": false,
           "document": "子账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3121231412",
           "member": "string",
           "name": "SubUin",
           "output_required": false,
@@ -17078,7 +17085,7 @@
         {
           "disabled": false,
           "document": "失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "fail-message",
           "member": "string",
           "name": "FailedMessage",
           "output_required": false,
@@ -17088,7 +17095,7 @@
         {
           "disabled": false,
           "document": "是否启用（0：否 1：是）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Enable",
           "output_required": false,
@@ -17098,7 +17105,7 @@
         {
           "disabled": false,
           "document": "识别模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "个人身份信息模版",
           "member": "string",
           "name": "ComplianceName",
           "output_required": false,
@@ -17108,7 +17115,7 @@
         {
           "disabled": false,
           "document": "进度百分比\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "uint64",
           "name": "ProgressPercent",
           "output_required": false,
@@ -17182,7 +17189,7 @@
         {
           "disabled": false,
           "document": "风险等级名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "高",
           "member": "string",
           "name": "RiskLevelName",
           "output_required": false,
@@ -17500,6 +17507,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -17510,6 +17518,7 @@
           "example": "1",
           "member": "int64",
           "name": "SensitiveLevelId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -17517,9 +17526,10 @@
         {
           "disabled": false,
           "document": "分类分级名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "高",
           "member": "string",
           "name": "SensitiveLevelName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -17530,6 +17540,7 @@
           "example": "高",
           "member": "string",
           "name": "VulnerabilityLevel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -17540,6 +17551,7 @@
           "example": "高",
           "member": "string",
           "name": "RiskLevel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -17665,9 +17677,10 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "risk-name",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -17678,6 +17691,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -17688,6 +17702,7 @@
           "example": "10",
           "member": "float",
           "name": "Score",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -18137,40 +18152,40 @@
         {
           "disabled": false,
           "document": "分类分级等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "高",
           "member": "RiskMatrixLevel",
           "name": "SensitiveLevel",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "脆弱项等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "低",
           "member": "RiskMatrixLevel",
           "name": "VulnerabilityLevel",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "风险名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "riskname",
           "member": "string",
           "name": "RiskName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "float",
           "name": "RiskScore",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }

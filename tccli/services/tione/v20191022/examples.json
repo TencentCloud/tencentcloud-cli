@@ -181,14 +181,6 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac85a52-fb9d-4b28-b0fa-1017b9ada1ac\"\n    }\n}",
         "title": "更新Notebook实例"
       }
-    ],
-    "UpdateNotebookLifecycleScript": [
-      {
-        "document": "",
-        "input": "https://tione.tencentcloudapi.com/?Action=UpdateNotebookLifecycleScripts\r\n&NotebookLifecycleScriptsName=abc\r\n&CreateScript=YWJj&StartScript=YWJj\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15833967702530096378\"\n    }\n}",
-        "title": "更新notebook生命周期脚本"
-      }
     ]
   },
   "version": "1.0"

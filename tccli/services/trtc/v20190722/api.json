@@ -3842,6 +3842,15 @@
           "name": "ZOrder",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

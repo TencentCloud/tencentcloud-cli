@@ -1360,6 +1360,23 @@
       ],
       "usage": "out"
     },
+    "CBSConfig": {
+      "document": "CBS存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "VolumeSizeInGB",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CFSConfig": {
       "document": "CFS存储的配置",
       "members": [
@@ -3666,6 +3683,17 @@
           "example": "无",
           "member": "LocalDisk",
           "name": "LocalDiskSource",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CBS配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CBSConfig",
+          "name": "CBSSource",
           "output_required": true,
           "required": false,
           "type": "object",

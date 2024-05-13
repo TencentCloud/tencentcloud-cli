@@ -555,8 +555,8 @@
     "DescribeDSPACOSDiscoveryTaskResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"BucketName\",\n            \"Values\": [\n                \"bucket_1\"\n            ]\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"BucketResultId\": 3,\n                \"TaskId\": 28,\n                \"TaskName\": \"898111\",\n                \"BucketName\": \"bucket_1\",\n                \"TotalFiles\": 2,\n                \"SensitiveDataNums\": 6\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BucketResultId\": 0,\n                \"TaskId\": 0,\n                \"TaskName\": \"abc\",\n                \"ResultId\": 0,\n                \"DataSourceId\": \"abc\",\n                \"BucketName\": \"abc\",\n                \"TotalFiles\": 0,\n                \"SensitiveDataNums\": 0,\n                \"EndTime\": \"abc\",\n                \"DataSourceName\": \"abc\",\n                \"Status\": 0,\n                \"ErrorInfo\": \"abc\",\n                \"ResourceRegion\": \"abc\",\n                \"OverSize\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeCOSTaskResult"
       }
     ],
