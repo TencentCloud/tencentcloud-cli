@@ -1,3 +1,291 @@
+# Release 3.0.993.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 57 次发布
+
+发布时间：2024-05-14 01:07:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Specifications](http://document.tencentcloudapi.woa.com/document/product/1021/57582#Specifications)
+
+	* 新增成员：BillingType, InsuranceBusiness
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 97 次发布
+
+发布时间：2024-05-14 01:10:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：BillingParameters
+
+	* 新增出参：BillingParameters
+
+* [DescribeDBPrice](http://document.tencentcloudapi.woa.com/document/product/236/18566)
+
+	* 新增入参：BillingParameters
+
+	* 新增出参：BillingParameters
+
+* [RenewDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/30160)
+
+	* 新增入参：BillingParameters
+
+	* 新增出参：BillingParameters
+
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+### 第 2 次发布
+
+发布时间：2024-05-14 01:12:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCustomizedConfigAssociateList](http://document.tencentcloudapi.woa.com/document/product/214/83895)
+* [DescribeCustomizedConfigList](http://document.tencentcloudapi.woa.com/document/product/214/83894)
+
+新增数据结构：
+
+* [BindDetailItem](http://document.tencentcloudapi.woa.com/document/product/214/83865#BindDetailItem)
+* [ConfigListItem](http://document.tencentcloudapi.woa.com/document/product/214/83865#ConfigListItem)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 66 次发布
+
+发布时间：2024-05-14 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TargetGroupAssociation](http://document.tencentcloudapi.woa.com/document/product/214/30694#TargetGroupAssociation)
+
+	* 新增成员：Weight
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 84 次发布
+
+发布时间：2024-05-14 01:14:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83842)
+
+	* 新增入参：InstanceId, CLSInfoList
+
+	* 新增出参：TaskId
+
+* [DeleteCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83841)
+
+	* 新增入参：InstanceId, CLSTopicIds
+
+	* 新增出参：TaskId
+
+* [DescribeInstanceCLSLogDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83840)
+
+	* 新增入参：InstanceId
+
+	* 新增出参：TotalCount, InstanceCLSDeliveryInfos
+
+* [StartCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83839)
+
+	* 新增入参：InstanceId, CLSTopicIds
+
+	* 新增出参：TaskId
+
+* [StopCLSDelivery](http://document.tencentcloudapi.woa.com/document/product/1003/83838)
+
+	* 新增入参：InstanceId, CLSTopicIds
+
+	* 新增出参：TaskId
+
+
+新增数据结构：
+
+* [CLSInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CLSInfo)
+* [InstanceCLSDeliveryInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceCLSDeliveryInfo)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 46 次发布
+
+发布时间：2024-05-14 01:17:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImpalaQuery](http://document.tencentcloudapi.woa.com/document/product/589/33981#ImpalaQuery)
+
+	* 新增成员：BackendsCount, FragmentInstancesCount, RemainingFragmentCount
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 58 次发布
+
+发布时间：2024-05-14 01:17:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/83422)
+
+	* 新增入参：KibanaLanguage
+
+
+修改数据结构：
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：KibanaLanguage
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 58 次发布
+
+发布时间：2024-05-14 01:30:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CBSConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#CBSConfig)
+
+修改数据结构：
+
+* [DataConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#DataConfig)
+
+	* 新增成员：CBSSource
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 49 次发布
+
+发布时间：2024-05-14 01:31:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+	* 新增成员：Font
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 61 次发布
+
+发布时间：2024-05-14 01:31:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayNode](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayNode)
+
+	* 新增成员：Weight, IsDefaultWeight
+
+	* <font color="#dd0000">**修改成员**：</font>ZoneId, Zone, GroupId, GroupName, Status
+
+* [NativeGatewayServerGroup](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServerGroup)
+
+	* 新增成员：DefaultWeight
+
+
+
+
+## 视频转译(vtc) 版本：2024-02-23
+
+### 第 2 次发布
+
+发布时间：2024-05-14 01:33:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83880)
+
+	* 新增出参：OriginalVideoUrl, AsrTimestamps, JobSubmitReqId, JobAudioModerationId
+
+* [SubmitVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83879)
+
+	* 新增入参：AudioUrl, LipSync
+
+
+新增数据结构：
+
+* [AsrTimestamps](http://document.tencentcloudapi.woa.com/document/product/1761/83882#AsrTimestamps)
+
+
+
 # Release 3.0.992.1
 
 ## 访问管理(cam) 版本：2019-01-16

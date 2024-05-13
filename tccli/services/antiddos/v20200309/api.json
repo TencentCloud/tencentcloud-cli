@@ -5019,7 +5019,7 @@
         },
         {
           "disabled": false,
-          "document": "统计开始时间。 例：“2020-09-22 00:00:00”",
+          "document": "统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数",
           "example": "2020-09-22 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -5028,7 +5028,7 @@
         },
         {
           "disabled": false,
-          "document": "统计结束时间。 例：“2020-09-22 00:00:00”",
+          "document": "统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数",
           "example": "2020-09-22 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -12477,6 +12477,26 @@
           "name": "ProtectResetTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "BILLING_SEPARATE:单独计费\nBILLING_WITH_INSTANCE： 随实例计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BILLING_SEPARATE",
+          "member": "string",
+          "name": "BillingType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有保险版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InsuranceBusiness",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

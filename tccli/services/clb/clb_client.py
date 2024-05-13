@@ -11,6 +11,8 @@ from tccli.exceptions import ConfigurationError, ClientError, ParamError
 from tencentcloud.common import credential
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.common.profile.client_profile import ClientProfile
+from tencentcloud.clb.v20230417 import clb_client as clb_client_v20230417
+from tencentcloud.clb.v20230417 import models as models_v20230417
 from tencentcloud.clb.v20180317 import clb_client as clb_client_v20180317
 from tencentcloud.clb.v20180317 import models as models_v20180317
 
@@ -5374,11 +5376,13 @@ def doBatchModifyTargetTag(args, parsed_globals):
 
 
 CLIENT_MAP = {
+    "v20230417": clb_client_v20230417,
     "v20180317": clb_client_v20180317,
 
 }
 
 MODELS_MAP = {
+    "v20230417": models_v20230417,
     "v20180317": models_v20180317,
 
 }
@@ -5491,6 +5495,7 @@ ACTION_MAP = {
 }
 
 AVAILABLE_VERSION_LIST = [
+    "v20230417",
     "v20180317",
 
 ]

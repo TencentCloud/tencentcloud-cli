@@ -290,7 +290,7 @@
     "DescribeCloudStorageOrder": {
       "document": "查询云存服务详情",
       "input": "DescribeCloudStorageOrderRequest",
-      "name": "查询云存服务详情",
+      "name": "查询云存订单详情",
       "output": "DescribeCloudStorageOrderResponse",
       "status": "online"
     },

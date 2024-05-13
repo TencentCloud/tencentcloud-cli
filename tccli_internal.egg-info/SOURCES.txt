@@ -954,6 +954,8 @@ tccli/services/vpcdefensor/__init__.py
 tccli/services/vpcdefensor/vpcdefensor_client.py
 tccli/services/vrs/__init__.py
 tccli/services/vrs/vrs_client.py
+tccli/services/vtc/__init__.py
+tccli/services/vtc/vtc_client.py
 tccli/services/waf/__init__.py
 tccli/services/waf/waf_client.py
 tccli/services/waf/v20180125/api.json
