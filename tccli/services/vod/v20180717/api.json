@@ -16028,7 +16028,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "document": "任务状态，取值：\n<li>WAITING：等待中；</li>\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成；</li>\n<li>ABORTED：已终止。</li>",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
@@ -35179,7 +35179,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "document": "任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。",
           "example": "FINISH",
           "member": "string",
           "name": "Status",

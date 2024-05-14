@@ -3932,7 +3932,7 @@
         {
           "disabled": false,
           "document": "分组id, 不传默认全部",
-          "example": "无",
+          "example": "12836",
           "member": "int64",
           "name": "GroupId",
           "required": false,

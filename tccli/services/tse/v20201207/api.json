@@ -4577,6 +4577,24 @@
         },
         {
           "disabled": false,
+          "document": "zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM\nzk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50",
+          "example": "50",
+          "member": "int64",
+          "name": "StorageCapacity",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "zk专业版至多有两个盘，且磁盘的容量在50-3200之间\n如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致",
           "example": "无",
           "member": "StorageOption",

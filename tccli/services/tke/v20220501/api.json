@@ -1136,7 +1136,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 (默认）\n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不不自动续费\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
+          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 (默认）\n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不自动续费\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
