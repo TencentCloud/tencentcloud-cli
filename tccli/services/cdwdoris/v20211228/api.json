@@ -1528,6 +1528,42 @@
           "name": "DurationMs",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询sql",
+          "example": "无",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "无",
+          "member": "string",
+          "name": "ReadRows",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "无",
+          "member": "string",
+          "name": "ResultBytes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "无",
+          "member": "string",
+          "name": "MemoryUsage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1646,6 +1682,42 @@
           "name": "CatalogName",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "sql名",
+          "example": "select * from xxx",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ReadRows排序字段",
+          "example": "ASC",
+          "member": "string",
+          "name": "ReadRows",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ResultBytes排序字段",
+          "example": "ASC",
+          "member": "string",
+          "name": "ResultBytes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MemoryUsage排序字段",
+          "example": "ASC",
+          "member": "string",
+          "name": "MemoryUsage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

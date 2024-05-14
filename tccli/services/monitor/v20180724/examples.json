@@ -668,6 +668,14 @@
         "title": "列出实例的 DNS 配置"
       }
     ],
+    "DescribeDashboardMetricData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardMetricData\n<公共请求参数>\n\n{\n    \"Query\": [\n        {\n            \"DataSource\": \"DS_QCEMetric\",\n            \"Namespace\": \"QCE/CVM\",\n            \"MetricName\": \"CpuUsage\",\n            \"Aggregate\": \"\",\n            \"Period\": 60,\n            \"Conditions\": [\n                {\n                    \"Region\": \"na-toronto\",\n                    \"Dimension\": [\n                        \"{\\\"InstanceId\\\":\\\"ins-0o9cty8p\\\"}\"\n                    ]\n                }\n            ],\n            \"GroupBy\": [\n                \"InstanceId\"\n            ],\n            \"StartTime\": \"2020-11-02T15:52:36+08:00\",\n            \"EndTime\": \"2020-11-02T16:52:36+08:00\"\n        }\n    ],\n    \"Module\": \"monitor\",\n    \"SpaceUUID\": \"space_default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e0387fa-9871-49ac-a56d-8f080cb9d53e\"\n    }\n}",
+        "title": "查询指标监控数据"
+      }
+    ],
     "DescribeExporterIntegrations": [
       {
         "document": "查询 exporter 集成列表",

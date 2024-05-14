@@ -9089,6 +9089,15 @@
           "name": "Language",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动降级模式，参数取值如下：\n1：降级为静默活体模式；\n2：禁用降级模式。\n默认值为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoDowngrade",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

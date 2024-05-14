@@ -1,3 +1,91 @@
+# Release 3.0.994.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 14 次发布
+
+发布时间：2024-05-15 01:11:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
+
+	* 新增入参：Sql, ReadRows, ResultBytes, MemoryUsage
+
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
+
+	* 新增入参：Sql, ReadRows, ResultBytes, MemoryUsage
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 75 次发布
+
+发布时间：2024-05-15 01:13:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CpuTopology](http://document.tencentcloudapi.woa.com/document/product/213/15753#CpuTopology)
+
+	* <font color="#dd0000">**删除成员**：</font>Architecture
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 61 次发布
+
+发布时间：2024-05-15 01:19:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：AutoDowngrade
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 78 次发布
+
+发布时间：2024-05-15 01:24:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDashboardMetricData](http://document.tencentcloudapi.woa.com/document/product/248/83897)
+
+新增数据结构：
+
+* [DashboardMetricCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#DashboardMetricCondition)
+* [DashboardMetricQuery](http://document.tencentcloudapi.woa.com/document/product/248/30354#DashboardMetricQuery)
+
+
+
 # Release 3.0.993.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
