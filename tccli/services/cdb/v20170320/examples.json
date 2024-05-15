@@ -516,6 +516,14 @@
         "title": "获取数据库可售卖规格"
       }
     ],
+    "DescribeCdcList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdcList\n<公共请求参数>\n\n{\n    \"CdcIds\": [\n        \"cluster_cdc_test\"\n    ],\n    \"CdcName\": \"abc\",\n    \"NeedDetails\": true,\n    \"IncludeOff\": true,\n    \"ZoneId\": 10006,\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"CdcId\": \"cluster_cdc_test\",\n                \"ZoneId\": 10006,\n                \"Zone\": \"abc\",\n                \"CdcName\": \"abc\",\n                \"Status\": \"abc\",\n                \"ClusterType\": 1,\n                \"CampusId\": 1,\n                \"DeviceClass\": \"abc\",\n                \"ExclusterId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"39db5967-5605-42e0-b7b6-36cb74e5f8a7\"\n    }\n}",
+        "title": "查询本地专属集群列表"
+      }
+    ],
     "DescribeCloneList": [
       {
         "document": "查询克隆列表",

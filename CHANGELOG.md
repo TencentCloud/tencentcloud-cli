@@ -1,3 +1,201 @@
+# Release 3.0.995.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 98 次发布
+
+发布时间：2024-05-16 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCdcList](http://document.tencentcloudapi.woa.com/document/product/236/83898)
+
+新增数据结构：
+
+* [CdcInfoItem](http://document.tencentcloudapi.woa.com/document/product/236/15878#CdcInfoItem)
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 82 次发布
+
+发布时间：2024-05-16 01:25:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [MqttConnectParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MqttConnectParam)
+* [MqttParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MqttParam)
+
+修改数据结构：
+
+* [DatahubResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DatahubResource)
+
+	* 新增成员：MqttParam
+
+* [DescribeConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResource)
+
+	* 新增成员：MqttConnectParam
+
+	* <font color="#dd0000">**修改成员**：</font>TaskProgress, StepList, KafkaConnectParam
+
+* [DescribeConnectResourceResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#DescribeConnectResourceResp)
+
+	* 新增成员：MqttConnectParam
+
+	* <font color="#dd0000">**修改成员**：</font>KafkaConnectParam
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 35 次发布
+
+发布时间：2024-05-16 01:30:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateAlertStatusList](http://document.tencentcloudapi.woa.com/document/product/1726/83899)
+
+新增数据结构：
+
+* [NewAlertKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#NewAlertKey)
+
+
+
+## 高性能弹性计算底座(cube) 版本：2024-03-04
+
+### 第 2 次发布
+
+发布时间：2024-05-16 01:31:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RunProxyCall](http://document.tencentcloudapi.woa.com/document/product/1760/83901)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 86 次发布
+
+发布时间：2024-05-16 01:50:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
+
+	* 新增入参：UserData
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 62 次发布
+
+发布时间：2024-05-16 01:52:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplySdkVerificationToken](http://document.tencentcloudapi.woa.com/document/product/1007/76415)
+
+	* <font color="#dd0000">**修改入参**：</font>NeedVerifyIdCard
+
+
+新增数据结构：
+
+* [NormalCardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalCardInfo)
+* [NormalHKIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalHKIDCard)
+* [NormalIndonesiaIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalIndonesiaIDCard)
+* [NormalMLIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalMLIDCard)
+* [NormalThailandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NormalThailandIDCard)
+
+修改数据结构：
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+
+	* 新增成员：NormalCardInfo, WarnCardInfos
+
+* [MainlandIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#MainlandIDCard)
+
+	* 新增成员：FormattedAddress
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2023-10-24
+
+### 第 4 次发布
+
+发布时间：2024-05-16 01:56:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Strategy](http://document.tencentcloudapi.woa.com/document/product/1696/83274#Strategy)
+
+	* 新增成员：SwitchPoolType
+
+* [StrategyDetail](http://document.tencentcloudapi.woa.com/document/product/1696/83274#StrategyDetail)
+
+	* 新增成员：SwitchPoolType
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 17 次发布
+
+发布时间：2024-05-16 02:26:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEventEscapeImageList](http://document.tencentcloudapi.woa.com/document/product/1662/83902)
+
+新增数据结构：
+
+* [EventEscapeImageInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#EventEscapeImageInfo)
+
+
+
 # Release 3.0.994.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28

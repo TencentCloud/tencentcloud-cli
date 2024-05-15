@@ -30,7 +30,24 @@ Output:
                 "City": 216,
                 "Province": 19,
                 "LoginTime": "2020-02-20 14:51:35",
-                "ModifyTime": "2020-02-20 14:51:35"
+                "ModifyTime": "2020-02-20 14:51:35",
+                "IsRiskUser": 0,
+                "Port": 22,
+                "Location": "中国:广东省:深圳市",
+                "Desc": "",
+                "IsRiskSrcIp": 1,
+                "IsRiskArea": 1,
+                "Quuid": "xxxx-xxxx-xxxxxx-xxxxxx-xxxx",
+                "RiskLevel": 0,
+                "IsRiskTime": 1,
+                "MachineExtraInfo": {
+                    "WanIP": "111.111.111.111",
+                    "InstanceID": "ins-12341234",
+                    "NetworkName": "",
+                    "PrivateIP": "1.1.1.1",
+                    "NetworkType": 1,
+                    "HostName": "abc"
+                }
             }
         ],
         "RequestId": "4234234",

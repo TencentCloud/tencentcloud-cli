@@ -6,6 +6,13 @@
       "name": "查看实例列表",
       "output": "DescribeInstancesResponse",
       "status": "online"
+    },
+    "RunProxyCall": {
+      "document": "cube通过云api提供一个“公司内部”的通用代理接口，实现在公有云vpc环境实现网络访问。",
+      "input": "RunProxyCallRequest",
+      "name": "通用代理访问云支撑环境接口",
+      "output": "RunProxyCallResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -336,6 +343,106 @@
         }
       ],
       "usage": "both"
+    },
+    "RunProxyCallRequest": {
+      "document": "RunProxyCall请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要代理访问的内部接口所属产品名称",
+          "example": "cvm",
+          "member": "string",
+          "name": "ProxyProduct",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的内部接口名称",
+          "example": "DescribeInstanceFromVStation",
+          "member": "string",
+          "name": "ProxyAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的内部接口的请求体，json编码",
+          "example": "{}",
+          "member": "string",
+          "name": "ProxyRequest",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的内部接口的地域信息",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ProxyRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的用户主账号Uin",
+          "example": "1234",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的用户账号AppId",
+          "example": "12345",
+          "member": "int64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的内部接口的云api版本号，不提供则走配置里的默认版本号",
+          "example": "2024-03-04",
+          "member": "string",
+          "name": "ProxyVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要代理访问的用户子账号/协作者Uin",
+          "example": "123456",
+          "member": "string",
+          "name": "UserSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunProxyCallResponse": {
+      "document": "RunProxyCall返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代理接口请求的实际结果，json编码",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyResult",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SystemDisk": {
       "document": "描述了系统盘的信息",

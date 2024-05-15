@@ -3288,6 +3288,17 @@
         },
         {
           "disabled": false,
+          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
+          "member": "string",
+          "name": "SwitchPoolType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
@@ -3419,6 +3430,17 @@
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "UpdatedOn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
+          "member": "string",
+          "name": "SwitchPoolType",
           "output_required": false,
           "required": false,
           "type": "string",

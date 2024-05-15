@@ -666,15 +666,6 @@
       "document": "ApplySdkVerificationToken请求参数结构体",
       "members": [
         {
-          "disabled": true,
-          "document": "是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。",
-          "example": "true",
-          "member": "bool",
-          "name": "NeedVerifyIdCard",
-          "required": true,
-          "type": "bool"
-        },
-        {
           "disabled": false,
           "document": "检测模式，参数取值如下：\n1：OCR+活体检测+人脸比对；\n2：活体检测+人脸比对；\n3：活体检测；\n默认值为1。",
           "example": "1",
@@ -694,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:\n1.HK：中国香港身份证\n2.ML：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.MLIDPassport：港澳台地区以及境外护照\n默认值为HK。",
+          "document": "认证使用的卡证类型，当前支持: \n1.HK：中国香港身份证 \n2.ML：马来西亚身份证 \n3.IndonesiaIDCard：印度尼西亚身份证 \n4.PhilippinesVoteID：菲律宾选民卡 \n5.PhilippinesDrivingLicense：菲律宾驾驶证 \n6.PhilippinesTinID：菲律宾TinID \n7.PhilippinesSSSID：菲律宾SSSID \n8.PhilippinesUMID：菲律宾UMID \n9.MLIDPassport：港澳台地区以及境外护照 \n10.MacaoIDCard:  澳门身份证 \n11.ThailandIDCard: 泰国身份证\n12.MainlandIDCard: 大陆身份证\n默认值为HK。",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -709,6 +700,15 @@
           "name": "CompareImage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "是否需要身份证鉴伪，如果不需要，则仅做证件OCR。当前仅IdCardType为HK支持鉴伪。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedVerifyIdCard",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1368,7 +1368,7 @@
         },
         {
           "disabled": false,
-          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- CnName string 中文姓名\n- EnName string 英文姓名\n- TelexCode string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- IdNum string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- FirstIssueDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- ID string 证号\n- Name string 名字\n- Address string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- NIK string 证件号码\n- Nama string 姓名\n- TempatTglLahir string 出生地/出生时间\n- JenisKelamin string 性别\n- GolDarah string 血型\n- Alamat string 地址\n- RTRW string 街道\n- KelDesa string 村\n- Kecamatan string 地区\n- Agama string 宗教信仰\n- StatusPerkawinan string 婚姻状况\n- Perkerjaan string 职业\n- KewargaNegaraan string 国籍\n- BerlakuHingga string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- ChineseName string 中文姓名\n- FullName string 英文姓名\n- RegistrationNumber string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- LicenseNumber string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- IssuedDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- LicenseNumber string 证号\n- FullName string 名字\n- FormattedAddress string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- LicenseNumber string 证件号码\n- FullName string 姓名\n- Birthday string 出生地/出生时间\n- Sex string 性别\n- BloodType string 血型\n- FormattedAddress string 地址\n- Street string 街道\n- Village string 村\n- Area string 地区\n- Religion string 宗教信仰\n- MaritalStatus string 婚姻状况\n- Occupation string 职业\n- Nationality string 国籍\n- DueDate string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoOcrJson",
@@ -1387,13 +1387,33 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "证件照的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CardInfo",
           "name": "CardInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件照的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalCardInfo",
+          "name": "NormalCardInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "WarnCardInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -7187,7 +7207,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -7203,6 +7223,17 @@
           "example": "无",
           "member": "string",
           "name": "LicenseNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormattedAddress",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -7435,6 +7466,646 @@
         }
       ],
       "type": "object"
+    },
+    "NormalCardInfo": {
+      "document": "证件识别结果（映射字段结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "香港身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalHKIDCard",
+          "name": "HKIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "马来西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalMLIDCard",
+          "name": "MLIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "菲律宾选民卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhilippinesVoteID",
+          "name": "PhilippinesVoteID",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印度尼西亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalIndonesiaIDCard",
+          "name": "IndonesiaIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "菲律宾驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhilippinesDrivingLicense",
+          "name": "PhilippinesDrivingLicense",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "菲律宾TinID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhilippinesTinID",
+          "name": "PhilippinesTinID",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "菲律宾SSSID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhilippinesSSSID",
+          "name": "PhilippinesSSSID",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "菲律宾UMID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhilippinesUMID",
+          "name": "PhilippinesUMID",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "港澳台地区以及境外护照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternationalIDPassport",
+          "name": "InternationalIDPassport",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通用卡证信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralCard",
+          "name": "GeneralCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "印度尼西亚驾驶证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndonesiaDrivingLicense",
+          "name": "IndonesiaDrivingLicense",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泰国身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NormalThailandIDCard",
+          "name": "ThailandIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新加坡身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SingaporeIDCard",
+          "name": "SingaporeIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "澳门身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MacaoIDCard",
+          "name": "MacaoIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大陆身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MainlandIDCard",
+          "name": "MainlandIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NormalHKIDCard": {
+      "document": "香港身份证（映射字段结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "申能",
+          "member": "string",
+          "name": "ChineseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SAN, Nan",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文姓名对应电码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistrationNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性别 ：“男M”或“女F”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "女F",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01-01-2001",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "永久性居民身份证:0-非永久；1-永久；-1-未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Permanent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C000000(E)",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件符号，出生日期下的符号，例如\"***AZ\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Symbol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近领用日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentIssueDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NormalIndonesiaIDCard": {
+      "document": "印度尼西亚身份证（映射字段结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出生地/出生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BloodType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FormattedAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "街道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Street",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "村\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Village",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Area",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "宗教信仰\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Religion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "婚姻状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MaritalStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "职业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Occupation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国籍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证有效期限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DueDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发证日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NormalMLIDCard": {
+      "document": "马来西亚身份证（映射字段结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "KAVIN ONG KHI MN",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "710716-08-6085",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LEAKI",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NO 11 PERSIARN PERAJRIT 4 TAMA PERAK 31400 IPOH ERAK",
+          "member": "string",
+          "name": "FormattedAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件类型\nMyKad 身份证\nMyPR 永居证\nMyTentera 军官证\nMyKAS 临时身份证\nPOLIS 警察证\nIKAD 劳工证\nMyKid 儿童卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MyKad",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出生日期（目前该字段仅支持IKAD劳工证、MyKad 身份证）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NormalThailandIDCard": {
+      "document": "泰国身份证（映射字段结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3102001968756",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泰文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "นาย ธนกฤต  บุญโญปกรุณ์",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Mr. Thanakit",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Boonyopakron",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13 Mar. 1986",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
+          "member": "string",
+          "name": "FormattedAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12 Mar. 2030",
+          "member": "string",
+          "name": "ExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13 Mar. 1986",
+          "member": "string",
+          "name": "IssuedDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1047-02-03291045",
+          "member": "string",
+          "name": "RegistrationNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "宗教信仰\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "พุทธ",
+          "member": "string",
+          "name": "Religion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泰文出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14ธ.ค.2509",
+          "member": "string",
+          "name": "ThaiBirthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泰文到期日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13ธ.ค.2567",
+          "member": "string",
+          "name": "ThaiExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "泰文签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9ธ.ค.2559",
+          "member": "string",
+          "name": "ThaiIssueDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OCRResult": {
       "document": "证件信息中单张证件的内容",
