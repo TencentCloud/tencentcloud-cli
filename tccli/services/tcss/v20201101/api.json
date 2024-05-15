@@ -1155,6 +1155,13 @@
       "output": "DescribeEscapeWhiteListResponse",
       "status": "online"
     },
+    "DescribeEventEscapeImageList": {
+      "document": "DescribeRiskContainerImageList查询风险容器镜像列表",
+      "input": "DescribeEventEscapeImageListRequest",
+      "name": "查询风险容器镜像列表",
+      "output": "DescribeEventEscapeImageListResponse",
+      "status": "online"
+    },
     "DescribeExportJobDownloadURL": {
       "document": "查询导出任务下载URL",
       "input": "DescribeExportJobDownloadURLRequest",
@@ -20426,6 +20433,89 @@
       ],
       "type": "object"
     },
+    "DescribeEventEscapeImageListRequest": {
+      "document": "DescribeEventEscapeImageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数:\nEventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器)\nStatus: 事件状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)\nImageID: 镜像id\nImageName:镜像名称",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "升序降序,asc desc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventEscapeImageListResponse": {
+      "document": "DescribeEventEscapeImageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险容器镜像列表",
+          "example": "无",
+          "member": "EventEscapeImageInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件总数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExportJobDownloadURLRequest": {
       "document": "DescribeExportJobDownloadURL请求参数结构体",
       "members": [
@@ -30737,6 +30827,132 @@
           "name": "ImageSize",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EventEscapeImageInfo": {
+      "document": "风险容器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像id，用于跳转",
+          "example": "sha256:9aae1601d6832af6c69ef257f09f9d4e41646ed287a269cf62ac39d8d",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一值",
+          "example": "无",
+          "member": "string",
+          "name": "UniqueKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型\n   ESCAPE_CGROUPS：利用cgroup机制逃逸\n   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸\n   ESCAPE_DOCKER_API：访问Docker API接口逃逸\n   ESCAPE_VUL_OCCURRED：逃逸漏洞利用\n   MOUNT_SENSITIVE_PTAH：敏感路径挂载\n   PRIVILEGE_CONTAINER_START：特权容器\n   PRIVILEGE：程序提权逃逸",
+          "example": "MOUNT_SENSITIVE_PTAH",
+          "member": "string",
+          "name": "EventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始事件类型",
+          "example": "203",
+          "member": "string",
+          "name": "OriginEventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名",
+          "example": "/condescending_allen",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器数量",
+          "example": "1",
+          "member": "int64",
+          "name": "ContainerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成时间",
+          "example": "2020-1-1 12:00:00",
+          "member": "datetime",
+          "name": "FoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近生成时间",
+          "example": "2020-2-2 13:00:00",
+          "member": "datetime",
+          "name": "LatestFoundTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件数量",
+          "example": "1",
+          "member": "int64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略",
+          "example": "EVENT_INGNORE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "无",
+          "member": "string",
+          "name": "Solution",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

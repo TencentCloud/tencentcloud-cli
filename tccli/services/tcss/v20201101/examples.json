@@ -1398,6 +1398,14 @@
         "title": "查询逃逸白名单"
       }
     ],
+    "DescribeEventEscapeImageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskContainerList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"EventType\": \"abc\",\n                \"OriginEventType\": \"abc\",\n                \"ImageName\": \"abc\",\n                \"ContainerCount\": 0,\n                \"FoundTime\": \"2020-09-22 00:00:00\",\n                \"LatestFoundTime\": \"2020-09-22 00:00:00\",\n                \"EventCount\": 0,\n                \"Status\": \"abc\",\n                \"Description\": \"abc\",\n                \"Solution\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询风险容器镜像列表"
+      }
+    ],
     "DescribeExportJobDownloadURL": [
       {
         "document": "",

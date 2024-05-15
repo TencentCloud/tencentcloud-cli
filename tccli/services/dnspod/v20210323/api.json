@@ -1881,7 +1881,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL，范围1-604800，不同等级域名最小值不同。",
+          "document": "TTL，范围1-604800，不同套餐域名最小值不同。",
           "example": "600",
           "member": "uint64",
           "name": "TTL",

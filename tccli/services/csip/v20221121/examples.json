@@ -311,6 +311,14 @@
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "停止扫风险中心扫描任务"
       }
+    ],
+    "UpdateAlertStatusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAlertStatusList\n<公共请求参数>\n\n{\n    \"OperatedMemberId\": [\n        \"abc\"\n    ],\n    \"ID\": [\n        {\n            \"AppId\": \"abc\",\n            \"Type\": \"abc\",\n            \"SubType\": \"abc\",\n            \"Source\": \"abc\",\n            \"Name\": \"abc\",\n            \"Key\": \"abc\",\n            \"Date\": \"abc\",\n            \"Status\": 0\n        }\n    ],\n    \"OperateType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Code\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
     ]
   },
   "version": "1.0"

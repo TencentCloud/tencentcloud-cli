@@ -25389,7 +25389,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
+          "document": "过滤条件。\n<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>\n<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>\n<li>MachineName - String - 是否必填：否 - 主机别名</li>\n<li>Ip - String - 是否必填：否 - 主机ip</li>\n<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>\n<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>\n<li>UserName - String - 是否必填：否 - 用户名筛选</li>\n<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>\n<li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>\n<li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -25426,6 +25426,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25435,6 +25436,7 @@
           "example": "[]",
           "member": "HostLoginList",
           "name": "HostLoginList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

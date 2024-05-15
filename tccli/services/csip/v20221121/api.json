@@ -272,6 +272,13 @@
       "name": "停止扫风险中心扫描任务",
       "output": "StopRiskCenterTaskResponse",
       "status": "online"
+    },
+    "UpdateAlertStatusList": {
+      "document": "批量告警状态处理接口",
+      "input": "UpdateAlertStatusListRequest",
+      "name": "批量告警状态处理",
+      "output": "UpdateAlertStatusListResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -9554,6 +9561,84 @@
       ],
       "usage": "out"
     },
+    "NewAlertKey": {
+      "document": "该结构体用来传入告警的key，以更新告警的status",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要更改的用户appid",
+          "example": "1255856753",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警类别",
+          "example": "攻击尝试",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警子类别",
+          "example": "密码破解(破解失败)",
+          "member": "string",
+          "name": "SubType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警来源",
+          "example": "主机安全",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警名称",
+          "example": "未成功:暴力破解攻击",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警key",
+          "example": "102.128.78.140#lhins-1fylv826",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2023-07-06 00:00:00",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "OrganizationUserInfo": {
       "document": "集团账号成员详情",
       "members": [
@@ -11972,6 +12057,71 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAlertStatusListRequest": {
+      "document": "UpdateAlertStatusList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警ID列表",
+          "example": "[\"alert-xxx\", \"alert-yyy\"]",
+          "member": "NewAlertKey",
+          "name": "ID",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型 \n1:撤销处置 \n2:标记为已处置 \n3:标记忽略 \n4:取消标记处置\n5:取消标记忽略",
+          "example": "1",
+          "member": "int64",
+          "name": "OperateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "被调用的集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "OperatedMemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAlertStatusListResponse": {
+      "document": "UpdateAlertStatusList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果代码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VULRiskAdvanceCFGList": {
       "document": "漏洞风险高级配置列表",
