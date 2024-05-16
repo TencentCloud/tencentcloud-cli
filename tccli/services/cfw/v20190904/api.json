@@ -5867,7 +5867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ip状态信息",
+          "document": "IP状态信息",
           "example": "无",
           "member": "IPDefendStatus",
           "name": "StatusList",

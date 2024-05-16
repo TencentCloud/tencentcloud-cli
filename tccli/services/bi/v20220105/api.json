@@ -983,6 +983,15 @@
           "name": "TicketNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全局筛选参数 报表过滤条件的全局参数。 格式为JSON格式的字符串\n**目前仅支持字符类型页面参数绑定到全局参数\n**\n[\n    {\n        \"ParamKey\": \"name\",  //页面参数名称\n        \"JoinType\": \"AND\",     // 连接方式,目前仅支持AND\n        \"WhereList\": [\n            {\n                \"Operator\": \"-neq\",   // 操作符，参考以下说明\n                \"Value\": [                   //操作值，单值数组只传一个值\n                    \"zZWJMD\",\n                    \"ZzVGHX\",\n                    \"湖南省\",\n                    \"河北省\"\n                ]\n            }\n        ]\n    },\n    {\n        \"ParamKey\": \"genderParam\",\n        \"JoinType\": \"AND\",\n        \"WhereList\": [\n            {\n                \"Operator\": \"-neq\",\n                \"Value\": [\n                    \"男\"\n                ]\n            }\n        ]\n    }\n]\n\n\n\nOperator 目前支持\n-neq  不等于!=操作符\n-eq  等于=操作符\n-is     in操作符\n",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalParam",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1006,7 +1015,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Extra",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1016,7 +1025,7 @@
           "example": "无",
           "member": "EmbedTokenInfo",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1026,7 +1035,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2817,6 +2826,16 @@
           "name": "TicketNum",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全局参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalParam",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -3631,20 +3631,20 @@
         },
         {
           "disabled": false,
-          "document": "COS文件所在文件夹的前缀",
-          "example": "var/xxx",
-          "member": "string",
-          "name": "Prefix",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；\n默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。",
+          "example": "var/xxx",
+          "member": "string",
+          "name": "Prefix",
+          "required": false,
           "type": "string"
         },
         {
@@ -10449,7 +10449,7 @@
         },
         {
           "disabled": false,
-          "document": "COS文件所在文件夹的前缀",
+          "document": "COS文件所在文件夹的前缀。为空串时投递存储桶下所有的文件。",
           "example": "var/xxx",
           "member": "string",
           "name": "Prefix",
@@ -12544,11 +12544,11 @@
         },
         {
           "disabled": false,
-          "document": "cos文件所在文件夹的前缀",
+          "document": "COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。",
           "example": "var/xxx",
           "member": "string",
           "name": "Prefix",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

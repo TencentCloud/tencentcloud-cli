@@ -215,7 +215,7 @@
         {
           "disabled": false,
           "document": "子标签名称，如色情--性行为；当未命中子标签时，返回空字符串；",
-          "example": "SexBehavior",
+          "example": "SexyBehavior",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,

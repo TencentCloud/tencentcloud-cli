@@ -96,6 +96,22 @@
         "title": "【监控】查询Appilication统计V2"
       }
     ],
+    "DescribeEmrOverviewMetrics": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeEmrOverviewData\n&Start=1572447652\n&End=1572448652\n&Downsample=1m-max\n&Metric=HDFS.NN.FILES.TOTAL\n&InstanceId=emr-bemcdx96\n&Tags=\"{\\\"type\\\":\\\"FilesTotal\\\"}\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Metric\": \"abc\",\n                \"First\": 0,\n                \"Last\": 0,\n                \"Interval\": 0,\n                \"DataPoints\": [\n                    \"abc\"\n                ],\n                \"Tags\": {\n                    \"Unit\": \"abc\",\n                    \"Type\": \"abc\"\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询监控概览页指标数据"
+      }
+    ],
+    "DescribeHBaseTableOverview": [
+      {
+        "document": "",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeHBaseTableOverview\r\n&InstanceId=emr-111df6u6\r\n&Table=test\r\n&Offset=0\r\n&Limit=10\r\n&OrderField=\r\n&OrderType=\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63cb3d88-2f61-4ae6-a989-ec4153f2bfd2\",\n        \"SchemaList\": [\n            {\n                \"Name\": \"Table\",\n                \"Sortable\": false,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": true,\n                \"Title\": \"表名\"\n            },\n            {\n                \"Name\": \"ReadRequestCount\",\n                \"Sortable\": true,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": false,\n                \"Title\": \"读请求量（个/s）\"\n            },\n            {\n                \"Name\": \"WriteRequestCount\",\n                \"Sortable\": true,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": false,\n                \"Title\": \"写请求量（个/s）\"\n            },\n            {\n                \"Name\": \"MemstoreSize\",\n                \"Sortable\": true,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": false,\n                \"Title\": \"Memstore大小（byte）\"\n            },\n            {\n                \"Name\": \"StoreFileSize\",\n                \"Sortable\": true,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": false,\n                \"Title\": \"Storefile大小（byte）\"\n            },\n            {\n                \"Name\": \"Operation\",\n                \"Sortable\": false,\n                \"WithFilter\": false,\n                \"Candidates\": null,\n                \"Clickable\": true,\n                \"Title\": \"操作\"\n            }\n        ],\n        \"TableMonitorList\": [\n            {\n                \"Table\": \"default_TEST\",\n                \"ReadRequestCount\": 0,\n                \"WriteRequestCount\": 0,\n                \"MemstoreSize\": 0,\n                \"StoreFileSize\": 0,\n                \"Operation\": \"regions\"\n            },\n            {\n                \"Table\": \"default_test\",\n                \"ReadRequestCount\": 0,\n                \"WriteRequestCount\": 0,\n                \"MemstoreSize\": 0,\n                \"StoreFileSize\": 4950,\n                \"Operation\": \"regions\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询Hbase表监控概览信息"
+      }
+    ],
     "DescribeHiveQueries": [
       {
         "document": "获取Hive查询语句",

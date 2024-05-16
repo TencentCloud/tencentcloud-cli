@@ -16666,7 +16666,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像标识Id",
+          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "无",
           "member": "uint64",
           "name": "Id",
@@ -16685,7 +16685,7 @@
           "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16739,7 +16739,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像标识Id",
+          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "无",
           "member": "uint64",
           "name": "Id",
@@ -16758,7 +16758,7 @@
           "example": "无",
           "member": "ImageVul",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16768,7 +16768,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

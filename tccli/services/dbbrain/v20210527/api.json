@@ -3040,7 +3040,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"mongodb\" - 云数据库 MongoDB，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3059,7 +3059,7 @@
           "example": "231",
           "member": "int64",
           "name": "Growth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3069,7 +3069,7 @@
           "example": "23224",
           "member": "int64",
           "name": "Remain",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3079,7 +3079,7 @@
           "example": "50000",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3089,7 +3089,7 @@
           "example": "35",
           "member": "int64",
           "name": "AvailableDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

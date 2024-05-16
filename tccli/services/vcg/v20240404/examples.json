@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeVideoStylizationJob": [
+      {
+        "document": "成功请求",
+        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"\",\n        \"RequestId\": \"\",\n        \"ResultVideoUrl\": \"\",\n        \"StatusCode\": \"JobSuccess\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
+        "title": "成功请求"
+      }
+    ],
+    "SubmitVideoStylizationJob": [
+      {
+        "document": "提交成功",
+        "input": "POST / HTTP/1.1\nHost: vcg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "提交成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

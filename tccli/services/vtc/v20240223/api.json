@@ -1,0 +1,425 @@
+{
+  "actions": {
+    "ConfirmVideoTranslateJob": {
+      "document": "确认视频翻译结果",
+      "input": "ConfirmVideoTranslateJobRequest",
+      "name": "确认视频翻译结果",
+      "output": "ConfirmVideoTranslateJobResponse",
+      "status": "online"
+    },
+    "DescribeVideoTranslateJob": {
+      "document": "查询视频翻译任务",
+      "input": "DescribeVideoTranslateJobRequest",
+      "name": "查询视频转译任务",
+      "output": "DescribeVideoTranslateJobResponse",
+      "status": "online"
+    },
+    "SubmitVideoTranslateJob": {
+      "document": "提交视频转译任务",
+      "input": "SubmitVideoTranslateJobRequest",
+      "name": "提交视频转译任务",
+      "output": "SubmitVideoTranslateJobResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-02-23",
+    "api_brief": "视频翻译",
+    "serviceNameCN": "视频转译",
+    "serviceShortName": "vtc"
+  },
+  "objects": {
+    "AsrTimestamps": {
+      "document": "文本片段及其时间戳",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本片段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StartMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EndMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AudioTranslateResult": {
+      "document": "音频翻译结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原文本",
+          "example": "无",
+          "member": "string",
+          "name": "SourceText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标文本",
+          "example": "无",
+          "member": "string",
+          "name": "TargetText",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ConfirmVideoTranslateJobRequest": {
+      "document": "ConfirmVideoTranslateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频翻译任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待确认文本",
+          "example": "无",
+          "member": "AudioTranslateResult",
+          "name": "TranslateResults",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfirmVideoTranslateJobResponse": {
+      "document": "ConfirmVideoTranslateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频翻译任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频转换任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频翻译结果确认 session",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoTranslateJobRequest": {
+      "document": "DescribeVideoTranslateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "JobId。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoTranslateJobResponse": {
+      "document": "DescribeVideoTranslateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。 1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。",
+          "example": "无",
+          "member": "int64",
+          "name": "JobStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务错误码。",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频翻译结果。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频翻译结果。",
+          "example": "无",
+          "member": "TranslateResult",
+          "name": "TranslateResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要确认翻译结果。0：不需要，1：需要",
+          "example": "无",
+          "member": "int64",
+          "name": "JobConfirm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobAudioTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频审核任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobVideoModerationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频生成任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobVideoId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频素材原始 URL",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本片段及其时间戳",
+          "example": "无",
+          "member": "AsrTimestamps",
+          "name": "AsrTimestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提交视频翻译任务时的 requestId",
+          "example": "无",
+          "member": "string",
+          "name": "JobSubmitReqId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频审核任务 ID",
+          "example": "无",
+          "member": "string",
+          "name": "JobAudioModerationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoTranslateJobRequest": {
+      "document": "SubmitVideoTranslateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频地址URL。",
+          "example": "无",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言：zh, en",
+          "example": "无",
+          "member": "string",
+          "name": "SrcLang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言：zh, en",
+          "example": "无",
+          "member": "string",
+          "name": "DstLang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当音频 URL 不为空时，默认以音频驱动视频任务口型",
+          "example": "无",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要确认翻译结果0：不需要，1：需要",
+          "example": "无",
+          "member": "int64",
+          "name": "Confirm",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启口型驱动，0：不开启，1：开启。默认开启。",
+          "example": "无",
+          "member": "int64",
+          "name": "LipSync",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoTranslateJobResponse": {
+      "document": "SubmitVideoTranslateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TranslateResult": {
+      "document": "音频翻译结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻译源文字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译后文字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

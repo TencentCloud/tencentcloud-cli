@@ -20,7 +20,7 @@ Output:
         "BizType": "test_1001",
         "Suggestion": "Block",
         "Label": "Porn",
-        "SubLabel": "SexBehavior",
+        "SubLabel": "SexyBehavior",
         "Score": 90,
         "HitFlag": 1,
         "LabelResults": [
@@ -28,7 +28,7 @@ Output:
                 "Scene": "Porn",
                 "Suggestion": "Block",
                 "Label": "Porn",
-                "SubLabel": "SexBehavior",
+                "SubLabel": "SexyBehavior",
                 "Score": 90,
                 "Details": [
                     {

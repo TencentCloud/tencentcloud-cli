@@ -316,11 +316,11 @@
       "status": "online"
     },
     "DescribeCmqDeadLetterSourceQueues": {
-      "document": "枚举cmq死信队列源队列",
+      "document": "接口很久之前已删除，需下线\n\n枚举cmq死信队列源队列",
       "input": "DescribeCmqDeadLetterSourceQueuesRequest",
       "name": "枚举cmq死信队列源队列",
       "output": "DescribeCmqDeadLetterSourceQueuesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCmqQueueDetail": {
       "document": "查询cmq队列详情",
@@ -2733,7 +2733,7 @@
         },
         {
           "disabled": false,
-          "document": "消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。",
+          "document": "消息最大长度。取值范围 1024-1048576 Byte（即1-1024K），默认值 1048576。",
           "example": "0",
           "member": "uint64",
           "name": "MaxMsgSize",
@@ -11616,7 +11616,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "document": "订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "tese-sub",
           "member": "string",
           "name": "SubscriptionName",
@@ -17284,7 +17284,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟时间",
+          "document": "延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。",
           "example": "100",
           "member": "int64",
           "name": "DelaySeconds",
@@ -17303,7 +17303,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -17313,7 +17313,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MsgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

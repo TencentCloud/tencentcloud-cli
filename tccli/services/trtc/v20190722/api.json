@@ -29,7 +29,7 @@
       "status": "online"
     },
     "DescribeCallDetailInfo": {
-      "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
+      "document": "查询指定时间内的用户列表及用户通话质量数据，最大可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅套餐解锁调用能力，提供以下两种解锁方式，可任选其一解锁：\n方式一：通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」（可查近7天）和「旗舰版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc?trtcversion=top)。\n方式二：通过订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包「基础版」（可查近7天）和「进阶版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc_monitor)。",
       "input": "DescribeCallDetailInfoRequest",
       "name": "查询历史用户列表与通话指标",
       "output": "DescribeCallDetailInfoResponse",
@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeRoomInfo": {
-      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
+      "document": "查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。最大可查询14天内的数据。（同老接口DescribeRoomInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅套餐解锁调用能力，提供以下两种解锁方式，可任意其一解锁：\n方式一：通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」（可查近7天）和「旗舰版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc?trtcversion=top)。\n方式二：通过订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包「基础版」（可查近7天）和「进阶版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc_monitor)。",
       "input": "DescribeRoomInfoRequest",
       "name": "查询历史房间列表",
       "output": "DescribeRoomInfoResponse",
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "DescribeUserInfo": {
-      "document": "查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，可通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」和「旗舰版」或订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包解锁接口调用能力，[前往购买](https://buy.cloud.tencent.com/trtc)。",
+      "document": "查询指定时间内的用户列表，最大可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。（同老接口DescribeUserInformation）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅套餐解锁调用能力，提供以下两种解锁方式，可任选其一解锁：\n方式一：通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」（可查近7天）和「旗舰版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc?trtcversion=top)。\n方式二：通过订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包「基础版」（可查近7天）和「进阶版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc_monitor)。",
       "input": "DescribeUserInfoRequest",
       "name": "查询历史用户列表",
       "output": "DescribeUserInfoResponse",
@@ -1477,7 +1477,7 @@
         },
         {
           "disabled": false,
-          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -2520,7 +2520,7 @@
         },
         {
           "disabled": false,
-          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）\n注意：支持查询14天内的数据",
+          "document": "查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据",
           "example": "1590065777",
           "member": "uint64",
           "name": "StartTime",
@@ -5517,12 +5517,12 @@
         },
         {
           "disabled": false,
-          "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
+          "document": "源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。",
           "example": "https://a.b/test.mp4",
           "member": "string",
-          "name": "SourceUrl",
+          "name": "StreamUrl",
           "required": false,
-          "type": "list"
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5553,12 +5553,21 @@
         },
         {
           "disabled": false,
-          "document": "源流URL。历史原因本字段【必填】。",
+          "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
           "example": "https://a.b/test.mp4",
           "member": "string",
-          "name": "StreamUrl",
+          "name": "SourceUrl",
           "required": false,
-          "type": "string"
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定视频从某个秒时间戳播放",
+          "example": "无",
+          "member": "int64",
+          "name": "SeekSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

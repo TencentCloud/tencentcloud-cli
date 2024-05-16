@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DescribeRiskAssessment": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskAssessment\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6227506-5f00-43cf-9a4c-66fe931cefc9\"\n    }\n}",
-        "title": "DescribeRiskAssessment"
-      }
-    ],
     "ManageMarketingRisk": [
       {
         "document": "使用手机号MD5请求方式",

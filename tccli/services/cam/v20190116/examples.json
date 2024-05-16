@@ -98,7 +98,7 @@
     ],
     "CreateRole": [
       {
-        "document": "以下示例将创建一个以日志服务和云审计为载体的角色",
+        "document": "以下示例将创建一个以日志服务和操作审计为载体的角色",
         "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=abc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"123456789000\",\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
         "title": "创建一个角色"

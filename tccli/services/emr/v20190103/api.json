@@ -84,6 +84,20 @@
       "output": "DescribeEmrApplicationStaticsResponse",
       "status": "online"
     },
+    "DescribeEmrOverviewMetrics": {
+      "document": "查询监控概览页指标数据",
+      "input": "DescribeEmrOverviewMetricsRequest",
+      "name": "查询监控概览页指标数据",
+      "output": "DescribeEmrOverviewMetricsResponse",
+      "status": "online"
+    },
+    "DescribeHBaseTableOverview": {
+      "document": "获取Hbase表级监控数据概览接口",
+      "input": "DescribeHBaseTableOverviewRequest",
+      "name": "【监控218】获取Hbase表级监控数据概览接口",
+      "output": "DescribeHBaseTableOverviewResponse",
+      "status": "online"
+    },
     "DescribeHiveQueries": {
       "document": "获取hive查询信息",
       "input": "DescribeHiveQueriesRequest",
@@ -3109,6 +3123,199 @@
       ],
       "type": "object"
     },
+    "DescribeEmrOverviewMetricsRequest": {
+      "document": "DescribeEmrOverviewMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1111122",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指标名",
+          "example": "NODE.CPU",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-byecdx96",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "粒度 30s-max 1m-max 1h-max等",
+          "example": "30s-min",
+          "member": "string",
+          "name": "Downsample",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，画饼状图时不传",
+          "example": "111111",
+          "member": "int64",
+          "name": "Start",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "聚合方法，扩展用，这里目前不用传",
+          "example": "30s",
+          "member": "string",
+          "name": "Aggregator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标要查询的具体type 如：\"{\"type\":\"CapacityTotal|CapacityRemaining\"}\"",
+          "example": "queue",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEmrOverviewMetricsResponse": {
+      "document": "DescribeEmrOverviewMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标数据明细",
+          "example": "无",
+          "member": "OverviewMetricData",
+          "name": "Result",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHBaseTableOverviewRequest": {
+      "document": "DescribeHBaseTableOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询编号偏移量，从0开始\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的分页大小，最小1，最大100",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表名称，模糊匹配",
+          "example": "hbase-meta",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序的字段，有默认值",
+          "example": "ReadRequestCount",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为降序，asc代表升序，desc代表降序",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHBaseTableOverviewResponse": {
+      "document": "DescribeHBaseTableOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "概览数据数组",
+          "example": "[                     {                         \"Table\":\"hbase_meta\",                         \"ReadRequestCount\":0,                         \"WriteRequestCount\":0,                         \"MemstoreSize\":768,                         \"StoreFileSize\":17273,                         \"Operation\":\"Regions,RegionServers\"                     }]",
+          "member": "OverviewRow",
+          "name": "TableMonitorList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "概览数据数组长度",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表schema信息",
+          "example": "[{                         \"Name\":\"Table\",                         \"Sortable\":false,                         \"WithFilter\":false,                         \"Candidates\":null,                         \"Clickable\":true,                         \"Title\":\"表名\"                     }]",
+          "member": "TableSchemaItem",
+          "name": "SchemaList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHiveQueriesRequest": {
       "document": "DescribeHiveQueries请求参数结构体",
       "members": [
@@ -5932,6 +6139,24 @@
           "name": "MasterCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型为ComputeResource和EMR以及默认，默认为EMR",
+          "example": "ComputeResource",
+          "member": "string",
+          "name": "ResourceBaseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源id",
+          "example": "emr-cr-xxxxx",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6555,6 +6780,34 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricTags": {
+      "document": "指标tag",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "个",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标Type\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Amount",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7943,6 +8196,144 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewMetricData": {
+      "document": "概览数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR.111.NODE.CPU",
+          "member": "string",
+          "name": "Metric",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第一个数据时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1708496100",
+          "member": "int64",
+          "name": "First",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后一个数据时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1708499400",
+          "member": "int64",
+          "name": "Last",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样点时间间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样点数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1.2, 1.4]",
+          "member": "string",
+          "name": "DataPoints",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标tags\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricTags",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OverviewRow": {
+      "document": "Hbase的TableMetric Overview返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名字",
+          "example": "无",
+          "member": "string",
+          "name": "Table",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读请求次数",
+          "example": "无",
+          "member": "float",
+          "name": "ReadRequestCount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写请求次数",
+          "example": "无",
+          "member": "float",
+          "name": "WriteRequestCount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前memstore的size",
+          "example": "无",
+          "member": "float",
+          "name": "MemstoreSize",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前region中StroreFile的size",
+          "example": "无",
+          "member": "float",
+          "name": "StoreFileSize",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "regions，点击可跳转",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9936,6 +10327,24 @@
           "name": "AutoRenew",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识",
+          "example": "ComputeResource",
+          "member": "string",
+          "name": "ResourceBaseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源id",
+          "example": "emr-cr-xxxx",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10482,6 +10891,72 @@
       ],
       "type": "object"
     },
+    "TableSchemaItem": {
+      "document": "表格schema信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列标识",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可按该列排序",
+          "example": "",
+          "member": "bool",
+          "name": "Sortable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可筛选",
+          "example": "",
+          "member": "bool",
+          "name": "WithFilter",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "筛选的候选集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Candidates",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可点击\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "Clickable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "展示的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "标签",
       "members": [
@@ -10600,6 +11075,24 @@
           "name": "ResourceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceBaseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

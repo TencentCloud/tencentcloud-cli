@@ -3063,6 +3063,15 @@
           "name": "KafkaConnectParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "MQTT配置，Type为 MQTT 时必填",
+          "example": "xxx",
+          "member": "MqttConnectParam",
+          "name": "MqttConnectParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3076,6 +3085,7 @@
           "example": "xxx",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12890,6 +12900,15 @@
           "name": "KafkaConnectParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "MQTT配置，Type为 MQTT 时必填",
+          "example": "xxx",
+          "member": "MqttConnectParam",
+          "name": "MqttConnectParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12903,6 +12922,7 @@
           "example": "xxx",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
