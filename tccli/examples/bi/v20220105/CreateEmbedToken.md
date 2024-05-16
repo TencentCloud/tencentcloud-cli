@@ -12,7 +12,8 @@ tccli bi CreateEmbedToken --cli-unfold-argument  \
     --ProjectId 1 \
     --UserCorpId  \
     --UserId  \
-    --TicketNum 0
+    --TicketNum 0 \
+    --GlobalParam [{"ParamKey": "province",         "JoinType": "and",         "WhereList": [             {                 "Operator": "-is",                 "Value": [                     "重庆市",                     "湖北省",                     "湖南省",                     "四川省"                 ]             }         ]     } ]
 ```
 
 Output: 
@@ -36,7 +37,8 @@ Output:
             "BIToken": "300cf2a4-cfb8-47b8-9bc0-4a1f1f74bc1d",
             "UserCorpId": "",
             "UserId": "",
-            "TicketNum": 0
+            "TicketNum": 0,
+            "GlobalParam": "[{\"ParamKey\": \"province\",         \"JoinType\": \"and\",         \"WhereList\": [             {                 \"Operator\": \"-is\",                 \"Value\": [                     \"重庆市\",                     \"湖北省\",                     \"湖南省\",                     \"四川省\"                 ]             }         ]     } ]"
         }
     }
 }

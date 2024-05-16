@@ -321,7 +321,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所命中优先级最高的恶意标签下的子标签名称，如：*色情--性行为*；若未命中任何子标签则返回空字符串。",
-          "example": "SexBehavior",
+          "example": "SexyBehavior",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,

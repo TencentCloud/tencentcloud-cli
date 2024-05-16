@@ -922,6 +922,15 @@
           "name": "KeepDomainRecords",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略调度模式：AUTO默认切换；STOP仅暂停不切换",
+          "example": "AUTO",
+          "member": "string",
+          "name": "SwitchPoolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2775,6 +2784,15 @@
           "example": "enabled",
           "member": "string",
           "name": "KeepDomainRecords",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度模式：AUTO默认；STOP仅暂停不切换",
+          "example": "AUTO",
+          "member": "string",
+          "name": "SwitchPoolType",
           "required": false,
           "type": "string"
         }

@@ -21,14 +21,14 @@ Output:
         "Suggestion": "Block",
         "FileMD5": "",
         "Label": "Porn",
-        "SubLabel": "SexBehavior",
+        "SubLabel": "SexyBehavior",
         "Score": 90,
         "LabelResults": [
             {
                 "Scene": "Porn",
                 "Suggestion": "Block",
                 "Label": "Porn",
-                "SubLabel": "SexBehavior",
+                "SubLabel": "SexyBehavior",
                 "Score": 90,
                 "Details": []
             }

@@ -928,6 +928,8 @@ tccli/services/ump/__init__.py
 tccli/services/ump/ump_client.py
 tccli/services/ump/v20200918/api.json
 tccli/services/ump/v20200918/examples.json
+tccli/services/vcg/__init__.py
+tccli/services/vcg/vcg_client.py
 tccli/services/vdb/__init__.py
 tccli/services/vdb/vdb_client.py
 tccli/services/vm/__init__.py

@@ -9031,56 +9031,6 @@
       ],
       "usage": "both"
     },
-    "ServicePort": {
-      "document": "Service 端口转发配置",
-      "members": [
-        {
-          "disabled": false,
-          "document": "端口名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Port",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "service 对外暴露的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Protocol",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器监听的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TargetPort",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
     "ServiceTrait": {
       "document": "Service 类型 Trait",
       "members": [
@@ -9088,64 +9038,37 @@
           "disabled": false,
           "document": "service 类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "string",
-          "name": "Type",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "定义路由的端口信息，与service的Port数据结构一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ServicePort",
-          "name": "Ports",
-          "output_required": true,
-          "required": true,
+          "member": "ServiceTraitRaw",
+          "name": "Objects",
+          "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
-        },
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceTraitRaw": {
+      "document": "Service 类型 Trait",
+      "members": [
         {
           "disabled": false,
-          "document": "service clusterIP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ClusterIP",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "非直连的 LoadBalancer Service 和 Nodeport 类型的 Service 需关注，支持 Local 和 Cluster\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ExternalTrafficPolicy",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "非直连的 LoadBalancer Service 和 Nodeport 类型的 Service 需关注，支持 ClientIP 和 None\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "SessionAffinity",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名字标识，与JSON数据结构中，Metadata.name的名字一致\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通过JSON数据结构进行声明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JSON",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
