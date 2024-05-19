@@ -5109,7 +5109,7 @@
           "example": "task-xxx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5119,7 +5119,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5129,7 +5129,7 @@
           "example": "SINK",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5139,7 +5139,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5149,7 +5149,7 @@
           "example": "xxx",
           "member": "DatahubResource",
           "name": "SourceResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5159,7 +5159,7 @@
           "example": "xxx",
           "member": "DatahubResource",
           "name": "TargetResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5169,7 +5169,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5179,7 +5179,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5189,7 +5189,7 @@
           "example": "90",
           "member": "float",
           "name": "TaskProgress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -5199,7 +5199,7 @@
           "example": "等待连接",
           "member": "string",
           "name": "TaskCurrentStep",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5209,7 +5209,7 @@
           "example": "datahub-xxx",
           "member": "string",
           "name": "DatahubId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5219,7 +5219,7 @@
           "example": "xxx",
           "member": "string",
           "name": "StepList",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6367,7 +6367,7 @@
           "example": "xxx",
           "member": "string",
           "name": "StepList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
