@@ -1,138 +1,35 @@
 # 本版本更新包含以下内容：
 
-## 弹性伸缩(as) 版本：2018-04-19
+## 云联络中心(ccc) 版本：2020-02-10
 
-### 第 33 次发布
+### 第 54 次发布
 
-发布时间：2024-05-17 01:07:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ExecuteScalingPolicy](http://document.tencentcloudapi.woa.com/document/product/377/35477)
-
-	* 新增入参：CloudMonitorPolicyId, CloudMonitorContent
-
-* [ModifyAutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20433)
-
-	* 新增入参：AssertOriginDesiredCapacity
-
-* [ModifyDesiredCapacity](http://document.tencentcloudapi.woa.com/document/product/377/20432)
-
-	* 新增入参：AssertOriginDesiredCapacity
-
-
-
-
-## 商业智能分析 BI(bi) 版本：2022-01-05
-
-### 第 13 次发布
-
-发布时间：2024-05-17 01:08:02
+发布时间：2024-05-20 01:09:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [CreateEmbedToken](http://document.tencentcloudapi.woa.com/document/product/1707/80322)
-
-	* 新增入参：GlobalParam
-
 
 修改数据结构：
 
-* [EmbedTokenInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EmbedTokenInfo)
+* [CompanyApplyInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyApplyInfo)
 
-	* 新增成员：GlobalParam
+	* 新增成员：IsEqualTencentCloud, CorporationMobile, CorporationMobilePicUrl, UseDescribeFileUrl, CompanyAuthLetterPicUrl, OperatorMobile, OperatorEmail, OperatorMobilePicUrl
 
+	* <font color="#dd0000">**删除成员**：</font>BusinessScope
 
+* [CompanyStateInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyStateInfo)
 
-
-## 应用管理平台(camp) 版本：2022-09-20
-
-### 第 32 次发布
-
-发布时间：2024-05-17 01:09:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ServiceTraitRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTraitRaw)
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ServicePort
-
-修改数据结构：
-
-* [ServiceTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTrait)
-
-	* 新增成员：Objects
-
-	* <font color="#dd0000">**删除成员**：</font>Type, Ports, ClusterIP, ExternalTrafficPolicy, SessionAffinity, Name
+	* 新增成员：ModifyTime
 
 
 
 
-## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 83 次发布
+### 第 36 次发布
 
-发布时间：2024-05-17 01:11:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75538)
-
-	* 新增入参：MqttConnectParam
-
-* [ModifyConnectResource](http://document.tencentcloudapi.woa.com/document/product/597/75544)
-
-	* 新增入参：MqttConnectParam
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 64 次发布
-
-发布时间：2024-05-17 01:12:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCosRecharge](http://document.tencentcloudapi.woa.com/document/product/614/77237)
-
-	* <font color="#dd0000">**修改入参**：</font>Prefix
-
-* [SearchCosRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/81708)
-
-	* <font color="#dd0000">**修改入参**：</font>Prefix
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 47 次发布
-
-发布时间：2024-05-17 01:16:57
+发布时间：2024-05-20 01:12:28
 
 本次发布包含了以下内容：
 
@@ -140,124 +37,13 @@
 
 新增接口：
 
-* [DescribeEmrOverviewMetrics](http://document.tencentcloudapi.woa.com/document/product/589/83932)
-* [DescribeHBaseTableOverview](http://document.tencentcloudapi.woa.com/document/product/589/83931)
-
-修改接口：
-
-* [InquiryPriceScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34265)
-
-	* 新增入参：ResourceBaseType, ComputeResourceId
-
-* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34264)
-
-	* 新增入参：ResourceBaseType, ComputeResourceId
-
-* [TerminateInstance](http://document.tencentcloudapi.woa.com/document/product/589/34260)
-
-	* 新增入参：ResourceBaseType, ComputeResourceId
-
+* [DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)
 
 新增数据结构：
 
-* [MetricTags](http://document.tencentcloudapi.woa.com/document/product/589/33981#MetricTags)
-* [OverviewMetricData](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewMetricData)
-* [OverviewRow](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewRow)
-* [TableSchemaItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#TableSchemaItem)
-
-
-
-## 智能全局流量管理(igtm) 版本：2023-10-24
-
-### 第 5 次发布
-
-发布时间：2024-05-17 01:19:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateStrategy](http://document.tencentcloudapi.woa.com/document/product/1696/83252)
-
-	* 新增入参：SwitchPoolType
-
-* [ModifyStrategy](http://document.tencentcloudapi.woa.com/document/product/1696/83247)
-
-	* 新增入参：SwitchPoolType
-
-
-
-
-## 智能全局流量管理(igtm) 版本：2021-09-07
-
-
-
-## 全栈式风控引擎(rce) 版本：2020-11-03
-
-### 第 11 次发布
-
-发布时间：2024-05-17 01:23:44
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeRiskAssessment
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 101 次发布
-
-发布时间：2024-05-17 01:26:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeCmqDeadLetterSourceQueues
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 50 次发布
-
-发布时间：2024-05-17 01:28:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
-
-	* 新增入参：SeekSecond
-
-
-
-
-## 视频生成(vcg) 版本：2024-04-04
-
-### 第 2 次发布
-
-发布时间：2024-05-17 01:29:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SubmitVideoStylizationJob](http://document.tencentcloudapi.woa.com/document/product/1762/83933)
+* [OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)
+* [UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)
+* [UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)
 
 
 
@@ -9134,7 +8920,7 @@
 
 新增数据结构：
 
-* [[ServiceTraitRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTraitRaw)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[ServiceTraitRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTraitRaw))
+* [ServiceTraitRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ServiceTraitRaw)
 
 <font color="#dd0000">**删除数据结构**：</font>
 
@@ -11383,6 +11169,27 @@
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 54 次发布
+
+发布时间：2024-05-20 01:09:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CompanyApplyInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyApplyInfo)
+
+	* 新增成员：IsEqualTencentCloud, CorporationMobile, CorporationMobilePicUrl, UseDescribeFileUrl, CompanyAuthLetterPicUrl, OperatorMobile, OperatorEmail, OperatorMobilePicUrl
+
+	* <font color="#dd0000">**删除成员**：</font>BusinessScope
+
+* [CompanyStateInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyStateInfo)
+
+	* 新增成员：ModifyTime
+
 
 ### 第 53 次发布
 
@@ -26825,6 +26632,24 @@
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
+### 第 36 次发布
+
+发布时间：2024-05-20 01:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo))
+* [[UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo))
+* [[UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo))
+
 ### 第 35 次发布
 
 发布时间：2024-05-16 01:30:47
@@ -42120,8 +41945,8 @@
 
 新增接口：
 
-* [[DescribeEmrOverviewMetrics](http://document.tencentcloudapi.woa.com/document/product/589/83932)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeHBaseTableOverview](http://document.tencentcloudapi.woa.com/document/product/589/83931)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEmrOverviewMetrics](http://document.tencentcloudapi.woa.com/document/product/589/83932)
+* [DescribeHBaseTableOverview](http://document.tencentcloudapi.woa.com/document/product/589/83931)
 
 修改接口：
 
@@ -42140,10 +41965,10 @@
 
 新增数据结构：
 
-* [[MetricTags](http://document.tencentcloudapi.woa.com/document/product/589/33981#MetricTags)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[MetricTags](http://document.tencentcloudapi.woa.com/document/product/589/33981#MetricTags))
-* [[OverviewMetricData](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewMetricData)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[OverviewMetricData](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewMetricData))
-* [[OverviewRow](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewRow)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[OverviewRow](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewRow))
-* [[TableSchemaItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#TableSchemaItem)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[TableSchemaItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#TableSchemaItem))
+* [MetricTags](http://document.tencentcloudapi.woa.com/document/product/589/33981#MetricTags)
+* [OverviewMetricData](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewMetricData)
+* [OverviewRow](http://document.tencentcloudapi.woa.com/document/product/589/33981#OverviewRow)
+* [TableSchemaItem](http://document.tencentcloudapi.woa.com/document/product/589/33981#TableSchemaItem)
 
 ### 第 46 次发布
 
@@ -98026,7 +97851,7 @@
 
 新增接口：
 
-* [[SubmitVideoStylizationJob](http://document.tencentcloudapi.woa.com/document/product/1762/83933)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SubmitVideoStylizationJob](http://document.tencentcloudapi.woa.com/document/product/1762/83933)
 
 ### 第 1 次发布
 

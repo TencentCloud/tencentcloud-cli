@@ -1,3 +1,52 @@
+# Release 3.0.997.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 54 次发布
+
+发布时间：2024-05-20 01:09:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CompanyApplyInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyApplyInfo)
+
+	* 新增成员：IsEqualTencentCloud, CorporationMobile, CorporationMobilePicUrl, UseDescribeFileUrl, CompanyAuthLetterPicUrl, OperatorMobile, OperatorEmail, OperatorMobilePicUrl
+
+	* <font color="#dd0000">**删除成员**：</font>BusinessScope
+
+* [CompanyStateInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyStateInfo)
+
+	* 新增成员：ModifyTime
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 36 次发布
+
+发布时间：2024-05-20 01:12:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)
+
+新增数据结构：
+
+* [OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)
+* [UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)
+* [UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)
+
+
+
 # Release 3.0.996.1
 
 ## 弹性伸缩(as) 版本：2018-04-19
