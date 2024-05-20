@@ -32,6 +32,14 @@
         "title": "删除图片"
       }
     ],
+    "DescribeAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "DescribeCallDetailInfo": [
       {
         "document": "",
@@ -280,6 +288,14 @@
         "title": "移出用户"
       }
     ],
+    "StartAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"1234\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"abc\",\n        \"UserSig\": \"abc\",\n        \"IMAdminUserId\": \"abc\",\n        \"IMAdminUserSig\": \"abc\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "StartMCUMixTranscode": [
       {
         "document": "启动指定房间（房间号为3560）的云端混流，同时指定各路画面按屏幕分享模板排布。\n\n设置云端混流参数如下：\n- CDN直播流ID：1400188366_3560_mix。\n- 录制文件名：1400188366_3560_mix_file。\n- CDN直播流视频参数：视频宽为1280、高为720，视频码率为1560kbps，视频帧率为15，gop为2秒。\n- CDN直播流音频参数：音频采样率为48kHz，音频码率为64kbps，音频声道数为双声道。\n- 各路画面按屏幕分享模板排布，占据屏幕左侧大画面的视频流为用户(main_pc)的屏幕分享。",
@@ -344,6 +360,14 @@
         "title": "启动一个页面录制任务"
       }
     ],
+    "StopAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
@@ -382,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "停止页面录制任务"
+      }
+    ],
+    "SummarizeTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SummarizeTranscription\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "样例"
       }
     ],
     "UpdatePublishCdnStream": [

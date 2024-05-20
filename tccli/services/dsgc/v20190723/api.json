@@ -157,7 +157,7 @@
     "CreateIdentifyRuleAnotherName": {
       "document": "创建规则别名",
       "input": "CreateIdentifyRuleAnotherNameRequest",
-      "name": "创建规则别别名",
+      "name": "创建规则别名",
       "output": "CreateIdentifyRuleAnotherNameResponse",
       "status": "online"
     },
@@ -1740,7 +1740,7 @@
       "usage": "both"
     },
     "AssessmentTemplate": {
-      "document": "DSPA评估模版",
+      "document": "DSPA评估模板",
       "members": [
         {
           "disabled": false,
@@ -3039,7 +3039,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名称",
+          "document": "模板名称",
           "example": "xx-风险模板",
           "member": "string",
           "name": "TemplateName",
@@ -3066,7 +3066,7 @@
         },
         {
           "disabled": false,
-          "document": "模版描述",
+          "document": "模板描述",
           "example": "模板描述",
           "member": "string",
           "name": "TemplateDescription",
@@ -5894,7 +5894,7 @@
         {
           "disabled": false,
           "document": "数据源name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "DataSourceName",
           "output_required": true,
@@ -5994,7 +5994,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -6004,7 +6004,7 @@
         {
           "disabled": false,
           "document": "安全产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "dsgc",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
           "output_required": true,
@@ -6034,7 +6034,7 @@
         {
           "disabled": false,
           "document": "风险账号详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[admin]",
           "member": "AccountRisk",
           "name": "AccountRiskDetail",
           "output_required": true,
@@ -6044,7 +6044,7 @@
         {
           "disabled": false,
           "document": "权限风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[riskDetail]",
           "member": "PrivilegeRisk",
           "name": "PrivilegeRiskDetail",
           "output_required": true,
@@ -6054,7 +6054,7 @@
         {
           "disabled": false,
           "document": "策略风险的cos风险文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[file1,file2]",
           "member": "string",
           "name": "PolicyRiskCosFileList",
           "output_required": true,
@@ -6064,7 +6064,7 @@
         {
           "disabled": false,
           "document": "AKSK泄漏列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[akList]",
           "member": "AKSKLeak",
           "name": "AKSKLeak",
           "output_required": true,
@@ -7684,7 +7684,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤项。\n支持模糊搜索：（TemplateId，TemplateName）\n支持过滤：\nSource：模版来源，system / user\nUseType：模版类型，auto，semi-auto，law等\nStatus：模版启用状态，draft / launched",
+          "document": "过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched",
           "example": "无",
           "member": "DspaAssessmentFilter",
           "name": "Filters",
@@ -16655,27 +16655,27 @@
           "example": "xx-account",
           "member": "string",
           "name": "AccountName",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "table",
           "member": "string",
           "name": "TableName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "table-desc",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

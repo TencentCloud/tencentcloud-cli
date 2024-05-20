@@ -28,6 +28,13 @@
       "output": "DeletePictureResponse",
       "status": "online"
     },
+    "DescribeAITranscription": {
+      "document": "查询AI转录状态",
+      "input": "DescribeAITranscriptionRequest",
+      "name": "查询AI转录状态",
+      "output": "DescribeAITranscriptionResponse",
+      "status": "online"
+    },
     "DescribeCallDetailInfo": {
       "document": "查询指定时间内的用户列表及用户通话质量数据，最大可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口自2024年4月1日起正式商业化，需订阅套餐解锁调用能力，提供以下两种解锁方式，可任选其一解锁：\n方式一：通过订阅[包月套餐](https://cloud.tencent.com/document/product/647/85386)「尊享版」（可查近7天）和「旗舰版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc?trtcversion=top)。\n方式二：通过订阅[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)商业套餐包「基础版」（可查近7天）和「进阶版」（可查近14天），[前往订阅](https://buy.cloud.tencent.com/trtc_monitor)。",
       "input": "DescribeCallDetailInfoRequest",
@@ -245,6 +252,13 @@
       "output": "RemoveUserByStrRoomIdResponse",
       "status": "online"
     },
+    "StartAITranscription": {
+      "document": "这个接口调用后，后台会启动机器人，实时进行语音识别并下发字幕和会议记录。",
+      "input": "StartAITranscriptionRequest",
+      "name": "开始AI转录",
+      "output": "StartAITranscriptionResponse",
+      "status": "online"
+    },
     "StartMCUMixTranscode": {
       "document": "接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。\n\nTRTC 的一个房间中可能会同时存在多路音视频流，您可以通过此 API 接口，通知腾讯云服务端将多路视频画面合成一路，并指定每一路画面的位置，同时将多路声音进行混音，最终形成一路音视频流，以便用于录制和直播观看。房间销毁后混流自动结束。\n\n您可以通过此接口实现如下目标：\n- 设置最终直播流的画质和音质，包括视频分辨率、视频码率、视频帧率、以及声音质量等。\n- 设置各路画面的位置和布局，您只需要在启动时设置一次，排版引擎会自动完成后续的画面排布。\n- 设置录制文件名，用于二次回放。\n- 设置 CDN 直播流 ID，用于在 CDN 进行直播观看。\n\n目前已经支持了如下几种布局模板：\n- 悬浮模板：第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面，最多4行，每行4个，小画面悬浮于大画面之上。最多支持1个大画面和15个小画面，如果用户只发送音频，仍然会占用画面位置。\n- 九宫格模板：所有用户的视频画面大小一致，平分整个屏幕，人数越多，每个画面的尺寸越小。最多支持16个画面，如果用户只发送音频，仍然会占用画面位置。\n- 屏幕分享模板：适合视频会议和在线教育场景的布局，屏幕分享（或者主讲的摄像头）始终占据屏幕左侧的大画面位置，其他用户依次垂直排列于右侧，最多两列，每列最多8个小画面。最多支持1个大画面和15个小画面。若上行分辨率宽高比与画面输出宽高比不一致时，左侧大画面为了保持内容的完整性采用缩放方式处理，右侧小画面采用裁剪方式处理。\n- 画中画模板：适用于混合大小两路视频画面和其他用户混音，或者混合一路大画面和其他用户混音的场景。小画面悬浮于大画面之上，可以指定大小画面的用户以及小画面的显示位置，最多支持2个画面。\n- 自定义模板：适用于在混流中指定用户的画面位置，或者预设视频画面位置的场景。当预设位置指定用户时，排版引擎会为该用户预留位置；当预设位置未指定用户时，排版引擎会根据进房间顺序自动填充。预设位置填满时，不再混合其他用户的画面和声音。自定义模板启用占位图功能时（LayoutParams中的PlaceHolderMode设置成1），在预设位置的用户没有上行视频时可显示对应的占位图（PlaceImageId）。\n\n注意：\n1、**混流转码为收费功能，调用接口将产生云端混流转码费用，详见[云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)。**\n2、2020年1月9号及以后创建的应用才能直接调用此接口。2020年1月9日之前创建的应用默认使用云直播的云端混流，如需切换至MCU混流，请[提交工单](https://console.cloud.tencent.com/workorder/category)寻求帮助。\n3、客户端混流和服务端混流不能混用。",
       "input": "StartMCUMixTranscodeRequest",
@@ -280,6 +294,13 @@
       "output": "StartWebRecordResponse",
       "status": "online"
     },
+    "StopAITranscription": {
+      "document": "停止AI转录",
+      "input": "StopAITranscriptionRequest",
+      "name": "停止AI转录",
+      "output": "StopAITranscriptionResponse",
+      "status": "online"
+    },
     "StopMCUMixTranscode": {
       "document": "接口说明：结束云端混流",
       "input": "StopMCUMixTranscodeRequest",
@@ -313,6 +334,13 @@
       "input": "StopWebRecordRequest",
       "name": "停止页面录制",
       "output": "StopWebRecordResponse",
+      "status": "online"
+    },
+    "SummarizeTranscription": {
+      "document": "对转录的文本进行总结",
+      "input": "SummarizeTranscriptionRequest",
+      "name": "总结转录文本",
+      "output": "SummarizeTranscriptionResponse",
       "status": "online"
     },
     "UpdatePublishCdnStream": {
@@ -935,6 +963,53 @@
     "DeletePictureResponse": {
       "document": "DeletePicture返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAITranscriptionRequest": {
+      "document": "DescribeAITranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识AI转录任务。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAITranscriptionResponse": {
+      "document": "DescribeAITranscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转录任务状态。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4608,6 +4683,30 @@
       ],
       "usage": "out"
     },
+    "RecognizeConfig": {
+      "document": "语音识别使用的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的语言，目前支持语言如下：\n    Chinese = \"zh\"\n    Chinese_TW = \"zh-TW\"\n    English = \"en\"\n    Vietnamese = \"vi\"\n    Japanese = \"ja\"\n    Korean = \"ko\"\n    Indonesia = \"id\"\n    Thai = \"th\"\n    Portuguese = \"pt\"\n    Turkish = \"tr\"\n    Arabic = \"ar\"\n    Spanish = \"es\"\n    Hindi = \"hi\"\n    French = \"fr\"",
+          "example": "无",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选填，如果填写，则会启用翻译，不填则忽略。支持语言同Language字段。",
+          "example": "无",
+          "member": "string",
+          "name": "TranslationLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RecordParams": {
       "document": "云端录制控制参数。",
       "members": [
@@ -5196,6 +5295,79 @@
       ],
       "usage": "in"
     },
+    "StartAITranscriptionRequest": {
+      "document": "StartAITranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "启动转录机器人和鉴权的参数。",
+          "example": "无",
+          "member": "TranscriptionParams",
+          "name": "TranscriptionParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型，0代表数字房间号，1代表字符串房间号。不填默认是数字房间号。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音识别配置",
+          "example": "无",
+          "member": "RecognizeConfig",
+          "name": "RecognizeConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAITranscriptionResponse": {
+      "document": "StartAITranscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于唯一标识转录任务。",
+          "example": "5df46eb2-8e4b-490e-9c3c-dbd3b84faefc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartMCUMixTranscodeByStrRoomIdRequest": {
       "document": "StartMCUMixTranscodeByStrRoomId请求参数结构体",
       "members": [
@@ -5685,6 +5857,33 @@
       ],
       "type": "object"
     },
+    "StopAITranscriptionRequest": {
+      "document": "StopAITranscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识转录任务。",
+          "example": "-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopAITranscriptionResponse": {
+      "document": "StopAITranscription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopMCUMixTranscodeByStrRoomIdRequest": {
       "document": "StopMCUMixTranscodeByStrRoomId请求参数结构体",
       "members": [
@@ -5982,6 +6181,23 @@
       ],
       "usage": "in"
     },
+    "SummarizeTranscriptionRequest": {
+      "document": "SummarizeTranscription请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SummarizeTranscriptionResponse": {
+      "document": "SummarizeTranscription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TRTCDataResp": {
       "document": "TRTC数据大盘/实时监控 API接口数据出参",
       "members": [
@@ -6166,6 +6382,75 @@
         }
       ],
       "usage": "out"
+    },
+    "TranscriptionParams": {
+      "document": "AI转录参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转录机器人的UserId，用于进房发起转录任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个转录任务时，机器人的userid也不能相互重复，否则会中断前一个任务。需要保证转录机器人UserId在房间内唯一。",
+          "example": "user123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转录机器人UserId对应的校验签名，即UserId和UserSig相当于转录机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
+          "example": "无",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IM[管理员账户](\nhttps://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)，如果填写，后台下发消息会使用IM通道，而不是TRTC自定义消息。",
+          "example": "无",
+          "member": "string",
+          "name": "IMAdminUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IM管理员账户生成的签名，用于向特定群组发送消息。如果填写，后台下发消息会使用IM通道，而不是TRTC自定义消息。必须和IM管理员的UserId一起填写。",
+          "example": "无",
+          "member": "string",
+          "name": "IMAdminUserSig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭转录任务，默认值是60s。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1表示机器人只订阅单个人的流，0表示机器人订阅整个房间的流，如果不填默认订阅整个房间的流。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TranscriptionMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TranscriptionMode为1时必填，机器人只会拉该userid的流，忽略房间里其他用户。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetUserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "TrtcUsage": {
       "document": "实时音视频用量在某一时间段的统计信息。",

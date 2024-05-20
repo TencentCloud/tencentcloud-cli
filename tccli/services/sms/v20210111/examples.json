@@ -11,7 +11,7 @@
     "AddSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddTemplateStatus\": {\n            \"TemplateId\": \"1110\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -75,7 +75,7 @@
     "ModifySmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110,\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110,\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModifyTemplateStatus\": {\n            \"TemplateId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }

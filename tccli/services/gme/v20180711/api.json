@@ -507,7 +507,7 @@
           "example": "[]",
           "member": "ServiceStatus",
           "name": "ServiceConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -517,7 +517,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -527,7 +527,7 @@
           "example": "xx",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -537,7 +537,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -547,7 +547,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AppStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -557,7 +557,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -567,7 +567,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AppType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

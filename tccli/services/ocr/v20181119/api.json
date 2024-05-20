@@ -12904,11 +12904,61 @@
         },
         {
           "disabled": false,
+          "document": "英文签发日期",
+          "example": "29 Mar. 2021",
+          "member": "string",
+          "name": "EnIssueDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文到期日期",
+          "example": "12 Mar. 2030",
+          "member": "string",
+          "name": "EnExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "泰文出生日期",
           "example": "14ธ.ค.2509",
           "member": "string",
           "name": "Birthday",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文出生日期",
+          "example": "13 Mar. 1986",
+          "member": "string",
+          "name": "EnBirthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宗教信仰",
+          "example": "พุทธ",
+          "member": "string",
+          "name": "Religion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "序列号",
+          "example": "1047-02-03291045",
+          "member": "string",
+          "name": "SerialNumber",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
