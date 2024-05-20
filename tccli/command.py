@@ -154,7 +154,10 @@ class ServiceCommand(BaseCommand):
             version = self._cli_data.get_service_default_version(service_name)
         available_version_list = self._cli_data.get_available_services()[service_name]
         if version not in available_version_list:
-            raise Exception("available versions: %s" % " ".join(available_version_list))
+            raise Exception("Version: %s is invalid in service: %s, available versions: %s. \n"
+                            "Please check your command or configure file to find out "
+                            "if version setting is correct."
+                            % (service_name, version, " ".join(available_version_list)))
         self._version = version
         self._command_map = None
         self._service_model = None
