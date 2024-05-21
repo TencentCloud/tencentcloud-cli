@@ -640,6 +640,14 @@
         "title": "查询数据表名称列表"
       }
     ],
+    "DescribeTaskLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"StartTime\": 0,\n    \"EndTime\": 0,\n    \"Limit\": 0,\n    \"Context\": \"abc\",\n    \"Asc\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"BatchId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"abc\",\n        \"ListOver\": true,\n        \"Results\": [\n            {\n                \"Time\": 0,\n                \"TopicId\": \"abc\",\n                \"TopicName\": \"abc\",\n                \"LogJson\": \"abc\",\n                \"PkgLogId\": \"abc\"\n            }\n        ],\n        \"LogUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取spark 作业任务日志详情"
+      }
+    ],
     "DescribeTaskResult": [
       {
         "document": "查询任务结果，每次返回1000行数据",

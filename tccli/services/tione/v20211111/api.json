@@ -2448,12 +2448,21 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令，以base64格式进行输入",
+          "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
           "example": "无",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
+          "example": "无",
+          "member": "int64",
+          "name": "ServicePort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8137,7 +8146,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像",
+          "document": "镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像",
           "example": "TCR",
           "member": "string",
           "name": "ImageType",
@@ -8210,6 +8219,56 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageSecret",
+          "name": "ImageSecret",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageSecret": {
+      "document": "自定义镜像仓库凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于加密密码的KMS公钥ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9a3b93e2-0f68-11ef-9b3e-5254000fd567",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_user",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码,base64编码； 当keyId不为空时，密码是加密后的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dGVzdF9wYXNzd29yZAo=",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9813,12 +9872,21 @@
         },
         {
           "disabled": false,
-          "document": "服务的启动命令，以base64格式进行输入",
+          "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
           "example": "无",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
+          "example": "无",
+          "member": "int64",
+          "name": "ServicePort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13224,6 +13292,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务端口，默认为8501\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ServicePort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

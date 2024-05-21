@@ -21,26 +21,26 @@ Output:
 {
     "Response": {
         "Product": {
-            "DevStatus": "xx",
-            "EncryptionType": "xx",
+            "DevStatus": "1",
+            "EncryptionType": "2",
             "DataProtocol": 1,
-            "ProjectId": "xx",
-            "Region": "xx",
+            "ProjectId": "0",
+            "Region": "47",
             "ModuleId": 0,
-            "EnableProductScript": "xx",
+            "EnableProductScript": "产品",
             "UpdateTime": 1,
-            "ProductName": "xx",
+            "ProductName": "name",
             "CreateUserId": 0,
-            "ProductDesc": "xx",
-            "NetType": "xx",
+            "ProductDesc": "备注",
+            "NetType": "1",
             "ProductType": 0,
-            "CreatorNickName": "xx",
+            "CreatorNickName": "name",
             "CreateTime": 1,
             "BindStrategy": 0,
             "CategoryId": 10,
-            "ProductId": "xx"
+            "ProductId": "id"
         },
-        "RequestId": "xx"
+        "RequestId": "tgb-0r89-4rcv"
     }
 }
 ```

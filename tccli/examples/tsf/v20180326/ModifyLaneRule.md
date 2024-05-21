@@ -6,20 +6,28 @@ Input:
 
 ```
 tccli tsf ModifyLaneRule --cli-unfold-argument  \
-    --RuleId 1 \
-    --RuleName 1 \
-    --Remark 1 \
-    --RuleTagList 1 \
-    --RuleTagRelationship RELEATION_AND \
-    --LaneId lane-fdsjakhfds \
-    --Enable 1
+    --RuleId abc \
+    --RuleName abc \
+    --Remark abc \
+    --RuleTagList.0.TagId abc \
+    --RuleTagList.0.TagName abc \
+    --RuleTagList.0.TagOperator abc \
+    --RuleTagList.0.TagValue abc \
+    --RuleTagList.0.LaneRuleId abc \
+    --RuleTagList.0.CreateTime 0 \
+    --RuleTagList.0.UpdateTime 0 \
+    --RuleTagRelationship abc \
+    --LaneId abc \
+    --Enable True
 ```
 
 Output: 
 ```
 {
-    "RequestId": "e448ce99-83af-47cd-b422-a203aa18d862",
-    "Result": true
+    "Response": {
+        "Result": true,
+        "RequestId": "abc"
+    }
 }
 ```
 

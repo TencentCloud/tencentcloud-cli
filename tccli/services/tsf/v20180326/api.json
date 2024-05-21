@@ -1092,6 +1092,13 @@
       "output": "DescribeUsableUnitNamespacesResponse",
       "status": "online"
     },
+    "DisableLaneRule": {
+      "document": "禁用泳道规则",
+      "input": "DisableLaneRuleRequest",
+      "name": "禁用泳道规则",
+      "output": "DisableLaneRuleResponse",
+      "status": "online"
+    },
     "DisableTask": {
       "document": "停用任务",
       "input": "DisableTaskRequest",
@@ -1139,6 +1146,13 @@
       "input": "DraftApiGroupRequest",
       "name": "下线Api分组",
       "output": "DraftApiGroupResponse",
+      "status": "online"
+    },
+    "EnableLaneRule": {
+      "document": "启用泳道规则",
+      "input": "EnableLaneRuleRequest",
+      "name": "启用泳道规则",
+      "output": "EnableLaneRuleResponse",
       "status": "online"
     },
     "EnableTask": {
@@ -17214,6 +17228,43 @@
       ],
       "type": "object"
     },
+    "DisableLaneRuleRequest": {
+      "document": "DisableLaneRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泳道规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableLaneRuleResponse": {
+      "document": "DisableLaneRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableTaskFlowRequest": {
       "document": "DisableTaskFlow请求参数结构体",
       "members": [
@@ -17474,6 +17525,43 @@
           "name": "Result",
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableLaneRuleRequest": {
+      "document": "EnableLaneRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泳道规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableLaneRuleResponse": {
+      "document": "EnableLaneRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22137,7 +22225,7 @@
         {
           "disabled": false,
           "document": "泳道规则ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -22146,7 +22234,7 @@
         {
           "disabled": false,
           "document": "泳道规则名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -22155,7 +22243,7 @@
         {
           "disabled": false,
           "document": "泳道规则备注",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -22164,7 +22252,7 @@
         {
           "disabled": false,
           "document": "泳道规则标签列表",
-          "example": "",
+          "example": "无",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
           "required": true,
@@ -22173,7 +22261,7 @@
         {
           "disabled": false,
           "document": "泳道规则标签关系",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RuleTagRelationship",
           "required": true,
@@ -22182,7 +22270,7 @@
         {
           "disabled": false,
           "document": "泳道ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LaneId",
           "required": true,
@@ -22191,7 +22279,7 @@
         {
           "disabled": false,
           "document": "开启状态",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "Enable",
           "required": true,
@@ -22205,10 +22293,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
