@@ -2,6 +2,9 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build]
+exclude = ["tccli/examples"]
+
 [project]
 name = "tccli"
 version = "3.0.1111.1"
