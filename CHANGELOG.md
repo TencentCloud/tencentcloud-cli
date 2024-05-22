@@ -1,3 +1,203 @@
+# Release 3.0.999.1
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 84 次发布
+
+发布时间：2024-05-23 01:11:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#PrometheusDTO)
+
+	* 新增成员：BrokerIp
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 87 次发布
+
+发布时间：2024-05-23 01:17:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo)
+
+	* 新增成员：PowerOfAttorneys
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 35 次发布
+
+发布时间：2024-05-23 01:18:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateDeviceTWeCallAuthorizeStatus](http://document.tencentcloudapi.woa.com/document/product/1081/83945)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 51 次发布
+
+发布时间：2024-05-23 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
+
+	* 新增成员：WebRoot
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 60 次发布
+
+发布时间：2024-05-23 01:27:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateBatchModelAccTasks
+* CreateBatchTask
+* CreateNotebookImage
+* CreateOptimizedModel
+* CreateTrainingTask
+* DeleteBatchTask
+* DeleteModelAccelerateTask
+* DeleteNotebookImageRecord
+* DeleteTrainingTask
+* DescribeAPIConfigs
+* DescribeBatchTask
+* DescribeBatchTaskInstances
+* DescribeBatchTasks
+* DescribeBillingSpecs
+* DescribeBillingSpecsPrice
+* DescribeDatasetDetailStructured
+* DescribeDatasetDetailUnstructured
+* DescribeEvents
+* DescribeLatestTrainingMetrics
+* DescribeLogs
+* DescribeModelAccEngineVersions
+* DescribeModelAccelerateTasks
+* DescribeModelServiceHistory
+* DescribeModelServices
+* DescribeNotebookImageKernels
+* DescribeNotebookImageRecords
+* DescribeTrainingFrameworks
+* DescribeTrainingMetrics
+* DescribeTrainingModels
+* ModifyModelServicePartialConfig
+* ModifyNotebook
+* ModifyNotebookTags
+* ModifyServiceGroupWeights
+* RestartModelAccelerateTask
+* StartTrainingTask
+* StopBatchTask
+* StopCreatingImage
+* StopTrainingTask
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* APIConfigDetail
+* BatchModelAccTask
+* BatchTaskDetail
+* BatchTaskInstance
+* BatchTaskSetItem
+* CronInfo
+* CustomTrainingData
+* CustomTrainingMetric
+* CustomTrainingPoint
+* DetectionLabelInfo
+* EncodedStartCmdInfo
+* EngineVersion
+* Event
+* FilterLabelInfo
+* FrameworkInfo
+* FrameworkVersion
+* LogIdentity
+* ModelAccEngineVersion
+* NotebookImageRecord
+* OcrLabelInfo
+* PointInfo
+* PreTrainModel
+* RowItem
+* RowValue
+* SegmentationInfo
+* ServiceHistory
+* Spec
+* SpecPrice
+* SpecUnit
+* TextLabelDistributionDetailInfoFifthClass
+* TextLabelDistributionDetailInfoFirstClass
+* TextLabelDistributionDetailInfoFourthClass
+* TextLabelDistributionDetailInfoSecondClass
+* TextLabelDistributionDetailInfoThirdClass
+* TextLabelDistributionInfo
+* TrainingDataPoint
+* TrainingMetric
+* TrainingModelDTO
+* WeightEntry
+
+修改数据结构：
+
+* [LocalDisk](http://document.tencentcloudapi.woa.com/document/product/851/74915#LocalDisk)
+
+	* 新增成员：LocalPath
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 自研上云(tocservice) 版本：2022-02-10
+
+### 第 2 次发布
+
+发布时间：2024-05-23 01:27:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams)
+
+	* 新增成员：InstanceTypeClass, InstanceTypeClassDesc
+
+
+
+
 # Release 3.0.998.1
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25

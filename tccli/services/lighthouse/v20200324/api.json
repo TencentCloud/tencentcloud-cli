@@ -1698,6 +1698,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网站根目录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/usr/share/nginx/html",
+          "member": "string",
+          "name": "WebRoot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
