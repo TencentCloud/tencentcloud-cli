@@ -794,6 +794,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的专用集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-gbo27yc4",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1402,6 +1412,24 @@
           "name": "IsElastic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要cdrom，默认true ",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCdromRequired",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在的专用集群`ID`。",
+          "example": "cluster-du3jken",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

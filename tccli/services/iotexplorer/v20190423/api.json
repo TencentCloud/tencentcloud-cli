@@ -2637,6 +2637,24 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平均传输速率",
+          "example": "1_0_mbps",
+          "member": "string",
+          "name": "Rate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "期限",
+          "example": "1_year",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2650,7 +2668,7 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10898,6 +10916,26 @@
           "name": "DeviceCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均传输速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1_0_mbps",
+          "member": "string",
+          "name": "Rate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5_year",
+          "member": "string",
+          "name": "Period",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

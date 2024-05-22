@@ -29,7 +29,7 @@ def main():
     cli_version = __version__.rsplit(".", 1)[0]
     dep_sdk = "tencentcloud-sdk-python-internal >= %s" % cli_version
     if SDK_VERSION is not None:
-        if SDK_VERSION < cli_version:
+        if int(SDK_VERSION.split(".")[-1]) < int(cli_version.split(".")[-1]):
             answer = None
             prompt = ("The current python sdk version (%s) is "
                       "too low and we will update to %s(yes/no):") % (SDK_VERSION, cli_version)

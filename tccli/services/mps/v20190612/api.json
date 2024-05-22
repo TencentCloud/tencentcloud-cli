@@ -961,10 +961,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -975,6 +976,7 @@
           "example": "无",
           "member": "int64",
           "name": "ReardriveIndex",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -985,6 +987,7 @@
           "example": "无",
           "member": "ActivityPara",
           "name": "ActivityPara",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1589,7 +1592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能去水印</li>\n<li>Description：大模型摘要</li>",
+          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>",
           "example": "Classification",
           "member": "string",
           "name": "Type",
@@ -1649,7 +1652,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDelLogoResult",
           "name": "DeLogoTask",
@@ -1887,15 +1890,15 @@
       "usage": "out"
     },
     "AiAnalysisTaskDelLogoInput": {
-      "document": "智能去水印任务输入类型",
+      "document": "智能擦除任务输入类型",
       "members": [
         {
           "disabled": false,
-          "document": "视频智能去水印模板 ID。",
+          "document": "视频智能擦除模板 ID。",
           "example": "无",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1903,25 +1906,25 @@
       "usage": "out"
     },
     "AiAnalysisTaskDelLogoOutput": {
-      "document": "智能去水印结果信息",
+      "document": "智能擦除结果信息",
       "members": [
         {
           "disabled": false,
-          "document": "去水印后文件的路径。",
+          "document": "擦除后文件的路径。",
           "example": "无",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "去水印后文件的存储位置。",
+          "document": "擦除后文件的存储位置。",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -1929,7 +1932,7 @@
       "usage": "out"
     },
     "AiAnalysisTaskDelLogoResult": {
-      "document": "智能去水印结果类型",
+      "document": "智能擦除结果类型",
       "members": [
         {
           "disabled": false,
@@ -1963,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "智能去水印任务输入。",
+          "document": "智能擦除任务输入。",
           "example": "无",
           "member": "AiAnalysisTaskDelLogoInput",
           "name": "Input",
@@ -1973,7 +1976,7 @@
         },
         {
           "disabled": false,
-          "document": "智能去水印任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能擦除任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDelLogoOutput",
           "name": "Output",
@@ -17026,6 +17029,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "北极星回调\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotifyPolaris",
+          "name": "NotifyPolaris",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -20925,6 +20939,56 @@
       ],
       "usage": "both"
     },
+    "NotifyPolaris": {
+      "document": "北极星回调",
+      "members": [
+        {
+          "disabled": false,
+          "document": "北极星命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "北极星服务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回调 uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JoinPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NumberFormat": {
       "document": "输出文件名的`{number}`变量的规则。",
       "members": [
@@ -24819,6 +24883,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "北极星回调。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotifyPolaris",
+          "name": "NotifyPolaris",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -25383,7 +25458,7 @@
           "example": "{   \"HeadSet\": [     {       \"Type\": \"URL\",       \"UrlInputInfo\"",
           "member": "HeadTailParameter",
           "name": "HeadTailParameter",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -25394,7 +25469,7 @@
           "example": "无",
           "member": "string",
           "name": "ChannelExtPara",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

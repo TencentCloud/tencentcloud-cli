@@ -1,35 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云联络中心(ccc) 版本：2020-02-10
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 54 次发布
+### 第 96 次发布
 
-发布时间：2024-05-20 01:09:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CompanyApplyInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyApplyInfo)
-
-	* 新增成员：IsEqualTencentCloud, CorporationMobile, CorporationMobilePicUrl, UseDescribeFileUrl, CompanyAuthLetterPicUrl, OperatorMobile, OperatorEmail, OperatorMobilePicUrl
-
-	* <font color="#dd0000">**删除成员**：</font>BusinessScope
-
-* [CompanyStateInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#CompanyStateInfo)
-
-	* 新增成员：ModifyTime
-
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 36 次发布
-
-发布时间：2024-05-20 01:12:28
+发布时间：2024-05-22 01:15:01
 
 本次发布包含了以下内容：
 
@@ -37,13 +12,92 @@
 
 新增接口：
 
-* [DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)
+* [DescribeTaskLog](http://document.tencentcloudapi.woa.com/document/product/1342/83942)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 34 次发布
+
+发布时间：2024-05-22 01:18:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateStudioProduct](http://document.tencentcloudapi.woa.com/document/product/1081/34987)
+
+	* 新增入参：Rate, Period
+
+
+修改数据结构：
+
+* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
+
+	* 新增成员：Rate, Period
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 59 次发布
+
+发布时间：2024-05-22 01:27:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：ServicePort
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ServicePort
+
 
 新增数据结构：
 
-* [OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)
-* [UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)
-* [UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)
+* [ImageSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageSecret)
+
+修改数据结构：
+
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
+
+	* 新增成员：ImageSecret
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：ServicePort
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 44 次发布
+
+发布时间：2024-05-22 01:28:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DisableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83944)
+* [EnableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83943)
 
 
 
@@ -8910,6 +8964,21 @@
 
 ## 应用管理平台(camp) 版本：2022-09-20
 
+### 第 33 次发布
+
+发布时间：2024-05-21 01:09:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77950)
+
+	* 新增入参：Description
+
+
 ### 第 32 次发布
 
 发布时间：2024-05-17 01:09:18
@@ -14481,6 +14550,21 @@
 
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 54 次发布
+
+发布时间：2024-05-21 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AvifAdapter](http://document.tencentcloudapi.woa.com/document/product/228/30987#AvifAdapter)
+
+	* 新增成员：FallbackFormats
+
 
 ### 第 53 次发布
 
@@ -26642,13 +26726,13 @@
 
 新增接口：
 
-* [[DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)
 
 新增数据结构：
 
-* [[OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo))
-* [[UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo))
-* [[UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo))
+* [OrderQuotaInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderQuotaInfo)
+* [UserMultiplePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserMultiplePayInfo)
+* [UserPayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserPayInfo)
 
 ### 第 35 次发布
 
@@ -31803,6 +31887,28 @@
 
 ## cxm(cxm) 版本：2017-03-12
 
+### 第 6 次发布
+
+发布时间：2024-05-21 01:14:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+
+	* 新增入参：IsCdromRequired, DedicatedClusterId
+
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1752/82730#Instance)
+
+	* 新增成员：DedicatedClusterId
+
+
 ### 第 5 次发布
 
 发布时间：2024-03-14 01:13:49
@@ -36146,6 +36252,18 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 96 次发布
+
+发布时间：2024-05-22 01:15:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTaskLog](http://document.tencentcloudapi.woa.com/document/product/1342/83942)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 95 次发布
 
@@ -51167,6 +51285,21 @@
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11
 
+### 第 22 次发布
+
+发布时间：2024-05-21 01:18:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApplicationList](http://document.tencentcloudapi.woa.com/document/product/607/35375#ApplicationList)
+
+	* 新增成员：NewVersion
+
+
 ### 第 21 次发布
 
 发布时间：2023-12-06 01:55:35
@@ -54307,6 +54440,28 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 34 次发布
+
+发布时间：2024-05-22 01:18:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateStudioProduct](http://document.tencentcloudapi.woa.com/document/product/1081/34987)
+
+	* 新增入参：Rate, Period
+
+
+修改数据结构：
+
+* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
+
+	* 新增成员：Rate, Period
+
 
 ### 第 33 次发布
 
@@ -64333,6 +64488,29 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 50 次发布
+
+发布时间：2024-05-21 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [NotifyPolaris](http://document.tencentcloudapi.woa.com/document/product/862/37615#NotifyPolaris)
+
+修改数据结构：
+
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTaskNotifyConfig)
+
+	* 新增成员：NotifyPolaris
+
+* [TaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskNotifyConfig)
+
+	* 新增成员：NotifyPolaris
+
 
 ### 第 49 次发布
 
@@ -88854,6 +89032,40 @@
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
+### 第 59 次发布
+
+发布时间：2024-05-22 01:27:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：ServicePort
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ServicePort
+
+
+新增数据结构：
+
+* [[ImageSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageSecret)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[ImageSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageSecret))
+
+修改数据结构：
+
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
+
+	* 新增成员：ImageSecret
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：ServicePort
+
+
 ### 第 58 次发布
 
 发布时间：2024-05-14 01:30:52
@@ -93042,6 +93254,19 @@
 
 ## 机器翻译(tmt) 版本：2018-03-21
 
+### 第 4 次发布
+
+发布时间：2024-05-21 01:28:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SpeechTranslate](http://document.tencentcloudapi.woa.com/document/product/551/16611)
+
+
 ### 第 3 次发布
 
 发布时间：2022-09-09 06:30:54
@@ -93818,6 +94043,27 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 51 次发布
+
+发布时间：2024-05-21 01:28:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAITranscription](http://document.tencentcloudapi.woa.com/document/product/647/83941)
+* [StartAITranscription](http://document.tencentcloudapi.woa.com/document/product/647/83940)
+* [StopAITranscription](http://document.tencentcloudapi.woa.com/document/product/647/83939)
+* [SummarizeTranscription](http://document.tencentcloudapi.woa.com/document/product/647/83938)
+
+新增数据结构：
+
+* [AISummaryConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AISummaryConfig)
+* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
+* [TranscriptionParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#TranscriptionParams)
 
 ### 第 50 次发布
 
@@ -96181,6 +96427,19 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 44 次发布
+
+发布时间：2024-05-22 01:28:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DisableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83944)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[EnableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83943)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 43 次发布
 

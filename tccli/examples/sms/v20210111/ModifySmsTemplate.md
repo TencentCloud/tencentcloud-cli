@@ -7,7 +7,7 @@ Input:
 ```
 tccli sms ModifySmsTemplate --cli-unfold-argument  \
     --TemplateId 1110 \
-    --SmsType 0 \
+    --SmsType 3 \
     --International 0 \
     --Remark 业务验证码 \
     --TemplateContent 您的验证码是{1} \

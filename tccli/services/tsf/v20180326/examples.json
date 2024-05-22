@@ -1266,6 +1266,14 @@
         "title": "查询可用于被导入的命名空间列表"
       }
     ],
+    "DisableLaneRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DisableLaneRule\r\n&RuleId=test\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "禁用泳道规则"
+      }
+    ],
     "DisableTask": [
       {
         "document": "",
@@ -1320,6 +1328,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DraftApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
         "title": "下线Api分组"
+      }
+    ],
+    "EnableLaneRule": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=EnableLaneRule\r\n&RuleId=lane-r-fdjsklafjdsa\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启用泳道规则"
       }
     ],
     "EnableTask": [
@@ -1429,8 +1445,8 @@
     "ModifyLaneRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyLaneRule\r\n&RuleId=1\r\n&RuleName=1\r\n&Remark=1\r\n&RuleTagList=1\r\n&RuleTagRelationship=RELEATION_AND\r\n&LaneId=lane-fdsjakhfds\r\n&Enable=1\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"e448ce99-83af-47cd-b422-a203aa18d862\",\"Result\":true}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaneRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"abc\",\n    \"RuleName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"RuleTagList\": [\n        {\n            \"TagId\": \"abc\",\n            \"TagName\": \"abc\",\n            \"TagOperator\": \"abc\",\n            \"TagValue\": \"abc\",\n            \"LaneRuleId\": \"abc\",\n            \"CreateTime\": 0,\n            \"UpdateTime\": 0\n        }\n    ],\n    \"RuleTagRelationship\": \"abc\",\n    \"LaneId\": \"abc\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新泳道规则"
       }
     ],

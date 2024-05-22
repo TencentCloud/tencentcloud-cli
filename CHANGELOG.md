@@ -1,3 +1,106 @@
+# Release 3.0.998.1
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 96 次发布
+
+发布时间：2024-05-22 01:15:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskLog](http://document.tencentcloudapi.woa.com/document/product/1342/83942)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 34 次发布
+
+发布时间：2024-05-22 01:18:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateStudioProduct](http://document.tencentcloudapi.woa.com/document/product/1081/34987)
+
+	* 新增入参：Rate, Period
+
+
+修改数据结构：
+
+* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
+
+	* 新增成员：Rate, Period
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 59 次发布
+
+发布时间：2024-05-22 01:27:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：ServicePort
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ServicePort
+
+
+新增数据结构：
+
+* [ImageSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageSecret)
+
+修改数据结构：
+
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
+
+	* 新增成员：ImageSecret
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：ServicePort
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 44 次发布
+
+发布时间：2024-05-22 01:28:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DisableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83944)
+* [EnableLaneRule](http://document.tencentcloudapi.woa.com/document/product/649/83943)
+
+
+
 # Release 3.0.997.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

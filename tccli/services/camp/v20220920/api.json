@@ -7544,6 +7544,15 @@
         },
         {
           "disabled": false,
+          "document": "用于增加应用的描述，方便识别",
+          "example": "这是个广州的应用实例",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略信息",
           "example": "无",
           "member": "Policy",
@@ -9589,7 +9598,7 @@
         },
         {
           "disabled": false,
-          "document": "CLB配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLB Service配置 \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CLBTrait",
           "name": "CLB",
