@@ -15137,7 +15137,7 @@
           "example": "jmx_export",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15147,7 +15147,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "SourceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15157,9 +15157,19 @@
           "example": "60002",
           "member": "int64",
           "name": "SourcePort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "broker地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.1.10",
+          "member": "string",
+          "name": "BrokerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

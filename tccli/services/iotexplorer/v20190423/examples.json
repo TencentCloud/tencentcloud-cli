@@ -1062,6 +1062,14 @@
         "title": "批量解绑子产品"
       }
     ],
+    "UpdateDeviceTWeCallAuthorizeStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDeviceTWeCallAuthorizeStatus\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"ProductId\": \"ProductId1\",\n    \"DeviceName\": \"DeviceName1\",\n    \"WechatOpenId\": \"111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "授权示例"
+      }
+    ],
     "UpdateDevicesEnableState": [
       {
         "document": "批量禁用启用设备",

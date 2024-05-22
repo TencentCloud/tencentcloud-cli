@@ -231,7 +231,6 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Unordered False \
     --FlowType 示例合同 \
     --Deadline 1830268800 \
-    --SignBeanTag 1 \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.ApproverName 典子谦 \
@@ -307,7 +306,6 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Unordered False \
     --FlowType 示例合同 \
     --Deadline 1830268800 \
-    --SignBeanTag 1 \
     --Approvers.0.ApproverType 0 \
     --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.ApproverName 典子谦 \
