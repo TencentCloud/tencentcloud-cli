@@ -1,0 +1,447 @@
+{
+  "actions": {
+    "QueryTcoTaskResult": {
+      "document": "查询护航任务结果",
+      "input": "QueryTcoTaskResultRequest",
+      "name": "查询护航任务结果",
+      "output": "QueryTcoTaskResultResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-04-23",
+    "api_brief": "大数据运营系统提供对外API能力",
+    "serviceNameCN": "青鹅大数据运营平台",
+    "serviceShortName": "qinge"
+  },
+  "objects": {
+    "QueryTcoTaskResultRequest": {
+      "document": "QueryTcoTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型示例：EMR：INSPECT_EMR；ES：INSPECT_ES；TCHouse-C：INSPECT_CDWCH；TCHouse-D：INSPECT_CDWDORIS；Wedata：INSPECT_WEDATA；Oceanus：INSPECT_OCEANUS",
+          "example": "INSPECT_ES",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id或AppId，要查询的",
+          "example": "es-xxx/123456xxx",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "护航时间段开始时间",
+          "example": "1715796900",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "护航时间段结束时间",
+          "example": "1715797560",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "地域id",
+          "example": "-99",
+          "member": "int64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTcoTaskResultResponse": {
+      "document": "QueryTcoTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "巡检异常数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "护航任务结果",
+          "example": "无",
+          "member": "TaskResult",
+          "name": "TaskResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "护航时间段结束时间",
+          "example": "1715797560",
+          "member": "V3CodeMessage",
+          "name": "CodeMsg",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TaskResult": {
+      "document": "任务结果与异常描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认是否开启安灯工单，1为开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Switch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "存在集群规格为 1C2G/2C2G 的集群。集群内存过低，容易出现因 oom 导致节点宕机的情况。1C2G/2C2G 集群严禁用于生产环境。",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "影响范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "如果将 dfs.replication 设置为较低的值，例如2，则每个数据块在集群中只有两个副本。这可能会降低数据的容灾能力，因为只有两个副本提供故障恢复和数据可用性。同时，存储占用可能也较低，因为副本数量较少。\\n相反，将 dfs.replication 设置为较高的值，例如4，则每个数据块在集群中有四个副本。这可以提高数据的冗余和容错能力，因为有更多的副本可用于故障恢复和数据保护。然而，存储占用和网络传输负载也会随之增加。",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "处理建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "长期解决方案：建议升级集群规格，至少为2C4G。",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19927333",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务taskKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3b4b0fbf-xxxxxx",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该集群该指标异常数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ExceptionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测类型 config/metric\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "metric",
+          "member": "string",
+          "name": "InspectionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "es-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常节点ip（可能为空）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.128.xxx",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HDFS",
+          "member": "string",
+          "name": "Service",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdfs-site.xml",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常检测任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dfs.replication_ConfigDataProcessor",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "内存规格1C2G巡检",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.15.64.xxx(1C2G)",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Notify",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常发生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-08T11:41:32+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该集群的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456xxx",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该集群的Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123xxxxxxx",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "巡检项阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "85",
+          "member": "string",
+          "name": "Threshold",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阈值比较符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ">",
+          "member": "string",
+          "name": "ThresholdOperator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AppId的String类型\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456XXX",
+          "member": "string",
+          "name": "AppIdStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群在数据库中的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "DbId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群的regionId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华北地区(北京)",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "巡检任务的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690861288",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "巡检任务的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1691466088",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常的等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期任务的母任务taskkey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3b4b0fbf-16f8-xxxx",
+          "member": "string",
+          "name": "ParentTaskKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MessageAll",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "V3CodeMessage": {
+      "document": "请求状态code以及响应状态说明message",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Retcode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应msg\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Succ",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

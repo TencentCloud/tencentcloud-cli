@@ -1,3 +1,175 @@
+# Release 3.0.1000.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 27 次发布
+
+发布时间：2024-05-24 01:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRedisBigKeyAnalysisTasks](http://document.tencentcloudapi.woa.com/document/product/1130/83961)
+
+新增数据结构：
+
+* [RedisBigKeyTask](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisBigKeyTask)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 97 次发布
+
+发布时间：2024-05-24 01:14:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddOptimizerEngines](http://document.tencentcloudapi.woa.com/document/product/1342/83962)
+* [DescribeTasksCostInfo](http://document.tencentcloudapi.woa.com/document/product/1342/83963)
+
+新增数据结构：
+
+* [OptimizerEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OptimizerEngineInfo)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 88 次发布
+
+发布时间：2024-05-24 01:17:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateIntegrationSubOrganizationActiveRecord](http://document.tencentcloudapi.woa.com/document/product/1668/83966)
+* [CreateOrganizationGroupInvitationLink](http://document.tencentcloudapi.woa.com/document/product/1668/83965)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 139 次发布
+
+发布时间：2024-05-24 01:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+	* 新增出参：FlowId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云市场(market) 版本：2019-10-10
+
+### 第 5 次发布
+
+发布时间：2024-05-24 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CVMImageElement](http://document.tencentcloudapi.woa.com/document/product/306/59175#CVMImageElement)
+
+	* 新增成员：IsFree, ProtocolID, ProductLogo
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 79 次发布
+
+发布时间：2024-05-24 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/248/77001)
+
+	* 新增入参：ClusterIds, ClusterTypes, ClusterName
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 51 次发布
+
+发布时间：2024-05-24 01:21:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [LiveStreamObjectRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamObjectRecognitionResult)
+
+修改数据结构：
+
+* [LiveStreamAiRecognitionResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiRecognitionResultItem)
+
+	* 新增成员：ObjectRecognitionResultSet
+
+
+
+
+## 节省计划(svp) 版本：2024-01-25
+
+### 第 2 次发布
+
+发布时间：2024-05-24 01:24:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSavingPlanDeduct](http://document.tencentcloudapi.woa.com/document/product/1757/83969)
+* [DescribeSavingPlanOverview](http://document.tencentcloudapi.woa.com/document/product/1757/83968)
+* [DescribeSavingPlanUsage](http://document.tencentcloudapi.woa.com/document/product/1757/83967)
+
+新增数据结构：
+
+* [SavingPlanDeductDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanDeductDetail)
+* [SavingPlanOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanOverviewDetail)
+* [SavingPlanUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanUsageDetail)
+
+
+
 # Release 3.0.999.1
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19

@@ -1,48 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 84 次发布
+### 第 27 次发布
 
-发布时间：2024-05-23 01:11:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PrometheusDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#PrometheusDTO)
-
-	* 新增成员：BrokerIp
-
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 87 次发布
-
-发布时间：2024-05-23 01:17:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RegistrationOrganizationInfo)
-
-	* 新增成员：PowerOfAttorneys
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 35 次发布
-
-发布时间：2024-05-23 01:18:56
+发布时间：2024-05-24 01:14:31
 
 本次发布包含了以下内容：
 
@@ -50,151 +12,161 @@
 
 新增接口：
 
-* [UpdateDeviceTWeCallAuthorizeStatus](http://document.tencentcloudapi.woa.com/document/product/1081/83945)
+* [DescribeRedisBigKeyAnalysisTasks](http://document.tencentcloudapi.woa.com/document/product/1130/83961)
+
+新增数据结构：
+
+* [RedisBigKeyTask](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisBigKeyTask)
 
 
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 97 次发布
+
+发布时间：2024-05-24 01:14:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddOptimizerEngines](http://document.tencentcloudapi.woa.com/document/product/1342/83962)
+* [DescribeTasksCostInfo](http://document.tencentcloudapi.woa.com/document/product/1342/83963)
+
+新增数据结构：
+
+* [OptimizerEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OptimizerEngineInfo)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 88 次发布
+
+发布时间：2024-05-24 01:17:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateIntegrationSubOrganizationActiveRecord](http://document.tencentcloudapi.woa.com/document/product/1668/83966)
+* [CreateOrganizationGroupInvitationLink](http://document.tencentcloudapi.woa.com/document/product/1668/83965)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 139 次发布
+
+发布时间：2024-05-24 01:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+	* 新增出参：FlowId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云市场(market) 版本：2019-10-10
+
+### 第 5 次发布
+
+发布时间：2024-05-24 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CVMImageElement](http://document.tencentcloudapi.woa.com/document/product/306/59175#CVMImageElement)
+
+	* 新增成员：IsFree, ProtocolID, ProductLogo
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 79 次发布
+
+发布时间：2024-05-24 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/248/77001)
+
+	* 新增入参：ClusterIds, ClusterTypes, ClusterName
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
 
 ### 第 51 次发布
 
-发布时间：2024-05-23 01:20:12
+发布时间：2024-05-24 01:21:58
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增数据结构：
 
-* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
-
-	* 新增成员：WebRoot
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 60 次发布
-
-发布时间：2024-05-23 01:27:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CreateBatchModelAccTasks
-* CreateBatchTask
-* CreateNotebookImage
-* CreateOptimizedModel
-* CreateTrainingTask
-* DeleteBatchTask
-* DeleteModelAccelerateTask
-* DeleteNotebookImageRecord
-* DeleteTrainingTask
-* DescribeAPIConfigs
-* DescribeBatchTask
-* DescribeBatchTaskInstances
-* DescribeBatchTasks
-* DescribeBillingSpecs
-* DescribeBillingSpecsPrice
-* DescribeDatasetDetailStructured
-* DescribeDatasetDetailUnstructured
-* DescribeEvents
-* DescribeLatestTrainingMetrics
-* DescribeLogs
-* DescribeModelAccEngineVersions
-* DescribeModelAccelerateTasks
-* DescribeModelServiceHistory
-* DescribeModelServices
-* DescribeNotebookImageKernels
-* DescribeNotebookImageRecords
-* DescribeTrainingFrameworks
-* DescribeTrainingMetrics
-* DescribeTrainingModels
-* ModifyModelServicePartialConfig
-* ModifyNotebook
-* ModifyNotebookTags
-* ModifyServiceGroupWeights
-* RestartModelAccelerateTask
-* StartTrainingTask
-* StopBatchTask
-* StopCreatingImage
-* StopTrainingTask
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* APIConfigDetail
-* BatchModelAccTask
-* BatchTaskDetail
-* BatchTaskInstance
-* BatchTaskSetItem
-* CronInfo
-* CustomTrainingData
-* CustomTrainingMetric
-* CustomTrainingPoint
-* DetectionLabelInfo
-* EncodedStartCmdInfo
-* EngineVersion
-* Event
-* FilterLabelInfo
-* FrameworkInfo
-* FrameworkVersion
-* LogIdentity
-* ModelAccEngineVersion
-* NotebookImageRecord
-* OcrLabelInfo
-* PointInfo
-* PreTrainModel
-* RowItem
-* RowValue
-* SegmentationInfo
-* ServiceHistory
-* Spec
-* SpecPrice
-* SpecUnit
-* TextLabelDistributionDetailInfoFifthClass
-* TextLabelDistributionDetailInfoFirstClass
-* TextLabelDistributionDetailInfoFourthClass
-* TextLabelDistributionDetailInfoSecondClass
-* TextLabelDistributionDetailInfoThirdClass
-* TextLabelDistributionInfo
-* TrainingDataPoint
-* TrainingMetric
-* TrainingModelDTO
-* WeightEntry
+* [LiveStreamObjectRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamObjectRecognitionResult)
 
 修改数据结构：
 
-* [LocalDisk](http://document.tencentcloudapi.woa.com/document/product/851/74915#LocalDisk)
+* [LiveStreamAiRecognitionResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiRecognitionResultItem)
 
-	* 新增成员：LocalPath
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+	* 新增成员：ObjectRecognitionResultSet
 
 
 
-## 自研上云(tocservice) 版本：2022-02-10
+
+## 节省计划(svp) 版本：2024-01-25
 
 ### 第 2 次发布
 
-发布时间：2024-05-23 01:27:56
+发布时间：2024-05-24 01:24:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [QueryApplyCVMCapacityOutParams](http://document.tencentcloudapi.woa.com/document/product/1608/77859#QueryApplyCVMCapacityOutParams)
+* [DescribeSavingPlanDeduct](http://document.tencentcloudapi.woa.com/document/product/1757/83969)
+* [DescribeSavingPlanOverview](http://document.tencentcloudapi.woa.com/document/product/1757/83968)
+* [DescribeSavingPlanUsage](http://document.tencentcloudapi.woa.com/document/product/1757/83967)
 
-	* 新增成员：InstanceTypeClass, InstanceTypeClassDesc
+新增数据结构：
 
+* [SavingPlanDeductDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanDeductDetail)
+* [SavingPlanOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanOverviewDetail)
+* [SavingPlanUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanUsageDetail)
 
 
 
@@ -34878,6 +34850,22 @@
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
+### 第 27 次发布
+
+发布时间：2024-05-24 01:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRedisBigKeyAnalysisTasks](http://document.tencentcloudapi.woa.com/document/product/1130/83961)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[RedisBigKeyTask](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisBigKeyTask)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[RedisBigKeyTask](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisBigKeyTask))
+
 ### 第 26 次发布
 
 发布时间：2024-01-16 01:13:37
@@ -36364,6 +36352,23 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 97 次发布
+
+发布时间：2024-05-24 01:14:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddOptimizerEngines](http://document.tencentcloudapi.woa.com/document/product/1342/83962)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTasksCostInfo](http://document.tencentcloudapi.woa.com/document/product/1342/83963)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[OptimizerEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OptimizerEngineInfo)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[OptimizerEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OptimizerEngineInfo))
 
 ### 第 96 次发布
 
@@ -44586,6 +44591,19 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 88 次发布
+
+发布时间：2024-05-24 01:17:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateIntegrationSubOrganizationActiveRecord](http://document.tencentcloudapi.woa.com/document/product/1668/83966)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreateOrganizationGroupInvitationLink](http://document.tencentcloudapi.woa.com/document/product/1668/83965)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 87 次发布
 
 发布时间：2024-05-23 01:17:00
@@ -46568,6 +46586,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 139 次发布
+
+发布时间：2024-05-24 01:17:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+	* 新增出参：FlowId
+
 
 ### 第 138 次发布
 
@@ -54578,7 +54611,7 @@
 
 新增接口：
 
-* [[UpdateDeviceTWeCallAuthorizeStatus](http://document.tencentcloudapi.woa.com/document/product/1081/83945)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [UpdateDeviceTWeCallAuthorizeStatus](http://document.tencentcloudapi.woa.com/document/product/1081/83945)
 
 ### 第 34 次发布
 
@@ -61785,6 +61818,21 @@
 
 ## 云市场(market) 版本：2019-10-10
 
+### 第 5 次发布
+
+发布时间：2024-05-24 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CVMImageElement](http://document.tencentcloudapi.woa.com/document/product/306/59175#CVMImageElement)
+
+	* 新增成员：IsFree, ProtocolID, ProductLogo
+
+
 ### 第 4 次发布
 
 发布时间：2023-04-10 01:30:58
@@ -62839,6 +62887,21 @@
 
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 79 次发布
+
+发布时间：2024-05-24 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrometheusClusterAgents](http://document.tencentcloudapi.woa.com/document/product/248/77001)
+
+	* 新增入参：ClusterIds, ClusterTypes, ClusterName
+
 
 ### 第 78 次发布
 
@@ -64642,6 +64705,25 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 51 次发布
+
+发布时间：2024-05-24 01:21:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[LiveStreamObjectRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamObjectRecognitionResult)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[LiveStreamObjectRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamObjectRecognitionResult))
+
+修改数据结构：
+
+* [LiveStreamAiRecognitionResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiRecognitionResultItem)
+
+	* 新增成员：ObjectRecognitionResultSet
+
 
 ### 第 50 次发布
 
@@ -72961,6 +73043,28 @@
 
 
 
+## 青鹅大数据运营平台(qinge) 版本：2024-04-23
+
+### 第 1 次发布
+
+发布时间：2024-05-23 16:12:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryTcoTaskResult](http://document.tencentcloudapi.woa.com/document/product/1763/83948)
+
+新增数据结构：
+
+* [TaskResult](http://document.tencentcloudapi.woa.com/document/product/1763/83949#TaskResult)
+* [V3CodeMessage](http://document.tencentcloudapi.woa.com/document/product/1763/83949#V3CodeMessage)
+
+
+
+
 ## 全栈式风控引擎(rce) 版本：2020-11-03
 
 ### 第 11 次发布
@@ -79420,6 +79524,26 @@
 
 
 ## 节省计划(svp) 版本：2024-01-25
+
+### 第 2 次发布
+
+发布时间：2024-05-24 01:24:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeSavingPlanDeduct](http://document.tencentcloudapi.woa.com/document/product/1757/83969)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeSavingPlanOverview](http://document.tencentcloudapi.woa.com/document/product/1757/83968)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeSavingPlanUsage](http://document.tencentcloudapi.woa.com/document/product/1757/83967)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SavingPlanDeductDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanDeductDetail)](http://document.tencentcloudapi.woa.com/document/product/1757/83970#[SavingPlanDeductDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanDeductDetail))
+* [[SavingPlanOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanOverviewDetail)](http://document.tencentcloudapi.woa.com/document/product/1757/83970#[SavingPlanOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanOverviewDetail))
+* [[SavingPlanUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanUsageDetail)](http://document.tencentcloudapi.woa.com/document/product/1757/83970#[SavingPlanUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1757/83970#SavingPlanUsageDetail))
 
 ### 第 1 次发布
 
