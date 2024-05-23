@@ -11382,6 +11382,33 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于通过集群id过滤被绑定集群",
+          "example": "[\"cls-12345\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于通过集群类型过滤被绑定集群",
+          "example": "[\"eks\"]",
+          "member": "string",
+          "name": "ClusterTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于通过名称搜索被绑定集群",
+          "example": "测试集群",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

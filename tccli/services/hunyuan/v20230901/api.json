@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认每种模型单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。",
+      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认每种模型单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "ChatCompletionsRequest",
       "name": "hunyuan",
       "output": "ChatCompletionsResponse",
@@ -132,7 +132,7 @@
         {
           "disabled": false,
           "document": "Unix 时间戳，单位为秒。",
-          "example": "无",
+          "example": "1705634032",
           "member": "int64",
           "name": "Created",
           "output_required": false,
@@ -152,7 +152,7 @@
         {
           "disabled": false,
           "document": "免责声明。",
-          "example": "无",
+          "example": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
           "member": "string",
           "name": "Note",
           "output_required": false,
@@ -162,7 +162,7 @@
         {
           "disabled": false,
           "document": "本轮对话的 ID。",
-          "example": "无",
+          "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -703,8 +703,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色",
-          "example": "[\"system\", \"user\", \"assistant\"]",
+          "document": "角色，可选值包括 system、user、assistant。",
+          "example": "user",
           "member": "string",
           "name": "Role",
           "output_required": false,

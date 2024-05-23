@@ -7,6 +7,13 @@
       "output": "AddDMSPartitionsResponse",
       "status": "online"
     },
+    "AddOptimizerEngines": {
+      "document": "添加数据优化资源",
+      "input": "AddOptimizerEnginesRequest",
+      "name": "添加数据优化资源",
+      "output": "AddOptimizerEnginesResponse",
+      "status": "online"
+    },
     "AddUsersToWorkGroup": {
       "document": "添加用户到工作组",
       "input": "AddUsersToWorkGroupRequest",
@@ -581,6 +588,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeTasksCostInfo": {
+      "document": "该接口（DescribeTasksCostInfo）用于查询任务消耗",
+      "input": "DescribeTasksCostInfoRequest",
+      "name": "查询任务消耗",
+      "output": "DescribeTasksCostInfoResponse",
+      "status": "online"
+    },
     "DescribeUpdatableDataEngines": {
       "document": "查询可更新配置的引擎列表",
       "input": "DescribeUpdatableDataEnginesRequest",
@@ -921,6 +935,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddOptimizerEnginesRequest": {
+      "document": "AddOptimizerEngines请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddOptimizerEnginesResponse": {
+      "document": "AddOptimizerEngines返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9723,6 +9754,98 @@
           "name": "TaskInfo",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksCostInfoRequest": {
+      "document": "DescribeTasksCostInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻",
+          "example": "2019-01-21 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
+          "example": "2019-01-22 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎名称，用于筛选",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一页的标识",
+          "example": "上一次返回的searchafter值",
+          "member": "string",
+          "name": "SearchAfter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页的大小",
+          "example": "10000",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksCostInfoResponse": {
+      "document": "DescribeTasksCostInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下一页的标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1716358571169]",
+          "member": "string",
+          "name": "SearchAfter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回的数据，字符串类型的二维数组，首行为列中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[[\\\"任务ID\\\",\\\"引擎具体类别\\\",\\\"任务提交时间\\\",\\\"引擎耗时(ms)\\\",\\\"引擎名称\\\",\\\"使用人\\\",\\\"资源总使用情况(cu*ms)\\\",\\\"资源拆分情况\\\"],[\\\"81e3ca8f-b617-4141-934d-d90dbbf43293\\\",\\\"SparkBatchSQL\\\",\\\"1716358571169\\\",\\\"0\\\",\\\"test_hz\\\",\\\"100000000000\\\",\\\"36396\\\",\\\"[{\\\\\\\"TaskId\\\\\\\":\\\\\\\"cbec28d8-4390-44d2-9c88-5ef777a92ecf\\\\\\\",\\\\\\\"TotalTime\\\\\\\":36396}]\\\"]]",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {

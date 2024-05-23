@@ -25,6 +25,7 @@ tccli essbasic ChannelCreatePrepareFlow --cli-unfold-argument  \
     --FlowOption.HideShowFlowType False \
     --FlowOption.HideShowDeadline False \
     --FlowOption.ForbidEditFillComponent False \
+    --FlowOption.SkipUploadFile True \
     --FlowOption.CustomCreateFlowDescription  \
     --FlowApproverList.0.ApproverType 0 \
     --FlowApproverList.0.NotChannelOrganization False \
@@ -49,6 +50,7 @@ Output:
     "Response": {
         "PrepareFlowUrl": "https://embed.beta.qian.tencent.cn/contract-create?embed=1&expiredOn=1700819911&code=yDSL6UUQEjIKK&businessId=yDSL6U3iY7&channel=PROXYCHANNEL&operateSource=byTemplate&themeId=channel_web_theme_yDwi3UAR2Yb",
         "PreviewFlowUrl": "",
+        "FlowId": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
         "RequestId": "c52aaa17-3f81-4640-be03-fca0a553d2e3"
     }
 }
@@ -88,6 +90,7 @@ Output:
     "Response": {
         "PrepareFlowUrl": "https://embed.beta.qian.tencent.cn/contract-create?code=yDCNBUUckpvlzt0sUypjGZRCTkEHyRh6",
         "PreviewFlowUrl": "",
+        "FlowId": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
         "RequestId": "296e3cfb-504e-494d-a86c-75101a87c09e"
     }
 }
@@ -131,6 +134,7 @@ Output:
     "Response": {
         "PrepareFlowUrl": "https://embed.beta.qian.tencent.cn/contract-create?embed=1&expiredOn=1700819911&code=yDSL6UUQEjIKK&businessId=yDSL6U3iY7&channel=PROXYCHANNEL&operateSource=byTemplate&themeId=channel_web_theme_yDwi3UAR2Yb",
         "PreviewFlowUrl": "",
+        "FlowId": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
         "RequestId": "c52aaa17-3f81-4640-be03-fca0a553d2e3"
     }
 }

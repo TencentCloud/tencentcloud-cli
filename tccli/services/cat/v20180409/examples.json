@@ -49,8 +49,8 @@
     "DescribeProbeMetricData": [
       {
         "document": "请求浏览数据",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeMetricData\n<公共请求参数>\n\n{\n    \"AnalyzeTaskType\": \"AnalyzeTaskType_Browse\",\n    \"MetricType\": \"gauge\",\n    \"Field\": \"avg(\\\"count\\\")\",\n    \"GroupBy\": \"time(30d), \\\"operator\\\"\",\n    \"Filters\": [\n        \"\\\"host\\\" = 'default-host'\",\n        \"time >= now()-3h\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSet\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeMetricData\n<公共请求参数>\n\n{\n    \"AnalyzeTaskType\": \"AnalyzeTaskType_Network\",\n    \"MetricType\": \"gauge\",\n    \"Field\": \"sum(\\\"error_count\\\")\",\n    \"GroupBy\": \"time(30d), \\\"operator\\\"\",\n    \"Filters\": [\n        \"\\\"host\\\" = 'default-host'\",\n        \"time >= now()-1h\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSet\": \"[{\\\"name\\\":\\\"netenv_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"sum(error_count)\\\"],\\\"values\\\":[[xxxxx,xxxxx]],\\\"tags\\\":null}]\",\n        \"RequestId\": \"xxxxx\"\n    }\n}",
         "title": "请求浏览数据"
       }
     ],

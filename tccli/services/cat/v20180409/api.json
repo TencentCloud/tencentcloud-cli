@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DescribeProbeMetricData": {
-      "document": "查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询",
+      "document": "查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询\n拨测频率与groupby聚合时间设置关联，如拨测频率为 30 分钟，则 grouby 聚合时间建议设置为大于30分钟，避免出现查询数据为空的情况",
       "input": "DescribeProbeMetricDataRequest",
       "name": "列出云拨测指标详细数据",
       "output": "DescribeProbeMetricDataResponse",
@@ -670,7 +670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回指标 JSON 序列化后的字符串,具体如下所示：\n\"[{\\\"name\\\":\\\"task_navigate_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(first_screen_time) / 1000\\\"],\\\"values\\\":[[1641571200,6.756600000000001]],\\\"tags\\\":null}]\"",
+          "document": " 返回指标 JSON 序列化后的字符串，具体如下所示：\"[{\\\"name\\\":\\\"task_navigate_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(first_screen_time) / 1000\\\"],\\\"values\\\":[[1641571200,6.756600000000001]],\\\"tags\\\":null}]\"",
           "example": "\"\"",
           "member": "string",
           "name": "MetricSet",

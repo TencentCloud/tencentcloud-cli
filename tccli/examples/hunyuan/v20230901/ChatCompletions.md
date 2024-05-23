@@ -1,6 +1,6 @@
-**Example 1: system参数示例**
+**Example 1: system prompt 示例**
 
-system提示词
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明 system prompt 的使用方法。
 
 Input: 
 
@@ -43,7 +43,7 @@ Output:
 
 **Example 2: 多轮对话示例**
 
-多轮对话场景
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明如何给模型传入多轮消息。
 
 Input: 
 
@@ -78,7 +78,7 @@ Output:
 
 **Example 3: 请求失败示例**
 
-
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例给出接口调用失败时的响应例子。
 
 Input: 
 
@@ -106,7 +106,7 @@ Output:
 
 **Example 4: 流式请求成功示例**
 
-
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例给出接口正常调用时的响应例子。
 
 Input: 
 
@@ -144,7 +144,7 @@ data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除
 
 **Example 5: 非流式请求成功示例**
 
-
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明如何用非流式方式调用接口。
 
 Input: 
 

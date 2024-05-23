@@ -15936,7 +15936,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>\n<li>TagRecognition：精彩打点。</li>",
+          "document": "结果的类型，取值范围：\n<li>FaceRecognition：人脸识别，</li>\n<li>AsrWordsRecognition：语音关键词识别，</li>\n<li>OcrWordsRecognition：文本关键词识别，</li>\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>OcrFullTextRecognition：文本全文识别。</li>\n<li>TransTextRecognition：语音翻译。</li>\n<li>ObjectRecognition：目标检测。</li>\n<li>TagRecognition：精彩打点。</li>",
           "example": "FaceRecognition",
           "member": "string",
           "name": "Type",
@@ -16000,6 +16000,16 @@
           "example": "NULL",
           "member": "LiveStreamTransTextRecognitionResult",
           "name": "TransTextRecognitionResultSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标检测结果，当Type为 ObjectRecognition 时有效。",
+          "example": "NULL",
+          "member": "LiveStreamObjectRecognitionResult",
+          "name": "ObjectRecognitionResultSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -16564,6 +16574,62 @@
           "example": "",
           "member": "float",
           "name": "EndPtsTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。",
+          "example": "",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveStreamObjectRecognitionResult": {
+      "document": "直播 AI 物体识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别的物体名称。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段起始的 PTS 时间，单位：秒。",
+          "example": "",
+          "member": "float",
+          "name": "StartPtsOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段终止的 PTS 时间，单位：秒。",
+          "example": "",
+          "member": "float",
+          "name": "EndPtsOffset",
           "required": true,
           "type": "float",
           "value_allowed_null": false

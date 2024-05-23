@@ -252,6 +252,13 @@
       "output": "DescribeProxySessionKillTasksResponse",
       "status": "online"
     },
+    "DescribeRedisBigKeyAnalysisTasks": {
+      "document": "查询redis大key分析任务列表。",
+      "input": "DescribeRedisBigKeyAnalysisTasksRequest",
+      "name": "查询redis大key分析任务列表",
+      "output": "DescribeRedisBigKeyAnalysisTasksResponse",
+      "status": "online"
+    },
     "DescribeRedisProcessList": {
       "document": "获取 Redis 实例所有 proxy 节点的实时会话详情列表。",
       "input": "DescribeRedisProcessListRequest",
@@ -386,7 +393,7 @@
       "status": "online"
     },
     "ModifyDiagDBInstanceConf": {
-      "document": "修改实例巡检开关。",
+      "document": "修改实例的配置信息。",
       "input": "ModifyDiagDBInstanceConfRequest",
       "name": "修改实例巡检开关状态",
       "output": "ModifyDiagDBInstanceConfResponse",
@@ -3116,7 +3123,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"dbbrain-mysql\" - 自建 MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"dbbrain-mysql\" - 自建 MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3900,6 +3907,80 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisBigKeyAnalysisTasksRequest": {
+      "document": "DescribeRedisBigKeyAnalysisTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "crs-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数目，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisBigKeyAnalysisTasksResponse": {
+      "document": "DescribeRedisBigKeyAnalysisTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务列表。",
+          "example": "无",
+          "member": "RedisBigKeyTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6028,7 +6109,7 @@
           "example": "无",
           "member": "string",
           "name": "KeyDelimiters",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6039,7 +6120,18 @@
           "example": "3",
           "member": "string",
           "name": "ShardNum",
-          "output_required": true,
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启大key周期性分析，仅redis产品有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Yes",
+          "member": "string",
+          "name": "AnalysisTopKey",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6822,7 +6914,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"redis\" - 云数据库 Redis。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7511,6 +7603,82 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisBigKeyTask": {
+      "document": "Redis大Key分析任务详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务请求 ID。",
+          "example": "12306",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间。",
+          "example": "2024-01-02 21:02:24",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间。",
+          "example": "2024-01-02 21:02:25",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间。",
+          "example": "2024-01-08 11:52:41",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。",
+          "example": "finished",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行进度。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务包含的分片节点序号列表。",
+          "example": "[2,3]",
+          "member": "int64",
+          "name": "ShardIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

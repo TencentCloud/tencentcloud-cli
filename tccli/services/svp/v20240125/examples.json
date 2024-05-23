@@ -7,6 +7,30 @@
         "output": "{\n    \"Response\": {\n        \"BigDealId\": \"20231020400000764159521\",\n        \"RequestId\": \"7525ef6b-ac63-4fa6-9bd4-d8c3c8b96220\"\n    }\n}",
         "title": "节省计划下单"
       }
+    ],
+    "DescribeSavingPlanDeduct": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanDeduct\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"StartEndDate\": \"2024-03-01 00:00:00\",\n    \"StartStartDate\": \"2024-05-01 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deducts\": [\n            {\n                \"DeductAmount\": \"10.00\",\n                \"DeductDiscount\": \"0.30\",\n                \"DeductRate\": \"0.22\",\n                \"DeductTime\": \"2024-03-04 21:24:05\",\n                \"OutTradeNo\": \"20240304031000383107912\",\n                \"OwnerUin\": \"700000594031\",\n                \"OwnerUinName\": \"艾欧尼亚\",\n                \"PayerUin\": \"700000594031\",\n                \"PayerUinName\": \"艾欧尼亚\",\n                \"ProductCode\": \"p_cvm\",\n                \"ProductName\": \"\",\n                \"RegionId\": 1,\n                \"RegionName\": \"\",\n                \"SpEndTime\": \"2024-03-04 22:00:00\",\n                \"SpId\": \"svp-ivm000e-D4l9f66\",\n                \"SpStartTime\": \"2024-03-04 21:00:00\",\n                \"SubProductCode\": \"sp_cvm_s1\",\n                \"SubProductName\": \"\",\n                \"ZoneId\": 100002,\n                \"ZoneName\": \"\"\n            }\n        ],\n        \"RequestId\": \"7a47a68c-21ee-405b-a33c-5fa67611847a\",\n        \"Total\": 1015\n    }\n}",
+        "title": "查询节省计划抵扣明细请求示例"
+      }
+    ],
+    "DescribeSavingPlanOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanOverview\n<公共请求参数>\n\n{\n    \"StartDate\": \"2024-03-01\",\n    \"EndDate\": \"2024-05-01\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Overviews\": [\n            {\n                \"EndTime\": \"2028-03-30 14:59:59\",\n                \"PayAmount\": \"0\",\n                \"Region\": [\n                    \"*\"\n                ],\n                \"SavingAmount\": \"600\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-03-30 14:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"aa36e003-786e-47aa-aefe-e717d749f964\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询节省计划总览明细示例"
+      }
+    ],
+    "DescribeSavingPlanUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanUsage\n<公共请求参数>\n\n{\n    \"StartDate\": \"2024-03-01\",\n    \"EndDate\": \"2024-05-01\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"TimeInterval\": \"month\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"626b5af9-5c9e-4ffb-ab6c-ec370b75a355\",\n        \"Total\": 1,\n        \"Usages\": [\n            {\n                \"CostAmount\": \"600\",\n                \"DeductAmount\": \"600\",\n                \"DosageAmount\": \"0\",\n                \"LossAmount\": \"0\",\n                \"NetSavings\": \"-600\",\n                \"PromiseAmount\": \"600\",\n                \"Region\": [\n                    \"*\"\n                ],\n                \"SpType\": \"svp_common\",\n                \"Status\": 1,\n                \"UtilizationRate\": 100\n            }\n        ]\n    }\n}",
+        "title": "查询节省计划使用率明细示例"
+      }
     ]
   },
   "version": "1.0"

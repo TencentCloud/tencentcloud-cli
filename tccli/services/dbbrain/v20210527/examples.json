@@ -288,6 +288,14 @@
         "title": "查询 kill 会话任务执行结果"
       }
     ],
+    "DescribeRedisBigKeyAnalysisTasks": [
+      {
+        "document": "获取某个Redis实例的大Key分析任务列表。",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedisBigKeyAnalysisTasks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-7i2test\",\n    \"Product\": \"redis\",\n    \"Limit\": 50,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"Progress\": 100,\n                \"AsyncRequestId\": 7309733,\n                \"EndTime\": \"2024-01-12 11:41:53\",\n                \"CreateTime\": \"2024-01-12 11:38:37\",\n                \"StartTime\": \"2024-01-12 11:38:38\",\n                \"TaskStatus\": \"finished\",\n                \"ShardIds\": [\n                    \"2\",\n                    \"3\"\n                ]\n            }\n        ],\n        \"RequestId\": \"e9833850-b113-11ee-8376-93f024a9a001\"\n    }\n}",
+        "title": "获取Redis大Key分析任务列表"
+      }
+    ],
     "DescribeRedisProcessList": [
       {
         "document": "指定 Offset 分页获取实例 Proxy 实时会话详情列表。",
@@ -448,10 +456,16 @@
     ],
     "ModifyDiagDBInstanceConf": [
       {
-        "document": "",
+        "document": "修改实例巡检状态。",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=ModifyDiagDBInstanceConf\n&InstanceIds.0=cdb-fyclrp7r\n&InstanceConfs.DailyInspection=Yes\n&Regions=All\n&Product=mysql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\n    }\n}",
         "title": "修改实例巡检状态"
+      },
+      {
+        "document": "开启Redis实例大key周期性分析并自定义分隔符。",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiagDBInstanceConf\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"Regions\": \"all\",\n    \"InstanceIds\": [\n        \"crs-pz1raq11\"\n    ],\n    \"InstanceConfs\": {\n        \"AnalysisTopKey\": \"Yes\",\n        \"KeyDelimiters\": [\n            \"_\",\n            \"-\",\n            \":\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bcd97ab0-16d1-11ef-8e52-3d11a9997f13\"\n    }\n}",
+        "title": "修改Redis实例大key周期性分析"
       }
     ],
     "ModifySqlFilters": [

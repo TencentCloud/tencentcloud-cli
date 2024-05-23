@@ -8,6 +8,14 @@
         "title": "DMS元数据新增分区"
       }
     ],
+    "AddOptimizerEngines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOptimizerEngines\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1304581893_25027_1709796072623_223\"\n    }\n}",
+        "title": "实例一"
+      }
+    ],
     "AddUsersToWorkGroup": [
       {
         "document": "",
@@ -662,6 +670,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"SortBy\": \"abc\",\n    \"Sorting\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"DataEngineName\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskList\": [\n            {\n                \"DatabaseName\": \"abc\",\n                \"DataAmount\": 0,\n                \"Id\": \"abc\",\n                \"UsedTime\": 0,\n                \"OutputPath\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"State\": 0,\n                \"SQLType\": \"abc\",\n                \"SQL\": \"abc\",\n                \"ResultExpired\": true,\n                \"RowAffectInfo\": \"abc\",\n                \"DataSet\": \"abc\",\n                \"Error\": \"abc\",\n                \"Percentage\": 0,\n                \"OutputMessage\": \"abc\",\n                \"TaskType\": \"abc\",\n                \"ProgressDetail\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"DataEngineId\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"DataEngineName\": \"abc\",\n                \"InputType\": \"abc\",\n                \"InputConf\": \"abc\",\n                \"DataNumber\": 0,\n                \"CanDownload\": true,\n                \"UserAlias\": \"abc\",\n                \"SparkJobName\": \"abc\",\n                \"SparkJobId\": \"abc\",\n                \"SparkJobFile\": \"abc\",\n                \"UiUrl\": \"abc\",\n                \"TotalTime\": 0,\n                \"CmdArgs\": \"abc\",\n                \"ImageVersion\": \"abc\",\n                \"DriverSize\": \"abc\",\n                \"ExecutorSize\": \"abc\",\n                \"ExecutorNums\": 1,\n                \"ExecutorMaxNumbers\": 1,\n                \"CommonMetrics\": {\n                    \"CreateTaskTime\": 0,\n                    \"ProcessTime\": 0,\n                    \"QueueTime\": 0,\n                    \"ExecutionTime\": 0,\n                    \"IsResultCacheHit\": true,\n                    \"MatchedMVBytes\": 0,\n                    \"MatchedMVs\": \"abc\",\n                    \"AffectedBytes\": \"abc\",\n                    \"AffectedRows\": 0,\n                    \"ProcessedBytes\": 0,\n                    \"ProcessedRows\": 0\n                },\n                \"SparkMonitorMetrics\": {\n                    \"ShuffleWriteBytesCos\": 0,\n                    \"ShuffleWriteBytesTotal\": 0\n                },\n                \"PrestoMonitorMetrics\": {\n                    \"LocalCacheHitRate\": 0,\n                    \"FragmentCacheHitRate\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"TasksOverview\": {\n            \"TaskQueuedCount\": 0,\n            \"TaskInitCount\": 0,\n            \"TaskRunningCount\": 0,\n            \"TotalTaskCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询任务列表"
+      }
+    ],
+    "DescribeTasksCostInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksCostInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SearchAfter\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询任务消耗"
       }
     ],
     "DescribeUpdatableDataEngines": [

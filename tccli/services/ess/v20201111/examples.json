@@ -680,6 +680,14 @@
         "title": "示例-普通企业创建角色（不带权限树参数）"
       }
     ],
+    "CreateIntegrationSubOrganizationActiveRecord": [
+      {
+        "document": "通过此接口，创建子企业激活记录，集团企业管理员可针对未激活的成员企业进行授权。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationSubOrganizationActiveRecord\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"SubOrganizationIds\": [\n        \"123456\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedSubOrganizationIds\": [],\n        \"RequestId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    }\n}",
+        "title": "创建成员企业激活记录"
+      }
+    ],
     "CreateIntegrationUserRoles": [
       {
         "document": "示例-主代子绑定角色",
@@ -758,6 +766,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UXXXzjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"\"\n    },\n    \"UserId\": \"\",\n    \"Name\": \"\",\n    \"Mobile\": \"\",\n    \"FlowIds\": [\n        \"yDC5yUUntf6vnnUxxBTyJ8Ps0WGqAuHL\",\n        \"yDC5yUUntf6fccUEgcyeHwPz4wjnDSI4\"\n    ],\n    \"RecipientIds\": [\n        \"yDC5yUUntf6vn0UxxBTyJvfv3Xlckcye\",\n        \"yDC5yUUntf6mdgUEgcyeHCpCDmDjbsQJ\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1706100107,\n        \"RequestId\": \"s1705495307288609862\",\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD\"\n    }\n}",
         "title": "基于RecipientIds 生成他方签署链接"
+      }
+    ],
+    "CreateOrganizationGroupInvitationLink": [
+      {
+        "document": "生成建工集团集团加入邀请链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationGroupInvitationLink\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"ExpireTime\": 1702366386\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1716683735,\n        \"JumpUrl\": \"https://test.essurl.cn/BGgGUBGtln\",\n        \"Link\": \"https://dyn.test.ess.tencent.cn/imgs/organization/732aaefa78c439d726f541b89c49e022/qrcode/joingroup/yDCZFUUckpyyo8pgUxP8QQ8yRgWF3en4.png\",\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDCZFUyOc8a3FdjP9477\",\n        \"RequestId\": \"acba9fe30ab0\"\n    }\n}",
+        "title": "生成建工集团集团加入邀请链接"
       }
     ],
     "CreateOrganizationInfoChangeUrl": [
