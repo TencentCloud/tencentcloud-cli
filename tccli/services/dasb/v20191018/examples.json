@@ -56,6 +56,14 @@
         "title": "创建主机资产同步任务"
       }
     ],
+    "CreateChangePwdTask": [
+      {
+        "document": "创建改密任务成功",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChangePwdTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"test\",\n    \"DeviceIdSet\": [\n        213\n    ],\n    \"AccountSet\": [\n        \"111\"\n    ],\n    \"ChangeMethod\": 1,\n    \"RunAccount\": \"root\",\n    \"AuthGenerationStrategy\": 3,\n    \"Password\": \"Pw1234567\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 1,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"JX4h=\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"112@qq.com\",\n        \"115@qq.com\"\n    ],\n    \"FilePassword\": \"123456\",\n    \"DepartmentId\": \"1\",\n    \"Type\": 4,\n    \"Period\": 14,\n    \"FirstTime\": \"2024-04-27T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperationId\": \"ops-xxx\",\n        \"RequestId\": \"f0be45dd-8719-46b5-b7ff-xxxx\"\n    }\n}",
+        "title": "创建改密任务"
+      }
+    ],
     "CreateCmdTemplate": [
       {
         "document": "控制台页面新增高危命令模板",
@@ -110,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAcls\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除访问权限"
+      }
+    ],
+    "DeleteChangePwdTask": [
+      {
+        "document": "删除改密任务",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChangePwdTask\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx\"\n    }\n}",
+        "title": "删除改密任务"
       }
     ],
     "DeleteCmdTemplates": [
@@ -204,6 +220,22 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSyncStatus\n<公共请求参数>\n\n{\n    \"Category\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxx\",\n        \"Status\": {\n            \"LastStatus\": 1,\n            \"LastTime\": \"2021-09-22T15:04:05Z07:00\",\n            \"InProcess\": true\n        }\n    }\n}",
         "title": "查询主机资产自动同步结果"
+      }
+    ],
+    "DescribeChangePwdTask": [
+      {
+        "document": "查询修改密码任务信息",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangePwdTask\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TaskName\",\n            \"Values\": [\n                \"task1\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\",\n        \"Tasks\": [\n            {\n                \"Id\": 1,\n                \"TaskName\": \"test-xxx\",\n                \"OperationId\": \"ops-xxx\",\n                \"ChangeMethod\": 1,\n                \"RunAccount\": \"root\",\n                \"AuthGenerationStrategy\": 1,\n                \"PasswordLength\": 12,\n                \"SmallLetter\": 1,\n                \"BigLetter\": 1,\n                \"Digit\": 1,\n                \"Symbol\": \"\",\n                \"CompleteNotify\": 1,\n                \"NotifyEmails\": [\n                    \"11323@qq.com\"\n                ],\n                \"FilePassword\": \"xxx\",\n                \"Type\": 4,\n                \"Period\": 0,\n                \"FirstTime\": null,\n                \"NextTime\": null,\n                \"DeviceSet\": [\n                    {\n                        \"Id\": 1,\n                        \"InstanceId\": \"ins-a3dvgvte\",\n                        \"Name\": \"可用-预发标准版-linux\",\n                        \"PublicIp\": \"\",\n                        \"PrivateIp\": \"172.20.0.17\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                        \"Kind\": 1,\n                        \"Port\": 22,\n                        \"IpPortSet\": null,\n                        \"VpcId\": \"vpc-test\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"AccountCount\": 0,\n                        \"GroupSet\": [],\n                        \"Resource\": {\n                            \"ResourceId\": \"bh-saas-test\",\n                            \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                            \"ApCode\": \"ap-shanghai-fsi\",\n                            \"Zone\": \"ap-shanghai-fsi-1\",\n                            \"Pid\": 10,\n                            \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_xxx\",\n                            \"PackageBandwidth\": 0,\n                            \"PackageNode\": 0,\n                            \"LogDeliveryArgs\": \"\",\n                            \"ProductCode\": \"p_cds_dasb\",\n                            \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                            \"VpcId\": \"vpc-test\",\n                            \"VpcName\": \"Default-VPC\",\n                            \"VpcCidrBlock\": \"172.20.0.0/16\",\n                            \"SubnetId\": \"subnet-test\",\n                            \"SubnetName\": \"1qu\",\n                            \"CidrBlock\": \"172.20.50.0/24\",\n                            \"Nodes\": 50,\n                            \"UsedNodes\": 2,\n                            \"PublicIpSet\": [\n                                \"101.35.32.101\"\n                            ],\n                            \"PrivateIpSet\": [\n                                \"172.20.50.50\"\n                            ],\n                            \"RenewFlag\": 2,\n                            \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                            \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                            \"Expired\": false,\n                            \"Deployed\": true,\n                            \"Status\": 1,\n                            \"ExtendPoints\": 0,\n                            \"ModuleSet\": []\n                        },\n                        \"Department\": {\n                            \"Id\": \"1\",\n                            \"Name\": \"总部\",\n                            \"Managers\": null,\n                            \"ManagerUsers\": null\n                        }\n                    }\n                ],\n                \"AccountSet\": [\n                    \"test042303\",\n                    \"test042304\",\n                    \"test042305\",\n                    \"test092702\"\n                ],\n                \"Department\": {\n                    \"Id\": \"1\",\n                    \"Name\": \"总部\",\n                    \"Managers\": null,\n                    \"ManagerUsers\": null\n                }\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询修改密码任务信息"
+      }
+    ],
+    "DescribeChangePwdTaskDetail": [
+      {
+        "document": "查询改密计划详情",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChangePwdTaskDetail\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"Values\": [\n                \"ins-xxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Device\": {\n                    \"Id\": 1,\n                    \"InstanceId\": \"ins-test\",\n                    \"Name\": \"linux\",\n                    \"PublicIp\": \"\",\n                    \"PrivateIp\": \"172.20.0.1\",\n                    \"ApCode\": \"ap-shanghai-fsi\",\n                    \"OsName\": \"TencentOS Server 3.1 (TK4)\",\n                    \"Kind\": 1,\n                    \"Port\": 22,\n                    \"IpPortSet\": null,\n                    \"VpcId\": \"vpc-test\",\n                    \"SubnetId\": \"subnet-test\",\n                    \"AccountCount\": 0,\n                    \"GroupSet\": [\n                        {\n                            \"Id\": 1,\n                            \"Name\": \"测试\",\n                            \"Department\": {\n                                \"Id\": \"\",\n                                \"Name\": \"\",\n                                \"Managers\": null,\n                                \"ManagerUsers\": null\n                            },\n                            \"Count\": 0\n                        }\n                    ],\n                    \"Resource\": {\n                        \"ResourceId\": \"bh-saas-test\",\n                        \"ResourceName\": \"T-Sec-堡垒机（SaaS型）/专业版\",\n                        \"ApCode\": \"ap-shanghai-fsi\",\n                        \"Zone\": \"ap-shanghai-fsi-1\",\n                        \"Pid\": 10,\n                        \"SvArgs\": \"sv_cds_dasb_saas_ex_pro_xxx\",\n                        \"PackageBandwidth\": 0,\n                        \"PackageNode\": 0,\n                        \"LogDeliveryArgs\": \"\",\n                        \"ProductCode\": \"p_cds_dasb\",\n                        \"SubProductCode\": \"sp_cds_dasb_bh_saas_pro\",\n                        \"VpcId\": \"vpc-test\",\n                        \"VpcName\": \"Default-VPC\",\n                        \"VpcCidrBlock\": \"172.20.0.0/16\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"SubnetName\": \"1qu\",\n                        \"CidrBlock\": \"172.20.50.0/24\",\n                        \"Nodes\": 50,\n                        \"UsedNodes\": 2,\n                        \"PublicIpSet\": [\n                            \"1.1.1.1\"\n                        ],\n                        \"PrivateIpSet\": [\n                            \"172.0.0.1\"\n                        ],\n                        \"RenewFlag\": 2,\n                        \"CreateTime\": \"2024-04-28T11:00:59+08:00\",\n                        \"ExpireTime\": \"2024-05-28T11:00:59+08:00\",\n                        \"Expired\": false,\n                        \"Deployed\": true,\n                        \"Status\": 1,\n                        \"ExtendPoints\": 0,\n                        \"ModuleSet\": []\n                    },\n                    \"Department\": {\n                        \"Id\": \"1\",\n                        \"Name\": \"总部\",\n                        \"Managers\": null,\n                        \"ManagerUsers\": null\n                    }\n                },\n                \"Account\": \"worktest\",\n                \"LastChangeStatus\": 1\n            }\n        ],\n        \"RequestId\": \"rid-test\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询改密计划详情"
       }
     ],
     "DescribeCmdTemplates": [
@@ -330,6 +362,14 @@
         "title": "修改访问权限"
       }
     ],
+    "ModifyChangePwdTask": [
+      {
+        "document": "修改改密任务",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"TaskName\": \"testchangePwd\",\n    \"DeviceIdSet\": [\n        215,\n        213\n    ],\n    \"AccountSet\": [\n        \"1111\"\n    ],\n    \"ModifyType\": 1,\n    \"DepartmentId\": \"1.10\",\n    \"ChangeMethod\": 2,\n    \"RunAccount\": \"\",\n    \"AuthGenerationStrategy\": 1,\n    \"Password\": \"test1234567\",\n    \"PasswordLength\": 12,\n    \"SmallLetter\": 0,\n    \"BigLetter\": 1,\n    \"Digit\": 1,\n    \"Symbol\": \"ISMkJQ==\",\n    \"CompleteNotify\": 1,\n    \"NotifyEmails\": [\n        \"113@qq.com\"\n    ],\n    \"FilePassword\": \"1234567\",\n    \"Type\": 5,\n    \"Period\": 16,\n    \"FirstTime\": \"2023-06-01T00:00:00+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\"\n    }\n}",
+        "title": "修改改密任务"
+      }
+    ],
     "ModifyCmdTemplate": [
       {
         "document": "修改高危命令模板",
@@ -408,6 +448,14 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetUser\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "重置用户"
+      }
+    ],
+    "RunChangePwdTask": [
+      {
+        "document": "执行改密任务成功",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-xxx\",\n    \"Details\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid-test\"\n    }\n}",
+        "title": "执行改密任务"
       }
     ],
     "SearchAuditLog": [

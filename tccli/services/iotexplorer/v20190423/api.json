@@ -1,5 +1,19 @@
 {
   "actions": {
+    "ActivateTWeCallLicense": {
+      "document": "激活",
+      "input": "ActivateTWeCallLicenseRequest",
+      "name": "激活TWeCall",
+      "output": "ActivateTWeCallLicenseResponse",
+      "status": "online"
+    },
+    "AssignTWeCallLicense": {
+      "document": "分配License",
+      "input": "AssignTWeCallLicenseRequest",
+      "name": "分配TWeCall",
+      "output": "AssignTWeCallLicenseResponse",
+      "status": "online"
+    },
     "BindCloudStorageUser": {
       "document": "绑定云存用户",
       "input": "BindCloudStorageUserRequest",
@@ -33,6 +47,13 @@
       "input": "CallDeviceActionSyncRequest",
       "name": "同步调用设备行为",
       "output": "CallDeviceActionSyncResponse",
+      "status": "online"
+    },
+    "CancelAssignTWeCallLicense": {
+      "document": "取消分配",
+      "input": "CancelAssignTWeCallLicenseRequest",
+      "name": "取消分配TWeCall",
+      "output": "CancelAssignTWeCallLicenseResponse",
       "status": "online"
     },
     "ControlDeviceData": {
@@ -581,6 +602,13 @@
       "output": "GenerateSignedVideoURLResponse",
       "status": "online"
     },
+    "GetAuthMiniProgramAppList": {
+      "document": "查询小程序列表",
+      "input": "GetAuthMiniProgramAppListRequest",
+      "name": "查询微信小程序授权列表",
+      "output": "GetAuthMiniProgramAppListResponse",
+      "status": "online"
+    },
     "GetBatchProductionsList": {
       "document": "列出量产数据列表信息。",
       "input": "GetBatchProductionsListRequest",
@@ -656,6 +684,20 @@
       "input": "GetStudioProductListRequest",
       "name": "获取产品列表",
       "output": "GetStudioProductListResponse",
+      "status": "online"
+    },
+    "GetTWeCallActiveStatus": {
+      "document": "查询激活状态",
+      "input": "GetTWeCallActiveStatusRequest",
+      "name": "查询TWeCall激活状态",
+      "output": "GetTWeCallActiveStatusResponse",
+      "status": "online"
+    },
+    "GetTWeCallPkgList": {
+      "document": "查询TWeCall包列表",
+      "input": "GetTWeCallPkgListRequest",
+      "name": "查询TWeCall包列表",
+      "output": "GetTWeCallPkgListResponse",
       "status": "online"
     },
     "GetTopicRuleList": {
@@ -918,6 +960,51 @@
     "serviceShortName": "iotexplorer"
   },
   "objects": {
+    "ActivateTWeCallLicenseRequest": {
+      "document": "ActivateTWeCallLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "voip类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PkgType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "appId",
+          "example": "3edappId",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表",
+          "example": "无",
+          "member": "TWeCallInfo",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateTWeCallLicenseResponse": {
+      "document": "ActivateTWeCallLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AppDeviceInfo": {
       "document": "云api直接绑定设备出参",
       "members": [
@@ -1023,6 +1110,123 @@
         }
       ],
       "usage": "out"
+    },
+    "AssignTWeCallLicenseRequest": {
+      "document": "AssignTWeCallLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "voip类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PkgType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "appId",
+          "example": "3edappId",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "License数",
+          "example": "100",
+          "member": "int64",
+          "name": "DeductNum",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignTWeCallLicenseResponse": {
+      "document": "AssignTWeCallLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuthMiniProgramAppInfo": {
+      "document": "授权小程序信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12sws",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19856567",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app",
+          "member": "string",
+          "name": "MiniProgramName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用ID \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app123",
+          "member": "string",
+          "name": "IotAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Test名",
+          "member": "string",
+          "name": "IotAppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BatchProductionInfo": {
       "document": "获取返回列表的详情。",
@@ -1486,6 +1690,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAssignTWeCallLicenseRequest": {
+      "document": "CancelAssignTWeCallLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "100",
+          "member": "string",
+          "name": "PkgId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAssignTWeCallLicenseResponse": {
+      "document": "CancelAssignTWeCallLicense返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7686,6 +7917,71 @@
       ],
       "type": "object"
     },
+    "GetAuthMiniProgramAppListRequest": {
+      "document": "GetAuthMiniProgramAppList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appId",
+          "example": "无",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAuthMiniProgramAppListResponse": {
+      "document": "GetAuthMiniProgramAppList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序列表",
+          "example": "无",
+          "member": "AuthMiniProgramAppInfo",
+          "name": "MiniProgramList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetBatchProductionsListRequest": {
       "document": "GetBatchProductionsList请求参数结构体",
       "members": [
@@ -8487,6 +8783,135 @@
           "member": "int64",
           "name": "Total",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeCallActiveStatusRequest": {
+      "document": "GetTWeCallActiveStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appId",
+          "example": "3edappId",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表",
+          "example": "无",
+          "member": "TWeCallInfo",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeCallActiveStatusResponse": {
+      "document": "GetTWeCallActiveStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "激活状态",
+          "example": "无",
+          "member": "TWeCallActiveInfo",
+          "name": "TWeCallActiveInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeCallPkgListRequest": {
+      "document": "GetTWeCallPkgList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "appId",
+          "example": "3edappId",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "int64",
+          "name": "PkgType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数据大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeCallPkgListResponse": {
+      "document": "GetTWeCallPkgList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "激活状态",
+          "example": "无",
+          "member": "TWeCallPkgInfo",
+          "name": "TWeCallPkgList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11779,6 +12204,164 @@
         }
       ],
       "usage": "out"
+    },
+    "TWeCallActiveInfo": {
+      "document": "TWeCall设备激活信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Sn信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TWeCallInfo": {
+      "document": "TWeCall信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Sn信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sn",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ActiveNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TWeCallPkgInfo": {
+      "document": "TWeCall设备信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3edc",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PkgType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "198653423",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "198653423",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseUsedNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LicenseTotalNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ThumbnailURLInfoList": {
       "document": "缩略图信息",

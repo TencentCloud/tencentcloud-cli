@@ -714,6 +714,13 @@
       "output": "ListTaskJobLogDetailResponse",
       "status": "online"
     },
+    "ListTaskJobLogName": {
+      "document": "本接口（ListTaskJobLogName）用于获取spark-jar日志名称列表",
+      "input": "ListTaskJobLogNameRequest",
+      "name": "日志名称列表",
+      "output": "ListTaskJobLogNameResponse",
+      "status": "online"
+    },
     "LockMetaData": {
       "document": "元数据锁",
       "input": "LockMetaDataRequest",
@@ -11768,6 +11775,52 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTaskJobLogNameRequest": {
+      "document": "ListTaskJobLogName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的taskId",
+          "example": "eks-1",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SparkSQL批任务唯一ID",
+          "example": "dsdde-dsada-xxsda-sdask2",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTaskJobLogNameResponse": {
+      "document": "ListTaskJobLogName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

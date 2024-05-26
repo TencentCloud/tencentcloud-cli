@@ -12899,7 +12899,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-a1b1",
           "member": "string",
           "name": "DspaId",
           "output_required": true,
@@ -12909,7 +12909,7 @@
         {
           "disabled": false,
           "document": "DSPA实例名称。",
-          "example": "无",
+          "example": "dspa-name",
           "member": "string",
           "name": "DspaName",
           "output_required": true,
@@ -12919,7 +12919,7 @@
         {
           "disabled": false,
           "document": "DSPA实例描述信息。",
-          "example": "无",
+          "example": "dspa-desc",
           "member": "string",
           "name": "DspaDescription",
           "output_required": true,
@@ -12939,7 +12939,7 @@
         {
           "disabled": false,
           "document": "DSPA实例已绑定的cos桶数量。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "CosBindCount",
           "output_required": true,
@@ -12949,7 +12949,7 @@
         {
           "disabled": false,
           "document": "DSPA实例版本。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "InstanceVersion",
           "output_required": true,
@@ -12959,7 +12959,7 @@
         {
           "disabled": false,
           "document": "DSPA实例状态。",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -12969,7 +12969,7 @@
         {
           "disabled": false,
           "document": "实例过期时间戳。",
-          "example": "无",
+          "example": "12312341",
           "member": "uint64",
           "name": "ExpiredAt",
           "output_required": true,
@@ -12979,7 +12979,7 @@
         {
           "disabled": false,
           "document": "账户APPID。",
-          "example": "无",
+          "example": "314151324",
           "member": "uint64",
           "name": "AppId",
           "output_required": true,
@@ -12989,7 +12989,7 @@
         {
           "disabled": false,
           "document": "体验版本信息。",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "TrialVersion",
           "output_required": true,
@@ -12999,7 +12999,7 @@
         {
           "disabled": false,
           "document": "体验版本过期时间戳。",
-          "example": "无",
+          "example": "12312341",
           "member": "uint64",
           "name": "TrialEndAt",
           "output_required": true,
@@ -13009,7 +13009,7 @@
         {
           "disabled": false,
           "document": "DB已购配额。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "DbTotalQuota",
           "output_required": true,
@@ -13019,7 +13019,7 @@
         {
           "disabled": false,
           "document": "COS已购配额。",
-          "example": "无",
+          "example": "5",
           "member": "int64",
           "name": "CosTotalQuota",
           "output_required": true,
@@ -13029,7 +13029,7 @@
         {
           "disabled": false,
           "document": "COS配额单位，例如:TB。",
-          "example": "无",
+          "example": "4",
           "member": "string",
           "name": "CosQuotaUnit",
           "output_required": true,
@@ -13039,12 +13039,22 @@
         {
           "disabled": false,
           "document": "0: 默认状态(用户未设置)\n1: 开启自动续费\n2: 明确不自动续费",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "RenewFlag",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wedata",
+          "member": "string",
+          "name": "Channel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14885,7 +14895,7 @@
         {
           "disabled": false,
           "document": "过滤项。\n支持的过滤项包括：DspaId、Status、Version、DspaName。\nDspaId和DspaName支持模糊搜索。\nStatus支持的可选值：enabled、disabled。\nVersion支持的可选值：trial、official。",
-          "example": "无",
+          "example": "[filter]",
           "member": "DspaDataSourceMngFilter",
           "name": "Filters",
           "required": false,
@@ -14894,7 +14904,7 @@
         {
           "disabled": false,
           "document": "展示模式。",
-          "example": "无",
+          "example": "mode",
           "member": "string",
           "name": "ListMode",
           "required": false,
@@ -14912,15 +14922,17 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源列表。",
-          "example": "无",
+          "example": "[dspa-a1b2c3]",
           "member": "DspaInstance",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14930,6 +14942,7 @@
           "example": "false",
           "member": "bool",
           "name": "DenyAll",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

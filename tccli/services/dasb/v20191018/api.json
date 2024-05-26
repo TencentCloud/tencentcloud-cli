@@ -49,6 +49,13 @@
       "output": "CreateAssetSyncJobResponse",
       "status": "online"
     },
+    "CreateChangePwdTask": {
+      "document": "创建修改密码任务",
+      "input": "CreateChangePwdTaskRequest",
+      "name": "创建修改密码任务",
+      "output": "CreateChangePwdTaskResponse",
+      "status": "online"
+    },
     "CreateCmdTemplate": {
       "document": "新建高危命令模板",
       "input": "CreateCmdTemplateRequest",
@@ -96,6 +103,13 @@
       "input": "DeleteAclsRequest",
       "name": "删除访问权限",
       "output": "DeleteAclsResponse",
+      "status": "online"
+    },
+    "DeleteChangePwdTask": {
+      "document": "删除改密任务",
+      "input": "DeleteChangePwdTaskRequest",
+      "name": "删除修改密码任务",
+      "output": "DeleteChangePwdTaskResponse",
       "status": "online"
     },
     "DeleteCmdTemplates": {
@@ -173,6 +187,20 @@
       "input": "DescribeAssetSyncStatusRequest",
       "name": "查询资产同步状态",
       "output": "DescribeAssetSyncStatusResponse",
+      "status": "online"
+    },
+    "DescribeChangePwdTask": {
+      "document": "查询改密任务列表",
+      "input": "DescribeChangePwdTaskRequest",
+      "name": "查询改密任务列表",
+      "output": "DescribeChangePwdTaskResponse",
+      "status": "online"
+    },
+    "DescribeChangePwdTaskDetail": {
+      "document": "查询改密任务详情",
+      "input": "DescribeChangePwdTaskDetailRequest",
+      "name": "查询改密任务详情",
+      "output": "DescribeChangePwdTaskDetailResponse",
       "status": "online"
     },
     "DescribeCmdTemplates": {
@@ -273,6 +301,13 @@
       "output": "ModifyAclResponse",
       "status": "online"
     },
+    "ModifyChangePwdTask": {
+      "document": "更新修改密码任务",
+      "input": "ModifyChangePwdTaskRequest",
+      "name": "更新修改密码任务",
+      "output": "ModifyChangePwdTaskResponse",
+      "status": "online"
+    },
     "ModifyCmdTemplate": {
       "document": "修改高危命令模板",
       "input": "ModifyCmdTemplateRequest",
@@ -341,6 +376,13 @@
       "input": "ResetUserRequest",
       "name": "重置用户",
       "output": "ResetUserResponse",
+      "status": "online"
+    },
+    "RunChangePwdTask": {
+      "document": "执行改密任务",
+      "input": "RunChangePwdTaskRequest",
+      "name": "执行改密任务",
+      "output": "RunChangePwdTaskResponse",
       "status": "online"
     },
     "SearchAuditLog": {
@@ -1086,6 +1128,258 @@
       ],
       "type": "object"
     },
+    "ChangePwdTaskDetail": {
+      "document": "查询改密计划详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Device",
+          "name": "Device",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Account",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次改密结果。0-未改密  1-改密成功 2-改密失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LastChangeStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChangePwdTaskInfo": {
+      "document": "修改密码任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "OperationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Department",
+          "name": "Department",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "改密方式。1：使用执行账号。2：修改自身密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChangeMethod",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunAccount",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码生成策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AuthGenerationStrategy",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PasswordLength",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含小写字母\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SmallLetter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含大写字母\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "BigLetter",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含数字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Digit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含的特殊字符，base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Symbol",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "改密完成通知。0-通知，1-不通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CompleteNotify",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知人邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyEmails",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密附件密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilePassword",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要改密的账户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要改密的主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Device",
+          "name": "DeviceSet",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型：4手动，5自动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "FirstTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下次执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "NextTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CmdTemplate": {
       "document": "高危命令模板",
       "members": [
@@ -1595,6 +1889,205 @@
       ],
       "type": "object"
     },
+    "CreateChangePwdTaskRequest": {
+      "document": "CreateChangePwdTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产id数组",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "DeviceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改的账户数组",
+          "example": "[\"root\",\"test\"]",
+          "member": "string",
+          "name": "AccountSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "改密方式。1：使用执行账号修改密码；2：修改自身密码",
+          "example": "1",
+          "member": "int64",
+          "name": "ChangeMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "认证生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthGenerationStrategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行账号",
+          "example": "root",
+          "member": "string",
+          "name": "RunAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手动指定密码时必传",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码限制长度，长度大于 12 位",
+          "example": "12",
+          "member": "int64",
+          "name": "PasswordLength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含小写字母。0：否，1：是",
+          "example": "1",
+          "member": "int64",
+          "name": "SmallLetter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含大写字母。0：否，1：是",
+          "example": "1",
+          "member": "int64",
+          "name": "BigLetter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含数字。0：否，1：是",
+          "example": "1",
+          "member": "int64",
+          "name": "Digit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$",
+          "example": "ISMkJQ==",
+          "member": "string",
+          "name": "Symbol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "改密完成通知。0：不通知 \n  1：通知",
+          "example": "0",
+          "member": "int64",
+          "name": "CompleteNotify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通知邮箱",
+          "example": "[\"123@qq.com\",\"234@qq.com\"]",
+          "member": "string",
+          "name": "NotifyEmails",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加密压缩文件密码",
+          "example": "123456",
+          "member": "string",
+          "name": "FilePassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属部门id。“1.2.3”",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型  4-手工执行  5-周期自动执行",
+          "example": "4",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行周期，单位天（大于等于 1，小于等于 365）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "周期任务首次执行时间",
+          "example": "无",
+          "member": "string",
+          "name": "FirstTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChangePwdTaskResponse": {
+      "document": "CreateChangePwdTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "ops-xxx",
+          "member": "string",
+          "name": "OperationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCmdTemplateRequest": {
       "document": "CreateCmdTemplate请求参数结构体",
       "members": [
@@ -2039,6 +2532,33 @@
     },
     "DeleteAclsResponse": {
       "document": "DeleteAcls返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChangePwdTaskRequest": {
+      "document": "DeleteChangePwdTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "改密任务id列表",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChangePwdTaskResponse": {
+      "document": "DeleteChangePwdTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2609,6 +3129,163 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangePwdTaskDetailRequest": {
+      "document": "DescribeChangePwdTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "改密任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "OperationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属部门ID，如：“1.2.3”",
+          "example": "\"1,2\"",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤数组，支持：InstanceId 资产ID，DeviceName 资产名称，Ip 内外IP，Account 资产账号，LastChangeStatus 上次改密状态。",
+          "example": "[{\"Name\": \"InstanceId\", \"Values\": [\"ins-xxx\"]}，{\"Name\": \"InstanceId\", \"Values\": [\"ins-xxx\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移位置，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条目。默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangePwdTaskDetailResponse": {
+      "document": "DescribeChangePwdTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChangePwdTaskDetail",
+          "name": "Details",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangePwdTaskRequest": {
+      "document": "DescribeChangePwdTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤数组。过滤数组。Name支持以下值: OperationId 任务ID TaskName 任务名",
+          "example": "[{\"Name\": \"TaskName\", \"Values\": [\"task1\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "所属部门ID",
+          "example": "\"1,2\"",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条目数量，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChangePwdTaskResponse": {
+      "document": "DescribeChangePwdTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChangePwdTaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4500,6 +5177,213 @@
       ],
       "type": "object"
     },
+    "ModifyChangePwdTaskRequest": {
+      "document": "ModifyChangePwdTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "改密任务id",
+          "example": "ops-xxx",
+          "member": "string",
+          "name": "OperationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "改密资产id列表",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "DeviceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "改密资产的账号列表",
+          "example": "[\"root\",\"user\"]",
+          "member": "string",
+          "name": "AccountSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改类型：1：修改任务信息  2：关联任务资产账号",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModifyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "改密方式。1：使用执行账号修改密码；2：修改自身密码",
+          "example": "1",
+          "member": "int64",
+          "name": "ChangeMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthGenerationStrategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属部门ID，\"1,2,3\"",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的执行账号\t",
+          "example": "root",
+          "member": "string",
+          "name": "RunAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，手动指定密码时必传。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码限制长度，自动生成密码必传。\t",
+          "example": "无",
+          "member": "int64",
+          "name": "PasswordLength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含小写字母，0：否，1：是。",
+          "example": "无",
+          "member": "int64",
+          "name": "SmallLetter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含大写字母，0：否，1：是。",
+          "example": "无",
+          "member": "int64",
+          "name": "BigLetter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含数字，0：否，1：是。",
+          "example": "无",
+          "member": "int64",
+          "name": "Digit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$",
+          "example": "ISMkJQ==",
+          "member": "string",
+          "name": "Symbol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "改密完成通知。0：不通知 1：通知",
+          "example": "1",
+          "member": "int64",
+          "name": "CompleteNotify",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通知邮箱",
+          "example": "[\"123@qq.com\",\"234@qq.com\"]",
+          "member": "string",
+          "name": "NotifyEmails",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加密压缩文件密码",
+          "example": "无",
+          "member": "string",
+          "name": "FilePassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型， 4：手工执行  5：周期自动执行",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "周期任务周期，单位天（大于等于 1，小于等于 365）",
+          "example": "无",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "周期任务首次执行时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "FirstTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChangePwdTaskResponse": {
+      "document": "ModifyChangePwdTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCmdTemplateRequest": {
       "document": "ModifyCmdTemplate请求参数结构体",
       "members": [
@@ -5447,6 +6331,75 @@
         }
       ],
       "usage": "out"
+    },
+    "RunChangePwdTaskDetail": {
+      "document": "立即执行改密任务的入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产id",
+          "example": "无",
+          "member": "uint64",
+          "name": "DeviceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产账号",
+          "example": "无",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RunChangePwdTaskRequest": {
+      "document": "RunChangePwdTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "OperationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部门id",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "改密任务详情",
+          "example": "[{\"DeviceId\":100,\"Account\":\"admin1\"},{\"DeviceId\":100,\"Account\":\"admin2\"},{\"DeviceId\":200,\"Account\":\"admin1\"}]",
+          "member": "RunChangePwdTaskDetail",
+          "name": "Details",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RunChangePwdTaskResponse": {
+      "document": "RunChangePwdTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchAuditLogRequest": {
       "document": "SearchAuditLog请求参数结构体",

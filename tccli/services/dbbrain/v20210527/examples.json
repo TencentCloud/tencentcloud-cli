@@ -120,6 +120,14 @@
         "title": "删除健康报告生成任务"
       }
     ],
+    "DeleteRedisBigKeyAnalysisTasks": [
+      {
+        "document": "删除Redis实例的大key分析任务。",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRedisBigKeyAnalysisTasks\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"InstanceId\": \"crs-0hnhwega\",\n    \"AsyncRequestIds\": [\n        11822173\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"e9833850-b223-18ee-8376-93f024a9a071\"\n    }\n}",
+        "title": "删除Redis实例的大key分析任务"
+      }
+    ],
     "DeleteSecurityAuditLogExportTasks": [
       {
         "document": "",
@@ -463,7 +471,7 @@
       },
       {
         "document": "开启Redis实例大key周期性分析并自定义分隔符。",
-        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiagDBInstanceConf\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"Regions\": \"all\",\n    \"InstanceIds\": [\n        \"crs-pz1raq11\"\n    ],\n    \"InstanceConfs\": {\n        \"AnalysisTopKey\": \"Yes\",\n        \"KeyDelimiters\": [\n            \"_\",\n            \"-\",\n            \":\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiagDBInstanceConf\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"Regions\": \"All\",\n    \"InstanceIds\": [\n        \"crs-pz1raq11\"\n    ],\n    \"InstanceConfs\": {\n        \"AnalysisTopKey\": \"Yes\",\n        \"KeyDelimiters\": [\n            \"_\",\n            \"-\",\n            \":\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bcd97ab0-16d1-11ef-8e52-3d11a9997f13\"\n    }\n}",
         "title": "修改Redis实例大key周期性分析"
       }

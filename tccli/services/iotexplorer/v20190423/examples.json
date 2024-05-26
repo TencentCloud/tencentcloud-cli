@@ -1,5 +1,21 @@
 {
   "actions": {
+    "ActivateTWeCallLicense": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgType\": 1,\n    \"MiniProgramAppId\": \"abc\",\n    \"DeviceList\": [\n        {\n            \"ModelId\": \"1qaz\",\n            \"Sn\": \"p/d\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功激活示例"
+      }
+    ],
+    "AssignTWeCallLicense": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgType\": 1,\n    \"MiniProgramAppId\": \"abc\",\n    \"DeductNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "分配成功"
+      }
+    ],
     "BindCloudStorageUser": [
       {
         "document": "",
@@ -50,6 +66,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallDeviceActionSync\n<公共请求参数>\n\n{\n    \"DeviceName\": \"light1\",\n    \"InputParams\": \"{\\\"brightness\\\":3}\",\n    \"ActionId\": \"actid\",\n    \"ProductId\": \"TOIDHQ3AOQ\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClientToken\": \"\",\n        \"OutputParams\": \"\",\n        \"RequestId\": \"b2621fc1-d6d9-4929-af0b-3fb0e919658a\",\n        \"Status\": \"FailedOperation.ActionUnreachable|动作消息不可达\"\n    }\n}",
         "title": "同步调用设备行为，设备不在线。"
+      }
+    ],
+    "CancelAssignTWeCallLicense": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功取消分配"
       }
     ],
     "ControlDeviceData": [
@@ -706,6 +730,14 @@
         "title": "获取视频防盗链播放URL"
       }
     ],
+    "GetAuthMiniProgramAppList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAuthMiniProgramAppList\n<公共请求参数>\n\n{\n    \"MiniProgramAppId\": \"123wdc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Total\": 1,\n        \"MiniProgramList\": [\n            {\n                \"MiniProgramAppId\": \"1qaz\",\n                \"MiniProgramName\": \"appBane\",\n                \"LicenseNum\": 100,\n                \"CreateTime\": 45674345567\n            }\n        ]\n    }\n}",
+        "title": "成功查询小程序列表"
+      }
+    ],
     "GetBatchProductionsList": [
       {
         "document": "",
@@ -798,6 +830,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetStudioProductList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-zunfat46\",\n    \"DevStatus\": \"dev\",\n    \"Limit\": \"0\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"4GDIU5HTEN\",\n                \"ProductName\": \"testproduct\",\n                \"CategoryId\": 3,\n                \"ProductType\": 0,\n                \"EncryptionType\": \"2\",\n                \"NetType\": \"else\",\n                \"DataProtocol\": 1,\n                \"ProductDesc\": \"desc\",\n                \"ProjectId\": \"prj-zunfat46\",\n                \"DevStatus\": \"dev\",\n                \"CreateTime\": 1560341825,\n                \"UpdateTime\": 1560341825,\n                \"Region\": \"gz\",\n                \"ModuleId\": 0,\n                \"EnableProductScript\": \"e\",\n                \"BindStrategy\": 0,\n                \"CreateUserId\": 100034,\n                \"CreatorNickName\": \"-\"\n            }\n        ],\n        \"RequestId\": \"55e612b3-ed75-44fe-b141-1c1a35d9a0da\",\n        \"Total\": 2\n    }\n}",
         "title": "获取产品列表"
+      }
+    ],
+    "GetTWeCallActiveStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallActiveStatus\n<公共请求参数>\n\n{\n    \"MiniProgramAppId\": \"abc\",\n    \"DeviceList\": [\n        {\n            \"ModelId\": \"1qaz\",\n            \"Sn\": \"p/d\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"TWeCallActiveInfos\": [\n            {\n                \"ModelId\": \"1qaz\",\n                \"Sn\": \"p/d\",\n                \"ExpireTime\": 45674345567\n            }\n        ]\n    }\n}",
+        "title": "成功获取激活状态"
+      }
+    ],
+    "GetTWeCallPkgList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallPkgList\n<公共请求参数>\n\n{\n    \"MiniProgramAppId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Total\": 1,\n        \"TWeCallPkgList\": [\n            {\n                \"PkgId\": \"1qaz\",\n                \"PkgType\": 1,\n                \"CreateTime\": 45674345567,\n                \"ExpireTime\": 45674345567,\n                \"LicenseTotalNum\": 1,\n                \"LicenseUsedNum\": 1\n            }\n        ]\n    }\n}",
+        "title": "成功查询示例"
       }
     ],
     "GetTopicRuleList": [

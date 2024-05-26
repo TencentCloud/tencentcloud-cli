@@ -1289,6 +1289,15 @@
           "type": "int"
         },
         {
+          "disabled": false,
+          "document": "实例机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": true,
           "document": "实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。",
           "example": "cynosmysql-grp-xxxxxxxx",
@@ -3222,6 +3231,26 @@
           "example": "无",
           "member": "string",
           "name": "ServerlessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "InstanceTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceDeviceType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6368,6 +6397,16 @@
           "name": "InstanceAbility",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9953,6 +9992,15 @@
           "name": "IncludeZoneStocks",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11775,6 +11823,15 @@
         },
         {
           "disabled": false,
+          "document": "实例设备类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "CPU核数，PREPAID与POSTPAID实例类型必传",
           "example": "1",
           "member": "int64",
@@ -11839,7 +11896,7 @@
           "example": "无",
           "member": "TradePrice",
           "name": "InstancePrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11849,7 +11906,7 @@
           "example": "无",
           "member": "TradePrice",
           "name": "StoragePrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12368,6 +12425,15 @@
           "name": "MaxRoCpu",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -13949,7 +14015,7 @@
         {
           "disabled": false,
           "document": "变配后CPU",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
@@ -13959,7 +14025,7 @@
         {
           "disabled": false,
           "document": "变配后内存",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Memory",
           "output_required": true,
@@ -13969,7 +14035,7 @@
         {
           "disabled": false,
           "document": "变配后存储上限",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "StorageLimit",
           "output_required": true,
@@ -13979,7 +14045,7 @@
         {
           "disabled": false,
           "document": "变配前CPU",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "OldCpu",
           "output_required": true,
@@ -13989,7 +14055,7 @@
         {
           "disabled": false,
           "document": "变配前内存",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "OldMemory",
           "output_required": true,
@@ -13999,7 +14065,7 @@
         {
           "disabled": false,
           "document": "变配前存储上限",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "OldStorageLimit",
           "output_required": true,
@@ -14008,8 +14074,28 @@
         },
         {
           "disabled": false,
+          "document": "变配前实例机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldDeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变配后实例机器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "升级方式。升级完成后切换或维护时间内切换",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpgradeType",
           "output_required": true,
@@ -15989,8 +16075,7 @@
           "member": "string",
           "name": "ParamName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -15999,8 +16084,7 @@
           "member": "string",
           "name": "CurrentValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -16009,8 +16093,7 @@
           "member": "string",
           "name": "OldValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -17700,15 +17783,6 @@
         },
         {
           "disabled": false,
-          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
-          "example": "MyClusterName",
-          "member": "string",
-          "name": "ClusterName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "所属VPC网络ID",
           "example": "vpc-1ptuei0b",
           "member": "string",
@@ -17727,12 +17801,48 @@
         },
         {
           "disabled": false,
+          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
+          "example": "MyClusterName",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RollbackId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间点回档，指定时间；快照回档，快照时间",
+          "example": "2021-04-26 18:13:10",
+          "member": "string",
+          "name": "ExpectTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "是否自动选择代金券 1是 0否 默认为0",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群创建需要绑定的tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -17808,30 +17918,12 @@
         },
         {
           "disabled": false,
-          "document": "0-下单并支付 1-下单",
-          "example": "无",
-          "member": "int64",
-          "name": "DealMode",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
           "example": "0",
           "member": "int64",
           "name": "ParamTemplateId",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "集群创建需要绑定的tag数组信息",
-          "example": "无",
-          "member": "Tag",
-          "name": "ResourceTags",
-          "required": false,
-          "type": "list"
         },
         {
           "disabled": false,
@@ -17844,21 +17936,21 @@
         },
         {
           "disabled": false,
-          "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
-          "example": "0",
-          "member": "uint64",
-          "name": "RollbackId",
+          "document": "0-下单并支付 1-下单",
+          "example": "无",
+          "member": "int64",
+          "name": "DealMode",
           "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "时间点回档，指定时间；快照回档，快照时间",
-          "example": "2021-04-26 18:13:10",
-          "member": "string",
-          "name": "ExpectTime",
+          "document": "计算节点付费模式：0-按量计费，1-预付费",
+          "example": "无",
+          "member": "int64",
+          "name": "PayMode",
           "required": false,
-          "type": "string"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -19439,6 +19531,15 @@
           "member": "string",
           "name": "UpgradeType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
           "type": "string"
         },
         {

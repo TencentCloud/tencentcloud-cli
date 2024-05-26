@@ -822,6 +822,14 @@
         "title": "查询日志详情"
       }
     ],
+    "ListTaskJobLogName": [
+      {
+        "document": "日志名称列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTaskJobLogName\n<公共请求参数>\n\n{\n    \"TaskId\": \"dasj-dasdjes0-dsak-dsa\",\n    \"BatchId\": \"eusj-2dks-dsad-edsaw2-dsa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"val1\",\n            \"val2\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "日志名称列表"
+      }
+    ],
     "LockMetaData": [
       {
         "document": "",

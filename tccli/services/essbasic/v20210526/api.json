@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeChannelSealPolicyWorkflowUrl": {
-      "document": "制定渠道分支客户的印刷申请审批微型应用程序链接，链接模式（通过H5触发微型应用程序或通过APP跳转进行查看）。\n此刻，代理参数中的OpenId 必须为审批者的openId，生成的链接必须由该用户启动，其他用户则无审批权限。",
+      "document": "生成用印申请审批链接，审批人可以通过此链接进入小程序进行审批。\n p.s.\nAgent参数中的OpenId 必须为审批者的openId，且链接必须由审批人打开。",
       "input": "DescribeChannelSealPolicyWorkflowUrlRequest",
       "name": "生成渠道子客用印申请审批链接",
       "output": "DescribeChannelSealPolicyWorkflowUrlResponse",
@@ -7196,7 +7196,7 @@
         },
         {
           "disabled": false,
-          "document": "用印审批单的ID，可通过用印申请回调获取。",
+          "document": "用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。",
           "example": "无",
           "member": "string",
           "name": "WorkflowInstanceId",

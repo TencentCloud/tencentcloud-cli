@@ -4104,6 +4104,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-1318247806",
+          "member": "string",
+          "name": "NameSpace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

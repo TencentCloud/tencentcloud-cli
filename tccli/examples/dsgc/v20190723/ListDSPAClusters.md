@@ -27,7 +27,9 @@ Output:
                 "TrialEndAt": 1,
                 "DbTotalQuota": 0,
                 "CosTotalQuota": 0,
-                "RenewFlag": 1
+                "CosQuotaUnit": "abc",
+                "RenewFlag": 1,
+                "Channel": "abc"
             }
         ],
         "DenyAll": true,
