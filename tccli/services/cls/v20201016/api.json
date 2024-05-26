@@ -56,6 +56,13 @@
       "output": "CreateAlarmShieldResponse",
       "status": "online"
     },
+    "CreateCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "CreateCloudProductLogTaskRequest",
+      "name": "创建云产品日志投递任务",
+      "output": "CreateCloudProductLogTaskResponse",
+      "status": "online"
+    },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
@@ -187,6 +194,13 @@
       "input": "DeleteAlarmShieldRequest",
       "name": "删除告警屏蔽规则",
       "output": "DeleteAlarmShieldResponse",
+      "status": "online"
+    },
+    "DeleteCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "DeleteCloudProductLogTaskRequest",
+      "name": "删除云产品日志投递任务",
+      "output": "DeleteCloudProductLogTaskResponse",
       "status": "online"
     },
     "DeleteConfig": {
@@ -327,6 +341,13 @@
       "input": "DescribeAlertRecordHistoryRequest",
       "name": "获取告警历史",
       "output": "DescribeAlertRecordHistoryResponse",
+      "status": "online"
+    },
+    "DescribeCloudProductLogTasks": {
+      "document": "云产品接入使用相关接口",
+      "input": "DescribeCloudProductLogTasksRequest",
+      "name": "查看云产品日志投递任务列表",
+      "output": "DescribeCloudProductLogTasksResponse",
       "status": "online"
     },
     "DescribeConfigExtras": {
@@ -537,6 +558,13 @@
       "input": "ModifyAlarmShieldRequest",
       "name": "修改告警屏蔽规则",
       "output": "ModifyAlarmShieldResponse",
+      "status": "online"
+    },
+    "ModifyCloudProductLogTask": {
+      "document": "内部云产品接入使用相关接口",
+      "input": "ModifyCloudProductLogTaskRequest",
+      "name": "修改云产品日志投递任务",
+      "output": "ModifyCloudProductLogTaskResponse",
       "status": "online"
     },
     "ModifyConfig": {
@@ -1932,6 +1960,62 @@
       ],
       "type": "object"
     },
+    "CloudProductLogTaskInfo": {
+      "document": "云产品日志投递任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志服务地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例标识",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CollectConfig": {
       "document": "采集配置信息",
       "members": [
@@ -3241,6 +3325,154 @@
           "example": "cb37f589-6232-431a-xxxx-e2b61fb375d1",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudProductLogTaskRequest": {
+      "document": "CreateCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
+          "example": "TKE",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
+          "example": "TKE-EVENT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务侧地域，若无地域区分填all",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ClsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称，未填LogsetId时必填",
+          "example": "logset",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID，若指定则代表选择已有日志集。选择已有日志集时，LogsetName可以不填",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称，在未填TopicId时必填",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID，若指定则代表选择已有日志主题，选择已有日志主题时，TopicName可以不填",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudProductLogTaskResponse": {
+      "document": "CreateCloudProductLogTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "test-topic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称",
+          "example": "test-logset",
+          "member": "string",
+          "name": "LogsetName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5688,6 +5920,60 @@
       ],
       "type": "object"
     },
+    "DeleteCloudProductLogTaskRequest": {
+      "document": "DeleteCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
+          "example": "TKE",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
+          "example": "TKE-EVENT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务侧地域，若无地域区分填all",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudProductLogTaskResponse": {
+      "document": "DeleteCloudProductLogTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConfigExtraRequest": {
       "document": "DeleteConfigExtra请求参数结构体",
       "members": [
@@ -6430,6 +6716,43 @@
           "name": "Records",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudProductLogTasksRequest": {
+      "document": "DescribeCloudProductLogTasks请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCloudProductLogTasksResponse": {
+      "document": "DescribeCloudProductLogTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志配置详情列表",
+          "example": "无",
+          "member": "CloudProductLogTaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志配置总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10497,6 +10820,69 @@
     },
     "ModifyAlarmShieldResponse": {
       "document": "ModifyAlarmShield返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudProductLogTaskRequest": {
+      "document": "ModifyCloudProductLogTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例标识，通常为实例ID，若实例需由多个属性唯一定位，由下划线分隔多个属性。如: {实例ID}_{实例类型}",
+          "example": "ins-r8hr2upy",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识, 与CLS运营平台登记的AssumerName保持一致",
+          "example": "TKE",
+          "member": "string",
+          "name": "AssumerName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，与CLS运营平台登记的LogType保持一致",
+          "example": "TKE-EVENT",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务侧地域，若无地域区分填all",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CloudProductRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "example": "无",
+          "member": "string",
+          "name": "Extend",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudProductLogTaskResponse": {
+      "document": "ModifyCloudProductLogTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

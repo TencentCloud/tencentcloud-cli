@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ChatCompletions": [
+      {
+        "document": "对话",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26b3ed8b-960d-4d68-bc7f-098839f4b574\"\n    }\n}",
+        "title": "对话"
+      }
+    ]
+  },
+  "version": "1.0"
+}

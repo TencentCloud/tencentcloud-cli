@@ -1,3 +1,253 @@
+# Release 3.0.1001.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 15 次发布
+
+发布时间：2024-05-27 01:10:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
+
+	* 新增入参：IsQuery
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 65 次发布
+
+发布时间：2024-05-27 01:11:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83989)
+* [DeleteCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83988)
+* [DescribeCloudProductLogTasks](http://document.tencentcloudapi.woa.com/document/product/614/83987)
+* [ModifyCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83986)
+
+新增数据结构：
+
+* [CloudProductLogTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CloudProductLogTaskInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 85 次发布
+
+发布时间：2024-05-27 01:13:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddInstances](http://document.tencentcloudapi.woa.com/document/product/1003/48088)
+
+	* 新增入参：DeviceType
+
+* [DescribeInstanceSpecs](http://document.tencentcloudapi.woa.com/document/product/1003/48084)
+
+	* 新增入参：DeviceType
+
+* [InquirePriceCreate](http://document.tencentcloudapi.woa.com/document/product/1003/75529)
+
+	* 新增入参：DeviceType
+
+* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
+
+	* 新增入参：PayMode
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48077)
+
+	* 新增入参：DeviceType
+
+
+修改数据结构：
+
+* [ClusterInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ClusterInstanceDetail)
+
+	* 新增成员：InstanceTasks, InstanceDeviceType
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：DeviceType
+
+* [InstanceInitInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceInitInfo)
+
+	* 新增成员：DeviceType
+
+* [ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)
+
+	* 新增成员：OldDeviceType, DeviceType
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 26 次发布
+
+发布时间：2024-05-27 01:14:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1492/83996)
+* [DeleteChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1492/83995)
+* [DescribeChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1492/83994)
+* [DescribeChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1492/83993)
+* [ModifyChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1492/83992)
+* [RunChangePwdTask](http://document.tencentcloudapi.woa.com/document/product/1492/83991)
+
+新增数据结构：
+
+* [ChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ChangePwdTaskDetail)
+* [ChangePwdTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#ChangePwdTaskInfo)
+* [RunChangePwdTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1492/74806#RunChangePwdTaskDetail)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 28 次发布
+
+发布时间：2024-05-27 01:14:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteRedisBigKeyAnalysisTasks](http://document.tencentcloudapi.woa.com/document/product/1130/83997)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 98 次发布
+
+发布时间：2024-05-27 01:15:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListTaskJobLogName](http://document.tencentcloudapi.woa.com/document/product/1342/83998)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 48 次发布
+
+发布时间：2024-05-27 01:16:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
+
+	* 新增成员：CcrDefault
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 89 次发布
+
+发布时间：2024-05-27 01:17:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeUserVerifyStatus](http://document.tencentcloudapi.woa.com/document/product/1668/83843)
+
+	* 新增入参：IdCardType
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 36 次发布
+
+发布时间：2024-05-27 01:18:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActivateTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84004)
+* [AssignTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84003)
+* [CancelAssignTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84002)
+* [GetAuthMiniProgramAppList](http://document.tencentcloudapi.woa.com/document/product/1081/84001)
+* [GetTWeCallActiveStatus](http://document.tencentcloudapi.woa.com/document/product/1081/84000)
+* [GetTWeCallPkgList](http://document.tencentcloudapi.woa.com/document/product/1081/83999)
+
+新增数据结构：
+
+* [AuthMiniProgramAppInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#AuthMiniProgramAppInfo)
+* [TWeCallActiveInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallActiveInfo)
+* [TWeCallInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallInfo)
+* [TWeCallPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallPkgInfo)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 61 次发布
+
+发布时间：2024-05-27 01:27:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GooseFS](http://document.tencentcloudapi.woa.com/document/product/851/74915#GooseFS)
+
+	* 新增成员：NameSpace
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.1000.1
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27

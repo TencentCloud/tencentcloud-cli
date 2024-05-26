@@ -8,7 +8,8 @@ Input:
 tccli ess DescribeUserVerifyStatus --cli-unfold-argument  \
     --Operator.UserId abc \
     --Name abc \
-    --IdCardNumber abc
+    --IdCardNumber abc \
+    --IdCardType ID_CARD
 ```
 
 Output: 

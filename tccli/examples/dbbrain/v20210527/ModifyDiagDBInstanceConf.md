@@ -30,7 +30,7 @@ Input:
 ```
 tccli dbbrain ModifyDiagDBInstanceConf --cli-unfold-argument  \
     --Product redis \
-    --Regions all \
+    --Regions All \
     --InstanceIds crs-pz1raq11 \
     --InstanceConfs.AnalysisTopKey Yes \
     --InstanceConfs.KeyDelimiters _ - :

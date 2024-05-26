@@ -1564,6 +1564,15 @@
           "name": "MemoryUsage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IsQuery条件",
+          "example": "无",
+          "member": "int64",
+          "name": "IsQuery",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

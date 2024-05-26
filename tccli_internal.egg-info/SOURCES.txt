@@ -556,6 +556,8 @@ tccli/services/live/v20180801/api.json
 tccli/services/live/v20180801/examples.json
 tccli/services/lke/__init__.py
 tccli/services/lke/lke_client.py
+tccli/services/lkeap/__init__.py
+tccli/services/lkeap/lkeap_client.py
 tccli/services/lowcode/__init__.py
 tccli/services/lowcode/lowcode_client.py
 tccli/services/lowcode/v20210108/api.json
