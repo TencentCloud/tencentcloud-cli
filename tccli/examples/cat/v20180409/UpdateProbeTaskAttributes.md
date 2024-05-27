@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cat UpdateProbeTaskAttributes --cli-unfold-argument  \
-    --TaskId task-xx \
-    --Name xx
+    --TaskId task-a3a9qbqy \
+    --Name 百度Test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "db996865-85af-496f-b081-3e2fff7e5af2"
     }
 }
 ```

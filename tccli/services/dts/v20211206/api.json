@@ -2172,7 +2172,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等",
+          "document": "源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,tdstore等",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -2190,7 +2190,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等",
+          "document": "目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka,tdstore等",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",

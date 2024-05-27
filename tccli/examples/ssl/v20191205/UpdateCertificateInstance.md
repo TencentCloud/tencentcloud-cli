@@ -28,7 +28,7 @@ Output:
                         "Region": "abc",
                         "TotalCount": 0,
                         "OffsetCount": 0,
-                        "Status": "abc"
+                        "Status": 0
                     }
                 ],
                 "Status": 0

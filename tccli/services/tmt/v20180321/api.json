@@ -173,7 +173,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "Success",
+          "example": "init：任务已初始化；wait：任务等待执行；success：任务执行成功；fail：任务执行失败",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -202,13 +202,13 @@
         },
         {
           "disabled": false,
-          "document": "翻译进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "翻译进度",
           "example": "100",
           "member": "int64",
           "name": "Progress",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

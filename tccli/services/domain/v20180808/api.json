@@ -7,11 +7,25 @@
       "output": "BatchModifyDomainInfoResponse",
       "status": "online"
     },
+    "BidDetailPage": {
+      "document": "该接口用于用户详情页出价请求",
+      "input": "BidDetailPageRequest",
+      "name": "预释放详情页出价",
+      "output": "BidDetailPageResponse",
+      "status": "online"
+    },
     "BidPreDomains": {
       "document": "用户合作商预释放出价",
       "input": "BidPreDomainsRequest",
       "name": "合作商预释放域名出价",
       "output": "BidPreDomainsResponse",
+      "status": "online"
+    },
+    "BiddingPreRelease": {
+      "document": "用于出价界面出价请求",
+      "input": "BiddingPreReleaseRequest",
+      "name": "预释放出价",
+      "output": "BiddingPreReleaseResponse",
       "status": "online"
     },
     "CheckBatchStatus": {
@@ -63,6 +77,13 @@
       "output": "CreateTemplateResponse",
       "status": "online"
     },
+    "DeleteBidding": {
+      "document": "删除记录。",
+      "input": "DeleteBiddingRequest",
+      "name": "删除记录",
+      "output": "DeleteBiddingResponse",
+      "status": "online"
+    },
     "DeleteCustomDnsHost": {
       "document": "删除自定义DNS Host",
       "input": "DeleteCustomDnsHostRequest",
@@ -91,6 +112,13 @@
       "output": "DeleteTemplateResponse",
       "status": "online"
     },
+    "DescribeAuctionList": {
+      "document": "用户控制台获取竞价列表",
+      "input": "DescribeAuctionListRequest",
+      "name": "获取竞价列表",
+      "output": "DescribeAuctionListResponse",
+      "status": "online"
+    },
     "DescribeBatchOperationLogDetails": {
       "document": "本接口 ( DescribeBatchOperationLogDetails ) 用于获取批量操作日志详情。",
       "input": "DescribeBatchOperationLogDetailsRequest",
@@ -103,6 +131,48 @@
       "input": "DescribeBatchOperationLogsRequest",
       "name": "批量操作日志列表",
       "output": "DescribeBatchOperationLogsResponse",
+      "status": "online"
+    },
+    "DescribeBiddingAppointDetail": {
+      "document": "我预约的域名-预约详情。",
+      "input": "DescribeBiddingAppointDetailRequest",
+      "name": "我预约的域名-预约详情",
+      "output": "DescribeBiddingAppointDetailResponse",
+      "status": "online"
+    },
+    "DescribeBiddingAppointList": {
+      "document": "我预定的域名。",
+      "input": "DescribeBiddingAppointListRequest",
+      "name": "我预定的域名",
+      "output": "DescribeBiddingAppointListResponse",
+      "status": "online"
+    },
+    "DescribeBiddingDetail": {
+      "document": "我竞价的域名-竞价详情。",
+      "input": "DescribeBiddingDetailRequest",
+      "name": "我竞价的域名-竞价详情",
+      "output": "DescribeBiddingDetailResponse",
+      "status": "online"
+    },
+    "DescribeBiddingList": {
+      "document": "我竞价的域名。",
+      "input": "DescribeBiddingListRequest",
+      "name": "我竞价的域名",
+      "output": "DescribeBiddingListResponse",
+      "status": "online"
+    },
+    "DescribeBiddingSuccessfulDetail": {
+      "document": "我得标的域名-得标详情。",
+      "input": "DescribeBiddingSuccessfulDetailRequest",
+      "name": "我得标的域名-得标详情",
+      "output": "DescribeBiddingSuccessfulDetailResponse",
+      "status": "online"
+    },
+    "DescribeBiddingSuccessfulList": {
+      "document": "我得标的域名。",
+      "input": "DescribeBiddingSuccessfulListRequest",
+      "name": "我得标的域名",
+      "output": "DescribeBiddingSuccessfulListResponse",
       "status": "online"
     },
     "DescribeCustomDnsHostSet": {
@@ -140,6 +210,13 @@
       "output": "DescribeDomainSimpleInfoResponse",
       "status": "online"
     },
+    "DescribePayWaitDetail": {
+      "document": "等待支付详情接口",
+      "input": "DescribePayWaitDetailRequest",
+      "name": "等待支付详情接口",
+      "output": "DescribePayWaitDetailResponse",
+      "status": "online"
+    },
     "DescribePhoneEmailList": {
       "document": "本接口用于获取已验证的手机邮箱列表",
       "input": "DescribePhoneEmailListRequest",
@@ -147,11 +224,25 @@
       "output": "DescribePhoneEmailListResponse",
       "status": "online"
     },
+    "DescribePreAuctionList": {
+      "document": "用于预释放竞价列表数据查询",
+      "input": "DescribePreAuctionListRequest",
+      "name": "查询预释放竞价列表",
+      "output": "DescribePreAuctionListResponse",
+      "status": "online"
+    },
     "DescribePreDomainList": {
       "document": "用户服务商提前获取预释放域名数据，查询数据根据结束时间进行倒序。",
       "input": "DescribePreDomainListRequest",
       "name": "提前获取域释放域名数据",
       "output": "DescribePreDomainListResponse",
+      "status": "online"
+    },
+    "DescribePreReleaseList": {
+      "document": "接口用于预释放页面查询",
+      "input": "DescribePreReleaseListRequest",
+      "name": "购买页预释放域名查询",
+      "output": "DescribePreReleaseListResponse",
       "status": "online"
     },
     "DescribeReservedBidInfo": {
@@ -187,6 +278,13 @@
       "input": "DescribeTldListRequest",
       "name": "查询支持注册后缀",
       "output": "DescribeTldListResponse",
+      "status": "online"
+    },
+    "DescribeUnPreDomainDetail": {
+      "document": "查询预释放未预约域名详情接口",
+      "input": "DescribeUnPreDomainDetailRequest",
+      "name": "查询预释放未预约域名详情接口",
+      "output": "DescribeUnPreDomainDetailResponse",
       "status": "online"
     },
     "ModifyCustomDnsHost": {
@@ -295,6 +393,52 @@
     "serviceShortName": "domain"
   },
   "objects": {
+    "AuctionInfo": {
+      "document": "用于域名预释放详情页面",
+      "members": [
+        {
+          "disabled": false,
+          "document": "竞拍人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bidder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "竞拍时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "竞拍价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "AuctionPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态 up: 领先 down: 落后\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BatchModifyDomainInfoRequest": {
       "document": "BatchModifyDomainInfo请求参数结构体",
       "members": [
@@ -386,6 +530,93 @@
       ],
       "usage": "out"
     },
+    "BidDetailPageRequest": {
+      "document": "BidDetailPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BidDetailPageResponse": {
+      "document": "BidDetailPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前域名价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CurrentPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户上次出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "BidPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前加价幅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CurrentPriceScope",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加价幅度区间配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceScopeConf",
+          "name": "PriceScope",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户当前已经支付了的保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "DepositPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BidPreDomainsRequest": {
       "document": "BidPreDomains请求参数结构体",
       "members": [
@@ -413,6 +644,62 @@
     "BidPreDomainsResponse": {
       "document": "BidPreDomains返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BiddingPreReleaseRequest": {
+      "document": "BiddingPreRelease请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "价格",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "required": true,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "BiddingPreReleaseResponse": {
+      "document": "BiddingPreRelease返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否需要额外支付",
+          "example": "无",
+          "member": "bool",
+          "name": "IsNeedPay",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费请求参数，以Json字符串的形式进行返回。",
+          "example": "无",
+          "member": "string",
+          "name": "BillingParam",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1203,6 +1490,23 @@
       ],
       "usage": "out"
     },
+    "DeleteBiddingRequest": {
+      "document": "DeleteBidding请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteBiddingResponse": {
+      "document": "DeleteBidding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCustomDnsHostRequest": {
       "document": "DeleteCustomDnsHost请求参数结构体",
       "members": [
@@ -1339,6 +1643,71 @@
       ],
       "type": "object"
     },
+    "DescribeAuctionListRequest": {
+      "document": "DescribeAuctionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "条数，默认10条",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "OffSet",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuctionListResponse": {
+      "document": "DescribeAuctionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "竞拍详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuctionInfo",
+          "name": "AuctionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBatchOperationLogDetailsRequest": {
       "document": "DescribeBatchOperationLogDetails请求参数结构体",
       "members": [
@@ -1451,6 +1820,259 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingAppointDetailRequest": {
+      "document": "DescribeBiddingAppointDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBiddingAppointDetailResponse": {
+      "document": "DescribeBiddingAppointDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预约保证金是否已经退回\nyes：退回 no: 未退回",
+          "example": "无",
+          "member": "string",
+          "name": "BiddingBondRefund",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingAppointListRequest": {
+      "document": "DescribeBiddingAppointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态： 1 已预约 9 预约持有者索回",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：AppointEndTime 预约结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则：asc升序，desc降序",
+          "example": "无",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingAppointListResponse": {
+      "document": "DescribeBiddingAppointList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingDetailRequest": {
+      "document": "DescribeBiddingDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBiddingDetailResponse": {
+      "document": "DescribeBiddingDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingListRequest": {
+      "document": "DescribeBiddingList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：BiddingEndTime 竞价结束时间\t\nBiddingPrice 我的价格",
+          "example": "无",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则：asc升序，desc降序",
+          "example": "无",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingListResponse": {
+      "document": "DescribeBiddingList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingSuccessfulDetailRequest": {
+      "document": "DescribeBiddingSuccessfulDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBiddingSuccessfulDetailResponse": {
+      "document": "DescribeBiddingSuccessfulDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保证金，是否退款，yes表示退款，no表示不退款",
+          "example": "无",
+          "member": "string",
+          "name": "BiddingBondRefund",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：1 竞价中，2 待出价，3 竞价失败， 4 等待支付 5 等待转移， 6 转移中，7 交易成功，8 持有者索回，9 已违约",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingSuccessfulListRequest": {
+      "document": "DescribeBiddingSuccessfulList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态：5 等待支付 6 等待转移， 7 转移中，8 交易成功，11 尾款阶段持有者索回，12 已违约",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：SuccessfulTime 预约结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则：asc升序，desc降序",
+          "example": "无",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBiddingSuccessfulListResponse": {
+      "document": "DescribeBiddingSuccessfulList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1730,6 +2352,93 @@
       ],
       "type": "object"
     },
+    "DescribePayWaitDetailRequest": {
+      "document": "DescribePayWaitDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePayWaitDetailResponse": {
+      "document": "DescribePayWaitDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名类型",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名注册时间",
+          "example": "无",
+          "member": "string",
+          "name": "RegTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名成交价格",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待退还保证金",
+          "example": "无",
+          "member": "float",
+          "name": "RetDeposit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePhoneEmailListRequest": {
       "document": "DescribePhoneEmailList请求参数结构体",
       "members": [
@@ -1804,6 +2513,62 @@
       ],
       "type": "object"
     },
+    "DescribePreAuctionListRequest": {
+      "document": "DescribePreAuctionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreAuctionListResponse": {
+      "document": "DescribePreAuctionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预释放竞价列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreAuctionInfo",
+          "name": "PreAuctionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePreDomainListRequest": {
       "document": "DescribePreDomainList请求参数结构体",
       "members": [
@@ -1868,6 +2633,242 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreReleaseListRequest": {
+      "document": "DescribePreReleaseList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "无",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字，开头",
+          "example": "无",
+          "member": "bool",
+          "name": "DomainStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字结尾",
+          "example": "无",
+          "member": "bool",
+          "name": "DomainEnd",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "无",
+          "member": "int64",
+          "name": "Sort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始价格",
+          "example": "无",
+          "member": "float",
+          "name": "PriceStart",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "结束价格",
+          "example": "无",
+          "member": "float",
+          "name": "PriceEnd",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "起始域名长度",
+          "example": "无",
+          "member": "int64",
+          "name": "LengthStart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束域名长度",
+          "example": "无",
+          "member": "int64",
+          "name": "LengthEnd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "没页显示数",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "后缀",
+          "example": "无",
+          "member": "int64",
+          "name": "Suffix",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "一级分类",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassOne",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "二级分类",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassTwo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "三级分类",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassThree",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "四级分类",
+          "example": "无",
+          "member": "int64",
+          "name": "ClassFour",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排除关键字，开头",
+          "example": "无",
+          "member": "bool",
+          "name": "FilterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "排除关键字，结尾",
+          "example": "无",
+          "member": "bool",
+          "name": "FilterEnd",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "排除关键字",
+          "example": "无",
+          "member": "string",
+          "name": "FilterWords",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易类型",
+          "example": "无",
+          "member": "int64",
+          "name": "TransType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索白金域名",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTop",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间排序啊 desc:倒序 asc:正序",
+          "example": "desc",
+          "member": "string",
+          "name": "EndTimeSort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2006-01-02",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreReleaseListResponse": {
+      "document": "DescribePreReleaseList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预释放列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreReleaseInfo",
+          "name": "PreReleaseList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2203,6 +3204,143 @@
           "name": "List",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnPreDomainDetailRequest": {
+      "document": "DescribeUnPreDomainDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUnPreDomainDetailResponse": {
+      "document": "DescribeUnPreDomainDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预约人数",
+          "example": "无",
+          "member": "int64",
+          "name": "PreCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名注册时间",
+          "example": "无",
+          "member": "string",
+          "name": "RegTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名删除时间",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名价格",
+          "example": "无",
+          "member": "float",
+          "name": "CurrentPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名保证金",
+          "example": "无",
+          "member": "float",
+          "name": "AppointBondPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已经预约",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAppoint",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为原持有者域名",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDomainUser",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -3163,6 +4301,178 @@
       ],
       "usage": "out"
     },
+    "PreAuctionInfo": {
+      "document": "预释放竞价列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "竞价倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BiddingTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出价次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户操作 bid：出价 \"noAction\"：无法操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Op",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PreReleaseInfo": {
+      "document": "预释放列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预订倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReservationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DelTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CurrentPeople",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否收藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFollow",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已经预约\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAppoint",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为原持有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDomainUser",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PriceInfo": {
       "document": "域名价格信息",
       "members": [
@@ -3215,6 +4525,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PriceScopeConf": {
+      "document": "预释放价格区间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最高价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MaxPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最低价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价格幅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Price",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "DepositPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

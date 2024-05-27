@@ -2998,7 +2998,7 @@
         {
           "disabled": false,
           "document": "公司名称",
-          "example": "无",
+          "example": "foobar科技有限公司",
           "member": "string",
           "name": "CompanyName",
           "required": false,
@@ -4033,7 +4033,7 @@
         {
           "disabled": false,
           "document": "呼叫的 session id 列表，通过 https://cloud.tencent.com/document/product/679/47714 可以批量获取呼叫详细话单",
-          "example": "无",
+          "example": "[\"e4b2d3f1-8c27-4a9d-bef1-0b412a7c5e8d\", \"a3e8f4c9-2b7d-4e1f-9d82-6c5a8b0d3f1e\", \"f7d2b4e9-1c8a-5d9e-b0f3-2e1a3c4b5d6f\"]",
           "member": "string",
           "name": "SessionList",
           "output_required": false,

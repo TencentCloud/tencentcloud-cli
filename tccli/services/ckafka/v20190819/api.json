@@ -15170,6 +15170,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC ID信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-9icn1ic",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-1incnn1",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

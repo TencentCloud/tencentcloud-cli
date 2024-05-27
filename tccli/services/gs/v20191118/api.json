@@ -77,7 +77,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "xxx",
+          "example": "xyz789",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -113,7 +113,7 @@
         {
           "disabled": false,
           "document": "客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空",
-          "example": "xxx",
+          "example": "e30=",
           "member": "string",
           "name": "ClientSession",
           "required": false,
@@ -203,7 +203,7 @@
         {
           "disabled": false,
           "document": "【互动云游】游戏主机用户ID",
-          "example": "xxx",
+          "example": "abc123",
           "member": "string",
           "name": "HostUserId",
           "required": false,
@@ -245,18 +245,20 @@
         {
           "disabled": false,
           "document": "服务端session信息，返回给JSSDK",
-          "example": "xxx",
+          "example": "e30=",
           "member": "string",
           "name": "ServerSession",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "【已废弃】",
-          "example": "xx",
+          "example": "1",
           "member": "string",
           "name": "RoleNumber",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -266,6 +268,7 @@
           "example": "Player",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -464,7 +467,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "xxx",
+          "example": "xyz789",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -473,7 +476,7 @@
         {
           "disabled": false,
           "document": "【多人游戏】游戏主机用户ID",
-          "example": "无",
+          "example": "abc123",
           "member": "string",
           "name": "HostUserId",
           "required": false,
@@ -581,7 +584,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "xxx",
+          "example": "xyz789",
           "member": "string",
           "name": "UserId",
           "required": true,

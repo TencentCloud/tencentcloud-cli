@@ -5119,7 +5119,7 @@
         },
         {
           "disabled": false,
-          "document": "获取day：d，   获取min则不填",
+          "document": "对PV指标的查询维度。获取day：d，   获取min则不填。",
           "example": "d",
           "member": "string",
           "name": "Dimension",
@@ -5138,7 +5138,7 @@
           "example": "无",
           "member": "RumPvInfo",
           "name": "ProjectPvSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5769,7 +5769,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit",
+          "document": "分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -5787,7 +5787,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset",
+          "document": "分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。",
           "example": "100",
           "member": "int64",
           "name": "Offset",
@@ -5806,7 +5806,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5816,7 +5816,7 @@
           "example": "无",
           "member": "RumAreaInfo",
           "name": "AreaSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

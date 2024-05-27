@@ -430,7 +430,7 @@
       {
         "document": "一键更新旧证书资源",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"OldCertificateId\": \"abc\",\n    \"ResourceTypes\": [\n        \"abc\"\n    ],\n    \"Regions\": [\n        \"abc\"\n    ],\n    \"ResourceTypesRegions\": [\n        {\n            \"ResourceType\": \"abc\",\n            \"Regions\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"UpdateSyncProgress\": [\n            {\n                \"ResourceType\": \"abc\",\n                \"UpdateSyncProgressRegions\": [\n                    {\n                        \"Region\": \"abc\",\n                        \"TotalCount\": 0,\n                        \"OffsetCount\": 0,\n                        \"Status\": \"abc\"\n                    }\n                ],\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"UpdateSyncProgress\": [\n            {\n                \"ResourceType\": \"abc\",\n                \"UpdateSyncProgressRegions\": [\n                    {\n                        \"Region\": \"abc\",\n                        \"TotalCount\": 0,\n                        \"OffsetCount\": 0,\n                        \"Status\": 0\n                    }\n                ],\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "一键更新旧证书资源"
       }
     ],
