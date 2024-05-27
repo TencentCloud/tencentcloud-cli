@@ -1,4 +1,4 @@
-**Example 1: AIGC代答示例**
+**Example 1: 代答示例**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tms AnswerQuestion --cli-unfold-argument  \
-    --Question 社会主义
+    --Question 社会主义是什么？
 ```
 
 Output: 

@@ -77,6 +77,13 @@
       "output": "GetDevicesResponse",
       "status": "online"
     },
+    "GetFlowAlarmInfo": {
+      "document": "根据AppId查询用户设置的流量告警信息，包括阈值，回调url和key",
+      "input": "GetFlowAlarmInfoRequest",
+      "name": "查询流量告警信息",
+      "output": "GetFlowAlarmInfoResponse",
+      "status": "online"
+    },
     "GetFlowPackages": {
       "document": "获取流量包列表",
       "input": "GetFlowPackagesRequest",
@@ -89,6 +96,13 @@
       "input": "GetFlowStatisticRequest",
       "name": "获取数据流量统计数据",
       "output": "GetFlowStatisticResponse",
+      "status": "online"
+    },
+    "GetFlowStatisticByGroup": {
+      "document": "获取指定分组，指定时间数据流量使用情况",
+      "input": "GetFlowStatisticByGroupRequest",
+      "name": "根据设备组获取数据流量统计数据",
+      "output": "GetFlowStatisticByGroupResponse",
       "status": "online"
     },
     "GetHardwareList": {
@@ -1653,6 +1667,53 @@
       ],
       "type": "object"
     },
+    "GetFlowAlarmInfoRequest": {
+      "document": "GetFlowAlarmInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetFlowAlarmInfoResponse": {
+      "document": "GetFlowAlarmInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包的告警阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "AlarmValue",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警通知回调url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://ip:port/callurl",
+          "member": "string",
+          "name": "NotifyUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警通知回调key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xd23y5cb89bx23432",
+          "member": "string",
+          "name": "CallbackKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetFlowPackagesRequest": {
       "document": "GetFlowPackages请求参数结构体",
       "members": [
@@ -1725,6 +1786,127 @@
           "name": "Total",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticByGroupRequest": {
+      "document": "GetFlowStatisticByGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "1a2b3c4d5e",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始查找时间",
+          "example": "1659514436",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "截止时间",
+          "example": "1659515436",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "流量种类（1：上行流量，2：下行流量， 3: 上下行总和）",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。不传默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticByGroupResponse": {
+      "document": "GetFlowStatisticByGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量详细信息",
+          "example": "无",
+          "member": "NetDetails",
+          "name": "NetDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用最大值（单位：byte）",
+          "example": "216516",
+          "member": "float",
+          "name": "MaxValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用平均值（单位：byte）",
+          "example": "25151",
+          "member": "float",
+          "name": "AvgValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用总量（单位：byte）",
+          "example": "35465464",
+          "member": "float",
+          "name": "TotalValue",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {

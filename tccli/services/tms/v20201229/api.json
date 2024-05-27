@@ -1,9 +1,9 @@
 {
   "actions": {
     "AnswerQuestion": {
-      "document": "\"AIGC代答\"产品帮助客户在其AIGC场景下，对于敏感类的问题，不是由客户的大模型机器人来回答，而是我们来进行代答，尽最大可能帮助客户规避风险。",
+      "document": "\"AI问答增强-代答\"产品帮助客户在其AI问答场景下，对于敏感类的问题，不是由客户的大模型机器人来回答，而是我们来进行代答，尽最大可能帮助客户规避风险。",
       "input": "AnswerQuestionRequest",
-      "name": "AIGC代答",
+      "name": "AI问答增强-代答",
       "output": "AnswerQuestionResponse",
       "status": "online"
     },

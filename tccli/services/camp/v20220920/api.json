@@ -6800,6 +6800,40 @@
       ],
       "usage": "both"
     },
+    "IngressTrait": {
+      "document": "ingress 特征信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ingress 数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IngressTraitConfig",
+          "name": "Objects",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IngressTraitConfig": {
+      "document": "Ingress 特征配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Ingress Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx-ingress",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IsolationPod": {
       "document": "要隔离的Pod",
       "members": [
@@ -7553,6 +7587,15 @@
         },
         {
           "disabled": false,
+          "document": "应用实例别名",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略信息",
           "example": "无",
           "member": "Policy",
@@ -7595,6 +7638,15 @@
           "name": "CMDBAdmins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于JSON结构直接修改实例，使用此字段后，Componets, Ploicies, Description, InstanceAlias均不生效",
+          "example": "无",
+          "member": "string",
+          "name": "JSON",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9602,6 +9654,17 @@
           "example": "无",
           "member": "CLBTrait",
           "name": "CLB",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ingress Trait\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IngressTrait",
+          "name": "Ingress",
           "output_required": false,
           "required": false,
           "type": "object",

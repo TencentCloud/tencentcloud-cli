@@ -56,7 +56,7 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
+        "Result": "{\"request_id\":\"ddec0dc8-3268-4571-9ac0-566ae7537495\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0},{\"statement_id\":2,\"total\":0},{\"statement_id\":3,\"total\":0}]}",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

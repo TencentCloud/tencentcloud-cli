@@ -1,3 +1,108 @@
+# Release 3.0.1002.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 34 次发布
+
+发布时间：2024-05-28 01:09:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77950)
+
+	* 新增入参：InstanceAlias, JSON
+
+
+新增数据结构：
+
+* [IngressTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#IngressTrait)
+* [IngressTraitConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#IngressTraitConfig)
+
+修改数据结构：
+
+* [TraitProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TraitProperties)
+
+	* 新增成员：Ingress
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 85 次发布
+
+发布时间：2024-05-28 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PrometheusDTO](http://document.tencentcloudapi.woa.com/document/product/597/40861#PrometheusDTO)
+
+	* 新增成员：VpcId, SubnetId
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 30 次发布
+
+发布时间：2024-05-28 01:15:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BidDetailPage](http://document.tencentcloudapi.woa.com/document/product/242/84018)
+* [BiddingPreRelease](http://document.tencentcloudapi.woa.com/document/product/242/84017)
+* [DeleteBidding](http://document.tencentcloudapi.woa.com/document/product/242/84016)
+* [DescribeAuctionList](http://document.tencentcloudapi.woa.com/document/product/242/84015)
+* [DescribeBiddingAppointDetail](http://document.tencentcloudapi.woa.com/document/product/242/84014)
+* [DescribeBiddingAppointList](http://document.tencentcloudapi.woa.com/document/product/242/84013)
+* [DescribeBiddingDetail](http://document.tencentcloudapi.woa.com/document/product/242/84012)
+* [DescribeBiddingList](http://document.tencentcloudapi.woa.com/document/product/242/84011)
+* [DescribeBiddingSuccessfulDetail](http://document.tencentcloudapi.woa.com/document/product/242/84010)
+* [DescribeBiddingSuccessfulList](http://document.tencentcloudapi.woa.com/document/product/242/84009)
+* [DescribePayWaitDetail](http://document.tencentcloudapi.woa.com/document/product/242/84008)
+* [DescribePreAuctionList](http://document.tencentcloudapi.woa.com/document/product/242/84007)
+* [DescribePreReleaseList](http://document.tencentcloudapi.woa.com/document/product/242/84006)
+* [DescribeUnPreDomainDetail](http://document.tencentcloudapi.woa.com/document/product/242/84005)
+
+新增数据结构：
+
+* [AuctionInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#AuctionInfo)
+* [PreAuctionInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#PreAuctionInfo)
+* [PreReleaseInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#PreReleaseInfo)
+* [PriceScopeConf](http://document.tencentcloudapi.woa.com/document/product/242/38895#PriceScopeConf)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 18 次发布
+
+发布时间：2024-05-28 01:21:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetFlowAlarmInfo](http://document.tencentcloudapi.woa.com/document/product/1385/84020)
+* [GetFlowStatisticByGroup](http://document.tencentcloudapi.woa.com/document/product/1385/84019)
+
+
+
 # Release 3.0.1001.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
