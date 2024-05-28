@@ -1380,6 +1380,22 @@
       ],
       "usage": "out"
     },
+    "Clb": {
+      "document": "负载均衡",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClbIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CmdTemplate": {
       "document": "高危命令模板",
       "members": [
@@ -4112,6 +4128,24 @@
           "name": "ResourceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "每页条目数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移位置",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4125,9 +4159,19 @@
           "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "堡垒机资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6327,6 +6371,16 @@
           "name": "LogDeliveryArgs",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "堡垒机资源LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Clb",
+          "name": "ClbSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

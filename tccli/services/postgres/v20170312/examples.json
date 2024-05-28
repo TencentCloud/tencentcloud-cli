@@ -364,10 +364,16 @@
     ],
     "DescribeDatabases": [
       {
-        "document": "拉取数据库列表",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86eb714c-500f-412e-8090-3b3f76843d86\",\n        \"Items\": [\n            \"postgres\",\n            \"testdatabase\"\n        ]\n    }\n}",
-        "title": "拉取数据库列表"
+        "document": "不做筛选，全量拉取实例的数据库列表。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres\",\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\",\n            \"rds\",\n            \"postgres_bak_1715152994\"\n        ],\n        \"RequestId\": \"4045d7a9-5330-4c2c-b968-475570200a97\"\n    }\n}",
+        "title": "获取实例所有数据库"
+      },
+      {
+        "document": "使用筛选条件，返回部分数据库列表。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"postgres_bak_1715086333\",\n            \"postgres_bak_1715140150\"\n        ],\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\"\n    }\n}",
+        "title": "获取实例部分数据库"
       }
     ],
     "DescribeDefaultParameters": [

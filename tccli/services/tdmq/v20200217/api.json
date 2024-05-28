@@ -6944,7 +6944,7 @@
           "example": "无",
           "member": "PulsarProClusterInfo",
           "name": "ClusterInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6954,7 +6954,7 @@
           "example": "无",
           "member": "PulsarNetworkAccessPointInfo",
           "name": "NetworkAccessPointInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6964,7 +6964,7 @@
           "example": "无",
           "member": "PulsarProClusterSpecInfo",
           "name": "ClusterSpecInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7019,7 +7019,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7029,7 +7029,7 @@
           "example": "无",
           "member": "PulsarProInstance",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13226,6 +13226,16 @@
           "name": "OperationType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessPointsType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

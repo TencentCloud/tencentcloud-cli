@@ -13,40 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "ClusterSpecInfo": {
-            "MaxTopics": 1,
-            "MaxNamespaces": 1,
-            "SpecName": "xx",
-            "MaxBandWidth": 1,
-            "ScalableTps": 1,
-            "MaxTps": 1
+        "ClusterInfo": {
+            "ClusterId": "abc",
+            "ClusterName": "abc",
+            "Remark": "abc",
+            "CreateTime": "abc",
+            "Status": 0,
+            "Version": "abc",
+            "NodeDistribution": [
+                {
+                    "ZoneName": "abc",
+                    "ZoneId": "abc",
+                    "NodeCount": 1
+                }
+            ],
+            "MaxStorage": 1,
+            "CanEditRoute": true,
+            "BillingLabelVersion": "abc"
         },
         "NetworkAccessPointInfos": [
             {
-                "SubnetId": "xx",
-                "InstanceId": "xx",
-                "Endpoint": "xx",
-                "VpcId": "xx",
-                "RouteType": 1
+                "VpcId": "abc",
+                "SubnetId": "abc",
+                "Endpoint": "abc",
+                "InstanceId": "abc",
+                "RouteType": 1,
+                "OperationType": 1,
+                "AccessPointsType": "abc"
             }
         ],
-        "ClusterInfo": {
-            "Status": 0,
-            "Remark": "xx",
-            "NodeDistribution": [
-                {
-                    "NodeCount": 1,
-                    "ZoneId": "xx",
-                    "ZoneName": "xx"
-                }
-            ],
-            "ClusterName": "xx",
-            "ClusterId": "xx",
-            "MaxStorage": 1,
-            "Version": "xx",
-            "CreateTime": "xx"
+        "ClusterSpecInfo": {
+            "SpecName": "abc",
+            "MaxTps": 1,
+            "MaxBandWidth": 1,
+            "MaxNamespaces": 1,
+            "MaxTopics": 1,
+            "ScalableTps": 1
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -11938,7 +11938,7 @@
         {
           "disabled": false,
           "document": "站点Id。",
-          "example": "test.com",
+          "example": "zone-225qgrnvbi9w",
           "member": "string",
           "name": "ZoneId",
           "required": true,

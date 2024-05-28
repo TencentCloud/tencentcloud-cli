@@ -3079,6 +3079,15 @@
           "name": "BackupToUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。",
+          "example": "hevc720",
+          "member": "string",
+          "name": "TranscodeTemplateName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14688,6 +14697,16 @@
           "member": "string",
           "name": "BackupToUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播转码模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hevc760",
+          "member": "string",
+          "name": "TranscodeTemplateName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

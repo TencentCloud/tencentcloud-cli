@@ -8,9 +8,9 @@
       "status": "online"
     },
     "CreateInstance": {
-      "document": "购买新实例",
+      "document": "创建 RocketMQ 5.x 集群",
       "input": "CreateInstanceRequest",
-      "name": "购买实例",
+      "name": "创建集群",
       "output": "CreateInstanceResponse",
       "status": "online"
     },
@@ -501,7 +501,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "abcd",
+          "example": "testName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -509,8 +509,8 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，可用规格如下：\nexperiment_500,\nbasic_1k,\nbasic_2k,\nbasic_4k,\nbasic_6k,\npro_4k,\npro_6k,\npro_1w,\npro_2w,\npro_3w,\npro_4w,\npro_5w,\nplatinum_6k,\nplatinum_1w,\nplatinum_2w,\nplatinum_4w,\nplatinum_10w,\nplatinum_15w,\nplatinum_20w,\nplatinum_40w,\nplatinum_60w,\nplatinum_100w",
-          "example": "无",
+          "document": "商品规格，可用规格如下：experiment_500, basic_1k, basic_2k, basic_3k, basic_4k, basic_5k, basic_6k, basic_7k, basic_8k, basic_9k, basic_10k, pro_4k, pro_6k, pro_8k, pro_1w, pro_15k, pro_2w, pro_25k, pro_3w, pro_35k, pro_4w, pro_45k, pro_5w, pro_55k, pro_60k, pro_65k, pro_70k, pro_75k, pro_80k, pro_85k, pro_90k, pro_95k, pro_100k, platinum_1w, platinum_2w, platinum_3w, platinum_4w, platinum_5w, platinum_6w, platinum_7w, platinum_8w, platinum_9w, platinum_10w, platinum_12w, platinum_14w, platinum_16w, platinum_18w, platinum_20w, platinum_25w, platinum_30w, platinum_35w, platinum_40w, platinum_45w, platinum_50w, platinum_60w, platinum_70w, platinum_80w, platinum_90w, platinum_100w",
+          "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
           "required": true,
@@ -519,7 +519,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "无",
+          "example": "测试集群",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -528,7 +528,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "TagList",
           "required": false,
@@ -537,7 +537,7 @@
         {
           "disabled": false,
           "document": "实例绑定的VPC信息",
-          "example": "无",
+          "example": "[]",
           "member": "VpcInfo",
           "name": "VpcList",
           "required": false,
@@ -546,7 +546,7 @@
         {
           "disabled": false,
           "document": "是否开启公网",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnablePublic",
           "required": false,
@@ -555,7 +555,7 @@
         {
           "disabled": false,
           "document": "公网带宽（单位：兆）",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
@@ -564,7 +564,7 @@
         {
           "disabled": false,
           "document": "公网访问白名单",
-          "example": "无",
+          "example": "[]",
           "member": "IpRule",
           "name": "IpRules",
           "required": false,
@@ -573,7 +573,7 @@
         {
           "disabled": false,
           "document": "消息保留时长（单位：小时）",
-          "example": "无",
+          "example": "72",
           "member": "int64",
           "name": "MessageRetention",
           "required": false,
@@ -582,7 +582,7 @@
         {
           "disabled": false,
           "document": "付费模式（0: 后付费；1: 预付费）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PayMode",
           "required": false,
@@ -591,7 +591,7 @@
         {
           "disabled": false,
           "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RenewFlag",
           "required": false,
@@ -600,7 +600,7 @@
         {
           "disabled": false,
           "document": "购买时长（单位：月）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
           "required": false,

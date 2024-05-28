@@ -5174,6 +5174,7 @@
           "example": "[\"postgres\",\"testdatabase\"]",
           "member": "string",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

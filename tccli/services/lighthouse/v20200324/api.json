@@ -894,8 +894,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对 ID 列表。每次请求批量密钥对的上限为 100。",
-          "example": "[\"lhkp-f7rjie1q\\n\"]",
+          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 100。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。",
+          "example": "[\"lhkp-f7rjie1q\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -904,7 +904,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -930,7 +930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网实例ID。",
+          "document": "云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。",
           "example": "ccn-f49l6u0z",
           "member": "string",
           "name": "CcnId",
@@ -2507,8 +2507,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 10。",
-          "example": "[\"lhkp-1234abcd\\r\\n\"]",
+          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。",
+          "example": "[\"lhkp-1234abcd\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -4194,7 +4194,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
           "example": "[\"lhins-4r4pvtbg\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4398,8 +4398,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对 ID 列表。",
-          "example": "[\"lhkp-omd12oc1\\r\\n\"]",
+          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 100。",
+          "example": "[\"lhkp-omd12oc1\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,
@@ -4444,7 +4444,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4454,7 +4454,7 @@
           "example": "无",
           "member": "KeyPair",
           "name": "KeyPairSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4999,8 +4999,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对 ID 列表。每次请求批量密钥对的上限为 100。",
-          "example": "[\"lhkp-f7rjie1q\\n\"]",
+          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 100。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。",
+          "example": "[\"lhkp-f7rjie1q\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -5009,7 +5009,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7982,7 +7982,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\",\"lhins-rusdke45\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8099,7 +8099,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8557,7 +8557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -8566,7 +8566,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板规则ID。",
+          "document": "防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。",
           "example": "lhftr-xxxxxxxxxx",
           "member": "string",
           "name": "TemplateRuleId",
@@ -9382,7 +9382,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\",\"lhins-rusdke45\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -9455,7 +9455,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\",\"lhins-rusdke45\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

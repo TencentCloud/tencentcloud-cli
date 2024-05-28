@@ -105,8 +105,8 @@
     "BatchStopOpsTasks": [
       {
         "document": "任务运维-批量停止任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopOpsTasks\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"abc\"\n    ],\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchStopOpsTasks\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"111\"\n    ],\n    \"ProjectId\": \"1485413914375667\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SuccessCount\": 1,\n            \"FailedCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\"\n    }\n}",
         "title": "批量停止任务"
       }
     ],
@@ -1445,15 +1445,15 @@
         "document": "任务运维-批量冻结任务",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeOpsTasks\n<公共请求参数>\n\n{\n    \"Tasks\": [\n        {\n            \"TaskId\": \"123\",\n            \"TaskName\": \"ew\"\n        }\n    ],\n    \"OperateIsInform\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"12345\"\n    }\n}",
-        "title": "批量冻结任务"
+        "title": "批量暂停任务"
       }
     ],
     "FreezeTasksByWorkflowIds": [
       {
-        "document": "暂停工作流下的所有任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeTasksByWorkflowIds\n<公共请求参数>\n\n{\n    \"WorkflowIds\": [\n        \"abc\"\n    ],\n    \"ProjectId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true,\n            \"ResultMsg\": \"abc\",\n            \"ErrorId\": \"abc\",\n            \"ErrorDesc\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "暂停工作流下的所有任务"
+        "document": "暂停工作流下的所有任务--暂停成功",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FreezeTasksByWorkflowIds\n<公共请求参数>\n\n{\n    \"WorkflowIds\": [\n        \"e1c0831c-e1a3-11ee-8ec8-b8599f277de5\"\n    ],\n    \"ProjectId\": \"1470547050521227264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorDesc\": null,\n            \"ErrorId\": null,\n            \"Result\": true,\n            \"ResultMsg\": null\n        },\n        \"RequestId\": \"ba5bafa6-e05d-4877-8f2e-0de7cc00305c\"\n    }\n}",
+        "title": "暂停工作流下的所有任务--暂停成功"
       }
     ],
     "GenHiveTableDDLSql": [

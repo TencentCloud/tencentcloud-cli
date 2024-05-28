@@ -5707,7 +5707,7 @@
         },
         {
           "disabled": false,
-          "document": "视频编码参数。可选，如果不填，保持原始流的参数。",
+          "document": "【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。",
           "example": "无",
           "member": "VideoEncodeParams",
           "name": "VideoEncodeParams",
@@ -5716,7 +5716,7 @@
         },
         {
           "disabled": false,
-          "document": "音频编码参数。可选，如果不填，保持原始流的参数。",
+          "document": "【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。",
           "example": "无",
           "member": "AudioEncodeParams",
           "name": "AudioEncodeParams",

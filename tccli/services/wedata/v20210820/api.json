@@ -87,7 +87,7 @@
     "BatchStopOpsTasks": {
       "document": "仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度",
       "input": "BatchStopOpsTasksRequest",
-      "name": "智能运维-批量停止任务",
+      "name": "任务运维-批量停止任务",
       "output": "BatchStopOpsTasksResponse",
       "status": "online"
     },
@@ -1177,9 +1177,9 @@
       "status": "online"
     },
     "FreezeOpsTasks": {
-      "document": "任务运维-批量冻结任务",
+      "document": "任务运维-批量暂停任务",
       "input": "FreezeOpsTasksRequest",
-      "name": "批量冻结任务",
+      "name": "任务运维-批量暂停任务",
       "output": "FreezeOpsTasksResponse",
       "status": "online"
     },
@@ -4149,11 +4149,20 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "1",
+          "example": "\"1485413914375667\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否终止已生成的实例",
+          "example": "false",
+          "member": "bool",
+          "name": "KillInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4167,6 +4176,7 @@
           "example": "无",
           "member": "BatchOperationOpsDto",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4199,6 +4209,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否终止已生成的实例",
+          "example": "false",
+          "member": "bool",
+          "name": "KillInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6634,6 +6653,15 @@
           "name": "Incharge",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称",
+          "example": "public",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8995,6 +9023,16 @@
           "example": "无",
           "member": "string",
           "name": "ParamsString",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区分数据源类型自定义源还是系统源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14388,6 +14426,24 @@
           "name": "KeyWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例生成方式",
+          "example": "无",
+          "member": "string",
+          "name": "InitStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外请求的资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "RequestResourceTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20998,7 +21054,7 @@
         {
           "disabled": false,
           "document": "任务列表",
-          "example": "SimpleTaskInfo",
+          "example": "{        [{\"TaskId\": \"123\", \"TaskName\": \"ew\" }]",
           "member": "SimpleTaskInfo",
           "name": "Tasks",
           "required": true,
@@ -21007,10 +21063,19 @@
         {
           "disabled": false,
           "document": "任务操作是否消息通知下游任务责任人",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "OperateIsInform",
           "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否终止已生成的实例",
+          "example": "false",
+          "member": "bool",
+          "name": "KillInstance",
+          "required": false,
           "type": "bool"
         }
       ],
@@ -21025,6 +21090,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -21043,7 +21109,7 @@
         {
           "disabled": false,
           "document": "工作流id列表",
-          "example": "无",
+          "example": "1520b2bc-f0f4-11ee-8d13-a1ae120f8272",
           "member": "string",
           "name": "WorkflowIds",
           "required": true,
@@ -21052,11 +21118,20 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "1531609696092265952",
           "member": "string",
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否终止已生成的实例",
+          "example": "false",
+          "member": "bool",
+          "name": "KillInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -21070,6 +21145,7 @@
           "example": "无",
           "member": "OperationOpsDto",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -23449,6 +23525,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "紧急去除的依赖父实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeletedFatherList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环依赖关联的实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceOpsDto",
+          "name": "CirculateInstanceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -28578,7 +28676,7 @@
           "example": "无",
           "member": "OpsTaskCanvasDto",
           "name": "TasksList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -28588,9 +28686,19 @@
           "example": "无",
           "member": "OpsTaskLinkInfoDto",
           "name": "LinksList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "画布循环依赖任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OpsTaskCanvasDto",
+          "name": "CirculateTaskList",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -28670,7 +28778,7 @@
           "example": "\"111111\"",
           "member": "string",
           "name": "TaskTo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28680,7 +28788,7 @@
           "example": "\"222222\"",
           "member": "string",
           "name": "TaskFrom",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28690,7 +28798,7 @@
           "example": "\"real_real\"",
           "member": "string",
           "name": "LinkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28700,9 +28808,19 @@
           "example": "\"121212\"",
           "member": "string",
           "name": "LinkId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal,circulate",
+          "member": "string",
+          "name": "LinkStyle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
