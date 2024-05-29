@@ -9,7 +9,8 @@ tccli car DescribeApplicationList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 20 \
     --Filters.0.Name ApplicationId \
-    --Filters.0.Values app-6get57ac
+    --Filters.0.Values app-6get57ac \
+    --ApplicationCategory MOBILE
 ```
 
 Output: 
@@ -64,6 +65,27 @@ Output:
                         "StorePath": "xxx"
                     }
                 ]
+            }
+        ],
+        "UserMobileApplicationList": [
+            {
+                "ApplicationId": "app-a1b2c3",
+                "ApplicationName": "abc",
+                "ApplicationType": "ApplicationAPK",
+                "ApplicationRunStatus": "ApplicationRunning",
+                "ApplicationUpdateStatus": "ApplicationUpdateCreating",
+                "ApplicationCreateTime": "2020-09-22T00:00:00+00:00",
+                "ApplicationVersions": [
+                    {
+                        "ApplicationVersionId": "ver-a1b2c3",
+                        "ApplicationVersionStatus": "Uploading",
+                        "ApplicationVersionName": "abc",
+                        "CreateTime": "2020-09-22T00:00:00+00:00",
+                        "ApplicationVersionRegions": [],
+                        "ApplicationVersionSize": 0
+                    }
+                ],
+                "ApplicationNature": "PUBLIC"
             }
         ],
         "ApplicationTotal": 100,

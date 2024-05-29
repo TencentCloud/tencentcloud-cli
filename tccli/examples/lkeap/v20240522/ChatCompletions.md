@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli lkeap ChatCompletions --cli-unfold-argument ```
+tccli lkeap ChatCompletions --cli-unfold-argument  \
+    --Model lke-sn-standard \
+    --Messages.0.Role user \
+    --Messages.0.Content 你好 \
+    --Stream False
+```
 
 Output: 
 ```

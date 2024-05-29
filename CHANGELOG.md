@@ -1,3 +1,188 @@
+# Release 3.0.1003.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 8 次发布
+
+发布时间：2024-05-29 01:09:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApplicationList](http://document.tencentcloudapi.woa.com/document/product/1710/81855)
+
+	* 新增入参：ApplicationCategory
+
+	* 新增出参：UserMobileApplicationList
+
+
+新增数据结构：
+
+* [UserMobileApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserMobileApplicationInfo)
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 27 次发布
+
+发布时间：2024-05-29 01:14:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeResources](http://document.tencentcloudapi.woa.com/document/product/1492/74803)
+
+	* 新增入参：Limit, Offset
+
+	* 新增出参：TotalCount
+
+
+新增数据结构：
+
+* [Clb](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Clb)
+
+修改数据结构：
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* 新增成员：ClbSet
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 62 次发布
+
+发布时间：2024-05-29 01:20:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56245)
+
+	* 新增入参：TranscodeTemplateName
+
+
+修改数据结构：
+
+* [PullStreamTaskInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#PullStreamTaskInfo)
+
+	* 新增成员：TranscodeTemplateName
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 2 次发布
+
+发布时间：2024-05-29 01:21:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增入参：Model, Messages, Stream
+
+
+新增数据结构：
+
+* [Message](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Message)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 102 次发布
+
+发布时间：2024-05-29 01:26:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
+
+	* 新增成员：AccessPointsType
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 50 次发布
+
+发布时间：2024-05-29 01:30:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BatchStopOpsTasks](http://document.tencentcloudapi.woa.com/document/product/1607/81363)
+
+	* 新增入参：KillInstance
+
+* [BatchStopWorkflowsByIds](http://document.tencentcloudapi.woa.com/document/product/1607/81338)
+
+	* 新增入参：KillInstance
+
+* [CreateHiveTableByDDL](http://document.tencentcloudapi.woa.com/document/product/1607/77607)
+
+	* 新增入参：SchemaName
+
+* [DescribeOperateOpsTasks](http://document.tencentcloudapi.woa.com/document/product/1607/81360)
+
+	* 新增入参：InitStrategy, RequestResourceTypes
+
+* [FreezeOpsTasks](http://document.tencentcloudapi.woa.com/document/product/1607/81358)
+
+	* 新增入参：KillInstance
+
+* [FreezeTasksByWorkflowIds](http://document.tencentcloudapi.woa.com/document/product/1607/81285)
+
+	* 新增入参：KillInstance
+
+
+修改数据结构：
+
+* [DatasourceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatasourceBaseInfo)
+
+	* 新增成员：Category
+
+* [InstanceOpsDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#InstanceOpsDto)
+
+	* 新增成员：DeletedFatherList, CirculateInstanceList
+
+* [OpsTaskCanvasInfoList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OpsTaskCanvasInfoList)
+
+	* 新增成员：CirculateTaskList
+
+* [OpsTaskLinkInfoDto](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OpsTaskLinkInfoDto)
+
+	* 新增成员：LinkStyle
+
+
+
+
 # Release 3.0.1002.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

@@ -43,7 +43,7 @@
     "DescribeServiceLoginSettings": [
       {
         "document": "查询实例hai-xxxxxxxx包含的服务登录配置",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceLoginSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-xxxxxxxx\",\n    \"ServiceName\": \"jupyter\"\n}",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceLoginSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-xxxxxxxx\",\n    \"ServiceName\": \"jupyter\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"73956f5a-0f0e-4e60-ba7d-d555bcefe27b\",\n        \"LoginSettings\": [\n            {\n                \"ServiceName\": \"jupyter\",\n                \"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"\n            }\n        ]\n    }\n}",
         "title": "查询实例hai-xxxxxxxx包含的服务登录配置"
       }

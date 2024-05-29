@@ -193,7 +193,7 @@
         },
         {
           "disabled": false,
-          "document": "应用窗口捕捉模式",
+          "document": "应用窗口捕捉模式（HOOK 默认模式、DDA_CUT 兼容模式）",
           "example": "\"HOOK|DDA_CUT\"",
           "member": "string",
           "name": "WindowCaptureMode",
@@ -364,7 +364,7 @@
         },
         {
           "disabled": false,
-          "document": "应用文件名（必须是 zip/rar/7z 格式压缩包）",
+          "document": "应用文件名（桌面端应用必须是 zip/rar/7z 格式文件、移动端应用必须是 apk 格式文件）",
           "example": "\"application.zip\"",
           "member": "string",
           "name": "ApplicationFileName",
@@ -634,6 +634,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用类别（DESKTOP: 桌面端，MOBILE：移动端）",
+          "example": "\"MOBILE\"",
+          "member": "string",
+          "name": "ApplicationCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -659,6 +668,16 @@
           "name": "ApplicationTotal",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "移动应用列表信息",
+          "example": "\"\"",
+          "member": "UserMobileApplicationInfo",
+          "name": "UserMobileApplicationList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -994,7 +1013,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤值集合（当过滤 Name 为 ApplicationRunStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无]）",
+          "document": "过滤值集合（当过滤 Name 为 ApplicationRunStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、ApplicationUpdateNormal 无]）",
           "example": "\"\"",
           "member": "string",
           "name": "Values",
@@ -1326,7 +1345,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型（云 3D: Application3D 、 云 XR: ApplicationXR、 云 APK: ApplicationAPK）",
+          "document": "应用类型（云 3D: Application3D 、 云 XR: ApplicationXR、 云 Web: ApplicationWeb）",
           "example": "\"Application3D\"",
           "member": "string",
           "name": "ApplicationType",
@@ -1366,7 +1385,7 @@
         },
         {
           "disabled": false,
-          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置\t）",
+          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置）",
           "example": "\"ApplicationDeleting\"",
           "member": "string",
           "name": "ApplicationRunStatus",
@@ -1376,7 +1395,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、applicationUpdateStatusNormal 无）",
+          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）",
           "example": "\"ApplicationUpdateCreating\"",
           "member": "string",
           "name": "ApplicationUpdateStatus",
@@ -1462,7 +1481,7 @@
         },
         {
           "disabled": false,
-          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ）",
+          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置、ApplicationNoPackage 无可用包体 ）",
           "example": "\"ApplicationRunning\"",
           "member": "string",
           "name": "ApplicationRunStatus",
@@ -1472,7 +1491,7 @@
         },
         {
           "disabled": false,
-          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无）",
+          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、ApplicationUpdateNormal 无）",
           "example": "\"ApplicationUpdateNoReleased\"",
           "member": "string",
           "name": "ApplicationUpdateStatus",
@@ -1616,6 +1635,92 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserMobileApplicationInfo": {
+      "document": "移动端应用数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-a1b2c3\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "\"name\"",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型（云 APK: ApplicationAPK）",
+          "example": "\"ApplicationAPK\"",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用运行状态（ApplicationRunning 正常运行、ApplicationNoPackage 无可用包体）",
+          "example": "\"ApplicationRunning\"",
+          "member": "string",
+          "name": "ApplicationRunStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、ApplicationUpdateNormal 无）",
+          "example": "\"ApplicationUpdateCreating\"",
+          "member": "string",
+          "name": "ApplicationUpdateStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用创建时间",
+          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "member": "datetime_iso",
+          "name": "ApplicationCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本列表",
+          "example": "\"\"",
+          "member": "UserApplicationVersion",
+          "name": "ApplicationVersions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）",
+          "example": "\"PRIVATE\"",
+          "member": "string",
+          "name": "ApplicationNature",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

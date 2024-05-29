@@ -1,6 +1,6 @@
-**Example 1: 创建实例**
+**Example 1: 正常响应**
 
-创建实例
+成功创建一个 TPS 2000 的 RocketMQ 5.x 集群。
 
 Input: 
 

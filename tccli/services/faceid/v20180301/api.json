@@ -685,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持: \n1.HK：中国香港身份证 \n2.ML：马来西亚身份证 \n3.IndonesiaIDCard：印度尼西亚身份证 \n4.PhilippinesVoteID：菲律宾选民卡 \n5.PhilippinesDrivingLicense：菲律宾驾驶证 \n6.PhilippinesTinID：菲律宾TinID \n7.PhilippinesSSSID：菲律宾SSSID \n8.PhilippinesUMID：菲律宾UMID \n9.MLIDPassport：港澳台地区以及境外护照 \n10.MacaoIDCard:  澳门身份证 \n11.ThailandIDCard: 泰国身份证\n12.MainlandIDCard: 大陆身份证\n默认值为HK。",
+          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",

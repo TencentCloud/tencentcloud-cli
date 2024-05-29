@@ -17,7 +17,35 @@
   "objects": {
     "ChatCompletionsRequest": {
       "document": "ChatCompletions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "lke-sn-standard",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话列表",
+          "example": "[{\"role\":\"user\",\"content\":\"你好\"}]",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否流式输出",
+          "example": "true",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "ChatCompletionsResponse": {
@@ -31,6 +59,34 @@
         }
       ],
       "type": "object"
+    },
+    "Message": {
+      "document": "会话内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "content",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
