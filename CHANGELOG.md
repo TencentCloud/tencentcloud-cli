@@ -1,3 +1,114 @@
+# Release 3.0.1004.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 66 次发布
+
+发布时间：2024-05-30 01:11:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLogContext](http://document.tencentcloudapi.woa.com/document/product/614/56448)
+
+	* 新增入参：Query, From, To
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 37 次发布
+
+发布时间：2024-05-30 01:15:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDomainToGroup](http://document.tencentcloudapi.woa.com/document/product/1427/84022)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 80 次发布
+
+发布时间：2024-05-30 01:21:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmPolicyRule](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicyRule)
+
+	* 新增成员：IsLatenessMetric
+
+* [Metric](http://document.tencentcloudapi.woa.com/document/product/248/30354#Metric)
+
+	* 新增成员：IsLatenessMetric
+
+	* <font color="#dd0000">**修改成员**：</font>Operators, Periods
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 41 次发布
+
+发布时间：2024-05-30 01:23:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CloneInstances](http://document.tencentcloudapi.woa.com/document/product/239/77351)
+
+	* 新增入参：CloneTime
+
+
+修改数据结构：
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+	* 新增成员：BackupMode
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 36 次发布
+
+发布时间：2024-05-30 01:27:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Rule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Rule)
+
+	* <font color="#dd0000">**修改成员**：</font>Actions
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.1003.1
 
 ## 应用云渲染(car) 版本：2022-01-10
