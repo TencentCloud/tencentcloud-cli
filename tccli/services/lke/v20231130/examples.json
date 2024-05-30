@@ -583,7 +583,7 @@
     "SaveDoc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"jkadslfjalkdfjaklsdfla.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/137/doc/jkadslfjalkdfjaklsdfla.docx\",\n    \"ETag\": \"f679b6029cba26d65ef93c4e174b59d8\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"643000\",\n    \"Source\": 1,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"FileName\": \"测试.docx\",\n    \"FileType\": \"docx\",\n    \"CosUrl\": \"/corp/23432432/233432/doc/zeSOHIBjwcWoEmlMMXOp-1796022574489010176.docx\",\n    \"ETag\": \"\\\"58e88ad7665f11c4f66eba0eada383a5\\\"\",\n    \"CosHash\": \"xxxxxxxxx\",\n    \"Size\": \"643000\",\n    \"Source\": 1,\n    \"WebUrl\": \"\",\n    \"AttrRange\": 1,\n    \"AttrLabels\": [],\n    \"ReferUrlType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"DocBizId\": \"1694921462777761792\",\n        \"ErrorMsg\": \"\",\n        \"ErrorLink\": \"\",\n        \"ErrorLinkText\": \"\",\n        \"RequestId\": \"e3338103-3165-49c0-b218-245be865cca5\"\n    }\n}",
         "title": "保存文档"
       }

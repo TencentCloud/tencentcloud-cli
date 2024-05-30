@@ -18,14 +18,18 @@ tccli waf ModifyCustomRule --cli-unfold-argument  \
     --Strategies.0.Field IP \
     --Strategies.0.CompareFunc ipmatch \
     --Strategies.0.Content 1.1.1.2 \
-    --Strategies.0.Arg 
+    --Strategies.0.Arg ""
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a713f4cf-51ef-437f-8467-d4fdec061b78"
+        "RequestId": "a713f4cf-51ef-437f-8467-d4fdec061b78",
+        "Success": {
+            "Code": "Success",
+            "Message": "Success"
+        }
     }
 }
 ```

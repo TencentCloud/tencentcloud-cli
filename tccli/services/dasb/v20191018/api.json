@@ -1348,6 +1348,15 @@
           "name": "ResourceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域ID",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3065,6 +3074,7 @@
           "member": "string",
           "name": "Id",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3075,6 +3085,7 @@
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3085,6 +3096,7 @@
           "member": "string",
           "name": "Managers",
           "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3095,11 +3107,12 @@
           "member": "DepartmentManagerUser",
           "name": "ManagerUsers",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DepartmentManagerUser": {
       "document": "部门管理员信息",
@@ -5040,6 +5053,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-xxx",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "网络 1",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5196,6 +5229,7 @@
           "member": "uint64",
           "name": "Id",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5206,6 +5240,7 @@
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5216,6 +5251,7 @@
           "member": "Department",
           "name": "Department",
           "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5226,11 +5262,12 @@
           "member": "uint64",
           "name": "Count",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ImportExternalDeviceRequest": {
       "document": "ImportExternalDevice请求参数结构体",
@@ -5278,7 +5315,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5288,7 +5325,7 @@
           "example": "10.10.10.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5298,7 +5335,7 @@
           "example": "10.10.10.2",
           "member": "string",
           "name": "IpBackup",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5308,7 +5345,7 @@
           "example": "389",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5318,7 +5355,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableSSL",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5328,7 +5365,7 @@
           "example": "true",
           "member": "string",
           "name": "BaseDN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5338,7 +5375,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AdminAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5348,7 +5385,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributeUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5358,7 +5395,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributeUserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5368,7 +5405,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoSync",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5378,7 +5415,7 @@
           "example": "true",
           "member": "bool",
           "name": "Overwrite",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5388,7 +5425,7 @@
           "example": "true",
           "member": "uint64",
           "name": "SyncPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5398,7 +5435,7 @@
           "example": "true",
           "member": "bool",
           "name": "SyncAll",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5408,7 +5445,7 @@
           "example": "无",
           "member": "string",
           "name": "SyncUnitSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5418,7 +5455,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5428,7 +5465,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributeRealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5438,7 +5475,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributePhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5448,9 +5485,29 @@
           "example": "xxx",
           "member": "string",
           "name": "AttributeEmail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求LDAP服务的堡垒机实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bh-saas-xxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6169,6 +6226,15 @@
           "example": "1.2.3",
           "member": "string",
           "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
           "required": false,
           "type": "string"
         }
@@ -7109,6 +7175,26 @@
           "name": "ClbSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DomainCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用网络域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UsedDomainCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

@@ -332,10 +332,10 @@
     ],
     "DescribeDefenseSwitch": [
       {
-        "document": "",
+        "document": "接口返回常见入侵防御开关接口",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDefenseSwitch\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"BasicRuleSwitch\": 1,\n        \"BaselineAllSwitch\": 1,\n        \"VirtualPatchSwitch\": 1,\n        \"TiSwitch\": 1,\n        \"HistoryOpen\": 1\n    }\n}",
-        "title": "获取入侵防御按钮列表"
+        "output": "{\n    \"Response\": {\n        \"BasicRuleSwitch\": 0,\n        \"BaselineAllSwitch\": 0,\n        \"TiSwitch\": 0,\n        \"VirtualPatchSwitch\": 0,\n        \"HistoryOpen\": 0,\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "入侵防御开关相关"
       }
     ],
     "DescribeEnterpriseSGRuleProgress": [

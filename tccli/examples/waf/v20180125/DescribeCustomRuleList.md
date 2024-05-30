@@ -42,29 +42,58 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d207f4f-0d41-4f5d-bce2-0320090c98d8",
         "RuleList": [
             {
-                "ActionType": "2",
-                "Bypass": "geoip,cc,owasp,ai,antileakage",
-                "CreateTime": "2020-02-20 14:00:12",
-                "ExpireTime": "0",
-                "Name": "test",
-                "Redirect": "/",
-                "RuleId": "17958569",
-                "SortId": "100",
-                "Status": "1",
+                "ActionType": "abc",
+                "Bypass": "abc",
+                "CreateTime": "abc",
+                "ExpireTime": "abc",
+                "Name": "abc",
+                "Redirect": "abc",
+                "RuleId": "abc",
+                "SortId": "abc",
+                "Status": "abc",
                 "Strategies": [
                     {
-                        "Arg": "",
-                        "CompareFunc": "ipmatch",
-                        "Content": "1.1.1.2",
-                        "Field": "IP"
+                        "Field": "abc",
+                        "CompareFunc": "abc",
+                        "Content": "abc",
+                        "Arg": "abc"
                     }
-                ]
+                ],
+                "EventId": "abc",
+                "ModifyTime": "abc",
+                "ValidStatus": 0,
+                "Source": "abc",
+                "JobType": "abc",
+                "JobDateTime": {
+                    "Timed": [
+                        {
+                            "StartDateTime": 1,
+                            "EndDateTime": 1
+                        }
+                    ],
+                    "Cron": [
+                        {
+                            "Days": [
+                                1
+                            ],
+                            "WDays": [
+                                1
+                            ],
+                            "StartTime": "abc",
+                            "EndTime": "abc"
+                        }
+                    ],
+                    "TimeTZone": "abc"
+                },
+                "CronType": "abc",
+                "Label": "abc",
+                "PageId": "abc"
             }
         ],
-        "TotalCount": "1"
+        "TotalCount": "abc",
+        "RequestId": "abc"
     }
 }
 ```

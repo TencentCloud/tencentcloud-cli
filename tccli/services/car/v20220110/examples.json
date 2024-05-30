@@ -136,6 +136,14 @@
         "title": "添加修改云应用版本请求"
       }
     ],
+    "ModifyMobileApplicationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMobileApplicationInfo\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-a1b2c3\",\n    \"ApplicationName\": \"testname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加修改移动端应用信息请求"
+      }
+    ],
     "SetApplicationVersionOnline": [
       {
         "document": "",

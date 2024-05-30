@@ -1218,7 +1218,7 @@
         {
           "disabled": false,
           "document": "新账户的名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": true,
@@ -1227,7 +1227,7 @@
         {
           "disabled": false,
           "document": "新账户的域名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -4615,6 +4615,24 @@
           "name": "MaxUserConnections",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建账号时是否开启CAM密码轮转",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenCam",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法版本号标识。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4628,7 +4646,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5577,6 +5595,15 @@
           "name": "CosUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法版本号标识。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5590,7 +5617,7 @@
           "example": "be9f64a6-fa652dc6-f5c878b6-a6a50746",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5945,6 +5972,15 @@
           "example": "cdc-test",
           "member": "string",
           "name": "CdcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法版本号标识。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
           "required": false,
           "type": "string"
         }
@@ -6343,6 +6379,15 @@
           "example": "无",
           "member": "string",
           "name": "BillingParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法版本号标识。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
           "required": false,
           "type": "string"
         }
@@ -15350,6 +15395,15 @@
           "name": "Accounts",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法版本号标识。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15363,7 +15417,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

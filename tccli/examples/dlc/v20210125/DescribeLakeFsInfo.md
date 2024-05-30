@@ -11,7 +11,15 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "123-456",
+        "LakeFsInfos": [
+            {
+                "Name": "my-bkt",
+                "Type": "chdfs",
+                "SpaceUsedSize": "1024",
+                "CreateTimeStamp": "1"
+            }
+        ]
     }
 }
 ```

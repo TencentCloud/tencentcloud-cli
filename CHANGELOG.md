@@ -1,3 +1,316 @@
+# Release 3.0.1005.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 14 次发布
+
+发布时间：2024-05-31 01:07:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserInfo)
+
+	* 新增成员：AppUserId, AppUserName
+
+* [UserRoleListDataUserRoleInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#UserRoleListDataUserRoleInfo)
+
+	* 新增成员：AppOpenUserId
+
+
+
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 9 次发布
+
+发布时间：2024-05-31 01:08:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyMobileApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1710/84023)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 99 次发布
+
+发布时间：2024-05-31 01:09:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAccounts](http://document.tencentcloudapi.woa.com/document/product/236/17502)
+
+	* 新增入参：OpenCam, EncryptMethod
+
+* [CreateDBImportJob](http://document.tencentcloudapi.woa.com/document/product/236/15858)
+
+	* 新增入参：EncryptMethod
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：EncryptMethod
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/236/15865)
+
+	* 新增入参：EncryptMethod
+
+* [ModifyAccountPassword](http://document.tencentcloudapi.woa.com/document/product/236/17497)
+
+	* 新增入参：EncryptMethod
+
+
+
+
+## 运维安全中心（堡垒机）(dasb) 版本：2019-10-18
+
+### 第 28 次发布
+
+发布时间：2024-05-31 01:13:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1492/74784)
+
+	* 新增入参：DomainId
+
+* [ModifyDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77122)
+
+	* 新增入参：DomainId
+
+
+修改数据结构：
+
+* [Department](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Department)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Name, Managers, ManagerUsers
+
+* [Device](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Device)
+
+	* 新增成员：DomainId, DomainName
+
+* [Group](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Group)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Name, Department, Count
+
+* [LDAPSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LDAPSetting)
+
+	* 新增成员：ResourceId, DomainId
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Resource)
+
+	* 新增成员：DomainCount, UsedDomainCount
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 99 次发布
+
+发布时间：2024-05-31 01:13:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/77202)
+
+	* 新增出参：LakeFsInfos
+
+
+新增数据结构：
+
+* [LakeFsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFsInfo)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 48 次发布
+
+发布时间：2024-05-31 01:20:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SubEks](http://document.tencentcloudapi.woa.com/document/product/849/52010#SubEks)
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：Type, SubEks, AgentSerialId
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+
+	* 新增成员：SubEks
+
+	* <font color="#dd0000">**修改成员**：</font>RunningCu, PayMode
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 18 次发布
+
+发布时间：2024-05-31 01:22:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAssetImageScanSetting](http://document.tencentcloudapi.woa.com/document/product/1662/79037)
+
+	* 新增入参：ExcludeImages
+
+* [DescribeAssetImageScanSetting](http://document.tencentcloudapi.woa.com/document/product/1662/78872)
+
+	* 新增出参：ExcludeImages
+
+* [DescribeImageRegistryTimingScanTask](http://document.tencentcloudapi.woa.com/document/product/1662/78851)
+
+	* 新增出参：ExcludeImageAssetIds
+
+* [UpdateImageRegistryTimingScanTask](http://document.tencentcloudapi.woa.com/document/product/1662/78811)
+
+	* 新增入参：ExcludeImageAssetIds
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 53 次发布
+
+发布时间：2024-05-31 01:26:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/53608)
+
+	* 新增入参：JobType, JobDateTime, Source, Label, Status, PageId
+
+	* <font color="#dd0000">**修改入参**：</font>ExpireTime
+
+* [AddCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77485)
+
+	* 新增入参：JobType, JobDateTime
+
+* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
+
+	* 新增入参：ProbeStatus
+
+* [DeleteCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/81724)
+
+	* 新增入参：DomainRuleIdList
+
+	* 新增出参：Success
+
+* [DescribeCustomRuleList](http://document.tencentcloudapi.woa.com/document/product/627/81723)
+
+	* 新增入参：DomainList
+
+* [ModifyCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/81722)
+
+	* 新增入参：JobType, JobDateTime, Source, Status, PageId
+
+	* 新增出参：Success
+
+* [ModifyCustomRuleStatus](http://document.tencentcloudapi.woa.com/document/product/627/53599)
+
+	* 新增入参：DomainRuleIdList
+
+* [ModifyCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77483)
+
+	* 新增入参：JobType, JobDateTime
+
+* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
+
+	* 新增入参：ProbeStatus
+
+* [UpsertCCRule](http://document.tencentcloudapi.woa.com/document/product/627/83532)
+
+	* 新增入参：CreateTime
+
+
+新增数据结构：
+
+* [CronJob](http://document.tencentcloudapi.woa.com/document/product/627/53609#CronJob)
+* [DomainRuleId](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainRuleId)
+* [JobDateTime](http://document.tencentcloudapi.woa.com/document/product/627/53609#JobDateTime)
+* [MiniExtendPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#MiniExtendPkg)
+* [TimedJob](http://document.tencentcloudapi.woa.com/document/product/627/53609#TimedJob)
+
+修改数据结构：
+
+* [BatchIpAccessControlItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#BatchIpAccessControlItem)
+
+	* 新增成员：CreateTime
+
+* [CCRuleItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#CCRuleItems)
+
+	* 新增成员：CreateTime
+
+* [CacheUrlItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#CacheUrlItems)
+
+	* 新增成员：ModifyTime, CreateTime
+
+* [DescribeAntiLeakageItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeAntiLeakageItem)
+
+	* 新增成员：ModifyTime
+
+* [DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem)
+
+	* 新增成员：JobType, JobDateTime, CronType, Label, PageId, Domain
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
+
+	* 新增成员：MiniExtendPkg, BillingItem
+
+* [IpAccessControlItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#IpAccessControlItem)
+
+	* 新增成员：CreateTime
+
+* [RuleList](http://document.tencentcloudapi.woa.com/document/product/627/53609#RuleList)
+
+	* 新增成员：CreateTime
+
+* [UserDomainInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#UserDomainInfo)
+
+	* 新增成员：AlbType, BotStatus, ApiStatus
+
+
+
+
 # Release 3.0.1004.1
 
 ## 日志服务(cls) 版本：2020-10-16
