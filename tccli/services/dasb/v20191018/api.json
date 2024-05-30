@@ -1112,6 +1112,15 @@
           "name": "ResourceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域ID",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2829,6 +2838,7 @@
           "member": "string",
           "name": "Id",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2839,6 +2849,7 @@
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2849,6 +2860,7 @@
           "member": "string",
           "name": "Managers",
           "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2859,11 +2871,12 @@
           "member": "DepartmentManagerUser",
           "name": "ManagerUsers",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DepartmentManagerUser": {
       "document": "部门管理员信息",
@@ -4656,6 +4669,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "net-xxx",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "网络 1",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4812,6 +4845,7 @@
           "member": "uint64",
           "name": "Id",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4822,6 +4856,7 @@
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4832,6 +4867,7 @@
           "member": "Department",
           "name": "Department",
           "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4842,11 +4878,12 @@
           "member": "uint64",
           "name": "Count",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ImportExternalDeviceRequest": {
       "document": "ImportExternalDevice请求参数结构体",
@@ -5563,6 +5600,15 @@
           "example": "1.2.3",
           "member": "string",
           "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id",
+          "example": "net-xxxxxxxx",
+          "member": "string",
+          "name": "DomainId",
           "required": false,
           "type": "string"
         }
@@ -6381,6 +6427,26 @@
           "name": "ClbSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DomainCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用网络域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UsedDomainCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

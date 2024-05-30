@@ -8159,6 +8159,16 @@
       "document": "DescribeLakeFsInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "托管存储信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LakeFsInfo",
+          "name": "LakeFsInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11648,6 +11658,52 @@
           "example": "无",
           "member": "int64",
           "name": "IssueTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LakeFsInfo": {
+      "document": "描述DLC托管存储基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管存储名称",
+          "example": "dlc_bkt",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管存储类型",
+          "example": "user_chdfs",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量",
+          "example": "1.0",
+          "member": "float",
+          "name": "SpaceUsedSize",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时候的时间戳",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateTimeStamp",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

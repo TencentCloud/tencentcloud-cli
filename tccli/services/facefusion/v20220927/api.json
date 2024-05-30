@@ -335,8 +335,7 @@
           "member": "FaceRect",
           "name": "LogoRect",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -345,8 +344,7 @@
           "member": "string",
           "name": "LogoUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -355,8 +353,7 @@
           "member": "string",
           "name": "LogoImage",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -1,6 +1,6 @@
-**Example 1: 获取入侵防御按钮列表**
+**Example 1: 入侵防御开关相关**
 
-
+接口返回常见入侵防御开关接口
 
 Input: 
 
@@ -11,14 +11,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "",
+        "BasicRuleSwitch": 0,
+        "BaselineAllSwitch": 0,
+        "TiSwitch": 0,
+        "VirtualPatchSwitch": 0,
+        "HistoryOpen": 0,
         "ReturnCode": 0,
-        "ReturnMsg": "success",
-        "BasicRuleSwitch": 1,
-        "BaselineAllSwitch": 1,
-        "VirtualPatchSwitch": 1,
-        "TiSwitch": 1,
-        "HistoryOpen": 1
+        "ReturnMsg": "abc",
+        "RequestId": "abc"
     }
 }
 ```

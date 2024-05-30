@@ -35,8 +35,8 @@
     "BindDeviceResource": [
       {
         "document": "修改资产绑定的堡垒机服务",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"DeviceIdSet\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDeviceResource\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-fphjn2p3\",\n    \"DeviceIdSet\": [\n        5186\n    ],\n    \"DomainId\": \"net-4sovwr11w7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfsadf-sdfasd-sdfsad-sdf2222\"\n    }\n}",
         "title": "修改资产绑定的堡垒机服务"
       }
     ],
@@ -382,7 +382,7 @@
       {
         "document": "修改资产信息",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDevice\n<公共请求参数>\n\n{\n    \"GroupIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"Port\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ba7270b-0596-4700-870a-2602aa0014f9\"\n    }\n}",
         "title": "修改资产信息"
       }
     ],

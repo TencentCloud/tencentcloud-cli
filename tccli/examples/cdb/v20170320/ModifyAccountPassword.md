@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdb ModifyAccountPassword --cli-unfold-argument  \
-    --InstanceId xx \
-    --NewPassword xx \
-    --Accounts.0.Host xx \
-    --Accounts.0.User xx
+    --InstanceId cdb-xxxx \
+    --NewPassword your_new_password \
+    --Accounts.0.Host % \
+    --Accounts.0.User user1
 ```
 
 Output: 

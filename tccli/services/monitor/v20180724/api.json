@@ -8378,7 +8378,7 @@
           "example": "无",
           "member": "GrafanaInstanceInfo",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8388,7 +8388,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8398,7 +8398,7 @@
           "example": "无",
           "member": "GrafanaInstanceInfo",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11129,6 +11129,7 @@
           "example": "prom-xxx",
           "member": "string",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

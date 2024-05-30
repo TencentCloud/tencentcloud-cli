@@ -7,10 +7,10 @@ Input:
 ```
 tccli lke SaveDoc --cli-unfold-argument  \
     --BotBizId 1727231073371148288 \
-    --FileName jkadslfjalkdfjaklsdfla.docx \
+    --FileName 测试.docx \
     --FileType docx \
-    --CosUrl /corp/137/doc/jkadslfjalkdfjaklsdfla.docx \
-    --ETag f679b6029cba26d65ef93c4e174b59d8 \
+    --CosUrl /corp/23432432/233432/doc/zeSOHIBjwcWoEmlMMXOp-1796022574489010176.docx \
+    --ETag "58e88ad7665f11c4f66eba0eada383a5" \
     --CosHash xxxxxxxxx \
     --Size 643000 \
     --Source 1 \

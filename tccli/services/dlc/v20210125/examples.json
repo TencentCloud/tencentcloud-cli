@@ -500,7 +500,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-456\",\n        \"LakeFsInfos\": [\n            {\n                \"Name\": \"my-bkt\",\n                \"Type\": \"chdfs\",\n                \"SpaceUsedSize\": \"1024\",\n                \"CreateTimeStamp\": \"1\"\n            }\n        ]\n    }\n}",
         "title": "示例一"
       }
     ],

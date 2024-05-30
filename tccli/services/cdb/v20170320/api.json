@@ -1162,7 +1162,7 @@
         {
           "disabled": false,
           "document": "新账户的名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "User",
           "required": true,
@@ -1171,7 +1171,7 @@
         {
           "disabled": false,
           "document": "新账户的域名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -4413,7 +4413,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5375,7 +5375,7 @@
           "example": "be9f64a6-fa652dc6-f5c878b6-a6a50746",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14355,7 +14355,7 @@
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

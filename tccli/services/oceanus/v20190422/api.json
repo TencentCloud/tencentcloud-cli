@@ -831,6 +831,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "2 独享集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子eks集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubEks",
+          "name": "SubEks",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上级集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentSerialId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -844,7 +874,7 @@
           "example": "cluster-sdhd0vtz",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -854,7 +884,7 @@
           "example": "MyClusterName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -864,7 +894,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -874,7 +904,7 @@
           "example": "ap-beijing-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -884,7 +914,7 @@
           "example": "3435324",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -894,7 +924,7 @@
           "example": "123456",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -904,7 +934,7 @@
           "example": "123456",
           "member": "string",
           "name": "CreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -914,7 +944,7 @@
           "example": "2",
           "member": "int64",
           "name": "CuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -924,7 +954,7 @@
           "example": "2",
           "member": "int64",
           "name": "CuMem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -934,7 +964,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -944,7 +974,7 @@
           "example": "description",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -954,7 +984,7 @@
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -964,7 +994,7 @@
           "example": "xxxx-xx-xx-xxxx",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -974,7 +1004,7 @@
           "example": "remark",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -984,7 +1014,7 @@
           "example": "2",
           "member": "int64",
           "name": "NetEnvironmentType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -994,7 +1024,7 @@
           "example": "1",
           "member": "int64",
           "name": "FreeCuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1004,7 +1034,7 @@
           "example": "2.5",
           "member": "float",
           "name": "FreeCu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1014,7 +1044,7 @@
           "example": "2.5",
           "member": "float",
           "name": "RunningCu",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1024,9 +1054,19 @@
           "example": "0",
           "member": "int64",
           "name": "PayMode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "SubEks",
+          "name": "SubEks",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6951,6 +6991,67 @@
         }
       ],
       "type": "object"
+    },
+    "SubEks": {
+      "document": "混合计费",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cu数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "CuNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行cu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "RunningCu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SubFolderInfo": {
       "document": "子目录信息",

@@ -163,8 +163,8 @@
     "DeleteCustomRule": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=DeleteCustomRule\r\n&Domain=www.test.com\r\n&Edition=clb-waf\r\n&RuleId=501\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26b0ac84-cb08-49d2-9899-4206d1849a41\"\n    }\n}",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteCustomRule\n&Domain=www.test.com\n&Edition=clb-waf\n&RuleId=501\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26b0ac84-cb08-49d2-9899-4206d1849a41\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "删除指定的自定义规则"
       }
     ],
@@ -396,7 +396,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"2\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleList\": [\n            {\n                \"ActionType\": \"abc\",\n                \"Bypass\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"Name\": \"abc\",\n                \"Redirect\": \"abc\",\n                \"RuleId\": \"abc\",\n                \"SortId\": \"abc\",\n                \"Status\": \"abc\",\n                \"Strategies\": [\n                    {\n                        \"Field\": \"abc\",\n                        \"CompareFunc\": \"abc\",\n                        \"Content\": \"abc\",\n                        \"Arg\": \"abc\"\n                    }\n                ],\n                \"EventId\": \"abc\",\n                \"ModifyTime\": \"abc\",\n                \"ValidStatus\": 0,\n                \"Source\": \"abc\",\n                \"JobType\": \"abc\",\n                \"JobDateTime\": {\n                    \"Timed\": [\n                        {\n                            \"StartDateTime\": 1,\n                            \"EndDateTime\": 1\n                        }\n                    ],\n                    \"Cron\": [\n                        {\n                            \"Days\": [\n                                1\n                            ],\n                            \"WDays\": [\n                                1\n                            ],\n                            \"StartTime\": \"abc\",\n                            \"EndTime\": \"abc\"\n                        }\n                    ],\n                    \"TimeTZone\": \"abc\"\n                },\n                \"CronType\": \"abc\",\n                \"Label\": \"abc\",\n                \"PageId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取访问控制规则列表"
       }
     ],
@@ -871,8 +871,8 @@
     "ModifyCustomRule": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRuleStatus\r\n&Edition=clb-waf\r\n&Domain=hfut.qcloud.com\r\n&RuleId=17958569\r\n&RuleName=test\r\n&RuleAction=1\r\n&Redirect=/\r\n&Bypass=geoip,cc,owasp,ai,antileakage\r\n&SortId=100\r\n&ExpireTime=0\r\n&Strategies.0.Field=IP\r\n&Strategies.0.CompareFunc=ipmatch\r\n&Strategies.0.Content=1.1.1.2\r\n&Strategies.0.Arg=\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a713f4cf-51ef-437f-8467-d4fdec061b78\"\n    }\n}",
+        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRule\n&Edition=clb-waf\n&Domain=hfut.qcloud.com\n&RuleId=17958569\n&RuleName=test\n&RuleAction=1\n&Redirect=/\n&Bypass=geoip,cc,owasp,ai,antileakage\n&SortId=100\n&ExpireTime=0\n&Strategies.0.Field=IP\n&Strategies.0.CompareFunc=ipmatch\n&Strategies.0.Content=1.1.1.2\n&Strategies.0.Arg=\"\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a713f4cf-51ef-437f-8467-d4fdec061b78\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "编辑自定义规则"
       }
     ],

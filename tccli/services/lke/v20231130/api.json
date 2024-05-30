@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateApp": {
-      "document": "创建只是引擎应用，包括：知识管理应用、知识摘要应用、标签提取应用。",
+      "document": "创建知识引擎应用。",
       "input": "CreateAppRequest",
       "name": "创建应用",
       "output": "CreateAppResponse",
@@ -981,7 +981,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人头像",
+          "document": "应用头像",
           "example": "无",
           "member": "string",
           "name": "Avatar",
@@ -992,7 +992,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人描述",
+          "document": "应用描述",
           "example": "无",
           "member": "string",
           "name": "Desc",
@@ -8748,8 +8748,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
-          "example": "无",
+          "document": "应用ID",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -8758,7 +8758,7 @@
         {
           "disabled": false,
           "document": "文件名",
-          "example": "无",
+          "example": "测试.docx",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -8775,8 +8775,8 @@
         },
         {
           "disabled": false,
-          "document": "cos路径",
-          "example": "无",
+          "document": "平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致",
+          "example": "/corp/23432432/233432/doc/zeSOHIBjwcWoEmlMMXOp-1796022574489010176.docx",
           "member": "string",
           "name": "CosUrl",
           "required": true,
@@ -8785,7 +8785,7 @@
         {
           "disabled": false,
           "document": "ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化",
-          "example": "无",
+          "example": "\\\"58e88ad7665f11c4f66eba0eada383a5\\\"",
           "member": "string",
           "name": "ETag",
           "required": true,
@@ -8794,7 +8794,7 @@
         {
           "disabled": false,
           "document": "cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性",
-          "example": "无",
+          "example": "xxxxxxxxx",
           "member": "string",
           "name": "CosHash",
           "required": true,
@@ -8803,7 +8803,7 @@
         {
           "disabled": false,
           "document": "文件大小",
-          "example": "无",
+          "example": "643000",
           "member": "string",
           "name": "Size",
           "required": true,
