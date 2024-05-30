@@ -23,7 +23,6 @@ tccli teo ModifyRule --cli-unfold-argument  \
     --Rules.0.Actions.2.RewriteAction.Parameters.1.Values World \
     --Rules.0.Actions.2.RewriteAction.Parameters.2.Action del \
     --Rules.0.Actions.2.RewriteAction.Parameters.2.Name Foo2 \
-    --Rules.0.Actions.2.RewriteAction.Parameters.2.Values  \
     --Rules.0.Conditions.0.Conditions.0.Operator equal \
     --Rules.0.Conditions.0.Conditions.0.Target host \
     --Rules.0.Conditions.0.Conditions.0.Values www.shawndai.cn \

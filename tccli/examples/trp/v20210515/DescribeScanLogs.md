@@ -13,26 +13,60 @@ Output:
 ```
 {
     "Response": {
-        "Products": [],
-        "ScanLogs": [
+        "Products": [
             {
-                "LogId": 2,
+                "LogId": 0,
                 "Openid": "abc",
-                "Nickname": "demo",
-                "CreateTime": "2021-12-06T07:13:35.000Z",
-                "Code": "https://anxin.m.qq.com/qr/eqdmnz70000243813742005003",
-                "CorpId": 10000,
-                "MerchantId": "",
-                "ProductId": "",
-                "Ip": "127.0.0.1",
-                "Country": "",
-                "Province": "广东",
-                "City": "广州",
-                "District": ""
+                "Nickname": "abc",
+                "CreateTime": "abc",
+                "Code": "abc",
+                "CorpId": 0,
+                "MerchantId": "abc",
+                "ProductId": "abc",
+                "Ip": "abc",
+                "Country": "abc",
+                "Province": "abc",
+                "City": "abc",
+                "District": "abc",
+                "Unionid": "abc",
+                "First": 0,
+                "BatchId": "abc",
+                "Type": 0,
+                "MerchantName": "abc",
+                "ProductName": "abc",
+                "ProductLogo": "abc",
+                "Status": 0,
+                "Verify": 0
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "ee4f0117-953f-4a5b-9a3f-6a1831ac3c0a"
+        "TotalCount": 0,
+        "ScanLogs": [
+            {
+                "LogId": 0,
+                "Openid": "abc",
+                "Nickname": "abc",
+                "CreateTime": "abc",
+                "Code": "abc",
+                "CorpId": 0,
+                "MerchantId": "abc",
+                "ProductId": "abc",
+                "Ip": "abc",
+                "Country": "abc",
+                "Province": "abc",
+                "City": "abc",
+                "District": "abc",
+                "Unionid": "abc",
+                "First": 0,
+                "BatchId": "abc",
+                "Type": 0,
+                "MerchantName": "abc",
+                "ProductName": "abc",
+                "ProductLogo": "abc",
+                "Status": 0,
+                "Verify": 0
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

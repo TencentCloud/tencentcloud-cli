@@ -12,7 +12,7 @@ tccli teo CreateRule --cli-unfold-argument  \
     --Rules.0.Actions.0.NormalAction.Parameters.0.Values on \
     --Rules.0.Actions.1.CodeAction.Action StatusCodeCache \
     --Rules.0.Actions.1.CodeAction.Parameters.0.Name CacheTime \
-    --Rules.0.Actions.1.CodeAction.Parameters.0.StatusCode 200 \
+    --Rules.0.Actions.1.CodeAction.Parameters.0.StatusCode 400 \
     --Rules.0.Actions.1.CodeAction.Parameters.0.Values 20 \
     --Rules.0.Actions.2.RewriteAction.Action ResponseHeader \
     --Rules.0.Actions.2.RewriteAction.Parameters.0.Action set \

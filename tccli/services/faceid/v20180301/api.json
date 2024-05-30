@@ -1920,7 +1920,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：\n\n0：明文，不加密\n1:   使用MD5加密\n2:   使用SHA256",
+          "document": "敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：\n\n0：明文，不加密\n1：使用MD5加密\n2：使用SHA256\n3：使用SM3加密",
           "example": "1",
           "member": "string",
           "name": "EncryptionMode",
@@ -1939,7 +1939,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1949,7 +1949,7 @@
           "example": "认证通过",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1959,7 +1959,7 @@
           "example": "运营商",
           "member": "string",
           "name": "ISP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -399,6 +399,13 @@
       "output": "ModifyDomainStatusResponse",
       "status": "online"
     },
+    "ModifyDomainToGroup": {
+      "document": "修改域名所属分组",
+      "input": "ModifyDomainToGroupRequest",
+      "name": "修改域名所属分组",
+      "output": "ModifyDomainToGroupResponse",
+      "status": "online"
+    },
     "ModifyDomainUnlock": {
       "document": "域名锁定解锁",
       "input": "ModifyDomainUnlockRequest",
@@ -6399,6 +6406,51 @@
     },
     "ModifyDomainStatusResponse": {
       "document": "ModifyDomainStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainToGroupRequest": {
+      "document": "ModifyDomainToGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "myfm.cc",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名分组ID",
+          "example": "32424",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID,域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain",
+          "example": "14535",
+          "member": "int64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainToGroupResponse": {
+      "document": "ModifyDomainToGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

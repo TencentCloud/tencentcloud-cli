@@ -474,6 +474,14 @@
         "title": "修改域名状态"
       }
     ],
+    "ModifyDomainToGroup": [
+      {
+        "document": " ",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainToGroup\n<公共请求参数>\n\n{\n    \"Domain\": \"myfm.cc\",\n    \"GroupId\": 176767\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "修改域名所属分组"
+      }
+    ],
     "ModifyDomainUnlock": [
       {
         "document": " ",

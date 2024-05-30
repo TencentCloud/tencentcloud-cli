@@ -6871,7 +6871,7 @@
         },
         {
           "disabled": false,
-          "document": "日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。",
+          "document": "日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
           "name": "BTime",
@@ -6880,7 +6880,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。",
+          "document": "日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。",
           "example": "528C1318606EFEB8-1A7",
           "member": "string",
           "name": "PkgId",
@@ -6889,7 +6889,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包内一条日志的序号。\nSearchLog接口返回信息中Results结构中的PkgLogId。",
+          "document": "日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。",
           "example": "65536",
           "member": "int64",
           "name": "PkgLogId",
@@ -6911,6 +6911,33 @@
           "example": "10",
           "member": "int64",
           "name": "NextLogs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索语句，对日志上下文进行过滤，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a>构成，不支持SQL语句",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上下文检索的开始时间，单位：毫秒级时间戳\n注意：\n- From为空时，表示上下文检索的开始时间不做限制\n- From和To非空时，From < To\n- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域",
+          "example": "1716532075000",
+          "member": "uint64",
+          "name": "From",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "上下文检索的结束时间，单位：毫秒级时间戳。\n注意：\n- To为空时，表示上下文检索的结束时间不做限制\n- From和To非空时，From < To\n- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域",
+          "example": "1716532085000",
+          "member": "uint64",
+          "name": "To",
           "required": false,
           "type": "int"
         }

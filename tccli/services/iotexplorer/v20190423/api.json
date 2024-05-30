@@ -7820,7 +7820,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）",
+          "document": "过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）",
           "example": "1710487898",
           "member": "uint64",
           "name": "ExpireTime",
@@ -7845,7 +7845,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间 UNIX 时间戳",
+          "document": "过期时间 UNIX 时间戳（最大不超过文件所属任务的过期时间）",
           "example": "1710487898",
           "member": "uint64",
           "name": "ExpireTime",

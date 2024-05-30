@@ -858,7 +858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId\t获取。",
           "example": "lhins-k31c771o",
           "member": "string",
           "name": "InstanceId",
@@ -867,7 +867,7 @@
         },
         {
           "disabled": false,
-          "document": "快照 ID。",
+          "document": "快照 ID。可通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/1207/54388) 接口返回值中的 SnapshotId\t\t获取。",
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
@@ -2043,7 +2043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要创建快照的实例 ID。",
+          "document": "需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId\t获取。",
           "example": "lhins-k31c771o",
           "member": "string",
           "name": "InstanceId",
@@ -2071,6 +2071,7 @@
           "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4147,7 +4148,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表。",
+          "document": "实例ID列表。每次请求批量实例的上限为 100。\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。",
           "example": "[\"lhins-anxwfvxh\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4166,7 +4167,7 @@
           "example": "无",
           "member": "AttachDetail",
           "name": "AttachDetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4176,7 +4177,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4472,7 +4473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。",
           "example": "lhins-f4s3n38h",
           "member": "string",
           "name": "InstanceId",
@@ -4481,7 +4482,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n可通过<a href=\"https://cloud.tencent.com/document/product/1207/47575\"> DescribeBundles </a>接口返回值中的 BundleId 获取。\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4518,7 +4519,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4528,7 +4529,7 @@
           "example": "无",
           "member": "ModifyBundle",
           "name": "ModifyBundleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4759,7 +4760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询快照的 ID 列表。\n参数不支持同时指定 SnapshotIds 和 Filters。",
+          "document": "要查询快照的 ID 列表。每次请求批量快照的上限为 100。 \n可通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/1207/54388) 接口返回值中的 SnapshotId\t\t获取。\n参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -4768,7 +4769,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
+          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotId 获取。\n\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/66093\">DescribeDisks</a> 接口返回值中的 DiskId 获取。\n\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotName 获取。\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4805,7 +4806,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4815,7 +4816,7 @@
           "example": "无",
           "member": "Snapshot",
           "name": "SnapshotSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8557,7 +8558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。",
+          "document": "防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 接口返回值中的 TemplateId 获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -8566,7 +8567,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。",
+          "document": "防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 接口返回值中的 TemplateRuleId 获取。",
           "example": "lhftr-xxxxxxxxxx",
           "member": "string",
           "name": "TemplateRuleId",
@@ -8684,7 +8685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID。",
+          "document": "防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 接口返回值中的 TemplateId\t获取。",
           "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
@@ -8693,7 +8694,7 @@
         },
         {
           "disabled": false,
-          "document": "重置后的防火墙模板规则列表。",
+          "document": "重置后的防火墙模板规则列表。每次请求批量防火墙规则的上限为 100。",
           "example": "无",
           "member": "FirewallRule",
           "name": "TemplateRules",
@@ -8820,7 +8821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
+          "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。",
           "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",

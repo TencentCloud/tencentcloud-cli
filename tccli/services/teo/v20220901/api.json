@@ -14062,30 +14062,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行的功能。",
-          "example": "[]",
-          "member": "Action",
-          "name": "Actions",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "执行功能判断条件。\n注意：满足该数组内任意一项条件，功能即可执行。",
           "example": "[]",
           "member": "RuleAndConditions",
           "name": "Conditions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "嵌套规则。",
+          "document": "执行的功能。注意：Actions 和 SubRules 不可都为空",
+          "example": "[]",
+          "member": "Action",
+          "name": "Actions",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嵌套规则。注意：SubRules 和 Actions 不可都为空",
           "example": "[]",
           "member": "SubRuleItem",
           "name": "SubRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false

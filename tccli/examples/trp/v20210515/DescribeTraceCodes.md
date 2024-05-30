@@ -17,21 +17,42 @@ Output:
     "Response": {
         "TraceCodes": [
             {
-                "Code": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003",
-                "CorpId": 10000,
-                "PackId": "z1vt4ma2jpladh362o",
-                "BatchId": "xfetmgoiky2nms6nk8",
-                "MerchantId": "eqdmnz7020bmtvi9",
-                "ProductId": "85tfp1sn78r9m1568i",
-                "Status": 0,
-                "CreateTime": "2021-12-01T09:04:50.000Z",
-                "UpdateTime": "2021-12-03T07:50:43.000Z",
-                "MerchantName": "demo",
-                "ProductName": "demo5"
+                "Code": "abc",
+                "CorpId": 1,
+                "PackId": "abc",
+                "BatchId": "abc",
+                "MerchantId": "abc",
+                "ProductId": "abc",
+                "Status": 1,
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "MerchantName": "abc",
+                "ProductName": "abc",
+                "AgentId": 1,
+                "Level": 1,
+                "PackSpec": [
+                    {
+                        "Level": 1,
+                        "Rate": 1,
+                        "Amount": 1,
+                        "CustomId": "abc",
+                        "CodeParts": [
+                            {
+                                "Name": "abc",
+                                "Type": "abc",
+                                "Value": "abc",
+                                "Length": 1,
+                                "Ext": "abc"
+                            }
+                        ],
+                        "Unit": "abc",
+                        "SceneCode": 0
+                    }
+                ]
             }
         ],
-        "TotalCount": 4,
-        "RequestId": "310c65d3-9be0-4d65-892c-fa09e9b69d25"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```

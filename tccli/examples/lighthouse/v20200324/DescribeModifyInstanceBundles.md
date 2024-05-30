@@ -13,115 +13,48 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "ModifyBundleSet": [
             {
-                "Bundle": {
-                    "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small2_500",
-                    "BundleSalesState": "AVAILABLE",
-                    "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
-                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "InternetMaxBandwidthOut": 3,
-                    "Memory": 2,
-                    "MonthlyTraffic": 500,
-                    "Price": {
-                        "InstancePrice": {
-                            "Discount": 100,
-                            "DiscountPrice": 90,
-                            "OriginalBundlePrice": 90,
-                            "OriginalPrice": 90
-                        }
-                    },
-                    "SupportLinuxUnixPlatform": true,
-                    "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
-                },
-                "ModifyBundleState": "UNAVAILABLE",
-                "NotSupportModifyMessage": "",
                 "ModifyPrice": {
                     "InstancePrice": {
-                        "Discount": 100,
-                        "DiscountPrice": 19.73,
-                        "OriginalBundlePrice": 90,
-                        "OriginalPrice": 19.73
+                        "OriginalBundlePrice": 0,
+                        "OriginalPrice": 0,
+                        "Discount": 0,
+                        "DiscountPrice": 0,
+                        "Currency": "abc"
                     }
-                }
-            },
-            {
+                },
+                "ModifyBundleState": "abc",
                 "Bundle": {
-                    "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small1_500",
-                    "BundleSalesState": "AVAILABLE",
-                    "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
-                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "InternetMaxBandwidthOut": 3,
-                    "Memory": 1,
-                    "MonthlyTraffic": 500,
-                    "Price": {
-                        "InstancePrice": {
-                            "Discount": 100,
-                            "DiscountPrice": 90,
-                            "OriginalBundlePrice": 90,
-                            "OriginalPrice": 90
-                        }
-                    },
+                    "BundleId": "abc",
+                    "Memory": 0,
+                    "SystemDiskType": "abc",
+                    "SystemDiskSize": 0,
+                    "MonthlyTraffic": 0,
                     "SupportLinuxUnixPlatform": true,
                     "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
-                },
-                "ModifyBundleState": "UNAVAILABLE",
-                "NotSupportModifyMessage": "",
-                "ModifyPrice": {
-                    "InstancePrice": {
-                        "Discount": 100,
-                        "DiscountPrice": 19.73,
-                        "OriginalBundlePrice": 90,
-                        "OriginalPrice": 19.73
-                    }
-                }
-            },
-            {
-                "Bundle": {
-                    "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small2_1000",
-                    "BundleSalesState": "AVAILABLE",
-                    "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
-                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "InternetMaxBandwidthOut": 5,
-                    "Memory": 2,
-                    "MonthlyTraffic": 1000,
                     "Price": {
                         "InstancePrice": {
-                            "Discount": 100,
-                            "DiscountPrice": 140,
-                            "OriginalBundlePrice": 140,
-                            "OriginalPrice": 140
+                            "OriginalBundlePrice": 0,
+                            "OriginalPrice": 0,
+                            "Discount": 0,
+                            "DiscountPrice": 0,
+                            "Currency": "abc"
                         }
                     },
-                    "SupportLinuxUnixPlatform": true,
-                    "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
+                    "CPU": 0,
+                    "InternetMaxBandwidthOut": 1,
+                    "InternetChargeType": "abc",
+                    "BundleSalesState": "abc",
+                    "BundleType": "abc",
+                    "BundleTypeDescription": "abc",
+                    "BundleDisplayLabel": "abc"
                 },
-                "ModifyBundleState": "UNAVAILABLE",
-                "NotSupportModifyMessage": "",
-                "ModifyPrice": {
-                    "InstancePrice": {
-                        "Discount": 100,
-                        "DiscountPrice": 52.6,
-                        "OriginalBundlePrice": 140,
-                        "OriginalPrice": 52.6
-                    }
-                }
+                "NotSupportModifyMessage": "abc"
             }
         ],
-        "RequestId": "f1bb6c99-e704-441e-a405-a594cb55c989",
-        "TotalCount": 3
+        "RequestId": "abc"
     }
 }
 ```

@@ -1001,6 +1001,56 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SceneCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "码规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CodeRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UsedAmount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SerialStart",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束流水号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SerialEnd",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1349,6 +1399,15 @@
           "name": "RelateType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景值",
+          "example": "1",
+          "member": "int64",
+          "name": "SceneCode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1592,6 +1651,15 @@
           "example": "1",
           "member": "int64",
           "name": "RelateType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景值",
+          "example": "1",
+          "member": "int64",
+          "name": "SceneCode",
           "required": false,
           "type": "int"
         }
@@ -2961,6 +3029,24 @@
           "name": "ResId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用场景",
+          "example": "无",
+          "member": "int64",
+          "name": "SceneCode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "码包状态",
+          "example": "done",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3887,6 +3973,7 @@
           "example": "无",
           "member": "ScanLog",
           "name": "Products",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3896,6 +3983,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3905,6 +3993,7 @@
           "example": "无",
           "member": "ScanLog",
           "name": "ScanLogs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4157,7 +4246,7 @@
           "example": "无",
           "member": "TraceCode",
           "name": "TraceCodes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4167,7 +4256,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4440,7 +4529,7 @@
           "example": "1000",
           "member": "int64",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4450,9 +4539,19 @@
           "example": "init",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5380,6 +5479,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5390,6 +5490,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Rate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5400,6 +5501,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Amount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5410,6 +5512,7 @@
           "example": "xxxid",
           "member": "string",
           "name": "CustomId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5420,8 +5523,31 @@
           "example": "无",
           "member": "CodePart",
           "name": "CodeParts",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包装单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "场景值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SceneCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6102,7 +6228,7 @@
           "example": "1000",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6112,7 +6238,7 @@
           "example": "abc",
           "member": "string",
           "name": "Openid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6122,7 +6248,7 @@
           "example": "aba",
           "member": "string",
           "name": "Nickname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6132,7 +6258,7 @@
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6142,7 +6268,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6152,7 +6278,7 @@
           "example": "10000",
           "member": "int64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6162,7 +6288,7 @@
           "example": "无",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6172,7 +6298,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6182,7 +6308,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6192,7 +6318,7 @@
           "example": "无",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6202,7 +6328,7 @@
           "example": "广东省",
           "member": "string",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6212,7 +6338,7 @@
           "example": "广州市",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6222,7 +6348,7 @@
           "example": "天河区",
           "member": "string",
           "name": "District",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6232,7 +6358,7 @@
           "example": "无",
           "member": "string",
           "name": "Unionid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6242,7 +6368,7 @@
           "example": "0",
           "member": "int64",
           "name": "First",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6252,7 +6378,7 @@
           "example": "无",
           "member": "string",
           "name": "BatchId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6262,7 +6388,7 @@
           "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6272,7 +6398,7 @@
           "example": "无",
           "member": "string",
           "name": "MerchantName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6282,9 +6408,39 @@
           "example": "无",
           "member": "string",
           "name": "ProductName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品Logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductLogo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险状态\n0: 未知, 1:通过, 2:失败/风险, 3:存疑",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启验证\n0:否, 1:是",
+          "example": "0",
+          "member": "int64",
+          "name": "Verify",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6414,7 +6570,7 @@
           "example": "https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6424,7 +6580,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6434,7 +6590,7 @@
           "example": "z1vt4ma2jpladh362o",
           "member": "string",
           "name": "PackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6444,7 +6600,7 @@
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6454,7 +6610,7 @@
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6464,7 +6620,7 @@
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6474,7 +6630,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6484,7 +6640,7 @@
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6494,7 +6650,7 @@
           "example": "2021-12-01T09:04:50.000Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6504,7 +6660,7 @@
           "example": "商户名称",
           "member": "string",
           "name": "MerchantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6514,7 +6670,7 @@
           "example": "产品名称",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6524,7 +6680,7 @@
           "example": "100",
           "member": "uint64",
           "name": "AgentId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6534,9 +6690,39 @@
           "example": "0",
           "member": "uint64",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "码层级详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PackSpec",
+          "name": "PackSpec",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "场景码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SceneCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流水码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "SerialCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

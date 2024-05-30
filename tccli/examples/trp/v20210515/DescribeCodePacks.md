@@ -50,9 +50,15 @@ Output:
                                 "Length": 1,
                                 "Ext": "abc"
                             }
-                        ]
+                        ],
+                        "Unit": "abc",
+                        "SceneCode": 0
                     }
-                ]
+                ],
+                "ProductName": "abc",
+                "ProductSpecification": "abc",
+                "ProductId": "abc",
+                "RelateType": 0
             }
         ],
         "TotalCount": 1,

@@ -1,4 +1,4 @@
-**Example 1: 查看容器托管的所有服务**
+**Example 1: 查看安全网关**
 
 
 
@@ -13,33 +13,40 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "Gateways": [
             {
-                "Status": "xx",
-                "L5Addr": "xx",
-                "EnvId": "xx",
-                "GatewayName": "xx",
+                "AccessDomain": "",
                 "AllowUncertified": 0,
+                "AppId": 0,
+                "AutoRenewFlag": 1,
+                "CanDowngrade": false,
+                "CanRenew": true,
+                "CreateTime": "2023-11-23 10:27:31",
+                "EnvId": "xxx",
+                "ExpireTime": "2024-12-23 23:59:59",
+                "GatewayDesc": "",
+                "GatewayId": "xxx",
+                "GatewayName": "xxx",
+                "GatewayType": "wechat",
+                "IsolateTime": "0000-00-00 00:00:00",
+                "L5Addr": "",
+                "LongAccessId": "",
+                "PackageId": 2005,
+                "PackageVersion": "testV2",
+                "Region": "ap-shanghai",
+                "Status": "success",
                 "SubnetIds": [
-                    "xx"
+                    "subnet-xxxx"
                 ],
-                "UpdateTime": "xx",
-                "GatewayDesc": "xx",
-                "Uin": "xx",
-                "ExpireTime": "xx",
-                "GatewayType": "xx",
-                "IsolateTime": "xx",
-                "VpcId": "xx",
-                "PackageId": 1,
-                "AppId": 1,
-                "GatewayId": "xx",
-                "PackageVersion": "xx",
-                "CreateTime": "xx",
-                "Region": "xx"
+                "Uin": "100008561789",
+                "UpdateTime": "2024-04-25 10:50:13",
+                "VersionNumLimit": 3,
+                "VpcId": "xxxx",
+                "WxAppId": "xxxx"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "",
+        "TotalCount": 1
     }
 }
 ```
