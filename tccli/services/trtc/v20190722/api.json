@@ -29,9 +29,9 @@
       "status": "online"
     },
     "DescribeAITranscription": {
-      "document": "查询AI转录状态",
+      "document": "查询AI转录任务状态。",
       "input": "DescribeAITranscriptionRequest",
-      "name": "查询AI转录状态",
+      "name": "查询AI转录任务状态",
       "output": "DescribeAITranscriptionResponse",
       "status": "online"
     },
@@ -253,9 +253,9 @@
       "status": "online"
     },
     "StartAITranscription": {
-      "document": "这个接口调用后，后台会启动机器人，实时进行语音识别并下发字幕和会议记录。",
+      "document": "这个接口调用后，后台会启动转录机器人，实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端实时下发字幕和会议记录有两种方式，通过IMAdminUserId和IMAdminUserSig字段控制：\n- 如果填写IMAdminUserId和IMAdminUserSig，服务端会调用IM的[发送群组消息](https://cloud.tencent.com/document/product/269/1629)API来向端上实时下发消息。客户端只需监听群组消息的回调即可，比如[web端回调](https://cloud.tencent.com/document/product/269/75319)。\n- 如果不填写IMAdminUserId和IMAdminUserSig，服务端使用TRTC自定义消息通道下发消息，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。\n\n服务端实时下发的消息是JSON字符串，实时字幕具体格式如下：\n`{\n    \"type\": \"subtitle\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"translation_text\": \"xxx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是subtitle，表示这是实时字幕消息。\n- userid表示是哪个用户说的话。\n- text是语音识别出的文本。\n- translation_text是text翻译后的文本，如果不启用翻译，则是空字符串。\n- start_time和end_time表示该字幕消息从任务开启后的开始和结束时间。\n\n转录消息具体格式如下：\n`{\n    \"type\": \"transcription\",\n    \"userid\": \"xxx\",\n    \"text\": \"xxx\",\n    \"translation_text\": \"xx\",\n    \"start_time\": \"00:00:02\",\n    \"end_time\": \"00:00:05\"\n}`\n字段作用如下：\n- type是transcription，表示这是转录消息。\n- 其余字段同实时字幕消息。\n\n转录消息和实时字幕消息的区别是，转录消息是完整的一句话，实时字幕消息则是这一句话的中间阶段。\n假如有一句完整的话，“今天天气怎么样？”，那么服务的下发消息的顺序可能是这样：\n- 字幕消息，“今天”\n- 字幕消息，“今天天气”\n- 字幕消息，“今天天气怎么样”\n- 转录消息，“今天天气怎么样？”",
       "input": "StartAITranscriptionRequest",
-      "name": "开始AI转录",
+      "name": "开始AI转录任务",
       "output": "StartAITranscriptionResponse",
       "status": "online"
     },
@@ -295,9 +295,9 @@
       "status": "online"
     },
     "StopAITranscription": {
-      "document": "停止AI转录",
+      "document": "停止AI转录任务。",
       "input": "StopAITranscriptionRequest",
-      "name": "停止AI转录",
+      "name": "停止AI转录任务",
       "output": "StopAITranscriptionResponse",
       "status": "online"
     },
@@ -337,7 +337,7 @@
       "status": "online"
     },
     "SummarizeTranscription": {
-      "document": "对转录的文本进行总结",
+      "document": "对转录的文本进行总结。",
       "input": "SummarizeTranscriptionRequest",
       "name": "总结转录文本",
       "output": "SummarizeTranscriptionResponse",
@@ -977,11 +977,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "唯一标识AI转录任务。",
+          "document": "查询任务状态，不使用时传入空字符串。\n有两种查询方式：\n1、只填写TaskId，这种方式使用TaskId来查询任务\n2、TaskId为空字符串，填写SdkAppId和SessionId，这种方式不需要使用TaskId查询任务",
           "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的SdkAppId，和SessionId配合使用。",
+          "example": "无",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启转录任务时传入的SessionId，和SdkAppId配合使用。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -992,7 +1010,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间。",
+          "document": "任务开始时间。",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -1002,11 +1020,31 @@
         },
         {
           "disabled": false,
-          "document": "转录任务状态。",
+          "document": "转录任务状态。\n有4个值：\n1、Idle表示任务未开始\n2、Preparing表示任务准备中\n3、InProgress表示任务正在运行\n4、Stopped表示任务已停止，正在清理资源中",
           "example": "无",
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识一次任务。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启转录任务时填写的SessionId，如果没写则不返回。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4688,8 +4726,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的语言，目前支持语言如下：\n    Chinese = \"zh\"\n    Chinese_TW = \"zh-TW\"\n    English = \"en\"\n    Vietnamese = \"vi\"\n    Japanese = \"ja\"\n    Korean = \"ko\"\n    Indonesia = \"id\"\n    Thai = \"th\"\n    Portuguese = \"pt\"\n    Turkish = \"tr\"\n    Arabic = \"ar\"\n    Spanish = \"es\"\n    Hindi = \"hi\"\n    French = \"fr\"",
-          "example": "无",
+          "document": "语音识别支持的语言，默认是\"zh\"。目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\ntencent asr不支持\"it\"和\"ru\"，google asr全都支持。",
+          "example": "zh",
           "member": "string",
           "name": "Language",
           "required": false,
@@ -4697,8 +4735,17 @@
         },
         {
           "disabled": false,
-          "document": "选填，如果填写，则会启用翻译，不填则忽略。支持语言同Language字段。",
-          "example": "无",
+          "document": "使用的模型，目前支持tencent和google，默认是tencent。",
+          "example": "tencent",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\ngoogle支持上述语言两两之间翻译，tencent只支持部分语言之间翻译。\n\ntencnet目标语言，各源语言的目标语言支持列表如下，冒号左侧是目标语言，右侧是源语言：\n- zh（简体中文）：zh-TW（繁体中文）、en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）\n- zh-TW（繁体中文）：zh（简体中文）、en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）\n- en（英语）：zh（中文）、zh-TW（繁体中文）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）、ar（阿拉伯语）、hi（印地语）\n- ja（日语）：zh（中文）、zh-TW（繁体中文）、en（英语）、ko（韩语）\n- ko（韩语）：zh（中文）、zh-TW（繁体中文）、en（英语）、ja（日语）\n- fr（法语）：zh（中文）、zh-TW（繁体中文）、en（英语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- es（西班牙语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- it（意大利语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- de（德语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- tr（土耳其语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、ru（俄语）、pt（葡萄牙语）\n- ru（俄语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、pt（葡萄牙语）\n- pt（葡萄牙语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）\n- vi（越南语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- id（印尼语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- th（泰语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- ms（马来语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- ar（阿拉伯语）：en（英语）\n- hi（印地语）：en（英语）",
+          "example": "en",
           "member": "string",
           "name": "TranslationLanguage",
           "required": false,
@@ -5300,7 +5347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。",
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。",
           "example": "无",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5309,7 +5356,7 @@
         },
         {
           "disabled": false,
-          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。",
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。",
           "example": "无",
           "member": "string",
           "name": "RoomId",
@@ -5318,12 +5365,21 @@
         },
         {
           "disabled": false,
-          "document": "启动转录机器人和鉴权的参数。",
+          "document": "转录机器人的参数。",
           "example": "无",
           "member": "TranscriptionParams",
           "name": "TranscriptionParams",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "调用方传入的唯一Id，服务端用来去重。\n注意：\n如果传入该参数，服务端优先使用该参数来去重。\n如果不传该参数，服务端的去重策略如下：\n- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务\n- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5336,7 +5392,7 @@
         },
         {
           "disabled": false,
-          "document": "语音识别配置",
+          "document": "语音识别配置。",
           "example": "无",
           "member": "RecognizeConfig",
           "name": "RecognizeConfig",
