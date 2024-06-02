@@ -126,6 +126,13 @@
       "output": "DescribeConsumerGroupListResponse",
       "status": "online"
     },
+    "DescribeFusionInstanceList": {
+      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n4. Version，实例版本查询\n当使用TagFilters查询时，Filters参数失效。",
+      "input": "DescribeFusionInstanceListRequest",
+      "name": "获取4.x和5.0版本的实例列表",
+      "output": "DescribeFusionInstanceListResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -1589,6 +1596,80 @@
           "member": "string",
           "name": "Remark",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFusionInstanceListRequest": {
+      "document": "DescribeFusionInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFusionInstanceListResponse": {
+      "document": "DescribeFusionInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "无",
+          "member": "FusionInstanceItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3422,6 +3503,222 @@
       ],
       "usage": "in"
     },
+    "FusionInstanceItem": {
+      "document": "实例列表页中的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本",
+          "example": "5.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例主题数上限",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例消费组数量上限",
+          "example": "100",
+          "member": "int64",
+          "name": "GroupNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，\nPOSTPAID，按量计费\nPREPAID，包年包月",
+          "example": "0",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间，秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "ExpiryTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组数量",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品规格",
+          "example": "basic_1k",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS限流值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScaledTpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageRetention",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "延迟消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxMessageDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x独有数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceItemExtraInfo",
+          "name": "InstanceItemExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DestroyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ImportSourceClusterConsumerGroupsRequest": {
       "document": "ImportSourceClusterConsumerGroups请求参数结构体",
       "members": [
@@ -3674,6 +3971,102 @@
           "member": "int64",
           "name": "MaxMessageDelay",
           "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceItemExtraInfo": {
+      "document": "4.x集群和5.0集群列表统一显示 4.x特殊数据承载接口",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVip",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x专享集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VipInstanceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享集群峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxBandWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享集群节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享集群最大存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享集群最大保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxRetention",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专项集群最大保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinRetention",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.0共享集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

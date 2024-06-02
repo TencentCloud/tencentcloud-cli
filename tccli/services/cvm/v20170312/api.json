@@ -6804,6 +6804,24 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被继承的实例ID。",
+          "example": "[\"ins-6mre94jv\"]\t",
+          "member": "string",
+          "name": "InheritInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自研上云罚金开关。 true：计算罚金 false：免罚金\t",
+          "example": "false",
+          "member": "bool",
+          "name": "PunishmentSwitch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11539,6 +11557,15 @@
           "name": "DisableApiTermination",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被继承的实例ID。",
+          "example": "[\"ins-6mre94jv\"]\t",
+          "member": "string",
+          "name": "InheritInstanceIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12083,6 +12110,24 @@
           "example": "true",
           "member": "bool",
           "name": "ReleasePrepaidDataDisks",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "被继承的实例ID。",
+          "example": "[\"ins-6mre94jv\"]",
+          "member": "string",
+          "name": "InheritInstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否收取罚金的开关。",
+          "example": "false",
+          "member": "bool",
+          "name": "PunishmentSwitch",
           "required": false,
           "type": "bool"
         }

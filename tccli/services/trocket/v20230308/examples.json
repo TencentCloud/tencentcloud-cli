@@ -150,6 +150,14 @@
         "title": "获取消费组列表"
       }
     ],
+    "DescribeFusionInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFusionInstanceList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"TagFilters\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValues\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Version\": \"abc\",\n                \"InstanceType\": \"abc\",\n                \"InstanceStatus\": \"abc\",\n                \"TopicNumLimit\": 0,\n                \"GroupNumLimit\": 0,\n                \"PayMode\": \"abc\",\n                \"ExpiryTime\": 0,\n                \"Remark\": \"abc\",\n                \"TopicNum\": 0,\n                \"GroupNum\": 0,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"SkuCode\": \"abc\",\n                \"TpsLimit\": 0,\n                \"ScaledTpsLimit\": 0,\n                \"MessageRetention\": 0,\n                \"MaxMessageDelay\": 0,\n                \"RenewFlag\": 0,\n                \"InstanceItemExtraInfo\": {\n                    \"IsVip\": true,\n                    \"VipInstanceStatus\": 0,\n                    \"MaxBandWidth\": 0,\n                    \"SpecName\": \"abc\",\n                    \"NodeCount\": 0,\n                    \"MaxStorage\": 0,\n                    \"MaxRetention\": 0,\n                    \"MinRetention\": 0,\n                    \"InstanceStatus\": 0\n                },\n                \"DestroyTime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeInstance": [
       {
         "document": "查询实例",

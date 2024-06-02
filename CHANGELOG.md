@@ -1,3 +1,82 @@
+# Release 3.0.1006.1
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 76 次发布
+
+发布时间：2024-06-03 01:11:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceTerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/58193)
+
+	* 新增入参：InheritInstanceIds, PunishmentSwitch
+
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15730)
+
+	* 新增入参：InheritInstanceIds
+
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/15723)
+
+	* 新增入参：InheritInstanceIds, PunishmentSwitch
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 15 次发布
+
+发布时间：2024-06-03 01:24:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFusionInstanceList](http://document.tencentcloudapi.woa.com/document/product/1739/84028)
+
+新增数据结构：
+
+* [FusionInstanceItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#FusionInstanceItem)
+* [InstanceItemExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InstanceItemExtraInfo)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 52 次发布
+
+发布时间：2024-06-03 01:24:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAITranscription](http://document.tencentcloudapi.woa.com/document/product/647/83941)
+
+	* 新增入参：SdkAppId, SessionId
+
+	* 新增出参：TaskId, SessionId
+
+* [StartAITranscription](http://document.tencentcloudapi.woa.com/document/product/647/83940)
+
+	* 新增入参：SessionId
+
+
+
+
 # Release 3.0.1005.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
