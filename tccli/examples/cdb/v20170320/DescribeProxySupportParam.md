@@ -21,7 +21,9 @@ Output:
         "SupportTransSplit": true,
         "SupportTransSplitMinVersion": "1.3.1",
         "SupportPoolMinVersion": "1.1.1",
-        "SupportReadOnly": true
+        "SupportReadOnly": true,
+        "SupportAutoLoadBalance": true,
+        "SupportAccessMode": true
     }
 }
 ```

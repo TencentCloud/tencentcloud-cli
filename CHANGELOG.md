@@ -1,3 +1,216 @@
+# Release 3.0.1007.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 58 次发布
+
+发布时间：2024-06-04 01:07:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterZoneIdList
+
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：ZoneId
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 100 次发布
+
+发布时间：2024-06-04 01:09:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
+
+	* 新增入参：AutoLoadBalance, AccessMode
+
+* [CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)
+
+	* 新增入参：AutoLoadBalance, AccessMode
+
+* [DescribeProxySupportParam](http://document.tencentcloudapi.woa.com/document/product/236/77507)
+
+	* 新增出参：SupportAutoLoadBalance, SupportAccessMode
+
+
+修改数据结构：
+
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+
+	* 新增成员：AccessMode, AutoLoadBalance
+
+* [ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst)
+
+	* 新增成员：InstNodeId, InstNodeRole
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 31 次发布
+
+发布时间：2024-06-04 01:14:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
+
+	* 新增入参：IsAutoPay, IsBidAutoPay
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 90 次发布
+
+发布时间：2024-06-04 01:15:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateUserMobileChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84029)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 62 次发布
+
+发布时间：2024-06-04 01:25:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongUpstreamInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamInfo)
+
+	* 新增成员：ScfIsBase64Encoded, ScfIsIntegratedResponse
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 45 次发布
+
+发布时间：2024-06-04 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteApplication](http://document.tencentcloudapi.woa.com/document/product/649/36093)
+
+	* 新增入参：SyncDeleteImageRepository
+
+* [DescribeMicroservices](http://document.tencentcloudapi.woa.com/document/product/649/36084)
+
+	* 新增入参：ConfigCenterInstanceId
+
+* [DescribeStatistics](http://document.tencentcloudapi.woa.com/document/product/649/70427)
+
+	* 新增入参：ConfigCenterInstanceId
+
+
+修改数据结构：
+
+* [ConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigRelease)
+
+	* 新增成员：DaulStatus
+
+* [TsfConfigCenter](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfConfigCenter)
+
+	* 新增成员：CurrentVersion, TargetVersion
+
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 8 次发布
+
+发布时间：2024-06-04 01:26:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetVRSVoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/84030)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 54 次发布
+
+发布时间：2024-06-04 01:27:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyApiSecEventChange](http://document.tencentcloudapi.woa.com/document/product/627/84031)
+
+新增数据结构：
+
+* [ApiSecKey](http://document.tencentcloudapi.woa.com/document/product/627/53609#ApiSecKey)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 51 次发布
+
+发布时间：2024-06-04 01:27:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadContent](http://document.tencentcloudapi.woa.com/document/product/1607/77900)
+
+	* 新增入参：ProjectId
+
+
+
+
 # Release 3.0.1006.1
 
 ## 云服务器(cvm) 版本：2019-12-12

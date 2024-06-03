@@ -645,14 +645,14 @@
       "status": "online"
     },
     "RemoveDockerContainers": {
-      "document": "删除实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询删除情况。",
+      "document": "删除实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询删除情况。",
       "input": "RemoveDockerContainersRequest",
       "name": "删除Docker容器",
       "output": "RemoveDockerContainersResponse",
       "status": "online"
     },
     "RenameDockerContainer": {
-      "document": "重命名实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重命名情况。",
+      "document": "重命名实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询重命名情况。",
       "input": "RenameDockerContainerRequest",
       "name": "重命名Docker容器",
       "output": "RenameDockerContainerResponse",
@@ -722,7 +722,7 @@
       "status": "online"
     },
     "RestartDockerContainers": {
-      "document": "重启实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重启情况。",
+      "document": "重启实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询重启情况。",
       "input": "RestartDockerContainersRequest",
       "name": "重启Docker容器",
       "output": "RestartDockerContainersResponse",
@@ -743,7 +743,7 @@
       "status": "online"
     },
     "StartDockerContainers": {
-      "document": "启动实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询启动情况。",
+      "document": "启动实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询启动情况。",
       "input": "StartDockerContainersRequest",
       "name": "启动Docker容器",
       "output": "StartDockerContainersResponse",
@@ -757,7 +757,7 @@
       "status": "online"
     },
     "StopDockerContainers": {
-      "document": "停止实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询停止情况。",
+      "document": "停止实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询停止情况。",
       "input": "StopDockerContainersRequest",
       "name": "停止Docker容器",
       "output": "StopDockerContainersResponse",
@@ -1209,7 +1209,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -1218,7 +1218,7 @@
         },
         {
           "disabled": false,
-          "document": "应用防火墙模板的实例列表。",
+          "document": "应用防火墙模板的实例列表。列表长度最大值是100。",
           "example": "无",
           "member": "InstanceIdentifier",
           "name": "ApplyInstances",
@@ -2345,7 +2345,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘 ID。当前只支持数据盘创建备份点。",
+          "document": "云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 ",
           "example": "lhdisk-p1zflrif",
           "member": "string",
           "name": "DiskId",
@@ -2354,7 +2354,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点名称，最大长度90。",
+          "document": "云硬盘备份点名称，最大长度为 90 。",
           "example": "disk-backup-01",
           "member": "string",
           "name": "DiskBackupName",
@@ -2373,6 +2373,7 @@
           "example": "lhbak-g7w4rd71",
           "member": "string",
           "name": "DiskBackupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2499,7 +2500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/1207/47573) 接口返回值中的 InstanceId 获取。",
           "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
@@ -2590,7 +2591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
@@ -3002,7 +3003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/1207/47573) 接口返回值中的 InstanceId 获取。",
           "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
@@ -3047,7 +3048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -3074,7 +3075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -3083,7 +3084,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板规则ID列表。",
+          "document": "防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。\n",
           "example": "[\"lhftr-baaj68clja\"]",
           "member": "string",
           "name": "TemplateRuleIds",
@@ -3302,7 +3303,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "使用场景ID列表。",
+          "document": "使用场景ID列表。可通过[DescribeAllScenes](https://cloud.tencent.com/document/product/1207/83513)接口返回值中的SceneId获取。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIds",
@@ -3339,7 +3340,7 @@
           "example": "无",
           "member": "SceneInfo",
           "name": "SceneInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3349,7 +3350,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3761,7 +3762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询云硬盘备份点的ID列表。参数不支持同时指定 DiskBackupIds 和 Filters。",
+          "document": "查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。",
           "example": "[\"lhbak-nuen5foj\"]",
           "member": "string",
           "name": "DiskBackupIds",
@@ -3770,7 +3771,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup)下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
+          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 \n<a href=\"https://cloud.tencent.com/document/product/1207/47576#DiskBackup\">DescribeSnapshots</a> 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3779,7 +3780,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0。",
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3788,7 +3789,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100。",
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -3807,6 +3808,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3816,6 +3818,7 @@
           "example": "无",
           "member": "DiskBackup",
           "name": "DiskBackupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4395,7 +4398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/1207/47573) 接口返回值中的 InstanceId 获取。",
           "example": "lhins-aglzynfg",
           "member": "string",
           "name": "InstanceId",
@@ -4404,7 +4407,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为 0。",
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4413,7 +4416,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为 20，最大值为 100。",
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4432,7 +4435,7 @@
           "example": "7",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4442,7 +4445,7 @@
           "example": "无",
           "member": "FirewallRuleInfo",
           "name": "FirewallRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4452,7 +4455,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FirewallVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4507,7 +4510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
@@ -4516,7 +4519,7 @@
         },
         {
           "disabled": false,
-          "document": "应用任务ID列表。",
+          "document": "应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。",
           "example": "lgtk-abcd1234",
           "member": "string",
           "name": "TaskIds",
@@ -4590,7 +4593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -4711,7 +4714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID列表。",
+          "document": "防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。",
           "example": "[\"lhft-6brh0ciy\"]",
           "member": "string",
           "name": "TemplateIds",
@@ -5443,7 +5446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "使用场景ID列表。",
+          "document": "使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIds",
@@ -5480,7 +5483,7 @@
           "example": "无",
           "member": "Scene",
           "name": "SceneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5490,7 +5493,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7385,7 +7388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的套餐 ID。",
+          "document": "实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。",
           "example": "bundle_ntp_small1_500",
           "member": "string",
           "name": "BundleId",
@@ -7431,6 +7434,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7495,7 +7499,7 @@
         {
           "disabled": false,
           "document": "待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。",
-          "example": "[\"lhins-11110001\\r\\n\"]",
+          "example": "[\"lhins-11110001\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7540,6 +7544,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7549,6 +7554,7 @@
           "example": "无",
           "member": "DataDiskPrice",
           "name": "DataDiskPriceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7558,6 +7564,7 @@
           "example": "无",
           "member": "InstancePriceDetail",
           "name": "InstancePriceDetailSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7567,6 +7574,7 @@
           "example": "无",
           "member": "TotalPrice",
           "name": "TotalPrice",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8579,7 +8587,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点ID列表。",
+          "document": "云硬盘备份点ID，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379) 接口返回值中的 DiskBackupId 获取。",
           "example": "[\"lhbak-l1ghx97r\"]",
           "member": "string",
           "name": "DiskBackupIds",
@@ -8588,7 +8596,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点名称，最大长度90。",
+          "document": "云硬盘备份点名称，最大长度 90 。",
           "example": "disk-backup-name",
           "member": "string",
           "name": "DiskBackupName",
@@ -8814,7 +8822,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/1207/47573) 接口返回值中的 InstanceId 获取。",
           "example": "lhins-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -8859,7 +8867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -8868,7 +8876,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙规则列表。",
+          "document": "防火墙规则列表。列表长度最大值是100。",
           "example": "无",
           "member": "FirewallRule",
           "name": "FirewallRules",
@@ -8904,7 +8912,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "lhft-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -8913,7 +8921,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。",
           "example": "DemoTemplate",
           "member": "string",
           "name": "TemplateName",
@@ -9300,7 +9308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -9309,8 +9317,8 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。",
-          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534\"]",
           "member": "string",
           "name": "ContainerIds",
           "required": true,
@@ -9328,7 +9336,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9346,7 +9354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -9355,7 +9363,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
           "member": "string",
           "name": "ContainerId",
@@ -9383,7 +9391,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9886,7 +9894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -9895,8 +9903,8 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。",
-          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534\"]",
           "member": "string",
           "name": "ContainerIds",
           "required": true,
@@ -9914,7 +9922,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10320,7 +10328,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -10329,8 +10337,8 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。",
-          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534\"]",
           "member": "string",
           "name": "ContainerIds",
           "required": true,
@@ -10348,7 +10356,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10393,7 +10401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -10402,8 +10410,8 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。",
-          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "example": "[\"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e5534\"]",
           "member": "string",
           "name": "ContainerIds",
           "required": true,
@@ -10421,7 +10429,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10566,7 +10574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘ID列表。",
+          "document": "云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",

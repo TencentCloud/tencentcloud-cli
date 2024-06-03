@@ -48,6 +48,14 @@
         "title": "获取训练文本信息"
       }
     ],
+    "GetVRSVoiceTypeInfo": [
+      {
+        "document": "查询复刻音色信息",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVRSVoiceTypeInfo\n<公共请求参数>\n\n{\n    \"VoiceType\": 200000000,\n    \"FastVoiceType\": \"c0be5744e9804c5fae5708fbd71db20d\",\n    \"TaskType\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DateCreated\": \"2024-05-30T15:53:58+08:00\",\n            \"ExpireTime\": \"2025-05-25T15:54:10+08:00\",\n            \"FastVoiceType\": \"c0be5744e9804c5fae5708fbd71db20d\",\n            \"IsDeployed\": true,\n            \"TaskID\": \"fast6d467a51055149138f7fc8852dbd86a0\",\n            \"TaskType\": 5,\n            \"VoiceGender\": 1,\n            \"VoiceName\": \"ceshi\",\n            \"VoiceType\": 200000000\n        },\n        \"RequestId\": \"9bf903a9-437e-4448-b015-c3c920e2e9cc\"\n    }\n}",
+        "title": "查询复刻音色信息"
+      }
+    ],
     "GetVRSVoiceTypes": [
       {
         "document": "查询复刻音色",
