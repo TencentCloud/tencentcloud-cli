@@ -18,10 +18,11 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalBundlePrice": 60.0,
-                "OriginalPrice": 1440.0,
+                "OriginalBundlePrice": 60,
+                "OriginalPrice": 1440,
                 "Discount": 100,
-                "DiscountPrice": 1440.0
+                "DiscountPrice": 1440,
+                "Currency": "CNY"
             }
         },
         "RequestId": "96d188f2-caf0-4d63-ba6f-474d22a8b344"

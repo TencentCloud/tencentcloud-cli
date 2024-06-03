@@ -1878,6 +1878,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7074,6 +7084,15 @@
           "name": "FilterTransRegionFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "zoenid列表",
+          "example": "无",
+          "member": "int64",
+          "name": "FilterZoneIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

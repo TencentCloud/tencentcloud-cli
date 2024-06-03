@@ -7498,7 +7498,7 @@
         {
           "disabled": false,
           "document": "更新后的密码",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "Password",
           "required": true,

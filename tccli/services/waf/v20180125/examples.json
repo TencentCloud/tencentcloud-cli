@@ -832,6 +832,14 @@
         "title": "api分析页面开关"
       }
     ],
+    "ModifyApiSecEventChange": [
+      {
+        "document": "weraza",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiSecEventChange\n<公共请求参数>\n\n{\n    \"UserName\": \"ddp\",\n    \"EventIdList\": [\n        \"api_test\"\n    ],\n    \"Remark\": \"test\",\n    \"Mode\": \"2\",\n    \"ApiNameList\": [\n        {\n            \"Domain\": \"www.test.com\",\n            \"Method\": \"POST\",\n            \"ApiName\": \"aaa\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac576aa3-4a4c-4a8e-81c0-c650c139d074\"\n    }\n}",
+        "title": "test111"
+      }
+    ],
     "ModifyAreaBanStatus": [
       {
         "document": "",

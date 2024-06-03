@@ -27,6 +27,7 @@ Output:
                         "MaxDelay": 0,
                         "MinCount": 0,
                         "ProxyAddressId": "proxyaddr-test",
+                        "AccessMode": "balance",
                         "ProxyAllocation": [
                             {
                                 "ProxyInstance": [

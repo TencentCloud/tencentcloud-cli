@@ -12539,7 +12539,7 @@
           "example": "2021-07-01",
           "member": "string",
           "name": "ReportDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12549,7 +12549,7 @@
           "example": "100008561789",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12559,17 +12559,17 @@
           "example": "lbvliu-5gfy5n4a0776401d",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "上报任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\\\"Metric\\\":3,\\\"ResourceType\\\":\\\"COS\\\",\\\"MetricName\\\":\\\"Capacit",
+          "example": "new",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

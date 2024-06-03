@@ -4656,6 +4656,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启\n\nDUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DaulStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9170,11 +9180,20 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-xx",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除镜像仓库",
+          "example": "无",
+          "member": "bool",
+          "name": "SyncDeleteImageRepository",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9185,9 +9204,10 @@
         {
           "disabled": false,
           "document": "删除应用操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11813,7 +11833,7 @@
         {
           "disabled": false,
           "document": "配置项名称，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -11822,7 +11842,7 @@
         {
           "disabled": false,
           "document": "部署组ID，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -11831,7 +11851,7 @@
         {
           "disabled": false,
           "document": "命名空间ID，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -11840,7 +11860,7 @@
         {
           "disabled": false,
           "document": "集群ID，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -11849,7 +11869,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11858,7 +11878,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11867,7 +11887,7 @@
         {
           "disabled": false,
           "document": "配置ID，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -11876,7 +11896,7 @@
         {
           "disabled": false,
           "document": "应用ID，不传入时查询全量",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -11891,9 +11911,10 @@
         {
           "disabled": false,
           "document": "分页的配置发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TsfPageConfigRelease",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14884,6 +14905,15 @@
           "name": "MicroserviceNameList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "注册中心实例id",
+          "example": "ins-ac69c57e",
+          "member": "string",
+          "name": "ConfigCenterInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14897,7 +14927,7 @@
           "example": "无",
           "member": "TsfPageMicroservice",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16427,7 +16457,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间Id",
+          "document": "命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。",
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
@@ -16454,7 +16484,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间：年月日 时分秒2020-05-12 14:43:12",
+          "document": "开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空",
           "example": "无",
           "member": "datetime",
           "name": "EndTime",
@@ -16463,7 +16493,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间：年月日 时分秒2020-05-12 14:43:12",
+          "document": "开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空",
           "example": "无",
           "member": "datetime",
           "name": "StartTime",
@@ -16523,6 +16553,15 @@
           "name": "NamespaceIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "独占配置中心的ID",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigCenterInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16536,7 +16575,7 @@
           "example": "无",
           "member": "ServiceStatisticsResults",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -27376,6 +27415,28 @@
           "example": "namespace-byxkpkal",
           "member": "string",
           "name": "NamespaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.18.0.0",
+          "member": "string",
+          "name": "CurrentVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要升级的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.18.0.1",
+          "member": "string",
+          "name": "TargetVersion",
           "output_required": false,
           "required": false,
           "type": "string",

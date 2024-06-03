@@ -1012,6 +1012,26 @@
         "title": "错误示例-获取设置自动签印章的小程序链接。"
       }
     ],
+    "CreateUserMobileChangeUrl": [
+      {
+        "document": "生成修改个人手机号链接，\n此用户是通过 获取c端用户实名链接实名的，\n调用方知道用户的 userId， 所以使用 UserId 的方式生成手机号变更链接\n生成的链接是 APP 的方式，所以参数中 Endpoint 为 APP",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserMobileChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"UserId\": \"yDCZmUUckpy1jpdxUBBx43i4P29qekYx\",\n    \"Endpoint\": \"APP\",\n    \"UserData\": \"MjMwMDAwMTM4Mw==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1717751037,\n        \"RequestId\": \"s1717146237659391990\",\n        \"Url\": \"pages/guide/index?to=MOBILE_CHANGE_INTENTION&shortKey=yDCZiUv2ByIvoFcoDTfb&autoJumpBack=true\"\n    }\n}",
+        "title": "生成修改个人手机号链接"
+      },
+      {
+        "document": "使用二要素（姓名/证件号）生成修改个人手机号链接\n此用户是通过 获取c端用户实名链接实名的，\n调用方不知道用户的 userId，但是有用户的二要素信息（姓名和证件号）\n此时需要传递参数UserAccountType 为 1，表示个人\n生成的链接是 短链的方式，所以参数中 Endpoint 为 HTTP_SHORT_URL",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserMobileChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"UserAccountType\": 1,\n    \"Name\": \"典子谦\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\",\n    \"Endpoint\": \"HTTP_SHORT_URL\",\n    \"UserData\": \"MjMwMDAwMTM4Mw==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1717754432,\n        \"RequestId\": \"s1717149632556325434\",\n        \"Url\": \"https://test.essurl.cn/qLAEUBG2s4\"\n    }\n}",
+        "title": "使用二要素生成修改个人手机号链接"
+      },
+      {
+        "document": "使用二要素（姓名/证件号）生成修改员工手机号链接\n此用户是通过 获取c端用户实名链接实名的，\n调用方不知道用户的 userId，但是有用户的二要素信息（姓名和证件号）\n此时需要传递参数UserAccountType 为 0，表示员工\n生成的链接是 短链的方式，所以参数中 Endpoint 为 HTTP_SHORT_URL",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserMobileChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"UserAccountType\": 0,\n    \"Name\": \"典子谦\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\",\n    \"Endpoint\": \"HTTP_SHORT_URL\",\n    \"UserData\": \"MjMwMDAwMTM4Mw==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1717754432,\n        \"RequestId\": \"s1717149632556325434\",\n        \"Url\": \"https://test.essurl.cn/qHAEUjG2s4\"\n    }\n}",
+        "title": "使用二要素生成修改员工手机号链接"
+      }
+    ],
     "CreateUserVerifyUrl": [
       {
         "document": "获取c端用户实名链接",

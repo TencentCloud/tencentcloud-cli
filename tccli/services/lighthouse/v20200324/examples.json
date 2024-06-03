@@ -562,7 +562,7 @@
       {
         "document": "创建实例询价-成功返回",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=InquirePriceCreateInstances\n&BundleId=bundle_ntp_small1_500\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\n&InstanceChargePrepaid.Period=1\n&InstanceCount=2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalBundlePrice\": 60.0,\n                \"OriginalPrice\": 1440.0,\n                \"Discount\": 100,\n                \"DiscountPrice\": 1440.0\n            }\n        },\n        \"RequestId\": \"96d188f2-caf0-4d63-ba6f-474d22a8b344\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalBundlePrice\": 60,\n                \"OriginalPrice\": 1440,\n                \"Discount\": 100,\n                \"DiscountPrice\": 1440,\n                \"Currency\": \"CNY\"\n            }\n        },\n        \"RequestId\": \"96d188f2-caf0-4d63-ba6f-474d22a8b344\"\n    }\n}",
         "title": "创建实例询价-成功返回"
       }
     ],

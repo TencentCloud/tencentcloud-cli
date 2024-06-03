@@ -1526,7 +1526,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池",
+          "document": "是否开启连接池\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -1541,6 +1541,24 @@
           "name": "ProxyAllocation",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自适应负载均衡",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoLoadBalance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "访问模式：就近访问，均衡分配",
+          "example": "balance",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4895,7 +4913,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池",
+          "document": "是否开启连接池\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -4946,6 +4964,24 @@
           "name": "ConnectionPoolType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自适应负载均衡",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoLoadBalance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "接入模式",
+          "example": "nearBy",
+          "member": "string",
+          "name": "AccessMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4959,6 +4995,7 @@
           "example": "1312",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8713,6 +8750,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8722,6 +8760,7 @@
           "example": "无",
           "member": "ProxyGroupInfo",
           "name": "ProxyInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11185,7 +11224,7 @@
           "example": "1.3.1",
           "member": "string",
           "name": "ProxyVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11195,7 +11234,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportPool",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11205,7 +11244,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PoolMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11215,7 +11254,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PoolMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11225,7 +11264,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportTransSplit",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11235,7 +11274,7 @@
           "example": "1.1.1",
           "member": "string",
           "name": "SupportPoolMinVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11245,7 +11284,7 @@
           "example": "1.3.1",
           "member": "string",
           "name": "SupportTransSplitMinVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11255,7 +11294,27 @@
           "example": "true",
           "member": "bool",
           "name": "SupportReadOnly",
-          "required": true,
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动均衡负载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportAutoLoadBalance",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持接入模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportAccessMode",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16705,7 +16764,7 @@
           "example": "proxyaddr-ixw3ll2d",
           "member": "string",
           "name": "ProxyAddressId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16715,7 +16774,7 @@
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16725,7 +16784,7 @@
           "example": "subnet-ixw3ll2d",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16735,7 +16794,7 @@
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16745,7 +16804,7 @@
           "example": "80",
           "member": "uint64",
           "name": "VPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16755,7 +16814,7 @@
           "example": "system",
           "member": "string",
           "name": "WeightMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16765,7 +16824,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsKickOut",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16775,7 +16834,7 @@
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16785,7 +16844,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MaxDelay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16795,7 +16854,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoAddRo",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16805,7 +16864,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16815,7 +16874,7 @@
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16825,7 +16884,7 @@
           "example": "true",
           "member": "bool",
           "name": "FailOver",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16835,7 +16894,7 @@
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -16845,7 +16904,7 @@
           "example": "test",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16855,8 +16914,28 @@
           "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "balance",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动负载均衡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoLoadBalance",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -17080,6 +17159,28 @@
           "member": "string",
           "name": "Zone",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cbn-test",
+          "member": "string",
+          "name": "InstNodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "master",
+          "member": "string",
+          "name": "InstNodeRole",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -672,6 +672,13 @@
       "output": "ModifyApiAnalyzeStatusResponse",
       "status": "online"
     },
+    "ModifyApiSecEventChange": {
+      "document": "api安全状态变更接口",
+      "input": "ModifyApiSecEventChangeRequest",
+      "name": "api安全状态变更接口",
+      "output": "ModifyApiSecEventChangeResponse",
+      "status": "online"
+    },
     "ModifyAreaBanStatus": {
       "document": "修改防护域名的地域封禁状态",
       "input": "ModifyAreaBanStatusRequest",
@@ -2387,6 +2394,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ApiSecKey": {
+      "document": "api列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApiName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "AttackLogInfo": {
       "document": "攻击日志详情",
@@ -14154,6 +14197,87 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiSecEventChangeRequest": {
+      "document": "ModifyApiSecEventChange请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变更状态，1:新发现，2，确认中，3，已确认，4，已下线，5，已忽略",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处理人",
+          "example": "ddp",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注，有长度显示1k",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的事件列表",
+          "example": "[\"api_aaa\",\"api_bbb\"]",
+          "member": "string",
+          "name": "EventIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的api列表",
+          "example": "无",
+          "member": "ApiSecKey",
+          "name": "ApiNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "判断是否删除，包括删除事件和删除资产",
+          "example": "true或者false",
+          "member": "bool",
+          "name": "IsDelete",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "判断是否是更新api的备注，更新api备注的时候，为true",
+          "example": "无",
+          "member": "bool",
+          "name": "UpdateApiRemark",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiSecEventChangeResponse": {
+      "document": "ModifyApiSecEventChange返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

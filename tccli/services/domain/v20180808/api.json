@@ -4893,6 +4893,24 @@
           "name": "TemplateId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束后是否自动支付尾款，默认开启 传入1关闭",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAutoPay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭",
+          "example": "0",
+          "member": "int64",
+          "name": "IsBidAutoPay",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
