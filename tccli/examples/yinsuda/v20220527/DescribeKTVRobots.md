@@ -18,37 +18,35 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "KTVRobotInfoSet": [
             {
-                "RobotId": "ame-xxxxx1",
+                "RobotId": "d2w7m6t9z8",
                 "Status": "Play",
                 "Playlists": [
-                    "xxxx1",
-                    "xxxx2",
-                    "xxxx3",
-                    "xxxx4"
+                    "vvws7nzzxg"
                 ],
-                "CurIndex": 2,
-                "Position": 120,
-                "RTCSystem": "TRTC",
-                "JoinRoomInput": {
-                    "TRTCJoinRoomInput": {
-                        "Sign": "xxxxxxxxxxx",
-                        "RoomId": "12345",
-                        "SdkAppId": "140000001",
-                        "UserId": "tom"
-                    }
-                },
+                "CurIndex": 1,
+                "Position": 120000,
                 "SetAudioParamInput": {
                     "Type": "Original"
                 },
+                "JoinRoomInput": {
+                    "TRTCJoinRoomInput": {
+                        "Sign": "我是孤独的鹰",
+                        "RoomId": "1234",
+                        "SdkAppId": "140000001",
+                        "UserId": "tom",
+                        "RoomIdType": "Integer"
+                    }
+                },
+                "RTCSystem": "TRTC",
                 "SetPlayModeInput": {
-                    "PlayMode": "Order"
+                    "PlayMode": "RepeatPlaylist"
                 }
             }
         ],
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "abc"
     }
 }
 ```

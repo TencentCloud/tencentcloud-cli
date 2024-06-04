@@ -2387,6 +2387,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后查询结果的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "QueryResultTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8059,6 +8069,15 @@
           "name": "EngineTypeDetail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认 false, 为 true 时仅列出具有洞察 listener 的引擎",
+          "example": "false",
+          "member": "bool",
+          "name": "ListHasListener",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

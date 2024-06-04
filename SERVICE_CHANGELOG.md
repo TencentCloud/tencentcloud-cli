@@ -1,36 +1,26 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+## 磐石(clouddc) 版本：2018-08-30
 
-### 第 58 次发布
+### 第 9 次发布
 
-发布时间：2024-06-04 01:07:06
+发布时间：2024-06-05 01:10:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
-
-	* 新增入参：FilterZoneIdList
-
-
-修改数据结构：
-
-* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
-
-	* 新增成员：ZoneId
+* [DescribeUnitInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/84032)
 
 
 
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
 ### 第 100 次发布
 
-发布时间：2024-06-04 01:09:20
+发布时间：2024-06-05 01:13:33
 
 本次发布包含了以下内容：
 
@@ -38,37 +28,25 @@
 
 修改接口：
 
-* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
 
-	* 新增入参：AutoLoadBalance, AccessMode
-
-* [CreateCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77509)
-
-	* 新增入参：AutoLoadBalance, AccessMode
-
-* [DescribeProxySupportParam](http://document.tencentcloudapi.woa.com/document/product/236/77507)
-
-	* 新增出参：SupportAutoLoadBalance, SupportAccessMode
+	* 新增入参：ListHasListener
 
 
 修改数据结构：
 
-* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+* [CommonMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CommonMetrics)
 
-	* 新增成员：AccessMode, AutoLoadBalance
-
-* [ProxyInst](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyInst)
-
-	* 新增成员：InstNodeId, InstNodeRole
+	* 新增成员：QueryResultTime
 
 
 
 
-## 域名注册(domain) 版本：2018-08-08
+## 物联网通信(iotcloud) 版本：2021-04-08
 
-### 第 31 次发布
+### 第 15 次发布
 
-发布时间：2024-06-04 01:14:18
+发布时间：2024-06-05 01:16:51
 
 本次发布包含了以下内容：
 
@@ -76,34 +54,29 @@
 
 修改接口：
 
-* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/634/73630)
 
-	* 新增入参：IsAutoPay, IsBidAutoPay
-
-
+	* 新增出参：UserDefined
 
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
+修改数据结构：
 
-### 第 90 次发布
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/634/71973#FirmwareInfo)
 
-发布时间：2024-06-04 01:15:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateUserMobileChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84029)
+	* 新增成员：UserDefined
 
 
 
-## 微服务引擎(tse) 版本：2020-12-07
 
-### 第 62 次发布
+## 物联网通信(iotcloud) 版本：2018-06-14
 
-发布时间：2024-06-04 01:25:17
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 37 次发布
+
+发布时间：2024-06-05 01:17:02
 
 本次发布包含了以下内容：
 
@@ -111,18 +84,37 @@
 
 修改数据结构：
 
-* [KongUpstreamInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamInfo)
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#FirmwareInfo)
 
-	* 新增成员：ScfIsBase64Encoded, ScfIsIntegratedResponse
-
-
+	* 新增成员：UserDefined
 
 
-## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-### 第 45 次发布
 
-发布时间：2024-06-04 01:25:33
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 49 次发布
+
+发布时间：2024-06-05 01:19:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：ResourceType
+
+
+
+
+## 音速达直播音乐版权引擎(yinsuda) 版本：2022-05-27
+
+### 第 4 次发布
+
+发布时间：2024-06-05 01:27:38
 
 本次发布包含了以下内容：
 
@@ -130,83 +122,24 @@
 
 修改接口：
 
-* [DeleteApplication](http://document.tencentcloudapi.woa.com/document/product/649/36093)
+* [DescribeKTVMusicAccompanySegmentUrlVip](http://document.tencentcloudapi.woa.com/document/product/1717/82871)
 
-	* 新增入参：SyncDeleteImageRepository
-
-* [DescribeMicroservices](http://document.tencentcloudapi.woa.com/document/product/649/36084)
-
-	* 新增入参：ConfigCenterInstanceId
-
-* [DescribeStatistics](http://document.tencentcloudapi.woa.com/document/product/649/70427)
-
-	* 新增入参：ConfigCenterInstanceId
+	* 新增入参：RoomId
 
 
 修改数据结构：
 
-* [ConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#ConfigRelease)
+* [LiveVipTradeInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipTradeInfo)
 
-	* 新增成员：DaulStatus
+	* <font color="#dd0000">**修改成员**：</font>TradeSerialNo, AppName, UserId, RoomId, VipDays, Status, CreateTime
 
-* [TsfConfigCenter](http://document.tencentcloudapi.woa.com/document/product/649/36099#TsfConfigCenter)
+* [LiveVipUserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipUserInfo)
 
-	* 新增成员：CurrentVersion, TargetVersion
+	* <font color="#dd0000">**修改成员**：</font>RoomId, LiveVipEndTime, LiveVipStatus
 
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#UserInfo)
 
-
-
-## 声音复刻(vrs) 版本：2020-08-24
-
-### 第 8 次发布
-
-发布时间：2024-06-04 01:26:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetVRSVoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/84030)
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 54 次发布
-
-发布时间：2024-06-04 01:27:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyApiSecEventChange](http://document.tencentcloudapi.woa.com/document/product/627/84031)
-
-新增数据结构：
-
-* [ApiSecKey](http://document.tencentcloudapi.woa.com/document/product/627/53609#ApiSecKey)
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
-
-### 第 51 次发布
-
-发布时间：2024-06-04 01:27:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UploadContent](http://document.tencentcloudapi.woa.com/document/product/1607/77900)
-
-	* 新增入参：ProjectId
+	* <font color="#dd0000">**修改成员**：</font>AppName, UserId, LiveVipUserInfo, UserType
 
 
 
@@ -22505,6 +22438,18 @@
 
 ## 磐石(clouddc) 版本：2018-08-30
 
+### 第 9 次发布
+
+发布时间：2024-06-05 01:10:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUnitInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/84032)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 8 次发布
 
 发布时间：2023-12-05 01:27:14
@@ -36802,6 +36747,28 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 100 次发布
+
+发布时间：2024-06-05 01:13:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：ListHasListener
+
+
+修改数据结构：
+
+* [CommonMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CommonMetrics)
+
+	* 新增成员：QueryResultTime
+
+
 ### 第 99 次发布
 
 发布时间：2024-05-31 01:13:52
@@ -45155,7 +45122,7 @@
 
 新增接口：
 
-* [[CreateUserMobileChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84029)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateUserMobileChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84029)
 
 ### 第 89 次发布
 
@@ -54857,6 +54824,28 @@
 
 ## 物联网通信(iotcloud) 版本：2021-04-08
 
+### 第 15 次发布
+
+发布时间：2024-06-05 01:16:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/634/73630)
+
+	* 新增出参：UserDefined
+
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/634/71973#FirmwareInfo)
+
+	* 新增成员：UserDefined
+
+
 ### 第 14 次发布
 
 发布时间：2024-01-31 01:17:40
@@ -55181,6 +55170,21 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 37 次发布
+
+发布时间：2024-06-05 01:17:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#FirmwareInfo)
+
+	* 新增成员：UserDefined
+
 
 ### 第 36 次发布
 
@@ -68291,6 +68295,21 @@
 
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 49 次发布
+
+发布时间：2024-06-05 01:19:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：ResourceType
+
 
 ### 第 48 次发布
 
@@ -105658,7 +105677,7 @@
 
 新增接口：
 
-* [[GetVRSVoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/84030)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetVRSVoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/84030)
 
 ### 第 7 次发布
 
@@ -105878,11 +105897,11 @@
 
 新增接口：
 
-* [[ModifyApiSecEventChange](http://document.tencentcloudapi.woa.com/document/product/627/84031)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyApiSecEventChange](http://document.tencentcloudapi.woa.com/document/product/627/84031)
 
 新增数据结构：
 
-* [[ApiSecKey](http://document.tencentcloudapi.woa.com/document/product/627/53609#ApiSecKey)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[ApiSecKey](http://document.tencentcloudapi.woa.com/document/product/627/53609#ApiSecKey))
+* [ApiSecKey](http://document.tencentcloudapi.woa.com/document/product/627/53609#ApiSecKey)
 
 ### 第 53 次发布
 
@@ -110941,6 +110960,36 @@
 
 
 ## 音速达直播音乐版权引擎(yinsuda) 版本：2022-05-27
+
+### 第 4 次发布
+
+发布时间：2024-06-05 01:27:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeKTVMusicAccompanySegmentUrlVip](http://document.tencentcloudapi.woa.com/document/product/1717/82871)
+
+	* 新增入参：RoomId
+
+
+修改数据结构：
+
+* [LiveVipTradeInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipTradeInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>TradeSerialNo, AppName, UserId, RoomId, VipDays, Status, CreateTime
+
+* [LiveVipUserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>RoomId, LiveVipEndTime, LiveVipStatus
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#UserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppName, UserId, LiveVipUserInfo, UserType
+
 
 ### 第 3 次发布
 

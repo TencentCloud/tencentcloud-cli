@@ -2489,7 +2489,7 @@
           "example": "1.0.3",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2499,7 +2499,7 @@
           "example": "7ZISKXPJVU",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2509,7 +2509,7 @@
           "example": "name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2519,7 +2519,7 @@
           "example": "desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2529,7 +2529,7 @@
           "example": "md5",
           "member": "string",
           "name": "Md5sum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2539,7 +2539,7 @@
           "example": "1597047368",
           "member": "uint64",
           "name": "Createtime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2549,7 +2549,7 @@
           "example": "ABC",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2559,9 +2559,19 @@
           "example": "mcu",
           "member": "string",
           "name": "FwType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固件用户自定义配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
+          "member": "string",
+          "name": "UserDefined",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4447,7 +4457,7 @@
           "example": "1.0.1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4457,7 +4467,7 @@
           "example": "2f8222b4f275c4f18e69c34f66d2631b",
           "member": "string",
           "name": "Md5sum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4467,7 +4477,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4477,7 +4487,7 @@
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4487,7 +4497,7 @@
           "example": "固件名称",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4497,7 +4507,7 @@
           "example": "固件信息描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4507,7 +4517,7 @@
           "example": "ABCDE12345",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4517,7 +4527,7 @@
           "example": "mcu",
           "member": "string",
           "name": "FwType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4527,8 +4537,18 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateUserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件用户自定义配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
+          "member": "string",
+          "name": "UserDefined",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

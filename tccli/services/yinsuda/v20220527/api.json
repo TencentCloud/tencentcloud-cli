@@ -154,30 +154,30 @@
         {
           "disabled": false,
           "document": "歌曲 Id。",
-          "example": "\"\"",
+          "example": "bmp7a8yut5",
           "member": "string",
           "name": "MusicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌曲名称。",
-          "example": "\"\"",
+          "example": "反方向的钟",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌手列表。",
-          "example": "\"\"",
+          "example": "[\"周杰伦\",\"陈奕迅\"]",
           "member": "string",
           "name": "SingerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -190,7 +190,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "超酷音乐盒",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -199,7 +199,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "ua21nf932",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -208,7 +208,7 @@
         {
           "disabled": false,
           "document": "房间号。",
-          "example": "无",
+          "example": "93ncds8r",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -217,7 +217,7 @@
         {
           "disabled": false,
           "document": "歌曲 Id。",
-          "example": "无",
+          "example": "912ncsuu412",
           "member": "string",
           "name": "MusicId",
           "required": true,
@@ -226,7 +226,7 @@
         {
           "disabled": false,
           "document": "最大合唱人数，默认值为 8，最大值为 20。",
-          "example": "无",
+          "example": "8",
           "member": "uint64",
           "name": "MaxChorusNum",
           "required": false,
@@ -235,7 +235,7 @@
         {
           "disabled": false,
           "document": "合唱用户标识列表。",
-          "example": "无",
+          "example": "[\"02hfw83ef\",\"307023hsdi\"]",
           "member": "string",
           "name": "ChorusUserIds",
           "required": false,
@@ -250,10 +250,10 @@
         {
           "disabled": false,
           "document": "合唱 Token。",
-          "example": "无",
+          "example": "3mcwprujq9",
           "member": "string",
           "name": "ChorusToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -272,7 +272,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -281,7 +281,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "7jd457rjz2",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -290,7 +290,7 @@
         {
           "disabled": false,
           "document": "歌曲 Id 列表。",
-          "example": "无",
+          "example": "[\"ttxvqa4buy\",\"c2ez447xpd\"]",
           "member": "string",
           "name": "MusicIds",
           "required": true,
@@ -299,7 +299,7 @@
         {
           "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
-          "example": "无",
+          "example": "Chat",
           "member": "string",
           "name": "PlayScene",
           "required": false,
@@ -308,7 +308,7 @@
         {
           "disabled": false,
           "document": "玩家用户标识",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "GuestUserId",
           "required": false,
@@ -317,7 +317,7 @@
         {
           "disabled": false,
           "document": "房间Id",
-          "example": "无",
+          "example": "29ds5emhuf",
           "member": "string",
           "name": "RoomId",
           "required": false,
@@ -332,18 +332,20 @@
         {
           "disabled": false,
           "document": "歌曲详细信息列表。",
-          "example": "无",
+          "example": "[{\"KTVMusicBaseInfo\": {\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"},\"PlayToken\": \"4g8jfa9bjz\",\"LyricsUrl\": \"http://download.tencent.com\",\"MidiUrl\": \"http://download.tencent.com\",\"ChorusClipSet\": [{\"Type\": \"Slow\",\"Value\": 100}],\"PreludeInterval\": 100,\"GenreSet\": [\"2a7ivdfh4u\",\"pejyjvfitc\"],\"BPMInfo\": {\"Type\": \"Slow\",\"Value\": 100}}]",
           "member": "KTVMusicDetailInfo",
           "name": "KTVMusicDetailInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不存在歌曲Id列表。",
-          "example": "无",
+          "example": "[\"7jd457rjz2\"]",
           "member": "string",
           "name": "NotExistMusicIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -362,20 +364,20 @@
         {
           "disabled": false,
           "document": "开始时间，单位：毫秒。",
-          "example": "无",
+          "example": "300",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束时间，单位：毫秒。",
-          "example": "无",
+          "example": "1800",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -461,7 +463,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "超酷音乐盒子",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -470,7 +472,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "2a7ivdfh4u",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -479,7 +481,7 @@
         {
           "disabled": false,
           "document": "匹配规则列表。",
-          "example": "无",
+          "example": "[{\"AMEMusicId\": \"bmp7a8yut5\",\"MusicInfo\": {\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]},\"MusicIdToMatchAME\": \"hr9nqvkz46\"}]",
           "member": "KTVMatchRule",
           "name": "Rules",
           "required": true,
@@ -494,20 +496,20 @@
         {
           "disabled": false,
           "document": "匹配到的歌曲列表。",
-          "example": "\"\"",
+          "example": "[{\"KTVMusicBaseInfo\": {\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"},\"MatchRule\": {\"AMEMusicId\": \"bmp7a8yut5\",\"MusicInfo\": {\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]},\"MusicIdToMatchAME\": \"hr9nqvkz46\"},\"AMEMusicBaseInfo\": {\"MusicId\": \"bmp7a8yut5\",\"Name\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]}}]",
           "member": "KTVMatchMusic",
           "name": "MatchMusicSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "未匹配的规则列表。",
-          "example": "\"\"",
+          "example": "[{\"AMEMusicId\": \"bmp7a8yut5\",\"MusicInfo\": {\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]},\"MusicIdToMatchAME\": \"hr9nqvkz46\"}]",
           "member": "KTVMatchRule",
           "name": "NotMatchRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -661,7 +663,7 @@
         {
           "disabled": false,
           "document": "用户标识",
-          "example": "test",
+          "example": "bmp7a8yut5",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -670,10 +672,19 @@
         {
           "disabled": false,
           "document": "歌曲 Id ",
-          "example": "mid-test",
+          "example": "jcrnwqzdp3",
           "member": "string",
           "name": "MusicId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间Id",
+          "example": "sgqufpd75i",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -695,7 +706,7 @@
         {
           "disabled": false,
           "document": "伴奏链接\n",
-          "example": "http://xxxx",
+          "example": "http://url.tencent.com",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -715,7 +726,7 @@
         {
           "disabled": false,
           "document": "高潮开始时间\n",
-          "example": "12452323",
+          "example": "100",
           "member": "int64",
           "name": "SegmentBegin",
           "output_required": false,
@@ -725,7 +736,7 @@
         {
           "disabled": false,
           "document": "高潮结束时间\n",
-          "example": "1234566",
+          "example": "18000",
           "member": "int64",
           "name": "SegmentEnd",
           "output_required": false,
@@ -735,7 +746,7 @@
         {
           "disabled": false,
           "document": "链接文件大小 (单位:字节)\n",
-          "example": "无",
+          "example": "2412390",
           "member": "int64",
           "name": "FileSize",
           "output_required": false,
@@ -757,7 +768,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -766,7 +777,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -775,7 +786,7 @@
         {
           "disabled": false,
           "document": "标签 Id。",
-          "example": "无",
+          "example": "vvws7nzzxg",
           "member": "string",
           "name": "TagId",
           "required": true,
@@ -784,7 +795,7 @@
         {
           "disabled": false,
           "document": "滚动标记。",
-          "example": "无",
+          "example": "vyg79z45nz",
           "member": "string",
           "name": "ScrollToken",
           "required": false,
@@ -793,7 +804,7 @@
         {
           "disabled": false,
           "document": "返回条数限制，默认 20，最大 50。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -802,7 +813,7 @@
         {
           "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
-          "example": "无",
+          "example": "[\"Play\"]",
           "member": "string",
           "name": "RightFilters",
           "required": false,
@@ -811,7 +822,7 @@
         {
           "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
-          "example": "无",
+          "example": "[\"Lyrics\"]",
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
@@ -826,18 +837,20 @@
         {
           "disabled": false,
           "document": "歌曲信息列表。",
-          "example": "无",
+          "example": "[{\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"}]",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
-          "example": "无",
+          "example": "ttxvqa4buy",
           "member": "string",
           "name": "ScrollToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -856,7 +869,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "超酷音乐盒",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -865,7 +878,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "wig792a58y",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -874,7 +887,7 @@
         {
           "disabled": false,
           "document": "歌单 Id。",
-          "example": "无",
+          "example": "xxv252gtn5",
           "member": "string",
           "name": "PlaylistId",
           "required": true,
@@ -883,7 +896,7 @@
         {
           "disabled": false,
           "document": "滚动标记。",
-          "example": "无",
+          "example": "vbcekmwwy8",
           "member": "string",
           "name": "ScrollToken",
           "required": false,
@@ -892,7 +905,7 @@
         {
           "disabled": false,
           "document": "返回条数，默认：20，最大：50。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -901,7 +914,7 @@
         {
           "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
-          "example": "无",
+          "example": "[\"Play\"]",
           "member": "string",
           "name": "RightFilters",
           "required": false,
@@ -910,7 +923,7 @@
         {
           "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
-          "example": "无",
+          "example": "Chat",
           "member": "string",
           "name": "PlayScene",
           "required": false,
@@ -919,7 +932,7 @@
         {
           "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
-          "example": "无",
+          "example": "[\"Lyrics\"]",
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
@@ -934,18 +947,20 @@
         {
           "disabled": false,
           "document": "歌曲信息列表。",
-          "example": "无",
+          "example": "[{\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"}]",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
-          "example": "无",
+          "example": "fqc9u4giz9",
           "member": "string",
           "name": "ScrollToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -964,7 +979,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "超酷音乐盒",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -973,7 +988,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "nkwmazaqmd",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -982,7 +997,7 @@
         {
           "disabled": false,
           "document": "类型列表，取值有：\n<li>OfficialRec：官方推荐；</li>\n<li>Customize：自定义。</li>\n默认值为 OfficialRec。",
-          "example": "无",
+          "example": "[\"OfficialRec\"]",
           "member": "string",
           "name": "Types",
           "required": false,
@@ -991,7 +1006,7 @@
         {
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1000,7 +1015,7 @@
         {
           "disabled": false,
           "document": "分页返回的记录条数，默认值：20，最大值：50。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1015,20 +1030,20 @@
         {
           "disabled": false,
           "document": "歌单基础信息。",
-          "example": "无",
+          "example": "[{\"PlaylistId\": \"bqw27wdnr6\",\"Title\": \"中文DJ舞曲\",\"Remark\": \"非常嗨的歌单\",\"Status\": \"Online\",\"UpdateTime\": \"2024-01-01T12:00:00Z\",\"MusicNum\": \"MusicNum\"}]",
           "member": "KTVPlaylistBaseInfo",
           "name": "PlaylistBaseInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌单总数。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1047,7 +1062,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "ktv",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -1065,7 +1080,7 @@
         {
           "disabled": false,
           "document": "机器人Id列表。",
-          "example": "无",
+          "example": "[\"d2w7m6t9z8\"]",
           "member": "string",
           "name": "RobotIds",
           "required": false,
@@ -1074,7 +1089,7 @@
         {
           "disabled": false,
           "document": "机器人状态，取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>Destroy：销毁</li>",
-          "example": "无",
+          "example": "[\"Play\"]",
           "member": "string",
           "name": "Statuses",
           "required": false,
@@ -1083,7 +1098,7 @@
         {
           "disabled": false,
           "document": "匹配创建时间在此时间段内的机器人。\n<li>包含所指定的头尾时间点。</li>",
-          "example": "无",
+          "example": "{\"Before\": \"2020-12-10T07:25:52Z\",\"After\": \"2020-12-10T07:25:52Z\"}",
           "member": "TimeRange",
           "name": "CreateTime",
           "required": false,
@@ -1119,17 +1134,17 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机器人信息集合。",
-          "example": "无",
+          "example": "[{\"RobotId\": \"d2w7m6t9z8\",\"Status\": \"Play\",\"Playlists\": [\"vvws7nzzxg\"],\"CurIndex\": 1,\"Position\": 120000,\"SetAudioParamInput\": {\"Definition\": \"audio/hi,\"Type\": \"Original\"},\"JoinRoomInput\": {\"TRTCJoinRoomInput\": {\"Sign\": \"我是孤独的鹰\",\"RoomId\": \"1234\",\"SdkAppId\": \"140000001\",\"UserId\": \"tom\",\"RoomIdType\": \"Integer\"}},\"RTCSystem\": \"TRTC\",\"SetPlayModeInput\": {\"PlayMode\": \"RepeatPlaylist\"}}]",
           "member": "KTVRobotInfo",
           "name": "KTVRobotInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1203,7 +1218,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -1212,7 +1227,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -1227,10 +1242,10 @@
         {
           "disabled": false,
           "document": "标签分组列表。",
-          "example": "无",
+          "example": "[{\"GroupId\": \"vvws7nzzxg\",\"Name\": \"娱乐大队\t\",\"TagInfoSet\": [{\"TagId\": \"wig792a58y\",\"Name\": \"流行音乐\"}]}]",
           "member": "KTVTagGroupInfo",
           "name": "TagGroupInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1249,7 +1264,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -1276,7 +1291,7 @@
         {
           "disabled": false,
           "document": "交易流水号集合，匹配集合指定所有流水号 。\n<li>数组长度限制：10。</li>",
-          "example": "无",
+          "example": "[\"ymccjurfpz\",\"aseycksjxh\"]",
           "member": "string",
           "name": "TradeSerialNos",
           "required": false,
@@ -1285,7 +1300,7 @@
         {
           "disabled": false,
           "document": "用户标识集合，匹配集合指定所有用户标识 。\n<li>数组长度限制：10。</li>",
-          "example": "无",
+          "example": "[\"pgg5cibqa6\",\"gq2nj5kymz\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -1294,7 +1309,7 @@
         {
           "disabled": false,
           "document": "分页返回的起始偏移量，默认值：0。将返回第 Offset 到第 Offset+Limit-1 条。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1303,7 +1318,7 @@
         {
           "disabled": false,
           "document": "分页返回的记录条数，默认值：20，最大值：50。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1318,18 +1333,20 @@
         {
           "disabled": false,
           "document": "直播会员充值流水信息列表",
-          "example": "无",
+          "example": "[{\"TradeSerialNo\": \"x8pr6f6wvx\",\"AppName\": \"app-test\",\"UserId\": \"gq2nj5kymz\",\"RoomId\": \"ymccjurfpz\",\"VipDays\": 30,\"Status\": \"Success\",\"CreateTime\": \"2022-06-06T18:29:33Z\"}]",
           "member": "LiveVipTradeInfo",
           "name": "LiveVipTradeInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "直播会员充值流水总数。",
-          "example": "无",
+          "example": "30",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1348,7 +1365,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -1357,7 +1374,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -1372,9 +1389,10 @@
         {
           "disabled": false,
           "document": "用户信息。",
-          "example": "无",
+          "example": "{\"AppName\": \"app-test\",\"UserId\": \"d2w7m6t9z8\",\"LiveVipUserInfo\": {\"RoomId\": \"awv5dis27j\",\"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\"LiveVipStatus\": \"Valid\"},\"UserType\": \"Normal\"}",
           "member": "UserInfo",
           "name": "UserInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1417,7 +1435,7 @@
         {
           "disabled": false,
           "document": "是否是会员。（0:不是会员 1:是会员）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsVip",
           "output_required": false,
@@ -1427,7 +1445,7 @@
         {
           "disabled": false,
           "document": "主播id",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "AnchorId",
           "output_required": false,
@@ -1437,7 +1455,7 @@
         {
           "disabled": false,
           "document": "房间id",
-          "example": "无",
+          "example": "vvws7nzzxg",
           "member": "string",
           "name": "RoomId",
           "output_required": false,
@@ -1447,7 +1465,7 @@
         {
           "disabled": false,
           "document": "会员过期时间",
-          "example": "无",
+          "example": "2022-06-06T18:29:33Z",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -1457,7 +1475,7 @@
         {
           "disabled": false,
           "document": "会员状态。（-1:未开通过；1:已开通，未过期；2:已开通，已过期）",
-          "example": "无",
+          "example": "-1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -1524,9 +1542,10 @@
         {
           "disabled": false,
           "document": "TRTC进房参数",
-          "example": "无",
+          "example": "{\"Sign\": \"我是孤独的鹰\",\"RoomId\": \"1234\",\"SdkAppId\": \"140000001\",\"UserId\": \"tom\",\"RoomIdType\": \"Integer\"}",
           "member": "TRTCJoinRoomInput",
           "name": "TRTCJoinRoomInput",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -1540,20 +1559,20 @@
         {
           "disabled": false,
           "document": "节拍类型，取值有：\n<li>Slow：慢；</li>\n<li>Middle：中等；</li>\n<li>Fast：快；</li>\n<li>Unknown：未知。</li>",
-          "example": "无",
+          "example": "Slow",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "BPM 值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1566,30 +1585,30 @@
         {
           "disabled": false,
           "document": "匹配到的歌曲基础信息。",
-          "example": "\"\"",
+          "example": "{\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"}",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicBaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命中规则。",
-          "example": "\"\"",
+          "example": "{\"AMEMusicId\": \"bmp7a8yut5\",\"MusicInfo\": {\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]},\"MusicIdToMatchAME\": \"hr9nqvkz46\"}",
           "member": "KTVMatchRule",
           "name": "MatchRule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "{\"MusicId\": \"bmp7a8yut5\",\"Name\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]}",
           "member": "AMEMusicBaseInfo",
           "name": "AMEMusicBaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1602,9 +1621,10 @@
         {
           "disabled": false,
           "document": "AME 曲库 Id。",
-          "example": "\"\"",
+          "example": "bmp7a8yut5",
           "member": "string",
           "name": "AMEMusicId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1612,9 +1632,10 @@
         {
           "disabled": false,
           "document": "歌曲匹配信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "{\"MusicName\": \"反方向的钟\",\"SingerSet\": [\"周杰伦\",\"陈奕迅\"]}",
           "member": "KTVMatchRuleMusicInfo",
           "name": "MusicInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1622,9 +1643,10 @@
         {
           "disabled": false,
           "document": "音速达歌曲 Id，用于匹配 AME 曲库歌曲。",
-          "example": "\"\"",
+          "example": "hr9nqvkz46",
           "member": "string",
           "name": "MusicIdToMatchAME",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1638,9 +1660,10 @@
         {
           "disabled": false,
           "document": "歌曲名称。",
-          "example": "\"\"",
+          "example": "反方向的钟",
           "member": "string",
           "name": "MusicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1648,9 +1671,10 @@
         {
           "disabled": false,
           "document": "歌手列表。",
-          "example": "\"\"",
+          "example": "[\"周杰伦\",\"陈奕迅\"]",
           "member": "string",
           "name": "SingerSet",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1664,80 +1688,80 @@
         {
           "disabled": false,
           "document": "歌曲Id。",
-          "example": "无",
+          "example": "3mcwprujq9",
           "member": "string",
           "name": "MusicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌曲名称。",
-          "example": "无",
+          "example": "七里香",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌手名称。",
-          "example": "无",
+          "example": "[\"周杰伦\"]",
           "member": "string",
           "name": "SingerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放时长。",
-          "example": "无",
+          "example": "120",
           "member": "int64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌手图片链接。",
-          "example": "无",
+          "example": "http://image.tencent.com",
           "member": "string",
           "name": "SingerImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]}",
           "member": "MusicAlbumInfo",
           "name": "AlbumInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
-          "example": "无",
+          "example": "[\"Play\"]",
           "member": "string",
           "name": "RightSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
-          "example": "无",
+          "example": "Featured",
           "member": "string",
           "name": "RecommendType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1750,80 +1774,80 @@
         {
           "disabled": false,
           "document": "歌曲基础信息。",
-          "example": "无",
+          "example": "{\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"}",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicBaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放凭证。",
-          "example": "无",
+          "example": "4g8jfa9bjz",
           "member": "string",
           "name": "PlayToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌词下载链接。",
-          "example": "无",
+          "example": "http://download.tencent.com",
           "member": "string",
           "name": "LyricsUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音高数据下载链接。",
-          "example": "无",
+          "example": "http://download.tencent.com",
           "member": "string",
           "name": "MidiUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "副歌片段信息。",
-          "example": "无",
+          "example": "[{\"StartTime\": 300,\"EndTime\": 1800}]",
           "member": "ChorusClip",
           "name": "ChorusClipSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前奏间隔。",
-          "example": "0",
+          "example": "100",
           "member": "int64",
           "name": "PreludeInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌曲流派列表。",
-          "example": "无",
+          "example": "[\"2a7ivdfh4u\",\"pejyjvfitc\"]",
           "member": "string",
           "name": "GenreSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节拍信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Type\": \"Slow\",\"Value\": 100}",
           "member": "KTVBPMInfo",
           "name": "BPMInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1862,20 +1886,20 @@
         {
           "disabled": false,
           "document": "歌单Id。",
-          "example": "无",
+          "example": "bqw27wdnr6",
           "member": "string",
           "name": "PlaylistId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "歌单标题。",
-          "example": "无",
+          "example": "中文DJ舞曲",
           "member": "string",
           "name": "Title",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1888,10 +1912,10 @@
         {
           "disabled": false,
           "document": "机器人Id。",
-          "example": "xxxxx",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "RobotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1901,17 +1925,17 @@
           "example": "Play",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放列表。",
-          "example": "无",
+          "example": "[\"vvws7nzzxg\"]",
           "member": "string",
           "name": "Playlists",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1921,7 +1945,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurIndex",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1931,27 +1955,27 @@
           "example": "120000",
           "member": "uint64",
           "name": "Position",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频参数。",
-          "example": "无",
+          "example": "{\"Definition\": \"audio/hi,\"Type\": \"Original\"}",
           "member": "SetAudioParamCommandInput",
           "name": "SetAudioParamInput",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "进房信息。",
-          "example": "无",
+          "example": "{\"JoinRoomInput\": {\"Sign\": \"我是孤独的鹰\",\"RoomId\": \"1234\",\"SdkAppId\": \"140000001\",\"UserId\": \"tom\",\"RoomIdType\": \"Integer\"}}",
           "member": "JoinRoomInput",
           "name": "JoinRoomInput",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1961,17 +1985,17 @@
           "example": "TRTC",
           "member": "string",
           "name": "RTCSystem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放模式，PlayMode取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
-          "example": "无",
+          "example": "{\"PlayMode\": \"RepeatPlaylist\"}",
           "member": "SetPlayModeCommandInput",
           "name": "SetPlayModeInput",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -1984,10 +2008,10 @@
         {
           "disabled": false,
           "document": "联想词。",
-          "example": "无",
+          "example": "联想",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2000,30 +2024,30 @@
         {
           "disabled": false,
           "document": "分组 Id。",
-          "example": "无",
+          "example": "vvws7nzzxg",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分组名。",
-          "example": "无",
+          "example": "娱乐大队",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表。",
-          "example": "无",
+          "example": "[{\"TagId\": \"wig792a58y\",\"Name\": \"流行音乐\"}]",
           "member": "KTVTagInfo",
           "name": "TagInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2036,20 +2060,20 @@
         {
           "disabled": false,
           "document": "标签 Id。",
-          "example": "无",
+          "example": "wig792a58y",
           "member": "string",
           "name": "TagId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签名称。",
-          "example": "无",
+          "example": "流行音乐",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2062,70 +2086,70 @@
         {
           "disabled": false,
           "document": "交易流水号。",
-          "example": "无",
+          "example": "x8pr6f6wvx",
           "member": "string",
           "name": "TradeSerialNo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "gq2nj5kymz",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间标识。",
-          "example": "无",
+          "example": "ymccjurfpz",
           "member": "string",
           "name": "RoomId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "充值会员天数。\n取值有： \n<li>31</li> <li>93</li><li>186</li> <li>372</li>",
-          "example": "无",
+          "example": "30",
           "member": "int64",
           "name": "VipDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态。 \n取值有： \n<li>Success：成功</li><li>Fail：失败</li><li>Processing：订单处理中</li>",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2022-06-06T18:29:33Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2138,30 +2162,30 @@
         {
           "disabled": false,
           "document": "房间标识。",
-          "example": "无",
+          "example": "awv5dis27j",
           "member": "string",
           "name": "RoomId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "直播会员结束时间。",
-          "example": "无",
+          "example": "2020-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "LiveVipEndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "会员生效状态\n<li>Valid：生效</li><li>Invalid：无效</li>",
-          "example": "无",
+          "example": "Valid",
           "member": "string",
           "name": "LiveVipStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2174,20 +2198,20 @@
         {
           "disabled": false,
           "document": "尺寸规格，取值有：\n<li>Mini：150 x 150 尺寸；</li>\n<li>Small：240 x 240 尺寸；</li>\n<li>Medium：480 x 480 尺寸。</li>",
-          "example": "无",
+          "example": "Mini",
           "member": "string",
           "name": "Dimension",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下载链接。",
-          "example": "无",
+          "example": "http://download.tencent.com",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2200,20 +2224,20 @@
         {
           "disabled": false,
           "document": "专辑名称。",
-          "example": "无",
+          "example": "一个浪漫的专辑",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "封面列表。",
-          "example": "无",
+          "example": "[{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]",
           "member": "MusicAlbumCoverInfo",
           "name": "CoverInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2242,7 +2266,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -2251,7 +2275,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2260,7 +2284,7 @@
         {
           "disabled": false,
           "document": "交易流水号，用于标记此次充值记录，多次充值记录传入相同的 TradeSerialNo 会判断为失败，可用于防止重提提交造成重复计费。",
-          "example": "无",
+          "example": "vvws7nzzxg",
           "member": "string",
           "name": "TradeSerialNo",
           "required": true,
@@ -2269,7 +2293,7 @@
         {
           "disabled": false,
           "document": "房间标识。",
-          "example": "无",
+          "example": "vyg79z45nz",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -2278,7 +2302,7 @@
         {
           "disabled": false,
           "document": "充值会员天数。\n取值有：\n<li>31</li>\n<li>93</li>\n<li>186</li>\n<li>372</li>",
-          "example": "无",
+          "example": "60",
           "member": "int64",
           "name": "VipDays",
           "required": true,
@@ -2287,7 +2311,7 @@
         {
           "disabled": false,
           "document": "充值分类。取值有：room_card-包月房卡; 其他-保留。",
-          "example": "无",
+          "example": "room_card-包月房卡",
           "member": "string",
           "name": "GiveType",
           "required": false,
@@ -2296,7 +2320,7 @@
         {
           "disabled": false,
           "document": "播放场景。默认为Live\n<li>Live：直播</li><li>Chat：语聊</li>",
-          "example": "无",
+          "example": "Live",
           "member": "string",
           "name": "PlayScene",
           "required": false,
@@ -2311,9 +2335,10 @@
         {
           "disabled": false,
           "document": "直播会员信息。",
-          "example": "无",
+          "example": "{\"RoomId\": \"awv5dis27j\",\"LiveVipEndTime\": \"\t2024-06-01T12:00:00Z\",\"LiveVipStatus\": \"Valid\"}",
           "member": "LiveVipUserInfo",
           "name": "LiveVipUserInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2383,7 +2408,7 @@
         {
           "disabled": false,
           "document": "厂商订单号。",
-          "example": "无",
+          "example": "3manipbf6x",
           "member": "string",
           "name": "PartnerNo",
           "output_required": false,
@@ -2393,7 +2418,7 @@
         {
           "disabled": false,
           "document": "TME订单号。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "OrderNo",
           "output_required": false,
@@ -2403,7 +2428,7 @@
         {
           "disabled": false,
           "document": "订单创建时间。",
-          "example": "无",
+          "example": "2022-06-06T18:29:33Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -2425,7 +2450,7 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -2434,7 +2459,7 @@
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2443,7 +2468,7 @@
         {
           "disabled": false,
           "document": "关键词。",
-          "example": "无",
+          "example": "伤感",
           "member": "string",
           "name": "KeyWord",
           "required": true,
@@ -2452,7 +2477,7 @@
         {
           "disabled": false,
           "document": "滚动标记。",
-          "example": "无",
+          "example": "vvws7nzzxg",
           "member": "string",
           "name": "ScrollToken",
           "required": false,
@@ -2461,7 +2486,7 @@
         {
           "disabled": false,
           "document": "返回条数限制，默认 20，最大 50.",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2470,7 +2495,7 @@
         {
           "disabled": false,
           "document": "权益过滤，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
-          "example": "无",
+          "example": "[\"Play\"]",
           "member": "string",
           "name": "RightFilters",
           "required": false,
@@ -2479,7 +2504,7 @@
         {
           "disabled": false,
           "document": "播放场景。默认为Chat\n<li>Live：直播</li><li>Chat：语聊</li>",
-          "example": "无",
+          "example": "Chat",
           "member": "string",
           "name": "PlayScene",
           "required": false,
@@ -2488,7 +2513,7 @@
         {
           "disabled": false,
           "document": "物料过滤，取值有：\n<li>Lyrics：含有歌词；</li>\n<li>Midi：含有音高线。</li>",
-          "example": "无",
+          "example": "[\"Lyrics\"]",
           "member": "string",
           "name": "MaterialFilters",
           "required": false,
@@ -2503,18 +2528,20 @@
         {
           "disabled": false,
           "document": "歌曲信息列表。",
-          "example": "无",
+          "example": "[{\"MusicId\": \"3mcwprujq9\",\"Name\": \"七里香\",\"SingerSet\": [\"周杰伦\"],\"Duration\": 120,\"SingerImageUrl\": \"http://image.tencent.com\",\"AlbumInfo\": {\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]},\"RightSet\": [\"Play\"],\"RecommendType\": \"Featured\"}]",
           "member": "KTVMusicBaseInfo",
           "name": "KTVMusicInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "滚动标记，用于设置下次请求的 ScrollToken 参数。",
-          "example": "无",
+          "example": "vyg79z45nz",
           "member": "string",
           "name": "ScrollToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2574,16 +2601,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>",
+          "document": "音频类型，取值有：\n<li>Original：原唱</li>\n<li>Accompaniment：伴奏</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Original",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SetDestroyModeCommandInput": {
       "document": "设置销毁模式",
@@ -2616,16 +2644,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>",
+          "document": "播放模式，取值有：\n<li>RepeatPlaylist：列表循环</li>\n<li>Order：顺序播放</li>\n<li>RepeatSingle：单曲循环</li>\n<li>Shuffle：随机播放</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RepeatPlaylist",
           "member": "string",
           "name": "PlayMode",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SetPlaylistCommandInput": {
       "document": "设置播放列表指令参数",
@@ -2637,8 +2666,7 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2647,8 +2675,7 @@
           "member": "int64",
           "name": "Index",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2657,18 +2684,16 @@
           "member": "int64",
           "name": "ChangedIndex",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "歌曲 ID 列表，当 Type 取 Add 时，必填。",
-          "example": "xxxxx",
+          "example": "[\"d2w7m6t9z8\",\"vvws7nzzxg\"]",
           "member": "string",
           "name": "MusicIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2733,82 +2758,74 @@
         {
           "disabled": false,
           "document": "可同时传入多个指令，顺序执行。取值有：\n<li>Play：播放</li>\n<li>Pause：暂停</li>\n<li>SwitchPrevious：上一首</li>\n<li>SwitchNext：下一首</li>\n<li>SetPlayMode：设置播放模式</li>\n<li>Seek：调整播放进度</li>\n<li>SetPlaylist：歌单变更</li>\n<li>SetAudioParam：音频参数变更</li>\n<li>SendMessage：发送自定义消息</li>\n<li>SetDestroyMode：设置销毁模式</li>",
-          "example": "无",
+          "example": "Play",
           "member": "string",
           "name": "Command",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "播放参数。",
-          "example": "无",
+          "example": "{\"Index\": 2}",
           "member": "PlayCommandInput",
           "name": "PlayCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "播放列表变更信息，当Command取SetPlaylist时，必填。",
-          "example": "无",
+          "example": "{\"Type\": \"Add\",\"Index\": 1,\"ChangedIndex\": 2,\"MusicIds\": [\"d2w7m6t9z8\",\"vvws7nzzxg\"]}",
           "member": "SetPlaylistCommandInput",
           "name": "SetPlaylistCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "播放进度，当Command取Seek时，必填。",
-          "example": "无",
+          "example": "{\"Position\": 120}",
           "member": "SeekCommandInput",
           "name": "SeekCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "音频参数，当Command取SetAudioParam时，必填。",
-          "example": "无",
+          "example": "{\"Definition\": \"audio/hi,\"Type\": \"Original\"}",
           "member": "SetAudioParamCommandInput",
           "name": "SetAudioParamCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "自定义消息，当Command取SendMessage时，必填。",
-          "example": "无",
+          "example": "{\"Message\": {\"field\": \"value\"},\"Repeat\": 2}",
           "member": "SendMessageCommandInput",
           "name": "SendMessageCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "播放模式，当Command取SetPlayMode时，必填。",
-          "example": "无",
+          "example": "{\"PlayMode\": \"RepeatPlaylist\"}",
           "member": "SetPlayModeCommandInput",
           "name": "SetPlayModeCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "销毁模式，当Command取SetDestroyMode时，必填。",
-          "example": "无",
+          "example": "{\"DestroyMode\": \"Auto\",\"DestroyExpireTime\": 120}",
           "member": "SetDestroyModeCommandInput",
           "name": "SetDestroyModeCommandInput",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -2819,7 +2836,7 @@
         {
           "disabled": false,
           "document": "签名。",
-          "example": "xxxxxxx",
+          "example": "我是孤独的鹰",
           "member": "string",
           "name": "Sign",
           "output_required": true,
@@ -2906,40 +2923,40 @@
         {
           "disabled": false,
           "document": "应用名称。",
-          "example": "无",
+          "example": "app-test",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户标识。",
-          "example": "无",
+          "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "直播会员详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"RoomId\": \"awv5dis27j\",\"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\"LiveVipStatus\": \"Valid\"}",
           "member": "LiveVipUserInfo",
           "name": "LiveVipUserInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户类型\n<li>Normal：普通用户</li>\n<li>LiveVip：直播会员用户</li>",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "UserType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

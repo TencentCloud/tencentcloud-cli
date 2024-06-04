@@ -41,8 +41,8 @@ Output:
 ```
 {
     "Response": {
-        "Msg": "xx",
-        "RequestId": "xx"
+        "Msg": "invalid ModifyProjectLimitRequest.ProjectInterface: value must be in list [log speed performance webvitals pv event custom miniProgramData]",
+        "RequestId": "57e7f631-73d0-4926-b659-d4ef64818312"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 获取标签列表**
 
-
+获取标签信息列表
 
 Input: 
 
@@ -19,7 +19,7 @@ Output:
                 "GroupId": "1",
                 "TagInfoSet": [
                     {
-                        "TagId": "11",
+                        "TagId": "ID1",
                         "Name": "嘻哈"
                     }
                 ],

@@ -1,3 +1,149 @@
+# Release 3.0.1008.1
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 9 次发布
+
+发布时间：2024-06-05 01:10:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUnitInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/84032)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 100 次发布
+
+发布时间：2024-06-05 01:13:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：ListHasListener
+
+
+修改数据结构：
+
+* [CommonMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CommonMetrics)
+
+	* 新增成员：QueryResultTime
+
+
+
+
+## 物联网通信(iotcloud) 版本：2021-04-08
+
+### 第 15 次发布
+
+发布时间：2024-06-05 01:16:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/634/73630)
+
+	* 新增出参：UserDefined
+
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/634/71973#FirmwareInfo)
+
+	* 新增成员：UserDefined
+
+
+
+
+## 物联网通信(iotcloud) 版本：2018-06-14
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 37 次发布
+
+发布时间：2024-06-05 01:17:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FirmwareInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#FirmwareInfo)
+
+	* 新增成员：UserDefined
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 49 次发布
+
+发布时间：2024-06-05 01:19:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：ResourceType
+
+
+
+
+## 音速达直播音乐版权引擎(yinsuda) 版本：2022-05-27
+
+### 第 4 次发布
+
+发布时间：2024-06-05 01:27:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeKTVMusicAccompanySegmentUrlVip](http://document.tencentcloudapi.woa.com/document/product/1717/82871)
+
+	* 新增入参：RoomId
+
+
+修改数据结构：
+
+* [LiveVipTradeInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipTradeInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>TradeSerialNo, AppName, UserId, RoomId, VipDays, Status, CreateTime
+
+* [LiveVipUserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#LiveVipUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>RoomId, LiveVipEndTime, LiveVipStatus
+
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/80557#UserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppName, UserId, LiveVipUserInfo, UserType
+
+
+
+
 # Release 3.0.1007.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
