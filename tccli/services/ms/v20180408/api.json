@@ -2840,27 +2840,30 @@
         {
           "disabled": false,
           "document": "用户uin信息",
-          "example": "",
+          "example": "5975134874",
           "member": "uint64",
           "name": "UserUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户APPID信息",
-          "example": "",
+          "example": "1234879",
           "member": "uint64",
           "name": "UserAppid",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "系统时间戳",
-          "example": "",
+          "example": "154976147",
           "member": "uint64",
           "name": "TimeStamp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -427,7 +427,7 @@
       "usage": "out"
     },
     "Network": {
-      "document": "网路信息",
+      "document": "网络信息",
       "members": [
         {
           "disabled": false,

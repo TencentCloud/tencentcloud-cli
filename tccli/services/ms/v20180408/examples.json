@@ -201,7 +201,7 @@
     "DescribeUserBaseInfoInstance": [
       {
         "document": "",
-        "input": "https://ms.tencentcloudapi.com/?Action=DescribeUserBaseInfoInstance\r\n&<公共请求参数>",
+        "input": "https://ms.tencentcloudapi.com/?Action=DescribeUserBaseInfoInstance\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce5e66e0-aab5-4d31-9b98-c52caf0fdfae\",\n        \"TimeStamp\": 1544607650,\n        \"UserAppid\": 1251006373,\n        \"UserUin\": 20548499\n    }\n}",
         "title": "获取用户基础信息"
       }

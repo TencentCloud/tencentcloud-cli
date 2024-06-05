@@ -399,7 +399,7 @@
         {
           "disabled": false,
           "document": "竞拍人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ten***t.com",
           "member": "string",
           "name": "Bidder",
           "output_required": false,
@@ -409,7 +409,7 @@
         {
           "disabled": false,
           "document": "竞拍时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "AuctionTime",
           "output_required": false,
@@ -419,7 +419,7 @@
         {
           "disabled": false,
           "document": "竞拍价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "AuctionPrice",
           "output_required": false,
@@ -429,7 +429,7 @@
         {
           "disabled": false,
           "document": "状态 up: 领先 down: 落后\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "up",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -536,7 +536,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "required": true,
@@ -551,7 +551,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -561,7 +561,7 @@
         {
           "disabled": false,
           "document": "当前域名价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "120.00",
           "member": "float",
           "name": "CurrentPrice",
           "output_required": false,
@@ -571,7 +571,7 @@
         {
           "disabled": false,
           "document": "用户上次出价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "BidPrice",
           "output_required": false,
@@ -581,7 +581,7 @@
         {
           "disabled": false,
           "document": "当前加价幅度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50.00",
           "member": "float",
           "name": "CurrentPriceScope",
           "output_required": false,
@@ -591,7 +591,7 @@
         {
           "disabled": false,
           "document": "加价幅度区间配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "list[\"PriceScopeConf\"]",
           "member": "PriceScopeConf",
           "name": "PriceScope",
           "output_required": false,
@@ -601,7 +601,7 @@
         {
           "disabled": false,
           "document": "用户当前已经支付了的保证金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
           "output_required": false,
@@ -659,7 +659,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "required": true,
@@ -668,7 +668,7 @@
         {
           "disabled": false,
           "document": "价格",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "Price",
           "required": true,
@@ -683,7 +683,7 @@
         {
           "disabled": false,
           "document": "是否需要额外支付",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsNeedPay",
           "output_required": true,
@@ -693,7 +693,7 @@
         {
           "disabled": false,
           "document": "计费请求参数，以Json字符串的形式进行返回。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "BillingParam",
           "output_required": false,
@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "required": true,
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "条数，默认10条",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1667,7 +1667,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "OffSet",
           "required": false,
@@ -1682,7 +1682,7 @@
         {
           "disabled": false,
           "document": "竞拍详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "list[\"AuctionInfo\"]",
           "member": "AuctionInfo",
           "name": "AuctionList",
           "output_required": false,
@@ -1692,7 +1692,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -1840,7 +1840,7 @@
         {
           "disabled": false,
           "document": " 1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -1850,7 +1850,7 @@
         {
           "disabled": false,
           "document": "预约保证金是否已经退回\nyes：退回 no: 未退回",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "BiddingBondRefund",
           "output_required": false,
@@ -1872,7 +1872,7 @@
         {
           "disabled": false,
           "document": "每页数量",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -1881,7 +1881,7 @@
         {
           "disabled": false,
           "document": "状态： 1 已预约 9 预约持有者索回",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1890,7 +1890,7 @@
         {
           "disabled": false,
           "document": "排序字段：AppointEndTime 预约结束时间",
-          "example": "无",
+          "example": "AppointEndTime",
           "member": "string",
           "name": "SortField",
           "required": false,
@@ -1899,7 +1899,7 @@
         {
           "disabled": false,
           "document": "排序规则：asc升序，desc降序",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "SortOrder",
           "required": false,
@@ -1943,7 +1943,7 @@
         {
           "disabled": false,
           "document": "每页数量",
-          "example": "无",
+          "example": "20",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -1952,7 +1952,7 @@
         {
           "disabled": false,
           "document": "2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -1961,7 +1961,7 @@
         {
           "disabled": false,
           "document": "排序字段：BiddingEndTime 竞价结束时间\t\nBiddingPrice 我的价格",
-          "example": "无",
+          "example": "BiddingEndTime",
           "member": "string",
           "name": "SortField",
           "required": false,
@@ -1970,7 +1970,7 @@
         {
           "disabled": false,
           "document": "排序规则：asc升序，desc降序",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "SortOrder",
           "required": false,
@@ -2002,7 +2002,7 @@
         {
           "disabled": false,
           "document": "保证金，是否退款，yes表示退款，no表示不退款",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "BiddingBondRefund",
           "output_required": false,
@@ -2012,7 +2012,7 @@
         {
           "disabled": false,
           "document": "状态：1 竞价中，2 待出价，3 竞价失败， 4 等待支付 5 等待转移， 6 转移中，7 交易成功，8 持有者索回，9 已违约",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -2034,7 +2034,7 @@
         {
           "disabled": false,
           "document": "每页数量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "状态：5 等待支付 6 等待转移， 7 转移中，8 交易成功，11 尾款阶段持有者索回，12 已违约",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -2052,7 +2052,7 @@
         {
           "disabled": false,
           "document": "排序字段：SuccessfulTime 预约结束时间",
-          "example": "无",
+          "example": "SuccessfulTime",
           "member": "string",
           "name": "SortField",
           "required": false,
@@ -2061,7 +2061,7 @@
         {
           "disabled": false,
           "document": "排序规则：asc升序，desc降序",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "SortOrder",
           "required": false,
@@ -2358,7 +2358,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "required": true,
@@ -2373,7 +2373,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -2383,7 +2383,7 @@
         {
           "disabled": false,
           "document": "域名类型",
-          "example": "无",
+          "example": "pay",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -2393,7 +2393,7 @@
         {
           "disabled": false,
           "document": "支付结束时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -2403,7 +2403,7 @@
         {
           "disabled": false,
           "document": "域名注册时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -2413,7 +2413,7 @@
         {
           "disabled": false,
           "document": "域名成交价格",
-          "example": "无",
+          "example": "200.00",
           "member": "float",
           "name": "Price",
           "output_required": false,
@@ -2423,7 +2423,7 @@
         {
           "disabled": false,
           "document": "待退还保证金",
-          "example": "无",
+          "example": "50.00",
           "member": "float",
           "name": "RetDeposit",
           "output_required": false,
@@ -2519,7 +2519,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -2528,7 +2528,7 @@
         {
           "disabled": false,
           "document": "条数",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -2543,7 +2543,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -2553,7 +2553,7 @@
         {
           "disabled": false,
           "document": "预释放竞价列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "list[\"PreAuctionInfo\"]",
           "member": "PreAuctionInfo",
           "name": "PreAuctionList",
           "output_required": false,
@@ -2649,7 +2649,7 @@
         {
           "disabled": false,
           "document": "关键词",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -2658,7 +2658,7 @@
         {
           "disabled": false,
           "document": "搜索关键字，开头",
-          "example": "无",
+          "example": "tencent",
           "member": "bool",
           "name": "DomainStart",
           "required": false,
@@ -2667,7 +2667,7 @@
         {
           "disabled": false,
           "document": "搜索关键字结尾",
-          "example": "无",
+          "example": ".com",
           "member": "bool",
           "name": "DomainEnd",
           "required": false,
@@ -2676,7 +2676,7 @@
         {
           "disabled": false,
           "document": "排序",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Sort",
           "required": false,
@@ -2685,7 +2685,7 @@
         {
           "disabled": false,
           "document": "起始价格",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "PriceStart",
           "required": false,
@@ -2694,7 +2694,7 @@
         {
           "disabled": false,
           "document": "结束价格",
-          "example": "无",
+          "example": "1000.00",
           "member": "float",
           "name": "PriceEnd",
           "required": false,
@@ -2703,7 +2703,7 @@
         {
           "disabled": false,
           "document": "起始域名长度",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "LengthStart",
           "required": false,
@@ -2712,7 +2712,7 @@
         {
           "disabled": false,
           "document": "结束域名长度",
-          "example": "无",
+          "example": "4",
           "member": "int64",
           "name": "LengthEnd",
           "required": false,
@@ -2721,7 +2721,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -2729,8 +2729,8 @@
         },
         {
           "disabled": false,
-          "document": "没页显示数",
-          "example": "无",
+          "document": "每页显示数",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -2739,7 +2739,7 @@
         {
           "disabled": false,
           "document": "后缀",
-          "example": "无",
+          "example": "9",
           "member": "int64",
           "name": "Suffix",
           "required": false,
@@ -2748,7 +2748,7 @@
         {
           "disabled": false,
           "document": "一级分类",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ClassOne",
           "required": false,
@@ -2757,7 +2757,7 @@
         {
           "disabled": false,
           "document": "二级分类",
-          "example": "无",
+          "example": "5",
           "member": "int64",
           "name": "ClassTwo",
           "required": false,
@@ -2766,7 +2766,7 @@
         {
           "disabled": false,
           "document": "三级分类",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "ClassThree",
           "required": false,
@@ -2775,7 +2775,7 @@
         {
           "disabled": false,
           "document": "四级分类",
-          "example": "无",
+          "example": "6",
           "member": "int64",
           "name": "ClassFour",
           "required": false,
@@ -2784,7 +2784,7 @@
         {
           "disabled": false,
           "document": "排除关键字，开头",
-          "example": "无",
+          "example": "tencent",
           "member": "bool",
           "name": "FilterStart",
           "required": false,
@@ -2793,7 +2793,7 @@
         {
           "disabled": false,
           "document": "排除关键字，结尾",
-          "example": "无",
+          "example": ".com",
           "member": "bool",
           "name": "FilterEnd",
           "required": false,
@@ -2802,7 +2802,7 @@
         {
           "disabled": false,
           "document": "排除关键字",
-          "example": "无",
+          "example": "tencent",
           "member": "string",
           "name": "FilterWords",
           "required": false,
@@ -2811,7 +2811,7 @@
         {
           "disabled": false,
           "document": "交易类型",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TransType",
           "required": false,
@@ -2820,7 +2820,7 @@
         {
           "disabled": false,
           "document": "搜索白金域名",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsTop",
           "required": false,
@@ -2853,7 +2853,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -2863,7 +2863,7 @@
         {
           "disabled": false,
           "document": "预释放列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "list[\"PreReleaseInfo\"]",
           "member": "PreReleaseInfo",
           "name": "PreReleaseList",
           "output_required": false,
@@ -3221,7 +3221,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3236,7 +3236,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -3246,7 +3246,7 @@
         {
           "disabled": false,
           "document": "预约人数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PreCount",
           "output_required": false,
@@ -3256,7 +3256,7 @@
         {
           "disabled": false,
           "document": "域名注册时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -3266,7 +3266,7 @@
         {
           "disabled": false,
           "document": "域名删除时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -3276,7 +3276,7 @@
         {
           "disabled": false,
           "document": "到期时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -3286,7 +3286,7 @@
         {
           "disabled": false,
           "document": "域名状态",
-          "example": "无",
+          "example": "bid",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -3296,7 +3296,7 @@
         {
           "disabled": false,
           "document": "域名价格",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "CurrentPrice",
           "output_required": false,
@@ -3306,7 +3306,7 @@
         {
           "disabled": false,
           "document": "域名保证金",
-          "example": "无",
+          "example": "85.00",
           "member": "float",
           "name": "AppointBondPrice",
           "output_required": false,
@@ -3316,7 +3316,7 @@
         {
           "disabled": false,
           "document": "是否已经预约",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAppoint",
           "output_required": false,
@@ -3326,7 +3326,7 @@
         {
           "disabled": false,
           "document": "业务ID",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
@@ -3336,7 +3336,7 @@
         {
           "disabled": false,
           "document": "是否为原持有者域名",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDomainUser",
           "output_required": false,
@@ -4307,7 +4307,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -4317,7 +4317,7 @@
         {
           "disabled": false,
           "document": "竞价倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingTime",
           "output_required": false,
@@ -4327,7 +4327,7 @@
         {
           "disabled": false,
           "document": "出价次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "BidCount",
           "output_required": false,
@@ -4337,7 +4337,7 @@
         {
           "disabled": false,
           "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1200.00",
           "member": "float",
           "name": "Price",
           "output_required": false,
@@ -4347,7 +4347,7 @@
         {
           "disabled": false,
           "document": "用户操作 bid：出价 \"noAction\"：无法操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "bid",
           "member": "string",
           "name": "Op",
           "output_required": false,
@@ -4357,7 +4357,7 @@
         {
           "disabled": false,
           "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
@@ -4373,7 +4373,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -4383,7 +4383,7 @@
         {
           "disabled": false,
           "document": "预订倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ReservationTime",
           "output_required": false,
@@ -4393,7 +4393,7 @@
         {
           "disabled": false,
           "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -4403,7 +4403,7 @@
         {
           "disabled": false,
           "document": "域名删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DelTime",
           "output_required": false,
@@ -4413,7 +4413,7 @@
         {
           "disabled": false,
           "document": "当前人数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "CurrentPeople",
           "output_required": false,
@@ -4423,7 +4423,7 @@
         {
           "disabled": false,
           "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1200.00",
           "member": "float",
           "name": "Price",
           "output_required": false,
@@ -4433,7 +4433,7 @@
         {
           "disabled": false,
           "document": "是否收藏\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsFollow",
           "output_required": false,
@@ -4443,7 +4443,7 @@
         {
           "disabled": false,
           "document": "是否已经预约\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAppoint",
           "output_required": false,
@@ -4453,7 +4453,7 @@
         {
           "disabled": false,
           "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
@@ -4463,7 +4463,7 @@
         {
           "disabled": false,
           "document": "是否为原持有者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDomainUser",
           "output_required": false,
@@ -4535,7 +4535,7 @@
         {
           "disabled": false,
           "document": "最高价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000.00",
           "member": "float",
           "name": "MaxPrice",
           "output_required": true,
@@ -4545,7 +4545,7 @@
         {
           "disabled": false,
           "document": "最低价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "float",
           "name": "MinPrice",
           "output_required": true,
@@ -4555,7 +4555,7 @@
         {
           "disabled": false,
           "document": "价格幅度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.00",
           "member": "float",
           "name": "Price",
           "output_required": true,
@@ -4565,7 +4565,7 @@
         {
           "disabled": false,
           "document": "保证金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
           "output_required": true,

@@ -19,10 +19,11 @@ Output:
 {
     "Response": {
         "LiveVipUserInfo": {
-            "LiveVipEndTime": "2023-07-10T18:17:37+08:00",
-            "LiveVipStatus": "LiveVip"
+            "RoomId": "awv5dis27j",
+            "LiveVipEndTime": "2020-09-22T00:00:00+00:00",
+            "LiveVipStatus": "Valid"
         },
-        "RequestId": "RequestId"
+        "RequestId": "abc"
     }
 }
 ```

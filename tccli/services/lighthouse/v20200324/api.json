@@ -3347,7 +3347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -3356,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "Docker活动ID列表。",
+          "document": "Docker活动ID列表。可通过[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口返回值中的ActivityId获取。",
           "example": "[\"lhda-nn82v77w\"]",
           "member": "string",
           "name": "ActivityIds",
@@ -3484,7 +3484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -3493,7 +3493,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
           "member": "string",
           "name": "ContainerId",
@@ -3530,7 +3530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -3539,7 +3539,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "[\"edbc15ffac7074bf28cbc6071f422f90029154aefd9bf0392f33b247a3577a57\"]",
           "member": "string",
           "name": "ContainerIds",

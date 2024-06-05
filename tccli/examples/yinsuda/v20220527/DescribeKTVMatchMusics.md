@@ -15,29 +15,64 @@ Output:
 ```
 {
     "Response": {
-        "NotMatchRuleSet": [],
         "MatchMusicSet": [
             {
-                "MatchRule": {
-                    "AMEMusicId": "1111003-xxx2-2edd"
-                },
                 "KTVMusicBaseInfo": {
-                    "SingerImageUrl": "http://yinsuda.qcloud.com/1.jpg",
-                    "Name": "一千年以后",
-                    "MusicId": "mid-did2iixxx",
-                    "RightSet": [
-                        "Sing"
-                    ],
-                    "AlbumInfo": null,
-                    "RecommendType": "Othter",
+                    "MusicId": "3mcwprujq9",
+                    "Name": "七里香",
                     "SingerSet": [
-                        "林俊杰"
+                        "周杰伦"
                     ],
-                    "Duration": 240000
+                    "Duration": 120,
+                    "SingerImageUrl": "http://image.tencent.com",
+                    "AlbumInfo": {
+                        "Name": "一个浪漫的专辑",
+                        "CoverInfoSet": [
+                            {
+                                "Dimension": "Mini",
+                                "Url": "http://download.tencent.com"
+                            }
+                        ]
+                    },
+                    "RightSet": [
+                        "Play"
+                    ],
+                    "RecommendType": "Featured"
+                },
+                "MatchRule": {
+                    "AMEMusicId": "bmp7a8yut5",
+                    "MusicInfo": {
+                        "MusicName": "反方向的钟",
+                        "SingerSet": [
+                            "周杰伦",
+                            "陈奕迅"
+                        ]
+                    },
+                    "MusicIdToMatchAME": "hr9nqvkz46"
+                },
+                "AMEMusicBaseInfo": {
+                    "MusicId": "bmp7a8yut5",
+                    "Name": "反方向的钟",
+                    "SingerSet": [
+                        "周杰伦",
+                        "陈奕迅"
+                    ]
                 }
             }
         ],
-        "RequestId": "58bfe77f-d477-48e8-9922-55f56d0b88fb"
+        "NotMatchRuleSet": [
+            {
+                "AMEMusicId": "abc",
+                "MusicInfo": {
+                    "MusicName": "abc",
+                    "SingerSet": [
+                        "abc"
+                    ]
+                },
+                "MusicIdToMatchAME": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```
