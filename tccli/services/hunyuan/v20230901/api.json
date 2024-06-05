@@ -15,7 +15,7 @@
       "status": "online"
     },
     "ChatStd": {
-      "document": "<span style=\"font-size:1.5em;\">注意：本接口将于 5 月 15 日下线；下线后将不再提供文档指引，接口本身可继续调用，建议使用 [hunyuan](https://cloud.tencent.com/document/api/1729/105701) 接入。</span>\n\n腾讯混元大模型标准版是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。",
+      "document": "<span style=\"font-size:1.5em;\">注意：本接口将于 5 月 15 日下线；下线后将不再提供文档指引，接口本身可继续调用，建议使用 [hunyuan](https://cloud.tencent.com/document/api/1729/105701) 接入。</span>\n\n腾讯混元大模型（hunyuan-standard）是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。",
       "input": "ChatStdRequest",
       "name": "hunyuan-standard (即将下线)",
       "output": "ChatStdResponse",
@@ -63,7 +63,7 @@
         {
           "disabled": false,
           "document": "模型名称，可选值包括 hunyuan-lite、hunyuan-standard、hunyuan-standard-256K、hunyuan-pro。\n各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。\n\n注意：\n不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
-          "example": "hunyuan-standard",
+          "example": "hunyuan-pro",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -255,7 +255,7 @@
         {
           "disabled": false,
           "document": "Unix 时间戳，单位为秒。",
-          "example": "无",
+          "example": "1705634032",
           "member": "int64",
           "name": "Created",
           "output_required": false,
@@ -275,7 +275,7 @@
         {
           "disabled": false,
           "document": "免责声明。",
-          "example": "无",
+          "example": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
           "member": "string",
           "name": "Note",
           "output_required": false,
@@ -285,7 +285,7 @@
         {
           "disabled": false,
           "document": "本轮对话的 ID。",
-          "example": "无",
+          "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -378,7 +378,7 @@
         {
           "disabled": false,
           "document": "Unix 时间戳，单位为秒。",
-          "example": "无",
+          "example": "1705634032",
           "member": "int64",
           "name": "Created",
           "output_required": false,
@@ -398,7 +398,7 @@
         {
           "disabled": false,
           "document": "免责声明。",
-          "example": "无",
+          "example": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
           "member": "string",
           "name": "Note",
           "output_required": false,
@@ -408,7 +408,7 @@
         {
           "disabled": false,
           "document": "本轮对话的 ID。",
-          "example": "无",
+          "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -511,7 +511,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "embedding 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Embedding 信息，目前为 1024 维浮点数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "Embedding",
@@ -521,8 +521,8 @@
         },
         {
           "disabled": false,
-          "document": "下标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "下标，目前不支持批量，因此固定为 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Index",
           "output_required": false,
@@ -531,8 +531,8 @@
         },
         {
           "disabled": false,
-          "document": "embedding\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目前固定为 \"embedding\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "embedding",
           "member": "string",
           "name": "Object",
           "output_required": false,
@@ -662,7 +662,7 @@
         {
           "disabled": false,
           "document": "token计数",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TokenCount",
           "output_required": false,
@@ -672,7 +672,7 @@
         {
           "disabled": false,
           "document": "字符计数",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "CharacterCount",
           "output_required": false,

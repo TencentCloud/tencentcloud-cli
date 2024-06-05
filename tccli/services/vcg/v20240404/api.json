@@ -28,7 +28,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -43,7 +43,7 @@
         {
           "disabled": false,
           "document": "任务ID。",
-          "example": "无",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -52,8 +52,8 @@
         },
         {
           "disabled": false,
-          "document": "任务状态码：\nJobInit:  \"初始化中\"\nJobModerationFailed: \"审核失败\",\nJobRunning: \"处理中\",\nJobFailed: \"处理完成\",\nJobSuccess: \"处理失败\"。",
-          "example": "无",
+          "document": "任务状态码：\nJobInit:  \"初始化中\"\nJobModerationFailed: \"审核失败\",\nJobRunning: \"处理中\",\nJobFailed: \"处理失败\",\nJobSuccess: \"处理完成\"。",
+          "example": "[\"JobInit:\", \"JobModerationFailed\", \"JobRunning\", \"JobFailed\", \"JobSuccess\"]",
           "member": "string",
           "name": "StatusCode",
           "output_required": false,
@@ -63,7 +63,7 @@
         {
           "disabled": false,
           "document": "任务状态描述。",
-          "example": "无",
+          "example": "[\"初始化中\", \"审核失败\", \"处理中\", \"处理失败\", \"处理完成\"]",
           "member": "string",
           "name": "StatusMsg",
           "output_required": false,
@@ -73,7 +73,7 @@
         {
           "disabled": false,
           "document": "处理结果视频Url。URL有效期为24小时。",
-          "example": "无",
+          "example": "https://xxx.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
           "output_required": false,
@@ -104,7 +104,7 @@
         {
           "disabled": false,
           "document": "输入视频URL。视频要求：\n- 视频格式：mp4、mov；\n- 视频时长：1～60秒；\n- 视频分辨率：540P~2056P，即长宽像素数均在540px～2056px范围内；\n- 视频大小：不超过200M；\n- 视频FPS：15～60fps。",
-          "example": "无",
+          "example": "https://xxx.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,
@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
           "member": "string",
           "name": "JobId",
           "output_required": false,

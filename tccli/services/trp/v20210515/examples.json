@@ -8,6 +8,14 @@
         "title": "接收客户侧的用户已授权的号码"
       }
     ],
+    "CreateChainBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChainBatch\n<公共请求参数>\n\n{\n    \"CorpId\": 1,\n    \"ChainList\": [\n        {\n            \"Code\": \"abc\",\n            \"Data\": [\n                {\n                    \"Label\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量上链接口"
+      }
+    ],
     "CreateCodeBatch": [
       {
         "document": "新增批次",

@@ -31,7 +31,8 @@ Output:
                         "Min": "1",
                         "NeedReboot": 0,
                         "ParamName": "auto_increment_increment",
-                        "ParamType": "integer"
+                        "ParamType": "integer",
+                        "FuncPattern": "{MAX(DBInitCpu/%d,%d)},2,4"
                     }
                 ]
             }

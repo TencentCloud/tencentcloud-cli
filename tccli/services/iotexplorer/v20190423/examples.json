@@ -856,6 +856,14 @@
         "title": "获取规则列表"
       }
     ],
+    "GetWechatDeviceTicket": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWechatDeviceTicket\n<公共请求参数>\n\n{\n    \"ProductId\": \"123wdc\",\n    \"DeviceName\": \"d1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WXDeviceInfo\": {\n            \"DeviceId\": \"II0Q47L8B9/e_70660037_1\",\n            \"WXIoTDeviceInfo\": {\n                \"SN\": \"II0Q47L8B9_e_70660037_1\",\n                \"SNTicket\": \"1d07ea20caa8a12e1e1\",\n                \"ModelId\": \"xd1Fje8YfY4aWw\"\n            }\n        },\n        \"RequestId\": \"PGagP4JXp\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "InheritCloudStorageUser": [
       {
         "document": "",

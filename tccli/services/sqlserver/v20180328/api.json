@@ -1040,8 +1040,7 @@
           "member": "string",
           "name": "UserName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1049,9 +1048,8 @@
           "example": "无",
           "member": "string",
           "name": "Password",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1060,8 +1058,7 @@
           "member": "DBPrivilege",
           "name": "DBPrivileges",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1070,18 +1067,16 @@
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3",
+          "document": "是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3",
           "example": "false",
           "member": "bool",
           "name": "IsAdmin",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -1090,8 +1085,7 @@
           "member": "string",
           "name": "Authentication",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1100,14 +1094,22 @@
           "member": "string",
           "name": "AccountType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启CAM验证",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCam",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
     },
     "AccountDetail": {
-      "document": "账户信息详情",
+      "document": "账号信息详情",
       "members": [
         {
           "disabled": false,
@@ -1115,7 +1117,7 @@
           "example": "ac1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1125,7 +1127,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1135,7 +1137,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1145,7 +1147,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1155,7 +1157,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1165,7 +1167,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "PassTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1175,7 +1177,7 @@
           "example": "enable",
           "member": "string",
           "name": "InternalStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1185,7 +1187,7 @@
           "example": "无",
           "member": "DBPrivilege",
           "name": "Dbs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1195,7 +1197,17 @@
           "example": "false",
           "member": "bool",
           "name": "IsAdmin",
-          "required": true,
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为cam托管账户",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCam",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1205,7 +1217,7 @@
           "example": "win",
           "member": "string",
           "name": "Authentication",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1215,7 +1227,7 @@
           "example": "172_8_9_12",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1225,7 +1237,7 @@
           "example": "L0",
           "member": "string",
           "name": "AccountType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

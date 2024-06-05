@@ -6133,8 +6133,8 @@
         },
         {
           "disabled": false,
-          "document": "项目接口",
-          "example": "web",
+          "document": "取值为[log speed performance webvitals pv event custom miniProgramData]其中之一",
+          "example": "log",
           "member": "string",
           "name": "ProjectInterface",
           "required": false,

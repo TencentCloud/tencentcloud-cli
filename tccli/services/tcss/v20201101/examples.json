@@ -1958,7 +1958,7 @@
       {
         "document": "查询安全日志接入列表",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecLogJoinTypeList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"LogType\": \"container_bash\",\n                \"Count\": 10,\n                \"IsJoined\": true\n            }\n        ],\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Count\": 1,\n                \"SuperNodeCount\": 1,\n                \"IsJoined\": true,\n                \"LogType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询安全日志接入列表"
       }
     ],

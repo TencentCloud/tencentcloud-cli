@@ -12878,7 +12878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，目前取值有：\n<li>WorkflowTask：视频工作流处理任务。</li>\n<li>EditMediaTask：视频编辑任务。</li>\n<li>LiveStreamProcessTask：直播流处理任务。</li>\n<li>ScheduleTask：编排处理任务。</li>",
+          "document": "任务类型，目前取值有：<li>WorkflowTask：视频工作流处理任务。</li><li>EditMediaTask：视频编辑任务。</li><li>LiveStreamProcessTask：直播流处理任务。</li><li>ScheduleTask：编排处理任务。</li><li>EvaluationTask：评测任务。</li>",
           "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
@@ -18214,7 +18214,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18224,7 +18224,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18234,7 +18234,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18244,7 +18244,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18254,7 +18254,7 @@
           "example": "NULL",
           "member": "AnimatedGraphicTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18264,7 +18264,7 @@
           "example": "NULL",
           "member": "MediaAnimatedGraphicsItem",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18274,7 +18274,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18284,7 +18284,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18300,7 +18300,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18310,7 +18310,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18320,7 +18320,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18330,7 +18330,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18340,7 +18340,7 @@
           "example": "NULL",
           "member": "ImageSpriteTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18350,7 +18350,7 @@
           "example": "NULL",
           "member": "MediaImageSpriteItem",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18360,7 +18360,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18370,7 +18370,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -22456,7 +22456,7 @@
           "example": "true",
           "member": "bool",
           "name": "NoAudio",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22466,7 +22466,7 @@
           "example": "true",
           "member": "bool",
           "name": "NoVideo",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22476,7 +22476,7 @@
           "example": "95",
           "member": "int64",
           "name": "QualityEvaluationScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -22486,7 +22486,7 @@
           "example": "无",
           "member": "QualityControlResult",
           "name": "QualityControlResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -26027,7 +26027,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 \n当取值为 0，表示帧率和原始视频保持一致。 \n注意：自适应码率时取值范围是 [0, 60]",
           "example": "0",
           "member": "int64",
           "name": "Fps",

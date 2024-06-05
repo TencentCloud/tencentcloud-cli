@@ -204,11 +204,11 @@
       "status": "online"
     },
     "DeleteVpcInstance": {
-      "document": "删除防火墙实例",
+      "document": "接口废弃\n\n删除防火墙实例",
       "input": "DeleteVpcInstanceRequest",
       "name": "删除防火墙实例",
       "output": "DeleteVpcInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAcLists": {
       "document": "访问控制列表",
@@ -421,9 +421,9 @@
       "status": "online"
     },
     "DescribeSourceAsset": {
-      "document": "DescribeSourceAsset-查询资产组全部资产信息",
+      "document": "DescribeSourceAsset-查询全部资产信息",
       "input": "DescribeSourceAssetRequest",
-      "name": "查询资产组全部资产信息",
+      "name": "查询全部资产信息",
       "output": "DescribeSourceAssetResponse",
       "status": "online"
     },
@@ -5808,6 +5808,7 @@
           "example": "0",
           "member": "int64",
           "name": "SyncStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5834,7 +5835,7 @@
           "example": "无",
           "member": "ScanInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

@@ -259,8 +259,8 @@
     "DescribeAntiFakeRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiFakeRules\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Order\": \"xx\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"08e8410d-6e80-4d1f-89ff-62669042369d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiFakeRules\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"08e8410d-6e80-4d1f-89ff-62669042369d\",\n        \"Total\": 0\n    }\n}",
         "title": "获取防篡改url"
       }
     ],

@@ -10218,6 +10218,7 @@
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10227,6 +10228,7 @@
           "example": "无",
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10236,6 +10238,7 @@
           "example": "无",
           "member": "string",
           "name": "TemplateDescription",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10245,6 +10248,7 @@
           "example": "无",
           "member": "string",
           "name": "EngineVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10254,6 +10258,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10263,6 +10268,7 @@
           "example": "无",
           "member": "ParamDetail",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10272,6 +10278,7 @@
           "example": "无",
           "member": "string",
           "name": "DbMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15752,7 +15759,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15762,7 +15769,7 @@
           "example": "无",
           "member": "string",
           "name": "ParamType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15772,7 +15779,7 @@
           "example": "无",
           "member": "bool",
           "name": "SupportFunc",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -15782,7 +15789,7 @@
           "example": "无",
           "member": "string",
           "name": "Default",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15792,7 +15799,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15802,7 +15809,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15812,7 +15819,7 @@
           "example": "无",
           "member": "int64",
           "name": "NeedReboot",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15822,7 +15829,7 @@
           "example": "无",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15832,7 +15839,7 @@
           "example": "无",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15842,7 +15849,7 @@
           "example": "无",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15852,7 +15859,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15862,7 +15869,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15872,7 +15879,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15882,7 +15889,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsFunc",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -15892,7 +15899,7 @@
           "example": "无",
           "member": "string",
           "name": "Func",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15902,8 +15909,18 @@
           "example": "无",
           "member": "ModifiableInfo",
           "name": "ModifiableInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持公式的参数的默认公式样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuncPattern",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -16217,6 +16234,16 @@
           "example": "无",
           "member": "string",
           "name": "Func",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持公式的参数的默认公式样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuncPattern",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

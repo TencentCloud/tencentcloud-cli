@@ -7,6 +7,13 @@
       "output": "AuthorizedTransferResponse",
       "status": "online"
     },
+    "CreateChainBatch": {
+      "document": "批量上链接口",
+      "input": "CreateChainBatchRequest",
+      "name": "通用批量上链接口",
+      "output": "CreateChainBatchResponse",
+      "status": "online"
+    },
     "CreateCodeBatch": {
       "document": "新增批次",
       "input": "CreateCodeBatchRequest",
@@ -501,6 +508,34 @@
       ],
       "type": "object"
     },
+    "Chain": {
+      "document": "上链数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "码url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChainValue",
+          "name": "Data",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ChainData": {
       "document": "上链数据",
       "members": [
@@ -531,6 +566,45 @@
           "member": "string",
           "name": "BlockTime",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ChainValue": {
+      "document": "上链数据 key-value",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "图片",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型，文字：\"text\"，图片：\"image\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值，文字类型：\"abc\"，图片类型：\"\"/images/img.png\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/images/img.png",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1161,6 +1235,42 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateChainBatchRequest": {
+      "document": "CreateChainBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CorpId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "溯源ID",
+          "example": "[]",
+          "member": "Chain",
+          "name": "ChainList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChainBatchResponse": {
+      "document": "CreateChainBatch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCodeBatchRequest": {
       "document": "CreateCodeBatch请求参数结构体",

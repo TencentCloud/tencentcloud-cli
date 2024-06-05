@@ -707,6 +707,13 @@
       "output": "GetTopicRuleListResponse",
       "status": "online"
     },
+    "GetWechatDeviceTicket": {
+      "document": "查询微信设备授权票据",
+      "input": "GetWechatDeviceTicketRequest",
+      "name": "查询微信授权票据",
+      "output": "GetWechatDeviceTicketResponse",
+      "status": "online"
+    },
     "InheritCloudStorageUser": {
       "document": "继承云存用户",
       "input": "InheritCloudStorageUserRequest",
@@ -8990,6 +8997,70 @@
       ],
       "type": "object"
     },
+    "GetWechatDeviceTicketRequest": {
+      "document": "GetWechatDeviceTicket请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "3DCCD",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "d1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否第三方小程序",
+          "example": "0",
+          "member": "int64",
+          "name": "IsThirdApp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板ID",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWechatDeviceTicketResponse": {
+      "document": "GetWechatDeviceTicket返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "微信设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WXDeviceInfo",
+          "name": "WXDeviceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InheritCloudStorageUserRequest": {
       "document": "InheritCloudStorageUser请求参数结构体",
       "members": [
@@ -12991,6 +13062,71 @@
         }
       ],
       "type": "object"
+    },
+    "WXDeviceInfo": {
+      "document": "微信硬件设备信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p/d",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WXIoTDeviceInfo",
+          "name": "WXIoTDeviceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WXIoTDeviceInfo": {
+      "document": "微信物联网硬件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sn信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567",
+          "member": "string",
+          "name": "SN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "票据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4rf5gtg",
+          "member": "string",
+          "name": "SNTicket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3rfv",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WifiInfo": {
       "document": "wifi定位信息",

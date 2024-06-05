@@ -4732,6 +4732,15 @@
         },
         {
           "disabled": false,
+          "document": "订阅的topicName",
+          "example": "topic-subs-g9k9ct7gmc--6itdltb8",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "计费模式筛选，可能的值：0-包年包月，1-按量计费",
           "example": "1",
           "member": "int64",

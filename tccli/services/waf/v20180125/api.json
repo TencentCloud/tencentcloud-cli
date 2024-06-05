@@ -5503,11 +5503,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "返回值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "CacheUrlItems",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

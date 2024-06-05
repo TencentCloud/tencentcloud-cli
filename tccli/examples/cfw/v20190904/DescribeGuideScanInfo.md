@@ -12,19 +12,19 @@ Output:
 {
     "Response": {
         "Data": {
-            "ScanTime": "xx",
-            "ScanPercent": 0.0,
             "ScanResultInfo": {
                 "LeakNum": 1,
                 "IPNum": 1,
-                "IdpStatus": true,
                 "PortNum": 1,
-                "BanStatus": true,
-                "IPStatus": true
+                "IPStatus": true,
+                "IdpStatus": true,
+                "BanStatus": true
             },
-            "ScanStatus": 0
+            "ScanStatus": 0,
+            "ScanPercent": 0,
+            "ScanTime": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -8783,7 +8783,7 @@
           "example": "无",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12078,7 +12078,7 @@
           "example": "无",
           "member": "ABTestConfig",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25668,6 +25668,7 @@
           "example": "无",
           "member": "SecLogJoinInfo",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

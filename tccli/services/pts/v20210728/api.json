@@ -2401,7 +2401,7 @@
           "example": "无",
           "member": "MetricInfo",
           "name": "MetricSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

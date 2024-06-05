@@ -34,7 +34,8 @@ Output:
                 "NeedReboot": 0,
                 "ParamName": "max_user_connections",
                 "ParamType": "integer",
-                "SupportFunc": false
+                "SupportFunc": false,
+                "FuncPattern": "{MAX(DBInitCpu/%d,%d)},2,4"
             }
         ],
         "RequestId": "ca8481bf-ba79-42ba-b90b-bd47df104add",
