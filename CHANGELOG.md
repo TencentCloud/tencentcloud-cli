@@ -1,3 +1,257 @@
+# Release 3.0.1009.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 55 次发布
+
+发布时间：2024-06-06 01:09:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateIVRSession](http://document.tencentcloudapi.woa.com/document/product/679/84034)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 47 次发布
+
+发布时间：2024-06-06 01:10:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DeleteVpcInstance
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 86 次发布
+
+发布时间：2024-06-06 01:12:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ParamDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamDetail)
+
+	* 新增成员：FuncPattern
+
+* [ParamItemDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamItemDetail)
+
+	* 新增成员：FuncPattern
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 20 次发布
+
+发布时间：2024-06-06 01:16:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSubscribeJobs](http://document.tencentcloudapi.woa.com/document/product/571/82911)
+
+	* 新增入参：Topic
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 4 次发布
+
+发布时间：2024-06-06 01:18:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FuseFaceUltra](http://document.tencentcloudapi.woa.com/document/product/670/84037)
+
+新增数据结构：
+
+* [FusionUltraParam](http://document.tencentcloudapi.woa.com/document/product/670/78443#FusionUltraParam)
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+
+
+## 智能全局流量管理(igtm) 版本：2023-10-24
+
+### 第 6 次发布
+
+发布时间：2024-06-06 01:19:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeQuotas](http://document.tencentcloudapi.woa.com/document/product/1696/83268)
+
+	* 新增入参：AccessDomain
+
+
+修改数据结构：
+
+* [Quota](http://document.tencentcloudapi.woa.com/document/product/1696/83274#Quota)
+
+	* 新增成员：UsedFreeInstanceNum, UsedBillInstanceNum, FreePackageNum, UsedBillPackageNum, BillPackageNum
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 38 次发布
+
+发布时间：2024-06-06 01:19:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetWechatDeviceTicket](http://document.tencentcloudapi.woa.com/document/product/1081/84038)
+
+新增数据结构：
+
+* [WXDeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#WXDeviceInfo)
+* [WXIoTDeviceInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#WXIoTDeviceInfo)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 52 次发布
+
+发布时间：2024-06-06 01:22:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MediaProcessTaskAnimatedGraphicResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskAnimatedGraphicResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime
+
+* [MediaProcessTaskImageSpriteResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskImageSpriteResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime, Progress
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 41 次发布
+
+发布时间：2024-06-06 01:24:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyAccountCam](http://document.tencentcloudapi.woa.com/document/product/238/84040)
+* [RefreshCamPassword](http://document.tencentcloudapi.woa.com/document/product/238/84039)
+
+修改数据结构：
+
+* [AccountCreateInfo](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountCreateInfo)
+
+	* 新增成员：IsCam
+
+	* <font color="#dd0000">**修改成员**：</font>Password
+
+* [AccountDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountDetail)
+
+	* 新增成员：IsCam
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 55 次发布
+
+发布时间：2024-06-06 01:29:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAntiFakeRules](http://document.tencentcloudapi.woa.com/document/product/627/83514)
+
+	* 新增出参：Total
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 52 次发布
+
+发布时间：2024-06-06 01:29:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DimensionScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DimensionScoreInfo)
+
+	* 新增成员：UserIdStr
+
+* [RuleTemplate](http://document.tencentcloudapi.woa.com/document/product/1607/77747#RuleTemplate)
+
+	* 新增成员：UserIdStr
+
+* [SubscribeReceiver](http://document.tencentcloudapi.woa.com/document/product/1607/77747#SubscribeReceiver)
+
+	* 新增成员：ReceiverUserIdStr
+
+
+
+
 # Release 3.0.1008.1
 
 ## 磐石(clouddc) 版本：2018-08-30

@@ -2292,7 +2292,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsTencentAccount",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2521,7 +2521,7 @@
           "example": "无",
           "member": "MetricInfo",
           "name": "MetricSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4367,7 +4367,7 @@
           "example": "无",
           "member": "ScriptTemplate",
           "name": "ScriptTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4377,7 +4377,7 @@
           "example": "5",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

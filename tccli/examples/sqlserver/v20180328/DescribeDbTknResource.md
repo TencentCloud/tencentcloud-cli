@@ -1,4 +1,4 @@
-**Example 1: DescribeUpgradeInstanceCheck**
+**Example 1: DescribeDbTknResource**
 
 
 

@@ -13,12 +13,13 @@ Output:
     "Response": {
         "List": [
             {
-                "LogType": "container_bash",
-                "Count": 10,
-                "IsJoined": true
+                "Count": 1,
+                "SuperNodeCount": 1,
+                "IsJoined": true,
+                "LogType": "abc"
             }
         ],
-        "RequestId": "29b37d86-f63d-43d1-b21a-640e82965198"
+        "RequestId": "abc"
     }
 }
 ```

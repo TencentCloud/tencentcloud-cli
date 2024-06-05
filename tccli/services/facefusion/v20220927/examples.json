@@ -15,6 +15,20 @@
         "output": "{\n    \"Response\": {\n        \"FusedImage\": \"result.jpg\",\n        \"RequestId\": \"1a2e88a4-3614-48a0-96b9-d09bf6de2fe4\"\n    }\n}",
         "title": "选脸融合"
       }
+    ],
+    "FuseFaceUltra": [
+      {
+        "document": "调用失败示例",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FuseFaceUltra\n<公共请求参数>\n\n{\n    \"ModelUrl\": \"https://host.com/1.jpg\",\n    \"RspImgType\": \"base64\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"https://host.com/2.jpg\"\n        }\n    ],\n    \"FusionUltraParam\": {\n        \"WarpRadio\": 1.2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ParameterValueError\",\n            \"Message\": \"FusionParam值不合法。\"\n        },\n        \"RequestId\": \"89cdd6c5-cb8f-4cbe-959b-e249f3753f55\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: facefusion.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FuseFaceUltra\n<公共请求参数>\n\n{\n    \"ModelUrl\": \"https://host.com/1.jpg\",\n    \"RspImgType\": \"url\",\n    \"MergeInfos\": [\n        {\n            \"Url\": \"https://host.com/2.jpg\"\n        }\n    ],\n    \"FusionUltraParam\": {\n        \"WarpRadio\": 0.7\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FusedImage\": \"https://xxxx.cos.ap-guangzhou.myqcloud.com/facefusion/FuseFaceUltra/xxxxx\",\n        \"RequestId\": \"06f9b251-fa48-435e-b391-145d67919b2c\"\n    }\n}",
+        "title": "调用成功示例"
+      }
     ]
   },
   "version": "1.0"
