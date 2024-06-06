@@ -192,6 +192,14 @@
         "title": "获取批次列表"
       }
     ],
+    "GetTreeNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTreeNode\n<公共请求参数>\n\n{\n    \"Code\": \"HA000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": \"abc\",\n            \"Desc\": \"abc\",\n            \"Name\": \"abc\",\n            \"Level\": 1,\n            \"DictId\": 1,\n            \"NameEn\": \"abc\",\n            \"Status\": 1,\n            \"Creator\": \"abc\",\n            \"Version\": 1,\n            \"Managers\": [\n                \"abc\"\n            ],\n            \"Modifier\": \"abc\",\n            \"CenterIds\": [\n                1\n            ],\n            \"CreateTime\": \"abc\",\n            \"ProductNum\": 1,\n            \"UpdateTime\": \"abc\",\n            \"DepartmentIds\": [\n                \"abc\"\n            ],\n            \"IntroPageStatus\": 1,\n            \"ReportLevelList\": [\n                {\n                    \"Code\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Level\": \"abc\",\n                    \"Status\": \"abc\",\n                    \"Creator\": \"abc\",\n                    \"Children\": [\n                        {\n                            \"Code\": \"abc\",\n                            \"Name\": \"abc\",\n                            \"Level\": \"abc\",\n                            \"Status\": \"abc\",\n                            \"Creator\": \"abc\",\n                            \"Modifier\": \"abc\",\n                            \"CreateTime\": \"abc\",\n                            \"ParentCode\": \"abc\",\n                            \"ParentName\": \"abc\",\n                            \"UpdateTime\": \"abc\"\n                        }\n                    ],\n                    \"HasChild\": \"abc\",\n                    \"Modifier\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateTime\": \"abc\"\n                }\n            ],\n            \"EffectProductNum\": 1,\n            \"CalcStatusProducts\": [\n                {\n                    \"Num\": 1,\n                    \"Status\": \"abc\"\n                }\n            ],\n            \"ParentDepartmentIds\": [\n                1\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetTreeNodeInfoByCodes": [
       {
         "document": "示例",

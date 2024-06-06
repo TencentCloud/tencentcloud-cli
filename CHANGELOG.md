@@ -1,3 +1,259 @@
+# Release 3.0.1010.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 9 次发布
+
+发布时间：2024-06-07 01:08:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeArchSync](http://document.tencentcloudapi.woa.com/document/product/1660/84043)
+* [DescribeArchTaskResult](http://document.tencentcloudapi.woa.com/document/product/1660/84042)
+
+新增数据结构：
+
+* [ArchKeyValue](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchKeyValue)
+* [ArchNode](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNode)
+* [ArchNodeDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNodeDetail)
+* [ArchResource](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchResource)
+* [ArchResourceDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchResourceDetail)
+* [ExtensionAttribute](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ExtensionAttribute)
+* [KeyValueList](http://document.tencentcloudapi.woa.com/document/product/1660/78752#KeyValueList)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1660/78752#Tag)
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 10 次发布
+
+发布时间：2024-06-07 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTreeNode](http://document.tencentcloudapi.woa.com/document/product/1626/84045)
+
+新增数据结构：
+
+* [CalcStatusProduct](http://document.tencentcloudapi.woa.com/document/product/1626/78427#CalcStatusProduct)
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfo)
+* [ReportLevelList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ReportLevelList)
+* [ReportLevelListChildren](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ReportLevelListChildren)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 67 次发布
+
+发布时间：2024-06-07 01:12:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteMetricSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/84050)
+* [DescribeMetricSubscribePreview](http://document.tencentcloudapi.woa.com/document/product/614/84049)
+* [DescribeMetricSubscribes](http://document.tencentcloudapi.woa.com/document/product/614/84048)
+* [ModifyMetricSubscribe](http://document.tencentcloudapi.woa.com/document/product/614/84047)
+
+新增数据结构：
+
+* [Dimension](http://document.tencentcloudapi.woa.com/document/product/614/56471#Dimension)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/614/56471#Instance)
+* [InstanceConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#InstanceConfig)
+* [InstanceData](http://document.tencentcloudapi.woa.com/document/product/614/56471#InstanceData)
+* [MetricConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetricConfig)
+* [MetricSubscribeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetricSubscribeInfo)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 101 次发布
+
+发布时间：2024-06-07 01:15:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCHDFSBindingProduct](http://document.tencentcloudapi.woa.com/document/product/1342/84057)
+* [DeleteCHDFSBindingProduct](http://document.tencentcloudapi.woa.com/document/product/1342/84056)
+* [DeleteThirdPartyAccessUser](http://document.tencentcloudapi.woa.com/document/product/1342/84055)
+* [DescribeDLCCatalogAccess](http://document.tencentcloudapi.woa.com/document/product/1342/84060)
+* [DescribeOtherCHDFSBindingList](http://document.tencentcloudapi.woa.com/document/product/1342/84054)
+* [DescribeSubUserAccessPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/84053)
+* [DescribeThirdPartyAccessUser](http://document.tencentcloudapi.woa.com/document/product/1342/84052)
+* [GrantDLCCatalogAccess](http://document.tencentcloudapi.woa.com/document/product/1342/84059)
+* [RegisterThirdPartyAccessUser](http://document.tencentcloudapi.woa.com/document/product/1342/84051)
+* [RevokeDLCCatalogAccess](http://document.tencentcloudapi.woa.com/document/product/1342/84058)
+
+新增数据结构：
+
+* [CHDFSProductVpcInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#CHDFSProductVpcInfo)
+* [DLCCatalogAccess](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DLCCatalogAccess)
+* [MountPointAssociates](http://document.tencentcloudapi.woa.com/document/product/1342/53778#MountPointAssociates)
+* [OpendThirdAccessUserInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OpendThirdAccessUserInfo)
+* [OtherCHDFSBinding](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OtherCHDFSBinding)
+* [VpcCidrBlock](http://document.tencentcloudapi.woa.com/document/product/1342/53778#VpcCidrBlock)
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#VpcInfo)
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+### 第 8 次发布
+
+发布时间：2024-06-07 01:16:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SubsErr](http://document.tencentcloudapi.woa.com/document/product/571/18131#SubsErr)
+
+	* <font color="#dd0000">**修改成员**：</font>Message
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 59 次发布
+
+发布时间：2024-06-07 01:17:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [SmartAdvisorManageBatch](http://document.tencentcloudapi.woa.com/document/product/845/84061)
+
+新增数据结构：
+
+* [SmartAdvisor](http://document.tencentcloudapi.woa.com/document/product/845/30634#SmartAdvisor)
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 28 次发布
+
+发布时间：2024-06-07 01:22:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RestoreDBInstanceObjects](http://document.tencentcloudapi.woa.com/document/product/409/84062)
+
+修改接口：
+
+* [DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/409/43353)
+
+	* 新增入参：Filters, Offset, Limit
+
+	* 新增出参：TotalCount
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 62 次发布
+
+发布时间：2024-06-07 01:26:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeModelServiceCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/76495)
+
+	* 新增出参：ServiceCallInfoV2
+
+
+新增数据结构：
+
+* [ServiceCallInfoV2](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceCallInfoV2)
+
+修改数据结构：
+
+* [IntranetCallInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#IntranetCallInfo)
+
+	* 新增成员：PrivateLinkInfosV2
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 视频转译(vtc) 版本：2024-02-23
+
+### 第 3 次发布
+
+发布时间：2024-06-07 01:28:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ConfirmVideoTranslateJob](http://document.tencentcloudapi.woa.com/document/product/1761/83881)
+
+	* 新增出参：Status, Message
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 53 次发布
+
+发布时间：2024-06-07 01:29:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OrganizationalFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrganizationalFunction)
+
+	* 新增成员：OperatorUserIdsStr, OwnerUserIdsStr
+
+
+
+
 # Release 3.0.1009.1
 
 ## 云联络中心(ccc) 版本：2020-02-10

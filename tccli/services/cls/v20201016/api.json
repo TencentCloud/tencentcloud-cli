@@ -294,6 +294,13 @@
       "output": "DeleteMachineGroupInfoResponse",
       "status": "online"
     },
+    "DeleteMetricSubscribe": {
+      "document": "删除指标订阅配置",
+      "input": "DeleteMetricSubscribeRequest",
+      "name": "删除指标订阅配置",
+      "output": "DeleteMetricSubscribeResponse",
+      "status": "online"
+    },
     "DeleteScheduledSql": {
       "document": "本接口用于删除定时SQL分析任务",
       "input": "DeleteScheduledSqlRequest",
@@ -476,6 +483,20 @@
       "output": "DescribeMachinesResponse",
       "status": "online"
     },
+    "DescribeMetricSubscribePreview": {
+      "document": "创建指标订阅配置",
+      "input": "DescribeMetricSubscribePreviewRequest",
+      "name": "指标订阅数据预览",
+      "output": "DescribeMetricSubscribePreviewResponse",
+      "status": "online"
+    },
+    "DescribeMetricSubscribes": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeMetricSubscribesRequest",
+      "name": "获取指标订阅配置",
+      "output": "DescribeMetricSubscribesResponse",
+      "status": "online"
+    },
     "DescribePartitions": {
       "document": "本接口用于获取主题分区列表。",
       "input": "DescribePartitionsRequest",
@@ -649,6 +670,13 @@
       "input": "ModifyMachineGroupRequest",
       "name": "修改机器组",
       "output": "ModifyMachineGroupResponse",
+      "status": "online"
+    },
+    "ModifyMetricSubscribe": {
+      "document": "修改指标订阅配置",
+      "input": "ModifyMetricSubscribeRequest",
+      "name": "修改指标订阅配置",
+      "output": "ModifyMetricSubscribeResponse",
       "status": "online"
     },
     "ModifyScheduledSql": {
@@ -6352,6 +6380,42 @@
       ],
       "type": "object"
     },
+    "DeleteMetricSubscribeRequest": {
+      "document": "DeleteMetricSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标采集任务id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集任务配置的日志主题id。",
+          "example": "1111c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMetricSubscribeResponse": {
+      "document": "DeleteMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteScheduledSqlRequest": {
       "document": "DeleteScheduledSql请求参数结构体",
       "members": [
@@ -8072,6 +8136,175 @@
       ],
       "type": "object"
     },
+    "DescribeMetricSubscribePreviewRequest": {
+      "document": "DescribeMetricSubscribePreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置配置。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribePreviewResponse": {
+      "document": "DescribeMetricSubscribePreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "FailCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功实例数据",
+          "example": "无",
+          "member": "InstanceData",
+          "name": "SuccessInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败实例数据",
+          "example": "无",
+          "member": "InstanceData",
+          "name": "FailInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribesRequest": {
+      "document": "DescribeMetricSubscribes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<br><li> taskId按照【配置id】进行过滤。类型：String  必选：否</li>\n<br><li> name按照【配置名称】进行过滤。类型：String 必选：否</li>\n<br><li> status按照【配置状态标记】进行过滤。类型：String 必选：否</li>\n<br><li> 每次请求的Filters的上限为10，Filter.Values的上限为100。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribesResponse": {
+      "document": "DescribeMetricSubscribes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标订阅配置信息",
+          "example": "无",
+          "member": "MetricSubscribeInfo",
+          "name": "Datas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePartitionsRequest": {
       "document": "DescribePartitions请求参数结构体",
       "members": [
@@ -8392,6 +8625,32 @@
         }
       ],
       "type": "object"
+    },
+    "Dimension": {
+      "document": "云产品实例维度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度名称,此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例维度值,此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo_value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DynamicIndex": {
       "document": "键值索引自动配置，启用后自动将日志内的字段添加到键值索引中，包括日志中后续新增的字段。",
@@ -9305,6 +9564,127 @@
         }
       ],
       "usage": "both"
+    },
+    "Instance": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例信息",
+          "example": "[\"key1-value\",\"key2-value\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceConfig": {
+      "document": "实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度",
+          "example": "[\"bucket\",\"appid\"]",
+          "member": "string",
+          "name": "InstanceDimension",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例值",
+          "example": "无",
+          "member": "Instance",
+          "name": "Instances",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceData": {
+      "document": "云产品指标订阅预览结果实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云监控指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MemUsed",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qce_cvm_memused_60_avg",
+          "member": "string",
+          "name": "CLSMetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期,单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "err_msg",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "JsonInfo": {
       "document": "JSON类型描述",
@@ -10469,6 +10849,45 @@
       ],
       "usage": "both"
     },
+    "MetricConfig": {
+      "document": "指标配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "metric_name",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计周期,单位:秒（s）",
+          "example": "[60,120]",
+          "member": "uint64",
+          "name": "Periods",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义指标标签",
+          "example": "无",
+          "member": "MetricLabel",
+          "name": "MetricLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MetricLabel": {
       "document": "过滤器",
       "members": [
@@ -10496,6 +10915,122 @@
         }
       ],
       "usage": "both"
+    },
+    "MetricSubscribeInfo": {
+      "document": "指标订阅配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅任务id。",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务名称。",
+          "example": "template_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例配置信息。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务开关。1:暂停 2:启用",
+          "example": "2",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务运行状态。0:创建中 1:暂停 2:运行中 3:异常",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务运行异常时的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（秒级时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（秒级时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ModifyAlarmNoticeRequest": {
       "document": "ModifyAlarmNotice请求参数结构体",
@@ -11991,6 +12526,87 @@
     },
     "ModifyMachineGroupResponse": {
       "document": "ModifyMachineGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetricSubscribeRequest": {
+      "document": "ModifyMetricSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标采集任务的日志主题id。必填字段",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集任务id。必填字段",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置信息。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。\n\n1： 未启用\n\n2： 启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetricSubscribeResponse": {
+      "document": "ModifyMetricSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14733,7 +15349,7 @@
         {
           "disabled": false,
           "document": "回调地址。最大支持1024个字节数。",
-          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2525c9e890",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2kjnbhjgx",
           "member": "string",
           "name": "Url",
           "output_required": true,

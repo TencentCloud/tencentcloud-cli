@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli lowcode BindProcessComponent --cli-unfold-argument  \
-    --EnvId env-001 \
-    --ProcessKeyList xx \
-    --AppDeployLink https://app1xxxx.tcloudbaseapp.com//adminportal/#/app/appCode-001 \
-    --AppCode appCode-001
+    --ProcessKeyList abc \
+    --AppCode abc \
+    --EnvType abc \
+    --EnvId abc \
+    --AppDeployLink abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -11366,7 +11366,6 @@
           "example": "无",
           "member": "ProxySpec",
           "name": "ProxySpecs",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11789,7 +11788,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cynosdbmysql-gn65y9nk",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11798,7 +11797,7 @@
         {
           "disabled": false,
           "document": "期望回滚的时间点",
-          "example": "",
+          "example": "2019-01-13 02:12:05",
           "member": "string",
           "name": "ExpectTime",
           "required": true,
@@ -11807,7 +11806,7 @@
         {
           "disabled": false,
           "document": "回滚时间点的允许误差范围",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "ExpectTimeThresh",
           "required": true,
@@ -11822,36 +11821,40 @@
         {
           "disabled": false,
           "document": "存储poolID",
-          "example": "",
+          "example": "\t1050",
           "member": "uint64",
           "name": "PoolId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "回滚任务ID，后续按该时间点回滚时，需要传入",
-          "example": "",
+          "example": "\t2008",
           "member": "uint64",
           "name": "QueryId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时间点是否有效：pass，检测通过；fail，检测失败",
-          "example": "",
+          "example": "pass",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议时间点，在Status为fail时，该值才有效",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "SuggestTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18924,7 +18927,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd123qw",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -18942,7 +18945,7 @@
         {
           "disabled": false,
           "document": "数据库表权限数组",
-          "example": "无",
+          "example": "[\"ALTER\", \"CREATE\", \"CREATE VIEW\", \"DELETE\", \"DROP\", \"GRANT OPTION\", \"INDEX\", \"INSERT\", \"REFERENCES\", \"SELECT\", \"SHOW VIEW\", \"TRIGGER\", \"UPDATE\"]",
           "member": "string",
           "name": "DbTablePrivileges",
           "required": true,

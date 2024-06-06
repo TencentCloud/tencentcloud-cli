@@ -3,8 +3,8 @@
     "BindProcessComponent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindProcessComponent\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\",\n    \"ProcessKeyList\": [\n        \"xx\"\n    ],\n    \"AppDeployLink\": \"https://app1xxxx.tcloudbaseapp.com//adminportal/#/app/appCode-001\",\n    \"AppCode\": \"appCode-001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindProcessComponent\n<公共请求参数>\n\n{\n    \"ProcessKeyList\": [\n        \"abc\"\n    ],\n    \"AppCode\": \"abc\",\n    \"EnvType\": \"abc\",\n    \"EnvId\": \"abc\",\n    \"AppDeployLink\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "流程组件绑定"
       }
     ],

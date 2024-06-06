@@ -28,8 +28,12 @@ Output:
         "TJCallInfo": null,
         "IntranetCallInfo": {
             "IngressPrivateLinkInfo": null,
-            "ServiceEIPInfo": []
+            "ServiceEIPInfo": [],
+            "DefaultInnerCallInfos": [],
+            "PrivateLinkInfos": [],
+            "PrivateLinkInfosV2": []
         },
+        "ServiceCallInfoV2": null,
         "RequestId": "0e26af99-dc12-4866-b6cf-1896a10c2910"
     }
 }

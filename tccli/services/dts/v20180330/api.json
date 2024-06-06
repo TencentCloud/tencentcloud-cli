@@ -1301,7 +1301,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1311,7 +1311,7 @@
           "example": "无",
           "member": "SubscribeInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2465,12 +2465,13 @@
           "example": "error",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "SubscribeInfo": {
       "document": "订阅实例信息",
@@ -2478,9 +2479,10 @@
         {
           "disabled": false,
           "document": "数据订阅的实例ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SubscribeId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2488,9 +2490,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例的名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SubscribeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2498,9 +2501,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例绑定的通道ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ChannelId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2508,9 +2512,10 @@
         {
           "disabled": false,
           "document": "数据订阅绑定实例对应的产品名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Product",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2518,9 +2523,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例绑定的数据库实例ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2528,9 +2534,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例绑定的数据库实例状态",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2538,9 +2545,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SubsStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2548,9 +2556,10 @@
         {
           "disabled": false,
           "document": "上次修改时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2558,9 +2567,10 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2568,9 +2578,10 @@
         {
           "disabled": false,
           "document": "隔离时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IsolateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2578,9 +2589,10 @@
         {
           "disabled": false,
           "document": "到期时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ExpireTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2588,9 +2600,10 @@
         {
           "disabled": false,
           "document": "下线时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OfflineTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2598,19 +2611,32 @@
         {
           "disabled": false,
           "document": "最近一次修改的消费时间起点，如果从未修改则为零值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConsumeStartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
+          "document": "自动续费标识。0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "数据订阅实例所属地域",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2618,9 +2644,10 @@
         {
           "disabled": false,
           "document": "计费方式，0 - 包年包月，1 - 按量计费",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "PayType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2628,9 +2655,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例的Vip",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2638,9 +2666,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例的Vport",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Vport",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2648,9 +2677,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例Vip所在VPC的唯一ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2658,9 +2688,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例Vip所在子网的唯一ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UniqSubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2668,9 +2699,10 @@
         {
           "disabled": false,
           "document": "数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2678,9 +2710,10 @@
         {
           "disabled": false,
           "document": "SDK最后一条确认消息的时间戳，如果SDK一直消费，也可以作为SDK当前消费时间点",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SdkConsumedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2688,29 +2721,21 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TagItem",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自动续费标识。0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "int64",
-          "name": "AutoRenewFlag",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SubscribeVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

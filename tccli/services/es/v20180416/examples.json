@@ -424,6 +424,14 @@
         "title": "demo"
       }
     ],
+    "SmartAdvisorManageBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SmartAdvisorManageBatch\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-q3qu29c7\",\n    \"StrategyName\": [\n        \"cluster.enable.opack\"\n    ],\n    \"StrategyType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyResult\": [\n            {\n                \"StrategyName\": \"cluster.enable.opack\",\n                \"StrategyValue\": \"true\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "StartLogstashPipelines": [
       {
         "document": "",
