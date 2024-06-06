@@ -13720,7 +13720,7 @@
         {
           "disabled": false,
           "document": "回调地址。最大支持1024个字节数。",
-          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2525c9e890",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2kjnbhjgx",
           "member": "string",
           "name": "Url",
           "output_required": true,

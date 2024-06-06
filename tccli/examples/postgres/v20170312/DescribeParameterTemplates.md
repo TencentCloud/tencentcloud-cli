@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli postgres DescribeParameterTemplates --cli-unfold-argument  \
-    --OrderBy CreateTime \
-    --OrderByType desc \
-    --Limit 0 \
-    --Filters.0.Values test \
     --Filters.0.Name TemplateName \
-    --Offset 10
+    --Filters.0.Values test \
+    --Limit 0 \
+    --Offset 10 \
+    --OrderBy CreateTime \
+    --OrderByType desc
 ```
 
 Output: 

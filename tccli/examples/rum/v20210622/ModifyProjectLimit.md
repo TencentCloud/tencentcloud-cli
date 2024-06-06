@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rum ModifyProjectLimit --cli-unfold-argument  \
-    --ProjectInterface web \
+    --ProjectInterface log \
     --ProjectID 8 \
     --ReportRate 10 \
     --ReportType 1
@@ -31,7 +31,7 @@ Input:
 ```
 tccli rum ModifyProjectLimit --cli-unfold-argument  \
     --ProjectID 1 \
-    --ProjectInterface web \
+    --ProjectInterface log \
     --ReportRate 10 \
     --ReportType 1 \
     --ID 1

@@ -479,13 +479,13 @@
     "ModifyProjectLimit": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectLimit\n<公共请求参数>\n\n{\n    \"ProjectInterface\": \"web\",\n    \"ProjectID\": 8,\n    \"ReportRate\": 10,\n    \"ReportType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectLimit\n<公共请求参数>\n\n{\n    \"ProjectInterface\": \"log\",\n    \"ProjectID\": 8,\n    \"ReportRate\": 10,\n    \"ReportType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"a62c0f90-5ed0-4f3e-b285-8e4885a5ca45\"\n    }\n}",
         "title": "新增抽样"
       },
       {
         "document": "新增修改限流",
-        "input": "https://rum.tencentcloudapi.com/?Action=ModifyProjectLimit\n&ProjectID=1\n&ProjectInterface=web\n&ReportRate=10\n&ReportType=1\n&ID=1\n&<公共请求参数>",
+        "input": "https://rum.tencentcloudapi.com/?Action=ModifyProjectLimit\n&ProjectID=1\n&ProjectInterface=log\n&ReportRate=10\n&ReportType=1\n&ID=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"invalid ModifyProjectLimitRequest.ProjectInterface: value must be in list [log speed performance webvitals pv event custom miniProgramData]\",\n        \"RequestId\": \"57e7f631-73d0-4926-b659-d4ef64818312\"\n    }\n}",
         "title": "新增修改限流"
       }

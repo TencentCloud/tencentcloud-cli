@@ -1,6 +1,6 @@
 **Example 1: 查询所有实例列表**
 
-
+按指定分页查询实例列表
 
 Input: 
 
@@ -17,72 +17,80 @@ Output:
         "TotalCount": 1,
         "DBInstanceSet": [
             {
-                "Zone": "ap-guangzhou-2",
-                "DBInstanceName": "xxx",
-                "DBNodeSet": [
-                    {
-                        "Role": "Primary",
-                        "Zone": "ap-guangzhou-2"
-                    }
-                ],
-                "Type": 1,
-                "IsSupportTDE": 0,
-                "DBMajorVersion": "10",
-                "ReadOnlyInstanceNum": 1,
-                "MasterDBInstanceId": "",
-                "UpdateTime": "2020-09-22 00:00:00",
-                "VpcId": "vpc-xxxxxxxx",
-                "IsolatedTime": "2020-09-22 00:00:00",
-                "DBVersion": "10",
-                "DBKernelVersion": "v10.4_r1.0",
-                "DBInstanceVersion": "standard",
+                "AppId": 123456789,
                 "AutoRenew": 1,
-                "StatusInReadonlyGroup": "running",
-                "SubnetId": "subnet-xxxxxxxx",
-                "DBInstanceMemory": 1,
-                "DBInstanceType": "primary",
-                "DBInstanceStatus": "running",
-                "OfflineTime": "2019-12-28 19:23:19",
-                "Region": "ap-guangzhou",
-                "ProjectId": 1,
+                "CreateTime": "2022-03-16 18:12:10",
+                "DBCharset": "UTF8",
+                "DBEngine": "postgresql",
+                "DBEngineConfig": "",
+                "DBInstanceClass": "cdb.pg.ts1.8g",
+                "DBInstanceCpu": 4,
+                "DBInstanceId": "postgres-xxxxxx",
+                "DBInstanceMemory": 8,
+                "DBInstanceName": "test",
                 "DBInstanceNetInfo": [
                     {
                         "Address": "",
-                        "Ip": "10.10.10.220",
-                        "Port": 5432,
-                        "Status": "opened",
+                        "Ip": "xx.xx.xx.xx",
                         "NetType": "private",
-                        "VpcId": "vpc-xxxxxxxx",
-                        "SubnetId": "subnet-xxxxxxxx"
+                        "Port": 5432,
+                        "ProtocolType": "postgresql",
+                        "Status": "opened",
+                        "SubnetId": "subnet-xxxx",
+                        "VpcId": "vpc-xxxx"
                     },
                     {
                         "Address": "",
                         "Ip": "",
-                        "Port": 0,
-                        "Status": "",
                         "NetType": "public",
-                        "VpcId": "",
-                        "SubnetId": ""
+                        "Port": 0,
+                        "ProtocolType": "",
+                        "Status": "initing",
+                        "SubnetId": "",
+                        "VpcId": ""
                     }
                 ],
-                "DBInstanceStorage": 1,
-                "Uid": 1,
-                "DBCharset": "UTF8",
-                "DBInstanceId": "postgres-xxxxxxxx",
+                "DBInstanceStatus": "running",
+                "DBInstanceStorage": 20,
+                "DBInstanceType": "primary",
+                "DBInstanceVersion": "standard",
+                "DBKernelVersion": "v13.3_r1.1",
+                "DBMajorVersion": "13",
+                "DBNodeSet": [
+                    {
+                        "Role": "Primary",
+                        "Zone": "ap-guangzhou-6"
+                    },
+                    {
+                        "Role": "Standby",
+                        "Zone": "ap-guangzhou-6"
+                    }
+                ],
+                "DBVersion": "13.3",
+                "ExpireTime": "2023-04-16 18:14:49",
+                "IsSupportTDE": 0,
+                "IsolatedTime": "0000-00-00 00:00:00",
+                "MasterDBInstanceId": "",
+                "NetworkAccessList": null,
+                "OfflineTime": "0001-01-08 00:00:00",
                 "PayType": "prepaid",
-                "ExpireTime": "2020-09-22 00:00:00",
-                "SupportIpv6": 1,
-                "AppId": 1,
-                "DBInstanceClass": "cdb.pg.z1.4g",
-                "CreateTime": "2020-09-22 00:00:00",
-                "DBInstanceCpu": 1,
+                "ProjectId": 0,
+                "ReadOnlyInstanceNum": 0,
+                "Region": "ap-guangzhou",
+                "StatusInReadonlyGroup": "",
+                "SubnetId": "subnet-xxxx",
+                "SupportIpv6": 0,
                 "TagList": [
                     {
-                        "TagKey": "tag1",
-                        "TagValue": "v1"
+                        "TagKey": "tag_key_test",
+                        "TagValue": "tag_value_test"
                     }
                 ],
-                "NetworkAccessList": []
+                "Type": "TS85",
+                "Uid": 1234,
+                "UpdateTime": "2023-03-15 17:31:58",
+                "VpcId": "vpc-xxxx",
+                "Zone": "ap-guangzhou-6"
             }
         ],
         "RequestId": "d849664a-191c-48bf-b42f-444caa189557"
@@ -92,14 +100,14 @@ Output:
 
 **Example 2: 根据实例ID查询实例信息**
 
-例如：查询实例ID为postgres-xxxxxxxx的实例信息
+例如：查询实例ID为postgres-xxxxx的实例信息
 
 Input: 
 
 ```
 tccli postgres DescribeDBInstances --cli-unfold-argument  \
     --Limit 10 \
-    --Filters.0.Values postgres-xxxxxxxx \
+    --Filters.0.Values postgres-xxxxx \
     --Filters.0.Name db-instance-id \
     --Offset 0
 ```
@@ -108,78 +116,86 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d849664a-191c-48bf-b42f-444caa189557",
         "TotalCount": 1,
         "DBInstanceSet": [
             {
-                "Region": "ap-guangzhou",
-                "Zone": "ap-guangzhou-2",
-                "AppId": 100000000,
-                "Uid": 1000001,
-                "ProjectId": 0,
-                "VpcId": "vpc-xxxxxxxx",
-                "SubnetId": "subnet-xxxxxxxx",
-                "Type": 1,
-                "DBNodeSet": [
-                    {
-                        "Role": "Primary",
-                        "Zone": "ap-guangzhou-2"
-                    }
-                ],
-                "DBInstanceId": "postgres-xxxxxxxx",
-                "MasterDBInstanceId": "",
+                "AppId": 123456789,
+                "AutoRenew": 1,
+                "CreateTime": "2022-03-16 18:12:10",
+                "DBCharset": "UTF8",
+                "DBEngine": "postgresql",
+                "DBEngineConfig": "",
+                "DBInstanceClass": "cdb.pg.ts1.8g",
+                "DBInstanceCpu": 4,
+                "DBInstanceId": "postgres-xxxxx",
+                "DBInstanceMemory": 8,
                 "DBInstanceName": "test",
-                "DBInstanceStatus": "running",
-                "DBInstanceMemory": 4,
-                "DBInstanceStorage": 20,
-                "DBInstanceCpu": 2,
-                "DBInstanceClass": "cdb.pg.z1.4g",
-                "DBInstanceType": "primary",
-                "DBInstanceVersion": "standard",
                 "DBInstanceNetInfo": [
                     {
                         "Address": "",
-                        "Ip": "10.10.10.220",
-                        "Port": 5432,
-                        "Status": "opened",
+                        "Ip": "xx.xx.xx.xx",
                         "NetType": "private",
-                        "VpcId": "vpc-xxxxxxxx",
-                        "SubnetId": "subnet-xxxxxxxx"
+                        "Port": 5432,
+                        "ProtocolType": "postgresql",
+                        "Status": "opened",
+                        "SubnetId": "subnet-xxxx",
+                        "VpcId": "vpc-xxxx"
                     },
                     {
                         "Address": "",
                         "Ip": "",
-                        "Port": 0,
-                        "Status": "",
                         "NetType": "public",
-                        "VpcId": "",
-                        "SubnetId": ""
+                        "Port": 0,
+                        "ProtocolType": "",
+                        "Status": "initing",
+                        "SubnetId": "",
+                        "VpcId": ""
                     }
                 ],
-                "DBCharset": "UTF8",
-                "DBVersion": "10",
+                "DBInstanceStatus": "running",
+                "DBInstanceStorage": 20,
+                "DBInstanceType": "primary",
+                "DBInstanceVersion": "standard",
+                "DBKernelVersion": "v13.3_r1.1",
+                "DBMajorVersion": "13",
+                "DBNodeSet": [
+                    {
+                        "Role": "Primary",
+                        "Zone": "ap-guangzhou-6"
+                    },
+                    {
+                        "Role": "Standby",
+                        "Zone": "ap-guangzhou-6"
+                    }
+                ],
+                "DBVersion": "13.3",
+                "ExpireTime": "2023-04-16 18:14:49",
                 "IsSupportTDE": 0,
-                "DBMajorVersion": "10",
-                "DBKernelVersion": "v10.4_r1.0",
-                "CreateTime": "2017-12-28 19:23:19",
-                "UpdateTime": "2018-01-18 15:54:32",
-                "ExpireTime": "2018-01-28 19:23:23",
                 "IsolatedTime": "0000-00-00 00:00:00",
-                "OfflineTime": "2019-12-28 19:23:19",
-                "StatusInReadonlyGroup": "running",
-                "ReadOnlyInstanceNum": 1,
+                "MasterDBInstanceId": "",
+                "NetworkAccessList": null,
+                "OfflineTime": "0001-01-08 00:00:00",
                 "PayType": "prepaid",
-                "AutoRenew": 1,
+                "ProjectId": 0,
+                "ReadOnlyInstanceNum": 0,
+                "Region": "ap-guangzhou",
+                "StatusInReadonlyGroup": "",
+                "SubnetId": "subnet-xxxx",
                 "SupportIpv6": 0,
                 "TagList": [
                     {
-                        "TagKey": "tag1",
-                        "TagValue": "v1"
+                        "TagKey": "tag_key_test",
+                        "TagValue": "tag_value_test"
                     }
                 ],
-                "NetworkAccessList": []
+                "Type": "TS85",
+                "Uid": 1234,
+                "UpdateTime": "2023-03-15 17:31:58",
+                "VpcId": "vpc-xxxx",
+                "Zone": "ap-guangzhou-6"
             }
-        ]
+        ],
+        "RequestId": "d849664a-191c-48bf-b42f-444caa189557"
     }
 }
 ```

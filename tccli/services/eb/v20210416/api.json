@@ -1298,60 +1298,72 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络连接类型",
+          "document": "网络连接类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "privatelink",
           "member": "string",
           "name": "NetMode",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "索引前缀",
+          "document": "索引前缀\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "esindex",
           "member": "string",
           "name": "IndexPrefix",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "es日志轮换粒度",
+          "document": "es日志轮换粒度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none",
           "member": "string",
           "name": "RotationInterval",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "DTS事件配置",
+          "document": "DTS事件配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "OutputMode",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "DTS索引配置",
+          "document": "DTS索引配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "default",
           "member": "string",
           "name": "IndexSuffixMode",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "es模版类型",
+          "document": "es模版类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_type",
           "member": "string",
           "name": "IndexTemplateType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "EtlFilter": {
       "document": "描述如何过滤数据",
@@ -2025,7 +2037,7 @@
           "example": "无",
           "member": "Connection",
           "name": "Connections",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2035,7 +2047,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2246,7 +2258,7 @@
         },
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）,name（规则名称）",
           "example": "ModTime",
           "member": "string",
           "name": "OrderBy",
@@ -2292,7 +2304,7 @@
           "example": "无",
           "member": "Rule",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2302,7 +2314,7 @@
           "example": "8",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2384,7 +2396,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2394,7 +2406,7 @@
           "example": "无",
           "member": "Target",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2717,7 +2729,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2727,7 +2739,7 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2737,7 +2749,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2747,7 +2759,7 @@
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2757,7 +2769,7 @@
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2767,7 +2779,7 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2777,7 +2789,7 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2787,7 +2799,7 @@
           "example": "rule",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2797,7 +2809,7 @@
           "example": "无",
           "member": "TargetBrief",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2807,7 +2819,7 @@
           "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2819,33 +2831,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量投递最长等待时间",
+          "document": "批量投递最长等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "BatchTimeout",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "批量投递最大事件条数",
+          "document": "批量投递最大事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "BatchEventCount",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "开启批量投递使能",
+          "document": "开启批量投递使能\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableBatchDelivery",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SearchLogRequest": {
       "document": "SearchLog请求参数结构体",
@@ -3128,7 +3146,7 @@
           "example": "scf",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3138,7 +3156,7 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3148,7 +3166,7 @@
           "example": "target-xxxxxxxx",
           "member": "string",
           "name": "TargetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3158,7 +3176,7 @@
           "example": "无",
           "member": "TargetDescription",
           "name": "TargetDescription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3168,7 +3186,7 @@
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3178,7 +3196,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableBatchDelivery",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3188,7 +3206,7 @@
           "example": "1",
           "member": "int64",
           "name": "BatchTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3198,7 +3216,7 @@
           "example": "1",
           "member": "int64",
           "name": "BatchEventCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

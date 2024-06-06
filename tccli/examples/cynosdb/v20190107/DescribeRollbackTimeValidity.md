@@ -15,10 +15,11 @@ Output:
 ```
 {
     "Response": {
-        "PoolId": 1050,
-        "QueryId": 2008,
-        "Status": "pass",
-        "SuggestTime": ""
+        "PoolId": 1,
+        "QueryId": 1,
+        "Status": "abc",
+        "SuggestTime": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 获取目标列表**
 
-
+获取目标列表
 
 Input: 
 
@@ -14,70 +14,42 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "03118ade-8de2-4514-af4b-b9a2f170ddd9",
+        "TotalCount": 0,
         "Targets": [
             {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
+                "Type": "abc",
+                "EventBusId": "abc",
+                "TargetId": "abc",
                 "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
+                    "ResourceDescription": "abc",
+                    "SCFParams": {
+                        "BatchTimeout": 0,
+                        "BatchEventCount": 0,
+                        "EnableBatchDelivery": true
+                    },
+                    "CkafkaTargetParams": {
+                        "TopicName": "abc",
+                        "RetryPolicy": {
+                            "RetryInterval": 1,
+                            "MaxRetryAttempts": 1
+                        }
+                    },
+                    "ESTargetParams": {
+                        "NetMode": "abc",
+                        "IndexPrefix": "abc",
+                        "IndexTemplateType": "abc",
+                        "RotationInterval": "abc",
+                        "OutputMode": "abc",
+                        "IndexSuffixMode": "abc"
+                    }
                 },
-                "TargetId": "target-azwj7s7g",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-o5yx01oq",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-prp1ovqi",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-krcwchke",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-e9r3a1l0",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
+                "RuleId": "abc",
+                "EnableBatchDelivery": true,
+                "BatchTimeout": 0,
+                "BatchEventCount": 0
             }
         ],
-        "TotalCount": 5
+        "RequestId": "abc"
     }
 }
 ```

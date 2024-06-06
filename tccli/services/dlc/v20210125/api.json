@@ -126,6 +126,13 @@
       "output": "CheckLockMetaDataResponse",
       "status": "online"
     },
+    "CreateCHDFSBindingProduct": {
+      "document": "此接口（CreateCHDFSBindingProduct）用于创建元数据加速桶和产品绑定关系",
+      "input": "CreateCHDFSBindingProductRequest",
+      "name": "创建元数据加速桶和产品绑定关系",
+      "output": "CreateCHDFSBindingProductResponse",
+      "status": "online"
+    },
     "CreateDMSDatabase": {
       "document": "DMS元数据创建库",
       "input": "CreateDMSDatabaseRequest",
@@ -280,6 +287,13 @@
       "output": "CreateWorkGroupResponse",
       "status": "online"
     },
+    "DeleteCHDFSBindingProduct": {
+      "document": "此接口（DeleteCHDFSBindingProduct）用于删除元数据加速桶和产品绑定关系",
+      "input": "DeleteCHDFSBindingProductRequest",
+      "name": "删除元数据加速桶和产品绑定关系",
+      "output": "DeleteCHDFSBindingProductResponse",
+      "status": "online"
+    },
     "DeleteDataEngine": {
       "document": "删除数据引擎",
       "input": "DeleteDataEngineRequest",
@@ -308,6 +322,13 @@
       "output": "DeleteSparkAppResponse",
       "status": "online"
     },
+    "DeleteThirdPartyAccessUser": {
+      "document": "本接口（RegisterThirdPartyAccessUser）用于移除第三方平台访问",
+      "input": "DeleteThirdPartyAccessUserRequest",
+      "name": "移除第三方平台访问用户",
+      "output": "DeleteThirdPartyAccessUserResponse",
+      "status": "online"
+    },
     "DeleteUser": {
       "document": "删除用户",
       "input": "DeleteUserRequest",
@@ -334,6 +355,13 @@
       "input": "DescribeAdvancedStoreLocationRequest",
       "name": "查询高级设置",
       "output": "DescribeAdvancedStoreLocationResponse",
+      "status": "online"
+    },
+    "DescribeDLCCatalogAccess": {
+      "document": "查询DLC Catalog授权列表",
+      "input": "DescribeDLCCatalogAccessRequest",
+      "name": "查询DLCCatalog访问权限",
+      "output": "DescribeDLCCatalogAccessResponse",
       "status": "online"
     },
     "DescribeDMSDatabase": {
@@ -490,6 +518,13 @@
       "output": "DescribeNotebookSessionsResponse",
       "status": "online"
     },
+    "DescribeOtherCHDFSBindingList": {
+      "document": "此接口（DescribeOtherCHDFSBindingList）用于查询其他产品元数据加速桶绑定列表",
+      "input": "DescribeOtherCHDFSBindingListRequest",
+      "name": "查询其他产品元数据加速桶绑定列表",
+      "output": "DescribeOtherCHDFSBindingListResponse",
+      "status": "online"
+    },
     "DescribeResultDownload": {
       "document": "查询结果下载任务",
       "input": "DescribeResultDownloadRequest",
@@ -546,6 +581,13 @@
       "output": "DescribeStoreLocationResponse",
       "status": "online"
     },
+    "DescribeSubUserAccessPolicy": {
+      "document": "本接口（DescribeSubUserAccessPolicy）用于开通了第三方平台访问的用户，查询其子用户的访问策略",
+      "input": "DescribeSubUserAccessPolicyRequest",
+      "name": "查询子用户访问策略",
+      "output": "DescribeSubUserAccessPolicyResponse",
+      "status": "online"
+    },
     "DescribeTable": {
       "document": "本接口（DescribeTable），用于查询单个表的详细信息。",
       "input": "DescribeTableRequest",
@@ -593,6 +635,13 @@
       "input": "DescribeTasksCostInfoRequest",
       "name": "查询任务消耗",
       "output": "DescribeTasksCostInfoResponse",
+      "status": "online"
+    },
+    "DescribeThirdPartyAccessUser": {
+      "document": "本接口（RegisterThirdPartyAccessUser）查询开通第三方平台访问的用户信息",
+      "input": "DescribeThirdPartyAccessUserRequest",
+      "name": "查询开通的第三方平台访问用户信息",
+      "output": "DescribeThirdPartyAccessUserResponse",
       "status": "online"
     },
     "DescribeUpdatableDataEngines": {
@@ -707,6 +756,13 @@
       "output": "GetOptimizerPolicyResponse",
       "status": "online"
     },
+    "GrantDLCCatalogAccess": {
+      "document": "授权访问DLC Catalog",
+      "input": "GrantDLCCatalogAccessRequest",
+      "name": "授权DLCCatalog访问权限",
+      "output": "GrantDLCCatalogAccessResponse",
+      "status": "online"
+    },
     "ListTaskJobLogDetail": {
       "document": "本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情",
       "input": "ListTaskJobLogDetailRequest",
@@ -798,6 +854,13 @@
       "output": "QueryTaskCostDetailResponse",
       "status": "online"
     },
+    "RegisterThirdPartyAccessUser": {
+      "document": "本接口（RegisterThirdPartyAccessUser）用于开通第三方平台访问",
+      "input": "RegisterThirdPartyAccessUserRequest",
+      "name": "注册第三方平台访问用户",
+      "output": "RegisterThirdPartyAccessUserResponse",
+      "status": "online"
+    },
     "RenewDataEngine": {
       "document": "续费数据引擎",
       "input": "RenewDataEngineRequest",
@@ -817,6 +880,13 @@
       "input": "RestartDataEngineRequest",
       "name": "重启引擎",
       "output": "RestartDataEngineResponse",
+      "status": "online"
+    },
+    "RevokeDLCCatalogAccess": {
+      "document": "撤销DLC Catalog访问权限",
+      "input": "RevokeDLCCatalogAccessRequest",
+      "name": "撤销DLCCatalog访问权限",
+      "output": "RevokeDLCCatalogAccessResponse",
       "status": "online"
     },
     "RollbackDataEngineImage": {
@@ -1627,6 +1697,67 @@
       ],
       "type": "object"
     },
+    "CHDFSProductVpcInfo": {
+      "document": "chdfs产品vpc信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc子网信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcCidrBlock",
+          "name": "VpcCidrBlock",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CSV": {
       "document": "CSV类型数据格式",
       "members": [
@@ -2336,6 +2467,79 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateCHDFSBindingProductRequest": {
+      "document": "CreateCHDFSBindingProduct请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要绑定的元数据加速桶名",
+          "example": "dlc-xxx",
+          "member": "string",
+          "name": "MountPoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "桶的类型，分为cos和lakefs",
+          "example": "lakefs",
+          "member": "string",
+          "name": "BucketType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "DLC",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称，ProductName选择DLC产品时，必传此参数。其他产品可不传",
+          "example": "无",
+          "member": "string",
+          "name": "EngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc信息，产品名称为other时必传此参数",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCHDFSBindingProductResponse": {
+      "document": "CreateCHDFSBindingProduct返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MountPointAssociates",
+          "name": "MountPointAssociates",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDMSDatabaseRequest": {
       "document": "CreateDMSDatabase请求参数结构体",
@@ -4487,6 +4691,56 @@
       ],
       "usage": "both"
     },
+    "DLCCatalogAccess": {
+      "document": "DLC 数据目录访问权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-1234567",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR",
+          "member": "string",
+          "name": "Product",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "生产环境",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 10:10:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DMSColumn": {
       "document": "迁移列对象",
       "members": [
@@ -6559,6 +6813,69 @@
       ],
       "usage": "both"
     },
+    "DeleteCHDFSBindingProductRequest": {
+      "document": "DeleteCHDFSBindingProduct请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要解绑的元数据加速桶名",
+          "example": "dlc-xxx",
+          "member": "string",
+          "name": "MountPoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "桶的类型，分为cos和lakefs",
+          "example": "lakefs",
+          "member": "string",
+          "name": "BucketType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "DLC",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称，ProductName选择DLC产品时，必传此参数。其他产品可不传",
+          "example": "无",
+          "member": "string",
+          "name": "EngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc信息，ProductName选择other时，必传此参数",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCHDFSBindingProductResponse": {
+      "document": "DeleteCHDFSBindingProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDataEngineRequest": {
       "document": "DeleteDataEngine请求参数结构体",
       "members": [
@@ -6667,6 +6984,23 @@
     },
     "DeleteSparkAppResponse": {
       "document": "DeleteSparkApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteThirdPartyAccessUserRequest": {
+      "document": "DeleteThirdPartyAccessUser请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteThirdPartyAccessUserResponse": {
+      "document": "DeleteThirdPartyAccessUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6805,6 +7139,71 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLCCatalogAccessRequest": {
+      "document": "DescribeDLCCatalogAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "显示条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "记录数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLCCatalogAccessResponse": {
+      "document": "DescribeDLCCatalogAccess返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DLCCatalog授权列表",
+          "example": "无",
+          "member": "DLCCatalogAccess",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8674,6 +9073,53 @@
       ],
       "type": "object"
     },
+    "DescribeOtherCHDFSBindingListRequest": {
+      "document": "DescribeOtherCHDFSBindingList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶名",
+          "example": "无",
+          "member": "string",
+          "name": "BucketId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOtherCHDFSBindingListResponse": {
+      "document": "DescribeOtherCHDFSBindingList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "非DLC 产品绑定列表",
+          "example": "无",
+          "member": "OtherCHDFSBinding",
+          "name": "OtherCHDFSBindingList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResultDownloadRequest": {
       "document": "DescribeResultDownload请求参数结构体",
       "members": [
@@ -9249,6 +9695,33 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubUserAccessPolicyRequest": {
+      "document": "DescribeSubUserAccessPolicy请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSubUserAccessPolicyResponse": {
+      "document": "DescribeSubUserAccessPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子用户访问策略",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyDocument",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9993,6 +10466,33 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeThirdPartyAccessUserRequest": {
+      "document": "DescribeThirdPartyAccessUser请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeThirdPartyAccessUserResponse": {
+      "document": "DescribeThirdPartyAccessUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "无",
+          "member": "OpendThirdAccessUserInfo",
+          "name": "UserInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11258,6 +11758,69 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantDLCCatalogAccessRequest": {
+      "document": "GrantDLCCatalogAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权VpcId",
+          "example": "vpc-123456",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品(EMR|DLC|Doris|Inlong|Wedata)",
+          "example": "EMR",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "生产环境",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC所属账号UIN",
+          "example": "12345678",
+          "member": "string",
+          "name": "VpcUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC所属账号AppId",
+          "example": "12345678",
+          "member": "uint64",
+          "name": "VpcAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantDLCCatalogAccessResponse": {
+      "document": "GrantDLCCatalogAccess返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12622,6 +13185,62 @@
       ],
       "type": "object"
     },
+    "MountPointAssociates": {
+      "document": "绑定融合桶信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BucketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AccessRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MysqlInfo": {
       "document": "Mysql类型数据源信息",
       "members": [
@@ -13348,6 +13967,52 @@
       ],
       "usage": "out"
     },
+    "OpendThirdAccessUserInfo": {
+      "document": "开通了第三方访问的用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户主UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-16 14:50:30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Other": {
       "document": "数据格式其它类型。",
       "members": [
@@ -13364,6 +14029,52 @@
         }
       ],
       "usage": "both"
+    },
+    "OtherCHDFSBinding": {
+      "document": "非DLC产品CHDFS绑定",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称（该字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "SuperUser",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CHDFSProductVpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否与该桶绑定（该字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsBind",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OtherDatasourceConnection": {
       "document": "其他数据源",
@@ -13941,6 +14652,23 @@
       ],
       "type": "object"
     },
+    "RegisterThirdPartyAccessUserRequest": {
+      "document": "RegisterThirdPartyAccessUser请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RegisterThirdPartyAccessUserResponse": {
+      "document": "RegisterThirdPartyAccessUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RenewDataEngineRequest": {
       "document": "RenewDataEngine请求参数结构体",
       "members": [
@@ -14147,6 +14875,33 @@
     },
     "RestartDataEngineResponse": {
       "document": "RestartDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeDLCCatalogAccessRequest": {
+      "document": "RevokeDLCCatalogAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VpcID",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokeDLCCatalogAccessResponse": {
+      "document": "RevokeDLCCatalogAccess返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17588,6 +18343,82 @@
         }
       ],
       "usage": "out"
+    },
+    "VpcCidrBlock": {
+      "document": "VPC子网信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CidrId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CidrAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcInfo": {
+      "document": "vpc信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1/22",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WorkGroupDetailInfo": {
       "document": "工作组详细信息",

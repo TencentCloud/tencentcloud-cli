@@ -638,7 +638,7 @@
       "status": "online"
     },
     "DescribePrometheusInstanceUsage": {
-      "document": " 查询Prometheus按量实例用量",
+      "document": "查询Prometheus按量实例用量",
       "input": "DescribePrometheusInstanceUsageRequest",
       "name": "查询Prometheus按量实例用量",
       "output": "DescribePrometheusInstanceUsageResponse",
@@ -11988,7 +11988,7 @@
           "example": "无",
           "member": "PrometheusInstanceTenantUsage",
           "name": "UsageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

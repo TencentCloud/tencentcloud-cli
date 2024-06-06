@@ -3343,6 +3343,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "基于新网关的服务调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceCallInfoV2",
+          "name": "ServiceCallInfoV2",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4899,6 +4909,17 @@
         },
         {
           "disabled": false,
+          "document": "默认内网调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DefaultInnerCallInfo",
+          "name": "DefaultInnerCallInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "私有连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrivateLinkInfo",
@@ -4910,10 +4931,10 @@
         },
         {
           "disabled": false,
-          "document": "默认内网调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基于新网关的私有连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "DefaultInnerCallInfo",
-          "name": "DefaultInnerCallInfos",
+          "member": "PrivateLinkInfo",
+          "name": "PrivateLinkInfosV2",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -7958,6 +7979,52 @@
           "name": "AuthorizationEnable",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceCallInfoV2": {
+      "document": "V2版本的服务调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-ttt",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的公网调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://ms-ttt.tencentcs.com",
+          "member": "string",
+          "name": "InternetEndpoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权token，仅当AuthorizationEnable为true时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ttt",
+          "member": "string",
+          "name": "AuthToken",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -1,4 +1,4 @@
-**Example 1: 通用印刷体识别（高精度版）示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralAccurateOCR)**
+**Example 1: 通用文字识别（高精度版）示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralAccurateOCR)**
 
 图像整体文字的检测和识别，返回文字框位置与文字内容
 

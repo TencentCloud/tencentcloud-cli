@@ -20,7 +20,8 @@ Output:
             "rds",
             "postgres_bak_1715152994"
         ],
-        "RequestId": "4045d7a9-5330-4c2c-b968-475570200a97"
+        "RequestId": "4045d7a9-5330-4c2c-b968-475570200a97",
+        "TotalCount": 5
     }
 }
 ```
@@ -33,7 +34,11 @@ Input:
 
 ```
 tccli postgres DescribeDatabases --cli-unfold-argument  \
-    --DBInstanceId postgres-hf8jo5pr
+    --DBInstanceId postgres-hf8jo5pr \
+    --Filters.0.Name database-name \
+    --Filters.0.Values postgres \
+    --Offset 1 \
+    --Limit 2
 ```
 
 Output: 
@@ -44,7 +49,8 @@ Output:
             "postgres_bak_1715086333",
             "postgres_bak_1715140150"
         ],
-        "RequestId": "25cc2555-14a2-454f-af08-6bd691315335"
+        "RequestId": "25cc2555-14a2-454f-af08-6bd691315335",
+        "TotalCount": 5
     }
 }
 ```

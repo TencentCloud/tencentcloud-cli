@@ -144,6 +144,14 @@
         "title": "元数据锁检查"
       }
     ],
+    "CreateCHDFSBindingProduct": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCHDFSBindingProduct\n<公共请求参数>\n\n{\n    \"MountPoint\": \"abc\",\n    \"BucketType\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"EngineName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDMSDatabase": [
       {
         "document": "",
@@ -320,6 +328,14 @@
         "title": "创建工作组"
       }
     ],
+    "DeleteCHDFSBindingProduct": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCHDFSBindingProduct\n<公共请求参数>\n\n{\n    \"MountPoint\": \"abc\",\n    \"BucketType\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"EngineName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteDataEngine": [
       {
         "document": "",
@@ -352,6 +368,20 @@
         "title": "删除spark作业"
       }
     ],
+    "DeleteThirdPartyAccessUser": [
+      {
+        "document": "删除注册的用户",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteThirdPartyAccessUser\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1584c994-e31c-4fb8-9a71-03b07c8fb729\"\n    }\n}",
+        "title": "示例一"
+      },
+      {
+        "document": "注册第三方访问用户",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteThirdPartyAccessUser\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7be43271-5667-4fd4-b37a-030955cbc56f\"\n    }\n}",
+        "title": "实例一"
+      }
+    ],
     "DeleteUser": [
       {
         "document": "",
@@ -382,6 +412,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAdvancedStoreLocation\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"StoreLocation\": \"xx\",\n        \"HasLakeFs\": false,\n        \"Enable\": 1,\n        \"LakeFsStatus\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询高级设置"
+      }
+    ],
+    "DescribeDLCCatalogAccess": [
+      {
+        "document": "查询DLC Catalog授权列表",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 20,\n        \"Rows\": [\n            {\n                \"VpcId\": \"vpc-12345\",\n                \"Product\": \"EMR\",\n                \"Description\": \"EMR生产集群\",\n                \"CreateTime\": \"2024年10月01日\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询DLC Catalog授权列表"
       }
     ],
     "DescribeDMSDatabase": [
@@ -560,6 +598,14 @@
         "title": "查询交互式 session列表"
       }
     ],
+    "DescribeOtherCHDFSBindingList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOtherCHDFSBindingList\n<公共请求参数>\n\n{\n    \"BucketId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OtherCHDFSBindingList\": [\n            {\n                \"ProductName\": \"abc\",\n                \"SuperUser\": [\n                    \"abc\"\n                ],\n                \"VpcInfo\": [\n                    {\n                        \"VpcId\": \"abc\",\n                        \"VpcName\": \"abc\",\n                        \"VpcCidrBlock\": [\n                            {\n                                \"CidrId\": \"abc\",\n                                \"CidrAddr\": \"abc\"\n                            }\n                        ]\n                    }\n                ],\n                \"IsBind\": true\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeResultDownload": [
       {
         "document": "",
@@ -624,6 +670,14 @@
         "title": "查询计算结果存储路径"
       }
     ],
+    "DescribeSubUserAccessPolicy": [
+      {
+        "document": "查询子用户策略",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubUserAccessPolicy\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"statement\\\":[{\\\"action\\\":[\\\"cos:*\\\"],\\\"effect\\\":\\\"allow\\\",\\\"resource\\\":[\\\"qcs::cos:ap-beijing:uid/123456:test_bucket/*\\\",\\\"qcs::cos:ap-beijing:uid/123456:test_bucket/*\\\",\\\"qcs::cos:ap-beijing:uid/123456:test_bucket/*\\\"]}],\\\"version\\\":\\\"2.0\\\"}\",\n        \"RequestId\": \"799cd718-d0da-4f7c-a0c1-104205dc6d8f\"\n    }\n}",
+        "title": "实例一"
+      }
+    ],
     "DescribeTable": [
       {
         "document": "查询表信息",
@@ -678,6 +732,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksCostInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"SearchAfter\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询任务消耗"
+      }
+    ],
+    "DescribeThirdPartyAccessUser": [
+      {
+        "document": "查询注册的第三方访问用户信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAccessUser\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584515f3-835f-459d-b93b-d6c6f64c0daa\",\n        \"UserInfo\": {\n            \"AppId\": \"123456\",\n            \"CreateTime\": \"2024-05-22T09:49:56+08:00\",\n            \"Id\": 5,\n            \"Uin\": \"123456\"\n        }\n    }\n}",
+        "title": "实例一"
       }
     ],
     "DescribeUpdatableDataEngines": [
@@ -814,6 +876,14 @@
         "title": "test"
       }
     ],
+    "GrantDLCCatalogAccess": [
+      {
+        "document": "授权访问DLC元数据",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-1234\",\n    \"Product\": \"EMR\",\n    \"Description\": \"EMR生产集群\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234-4567\"\n    }\n}",
+        "title": "授权访问DLC元数据"
+      }
+    ],
     "ListTaskJobLogDetail": [
       {
         "document": "查询spark 作业任务的日志详情",
@@ -918,6 +988,14 @@
         "title": "查询任务消耗明细"
       }
     ],
+    "RegisterThirdPartyAccessUser": [
+      {
+        "document": "注册访问用户",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterThirdPartyAccessUser\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"346d80be-643f-4980-ad5d-d59f419a120e\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
     "RenewDataEngine": [
       {
         "document": "续费数据引擎",
@@ -940,6 +1018,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"abc\",\n    \"ForcedOperation\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "重启集群"
+      }
+    ],
+    "RevokeDLCCatalogAccess": [
+      {
+        "document": "撤销DLC Catalog访问权限",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "撤销DLC Catalog访问权限"
       }
     ],
     "RollbackDataEngineImage": [

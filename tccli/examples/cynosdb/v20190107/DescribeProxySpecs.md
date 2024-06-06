@@ -1,6 +1,6 @@
 **Example 1: 查询proxy规格**
 
-
+查询proxy规格
 
 Input: 
 
@@ -32,7 +32,7 @@ Output:
 
 **Example 2: 查询数据库代理规格**
 
-
+查询数据库代理规格
 
 Input: 
 

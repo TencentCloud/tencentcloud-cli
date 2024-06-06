@@ -2414,8 +2414,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定待查询参数列表的实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
-          "example": "cmgo-********",
+          "document": "指定待查询参数列表的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2429,19 +2429,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数值为枚举类型参数集合。",
+          "document": "参数值为枚举类型的参数集合。",
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数值为 Integer 类型参数集合。",
+          "document": "参数值为 Integer 类型的参数集合。",
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2451,6 +2453,7 @@
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2460,15 +2463,17 @@
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前实例支持修改的参数个数统计 如0",
+          "document": "当前实例支持修改的参数数量。",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3745,7 +3750,7 @@
           "example": "\"all\"",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3755,7 +3760,7 @@
           "example": "\"slowOp\"",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3765,7 +3770,7 @@
           "example": "[\"off\",\"slowOp\",\"all\"]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3775,7 +3780,7 @@
           "example": "\"0\"",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3785,7 +3790,7 @@
           "example": "\"operationProfiling.mode\"",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3795,7 +3800,7 @@
           "example": "[\"事务加锁超时时间\",\"max transaction lockrequest timeout millis\"]",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3805,7 +3810,7 @@
           "example": "\"enum\"",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3815,7 +3820,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
