@@ -606,6 +606,14 @@
         "title": "获取云原生网关服务详情"
       }
     ],
+    "DescribePublicAddressConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicAddressConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"GroupId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询网关公网地址列表"
+      }
+    ],
     "DescribePublicNetwork": [
       {
         "document": "查询云原生API网关实例公网详情",

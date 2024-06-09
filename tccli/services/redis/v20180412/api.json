@@ -133,6 +133,13 @@
       "output": "DescribeAutoBackupConfigResponse",
       "status": "online"
     },
+    "DescribeBackupDetail": {
+      "document": "本接口（DescribeBackupDetail）用于查询实例的备份信息详情。",
+      "input": "DescribeBackupDetailRequest",
+      "name": "查询备份信息详情",
+      "output": "DescribeBackupDetailResponse",
+      "status": "online"
+    },
     "DescribeBackupDownloadRestriction": {
       "document": "本接口（DescribeBackupDownloadRestriction）用于查询当前地域数据库备份文件的下载地址。",
       "input": "DescribeBackupDownloadRestrictionRequest",
@@ -2355,6 +2362,150 @@
           "example": "7",
           "member": "int64",
           "name": "BinlogStorageDays",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDetailRequest": {
+      "document": "DescribeBackupDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "crs-4y9t57vt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份 ID，可通过接口 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 返回的参数 **RedisBackupSet** 获取。",
+          "example": "678362566696298532848117",
+          "member": "string",
+          "name": "BackupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupDetailResponse": {
+      "document": "DescribeBackupDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份 ID。",
+          "example": "678362566696298532848117",
+          "member": "string",
+          "name": "BackupId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间。",
+          "example": "\"2022-03-24 11:52:20\"",
+          "member": "string",
+          "name": "StartTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份结束时间。",
+          "example": "\"2022-03-24 11:59:16\"",
+          "member": "string",
+          "name": "EndTime",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。 \n\n- 1：手动备份。\n-  0：自动备份。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "BackupType",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份状态。 \n\n- 1：备份被其它流程锁定。\n- 2：备份正常，没有被任何流程锁定。\n- -1：备份已过期。\n- 3：备份正在被导出。\n- 4：备份导出成功。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份的备注信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份是否被锁定。\n\n- 0：未被锁定。\n- 1：已被锁定。",
+          "example": "0",
+          "member": "int64",
+          "name": "Locked",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件大小。单位：Byte。",
+          "example": "10240",
+          "member": "int64",
+          "name": "BackupSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。",
+          "example": "6",
+          "member": "int64",
+          "name": "InstanceType",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单分片内存规格大小，单位：MB。",
+          "example": "4096",
+          "member": "int64",
+          "name": "MemSize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片数量。",
+          "example": "3",
+          "member": "int64",
+          "name": "ShardNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "副本数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicasNum",
           "type": "int",
           "value_allowed_null": false
         },

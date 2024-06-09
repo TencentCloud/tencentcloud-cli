@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli domain DeleteBidding --cli-unfold-argument ```
+tccli domain DeleteBidding --cli-unfold-argument  \
+    --BusinessID xxxx
+```
 
 Output: 
 ```

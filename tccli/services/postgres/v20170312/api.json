@@ -2967,8 +2967,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，形如vpc-xxxxxxxx。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。",
-          "example": "vpc-xxxxxxxx",
+          "document": "私有网络ID，形如vpc-e6w23k31。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) ，从接口返回中的unVpcId字段获取。",
+          "example": "vpc-e6w23k31",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -2977,8 +2977,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如subnet-xxxxxxxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。",
-          "example": "subnet-xxxxxxxx",
+          "document": "私有网络子网ID，形如subnet-51lcif9y。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。",
+          "example": "subnet-51lcif9y",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -2988,7 +2988,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "postgres-xxxxxxxx",
+          "example": "postgres-7lzldndx",
           "member": "string",
           "name": "DBInstanceId",
           "output_required": true,
@@ -2998,7 +2998,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "xxxx",
+          "example": "数据库名称",
           "member": "string",
           "name": "DBInstanceName",
           "output_required": true,
@@ -3238,7 +3238,7 @@
         {
           "disabled": false,
           "document": "主实例信息，仅在实例为只读实例时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "postgres-xxxxxxxx",
+          "example": "postgres-7lzldndx",
           "member": "string",
           "name": "MasterDBInstanceId",
           "output_required": true,
@@ -4188,7 +4188,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
-          "example": "无",
+          "example": "[     {         \"Values\": [             \"postgres-2uepfuz1\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4221,10 +4221,10 @@
         {
           "disabled": false,
           "document": "备份统计信息列表。",
-          "example": "无",
+          "example": "[     {         \"AutoBaseBackupCount\": 3,         \"AutoBaseBackupSize\": 3535342436352,         \"DBInstanceId\": \"postgres-lsw5y0bp\",         \"LogBackupCount\": 2,         \"LogBackupSize\": 167792640,         \"ManualBaseBackupCount\": 1,         \"ManualBaseBackupSize\": 1178447478784,         \"TotalBackupCount\": 6,         \"TotalBackupSize\": 4713957707776     } ]",
           "member": "BackupSummary",
           "name": "BackupSummarySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4234,7 +4234,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

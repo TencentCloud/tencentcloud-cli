@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBiddingSuccessfulList --cli-unfold-argument  \
+    --PageNumber 1 \
     --PageSize 10
 ```
 
@@ -13,7 +14,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "340187d9-be66-43e7-a837-80049dad20ec"
+        "RequestId": "340187d9-be66-43e7-a837-80049dad20ec",
+        "SuccessfulList": [
+            {}
+        ],
+        "Total": 1
     }
 }
 ```

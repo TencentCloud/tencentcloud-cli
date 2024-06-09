@@ -158,6 +158,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeBackupDetail": [
+      {
+        "document": "通过该接口查询指定实例备份 ID 的备份信息。",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-g9my5vt7\",\n    \"BackupId\": \"154571841-1165701309-438602494\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"154571841-1165701309-438602494\",\n        \"BackupSize\": 528,\n        \"BackupType\": \"0\",\n        \"EndTime\": \"2022-12-19 19:42:20\",\n        \"InstanceType\": 9,\n        \"Locked\": 0,\n        \"MemSize\": 2048,\n        \"Remark\": \"test005\",\n        \"ReplicasNum\": 1,\n        \"RequestId\": \"add15b91-8f3c-4ff3-ba52-7c64c9c435ba\",\n        \"ShardNum\": 3,\n        \"StartTime\": \"2022-12-19 19:41:42\",\n        \"Status\": 2\n    }\n}",
+        "title": "查询备份信息详情"
+      }
+    ],
     "DescribeBackupDownloadRestriction": [
       {
         "document": "通过该接口查询当前地域用户设置的备份文件的下载来源限制。",

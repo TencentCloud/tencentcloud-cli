@@ -91,7 +91,7 @@
     "DeleteBidding": [
       {
         "document": "删除记录",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBidding\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBidding\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5ae6a11-ad75-4196-8176-9d72bc287eda\"\n    }\n}",
         "title": "删除记录"
       }
@@ -155,48 +155,48 @@
     "DescribeBiddingAppointDetail": [
       {
         "document": "我预定的域名-预约详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0d60073-3fbb-4216-ba20-7ccad80d030a\",\n        \"Status\": 7\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppointBondPrice\": 70,\n        \"AppointEndTime\": \"2023-10-28 09:53:48\",\n        \"AppointNum\": 1,\n        \"AppointPrice\": 105,\n        \"AppointStartTime\": \"2023-10-18 09:53:48\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"e0d60073-3fbb-4216-ba20-7ccad80d030a\",\n        \"Status\": 7\n    }\n}",
         "title": "我预定的域名-预约详情"
       }
     ],
     "DescribeBiddingAppointList": [
       {
         "document": "我的预约列表",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointList\n<公共请求参数>\n\n{\n    \"PageSize\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02f51803-507c-40ad-b26a-9a0178fa7ffc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"AppointList\": [\n            {\n                \"AppointBondPrice\": 70,\n                \"AppointEndTime\": \"2023-10-28T09:53:48+08:00\",\n                \"AppointNum\": 1,\n                \"AppointPrice\": 105,\n                \"BusinessID\": \"xxxx\",\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"02f51803-507c-40ad-b26a-9a0178fa7ffc\",\n        \"Total\": 1\n    }\n}",
         "title": "我的预约列表"
       }
     ],
     "DescribeBiddingDetail": [
       {
         "document": "我竞价的域名-竞价详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fdc5b55-514b-42f8-85a3-e269db61f752\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n        \"BiddingFlag\": 1,\n        \"BiddingNum\": 1,\n        \"BiddingPrice\": 150,\n        \"BiddingStartTime\": \"2023-10-28 09:53:48\",\n        \"CurrentNickname\": \"feng\",\n        \"CurrentPrice\": 120,\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"5fdc5b55-514b-42f8-85a3-e269db61f752\",\n        \"Status\": 2\n    }\n}",
         "title": "我竞价的域名-竞价详情"
       }
     ],
     "DescribeBiddingList": [
       {
         "document": "我的竞价列表",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingList\n<公共请求参数>\n\n{\n    \"PageSize\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"560e00d9-ddf1-4d4b-a3d8-461eb8c8e40c\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingList\": [\n            {\n                \"BiddingBondPrice\": 0,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 0,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 0,\n                \"BusinessID\": \"xxxx\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 7\n            },\n            {\n                \"BiddingBondPrice\": 80,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 1,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 150,\n                \"BusinessID\": \"xxxx\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"560e00d9-ddf1-4d4b-a3d8-461eb8c8e40c\",\n        \"Total\": 2\n    }\n}",
         "title": "我的竞价列表"
       }
     ],
     "DescribeBiddingSuccessfulDetail": [
       {
         "document": "我得标的域名-得标详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"BiddingBondRefund\": \"no\",\n        \"RequestId\": \"7a179528-6d80-495b-8e6c-14b935eccec9\",\n        \"Status\": 5\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"PayEndTime\": \"2023-11-07 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"7a179528-6d80-495b-8e6c-14b935eccec9\",\n        \"Status\": 5,\n        \"SuccessfulPrice\": 200,\n        \"SuccessfulTime\": \"2023-10-25 16:00:00\"\n    }\n}",
         "title": "我得标的域名-得标详情"
       }
     ],
     "DescribeBiddingSuccessfulList": [
       {
         "document": "我得标的域名",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulList\n<公共请求参数>\n\n{\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340187d9-be66-43e7-a837-80049dad20ec\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340187d9-be66-43e7-a837-80049dad20ec\",\n        \"SuccessfulList\": [\n            {}\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "我得标的域名"
       }
     ],

@@ -8535,6 +8535,7 @@
           "example": "[]",
           "member": "GrafanaNotificationChannel",
           "name": "NotificationChannelSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

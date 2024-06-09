@@ -5,13 +5,29 @@
 Input: 
 
 ```
-tccli domain DescribeBiddingDetail --cli-unfold-argument ```
+tccli domain DescribeBiddingDetail --cli-unfold-argument  \
+    --BusinessID xxxx
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5fdc5b55-514b-42f8-85a3-e269db61f752"
+        "BiddingBondPrice": 80,
+        "BiddingBondRefund": "no",
+        "BiddingEndTime": "2023-11-04 09:53:48",
+        "BiddingFlag": 1,
+        "BiddingNum": 1,
+        "BiddingPrice": 150,
+        "BiddingStartTime": "2023-10-28 09:53:48",
+        "CurrentNickname": "feng",
+        "CurrentPrice": 120,
+        "DeleteTime": "2023-11-28 09:53:48",
+        "Domain": "sasdfzcccc2216.com",
+        "ExpireTime": "2023-09-28 09:53:48",
+        "RegTime": "2022-09-28 09:53:48",
+        "RequestId": "5fdc5b55-514b-42f8-85a3-e269db61f752",
+        "Status": 2
     }
 }
 ```

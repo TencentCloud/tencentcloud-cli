@@ -98,6 +98,14 @@
         "title": "为指定配置组创建新版本"
       }
     ],
+    "CreateCustomizeErrorPage": [
+      {
+        "document": "创建自定义错误页面接口",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomizeErrorPage\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义错误页面\",\n    \"Description\": \"web防护自定义错误页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\":\\\"自定义错误页\\\", \\\"Content\\\":\\\"自定义错误页面内容\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PageId\": \"p-2kplomhisdcb\",\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
+        "title": "创建自定义错误页面接口"
+      }
+    ],
     "CreateL4Proxy": [
       {
         "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为中国大陆可用区的四层实例。",
@@ -316,6 +324,14 @@
         "title": "删除应用代理规则"
       }
     ],
+    "DeleteCustomErrorPage": [
+      {
+        "document": "删除自定义错误页面接口",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
+        "title": "删除自定义错误页面接口"
+      }
+    ],
     "DeleteL4Proxy": [
       {
         "document": "删除 ZoneId 为 zone-24wjy25v1cwi 下，ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例。",
@@ -450,6 +466,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContentQuota\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-ajj243dwrew\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-ajj243-afjkj245-af\",\n        \"PrefetchQuota\": [\n            {\n                \"Batch\": 2000,\n                \"Daily\": 10000,\n                \"DailyAvailable\": 10000,\n                \"Type\": \"prefetch_url\"\n            }\n        ],\n        \"PurgeQuota\": [\n            {\n                \"Batch\": 2000,\n                \"Daily\": 10000,\n                \"DailyAvailable\": 10000,\n                \"Type\": \"purge_url\"\n            },\n            {\n                \"Batch\": 2000,\n                \"Daily\": 10000,\n                \"DailyAvailable\": 10000,\n                \"Type\": \"purge_prefix\"\n            },\n            {\n                \"Batch\": 2000,\n                \"Daily\": 10000,\n                \"DailyAvailable\": 10000,\n                \"Type\": \"purge_host\"\n            },\n            {\n                \"Batch\": 2000,\n                \"Daily\": 10000,\n                \"DailyAvailable\": 10000,\n                \"Type\": \"purge_all\"\n            }\n        ]\n    }\n}",
         "title": "查询配额"
+      }
+    ],
+    "DescribeCustomErrorPages": [
+      {
+        "document": "自定义错误页面查询列表",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomErrorPages\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Filters\": [\n        {\n            \"Name\": \"name\",\n            \"Values\": [\n                \"web防护错误页面\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorPages\": [\n            {\n                \"PageId\": \"p-2kplomhisdcb\",\n                \"Name\": \"web防护错误页面\",\n                \"ContentType\": \"application/json\",\n                \"Content\": \"{\\\"title\\\": \\\"自定义错误页面title\\\",\\\"content\\\": \\\"自定义错误页面内容\\\"}\",\n                \"Description\": \"自定义的web防护错误页面\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
+        "title": "自定义错误页面查询列表"
       }
     ],
     "DescribeDDoSAttackData": [
@@ -870,6 +894,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationProxyStatus\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"Status\": \"online\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "修改应用代理的状态"
+      }
+    ],
+    "ModifyCustomErrorPage": [
+      {
+        "document": "修改自定义错误页面。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义错误页面\",\n    \"Description\": \"web防护自定义错误页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\": \\\"自定义错误页面title\\\",\\\"content\\\": \\\"自定义错误页面内容\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
+        "title": "修改自定义错误页面"
       }
     ],
     "ModifyHostsCertificate": [

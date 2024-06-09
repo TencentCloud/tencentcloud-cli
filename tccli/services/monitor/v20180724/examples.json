@@ -706,7 +706,7 @@
       {
         "document": "列出 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaNotificationChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"test\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ChannelId\": \"xx\",\n                \"ChannelName\": \"xx\",\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"OrgId\": \"xx\",\n                \"ExtraOrgIds\": [\n                    \"xx\"\n                ],\n                \"OrgIds\": [\n                    \"xx\"\n                ],\n                \"OrganizationIds\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"ChannelId\": \"abc\",\n                \"ChannelName\": \"abc\",\n                \"Receivers\": [\n                    \"abc\"\n                ],\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"OrgId\": \"abc\",\n                \"ExtraOrgIds\": [\n                    \"abc\"\n                ],\n                \"OrgIds\": [\n                    \"abc\"\n                ],\n                \"OrganizationIds\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "列出 Grafana 告警通道"
       }
     ],
@@ -1311,7 +1311,7 @@
     "UpdateDNSConfig": [
       {
         "document": "更新 Grafana 的 DNS 配置",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"NameServers\": [\n        \"xx\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDNSConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"NameServers\": [\n        \"1.1.1.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fpllngzieyoh54e1244ols7k2hh3gdny\"\n    }\n}",
         "title": "更新 Grafana 的 DNS 配置"
       }

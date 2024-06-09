@@ -20,26 +20,26 @@ Output:
     "Response": {
         "NotificationChannelSet": [
             {
-                "ChannelId": "xx",
-                "ChannelName": "xx",
+                "ChannelId": "abc",
+                "ChannelName": "abc",
                 "Receivers": [
-                    "xx"
+                    "abc"
                 ],
                 "CreatedAt": "2020-09-22T00:00:00+00:00",
                 "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                "OrgId": "xx",
+                "OrgId": "abc",
                 "ExtraOrgIds": [
-                    "xx"
+                    "abc"
                 ],
                 "OrgIds": [
-                    "xx"
+                    "abc"
                 ],
                 "OrganizationIds": [
-                    "xx"
+                    "abc"
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

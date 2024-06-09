@@ -70,6 +70,13 @@
       "output": "CreateConfigGroupVersionResponse",
       "status": "online"
     },
+    "CreateCustomizeErrorPage": {
+      "document": "创建自定义错误页面。",
+      "input": "CreateCustomizeErrorPageRequest",
+      "name": "创建自定义错误页面",
+      "output": "CreateCustomizeErrorPageResponse",
+      "status": "online"
+    },
     "CreateL4Proxy": {
       "document": "用于创建四层代理实例。",
       "input": "CreateL4ProxyRequest",
@@ -180,6 +187,13 @@
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则（旧）",
       "output": "DeleteApplicationProxyRuleResponse",
+      "status": "online"
+    },
+    "DeleteCustomErrorPage": {
+      "document": "删除自定义错误页面。",
+      "input": "DeleteCustomErrorPageRequest",
+      "name": "删除自定义错误页面",
+      "output": "DeleteCustomErrorPageResponse",
       "status": "online"
     },
     "DeleteL4Proxy": {
@@ -299,6 +313,13 @@
       "input": "DescribeContentQuotaRequest",
       "name": "查询内容管理接口配额",
       "output": "DescribeContentQuotaResponse",
+      "status": "online"
+    },
+    "DescribeCustomErrorPages": {
+      "document": "查询自定义错误页列表。",
+      "input": "DescribeCustomErrorPagesRequest",
+      "name": "查询自定义错误页列表",
+      "output": "DescribeCustomErrorPagesResponse",
       "status": "online"
     },
     "DescribeDDoSAttackData": {
@@ -593,6 +614,13 @@
       "input": "ModifyApplicationProxyStatusRequest",
       "name": "修改应用代理的状态（旧）",
       "output": "ModifyApplicationProxyStatusResponse",
+      "status": "online"
+    },
+    "ModifyCustomErrorPage": {
+      "document": "修改自定义错误页面。",
+      "input": "ModifyCustomErrorPageRequest",
+      "name": "修改自定义错误页面",
+      "output": "ModifyCustomErrorPageResponse",
       "status": "online"
     },
     "ModifyHostsCertificate": {
@@ -3622,6 +3650,79 @@
       ],
       "type": "object"
     },
+    "CreateCustomizeErrorPageRequest": {
+      "document": "CreateCustomizeErrorPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2kplomhisdcb",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页名称，名称为 2-30 个字符。",
+          "example": "错误定制页",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面类型，取值有：<li>text/html； </li><li>application/json；</li><li>text/plain；</li><li>text/xml。</li>",
+          "example": "application/json",
+          "member": "string",
+          "name": "ContentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面描述，描述不超过 60 个字符。",
+          "example": "web规则自定义错误页面",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面内容，内容不超过 2KB。",
+          "example": "{\"title\":\"自定义错误页\", \"Content\":\"自定义错误页面内容\"}",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomizeErrorPageResponse": {
+      "document": "CreateCustomizeErrorPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页面 ID。",
+          "example": "p-2kplomhisdcb",
+          "member": "string",
+          "name": "PageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateL4ProxyRequest": {
       "document": "CreateL4Proxy请求参数结构体",
       "members": [
@@ -4638,6 +4739,82 @@
       ],
       "usage": "both"
     },
+    "CustomErrorPage": {
+      "document": "自定义错误码页面结构体。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误页面 ID。",
+          "example": "p-2kplomhisdcb",
+          "member": "string",
+          "name": "PageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2kplomhisdcb",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面名称。",
+          "example": "web防护页面",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面类型。",
+          "example": "application/json",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面描述。",
+          "example": "web防护页面",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面内容。",
+          "example": "{\"title\": \"自定义错误页面title\",\"content\": \"自定义错误页面内容\"}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面引用。",
+          "example": "无",
+          "member": "ErrorPageReference",
+          "name": "References",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CustomField": {
       "document": "实时日志投递任务中的自定义日志字段。",
       "members": [
@@ -5142,6 +5319,42 @@
     },
     "DeleteApplicationProxyRuleResponse": {
       "document": "DeleteApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomErrorPageRequest": {
+      "document": "DeleteCustomErrorPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2kplomhisdcb",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义页面 ID。",
+          "example": "p-2kplomhisdcb",
+          "member": "string",
+          "name": "PageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomErrorPageResponse": {
+      "document": "DeleteCustomErrorPage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6121,6 +6334,80 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomErrorPagesRequest": {
+      "document": "DescribeCustomErrorPages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2kplomhisdcb",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：\n<li>page-id： 按照页面 ID 进行过滤；</li>\n<li>name： 按照页面名称进行过滤；</li>\n<li>description：按照页面描述过滤；</li>\n<li>content-type：按照页面类型过滤。</li>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：1000。 ",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomErrorPagesResponse": {
+      "document": "DescribeCustomErrorPages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误页面总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面数据列表。",
+          "example": "无",
+          "member": "CustomErrorPage",
+          "name": "ErrorPages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9152,6 +9439,22 @@
       ],
       "usage": "out"
     },
+    "ErrorPageReference": {
+      "document": "自定义错误页面被引用的来源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引用的业务 ID，如自定义拦截规则 ID。",
+          "example": "2181757654",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExceptConfig": {
       "document": "例外规则，用于配置需要跳过特定场景的规则",
       "members": [
@@ -11300,6 +11603,78 @@
     },
     "ModifyApplicationProxyStatusResponse": {
       "document": "ModifyApplicationProxyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomErrorPageRequest": {
+      "document": "ModifyCustomErrorPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误页面 ID。",
+          "example": "p-2kplomhisdcb",
+          "member": "string",
+          "name": "PageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2kplomhisdcb",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页名称，名称为2 - 60个字符。",
+          "example": "web防护自定义错误页",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页描述，描述内容不超过60个字符。",
+          "example": "web规则自定义错误页面",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>",
+          "example": "application/json",
+          "member": "string",
+          "name": "ContentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面内容。内容不超过 2KB。",
+          "example": "{\"title\":\"自定义错误页\", \"Content\":\"自定义错误页面内容\"}",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomErrorPageResponse": {
+      "document": "ModifyCustomErrorPage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

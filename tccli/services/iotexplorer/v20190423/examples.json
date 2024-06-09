@@ -574,7 +574,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewaySubProducts\n<公共请求参数>\n\n{\n    \"GatewayProductId\": \"M5QJPYQ\",\n    \"ProjectId\": \"pri_211\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"xx\",\n                \"NetType\": \"xx\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductId\": \"xx\",\n                \"ProductOwnerName\": \"\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Products\": [\n            {\n                \"DevStatus\": \"1\",\n                \"NetType\": \"wifi\",\n                \"DataProtocol\": 1,\n                \"ProjectId\": \"pro-jed\",\n                \"ProductName\": \"名称\",\n                \"ProductType\": 0,\n                \"CategoryId\": 0,\n                \"ProductId\": \"p_34rd\",\n                \"ProductOwnerName\": \"\"\n            }\n        ],\n        \"RequestId\": \"ed3-5tgbth565-678g\"\n    }\n}",
         "title": "用于获取网关可绑定或解绑的子产品"
       }
     ],
