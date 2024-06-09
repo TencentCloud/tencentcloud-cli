@@ -35,6 +35,13 @@
       "output": "DescribeZoneInstanceTypeInventoryResponse",
       "status": "online"
     },
+    "RebootInstances": {
+      "document": "本接口 (RebootInstances) 用于重启实例。\n\n* 只有状态为`RUNNING`的实例才可以进行此操作。\n* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。\n* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "input": "RebootInstancesRequest",
+      "name": "重启实例",
+      "output": "RebootInstancesResponse",
+      "status": "online"
+    },
     "RestoreInstances": {
       "document": "本接口 (RestoreInstances) 对贮藏实例进行恢复。",
       "input": "RestoreInstancesRequest",
@@ -1023,6 +1030,61 @@
         }
       ],
       "usage": "both"
+    },
+    "RebootInstancesRequest": {
+      "document": "RebootInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否在重启时进入安全模式。取值范围：<br><li>TRUE：表示在重启时进入安全模式<br><li>FALSE：表示在重启时进入正常模式<br><br>默认取值：FALSE。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "RemainGrub",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。",
+          "example": "SOFT",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootInstancesResponse": {
+      "document": "RebootInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "283426327",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReservedPack": {
       "document": "预扣包",

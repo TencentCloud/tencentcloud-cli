@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBiddingAppointList --cli-unfold-argument  \
+    --PageNumber 1 \
     --PageSize 20
 ```
 
@@ -13,7 +14,19 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "02f51803-507c-40ad-b26a-9a0178fa7ffc"
+        "AppointList": [
+            {
+                "AppointBondPrice": 70,
+                "AppointEndTime": "2023-10-28T09:53:48+08:00",
+                "AppointNum": 1,
+                "AppointPrice": 105,
+                "BusinessID": "xxxx",
+                "Domain": "sasdfzcccc2216.com",
+                "Status": 1
+            }
+        ],
+        "RequestId": "02f51803-507c-40ad-b26a-9a0178fa7ffc",
+        "Total": 1
     }
 }
 ```

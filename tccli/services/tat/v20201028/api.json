@@ -63,6 +63,13 @@
       "output": "DeleteRegisterInstanceResponse",
       "status": "online"
     },
+    "DescribeAllResourcesCount": {
+      "document": "查询所有地域下，指定资源的数量。",
+      "input": "DescribeAllResourcesCountRequest",
+      "name": "查询各地域资源数量",
+      "output": "DescribeAllResourcesCountResponse",
+      "status": "online"
+    },
     "DescribeAutomationAgentStatus": {
       "document": "此接口用于查询自动化助手客户端的状态。",
       "input": "DescribeAutomationAgentStatusRequest",
@@ -1066,6 +1073,53 @@
     "DeleteRegisterInstanceResponse": {
       "document": "DeleteRegisterInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllResourcesCountRequest": {
+      "document": "DescribeAllResourcesCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称。仅支持以下取值：COMMAND",
+          "example": "[\"COMMAND\"]",
+          "member": "string",
+          "name": "ResourceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllResourcesCountResponse": {
+      "document": "DescribeAllResourcesCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果的地域数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名及该地域资源计数列表。",
+          "example": "[{\"Region\": \"ap-beijing\", \"ResourceCountDetailSet\": [{\"ResourceName\": \"COMMAND\", \"ResourceCount\": 0}] }]",
+          "member": "RegionResourceCount",
+          "name": "RegionResourceCountSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2867,6 +2921,32 @@
       ],
       "usage": "out"
     },
+    "RegionResourceCount": {
+      "document": "地域名及该地域资源计数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源所属地域",
+          "example": "\"ap-beijing\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源数量详情列表。",
+          "example": "[{\"ResourceName\": \"COMMAND\", \"ResourceCount\": 0}]",
+          "member": "ResourceCountDetail",
+          "name": "ResourceCountDetailSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RegisterCodeInfo": {
       "document": "注册码信息。",
       "members": [
@@ -3085,6 +3165,32 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceCountDetail": {
+      "document": "资源数量详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "COMMAND",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "ResourceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

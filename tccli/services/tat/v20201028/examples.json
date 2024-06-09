@@ -84,6 +84,14 @@
         "title": "删除托管实例"
       }
     ],
+    "DescribeAllResourcesCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllResourcesCount\n<公共请求参数>\n\n{\n    \"ResourceNames\": [\n        \"COMMAND\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RegionResourceCountSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceName\": \"COMMAND\",\n                        \"ResourceCount\": 20\n                    }\n                ]\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceName\": \"COMMAND\",\n                        \"ResourceCount\": 9\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"7660ce41-d33e-40af-a814-43d9ea62d59b\"\n    }\n}",
+        "title": "查询所有地域下指定资源的数量"
+      }
+    ],
     "DescribeAutomationAgentStatus": [
       {
         "document": "",

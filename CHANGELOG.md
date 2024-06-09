@@ -1,3 +1,186 @@
+# Release 3.0.1011.1
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 7 次发布
+
+发布时间：2024-06-10 01:12:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RebootInstances](http://document.tencentcloudapi.woa.com/document/product/1752/84063)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 32 次发布
+
+发布时间：2024-06-10 01:14:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteBidding](http://document.tencentcloudapi.woa.com/document/product/242/84016)
+
+	* 新增入参：BusinessID
+
+* [DescribeBiddingAppointDetail](http://document.tencentcloudapi.woa.com/document/product/242/84014)
+
+	* 新增入参：BusinessID
+
+	* 新增出参：Domain, AppointNum, AppointEndTime, RegTime, ExpireTime, DeleteTime, AppointPrice, AppointBondPrice
+
+* [DescribeBiddingAppointList](http://document.tencentcloudapi.woa.com/document/product/242/84013)
+
+	* 新增入参：PageNumber, Domain
+
+	* 新增出参：Total, AppointList
+
+* [DescribeBiddingDetail](http://document.tencentcloudapi.woa.com/document/product/242/84012)
+
+	* 新增入参：BusinessID
+
+	* 新增出参：Domain, BiddingNum, BiddingStartTime, BiddingEndTime, RegTime, ExpireTime, DeleteTime, CurrentPrice, CurrentNickname, BiddingBondPrice, Status, BiddingFlag, BiddingBondRefund, BiddingPrice
+
+* [DescribeBiddingList](http://document.tencentcloudapi.woa.com/document/product/242/84011)
+
+	* 新增入参：PageNumber, Domain
+
+	* 新增出参：Total, BiddingList
+
+* [DescribeBiddingSuccessfulDetail](http://document.tencentcloudapi.woa.com/document/product/242/84010)
+
+	* 新增入参：BusinessID
+
+	* 新增出参：Domain, SuccessfulTime, SuccessfulPrice, RegTime, ExpireTime, DeleteTime, PayEndTime, BiddingBondPrice
+
+* [DescribeBiddingSuccessfulList](http://document.tencentcloudapi.woa.com/document/product/242/84009)
+
+	* 新增入参：PageNumber, Domain
+
+	* 新增出参：Total, SuccessfulList
+
+
+新增数据结构：
+
+* [BiddingAppointResult](http://document.tencentcloudapi.woa.com/document/product/242/38895#BiddingAppointResult)
+* [BiddingResult](http://document.tencentcloudapi.woa.com/document/product/242/38895#BiddingResult)
+* [BiddingSuccessfulResult](http://document.tencentcloudapi.woa.com/document/product/242/38895#BiddingSuccessfulResult)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 49 次发布
+
+发布时间：2024-06-10 01:15:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ScaleOutCluster](http://document.tencentcloudapi.woa.com/document/product/589/76812)
+
+	* 新增出参：TraceId
+
+* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34264)
+
+	* 新增出参：TraceId
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 42 次发布
+
+发布时间：2024-06-10 01:21:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupDetail](http://document.tencentcloudapi.woa.com/document/product/239/84064)
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 14 次发布
+
+发布时间：2024-06-10 01:22:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAllResourcesCount](http://document.tencentcloudapi.woa.com/document/product/1340/84066)
+
+新增数据结构：
+
+* [RegionResourceCount](http://document.tencentcloudapi.woa.com/document/product/1340/52687#RegionResourceCount)
+* [ResourceCountDetail](http://document.tencentcloudapi.woa.com/document/product/1340/52687#ResourceCountDetail)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 37 次发布
+
+发布时间：2024-06-10 01:24:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCustomizeErrorPage](http://document.tencentcloudapi.woa.com/document/product/1738/84071)
+* [DeleteCustomErrorPage](http://document.tencentcloudapi.woa.com/document/product/1738/84070)
+* [DescribeCustomErrorPages](http://document.tencentcloudapi.woa.com/document/product/1738/84069)
+* [ModifyCustomErrorPage](http://document.tencentcloudapi.woa.com/document/product/1738/84068)
+
+新增数据结构：
+
+* [CustomErrorPage](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CustomErrorPage)
+* [ErrorPageReference](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ErrorPageReference)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 63 次发布
+
+发布时间：2024-06-10 01:25:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePublicAddressConfig](http://document.tencentcloudapi.woa.com/document/product/1364/84072)
+
+
+
 # Release 3.0.1010.1
 
 ## 云顾问(advisor) 版本：2020-07-21

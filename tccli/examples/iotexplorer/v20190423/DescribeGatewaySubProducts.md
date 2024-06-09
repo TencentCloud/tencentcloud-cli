@@ -19,18 +19,18 @@ Output:
         "Total": 1,
         "Products": [
             {
-                "DevStatus": "xx",
-                "NetType": "xx",
+                "DevStatus": "1",
+                "NetType": "wifi",
                 "DataProtocol": 1,
-                "ProjectId": "xx",
-                "ProductName": "xx",
+                "ProjectId": "pro-jed",
+                "ProductName": "名称",
                 "ProductType": 0,
                 "CategoryId": 0,
-                "ProductId": "xx",
+                "ProductId": "p_34rd",
                 "ProductOwnerName": ""
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "ed3-5tgbth565-678g"
     }
 }
 ```
