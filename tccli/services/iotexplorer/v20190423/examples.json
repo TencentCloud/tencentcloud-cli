@@ -773,8 +773,8 @@
     "GetDeviceSumStatistics": [
       {
         "document": "",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetDeviceSumStatistics\r\n&ProjectId=prj-zunfat46\r\n&ProductIds=[4GDIU5HTEN]\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ActivationBeforeWeekDayCount\": 100,\n        \"ActiveBeforeWeekDayCount\": 60,\n        \"RequestId\": \"6b6e765c-1625-49e6-9743-452e6ce15caa\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDeviceSumStatistics\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"ProductIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivationCount\": 1,\n        \"OnlineCount\": 1,\n        \"ActiveBeforeDay\": 20,\n        \"ActivationBeforeDay\": 10,\n        \"ActivationWeekDayCount\": 80,\n        \"ActiveWeekDayCount\": 40,\n        \"ActivationBeforeWeekDayCount\": 100,\n        \"ActiveBeforeWeekDayCount\": 60,\n        \"RequestId\": \"6b6e765c-1625-49e6-9743-452e6ce15caa\"\n    }\n}",
         "title": "拉取设备统计汇总数据示例"
       }
     ],
@@ -812,7 +812,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPositionSpaceList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-projectid\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"UpdateTime\": 1598863974,\n                \"Description\": \"desc\",\n                \"ProjectId\": \"prj\",\n                \"AuthorizeType\": 0,\n                \"SpaceId\": \"id\",\n                \"ProductIdList\": [\n                    \"ProductId\"\n                ],\n                \"CreateTime\": 1598863974,\n                \"SpaceName\": \"name\",\n                \"Icon\": \"icon\",\n                \"Zoom\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"UpdateTime\": 1598863974,\n                \"Description\": \"desc\",\n                \"ProjectId\": \"prj\",\n                \"AuthorizeType\": 0,\n                \"SpaceId\": \"id\",\n                \"ProductIdList\": [\n                    \"ProductId\"\n                ],\n                \"CreateTime\": 1598863974,\n                \"SpaceName\": \"name\",\n                \"Icon\": \"icon\",\n                \"Zoom\": 0\n            }\n        ],\n        \"RequestId\": \"1qaz-efg4-65777777\"\n    }\n}",
         "title": "获取位置空间列表"
       }
     ],

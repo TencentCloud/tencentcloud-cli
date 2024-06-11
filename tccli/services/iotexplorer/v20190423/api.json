@@ -638,7 +638,7 @@
       "status": "online"
     },
     "GetDeviceSumStatistics": {
-      "document": "拉取设备统计汇总数据 ",
+      "document": "拉取设备统计汇总数据",
       "input": "GetDeviceSumStatisticsRequest",
       "name": "拉取设备统计汇总数据",
       "output": "GetDeviceSumStatisticsResponse",
@@ -8288,7 +8288,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "",
+          "example": "pro-d1",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -8297,7 +8297,7 @@
         {
           "disabled": false,
           "document": "产品id列表，长度为0则拉取项目内全部产品",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ProductIds",
           "required": false,
@@ -8312,72 +8312,80 @@
         {
           "disabled": false,
           "document": "激活设备总数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ActivationCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "在线设备总数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "OnlineCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前一天激活设备数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ActivationBeforeDay",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前一天活跃设备数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ActiveBeforeDay",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前一周激活设备数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ActivationWeekDayCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前一周活跃设备数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ActiveWeekDayCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "上一周激活设备数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ActivationBeforeWeekDayCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "上一周活跃设备数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ActiveBeforeWeekDayCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8616,7 +8624,7 @@
           "example": "无",
           "member": "PositionSpaceInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8626,7 +8634,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

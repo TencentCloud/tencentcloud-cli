@@ -35,6 +35,13 @@
       "output": "AttachUserPolicyResponse",
       "status": "online"
     },
+    "BuildDataFlowAuthToken": {
+      "document": "获取数据流认证Token",
+      "input": "BuildDataFlowAuthTokenRequest",
+      "name": "获取数据流认证Token",
+      "output": "BuildDataFlowAuthTokenResponse",
+      "status": "online"
+    },
     "ConsumeCustomMFAToken": {
       "document": "验证自定义多因子Token",
       "input": "ConsumeCustomMFATokenRequest",
@@ -1384,6 +1391,127 @@
         }
       ],
       "usage": "out"
+    },
+    "AuthToken": {
+      "document": "认证凭据Token",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证Token",
+          "example": "Ad3**asf3",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "987654321",
+          "member": "int64",
+          "name": "CurrentTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳，根据轮转周期准确计算得到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234567890",
+          "member": "int64",
+          "name": "NextRotationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "毫秒，如果轮转失败则为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "LastRotationTimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功：success\n失败：failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "RotationStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功：success\n失败：失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "RotationMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BuildDataFlowAuthTokenRequest": {
+      "document": "BuildDataFlowAuthToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cbd-esq42",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源用户名",
+          "example": "readOnly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildDataFlowAuthTokenResponse": {
+      "document": "BuildDataFlowAuthToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证凭据AuthToken信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthToken",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ConsumeCustomMFATokenRequest": {
       "document": "ConsumeCustomMFAToken请求参数结构体",

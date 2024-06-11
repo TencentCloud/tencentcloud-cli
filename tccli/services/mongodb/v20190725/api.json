@@ -70,6 +70,13 @@
       "output": "DescribeBackupDownloadTaskResponse",
       "status": "online"
     },
+    "DescribeBackupRules": {
+      "document": "本接口（DescribeBackupRules）用于获取实例自动备份配置信息。",
+      "input": "DescribeBackupRulesRequest",
+      "name": "获取云数据库实例自动备份配置",
+      "output": "DescribeBackupRulesResponse",
+      "status": "online"
+    },
     "DescribeClientConnections": {
       "document": "本接口（DescribeClientConnections）用于查询实例客户端连接信息，包括连接 IP 和连接数量。",
       "input": "DescribeClientConnectionsRequest",
@@ -145,6 +152,20 @@
       "input": "DescribeSpecInfoRequest",
       "name": "查询云数据库的售卖规格",
       "output": "DescribeSpecInfoResponse",
+      "status": "online"
+    },
+    "DescribeTransparentDataEncryptionStatus": {
+      "document": "获取实例透明加密的开启状态",
+      "input": "DescribeTransparentDataEncryptionStatusRequest",
+      "name": "获取实例透明加密的开启状态",
+      "output": "DescribeTransparentDataEncryptionStatusResponse",
+      "status": "online"
+    },
+    "EnableTransparentDataEncryption": {
+      "document": "本接口(EnableTransparentDataEncryption)用于开启云数据库 MongoDB 的透明加密能力。",
+      "input": "EnableTransparentDataEncryptionRequest",
+      "name": "开启实例数据透明加密",
+      "output": "EnableTransparentDataEncryptionResponse",
       "status": "online"
     },
     "FlashBackDBInstance": {
@@ -250,6 +271,13 @@
       "input": "SetAccountUserPrivilegeRequest",
       "name": "设置账户权限",
       "output": "SetAccountUserPrivilegeResponse",
+      "status": "online"
+    },
+    "SetBackupRules": {
+      "document": "本接口(SetBackupRules)用于设置 MongoDB 云数据库的自动备份规则。",
+      "input": "SetBackupRulesRequest",
+      "name": "设置云数据库实例的自动备份规则",
+      "output": "SetBackupRulesResponse",
       "status": "online"
     },
     "SetInstanceMaintenance": {
@@ -1802,6 +1830,63 @@
       ],
       "type": "object"
     },
+    "DescribeBackupRulesRequest": {
+      "document": "DescribeBackupRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "cmgo-7pjedvz7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupRulesResponse": {
+      "document": "DescribeBackupRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份数据保留期限。单位为：天。",
+          "example": "7",
+          "member": "uint64",
+          "name": "BackupSaveTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动备份开始时间。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BackupTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。\n- 0：逻辑备份。\n- 1：物理备份。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BackupMethod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClientConnectionsRequest": {
       "document": "DescribeClientConnections请求参数结构体",
       "members": [
@@ -2748,6 +2833,108 @@
           "name": "SpecInfoList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTransparentDataEncryptionStatusRequest": {
+      "document": "DescribeTransparentDataEncryptionStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "\"cmgo-jyjcw8yv\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTransparentDataEncryptionStatusResponse": {
+      "document": "DescribeTransparentDataEncryptionStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示是否开启了透明加密。 \n- close：未开启。\n- open：已开启。",
+          "example": "open或close",
+          "member": "string",
+          "name": "TransparentDataEncryptionStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已绑定的密钥列表，如未绑定，返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KMSInfoDetail",
+          "name": "KeyInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTransparentDataEncryptionRequest": {
+      "document": "EnableTransparentDataEncryption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。目前支持通用版本包含：4.4、5.0，云盘版暂不支持。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " [密钥管理系统（Key Management Service，KMS）](https://cloud.tencent.com/document/product/573/18809)服务所在地域，例如 ap-shanghai。",
+          "example": "无",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥 ID。若不设置该参数，不指定具体的密钥 ID，由腾讯云自动生成密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableTransparentDataEncryptionResponse": {
+      "document": "EnableTransparentDataEncryption返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启透明加密的异步流程id，用于查询流程状态。",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4142,6 +4329,78 @@
       ],
       "type": "object"
     },
+    "KMSInfoDetail": {
+      "document": "KMS密钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主密钥 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主密钥名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例与密钥绑定时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密钥状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密钥用途。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyUsage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密钥来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KillOpsRequest": {
       "document": "KillOps请求参数结构体",
       "members": [
@@ -5036,6 +5295,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetBackupRulesRequest": {
+      "document": "SetBackupRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置自动备份方式。- 0：逻辑备份。- 1：物理备份。-3：快照备份(仅云盘版支持)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置自动备份开始时间。取值范围为：[0,23]，例如：该参数设置为2，表示02:00开始备份。",
+          "example": "2",
+          "member": "uint64",
+          "name": "BackupTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置自动备份发生错误时，是否发送失败告警。\n- true：发送。\n- false：不发送。",
+          "example": "true",
+          "member": "bool",
+          "name": "Notify",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定备份数据保存天数。默认为 7 天，支持设置为7、30、90、180、365。",
+          "example": "7",
+          "member": "uint64",
+          "name": "BackupRetentionPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetBackupRulesResponse": {
+      "document": "SetBackupRules返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

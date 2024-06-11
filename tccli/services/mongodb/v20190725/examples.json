@@ -80,6 +80,14 @@
         "title": "查询备份下载任务"
       }
     ],
+    "DescribeBackupRules": [
+      {
+        "document": "查询实例的自动备份规则信息",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupMethod\": 0,\n        \"BackupSaveTime\": 7,\n        \"BackupTime\": 1,\n        \"RequestId\": \"07ec4290-d682-11ed-aa06-f56fb86dae78\"\n    }\n}",
+        "title": "查询实例的自动备份规则信息"
+      }
+    ],
     "DescribeClientConnections": [
       {
         "document": "查询云数据库实例的客户端连接情况",
@@ -166,6 +174,22 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpecInfo\n<公共请求参数>\n\n{\n    \"Zone\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8c7ade4-2d22-4f5e-9e71-f546f15e6d67\",\n        \"SpecInfoList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"SpecItems\": [\n                    {\n                        \"ClusterType\": 0,\n                        \"Conns\": 1500,\n                        \"Cpu\": 2,\n                        \"DefaultStorage\": 25600,\n                        \"EngineName\": \"WiredTiger\",\n                        \"MachineType\": \"HIO10G\",\n                        \"MaxNodeNum\": 3,\n                        \"MaxReplicateSetNodeNum\": 5,\n                        \"MaxReplicateSetNum\": 20,\n                        \"MaxStorage\": 512000,\n                        \"Memory\": 4096,\n                        \"MinNodeNum\": 3,\n                        \"MinReplicateSetNodeNum\": 3,\n                        \"MinReplicateSetNum\": 2,\n                        \"MinStorage\": 102400,\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\n                        \"MongoVersionValue\": 4,\n                        \"Qps\": 5000,\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\n                        \"Status\": 1,\n                        \"Version\": \"3.6\"\n                    },\n                    {\n                        \"ClusterType\": 0,\n                        \"Conns\": 1500,\n                        \"Cpu\": 2,\n                        \"DefaultStorage\": 25600,\n                        \"EngineName\": \"WiredTiger\",\n                        \"MachineType\": \"HIO10G\",\n                        \"MaxNodeNum\": 3,\n                        \"MaxReplicateSetNodeNum\": 5,\n                        \"MaxReplicateSetNum\": 20,\n                        \"MaxStorage\": 512000,\n                        \"Memory\": 4096,\n                        \"MinNodeNum\": 3,\n                        \"MinReplicateSetNodeNum\": 3,\n                        \"MinReplicateSetNum\": 2,\n                        \"MinStorage\": 102400,\n                        \"MongoVersionCode\": \"MONGO_3_WT\",\n                        \"MongoVersionValue\": 2,\n                        \"Qps\": 5000,\n                        \"SpecCode\": \"mongo.HIO10G.4g\",\n                        \"Status\": 1,\n                        \"Version\": \"3.2\"\n                    },\n                    {\n                        \"ClusterType\": 1,\n                        \"Conns\": 15000,\n                        \"Cpu\": 48,\n                        \"DefaultStorage\": 4096000,\n                        \"EngineName\": \"WiredTiger\",\n                        \"MachineType\": \"HIO10G\",\n                        \"MaxNodeNum\": 3,\n                        \"MaxReplicateSetNodeNum\": 5,\n                        \"MaxReplicateSetNum\": 20,\n                        \"MaxStorage\": 6144000,\n                        \"Memory\": 524288,\n                        \"MinNodeNum\": 3,\n                        \"MinReplicateSetNodeNum\": 3,\n                        \"MinReplicateSetNum\": 2,\n                        \"MinStorage\": 1536000,\n                        \"MongoVersionCode\": \"MONGO_36_WT\",\n                        \"MongoVersionValue\": 4,\n                        \"Qps\": 42000,\n                        \"SpecCode\": \"mongo.HIO10G.512g\",\n                        \"Status\": 1,\n                        \"Version\": \"3.6\"\n                    }\n                ],\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ]\n    }\n}",
         "title": "查询云数据库售卖"
+      }
+    ],
+    "DescribeTransparentDataEncryptionStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTransparentDataEncryptionStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TransparentDataEncryptionStatus\": \"open\",\n        \"KeyInfoList\": [\n            {\n                \"KeyId\": \"abc\",\n                \"KeyName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Status\": \"abc\",\n                \"KeyUsage\": \"abc\",\n                \"KeyOrigin\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取当前实例是否已开启数据加密"
+      }
+    ],
+    "EnableTransparentDataEncryption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"abcabc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"abcd\"\n    }\n}",
+        "title": "开启实例数据透明加密"
       }
     ],
     "FlashBackDBInstance": [
@@ -298,6 +322,14 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAccountUserPrivilege\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p6umb\",\n    \"UserName\": \"test_user\",\n    \"AuthRole\": [\n        {\n            \"Mask\": 0,\n            \"NameSpace\": \"eg_collection\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1680767468,\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
         "title": "为当前实例设置账号权限"
+      }
+    ],
+    "SetBackupRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetBackupRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-abcede\",\n    \"BackupTime\": 22,\n    \"BackupMethod\": 1,\n    \"BackupRetentionPeriod\": 7,\n    \"Notify\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58f3a6a0-2330-11ef-ad75-7139c2c3f68c\"\n    }\n}",
+        "title": "设置实例的自动备份规则"
       }
     ],
     "SetInstanceMaintenance": [
