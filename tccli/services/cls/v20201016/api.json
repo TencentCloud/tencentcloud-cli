@@ -4376,6 +4376,15 @@
           "name": "SyntaxRule",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导出字段",
+          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "member": "string",
+          "name": "DerivedFields",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8887,6 +8896,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "member": "string",
+          "name": "DerivedFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

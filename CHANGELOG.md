@@ -1,3 +1,156 @@
+# Release 3.0.1012.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 10 次发布
+
+发布时间：2024-06-12 01:07:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeArchSvg](http://document.tencentcloudapi.woa.com/document/product/1660/84073)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 54 次发布
+
+发布时间：2024-06-12 01:08:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAllocationOverview](http://document.tencentcloudapi.woa.com/document/product/555/83407)
+
+	* 新增入参：BillType
+
+* [DescribeAllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/83406)
+
+	* 新增入参：BillType
+
+* [DescribeAllocationTrendByMonth](http://document.tencentcloudapi.woa.com/document/product/555/83403)
+
+	* 新增入参：BillType
+
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 19 次发布
+
+发布时间：2024-06-12 01:09:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProbeTask](http://document.tencentcloudapi.woa.com/document/product/280/40931#ProbeTask)
+
+	* 新增成员：SubSyncFlag
+
+
+
+
+## T-Sec-数据安全审计（DSA）(cds) 版本：2018-04-20
+
+### 第 2 次发布
+
+发布时间：2024-06-12 01:10:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeDasbImageIds
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 68 次发布
+
+发布时间：2024-06-12 01:11:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateExport](http://document.tencentcloudapi.woa.com/document/product/614/56451)
+
+	* 新增入参：DerivedFields
+
+
+修改数据结构：
+
+* [ExportInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExportInfo)
+
+	* 新增成员：DerivedFields
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 102 次发布
+
+发布时间：2024-06-12 01:14:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeStandardEngineResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1342/84075)
+
+新增数据结构：
+
+* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 26 次发布
+
+发布时间：2024-06-12 01:19:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84079)
+* [DescribeTransparentDataEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/240/84078)
+* [EnableTransparentDataEncryption](http://document.tencentcloudapi.woa.com/document/product/240/84077)
+* [SetBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84076)
+
+新增数据结构：
+
+* [KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
 # Release 3.0.1011.1
 
 ## cxm(cxm) 版本：2017-03-12

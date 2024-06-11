@@ -10168,7 +10168,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10237,6 +10237,15 @@
           "name": "SearchKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单类型，枚举值如下： resource - 资源账单  consumption - 消耗账单 application - 云应用账单",
+          "example": "resource",
+          "member": "string",
+          "name": "BillType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10297,7 +10306,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -10373,6 +10382,15 @@
           "example": "xxx",
           "member": "string",
           "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单类型，枚举值如下： resource - 资源账单  consumption - 消耗账单 application - 云应用账单",
+          "example": "resource",
+          "member": "string",
+          "name": "BillType",
           "required": false,
           "type": "string"
         }
@@ -10958,6 +10976,15 @@
           "example": "p_cvm",
           "member": "string",
           "name": "BusinessCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单类型，枚举值如下： resource - 资源账单  consumption - 消耗账单 application - 云应用账单",
+          "example": "resource",
+          "member": "string",
+          "name": "BillType",
           "required": false,
           "type": "string"
         }

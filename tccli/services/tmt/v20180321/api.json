@@ -335,7 +335,7 @@
           "example": "session-00001",
           "member": "string",
           "name": "SessionUuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -345,7 +345,7 @@
           "example": "zh",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -355,7 +355,7 @@
           "example": "en",
           "member": "string",
           "name": "Target",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -365,7 +365,7 @@
           "example": "无",
           "member": "ImageRecord",
           "name": "ImageRecord",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -477,6 +477,7 @@
           "example": "zh",
           "member": "string",
           "name": "Lang",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

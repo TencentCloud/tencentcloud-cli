@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeDasbImageIds": {
-      "document": "获取镜像列表",
+      "document": "这些接口是传统版堡垒机接口.数审未用到，堡垒机的已全部迁移到dasb下，cds这边预下线\n\n获取镜像列表",
       "input": "DescribeDasbImageIdsRequest",
       "name": "数盾-DASB-获取镜像列表",
       "output": "DescribeDasbImageIdsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDbauditInstanceType": {
       "document": "本接口 (DescribeDbauditInstanceType) 用于查询可售卖的产品规格列表。",

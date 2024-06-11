@@ -694,6 +694,14 @@
         "title": "查询Spark SQL批任务日志"
       }
     ],
+    "DescribeStandardEngineResourceGroups": [
+      {
+        "document": "查询指定资源组信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandardEngineResourceGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"engine-resource-group-id\",\n            \"Values\": [\n                \"rg-9y1f952gsss\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21f32ad0-941c-4515-970c-1658f2a19964\",\n        \"Total\": 1,\n        \"UserEngineResourceGroupInfos\": [\n            {\n                \"AutoLaunch\": 1,\n                \"AutoPause\": 1,\n                \"AutoPauseTime\": 0,\n                \"CreateTime\": 1705892615,\n                \"Creator\": \"100013032040\",\n                \"DataEngineId\": \"DataEngine-37sutfj4\",\n                \"DataEngineName\": \"spark_common_two\",\n                \"DriverCuSpec\": \"small\",\n                \"EngineResourceGroupId\": \"rg-9y1f952g\",\n                \"EngineResourceGroupName\": \"rg-test\",\n                \"ExecutorCuSpec\": \"small\",\n                \"MaxExecutorNums\": 1,\n                \"MinExecutorNums\": 1,\n                \"MaxConcurrency\": 5,\n                \"NeedRestart\": 0,\n                \"ResourceGroupState\": 0,\n                \"UpdateTime\": 1705892615\n            }\n        ]\n    }\n}",
+        "title": "查询指定资源组信息"
+      }
+    ],
     "DescribeStoreLocation": [
       {
         "document": "",

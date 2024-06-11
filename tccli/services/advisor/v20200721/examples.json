@@ -8,6 +8,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeArchSvg": [
+      {
+        "document": "示例1",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeArchSvg\n<公共请求参数>\n\n{\n    \"ArchId\": \"arch-abcdef\",\n    \"Username\": \"tencentUser\",\n    \"VersionId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ArchId\": \"arch-abcdef\",\n        \"Svg\": \"xxxxxxxx\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeArchSync": [
       {
         "document": "同步获取架构资源详情",
