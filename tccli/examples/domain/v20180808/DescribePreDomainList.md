@@ -16,15 +16,15 @@ Output:
     "Response": {
         "ReservedDomainList": [
             {
-                "Domain": "abc",
-                "RegTime": "abc",
-                "ExpireTime": "abc",
-                "RenewEndTime": "abc",
-                "RestoreEndTime": "abc",
-                "ReservedEndTime": "abc"
+                "Domain": "tencent.com",
+                "RegTime": "2006-01-02 15:04:05",
+                "ExpireTime": "2006-01-02 15:04:05",
+                "RenewEndTime": "2006-01-02 15:04:05",
+                "RestoreEndTime": "2006-01-02 15:04:05",
+                "ReservedEndTime": "2006-01-02 15:04:05"
             }
         ],
-        "Total": 0,
+        "Total": 1,
         "RequestId": "abc"
     }
 }

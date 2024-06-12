@@ -9993,7 +9993,7 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10003,7 +10003,7 @@
           "example": "无",
           "member": "ZookeeperServerInterface",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

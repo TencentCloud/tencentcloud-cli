@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云顾问(advisor) 版本：2020-07-21
+## 日志服务(cls) 版本：2020-10-16
 
-### 第 10 次发布
+### 第 69 次发布
 
-发布时间：2024-06-12 01:07:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeArchSvg](http://document.tencentcloudapi.woa.com/document/product/1660/84073)
-
-
-
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 54 次发布
-
-发布时间：2024-06-12 01:08:05
+发布时间：2024-06-13 01:10:57
 
 本次发布包含了以下内容：
 
@@ -28,45 +12,22 @@
 
 修改接口：
 
-* [DescribeAllocationOverview](http://document.tencentcloudapi.woa.com/document/product/555/83407)
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/614/56453)
 
-	* 新增入参：BillType
-
-* [DescribeAllocationSummaryByBusiness](http://document.tencentcloudapi.woa.com/document/product/555/83406)
-
-	* 新增入参：BillType
-
-* [DescribeAllocationTrendByMonth](http://document.tencentcloudapi.woa.com/document/product/555/83403)
-
-	* 新增入参：BillType
+	* 新增入参：PartitionCount
 
 
 
 
-## 云拨测(cat) 版本：2018-04-09
-
-### 第 19 次发布
-
-发布时间：2024-06-12 01:09:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ProbeTask](http://document.tencentcloudapi.woa.com/document/product/280/40931#ProbeTask)
-
-	* 新增成员：SubSyncFlag
+## 数据传输服务(dts) 版本：2021-12-06
 
 
 
+## 数据传输服务(dts) 版本：2018-03-30
 
-## T-Sec-数据安全审计（DSA）(cds) 版本：2018-04-20
+### 第 9 次发布
 
-### 第 2 次发布
-
-发布时间：2024-06-12 01:10:05
+发布时间：2024-06-13 01:14:36
 
 本次发布包含了以下内容：
 
@@ -74,15 +35,45 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* DescribeDasbImageIds
+* DescribeRegionConf
 
 
 
-## 日志服务(cls) 版本：2020-10-16
+## 弹性 MapReduce(emr) 版本：2019-01-03
 
-### 第 68 次发布
+### 第 50 次发布
 
-发布时间：2024-06-12 01:11:16
+发布时间：2024-06-13 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeClusterFlowStatusDetail](http://document.tencentcloudapi.woa.com/document/product/589/84080)
+
+新增数据结构：
+
+* [FlowExtraDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowExtraDetail)
+* [FlowParam](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParam)
+* [FlowParamsDesc](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParamsDesc)
+* [StageInfoDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#StageInfoDetail)
+
+修改数据结构：
+
+* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+
+	* 新增成员：Remark
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 39 次发布
+
+发布时间：2024-06-13 01:17:20
 
 本次发布包含了以下内容：
 
@@ -90,25 +81,34 @@
 
 修改接口：
 
-* [CreateExport](http://document.tencentcloudapi.woa.com/document/product/614/56451)
+* [GetWechatDeviceTicket](http://document.tencentcloudapi.woa.com/document/product/1081/84038)
 
-	* 新增入参：DerivedFields
-
-
-修改数据结构：
-
-* [ExportInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExportInfo)
-
-	* 新增成员：DerivedFields
+	* 新增入参：MiniProgramAppId
 
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 102 次发布
+### 第 81 次发布
 
-发布时间：2024-06-12 01:14:00
+发布时间：2024-06-13 01:19:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribePrometheusRecordRuleYaml
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 136 次发布
+
+发布时间：2024-06-13 01:25:57
 
 本次发布包含了以下内容：
 
@@ -116,19 +116,49 @@
 
 新增接口：
 
-* [DescribeStandardEngineResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1342/84075)
+* [CreatePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84100)
+* [CreatePrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84099)
+* [CreatePrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84098)
+* [CreatePrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84097)
+* [DeletePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84096)
+* [DeletePrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84095)
+* [DeletePrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84094)
+* [DeletePrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84093)
+* [DescribePrivateNatGatewayAvailability](http://document.tencentcloudapi.woa.com/document/product/215/84081)
+* [DescribePrivateNatGatewayDestinationIpPortTranslationNatRules](http://document.tencentcloudapi.woa.com/document/product/215/84092)
+* [DescribePrivateNatGatewayLimits](http://document.tencentcloudapi.woa.com/document/product/215/84091)
+* [DescribePrivateNatGatewayRegions](http://document.tencentcloudapi.woa.com/document/product/215/84090)
+* [DescribePrivateNatGatewayTranslationAclRules](http://document.tencentcloudapi.woa.com/document/product/215/84089)
+* [DescribePrivateNatGatewayTranslationNatRules](http://document.tencentcloudapi.woa.com/document/product/215/84088)
+* [DescribePrivateNatGateways](http://document.tencentcloudapi.woa.com/document/product/215/84087)
+* [InquirePricePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84086)
+* [ModifyPrivateNatGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84085)
+* [ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84084)
+* [ModifyPrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84083)
+* [ModifyPrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84082)
 
 新增数据结构：
 
-* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
+* [DestinationIpPortTranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleDiff)
+* [LocalDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalDestinationIpPortTranslationNatRule)
+* [NatGatewayAvailabilityInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayAvailabilityInfo)
+* [NatRegionInfoWithArea](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatRegionInfoWithArea)
+* [PrivateNatDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatDestinationIpPortTranslationNatRule)
+* [PrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGateway)
+* [PrivateNatGatewayLimit](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGatewayLimit)
+* [PrivateNatPrice](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatPrice)
+* [TranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationAclRule)
+* [TranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRule)
+* [TranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleDiff)
+* [TranslationNatRuleInput](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleInput)
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 26 次发布
+### 第 56 次发布
 
-发布时间：2024-06-12 01:19:42
+发布时间：2024-06-13 01:28:06
 
 本次发布包含了以下内容：
 
@@ -136,18 +166,8 @@
 
 新增接口：
 
-* [DescribeBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84079)
-* [DescribeTransparentDataEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/240/84078)
-* [EnableTransparentDataEncryption](http://document.tencentcloudapi.woa.com/document/product/240/84077)
-* [SetBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84076)
-
-新增数据结构：
-
-* [KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+* [DescribeAreaBanSupportAreas](http://document.tencentcloudapi.woa.com/document/product/627/84101)
+* [ModifyAreaBanAreas](http://document.tencentcloudapi.woa.com/document/product/627/84102)
 
 
 
@@ -554,7 +574,7 @@
 
 新增接口：
 
-* [[DescribeArchSvg](http://document.tencentcloudapi.woa.com/document/product/1660/84073)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeArchSvg](http://document.tencentcloudapi.woa.com/document/product/1660/84073)
 
 ### 第 9 次发布
 
@@ -23045,6 +23065,21 @@
 
 ## 日志服务(cls) 版本：2020-10-16
 
+### 第 69 次发布
+
+发布时间：2024-06-13 01:10:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/614/56453)
+
+	* 新增入参：PartitionCount
+
+
 ### 第 68 次发布
 
 发布时间：2024-06-12 01:11:16
@@ -36970,11 +37005,11 @@
 
 新增接口：
 
-* [[DescribeStandardEngineResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1342/84075)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeStandardEngineResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1342/84075)
 
 新增数据结构：
 
-* [[StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo))
+* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
 
 ### 第 101 次发布
 
@@ -40672,6 +40707,18 @@
 
 ## 数据传输服务(dts) 版本：2018-03-30
 
+### 第 9 次发布
+
+发布时间：2024-06-13 01:14:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeRegionConf
+
 ### 第 8 次发布
 
 发布时间：2024-06-07 01:16:07
@@ -43022,6 +43069,32 @@
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 50 次发布
+
+发布时间：2024-06-13 01:15:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeClusterFlowStatusDetail](http://document.tencentcloudapi.woa.com/document/product/589/84080)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FlowExtraDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowExtraDetail)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[FlowExtraDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowExtraDetail))
+* [[FlowParam](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParam)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[FlowParam](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParam))
+* [[FlowParamsDesc](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParamsDesc)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[FlowParamsDesc](http://document.tencentcloudapi.woa.com/document/product/589/33981#FlowParamsDesc))
+* [[StageInfoDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#StageInfoDetail)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[StageInfoDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#StageInfoDetail))
+
+修改数据结构：
+
+* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+
+	* 新增成员：Remark
+
 
 ### 第 49 次发布
 
@@ -55591,6 +55664,21 @@
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
+### 第 39 次发布
+
+发布时间：2024-06-13 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetWechatDeviceTicket](http://document.tencentcloudapi.woa.com/document/product/1081/84038)
+
+	* 新增入参：MiniProgramAppId
+
+
 ### 第 38 次发布
 
 发布时间：2024-06-06 01:19:38
@@ -63565,14 +63653,14 @@
 
 新增接口：
 
-* [[DescribeBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84079)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTransparentDataEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/240/84078)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[EnableTransparentDataEncryption](http://document.tencentcloudapi.woa.com/document/product/240/84077)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84076)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84079)
+* [DescribeTransparentDataEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/240/84078)
+* [EnableTransparentDataEncryption](http://document.tencentcloudapi.woa.com/document/product/240/84077)
+* [SetBackupRules](http://document.tencentcloudapi.woa.com/document/product/240/84076)
 
 新增数据结构：
 
-* [[KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail))
+* [KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)
 
 ### 第 25 次发布
 
@@ -64023,6 +64111,18 @@
 
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 81 次发布
+
+发布时间：2024-06-13 01:19:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribePrometheusRecordRuleYaml
 
 ### 第 80 次发布
 
@@ -102692,6 +102792,52 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 136 次发布
+
+发布时间：2024-06-13 01:25:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreatePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84100)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreatePrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84099)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreatePrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84098)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[CreatePrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84097)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeletePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84096)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeletePrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84095)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeletePrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84094)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeletePrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84093)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayAvailability](http://document.tencentcloudapi.woa.com/document/product/215/84081)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayDestinationIpPortTranslationNatRules](http://document.tencentcloudapi.woa.com/document/product/215/84092)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayLimits](http://document.tencentcloudapi.woa.com/document/product/215/84091)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayRegions](http://document.tencentcloudapi.woa.com/document/product/215/84090)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayTranslationAclRules](http://document.tencentcloudapi.woa.com/document/product/215/84089)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGatewayTranslationNatRules](http://document.tencentcloudapi.woa.com/document/product/215/84088)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribePrivateNatGateways](http://document.tencentcloudapi.woa.com/document/product/215/84087)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[InquirePricePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84086)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyPrivateNatGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/84085)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84084)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyPrivateNatGatewayTranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/84083)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyPrivateNatGatewayTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/84082)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DestinationIpPortTranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleDiff)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[DestinationIpPortTranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#DestinationIpPortTranslationNatRuleDiff))
+* [[LocalDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalDestinationIpPortTranslationNatRule)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[LocalDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#LocalDestinationIpPortTranslationNatRule))
+* [[NatGatewayAvailabilityInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayAvailabilityInfo)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[NatGatewayAvailabilityInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatGatewayAvailabilityInfo))
+* [[NatRegionInfoWithArea](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatRegionInfoWithArea)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[NatRegionInfoWithArea](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatRegionInfoWithArea))
+* [[PrivateNatDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatDestinationIpPortTranslationNatRule)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PrivateNatDestinationIpPortTranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatDestinationIpPortTranslationNatRule))
+* [[PrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGateway)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGateway))
+* [[PrivateNatGatewayLimit](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGatewayLimit)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PrivateNatGatewayLimit](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatGatewayLimit))
+* [[PrivateNatPrice](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatPrice)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[PrivateNatPrice](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatPrice))
+* [[TranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationAclRule)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TranslationAclRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationAclRule))
+* [[TranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRule)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TranslationNatRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRule))
+* [[TranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleDiff)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TranslationNatRuleDiff](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleDiff))
+* [[TranslationNatRuleInput](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleInput)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[TranslationNatRuleInput](http://document.tencentcloudapi.woa.com/document/product/215/15824#TranslationNatRuleInput))
+
 ### 第 135 次发布
 
 发布时间：2024-05-10 01:31:11
@@ -106510,6 +106656,19 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 56 次发布
+
+发布时间：2024-06-13 01:28:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAreaBanSupportAreas](http://document.tencentcloudapi.woa.com/document/product/627/84101)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAreaBanAreas](http://document.tencentcloudapi.woa.com/document/product/627/84102)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 55 次发布
 

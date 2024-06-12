@@ -26,7 +26,7 @@ Output:
         "RealTotalCost": 155520,
         "HourTimeSpan": 720,
         "BaseNum": 0.0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

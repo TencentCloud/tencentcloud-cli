@@ -17,14 +17,14 @@ Output:
     "Response": {
         "PhoneEmailList": [
             {
-                "Code": "abc",
+                "Code": "137***3434",
                 "Type": 1,
-                "CreatedOn": "abc",
-                "CheckStatus": 0
+                "CreatedOn": "2023-03-10 10:00:00",
+                "CheckStatus": 1
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "xxxx-xxx-xxx-xxxx"
     }
 }
 ```

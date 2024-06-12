@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli domain ReservedPreDomains --cli-unfold-argument  \
-    --DomainList abc \
-    --TemplateId abc
+    --DomainList aksdwe1.cn aksdwe2.cn \
+    --TemplateId tmpl-abxxxxxx
 ```
 
 Output: 
@@ -15,15 +15,15 @@ Output:
 {
     "Response": {
         "SucDomainList": [
-            "abc"
+            "aksdwe1.cn"
         ],
         "FailDomainList": [
             {
-                "Domain": "abc",
-                "FailReason": "abc"
+                "Domain": "aksdwe2.cn",
+                "FailReason": "域名下架"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxxx-xxx-xxx-xxxx"
     }
 }
 ```

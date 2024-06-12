@@ -106,7 +106,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasksEstimate\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"Name\": \"probe\",\n            \"TargetAddress\": \"http://www.baidu.com\"\n        }\n    ],\n    \"Parameters\": \"{}\",\n    \"Interval\": 30,\n    \"TaskCategory\": 1,\n    \"TaskType\": 1,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Cron\": \"* 0-6 * * *\",\n    \"HourTimeSpan\": 720\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCost\": 155520,\n        \"AdvanceNum\": 0.0,\n        \"RealTotalCost\": 155520,\n        \"HourTimeSpan\": 720,\n        \"BaseNum\": 0.0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCost\": 155520,\n        \"AdvanceNum\": 0.0,\n        \"RealTotalCost\": 155520,\n        \"HourTimeSpan\": 720,\n        \"BaseNum\": 0.0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "对新建的拨测任务进行价格估算"
       }
     ],

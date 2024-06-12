@@ -1379,7 +1379,7 @@
           "example": "\"{\\\"apiVersion\\\":\\\"networking.istio.io/v1alpha3\\\",\\\"items\\\":[]}\"",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
