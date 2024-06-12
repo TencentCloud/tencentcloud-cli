@@ -232,32 +232,3 @@ Output:
 }
 ```
 
-**Example 8: 错误示例-创建个人用户签署链接，该用户还有些控件需要填写**
-
-1. 给个人用户创建签署链接
-2. 该个人用户除了签署控件，还有填写控件需要补充
-
-Input: 
-
-```
-tccli ess CreateFlowSignUrl --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --FlowApproverInfos.0.ApproverType 1 \
-    --FlowApproverInfos.0.ApproverMobile 13200000000 \
-    --FlowApproverInfos.0.ApproverName 典子谦 \
-    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "该用户有暂不支持H5端的控件，请删除后重新发起流程"
-        },
-        "RequestId": "s1693901602090298421"
-    }
-}
-```
-

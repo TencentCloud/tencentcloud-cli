@@ -9043,6 +9043,15 @@
           "name": "ModelId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序APPID",
+          "example": "无",
+          "member": "string",
+          "name": "MiniProgramAppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

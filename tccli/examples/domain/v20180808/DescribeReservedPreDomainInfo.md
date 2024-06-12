@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli domain DescribeReservedPreDomainInfo --cli-unfold-argument  \
-    --DomainList abc \
+    --DomainList abdwww.cn \
     --ReservedStatus 0 \
-    --ReservedTimeSort abc \
-    --Limit 0 \
+    --ReservedTimeSort asc \
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -19,17 +19,17 @@ Output:
     "Response": {
         "ReservedPreDomainInfoList": [
             {
-                "Domain": "abc",
+                "Domain": "abdwww.cn",
                 "ReservedStatus": 0,
-                "FailReason": "abc",
-                "ChangeOwnerTime": "abc",
-                "RegTime": "abc",
-                "ExpireTime": "abc",
-                "ResourceId": "abc"
+                "FailReason": "",
+                "ChangeOwnerTime": "2024-03-01 20:13:23",
+                "RegTime": "2022-03-01 20:13:23",
+                "ExpireTime": "2024-03-01 20:13:23",
+                "ResourceId": "domain-dfo23req"
             }
         ],
-        "Total": 0,
-        "RequestId": "abc"
+        "Total": 1,
+        "RequestId": "xxxx-xxx-xxx-xxxx"
     }
 }
 ```
@@ -47,7 +47,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "a6bd9e77-517f-4fd8-9ee9-f7042b7ae847",
+        "RequestId": "xxxx-xxx-xxx-xxxx",
         "ReservedPreDomainInfoList": [
             {
                 "BusinessId": "P0011712734968570466",

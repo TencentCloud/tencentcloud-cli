@@ -15,14 +15,15 @@ Output:
     "Response": {
         "ZoneSet": [
             {
-                "ZoneState": 1,
-                "ZoneName": "xx",
+                "Zone": "abc",
+                "ZoneId": 0,
+                "ZoneState": 0,
                 "RegionId": 0,
-                "Zone": "xx",
-                "ZoneId": 160001
+                "ZoneName": "abc",
+                "ZoneResourceState": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

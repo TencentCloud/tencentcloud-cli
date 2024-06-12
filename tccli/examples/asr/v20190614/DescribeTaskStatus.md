@@ -57,6 +57,12 @@ Output:
                     "EndMs": 2380,
                     "SpeechSpeed": 5.9,
                     "WordsNum": 4,
+                    "EmotionalEnergy": 0,
+                    "SpeakerId": 0,
+                    "SilenceTime": 0,
+                    "EmotionType": [
+                        "happy"
+                    ],
                     "Words": [
                         {
                             "OffsetStartMs": 120,

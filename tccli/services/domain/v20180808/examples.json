@@ -59,8 +59,8 @@
     "CreateDomainBatch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"abc\",\n    \"Period\": 0,\n    \"Domains\": [\n        \"abc\"\n    ],\n    \"PayMode\": 0,\n    \"AutoRenewFlag\": 0,\n    \"PackageResourceId\": \"abc\",\n    \"UpdateProhibition\": 0,\n    \"TransferProhibition\": 0,\n    \"ChannelFrom\": \"abc\",\n    \"OrderFrom\": \"abc\",\n    \"ActivityId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    },\n    \"ResultStatus\": true\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-acxxxxxx\",\n    \"Period\": 1,\n    \"Domains\": [\n        \"abcd.xyz\"\n    ],\n    \"PayMode\": 0,\n    \"AutoRenewFlag\": 0,\n    \"PackageResourceId\": \"\",\n    \"UpdateProhibition\": 0,\n    \"TransferProhibition\": 0,\n    \"ChannelFrom\": \"ChannelFrom\",\n    \"OrderFrom\": \"OrderFrom\",\n    \"ActivityId\": \"10001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
         "title": "批量域名注册"
       }
     ],
@@ -252,7 +252,7 @@
       {
         "document": "默认",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneEmailList\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"abc\",\n                \"Type\": 1,\n                \"CreatedOn\": \"abc\",\n                \"CheckStatus\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"137***3434\",\n                \"Type\": 1,\n                \"CreatedOn\": \"2023-03-10 10:00:00\",\n                \"CheckStatus\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
         "title": "获取已验证的手机邮箱列表"
       }
     ],
@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreDomainList\n<公共请求参数>\n\n{\n    \"Page\": 0,\n    \"Size\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ReservedDomainList\": [\n            {\n                \"Domain\": \"abc\",\n                \"RegTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"RenewEndTime\": \"abc\",\n                \"RestoreEndTime\": \"abc\",\n                \"ReservedEndTime\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReservedDomainList\": [\n            {\n                \"Domain\": \"tencent.com\",\n                \"RegTime\": \"2006-01-02 15:04:05\",\n                \"ExpireTime\": \"2006-01-02 15:04:05\",\n                \"RenewEndTime\": \"2006-01-02 15:04:05\",\n                \"RestoreEndTime\": \"2006-01-02 15:04:05\",\n                \"ReservedEndTime\": \"2006-01-02 15:04:05\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -291,14 +291,14 @@
     "DescribeReservedPreDomainInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abc\"\n    ],\n    \"ReservedStatus\": 0,\n    \"ReservedTimeSort\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"Domain\": \"abc\",\n                \"ReservedStatus\": 0,\n                \"FailReason\": \"abc\",\n                \"ChangeOwnerTime\": \"abc\",\n                \"RegTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abdwww.cn\"\n    ],\n    \"ReservedStatus\": 0,\n    \"ReservedTimeSort\": \"asc\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"Domain\": \"abdwww.cn\",\n                \"ReservedStatus\": 0,\n                \"FailReason\": \"\",\n                \"ChangeOwnerTime\": \"2024-03-01 20:13:23\",\n                \"RegTime\": \"2022-03-01 20:13:23\",\n                \"ExpireTime\": \"2024-03-01 20:13:23\",\n                \"ResourceId\": \"domain-dfo23req\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
         "title": "成功示例"
       },
       {
         "document": "请求成功获取参数示例",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPreDomainInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a6bd9e77-517f-4fd8-9ee9-f7042b7ae847\",\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"BusinessId\": \"P0011712734968570466\",\n                \"ChangeOwnerTime\": \"2024-03-15 08:40:34\",\n                \"Domain\": \"fdasfasfdsaf.com\",\n                \"ExpireTime\": \"2024-01-14 08:40:34\",\n                \"FailReason\": \"\",\n                \"RegTime\": \"2020-01-14 08:40:34\",\n                \"ReservedStatus\": 6,\n                \"ResourceId\": \"R0011712734968672830\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\",\n        \"ReservedPreDomainInfoList\": [\n            {\n                \"BusinessId\": \"P0011712734968570466\",\n                \"ChangeOwnerTime\": \"2024-03-15 08:40:34\",\n                \"Domain\": \"fdasfasfdsaf.com\",\n                \"ExpireTime\": \"2024-01-14 08:40:34\",\n                \"FailReason\": \"\",\n                \"RegTime\": \"2020-01-14 08:40:34\",\n                \"ReservedStatus\": 6,\n                \"ResourceId\": \"R0011712734968672830\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "请求成功示例"
       }
     ],
@@ -385,8 +385,8 @@
     "ReservedPreDomains": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"abc\"\n    ],\n    \"TemplateId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"abc\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"abc\",\n                \"FailReason\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"aksdwe1.cn\",\n        \"aksdwe2.cn\"\n    ],\n    \"TemplateId\": \"tmpl-abxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"aksdwe1.cn\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"aksdwe2.cn\",\n                \"FailReason\": \"域名下架\"\n            }\n        ],\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
         "title": "成功示例"
       }
     ],

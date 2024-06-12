@@ -63,6 +63,13 @@
       "output": "DescribeAutoScaleStrategiesResponse",
       "status": "online"
     },
+    "DescribeClusterFlowStatusDetail": {
+      "document": "查询EMR任务运行详情状态",
+      "input": "DescribeClusterFlowStatusDetailRequest",
+      "name": "查询EMR集群任务运行详情状态",
+      "output": "DescribeClusterFlowStatusDetailResponse",
+      "status": "online"
+    },
     "DescribeClusterNodes": {
       "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
@@ -2751,6 +2758,111 @@
       ],
       "type": "object"
     },
+    "DescribeClusterFlowStatusDetailRequest": {
+      "document": "DescribeClusterFlowStatusDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例ID",
+          "example": "emr-examples",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流程相关参数",
+          "example": "无",
+          "member": "FlowParam",
+          "name": "FlowParam",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回任务额外信息\n默认: false",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedExtraDetail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterFlowStatusDetailResponse": {
+      "document": "DescribeClusterFlowStatusDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务步骤详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StageInfoDetail",
+          "name": "StageDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowParamsDesc",
+          "name": "FlowDesc",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总任务流程进度：\n例如：0.8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "FlowTotalProgress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定义流程总状态：\n0:初始化，\n1:运行中，\n2:完成，\n3:完成（存在跳过步骤），\n-1:失败，\n-3:阻塞，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowTotalStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流程额外信息\nNeedExtraDetail为true时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowExtraDetail",
+          "name": "FlowExtraDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterNodesRequest": {
       "document": "DescribeClusterNodes请求参数结构体",
       "members": [
@@ -5154,6 +5266,82 @@
         }
       ],
       "usage": "in"
+    },
+    "FlowExtraDetail": {
+      "document": "流程额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "额外信息Title\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FlowParamsDesc",
+          "name": "Detail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowParam": {
+      "document": "FlowParam流程参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程参数key\nTraceId：通过TraceId查询\nFlowId： 通过FlowId查询",
+          "example": "无",
+          "member": "string",
+          "name": "FKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数value",
+          "example": "无",
+          "member": "string",
+          "name": "FValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FlowParamsDesc": {
+      "document": "任务参数描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数key",
+          "example": "",
+          "member": "string",
+          "name": "PKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "PValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GroupGlobalConfs": {
       "document": "集群所有伸缩组全局参数信息",
@@ -8012,6 +8200,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10660,6 +10858,162 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StageInfoDetail": {
+      "document": "任务步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤id",
+          "example": "无",
+          "member": "string",
+          "name": "Stage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否展示",
+          "example": "无",
+          "member": "bool",
+          "name": "IsShow",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否子流程",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSubFlow",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子流程标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubFlowFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步骤运行状态：0:未开始 1:进行中 2:已完成 3:部分完成  -1:失败",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤运行状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Progress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime",
+          "name": "Starttime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime",
+          "name": "Endtime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HadWoodDetail",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Wood子流程Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "WoodJobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多语言版本Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LanguageKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果stage失败，失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailedReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步骤耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeConsuming",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

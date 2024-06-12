@@ -11382,6 +11382,15 @@
           "name": "IsWebTracking",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题分区数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PartitionCount",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

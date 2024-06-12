@@ -234,7 +234,7 @@
     "DescribePreDomainList": {
       "document": "用户服务商提前获取预释放域名数据，查询数据根据结束时间进行倒序。",
       "input": "DescribePreDomainListRequest",
-      "name": "提前获取域释放域名数据",
+      "name": "提前获取预释放域名数据",
       "output": "DescribePreDomainListResponse",
       "status": "online"
     },
@@ -323,7 +323,7 @@
       "status": "online"
     },
     "RenewDomainBatch": {
-      "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。\n",
+      "document": "本接口 ( RenewDomainBatch ) 用于批量续费域名 。",
       "input": "RenewDomainBatchRequest",
       "name": "批量域名续费",
       "output": "RenewDomainBatchResponse",
@@ -453,8 +453,8 @@
         },
         {
           "disabled": false,
-          "document": "模板ID。",
-          "example": "tmpl-xxxxx",
+          "document": "模板ID(可从模板列表接口获取)",
+          "example": "tmpl-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -481,7 +481,7 @@
           "example": "318",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1594,7 +1594,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码",
+          "document": "验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)",
           "example": "234567",
           "member": "string",
           "name": "VerifyCode",
@@ -1829,8 +1829,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
-          "example": "模板ID",
+          "document": "模板ID(可通过模板信息列表获取)",
+          "example": "tmpl-itxxxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -2749,7 +2749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID",
+          "document": "域名实例ID(域名基本信息或我的域名列表接口可获取)",
           "example": "domain-7312mrgq",
           "member": "string",
           "name": "DomainId",
@@ -2759,7 +2759,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，取值范围[1,100]",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -3236,8 +3236,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
-          "example": "20",
+          "document": "页码，默认为1",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "required": false,
@@ -3245,8 +3245,8 @@
         },
         {
           "disabled": false,
-          "document": "条数",
-          "example": "0",
+          "document": "条数，默认为20",
+          "example": "20",
           "member": "int64",
           "name": "Size",
           "required": false,
@@ -5279,7 +5279,7 @@
         {
           "disabled": false,
           "document": "特惠包ID",
-          "example": "XXX",
+          "example": "E065785299",
           "member": "string",
           "name": "PackageResourceId",
           "required": false,
@@ -5324,7 +5324,7 @@
           "example": "318",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
