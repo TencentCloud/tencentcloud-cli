@@ -1,3 +1,273 @@
+# Release 3.0.1014.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 16 次发布
+
+发布时间：2024-06-14 01:09:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：EnableCoolDown, CoolDownBucket
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 70 次发布
+
+发布时间：2024-06-14 01:10:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudProductLogTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CloudProductLogTaskInfo)
+
+	* 新增成员：LogType
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 5 次发布
+
+发布时间：2024-06-14 01:13:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DirectConnectTunnel](http://document.tencentcloudapi.woa.com/document/product/216/18418#DirectConnectTunnel)
+
+	* 新增成员：ShareOrNot
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 60 次发布
+
+发布时间：2024-06-14 01:15:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiDataSourceEmr](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceEmr)
+
+	* 新增成员：InputPaths
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：ClusterType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 140 次发布
+
+发布时间：2024-06-14 01:15:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateEmbedWebUrl](http://document.tencentcloudapi.woa.com/document/product/1595/77218)
+
+	* 新增入参：Option
+
+* [ChannelDescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1595/76535)
+
+	* 新增入参：SealStatuses
+
+
+新增数据结构：
+
+* [EmbedUrlOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#EmbedUrlOption)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 63 次发布
+
+发布时间：2024-06-14 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SingaporeIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#SingaporeIDCard)
+
+	* 新增成员：ChineseName, FullName, LicenseNumber, Nationality
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 82 次发布
+
+发布时间：2024-06-14 01:19:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CheckIsPrometheusNewUser
+
+修改数据结构：
+
+* [AlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmNotice)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Name, UpdatedAt, UpdatedBy, NoticeType, UserNotices, URLNotices, IsPreset, NoticeLanguage, PolicyIds, AMPConsumerId, CLSNotices, Tags
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 53 次发布
+
+发布时间：2024-06-14 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AiAnalysisTaskSegmentInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskSegmentInput)
+* [AiAnalysisTaskSegmentOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskSegmentOutput)
+* [AiAnalysisTaskSegmentResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskSegmentResult)
+
+修改数据结构：
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：SegmentTask
+
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
+
+	* 新增成员：Title, Summary
+
+	* <font color="#dd0000">**修改成员**：</font>SegmentUrl
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 36 次发布
+
+发布时间：2024-06-14 01:20:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddShareUnit](http://document.tencentcloudapi.woa.com/document/product/850/82969)
+
+	* 新增入参：ShareScope
+
+* [UpdateShareUnit](http://document.tencentcloudapi.woa.com/document/product/850/82959)
+
+	* 新增入参：ShareScope
+
+
+修改数据结构：
+
+* [ManagerShareUnit](http://document.tencentcloudapi.woa.com/document/product/850/67060#ManagerShareUnit)
+
+	* 新增成员：ShareScope
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 43 次发布
+
+发布时间：2024-06-14 01:21:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProjectSecurityGroups](http://document.tencentcloudapi.woa.com/document/product/239/41258)
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 54 次发布
+
+发布时间：2024-06-14 01:27:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/82944)
+
+	* 新增入参：TableNameFilter, TableFilterType
+
+
+新增数据结构：
+
+* [TableMetaProperty](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMetaProperty)
+* [TableNameFilter](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableNameFilter)
+
+修改数据结构：
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：TableProperties
+
+
+
+
 # Release 3.0.1013.1
 
 ## 日志服务(cls) 版本：2020-10-16

@@ -5159,6 +5159,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR 自定义采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InputPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11234,6 +11244,16 @@
           "name": "KibanaLanguage",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0:普通集群；1:T-Search集群",
+          "member": "int64",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

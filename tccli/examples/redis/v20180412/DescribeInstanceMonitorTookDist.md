@@ -18,27 +18,13 @@ Output:
         "Data": [
             {
                 "Ladder": -1,
-                "Size": 0
+                "Size": 0,
+                "Updatetime": 1718073070
             },
             {
                 "Ladder": 5,
-                "Size": 0
-            },
-            {
-                "Ladder": 10,
-                "Size": 0
-            },
-            {
-                "Ladder": 1,
-                "Size": 178942
-            },
-            {
-                "Ladder": 50,
-                "Size": 0
-            },
-            {
-                "Ladder": 200,
-                "Size": 0
+                "Size": 0,
+                "Updatetime": 1718073070
             }
         ],
         "RequestId": "6f6441b4-884e-40b0-8503-5e5f5e6b6714"

@@ -57,7 +57,7 @@
       "status": "online"
     },
     "DescribeDirectConnectTunnels": {
-      "document": "用于查询专用通道列表。",
+      "document": "查询专用通道列表。",
       "input": "DescribeDirectConnectTunnelsRequest",
       "name": "查询专用通道列表",
       "output": "DescribeDirectConnectTunnelsResponse",
@@ -410,24 +410,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户侧BGP ASN",
+          "document": "用户侧BGP ASN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Asn",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户侧BGP密钥",
+          "document": "用户侧BGP密钥\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AuthKey",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Coordinate": {
       "document": "坐标，经维度描述",
@@ -1001,8 +1005,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\n<li> direct-connect-tunnel-name, 专用通道名称。</li>\n<li> direct-connect-tunnel-id, 专用通道实例ID，如dcx-abcdefgh。</li>\n<li>direct-connect-id, 物理专线实例ID，如，dc-abcdefgh。</li>",
-          "example": "",
+          "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\ndirect-connect-tunnel-name, 专用通道名称。\ndirect-connect-tunnel-id, 专用通道实例ID，如：dcx-abcdefgh。\ndirect-connect-id, 物理专线实例ID，如：dc-abcdefgh。",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1010,8 +1014,8 @@
         },
         {
           "disabled": false,
-          "document": "专用通道 ID数组",
-          "example": "",
+          "document": "专用通道ID数组。",
+          "example": "[]",
           "member": "string",
           "name": "DirectConnectTunnelIds",
           "required": false,
@@ -1019,8 +1023,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
-          "example": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1028,8 +1032,8 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100",
-          "example": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1043,19 +1047,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道列表",
-          "example": "",
+          "document": "专用通道列表。",
+          "example": "[]",
           "member": "DirectConnectTunnel",
           "name": "DirectConnectTunnelSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合专用通道数量。",
-          "example": "",
+          "document": "专用通道总数量。",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1713,301 +1719,311 @@
         {
           "disabled": false,
           "document": "专用通道ID",
-          "example": "",
+          "example": "dcx-r3sml04o",
           "member": "string",
           "name": "DirectConnectTunnelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "物理专线ID",
-          "example": "",
+          "example": "dc-9s5kpgyp",
           "member": "string",
           "name": "DirectConnectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道状态\nAVAILABLE:就绪或者已连接\nPENDING:申请中\nALLOCATING:配置中\nALLOCATED:配置完成\nALTERING:修改中\nDELETING:删除中\nDELETED:删除完成\nCOMFIRMING:待接受\nREJECTED:拒绝",
-          "example": "",
+          "example": "PENDING",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "物理专线的拥有者，开发商账号 ID",
-          "example": "",
+          "example": "2407912486",
           "member": "string",
           "name": "DirectConnectOwnerAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道的拥有者，开发商账号 ID",
-          "example": "",
+          "example": "2407912486",
           "member": "string",
           "name": "OwnerAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络类型，分别为VPC、BMVPC、CCN\n VPC：私有网络 ，BMVPC：黑石网络，CCN：云联网",
-          "example": "",
+          "example": "VPC",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "VPC地域对应的网络名，如ap-guangzhou",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "NetworkRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "私有网络统一 ID 或者黑石网络统一 ID",
-          "example": "",
+          "example": "vpc-aipqhdez",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专线网关 ID",
-          "example": "",
+          "example": "dcg-r70hz833",
           "member": "string",
           "name": "DirectConnectGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "BGP ：BGP路由 STATIC：静态 默认为 BGP 路由",
-          "example": "",
+          "example": "STATIC",
           "member": "string",
           "name": "RouteType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户侧BGP，Asn，AuthKey",
-          "example": "",
+          "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户侧网段地址",
-          "example": "",
+          "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道的Vlan",
-          "example": "",
+          "example": "123",
           "member": "int64",
           "name": "Vlan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "TencentAddress，腾讯侧互联 IP",
-          "example": "",
+          "example": "169.254.64.1/29",
           "member": "string",
           "name": "TencentAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CustomerAddress，用户侧互联 IP",
-          "example": "",
+          "example": "169.254.64.2/29",
           "member": "string",
           "name": "CustomerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道名称",
-          "example": "",
+          "example": "测试通道",
           "member": "string",
           "name": "DirectConnectTunnelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道创建时间",
-          "example": "",
+          "example": "2018-06-01 14:59:16",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道带宽值",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专用通道标签值",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联的网络自定义探测ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "NetDetectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "BGP community开关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "False",
           "member": "bool",
           "name": "EnableBGPCommunity",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否为Nat通道\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "NatType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "VPC地域简码，如gz、cd\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "gz",
           "member": "string",
           "name": "VpcRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否开启BFD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "BfdEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "专用通道接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "QCPL",
           "member": "string",
           "name": "AccessPointType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "专线网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "测试网关",
           "member": "string",
           "name": "DirectConnectGatewayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "VPC名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "测试VPC",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "TencentBackupAddress，腾讯侧备用互联 IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "169.254.64.3/29",
           "member": "string",
           "name": "TencentBackupAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "专用通道关联的物理专线是否签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "True",
           "member": "bool",
           "name": "SignLaw",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "高速上云服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cas-xxxxxxxx",
           "member": "string",
           "name": "CloudAttachId",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否共享通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShareOrNot",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2022,7 +2038,7 @@
           "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2032,7 +2048,7 @@
           "example": "dc-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2042,7 +2058,7 @@
           "example": "ALLOCATING",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2052,7 +2068,7 @@
           "example": "1233453",
           "member": "string",
           "name": "DirectConnectOwnerAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2062,7 +2078,7 @@
           "example": "12343252",
           "member": "string",
           "name": "OwnerAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2072,7 +2088,7 @@
           "example": "VPC",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2082,7 +2098,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "NetworkRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2092,7 +2108,7 @@
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2102,7 +2118,7 @@
           "example": "dcx-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2112,7 +2128,7 @@
           "example": "STATIC",
           "member": "string",
           "name": "RouteType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2122,7 +2138,7 @@
           "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2132,7 +2148,7 @@
           "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2142,7 +2158,7 @@
           "example": "无",
           "member": "RouteFilterPrefix",
           "name": "PublicAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2152,7 +2168,7 @@
           "example": "100",
           "member": "int64",
           "name": "Vlan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2162,7 +2178,7 @@
           "example": "192.168.1.1/29",
           "member": "string",
           "name": "TencentAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2172,7 +2188,7 @@
           "example": "192.168.1.2/29",
           "member": "string",
           "name": "TencentBackupAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2182,7 +2198,7 @@
           "example": "192.168.1.3/29",
           "member": "string",
           "name": "CustomerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2192,7 +2208,7 @@
           "example": "通道",
           "member": "string",
           "name": "DirectConnectTunnelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2202,7 +2218,7 @@
           "example": "2020-09-23 00:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2212,7 +2228,7 @@
           "example": "2020-09-23 00:00:00",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2222,7 +2238,7 @@
           "example": "netid-xxxxxxxx",
           "member": "string",
           "name": "NetDetectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2232,7 +2248,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableBGPCommunity",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2242,7 +2258,7 @@
           "example": "1",
           "member": "int64",
           "name": "NatType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2252,7 +2268,7 @@
           "example": "gz",
           "member": "string",
           "name": "VpcRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2262,7 +2278,7 @@
           "example": "1",
           "member": "int64",
           "name": "BfdEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2272,7 +2288,7 @@
           "example": "1",
           "member": "int64",
           "name": "NqaEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2282,7 +2298,7 @@
           "example": "1",
           "member": "string",
           "name": "AccessPointType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2292,7 +2308,7 @@
           "example": "网关",
           "member": "string",
           "name": "DirectConnectGatewayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2302,7 +2318,7 @@
           "example": "VPC",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2312,7 +2328,7 @@
           "example": "true",
           "member": "bool",
           "name": "SignLaw",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2322,7 +2338,7 @@
           "example": "无",
           "member": "BFDInfo",
           "name": "BfdInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2332,7 +2348,7 @@
           "example": "无",
           "member": "NQAInfo",
           "name": "NqaInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2342,7 +2358,7 @@
           "example": "无",
           "member": "BGPStatus",
           "name": "BgpStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2352,7 +2368,7 @@
           "example": "1",
           "member": "int64",
           "name": "IPv6Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2362,7 +2378,7 @@
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "TencentIPv6Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2372,7 +2388,7 @@
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "TencentBackupIPv6Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2382,7 +2398,7 @@
           "example": "无",
           "member": "BGPStatus",
           "name": "BgpIPv6Status",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2392,7 +2408,7 @@
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "CustomerIPv6Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2402,7 +2418,7 @@
           "example": "1",
           "member": "int64",
           "name": "JumboEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2412,7 +2428,7 @@
           "example": "1",
           "member": "int64",
           "name": "HighPrecisionBFDEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -3226,15 +3242,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户侧网段地址",
+          "document": "用户侧网段地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Cidr",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Tag": {
       "document": "标签键值对",

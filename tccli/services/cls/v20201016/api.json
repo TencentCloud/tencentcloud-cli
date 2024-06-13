@@ -2040,6 +2040,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志类型，与CLS运营平台登记的LogType保持一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TKE-EVENT",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
