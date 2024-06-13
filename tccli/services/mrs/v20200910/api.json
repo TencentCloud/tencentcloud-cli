@@ -934,7 +934,7 @@
           "example": "object",
           "member": "NeonatalInfo",
           "name": "NeonatalInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -944,7 +944,7 @@
           "example": "object",
           "member": "ParentInfo",
           "name": "MotherInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -954,7 +954,7 @@
           "example": "object",
           "member": "ParentInfo",
           "name": "FatherInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -964,8 +964,18 @@
           "example": "object",
           "member": "IssueInfo",
           "name": "IssueInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1569,6 +1579,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1706,6 +1726,16 @@
           "name": "BlockTitle",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2766,7 +2796,7 @@
           "example": "[object]",
           "member": "CovidItem",
           "name": "CovidItems",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2776,8 +2806,18 @@
           "example": "\"\"",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3086,7 +3126,7 @@
           "example": "“”",
           "member": "Advice",
           "name": "Advice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3096,8 +3136,18 @@
           "example": "[object]",
           "member": "DiagCertItem",
           "name": "Diagnosis",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3296,7 +3346,7 @@
           "example": "object",
           "member": "DiseaseHistoryBlock",
           "name": "DiseaseHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3306,7 +3356,7 @@
           "example": "object",
           "member": "PersonalHistoryBlock",
           "name": "PersonalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3316,7 +3366,7 @@
           "example": "object",
           "member": "DrugHistoryBlock",
           "name": "DrugHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3326,7 +3376,7 @@
           "example": "object",
           "member": "TreatmentRecordBlock",
           "name": "TreatmentRecord",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3336,8 +3386,18 @@
           "example": "object",
           "member": "ParagraphBlock",
           "name": "ParagraphBlock",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4029,7 +4089,7 @@
           "example": "object",
           "member": "EcgDescription",
           "name": "EcgDescription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4039,8 +4099,18 @@
           "example": "object",
           "member": "EcgDiagnosis",
           "name": "EcgDiagnosis",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4055,7 +4125,7 @@
           "example": "object",
           "member": "BiopsyPart",
           "name": "BiopsyPart",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4065,7 +4135,7 @@
           "example": "object",
           "member": "EndoscopyDesc",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4075,8 +4145,18 @@
           "example": "object",
           "member": "Summary",
           "name": "Summary",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4301,7 +4381,7 @@
           "example": "object",
           "member": "EyeItem",
           "name": "EyeItems",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4311,8 +4391,18 @@
           "example": "\"\"",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4797,7 +4887,7 @@
           "example": "[object]",
           "member": "DischargeDiagnosis",
           "name": "DischargeDiagnosis",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4807,7 +4897,7 @@
           "example": "object",
           "member": "BlockInfo",
           "name": "PathologicalDiagnosis",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4817,7 +4907,7 @@
           "example": "object",
           "member": "BlockInfo",
           "name": "ClinicalDiagnosis",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4827,7 +4917,7 @@
           "example": "object",
           "member": "BlockInfoV2",
           "name": "DamagePoi",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4837,8 +4927,18 @@
           "example": "[object]",
           "member": "Fp2NdItem",
           "name": "Fp2NdItems",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5938,6 +6038,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6515,6 +6625,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6802,6 +6922,16 @@
           "name": "TableIndicators",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -7603,6 +7733,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7966,7 +8106,7 @@
           "example": "object",
           "member": "MaternityDesc",
           "name": "Desc",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7976,7 +8116,7 @@
           "example": "object",
           "member": "MaternitySummary",
           "name": "Summary",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7986,8 +8126,18 @@
           "example": "\"\"",
           "member": "string",
           "name": "OcrText",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -8104,7 +8254,7 @@
           "example": "object",
           "member": "Advice",
           "name": "Advice",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8114,7 +8264,7 @@
           "example": "[object]",
           "member": "DiagCertItem",
           "name": "Diagnosis",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8124,7 +8274,7 @@
           "example": "object",
           "member": "DiseaseMedicalHistory",
           "name": "DiseaseMedicalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8134,7 +8284,7 @@
           "example": "object",
           "member": "PersonalMedicalHistory",
           "name": "PersonalMedicalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8144,7 +8294,7 @@
           "example": "object",
           "member": "ObstericalMedicalHistory",
           "name": "ObstericalMedicalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8154,7 +8304,7 @@
           "example": "object",
           "member": "FamilyMedicalHistory",
           "name": "FamilyMedicalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8164,7 +8314,7 @@
           "example": "object",
           "member": "MenstrualMedicalHistory",
           "name": "MenstrualMedicalHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8174,9 +8324,19 @@
           "example": "object",
           "member": "TreatmentRecord",
           "name": "TreatmentRecord",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8190,7 +8350,7 @@
           "example": "2020-09-28 14:46",
           "member": "string",
           "name": "DiagnosisTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8200,7 +8360,7 @@
           "example": "IMC眼科门诊",
           "member": "string",
           "name": "DiagnosisDepartmentName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8210,7 +8370,7 @@
           "example": "hwn",
           "member": "string",
           "name": "DiagnosisDoctorName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8220,7 +8380,7 @@
           "example": "过敏性结膜炎ou",
           "member": "string",
           "name": "ClinicalDiagnosis",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8230,7 +8390,7 @@
           "example": "眼痒疼数周",
           "member": "string",
           "name": "MainNarration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8240,7 +8400,7 @@
           "example": "VACC1.2/1.2\\nNCT 15/12mmHg\\n双眼结膜充血+乳头++角膜透明，前房-，晶体透明，小瞳眼底C/D0.4",
           "member": "string",
           "name": "PhysicalExamination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8250,7 +8410,7 @@
           "example": "过敏性结膜炎",
           "member": "string",
           "name": "InspectionFindings",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8260,8 +8420,18 @@
           "example": "裂隙灯检查ST;普通视力检查ST",
           "member": "string",
           "name": "TreatmentOpinion",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -10830,7 +11000,7 @@
           "example": "object",
           "member": "Report",
           "name": "PathologicalReportType",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10840,7 +11010,7 @@
           "example": "object",
           "member": "DescInfo",
           "name": "Desc",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10850,7 +11020,7 @@
           "example": "object",
           "member": "SummaryInfo",
           "name": "Summary",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10860,7 +11030,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ReportText",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10870,7 +11040,7 @@
           "example": "[object]",
           "member": "LymphTotal",
           "name": "LymphTotal",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10880,7 +11050,7 @@
           "example": "[object]",
           "member": "LymphNode",
           "name": "LymphNodes",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10890,7 +11060,7 @@
           "example": "[object]",
           "member": "IHCV2",
           "name": "Ihc",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10900,7 +11070,7 @@
           "example": "object",
           "member": "BaseInfo",
           "name": "Clinical",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10910,7 +11080,7 @@
           "example": "object",
           "member": "HistologyClass",
           "name": "Precancer",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10920,7 +11090,7 @@
           "example": "object",
           "member": "HistologyClass",
           "name": "Malignant",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10930,7 +11100,7 @@
           "example": "object",
           "member": "HistologyClass",
           "name": "Benigntumor",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10940,7 +11110,7 @@
           "example": "object",
           "member": "BaseInfo",
           "name": "SampleType",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10950,7 +11120,7 @@
           "example": "[object]",
           "member": "Size",
           "name": "LymphSize",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10960,8 +11130,18 @@
           "example": "[object]",
           "member": "Molecular",
           "name": "Molecular",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -11578,8 +11758,18 @@
           "example": "[object]",
           "member": "Medicine",
           "name": "MedicineList",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12212,7 +12402,7 @@
           "example": "object",
           "member": "BaseInfo",
           "name": "Text",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12222,8 +12412,18 @@
           "example": "[object]",
           "member": "BaseInfo",
           "name": "Items",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12562,7 +12762,7 @@
           "example": "object",
           "member": "SurgeryHistory",
           "name": "SurgeryHistory",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12572,8 +12772,18 @@
           "example": "object",
           "member": "OtherInfo",
           "name": "OtherInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -13723,6 +13933,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13848,8 +14068,18 @@
           "example": "[object]",
           "member": "TimelineEvent",
           "name": "Timeline",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -15473,8 +15703,18 @@
           "example": "[object]",
           "member": "Vaccination",
           "name": "VaccineList",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -15593,6 +15833,16 @@
           "name": "Unit",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据在原PDF文件中的第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

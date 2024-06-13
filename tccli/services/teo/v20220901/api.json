@@ -73,7 +73,7 @@
     "CreateCustomizeErrorPage": {
       "document": "创建自定义错误页面。",
       "input": "CreateCustomizeErrorPageRequest",
-      "name": "创建自定义错误页面",
+      "name": "创建自定义响应页面",
       "output": "CreateCustomizeErrorPageResponse",
       "status": "online"
     },
@@ -192,7 +192,7 @@
     "DeleteCustomErrorPage": {
       "document": "删除自定义错误页面。",
       "input": "DeleteCustomErrorPageRequest",
-      "name": "删除自定义错误页面",
+      "name": "删除自定义响应页面",
       "output": "DeleteCustomErrorPageResponse",
       "status": "online"
     },
@@ -318,7 +318,7 @@
     "DescribeCustomErrorPages": {
       "document": "查询自定义错误页列表。",
       "input": "DescribeCustomErrorPagesRequest",
-      "name": "查询自定义错误页列表",
+      "name": "查询自定义响应页面列表",
       "output": "DescribeCustomErrorPagesResponse",
       "status": "online"
     },
@@ -619,7 +619,7 @@
     "ModifyCustomErrorPage": {
       "document": "修改自定义错误页面。",
       "input": "ModifyCustomErrorPageRequest",
-      "name": "修改自定义错误页面",
+      "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
       "status": "online"
     },

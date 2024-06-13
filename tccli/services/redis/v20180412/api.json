@@ -232,9 +232,9 @@
       "status": "online"
     },
     "DescribeInstanceMonitorHotKey": {
-      "document": "查询实例热Key",
+      "document": "本接口（DescribeInstanceMonitorHotKey）用于查询实例热Key。",
       "input": "DescribeInstanceMonitorHotKeyRequest",
-      "name": "查询实例热Key",
+      "name": "查询实例热 Key",
       "output": "DescribeInstanceMonitorHotKeyResponse",
       "status": "online"
     },
@@ -1635,8 +1635,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "命令",
-          "example": "",
+          "document": "命令名。",
+          "example": "无",
           "member": "string",
           "name": "Cmd",
           "required": true,
@@ -1645,8 +1645,8 @@
         },
         {
           "disabled": false,
-          "document": "耗时",
-          "example": "",
+          "document": "耗时时长。",
+          "example": "无",
           "member": "int64",
           "name": "Took",
           "required": true,
@@ -3531,6 +3531,7 @@
           "example": "无",
           "member": "BigKeyInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3576,6 +3577,7 @@
           "example": "无",
           "member": "DelayDistribution",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3621,6 +3623,7 @@
           "example": "无",
           "member": "BigKeyTypeInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3638,8 +3641,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
-          "example": "",
+          "document": "指定实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-xjhsdj****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3647,8 +3650,8 @@
         },
         {
           "disabled": false,
-          "document": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时",
-          "example": "",
+          "document": "查询时间范围。\n- 1：实时。\n- 2：近30分钟。\n- 3：近6小时。\n- 4：近24小时。",
+          "example": "1",
           "member": "int64",
           "name": "SpanType",
           "required": true,
@@ -3662,10 +3665,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "热Key详细信息",
-          "example": "",
+          "document": "热 Key 详细信息。",
+          "example": "key",
           "member": "HotKeyInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3720,8 +3724,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
-          "example": "",
+          "document": "实例 ID。",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3729,8 +3733,8 @@
         },
         {
           "disabled": false,
-          "document": "时间；例如：\"20190219\"",
-          "example": "",
+          "document": "查询时间日期。",
+          "example": "2019-11-07",
           "member": "string",
           "name": "Date",
           "required": true,
@@ -3738,8 +3742,8 @@
         },
         {
           "disabled": false,
-          "document": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时",
-          "example": "",
+          "document": "时间范围。\n- 1：实时。\n- 2：近30分钟。\n- 3：近6小时。\n- 4：近24小时。",
+          "example": "1",
           "member": "int64",
           "name": "SpanType",
           "required": true,
@@ -3753,10 +3757,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "时延分布信息",
-          "example": "",
+          "document": "时延分布信息。",
+          "example": "无",
           "member": "DelayDistribution",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3802,6 +3807,7 @@
           "example": "",
           "member": "SourceCommand",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3819,7 +3825,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。",
           "example": "crs-r34wkc1d",
           "member": "string",
           "name": "InstanceId",
@@ -3828,7 +3834,7 @@
         },
         {
           "disabled": false,
-          "document": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时",
+          "document": "查询时间范围。\n- 1：实时。\n- 2：近30分钟。\n- 3：近6小时。\n- 4：近24小时。",
           "example": "4",
           "member": "int64",
           "name": "SpanType",
@@ -3847,7 +3853,7 @@
           "example": "无",
           "member": "CommandTake",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4840,7 +4846,7 @@
           "example": "11954",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -10599,8 +10605,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "命令",
-          "example": "",
+          "document": "命令名称。",
+          "example": "无",
           "member": "string",
           "name": "Cmd",
           "required": true,
@@ -10609,8 +10615,8 @@
         },
         {
           "disabled": false,
-          "document": "执行次数",
-          "example": "",
+          "document": "执行次数。",
+          "example": "无",
           "member": "int64",
           "name": "Count",
           "required": true,

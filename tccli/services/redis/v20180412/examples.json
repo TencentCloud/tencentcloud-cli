@@ -272,9 +272,9 @@
     ],
     "DescribeInstanceMonitorHotKey": [
       {
-        "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceMonitorHotKey\r\n&InstanceId=crs-r34wkc1d\r\n&SpanType=4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"haha\",\n                \"Type\": \"string\",\n                \"Count\": 123\n            }\n        ],\n        \"RequestId\": \"20d64b80-cbac-49a0-8771-42e326db5c45\"\n    }\n}",
+        "document": "查询指定实例的热 Key信息",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceMonitorHotKey\n&InstanceId=crs-r34w****\n&SpanType=4\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Key\": \"hello\",\n                \"Type\": \"string\",\n                \"Count\": 110\n            }\n        ],\n        \"RequestId\": \"20d64b80-cbac-49a0-8771-42e326db5c45\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -290,7 +290,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeInstanceMonitorTookDist\r\n&InstanceId=crs-5a4py64p\r\n&Date=2019-11-07\r\n&SpanType=4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Ladder\": -1,\n                \"Size\": 0\n            },\n            {\n                \"Ladder\": 5,\n                \"Size\": 0\n            },\n            {\n                \"Ladder\": 10,\n                \"Size\": 0\n            },\n            {\n                \"Ladder\": 1,\n                \"Size\": 178942\n            },\n            {\n                \"Ladder\": 50,\n                \"Size\": 0\n            },\n            {\n                \"Ladder\": 200,\n                \"Size\": 0\n            }\n        ],\n        \"RequestId\": \"6f6441b4-884e-40b0-8503-5e5f5e6b6714\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Ladder\": -1,\n                \"Size\": 0,\n                \"Updatetime\": 1718073070\n            },\n            {\n                \"Ladder\": 5,\n                \"Size\": 0,\n                \"Updatetime\": 1718073070\n            }\n        ],\n        \"RequestId\": \"6f6441b4-884e-40b0-8503-5e5f5e6b6714\"\n    }\n}",
         "title": "请求示例"
       }
     ],

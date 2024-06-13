@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tke UpdateEKSCluster --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
+    --ServiceSubnetId subnet-xxxx \
     --ClusterName test_cluster1 \
     --SubnetIds subnet-xxxx \
-    --ClusterDesc my_test_cluster888 \
-    --ServiceSubnetId subnet-xxxx \
+    --ClusterId cls-xxxxxx \
     --DnsServers.0.Domain exam.com \
-    --DnsServers.0.DnsServers 10.2.2.88:53
+    --DnsServers.0.DnsServers 10.2.2.88:53 \
+    --ClusterDesc my_test_cluster888
 ```
 
 Output: 

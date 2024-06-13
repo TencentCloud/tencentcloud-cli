@@ -17694,6 +17694,24 @@
           "name": "TableId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按名称查询的条件",
+          "example": "无",
+          "member": "TableNameFilter",
+          "name": "TableNameFilter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件类型0按id，1按名称，默认为0",
+          "example": "无",
+          "member": "uint64",
+          "name": "TableFilterType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17707,7 +17725,7 @@
           "example": "无",
           "member": "TableMeta",
           "name": "TableMeta",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -37429,9 +37447,96 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表附属信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableMetaProperty",
+          "name": "TableProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "TableMetaProperty": {
+      "document": "表附加信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableNameFilter": {
+      "document": "按表名查询的查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源类型",
+          "example": "无",
+          "member": "string",
+          "name": "MsType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "无",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema",
+          "example": "无",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "TablePropertyScore": {
       "document": "按天更新的表的资产评分",

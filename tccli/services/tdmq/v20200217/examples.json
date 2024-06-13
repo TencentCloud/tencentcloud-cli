@@ -478,7 +478,7 @@
     ],
     "DescribeNodeHealthOpt": [
       {
-        "document": "",
+        "document": "测试",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeHealthOpt\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-lyzxwt0q\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9933e0f7-77fa-4c62-905d-dbd7936a7372\",\n        \"NodeState\": 1,\n        \"LatestHealthCheckTime\": \"2021-07-19 20:46:50\"\n    }\n}",
         "title": "test"
@@ -487,16 +487,16 @@
     "DescribePublisherSummary": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublisherSummary\n<公共请求参数>\n\n{\n    \"Topic\": \"xx\",\n    \"Namespace\": \"xx\",\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MsgRateIn\": 0.0,\n        \"PublisherCount\": 0,\n        \"StorageSize\": 0,\n        \"RequestId\": \"xx\",\n        \"MsgThroughputIn\": 0.0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublisherSummary\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Topic\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MsgRateIn\": 0,\n        \"MsgThroughputIn\": 0,\n        \"PublisherCount\": 0,\n        \"StorageSize\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取生产者概览"
       }
     ],
     "DescribePublishers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublishers\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Name\": \"xx\",\n        \"Order\": \"xx\"\n    },\n    \"ClusterId\": \"xx\",\n    \"Namespace\": \"xx\",\n    \"Topic\": \"xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"Publishers\": [\n            {\n                \"ConnectedSince\": \"xx\",\n                \"MsgThroughputIn\": 0.0,\n                \"ClientVersion\": \"xx\",\n                \"ProducerId\": 0,\n                \"Partition\": 0,\n                \"AverageMsgSize\": 0.0,\n                \"ProducerName\": \"xx\",\n                \"Address\": \"xx\",\n                \"MsgRateIn\": 0.0\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublishers\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Namespace\": \"abc\",\n    \"Topic\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Sort\": {\n        \"Name\": \"abc\",\n        \"Order\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Publishers\": [\n            {\n                \"ProducerId\": 0,\n                \"ProducerName\": \"abc\",\n                \"Address\": \"abc\",\n                \"ClientVersion\": \"abc\",\n                \"MsgRateIn\": 0,\n                \"MsgThroughputIn\": 0,\n                \"AverageMsgSize\": 0,\n                \"ConnectedSince\": \"abc\",\n                \"Partition\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取生产者列表"
       }
     ],

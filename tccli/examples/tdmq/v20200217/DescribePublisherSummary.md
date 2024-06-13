@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli tdmq DescribePublisherSummary --cli-unfold-argument  \
-    --Topic xx \
-    --Namespace xx \
-    --ClusterId xx
+    --ClusterId abc \
+    --Namespace abc \
+    --Topic abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "MsgRateIn": 0.0,
+        "MsgRateIn": 0,
+        "MsgThroughputIn": 0,
         "PublisherCount": 0,
         "StorageSize": 0,
-        "RequestId": "xx",
-        "MsgThroughputIn": 0.0
+        "RequestId": "abc"
     }
 }
 ```

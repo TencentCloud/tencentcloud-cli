@@ -434,8 +434,8 @@
     ],
     "DeleteEKSCluster": [
       {
-        "document": "删除弹性集群",
-        "input": "https://tke.tencentcloudapi.com/?Action=DeleteEKSCluster\n&ClusterId=cls-xxxxxx\n&<公共请求参数>",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEKSCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除弹性集群"
       }
@@ -1833,7 +1833,7 @@
     "UpdateEKSCluster": [
       {
         "document": "修改弹性集群",
-        "input": "https://tke.tencentcloudapi.com/?Action=UpdateEKSCluster\n&ClusterId=cls-xxxxxx\n&ClusterName=test_cluster1\n&SubnetIds.0=subnet-xxxx\n&ClusterDesc=my_test_cluster888\n&ServiceSubnetId=subnet-xxxx\n&DnsServers.0.Domain=exam.com\n&DnsServers.0.DnsServers.0=10.2.2.88:53\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEKSCluster\n<公共请求参数>\n\n{\n    \"ServiceSubnetId\": \"subnet-xxxx\",\n    \"ClusterName\": \"test_cluster1\",\n    \"SubnetIds\": [\n        \"subnet-xxxx\"\n    ],\n    \"ClusterId\": \"cls-xxxxxx\",\n    \"DnsServers\": [\n        {\n            \"Domain\": \"exam.com\",\n            \"DnsServers\": [\n                \"10.2.2.88:53\"\n            ]\n        }\n    ],\n    \"ClusterDesc\": \"my_test_cluster888\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改弹性集群"
       }

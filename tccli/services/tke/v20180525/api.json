@@ -1492,7 +1492,7 @@
       "status": "online"
     },
     "UpdateEKSCluster": {
-      "document": "修改弹性集群名称等属性 ",
+      "document": "修改弹性集群名称等属性",
       "input": "UpdateEKSClusterRequest",
       "name": "修改弹性集群EKS",
       "output": "UpdateEKSClusterResponse",
@@ -3521,26 +3521,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启内网访问LB",
-          "example": "",
+          "document": "是否开启内网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "bool",
           "name": "Enabled",
+          "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "内网访问LB关联的子网Id",
-          "example": "",
+          "document": "内网访问LB关联的子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SubnetId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ClusterLevelAttribute": {
       "document": "托管集群等级属性",
@@ -3911,56 +3913,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启公网访问LB",
+          "document": "是否开启公网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "允许访问的来源CIDR列表",
+          "document": "允许访问的来源CIDR列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "AllowFromCidrs",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
+          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[]",
           "member": "string",
           "name": "SecurityPolicies",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "外网访问相关的扩展参数，格式为json",
+          "document": "外网访问相关的扩展参数，格式为json\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{}",
           "member": "string",
           "name": "ExtraParam",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "新内外网功能，需要传递安全组",
+          "document": "新内外网功能，需要传递安全组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "SecurityGroup",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ClusterStatus": {
       "document": "集群状态信息",
@@ -5625,7 +5632,7 @@
           "example": "cls-hofqp2ie",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10136,7 +10143,7 @@
           "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10146,7 +10153,7 @@
           "example": "无",
           "member": "ClusterCredential",
           "name": "Credential",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10156,7 +10163,7 @@
           "example": "无",
           "member": "ClusterPublicLB",
           "name": "PublicLB",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10166,7 +10173,7 @@
           "example": "无",
           "member": "ClusterInternalLB",
           "name": "InternalLB",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10176,7 +10183,7 @@
           "example": "false",
           "member": "bool",
           "name": "ProxyLB",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10186,7 +10193,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Kubeconfig",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16151,6 +16158,7 @@
           "example": "无",
           "member": "AppChart",
           "name": "AppCharts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23500,7 +23508,7 @@
         },
         {
           "disabled": false,
-          "document": "系统",
+          "document": "系统，默认linux",
           "example": "linux",
           "member": "string",
           "name": "Os",
@@ -23510,7 +23518,7 @@
         },
         {
           "disabled": false,
-          "document": "硬件架构",
+          "document": "硬件架构，默认amd64",
           "example": "amd64",
           "member": "string",
           "name": "Arch",

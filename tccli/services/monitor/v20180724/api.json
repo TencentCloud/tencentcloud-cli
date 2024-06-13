@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CheckIsPrometheusNewUser": {
-      "document": "判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户",
+      "document": "接口功能是检查是否为prometheus新用户，已有其他功能更加全面的接口替代\n\n判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户",
       "input": "CheckIsPrometheusNewUserRequest",
       "name": "判断用户是否为云原生监控新用户",
       "output": "CheckIsPrometheusNewUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CleanGrafanaInstance": {
       "document": "强制销毁 Grafana 实例",
@@ -1681,7 +1681,8 @@
           "example": "12345",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1691,7 +1692,8 @@
           "example": "默认通知",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1701,7 +1703,8 @@
           "example": "2020-11-16 13:56:56",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1711,7 +1714,8 @@
           "example": "1500000688",
           "member": "string",
           "name": "UpdatedBy",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1721,7 +1725,8 @@
           "example": "ALL",
           "member": "string",
           "name": "NoticeType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1731,7 +1736,8 @@
           "example": "无",
           "member": "UserNotice",
           "name": "UserNotices",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1741,7 +1747,8 @@
           "example": "无",
           "member": "URLNotice",
           "name": "URLNotices",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1751,7 +1758,8 @@
           "example": "1",
           "member": "int64",
           "name": "IsPreset",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1761,7 +1769,8 @@
           "example": "zh-CN",
           "member": "string",
           "name": "NoticeLanguage",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1771,7 +1780,8 @@
           "example": "无",
           "member": "string",
           "name": "PolicyIds",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1781,7 +1791,8 @@
           "example": "Consumer-asfafasf",
           "member": "string",
           "name": "AMPConsumerId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1791,7 +1802,8 @@
           "example": "无",
           "member": "CLSNotice",
           "name": "CLSNotices",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1801,12 +1813,13 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AlarmPolicy": {
       "document": "告警策略详情",

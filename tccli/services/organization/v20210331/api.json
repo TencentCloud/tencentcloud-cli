@@ -628,6 +628,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShareScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4140,6 +4149,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShareScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5744,6 +5763,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ShareScope",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -93,6 +93,7 @@
           "example": "1111111",
           "member": "uint64",
           "name": "Uin",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -103,6 +104,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -113,6 +115,7 @@
           "example": "aa",
           "member": "string",
           "name": "Desc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -123,6 +126,7 @@
           "example": "aa",
           "member": "string",
           "name": "Nick",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -133,6 +137,7 @@
           "example": "xx",
           "member": "Scf",
           "name": "Scf",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

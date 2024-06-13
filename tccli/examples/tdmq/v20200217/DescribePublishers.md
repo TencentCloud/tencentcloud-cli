@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tdmq DescribePublishers --cli-unfold-argument  \
-    --Sort.Name xx \
-    --Sort.Order xx \
-    --ClusterId xx \
-    --Namespace xx \
-    --Topic xx \
+    --ClusterId abc \
+    --Namespace abc \
+    --Topic abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Offset 0 \
     --Limit 0 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Offset 0
+    --Sort.Name abc \
+    --Sort.Order abc
 ```
 
 Output: 
@@ -22,20 +22,20 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
         "Publishers": [
             {
-                "ConnectedSince": "xx",
-                "MsgThroughputIn": 0.0,
-                "ClientVersion": "xx",
                 "ProducerId": 0,
-                "Partition": 0,
-                "AverageMsgSize": 0.0,
-                "ProducerName": "xx",
-                "Address": "xx",
-                "MsgRateIn": 0.0
+                "ProducerName": "abc",
+                "Address": "abc",
+                "ClientVersion": "abc",
+                "MsgRateIn": 0,
+                "MsgThroughputIn": 0,
+                "AverageMsgSize": 0,
+                "ConnectedSince": "abc",
+                "Partition": 0
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

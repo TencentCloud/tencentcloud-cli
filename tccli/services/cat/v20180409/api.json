@@ -747,6 +747,7 @@
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefine",
           "name": "NodeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
