@@ -16,12 +16,17 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
         "NodeList": [
             {
-                "NodeName": "xx"
+                "NodeName": "abc",
+                "NodeStatus": "abc",
+                "CPUUsage": "abc",
+                "Memory": 1,
+                "DiskUsage": "abc",
+                "ProcessNumber": 1
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

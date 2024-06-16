@@ -26,7 +26,7 @@
     ],
     "AddNodeToNodePool": [
       {
-        "document": "",
+        "document": "将集群内节点移入节点池",
         "input": "https://tke.tencentcloudapi.com/?Action=AddNodeToNodePool\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxx\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
         "title": "将集群内节点移入节点池"
@@ -674,7 +674,7 @@
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterExtraArgs\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"max-mutating-requests-inflight=500\"\n            ],\n            \"KubeControllerManager\": [\n                \"kube-api-burst=500\"\n            ],\n            \"KubeScheduler\": [\n                \"kube-api-burst=500\"\n            ]\n        },\n        \"RequestId\": \"5a489220-1730-43ee-9a59-7d3a752ac750\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"max-mutating-requests-inflight=500\"\n            ],\n            \"KubeControllerManager\": [\n                \"kube-api-burst=500\"\n            ],\n            \"KubeScheduler\": [\n                \"kube-api-burst=500\"\n            ],\n            \"Etcd\": [\n                \"election-timeout=500\"\n            ]\n        },\n        \"RequestId\": \"5a489220-1730-43ee-9a59-7d3a752ac750\"\n    }\n}",
         "title": "查询集群自定义参数"
       }
     ],
@@ -706,7 +706,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterLevelAttribute\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Items\": [\n            {\n                \"Name\": \"L5\",\n                \"Alias\": \"500节点\",\n                \"NodeCount\": 500,\n                \"PodCount\": 1000,\n                \"ConfigMapCount\": 200,\n                \"CRDCount\": 1,\n                \"OtherCount\": 1,\n                \"Enable\": true\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"7f654d68-0f64-4195-8aa8-5351bc441402\",\n        \"Items\": [\n            {\n                \"Name\": \"L5\",\n                \"Alias\": \"500节点\",\n                \"NodeCount\": 500,\n                \"PodCount\": 1000,\n                \"ConfigMapCount\": 200,\n                \"CRDCount\": 1,\n                \"OtherCount\": 1,\n                \"RSCount\": 1,\n                \"Enable\": true\n            }\n        ]\n    }\n}",
         "title": "获取托管集群规模"
       }
     ],
@@ -722,7 +722,7 @@
       {
         "document": "查询节点池详情",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePoolDetail\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"AutoscalingGroupId\": \"asg-xxx\",\n            \"AutoscalingGroupStatus\": \"disabled\",\n            \"ClusterInstanceId\": \"cls-xxx\",\n            \"DataDisks\": null,\n            \"DeletionProtection\": true,\n            \"DesiredNodesNum\": 2,\n            \"DesiredPodNum\": 64,\n            \"DockerGraphPath\": \"\",\n            \"ExtraArgs\": {\n                \"Kubelet\": []\n            },\n            \"GPUArgs\": {\n                \"CUDA\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CUDNN\": {\n                    \"DevName\": \"\",\n                    \"DocName\": \"\",\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CustomDriver\": {\n                    \"Address\": \"\"\n                },\n                \"Driver\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"MIGEnable\": false\n            },\n            \"ImageId\": \"\",\n            \"Labels\": [],\n            \"LaunchConfigurationId\": \"asc-xxx\",\n            \"LifeState\": \"normal\",\n            \"MaxNodesNum\": 3,\n            \"MinNodesNum\": 0,\n            \"Name\": \"xxx\",\n            \"NodeCountSummary\": {\n                \"AutoscalingAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 2,\n                    \"Total\": 2\n                },\n                \"ManuallyAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 1,\n                    \"Total\": 1\n                }\n            },\n            \"NodePoolId\": \"np-xxx\",\n            \"NodePoolOs\": \"tlinux_xxx\",\n            \"OsCustomizeType\": \"GENERAL\",\n            \"PreStartUserScript\": \"#!/bin/sh\\ntouch /tmp/before\",\n            \"RuntimeConfig\": {\n                \"RuntimeType\": \"containerd\",\n                \"RuntimeVersion\": \"1.6.9\"\n            },\n            \"Tags\": null,\n            \"Taints\": [],\n            \"Unschedulable\": 0,\n            \"UserScript\": \"#!/bin/sh\\ntouch /tmp/after\"\n        },\n        \"RequestId\": \"68b7b080-7c57-4869-bc54-a518b4902b2d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"AutoscalingGroupId\": \"asg-xxx\",\n            \"AutoscalingGroupStatus\": \"disabled\",\n            \"ClusterInstanceId\": \"cls-xxx\",\n            \"DataDisks\": null,\n            \"DeletionProtection\": true,\n            \"DesiredNodesNum\": 2,\n            \"DesiredPodNum\": 64,\n            \"DockerGraphPath\": \"\",\n            \"ExtraArgs\": {\n                \"Kubelet\": []\n            },\n            \"GPUArgs\": {\n                \"CUDA\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CUDNN\": {\n                    \"DevName\": \"\",\n                    \"DocName\": \"\",\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CustomDriver\": {\n                    \"Address\": \"\"\n                },\n                \"Driver\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"MIGEnable\": false\n            },\n            \"ImageId\": \"\",\n            \"Labels\": [],\n            \"Annotations\": [],\n            \"LaunchConfigurationId\": \"asc-xxx\",\n            \"LifeState\": \"normal\",\n            \"MaxNodesNum\": 3,\n            \"MinNodesNum\": 0,\n            \"Name\": \"xxx\",\n            \"NodeCountSummary\": {\n                \"AutoscalingAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 2,\n                    \"Total\": 2\n                },\n                \"ManuallyAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 1,\n                    \"Total\": 1\n                }\n            },\n            \"NodePoolId\": \"np-xxx\",\n            \"NodePoolOs\": \"tlinux_xxx\",\n            \"OsCustomizeType\": \"GENERAL\",\n            \"PreStartUserScript\": \"#!/bin/sh\\ntouch /tmp/before\",\n            \"RuntimeConfig\": {\n                \"RuntimeType\": \"containerd\",\n                \"RuntimeVersion\": \"1.6.9\"\n            },\n            \"Tags\": null,\n            \"Taints\": [],\n            \"Unschedulable\": 0,\n            \"UserScript\": \"#!/bin/sh\\ntouch /tmp/after\"\n        },\n        \"RequestId\": \"68b7b080-7c57-4869-bc54-a518b4902b2d\"\n    }\n}",
         "title": "查询节点池详情"
       }
     ],
@@ -793,8 +793,8 @@
     "DescribeClusterStatus": [
       {
         "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterStatus\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterStatusSet\": [\n            {\n                \"ClusterClosingNodeNum\": 0,\n                \"ClusterAuditEnabled\": true,\n                \"ClusterDeletionProtection\": true,\n                \"ClusterId\": \"xx\",\n                \"ClusterBMonitor\": true,\n                \"ClusterInitNodeNum\": 0,\n                \"ClusterState\": \"xx\",\n                \"ClusterClosedNodeNum\": 0,\n                \"ClusterInstanceState\": \"xx\",\n                \"ClusterRunningNodeNum\": 0,\n                \"ClusterFailedNodeNum\": 0\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterStatusSet\": [\n            {\n                \"ClusterClosingNodeNum\": 0,\n                \"ClusterAuditEnabled\": true,\n                \"ClusterDeletionProtection\": true,\n                \"ClusterId\": \"cls-1oxlc88c\",\n                \"ClusterBMonitor\": true,\n                \"ClusterInitNodeNum\": 0,\n                \"ClusterState\": \"\",\n                \"ClusterClosedNodeNum\": 0,\n                \"ClusterInstanceState\": \"\",\n                \"ClusterRunningNodeNum\": 0,\n                \"ClusterFailedNodeNum\": 0\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
         "title": "获取集群当前状态"
       }
     ],
@@ -946,7 +946,7 @@
       {
         "document": "查询已经存在的节点，判断是否可以加入集群",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeExistedInstances\n&ClusterId=cls-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ExistedInstanceSet\": [\n            {\n                \"Usable\": true,\n                \"UnusableReason\": \"\",\n                \"AlreadyInCluster\": \"\",\n                \"InstanceId\": \"ins-xxxxxxxx\",\n                \"InstanceName\": \"未命名\",\n                \"PrivateIpAddresses\": [\n                    \"192.168.x.x\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"118.24.x.x\"\n                ],\n                \"CreatedTime\": \"2019-05-13T03:37:24Z\",\n                \"CPU\": 2,\n                \"Memory\": 4,\n                \"OsName\": \"Ubuntu xxxxxxxxx\",\n                \"InstanceType\": \"Sxxxxxx\"\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ExistedInstanceSet\": [\n            {\n                \"Usable\": true,\n                \"UnusableReason\": \"\",\n                \"AlreadyInCluster\": \"\",\n                \"InstanceId\": \"ins-xxxxxxxx\",\n                \"InstanceName\": \"未命名\",\n                \"PrivateIpAddresses\": [\n                    \"192.168.x.x\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"118.24.x.x\"\n                ],\n                \"CreatedTime\": \"2019-05-13T03:37:24Z\",\n                \"CPU\": 2,\n                \"Memory\": 4,\n                \"OsName\": \"Ubuntu xxxxxxxxx\",\n                \"InstanceType\": \"Sxxxxxx\",\n                \"AutoscalingGroupId\": \"\",\n                \"InstanceChargeType\": \"\",\n                \"IPv6Addresses\": [\n                    \"\"\n                ]\n            }\n        ],\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "查询已经存在的节点"
       }
     ],
@@ -1762,7 +1762,7 @@
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": \"true\",\n    \"ClusterId\": \"cls-xxx\",\n    \"InstanceIds\": [\n        \"ins-xxx\"\n    ],\n    \"NodePoolId\": \"np-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SucceedInstanceIds\": [\n            \"ins-xxx\"\n        ],\n        \"FailedInstanceIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SucceedInstanceIds\": [\n            \"ins-rvob5o5\"\n        ],\n        \"FailedInstanceIds\": [\n            \"ins-abocc5o\"\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "给节点池中的节点设置移出保护"
       }
     ],
@@ -1874,7 +1874,7 @@
       {
         "document": "给集群的一批work节点进行升级 ",
         "input": "https://tke.tencentcloudapi.com/?Action=UpgradeClusterInstances\n&ClusterId=cls-xxxxxx\n&UpgradeType=reset\n&Operation=create\n&InstanceIds.0=ins-xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "集群节点升级"
       }
     ],

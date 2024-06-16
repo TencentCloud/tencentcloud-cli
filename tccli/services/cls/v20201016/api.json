@@ -442,7 +442,7 @@
       "status": "online"
     },
     "DescribePartitions": {
-      "document": "本接口用于获取主题分区列表。",
+      "document": "该接口已废弃，如需获取分区数量，请使用DescribeTopics接口。",
       "input": "DescribePartitionsRequest",
       "name": "获取分区列表",
       "output": "DescribePartitionsResponse",
@@ -484,7 +484,7 @@
       "status": "online"
     },
     "MergePartition": {
-      "document": "本接口用于合并一个读写态的主题分区，合并时指定一个主题分区 ID，日志服务会自动合并范围右相邻的分区。",
+      "document": "该接口已废弃，如需修改分区数量，请使用ModifyTopic接口。",
       "input": "MergePartitionRequest",
       "name": "合并分区",
       "output": "MergePartitionResponse",
@@ -666,7 +666,7 @@
       "status": "online"
     },
     "SplitPartition": {
-      "document": "本接口用于分裂主题分区",
+      "document": "该接口已废弃，如需修改分区数量，请使用ModifyTopic接口。",
       "input": "SplitPartitionRequest",
       "name": "分裂主题分区",
       "output": "SplitPartitionResponse",
@@ -7368,7 +7368,7 @@
           "example": "无",
           "member": "PartitionInfo",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13402,7 +13402,7 @@
           "example": "无",
           "member": "PartitionInfo",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

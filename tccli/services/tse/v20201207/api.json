@@ -15120,6 +15120,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Zookeeper的额外环境数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZookeeperRegionInfo",
+          "name": "ZookeeperRegionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SingleRegion",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15817,9 +15837,92 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡均衡接入点子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "LbSubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "ZookeeperRegionInfo": {
+      "document": "Zookeeper的地域额外信息记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署架构信息\n\n- SingleRegion: 普通单地域\n- MultiRegion: 普通多地域场景\n- MasterSlave: 两地域，主备地域场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SingleRegion",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主地域的额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZookeeperRegionMyIdInfo",
+          "name": "MainRegion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他地域的额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZookeeperRegionMyIdInfo",
+          "name": "OtherRegions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZookeeperRegionMyIdInfo": {
+      "document": "Zookeeper的地域信息的 myid 信息记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "myid 的起始号段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "int64",
+          "name": "MyIdStart",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "myid 的结束号段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "109",
+          "member": "int64",
+          "name": "MyIdEnd",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ZookeeperReplica": {
       "document": "Zookeeper副本信息",

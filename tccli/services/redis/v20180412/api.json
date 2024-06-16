@@ -175,6 +175,13 @@
       "output": "DescribeDBSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeGlobalReplicationArea": {
+      "document": "查询全球复制支持地域信息",
+      "input": "DescribeGlobalReplicationAreaRequest",
+      "name": "查询全球复制支持地域信息",
+      "output": "DescribeGlobalReplicationAreaResponse",
+      "status": "online"
+    },
     "DescribeInstanceAccount": {
       "document": "本接口（DescribeInstanceAccount）用于查看实例子账号信息。",
       "input": "DescribeInstanceAccountRequest",
@@ -301,6 +308,13 @@
       "output": "DescribeInstanceShardsResponse",
       "status": "online"
     },
+    "DescribeInstanceSpecBandwidth": {
+      "document": "本接口（DescribeInstanceSpecBandwidth）用于查询或计算带宽规格。",
+      "input": "DescribeInstanceSpecBandwidthRequest",
+      "name": "查询或计算带宽规格",
+      "output": "DescribeInstanceSpecBandwidthResponse",
+      "status": "online"
+    },
     "DescribeInstanceSupportFeature": {
       "document": "本接口（DescribeInstanceSupportFeature）用于查询实例支持的功能特性。",
       "input": "DescribeInstanceSupportFeatureRequest",
@@ -376,6 +390,13 @@
       "input": "DescribeReplicationGroupRequest",
       "name": "查询复制组",
       "output": "DescribeReplicationGroupResponse",
+      "status": "online"
+    },
+    "DescribeReplicationGroupInstance": {
+      "document": "查询复制组信息",
+      "input": "DescribeReplicationGroupInstanceRequest",
+      "name": "查询复制组信息",
+      "output": "DescribeReplicationGroupInstanceResponse",
       "status": "online"
     },
     "DescribeSSLStatus": {
@@ -579,6 +600,13 @@
       "input": "ModifyParamTemplateRequest",
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse",
+      "status": "online"
+    },
+    "ModifyReplicationGroup": {
+      "document": "修改复制组信息",
+      "input": "ModifyReplicationGroupRequest",
+      "name": "修改复制组信息",
+      "output": "ModifyReplicationGroupResponse",
       "status": "online"
     },
     "OpenSSL": {
@@ -962,6 +990,32 @@
         }
       ],
       "type": "object"
+    },
+    "AvailableRegion": {
+      "document": "可使用的地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AvailableZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BackupDownloadInfo": {
       "document": "备份文件下载信息",
@@ -2988,6 +3042,33 @@
       ],
       "type": "object"
     },
+    "DescribeGlobalReplicationAreaRequest": {
+      "document": "DescribeGlobalReplicationArea请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeGlobalReplicationAreaResponse": {
+      "document": "DescribeGlobalReplicationArea返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用地域信息",
+          "example": "无",
+          "member": "AvailableRegion",
+          "name": "AvailableRegions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceAccountRequest": {
       "document": "DescribeInstanceAccount请求参数结构体",
       "members": [
@@ -4192,6 +4273,23 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceSpecBandwidthRequest": {
+      "document": "DescribeInstanceSpecBandwidth请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInstanceSpecBandwidthResponse": {
+      "document": "DescribeInstanceSpecBandwidth返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceSupportFeatureRequest": {
       "document": "DescribeInstanceSupportFeature请求参数结构体",
       "members": [
@@ -4990,6 +5088,83 @@
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationGroupInstanceRequest": {
+      "document": "DescribeReplicationGroupInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-deindi7de",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationGroupInstanceResponse": {
+      "document": "DescribeReplicationGroupInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AppID。",
+          "example": "251006366",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域数字编号。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复制组字符串ID。",
+          "example": "crs-rpl-qhj4wgcn",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复制组名称。",
+          "example": "复制组测试",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例复制组角色。\n- r:  备实例\n- rw: 主实例",
+          "example": "r",
+          "member": "string",
+          "name": "InstanceRole",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8966,6 +9141,51 @@
     },
     "ModifyParamTemplateResponse": {
       "document": "ModifyParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReplicationGroupRequest": {
+      "document": "ModifyReplicationGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "复制组字符串ID",
+          "example": "crs-rpl-qhj4wgcn",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "复制组名称",
+          "example": "复制组名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReplicationGroupResponse": {
+      "document": "ModifyReplicationGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

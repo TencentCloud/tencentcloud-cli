@@ -704,7 +704,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DownloadHelmChart\n&RegistryId=tcr-xxx\n&NamespaceName=tcr-test\n&ChartName=test\n&ChartVersion=1.0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TmpToken\": \"XXXX\",\n        \"TmpSecretId\": \"XXXX\",\n        \"TmpSecretKey\": \"XXXX\",\n        \"Bucket\": \"XXXX\",\n        \"Region\": \"XXXX\",\n        \"Path\": \"tcr-test/test-1.0.tgz\",\n        \"StartTime\": \"12345\",\n        \"ExpiredTime\": \"123456\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TmpSecretKey\": \"abc\",\n        \"TmpToken\": \"abc\",\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"tcr-d3av5-536254\",\n        \"TmpSecretId\": \"abc\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": 0,\n        \"Path\": \"/docker/registry\",\n        \"ExpiredTime\": 0\n    }\n}",
         "title": "下载Helm Chart"
       }
     ],

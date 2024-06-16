@@ -294,6 +294,20 @@
         "title": "获取信息防泄漏规则列表"
       }
     ],
+    "DescribeAreaBanAreas": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeAreaBanAreas\r\n&Domain=test.qcloudwaf.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Areas\": [\n                \"新疆\",\n                \"江西\"\n            ],\n            \"Status\": \"0\"\n        },\n        \"RequestId\": \"5ae9f295-4075-4472-8fd5-da69cc6ffa58\"\n    }\n}",
+        "title": "获取地域封禁配置"
+      },
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeAreaBanAreas\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"7b9c4e2b-8282-4a6a-90cf-f64f2caef67a\"\n    }\n}",
+        "title": "未设置封禁区域的场景"
+      }
+    ],
     "DescribeAreaBanSupportAreas": [
       {
         "document": "",

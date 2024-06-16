@@ -19,17 +19,24 @@ Output:
             {
                 "MeshId": "xxxxx",
                 "DisplayName": "test",
-                "Region": "xx",
+                "Region": "sh",
                 "Type": "HOSTED",
-                "State": "xx",
-                "Version": "xx",
-                "CreatedTime": "2020-09-22 00:00:00",
-                "UpdatedTime": "2020-09-22 00:00:00",
+                "State": "pending",
+                "Version": "1.12.5",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "UpdatedTime": "2020-09-22T00:00:00+00:00",
                 "Config": {
                     "Istio": {
                         "OutboundTrafficPolicy": "ALLOW_ANY",
                         "Tracing": {
                             "Sampling": 1
+                        },
+                        "DisablePolicyChecks": true,
+                        "EnablePilotHTTP": true,
+                        "DisableHTTPRetry": true,
+                        "SmartDNS": {
+                            "IstioMetaDNSCapture": true,
+                            "IstioMetaDNSAutoAllocate": true
                         }
                     }
                 },
@@ -41,18 +48,33 @@ Output:
                         "Role": "MASTER",
                         "VpcId": "{{vpcId}}",
                         "SubnetId": "{{subnetId}}",
+                        "State": "RUNNING",
+                        "HostedNamespaces": [],
+                        "Type": "TKE",
+                        "LinkedTime": "2020-09-22T00:00:00+00:00",
                         "Config": {
                             "AutoInjectionNamespaceList": [
                                 "default"
                             ]
+                        },
+                        "Status": {
+                            "LinkState": "LINKED",
+                            "LinkErrorDetail": ""
                         }
                     }
                 ],
                 "Status": {
-                    "CanaryVersion": "xx",
+                    "CanaryVersion": "1.14.5",
                     "ServiceCount": 0,
                     "Prometheus": null
-                }
+                },
+                "TagList": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc",
+                        "Passthrough": true
+                    }
+                ]
             }
         ],
         "Total": 1

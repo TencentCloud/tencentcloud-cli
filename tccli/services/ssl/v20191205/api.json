@@ -3908,7 +3908,7 @@
         },
         {
           "disabled": false,
-          "document": "证书套餐类型：1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书套餐类型： 2 = TrustAsia TLS RSA CA，3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = Wotrus 国密域名型证书，34 = Wotrus 国密域名型多域名证书，35 = Wotrus 国密域名型通配符证书，37 = Wotrus 国密企业型证书，38 = Wotrus 国密企业型多域名证书，39 = Wotrus 国密企业型通配符证书，40 = Wotrus 国密增强型证书，41 = Wotrus 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书，43 = DNSPod-企业型(OV)SSL证书，44 = DNSPod-企业型(OV)通配符SSL证书，45 = DNSPod-企业型(OV)多域名SSL证书， 46 = DNSPod-增强型(EV)SSL证书，47 = DNSPod-增强型(EV)多域名SSL证书，48 = DNSPod-域名型(DV)SSL证书，49 = DNSPod-域名型(DV)通配符SSL证书，50 = DNSPod-域名型(DV)多域名SSL证书，51 = DNSPod（国密）-企业型(OV)SSL证书，52 = DNSPod（国密）-企业型(OV)通配符SSL证书，53 = DNSPod（国密）-企业型(OV)多域名SSL证书，54 = DNSPod（国密）-域名型(DV)SSL证书，55 = DNSPod（国密）-域名型(DV)通配符SSL证书， 56 = DNSPod（国密）-域名型(DV)多域名SSL证书，57 = SecureSite 企业型专业版多域名(OV Pro)，58 = SecureSite 企业型多域名(OV)，59 = SecureSite 增强型专业版多域名(EV Pro)，60 = SecureSite 增强型多域名(EV)，61 = Geotrust 增强型多域名(EV)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PackageType",
@@ -6612,60 +6612,60 @@
         {
           "disabled": false,
           "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证子域名，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthSubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DvAuthVerifyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8180,9 +8180,10 @@
         {
           "disabled": false,
           "document": "CSR 类型，（online = 在线生成CSR，parse = 粘贴 CSR）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CsrType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8190,9 +8191,10 @@
         {
           "disabled": false,
           "document": "CSR 内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CsrContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8200,9 +8202,10 @@
         {
           "disabled": false,
           "document": "域名信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CertificateDomain",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8210,9 +8213,10 @@
         {
           "disabled": false,
           "document": "DNS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DomainList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8220,9 +8224,10 @@
         {
           "disabled": false,
           "document": "私钥密码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "KeyPassword",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8230,9 +8235,10 @@
         {
           "disabled": false,
           "document": "企业或单位名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8240,9 +8246,10 @@
         {
           "disabled": false,
           "document": "部门。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationDivision",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8250,9 +8257,10 @@
         {
           "disabled": false,
           "document": "地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationAddress",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8260,9 +8268,10 @@
         {
           "disabled": false,
           "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationCountry",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8270,9 +8279,10 @@
         {
           "disabled": false,
           "document": "市。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationCity",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8280,9 +8290,10 @@
         {
           "disabled": false,
           "document": "省。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8290,9 +8301,10 @@
         {
           "disabled": false,
           "document": "邮政编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PostalCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8300,9 +8312,10 @@
         {
           "disabled": false,
           "document": "座机区号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneAreaCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8310,9 +8323,10 @@
         {
           "disabled": false,
           "document": "座机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneNumber",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8320,9 +8334,10 @@
         {
           "disabled": false,
           "document": "管理员名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminFirstName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8330,9 +8345,10 @@
         {
           "disabled": false,
           "document": "管理员姓。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminLastName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8340,9 +8356,10 @@
         {
           "disabled": false,
           "document": "管理员电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminPhoneNum",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8350,9 +8367,10 @@
         {
           "disabled": false,
           "document": "管理员邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminEmail",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8360,9 +8378,10 @@
         {
           "disabled": false,
           "document": "管理员职位。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminPosition",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8370,9 +8389,10 @@
         {
           "disabled": false,
           "document": "联系人名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactFirstName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8380,9 +8400,10 @@
         {
           "disabled": false,
           "document": "联系人姓。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactLastName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8390,9 +8411,10 @@
         {
           "disabled": false,
           "document": "联系人电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactNumber",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8400,9 +8422,10 @@
         {
           "disabled": false,
           "document": "联系人邮箱地址，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactEmail",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8410,9 +8433,10 @@
         {
           "disabled": false,
           "document": "联系人职位。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactPosition",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8420,9 +8444,10 @@
         {
           "disabled": false,
           "document": "验证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "VerifyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

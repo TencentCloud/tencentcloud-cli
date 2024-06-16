@@ -22,6 +22,9 @@ Output:
             ],
             "KubeScheduler": [
                 "kube-api-burst=500"
+            ],
+            "Etcd": [
+                "election-timeout=500"
             ]
         },
         "RequestId": "5a489220-1730-43ee-9a59-7d3a752ac750"

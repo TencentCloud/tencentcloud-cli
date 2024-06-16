@@ -48,6 +48,7 @@ Output:
             },
             "ImageId": "",
             "Labels": [],
+            "Annotations": [],
             "LaunchConfigurationId": "asc-xxx",
             "LifeState": "normal",
             "MaxNodesNum": 3,

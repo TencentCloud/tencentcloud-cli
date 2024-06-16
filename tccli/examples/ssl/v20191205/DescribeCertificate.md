@@ -36,7 +36,8 @@ Output:
             "ReplacedBy": "abc",
             "ReplacedFor": "abc",
             "RenewOrder": "abc",
-            "SMCert": 0
+            "SMCert": 0,
+            "CompanyType": 0
         },
         "DvAuthDetail": {
             "DvAuthKey": "abc",

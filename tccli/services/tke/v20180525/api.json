@@ -806,11 +806,11 @@
       "status": "online"
     },
     "DescribeExternalClusterSpec": {
-      "document": "获取导入第三方集群YAML定义",
+      "document": "tdcc接口已迁移至tdcc产品下，tke下的接口下线\n\n获取导入第三方集群YAML定义",
       "input": "DescribeExternalClusterSpecRequest",
       "name": "获取导入第三方集群YAML定义",
       "output": "DescribeExternalClusterSpecResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeExternalNodeSupportConfig": {
       "document": "查看开启第三方节点池配置信息",
@@ -1529,7 +1529,7 @@
     "UpgradeClusterInstances": {
       "document": "给集群的一批work节点进行升级",
       "input": "UpgradeClusterInstancesRequest",
-      "name": "集群节点升级",
+      "name": "集群节点的升级",
       "output": "UpgradeClusterInstancesResponse",
       "status": "online"
     },
@@ -1783,7 +1783,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "[cls-ny2v7ra2]",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "节点池id",
-          "example": "",
+          "example": "[np-lquhxcic]",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -1801,7 +1801,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "",
+          "example": "[ins-wsw4j631]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7663,7 +7663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像缓存Id数组",
+          "document": "镜像缓存ID数组",
           "example": "\"\"",
           "member": "string",
           "name": "ImageCacheIds",
@@ -8546,7 +8546,7 @@
           "example": "无",
           "member": "CommonName",
           "name": "CommonNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8583,6 +8583,7 @@
           "example": "[{\"route-controller\",true}]",
           "member": "ControllerStatus",
           "name": "ControllerStatusSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8819,7 +8820,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-32x36098",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8834,9 +8835,10 @@
         {
           "disabled": false,
           "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "ClusterExtraArgs",
           "name": "ClusterExtraArgs",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9072,7 +9074,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9082,7 +9084,7 @@
           "example": "无",
           "member": "ClusterLevelAttribute",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9637,18 +9639,20 @@
         {
           "disabled": false,
           "document": "符合条件的实例数量。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群路由表对象。",
-          "example": "",
+          "example": "无",
           "member": "RouteTableInfo",
           "name": "RouteTableSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9847,7 +9851,7 @@
           "example": "无",
           "member": "ClusterStatus",
           "name": "ClusterStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9857,7 +9861,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10311,7 +10315,7 @@
           "example": "无",
           "member": "Event",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10321,7 +10325,7 @@
           "example": "无",
           "member": "string",
           "name": "EksCiId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10853,6 +10857,7 @@
           "example": "“”",
           "member": "string",
           "name": "ContainerName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10862,6 +10867,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "LogContent",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11055,7 +11061,7 @@
           "example": "无",
           "member": "ExistedInstance",
           "name": "ExistedInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11065,7 +11071,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13291,7 +13297,7 @@
         {
           "disabled": false,
           "document": "路由表绑定的VPC",
-          "example": "vpc-xxx",
+          "example": "vpc-sgdfgfhs",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -13309,7 +13315,7 @@
           "example": "true",
           "member": "bool",
           "name": "HasConflict",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13319,7 +13325,7 @@
           "example": "无",
           "member": "RouteTableConflict",
           "name": "RouteTableConflictSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23394,7 +23400,7 @@
           "example": "[\"ins-xxx\"]",
           "member": "string",
           "name": "SucceedInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23404,7 +23410,7 @@
           "example": "无",
           "member": "string",
           "name": "FailedInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

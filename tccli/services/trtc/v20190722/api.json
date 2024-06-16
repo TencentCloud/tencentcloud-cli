@@ -5845,7 +5845,7 @@
         },
         {
           "disabled": false,
-          "document": "云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储",
+          "document": "【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储",
           "example": "无",
           "member": "StorageParams",
           "name": "StorageParams",
@@ -5863,7 +5863,7 @@
         },
         {
           "disabled": false,
-          "document": "TRTC的SdkAppId",
+          "document": "【必填】TRTC的SdkAppId",
           "example": "无",
           "member": "int64",
           "name": "SdkAppId",

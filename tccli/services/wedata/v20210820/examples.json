@@ -300,6 +300,14 @@
         "title": "创建集成任务告警规则"
       }
     ],
+    "CreateTaskFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFolder\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1522676572149563392\",\n    \"FolderName\": \"FFFOOOLLLDDDEERR\",\n    \"ParentFolderId\": \"6cccb832-b76a-11ed-b7fc-043f72e73c62\",\n    \"WorkflowId\": \"63b3878f-0602-11ee-b7fc-043f72e73c62\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"277e97b2-8475-11ee-bfeb-b8cef68a6637\",\n        \"RequestId\": \"7d1d9f10-fb66-40c3-b704-5e174ebc95dd\"\n    }\n}",
+        "title": "创建工作流中任务目录接口"
+      }
+    ],
     "CreateTaskVersionDs": [
       {
         "document": "失败",

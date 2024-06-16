@@ -5867,7 +5867,7 @@
           "example": "yyy",
           "member": "string",
           "name": "TmpToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5877,7 +5877,7 @@
           "example": "ddd",
           "member": "string",
           "name": "TmpSecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5887,7 +5887,7 @@
           "example": "eeee",
           "member": "string",
           "name": "TmpSecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5897,7 +5897,7 @@
           "example": "tcr-test134",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5907,7 +5907,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5917,7 +5917,7 @@
           "example": "tcr-test/test-1.0.tgz",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5927,7 +5927,7 @@
           "example": "12345",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5937,7 +5937,7 @@
           "example": "123456",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

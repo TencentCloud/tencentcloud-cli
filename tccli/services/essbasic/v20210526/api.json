@@ -6501,6 +6501,15 @@
           "name": "PlatformAppAuthorization",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定印章类型，指定后只能选择该类型的印章进行授权\n支持以下印章类型：\n- OFFICIAL : 企业公章\n- CONTRACT : 合同专用章\n- FINANCE : 财务专用章\n- PERSONNEL : 人事专用章",
+          "example": "无",
+          "member": "string",
+          "name": "SealTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6633,7 +6642,7 @@
         },
         {
           "disabled": false,
-          "document": "企业税号\n注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`\n`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`",
+          "document": "企业税号\n\n注:\n<ul>\n<li>1.印章类型SealType是INVOICE类型时，此参数才会生效</li>\n<li>2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号（<font color=\"red\">如果是通过授权书授权方式认证的企业，此参数必传不能为空</font>）</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "TaxIdentifyCode",

@@ -31,7 +31,12 @@ Output:
                 "CPU": 2,
                 "Memory": 4,
                 "OsName": "Ubuntu xxxxxxxxx",
-                "InstanceType": "Sxxxxxx"
+                "InstanceType": "Sxxxxxx",
+                "AutoscalingGroupId": "",
+                "InstanceChargeType": "",
+                "IPv6Addresses": [
+                    ""
+                ]
             }
         ],
         "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"

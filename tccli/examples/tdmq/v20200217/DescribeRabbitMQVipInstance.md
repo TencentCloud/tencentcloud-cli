@@ -53,6 +53,7 @@ Output:
             "PublicNetworkTps": 1
         },
         "ClusterNetInfo": {
+            "WebConsoleDomainEndpoint": "1",
             "PublicAccessEndpoint": "1.1.1.1",
             "WebConsoleEndpoint": "1.1.1.1",
             "WebConsoleUsername": "abc",

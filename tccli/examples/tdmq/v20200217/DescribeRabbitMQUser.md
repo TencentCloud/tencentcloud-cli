@@ -16,6 +16,9 @@ Output:
         "RequestId": "dsfsdfs",
         "RabbitMQUserList": [
             {
+                "ModifyTime": "1",
+                "CreateTime": "1",
+                "Type": "1",
                 "InstanceId": "amqp-xxx",
                 "User": "testVhost",
                 "Password": "123",

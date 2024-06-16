@@ -206,6 +206,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeGlobalReplicationArea": [
+      {
+        "document": "查询全球复制支持地域信息",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalReplicationArea\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AvailableRegions\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"AvailableZones\": [\n                    \"ap-guangzhou-1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询全球复制支持地域信息"
+      }
+    ],
     "DescribeInstanceAccount": [
       {
         "document": "查询指定实例的账号信息",
@@ -350,6 +358,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeInstanceSpecBandwidth": [
+      {
+        "document": "查询带宽规格",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSpecBandwidth\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询带宽规格"
+      }
+    ],
     "DescribeInstanceSupportFeature": [
       {
         "document": "查询是否支持就近接入",
@@ -436,6 +452,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationGroup\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"GroupId\": \"crs-rpl-lkgv****\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"65e950b9-78e8-49b1-9200-0e62a1925557\",\n        \"Groups\": [\n            {\n                \"Status\": 37,\n                \"Remark\": \"测试复制组\",\n                \"InstanceCount\": 1,\n                \"Instances\": [\n                    {\n                        \"Engine\": \"社区版Redis\",\n                        \"Vip6\": \"\",\n                        \"UpdateTime\": \"2022-11-02 15:04:05\",\n                        \"VpcID\": 16770550,\n                        \"InstanceId\": \"crs-9c36****\",\n                        \"RedisShardSize\": 1024,\n                        \"RegionId\": 1,\n                        \"RedisShardNum\": 1,\n                        \"Status\": 1,\n                        \"Vip\": \"10.0.4.42\",\n                        \"DiskSize\": 0,\n                        \"CreateTime\": \"2022-11-02 15:04:05\",\n                        \"ProductType\": 9,\n                        \"AppId\": 0,\n                        \"Role\": \"rw\",\n                        \"VPort\": 6379,\n                        \"ZoneId\": 1,\n                        \"InstanceName\": \"crs-test\",\n                        \"RedisReplicasNum\": 1,\n                        \"GrocerySysId\": 1000259\n                    }\n                ],\n                \"RegionId\": 1,\n                \"GroupName\": \"crs-ben-test\",\n                \"AppId\": 0,\n                \"GroupId\": \"crs-rpl-lkgv****\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeReplicationGroupInstance": [
+      {
+        "document": "查询实例对应的复制组信息",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationGroupInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-a7oxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 251237400,\n        \"GroupId\": \"crs-rpl-oxsincth\",\n        \"GroupName\": \"test\",\n        \"InstanceRole\": \"rw\",\n        \"RegionId\": 1,\n        \"RequestId\": \"02ef9326-3db7-47ab-8f65-c6d1a772f71c\"\n    }\n}",
+        "title": "查询复制组信息"
       }
     ],
     "DescribeSSLStatus": [
@@ -668,6 +692,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParamTemplate\n<公共请求参数>\n\n{\n    \"ParamList\": [\n        {\n            \"Value\": \"120\",\n            \"Key\": \"timeout\"\n        }\n    ],\n    \"TemplateId\": \"crs-cfg-sa23d5d3\",\n    \"Description\": \"MyCustomParamTemplate\",\n    \"Name\": \"CustomParamTemplate\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyReplicationGroup": [
+      {
+        "document": "修改复制组信息",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReplicationGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"crs-rpl-oxsincth\",\n    \"GroupName\": \"abc\",\n    \"Remark\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改复制组信息"
       }
     ],
     "OpenSSL": [

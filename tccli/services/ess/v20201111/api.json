@@ -190,7 +190,7 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "CreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多签签署码",
       "output": "CreateMultiFlowSignQRCodeResponse",
@@ -2463,7 +2463,7 @@
         },
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5672,7 +5672,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转到的页面类型 \n\n<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>\n<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>\n<li> **2** : 腾讯电子签小程序合同列表页</li><li> **3** : 腾讯电子签小程序合同封面页\n注：`生成动态签署人补充链接时，必须指定为封面页`</li></ul>",
+          "document": "要跳转到的页面类型 \n\n<ul><li> **0** : 腾讯电子签小程序个人首页 (默认) <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a2667ea84ec993cc060321afe3191d65.jpg\" target=\"_blank\" >点击查看示例页面</a></li>\n<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)<a href=\"https://qcloudimg.tencent-cloud.cn/raw/446a679f09b1b7f40eb84e67face8acc.jpg\" target=\"_blank\" >点击查看示例页面</a></li>\n<li> **2** : 腾讯电子签小程序合同列表页 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/c7b80e44c1d68ae3270a6fc4939c7214.jpg\" target=\"_blank\" >点击查看示例页面</a> </li>\n<li> **3** : 腾讯电子签小程序合同封面页  （注：`生成动态签署人补充链接时，必须指定为封面页`）<a href=\"https://qcloudimg.tencent-cloud.cn/raw/0d22cc587be4bf084877c151350c3bf7.jpg\" target=\"_blank\" >点击查看示例页面</a></li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "PathType",
@@ -5999,7 +5999,7 @@
         },
         {
           "disabled": false,
-          "document": "企业税号\n注: `1.印章类型SealType是INVOICE类型时，此参数才会生效`\n`2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号`",
+          "document": "企业税号\n注:\n<ul>\n<li>1.印章类型SealType是INVOICE类型时，此参数才会生效</li>\n<li>2.印章类型SealType是INVOICE类型，且该字段没有传入值或传入空时，会取该企业对应的统一社会信用代码作为默认的企业税号（<font color=\"red\">如果是通过授权书授权方式认证的企业，此参数必传不能为空</font>）</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "TaxIdentifyCode",
@@ -10431,7 +10431,7 @@
         },
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",

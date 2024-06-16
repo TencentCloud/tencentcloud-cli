@@ -38,7 +38,8 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId org_open_id \
     --Agent.ProxyOperator.OpenId user_open_id \
     --AuthorizedOrganizationId org_open_id_another \
-    --AuthorizedOrganizationName 典子谦子客企业
+    --AuthorizedOrganizationName 典子谦子客企业 \
+    --SealTypes OFFICIAL
 ```
 
 Output: 
