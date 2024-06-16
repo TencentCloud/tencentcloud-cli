@@ -3654,6 +3654,7 @@
           "example": "test_user",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7419,6 +7420,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7428,6 +7430,7 @@
           "example": "无",
           "member": "RabbitMQPrivateNode",
           "name": "NodeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7964,7 +7967,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7974,7 +7977,7 @@
           "example": "无",
           "member": "RabbitMQUser",
           "name": "RabbitMQUserList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14302,6 +14305,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，0-后付费，1-预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14721,7 +14734,7 @@
           "example": "amqp-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14731,7 +14744,7 @@
           "example": "test_user",
           "member": "string",
           "name": "User",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14741,7 +14754,7 @@
           "example": "abc123",
           "member": "string",
           "name": "Password",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14751,7 +14764,7 @@
           "example": "测试账号",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14761,7 +14774,7 @@
           "example": "monitoring",
           "member": "string",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14771,7 +14784,7 @@
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14781,7 +14794,7 @@
           "example": "2022-11-11 11:11:11",
           "member": "string",
           "name": "ModifyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14791,7 +14804,7 @@
           "example": "System",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

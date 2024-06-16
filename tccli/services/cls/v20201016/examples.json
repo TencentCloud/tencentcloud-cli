@@ -386,6 +386,14 @@
         "title": "删除日志主题"
       }
     ],
+    "DescribeAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取账户状态"
+      }
+    ],
     "DescribeAlarmNotices": [
       {
         "document": "",

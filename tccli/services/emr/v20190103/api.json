@@ -4146,6 +4146,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认0为普通集群，1位容器集群",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

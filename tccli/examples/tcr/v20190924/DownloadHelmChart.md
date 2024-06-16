@@ -16,15 +16,15 @@ Output:
 ```
 {
     "Response": {
-        "TmpToken": "XXXX",
-        "TmpSecretId": "XXXX",
-        "TmpSecretKey": "XXXX",
-        "Bucket": "XXXX",
-        "Region": "XXXX",
-        "Path": "tcr-test/test-1.0.tgz",
-        "StartTime": "12345",
-        "ExpiredTime": "123456",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "TmpSecretKey": "abc",
+        "TmpToken": "abc",
+        "Region": "ap-guangzhou",
+        "Bucket": "tcr-d3av5-536254",
+        "TmpSecretId": "abc",
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "StartTime": 0,
+        "Path": "/docker/registry",
+        "ExpiredTime": 0
     }
 }
 ```

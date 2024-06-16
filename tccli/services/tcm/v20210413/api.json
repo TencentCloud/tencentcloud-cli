@@ -192,6 +192,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -202,6 +203,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -212,8 +214,20 @@
           "example": "xxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否要删除APM实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -629,6 +643,7 @@
           "example": "linking",
           "member": "string",
           "name": "LinkState",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -639,12 +654,13 @@
           "example": "无",
           "member": "string",
           "name": "LinkErrorDetail",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CreateIngressGatewayRequest": {
       "document": "CreateIngressGateway请求参数结构体",
@@ -904,66 +920,72 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 访问地址",
+          "document": "Prometheus 访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://x.x.x.x:909",
           "member": "string",
           "name": "Url",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "认证方式",
+          "document": "认证方式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "none, basic",
           "member": "string",
           "name": "AuthType",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否公网地址，缺省为 false",
+          "document": "是否公网地址，缺省为 false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsPublicAddr",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "虚拟网络id",
+          "document": "虚拟网络id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Prometheus 用户名（用于 basic 认证方式）",
+          "document": "Prometheus 用户名（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Username",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Prometheus 密码（用于 basic 认证方式）",
+          "document": "Prometheus 密码（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Password",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DeleteIngressGatewayRequest": {
       "document": "DeleteIngressGateway请求参数结构体",
@@ -1434,7 +1456,7 @@
           "example": "无",
           "member": "Mesh",
           "name": "MeshList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1444,7 +1466,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1549,6 +1571,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1559,6 +1582,7 @@
           "example": "无",
           "member": "string",
           "name": "DesiredVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1569,12 +1593,13 @@
           "example": "无",
           "member": "string",
           "name": "State",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ExtensiveCluster": {
       "document": "内网独占集群配置",
@@ -1916,6 +1941,7 @@
           "example": "无",
           "member": "LoadBalancerStatus",
           "name": "LoadBalancer",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -1926,6 +1952,7 @@
           "example": "无",
           "member": "string",
           "name": "CurrentVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1936,6 +1963,7 @@
           "example": "无",
           "member": "string",
           "name": "DesiredVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1946,12 +1974,13 @@
           "example": "无",
           "member": "string",
           "name": "State",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InjectConfig": {
       "document": "自动注入配置",
@@ -2140,7 +2169,7 @@
           "example": "无",
           "member": "HostedNamespace",
           "name": "NamespaceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2301,6 +2330,26 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置跨可用区容灾时的主可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MasterZoneID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置跨可用区容灾时的备可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaveZoneID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2314,6 +2363,7 @@
           "example": "lb-xxxxxxxx",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2324,6 +2374,7 @@
           "example": "cls-xxxxxxxx_istio_igw",
           "member": "string",
           "name": "LoadBalancerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2334,6 +2385,7 @@
           "example": "x.x.x.x",
           "member": "string",
           "name": "LoadBalancerVip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2344,12 +2396,13 @@
           "example": "lb-xxxxx-xxxx.clb.ap-shanghai.tencentclb.com",
           "member": "string",
           "name": "LoadBalancerHostname",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Mesh": {
       "document": "Mesh信息",
@@ -2418,7 +2471,7 @@
           "disabled": false,
           "document": "创建时间",
           "example": "无",
-          "member": "datetime",
+          "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
           "type": "string",
@@ -2428,7 +2481,7 @@
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "datetime",
+          "member": "datetime_iso",
           "name": "UpdatedTime",
           "required": true,
           "type": "string",
@@ -3745,7 +3798,7 @@
           "example": "无",
           "member": "HostedNamespace",
           "name": "NamespaceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
