@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DescribeDasbImageIds": [
-      {
-        "document": "",
-        "input": "https://cds.tencentcloudapi.com/?Action=DescribeDasbImageIds\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BaseImageId\": \"SDFEEF\",\n        \"AiImageId\": \"XXXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "获取镜像列表"
-      }
-    ],
     "DescribeDbauditInstanceType": [
       {
         "document": "本示例用于查询数据安全审计产品规格信息列表",

@@ -16164,7 +16164,6 @@
           "example": "无",
           "member": "AppChart",
           "name": "AppCharts",
-          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

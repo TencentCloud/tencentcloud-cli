@@ -843,7 +843,7 @@
           "example": "xxx",
           "member": "string",
           "name": "File",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -853,7 +853,7 @@
           "example": "%REQ(Method)",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -863,7 +863,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "Encoding",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -873,7 +873,7 @@
           "example": "无",
           "member": "SelectedRange",
           "name": "SelectedRange",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -883,7 +883,7 @@
           "example": "istio",
           "member": "string",
           "name": "Template",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -893,7 +893,7 @@
           "example": "无",
           "member": "CLS",
           "name": "CLS",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -903,7 +903,7 @@
           "example": "无",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -913,7 +913,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableServer",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -923,7 +923,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableStdout",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -933,7 +933,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

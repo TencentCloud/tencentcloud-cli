@@ -12779,7 +12779,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -12788,7 +12788,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -12797,7 +12797,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -12806,7 +12806,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -12815,7 +12815,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -12824,7 +12824,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -12833,7 +12833,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -12842,7 +12842,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -12857,9 +12857,10 @@
         {
           "disabled": false,
           "document": "配置项发布信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TsfPageFileConfigRelease",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13466,7 +13467,7 @@
           "example": "无",
           "member": "GroupRelease",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -18100,7 +18101,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigReleaseId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18110,7 +18111,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18120,7 +18121,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18130,7 +18131,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18140,7 +18141,7 @@
           "example": "无",
           "member": "string",
           "name": "ReleaseDesc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18150,7 +18151,7 @@
           "example": "无",
           "member": "string",
           "name": "ReleaseTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18160,7 +18161,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18170,7 +18171,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18180,7 +18181,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18190,7 +18191,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18200,7 +18201,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18210,8 +18211,18 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置中心发布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TsfConfigCenter",
+          "name": "ConfigCenters",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -20013,7 +20024,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20023,7 +20035,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20033,7 +20046,8 @@
           "example": "无",
           "member": "string",
           "name": "LanIp",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20043,7 +20057,8 @@
           "example": "无",
           "member": "string",
           "name": "WanIp",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20053,7 +20068,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceDesc",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20063,7 +20079,8 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20073,7 +20090,8 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20083,7 +20101,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20093,7 +20112,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceAvailableStatus",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20103,7 +20123,8 @@
           "example": "无",
           "member": "string",
           "name": "ServiceInstanceStatus",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20113,7 +20134,8 @@
           "example": "无",
           "member": "int64",
           "name": "CountInTsf",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20123,7 +20145,8 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20133,7 +20156,8 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20143,7 +20167,8 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20153,7 +20178,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceCreatedTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20163,7 +20189,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceExpiredTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20173,7 +20200,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20183,7 +20211,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceTotalCpu",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20193,7 +20222,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceTotalMem",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20203,7 +20233,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceUsedCpu",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20213,7 +20244,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceUsedMem",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20223,7 +20255,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceLimitCpu",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20233,7 +20266,8 @@
           "example": "无",
           "member": "float",
           "name": "InstanceLimitMem",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": true
         },
@@ -20243,7 +20277,8 @@
           "example": "无",
           "member": "string",
           "name": "InstancePkgVersion",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20253,7 +20288,8 @@
           "example": "无",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20263,7 +20299,8 @@
           "example": "无",
           "member": "string",
           "name": "RestrictState",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20273,7 +20310,8 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20283,7 +20321,8 @@
           "example": "无",
           "member": "int64",
           "name": "OperationState",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20293,7 +20332,8 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20303,7 +20343,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceZoneId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20313,7 +20354,8 @@
           "example": "无",
           "member": "string",
           "name": "InstanceImportMode",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20323,7 +20365,8 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20333,7 +20376,8 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationResourceType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20343,7 +20387,8 @@
           "example": "无",
           "member": "string",
           "name": "ServiceSidecarStatus",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20353,7 +20398,8 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20363,7 +20409,8 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20373,7 +20420,8 @@
           "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20383,7 +20431,8 @@
           "example": "无",
           "member": "string",
           "name": "AgentVersion",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20393,12 +20442,13 @@
           "example": "无",
           "member": "string",
           "name": "NodeInstanceId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InstanceAdvancedSettings": {
       "document": "容器导入实例高级设置",

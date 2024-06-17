@@ -14,6 +14,17 @@ Output:
 ```
 {
     "Response": {
+        "Result": {
+            "GatewayId": "abc",
+            "ConfigList": [
+                {
+                    "Vip": "1.1.1.1",
+                    "InternetMaxBandwidthOut": 1,
+                    "GroupId": "abc",
+                    "GroupName": "abc"
+                }
+            ]
+        },
         "RequestId": "abc"
     }
 }

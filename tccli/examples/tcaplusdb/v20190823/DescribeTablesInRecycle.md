@@ -6,59 +6,84 @@ Input:
 
 ```
 tccli tcaplusdb DescribeTablesInRecycle --cli-unfold-argument  \
-    --TableGroupIds xx \
-    --ClusterId 5674209986 \
-    --Limit 0 \
-    --Filters.0.Name xx \
-    --Filters.0.Value xx \
-    --Offset 0
+    --ClusterId 5674209986
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d7da70a-2aa6-4e61-9389-46a92770974c",
+        "TotalCount": 1,
         "TableInfos": [
             {
-                "ApiAccessId": "10",
-                "ClusterName": "gz测试App",
-                "ClusterId": "5674209986",
-                "CreatedTime": "2019-08-29 22:03:27",
-                "Error": null,
+                "TableName": "abc",
+                "TableInstanceId": "abc",
+                "TableType": "abc",
+                "TableIdlType": "abc",
+                "ClusterId": "abc",
+                "ClusterName": "abc",
+                "TableGroupId": "abc",
+                "TableGroupName": "abc",
+                "KeyStruct": "abc",
+                "ValueStruct": "abc",
+                "ShardingKeySet": "abc",
+                "IndexStruct": "abc",
+                "ListElementNum": 1,
                 "IdlFiles": [
                     {
-                        "FileContent": null,
-                        "FileExtType": "proto",
-                        "FileId": 551,
-                        "FileName": "tb_example",
-                        "FileSize": 266,
-                        "FileType": "PROTO"
+                        "FileName": "abc",
+                        "FileType": "abc",
+                        "FileExtType": "abc",
+                        "FileSize": 0,
+                        "FileId": 0,
+                        "FileContent": "abc"
                     }
                 ],
-                "IndexStruct": null,
-                "KeyStruct": null,
-                "ListElementNum": 1,
-                "TableGroupId": "101",
-                "Memo": null,
-                "ReservedReadQps": 80,
-                "ReservedVolume": 1,
-                "ReservedWriteQps": 26,
-                "ShardingKeySet": "key",
-                "Status": "RECYCLING",
-                "TableIdlType": "PROTO",
-                "TableInstanceId": "tcaplus-1f224454",
-                "TableName": "tb_example",
-                "TableSize": 48566336,
-                "TableType": "GENERIC",
-                "UpdatedTime": "",
-                "ValueStruct": null,
-                "SortFieldNum": null,
-                "SortRule": null,
-                "TableGroupName": "test_zone_1"
+                "ReservedVolume": 0,
+                "ReservedReadQps": 0,
+                "ReservedWriteQps": 0,
+                "TableSize": 0,
+                "Status": "abc",
+                "CreatedTime": "abc",
+                "UpdatedTime": "abc",
+                "Memo": "abc",
+                "Error": {
+                    "Code": "abc",
+                    "Message": "abc"
+                },
+                "ApiAccessId": "abc",
+                "SortFieldNum": 0,
+                "SortRule": 0,
+                "DbClusterInfoStruct": "abc",
+                "TxhBackupExpireDay": 1,
+                "SyncTableInfo": {
+                    "TargetTableSplitNum": 1,
+                    "TargetTableNamePrefix": [
+                        "abc"
+                    ],
+                    "TargetSyncDBInstanceId": "abc",
+                    "TargetDatabaseName": "abc",
+                    "Status": 0,
+                    "ClusterId": "abc",
+                    "TableGroupId": 1,
+                    "TableName": "abc",
+                    "TableId": "abc",
+                    "KeyFieldMapping": [
+                        {
+                            "SourceName": "abc",
+                            "TargetName": "abc"
+                        }
+                    ],
+                    "ValueFieldMapping": [
+                        {
+                            "SourceName": "abc",
+                            "TargetName": "abc"
+                        }
+                    ]
+                }
             }
         ],
-        "TotalCount": 1
+        "RequestId": "abc"
     }
 }
 ```

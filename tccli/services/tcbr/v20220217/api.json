@@ -17,7 +17,7 @@
     "DescribeCloudRunEnvs": {
       "document": "获取环境列表，含环境下的各个资源信息。尤其是各资源的唯一标识，是请求各资源的关键参数",
       "input": "DescribeCloudRunEnvsRequest",
-      "name": "查询环境列表",
+      "name": "查询云托管环境列表",
       "output": "DescribeCloudRunEnvsResponse",
       "status": "online"
     },
@@ -524,7 +524,7 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -512,11 +512,11 @@
       "status": "online"
     },
     "DescribeRollbackTimeValidity": {
-      "document": "指定时间和集群查询是否可回滚",
+      "document": "历史废弃接口，从云API下线\n\n指定时间和集群查询是否可回滚",
       "input": "DescribeRollbackTimeValidityRequest",
       "name": "查询指定时间是否可回滚",
       "output": "DescribeRollbackTimeValidityResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSupportProxyVersion": {
       "document": "查询支持的数据库代理版本",
@@ -17983,6 +17983,51 @@
           "name": "PayMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "无",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回档库信息",
+          "example": "无",
+          "member": "RollbackDatabase",
+          "name": "RollbackDatabases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "回档表信息",
+          "example": "无",
+          "member": "RollbackTable",
+          "name": "RollbackTables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原ro实例信息",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalROInstanceList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

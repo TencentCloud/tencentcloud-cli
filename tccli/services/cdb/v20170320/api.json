@@ -5457,7 +5457,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL 版本，值包括：5.5、5.6 、5.7 、8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。",
+          "document": "MySQL 版本，值包括：5.5、5.6、5.7、8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：若此参数不填，则默认值为5.6。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -5900,7 +5900,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL 版本，值包括：5.5、5.6 、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。",
+          "document": "MySQL 版本，值包括：5.5、5.6、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：若此参数不填，则默认值为5.6。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",

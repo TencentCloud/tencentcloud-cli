@@ -47,8 +47,8 @@ Output:
                 "PackageId": "basic1",
                 "PackageName": "基础版1",
                 "IsAutoDegrade": true,
-                "EnvChannel": "xx",
-                "Region": "xx",
+                "EnvChannel": "channel",
+                "Region": "ap-shanghai",
                 "IsDefault": true,
                 "CreateTime": "2020-09-22T00:00:00+00:00",
                 "UpdateTime": "2020-09-22T00:00:00+00:00",
@@ -56,11 +56,11 @@ Output:
                 "LogServices": [],
                 "StaticStorages": [
                     {
-                        "Status": "xx",
-                        "StaticDomain": "xx",
-                        "DefaultDirName": "xx",
-                        "Bucket": "xx",
-                        "Region": "xx"
+                        "Status": "succ",
+                        "StaticDomain": "http://asdasda",
+                        "DefaultDirName": "default",
+                        "Bucket": "bucket",
+                        "Region": "ap-shanghai"
                     }
                 ],
                 "Databases": [
@@ -72,9 +72,9 @@ Output:
                 ],
                 "CustomLogServices": [
                     {
-                        "ClsTopicId": "xx",
-                        "ClsRegion": "xx",
-                        "ClsLogsetId": "xx",
+                        "ClsTopicId": "topic",
+                        "ClsRegion": "ap-shanghai",
+                        "ClsLogsetId": "setId",
                         "CreateTime": "2020-09-22 00:00:00"
                     }
                 ],
@@ -83,7 +83,7 @@ Output:
                         "Region": "ap-shanghai",
                         "Bucket": "yourenvid-2fb346-12532284",
                         "CdnDomain": "yourenvid-2fb346.tcb.qcloud.la",
-                        "AppId": "xx"
+                        "AppId": "123121"
                     }
                 ],
                 "Functions": [

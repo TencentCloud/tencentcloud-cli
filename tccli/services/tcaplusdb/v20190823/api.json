@@ -1265,86 +1265,94 @@
       "members": [
         {
           "disabled": false,
-          "document": "源表格的集群id",
-          "example": "",
+          "document": "源表格的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SrcTableClusterId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源表格的表格组id",
-          "example": "",
+          "document": "源表格的表格组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SrcTableGroupId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源表格的表名",
-          "example": "",
+          "document": "源表格的表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SrcTableName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标表格的集群id",
-          "example": "",
+          "document": "目标表格的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DstTableClusterId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标表格的表格组id",
-          "example": "",
+          "document": "目标表格的表格组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DstTableGroupId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标表格的表名",
-          "example": "",
+          "document": "目标表格的表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DstTableName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源表格的实例id",
-          "example": "",
+          "document": "源表格的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "SrcTableInstanceId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "目标表格的实例id",
-          "example": "",
+          "document": "目标表格的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DstTableInstanceId",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateBackupRequest": {
       "document": "CreateBackup请求参数结构体",
@@ -2329,7 +2337,7 @@
         {
           "disabled": false,
           "document": "集群ID列表",
-          "example": "",
+          "example": "\"123\"",
           "member": "string",
           "name": "ClusterIds",
           "required": true,
@@ -2344,18 +2352,20 @@
         {
           "disabled": false,
           "document": "集群标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "TagsInfoOfCluster",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2428,7 +2438,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2438,7 +2448,7 @@
           "example": "无",
           "member": "ClusterInfo",
           "name": "Clusters",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2692,7 +2702,7 @@
         {
           "disabled": false,
           "document": "待查询标签表格组所属集群ID",
-          "example": "",
+          "example": "\"123\"",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2701,7 +2711,7 @@
         {
           "disabled": false,
           "document": "待查询标签表格组ID列表",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "TableGroupIds",
           "required": true,
@@ -2716,18 +2726,20 @@
         {
           "disabled": false,
           "document": "表格组标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "TagsInfoOfTableGroup",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2746,7 +2758,7 @@
         {
           "disabled": false,
           "document": "表格组所属集群ID",
-          "example": "",
+          "example": "\"123\"",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2755,7 +2767,7 @@
         {
           "disabled": false,
           "document": "表格组ID列表",
-          "example": "",
+          "example": "\"1\"",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
@@ -2764,7 +2776,7 @@
         {
           "disabled": false,
           "document": "过滤条件，本接口支持：TableGroupName，TableGroupId",
-          "example": "",
+          "example": "{}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2773,7 +2785,7 @@
         {
           "disabled": false,
           "document": "查询列表偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2782,7 +2794,7 @@
         {
           "disabled": false,
           "document": "查询列表返回记录数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2797,18 +2809,20 @@
         {
           "disabled": false,
           "document": "表格组数量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表格组信息列表",
-          "example": "",
+          "example": "{}",
           "member": "TableGroupInfo",
           "name": "TableGroups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2827,7 +2841,7 @@
         {
           "disabled": false,
           "document": "表格所属集群ID",
-          "example": "",
+          "example": "\"123\"",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2836,7 +2850,7 @@
         {
           "disabled": false,
           "document": "表格列表",
-          "example": "",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -2851,18 +2865,20 @@
         {
           "disabled": false,
           "document": "返回结果总数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表格标签信息列表",
-          "example": "",
+          "example": "0",
           "member": "TagsInfoOfTable",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2881,7 +2897,7 @@
         {
           "disabled": false,
           "document": "待查询表格所属集群ID",
-          "example": "",
+          "example": "\"123\"",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2890,7 +2906,7 @@
         {
           "disabled": false,
           "document": "待查询表格所属表格组ID列表",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
@@ -2899,7 +2915,7 @@
         {
           "disabled": false,
           "document": "过滤条件，本接口支持：TableName，TableInstanceId",
-          "example": "",
+          "example": "{}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2908,7 +2924,7 @@
         {
           "disabled": false,
           "document": "查询结果偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2917,7 +2933,7 @@
         {
           "disabled": false,
           "document": "查询结果返回记录数量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2932,18 +2948,20 @@
         {
           "disabled": false,
           "document": "表格数量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表格详情结果列表",
-          "example": "",
+          "example": "{}",
           "member": "TableInfoNew",
           "name": "TableInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3025,6 +3043,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3034,6 +3053,7 @@
           "example": "无",
           "member": "TableInfoNew",
           "name": "TableInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3593,60 +3613,72 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka address",
+          "document": "Kafka address\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ckafka-3azrwxvw.ap-shanghai.ckafka.tencentcloudmq.com:6006",
           "member": "string",
           "name": "Address",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Kafka topic",
+          "document": "Kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcapstream",
           "member": "string",
           "name": "Topic",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "kafka username",
+          "document": "kafka username\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ckafka-3azrwxvw#tcaplusDev",
           "member": "string",
           "name": "User",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "kafka password",
+          "document": "kafka password\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tcaplusDev123321",
           "member": "string",
           "name": "Password",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "ckafka实例",
+          "document": "ckafka实例\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ckafka-l4xpzgpz",
           "member": "string",
           "name": "Instance",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否走VPC",
+          "document": "是否走VPC\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IsVpc",
+          "output_required": false,
           "required": true,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "KeyFile": {
       "document": "部分key导入快照数据时所需要的key文件",
@@ -5745,6 +5777,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6665,7 +6707,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6675,7 +6717,7 @@
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -6685,7 +6727,7 @@
         {
           "disabled": false,
           "document": "任务所关联的TcaplusDB内部事务ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TransId",
           "required": true,
@@ -6695,7 +6737,7 @@
         {
           "disabled": false,
           "document": "任务所属集群ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6705,7 +6747,7 @@
         {
           "disabled": false,
           "document": "任务所属集群名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -6715,7 +6757,7 @@
         {
           "disabled": false,
           "document": "任务进度",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Progress",
           "required": true,
@@ -6725,7 +6767,7 @@
         {
           "disabled": false,
           "document": "任务创建时间",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -6735,7 +6777,7 @@
         {
           "disabled": false,
           "document": "任务最后更新时间",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -6745,7 +6787,7 @@
         {
           "disabled": false,
           "document": "操作者",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Operator",
           "required": true,
@@ -6755,12 +6797,42 @@
         {
           "disabled": false,
           "document": "任务详情",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
