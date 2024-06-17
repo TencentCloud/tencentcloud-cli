@@ -1808,6 +1808,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsValid",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1817,6 +1818,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsTrustedCA",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1826,6 +1828,7 @@
           "example": "[\"qcloud.com\",\"WoTrus DV Server CA  [Run by the Issuer]\"]",
           "member": "string",
           "name": "Chains",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

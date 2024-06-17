@@ -13,17 +13,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abd7111a-62d4-4bbb-a781-3646040e9530",
-        "TotalCount": 1,
         "Rows": [
             {
-                "ClusterId": "5674209986",
-                "Tags": {
-                    "TagKey": "test1",
-                    "TagValue": "value1"
+                "ClusterId": "abc",
+                "Tags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "Error": {
+                    "Code": "abc",
+                    "Message": "abc"
                 }
             }
-        ]
+        ],
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

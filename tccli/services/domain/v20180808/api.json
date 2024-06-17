@@ -1302,7 +1302,7 @@
         {
           "disabled": false,
           "document": "business_id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
           "output_required": false,
@@ -1312,7 +1312,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -1322,7 +1322,7 @@
         {
           "disabled": false,
           "document": "预定价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "127",
           "member": "uint64",
           "name": "AppointPrice",
           "output_required": false,
@@ -1332,7 +1332,7 @@
         {
           "disabled": false,
           "document": "预约保证金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "85",
           "member": "uint64",
           "name": "AppointBondPrice",
           "output_required": false,
@@ -1342,7 +1342,7 @@
         {
           "disabled": false,
           "document": "预约结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "AppointEndTime",
           "output_required": false,
@@ -1352,7 +1352,7 @@
         {
           "disabled": false,
           "document": "预约人数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "AppointNum",
           "output_required": false,
@@ -1361,8 +1361,8 @@
         },
         {
           "disabled": false,
-          "document": " 1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -1434,7 +1434,7 @@
         {
           "disabled": false,
           "document": "business_id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
           "output_required": false,
@@ -1444,7 +1444,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -1454,7 +1454,7 @@
         {
           "disabled": false,
           "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "CurrentPrice",
           "output_required": false,
@@ -1464,7 +1464,7 @@
         {
           "disabled": false,
           "document": "当前用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ten**nt",
           "member": "string",
           "name": "CurrentNickname",
           "output_required": false,
@@ -1474,7 +1474,7 @@
         {
           "disabled": false,
           "document": "我的出价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "BiddingPrice",
           "output_required": false,
@@ -1484,7 +1484,7 @@
         {
           "disabled": false,
           "document": "竞价保证金\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "BiddingBondPrice",
           "output_required": false,
@@ -1494,7 +1494,7 @@
         {
           "disabled": false,
           "document": "竞价结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingEndTime",
           "output_required": false,
@@ -1504,7 +1504,7 @@
         {
           "disabled": false,
           "document": "竞价标识，1 领先，2 落后\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "BiddingFlag",
           "output_required": false,
@@ -1514,7 +1514,7 @@
         {
           "disabled": false,
           "document": "出价次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "2",
           "member": "uint64",
           "name": "BiddingNum",
           "output_required": false,
@@ -1523,8 +1523,8 @@
         },
         {
           "disabled": false,
-          "document": "1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -1540,7 +1540,7 @@
         {
           "disabled": false,
           "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "PayEndTime",
           "output_required": false,
@@ -3377,7 +3377,7 @@
         },
         {
           "disabled": false,
-          "document": " 1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回",
+          "document": "1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3502,7 +3502,7 @@
         {
           "disabled": false,
           "document": "business_id",
-          "example": "xx",
+          "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
           "required": false,
@@ -3517,7 +3517,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "abc.com",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -3527,7 +3527,7 @@
         {
           "disabled": false,
           "document": "出价次数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "BiddingNum",
           "output_required": false,
@@ -3537,7 +3537,7 @@
         {
           "disabled": false,
           "document": "竞价开始时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingStartTime",
           "output_required": false,
@@ -3547,7 +3547,7 @@
         {
           "disabled": false,
           "document": "竞价结束时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingEndTime",
           "output_required": false,
@@ -3557,7 +3557,7 @@
         {
           "disabled": false,
           "document": " 注册时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -3567,7 +3567,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -3577,7 +3577,7 @@
         {
           "disabled": false,
           "document": "删除时间",
-          "example": "无",
+          "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -3587,7 +3587,7 @@
         {
           "disabled": false,
           "document": "当前价格",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "CurrentPrice",
           "output_required": false,
@@ -3597,7 +3597,7 @@
         {
           "disabled": false,
           "document": "当前用户昵称",
-          "example": "无",
+          "example": "ten**nt",
           "member": "string",
           "name": "CurrentNickname",
           "output_required": false,
@@ -3607,7 +3607,7 @@
         {
           "disabled": false,
           "document": "竞价保证金",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "BiddingBondPrice",
           "output_required": false,
@@ -3616,8 +3616,8 @@
         },
         {
           "disabled": false,
-          "document": "1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期",
-          "example": "无",
+          "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -3627,7 +3627,7 @@
         {
           "disabled": false,
           "document": "竞价标识，1 领先，2 落后",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "BiddingFlag",
           "output_required": false,
@@ -3637,7 +3637,7 @@
         {
           "disabled": false,
           "document": "是否退款，yes表示退款，no表示不退款",
-          "example": "无",
+          "example": "no",
           "member": "string",
           "name": "BiddingBondRefund",
           "output_required": false,
@@ -3647,7 +3647,7 @@
         {
           "disabled": false,
           "document": "我的出价",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "BiddingPrice",
           "output_required": false,
@@ -3695,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回",
+          "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -3865,7 +3865,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：1 竞价中，2 待出价，3 竞价失败， 4 等待支付 5 等待转移， 6 转移中，7 交易成功，8 持有者索回，9 已违约",
+          "document": "状态：5 等待支付 6 等待转移， 7 转移中，8 交易成功，11 尾款阶段持有者索回，12 已违约",
           "example": "1",
           "member": "uint64",
           "name": "Status",

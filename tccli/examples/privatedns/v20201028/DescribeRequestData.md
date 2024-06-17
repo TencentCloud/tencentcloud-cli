@@ -25,6 +25,7 @@ Output:
             {
                 "Resource": "all",
                 "Metric": "request_count",
+                "MetricCount": 0,
                 "DataSet": [
                     {
                         "Date": "2020-11-22 00:00:00",

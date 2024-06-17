@@ -1803,7 +1803,7 @@
           "example": "bundle_gen_01",
           "member": "string",
           "name": "BundleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1813,7 +1813,7 @@
           "example": "1",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1823,7 +1823,7 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "SystemDiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1833,7 +1833,7 @@
           "example": "40",
           "member": "int64",
           "name": "SystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1843,7 +1843,7 @@
           "example": "300",
           "member": "int64",
           "name": "MonthlyTraffic",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1853,7 +1853,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportLinuxUnixPlatform",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1863,7 +1863,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportWindowsPlatform",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1873,7 +1873,7 @@
           "example": " {           \"InstancePrice\": {             \"OriginalBundlePrice",
           "member": "Price",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1883,7 +1883,7 @@
           "example": "1",
           "member": "int64",
           "name": "CPU",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1893,7 +1893,7 @@
           "example": "3",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1903,7 +1903,7 @@
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1913,7 +1913,7 @@
           "example": "SOLD_OUT",
           "member": "string",
           "name": "BundleSalesState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1923,7 +1923,7 @@
           "example": "GENERAL_BUNDLE",
           "member": "string",
           "name": "BundleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1933,7 +1933,7 @@
           "example": "通用型",
           "member": "string",
           "name": "BundleTypeDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1943,7 +1943,7 @@
           "example": "1",
           "member": "int64",
           "name": "BundleTypePriority",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1953,7 +1953,17 @@
           "example": "NORMAL",
           "member": "string",
           "name": "BundleDisplayLabel",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动ID。",
+          "example": "\"1001\"",
+          "member": "string",
+          "name": "ActivityId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

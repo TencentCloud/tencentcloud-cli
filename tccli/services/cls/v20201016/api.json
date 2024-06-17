@@ -6846,7 +6846,35 @@
     },
     "DescribeCloudProductLogTasksRequest": {
       "document": "DescribeCloudProductLogTasks请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为100，最大值100。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<li> assumerName\n按照【云产品标识】进行过滤。\n类型：String\n必选：否\n</li>\n<li> logType\n按照【日志类型】进行过滤。\n类型：String\n必选：否\n</li>\n<li> instanceId\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeCloudProductLogTasksResponse": {

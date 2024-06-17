@@ -1,3 +1,234 @@
+# Release 3.0.1016.1
+
+## T-Sec-数据安全审计（DSA）(cds) 版本：2018-04-20
+
+### 第 3 次发布
+
+发布时间：2024-06-18 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeDasbImageIds
+
+
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 11 次发布
+
+发布时间：2024-06-18 01:10:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceInfo)
+
+	* 新增成员：IsSecondaryZone, SecondaryZoneInfo, ClickHouseKeeper
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 72 次发布
+
+发布时间：2024-06-18 01:11:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudProductLogTasks](http://document.tencentcloudapi.woa.com/document/product/614/83987)
+
+	* 新增入参：Offset, Limit, Filters
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 87 次发布
+
+发布时间：2024-06-18 01:13:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeRollbackTimeValidity
+
+修改接口：
+
+* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
+
+	* 新增入参：TimeSpan, TimeUnit, RollbackDatabases, RollbackTables, OriginalROInstanceList
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 52 次发布
+
+发布时间：2024-06-18 01:18:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Bundle](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Bundle)
+
+	* 新增成员：ActivityId
+
+	* <font color="#dd0000">**修改成员**：</font>BundleTypeDescription, BundleTypePriority
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 27 次发布
+
+发布时间：2024-06-18 01:19:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#BackupInfo)
+
+	* 新增成员：BackId, DeleteTime, BackupRegion
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 45 次发布
+
+发布时间：2024-06-18 01:21:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TendisNodes](http://document.tencentcloudapi.woa.com/document/product/239/20022#TendisNodes)
+
+	* 新增成员：ZoneId
+
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 10 次发布
+
+发布时间：2024-06-18 01:22:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SnapshotResult](http://document.tencentcloudapi.woa.com/document/product/596/39686#SnapshotResult)
+
+	* 新增成员：ApplicationId
+
+* [TaskInfoNew](http://document.tencentcloudapi.woa.com/document/product/596/39686#TaskInfoNew)
+
+	* 新增成员：TableGroupId, TableGroupName, TableName
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 53 次发布
+
+发布时间：2024-06-18 01:25:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TranscriptionParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#TranscriptionParams)
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 65 次发布
+
+发布时间：2024-06-18 01:25:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePublicAddressConfig](http://document.tencentcloudapi.woa.com/document/product/1364/84072)
+
+	* 新增出参：Result
+
+
+新增数据结构：
+
+* [DescribePublicAddressConfigResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribePublicAddressConfigResult)
+* [PublicAddressConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PublicAddressConfig)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 46 次发布
+
+发布时间：2024-06-18 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FileConfigRelease](http://document.tencentcloudapi.woa.com/document/product/649/36099#FileConfigRelease)
+
+	* 新增成员：ConfigCenters
+
+	* <font color="#dd0000">**修改成员**：</font>ConfigReleaseId, ConfigId, ConfigName, ConfigVersion, ReleaseDesc, ReleaseTime, GroupId, GroupName, NamespaceId, NamespaceName, ClusterId, ClusterName
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/649/36099#Instance)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstanceName, LanIp, WanIp, InstanceDesc, ClusterId, ClusterName, InstanceStatus, InstanceAvailableStatus, ServiceInstanceStatus, CountInTsf, GroupId, ApplicationId, ApplicationName, InstanceCreatedTime, InstanceExpiredTime, InstanceChargeType, InstanceTotalCpu, InstanceTotalMem, InstanceUsedCpu, InstanceUsedMem, InstanceLimitCpu, InstanceLimitMem, InstancePkgVersion, ClusterType, RestrictState, UpdateTime, OperationState, NamespaceId, InstanceZoneId, InstanceImportMode, ApplicationType, ApplicationResourceType, ServiceSidecarStatus, GroupName, NamespaceName, Reason, AgentVersion, NodeInstanceId
+
+
+
+
 # Release 3.0.1015.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

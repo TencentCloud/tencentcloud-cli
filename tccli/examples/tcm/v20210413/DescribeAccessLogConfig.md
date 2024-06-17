@@ -13,24 +13,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
-        "Enable": true,
-        "File": "xxx",
-        "Format": "%REQ(Method)",
-        "Encoding": "TEXT",
-        "EnableStdout": true,
-        "EnableServer": true,
-        "Address": "xx",
+        "File": "abc",
+        "Format": "abc",
+        "Encoding": "abc",
         "SelectedRange": {
+            "Items": [
+                {
+                    "Namespace": "abc",
+                    "ClusterName": "abc",
+                    "ItemName": "abc",
+                    "Gateways": [
+                        "abc"
+                    ]
+                }
+            ],
             "All": true
         },
-        "Template": "xx",
+        "Template": "abc",
         "CLS": {
-            "LogSet": "xx",
-            "Topic": "xx",
             "Enable": true,
-            "NeedDelete": true
-        }
+            "LogSet": "abc",
+            "Topic": "abc",
+            "NeedDelete": true,
+            "Region": "abc"
+        },
+        "Address": "abc",
+        "EnableServer": true,
+        "EnableStdout": true,
+        "Enable": true,
+        "RequestId": "abc"
     }
 }
 ```
