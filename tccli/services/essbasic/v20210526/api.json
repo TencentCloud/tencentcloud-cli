@@ -78,7 +78,7 @@
       "status": "online"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。\n\n适用场景：适用非制式的合同文件签署，开发者有每个签署流程的PDF，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。整体的逻辑如下图</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bf86248a2c163228c4e894cf5926af69/ChannelCreateFlowByFiles.png)\n\n**可以作为发起方和签署方的角色列表**\n<table>     <thead>     <tr>         <th>场景编号</th>         <th>发起方</th>         <th>签署方</th>         <th>补充</th>     </tr>     </thead>     <tbody>     <tr>         <td>场景一</td>         <td>子企业A的员工</td>         <td>子企业A的员工</td>         <td>子企业是通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">CreateConsoleLoginUrl</a>生成子客登录链接注册的企业</td>     </tr>     <tr>         <td>场景二</td>         <td>子企业A的员工</td>         <td>子企业B(不指定经办人走领取逻辑)</td>         <td>领取的逻辑可以参考文档<a href=\"https://qian.tencent.com/developers/partner/dynamic_signer\" target=\"_blank\">动态签署方</a> </td>     </tr>     <tr>         <td>场景三</td>         <td>子企业A的员工</td>         <td>子企业B的员工</td>         <td>-</td>     </tr>     <tr>         <td>场景四</td>         <td>子企业A的员工</td>         <td>个人</td>         <td>就是自然人，不是企业员工</td>     </tr>     <tr>         <td>场景五</td>         <td>子企业A的员工</td>         <td>SaaS平台企业员工</td>         <td>SaaS平台企业是通过<a href=\"https://qian.tencent.cn/console/company-register\" target=\"_blank\">https://qian.tencent.cn/console/company-register</a>链接注册的企业</td>     </tr>     </tbody> </table>\n\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度）`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`",
+      "document": "接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。\n\n适用场景：适用非制式的合同文件签署，开发者有每个签署流程的PDF，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。整体的逻辑如下图</li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bf86248a2c163228c4e894cf5926af69/ChannelCreateFlowByFiles.png)\n\n**可以作为发起方和签署方的角色列表**\n<table>     <thead>     <tr>         <th>场景编号</th>         <th>发起方</th>         <th>签署方</th>         <th>补充</th>     </tr>     </thead>     <tbody>     <tr>         <td>场景一</td>         <td>子企业A的员工</td>         <td>子企业A的员工</td>         <td>子企业是通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">CreateConsoleLoginUrl</a>生成子客登录链接注册的企业</td>     </tr>     <tr>         <td>场景二</td>         <td>子企业A的员工</td>         <td>子企业B(不指定经办人走领取逻辑)</td>         <td>领取的逻辑可以参考文档<a href=\"https://qian.tencent.com/developers/partner/dynamic_signer\" target=\"_blank\">动态签署方</a> </td>     </tr>     <tr>         <td>场景三</td>         <td>子企业A的员工</td>         <td>子企业B的员工</td>         <td>-</td>     </tr>     <tr>         <td>场景四</td>         <td>子企业A的员工</td>         <td>个人</td>         <td>就是自然人，不是企业员工</td>     </tr>     <tr>         <td>场景五</td>         <td>子企业A的员工</td>         <td>SaaS平台企业员工</td>         <td>SaaS平台企业是通过<a href=\"https://qian.tencent.cn/console/company-register\" target=\"_blank\">https://qian.tencent.cn/console/company-register</a>链接注册的企业</td>     </tr>     </tbody> </table>\n\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`\n\n`3. 合同发起后就会扣减合同的额度, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（过期，拒签，签署完成，解除完成等状态不会返还额度）`\n\n`4. 静默（自动）签署不支持合同签署方存在填写功能`\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-UploadFiles.mp4\" target=\"_blank\">【上传文件代码】编写示例</a><br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/essbasic-ChannelCreateFlowByFiles.mp4\" target=\"_blank\">【用PDF文件创建签署流程】编写示例</a><br>",
       "input": "ChannelCreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse",
@@ -113,7 +113,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "获取用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -2635,7 +2635,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的Name，Mobile和ApproverType必传，企业签署人则还需传OrganizationName、OpenId、OrganizationOpenId，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型和印章类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "流程签署人列表，其中结构体的Name，Mobile和ApproverType必传，企业签署人则还需传OrganizationName、OpenId、OrganizationOpenId，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfos",
@@ -2662,7 +2662,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)",
+          "document": "签署完之后的H5页面的跳转链接，最大长度1000个字符。链接类型请参考 <a href=\"https://qian.tencent.com/developers/company/openqianh5\" target=\"_blank\">跳转电子签H5</a>\n",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",

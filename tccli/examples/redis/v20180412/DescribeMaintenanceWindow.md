@@ -1,12 +1,12 @@
-**Example 1: 示例**
+**Example 1: 配置实例访问时间窗**
 
-
+修改实例的维护时间窗为03:00-06:00
 
 Input: 
 
 ```
 tccli redis DescribeMaintenanceWindow --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p
+    --InstanceId crs-5a4p****
 ```
 
 Output: 

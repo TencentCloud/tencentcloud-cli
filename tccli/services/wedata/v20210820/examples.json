@@ -1684,6 +1684,14 @@
         "title": "更新工作流调度范例2"
       }
     ],
+    "MoveTasksToFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MoveTasksToFolder\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1522676572149563392\",\n    \"WorkflowId\": \"63b3878f-0602-11ee-b7fc-043f72e73c62\",\n    \"TaskFolderId\": \"1029cb2d-58f4-4400-b65a-6a3db680955f\",\n    \"TaskIds\": [\n        \"bf8c8d93-da0b-4665-aec9-92890baa9a18\"\n    ],\n    \"VirtualTaskIds\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"bf8c8d93-da0b-4665-aec9-92890baa9a18\"\n    }\n}",
+        "title": "编排空间-工作流-移动任务到工作流文件夹示例"
+      }
+    ],
     "RegisterEvent": [
       {
         "document": "注册事件",

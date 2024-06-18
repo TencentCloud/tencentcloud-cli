@@ -394,6 +394,14 @@
         "title": "获取账户状态"
       }
     ],
+    "DescribeAccountInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UinType\": 1,\n        \"RequestId\": \"c01286df-aff4-4998-90c0-6e42e2cac920\"\n    }\n}",
+        "title": "获取腾讯云用户信息"
+      }
+    ],
     "DescribeAlarmNotices": [
       {
         "document": "",

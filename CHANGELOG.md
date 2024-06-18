@@ -1,3 +1,87 @@
+# Release 3.0.1017.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 73 次发布
+
+发布时间：2024-06-19 01:11:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAccountInfo](http://document.tencentcloudapi.woa.com/document/product/614/84110)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 37 次发布
+
+发布时间：2024-06-19 01:11:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVULRiskDetail](http://document.tencentcloudapi.woa.com/document/product/1726/84112)
+* [DescribeVulViewVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/84111)
+
+新增数据结构：
+
+* [VULRiskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULRiskInfo)
+* [VULViewVULRiskData](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRiskData)
+* [VulImpactComponentInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VulImpactComponentInfo)
+* [VulTrend](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VulTrend)
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 25 次发布
+
+发布时间：2024-06-19 01:16:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainRuleSet](http://document.tencentcloudapi.woa.com/document/product/608/37023#DomainRuleSet)
+
+	* 新增成员：TLSCiphers, TLSSupportVersion
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 56 次发布
+
+发布时间：2024-06-19 01:26:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [MoveTasksToFolder](http://document.tencentcloudapi.woa.com/document/product/1607/83028)
+
+修改数据结构：
+
+* [OpsTaskCanvasInfoList](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OpsTaskCanvasInfoList)
+
+	* <font color="#dd0000">**修改成员**：</font>CirculateTaskList
+
+
+
+
 # Release 3.0.1016.1
 
 ## T-Sec-数据安全审计（DSA）(cds) 版本：2018-04-20
