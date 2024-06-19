@@ -37,10 +37,10 @@ Output:
                     "ESTargetParams": {
                         "NetMode": "abc",
                         "IndexPrefix": "abc",
-                        "IndexTemplateType": "abc",
                         "RotationInterval": "abc",
                         "OutputMode": "abc",
-                        "IndexSuffixMode": "abc"
+                        "IndexSuffixMode": "abc",
+                        "IndexTemplateType": "abc"
                     }
                 },
                 "RuleId": "abc",

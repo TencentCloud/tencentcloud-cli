@@ -10181,12 +10181,21 @@
         },
         {
           "disabled": false,
-          "document": "私有网络实例ID",
+          "document": "私有网络实例ID。当创建VPC类型私网NAT网关或者专线网关类型私网NAT网关时，此参数必填。",
           "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨域参数。仅当取值为True时，才会支持跨域绑定VPC。",
+          "example": "True",
+          "member": "bool",
+          "name": "CrossDomain",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -10199,7 +10208,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc类型参数，当创建Vpc类型NAT实例时为True",
+          "document": "VPC类型私网NAT网关。仅当取值为True时，才会创建VPC类型私网NAT网关。",
           "example": "True",
           "member": "bool",
           "name": "VpcType",
@@ -10208,7 +10217,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网类型实例需要绑定的云联网实例",
+          "document": "云联网类型私网NAT网关需要绑定的云联网实例ID。",
           "example": "ccn-jq193paf",
           "member": "string",
           "name": "CcnId",
@@ -10223,10 +10232,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线网关对象。",
+          "document": "私网网关对象。",
           "example": "无",
           "member": "PrivateNatGateway",
           "name": "PrivateNatGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10236,6 +10246,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

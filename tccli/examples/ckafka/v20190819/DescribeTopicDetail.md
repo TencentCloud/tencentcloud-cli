@@ -16,30 +16,44 @@ Output:
         "Result": {
             "TopicList": [
                 {
-                    "TopicName": "test",
-                    "TopicId": "inter-topic-d7a2f7fq",
-                    "PartitionNum": 3,
-                    "ReplicaNum": 2,
-                    "Note": "",
-                    "CreateTime": 1561637447,
-                    "EnableWhiteList": false,
+                    "TopicName": "abc",
+                    "TopicId": "abc",
+                    "PartitionNum": 0,
+                    "ReplicaNum": 0,
+                    "Note": "abc",
+                    "CreateTime": 0,
+                    "EnableWhiteList": true,
                     "IpWhiteListCount": 0,
-                    "ForwardCosBucket": "",
-                    "ForwardStatus": 1,
+                    "ForwardCosBucket": "abc",
+                    "ForwardStatus": 0,
                     "ForwardInterval": 0,
                     "Config": {
-                        "Retention": 300000000
+                        "Retention": 0,
+                        "MinInsyncReplicas": 0,
+                        "CleanUpPolicy": "abc",
+                        "SegmentMs": 0,
+                        "UncleanLeaderElectionEnable": 0,
+                        "SegmentBytes": 0,
+                        "MaxMessageBytes": 0,
+                        "RetentionBytes": 0
                     },
                     "RetentionTimeConfig": {
-                        "Expect": 1440,
-                        "Current": 480,
-                        "ModTimeStamp": 1561637447
-                    }
+                        "Expect": 0,
+                        "Current": 0,
+                        "ModTimeStamp": 0
+                    },
+                    "Status": 0,
+                    "Tags": [
+                        {
+                            "TagKey": "abc",
+                            "TagValue": "abc"
+                        }
+                    ]
                 }
             ],
-            "TotalCount": 12
+            "TotalCount": 0
         },
-        "RequestId": "98fdae03-9bc2-4c2e-b429-0a96cca7144b"
+        "RequestId": "abc"
     }
 }
 ```

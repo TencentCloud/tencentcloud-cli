@@ -13,36 +13,28 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "AreaId": "1",
-                "ChargeStatus": 1,
-                "ChargeType": 1,
-                "ClusterId": "1",
-                "CreatedAt": "2021-04-29 20:51:05",
-                "DataRetentionDays": "30",
-                "InstanceDesc": "",
-                "InstanceId": "taw-VJ2mHDEb",
-                "InstanceName": "test",
-                "InstanceStatus": 2,
-                "Tags": [],
-                "UpdatedAt": "2021-04-29 20:51:05"
-            },
-            {
-                "AreaId": "1",
-                "ChargeStatus": 1,
-                "ChargeType": 1,
-                "ClusterId": "1",
-                "CreatedAt": "2021-04-29 20:59:15",
-                "DataRetentionDays": "30",
-                "InstanceDesc": "",
-                "InstanceId": "taw-mE08H4Ez",
-                "InstanceName": "test",
-                "InstanceStatus": 2,
-                "Tags": [],
-                "UpdatedAt": "2021-04-29 20:59:15"
+                "InstanceStatus": 0,
+                "AreaId": 0,
+                "Tags": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "InstanceId": "abc",
+                "ClusterId": 0,
+                "InstanceDesc": "abc",
+                "ChargeStatus": 0,
+                "ChargeType": 0,
+                "UpdatedAt": "abc",
+                "DataRetentionDays": 0,
+                "InstanceName": "abc",
+                "CreatedAt": "abc",
+                "InstanceType": 0
             }
         ],
-        "RequestId": "d356e035-ac3d-4237-add9-50a44c01dd39",
-        "TotalCount": "2"
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

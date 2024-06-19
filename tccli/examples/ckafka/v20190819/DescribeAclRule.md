@@ -20,8 +20,19 @@ Output:
             "TotalCount": 1,
             "AclRuleList": [
                 {
-                    "RuleName": "testRule",
-                    "ResourceType": 2
+                    "RuleName": "test",
+                    "InstanceId": "ckafka-abc",
+                    "PatternType": "PRESET",
+                    "Pattern": "",
+                    "ResourceType": "Topic",
+                    "AclList": "[{\"host\":\"*\",\"operation\":\"Read\",\"permissionType\":\"Allow\",\"principal\":\"User:*\"}]",
+                    "CreateTimeStamp": "Thu Jun 06 13:07:13 CST 2024",
+                    "IsApplied": 0,
+                    "UpdateTimeStamp": "Thu Jun 06 13:07:13 CST 2024",
+                    "Comment": "",
+                    "TopicName": "",
+                    "TopicCount": 0,
+                    "PatternTypeTitle": "预设策略"
                 }
             ]
         },

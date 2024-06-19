@@ -3678,6 +3678,7 @@
           "example": "",
           "member": "DescribeApplicationTriggerPersonalResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3807,7 +3808,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -3816,7 +3817,7 @@
         {
           "disabled": false,
           "document": "分页Limit",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -3825,7 +3826,7 @@
         {
           "disabled": false,
           "document": "Offset用于分页",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -3840,9 +3841,10 @@
         {
           "disabled": false,
           "document": "个人收藏仓库列表返回信息",
-          "example": "",
+          "example": "无",
           "member": "FavorResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3979,7 +3981,7 @@
           "example": "无",
           "member": "SameImagesResp",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4132,7 +4134,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nsName/repoName",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -4141,7 +4143,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4150,7 +4152,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20, 最大值 100",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4159,7 +4161,7 @@
         {
           "disabled": false,
           "document": "tag名称，可根据输入搜索",
-          "example": "",
+          "example": "tag",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -4174,9 +4176,10 @@
         {
           "disabled": false,
           "document": "镜像tag信息",
-          "example": "",
+          "example": "无",
           "member": "TagInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

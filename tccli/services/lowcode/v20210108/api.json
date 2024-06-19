@@ -1491,8 +1491,8 @@
         },
         {
           "disabled": false,
-          "document": "查询数据源黑名单机制，比如不想要系统数据源[\"system\"]",
-          "example": "[\"system\"]",
+          "document": "废弃中",
+          "example": "无",
           "member": "string",
           "name": "NotQuerySubTypeList",
           "required": false,
@@ -1536,7 +1536,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询系统模型",
+          "document": "是否查询系统模型，默认为true，需要显示设置为False才能过滤系统模型",
           "example": "无",
           "member": "bool",
           "name": "QuerySystemModel",

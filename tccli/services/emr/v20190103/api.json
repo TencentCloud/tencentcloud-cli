@@ -4131,7 +4131,7 @@
         },
         {
           "disabled": false,
-          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。",
+          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Asc",
@@ -4149,8 +4149,8 @@
         },
         {
           "disabled": false,
-          "document": "默认0为普通集群，1位容器集群",
-          "example": "1",
+          "document": "默认0为普通集群，2为tke集群",
+          "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "required": false,

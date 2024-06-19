@@ -918,6 +918,8 @@ tccli/services/tsf/__init__.py
 tccli/services/tsf/tsf_client.py
 tccli/services/tsf/v20180326/api.json
 tccli/services/tsf/v20180326/examples.json
+tccli/services/tsi/__init__.py
+tccli/services/tsi/tsi_client.py
 tccli/services/tsw/__init__.py
 tccli/services/tsw/tsw_client.py
 tccli/services/tsw/v20200924/api.json

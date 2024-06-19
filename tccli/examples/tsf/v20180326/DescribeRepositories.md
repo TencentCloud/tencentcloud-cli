@@ -7,15 +7,32 @@ Input:
 ```
 tccli tsf DescribeRepositories --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --SearchWord demo \
+    --RepositoryType default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "58998bc6-b283-4242-94e9-4d1b75e47a01",
-        "Result": {}
+        "Result": {
+            "TotalCount": 0,
+            "Content": [
+                {
+                    "RepositoryId": "abc",
+                    "RepositoryName": "abc",
+                    "RepositoryType": "abc",
+                    "RepositoryDesc": "abc",
+                    "IsUsed": true,
+                    "CreateTime": "abc",
+                    "BucketName": "abc",
+                    "BucketRegion": "abc",
+                    "Directory": "abc"
+                }
+            ]
+        },
+        "RequestId": "abc"
     }
 }
 ```

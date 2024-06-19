@@ -16,46 +16,30 @@ Output:
 {
     "Response": {
         "Result": {
+            "TotalCount": 0,
             "Content": [
                 {
-                    "PkgId": "xx",
-                    "PkgType": "xx",
-                    "UploadTime": "xx",
-                    "PkgName": "xx",
-                    "PkgDesc": "xx",
+                    "PkgId": "abc",
+                    "PkgName": "abc",
+                    "PkgType": "abc",
+                    "PkgVersion": "abc",
+                    "PkgDesc": "abc",
+                    "UploadTime": "abc",
+                    "Md5": "abc",
+                    "PkgPubStatus": 0,
                     "PkgBindInfo": [
                         {
-                            "ApplicationId": "xx",
-                            "GroupId": "xx"
+                            "ApplicationId": "abc",
+                            "GroupId": "abc"
                         }
-                    ],
-                    "PkgVersion": "xx",
-                    "PkgPubStatus": 1,
-                    "Md5": "xx"
-                },
-                {
-                    "PkgId": "xx",
-                    "PkgType": "xx",
-                    "UploadTime": "xx",
-                    "PkgName": "xx",
-                    "PkgDesc": "xx",
-                    "PkgBindInfo": [
-                        {
-                            "ApplicationId": "xx",
-                            "GroupId": "xx"
-                        }
-                    ],
-                    "PkgVersion": "xx",
-                    "PkgPubStatus": 1,
-                    "Md5": "xx"
+                    ]
                 }
             ],
-            "TotalCount": 2,
-            "RepositoryType": "xx",
-            "RepositoryName": "xx",
-            "RepositoryId": "xx"
+            "RepositoryId": "abc",
+            "RepositoryType": "abc",
+            "RepositoryName": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

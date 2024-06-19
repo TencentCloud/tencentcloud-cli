@@ -5188,6 +5188,15 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否尝试查询计费数据，默认 true。如果 true，查询时间段内计费数据可用则优先查询计费数据，其他剩下时间段则查监控或者日志数据。",
+          "example": "true",
+          "member": "bool",
+          "name": "TryCost",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -17,14 +17,15 @@ Output:
 {
     "Response": {
         "Result": {
+            "Topic": "abc",
+            "Partition": 0,
+            "Offset": 0,
+            "Key": "abc",
+            "Value": "abc",
             "Timestamp": 0,
-            "Topic": "xxx",
-            "Partition": 2,
-            "Offset": 2,
-            "Key": "xxx",
-            "Value": "xxx"
+            "Headers": "abc"
         },
-        "RequestId": "62d589e0-53d5-47e0-95ff-237c48b8fb77"
+        "RequestId": "abc"
     }
 }
 ```

@@ -15,68 +15,57 @@ Output:
 {
     "Response": {
         "Result": {
-            "TopicId": "xx",
-            "PartitionNum": 3,
-            "AclRuleList": [
-                {
-                    "Comment": "xx",
-                    "PatternType": "xx",
-                    "UpdateTimeStamp": "xx",
-                    "InstanceId": "xx",
-                    "Pattern": "xx",
-                    "ResourceType": "xx",
-                    "AclList": "xx",
-                    "PatternTypeTitle": "xx",
-                    "IsApplied": 0,
-                    "RuleName": "xx",
-                    "TopicCount": 0,
-                    "CreateTimeStamp": "xx",
-                    "TopicName": "xx"
-                }
-            ],
-            "Note": "xx",
+            "TopicId": "abc",
+            "CreateTime": 0,
+            "Note": "abc",
+            "PartitionNum": 0,
+            "EnableWhiteList": 0,
             "IpWhiteList": [
-                "xx"
+                "abc"
             ],
-            "EnableAclRule": 0,
-            "QuotaConfig": {
-                "QuotaConsumerByteRate": 0,
-                "QuotaProducerByteRate": 0
+            "Config": {
+                "Retention": 0,
+                "MinInsyncReplicas": 0,
+                "CleanUpPolicy": "abc",
+                "SegmentMs": 0,
+                "UncleanLeaderElectionEnable": 0,
+                "SegmentBytes": 0,
+                "MaxMessageBytes": 0,
+                "RetentionBytes": 0
             },
             "Partitions": [
                 {
                     "Partition": 0,
-                    "IsrNum": 2,
                     "LeaderStatus": 0,
-                    "ReplicaNum": 2
-                },
-                {
-                    "Partition": 1,
-                    "IsrNum": 2,
-                    "LeaderStatus": 0,
-                    "ReplicaNum": 2
-                },
-                {
-                    "Partition": 2,
-                    "IsrNum": 2,
-                    "LeaderStatus": 0,
-                    "ReplicaNum": 2
+                    "IsrNum": 0,
+                    "ReplicaNum": 0
                 }
             ],
-            "Config": {
-                "UncleanLeaderElectionEnable": 0,
-                "MinInsyncReplicas": 0,
-                "SegmentMs": 0,
-                "CleanUpPolicy": "xx",
-                "SegmentBytes": 0,
-                "RetentionBytes": 0,
-                "MaxMessageBytes": 0,
-                "Retention": 300000000
+            "EnableAclRule": 0,
+            "AclRuleList": [
+                {
+                    "RuleName": "abc",
+                    "InstanceId": "abc",
+                    "PatternType": "abc",
+                    "Pattern": "abc",
+                    "ResourceType": "abc",
+                    "AclList": "abc",
+                    "CreateTimeStamp": "abc",
+                    "IsApplied": 0,
+                    "UpdateTimeStamp": "abc",
+                    "Comment": "abc",
+                    "TopicName": "abc",
+                    "TopicCount": 0,
+                    "PatternTypeTitle": "abc"
+                }
+            ],
+            "QuotaConfig": {
+                "QuotaProducerByteRate": 0,
+                "QuotaConsumerByteRate": 0
             },
-            "CreateTime": 111,
-            "EnableWhiteList": 0
+            "ReplicaNum": 0
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -28,7 +28,10 @@ Output:
                 "Describe": "abc",
                 "CreateTime": "abc",
                 "Suggestion": "abc",
-                "MatchType": "abc"
+                "MatchType": "abc",
+                "BizTypes": [
+                    "abc"
+                ]
             }
         ],
         "RequestId": "abc"

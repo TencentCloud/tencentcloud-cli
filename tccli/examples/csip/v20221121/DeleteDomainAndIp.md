@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip DeleteDomainAndIp --cli-unfold-argument  \
+    --MemberId abc \
     --Content.0.Asset abc \
     --RetainPath 0 \
     --IgnoreAsset 0 \

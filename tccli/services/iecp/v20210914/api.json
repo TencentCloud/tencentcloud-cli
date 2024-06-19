@@ -1,11 +1,11 @@
 {
   "actions": {
     "ApplyMarketComponent": {
-      "document": "从组件市场选中组件并添加到应用模板列表",
+      "document": "产品停售，预下线\n\n从组件市场选中组件并添加到应用模板列表",
       "input": "ApplyMarketComponentRequest",
       "name": "使用组件市场中的组件",
       "output": "ApplyMarketComponentResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BuildMessageRoute": {
       "document": "建立消息路由",
@@ -15,11 +15,11 @@
       "status": "online"
     },
     "CreateApplicationVisualization": {
-      "document": "创建可视化创建应用模板",
+      "document": "产品停售，预下线\n\n创建可视化创建应用模板",
       "input": "CreateApplicationVisualizationRequest",
       "name": "创建可视化创建应用模板",
       "output": "CreateApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateConfigMap": {
       "document": "创建ConfigMap",
@@ -57,18 +57,18 @@
       "status": "online"
     },
     "CreateEdgeUnitApplicationVisualization": {
-      "document": "可视化创建应用",
+      "document": "产品停售，预下线\n\n可视化创建应用",
       "input": "CreateEdgeUnitApplicationVisualizationRequest",
       "name": "可视化创建应用",
       "output": "CreateEdgeUnitApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeUnitApplicationYaml": {
-      "document": "yaml方式创建应用",
+      "document": "产品停售，预下线\n\nyaml方式创建应用",
       "input": "CreateEdgeUnitApplicationYamlRequest",
       "name": "yaml方式创建应用",
       "output": "CreateEdgeUnitApplicationYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgeUnitCloud": {
       "document": "创建边缘单元",
@@ -127,11 +127,11 @@
       "status": "online"
     },
     "DeleteApplications": {
-      "document": "删除应用模板",
+      "document": "产品停售，预下线\n\n删除应用模板",
       "input": "DeleteApplicationsRequest",
       "name": "删除应用模板",
       "output": "DeleteApplicationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteConfigMap": {
       "document": "删除ConfigMap",
@@ -162,11 +162,11 @@
       "status": "online"
     },
     "DeleteEdgeUnitApplications": {
-      "document": "删除应用列表",
+      "document": "产品停售，预下线\n\n删除应用列表",
       "input": "DeleteEdgeUnitApplicationsRequest",
       "name": "删除应用列表",
       "output": "DeleteEdgeUnitApplicationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEdgeUnitCloud": {
       "document": "删除边缘单元",
@@ -239,32 +239,32 @@
       "status": "online"
     },
     "DescribeApplicationVisualization": {
-      "document": "获取应用模板可视化配置信息",
+      "document": "产品停售，预下线\n\n获取应用模板可视化配置信息",
       "input": "DescribeApplicationVisualizationRequest",
       "name": "获取应用模板可视化配置信息",
       "output": "DescribeApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeApplicationYaml": {
-      "document": "查询应用模板Yaml",
+      "document": "产品停售，预下线\n\n查询应用模板Yaml",
       "input": "DescribeApplicationYamlRequest",
       "name": "查询应用模板Yaml",
       "output": "DescribeApplicationYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeApplicationYamlError": {
-      "document": "检查应用模板的Yaml配置",
+      "document": "产品停售，预下线\n\n检查应用模板的Yaml配置",
       "input": "DescribeApplicationYamlErrorRequest",
       "name": "检查应用模板的Yaml配置",
       "output": "DescribeApplicationYamlErrorResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeApplications": {
-      "document": "获取应用模板列表",
+      "document": "产品停售，预下线\n\n获取应用模板列表",
       "input": "DescribeApplicationsRequest",
       "name": "获取应用模板列表",
       "output": "DescribeApplicationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeConfigMap": {
       "document": "获取ConfigMap详情",
@@ -365,53 +365,53 @@
       "status": "online"
     },
     "DescribeEdgeUnitApplicationEvents": {
-      "document": "获取应用事件列表",
+      "document": "产品停售，预下线\n\n获取应用事件列表",
       "input": "DescribeEdgeUnitApplicationEventsRequest",
       "name": "获取应用事件列表",
       "output": "DescribeEdgeUnitApplicationEventsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationLogs": {
-      "document": "获取应用日志",
+      "document": "产品停售，预下线\n\n获取应用日志",
       "input": "DescribeEdgeUnitApplicationLogsRequest",
       "name": "获取应用日志",
       "output": "DescribeEdgeUnitApplicationLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationPodContainers": {
-      "document": "获取应用容器状态",
+      "document": "产品停售，预下线\n\n获取应用容器状态",
       "input": "DescribeEdgeUnitApplicationPodContainersRequest",
       "name": "获取应用容器状态",
       "output": "DescribeEdgeUnitApplicationPodContainersResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationPods": {
-      "document": "获取应用下Pod状态",
+      "document": "产品停售，预下线\n\n获取应用下Pod状态",
       "input": "DescribeEdgeUnitApplicationPodsRequest",
       "name": "获取应用下Pod状态",
       "output": "DescribeEdgeUnitApplicationPodsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationVisualization": {
-      "document": "获取单元可视化配置信息",
+      "document": "产品停售，预下线\n\n获取单元可视化配置信息",
       "input": "DescribeEdgeUnitApplicationVisualizationRequest",
       "name": "获取单元可视化配置信息",
       "output": "DescribeEdgeUnitApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationYaml": {
-      "document": "获取应用的Yaml配置",
+      "document": "产品停售，预下线\n\n获取应用的Yaml配置",
       "input": "DescribeEdgeUnitApplicationYamlRequest",
       "name": "获取应用的Yaml配置",
       "output": "DescribeEdgeUnitApplicationYamlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplicationYamlError": {
-      "document": "检查单元应用的Yaml配置",
+      "document": "产品停售，预下线\n\n检查单元应用的Yaml配置",
       "input": "DescribeEdgeUnitApplicationYamlErrorRequest",
       "name": "检查单元应用的Yaml配置",
       "output": "DescribeEdgeUnitApplicationYamlErrorResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitApplications": {
       "document": "获取单元下应用列表",
@@ -421,11 +421,11 @@
       "status": "online"
     },
     "DescribeEdgeUnitCloud": {
-      "document": "查询边缘集群详情",
+      "document": "产品停售，预下线\n\n查询边缘集群详情",
       "input": "DescribeEdgeUnitCloudRequest",
       "name": "查询边缘集群详情",
       "output": "DescribeEdgeUnitCloudResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEdgeUnitDeployGrid": {
       "document": "查询边缘单元Grid列表",
@@ -603,18 +603,18 @@
       "status": "online"
     },
     "ModifyApplicationBasicInfo": {
-      "document": "修改应用模板基本信息",
+      "document": "产品停售，预下线\n\n修改应用模板基本信息",
       "input": "ModifyApplicationBasicInfoRequest",
       "name": "修改应用模板基本信息",
       "output": "ModifyApplicationBasicInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyApplicationVisualization": {
-      "document": "修改应用模板配置",
+      "document": "产品停售，预下线\n\n修改应用模板配置",
       "input": "ModifyApplicationVisualizationRequest",
       "name": "修改应用模板配置",
       "output": "ModifyApplicationVisualizationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyConfigMap": {
       "document": "修改ConfigMap",

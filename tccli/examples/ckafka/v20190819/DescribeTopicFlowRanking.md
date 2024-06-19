@@ -52,6 +52,13 @@ Output:
                     "TopicId": "abc",
                     "DataSize": 1
                 }
+            ],
+            "BrokerTopicFlowData": [
+                {
+                    "TopicName": "abc",
+                    "TopicId": "abc",
+                    "TopicTraffic": "abc"
+                }
             ]
         },
         "RequestId": "abc"

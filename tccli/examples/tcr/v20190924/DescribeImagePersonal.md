@@ -33,7 +33,8 @@ Output:
                     "OS": "linux",
                     "UpdateTime": "2019-10-24 14:20:55 +0800 CST",
                     "PushTime": "2019-10-24 14:20:51 +0800 CST",
-                    "SizeByte": 128152591
+                    "SizeByte": 128152591,
+                    "Kind": "Artifact::application/vnd.docker.distribution.manifest.v2+json"
                 }
             ]
         }

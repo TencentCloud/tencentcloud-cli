@@ -15,131 +15,56 @@ Output:
     "Response": {
         "ConfigItems": [
             {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "ModifyRuleValue": "xx",
-                "DefaultValue": "xx",
-                "Editable": false,
-                "NeedRestart": false,
-                "FileName": "xxx",
-                "ConfDesc": "xxx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
-            },
-            {
-                "ConfValue": "xx",
-                "ConfKey": "xx",
-                "Editable": false,
-                "DefaultValue": "xx",
-                "ModifyRuleValue": "xx",
-                "NeedRestart": false,
-                "FileName": "xx",
-                "ConfDesc": "xx",
-                "ModifyRuleType": "xx"
+                "ConfKey": "abc",
+                "ConfValue": "abc",
+                "DefaultValue": "abc",
+                "NeedRestart": true,
+                "Editable": true,
+                "ConfDesc": "abc",
+                "FileName": "abc",
+                "ModifyRuleType": "abc",
+                "ModifyRuleValue": "abc",
+                "Uin": "abc",
+                "ModifyTime": "abc"
             }
         ],
-        "UnConfigItems": [],
-        "MapConfigItems": [],
-        "ErrorMsg": "",
-        "RequestId": "xx"
+        "UnConfigItems": [
+            {
+                "ConfKey": "abc",
+                "ConfValue": "abc",
+                "DefaultValue": "abc",
+                "NeedRestart": true,
+                "Editable": true,
+                "ConfDesc": "abc",
+                "FileName": "abc",
+                "ModifyRuleType": "abc",
+                "ModifyRuleValue": "abc",
+                "Uin": "abc",
+                "ModifyTime": "abc"
+            }
+        ],
+        "MapConfigItems": [
+            {
+                "ConfKey": "abc",
+                "Items": [
+                    {
+                        "ConfKey": "abc",
+                        "ConfValue": "abc",
+                        "DefaultValue": "abc",
+                        "NeedRestart": true,
+                        "Editable": true,
+                        "ConfDesc": "abc",
+                        "FileName": "abc",
+                        "ModifyRuleType": "abc",
+                        "ModifyRuleValue": "abc",
+                        "Uin": "abc",
+                        "ModifyTime": "abc"
+                    }
+                ]
+            }
+        ],
+        "ErrorMsg": "abc",
+        "RequestId": "abc"
     }
 }
 ```

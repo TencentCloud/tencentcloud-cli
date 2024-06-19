@@ -1296,6 +1296,7 @@
           "example": "50",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1305,6 +1306,7 @@
           "example": "1",
           "member": "KeywordsLibInfo",
           "name": "Infos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
