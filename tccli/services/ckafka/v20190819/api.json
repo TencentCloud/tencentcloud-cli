@@ -8142,7 +8142,7 @@
         {
           "disabled": false,
           "document": "任务唯一标记",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -8157,9 +8157,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "",
+          "example": "无",
           "member": "TaskStatusResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

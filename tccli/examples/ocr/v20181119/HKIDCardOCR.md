@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli ocr HKIDCardOCR --cli-unfold-argument  \
-    --DetectFake true \
     --ReturnHeadImage false \
     --ImageUrl https://xx/a.jpg
 ```
@@ -25,12 +24,10 @@ Output:
         "Symbol": "***AZ",
         "FirstIssueDate": "(09-99)",
         "CurrentIssueDate": "23-09-10",
-        "FakeDetectResult": 1,
-        "WarningCode": [
-            -9102,
-            -9103
-        ],
         "HeadImage": "",
+        "WarnCardInfos": [
+            -9104
+        ],
         "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875"
     }
 }

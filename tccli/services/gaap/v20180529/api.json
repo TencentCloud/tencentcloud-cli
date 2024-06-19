@@ -6999,6 +6999,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLS套件包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GAAP_TLS_CIPHERS_WIDE",
+          "member": "string",
+          "name": "TLSCiphers",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLS版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"TLSv1\", \"TLSv1.1\", \"TLSv1.2\", \"TLSv1.3\"]",
+          "member": "string",
+          "name": "TLSSupportVersion",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

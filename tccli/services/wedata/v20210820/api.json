@@ -1379,6 +1379,13 @@
       "output": "ModifyWorkflowScheduleResponse",
       "status": "online"
     },
+    "MoveTasksToFolder": {
+      "document": "编排空间-工作流-移动任务到工作流文件夹",
+      "input": "MoveTasksToFolderRequest",
+      "name": "移动任务到工作流文件夹",
+      "output": "MoveTasksToFolderResponse",
+      "status": "online"
+    },
     "RegisterEvent": {
       "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n注册事件",
       "input": "RegisterEventRequest",
@@ -28013,6 +28020,79 @@
       ],
       "type": "object"
     },
+    "MoveTasksToFolderRequest": {
+      "document": "MoveTasksToFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务文件夹ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFolderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "虚拟任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "VirtualTaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MoveTasksToFolderResponse": {
+      "document": "MoveTasksToFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true代表成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OfflineInstance": {
       "document": "离线实例",
       "members": [
@@ -28796,7 +28876,7 @@
           "member": "OpsTaskCanvasDto",
           "name": "CirculateTaskList",
           "output_required": false,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": true
         }
       ],

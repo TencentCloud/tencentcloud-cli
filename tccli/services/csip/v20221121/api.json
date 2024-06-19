@@ -238,11 +238,25 @@
       "output": "DescribeVULRiskAdvanceCFGListResponse",
       "status": "online"
     },
+    "DescribeVULRiskDetail": {
+      "document": "获取漏洞展开详情",
+      "input": "DescribeVULRiskDetailRequest",
+      "name": "漏洞管理-漏洞详情",
+      "output": "DescribeVULRiskDetailResponse",
+      "status": "online"
+    },
     "DescribeVpcAssets": {
       "document": "获取vpc列表",
       "input": "DescribeVpcAssetsRequest",
       "name": "vpc列表",
       "output": "DescribeVpcAssetsResponse",
+      "status": "online"
+    },
+    "DescribeVulViewVulRiskList": {
+      "document": "获取漏洞视角的漏洞风险列表",
+      "input": "DescribeVulViewVulRiskListRequest",
+      "name": "漏洞管理-漏洞视角的漏洞风险列表",
+      "output": "DescribeVulViewVulRiskListResponse",
       "status": "online"
     },
     "ModifyOrganizationAccountStatus": {
@@ -7793,6 +7807,101 @@
       ],
       "type": "object"
     },
+    "DescribeVULRiskDetailRequest": {
+      "document": "DescribeVULRiskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险id",
+          "example": "无",
+          "member": "string",
+          "name": "RiskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "pcMgrId",
+          "example": "无",
+          "member": "string",
+          "name": "PCMGRId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVULRiskDetailResponse": {
+      "document": "DescribeVULRiskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全产品支持情况",
+          "example": "无",
+          "member": "ServiceSupport",
+          "name": "ServiceSupport",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞趋势",
+          "example": "无",
+          "member": "VulTrend",
+          "name": "VulTrend",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞补充信息",
+          "example": "无",
+          "member": "VULRiskInfo",
+          "name": "VulData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小助手问答id",
+          "example": "csipllm-xxx",
+          "member": "string",
+          "name": "QuestionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话id",
+          "example": "cve-xx-xx",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcAssetsRequest": {
       "document": "DescribeVpcAssets请求参数结构体",
       "members": [
@@ -7855,6 +7964,111 @@
           "name": "AppIdList",
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulViewVulRiskListRequest": {
+      "document": "DescribeVulViewVulRiskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVulViewVulRiskListResponse": {
+      "document": "DescribeVulViewVulRiskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞产视角的漏洞风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VULViewVULRiskData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "危险等级列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "LevelLists",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "FromLists",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞类型列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "VULTypeLists",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12330,6 +12544,52 @@
       ],
       "usage": "out"
     },
+    "VULRiskInfo": {
+      "document": "漏洞风险信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修复建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Fix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "技术参考/参考链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "References",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Describe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "受影响组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VulImpactComponentInfo",
+          "name": "ImpactComponent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "VULViewVULRisk": {
       "document": "漏洞视角的漏洞风险对象",
       "members": [
@@ -12576,6 +12836,312 @@
       ],
       "usage": "out"
     },
+    "VULViewVULRiskData": {
+      "document": "漏洞视角的漏洞风险对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "21",
+          "member": "string",
+          "name": "Port",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响资产",
+          "example": "1.1.1.1",
+          "member": "int64",
+          "name": "NoHandleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件",
+          "example": "Nginx",
+          "member": "string",
+          "name": "Component",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近识别时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "RecentTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次识别时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "FirstTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响资产数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "AffectAssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "0b01fb18c8fb6e5644ef6f1e69a7fa30",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描来源，具体看接口返回枚举类型",
+          "example": "1",
+          "member": "string",
+          "name": "From",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前端索引",
+          "example": "fb0ee4db25383610147c43c858212291",
+          "member": "string",
+          "name": "Index",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞类型",
+          "example": "命令注入",
+          "member": "string",
+          "name": "VULType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名",
+          "example": "Oracle Fusion Middleware WebLogic Server组件安全漏洞",
+          "member": "string",
+          "name": "VULName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve",
+          "example": "CVE-2016-0638",
+          "member": "string",
+          "name": "CVE",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞payload",
+          "example": "/wls-wsat/CoordinatorPortType",
+          "member": "string",
+          "name": "Payload",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响组件",
+          "example": "Weblogic_interface_7001",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响版本",
+          "example": "Oracle WebLogic Server 10.3.6.0.0版本，12.1.3.0.0版本，12.2.1.1.0版本，12.2.1.2.0版本",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险点",
+          "example": "https://abcd.test",
+          "member": "string",
+          "name": "VULURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Nick",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "1234",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应急漏洞类型，1-应急漏洞，0-非应急漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EMGCVulType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CVSS",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "PCMGRId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PCMGRId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VulTag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞披露时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DisclosureTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AttackHeat",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否必修漏洞1是，0不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsSuggest",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "处置任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HandleTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nsfocus_vul",
+          "member": "string",
+          "name": "EngineSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新的漏洞风险id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VulRiskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Vpc": {
       "document": "vpc列表数据",
       "members": [
@@ -12727,6 +13293,78 @@
           "name": "IsCore",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VulImpactComponentInfo": {
+      "document": "漏洞影响组件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nginx",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.7,1.8",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VulTrend": {
+      "document": "漏洞趋势-攻击趋势、影响用户、影响资产",
+      "members": [
+        {
+          "disabled": false,
+          "document": "影响的资产数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AffectAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "影响的用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AffectUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AttackCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-29 10:00:00",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

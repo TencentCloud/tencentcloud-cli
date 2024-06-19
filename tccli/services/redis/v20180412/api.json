@@ -337,7 +337,7 @@
       "status": "online"
     },
     "DescribeMaintenanceWindow": {
-      "document": "查询实例维护时间窗，在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换",
+      "document": "本接口（DescribeMaintenanceWindow）用于查询实例维护时间窗。在实例需要进行版本升级或者架构升级的时候，会在维护时间窗时间内进行切换",
       "input": "DescribeMaintenanceWindowRequest",
       "name": "查询实例维护时间窗",
       "output": "DescribeMaintenanceWindowResponse",
@@ -477,7 +477,7 @@
       "status": "online"
     },
     "InquiryPriceRenewInstance": {
-      "document": "查询实例续费价格（包年包月）",
+      "document": "本接口（InquiryPriceRenewInstance）用于查询包年包月计费实例的续费价格。",
       "input": "InquiryPriceRenewInstanceRequest",
       "name": "查询实例续费价格（包年包月）",
       "output": "InquiryPriceRenewInstanceResponse",
@@ -840,7 +840,7 @@
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2343,7 +2343,7 @@
           "example": "486489",
           "member": "float",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -4668,8 +4668,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4683,19 +4683,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "维护时间窗起始时间，如：17:00",
-          "example": "",
+          "document": "维护时间窗开始时间。取值范围为\"00:00-23:00\"的任意时间点，如03:24。",
+          "example": "03:00",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "维护时间窗结束时间，如：19:00",
-          "example": "",
+          "document": "维护时间窗结束时间。\n- 取值范围为\"00:00-23:00\"的任意时间点，如：04:24。\n- 维护时间持续时长最小为30分钟，最大为3小时。\n- 结束时间务必是基于开始时间向后的时间。",
+          "example": "06:00",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4868,7 +4870,7 @@
           "example": "无",
           "member": "RegionConf",
           "name": "RegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6169,7 +6171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型：2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)。",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -6205,7 +6207,7 @@
         },
         {
           "disabled": false,
-          "document": "付费方式:0-按量计费，1-包年包月。",
+          "document": "付费方式。\n- 0：按量计费。\n- 1：包年包月。",
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
@@ -6223,7 +6225,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版、Redis4.0标准架构不需要填写。",
+          "document": "实例分片数量。\nRedis2.8标准架构、CKV标准架构、Redis4.0标准架构无需填写。",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -6232,7 +6234,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。",
+          "document": "实例副本数量。\nRedis2.8标准架构、CKV标准架构无需填写。",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -6241,7 +6243,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持副本只读，Redis2.8标准架构、CKV标准架构和Redis2.8单机版不需要填写。",
+          "document": "是否支持副本只读。Redis2.8标准架构、CKV标准架构无需填写。\n- true：无需支持副本只读。\n- false：需支持。",
           "example": "false",
           "member": "bool",
           "name": "ReplicasReadonly",
@@ -6259,7 +6261,7 @@
         },
         {
           "disabled": false,
-          "document": "\"local\"本地盘版，\"cloud\"云盘版，\"cdc\"独享集群版，如果不传默认询价为本地盘版本",
+          "document": "部署方式。\n- local：本地盘版，默认为 local。\n- cloud：云盘版。\n- cdc：独享集群版。",
           "example": "cloud",
           "member": "string",
           "name": "ProductVersion",
@@ -6278,7 +6280,7 @@
           "example": "30400",
           "member": "float",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -6296,8 +6298,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买时长，单位：月",
-          "example": "",
+          "document": "包年包月实例的购买时长，单位：月。",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
           "required": true,
@@ -6305,8 +6307,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "",
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6320,10 +6322,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "价格，单位：分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100800",
           "member": "float",
           "name": "Price",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -6342,7 +6345,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "crs-xjhsdjcxjd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6351,7 +6354,7 @@
         {
           "disabled": false,
           "document": "分片大小 单位 MB",
-          "example": "",
+          "example": "4096",
           "member": "uint64",
           "name": "MemSize",
           "required": true,
@@ -6360,7 +6363,7 @@
         {
           "disabled": false,
           "document": "分片数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "RedisShardNum",
           "required": false,
@@ -6369,7 +6372,7 @@
         {
           "disabled": false,
           "document": "副本数量，Redis2.8主从版、CKV主从版和Redis2.8单机版不需要填写",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "RedisReplicasNum",
           "required": false,
@@ -6384,9 +6387,10 @@
         {
           "disabled": false,
           "document": "价格，单位：分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "30400",
           "member": "float",
           "name": "Price",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },

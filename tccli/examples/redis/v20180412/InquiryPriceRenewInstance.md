@@ -1,13 +1,13 @@
-**Example 1: 示例**
+**Example 1: 查询示例**
 
-
+查询续费价格
 
 Input: 
 
 ```
 tccli redis InquiryPriceRenewInstance --cli-unfold-argument  \
     --Period 1 \
-    --InstanceId crs-qkdjynur
+    --InstanceId crs-qkdj****
 ```
 
 Output: 
