@@ -498,11 +498,11 @@
       "status": "online"
     },
     "DescribeApplicationBusinessLogConfig": {
-      "document": "查询应用关联日志配置项信息",
+      "document": "接口未使用，废弃录用\n\n查询应用关联日志配置项信息",
       "input": "DescribeApplicationBusinessLogConfigRequest",
       "name": "查询应用关联日志配置项信息",
       "output": "DescribeApplicationBusinessLogConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeApplications": {
       "document": "获取应用列表",
@@ -15272,7 +15272,7 @@
           "example": "无",
           "member": "PkgList",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15871,7 +15871,7 @@
         {
           "disabled": false,
           "document": "查询关键字（按照仓库名称搜索）",
-          "example": "",
+          "example": "demo",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -15880,7 +15880,7 @@
         {
           "disabled": false,
           "document": "查询起始偏移",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -15889,7 +15889,7 @@
         {
           "disabled": false,
           "document": "返回数量限制",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -15898,7 +15898,7 @@
         {
           "disabled": false,
           "document": "仓库类型（默认仓库：default，私有仓库：private）",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -15913,9 +15913,10 @@
         {
           "disabled": false,
           "document": "符合查询仓库信息列表",
-          "example": "",
+          "example": " ",
           "member": "RepositoryList",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15952,6 +15953,7 @@
           "example": "",
           "member": "RepositoryInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -1,126 +1,126 @@
 {
   "actions": {
     "AddSmsSign": {
-      "document": "1. 添加短信签名，申请之前请先认真参阅 [腾讯云短信签名审核标准](https://cloud.tencent.com/document/product/382/39022)。\n2. ⚠️注意：个人认证用户不支持使用 API 申请短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录控制台申请短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (AddSmsSign) 用于添加短信签名。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>添加短信签名前，请先认真参阅 <a href=\"https://cloud.tencent.com/document/product/382/39022\">腾讯云短信签名审核标准。</a></li><li>个人认证用户不支持使用 API 申请短信签名，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 申请短信签名。</li></ul></blockquote>",
       "input": "AddSmsSignRequest",
       "name": "添加短信签名",
       "output": "AddSmsSignResponse",
       "status": "online"
     },
     "AddSmsTemplate": {
-      "document": "1. 添加短信模板，申请之前请先认真参阅 [腾讯云短信正文模板审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 申请短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 申请短信正文模板。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (AddSmsTemplate) 用于创建短信模板。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>申请短信模板前，请先认真参阅 <a href=\"https://cloud.tencent.com/document/product/382/39023\">腾讯云短信正文模板审核标准。</a></li><li>个人认证用户不支持使用 API 申请短信正文模板，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 申请短信正文模板。</li></ul></blockquote>",
       "input": "AddSmsTemplateRequest",
       "name": "添加短信模板",
       "output": "AddSmsTemplateResponse",
       "status": "online"
     },
     "CallbackStatusStatistics": {
-      "document": "统计用户回执的数据。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (CallbackStatusStatistics) 用于统计用户回执的数据。",
       "input": "CallbackStatusStatisticsRequest",
       "name": "回执数据统计",
       "output": "CallbackStatusStatisticsResponse",
       "status": "online"
     },
     "DeleteSmsSign": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 删除短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，请登录 [控制台](https://console.cloud.tencent.com/smsv2) 删除短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (DeleteSmsSign) 用于删除短信签名。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>个人认证用户不支持使用 API 删除短信签名，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 删除短信签名。</li></ul></blockquote>",
       "input": "DeleteSmsSignRequest",
       "name": "删除短信签名",
       "output": "DeleteSmsSignResponse",
       "status": "online"
     },
     "DeleteSmsTemplate": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 删除短信正文模板，请登录 [控制台](https://console.cloud.tencent.com/smsv2) 删除短信正文模板，如需了解请参阅 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (DeleteSmsTemplate) 用于删除短信模板。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>个人认证用户不支持使用 API 删除短信正文模板，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 删除短信正文模板。</li></ul></blockquote>",
       "input": "DeleteSmsTemplateRequest",
       "name": "删除短信模板",
       "output": "DeleteSmsTemplateResponse",
       "status": "online"
     },
     "DescribePhoneNumberInfo": {
-      "document": "提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n>- 例如：查询号码 +86018845720123，可以得到国家码 86、规范的 E.164 号码 +8618845720123 等信息。",
+      "document": "本接口 (DescribePhoneNumberInfo) 用于提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n- 例如：查询号码 +86018845720123，可以得到国家码 86、规范的 E.164 号码 +8618845720123 等信息。",
       "input": "DescribePhoneNumberInfoRequest",
       "name": "号码信息查询",
       "output": "DescribePhoneNumberInfoResponse",
       "status": "online"
     },
     "DescribeSmsSignList": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629),如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 查询短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (DescribeSmsSignList) 用于查询短信签名状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>个人认证用户不支持使用 API 查询短信签名，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 查询短信签名。</li></ul></blockquote>",
       "input": "DescribeSmsSignListRequest",
       "name": "短信签名状态查询",
       "output": "DescribeSmsSignListResponse",
       "status": "online"
     },
     "DescribeSmsTemplateList": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (DescribeSmsTemplateList) 用于查询短信模板状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>个人认证用户不支持使用 API 查询短信正文模板，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 查询短信正文模板。</li></ul></blockquote>",
       "input": "DescribeSmsTemplateListRequest",
       "name": "短信模板状态查询",
       "output": "DescribeSmsTemplateListResponse",
       "status": "online"
     },
     "ModifySmsSign": {
-      "document": "1. 修改短信签名，修改之前请先认真参阅 [腾讯云短信签名审核标准](https://cloud.tencent.com/document/product/382/39022)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信签名。\n3. 修改短信签名，仅当签名为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的签名不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (ModifySmsSign) 用于修改短信签名。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>修改短信签名前，请先认真参阅 <a href=\"https://cloud.tencent.com/document/product/382/39022\">腾讯云短信签名审核标准。</a></li><li>个人认证用户不支持使用 API 修改短信签名，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 修改短信签名。</li><li>修改短信签名，仅当签名为<b>待审核</b>或<b>已拒绝</b>状态时，才能进行修改，<b>已审核通过</b>的签名不支持修改。</li></ul></blockquote>",
       "input": "ModifySmsSignRequest",
       "name": "修改短信签名",
       "output": "ModifySmsSignResponse",
       "status": "online"
     },
     "ModifySmsTemplate": {
-      "document": "1. 修改短信正文模板，修改之前请先认真参阅 [腾讯云短信正文模板审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信正文模板。\n3. 修改短信模板，仅当正文模板为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的正文模板不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (ModifySmsTemplate) 用于修改短信模板。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>修改短信正文模板前，请先认真参阅 <a href=\"https://cloud.tencent.com/document/product/382/39023\">腾讯云短信正文模板审核标准。</a></li><li>个人认证用户不支持使用 API 修改短信正文模板，请参阅了解 <a href=\"https://cloud.tencent.com/document/product/378/3629\">实名认证基本介绍</a>，如果为个人认证请登录 <a href=\"https://console.cloud.tencent.com/smsv2\">控制台</a> 修改短信正文模板。</li><li>修改短信模板，仅当正文模板为<b>待审核</b>或<b>已拒绝</b>状态时，才能进行修改，<b>已审核通过</b>的正文模板不支持修改。</li></ul></blockquote>",
       "input": "ModifySmsTemplateRequest",
       "name": "修改短信模板",
       "output": "ModifySmsTemplateResponse",
       "status": "online"
     },
     "PullSmsReplyStatus": {
-      "document": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (PullSmsReplyStatus) 用于拉取短信回复状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li><li>上行回复也支持 <a href=\"https://cloud.tencent.com/document/product/382/42907\">配置回复回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsReplyStatusRequest",
       "name": "拉取短信回复状态",
       "output": "PullSmsReplyStatusResponse",
       "status": "online"
     },
     "PullSmsReplyStatusByPhoneNumber": {
-      "document": "拉取单个号码短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (PullSmsReplyStatusByPhoneNumber) 用于拉取单个号码短信回复状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>上行回复也支持 <a href=\"https://cloud.tencent.com/document/product/382/42907\">配置回复回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsReplyStatusByPhoneNumberRequest",
       "name": "拉取单个号码短信回复状态",
       "output": "PullSmsReplyStatusByPhoneNumberResponse",
       "status": "online"
     },
     "PullSmsSendStatus": {
-      "document": "拉取短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (PullSmsSendStatus) 用于拉取短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#.E7.9F.AD.E4.BF.A1.E7.8A.B6.E6.80.81.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE\">配置回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsSendStatusRequest",
       "name": "拉取短信下发状态",
       "output": "PullSmsSendStatusResponse",
       "status": "online"
     },
     "PullSmsSendStatusByPhoneNumber": {
-      "document": "拉取单个号码短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (PullSmsSendStatusByPhoneNumber) 用于拉取单个号码短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#.E7.9F.AD.E4.BF.A1.E7.8A.B6.E6.80.81.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE\">配置回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsSendStatusByPhoneNumberRequest",
       "name": "拉取单个号码短信下发状态",
       "output": "PullSmsSendStatusByPhoneNumberResponse",
       "status": "online"
     },
     "ReportConversion": {
-      "document": "短信转化率上报。将已接收到短信的流水号上报到腾讯云短信服务。\n>- 注：当前接口以白名单方式对外开放，如有需要请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。",
+      "document": "本接口 (ReportConversion) 用于短信转化率上报。将已接收到短信的流水号上报到腾讯云短信服务。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>该接口当前以白名单方式对外开放，如有需要请联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li></ul></blockquote>",
       "input": "ReportConversionRequest",
       "name": "上报转换率",
       "output": "ReportConversionResponse",
       "status": "online"
     },
     "SendSms": {
-      "document": "短信发送接口，用于给用户发短信验证码、通知类短信或营销短信。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 [SDK](https://cloud.tencent.com/document/product/382/43193) 来使用云短信服务。\n>- 注：您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n>- 注：当前接口属于 2021-01-11 版本，如果您仍在使用 [2019-07-11 版本](https://cloud.tencent.com/document/product/382/38778)，建议您使用当前最新版本的接口，版本差异可参考[版本描述](https://cloud.tencent.com/document/product/382/63195#.E7.89.88.E6.9C.AC.E6.8F.8F.E8.BF.B0)。",
+      "document": "本接口 (SendSms) 用于发送验证码、通知类短信和营销短信。支持国内短信与国际/港澳台短信。\n- 当前接口属于 2021-01-11 版本，如果您仍在使用 [2019-07-11 版本](https://cloud.tencent.com/document/product/382/38778)，建议您使用当前最新版本的接口，版本差异可参考[版本描述](https://cloud.tencent.com/document/product/382/63195#.E7.89.88.E6.9C.AC.E6.8F.8F.E8.BF.B0)。",
       "input": "SendSmsRequest",
       "name": "发送短信",
       "output": "SendSmsResponse",
       "status": "online"
     },
     "SendStatusStatistics": {
-      "document": "统计用户发送短信的数据。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (SendStatusStatistics) 用于统计用户发送短信的数据。",
       "input": "SendStatusStatisticsRequest",
       "name": "发送短信数据统计",
       "output": "SendStatusStatisticsResponse",
       "status": "online"
     },
     "SmsPackagesStatistics": {
-      "document": "用户套餐包信息统计。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
+      "document": "本接口 (SmsPackagesStatistics) 用于统计用户套餐包数据。",
       "input": "SmsPackagesStatisticsRequest",
       "name": "套餐包信息统计",
       "output": "SmsPackagesStatisticsResponse",
@@ -1729,7 +1729,7 @@
         {
           "disabled": false,
           "document": "下发手机号码，采用 E.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号或全为境外手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。\n注：发送国内短信格式还支持0086、86或无任何国家或地区码的11位手机号码，前缀默认为+86。",
-          "example": "+8618511122233",
+          "example": "[\"+8618511122233\"]",
           "member": "string",
           "name": "PhoneNumberSet",
           "required": true,
@@ -1738,7 +1738,7 @@
         {
           "disabled": false,
           "document": "短信 SdkAppId，在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
-          "example": "1400006666",
+          "example": "\"1400006666\"",
           "member": "string",
           "name": "SmsSdkAppId",
           "required": true,
@@ -1747,7 +1747,7 @@
         {
           "disabled": false,
           "document": "模板 ID，必须填写已审核通过的模板 ID。模板 ID 可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-template) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-template) 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。",
-          "example": "1110",
+          "example": "\"1110\"",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -1756,7 +1756,7 @@
         {
           "disabled": false,
           "document": "短信签名内容，使用 UTF-8 编码，必须填写已审核通过的签名，例如：腾讯云，签名信息可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-sign) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-sign) 的签名管理查看。\n<dx-alert infotype=\"notice\" title=\"注意\">发送国内短信该参数必填，且需填写签名内容而非签名ID。</dx-alert>",
-          "example": "腾讯云",
+          "example": "\"腾讯云\"",
           "member": "string",
           "name": "SignName",
           "required": false,
@@ -1765,7 +1765,7 @@
         {
           "disabled": false,
           "document": "模板参数，若无模板参数，则设置为空。\n<dx-alert infotype=\"notice\" title=\"注意\">模板参数的个数需要与 TemplateId 对应模板的变量个数保持一致。</dx-alert>",
-          "example": "[1234]",
+          "example": "[\"1234\"]",
           "member": "string",
           "name": "TemplateParamSet",
           "required": false,
@@ -1774,7 +1774,7 @@
         {
           "disabled": false,
           "document": "短信码号扩展号，默认未开通，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "12",
+          "example": "\"12\"",
           "member": "string",
           "name": "ExtendCode",
           "required": false,
@@ -1783,7 +1783,7 @@
         {
           "disabled": false,
           "document": "用户的 session 内容，可以携带用户侧 ID 等上下文信息，server 会原样返回。注意长度需小于512字节。",
-          "example": "test",
+          "example": "\"test\"",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "Qsms",
+          "example": "\"Qsms\"",
           "member": "string",
           "name": "SenderId",
           "required": false,

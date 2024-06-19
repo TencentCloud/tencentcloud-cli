@@ -3594,7 +3594,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "dspa-xxxxxxxx",
+          "example": "dspa-abcd1234",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -3612,7 +3612,7 @@
         {
           "disabled": true,
           "document": "COS桶列表",
-          "example": "无",
+          "example": "[\"cos-123\",\"cos-456\"]",
           "member": "string",
           "name": "Buckets",
           "required": false,
@@ -3621,7 +3621,7 @@
         {
           "disabled": false,
           "document": "必填，COS资源列表",
-          "example": "无",
+          "example": "cosItem",
           "member": "CosBucketItem",
           "name": "CosBucketItems",
           "required": false,
@@ -4337,7 +4337,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID",
-          "example": "dspa-xxx",
+          "example": "dspa-abcd1234",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -4373,7 +4373,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "xx",
+          "example": "手机号",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4382,7 +4382,7 @@
         {
           "disabled": false,
           "document": "规则别名",
-          "example": "xx",
+          "example": "电话号码",
           "member": "string",
           "name": "AnotherName",
           "required": true,
@@ -8546,10 +8546,10 @@
         {
           "disabled": false,
           "document": "分类树json\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"result\": 1}]",
           "member": "string",
           "name": "ResultJson",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9649,7 +9649,7 @@
           "example": "无",
           "member": "LevelItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9659,7 +9659,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9705,7 +9705,7 @@
           "example": "无",
           "member": "DspaDiscoveryLevelDetail",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9715,7 +9715,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16819,7 +16819,7 @@
         {
           "disabled": false,
           "document": "DSPA实例ID。",
-          "example": "无",
+          "example": "dspa-aaa",
           "member": "string",
           "name": "DspaId",
           "required": true,
@@ -16828,7 +16828,7 @@
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -16837,7 +16837,7 @@
         {
           "disabled": false,
           "document": "资源所在地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -16846,7 +16846,7 @@
         {
           "disabled": false,
           "document": "资源类型。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "MetaType",
           "required": true,
@@ -16861,18 +16861,20 @@
         {
           "disabled": false,
           "document": "绑定DB数量。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "BindDbNums",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "未绑定DB数量。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "UnbindDbNums",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

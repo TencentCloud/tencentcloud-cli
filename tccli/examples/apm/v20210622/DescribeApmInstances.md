@@ -16,20 +16,15 @@ Output:
     "Response": {
         "Instances": [
             {
-                "Name": "APM自动化测试",
-                "InstanceId": "apm-OzNrwxuDj",
-                "Description": "test123",
-                "TraceDuration": 1,
-                "AppId": 251226959,
-                "CreateUin": "700000357122",
-                "Tags": [
-                    {
-                        "Key": "AutoTest",
-                        "Value": "cvm"
-                    }
-                ],
-                "ServiceCount": 5,
-                "ClientCount": 5,
+                "Name": "ss1123",
+                "InstanceId": "zE7Yu-g7R",
+                "Description": "ssd",
+                "TraceDuration": 3,
+                "AppId": 251005942,
+                "CreateUin": "1500000686",
+                "Tags": [],
+                "ServiceCount": 0,
+                "ClientCount": 0,
                 "TotalCount": 0,
                 "CountOfReportSpanPerDay": 0,
                 "AmountOfUsedStorage": 100,
@@ -37,11 +32,14 @@ Output:
                 "Region": "ap-guangzhou",
                 "ErrRateThreshold": 5,
                 "SampleRate": 100,
-                "ErrorSample": 1,
+                "ErrorSample": 0,
                 "SlowRequestSavedThreshold": 500,
-                "SpanDailyCounters": 0,
-                "BillingInstance": 1,
+                "SpanDailyCounters": 1,
+                "BillingInstance": 0,
                 "MetricDuration": 30,
+                "CustomShowTags": [],
+                "PayMode": 1,
+                "PayModeEffective": true,
                 "LogSource": "",
                 "LogRegion": "",
                 "IsRelatedLog": 0,

@@ -847,6 +847,13 @@
       "output": "DescribeLogSwitchesResponse",
       "status": "online"
     },
+    "DescribePodChargeInfo": {
+      "document": "查询正在运行中Pod的计费信息。可以通过 Namespace 和 Name 来查询某个 Pod 的信息，也可以通过 Pod 的 Uid 批量查询。",
+      "input": "DescribePodChargeInfoRequest",
+      "name": "查询超级节点上正在运行中Pod的计费信息",
+      "output": "DescribePodChargeInfoResponse",
+      "status": "online"
+    },
     "DescribePodDeductionRate": {
       "document": "查询各个规格的 Pod 的抵扣率",
       "input": "DescribePodDeductionRateRequest",
@@ -1581,7 +1588,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-asvdar",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1828,7 +1835,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxxx",
+          "example": "cls-brehdsf",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1837,7 +1844,7 @@
         {
           "disabled": false,
           "document": "为集群容器网络增加的子网列表",
-          "example": "[\"subnet-xxxxx\\n\"]",
+          "example": "[\"subnet-gsdfggf\\n\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -1846,7 +1853,7 @@
         {
           "disabled": false,
           "document": "集群所属的VPC的ID",
-          "example": "vpc-xxxx",
+          "example": "vpc-sdahtdd",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -4302,7 +4309,8 @@
           "example": "2021-01-22T06:56:09Z",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4312,7 +4320,8 @@
           "example": "running",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4322,7 +4331,8 @@
           "example": "2021-01-22T06:56:09Z",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4332,7 +4342,8 @@
           "example": "0",
           "member": "int64",
           "name": "ExitCode",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4342,7 +4353,8 @@
           "example": "todo ",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4352,7 +4364,8 @@
           "example": " todo",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4362,12 +4375,13 @@
           "example": " 1",
           "member": "int64",
           "name": "RestartCount",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ControllerStatus": {
       "document": "集群中控制器的状态描述",
@@ -6058,7 +6072,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属子网Id",
+          "document": "实例所属子网 ID",
           "example": "\"\"",
           "member": "string",
           "name": "SubnetId",
@@ -6067,7 +6081,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属VPC Id",
+          "document": "实例所属 VPC ID",
           "example": "\"\"",
           "member": "string",
           "name": "VpcId",
@@ -6085,7 +6099,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组Id",
+          "document": "安全组 ID",
           "example": "\"\"",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -6185,7 +6199,7 @@
           "example": "[]",
           "member": "string",
           "name": "ImageCacheId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7331,7 +7345,7 @@
         {
           "disabled": false,
           "document": "路由表名称。",
-          "example": "",
+          "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -7340,7 +7354,7 @@
         {
           "disabled": false,
           "document": "下一跳地址。",
-          "example": "",
+          "example": "10.0.0.3",
           "member": "string",
           "name": "GatewayIp",
           "required": true,
@@ -7349,7 +7363,7 @@
         {
           "disabled": false,
           "document": "目的端CIDR。",
-          "example": "",
+          "example": "10.4.0.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "required": true,
@@ -7376,7 +7390,7 @@
         {
           "disabled": false,
           "document": "路由表名称",
-          "example": "",
+          "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -9671,7 +9685,7 @@
         {
           "disabled": false,
           "document": "路由表名称。",
-          "example": "",
+          "example": "cls-abcdefgh",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -9680,7 +9694,7 @@
         {
           "disabled": false,
           "document": "过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）",
-          "example": "",
+          "example": "[{\"Name\":\"GatewayIP\",\"Values\":\"10.0.0.3\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9695,18 +9709,20 @@
         {
           "disabled": false,
           "document": "符合条件的实例数量。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群路由对象。",
-          "example": "",
+          "example": "无",
           "member": "RouteInfo",
           "name": "RouteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10904,7 +10920,7 @@
           "example": "\"Running\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10914,7 +10930,7 @@
           "example": "\"ipamd has not been installed yet\"",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11395,6 +11411,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "是否开启了中继网卡模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableTrunkingENI",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11463,7 +11489,7 @@
           "example": "[]",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11473,7 +11499,7 @@
           "example": "[]",
           "member": "ImageCache",
           "name": "ImageCaches",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11557,6 +11583,70 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodChargeInfoRequest": {
+      "document": "DescribePodChargeInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod名称",
+          "example": "test-0",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod的Uid",
+          "example": "4df5eb56-df50-4bd4-b84e-8c3f7fdf7ab8",
+          "member": "string",
+          "name": "Uids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodChargeInfoResponse": {
+      "document": "DescribePodChargeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod计费信息",
+          "example": "无",
+          "member": "PodChargeInfo",
+          "name": "ChargeInfoSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16099,7 +16189,7 @@
           "example": "[]",
           "member": "bool",
           "name": "Found",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16109,7 +16199,7 @@
           "example": "[]",
           "member": "ImageCache",
           "name": "ImageCache",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16352,7 +16442,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ImageCacheId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16362,7 +16452,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ImageCacheName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16372,7 +16462,7 @@
           "example": "\"\"",
           "member": "uint64",
           "name": "ImageCacheSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16382,7 +16472,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Images",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16392,7 +16482,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16402,7 +16492,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ExpireDateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16412,7 +16502,7 @@
           "example": "\"\"",
           "member": "ImageCacheEvent",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16422,7 +16512,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "LastMatchedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16432,7 +16522,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16442,7 +16532,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19621,6 +19711,102 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PodChargeInfo": {
+      "document": "Pod计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod计费开始时间",
+          "example": "\"2021-07-13 23:06:43\"",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的Uid",
+          "example": "\"74425581-ba21-4d03-8e18-33792a647a26\"",
+          "member": "string",
+          "name": "Uid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的CPU",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的内存",
+          "example": "2",
+          "member": "float",
+          "name": "Memory",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod类型：intel、amd、v100、t4、a10\\*gnv4、a10\\*gnv4v等。",
+          "example": "intel",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod是GPU时，表示GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0.25\"",
+          "member": "string",
+          "name": "Gpu",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费类型\nPREPAID：Pod调度到包月超级节点\nPOSTPAID_BY_HOUR：按量计费\nRESERVED_INSTANCE：上个周期被预留券抵扣\nSPOT：竞价实例\nTPOD：特惠实例",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24562,7 +24748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像缓存Id",
+          "document": "镜像缓存ID",
           "example": "\"\"",
           "member": "string",
           "name": "ImageCacheId",

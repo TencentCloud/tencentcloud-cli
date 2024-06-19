@@ -87,7 +87,7 @@
     "DescribeInstanceKeyValConfigs": {
       "document": "在集群详情页面获取所有参数列表",
       "input": "DescribeInstanceKeyValConfigsRequest",
-      "name": "获取参数列表",
+      "name": "在集群详情页面获取所有参数列表",
       "output": "DescribeInstanceKeyValConfigsResponse",
       "status": "online"
     },
@@ -1402,7 +1402,7 @@
           "example": "无",
           "member": "ClusterInfo",
           "name": "Clusters",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1448,7 +1448,7 @@
           "example": "--",
           "member": "InstanceConfigInfo",
           "name": "ConfigItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1458,7 +1458,7 @@
           "example": "-",
           "member": "InstanceConfigInfo",
           "name": "UnConfigItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1468,7 +1468,7 @@
           "example": "-",
           "member": "MapConfigItem",
           "name": "MapConfigItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1478,7 +1478,7 @@
           "example": "-",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1652,7 +1652,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceShardsList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2979,7 +2979,7 @@
           "example": "-",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2989,7 +2989,7 @@
           "example": "-",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

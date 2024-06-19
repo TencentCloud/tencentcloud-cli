@@ -6250,7 +6250,7 @@
           "example": "无",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6260,7 +6260,7 @@
           "example": "1",
           "member": "int64",
           "name": "NatFwInsCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6270,7 +6270,7 @@
           "example": "1",
           "member": "int64",
           "name": "SubnetCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6280,7 +6280,7 @@
           "example": "1",
           "member": "int64",
           "name": "OpenSwitchCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

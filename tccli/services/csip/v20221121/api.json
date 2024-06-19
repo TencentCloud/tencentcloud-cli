@@ -3093,7 +3093,7 @@
         {
           "disabled": false,
           "document": "pcmgrId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "PCMGRId",
           "output_required": true,
@@ -3103,7 +3103,7 @@
         {
           "disabled": false,
           "document": "报告id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rpt-xxxxx",
           "member": "string",
           "name": "LogId",
           "output_required": false,
@@ -3113,7 +3113,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rmis-xxx",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -3123,7 +3123,7 @@
         {
           "disabled": false,
           "document": "漏洞标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "必修",
+          "example": "[]",
           "member": "string",
           "name": "VulTag",
           "output_required": false,
@@ -3133,7 +3133,7 @@
         {
           "disabled": false,
           "document": "漏洞披露时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "DisclosureTime",
           "output_required": false,
@@ -3143,7 +3143,7 @@
         {
           "disabled": false,
           "document": "攻击热度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "AttackHeat",
           "output_required": false,
@@ -3153,7 +3153,7 @@
         {
           "disabled": false,
           "document": "是否必修漏洞1是，0不是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsSuggest",
           "output_required": false,
@@ -3163,7 +3163,7 @@
         {
           "disabled": false,
           "document": "处置任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "HandleTaskId",
           "output_required": false,
@@ -3173,7 +3173,7 @@
         {
           "disabled": false,
           "document": "引擎来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "nsfocus_vul",
+          "example": "vss",
           "member": "string",
           "name": "EngineSource",
           "output_required": false,
@@ -3183,11 +3183,31 @@
         {
           "disabled": false,
           "document": "新的漏洞风险id(同全网漏洞表的riskid)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "VulRiskId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新版漏洞id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TVD-xxx",
+          "member": "string",
+          "name": "TvdID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以一键体检，1-可以，0-不可以\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsOneClick",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4310,6 +4330,28 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvm真正所属的appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RealAppid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云资产类型：0：腾讯云，1：aws，2：azure\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4464,6 +4506,15 @@
         },
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "资产标签",
           "example": "无",
           "member": "AssetTag",
@@ -4520,7 +4571,7 @@
         {
           "disabled": false,
           "document": "扫描项目；port/poc/weakpass/webcontent/configrisk/exposedserver",
-          "example": "无",
+          "example": "[port]",
           "member": "string",
           "name": "ScanItem",
           "required": true,
@@ -4547,7 +4598,7 @@
         {
           "disabled": false,
           "document": "扫描资产信息列表",
-          "example": "无",
+          "example": "[]",
           "member": "TaskAssetObject",
           "name": "Assets",
           "required": false,
@@ -4556,7 +4607,7 @@
         {
           "disabled": false,
           "document": "扫描计划详情",
-          "example": "无",
+          "example": "0 0 0 */1 * * *",
           "member": "string",
           "name": "ScanPlanContent",
           "required": false,
@@ -4565,7 +4616,7 @@
         {
           "disabled": false,
           "document": "ip/域名/url数组",
-          "example": "无",
+          "example": "[1.1.1.1]",
           "member": "string",
           "name": "SelfDefiningAssets",
           "required": false,
@@ -4583,7 +4634,7 @@
         {
           "disabled": false,
           "document": "高级配置",
-          "example": "无",
+          "example": "{}",
           "member": "TaskAdvanceCFG",
           "name": "TaskAdvanceCFG",
           "required": false,
@@ -4601,11 +4652,20 @@
         {
           "disabled": false,
           "document": "资产标签",
-          "example": "无",
+          "example": "{}",
           "member": "AssetTag",
           "name": "Tags",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务完成回调webhook地址",
+          "example": "https://abc.xyz",
+          "member": "string",
+          "name": "FinishWebHook",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5093,6 +5153,15 @@
     "DeleteDomainAndIpRequest": {
       "document": "DeleteDomainAndIp请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "-",
@@ -9397,7 +9466,7 @@
         {
           "disabled": false,
           "document": "扫描项目；port/poc/weakpass/webcontent/configrisk",
-          "example": "无",
+          "example": "[port]",
           "member": "string",
           "name": "ScanItem",
           "required": true,
@@ -9415,7 +9484,7 @@
         {
           "disabled": false,
           "document": "要修改的任务id",
-          "example": "无",
+          "example": "rmis-abcd",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9433,7 +9502,7 @@
         {
           "disabled": false,
           "document": "扫描资产信息列表",
-          "example": "无",
+          "example": "[]",
           "member": "TaskAssetObject",
           "name": "Assets",
           "required": false,
@@ -9442,7 +9511,7 @@
         {
           "disabled": false,
           "document": "扫描计划详情",
-          "example": "无",
+          "example": "0 0 0 */1 * * *",
           "member": "string",
           "name": "ScanPlanContent",
           "required": false,
@@ -9451,7 +9520,7 @@
         {
           "disabled": false,
           "document": "ip/域名/url数组",
-          "example": "无",
+          "example": "[1.1.1.1]",
           "member": "string",
           "name": "SelfDefiningAssets",
           "required": false,
@@ -9460,7 +9529,7 @@
         {
           "disabled": false,
           "document": "高级配置",
-          "example": "无",
+          "example": "{}",
           "member": "TaskAdvanceCFG",
           "name": "TaskAdvanceCFG",
           "required": false,
@@ -9469,11 +9538,20 @@
         {
           "disabled": false,
           "document": "体检模式，0-标准模式，1-快速模式，2-高级模式，默认标准模式",
-          "example": "无",
+          "example": "{}",
           "member": "int64",
           "name": "TaskMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务完成回调webhook地址",
+          "example": "https://abc.xyz",
+          "member": "string",
+          "name": "FinishWebHook",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10372,12 +10450,11 @@
         {
           "disabled": false,
           "document": "日志Id列表",
-          "example": "xx",
+          "example": "abcd",
           "member": "string",
           "name": "TaskLogList",
           "required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -12046,12 +12123,11 @@
         {
           "disabled": false,
           "document": "检测项ID",
-          "example": "xx",
+          "example": "50",
           "member": "int64",
           "name": "CheckItemId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -12060,8 +12136,7 @@
           "member": "int64",
           "name": "Enable",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12072,7 +12147,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "x",
+          "example": "abcd",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -13052,7 +13127,7 @@
         {
           "disabled": false,
           "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8.0",
           "member": "float",
           "name": "CVSS",
           "output_required": false,
@@ -13062,7 +13137,7 @@
         {
           "disabled": false,
           "document": "PCMGRId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "PCMGRId",
           "output_required": false,
@@ -13072,7 +13147,7 @@
         {
           "disabled": false,
           "document": "漏洞标签。搜索时应急 必修传参VulTag=SuggestRepair/EMGCVul\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "VulTag",
           "output_required": false,
@@ -13082,7 +13157,7 @@
         {
           "disabled": false,
           "document": "漏洞披露时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "DisclosureTime",
           "output_required": false,
@@ -13092,7 +13167,7 @@
         {
           "disabled": false,
           "document": "攻击热度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "AttackHeat",
           "output_required": false,
@@ -13101,8 +13176,8 @@
         },
         {
           "disabled": false,
-          "document": "是否必修漏洞1是，0不是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否必修漏洞，1-是，0-不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "IsSuggest",
           "output_required": false,
@@ -13112,7 +13187,7 @@
         {
           "disabled": false,
           "document": "处置任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "HandleTaskId",
           "output_required": false,
@@ -13122,7 +13197,7 @@
         {
           "disabled": false,
           "document": "引擎来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "nsfocus_vul",
+          "example": "vss",
           "member": "string",
           "name": "EngineSource",
           "output_required": false,
@@ -13132,11 +13207,31 @@
         {
           "disabled": false,
           "document": "新的漏洞风险id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "VulRiskId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新版漏洞id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TVD-xxx",
+          "member": "string",
+          "name": "TvdID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以一键体检，1-可以，0-不可以\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsOneClick",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

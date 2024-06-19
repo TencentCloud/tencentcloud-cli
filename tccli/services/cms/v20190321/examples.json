@@ -20,7 +20,7 @@
       {
         "document": "获取用户词库列表",
         "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeywordsLibs\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\",\n    \"Filters\": [\n        {\n            \"Name\": \"LibName\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"abc\",\n                \"LibName\": \"abc\",\n                \"Describe\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Suggestion\": \"abc\",\n                \"MatchType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"abc\",\n                \"LibName\": \"abc\",\n                \"Describe\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Suggestion\": \"abc\",\n                \"MatchType\": \"abc\",\n                \"BizTypes\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取用户词库列表"
       }
     ],

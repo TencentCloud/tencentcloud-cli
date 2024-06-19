@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli csip DeleteRiskScanTask --cli-unfold-argument ```
+tccli csip DeleteRiskScanTask --cli-unfold-argument  \
+    --MemberId mem-abcd \
+    --TaskIdList.0.TaskId abcd
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abcd"
     }
 }
 ```

@@ -14,10 +14,18 @@ Output:
         "Result": {
             "TotalCount": 1,
             "TopicList": [
-                {}
+                {
+                    "Name": "abc",
+                    "TopicName": "abc",
+                    "TopicId": "abc",
+                    "PartitionNum": 1,
+                    "RetentionMs": 1,
+                    "Note": "abc",
+                    "Status": 1
+                }
             ]
         },
-        "RequestId": "fd9afa97-cc0f-4ea7-9da8-63914a0877e1"
+        "RequestId": "abc"
     }
 }
 ```

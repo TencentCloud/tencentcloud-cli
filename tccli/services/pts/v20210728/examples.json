@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"Name\": \"MyProject\",\n    \"Description\": \"Test project\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ProjectId\": \"project-xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2lcbdvsgxaoc7yp5dxveh3mtpf27c4o\",\n        \"ProjectId\": \"project-xx\"\n    }\n}",
         "title": "创建项目"
       }
     ],

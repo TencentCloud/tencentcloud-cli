@@ -47,6 +47,7 @@ Output:
         "IsDefault": 0,
         "LastEditUin": "1500000000",
         "ProjectId": 0,
+        "IsUnionRule": 0,
         "ReceiverInfos": null,
         "Region": [
             "bj",

@@ -4299,7 +4299,7 @@
           "example": "无",
           "member": "GlobalDns",
           "name": "GlobalDnsList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

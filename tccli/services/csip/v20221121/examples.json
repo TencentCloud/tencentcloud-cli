@@ -11,7 +11,7 @@
     "CreateDomainAndIp": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainAndIp\n<公共请求参数>\n\n{\n    \"Content\": [\n        \"abc\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainAndIp\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"abc\"\n    ],\n    \"Content\": [\n        \"abc\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "添加资产"
       }
@@ -27,7 +27,7 @@
     "DeleteDomainAndIp": [
       {
         "document": "删除公网IP/域名",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainAndIp\n<公共请求参数>\n\n{\n    \"Content\": [\n        {\n            \"Asset\": \"abc\"\n        }\n    ],\n    \"RetainPath\": 0,\n    \"IgnoreAsset\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"Type\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainAndIp\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"abc\"\n    ],\n    \"Content\": [\n        {\n            \"Asset\": \"abc\"\n        }\n    ],\n    \"RetainPath\": 0,\n    \"IgnoreAsset\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"Type\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除公网IP/域名"
       }
@@ -35,8 +35,8 @@
     "DeleteRiskScanTask": [
       {
         "document": "删除风险中心扫描任务",
-        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"TaskIdList\": [\n    {\n      \"TaskId\": \"xx\",\n      \"TargetAppId\": \"xx\"\n    }\n  ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRiskScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-abcd\"\n    ],\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"abcd\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
         "title": "删除风险中心扫描任务"
       }
     ],

@@ -5079,6 +5079,15 @@
           "name": "PolicyIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "prom的实例id",
+          "example": "[\"prom-1234\"]",
+          "member": "string",
+          "name": "PromInsIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6550,6 +6559,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6559,6 +6569,7 @@
           "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9866,7 +9877,7 @@
         {
           "disabled": false,
           "document": "固定值，为\"monitor\"",
-          "example": "",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -9875,7 +9886,7 @@
         {
           "disabled": false,
           "document": "策略组id",
-          "example": "",
+          "example": "123456",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -9890,153 +9901,170 @@
         {
           "disabled": false,
           "document": "策略组名称",
-          "example": "",
+          "example": "策略",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略组所属的项目id",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为默认策略，0表示非默认策略，1表示默认策略",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "IsDefault",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略类型",
-          "example": "",
+          "example": "cvm_device",
           "member": "string",
           "name": "ViewName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略说明",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略类型名称",
-          "example": "",
+          "example": "云服务器基础监控",
           "member": "string",
           "name": "ShowName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近编辑的用户uin",
-          "example": "",
+          "example": "123",
           "member": "string",
           "name": "LastEditUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近编辑时间",
-          "example": "",
+          "example": "1718159371",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该策略支持的地域",
-          "example": "",
+          "example": "bj",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略类型的维度列表",
-          "example": "",
+          "example": "uuid",
           "member": "string",
           "name": "DimensionGroup",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "阈值规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "DescribePolicyGroupInfoCondition",
           "name": "ConditionsConfig",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "产品事件规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "DescribePolicyGroupInfoEventCondition",
           "name": "EventConfig",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "DescribePolicyGroupInfoReceiverInfo",
           "name": "ReceiverInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户回调信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{}",
           "member": "DescribePolicyGroupInfoCallback",
           "name": "Callback",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{}",
           "member": "DescribePolicyGroupInfoConditionTpl",
           "name": "ConditionsTemp",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否可以设置成默认策略",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "CanSetDefault",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否且规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "IsUnionRule",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

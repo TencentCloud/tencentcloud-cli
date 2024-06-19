@@ -998,6 +998,32 @@
         "title": "查询开关列表接口示例"
       }
     ],
+    "DescribePodChargeInfo": [
+      {
+        "document": " 需要同时指定 Namespace 和 Name",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodChargeInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-s180xq54\",\n    \"Namespace\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Namespace and Name must be set\"\n        },\n        \"RequestId\": \"e9de622d-82fc-4aa1-a32c-f2679bc51a9e\"\n    }\n}",
+        "title": "只指定 Namespace"
+      },
+      {
+        "document": " 需要同时输入 Namespace 和 Name，或者 Uid",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodChargeInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-s180xq54\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Namespace,Name,Uid is empty\"\n        },\n        \"RequestId\": \"99a94acb-7566-410b-8dc8-b611ca160820\"\n    }\n}",
+        "title": "不输入必要参数"
+      },
+      {
+        "document": "同时指定了 Namespace 和 Name",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodChargeInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-s180xq54\",\n    \"Namespace\": \"default\",\n    \"Name\": \"nginx-c4cd9685f-m58ts\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChargeInfoSet\": [\n            {\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"Name\": \"nginx-c4cd9685f-m58ts\",\n                \"Namespace\": \"default\",\n                \"StartTime\": \"2024-03-26 00:10:38\",\n                \"Type\": \"intel\",\n                \"Uid\": \"4df5eb56-df50-4bd4-b84e-8c3f7fdf7ab8\"\n            }\n        ],\n        \"RequestId\": \"9b400838-e679-486f-a7d3-854d5040a6e6\"\n    }\n}",
+        "title": "通过 Namespace 和 Name 查询"
+      },
+      {
+        "document": "输入多个Uid来查询",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodChargeInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0x51a7qw\",\n    \"Uids\": [\n        \"6c4022b4-288c-449e-b50f-ae06d91dd48e\",\n        \"a49edc4a-b316-45b0-8ce4-8f23f93a27c7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ChargeInfoSet\": [\n            {\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"Cpu\": 2,\n                \"Memory\": 4,\n                \"Name\": \"csi-cbs-controller-6678658c57-hhbvw\",\n                \"Namespace\": \"kube-system\",\n                \"StartTime\": \"2024-04-17 00:08:15\",\n                \"Type\": \"intel\",\n                \"Uid\": \"6c4022b4-288c-449e-b50f-ae06d91dd48e\"\n            },\n            {\n                \"ChargeType\": \"NO_CHARGE\",\n                \"Cpu\": 0.25,\n                \"Memory\": 0.5,\n                \"Name\": \"coredns-56555dd999-ntc6g\",\n                \"Namespace\": \"kube-system\",\n                \"StartTime\": \"2024-04-17 00:08:11\",\n                \"Type\": \"intel\",\n                \"Uid\": \"a49edc4a-b316-45b0-8ce4-8f23f93a27c7\"\n            }\n        ],\n        \"RequestId\": \"9fe5a6b6-ad87-426d-b619-b600d0a18f23\"\n    }\n}",
+        "title": "查询多个运行中的Pod计费信息"
+      }
+    ],
     "DescribePodDeductionRate": [
       {
         "document": "可被预留券抵扣的 Pod 的抵扣率查询",

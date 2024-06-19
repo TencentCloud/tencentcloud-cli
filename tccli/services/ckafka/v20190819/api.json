@@ -414,7 +414,7 @@
       "status": "online"
     },
     "DescribeTopicAttributes": {
-      "document": "获取主题属性\n",
+      "document": "获取主题属性",
       "input": "DescribeTopicAttributesRequest",
       "name": "获取主题属性",
       "output": "DescribeTopicAttributesResponse",
@@ -690,7 +690,7 @@
           "example": "testRule",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -700,7 +700,7 @@
           "example": "ckafka-****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -710,7 +710,7 @@
           "example": "PREFIXED",
           "member": "string",
           "name": "PatternType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -720,7 +720,7 @@
           "example": "test",
           "member": "string",
           "name": "Pattern",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -730,7 +730,7 @@
           "example": "Topic",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -740,7 +740,7 @@
           "example": "{}",
           "member": "string",
           "name": "AclList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -750,7 +750,7 @@
           "example": "Sat Apr 03 20:13:03 CST 2021",
           "member": "string",
           "name": "CreateTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -760,7 +760,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsApplied",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -770,7 +770,7 @@
           "example": "Sat Apr 03 20:13:03 CST 2021",
           "member": "string",
           "name": "UpdateTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -780,7 +780,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -790,7 +790,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -800,7 +800,7 @@
           "example": "1",
           "member": "int64",
           "name": "TopicCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -810,7 +810,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PatternTypeTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3149,7 +3149,7 @@
           "example": "data",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3966,7 +3966,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-ga52n7bz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3975,7 +3975,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -3984,7 +3984,7 @@
         {
           "disabled": false,
           "document": "主题分区个数",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "PartitionNum",
           "required": true,
@@ -3999,9 +3999,10 @@
         {
           "disabled": false,
           "document": "返回的结果集",
-          "example": "",
+          "example": "1",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4652,7 +4653,7 @@
           "example": "无",
           "member": "CreateTopicResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5468,7 +5469,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5671,7 +5672,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5809,7 +5810,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5909,7 +5910,7 @@
         {
           "disabled": false,
           "document": "ckafka 实例Id",
-          "example": "",
+          "example": "ckafka-ga52n7bz",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5918,7 +5919,7 @@
         {
           "disabled": false,
           "document": "ckafka 主题名称",
-          "example": "",
+          "example": "abc",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -5933,9 +5934,10 @@
         {
           "disabled": false,
           "document": "返回的结果集",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6063,7 +6065,7 @@
           "example": "无",
           "member": "AclResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6127,7 +6129,7 @@
           "example": "无",
           "member": "AclRuleResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6209,7 +6211,7 @@
           "example": "无",
           "member": "ZoneResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6833,6 +6835,7 @@
           "example": "xxx",
           "member": "DescribeConnectResourcesResp",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6860,7 +6863,7 @@
         {
           "disabled": false,
           "document": "可选，用户需要查询的group名称。",
-          "example": " ",
+          "example": " groupName",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -6869,7 +6872,7 @@
         {
           "disabled": false,
           "document": "可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。",
-          "example": " ",
+          "example": " topicName",
           "member": "string",
           "name": "TopicName",
           "required": false,
@@ -6902,7 +6905,7 @@
         {
           "disabled": false,
           "document": "返回的消费分组信息",
-          "example": " ",
+          "example": " 无",
           "member": "ConsumerGroupResponse",
           "name": "Result",
           "output_required": true,
@@ -7512,7 +7515,7 @@
           "example": "null",
           "member": "DescribeDatahubTopicsResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8077,7 +8080,7 @@
           "example": "无",
           "member": "Region",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8206,7 +8209,7 @@
           "example": "无",
           "member": "TopicAttributesResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8279,7 +8282,7 @@
           "example": "无",
           "member": "TopicDetailResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8352,6 +8355,7 @@
           "example": "无",
           "member": "TopicFlowRankingResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8397,7 +8401,7 @@
           "example": "无",
           "member": "DescribeConnectInfoResultDTO",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8470,7 +8474,7 @@
           "example": "无",
           "member": "TopicResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8534,7 +8538,7 @@
           "example": "无",
           "member": "TopicSubscribeGroup",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9998,7 +10002,7 @@
           "example": "无",
           "member": "ConsumerRecord",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10017,7 +10021,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "ckafka-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10026,7 +10030,7 @@
         {
           "disabled": false,
           "document": "主题名",
-          "example": "",
+          "example": "topicname",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -10035,7 +10039,7 @@
         {
           "disabled": false,
           "document": "分区id",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Partition",
           "required": true,
@@ -10044,7 +10048,7 @@
         {
           "disabled": false,
           "document": "位点信息",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -10053,7 +10057,7 @@
         {
           "disabled": false,
           "document": "最大查询条数，默认20，最大20",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "SinglePartitionRecordNumber",
           "required": false,
@@ -10068,9 +10072,10 @@
         {
           "disabled": false,
           "document": "返回结果。注意，列表中不返回具体的消息内容（key、value），如果需要查询具体消息内容，请使用FetchMessageByOffset接口",
-          "example": "",
+          "example": "无",
           "member": "ConsumerRecord",
           "name": "Result",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13052,7 +13057,7 @@
         {
           "disabled": false,
           "document": "kafka实例id",
-          "example": "",
+          "example": "ckafka-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13061,7 +13066,7 @@
         {
           "disabled": false,
           "document": "kafka 消费分组",
-          "example": "",
+          "example": "groupName",
           "member": "string",
           "name": "Group",
           "required": true,
@@ -13070,7 +13075,7 @@
         {
           "disabled": false,
           "document": "重置offset的策略，入参含义 0. 对齐shift-by参数，代表把offset向前或向后移动shift条 1. 对齐参考(by-duration,to-datetime,to-earliest,to-latest),代表把offset移动到指定timestamp的位置 2. 对齐参考(to-offset)，代表把offset移动到指定的offset位置",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Strategy",
           "required": true,
@@ -13079,7 +13084,7 @@
         {
           "disabled": false,
           "document": "表示需要重置的topics， 不填表示全部",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Topics",
           "required": false,
@@ -13088,7 +13093,7 @@
         {
           "disabled": false,
           "document": "当strategy为0时，必须包含该字段，可以大于零代表会把offset向后移动shift条，小于零则将offset向前回溯shift条数。正确重置后新的offset应该是(old_offset + shift)，需要注意的是如果新的offset小于partition的earliest则会设置为earliest，如果大于partition 的latest则会设置为latest",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Shift",
           "required": false,
@@ -13097,7 +13102,7 @@
         {
           "disabled": false,
           "document": "单位ms。当strategy为1时，必须包含该字段，其中-2表示重置offset到最开始的位置，-1表示重置到最新的位置(相当于清空)，其它值则代表指定的时间，会获取topic中指定时间的offset然后进行重置，需要注意的时，如果指定的时间不存在消息，则获取最末尾的offset。",
-          "example": "",
+          "example": "13589015901000",
           "member": "int64",
           "name": "ShiftTimestamp",
           "required": false,
@@ -13106,7 +13111,7 @@
         {
           "disabled": false,
           "document": "需要重新设置的offset位置。当strategy为2，必须包含该字段。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -13115,7 +13120,7 @@
         {
           "disabled": false,
           "document": "需要重新设置的partition的列表，如果没有指定Topics参数。则重置全部topics的对应的Partition列表里的partition。指定Topics时则重置指定的topic列表的对应的Partitions列表的partition。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Partitions",
           "required": false,
@@ -13130,9 +13135,10 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13483,19 +13489,19 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。",
-          "example": "86400000",
+          "document": "主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。",
+          "example": "1",
           "member": "int64",
-          "name": "SegmentMs",
+          "name": "MaxMessageBytes",
           "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。",
-          "example": "1",
+          "document": "Segment 分片滚动的时长，单位：ms，当前最小为300000ms。",
+          "example": "86400000",
           "member": "int64",
-          "name": "MaxMessageBytes",
+          "name": "SegmentMs",
           "required": false,
           "type": "int"
         },
@@ -13592,7 +13598,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17886,7 +17892,7 @@
           "example": "1",
           "member": "ZoneInfo",
           "name": "ZoneList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17896,7 +17902,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxBuyInstanceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17906,7 +17912,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17916,7 +17922,7 @@
           "example": "1",
           "member": "Price",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17926,7 +17932,7 @@
           "example": "1",
           "member": "Price",
           "name": "MessagePrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17936,7 +17942,7 @@
           "example": "1",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17946,7 +17952,7 @@
           "example": "1",
           "member": "string",
           "name": "Standard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17956,7 +17962,7 @@
           "example": "1",
           "member": "string",
           "name": "StandardS2",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17966,7 +17972,7 @@
           "example": "1",
           "member": "string",
           "name": "Profession",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17976,7 +17982,7 @@
           "example": "1",
           "member": "string",
           "name": "Physical",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17986,7 +17992,7 @@
           "example": "1",
           "member": "string",
           "name": "PublicNetwork",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17996,8 +18002,58 @@
           "example": "1",
           "member": "string",
           "name": "PublicNetworkLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否必须录入tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ForceCheckTag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

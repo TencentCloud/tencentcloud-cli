@@ -1573,6 +1573,24 @@
           "name": "IsQuery",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "[\"xx\",\"xxx\"]",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称",
+          "example": "[\"xx\",\"xxx\"]",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

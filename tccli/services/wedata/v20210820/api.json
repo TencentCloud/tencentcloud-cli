@@ -1163,7 +1163,7 @@
       "status": "online"
     },
     "DiagnosePro": {
-      "document": "实例诊断",
+      "document": "实例诊断，用于诊断 INITIAL、DEPENDENCE、ALLOCATED、LAUNCHED、EVENT_LISTENING、BEFORE_ASPECT、EXPIRED、FAILED状态的实例",
       "input": "DiagnoseProRequest",
       "name": "实例诊断信息-新",
       "output": "DiagnoseProResponse",
@@ -19103,6 +19103,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）",
+          "example": "{\"Instance\":{\"TaskId\":\"20231221111821390\",\"CurRunDate\":\"2024-04-1105:00:00\"}}",
+          "member": "InstanceApiOpsRequest",
+          "name": "SearchCondition",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "\"155477816885681\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "实例列表",
           "example": "无",
           "member": "InstanceOpsDto",
@@ -19157,15 +19175,6 @@
         },
         {
           "disabled": false,
-          "document": "查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）",
-          "example": "{\"Instance\":{\"TaskId\":\"20231221111821390\",\"CurRunDate\":\"2024-04-1105:00:00\"}}",
-          "member": "InstanceApiOpsRequest",
-          "name": "SearchCondition",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
           "document": "访问类型",
           "example": "无",
           "member": "string",
@@ -19188,15 +19197,6 @@
           "example": "无",
           "member": "string",
           "name": "OperatorId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "项目id",
-          "example": "\"155477816885681\"",
-          "member": "string",
-          "name": "ProjectId",
           "required": false,
           "type": "string"
         },
@@ -38293,6 +38293,17 @@
           "example": "https://www.feishu.cn/",
           "member": "string",
           "name": "LarkWebHooks",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "钉钉群Hook地址，多个hook地址使用,隔开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.dingtalk.com/",
+          "member": "string",
+          "name": "DingDingWebHooks",
           "output_required": false,
           "required": false,
           "type": "string",

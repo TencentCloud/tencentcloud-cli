@@ -1046,7 +1046,7 @@
       {
         "document": "获取应用application-jy9w6lka下的程序包信息",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribePkgs\n&ApplicationId=application-xxxxxxxx\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"PkgId\": \"xx\",\n                    \"PkgType\": \"xx\",\n                    \"UploadTime\": \"xx\",\n                    \"PkgName\": \"xx\",\n                    \"PkgDesc\": \"xx\",\n                    \"PkgBindInfo\": [\n                        {\n                            \"ApplicationId\": \"xx\",\n                            \"GroupId\": \"xx\"\n                        }\n                    ],\n                    \"PkgVersion\": \"xx\",\n                    \"PkgPubStatus\": 1,\n                    \"Md5\": \"xx\"\n                },\n                {\n                    \"PkgId\": \"xx\",\n                    \"PkgType\": \"xx\",\n                    \"UploadTime\": \"xx\",\n                    \"PkgName\": \"xx\",\n                    \"PkgDesc\": \"xx\",\n                    \"PkgBindInfo\": [\n                        {\n                            \"ApplicationId\": \"xx\",\n                            \"GroupId\": \"xx\"\n                        }\n                    ],\n                    \"PkgVersion\": \"xx\",\n                    \"PkgPubStatus\": 1,\n                    \"Md5\": \"xx\"\n                }\n            ],\n            \"TotalCount\": 2,\n            \"RepositoryType\": \"xx\",\n            \"RepositoryName\": \"xx\",\n            \"RepositoryId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": [\n                {\n                    \"PkgId\": \"abc\",\n                    \"PkgName\": \"abc\",\n                    \"PkgType\": \"abc\",\n                    \"PkgVersion\": \"abc\",\n                    \"PkgDesc\": \"abc\",\n                    \"UploadTime\": \"abc\",\n                    \"Md5\": \"abc\",\n                    \"PkgPubStatus\": 0,\n                    \"PkgBindInfo\": [\n                        {\n                            \"ApplicationId\": \"abc\",\n                            \"GroupId\": \"abc\"\n                        }\n                    ]\n                }\n            ],\n            \"RepositoryId\": \"abc\",\n            \"RepositoryType\": \"abc\",\n            \"RepositoryName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取应用下程序包列表"
       }
     ],
@@ -1125,8 +1125,8 @@
     "DescribeRepositories": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeRepositories\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58998bc6-b283-4242-94e9-4d1b75e47a01\",\n        \"Result\": {}\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeRepositories\n&Offset=0\n&Limit=20\n&SearchWord=demo\n&RepositoryType=default\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": [\n                {\n                    \"RepositoryId\": \"abc\",\n                    \"RepositoryName\": \"abc\",\n                    \"RepositoryType\": \"abc\",\n                    \"RepositoryDesc\": \"abc\",\n                    \"IsUsed\": true,\n                    \"CreateTime\": \"abc\",\n                    \"BucketName\": \"abc\",\n                    \"BucketRegion\": \"abc\",\n                    \"Directory\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取所有仓库列表"
       }
     ],

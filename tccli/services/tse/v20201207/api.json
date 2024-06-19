@@ -15891,11 +15891,22 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "健康检查屏蔽权重为0的节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "健康检查监控上报的数据屏蔽权重为0的节点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IgnoreZeroWeightNodes",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查支持权重为0节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ZeroWeightHeathCheck",
           "output_required": false,
           "required": false,
           "type": "bool",

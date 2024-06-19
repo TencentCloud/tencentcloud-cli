@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli csip CreateDomainAndIp --cli-unfold-argument  \
+    --MemberId abc \
     --Content abc \
     --Tags.0.TagKey abc \
     --Tags.0.TagValue abc

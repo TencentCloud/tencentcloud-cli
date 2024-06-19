@@ -8,7 +8,7 @@ Input:
 tccli ckafka CreatePartition --cli-unfold-argument  \
     --InstanceId xxx \
     --TopicName xxx \
-    --PartitionNum xxx
+    --PartitionNum 3
 ```
 
 Output: 

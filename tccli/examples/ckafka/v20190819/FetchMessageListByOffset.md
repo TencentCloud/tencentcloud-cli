@@ -19,23 +19,16 @@ Output:
     "Response": {
         "Result": [
             {
-                "Topic": "xxx",
-                "Partition": 2,
-                "Offset": 1,
-                "Key": "xxx",
-                "Value": "xxx",
-                "Timestamp": 1
-            },
-            {
-                "Topic": "xxx",
-                "Partition": 2,
-                "Offset": 2,
-                "Key": "xxx",
-                "Value": "xxx",
-                "Timestamp": 1
+                "Topic": "abc",
+                "Partition": 0,
+                "Offset": 0,
+                "Key": "abc",
+                "Value": "abc",
+                "Timestamp": 0,
+                "Headers": "abc"
             }
         ],
-        "RequestId": "62d589e0-53d5-47e0-95ff-237c48b8fb77"
+        "RequestId": "abc"
     }
 }
 ```

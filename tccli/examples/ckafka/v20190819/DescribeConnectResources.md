@@ -20,36 +20,137 @@ Output:
             "TotalCount": 0,
             "ConnectResourceList": [
                 {
+                    "ResourceId": "abc",
+                    "ResourceName": "abc",
+                    "Description": "abc",
+                    "Type": "abc",
                     "Status": 0,
-                    "ResourceName": "xxx",
-                    "Description": "xxx",
-                    "ResourceId": "resource-xxx",
-                    "DtsConnectParam": {
-                        "Topic": "xxx",
-                        "UserName": "xxx",
-                        "Resource": "xxx",
-                        "GroupId": "xxx",
-                        "Password": "xxx",
-                        "Port": 0
-                    },
-                    "MySQLConnectParam": null,
-                    "MongoDBConnectParam": null,
-                    "EsConnectParam": null,
-                    "PostgreSQLConnectParam": null,
-                    "ClickHouseConnectParam": null,
-                    "SQLServerConnectParam": null,
-                    "CurrentStep": "FINISH",
-                    "CtsdbConnectParam": null,
-                    "ErrorMessage": "RUNNING",
-                    "MariaDBConnectParam": null,
-                    "DorisConnectParam": null,
-                    "Type": "",
+                    "CreateTime": "abc",
+                    "ErrorMessage": "abc",
                     "DatahubTaskCount": 0,
-                    "CreateTime": "xxx"
+                    "CurrentStep": "abc",
+                    "TaskProgress": 0,
+                    "StepList": [
+                        "abc"
+                    ],
+                    "DtsConnectParam": {
+                        "Port": 0,
+                        "GroupId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "IsUpdate": true,
+                        "Topic": "abc"
+                    },
+                    "MongoDBConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "SelfBuilt": true,
+                        "IsUpdate": true
+                    },
+                    "EsConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "SelfBuilt": true,
+                        "IsUpdate": true
+                    },
+                    "ClickHouseConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "SelfBuilt": true,
+                        "IsUpdate": true
+                    },
+                    "MySQLConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "IsUpdate": true,
+                        "ClusterId": "abc",
+                        "SelfBuilt": true
+                    },
+                    "PostgreSQLConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "ClusterId": "abc",
+                        "IsUpdate": true,
+                        "SelfBuilt": true
+                    },
+                    "MariaDBConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "IsUpdate": true
+                    },
+                    "SQLServerConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "IsUpdate": true
+                    },
+                    "CtsdbConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc"
+                    },
+                    "DorisConnectParam": {
+                        "Port": 0,
+                        "ServiceVip": "abc",
+                        "UniqVpcId": "abc",
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "IsUpdate": true,
+                        "SelfBuilt": true,
+                        "BePort": 0
+                    },
+                    "KafkaConnectParam": {
+                        "Resource": "abc",
+                        "SelfBuilt": true,
+                        "IsUpdate": true,
+                        "BrokerAddress": "abc",
+                        "Region": "abc"
+                    },
+                    "MqttConnectParam": {
+                        "UserName": "abc",
+                        "Password": "abc",
+                        "Resource": "abc",
+                        "UniqVpcId": "abc",
+                        "SelfBuilt": true,
+                        "IsUpdate": true,
+                        "Region": "abc"
+                    }
                 }
             ]
         },
-        "RequestId": "xxx"
+        "RequestId": "abc"
     }
 }
 ```
