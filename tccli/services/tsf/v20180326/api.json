@@ -14819,7 +14819,7 @@
           "example": "null",
           "member": "TsfPageMsInstance",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16878,7 +16878,7 @@
           "example": "无",
           "member": "GroupUnitApiUseStatistics",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -22974,7 +22974,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22984,7 +22984,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22994,7 +22994,7 @@
           "example": "无",
           "member": "string",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23004,7 +23004,7 @@
           "example": "无",
           "member": "string",
           "name": "LanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23014,7 +23014,7 @@
           "example": "无",
           "member": "string",
           "name": "WanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23024,7 +23024,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceAvailableStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23034,7 +23034,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceInstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23044,7 +23044,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23054,7 +23054,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23064,7 +23064,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23074,7 +23074,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23084,7 +23084,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23094,7 +23094,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23104,7 +23104,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23114,7 +23114,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23124,7 +23124,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23134,7 +23134,7 @@
           "example": "无",
           "member": "string",
           "name": "HealthCheckUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23144,7 +23144,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23154,7 +23154,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationPackageVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23164,7 +23164,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23174,7 +23174,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23184,7 +23184,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegistrationTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23194,7 +23194,7 @@
           "example": "无",
           "member": "int64",
           "name": "LastHeartbeatTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23204,7 +23204,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23214,7 +23214,17 @@
           "example": "无",
           "member": "string",
           "name": "HiddenStatus",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "json格式的 meta 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetaJson",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

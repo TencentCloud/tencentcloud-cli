@@ -487,7 +487,7 @@ def doDescribeOrganizationMemberByUin(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeShareUnitResources(args, parsed_globals):
+def doAcceptJoinShareUnitInvitation(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -516,11 +516,11 @@ def doDescribeShareUnitResources(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeShareUnitResourcesRequest()
+    model = models.AcceptJoinShareUnitInvitationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeShareUnitResources(model)
+        rsp = client.AcceptJoinShareUnitInvitation(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1215,6 +1215,58 @@ def doDeleteAccount(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRejectJoinShareUnitInvitation(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RejectJoinShareUnitInvitationRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RejectJoinShareUnitInvitation(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDeleteOrganizationNodes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1735,7 +1787,7 @@ def doDescribeOrganizationFinancialByMember(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListOrganizationNodeMembers(args, parsed_globals):
+def doCreateOrganizationMemberAuthIdentity(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1764,11 +1816,63 @@ def doListOrganizationNodeMembers(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListOrganizationNodeMembersRequest()
+    model = models.CreateOrganizationMemberAuthIdentityRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ListOrganizationNodeMembers(model)
+        rsp = client.CreateOrganizationMemberAuthIdentity(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateOrganizationMembersPolicy(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateOrganizationMembersPolicyRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateOrganizationMembersPolicy(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1995,7 +2099,7 @@ def doAttachPolicy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateOrganizationMembersPolicy(args, parsed_globals):
+def doDescribeShareUnitResources(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2024,11 +2128,11 @@ def doCreateOrganizationMembersPolicy(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateOrganizationMembersPolicyRequest()
+    model = models.DescribeShareUnitResourcesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateOrganizationMembersPolicy(model)
+        rsp = client.DescribeShareUnitResources(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2307,7 +2411,7 @@ def doDeleteOrganizationMemberFromNode(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateOrganizationMemberAuthIdentity(args, parsed_globals):
+def doCreateOrganization(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2336,11 +2440,11 @@ def doCreateOrganizationMemberAuthIdentity(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateOrganizationMemberAuthIdentityRequest()
+    model = models.CreateOrganizationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateOrganizationMemberAuthIdentity(model)
+        rsp = client.CreateOrganization(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3139,7 +3243,7 @@ def doDeleteShareUnit(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeOrganizationOverView(args, parsed_globals):
+def doListPolicies(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3168,11 +3272,11 @@ def doDescribeOrganizationOverView(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeOrganizationOverViewRequest()
+    model = models.ListPoliciesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeOrganizationOverView(model)
+        rsp = client.ListPolicies(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3451,7 +3555,7 @@ def doDescribeOrganizationNodes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateOrganization(args, parsed_globals):
+def doDescribeOrganizationOverView(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3480,11 +3584,11 @@ def doCreateOrganization(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateOrganizationRequest()
+    model = models.DescribeOrganizationOverViewRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateOrganization(model)
+        rsp = client.DescribeOrganizationOverView(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3815,7 +3919,7 @@ def doListTargetsForPolicy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doListPolicies(args, parsed_globals):
+def doListOrganizationNodeMembers(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3844,11 +3948,11 @@ def doListPolicies(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ListPoliciesRequest()
+    model = models.ListOrganizationNodeMembersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ListPolicies(model)
+        rsp = client.ListOrganizationNodeMembers(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3993,7 +4097,7 @@ ACTION_MAP = {
     "UpdateOrganizationMember": doUpdateOrganizationMember,
     "ListPoliciesForTarget": doListPoliciesForTarget,
     "DescribeOrganizationMemberByUin": doDescribeOrganizationMemberByUin,
-    "DescribeShareUnitResources": doDescribeShareUnitResources,
+    "AcceptJoinShareUnitInvitation": doAcceptJoinShareUnitInvitation,
     "DeleteOrganizationMembersPolicy": doDeleteOrganizationMembersPolicy,
     "ListOrganizationIdentity": doListOrganizationIdentity,
     "AddOrganizationNode": doAddOrganizationNode,
@@ -4007,6 +4111,7 @@ ACTION_MAP = {
     "UpdateOrganizationIdentity": doUpdateOrganizationIdentity,
     "DescribeOrganizationFinancialByMonth": doDescribeOrganizationFinancialByMonth,
     "DeleteAccount": doDeleteAccount,
+    "RejectJoinShareUnitInvitation": doRejectJoinShareUnitInvitation,
     "DeleteOrganizationNodes": doDeleteOrganizationNodes,
     "DescribeEffectivePolicy": doDescribeEffectivePolicy,
     "DeleteShareUnitResources": doDeleteShareUnitResources,
@@ -4017,18 +4122,19 @@ ACTION_MAP = {
     "CancelOrganizationMemberAuthAccount": doCancelOrganizationMemberAuthAccount,
     "SendOrganizationInvitation": doSendOrganizationInvitation,
     "DescribeOrganizationFinancialByMember": doDescribeOrganizationFinancialByMember,
-    "ListOrganizationNodeMembers": doListOrganizationNodeMembers,
+    "CreateOrganizationMemberAuthIdentity": doCreateOrganizationMemberAuthIdentity,
+    "CreateOrganizationMembersPolicy": doCreateOrganizationMembersPolicy,
     "GetOrganizationMember": doGetOrganizationMember,
     "AddShareUnitResources": doAddShareUnitResources,
     "ListNonCompliantResource": doListNonCompliantResource,
     "AttachPolicy": doAttachPolicy,
-    "CreateOrganizationMembersPolicy": doCreateOrganizationMembersPolicy,
+    "DescribeShareUnitResources": doDescribeShareUnitResources,
     "DescribeShareAreas": doDescribeShareAreas,
     "DescribeOrganization": doDescribeOrganization,
     "MoveOrganizationNodeMembers": doMoveOrganizationNodeMembers,
     "ListOrganizationMembers": doListOrganizationMembers,
     "DeleteOrganizationMemberFromNode": doDeleteOrganizationMemberFromNode,
-    "CreateOrganizationMemberAuthIdentity": doCreateOrganizationMemberAuthIdentity,
+    "CreateOrganization": doCreateOrganization,
     "DetachPolicy": doDetachPolicy,
     "CreateOrganizationIdentity": doCreateOrganizationIdentity,
     "DeleteOrganizationIdentity": doDeleteOrganizationIdentity,
@@ -4044,20 +4150,20 @@ ACTION_MAP = {
     "MoveOrganizationMembersToNode": doMoveOrganizationMembersToNode,
     "AddShareUnit": doAddShareUnit,
     "DeleteShareUnit": doDeleteShareUnit,
-    "DescribeOrganizationOverView": doDescribeOrganizationOverView,
+    "ListPolicies": doListPolicies,
     "DescribeOrganizationFinancialByProduct": doDescribeOrganizationFinancialByProduct,
     "DescribeOrganizationAuthNode": doDescribeOrganizationAuthNode,
     "AddShareUnitMembers": doAddShareUnitMembers,
     "DescribePolicyConfig": doDescribePolicyConfig,
     "DescribeOrganizationNodes": doDescribeOrganizationNodes,
-    "CreateOrganization": doCreateOrganization,
+    "DescribeOrganizationOverView": doDescribeOrganizationOverView,
     "ListOrganizationNodes": doListOrganizationNodes,
     "CheckAccountDelete": doCheckAccountDelete,
     "CreatePolicy": doCreatePolicy,
     "CreateOrganizationMemberPolicy": doCreateOrganizationMemberPolicy,
     "DeletePolicy": doDeletePolicy,
     "ListTargetsForPolicy": doListTargetsForPolicy,
-    "ListPolicies": doListPolicies,
+    "ListOrganizationNodeMembers": doListOrganizationNodeMembers,
     "DeleteOrganizationMemberAuthIdentity": doDeleteOrganizationMemberAuthIdentity,
     "UpdatePolicy": doUpdatePolicy,
 

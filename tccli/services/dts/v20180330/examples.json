@@ -90,14 +90,6 @@
         "title": "查询数据迁移任务"
       }
     ],
-    "DescribeRegionConf": [
-      {
-        "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=DescribeRegionConf\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"RegionName\": \"广州\",\n                \"Region\": \"ap-guangzhou\",\n                \"Area\": \"华南地区\",\n                \"IsDefaultRegion\": 1,\n                \"Status\": 1\n            }\n        ]\n    }\n}",
-        "title": "查询可售卖订阅的地域"
-      }
-    ],
     "DescribeSubscribeConf": [
       {
         "document": "",

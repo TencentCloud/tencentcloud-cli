@@ -6,17 +6,15 @@ Input:
 
 ```
 tccli lke RetryDocAudit --cli-unfold-argument  \
-    --LoginUin abc \
-    --LoginSubAccountUin abc \
-    --BotBizId abc \
-    --DocBizId abc
+    --BotBizId 1231212123 \
+    --DocBizId 2131212333
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "xxsssdf-erw-xxxx"
     }
 }
 ```

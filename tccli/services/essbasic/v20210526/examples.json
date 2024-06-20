@@ -746,6 +746,14 @@
         "title": "生成到模板详情的控制台链接"
       }
     ],
+    "CreateFlowBlockchainEvidenceUrl": [
+      {
+        "document": "拥有访问权限的员工生成合同区块链存证报告查看二维码/链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowBlockchainEvidenceUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ianc_1111\"\n        },\n        \"ProxyOrganizationOpenId\": \"ABC_organization_open_id\",\n        \"AppId\": \"16fd2f7d7*****f8d501d57b5ec\"\n    },\n    \"FlowId\": \"yDCANUUckp******7SI8fHrn0LCd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredOn\": 1719463451,\n        \"QrCode\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d7914ff197f4b2b099ab565a5733**************3a5b2d692827ec738d02a519c7a9f\",\n        \"RequestId\": \"s17188843684971\",\n        \"Url\": \"https://test.essurl.cn/SR0****F9B\"\n    }\n}",
+        "title": "生成合同区块链存证报告查看二维码/链接"
+      }
+    ],
     "CreateFlowGroupSignReview": [
       {
         "document": "1.签署审核通过企业签署人（ApproverType 设置为PERSON）\n2.使用 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.拒绝（阻断）该签署人的签署操作 （ReviewType 设置为REJECT）",
@@ -784,6 +792,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowsByTemplates\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"d7c13a8b***********68c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc***********3aff766cac\"\n        },\n        \"AppId\": \"65fb0c59***********a382cc5ed0e\"\n    },\n    \"FlowInfos\": [\n        {\n            \"FlowName\": \"测试流程一\",\n            \"TemplateId\": \"005c***********4f7f64e8c\",\n            \"FlowDescription\": \"测试流程一的描述信息\",\n            \"FlowType\": \"合同\",\n            \"Deadline\": 1604910797,\n            \"CallbackUrl\": \"\",\n            \"FormFields\": [\n                {\n                    \"ComponentName\": \"姓名\",\n                    \"ComponentValue\": \"李四\"\n                }\n            ],\n            \"FlowApprovers\": [\n                {\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"ApproverRoleName\": \"企业签署方\",\n                    \"RecipientId\": \"yDxjbUU***********zjEuCkSaxt8n\",\n                    \"ApproverOption\": {\n                        \"FillType\": 1\n                    }\n                },\n                {\n                    \"ApproverType\": \"PERSON\",\n                    \"ApproverRoleName\": \"个人签署方\",\n                    \"RecipientId\": \"yDxjbUU***********ChJBkK7qS\",\n                    \"ApproverOption\": {\n                        \"FillType\": 1\n                    }\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CustomerData\": [\n            \"\"\n        ],\n        \"FlowIds\": [\n            \"yDxMqU***********vaigGvi\"\n        ],\n        \"PreviewUrls\": [\n            \"\"\n        ],\n        \"ErrorMessages\": [\n            \"\"\n        ],\n        \"TaskInfos\": [\n            {\n                \"TaskId\": \"taskid\",\n                \"TaskStatus\": \"status\"\n            }\n        ],\n        \"FlowApprovers\": [\n            {\n                \"Approvers\": [\n                    {\n                        \"ApproverRoleName\": \"企业签署方\",\n                        \"RecipientId\": \"yDxjbUU***********zjEuCkSaxt8n\",\n                        \"SignId\": \"yDw7hUUckpkmtvenURxlqRxRcrWD0zVk\"\n                    },\n                    {\n                        \"ApproverRoleName\": \"个人签署方\",\n                        \"RecipientId\": \"yDxjbUU***********ChJBkK7qS\",\n                        \"SignId\": \"yDw7hUUckpkmtvegURxlqRxSV5qDMex1\"\n                    }\n                ],\n                \"FlowId\": \"yDxMqU***********vaigGvi\"\n            }\n        ],\n        \"RequestId\": \"s16294xxxxx0001803\"\n    }\n}",
         "title": "创建含有动态签署人流程，签署方不指定具体的签署人"
+      }
+    ],
+    "CreateLegalSealQrCode": [
+      {
+        "document": "获取创建法人章二维码",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLegalSealQrCode\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDwfwUUgygormhg1UuS2eARxjMT0mxAw\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"xxxxxxxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取创建法人章二维码"
       }
     ],
     "CreatePartnerAutoSignAuthUrl": [

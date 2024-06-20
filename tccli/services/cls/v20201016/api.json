@@ -1701,6 +1701,34 @@
       ],
       "usage": "both"
     },
+    "AnonymousInfo": {
+      "document": "免鉴权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作列表，支持pushLog(上传日志)、trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
+          "example": "无",
+          "member": "string",
+          "name": "Operations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件列表",
+          "example": "无",
+          "member": "ConditionInfo",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyConfigToMachineGroupRequest": {
       "document": "ApplyConfigToMachineGroup请求参数结构体",
       "members": [
@@ -2149,6 +2177,45 @@
           "member": "string",
           "name": "Format",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConditionInfo": {
+      "document": "免鉴权条件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件属性，目前只支持VpcID",
+          "example": "VpcID",
+          "member": "string",
+          "name": "Attributes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件规则，1:等于，2:不等于",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应条件属性的值",
+          "example": "vpc-6jfhit1t",
+          "member": "string",
+          "name": "ConditionValue",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8663,7 +8730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> topicName按照【日志主题名称】进行过滤，默认为模糊匹配，可使用PreciseSearch参数设置为精确匹配。类型：String必选：否<br><li> logsetName按照【日志集名称】进行过滤，默认为模糊匹配，可使用PreciseSearch参数设置为精确匹配。类型：String必选：否<br><li> topicId按照【日志主题ID】进行过滤。类型：String必选：否<br><li> logsetId按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String必选：否<br><li> tagKey按照【标签键】进行过滤。类型：String必选：否<br><li> tag:tagKey按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String必选：否<br><li> storageType按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "* topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用PreciseSearch参数设置为精确匹配。类型：String。必选：否\n* logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用PreciseSearch参数设置为精确匹配。类型：String。必选：否\n* topicId 按照【日志主题ID】进行过滤。类型：String。必选：否\n* logsetId 按照【日志集ID】进行过滤，可通过调用DescribeLogsets查询已创建的日志集列表或登录控制台进行查看；也可以调用CreateLogset创建新的日志集。类型：String。必选：否\n* tagKey 按照【标签键】进行过滤。类型：String。必选：否\n* tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，例如tag:exampleKey。类型：String。必选：否\n* storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否\n\n注意：每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -13089,6 +13156,15 @@
         },
         {
           "disabled": false,
+          "document": "日志主题扩展信息",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "日志主题分区数量",
           "example": "10",
           "member": "uint64",
@@ -15171,6 +15247,23 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopicExtendInfo": {
+      "document": "日志主题扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题免鉴权配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnonymousInfo",
+          "name": "AnonymousAccess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

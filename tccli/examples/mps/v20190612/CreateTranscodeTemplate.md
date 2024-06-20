@@ -10,9 +10,9 @@ tccli mps CreateTranscodeTemplate --cli-unfold-argument  \
     --Container mp4 \
     --Name test \
     --AudioTemplate.SampleRate 44100 \
-    --AudioTemplate.Codec libfdk_aac \
+    --AudioTemplate.Codec aac \
     --AudioTemplate.Bitrate 200 \
-    --VideoTemplate.Codec libx264 \
+    --VideoTemplate.Codec h264 \
     --VideoTemplate.Bitrate 256 \
     --VideoTemplate.Fps 45 \
     --RemoveAudio 0

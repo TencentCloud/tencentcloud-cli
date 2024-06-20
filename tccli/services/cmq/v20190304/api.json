@@ -64,7 +64,7 @@
       "status": "online"
     },
     "DescribeQueueDetail": {
-      "document": "枚举队列",
+      "document": "枚举队列列表",
       "input": "DescribeQueueDetailRequest",
       "name": "枚举队列",
       "output": "DescribeQueueDetailResponse",
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "DescribeTopicDetail": {
-      "document": "查询主题详情 ",
+      "document": "查询主题详情",
       "input": "DescribeTopicDetailRequest",
-      "name": "查询主题详情",
+      "name": "查询主题列表",
       "output": "DescribeTopicDetailResponse",
       "status": "online"
     },
@@ -772,35 +772,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
-          "example": "",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
-          "example": "",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "筛选参数，目前支持QueueName筛选，且仅支持一个关键字",
-          "example": "",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "标签搜索",
-          "example": "",
+          "example": "tag",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -808,12 +781,39 @@
         },
         {
           "disabled": false,
+          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "精确匹配QueueName",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "QueueName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选参数，目前支持QueueName筛选，且仅支持一个关键字",
+          "example": "name",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -824,18 +824,20 @@
         {
           "disabled": false,
           "document": "总队列数。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "队列详情列表。",
-          "example": "",
+          "example": "[]",
           "member": "QueueSet",
           "name": "QueueSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -925,35 +927,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0。",
-          "example": "",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
-          "example": "",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "目前只支持过滤TopicName ， 且只能填一个过滤值。",
-          "example": "",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "标签匹配。",
-          "example": "",
+          "example": "aa",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -961,12 +936,39 @@
         },
         {
           "disabled": false,
+          "document": "分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "精确匹配TopicName。",
-          "example": "",
+          "example": "topic1",
           "member": "string",
           "name": "TopicName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目前只支持过滤TopicName ， 且只能填一个过滤值。",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -977,18 +979,20 @@
         {
           "disabled": false,
           "document": "主题列表总数。",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主题详情列表。",
-          "example": "",
+          "example": "[]",
           "member": "TopicSet",
           "name": "TopicSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

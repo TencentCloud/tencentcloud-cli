@@ -905,11 +905,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标项目ID",
+          "document": "目标项目ID，必填参数",
           "example": "f3glr49r3axn0fu2",
           "member": "string",
           "name": "ProjectId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -924,7 +924,7 @@
           "example": "project1",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -934,7 +934,7 @@
           "example": "test project",
           "member": "string",
           "name": "ProjectDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -944,7 +944,7 @@
           "example": "black",
           "member": "string",
           "name": "PolicyMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -954,7 +954,7 @@
           "example": "2022-03-22T09:25:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

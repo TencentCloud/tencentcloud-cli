@@ -20,6 +20,7 @@ Output:
                 "AttrKey": "test",
                 "AttrName": "诶皮爱标签",
                 "IsUpdating": false,
+                "AttrBizId": "1734549420823662592",
                 "LabelNames": [
                     "你好"
                 ]

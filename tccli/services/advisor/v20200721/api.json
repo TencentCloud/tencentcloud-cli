@@ -15,7 +15,7 @@
       "status": "online"
     },
     "DescribeArchSync": {
-      "document": "同步步拉取架构详情(插件专用)，是否缓存由入参决定",
+      "document": "同步拉取架构详情(插件专用)，是否缓存由入参决定",
       "input": "DescribeArchSyncRequest",
       "name": "同步获取架构图详情(插件专用)",
       "output": "DescribeArchSyncResponse",

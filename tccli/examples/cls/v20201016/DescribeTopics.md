@@ -14,33 +14,30 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Topics": [
             {
-                "Index": true,
+                "LogsetId": "46c34030-f7fd-xxxx-91ee-053215c2bf9c",
+                "TopicId": "305f8be8-25a9-xxxx-8f05-361dafab39fe",
+                "TopicName": "test",
                 "PartitionCount": 1,
-                "Describes": "x1",
+                "Index": true,
+                "AssumerName": "",
+                "SubAssumerName": "",
+                "CreateTime": "2022-12-30 16:02:52",
                 "Status": true,
-                "Tags": [
-                    {
-                        "Value": "x10",
-                        "Key": "x11"
-                    }
-                ],
-                "AssumerName": "x12",
-                "SubAssumerName": "x13",
-                "MaxSplitPartitions": 0,
-                "LogsetId": "x15",
-                "TopicId": "x16",
-                "HotPeriod": 1,
-                "StorageType": "x17",
-                "Period": 0,
+                "Tags": [],
                 "AutoSplit": true,
-                "CreateTime": "x18",
-                "TopicName": "x19"
+                "MaxSplitPartitions": 50,
+                "StorageType": "hot",
+                "Period": 27,
+                "Describes": "",
+                "HotPeriod": 0,
+                "BizType": 0,
+                "IsWebTracking": false
             }
         ],
-        "RequestId": "x20"
+        "RequestId": "cdb48d76-9be0-xxxx-8654-56290de7442e",
+        "TotalCount": 1
     }
 }
 ```

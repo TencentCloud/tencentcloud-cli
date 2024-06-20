@@ -340,6 +340,14 @@
         "title": "错误示例， B2B签署，补充签署流程本企业企业签署人使用了姓名和手机号进行补充报错"
       }
     ],
+    "CreateFlowBlockchainEvidenceUrl": [
+      {
+        "document": "拥有访问权限的员工生成合同区块链存证报告查看二维码/链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowBlockchainEvidenceUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDR0fUUgyg*********jE1RTDui4pB\"\n    },\n    \"FlowId\": \"yDCANUUc************SI8fHrn0LCd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredOn\": 1719463451,\n        \"QrCode\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d7914ff197f4b2b0*********27ec738d02a519c7a9f\",\n        \"RequestId\": \"s1718858684971\",\n        \"Url\": \"https://test.essurl.cn/SR0*****HF9B\"\n    }\n}",
+        "title": "生成合同区块链存证报告查看二维码/链接"
+      }
+    ],
     "CreateFlowByFiles": [
       {
         "document": "1. 处方单场景的\"典子谦\"医生需要自动签(典子谦参与人的ApproverType设置成7, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)\n2. 处方单的患者张三需要手工签署(张三参与人的ApproverType设置成1)\n3. 双方签署方的签署控件都是通过关键字生成(典子谦签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字\"处方医生\", 张三签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字\"患者签名\" )\n4. 不给合同签署方发送短信  (NotifyType设置成NONE)",
@@ -694,6 +702,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationUserRoles\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"y**************************************************s\",\n        \"y**************************************************e\"\n    ],\n    \"RoleIds\": [\n        \"0************************************************e\",\n        \"f*************************************************b\"\n    ],\n    \"Operator\": {\n        \"UserId\": \"y**********************************s\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCreateRoleData\": [\n            {\n                \"RoleIds\": [\n                    \"**************************************************\",\n                    \"**************************************************\"\n                ],\n                \"UserId\": \"*******************************************\"\n            }\n        ],\n        \"RequestId\": \"s******************\"\n    }\n}",
         "title": "示例-普通企业绑定角色"
+      }
+    ],
+    "CreateLegalSealQrCode": [
+      {
+        "document": "获取创建法人章二维码",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLegalSealQrCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwfsUUckpsqt647UE6uSrk1ZWhYH56z\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"xxxxxxxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取创建法人章二维码"
       }
     ],
     "CreateMultiFlowSignQRCode": [

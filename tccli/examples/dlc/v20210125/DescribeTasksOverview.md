@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli dlc DescribeTasksOverview --cli-unfold-argument ```
+tccli dlc DescribeTasksOverview --cli-unfold-argument  \
+    --StartTime 2022-08-23 00:00:00 \
+    --EndTime 2022-08-30 00:00:00
+```
 
 Output: 
 ```
