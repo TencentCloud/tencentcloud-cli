@@ -343,6 +343,13 @@
       "output": "CreateConsoleLoginUrlResponse",
       "status": "online"
     },
+    "CreateFlowBlockchainEvidenceUrl": {
+      "document": "获取区块链存证报告查看链接/二维码接口\n\n适用场景：企业员工可以通过此接口生成合同区块链存证报告的查看链接/二维码，以供他人扫码打开腾讯电子签小程序查看。\n\n[点击查看区块链存证报告样式](https://qcloudimg.tencent-cloud.cn/raw/47d5e9c2ffa90ad4e27b3cd14095aa08.jpg)\n\n注：\n<ul><li>1. 二维码下载链接过期时间为5分钟，请尽快下载保存。二维码/短链的过期时间为<font color=\"red\">7天</font>，超过有效期则不可用。</li>\n<li>2. 合同状态需为<font color=\"red\">签署完成</font> 、<font color=\"red\">已解除</font>才能生成报告查看二维码/短链。</li>\n<li>3. 调用接口时，需确保接口调用身份拥有此合同的访问数据权限或为合同参与方。</li>\n<li>4. 通过扫码或者点击链接，用户无需登录或者鉴权即可查看对应合同的区块链存证报告，请妥善保管好二维码或链接。</li></ul>",
+      "input": "CreateFlowBlockchainEvidenceUrlRequest",
+      "name": "获取签署存证证书查看二维码",
+      "output": "CreateFlowBlockchainEvidenceUrlResponse",
+      "status": "online"
+    },
     "CreateFlowGroupSignReview": {
       "document": "1. 在使用[通过多文件创建合同组签署流程](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByFiles)或[通过多模板创建合同组签署流程](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates)创建合同组签署流程时，若指定了参数以下参数为true,则可以调用此接口提交企业内部签署审批结果,即使是自动签署也需要进行审核通过才会进行签署。\n  - [FlowInfo.NeedSignReview](https://qian.tencent.com/developers/partnerApis/dataTypes/#flowinfo)\n  - [FlowFileInfo.NeedSignReview](https://qian.tencent.com/developers/partnerApis/dataTypes/#flowfileinfo)\n  - [FlowApproverInfo.ApproverNeedSignReview](https://qian.tencent.com/developers/partnerApis/dataTypes/#flowapproverinfo) \n\n2. 同一合同组，同一签署人可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "CreateFlowGroupSignReviewRequest",
@@ -355,6 +362,13 @@
       "input": "CreateFlowsByTemplatesRequest",
       "name": "用模板创建签署流程",
       "output": "CreateFlowsByTemplatesResponse",
+      "status": "online"
+    },
+    "CreateLegalSealQrCode": {
+      "document": "此接口用于获取创建法人章二维码图片base64",
+      "input": "CreateLegalSealQrCodeRequest",
+      "name": "获取创建法人章二维码",
+      "output": "CreateLegalSealQrCodeResponse",
       "status": "online"
     },
     "CreatePartnerAutoSignAuthUrl": {
@@ -6199,6 +6213,72 @@
       ],
       "type": "object"
     },
+    "CreateFlowBlockchainEvidenceUrlRequest": {
+      "document": "CreateFlowBlockchainEvidenceUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。  此接口下面信息必填。 <ul> <li>渠道应用标识:  Agent.AppId</li> <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li> <li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li> </ul>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。建议开发者妥善保存此流程ID，以便于顺利进行后续操作。可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowBlockchainEvidenceUrlResponse": {
+      "document": "CreateFlowBlockchainEvidenceUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码图片下载链接，下载链接有效时间5分钟，请尽快下载保存。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d7914ff197f4b2b099ab565a5733",
+          "member": "string",
+          "name": "QrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查看短链，可直接点击短链查看报告。",
+          "example": "https://test.essurl.cn/SR04UBxxxx",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码和短链的过期时间戳，过期时间默认为生成链接后7天。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpiredOn",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowGroupSignReviewRequest": {
       "document": "CreateFlowGroupSignReview请求参数结构体",
       "members": [
@@ -6452,6 +6532,61 @@
           "name": "FlowApprovers",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLegalSealQrCodeRequest": {
+      "document": "CreateLegalSealQrCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>注:\n`1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。 `\n`2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。 `\n`3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。 `",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业信息",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLegalSealQrCodeResponse": {
+      "document": "CreateLegalSealQrCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码图片base64值",
+          "example": "无",
+          "member": "string",
+          "name": "QrcodeBase64",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7848,7 +7983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同详情页面是否展示合同控件信息\n<br/>true:允许在合同详情页展示控件\n<br/>false:不允许在合同详情页展示控件\n<br/>默认false,在合同详情页不展示控件",
+          "document": "合同详情预览，允许展示控件信息\n<ul>\n<li><b>true</b>：允许在合同详情页展示控件</li>\n<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>\n</ul>",
           "example": "true",
           "member": "bool",
           "name": "ShowFlowDetailComponent",
@@ -7857,7 +7992,7 @@
         },
         {
           "disabled": false,
-          "document": "模版预览页面是否展示空间信息\n<br/>true:允许在模版预览页展示控件\n<br/>false:不允许在模版预览页展示控件\n<br/>默认false,在模版预览页不展示控件",
+          "document": "模板预览，允许展示模板控件信息\n<ul><li> <b>true</b> :允许在模板预览页展示控件</li>\n<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "ShowTemplateComponent",

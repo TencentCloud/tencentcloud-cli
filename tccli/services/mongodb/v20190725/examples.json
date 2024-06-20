@@ -284,6 +284,14 @@
         "title": "新增mognodb云数据库实例从节点"
       }
     ],
+    "ModifyInstanceParams": [
+      {
+        "document": "用户发起修改其mongoDB的参数配置",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p6umb\",\n    \"InstanceParams\": [\n        {\n            \"Value\": \"operation.profiling.slowOpThresholdMs\",\n            \"Key\": \"operation.profiling.slowOpThresholdMs\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Changed\": true,\n        \"RequestId\": \"e51b4590-db7b-4835-9899-1f5c33f92fbf\",\n        \"TaskId\": 0\n    }\n}",
+        "title": "修改mongoDB实例参数"
+      }
+    ],
     "OfflineIsolatedDBInstance": [
       {
         "document": "",

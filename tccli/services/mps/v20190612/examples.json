@@ -181,7 +181,7 @@
     "CreateTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscodeTemplate\n<公共请求参数>\n\n{\n    \"RemoveVideo\": 0,\n    \"Container\": \"mp4\",\n    \"Name\": \"test\",\n    \"AudioTemplate\": {\n        \"SampleRate\": 44100,\n        \"Codec\": \"libfdk_aac\",\n        \"Bitrate\": 200\n    },\n    \"VideoTemplate\": {\n        \"Codec\": \"libx264\",\n        \"Bitrate\": 256,\n        \"Fps\": 45\n    },\n    \"RemoveAudio\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscodeTemplate\n<公共请求参数>\n\n{\n    \"RemoveVideo\": 0,\n    \"Container\": \"mp4\",\n    \"Name\": \"test\",\n    \"AudioTemplate\": {\n        \"SampleRate\": 44100,\n        \"Codec\": \"aac\",\n        \"Bitrate\": 200\n    },\n    \"VideoTemplate\": {\n        \"Codec\": \"h264\",\n        \"Bitrate\": 256,\n        \"Fps\": 45\n    },\n    \"RemoveAudio\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转码模板"
       }

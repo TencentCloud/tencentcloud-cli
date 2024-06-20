@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AcceptJoinShareUnitInvitation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcceptJoinShareUnitInvitation\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-xhreo**2p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9ca56e2-1c27-483f-a78f-eaafc949b158\"\n    }\n}",
+        "title": "接受加入共享单元邀请"
+      }
+    ],
     "AddOrganizationMemberEmail": [
       {
         "document": "",
@@ -438,6 +446,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuitOrganization\n<公共请求参数>\n\n{\n    \"OrgId\": 1234\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "退出企业组织"
+      }
+    ],
+    "RejectJoinShareUnitInvitation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectJoinShareUnitInvitation\n<公共请求参数>\n\n{\n    \"UnitId\": \"shareUnit-xhreo**2p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9ca56e2-1c27-483f-a78f-eaafc949b158\"\n    }\n}",
+        "title": "拒绝加入共享单元邀请"
       }
     ],
     "UpdateOrganizationIdentity": [

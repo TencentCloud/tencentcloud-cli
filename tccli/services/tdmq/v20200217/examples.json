@@ -124,6 +124,14 @@
         "title": "创建集群"
       }
     ],
+    "CreateRocketMQEnvironmentRole": [
+      {
+        "document": "创建RocketMQ环境角色授权",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQEnvironmentRole\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"RoleName\": \"abc\",\n    \"Permissions\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建RocketMQ环境角色授权"
+      }
+    ],
     "CreateRocketMQGroup": [
       {
         "document": "",
@@ -138,6 +146,14 @@
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=CreateRocketMQNamespace\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Ttl=60000\n&RetentionTime=600000\n&Remark=example\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf71e2ae-8b56-4231-87cf-0cbb6f421caa\"\n    }\n}",
         "title": "创建命名空间"
+      }
+    ],
+    "CreateRocketMQRole": [
+      {
+        "document": "创建RocketMQ角色\n",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleName\": \"abc\",\n        \"Token\": \"abc\",\n        \"Remark\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建RocketMQ角色"
       }
     ],
     "CreateRocketMQTopic": [
@@ -268,6 +284,14 @@
         "title": "删除集群"
       }
     ],
+    "DeleteRocketMQEnvironmentRoles": [
+      {
+        "document": "删除环境角色授权",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"RoleNames\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除环境角色授权"
+      }
+    ],
     "DeleteRocketMQGroup": [
       {
         "document": "",
@@ -282,6 +306,14 @@
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=DeleteRocketMQNamespace\n&ClusterId=rocketmq-rd3545bkkj49\n&NamespaceId=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab274271-a599-4e1d-b044-f3d03699e32a\"\n    }\n}",
         "title": "删除命名空间"
+      }
+    ],
+    "DeleteRocketMQRoles": [
+      {
+        "document": "删除角色",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRocketMQRoles\n<公共请求参数>\n\n{\n    \"RoleNames\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除角色"
       }
     ],
     "DeleteRocketMQTopic": [
@@ -620,6 +652,14 @@
         "title": "获取指定消费组下当前客户端的连接情况"
       }
     ],
+    "DescribeRocketMQEnvironmentRoles": [
+      {
+        "document": "获取RocketMQ命名空间角色列表\n",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"ClusterId\": \"abc\",\n    \"RoleName\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"Permissions\": [\n                    \"abc\"\n                ],\n                \"RoleDescribe\": \"abc\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取RocketMQ命名空间角色列表"
+      }
+    ],
     "DescribeRocketMQGroups": [
       {
         "document": "test",
@@ -680,6 +720,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQPublicAccessPoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-jxj3wj5j8e7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"086e9401-0674-41f1-a381-9c6a8ba702ea\",\n        \"Status\": 0,\n        \"PayStatus\": 1,\n        \"AccessUrl\": \"rocketmq-jxj3wj5j8e7.mock-test.com\",\n        \"PayMode\": 0,\n        \"Bandwidth\": 0,\n        \"Rules\": [\n            {\n                \"IpRule\": \"0.0.0.0/0\",\n                \"Allow\": true,\n                \"Remark\": \"test\"\n            }\n        ]\n    }\n}",
         "title": "获取公网接入点信息"
+      }
+    ],
+    "DescribeRocketMQRoles": [
+      {
+        "document": "获取RocketMQ角色列表\n",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQRoles\n<公共请求参数>\n\n{\n    \"RoleName\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"ClusterId\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RoleSets\": [\n            {\n                \"RoleName\": \"abc\",\n                \"Token\": \"abc\",\n                \"Remark\": \"abc\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取RocketMQ角色列表"
       }
     ],
     "DescribeRocketMQSmoothMigrationTask": [
@@ -924,6 +972,14 @@
         "title": "修改集群信息"
       }
     ],
+    "ModifyRocketMQEnvironmentRole": [
+      {
+        "document": "修改RocketMQ环境角色授权\n",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQEnvironmentRole\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"RoleName\": \"abc\",\n    \"Permissions\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改RocketMQ环境角色授权"
+      }
+    ],
     "ModifyRocketMQGroup": [
       {
         "document": "",
@@ -946,6 +1002,14 @@
         "input": "https://tdmq.tencentcloudapi.com/?\nAction=ModifyRocketMQNamespace\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&Ttl=65000\n&RetentionTime=650000\n&Remark=example\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c995fd0-9a78-4985-8874-244a20a1d47b\"\n    }\n}",
         "title": "修改命名空间信息"
+      }
+    ],
+    "ModifyRocketMQRole": [
+      {
+        "document": "RocketMQ角色修改\n",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQRole\n<公共请求参数>\n\n{\n    \"RoleName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleName\": \"abc\",\n        \"Remark\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "RocketMQ角色修改"
       }
     ],
     "ModifyRocketMQTopic": [

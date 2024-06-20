@@ -832,7 +832,7 @@
         {
           "disabled": false,
           "document": "录音文件识别的请求返回结果。",
-          "example": "{     \"Response\": {         \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\"",
+          "example": "无",
           "member": "TaskStatus",
           "name": "Data",
           "output_required": true,
@@ -2302,7 +2302,7 @@
           "example": "无",
           "member": "string",
           "name": "VoicePrintId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

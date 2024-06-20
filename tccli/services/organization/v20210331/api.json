@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AcceptJoinShareUnitInvitation": {
+      "document": "接受加入共享单元邀请。",
+      "input": "AcceptJoinShareUnitInvitationRequest",
+      "name": "接受加入共享单元邀请",
+      "output": "AcceptJoinShareUnitInvitationResponse",
+      "status": "online"
+    },
     "AddOrganizationMemberEmail": {
       "document": "添加组织成员邮箱",
       "input": "AddOrganizationMemberEmailRequest",
@@ -385,6 +392,13 @@
       "output": "QuitOrganizationResponse",
       "status": "online"
     },
+    "RejectJoinShareUnitInvitation": {
+      "document": "拒绝加入共享单元邀请。",
+      "input": "RejectJoinShareUnitInvitationRequest",
+      "name": "拒绝加入共享单元邀请",
+      "output": "RejectJoinShareUnitInvitationResponse",
+      "status": "online"
+    },
     "UpdateOrganizationIdentity": {
       "document": "更新组织身份",
       "input": "UpdateOrganizationIdentityRequest",
@@ -435,6 +449,33 @@
     "serviceShortName": "organization"
   },
   "objects": {
+    "AcceptJoinShareUnitInvitationRequest": {
+      "document": "AcceptJoinShareUnitInvitation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享单元ID。",
+          "example": "shareUnit-xhreo**2p",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptJoinShareUnitInvitationResponse": {
+      "document": "AcceptJoinShareUnitInvitation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddOrganizationMemberEmailRequest": {
       "document": "AddOrganizationMemberEmail请求参数结构体",
       "members": [
@@ -5148,6 +5189,33 @@
     },
     "QuitOrganizationResponse": {
       "document": "QuitOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectJoinShareUnitInvitationRequest": {
+      "document": "RejectJoinShareUnitInvitation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享单元ID。",
+          "example": "shareUnit-xhreo**2p",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RejectJoinShareUnitInvitationResponse": {
+      "document": "RejectJoinShareUnitInvitation返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

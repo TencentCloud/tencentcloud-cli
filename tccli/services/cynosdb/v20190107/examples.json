@@ -1000,6 +1000,14 @@
         "title": "关闭多可用区部署"
       }
     ],
+    "RenewClusters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewClusters\n<公共请求参数>\n\n{\n    \"TimeUnit\": \"xx\",\n    \"DealMode\": 0,\n    \"ClusterId\": \"xx\",\n    \"TimeSpan\": 0.0\n}",
+        "output": "{\n    \"Response\": {\n        \"TranId\": \"\",\n        \"BigDealIds\": null,\n        \"ResourceIds\": [],\n        \"RequestId\": \"11b4ce54-xxxx\",\n        \"ClusterIds\": [],\n        \"DealNames\": [\n            \"xxx\",\n            \"xxx\",\n            \"xxx\"\n        ]\n    }\n}",
+        "title": "续费集群"
+      }
+    ],
     "ResetAccountPassword": [
       {
         "document": "修改数据库账号密码",

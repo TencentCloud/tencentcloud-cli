@@ -6,8 +6,12 @@ Input:
 
 ```
 tccli cmq DescribeTopicDetail --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 2
+    --TagKey abc \
+    --Limit 1 \
+    --TopicName abc \
+    --Filters.0.Values test123 \
+    --Filters.0.Name TopicName \
+    --Offset 1
 ```
 
 Output: 
@@ -16,19 +20,6 @@ Output:
     "Response": {
         "TotalCount": 2,
         "TopicSet": [
-            {
-                "Tags": [],
-                "TopicId": "topic-rga4l1o4",
-                "TopicName": "ConnTopic",
-                "CreateUin": 20548499,
-                "MsgRetentionSeconds": 10000,
-                "MaxMsgSize": 20000,
-                "Qps": 10000,
-                "FilterType": 1,
-                "CreateTime": 1581516588,
-                "LastModifyTime": 1581563581,
-                "MsgCount": 0
-            },
             {
                 "Tags": [],
                 "TopicId": "topic-388k6x98",

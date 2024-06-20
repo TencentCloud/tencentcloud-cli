@@ -633,7 +633,7 @@
           "example": "AccessKeyId",
           "member": "string",
           "name": "AccessKeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -643,7 +643,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -653,9 +653,19 @@
           "example": "2021-03-20 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -666,42 +676,52 @@
         {
           "disabled": false,
           "document": "访问密钥标识",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AccessKeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "访问密钥（密钥仅创建时可见，请妥善保存）",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SecretAccessKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥状态，激活（Active）或未激活（Inactive）",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1551,6 +1571,15 @@
           "name": "TargetUin",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密钥描述，长度在1到1024之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:/-]*。",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1564,7 +1593,7 @@
           "example": "无",
           "member": "AccessKeyDetail",
           "name": "AccessKey",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

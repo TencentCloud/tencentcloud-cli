@@ -654,6 +654,14 @@
         "title": "获取SparkSQL批任务运行状态"
       }
     ],
+    "DescribeSparkSessionBatchSQLCost": [
+      {
+        "document": "获取SparkSQL批任务消耗",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkSessionBatchSQLCost\n<公共请求参数>\n\n{\n    \"BatchIds\": [\n        \"d3018ad4-9a7e-4f64-a3f4-fsjr37c69742\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CostInfo\": [\n            {\n                \"BatchId\": \"892499-8b41-1f5a213689f0\",\n                \"DataEngineName\": \"engine_jar\",\n                \"DataEngineId\": \"DataEngine-xxxx\",\n                \"Cost\": 0.7466666666666667,\n                \"TimeCost\": 193,\n                \"Operator\": \"1000fsdf0\"\n            }\n        ],\n        \"RequestId\": \"2ae4707a-9f72-sdfsd-sdf-cac3c2bc\"\n    }\n}",
+        "title": "获取SparkSQL批任务消耗"
+      }
+    ],
     "DescribeSparkSessionBatchSqlLog": [
       {
         "document": "查询Spark SQL批任务日志",
@@ -737,7 +745,7 @@
     "DescribeTasksOverview": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksOverview\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasksOverview\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-08-23 00:00:00\",\n    \"EndTime\": \"2022-08-30 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"923423423445\",\n        \"TasksOverview\": {\n            \"TaskQueuedCount\": 0,\n            \"TaskInitCount\": 0,\n            \"TaskRunningCount\": 0,\n            \"TotalTaskCount\": 0\n        }\n    }\n}",
         "title": "查询任务概览情况"
       }

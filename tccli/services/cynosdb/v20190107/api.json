@@ -854,6 +854,13 @@
       "output": "RemoveClusterSlaveZoneResponse",
       "status": "online"
     },
+    "RenewClusters": {
+      "document": "续费集群",
+      "input": "RenewClustersRequest",
+      "name": "续费集群",
+      "output": "RenewClustersResponse",
+      "status": "online"
+    },
     "ResetAccountPassword": {
       "document": "本接口(ResetAccountPassword)用于修改数据库账号密码",
       "input": "ResetAccountPasswordRequest",
@@ -17287,6 +17294,110 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewClustersRequest": {
+      "document": "RenewClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbpg-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长",
+          "example": "1",
+          "member": "float",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "时间单位 y,m,d,h,i,s",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易模式 0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewClustersResponse": {
+      "document": "RenewClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费总订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "BigDealIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "退款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[134]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "冻结流水，一次开通一个冻结流水\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TranId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每个订单号对应的发货资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -4420,8 +4420,8 @@
         },
         {
           "disabled": false,
-          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "状态描述",
+          "document": "常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "集群运行中",
           "member": "string",
           "name": "StatusDesc",
           "output_required": true,
@@ -4580,8 +4580,8 @@
         },
         {
           "disabled": false,
-          "document": "状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "output_required": true,

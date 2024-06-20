@@ -98,6 +98,13 @@
       "output": "CreateFlowApproversResponse",
       "status": "online"
     },
+    "CreateFlowBlockchainEvidenceUrl": {
+      "document": "获取区块链存证报告查看链接/二维码接口\n\n适用场景：企业员工可以通过此接口生成合同区块链存证报告的查看链接/二维码，以供他人扫码打开腾讯电子签小程序查看。\n\n[点击查看区块链存证报告样式](https://qcloudimg.tencent-cloud.cn/raw/47d5e9c2ffa90ad4e27b3cd14095aa08.jpg)\n\n注：\n<ul><li>1. 二维码下载链接过期时间为5分钟，请尽快下载保存。二维码/短链的过期时间为<font color=\"red\">7天</font>，超过有效期则不可用。</li>\n<li>2. 合同状态需为<font color=\"red\">签署完成</font> 、<font color=\"red\">已解除</font>才能生成报告查看二维码/短链。</li>\n<li>3. 调用接口时，需确保接口调用身份拥有此合同的访问数据权限或为合同参与方。</li>\n<li>4. 通过扫码或者点击链接，用户无需登录或者鉴权即可查看对应合同的区块链存证报告，请妥善保管好二维码或链接。</li></ul>",
+      "input": "CreateFlowBlockchainEvidenceUrlRequest",
+      "name": "获取签署存证证书查看二维码",
+      "output": "CreateFlowBlockchainEvidenceUrlResponse",
+      "status": "online"
+    },
     "CreateFlowByFiles": {
       "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n-  合同**发起后就会扣减合同的额度**, 只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能\n\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess_uploadfiles.mp4\" target=\"_blank\">上传用于合同发起的PDF文件代码编写示例</a><br>\n2.  <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/ess-CreateFlowByFiles.mp4\" target=\"_blank\">用PDF文件创建签署流程编写示例</a><br>",
       "input": "CreateFlowByFilesRequest",
@@ -187,6 +194,13 @@
       "input": "CreateIntegrationUserRolesRequest",
       "name": "绑定员工角色",
       "output": "CreateIntegrationUserRolesResponse",
+      "status": "online"
+    },
+    "CreateLegalSealQrCode": {
+      "document": "该接口用于获取创建法人章的二维码<br/>\n\n**注意**\n1. 该二维码**有效期为7天**，过期后将失效，可重新创建 。",
+      "input": "CreateLegalSealQrCodeRequest",
+      "name": "获取创建法人章二维码",
+      "output": "CreateLegalSealQrCodeResponse",
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
@@ -2878,6 +2892,81 @@
       ],
       "type": "object"
     },
+    "CreateFlowBlockchainEvidenceUrlRequest": {
+      "document": "CreateFlowBlockchainEvidenceUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFlowBlockchainEvidenceUrlResponse": {
+      "document": "CreateFlowBlockchainEvidenceUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码图片下载链接，下载链接有效时间5分钟，请尽快下载保存。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d7914ff197f4b2b099ab565a5733",
+          "member": "string",
+          "name": "QrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查看短链，可直接点击短链查看报告。",
+          "example": "https://test.essurl.cn/SR04UBxxxx",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码和短链的过期时间戳，过期时间默认为生成链接后7天。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpiredOn",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFlowByFilesRequest": {
       "document": "CreateFlowByFiles请求参数结构体",
       "members": [
@@ -4360,6 +4449,61 @@
           "name": "FailedCreateRoleData",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLegalSealQrCodeRequest": {
+      "document": "CreateLegalSealQrCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "机构信息，暂未开放",
+          "example": "无",
+          "member": "OrganizationInfo",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLegalSealQrCodeResponse": {
+      "document": "CreateLegalSealQrCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码图片base64值",
+          "example": "”xxxx“",
+          "member": "string",
+          "name": "QrcodeBase64",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

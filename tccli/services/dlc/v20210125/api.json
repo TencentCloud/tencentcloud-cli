@@ -567,6 +567,13 @@
       "output": "DescribeSparkSessionBatchSQLResponse",
       "status": "online"
     },
+    "DescribeSparkSessionBatchSQLCost": {
+      "document": "本接口（DescribeSparkSessionBatchSQLCost）用于查询Spark SQL批任务消耗",
+      "input": "DescribeSparkSessionBatchSQLCostRequest",
+      "name": "获取Spark SQL批任务消耗",
+      "output": "DescribeSparkSessionBatchSQLCostResponse",
+      "status": "online"
+    },
     "DescribeSparkSessionBatchSqlLog": {
       "document": "本接口（DescribeSparkSessionBatchSqlLog）用于查询Spark SQL批任务日志",
       "input": "DescribeSparkSessionBatchSqlLogRequest",
@@ -1640,6 +1647,72 @@
         }
       ],
       "type": "object"
+    },
+    "BatchSQLCostInfo": {
+      "document": "spark session batch SQL的消耗信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8925a6ba-0b33-4499-8b41-1f5a213689f0",
+          "member": "string",
+          "name": "BatchId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testengine",
+          "member": "string",
+          "name": "DataEngineName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次消耗，单位cu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.231412",
+          "member": "float",
+          "name": "Cost",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间开销，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1238741213",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BatchSqlTask": {
       "document": "SparkSQL批任务信息",
@@ -9563,6 +9636,43 @@
       ],
       "type": "object"
     },
+    "DescribeSparkSessionBatchSQLCostRequest": {
+      "document": "DescribeSparkSessionBatchSQLCost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SparkSQL唯一标识",
+          "example": "[\"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"]",
+          "member": "string",
+          "name": "BatchIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkSessionBatchSQLCostResponse": {
+      "document": "DescribeSparkSessionBatchSQLCost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务消耗\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"BatchId\":\"8925sdfxv-3-4499-8b41-1f5a213689f0\",\"DataEngineName\":\"spark_jar\",\"DataEngineId\":\"DataEngine-xxxx\",\"Cost\":0.7466666666666667,\"TimeCost\":193,\"Operator\":\"100001244200\"}]",
+          "member": "BatchSQLCostInfo",
+          "name": "CostInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSparkSessionBatchSQLRequest": {
       "document": "DescribeSparkSessionBatchSQL请求参数结构体",
       "members": [
@@ -10356,7 +10466,44 @@
     },
     "DescribeTasksOverviewRequest": {
       "document": "DescribeTasksOverview请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-08-30 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-08-30 00:00:002022-08-30 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名",
+          "example": "dataengine-xx",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeTasksOverviewResponse": {
@@ -10368,7 +10515,7 @@
           "example": "无",
           "member": "TasksOverview",
           "name": "TasksOverview",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
