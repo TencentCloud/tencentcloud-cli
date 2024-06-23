@@ -14,18 +14,48 @@ Output:
         "TotalCount": 1,
         "Clusters": [
             {
-                "ClusterId": "cls-xxxxxxx",
-                "ClusterName": "集群AA",
-                "K8SVersion": "1.10.5",
-                "VpcId": "vpc-xxxxx",
-                "PodCIDR": "172.16.0.0/20",
-                "ServiceCIDR": "192.168.0.0/18",
-                "Status": "running",
-                "CreatedTime": "2019-08-16T04:31:26Z",
-                "ClusterDesc": "test edge cluster"
+                "ClusterId": "abc",
+                "ClusterName": "abc",
+                "VpcId": "abc",
+                "PodCIDR": "abc",
+                "ServiceCIDR": "abc",
+                "K8SVersion": "abc",
+                "Status": "abc",
+                "ClusterDesc": "abc",
+                "CreatedTime": "abc",
+                "EdgeClusterVersion": "abc",
+                "MaxNodePodNum": 0,
+                "ClusterAdvancedSettings": {
+                    "ExtraArgs": {
+                        "KubeAPIServer": [
+                            "abc"
+                        ],
+                        "KubeControllerManager": [
+                            "abc"
+                        ],
+                        "KubeScheduler": [
+                            "abc"
+                        ]
+                    },
+                    "Runtime": "abc",
+                    "ProxyMode": "abc"
+                },
+                "Level": "abc",
+                "AutoUpgradeClusterLevel": true,
+                "ChargeType": "abc",
+                "EdgeVersion": "abc",
+                "TagSpecification": {
+                    "ResourceType": "abc",
+                    "Tags": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ]
+                }
             }
         ],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+        "RequestId": "abc"
     }
 }
 ```

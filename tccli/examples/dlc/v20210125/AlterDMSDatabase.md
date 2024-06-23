@@ -6,33 +6,33 @@ Input:
 
 ```
 tccli dlc AlterDMSDatabase --cli-unfold-argument  \
-    --CurrentName xx \
-    --SchemaName xx \
-    --Location xx \
-    --Asset.Description xx \
-    --Asset.ModifiedTime 2020-09-22T00:00:00+00:00 \
-    --Asset.DataVersion 1 \
-    --Asset.BizParams.0.Value xx \
-    --Asset.BizParams.0.Key xx \
-    --Asset.OwnerAccount xx \
+    --CurrentName abc \
+    --SchemaName abc \
+    --Location abc \
+    --Asset.Id 0 \
+    --Asset.Name abc \
+    --Asset.Guid abc \
+    --Asset.Catalog abc \
+    --Asset.Description abc \
+    --Asset.Owner abc \
+    --Asset.OwnerAccount abc \
+    --Asset.PermValues.0.Key abc \
+    --Asset.PermValues.0.Value abc \
+    --Asset.Params.0.Key abc \
+    --Asset.Params.0.Value abc \
+    --Asset.BizParams.0.Key abc \
+    --Asset.BizParams.0.Value abc \
+    --Asset.DataVersion 0 \
     --Asset.CreateTime 2020-09-22T00:00:00+00:00 \
-    --Asset.Catalog xx \
-    --Asset.Params.0.Value xx \
-    --Asset.Params.0.Key xx \
-    --Asset.PermValues.0.Value xx \
-    --Asset.PermValues.0.Key xx \
-    --Asset.Owner xx \
-    --Asset.DatasourceId 1 \
-    --Asset.Guid xx \
-    --Asset.Id 1 \
-    --Asset.Name xx
+    --Asset.ModifiedTime 2020-09-22T00:00:00+00:00 \
+    --Asset.DatasourceId 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

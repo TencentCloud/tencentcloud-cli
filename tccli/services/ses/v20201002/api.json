@@ -99,7 +99,7 @@
       "status": "online"
     },
     "GetSendEmailStatus": {
-      "document": "获取邮件发送状态。仅支持查询30天之内的数据\n默认接口请求频率限制：1次/秒",
+      "document": "获取邮件发送状态。仅支持查询30天之内的数据",
       "input": "GetSendEmailStatusRequest",
       "name": "获取邮件发送的状态",
       "output": "GetSendEmailStatusResponse",
@@ -1137,6 +1137,7 @@
           "example": "无",
           "member": "SendEmailStatus",
           "name": "EmailStatusList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1904,6 +1905,24 @@
           "name": "TriggerType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "smtp头中的Message-Id字段",
+          "example": "<2SNZPF1T2NU4.5OB8TNNRVRYM3@qcloudmail.com>",
+          "member": "string",
+          "name": "SmtpMessageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "smtp头中可以设置的其它字段",
+          "example": "{\"header1\": \"value1\", \"header2\": \"value2\"}",
+          "member": "string",
+          "name": "SmtpHeaders",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

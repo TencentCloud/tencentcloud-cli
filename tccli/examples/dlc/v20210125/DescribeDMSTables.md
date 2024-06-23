@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dlc DescribeDMSTables --cli-unfold-argument  \
-    --Name xx \
-    --Keyword xx \
-    --Pattern xx \
-    --Catalog xx \
-    --SchemaName xx \
-    --Type xx \
-    --DbName xx
+    --Name name1 \
+    --Keyword key \
+    --Pattern pattern \
+    --Catalog DataLakeCatalog \
+    --SchemaName name \
+    --Type t1 \
+    --DbName db1
 ```
 
 Output: 
@@ -22,132 +22,147 @@ Output:
         "TableList": [
             {
                 "Table": {
-                    "PartitionKeys": [
-                        {
-                            "Name": "xx",
-                            "BizParams": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "IsPartition": true,
-                            "Params": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "Position": 0,
-                            "Type": "xx",
-                            "Description": "xx"
-                        }
-                    ],
+                    "ViewOriginalText": "abc",
+                    "ViewExpandedText": "abc",
+                    "Retention": 0,
+                    "Columns": [],
                     "Sds": {
-                        "OutputFormat": "xx",
-                        "SortCols": {
-                            "Col": "xx",
-                            "Order": 0
-                        },
-                        "InputFormat": "xx",
-                        "SerdeLib": "xx",
-                        "Cols": [
-                            {
-                                "Name": "xx",
-                                "BizParams": [
-                                    {
-                                        "Value": "xx",
-                                        "Key": "xx"
-                                    }
-                                ],
-                                "IsPartition": true,
-                                "Position": 0,
-                                "Type": "xx",
-                                "Description": "xx"
-                            }
-                        ],
-                        "Location": "xx",
+                        "Location": "abc",
+                        "InputFormat": "abc",
+                        "OutputFormat": "abc",
                         "NumBuckets": 0,
                         "Compressed": true,
-                        "SerdeName": "xx",
                         "StoredAsSubDirectories": true,
+                        "SerdeLib": "abc",
+                        "SerdeName": "abc",
                         "BucketCols": [
-                            "xx"
-                        ]
-                    },
-                    "RecordCount": 0,
-                    "StructUpdateTime": "2020-09-22T00:00:00+00:00",
-                    "Partitions": [
-                        {
-                            "Sds": {
-                                "OutputFormat": "xx",
-                                "SortCols": {
-                                    "Col": "xx",
-                                    "Order": 0
-                                },
-                                "InputFormat": "xx",
-                                "SerdeLib": "xx",
-                                "Cols": [
+                            "abc"
+                        ],
+                        "SerdeParams": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Params": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "SortCols": {
+                            "Col": "abc",
+                            "Order": 0
+                        },
+                        "Cols": [
+                            {
+                                "Name": "abc",
+                                "Description": "abc",
+                                "Type": "abc",
+                                "Position": 0,
+                                "Params": [
                                     {
-                                        "IsPartition": true,
-                                        "Type": "xx",
-                                        "Description": "xx",
-                                        "Position": 0,
-                                        "Name": "xx"
+                                        "Key": "abc",
+                                        "Value": "abc"
                                     }
                                 ],
-                                "Location": "xx",
-                                "NumBuckets": 0,
-                                "Compressed": true,
-                                "SerdeName": "xx",
-                                "StoredAsSubDirectories": true,
-                                "BucketCols": [
-                                    "xx"
-                                ]
-                            },
-                            "Name": "xx",
-                            "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                            "DataVersion": 0,
-                            "RecordCount": 0,
-                            "TableName": "xx",
-                            "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                            "Values": [
-                                "xx"
-                            ],
-                            "DatabaseName": "xx",
-                            "SchemaName": "xx",
-                            "StorageSize": 0,
-                            "CreateTime": "2020-09-22T00:00:00+00:00"
+                                "IsPartition": true
+                            }
+                        ],
+                        "SortColumns": [
+                            {
+                                "Col": "abc",
+                                "Order": 0
+                            }
+                        ]
+                    },
+                    "PartitionKeys": [
+                        {
+                            "Name": "abc",
+                            "Description": "abc",
+                            "Type": "abc",
+                            "Position": 0,
+                            "IsPartition": true
                         }
                     ],
-                    "DataUpdateTime": "2020-09-22T00:00:00+00:00",
-                    "ViewOriginalText": "xx",
-                    "LifeTime": 0,
+                    "Partitions": [
+                        {
+                            "DatabaseName": "abc",
+                            "SchemaName": "abc",
+                            "TableName": "abc",
+                            "DataVersion": 0,
+                            "Name": "abc",
+                            "Params": [],
+                            "Values": [
+                                "abc"
+                            ],
+                            "StorageSize": 0,
+                            "RecordCount": 0,
+                            "CreateTime": "2020-09-22T00:00:00+00:00",
+                            "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                            "LastAccessTime": "2020-09-22T00:00:00+00:00",
+                            "Sds": {
+                                "Location": "abc",
+                                "InputFormat": "abc",
+                                "OutputFormat": "abc",
+                                "NumBuckets": 0,
+                                "Compressed": true,
+                                "StoredAsSubDirectories": true,
+                                "SerdeLib": "abc",
+                                "SerdeName": "abc",
+                                "Params": [],
+                                "SerdeParams": [],
+                                "SortColumns": [],
+                                "BucketCols": [
+                                    "abc"
+                                ],
+                                "SortCols": {
+                                    "Col": "abc",
+                                    "Order": 0
+                                },
+                                "Cols": [
+                                    {
+                                        "Name": "abc",
+                                        "Description": "abc",
+                                        "Type": "abc",
+                                        "Position": 0,
+                                        "IsPartition": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "Type": "abc",
+                    "DbName": "abc",
+                    "SchemaName": "abc",
                     "StorageSize": 0,
-                    "ViewExpandedText": "xx",
-                    "SchemaName": "xx",
+                    "RecordCount": 0,
+                    "LifeTime": 0,
                     "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                    "Type": "xx",
-                    "DbName": "xx",
-                    "Retention": 0
+                    "DataUpdateTime": "2020-09-22T00:00:00+00:00",
+                    "StructUpdateTime": "2020-09-22T00:00:00+00:00",
+                    "Name": "abc"
                 },
                 "Asset": {
-                    "Description": "xx",
-                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                    "DataVersion": 0,
-                    "OwnerAccount": "xx",
-                    "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "Catalog": "xx",
-                    "DatasourceId": 0,
-                    "Owner": "xx",
-                    "Guid": "xx",
                     "Id": 0,
-                    "Name": "xx"
+                    "Name": "abc",
+                    "Guid": "abc",
+                    "Catalog": "abc",
+                    "Description": "abc",
+                    "Owner": "abc",
+                    "OwnerAccount": "abc",
+                    "DataVersion": 0,
+                    "CreateTime": "2020-09-22T00:00:00+00:00",
+                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                    "DatasourceId": 0,
+                    "Params": [],
+                    "PermValues": [],
+                    "BizParams": []
                 }
             }
         ],
         "TotalCount": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

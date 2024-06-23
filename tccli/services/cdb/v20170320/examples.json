@@ -714,6 +714,14 @@
         "title": "查询实例的可设置参数列表"
       }
     ],
+    "DescribeInstanceUpgradeType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceUpgradeType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxxxx\",\n    \"DstCpu\": 1,\n    \"DstMemory\": 1000,\n    \"DstDisk\": 200,\n    \"DstVersion\": \"8.0\",\n    \"DstProtectMode\": 0,\n    \"DstDeployMode\": 0,\n    \"DstSlaveZone\": 100003,\n    \"DstBackupZone\": 0,\n    \"DstCdbType\": \"CUSTOM\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceId\": \"cdb-xxx\",\n        \"UpgradeType\": \"Trsf\"\n    }\n}",
+        "title": "查询数据库实例升级类型"
+      }
+    ],
     "DescribeLocalBinlogConfig": [
       {
         "document": "",

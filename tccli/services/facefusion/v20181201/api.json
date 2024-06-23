@@ -465,60 +465,60 @@
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态码， 0为处理成功，其他值为处理失败",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对应状态码信息描述",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CodeDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "保留字段",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审核详细内容",
-          "example": "",
+          "example": "无",
           "member": "FuseFaceReviewDetail",
           "name": "DetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

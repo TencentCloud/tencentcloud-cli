@@ -10091,7 +10091,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-gv0a9ec2",
           "member": "string",
           "name": "ClusterID",
           "required": true,
@@ -10100,7 +10100,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n仅支持ecm-id过滤",
-          "example": "",
+          "example": "[{\"ecm-id\":\"ecs-1\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10115,18 +10115,20 @@
         {
           "disabled": false,
           "document": "返回的实例相关信息列表的长度",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回的实例相关信息列表",
-          "example": "",
+          "example": "[\"\"]",
           "member": "string",
           "name": "InstanceInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10471,7 +10473,7 @@
         {
           "disabled": false,
           "document": "集群版本",
-          "example": "",
+          "example": "1.28.4",
           "member": "string",
           "name": "ClusterVersion",
           "required": false,
@@ -10486,18 +10488,20 @@
         {
           "disabled": false,
           "document": "集群版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1.28.4",
           "member": "string",
           "name": "ClusterVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{}",
           "member": "EdgeAvailableExtraArgs",
           "name": "AvailableExtraArgs",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10516,7 +10520,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-gv0a9ec3",
           "member": "string",
           "name": "ClusterID",
           "required": true,
@@ -10525,7 +10529,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n仅支持cvm-id过滤",
-          "example": "",
+          "example": "[{cvm-id: ins-9j8hfu}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10540,18 +10544,20 @@
         {
           "disabled": false,
           "document": "返回的实例相关信息列表的长度",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回的实例相关信息列表",
-          "example": "",
+          "example": "[{}]",
           "member": "string",
           "name": "InstanceInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10588,7 +10594,7 @@
           "example": "{}",
           "member": "EdgeClusterExtraArgs",
           "name": "ClusterExtraArgs",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10607,7 +10613,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-gv0a9ec3",
           "member": "string",
           "name": "ClusterID",
           "required": true,
@@ -10616,7 +10622,7 @@
         {
           "disabled": false,
           "document": "查询总数",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -10625,7 +10631,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -10634,7 +10640,7 @@
         {
           "disabled": false,
           "document": "过滤条件，仅支持NodeName过滤",
-          "example": "",
+          "example": "[{nodename:\"csm-1\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10649,18 +10655,20 @@
         {
           "disabled": false,
           "document": "该集群总数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点信息集合",
-          "example": "",
+          "example": "{}",
           "member": "string",
           "name": "InstanceInfoSet",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10783,6 +10791,7 @@
           "example": "[{\"ClusterId\":\"cls-xxx1\",\"Audit\":{\"Enable\":true,\"TopicSet\":\"xxxx",
           "member": "string",
           "name": "SwitchSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13605,7 +13614,7 @@
           "example": "Initializing",
           "member": "string",
           "name": "Phase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13615,7 +13624,7 @@
           "example": "无",
           "member": "ClusterCondition",
           "name": "Conditions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13679,6 +13688,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13688,6 +13698,7 @@
           "example": "*",
           "member": "EdgeCluster",
           "name": "Clusters",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16254,6 +16265,7 @@
           "example": "无",
           "member": "AppChart",
           "name": "AppCharts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25155,7 +25167,7 @@
         },
         {
           "disabled": false,
-          "document": "制品来源，范围：tke-market 或 other",
+          "document": "制品来源，范围：tke-market 或 other默认值：tke-market。",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",

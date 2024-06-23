@@ -16182,6 +16182,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所属可用区，表明集群归属的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群节点所在的可用区，若该集群为跨可用区集群，则包含该集群节点所在的多个可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ZoneIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

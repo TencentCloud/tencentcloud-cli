@@ -1715,7 +1715,7 @@
         },
         {
           "disabled": false,
-          "document": "直播类型：0 常规（默认）1 伪直播",
+          "document": "直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -1733,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",
@@ -6065,7 +6065,7 @@
         },
         {
           "disabled": false,
-          "document": "直播类型：0 常规（默认）1 伪直播",
+          "document": "直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -6083,7 +6083,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",

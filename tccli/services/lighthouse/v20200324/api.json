@@ -3732,7 +3732,7 @@
         },
         {
           "disabled": false,
-          "document": "应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。",
+          "document": "应用防火墙模板任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。",
           "example": "lgtk-abcd1234",
           "member": "string",
           "name": "TaskIds",

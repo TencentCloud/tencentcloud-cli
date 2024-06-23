@@ -874,7 +874,7 @@
       {
         "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeAvailableExtraArgs\n&ClusterVersion=1.12.4\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.12.4\",\n        \"AvailableExtraArgs\": {\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"kube-api-burst\",\n                    \"Type\": \"int32\",\n                    \"Usage\": \"Burst to use while talking with kubernetes apiserver. (default 30)\",\n                    \"Default\": \"30\"\n                }\n            ],\n            \"KubeScheduler\": [],\n            \"Kubelet\": [\n                {}\n            ]\n        }\n    },\n    \"RequestId\": \"xxx-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"abc\",\n        \"AvailableExtraArgs\": {\n            \"KubeAPIServer\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Usage\": \"abc\",\n                    \"Default\": \"abc\",\n                    \"Constraint\": \"abc\"\n                }\n            ],\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Usage\": \"abc\",\n                    \"Default\": \"abc\",\n                    \"Constraint\": \"abc\"\n                }\n            ],\n            \"KubeScheduler\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Type\": \"abc\",\n                    \"Usage\": \"abc\",\n                    \"Default\": \"abc\",\n                    \"Constraint\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询集群可用的自定义参数"
       }
     ],
@@ -898,7 +898,7 @@
       {
         "document": "查询边缘计算集群的节点信息",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeEdgeClusterInstances\r\n&ClusterID=cls-xxxxx\r\n&Limit=5\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"187c16d5-1f53-4e88-b684-077f0c7369b2\",\n        \"TotalCount\": 2,\n        \"InstanceInfoSet\": [\n            \"info1\",\n            \"info2\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceInfoSet\": \"csm-1\",\n        \"RequestId\": \"a43dg678fhsctyh5\"\n    }\n}",
         "title": "查询边缘计算集群的节点信息"
       }
     ],
@@ -914,7 +914,7 @@
       {
         "document": "边缘集群日志开关",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeLogSwitches\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cls-xxx1\",\n        \"cls-xxx2\"\n    ]\n}",
-        "output": "{\n    \"Response\":{\n        \"SwitchSet\":[\n            {\n                \"ClusterId\":\"cls-xxx2\",\n                \"Audit\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"a0cd4067-c9a1-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"sadfssfasdf-c9a1-a895-907d-03b4025e4f2c\"\n                },\n                \"Event\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"sadfssfasdf-564f-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"sadfssfasdf-564f-a895-907d-5465tdtewrt\"\n                },\n                \"Log\":{\n                   \"Enable\": true,\n                   \"TopicSet\": \"3465345-564f-a895-907d-03b4025e4f2c\",\n                   \"TopicId\": \"6750000-564f-a895-907d-03b4025e4f2c\"\n                }\n            }\n        ],\n        \"RequestId\":\"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SwitchSet\": [\n            \"logsetid: 8hhy32hru27\"\n        ],\n        \"RequestId\": \"iu3u89fvfsyr37819hi9\"\n    }\n}",
         "title": "查询开关列表接口示例"
       }
     ],
@@ -1334,7 +1334,7 @@
       {
         "document": "查询集群列表，用于获取集群列表",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeTKEEdgeClusters\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"cls-xxxxxxx\",\n                \"ClusterName\": \"集群AA\",\n                \"K8SVersion\": \"1.10.5\",\n                \"VpcId\": \"vpc-xxxxx\",\n                \"PodCIDR\": \"172.16.0.0/20\",\n                \"ServiceCIDR\": \"192.168.0.0/18\",\n                \"Status\": \"running\",\n                \"CreatedTime\": \"2019-08-16T04:31:26Z\",\n                \"ClusterDesc\": \"test edge cluster\"\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"PodCIDR\": \"abc\",\n                \"ServiceCIDR\": \"abc\",\n                \"K8SVersion\": \"abc\",\n                \"Status\": \"abc\",\n                \"ClusterDesc\": \"abc\",\n                \"CreatedTime\": \"abc\",\n                \"EdgeClusterVersion\": \"abc\",\n                \"MaxNodePodNum\": 0,\n                \"ClusterAdvancedSettings\": {\n                    \"ExtraArgs\": {\n                        \"KubeAPIServer\": [\n                            \"abc\"\n                        ],\n                        \"KubeControllerManager\": [\n                            \"abc\"\n                        ],\n                        \"KubeScheduler\": [\n                            \"abc\"\n                        ]\n                    },\n                    \"Runtime\": \"abc\",\n                    \"ProxyMode\": \"abc\"\n                },\n                \"Level\": \"abc\",\n                \"AutoUpgradeClusterLevel\": true,\n                \"ChargeType\": \"abc\",\n                \"EdgeVersion\": \"abc\",\n                \"TagSpecification\": {\n                    \"ResourceType\": \"abc\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"abc\",\n                            \"Value\": \"abc\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "集群信息列表"
       }
     ],

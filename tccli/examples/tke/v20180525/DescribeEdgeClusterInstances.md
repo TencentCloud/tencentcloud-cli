@@ -15,12 +15,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "187c16d5-1f53-4e88-b684-077f0c7369b2",
-        "TotalCount": 2,
-        "InstanceInfoSet": [
-            "info1",
-            "info2"
-        ]
+        "TotalCount": 0,
+        "InstanceInfoSet": "csm-1",
+        "RequestId": "a43dg678fhsctyh5"
     }
 }
 ```

@@ -13,23 +13,38 @@ Output:
 ```
 {
     "Response": {
-        "ClusterVersion": "1.12.4",
+        "ClusterVersion": "abc",
         "AvailableExtraArgs": {
-            "KubeControllerManager": [
+            "KubeAPIServer": [
                 {
-                    "Name": "kube-api-burst",
-                    "Type": "int32",
-                    "Usage": "Burst to use while talking with kubernetes apiserver. (default 30)",
-                    "Default": "30"
+                    "Name": "abc",
+                    "Type": "abc",
+                    "Usage": "abc",
+                    "Default": "abc",
+                    "Constraint": "abc"
                 }
             ],
-            "KubeScheduler": [],
-            "Kubelet": [
-                {}
+            "KubeControllerManager": [
+                {
+                    "Name": "abc",
+                    "Type": "abc",
+                    "Usage": "abc",
+                    "Default": "abc",
+                    "Constraint": "abc"
+                }
+            ],
+            "KubeScheduler": [
+                {
+                    "Name": "abc",
+                    "Type": "abc",
+                    "Usage": "abc",
+                    "Default": "abc",
+                    "Constraint": "abc"
+                }
             ]
-        }
-    },
-    "RequestId": "xxx-xxxx"
+        },
+        "RequestId": "abc"
+    }
 }
 ```
 

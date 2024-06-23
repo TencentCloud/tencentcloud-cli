@@ -50,9 +50,9 @@
       "status": "online"
     },
     "CreateReconstructDocumentFlow": {
-      "document": "文档解析，异步接口。",
+      "document": "本接口为异步接口的发起请求接口，用于发起文档解析任务。\n文档解析支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n\n体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。",
       "input": "CreateReconstructDocumentFlowRequest",
-      "name": "创建智能文档识别任务",
+      "name": "创建文档解析任务",
       "output": "CreateReconstructDocumentFlowResponse",
       "status": "online"
     },
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DeleteDoc": {
-      "document": "创建企业",
+      "document": "删除文档",
       "input": "DeleteDocRequest",
       "name": "删除文档",
       "output": "DeleteDocResponse",
@@ -169,9 +169,9 @@
       "status": "online"
     },
     "DescribeRobotBizIDByAppKey": {
-      "document": "通过appKey获取机器人业务ID",
+      "document": "通过appKey获取应用业务ID",
       "input": "DescribeRobotBizIDByAppKeyRequest",
-      "name": "通过appKey获取机器人业务ID",
+      "name": "通过appKey获取应用业务ID",
       "output": "DescribeRobotBizIDByAppKeyResponse",
       "status": "online"
     },
@@ -253,9 +253,9 @@
       "status": "online"
     },
     "GetReconstructDocumentResult": {
-      "document": "获取文档解析任务执行结果",
+      "document": "本接口为异步接口的查询结果接口，用于获取文档解析处理结果。",
       "input": "GetReconstructDocumentResultRequest",
-      "name": "查询智能文档识别任务结果",
+      "name": "查询文档解析任务结果",
       "output": "GetReconstructDocumentResultResponse",
       "status": "online"
     },
@@ -456,9 +456,9 @@
       "status": "online"
     },
     "ParseDoc": {
-      "document": "解析拆分文档。该接口需开通文档解析原子能力后调用。文档解析原子能力内测中，如有需要请联系架构师或 [联系客服](https://cloud.tencent.com/act/event/Online_service)  。",
+      "document": "接口即将下线，请切换使用新接口：[文档解析](https://cloud.tencent.com/document/product/1759/107504)\n解析拆分文档。该接口需开通文档解析原子能力后调用。文档解析原子能力内测中，如有需要请联系架构师或 [联系客服](https://cloud.tencent.com/act/event/Online_service)  。",
       "input": "ParseDocRequest",
-      "name": "文档解析",
+      "name": "文档解析旧版（请迁移新接口）",
       "output": "ParseDocResponse",
       "status": "online"
     },
@@ -484,9 +484,9 @@
       "status": "online"
     },
     "ReconstructDocument": {
-      "document": "支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。",
+      "document": "支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n\n体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。",
       "input": "ReconstructDocumentRequest",
-      "name": "智能文档识别",
+      "name": "文档解析",
       "output": "ReconstructDocumentResponse",
       "status": "online"
     },
@@ -777,6 +777,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token余量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "TokenBalance",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1030,7 +1041,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1112,7 +1123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1310,6 +1321,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MsgFileInfo",
+          "name": "FileInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1391,7 +1412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1527,7 +1548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1612,7 +1633,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1745,7 +1766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "文件的 Base64 值。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -1754,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经 Base64 编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "文件的 Url 地址。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经 Base64 编码后不超过 100M。文件下载时间不超过 15 秒。 支持的图片像素：单边介于20-10000px之间。 文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "无",
           "member": "string",
           "name": "FileUrl",
@@ -1763,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型（IsPdf=true）时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -1772,7 +1793,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型（IsPdf=true）时，用来指定pdf识别的结束页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。",
           "example": "3",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -1781,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "创建智能文档识别任务配置信息",
+          "document": "创建文档解析任务配置信息",
           "example": "{\"TableResultType\":\"1\"}",
           "member": "CreateReconstructDocumentFlowConfig",
           "name": "Config",
@@ -1818,7 +1839,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -1990,7 +2011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2053,7 +2074,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2080,7 +2101,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2116,7 +2137,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2152,7 +2173,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2363,7 +2384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2541,7 +2562,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -2816,7 +2837,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID\n",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3083,7 +3104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3290,7 +3311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人appkey",
+          "document": "应用appkey",
           "example": "无",
           "member": "string",
           "name": "AppKey",
@@ -3305,7 +3326,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人业务ID",
+          "document": "应用业务ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3327,17 +3348,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "文件类型",
-          "example": "无",
+          "document": "文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等",
+          "example": "pdf",
           "member": "string",
           "name": "FileType",
           "required": false,
@@ -3345,12 +3366,21 @@
         },
         {
           "disabled": false,
-          "document": "权限场景，是否公有权限",
+          "document": "IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "存储类型: offline:离线文件，realtime:实时文件；为空默认为offline",
+          "example": "offline",
+          "member": "string",
+          "name": "TypeKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3450,8 +3480,8 @@
         },
         {
           "disabled": false,
-          "document": "上传存储目录",
-          "example": "无",
+          "document": "上传存储路径，到具体文件",
+          "example": "/corp/1768567877186617344/1768574873671565312/doc/XIEVIQBxpnltliscsSAu-1796171935184060416.pdf",
           "member": "string",
           "name": "UploadPath",
           "output_required": false,
@@ -3472,7 +3502,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3715,7 +3745,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3788,7 +3818,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3833,7 +3863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -3891,6 +3921,62 @@
       ],
       "type": "object"
     },
+    "FileInfo": {
+      "document": "实时上传的文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件的URL地址，COS地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析后返回的DocID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filters": {
       "document": "不满意回复检索过滤",
       "members": [
@@ -3920,7 +4006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4096,11 +4182,20 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储类型: offline:离线文件，realtime:实时文件；为空默认为offline",
+          "example": "offline",
+          "member": "string",
+          "name": "TypeKey",
+          "required": false,
           "type": "string"
         }
       ],
@@ -4274,7 +4369,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人AppKey",
+          "document": "应用AppKey",
           "example": "无",
           "member": "string",
           "name": "BotAppKey",
@@ -4365,7 +4460,7 @@
         },
         {
           "disabled": false,
-          "document": "还原失败的页",
+          "document": "文档解析失败的页码",
           "example": "无",
           "member": "ReconstructDocumentFailedPage",
           "name": "FailedPages",
@@ -4405,7 +4500,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4515,7 +4610,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人AppKey",
+          "document": "应用AppKey",
           "example": "无",
           "member": "string",
           "name": "BotAppKey",
@@ -4557,6 +4652,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "余额; 余额大于 0 时表示有效.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Balance",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对话窗输入字符限制",
+          "example": "无",
+          "member": "int64",
+          "name": "InputLenLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4570,7 +4685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4615,7 +4730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "高亮启始位置\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高亮起始位置\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "StartPos",
@@ -4654,7 +4769,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4717,7 +4832,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人appKey",
+          "document": "应用appKey",
           "example": "LYQCTv",
           "member": "string",
           "name": "BotAppKey",
@@ -4961,6 +5076,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检索置信度，针对文档和问答有效，最小0.01，最大0.99\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5142,7 +5268,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -5648,7 +5774,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6019,7 +6145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6129,7 +6255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6322,7 +6448,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6528,7 +6654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6712,7 +6838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -6767,7 +6893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7018,7 +7144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7118,7 +7244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7172,7 +7298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7289,7 +7415,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7343,7 +7469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7388,7 +7514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7505,7 +7631,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -7544,6 +7670,62 @@
         }
       ],
       "type": "object"
+    },
+    "MsgFileInfo": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MsgRecord": {
       "document": "消息详情",
@@ -7730,7 +7912,7 @@
         },
         {
           "disabled": false,
-          "document": "回复方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回复方式\n1:大模型直接回复;\n2:保守回复, 未知问题回复;\n3:拒答问题回复;\n4:敏感回复;\n5:问答对直接回复, 已采纳问答对优先回复;\n6:欢迎语回复;\n7:并发超限回复;\n8:全局干预知识;\n9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;\n10:任务流程答案回复;\n11:搜索引擎回复;\n12:知识润色后回复;\n13:图片理解回复;\n14:实时文档回复;\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ReplyMethod",
@@ -7756,6 +7938,16 @@
           "name": "TaskFlow",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户传入的文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -8186,7 +8378,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -8415,7 +8607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人appKey",
+          "document": "应用appKey",
           "example": "LYQCTv",
           "member": "string",
           "name": "BotAppKey",
@@ -8500,7 +8692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "文件的 Base64 值。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -8509,7 +8701,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经 Base64 编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "文件的 Url 地址。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经 Base64 编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "无",
           "member": "string",
           "name": "FileUrl",
@@ -8518,7 +8710,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型（IsPdf=true）时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -8527,7 +8719,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型（IsPdf=true）时，用来指定pdf识别的结束页码，识别的页码包含当前值。\n单次调用，最多支持10页pdf的智能识别。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。单次调用，最多支持10页pdf的文档解析。",
           "example": "3",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -9164,7 +9356,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -9200,7 +9392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -9474,7 +9666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -9817,7 +10009,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用回复\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Answer",
@@ -9843,7 +10035,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -10009,7 +10201,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",

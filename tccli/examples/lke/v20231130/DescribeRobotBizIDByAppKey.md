@@ -1,6 +1,6 @@
-**Example 1: 通过AppKey查询机器人业务ID**
+**Example 1: 通过AppKey查询应用业务ID**
 
-通过AppKey查询机器人业务ID
+通过AppKey查询应用业务ID
 
 Input: 
 
