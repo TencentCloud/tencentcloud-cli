@@ -546,6 +546,14 @@
         "title": "DescribeFenceEventList"
       }
     ],
+    "DescribeFirmware": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Createtime\": 1599626765,\n        \"Description\": \"ttttt\",\n        \"Md5sum\": \"1a5c386576074d22a604b795e8917e1a\",\n        \"Name\": \"test\",\n        \"ProductId\": \"I6KTCZ170U\",\n        \"ProductName\": \"8bvsn6go_测试OTA升级\",\n        \"RequestId\": \"01365e8c-f025-40b9-97a4-fa583d6c569e\",\n        \"Version\": \"t.2\",\n        \"FwType\": \"mcu\"\n    }\n}",
+        "title": "查询固件信息"
+      }
+    ],
     "DescribeFirmwareTask": [
       {
         "document": "查询固件升级任务详情",

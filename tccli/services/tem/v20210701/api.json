@@ -821,7 +821,7 @@
           "example": "service-3gn56p6v",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8629,7 +8629,8 @@
           "example": "test",
           "member": "string",
           "name": "EnterpriseInstanceName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8639,7 +8640,8 @@
           "example": "0",
           "member": "int64",
           "name": "EnterpriseInstanceChargeType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8649,12 +8651,13 @@
           "example": "basic",
           "member": "string",
           "name": "EnterpriseInstanceType",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "WorkloadInfo": {
       "document": "工作负载详情",

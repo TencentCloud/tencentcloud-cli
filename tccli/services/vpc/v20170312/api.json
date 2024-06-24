@@ -29,7 +29,7 @@
       "status": "online"
     },
     "AddTemplateMember": {
-      "document": "增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。",
       "input": "AddTemplateMemberRequest",
       "name": "增加模板对象成员",
       "output": "AddTemplateMemberResponse",
@@ -708,7 +708,7 @@
       "status": "online"
     },
     "DeleteTemplateMember": {
-      "document": "删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。",
       "input": "DeleteTemplateMemberRequest",
       "name": "删除模板对象成员",
       "output": "DeleteTemplateMemberResponse",
@@ -1268,7 +1268,7 @@
       "status": "online"
     },
     "DescribeVpcEndPointService": {
-      "document": "查询终端节点服务列表。",
+      "document": "本接口（DescribeVpcEndPointService）用于查询终端节点服务列表。",
       "input": "DescribeVpcEndPointServiceRequest",
       "name": "查询终端节点服务列表",
       "output": "DescribeVpcEndPointServiceResponse",
@@ -1912,7 +1912,7 @@
       "status": "online"
     },
     "ModifyTemplateMember": {
-      "document": "修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。",
+      "document": "修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。",
       "input": "ModifyTemplateMemberRequest",
       "name": "修改模板对象成员",
       "output": "ModifyTemplateMemberResponse",
@@ -12586,7 +12586,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。",
+          "document": "排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`，标准型nat额外支持 并发连接数`ConcurrentConnectionCount` 、新建连接速率`NewConnectionRate`。默认值`OutTraffic`。",
           "example": "InPkg",
           "member": "string",
           "name": "OrderField",
@@ -15462,7 +15462,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，那些终端节点服务授权了该账户。</li>",
+          "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，哪些终端节点服务授权了该账户。</li>",
           "example": "无",
           "member": "bool",
           "name": "IsListAuthorizedEndPointService",
@@ -18518,50 +18518,70 @@
         {
           "disabled": false,
           "document": "来源`IP`。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PrivateIpAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "入包量。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "InPkg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "出包量。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "OutPkg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "入流量，单位：`Byte`。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "InTraffic",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "出流量，单位：`Byte`。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "OutTraffic",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发连接数。仅标准型nat支持此参数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ConcurrentConnectionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新建连接速率。仅标准型nat支持此参数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NewConnectionRate",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

@@ -1,0 +1,373 @@
+{
+  "actions": {
+    "TongChuanDisplay": {
+      "document": "获取同传结果。",
+      "input": "TongChuanDisplayRequest",
+      "name": "同传查询结果",
+      "output": "TongChuanDisplayResponse",
+      "status": "online"
+    },
+    "TongChuanRecognize": {
+      "document": "本接口提供上传音频，将音频进行语音识别并翻译成文本的服务，目前开放中英互译的同传服务。 待识别和翻译的音频文件格式是 pcm，pcm采样率要求16kHz、位深16bit、单声道、每个分片时长200ms~500ms，音频内语音清晰。",
+      "input": "TongChuanRecognizeRequest",
+      "name": "同传上传音频",
+      "output": "TongChuanRecognizeResponse",
+      "status": "online"
+    },
+    "TongChuanSync": {
+      "document": "本接口提供上传音频，将音频进行语音识别并翻译成文本的服务，目前开放中英互译的同传服务。 待识别和翻译的音频文件格式是 pcm，pcm采样率要求16kHz、位深16bit、单声道、每个分片时长200ms~500ms，音频内语音清晰。",
+      "input": "TongChuanSyncRequest",
+      "name": "同传上传音频并查询结果",
+      "output": "TongChuanSyncResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-03-25",
+    "api_brief": "介绍如何使用API对腾讯同传进行操作，包括上传音频、查询同传结果等。",
+    "serviceNameCN": "腾讯同传系统",
+    "serviceShortName": "tsi"
+  },
+  "objects": {
+    "DisplayInfo": {
+      "document": "同传结果数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "句子 ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "SeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "句子版本号",
+          "example": "1",
+          "member": "uint64",
+          "name": "SeVer",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别结果",
+          "example": "你好",
+          "member": "string",
+          "name": "SourceText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 翻译结果",
+          "example": "Hello",
+          "member": "string",
+          "name": "TargetText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "句子开始时间",
+          "example": " 122",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "句子结束时间",
+          "example": "126",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 当前句子是否已结束",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TongChuanDisplayRequest": {
+      "document": "TongChuanDisplay请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一段完整的语音对应一个SessionUuid",
+          "example": "sid-1516105689129",
+          "member": "string",
+          "name": "SessionUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "句子排序方式，1-由新到旧",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsNew",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最多返回几句，目前只支持 5 条数据",
+          "example": "5",
+          "member": "uint64",
+          "name": "SeMax",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TongChuanDisplayResponse": {
+      "document": "TongChuanDisplay返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "同传结果数组",
+          "example": "[]",
+          "member": "DisplayInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TongChuanRecognizeRequest": {
+      "document": "TongChuanRecognize请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一段完整的语音对应一个SessionUuid",
+          "example": "sid-1516105689129",
+          "member": "string",
+          "name": "SessionUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语音编码类型，1-pcm",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音分片的序号，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Seq",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音开始的时间戳",
+          "example": "0",
+          "member": "uint64",
+          "name": "Utc",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否最后一片语音分片，0-否，1-是",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsEnd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译",
+          "example": "0",
+          "member": "uint64",
+          "name": "TranslateTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。",
+          "example": "OkolgkGSpWK==",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TongChuanRecognizeResponse": {
+      "document": "TongChuanRecognize返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TongChuanSyncRequest": {
+      "document": "TongChuanSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一段完整的语音对应一个SessionUuid",
+          "example": "sid-1516105689129",
+          "member": "string",
+          "name": "SessionUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频中的语言类型，支持语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻译目标语言类型，支持的语言列表<li> zh : 中文 </li> <li> en : 英文 </li>",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语音编码类型，1-pcm",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音分片的序号，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Seq",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音开始的时间戳",
+          "example": "0",
+          "member": "uint64",
+          "name": "Utc",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否最后一片语音分片，0-否，1-是",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsEnd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译",
+          "example": "0",
+          "member": "uint64",
+          "name": "TranslateTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音分片内容进行 Base64 编码后的字符串。音频内容需包含有效并可识别的文本信息。",
+          "example": "OkolgkGSpWK==",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TongChuanSyncResponse": {
+      "document": "TongChuanSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "同传结果数组",
+          "example": "[]",
+          "member": "DisplayInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

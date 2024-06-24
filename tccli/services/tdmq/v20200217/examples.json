@@ -548,6 +548,14 @@
         "title": "获取实例列表"
       }
     ],
+    "DescribeRabbitMQExchanges": [
+      {
+        "document": "查询RabbitMQ exchange 列表",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQExchanges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"vhost1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request1\",\n        \"ExchangeInfoList\": [\n            {\n                \"ExchangeName\": \"test1\",\n                \"ExchangeType\": \"fanout\",\n                \"Remark\": \"test1\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            },\n            {\n                \"ExchangeName\": \"test2\",\n                \"ExchangeType\": \"direct\",\n                \"Remark\": \"test2\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询RabbitMQ exchange 列表"
+      }
+    ],
     "DescribeRabbitMQNodeList": [
       {
         "document": "RabbitMQ专享版查询节点列表 在查询节点的时候使用。",

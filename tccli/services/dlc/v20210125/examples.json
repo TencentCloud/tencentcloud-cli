@@ -494,6 +494,14 @@
         "title": "查询DataEngines信息列表"
       }
     ],
+    "DescribeDataEnginesScaleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEnginesScaleDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-06-06 12:00:00\",\n    \"EndTime\": \"2024-06-06 13:00:00\",\n    \"DataEngineNames\": [\n        \"dataengine-abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Scales\": [\n            {\n                \"DataEngineId\": \"abc\",\n                \"DataEngineName\": \"abc\",\n                \"ScaleDetail\": [\n                    {\n                        \"StartTime\": \"abc\",\n                        \"EndTime\": \"abc\",\n                        \"CU\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询引擎规格详情"
+      }
+    ],
     "DescribeDatabases": [
       {
         "document": "查询数据库列表",

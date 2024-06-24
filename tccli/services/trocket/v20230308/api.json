@@ -231,6 +231,13 @@
       "output": "DescribeMQTTUserListResponse",
       "status": "online"
     },
+    "DescribeProductSKUs": {
+      "document": "查询产品售卖规格，针对 RocketMQ 5.x 集群。",
+      "input": "DescribeProductSKUsRequest",
+      "name": "查询产品售卖规格",
+      "output": "DescribeProductSKUsResponse",
+      "status": "online"
+    },
     "DescribeRoleList": {
       "document": "查询角色列表，Filter参数使用说明如下：\n\n1. RoleName，角色名称模糊搜索",
       "input": "DescribeRoleListRequest",
@@ -3096,6 +3103,33 @@
       ],
       "type": "object"
     },
+    "DescribeProductSKUsRequest": {
+      "document": "DescribeProductSKUs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductSKUsResponse": {
+      "document": "DescribeProductSKUs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProductSKU",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoleListRequest": {
       "document": "DescribeRoleList请求参数结构体",
       "members": [
@@ -5231,6 +5265,168 @@
           "example": "0",
           "member": "int64",
           "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PriceTag": {
+      "document": "价格标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计价名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Step",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductSKU": {
+      "document": "商品售卖信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
+          "example": "EXPERIMENT",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格代码",
+          "example": "无",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScaledTpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题数量上限默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组数量上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认消息保留时间，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DefaultRetention",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可调整消息保留时间上限，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RetentionUpperLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可调整消息保留时间下限，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RetentionLowerLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "延时消息最大时长，小时为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxMessageDelay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可购买",
+          "example": "无",
+          "member": "bool",
+          "name": "OnSale",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项信息",
+          "example": "无",
+          "member": "PriceTag",
+          "name": "PriceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题数量上限默认最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumUpperLimit",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

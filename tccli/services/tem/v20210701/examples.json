@@ -3,8 +3,8 @@
     "CreateApplication": [
       {
         "document": "创建应用",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"xx\",\n    \"SubnetList\": [\n        \"xx\"\n    ],\n    \"Description\": \"xx\",\n    \"InstanceId\": \"xx\",\n    \"DeployMode\": \"xx\",\n    \"RepoServer\": \"xx\",\n    \"SourceChannel\": 0,\n    \"RepoType\": 0,\n    \"RepoName\": \"xx\",\n    \"UseDefaultImageService\": 0,\n    \"CodingLanguage\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"abc\",\n    \"Description\": \"abc\",\n    \"UseDefaultImageService\": 0,\n    \"RepoType\": 0,\n    \"InstanceId\": \"abc\",\n    \"RepoServer\": \"abc\",\n    \"RepoName\": \"abc\",\n    \"SourceChannel\": 0,\n    \"SubnetList\": [\n        \"abc\"\n    ],\n    \"CodingLanguage\": \"abc\",\n    \"DeployMode\": \"abc\",\n    \"EnableTracing\": 0,\n    \"UseDefaultImageServiceParameters\": {\n        \"EnterpriseInstanceName\": \"abc\",\n        \"EnterpriseInstanceChargeType\": 0,\n        \"EnterpriseInstanceType\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建应用"
       }
     ],

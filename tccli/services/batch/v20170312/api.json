@@ -1434,7 +1434,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>",
-          "example": "",
+          "example": "\t[{\"Name\":\"zone\",\"Values\":[\"ap-guangzhou-1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1449,9 +1449,10 @@
         {
           "disabled": false,
           "document": "机型配置数组",
-          "example": "",
+          "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfigSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2013,7 +2014,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>\n<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。</li>\n<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 ( POSTPAID_BY_HOUR：表示后付费，即按量计费机型 | SPOTPAID：表示竞价付费机型。 )  </li>",
-          "example": "",
+          "example": "[{\"Name\":\"zone\",\"Values\":[\"ap-guangzhou-1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2028,9 +2029,10 @@
         {
           "disabled": false,
           "document": "可用区机型配置列表。",
-          "example": "",
+          "example": "无",
           "member": "InstanceTypeQuotaItem",
           "name": "InstanceTypeQuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2054,9 +2056,10 @@
         {
           "disabled": false,
           "document": "CVM实例分类列表",
-          "example": "",
+          "example": "[{\"InstanceFamilySet\": [\"C3\",\"CN3\"],\"InstanceCategory\": \"COMPUTE_3\"}",
           "member": "InstanceCategoryItem",
           "name": "InstanceCategorySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

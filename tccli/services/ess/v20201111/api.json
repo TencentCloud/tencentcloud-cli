@@ -4482,7 +4482,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "机构信息，暂未开放",
           "example": "无",
           "member": "OrganizationInfo",

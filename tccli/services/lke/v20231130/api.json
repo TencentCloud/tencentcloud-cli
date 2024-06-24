@@ -14,6 +14,13 @@
       "output": "CheckAttributeLabelReferResponse",
       "status": "online"
     },
+    "ConvertDocument": {
+      "document": "接口支持图片和PDF转可编辑word格式文件，将文件中的图片、文本、表格等元素识别，并根据位置进行还原。",
+      "input": "ConvertDocumentRequest",
+      "name": "文档转换",
+      "output": "ConvertDocumentResponse",
+      "status": "online"
+    },
     "CreateApp": {
       "document": "创建知识引擎应用。",
       "input": "CreateAppRequest",
@@ -217,6 +224,13 @@
       "output": "GenerateQAResponse",
       "status": "online"
     },
+    "GetAnswerTypeDataCount": {
+      "document": "回答类型数据统计",
+      "input": "GetAnswerTypeDataCountRequest",
+      "name": "回答类型数据统计",
+      "output": "GetAnswerTypeDataCountResponse",
+      "status": "online"
+    },
     "GetAppKnowledgeCount": {
       "document": "获取模型列表",
       "input": "GetAppKnowledgeCountRequest",
@@ -243,6 +257,13 @@
       "input": "GetEmbeddingRequest",
       "name": "获取特征向量",
       "output": "GetEmbeddingResponse",
+      "status": "online"
+    },
+    "GetLikeDataCount": {
+      "document": "点赞点踩数据统计",
+      "input": "GetLikeDataCountRequest",
+      "name": "点踩点赞数据统计",
+      "output": "GetLikeDataCountResponse",
       "status": "online"
     },
     "GetMsgRecord": {
@@ -1335,6 +1356,70 @@
       ],
       "usage": "out"
     },
+    "ConvertDocumentRequest": {
+      "document": "ConvertDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经 Base64 编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "FileBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当传入文件是PDF类型（FileType=PDF）时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当传入文件是PDF类型（FileType=PDF）时，用来指定pdf识别的结束页码，识别的页码包含当前值。\n建议一次请求的页面不超过3页。",
+          "example": "2",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ConvertDocumentResponse": {
+      "document": "ConvertDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别生成的word文件base64编码的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WordRecognizeInfo",
+          "name": "WordRecognizeInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Coord": {
       "document": "坐标",
       "members": [
@@ -1784,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -1793,7 +1878,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。",
           "example": "3",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -4037,6 +4122,178 @@
       ],
       "type": "object"
     },
+    "GetAnswerTypeDataCountRequest": {
+      "document": "GetAnswerTypeDataCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始日期",
+          "example": "1716368386",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束日期",
+          "example": "1716454119",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1747088166522585088",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消息来源(1、分享用户端  2、对话API  3、对话测试  4、应用评测)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAnswerTypeDataCountResponse": {
+      "document": "GetAnswerTypeDataCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总消息数",
+          "example": "45",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大模型直接回复总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModelReplyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识型回复总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "KnowledgeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务流回复总数",
+          "example": "3",
+          "member": "uint64",
+          "name": "TaskFlowCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索引擎回复总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "SearchEngineCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片理解回复总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "ImageUnderstandingCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拒答回复总数",
+          "example": "6",
+          "member": "uint64",
+          "name": "RejectCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感回复总数",
+          "example": "7",
+          "member": "uint64",
+          "name": "SensitiveCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发超限回复总数",
+          "example": "8",
+          "member": "uint64",
+          "name": "ConcurrentLimitCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未知问题回复总数",
+          "example": "9",
+          "member": "uint64",
+          "name": "UnknownIssuesCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetAppKnowledgeCountRequest": {
       "document": "GetAppKnowledgeCount请求参数结构体",
       "members": [
@@ -4317,6 +4574,148 @@
           "name": "Usage",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLikeDataCountRequest": {
+      "document": "GetLikeDataCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始日期",
+          "example": "1716368386",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束日期",
+          "example": "1716454119",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1747088166522585088",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消息来源(1、分享用户端  2、对话API)",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLikeDataCountResponse": {
+      "document": "GetLikeDataCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可评价消息数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评价数",
+          "example": "10",
+          "member": "uint64",
+          "name": "AppraisalTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参评率",
+          "example": "0.5",
+          "member": "float",
+          "name": "ParticipationRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点赞数",
+          "example": "8",
+          "member": "uint64",
+          "name": "LikeTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点赞率",
+          "example": "0.8",
+          "member": "float",
+          "name": "LikeRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点踩数",
+          "example": "2",
+          "member": "uint64",
+          "name": "DislikeTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点踩率",
+          "example": "0.2",
+          "member": "float",
+          "name": "DislikeRate",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -8710,7 +9109,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -8719,7 +9118,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。单次调用，最多支持10页pdf的文档解析。",
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为10，表示识别到pdf文件的第10页。单次调用最多支持识别10页内容，即FileEndPageNumber-FileStartPageNumber需要不大于10。",
           "example": "3",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -10240,6 +10639,32 @@
         }
       ],
       "type": "object"
+    },
+    "WordRecognizeInfo": {
+      "document": "解析为 word 文档的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入文件的页码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "word的base64\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WordBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -22,6 +22,14 @@
         "title": "添加信息防泄漏规则"
       }
     ],
+    "AddAreaBanAreas": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddAreaBanAreas\r\n&Domain=test.qcloud.com\r\n&Edition=clb-waf\r\n&Areas.0=新疆\r\n&Areas.1=江西\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "添加封禁地域"
+      }
+    ],
     "AddAttackWhiteRule": [
       {
         "document": "",

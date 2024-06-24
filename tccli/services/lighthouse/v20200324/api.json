@@ -659,7 +659,7 @@
       "status": "online"
     },
     "RerunDockerContainer": {
-      "document": "重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重建情况。",
+      "document": "重新创建并运行实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询重建情况。",
       "input": "RerunDockerContainerRequest",
       "name": "重新创建并运行Docker容器",
       "output": "RerunDockerContainerResponse",
@@ -2781,7 +2781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐 ID。",
+          "document": "套餐 ID。可通过[DescribeBundles](https://cloud.tencent.com/document/product/1207/47575)接口返回值中的BundleId获取。",
           "example": "bundle_bw_small1_1",
           "member": "string",
           "name": "BundleId",
@@ -2828,7 +2828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐 ID 列表。",
+          "document": "套餐 ID 列表。可通过[DescribeBundles](https://cloud.tencent.com/document/product/1207/47575)接口返回值中的BundleId获取。",
           "example": "[\"bundle_ntp_small1_500”]",
           "member": "string",
           "name": "BundleIds",
@@ -4585,7 +4585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。",
           "example": "lhins-383nzmm1",
           "member": "string",
           "name": "InstanceId",
@@ -4612,7 +4612,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4631,7 +4631,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4641,7 +4641,7 @@
           "example": "无",
           "member": "ResetInstanceBlueprint",
           "name": "ResetInstanceBlueprintSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7771,7 +7771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -7780,7 +7780,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
           "member": "string",
           "name": "ContainerId",
@@ -8609,7 +8609,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -8627,8 +8627,8 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
-          "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "example": "809e9d4014f08811779c07639ec13a53ee70ba1662016112986",
           "member": "string",
           "name": "ContainerId",
           "required": true,
@@ -8646,7 +8646,7 @@
           "example": "lhda-nn82v77w",
           "member": "string",
           "name": "DockerActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8954,7 +8954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",

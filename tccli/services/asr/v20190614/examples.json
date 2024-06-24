@@ -222,6 +222,14 @@
         "title": "注册说话人"
       }
     ],
+    "VoicePrintGroupVerify": [
+      {
+        "document": "提供一段音频数据和提前注册的一组说话人数据进行比对， 返回topN",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintGroupVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 1,\n    \"SampleRate\": 16000,\n    \"Data\": \"UklGRsb7AQBXQVZFZm10IBAAAAAB\",\n    \"GroupId\": \"test\",\n    \"TopN\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VerifyTops\": [\n                {\n                    \"Score\": \"100.0\",\n                    \"SpeakerId\": \"张三\",\n                    \"VoicePrintId\": \"03c7c4-34e1-4cc2-97d4-f031bc6538d0\"\n                },\n                {\n                    \"Score\": \"89.0\",\n                    \"SpeakerId\": \"李四\",\n                    \"VoicePrintId\": \"16a936-c0c9-44b8-81e6-19515a9515ef\"\n                }\n            ]\n        },\n        \"RequestId\": \"affe4cc1-7158-ad-aefc-371fce09c092\"\n    }\n}",
+        "title": "说话人验证1:N"
+      }
+    ],
     "VoicePrintUpdate": [
       {
         "document": "更新说话人的音频和昵称",
