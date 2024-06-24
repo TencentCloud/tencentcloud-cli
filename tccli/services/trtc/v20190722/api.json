@@ -6683,7 +6683,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。",
           "example": "无",
           "member": "VideoEncodeParams",
@@ -6692,7 +6692,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。",
           "example": "无",
           "member": "AudioEncodeParams",
@@ -6701,7 +6701,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "【本字段已废弃】您App server 的回调地址，用于监听任务状态, 其中回调为POST方法，JSON格式，其中有事件名EventName、任务TaskId、音视频源SourceUrl 三个字段，EventName中可能为任务发起成功TaskStartSucc、、任务发起失败TaskStartFail、任务结束成功TaskEndSucc、任务结束失败TaskEndFail。示例: {\"EventName\": \"TaskStartSucc\", \"TaskId\": \"1234\", \"https://a.b/test.mp4\"} 您可以实时接收任务状态。",
           "example": "https://a.b/callback",
           "member": "string",
@@ -6710,7 +6710,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
           "example": "https://a.b/test.mp4",
           "member": "string",

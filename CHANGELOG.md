@@ -1,3 +1,96 @@
+# Release 3.0.1020.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 102 次发布
+
+发布时间：2024-06-24 01:09:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceUpgradeType](http://document.tencentcloudapi.woa.com/document/product/236/84161)
+
+新增数据结构：
+
+* [NodeDistribution](http://document.tencentcloudapi.woa.com/document/product/236/15878#NodeDistribution)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 105 次发布
+
+发布时间：2024-06-24 01:14:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUpdateEffect](http://document.tencentcloudapi.woa.com/document/product/1342/84162)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 21 次发布
+
+发布时间：2024-06-24 01:21:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SendEmail](http://document.tencentcloudapi.woa.com/document/product/1288/51034)
+
+	* 新增入参：SmtpMessageId, SmtpHeaders
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 105 次发布
+
+发布时间：2024-06-24 01:23:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：ZoneId, ZoneIds
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 54 次发布
+
+发布时间：2024-06-24 01:25:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
+
+
+
+
 # Release 3.0.1019.1
 
 ## 语音识别(asr) 版本：2019-06-14

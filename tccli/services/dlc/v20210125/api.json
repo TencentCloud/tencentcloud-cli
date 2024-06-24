@@ -700,6 +700,13 @@
       "output": "DescribeUpdatableDataEnginesResponse",
       "status": "online"
     },
+    "DescribeUpdateEffect": {
+      "document": "获取变配影响范围",
+      "input": "DescribeUpdateEffectRequest",
+      "name": "获取变配影响范围",
+      "output": "DescribeUpdateEffectResponse",
+      "status": "online"
+    },
     "DescribeUserDataEngineConfig": {
       "document": "查询用户自定义引擎参数",
       "input": "DescribeUserDataEngineConfigRequest",
@@ -8197,7 +8204,7 @@
           "example": "无",
           "member": "DMSTableInfo",
           "name": "TableList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8207,7 +8214,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11172,6 +11179,61 @@
       ],
       "type": "object"
     },
+    "DescribeUpdateEffectRequest": {
+      "document": "DescribeUpdateEffect请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "test_engine",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变配目标规格",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变配目标最小集群数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinClusters",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpdateEffectResponse": {
+      "document": "DescribeUpdateEffect返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变配是否导致引擎/session重启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedRestart",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserDataEngineConfigRequest": {
       "document": "DescribeUserDataEngineConfig请求参数结构体",
       "members": [
@@ -12043,10 +12105,10 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

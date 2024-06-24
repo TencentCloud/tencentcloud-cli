@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "12345-67890-12345-67890",
         "Status": true
     }
 }

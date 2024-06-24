@@ -9072,7 +9072,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9082,7 +9082,7 @@
           "example": "无",
           "member": "TopicRuleInfo",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12314,7 +12314,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12324,7 +12324,7 @@
           "example": "无",
           "member": "TopicRuleInfo",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

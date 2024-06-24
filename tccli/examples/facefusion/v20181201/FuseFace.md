@@ -36,7 +36,7 @@ Output:
                 "DetailSet": [
                     {
                         "Field": "",
-                        "Label": "丁俊晖",
+                        "Label": "",
                         "Confidence": 30,
                         "Suggestion": "PASS"
                     }
