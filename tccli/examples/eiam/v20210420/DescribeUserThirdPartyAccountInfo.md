@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli eiam DescribeUserThirdPartyAccountInfo --cli-unfold-argument  \
-    --UserName xx \
-    --UserId xx
+    --UserName 测试用户1111 \
+    --UserId userId1111
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "UserName": "xx",
-        "UserId": "xx",
-        "RequestId": "xx",
+        "UserName": "测试用户1111",
+        "UserId": "userId1111",
+        "RequestId": "requestId1111",
         "ThirdPartyAccounts": [
             {
-                "AccountCode": "xx",
-                "AccountName": "xx"
+                "AccountCode": "userCode001",
+                "AccountName": "第三方测试用户0001"
             }
         ]
     }

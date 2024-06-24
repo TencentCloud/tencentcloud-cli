@@ -168,6 +168,13 @@
       "output": "VoicePrintEnrollResponse",
       "status": "online"
     },
+    "VoicePrintGroupVerify": {
+      "document": "说话人验证1:N接口，可以通过传入一段说话人音频，并且指定已存在的groupId, 和返回topN,  接口返回groupId内所有声纹和传入音频声纹比对打分TopN的结果。",
+      "input": "VoicePrintGroupVerifyRequest",
+      "name": "说话人验证1:N",
+      "output": "VoicePrintGroupVerifyResponse",
+      "status": "online"
+    },
     "VoicePrintUpdate": {
       "document": "本接口用于更新和覆盖已注册的音频数据和说话人昵称，更新后原有的音频数据将失效。",
       "input": "VoicePrintUpdateRequest",
@@ -2048,6 +2055,62 @@
       ],
       "type": "object"
     },
+    "VerifyTop": {
+      "document": "声纹组对比结果top数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相似度打分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.70",
+          "member": "string",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsadcsds-dsads-dsadasd",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "小明",
+          "member": "string",
+          "name": "SpeakerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VerifyTopResult": {
+      "document": "说话人验证1:N返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对比打分结果，按照打分降序排列返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VerifyTop",
+          "name": "VerifyTops",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Vocab": {
       "document": "[词表内容](https://cloud.tencent.com/document/product/1093/41484#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
@@ -2262,13 +2325,42 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "VoicePrintList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
     "VoicePrintCountRequest": {
       "document": "VoicePrintCount请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID,仅支持大小写字母和下划线的组合，不超过128个字符",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计模式\n0: 统计所有声纹数量\n1: 统计指定分组下的声纹数量",
+          "example": "0",
+          "member": "int64",
+          "name": "CountMod",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "VoicePrintCountResponse": {
@@ -2304,6 +2396,24 @@
           "name": "VoicePrintId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除模式: \n0.默认值，删除该条声纹\n1.从分组中删除该条声纹，声纹本身不删除\n2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹",
+          "example": "0",
+          "member": "int64",
+          "name": "DelMod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2368,6 +2478,15 @@
           "name": "SpeakerNick",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id, 仅支持大小写字母和下划线的组合，不超过128个字符",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2382,6 +2501,79 @@
           "member": "VoicePrintBaseData",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupVerifyRequest": {
+      "document": "VoicePrintGroupVerify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id, 支持数字，字母，下划线，长度不超过128",
+          "example": "test_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回打分结果降序排列topN, TopN大于0， 小于可创建声纹最大数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TopN",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupVerifyResponse": {
+      "document": "VoicePrintGroupVerify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TopN 返回结果;系统建议打分70分以上为同一个人音色，评分也取决于音频质量、长度等其他原因影响，您可以按照业务需求适当提高或降低分数要求",
+          "example": "无",
+          "member": "VerifyTopResult",
+          "name": "Data",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },

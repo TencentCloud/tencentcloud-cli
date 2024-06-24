@@ -41,3 +41,27 @@ Output:
 }
 ```
 
+**Example 2: modifyconfig修改配置**
+
+
+
+Input: 
+
+```
+tccli camp ModifyConfig --cli-unfold-argument  \
+    --ProjectID prj-xxxxxx \
+    --ConfigName dsada \
+    --ConfigType CONFIGMAP \
+    --ConfigVersion 0.0.1 \
+    --Description aaa
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "26ccfdd8-6d24-4236-9321-58d0467da44f"
+    }
+}
+```
+

@@ -102,6 +102,12 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DeleteConfig"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-hjqj5jmt\",\n    \"ConfigName\": \"dasdasdas\",\n    \"ConfigVersion\": \"0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"caf9f780-2c2f-45b9-a165-d155ec7fab6d\"\n    }\n}",
+        "title": "删除配置"
       }
     ],
     "DeleteEnvironment": [
@@ -118,6 +124,12 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除应用实例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-hjqj5jmt\",\n    \"ApplicationID\": \"app-4vxd88l6\",\n    \"EnvironmentName\": \"development\",\n    \"InstanceID\": \"tad-jrh2rl2w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5976eb0f-ab70-4636-a2ba-522b3189e908\"\n    }\n}",
+        "title": "删除实例"
       }
     ],
     "DeletePod": [
@@ -158,6 +170,12 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolumeSnapshot\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ClusterID\": \"abc\",\n    \"Name\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除卷快照"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolumeSnapshot\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxxxxxxx\",\n    \"ClusterID\": \"cls-xxxxxxx\",\n    \"EnvironmentName\": \"development\",\n    \"Name\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5976eb0f-ab70-4636-a2ba-522b3189e908\"\n    }\n}",
+        "title": "删除存储卷快照"
       }
     ],
     "DescribeAggregatedConfigs": [
@@ -388,7 +406,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Regions\": [\n            {}\n        ],\n        \"RequestId\": \"wallaceqian1669712117\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Regions\": [\n            {\n                \"Name\": \"ap-shanghai\",\n                \"Zones\": [\n                    {\n                        \"Name\": \"ap-shanghai-2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"wallaceqian1669712117\"\n    }\n}",
         "title": "DescribeRegions"
       }
     ],
@@ -404,7 +422,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplates\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"TemplateID\": \"abc\",\n                \"Name\": \"abc\",\n                \"DisplayName\": \"abc\",\n                \"Description\": \"abc\",\n                \"Content\": \"abc\",\n                \"Type\": \"abc\",\n                \"TemplateContent\": {\n                    \"Component\": \"abc\",\n                    \"Placements\": [\n                        {\n                            \"Name\": \"abc\",\n                            \"Type\": \"abc\",\n                            \"Properties\": {\n                                \"Placement\": {\n                                    \"Type\": \"abc\",\n                                    \"Region\": \"abc\",\n                                    \"Zones\": [\n                                        {\n                                            \"Zone\": \"abc\",\n                                            \"Weight\": 0\n                                        }\n                                    ],\n                                    \"MinZones\": 0,\n                                    \"MaxZones\": 0,\n                                    \"Components\": [\n                                        \"abc\"\n                                    ],\n                                    \"Strategy\": \"abc\",\n                                    \"Selector\": [\n                                        {\n                                            \"Key\": \"abc\",\n                                            \"Value\": \"abc\"\n                                        }\n                                    ],\n                                    \"Clusters\": [\n                                        \"abc\"\n                                    ]\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ],\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Templates\": [\n            {\n                \"ProjectID\": \"abc\",\n                \"TemplateID\": \"abc\",\n                \"Name\": \"abc\",\n                \"DisplayName\": \"abc\",\n                \"ProjectDisplayName\": \"abc\",\n                \"Description\": \"abc\",\n                \"Content\": \"abc\",\n                \"Type\": \"abc\",\n                \"TemplateContent\": {\n                    \"Component\": \"abc\",\n                    \"Placements\": [\n                        {\n                            \"Name\": \"abc\",\n                            \"Type\": \"abc\",\n                            \"Properties\": {\n                                \"Placement\": {\n                                    \"Type\": \"abc\",\n                                    \"Region\": \"abc\",\n                                    \"Zones\": [\n                                        {\n                                            \"Zone\": \"abc\",\n                                            \"Weight\": 0\n                                        }\n                                    ],\n                                    \"MinZones\": 0,\n                                    \"MaxZones\": 0,\n                                    \"Components\": [\n                                        \"abc\"\n                                    ],\n                                    \"Strategy\": \"abc\",\n                                    \"Selector\": [\n                                        {\n                                            \"Key\": \"abc\",\n                                            \"Value\": \"abc\"\n                                        }\n                                    ],\n                                    \"Clusters\": [\n                                        \"abc\"\n                                    ],\n                                    \"Effective\": \"abc\",\n                                    \"Workflow\": {\n                                        \"Name\": \"abc\",\n                                        \"ComponentName\": \"abc\",\n                                        \"Count\": 1,\n                                        \"Interval\": 1\n                                    },\n                                    \"FeatureAffinity\": {\n                                        \"FeatureTerms\": [\n                                            {\n                                                \"FeaturesID\": [\n                                                    \"abc\"\n                                                ],\n                                                \"Operator\": \"abc\"\n                                            }\n                                        ]\n                                    }\n                                }\n                            }\n                        }\n                    ]\n                },\n                \"Creator\": {\n                    \"Tencent\": {\n                        \"Name\": \"abc\"\n                    }\n                },\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeTemplates"
       }
     ],
@@ -494,6 +512,12 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfig\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"ConfigName\": \"abc\",\n    \"ConfigVersion\": \"abc\",\n    \"ConfigType\": \"abc\",\n    \"Content\": {\n        \"ConfigMap\": {\n            \"TypeMeta\": {\n                \"APIVersion\": \"abc\",\n                \"Kind\": \"abc\"\n            },\n            \"ObjectMeta\": {\n                \"Name\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Labels\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Annotations\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ]\n            },\n            \"Immutable\": true,\n            \"Data\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        },\n        \"Secret\": {\n            \"TypeMeta\": {\n                \"APIVersion\": \"abc\",\n                \"Kind\": \"abc\"\n            },\n            \"ObjectMeta\": {\n                \"Name\": \"abc\",\n                \"Namespace\": \"abc\"\n            },\n            \"Immutable\": true,\n            \"Type\": \"abc\"\n        },\n        \"Raw\": \"abc\"\n    },\n    \"Description\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "ModifyConfig"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfig\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxxxxx\",\n    \"ConfigName\": \"dsada\",\n    \"ConfigType\": \"CONFIGMAP\",\n    \"ConfigVersion\": \"0.0.1\",\n    \"Description\": \"aaa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26ccfdd8-6d24-4236-9321-58d0467da44f\"\n    }\n}",
+        "title": "modifyconfig修改配置"
       }
     ],
     "ModifyEnvironment": [
@@ -510,6 +534,12 @@
         "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"Platform\": \"abc\",\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"Policies\": [\n        {\n            \"Name\": \"abc\",\n            \"Type\": \"abc\",\n            \"Properties\": {\n                \"Placement\": {\n                    \"Type\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Zones\": [\n                        {\n                            \"Zone\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"Components\": [\n                        \"abc\"\n                    ],\n                    \"Strategy\": \"abc\"\n                }\n            }\n        }\n    ],\n    \"ReadOnly\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改实例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"ProjectID\": \"prj-xxxxxxx\",\n    \"ApplicationID\": \"app-xxxxxx\",\n    \"InstanceID\": \"tad-xxxxxxx\",\n    \"EnvironmentName\": \"development\",\n    \"CMDBAdmins\": [\n        {\n            \"Tencent\": {\n                \"Name\": \"aaaaa\"\n            }\n        },\n        {\n            \"Tencent\": {\n                \"Name\": \"def\"\n            }\n        },\n        {\n            \"Tencent\": {\n                \"Name\": \"abvc\"\n            }\n        },\n        {\n            \"Tencent\": {\n                \"Name\": \"adasdas1\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26ccfdd8-6d24-4236-9321-58d0467da44f\"\n    }\n}",
+        "title": "modifyinstance修改实例"
       }
     ],
     "ModifyPolicy": [

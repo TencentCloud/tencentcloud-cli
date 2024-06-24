@@ -1,3 +1,321 @@
+# Release 3.0.1021.1
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 22 次发布
+
+发布时间：2024-06-25 01:07:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VoicePrintGroupVerify](http://document.tencentcloudapi.woa.com/document/product/1093/84163)
+
+修改接口：
+
+* [VoicePrintCount](http://document.tencentcloudapi.woa.com/document/product/1093/81582)
+
+	* 新增入参：GroupId, CountMod
+
+* [VoicePrintDelete](http://document.tencentcloudapi.woa.com/document/product/1093/81020)
+
+	* 新增入参：GroupId, DelMod
+
+* [VoicePrintEnroll](http://document.tencentcloudapi.woa.com/document/product/1093/81019)
+
+	* 新增入参：GroupId
+
+
+新增数据结构：
+
+* [VerifyTop](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VerifyTop)
+* [VerifyTopResult](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VerifyTopResult)
+
+修改数据结构：
+
+* [VoicePrintCountData](http://document.tencentcloudapi.woa.com/document/product/1093/37824#VoicePrintCountData)
+
+	* 新增成员：VoicePrintList
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 35 次发布
+
+发布时间：2024-06-25 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImages](http://document.tencentcloudapi.woa.com/document/product/1609/77977)
+
+	* 新增出参：Filters
+
+* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1609/77962)
+
+	* 新增出参：Filters
+
+* [ModifyEnvironment](http://document.tencentcloudapi.woa.com/document/product/1609/77951)
+
+	* 新增入参：ZhiYan
+
+
+新增数据结构：
+
+* [Zone](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Zone)
+
+修改数据结构：
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Pod)
+
+	* 新增成员：IPV6
+
+* [Region](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Region)
+
+	* 新增成员：Name, Zones
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Template)
+
+	* 新增成员：ProjectDisplayName
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 106 次发布
+
+发布时间：2024-06-25 01:14:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDataEnginesScaleDetail](http://document.tencentcloudapi.woa.com/document/product/1342/84167)
+
+新增数据结构：
+
+* [DataEngineScaleInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineScaleInfo)
+* [DataEngineScaleInfoDetail](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineScaleInfoDetail)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 92 次发布
+
+发布时间：2024-06-25 01:16:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLegalSealQrCode](http://document.tencentcloudapi.woa.com/document/product/1668/84137)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 143 次发布
+
+发布时间：2024-06-25 01:16:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLegalSealQrCode](http://document.tencentcloudapi.woa.com/document/product/1595/84138)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 40 次发布
+
+发布时间：2024-06-25 01:17:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFirmware](http://document.tencentcloudapi.woa.com/document/product/1081/84168)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 53 次发布
+
+发布时间：2024-06-25 01:19:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBundleDiscount](http://document.tencentcloudapi.woa.com/document/product/1207/55627)
+
+	* 新增入参：BlueprintId
+
+
+修改数据结构：
+
+* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
+
+	* 新增成员：AppDefaultPort
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Instance)
+
+	* 新增成员：DisplayArea
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 106 次发布
+
+发布时间：2024-06-25 01:24:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRabbitMQExchanges](http://document.tencentcloudapi.woa.com/document/product/1179/84169)
+
+新增数据结构：
+
+* [RabbitMQExchangeListInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQExchangeListInfo)
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 33 次发布
+
+发布时间：2024-06-25 01:24:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UseDefaultRepoParameters](http://document.tencentcloudapi.woa.com/document/product/1371/60171#UseDefaultRepoParameters)
+
+	* <font color="#dd0000">**修改成员**：</font>EnterpriseInstanceName, EnterpriseInstanceChargeType, EnterpriseInstanceType
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 16 次发布
+
+发布时间：2024-06-25 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProductSKUs](http://document.tencentcloudapi.woa.com/document/product/1739/84170)
+
+新增数据结构：
+
+* [PriceTag](http://document.tencentcloudapi.woa.com/document/product/1739/81437#PriceTag)
+* [ProductSKU](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ProductSKU)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 55 次发布
+
+发布时间：2024-06-25 01:25:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+
+	* 新增成员：BackGroundColorMode
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 138 次发布
+
+发布时间：2024-06-25 01:26:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：EnableJumbo, EndPointServiceType
+
+* [GatewayFlowMonitorDetail](http://document.tencentcloudapi.woa.com/document/product/215/15824#GatewayFlowMonitorDetail)
+
+	* 新增成员：ConcurrentConnectionCount, NewConnectionRate
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 59 次发布
+
+发布时间：2024-06-25 01:28:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddAreaBanAreas](http://document.tencentcloudapi.woa.com/document/product/627/84171)
+
+
+
 # Release 3.0.1020.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

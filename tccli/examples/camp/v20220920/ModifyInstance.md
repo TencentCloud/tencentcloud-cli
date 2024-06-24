@@ -31,3 +31,30 @@ Output:
 }
 ```
 
+**Example 2: modifyinstance修改实例**
+
+
+
+Input: 
+
+```
+tccli camp ModifyInstance --cli-unfold-argument  \
+    --ProjectID prj-xxxxxxx \
+    --ApplicationID app-xxxxxx \
+    --InstanceID tad-xxxxxxx \
+    --EnvironmentName development \
+    --CMDBAdmins.0.Tencent.Name aaaaa \
+    --CMDBAdmins.1.Tencent.Name def \
+    --CMDBAdmins.2.Tencent.Name abvc \
+    --CMDBAdmins.3.Tencent.Name adasdas1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "26ccfdd8-6d24-4236-9321-58d0467da44f"
+    }
+}
+```
+

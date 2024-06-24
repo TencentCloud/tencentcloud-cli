@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli eiam DeleteUsers --cli-unfold-argument  \
-    --DeleteIdList xx \
-    --DeleteNameList xx
+    --DeleteIdList uid222222 \
+    --DeleteNameList 用户22222
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "requestId22222",
         "FailedItems": [
-            "xx"
+            "uid2222222"
         ]
     }
 }

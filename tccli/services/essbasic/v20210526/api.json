@@ -6566,7 +6566,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作人信息",
           "example": "无",
           "member": "UserInfo",
@@ -6575,7 +6575,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "企业信息",
           "example": "无",
           "member": "OrganizationInfo",

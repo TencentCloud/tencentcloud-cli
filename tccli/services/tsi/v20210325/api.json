@@ -24,7 +24,7 @@
   },
   "metadata": {
     "apiVersion": "2021-03-25",
-    "api_brief": "包括用户列表获取、资源包列表获取、密码重置等接口，用于用户资源数据展示和业务账号控制。",
+    "api_brief": "介绍如何使用API对腾讯同传进行操作，包括上传音频、查询同传结果等。",
     "serviceNameCN": "腾讯同传系统",
     "serviceShortName": "tsi"
   },

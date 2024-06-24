@@ -6,25 +6,31 @@ Input:
 
 ```
 tccli tem CreateApplication --cli-unfold-argument  \
-    --ApplicationName xx \
-    --SubnetList xx \
-    --Description xx \
-    --InstanceId xx \
-    --DeployMode xx \
-    --RepoServer xx \
-    --SourceChannel 0 \
-    --RepoType 0 \
-    --RepoName xx \
+    --ApplicationName abc \
+    --Description abc \
     --UseDefaultImageService 0 \
-    --CodingLanguage xx
+    --RepoType 0 \
+    --InstanceId abc \
+    --RepoServer abc \
+    --RepoName abc \
+    --SourceChannel 0 \
+    --SubnetList abc \
+    --CodingLanguage abc \
+    --DeployMode abc \
+    --EnableTracing 0 \
+    --UseDefaultImageServiceParameters.EnterpriseInstanceName abc \
+    --UseDefaultImageServiceParameters.EnterpriseInstanceChargeType 0 \
+    --UseDefaultImageServiceParameters.EnterpriseInstanceType abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "Result": "abc",
+        "RequestId": "abc"
     }
 }
 ```

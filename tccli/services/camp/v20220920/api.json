@@ -463,7 +463,7 @@
       "status": "online"
     },
     "ModifyTrait": {
-      "document": "修改运维操作",
+      "document": "修改运维操作，根据trait的类型和名称，只更新其中的数据。",
       "input": "ModifyTraitRequest",
       "name": "修改运维操作",
       "output": "ModifyTraitResponse",
@@ -4668,6 +4668,16 @@
       "document": "DescribeImages返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "过滤器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5283,7 +5293,7 @@
           "example": "无",
           "member": "Region",
           "name": "Regions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5293,8 +5303,18 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -7513,7 +7533,17 @@
     },
     "ModifyEnvironmentRequest": {
       "document": "ModifyEnvironment请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "ModifyEnvironmentResponse": {
@@ -8621,6 +8651,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPV6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IPV6",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8945,7 +8985,28 @@
     },
     "Region": {
       "document": "地域信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域全称",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Zone",
+          "name": "Zones",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "ReplicasTrait": {
@@ -9244,6 +9305,16 @@
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-prj",
+          "member": "string",
+          "name": "ProjectDisplayName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10469,6 +10540,32 @@
           "name": "Objects",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Zone": {
+      "document": "可用区",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

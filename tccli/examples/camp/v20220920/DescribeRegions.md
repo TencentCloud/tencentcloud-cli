@@ -13,7 +13,14 @@ Output:
     "Response": {
         "TotalCount": 1,
         "Regions": [
-            {}
+            {
+                "Name": "ap-shanghai",
+                "Zones": [
+                    {
+                        "Name": "ap-shanghai-2"
+                    }
+                ]
+            }
         ],
         "RequestId": "wallaceqian1669712117"
     }

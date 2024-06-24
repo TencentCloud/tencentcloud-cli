@@ -19,40 +19,51 @@ Output:
         "InstanceTypeQuotaSet": [
             {
                 "Status": "SELL",
-                "Zone": "ap-chongqing-1",
+                "Zone": "ap-guangzhou-2",
                 "NetworkCard": 0,
                 "Price": {
-                    "UnitPrice": 0.18,
-                    "ChargeUnit": "HOUR"
+                    "DiscountPrice": 59,
+                    "OriginalPriceThreeYear": 0,
+                    "DiscountOneYear": 0,
+                    "UnitPrice": 0,
+                    "UnitPriceThirdStep": 0,
+                    "OriginalPriceFiveYear": 0,
+                    "Discount": 0,
+                    "DiscountFiveYear": 0,
+                    "UnitPriceDiscountThirdStep": 0,
+                    "UnitPriceSecondStep": 0,
+                    "OriginalPrice": 59,
+                    "DiscountThreeYear": 0,
+                    "UnitPriceDiscountSecondStep": 0,
+                    "UnitPriceDiscount": 0,
+                    "DiscountPriceFiveYear": 0,
+                    "OriginalPriceOneYear": 708,
+                    "ChargeUnit": "HOUR",
+                    "DiscountPriceThreeYear": 0,
+                    "DiscountPriceOneYear": 587.64
                 },
-                "InstanceFamily": "S3",
+                "InstanceFamily": "S2",
                 "Externals": {},
-                "Cpu": 1,
-                "TypeName": "标准型S3",
+                "InstanceType": "S2.SMALL1",
+                "TypeName": "Standard S2",
                 "InstanceChargeType": "POSTPAID_BY_HOUR",
                 "Memory": 1,
                 "LocalDiskTypeList": [],
-                "InstanceType": "S3.SMALL1"
-            },
-            {
-                "Status": "SELL",
-                "Zone": "ap-chongqing-1",
-                "NetworkCard": 0,
-                "Price": {
-                    "UnitPrice": 0.26,
-                    "ChargeUnit": "HOUR"
-                },
-                "InstanceFamily": "S3",
-                "Externals": {},
                 "Cpu": 1,
-                "TypeName": "标准型S3",
-                "InstanceChargeType": "POSTPAID_BY_HOUR",
-                "Memory": 2,
-                "LocalDiskTypeList": [],
-                "InstanceType": "S3.SMALL2"
+                "SoldOutReason": "",
+                "StorageBlockAmount": 0,
+                "CpuType": "Intel Xeon E5-2680 v4",
+                "InstancePps": 20,
+                "InstanceBandwidth": 1.5,
+                "Gpu": 0,
+                "GpuCount": 0,
+                "Fpga": 0,
+                "Remark": "",
+                "Frequency": "2.4GHz",
+                "StatusCategory": "EnoughStock"
             }
         ],
-        "RequestId": "2fba5b9c-e4ee-47ad-a776-dabb79ff2c35"
+        "RequestId": "c28559ca-d3cf-40f0-9664-2ab303484efa"
     }
 }
 ```
