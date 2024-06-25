@@ -14,18 +14,33 @@ Output:
         "TotalCount": 1,
         "Registries": [
             {
-                "RegistryId": "cls-xxxxxxx",
-                "RegistryName": "aaa",
-                "Status": "Running",
-                "RegistryType": "standard",
-                "PublicDomain": "mytest.tencentcloudcr.com",
-                "InternalEndpoint": "8.9.10.9",
-                "ExpiredAt": "2020-09-10",
-                "PayMod": 1,
-                "RenewFlag": 1
+                "RegistryId": "tcr-xxx",
+                "RegistryName": "test",
+                "RegistryType": "basic",
+                "Status": "running",
+                "PublicDomain": "tcr-test.tencentcloudcr.com",
+                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "RegionName": "ap-guangzhou",
+                "RegionId": 1,
+                "EnableAnonymous": true,
+                "TokenValidTime": 1,
+                "InternalEndpoint": "nil",
+                "TagSpecification": {
+                    "ResourceType": "abc",
+                    "Tags": [
+                        {
+                            "Key": "abc",
+                            "Value": "abc"
+                        }
+                    ]
+                },
+                "ExpiredAt": "abc",
+                "PayMod": 0,
+                "RenewFlag": 0,
+                "DeletionProtection": true
             }
         ],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+        "RequestId": "abc"
     }
 }
 ```

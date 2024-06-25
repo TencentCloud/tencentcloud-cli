@@ -76,6 +76,14 @@
         "title": "成功取消分配"
       }
     ],
+    "CheckFirmwareUpdate": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CheckFirmwareUpdate\n&ProductId=PR******ID\n&DeviceName=de***01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DstVersion\": \"1.1\",\n        \"CurrentVersion\": \"1.0\",\n        \"RequestId\": \"584406e9-bf59-46a3-8d45-39f1891bed7b\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "ControlDeviceData": [
       {
         "document": "设置设备数据",
@@ -562,6 +570,14 @@
         "title": "查询固件升级任务详情"
       }
     ],
+    "DescribeFirmwareUpdateStatus": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeFirmwareUpdateStatus\n&ProductId=PR******ID\n&DeviceName=de***01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DstVersion\": \"1.0\",\n        \"OriVersion\": \"1.4\",\n        \"Percent\": 100,\n        \"RequestId\": \"adcfghb\",\n        \"Status\": 6\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeGatewayBindDevices": [
       {
         "document": "",
@@ -1022,6 +1038,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=PublishBroadcastMessage\n&ProductId=LK7LIPL6GE\n&Payload=123456\n&Qos=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\",\n        \"TaskId\": 1000523\n    }\n}",
         "title": "发布广播消息"
+      }
+    ],
+    "PublishFirmwareUpdateMessage": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=PublishFirmwareUpdateMessage\n&ProductID=PR******ID\n&DeviceName=de***01\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584406e9-bf59-46a3-8d45-39f1891bed7b\",\n        \"Status\": \"OK\"\n    }\n}",
+        "title": "确认固件升级任务"
       }
     ],
     "PublishMessage": [

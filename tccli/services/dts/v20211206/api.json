@@ -2172,7 +2172,7 @@
         },
         {
           "disabled": false,
-          "document": "源端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,tdstore等",
+          "document": "源端数据库类型,如mysql,mariadb,percona,postgresql,cynosdbmysql(表示TDSQL-C MySQL),tdpg(TDSQL PostgreSQL版),tdsqlmysql,tdstore(表示TDSQL TDStore版)等。",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -2190,7 +2190,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka,tdstore等",
+          "document": "目标端数据库类型,如mysql,mariadb,percona,cynosdbmysql(表示TDSQL-C MySQL),tdpg(TDSQL PostgreSQL版),tdsqlmysql,kafka,tdstore(表示TDSQL TDStore版)等。",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -5610,7 +5610,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mariadb",
           "member": "string",
           "name": "DbKernel",

@@ -1553,6 +1553,13 @@
       "name": "开发空间-保存任务信息",
       "output": "UploadContentResponse",
       "status": "online"
+    },
+    "UploadResource": {
+      "document": "资源管理-上传资源",
+      "input": "UploadResourceRequest",
+      "name": "【资源管理】上传资源",
+      "output": "UploadResourceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -40210,6 +40217,376 @@
         }
       ],
       "type": "object"
+    },
+    "UploadResourceRequest": {
+      "document": "UploadResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源上传请求信息",
+          "example": "无",
+          "member": "UploadResourceRequestInfo",
+          "name": "UploadResourceRequestInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadResourceRequestInfo": {
+      "document": "资管管理-上传资源请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源路径",
+          "example": "无",
+          "member": "string",
+          "name": "FilePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "桶名称",
+          "example": "无",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属地区",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为新资源",
+          "example": "无",
+          "member": "bool",
+          "name": "NewFile",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源列表",
+          "example": "无",
+          "member": "string",
+          "name": "FileList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源大小列表",
+          "example": "无",
+          "member": "string",
+          "name": "FileSizeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "File Md5（适配私有化，公有云可以不传）",
+          "example": "无",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadResourceResponse": {
+      "document": "UploadResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源文件信息列表",
+          "example": "无",
+          "member": "UserFileDTONew",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserFileDTONew": {
+      "document": "用户文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111111",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，如 jar zip 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jar",
+          "member": "string",
+          "name": "FileExtensionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件上传类型，资源管理为 resource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resouce",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件MD5值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "Md5Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-27 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-27 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位为字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/datastudio/resource/jaydenjhu/xxxx/wedata-spark-1.0-SNAPSHOT.ja",
+          "member": "string",
+          "name": "LocalPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地临时路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/tmp/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wed",
+          "member": "string",
+          "name": "LocalTempPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "远程路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/datastudio/resource/1171938931991703552/jaydenjhu/xxxx/wedata-s",
+          "member": "string",
+          "name": "RemotePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拥有者名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fe",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拥有者uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100022256608",
+          "member": "string",
+          "name": "Owner",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件深度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PathDepth",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地临时压缩文件绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ZipPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件所属存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agent-test-1257305158",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件所属存储桶的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "删除用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "删除用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeleteOwner",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FullPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "UserFileInfo": {
       "document": "开发空间-获取数据开发脚本信息响应体",

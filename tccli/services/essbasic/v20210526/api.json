@@ -2595,7 +2595,7 @@
         },
         {
           "disabled": false,
-          "document": "审核节点的签署人标志，用于指定当前审核的签署方\n<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>",
+          "document": "审核节点的签署人标志，用于指定当前审核的签署方。\n<font color= \"red\">注意：以下情况必须传递RecipientId</font>\n<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批\n<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo\" target=\"_blank\">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>",
           "example": "yDRS4UUgygqdcj56UuO4zjExBQcOiB68",
           "member": "string",
           "name": "RecipientId",
@@ -6044,7 +6044,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客的企业名称，请确认该企业名称与企业营业执照中注册的名称完全一致。\n在测试环境联调的过程中，企业名称请统一加上“测试”二字，如：典子谦示例企业测试，否则将无法审核通过。\n\n注:\n `1. 如果名称中包含英文括号()，请使用中文括号（）代替。`\n `2、该名称需要与Agent.ProxyOrganizationOpenId相匹配,  企业激活后Agent.ProxyOrganizationOpenId会跟此企业名称一一绑定; 如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。 `",
+          "document": "第三方平台子客的企业名称，请确认该企业名称与企业营业执照中注册的名称完全一致。\n<font color=\"red\">在测试环境联调的过程中，企业名称请统一加上“测试”二字，如：典子谦示例企业测试，否则将无法审核通过。</font>\n\n注:\n `1. 如果名称中包含英文括号()，请使用中文括号（）代替。`\n `2、该名称需要与Agent.ProxyOrganizationOpenId相匹配,  企业激活后Agent.ProxyOrganizationOpenId会跟此企业名称一一绑定; 如果您的企业已经在认证授权中或者激活完成，这里修改子客企业名字将不会生效。 `",
           "example": "典子谦示例企业测试",
           "member": "string",
           "name": "ProxyOrganizationName",

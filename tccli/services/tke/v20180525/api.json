@@ -20099,7 +20099,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -20109,7 +20109,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -20119,9 +20119,19 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Describe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群所在地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
           "required": false,
           "type": "string",
           "value_allowed_null": false

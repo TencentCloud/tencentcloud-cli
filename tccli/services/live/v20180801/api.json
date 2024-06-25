@@ -2176,8 +2176,7 @@
           "member": "int64",
           "name": "UseMixCropCenter",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2186,8 +2185,7 @@
           "member": "int64",
           "name": "AllowCopy",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2196,8 +2194,16 @@
           "member": "int64",
           "name": "PassInputSei",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取值范围[0,1]\n填1时，图片输入中的透明通道生效。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsePictureTransparent",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

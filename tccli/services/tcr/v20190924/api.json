@@ -1001,7 +1001,7 @@
         {
           "disabled": false,
           "document": "待创建的实例名称",
-          "example": "",
+          "example": "test123",
           "member": "string",
           "name": "RegistryName",
           "required": true,
@@ -1016,11 +1016,22 @@
         {
           "disabled": false,
           "document": "检查结果，true为合法，false为非法",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsValidated",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1: Illegal（名子非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DetailCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1055,7 +1066,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsValidated",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1065,7 +1076,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3896,9 +3907,10 @@
         {
           "disabled": false,
           "document": "全局自动删除策略信息",
-          "example": "",
+          "example": "无",
           "member": "AutoDelStrategyInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3917,7 +3929,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -3932,9 +3944,10 @@
         {
           "disabled": false,
           "document": "自动删除策略信息",
-          "example": "",
+          "example": "无",
           "member": "AutoDelStrategyInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4456,7 +4469,7 @@
         {
           "disabled": false,
           "document": "实例ID列表(为空时，\n表示获取账号下所有实例)",
-          "example": "",
+          "example": "tcr-xxx",
           "member": "string",
           "name": "Registryids",
           "required": false,
@@ -4465,7 +4478,7 @@
         {
           "disabled": false,
           "document": "偏移量,默认0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4474,7 +4487,7 @@
         {
           "disabled": false,
           "document": "最大输出条数，默认20，最大为100",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4483,7 +4496,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "",
+          "example": "nil",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4492,7 +4505,7 @@
         {
           "disabled": false,
           "document": "获取所有地域的实例，默认为False",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "AllRegion",
           "required": false,
@@ -4507,18 +4520,20 @@
         {
           "disabled": false,
           "document": "总实例个数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "nil",
           "member": "Registry",
           "name": "Registries",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4621,7 +4636,7 @@
         {
           "disabled": false,
           "document": "命名空间，支持模糊查询",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -4630,7 +4645,7 @@
         {
           "disabled": false,
           "document": "单页数量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -4639,7 +4654,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -4654,9 +4669,10 @@
         {
           "disabled": false,
           "document": "用户命名空间返回信息",
-          "example": "",
+          "example": "无",
           "member": "NamespaceInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4779,18 +4795,20 @@
         {
           "disabled": false,
           "document": "返回的总数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域信息列表",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "Region",
           "name": "Regions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5122,7 +5140,7 @@
         {
           "disabled": false,
           "document": "搜索镜像名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -5131,7 +5149,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5140,7 +5158,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20，最大100",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5149,7 +5167,7 @@
         {
           "disabled": false,
           "document": "筛选条件：1表示public，0表示private",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Public",
           "required": false,
@@ -5158,7 +5176,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5173,9 +5191,10 @@
         {
           "disabled": false,
           "document": "仓库信息",
-          "example": "",
+          "example": "无",
           "member": "SearchUserRepositoryResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5194,7 +5213,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5203,7 +5222,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20, 最大值 100",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5212,7 +5231,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -5227,9 +5246,10 @@
         {
           "disabled": false,
           "document": "仓库信息",
-          "example": "",
+          "example": "无",
           "member": "RepoInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5248,7 +5268,7 @@
         {
           "disabled": false,
           "document": "仓库名字",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -5263,9 +5283,10 @@
         {
           "disabled": false,
           "document": "仓库信息",
-          "example": "",
+          "example": "无",
           "member": "RepositoryInfoResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5649,9 +5670,10 @@
         {
           "disabled": false,
           "document": "配额返回信息",
-          "example": "",
+          "example": "无",
           "member": "RespLimit",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10002,7 +10024,7 @@
           "example": "无",
           "member": "NamespaceIsExistsResp",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10039,7 +10061,7 @@
           "example": "无",
           "member": "RepoIsExistResp",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

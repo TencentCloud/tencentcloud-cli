@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=CheckInstanceName\n&RegistryName=registryName123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IsValidated\": true,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsValidated\": true,\n        \"DetailCode\": 0,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "检查待创建的实例名称是否符合规范"
       }
     ],
@@ -536,7 +536,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstances\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Registries\": [\n            {\n                \"RegistryId\": \"cls-xxxxxxx\",\n                \"RegistryName\": \"aaa\",\n                \"Status\": \"Running\",\n                \"RegistryType\": \"standard\",\n                \"PublicDomain\": \"mytest.tencentcloudcr.com\",\n                \"InternalEndpoint\": \"8.9.10.9\",\n                \"ExpiredAt\": \"2020-09-10\",\n                \"PayMod\": 1,\n                \"RenewFlag\": 1\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Registries\": [\n            {\n                \"RegistryId\": \"tcr-xxx\",\n                \"RegistryName\": \"test\",\n                \"RegistryType\": \"basic\",\n                \"Status\": \"running\",\n                \"PublicDomain\": \"tcr-test.tencentcloudcr.com\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"EnableAnonymous\": true,\n                \"TokenValidTime\": 1,\n                \"InternalEndpoint\": \"nil\",\n                \"TagSpecification\": {\n                    \"ResourceType\": \"abc\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"abc\",\n                            \"Value\": \"abc\"\n                        }\n                    ]\n                },\n                \"ExpiredAt\": \"abc\",\n                \"PayMod\": 0,\n                \"RenewFlag\": 0,\n                \"DeletionProtection\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查看实例列表"
       }
     ],
@@ -559,7 +559,7 @@
     "DescribeNamespacePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeNamespacePersonal\r\n&Namespace=mynamespace&Limit=20&Offset=0\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespacePersonal\n<公共请求参数>\n\n{\n    \"Namespace\": \"mockns\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"NamespaceCount\": 1,\n            \"NamespaceInfo\": [\n                {\n                    \"Namespace\": \"test\",\n                    \"CreationTime\": \"2018-07-25 15:07:12\",\n                    \"RepoCount\": 2\n                }\n            ]\n        }\n    }\n}",
         "title": "查询个人版命名空间信息"
       }
@@ -576,7 +576,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeRegions\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Regions\": [\n            {\n                \"RegionId\": \"1\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"Status\": \"alluser\",\n                \"Remark\": \"aaa\",\n                \"Alias\": \"gz\",\n                \"CreatedAt\": \"2019-08-09\",\n                \"UpdatedAt\": \"2019-08-09\"\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Regions\": [\n            {\n                \"Alias\": \"gz\",\n                \"RegionId\": 1,\n                \"RegionName\": \"ap-guangzhou\",\n                \"Status\": \"alluser\",\n                \"Remark\": \"alluser\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "列出TCR可用区域"
       }
     ],

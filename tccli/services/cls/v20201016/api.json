@@ -1596,6 +1596,34 @@
       ],
       "usage": "both"
     },
+    "AnonymousInfo": {
+      "document": "免鉴权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作列表，支持trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
+          "example": "无",
+          "member": "string",
+          "name": "Operations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件列表",
+          "example": "无",
+          "member": "ConditionInfo",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyConfigToMachineGroupRequest": {
       "document": "ApplyConfigToMachineGroup请求参数结构体",
       "members": [
@@ -1978,6 +2006,45 @@
           "member": "string",
           "name": "Format",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConditionInfo": {
+      "document": "免鉴权条件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件属性，目前只支持VpcID",
+          "example": "VpcID",
+          "member": "string",
+          "name": "Attributes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件规则，1:等于，2:不等于",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应条件属性的值",
+          "example": "vpc-6jfhit1t",
+          "member": "string",
+          "name": "ConditionValue",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4759,6 +4826,15 @@
           "name": "IsWebTracking",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题扩展信息",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13436,6 +13512,23 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopicExtendInfo": {
+      "document": "日志主题扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题免鉴权配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnonymousInfo",
+          "name": "AnonymousAccess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

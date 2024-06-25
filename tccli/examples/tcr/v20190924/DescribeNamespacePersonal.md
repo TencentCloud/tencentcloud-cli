@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeNamespacePersonal --cli-unfold-argument  \
-    --Namespace mynamespace \
-    --Limit 20 \
+    --Namespace mockns \
+    --Limit 1 \
     --Offset 0
 ```
 

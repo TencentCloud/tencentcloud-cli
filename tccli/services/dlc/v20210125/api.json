@@ -2696,7 +2696,7 @@
         },
         {
           "disabled": false,
-          "document": "表类型",
+          "document": "表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW",
           "example": "EXTERNAL",
           "member": "string",
           "name": "Type",
@@ -7415,7 +7415,7 @@
           "example": "n1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7425,7 +7425,7 @@
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7435,7 +7435,7 @@
           "example": "cosn://123",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7445,7 +7445,7 @@
           "example": "无",
           "member": "Asset",
           "name": "Asset",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7682,7 +7682,7 @@
           "example": "无",
           "member": "Asset",
           "name": "Asset",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7692,7 +7692,7 @@
           "example": "select 1",
           "member": "string",
           "name": "ViewOriginalText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7702,7 +7702,7 @@
           "example": "select 1",
           "member": "string",
           "name": "ViewExpandedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7712,7 +7712,7 @@
           "example": "1",
           "member": "int64",
           "name": "Retention",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7722,7 +7722,7 @@
           "example": "无",
           "member": "DMSSds",
           "name": "Sds",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7732,7 +7732,7 @@
           "example": "无",
           "member": "DMSColumn",
           "name": "PartitionKeys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7742,7 +7742,7 @@
           "example": "无",
           "member": "DMSPartition",
           "name": "Partitions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7752,7 +7752,7 @@
           "example": "EXTERNAL",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7762,7 +7762,7 @@
           "example": "db1",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7772,7 +7772,7 @@
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7782,7 +7782,7 @@
           "example": "1",
           "member": "int64",
           "name": "StorageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7792,7 +7792,7 @@
           "example": "0",
           "member": "int64",
           "name": "RecordCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7802,7 +7802,7 @@
           "example": "1",
           "member": "int64",
           "name": "LifeTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7812,7 +7812,7 @@
           "example": "2020-01-01 11:11:11",
           "member": "datetime_iso",
           "name": "LastAccessTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7822,7 +7822,7 @@
           "example": "2020-01-01 11:11:11",
           "member": "datetime_iso",
           "name": "DataUpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7832,7 +7832,7 @@
           "example": "2020-01-01 11:11:11",
           "member": "datetime_iso",
           "name": "StructUpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7842,7 +7842,7 @@
           "example": "无",
           "member": "DMSColumn",
           "name": "Columns",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7852,7 +7852,7 @@
           "example": "table1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

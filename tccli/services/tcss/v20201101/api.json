@@ -5929,8 +5929,8 @@
         },
         {
           "disabled": false,
-          "document": "监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing",
-          "example": "Defender_Uninstall",
+          "document": "防护状态: 已防护: Defended 未防护: UnDefended",
+          "example": "UnDefended",
           "member": "string",
           "name": "DefenderStatus",
           "output_required": true,
@@ -6109,13 +6109,33 @@
         },
         {
           "disabled": false,
-          "document": "计费核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费核数(弹性计费核数+普通计费核数)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ChargeCoresCnt",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "master 地址列表",
+          "example": "无",
+          "member": "string",
+          "name": "MasterAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "CoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14675,7 +14695,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li>\n<li>HostName - String - 是否必填：否 - 主机名筛选</li>\n<li>Group- String - 是否必填：否 - 主机群组搜索</li>\n<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>\n<li>HostID- string - 是否必填：否 - 主机id搜索</li>\n<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>\n<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li>\n<li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li>\n<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>\n<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li>",
+          "document": "过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，\"ALL\":\"全部\"(或不传该字段),\"UNINSTALL\"：\"未安装\",\"OFFLINE\"：\"离线\", \"ONLINE\"：\"防护中\"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，\"ALL\":\"全部\"(或不传该字段),主机来源：[\"CVM\", \"ECM\", \"LH\", \"BM\"]  中的之一为腾讯云服务器；[\"Other\"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，\"ALL\":\"全部\"(或不传该字段),\"INSTALL\":\"已安装\",\"UNINSTALL\":\"未安装\"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters\":[{\"Name\":\"tag:tke-kind\",\"Values\":[\"service\"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>",
           "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
@@ -23333,13 +23353,33 @@
         },
         {
           "disabled": false,
-          "document": "总核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总资源核数 = 总防护核数 + 未防护核数",
+          "example": "10",
+          "member": "uint64",
+          "name": "AllCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "CoresCnt",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未防护核数(未开启防护资源核数)",
+          "example": "无",
+          "member": "uint64",
+          "name": "UndefendCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -23350,6 +23390,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "试用赠送专业版核心数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "GivenAuthorizedCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前弹性计费核数数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "CurrentFlexibleCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -23373,22 +23433,22 @@
         },
         {
           "disabled": false,
-          "document": "已购买镜像授权数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "PurchasedAuthorizedCnt",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "ExpirationTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已购买镜像授权数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PurchasedAuthorizedCnt",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -23440,6 +23500,46 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护策略",
+          "example": "无",
+          "member": "string",
+          "name": "DefendPolicy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性计费核数上限",
+          "example": "无",
+          "member": "uint64",
+          "name": "FlexibleCoresLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已防护集群核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "DefendClusterCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已防护主机核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "DefendHostCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -31445,6 +31545,16 @@
           "name": "DefendStatus",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "CoresCnt",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -56,6 +56,13 @@
       "output": "CancelAssignTWeCallLicenseResponse",
       "status": "online"
     },
+    "CheckFirmwareUpdate": {
+      "document": "本接口（CheckFirmwareUpdate）用于查询设备可升级固件版本",
+      "input": "CheckFirmwareUpdateRequest",
+      "name": "查询设备可升级固件版本",
+      "output": "CheckFirmwareUpdateResponse",
+      "status": "online"
+    },
     "ControlDeviceData": {
       "document": "根据设备产品ID、设备名称，设置控制设备的属性数据。",
       "input": "ControlDeviceDataRequest",
@@ -455,6 +462,13 @@
       "output": "DescribeFirmwareTaskResponse",
       "status": "online"
     },
+    "DescribeFirmwareUpdateStatus": {
+      "document": "本接口（DescribeFirmwareUpdateStatus）用于查询设备固件升级状态及进度。",
+      "input": "DescribeFirmwareUpdateStatusRequest",
+      "name": "查询设备固件升级状态",
+      "output": "DescribeFirmwareUpdateStatusResponse",
+      "status": "online"
+    },
     "DescribeGatewayBindDevices": {
       "document": "获取网关绑定的子设备列表",
       "input": "DescribeGatewayBindDevicesRequest",
@@ -852,6 +866,13 @@
       "input": "PublishBroadcastMessageRequest",
       "name": "发布广播消息",
       "output": "PublishBroadcastMessageResponse",
+      "status": "online"
+    },
+    "PublishFirmwareUpdateMessage": {
+      "document": "本接口（PublishFirmwareUpdateMessage）用于用户确认升级后，云端向设备发起固件升级请求。",
+      "input": "PublishFirmwareUpdateMessageRequest",
+      "name": "确认固件升级任务",
+      "output": "PublishFirmwareUpdateMessageResponse",
       "status": "online"
     },
     "PublishMessage": {
@@ -1731,6 +1752,62 @@
     "CancelAssignTWeCallLicenseResponse": {
       "document": "CancelAssignTWeCallLicense返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFirmwareUpdateRequest": {
+      "document": "CheckFirmwareUpdate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID。",
+          "example": "R7NHIV278R",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称。",
+          "example": "dev1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFirmwareUpdateResponse": {
+      "document": "CheckFirmwareUpdate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备当前固件版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "string",
+          "name": "CurrentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件可升级版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1",
+          "member": "string",
+          "name": "DstVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5949,6 +6026,82 @@
           "name": "CreatorNickName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareUpdateStatusRequest": {
+      "document": "DescribeFirmwareUpdateStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareUpdateStatusResponse": {
+      "document": "DescribeFirmwareUpdateStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级任务源版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级任务目标版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DstVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级状态：\n\n- 0：设备离线。\n- 1：待处理。\n- 2：消息下发成功。\n- 3：下载中。\n- 4：烧录中。\n- 5：失败。\n- 6：升级完成。\n- 7：正在处理中。\n- 8：等待用户确认。\n- 20：下载完成。\n",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Percent",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -11816,6 +11969,52 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishFirmwareUpdateMessageRequest": {
+      "document": "PublishFirmwareUpdateMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称。",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishFirmwareUpdateMessageResponse": {
+      "document": "PublishFirmwareUpdateMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
