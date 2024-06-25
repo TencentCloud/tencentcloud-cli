@@ -42,7 +42,8 @@ Output:
                 "ClusterName": "abc",
                 "ClusterAccessedStatus": "abc",
                 "ChargeCoresCnt": 1,
-                "DefendStatus": "abc"
+                "DefendStatus": "abc",
+                "CoresCnt": 1
             }
         ],
         "TotalCount": 1,

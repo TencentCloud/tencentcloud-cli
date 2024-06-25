@@ -14,16 +14,17 @@ Output:
         "TotalCount": 1,
         "Regions": [
             {
-                "RegionId": "1",
+                "Alias": "gz",
+                "RegionId": 1,
                 "RegionName": "ap-guangzhou",
                 "Status": "alluser",
-                "Remark": "aaa",
-                "Alias": "gz",
-                "CreatedAt": "2019-08-09",
-                "UpdatedAt": "2019-08-09"
+                "Remark": "alluser",
+                "CreatedAt": "2020-09-22T00:00:00+00:00",
+                "UpdatedAt": "2020-09-22T00:00:00+00:00",
+                "Id": 1
             }
         ],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+        "RequestId": "abc"
     }
 }
 ```

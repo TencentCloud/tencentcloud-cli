@@ -41,7 +41,12 @@ Output:
                 "AccessedSubStatus": "abc",
                 "NodeCount": 1,
                 "OffLineNodeCount": 1,
-                "UnInstallAgentNodeCount": 1
+                "UnInstallAgentNodeCount": 1,
+                "ChargeCoresCnt": 1,
+                "MasterAddresses": [
+                    "abc"
+                ],
+                "CoresCnt": 1
             }
         ],
         "RequestId": "abc"

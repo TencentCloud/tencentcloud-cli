@@ -1706,7 +1706,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作列表，支持pushLog(上传日志)、trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
+          "document": "操作列表，支持trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
           "example": "无",
           "member": "string",
           "name": "Operations",
@@ -5264,6 +5264,15 @@
           "name": "IsWebTracking",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题扩展信息",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

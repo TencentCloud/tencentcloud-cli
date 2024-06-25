@@ -7438,6 +7438,15 @@
           "name": "AccountRegexp",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只查询开启CAM轮转密码用户",
+          "example": "false",
+          "member": "bool",
+          "name": "OpenCam",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7451,7 +7460,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7461,7 +7470,7 @@
           "example": "无",
           "member": "AccountInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7471,7 +7480,7 @@
           "example": "10240",
           "member": "int64",
           "name": "MaxUserConnections",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

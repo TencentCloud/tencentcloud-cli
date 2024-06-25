@@ -15,41 +15,41 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Name": "Name1",
-        "SchemaName": "Schema1",
-        "Location": "cosn://123",
+        "Name": "abc",
+        "SchemaName": "abc",
+        "Location": "abc",
         "Asset": {
-            "Id": 1,
-            "Name": "Name1",
-            "Guid": "xxxx-xxxx-xxx-xxx",
-            "Catalog": "DataLakeCatalog",
-            "Description": "Description",
-            "Owner": "root",
-            "OwnerAccount": "root",
+            "Id": 0,
+            "Name": "abc",
+            "Guid": "abc",
+            "Catalog": "abc",
+            "Description": "abc",
+            "Owner": "abc",
+            "OwnerAccount": "abc",
             "PermValues": [
                 {
-                    "Key": "key1",
-                    "Value": "v1"
+                    "Key": "abc",
+                    "Value": "abc"
                 }
             ],
             "Params": [
                 {
-                    "Key": "key1",
-                    "Value": "v1"
+                    "Key": "abc",
+                    "Value": "abc"
                 }
             ],
             "BizParams": [
                 {
-                    "Key": "key1",
-                    "Value": "v1"
+                    "Key": "abc",
+                    "Value": "abc"
                 }
             ],
-            "DataVersion": 1,
-            "CreateTime": "2021-01-01 12:12:12",
-            "ModifiedTime": "2021-01-01 12:12:12",
-            "DatasourceId": 1
-        }
+            "DataVersion": 0,
+            "CreateTime": "2020-09-22T00:00:00+00:00",
+            "ModifiedTime": "2020-09-22T00:00:00+00:00",
+            "DatasourceId": 0
+        },
+        "RequestId": "abc"
     }
 }
 ```

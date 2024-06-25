@@ -1,3 +1,204 @@
+# Release 3.0.1022.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 103 次发布
+
+发布时间：2024-06-26 01:11:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccounts](http://document.tencentcloudapi.woa.com/document/product/236/17499)
+
+	* 新增入参：OpenCam
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 75 次发布
+
+发布时间：2024-06-26 01:12:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/614/56456)
+
+	* 新增入参：Extends
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 89 次发布
+
+发布时间：2024-06-26 01:13:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeleteAttackLogs
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 90 次发布
+
+发布时间：2024-06-26 01:14:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/48097#AuditLog)
+
+	* 新增成员：TrxId
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 41 次发布
+
+发布时间：2024-06-26 01:19:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckFirmwareUpdate](http://document.tencentcloudapi.woa.com/document/product/1081/84174)
+* [DescribeFirmwareUpdateStatus](http://document.tencentcloudapi.woa.com/document/product/1081/84173)
+* [PublishFirmwareUpdateMessage](http://document.tencentcloudapi.woa.com/document/product/1081/84172)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 63 次发布
+
+发布时间：2024-06-26 01:20:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CommonMixControlParams](http://document.tencentcloudapi.woa.com/document/product/267/20474#CommonMixControlParams)
+
+	* 新增成员：UsePictureTransparent
+
+
+
+
+## 渠道合作伙伴(partners) 版本：2018-03-21
+
+### 第 12 次发布
+
+发布时间：2024-06-26 01:22:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentAuditedClient](http://document.tencentcloudapi.woa.com/document/product/563/16047#AgentAuditedClient)
+
+	* 新增成员：TransactionType
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 32 次发布
+
+发布时间：2024-06-26 01:24:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckInstanceName](http://document.tencentcloudapi.woa.com/document/product/1141/52212)
+
+	* 新增出参：DetailCode
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 19 次发布
+
+发布时间：2024-06-26 01:25:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：AllCoresCnt, UndefendCoresCnt, GivenAuthorizedCoresCnt, CurrentFlexibleCoresCnt, DefendPolicy, FlexibleCoresLimit, DefendClusterCoresCnt, DefendHostCoresCnt
+
+
+修改数据结构：
+
+* [ClusterInfoItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterInfoItem)
+
+	* 新增成员：MasterAddresses, CoresCnt
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#HostInfo)
+
+	* 新增成员：CoresCnt
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 58 次发布
+
+发布时间：2024-06-26 01:29:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UploadResource](http://document.tencentcloudapi.woa.com/document/product/1607/83087)
+
+新增数据结构：
+
+* [UploadResourceRequestInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UploadResourceRequestInfo)
+* [UserFileDTONew](http://document.tencentcloudapi.woa.com/document/product/1607/77747#UserFileDTONew)
+
+
+
 # Release 3.0.1021.1
 
 ## 语音识别(asr) 版本：2019-06-14

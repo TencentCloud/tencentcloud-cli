@@ -6,229 +6,169 @@ Input:
 
 ```
 tccli dlc DescribeDMSTable --cli-unfold-argument  \
-    --Name xx \
-    --Keyword xx \
-    --Pattern xx \
-    --Catalog xx \
-    --SchemaName xx \
-    --Type xx \
-    --DbName xx
+    --DbName api_test \
+    --SchemaName api_test \
+    --Name test \
+    --Catalog  \
+    --Keyword  \
+    --Pattern * \
+    --Type  EXTERNAL_TABLE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PartitionKeys": [
-            {
-                "Name": "xx",
-                "BizParams": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "IsPartition": true,
-                "Params": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "Position": 0,
-                "Type": "xx",
-                "Description": "xx"
-            }
-        ],
-        "Sds": {
-            "OutputFormat": "xx",
-            "SortCols": {
-                "Col": "xx",
-                "Order": 0
-            },
-            "InputFormat": "xx",
-            "SerdeLib": "xx",
-            "Cols": [
-                {
-                    "Name": "xx",
-                    "BizParams": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "IsPartition": true,
-                    "Params": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "Position": 0,
-                    "Type": "xx",
-                    "Description": "xx"
-                }
-            ],
-            "Compressed": true,
-            "Params": [
-                {
-                    "Value": "xx",
-                    "Key": "xx"
-                }
-            ],
-            "Location": "xx",
-            "NumBuckets": 0,
-            "SerdeParams": [
-                {
-                    "Value": "xx",
-                    "Key": "xx"
-                }
-            ],
-            "SerdeName": "xx",
-            "StoredAsSubDirectories": true,
-            "BucketCols": [
-                "xx"
-            ]
-        },
-        "Name": "xx",
-        "Type": "xx",
-        "RecordCount": 0,
-        "StructUpdateTime": "2020-09-22T00:00:00+00:00",
-        "DataUpdateTime": "2020-09-22T00:00:00+00:00",
-        "ViewOriginalText": "xx",
-        "LifeTime": 0,
-        "RequestId": "xx",
-        "Retention": 0,
         "Asset": {
-            "Description": "xx",
-            "ModifiedTime": "2020-09-22T00:00:00+00:00",
-            "DataVersion": 0,
-            "BizParams": [
-                {
-                    "Value": "xx",
-                    "Key": "xx"
-                }
-            ],
-            "OwnerAccount": "xx",
+            "BizParams": [],
+            "Catalog": "hive",
             "CreateTime": "2020-09-22T00:00:00+00:00",
-            "Catalog": "xx",
+            "DataVersion": 0,
+            "DatasourceId": 0,
+            "Description": "",
+            "Guid": "un0hFApITjaahQW99mDNFw",
+            "Id": 11078081,
+            "ModifiedTime": "2020-09-22T00:00:00+00:00",
+            "Name": "",
+            "Owner": "root",
+            "OwnerAccount": "",
             "Params": [
                 {
-                    "Value": "xx",
-                    "Key": "xx"
-                }
-            ],
-            "PermValues": [
+                    "Key": "current-schema",
+                    "Value": "{\"type\":\"struct\",\"schema-id\":0,\"fields\":[{\"id\":1,\"name\":\"name\",\"required\":false,\"type\":\"string\"},{\"id\":2,\"name\":\"age\",\"required\":false,\"type\":\"int\"},{\"id\":3,\"name\":\"id\",\"required\":false,\"type\":\"int\"}]}"
+                },
                 {
-                    "Value": "xx",
-                    "Key": "xx"
+                    "Key": "metadata_location",
+                    "Value": "lakefs://10000034ec8fbe9c69533aa6685ed55676c8967a6e926f96e96e8f8294028d81060f6b3b@dlcfbe4-100018379117-1639652301-100017307912-1304028854/1305424723/warehouse/api_test/test/metadata/00000-d899e972-e96d-4451-9589-0dd2529894be.metadata.json"
+                },
+                {
+                    "Key": "snapshot-count",
+                    "Value": "0"
+                },
+                {
+                    "Key": "table_type",
+                    "Value": "ICEBERG"
+                },
+                {
+                    "Key": "write.metadata.metrics.default",
+                    "Value": "full"
+                },
+                {
+                    "Key": "dlc.ao.data.govern.inherit",
+                    "Value": "default"
+                },
+                {
+                    "Key": "dlc.ao.data.govern.policy.rule-type",
+                    "Value": "none"
+                },
+                {
+                    "Key": "dlc_sub_uin",
+                    "Value": "100016327396"
+                },
+                {
+                    "Key": "owner",
+                    "Value": "zYBEmJFg"
+                },
+                {
+                    "Key": "transient_lastDdlTime",
+                    "Value": "1690197650243"
+                },
+                {
+                    "Key": "write.distribution-mode",
+                    "Value": "hash"
+                },
+                {
+                    "Key": "write.upsert.enabled",
+                    "Value": "false"
+                },
+                {
+                    "Key": "EXTERNAL",
+                    "Value": "TRUE"
+                },
+                {
+                    "Key": "table_spec_internal_v_0_1_1",
+                    "Value": "[]"
+                },
+                {
+                    "Key": "uuid",
+                    "Value": "b9e945c2-2312-424e-a03f-2c3eeb71f095"
+                },
+                {
+                    "Key": "write.metadata.delete-after-commit.enabled",
+                    "Value": "true"
+                },
+                {
+                    "Key": "write.metadata.previous-versions-max",
+                    "Value": "100"
+                },
+                {
+                    "Key": "lakehouse.storage.type",
+                    "Value": "lakefs"
                 }
             ],
-            "Owner": "xx",
-            "DatasourceId": 0,
-            "Guid": "xx",
-            "Id": 0,
-            "Name": "xx"
+            "PermValues": []
         },
-        "ViewExpandedText": "xx",
-        "SchemaName": "xx",
-        "LastAccessTime": "2020-09-22T00:00:00+00:00",
-        "StorageSize": 0,
-        "DbName": "xx",
         "Columns": [
             {
-                "Name": "xx",
-                "BizParams": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "IsPartition": true,
-                "Params": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
+                "BizParams": [],
+                "Description": "",
+                "IsPartition": false,
+                "Name": "name",
+                "Params": null,
                 "Position": 0,
-                "Type": "xx",
-                "Description": "xx"
+                "Type": "string"
+            },
+            {
+                "BizParams": [],
+                "Description": "",
+                "IsPartition": false,
+                "Name": "age",
+                "Params": null,
+                "Position": 1,
+                "Type": "int"
+            },
+            {
+                "BizParams": [],
+                "Description": "",
+                "IsPartition": false,
+                "Name": "id",
+                "Params": null,
+                "Position": 2,
+                "Type": "int"
             }
         ],
-        "Partitions": [
-            {
-                "Sds": {
-                    "OutputFormat": "xx",
-                    "SortCols": {
-                        "Col": "xx",
-                        "Order": 0
-                    },
-                    "InputFormat": "xx",
-                    "SerdeLib": "xx",
-                    "Cols": [
-                        {
-                            "Name": "xx",
-                            "BizParams": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "IsPartition": true,
-                            "Params": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "Position": 0,
-                            "Type": "xx",
-                            "Description": "xx"
-                        }
-                    ],
-                    "Compressed": true,
-                    "Params": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "Location": "xx",
-                    "NumBuckets": 0,
-                    "SerdeParams": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "SerdeName": "xx",
-                    "StoredAsSubDirectories": true,
-                    "BucketCols": [
-                        "xx"
-                    ]
-                },
-                "Name": "xx",
-                "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                "DataVersion": 0,
-                "RecordCount": 0,
-                "TableName": "xx",
-                "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                "Values": [
-                    "xx"
-                ],
-                "DatabaseName": "xx",
-                "Params": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "SchemaName": "xx",
-                "StorageSize": 0,
-                "CreateTime": "2020-09-22T00:00:00+00:00"
-            }
-        ]
+        "DataUpdateTime": "2020-09-22T00:00:00+00:00",
+        "DbName": "api_test",
+        "LastAccessTime": "2020-09-22T00:00:00+00:00",
+        "LifeTime": 0,
+        "Name": "test",
+        "PartitionKeys": [],
+        "Partitions": null,
+        "RecordCount": 0,
+        "RequestId": "46021e35-056c-4460-9a37-e74b25f5b81b",
+        "Retention": 0,
+        "SchemaName": "",
+        "Sds": {
+            "BucketCols": null,
+            "Cols": null,
+            "Compressed": false,
+            "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+            "Location": "lakefs://10000034ec8fbe9c69533aa6685ed55676c8967a6e926f96e96e8f8294028d81060f6b3b@dlcfbe4-100018379117-1639652301-100017307912-1304028854/1305424723/warehouse/api_test/test",
+            "NumBuckets": 0,
+            "OutputFormat": "org.apache.hadoop.mapred.FileOutputFormat",
+            "Params": [],
+            "SerdeLib": "org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe",
+            "SerdeName": "",
+            "SerdeParams": null,
+            "SortCols": null,
+            "SortColumns": null,
+            "StoredAsSubDirectories": false
+        },
+        "StorageSize": 0,
+        "StructUpdateTime": "2020-09-22T00:00:00+00:00",
+        "Type": "EXTERNAL_TABLE",
+        "ViewExpandedText": "",
+        "ViewOriginalText": ""
     }
 }
 ```

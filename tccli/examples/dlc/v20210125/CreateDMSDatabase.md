@@ -6,25 +6,26 @@ Input:
 
 ```
 tccli dlc CreateDMSDatabase --cli-unfold-argument  \
-    --Asset.Description xx \
-    --Asset.ModifiedTime 2020-09-22T00:00:00+00:00 \
+    --Asset.Description api 测试库 \
+    --Asset.ModifiedTime 2023-07-24T15:26:30+00:00 \
     --Asset.DataVersion 0 \
-    --Asset.BizParams.0.Value xx \
-    --Asset.BizParams.0.Key xx \
-    --Asset.OwnerAccount xx \
-    --Asset.CreateTime 2020-09-22T00:00:00+00:00 \
-    --Asset.Catalog xx \
-    --Asset.Params.0.Value xx \
-    --Asset.Params.0.Key xx \
-    --Asset.PermValues.0.Value xx \
-    --Asset.PermValues.0.Key xx \
-    --Asset.Owner xx \
-    --Asset.DatasourceId 0 \
-    --Asset.Guid xx \
-    --Asset.Id 0 \
-    --Asset.Name xx \
-    --SchemaName test \
-    --Location cosn://
+    --Asset.BizParams.0.Value  \
+    --Asset.BizParams.0.Key  \
+    --Asset.OwnerAccount 100016321234396 \
+    --Asset.CreateTime 2023-07-24T15:26:30+00:00 \
+    --Asset.Catalog  \
+    --Asset.Params.0.Value  \
+    --Asset.Params.0.Key  \
+    --Asset.PermValues.0.Value  \
+    --Asset.PermValues.0.Key  \
+    --Asset.Owner 100016334432227396 \
+    --Asset.DatasourceId 100 \
+    --Asset.Guid 123-456-789 \
+    --Asset.Id 1 \
+    --Asset.Name api_test \
+    --SchemaName api_test \
+    --Location cosn://api_test \
+    --Name api_test
 ```
 
 Output: 

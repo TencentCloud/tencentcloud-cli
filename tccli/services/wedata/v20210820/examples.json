@@ -1895,6 +1895,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b24bf87c-c391-42cc-a41e-077f946bdff1\",\n        \"ScriptInfo\": {\n            \"Bucket\": \"wedata-agent-sh-1257305432\",\n            \"CreateTime\": \"2024-04-10 10:38:15\",\n            \"ExtraInfo\": \"{\\\"taskId\\\":\\\"ap-shanghai|wedata-agent-sh-1257305432|/datastudio/personal/shell1234.sh\\\"}\",\n            \"FileExtensionType\": \"sh\",\n            \"FileName\": \"shell1234.sh\",\n            \"LocalPath\": \"/datastudio/personal/shell1234.sh\",\n            \"LocalTempPath\": null,\n            \"Md5Value\": null,\n            \"Owner\": \"100028649733\",\n            \"OwnerName\": \"demo\",\n            \"PathDepth\": null,\n            \"ProjectId\": \"100028649733\",\n            \"Region\": \"ap-shanghai\",\n            \"RemotePath\": \"/datastudio/personal/100028649733/shell1234.sh\",\n            \"ResourceId\": \"3342446a-d046-4a97-9fe6-3c5dd9866ba4\",\n            \"Size\": null,\n            \"Type\": \"personal\",\n            \"UpdateTime\": \"2024-04-10 10:38:15\",\n            \"ZipPath\": null\n        }\n    }\n}",
         "title": "UploadContent 示例"
       }
+    ],
+    "UploadResource": [
+      {
+        "document": "资源上传",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadResource\n<公共请求参数>\n\n{\n    \"UploadResourceRequestInfo\": {\n        \"ProjectId\": \"abc\",\n        \"FileList\": [\n            \"abc\"\n        ],\n        \"FilePath\": \"abc\",\n        \"BucketName\": \"abc\",\n        \"Region\": \"abc\",\n        \"NewFile\": true,\n        \"FileSizeList\": [\n            \"abc\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ResourceId\": \"abc\",\n                \"FileName\": \"abc\",\n                \"FileExtensionType\": \"abc\",\n                \"Type\": \"abc\",\n                \"Md5Value\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Size\": 1,\n                \"LocalPath\": \"abc\",\n                \"LocalTempPath\": \"abc\",\n                \"RemotePath\": \"abc\",\n                \"OwnerName\": \"abc\",\n                \"Owner\": \"abc\",\n                \"PathDepth\": \"abc\",\n                \"ProjectId\": \"abc\",\n                \"ExtraInfo\": \"abc\",\n                \"ZipPath\": \"abc\",\n                \"Bucket\": \"abc\",\n                \"Region\": \"abc\",\n                \"DeleteName\": \"abc\",\n                \"DeleteOwner\": \"abc\",\n                \"Operator\": \"abc\",\n                \"OperatorName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "资源上传接口示例"
+      }
     ]
   },
   "version": "1.0"
