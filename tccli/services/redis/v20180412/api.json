@@ -4388,7 +4388,7 @@
         {
           "disabled": false,
           "document": "每页输出实例的数量，参数默认值20，最大值为1000。",
-          "example": "1",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4406,7 +4406,7 @@
         {
           "disabled": false,
           "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。\n\n",
-          "example": "无",
+          "example": "crs-dagpcalj",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -4415,7 +4415,7 @@
         {
           "disabled": false,
           "document": "实例列表排序依据，枚举值如下所示：\n- projectId：依据项目ID排序。\n- createtime：依据实例创建时间排序。\n- instancename：依据实例名称排序。\n- type：依据实例类型排序。\n- curDeadline：依据实例到期时间排序。",
-          "example": "无",
+          "example": "instancename",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -4424,7 +4424,7 @@
         {
           "disabled": false,
           "document": "实例排序方式，默认为倒序排序。\n- 1：倒序。\n- 0：顺序。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -4433,7 +4433,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID 数组。如果不配置该参数或设置数组为空则默认选择基础网络。例如47525。该参数暂时保留，可忽略。请根据 UniqVpcIds 参数格式设置私有网络ID数组。",
-          "example": "无",
+          "example": "47525",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -4442,7 +4442,7 @@
         {
           "disabled": false,
           "document": "私有网络所属子网 ID 数组，例如：56854。该参数暂时保留，可忽略。请根据 UniqSubnetIds 参数格式设置私有网络子网 ID 数组。",
-          "example": "无",
+          "example": "56854",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -4451,7 +4451,7 @@
         {
           "disabled": false,
           "document": "设置模糊查询关键字段，仅实例名称支持模糊查询。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -4460,7 +4460,7 @@
         {
           "disabled": false,
           "document": "项目 ID 组成的数组。",
-          "example": "无",
+          "example": "[1289900]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -4469,7 +4469,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -4478,7 +4478,7 @@
         {
           "disabled": false,
           "document": "私有网络 ID 数组。如果不配置该参数或者设置数组为空则默认选择基础网络，如：vpc-sad23jfdfk。",
-          "example": "无",
+          "example": "vpc-b6fsjaxt",
           "member": "string",
           "name": "UniqVpcIds",
           "required": false,
@@ -4487,7 +4487,7 @@
         {
           "disabled": false,
           "document": "私有网络所属子网 ID 数组，如：subnet-fdj24n34j2。",
-          "example": "无",
+          "example": "subnet-gqj66zh0",
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
@@ -4496,7 +4496,7 @@
         {
           "disabled": false,
           "document": "地域 ID 数组，该参数已经弃用，可通过公共参数Region查询对应地域。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RegionIds",
           "required": false,
@@ -4505,7 +4505,7 @@
         {
           "disabled": false,
           "document": "实例状态。\n- 0：待初始化。\n- 1：流程中。\n- 2：运行中。\n- -2：已隔离。\n- -3：待删除。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -4514,7 +4514,7 @@
         {
           "disabled": false,
           "document": "实例架构版本。\n- 1：单机版。\n- 2：主从版。\n- 3：集群版。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TypeVersion",
           "required": false,
@@ -4523,7 +4523,7 @@
         {
           "disabled": false,
           "document": "存储引擎信息。可设置为Redis-2.8、Redis-4.0、Redis-5.0、Redis-6.0 或者 CKV。",
-          "example": "无",
+          "example": "Redis-4.0",
           "member": "string",
           "name": "EngineName",
           "required": false,
@@ -4532,7 +4532,7 @@
         {
           "disabled": false,
           "document": "续费模式。\n- 0：手动续费。\n- 1：自动续费。\n- 2：到期不再续费。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
@@ -4541,7 +4541,7 @@
         {
           "disabled": false,
           "document": "计费模式。\n- postpaid：按量计费。\n- prepaid：包年包月。",
-          "example": "无",
+          "example": "prepaid",
           "member": "string",
           "name": "BillingMode",
           "required": false,
@@ -4549,8 +4549,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8内存版（标准架构）。\n- 3：CKV 3.2内存版（标准架构）。\n- 4：CKV 3.2内存版（集群架构）。\n- 5：Redis 2.8内存版（单机）。\n- 6：Redis 4.0内存版（标准架构）。\n- 7：Redis 4.0内存版（集群架构）。\n- 8：Redis 5.0内存版（标准架构）。\n- 9：Redis 5.0内存版（集群架构）。\n- 15：Redis 6.2内存版（标准架构）。\n- 16：Redis 6.2内存版（集群架构）。",
-          "example": "无",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "example": "8",
           "member": "int64",
           "name": "Type",
           "required": false,
@@ -4559,7 +4559,7 @@
         {
           "disabled": false,
           "document": "该参数为数组类型，支持配置实例名称、实例 ID、IP地址，其中实例名称为模糊匹配，实例 ID 和 IP 地址精确匹配。\n\n- 数组中每一个元素取并集进行匹配查询。\n- **InstanceId** 与 **SearchKeys** 同时配置，则取二者交集进行匹配查询。",
-          "example": "无",
+          "example": "[\"crs-dagpcalj\"]",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
@@ -4568,7 +4568,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TypeList",
           "required": false,
@@ -4577,7 +4577,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "MonitorVersion",
           "required": false,
@@ -4595,7 +4595,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "TagKeys",
           "required": false,

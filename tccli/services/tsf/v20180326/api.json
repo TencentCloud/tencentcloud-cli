@@ -25511,7 +25511,7 @@
           "example": "无",
           "member": "TsfPageBusinessLogV2",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

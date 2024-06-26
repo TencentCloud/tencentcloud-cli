@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tke CreatePrometheusDashboard --cli-unfold-argument  \
-    --InstanceId prom-xxx \
-    --DashboardName test-dashboards \
-    --Contens test
+    --InstanceId abc \
+    --DashboardName abc \
+    --Contents abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "abc"
     }
 }
 ```

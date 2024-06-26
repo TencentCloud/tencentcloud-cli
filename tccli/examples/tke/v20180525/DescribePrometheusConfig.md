@@ -29,12 +29,63 @@ Output:
                 "Config": "ddd"
             }
         ],
+        "Probes": [
+            {
+                "Name": "probe-xxx",
+                "Config": "ddd"
+            }
+        ],
         "RawJobs": [
             {
                 "Name": "job1",
                 "Config": "xxx"
             }
         ]
+    }
+}
+```
+
+**Example 2: 获取集群采集配置**
+
+
+
+Input: 
+
+```
+tccli tke DescribePrometheusConfig --cli-unfold-argument  \
+    --InstanceId prom-2tghe0lv \
+    --ClusterId cls-9cgtidkr \
+    --ClusterType tke
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Config": "abc",
+        "ServiceMonitors": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
+            }
+        ],
+        "PodMonitors": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
+            }
+        ],
+        "RawJobs": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
+            }
+        ],
+        "Probes": [],
+        "RequestId": "abc"
     }
 }
 ```

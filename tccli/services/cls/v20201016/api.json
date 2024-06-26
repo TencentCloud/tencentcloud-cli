@@ -3037,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
+          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -9932,7 +9932,7 @@
         },
         {
           "disabled": false,
-          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为10。",
+          "document": "持续周期。持续满足触发条件TriggerCount个周期后，再进行告警；最小值为1，最大值为2000。",
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
@@ -11461,6 +11461,15 @@
         },
         {
           "disabled": false,
+          "document": "日志主题扩展信息",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "日志主题分区数量",
           "example": "10",
           "member": "uint64",
@@ -11488,7 +11497,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行周期， 可选值：Period；Fixed。\n\n- Period：固定频率\n- Fixed：固定时间",
+          "document": "执行周期， 可选值：`Period`、`Fixed`。\n\n- Period：固定频率\n- Fixed：固定时间",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -11499,12 +11508,12 @@
         },
         {
           "disabled": false,
-          "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。",
+          "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。\n当type为`Period`,`Fixed`时，time字段生效。",
           "example": "无",
           "member": "int64",
           "name": "Time",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -13739,6 +13748,16 @@
           "name": "IsWebTracking",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

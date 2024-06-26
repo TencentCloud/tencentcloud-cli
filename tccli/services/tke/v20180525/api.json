@@ -211,9 +211,9 @@
       "status": "online"
     },
     "CreatePrometheusConfig": {
-      "document": "创建prometheus配置",
+      "document": "创建集群采集配置",
       "input": "CreatePrometheusConfigRequest",
-      "name": "创建prometheus配置",
+      "name": "创建集群采集配置",
       "output": "CreatePrometheusConfigResponse",
       "status": "online"
     },
@@ -232,9 +232,9 @@
       "status": "online"
     },
     "CreatePrometheusRecordRuleYaml": {
-      "document": "以Yaml的方式创建聚合规则",
+      "document": "创建聚合规则yaml方式",
       "input": "CreatePrometheusRecordRuleYamlRequest",
-      "name": "以Yaml的方式创建聚合规则",
+      "name": "创建聚合规则yaml方式",
       "output": "CreatePrometheusRecordRuleYamlResponse",
       "status": "online"
     },
@@ -414,16 +414,16 @@
       "status": "online"
     },
     "DeletePrometheusConfig": {
-      "document": "删除Prometheus配置，如果目标不存在，将返回成功",
+      "document": "删除集群采集配置",
       "input": "DeletePrometheusConfigRequest",
-      "name": "删除Prometheus配置",
+      "name": "删除集群采集配置",
       "output": "DeletePrometheusConfigResponse",
       "status": "online"
     },
     "DeletePrometheusRecordRuleYaml": {
-      "document": "删除聚合实例",
+      "document": "删除聚合规则",
       "input": "DeletePrometheusRecordRuleYamlRequest",
-      "name": "删除聚合实例",
+      "name": "删除聚合规则",
       "output": "DeletePrometheusRecordRuleYamlResponse",
       "status": "online"
     },
@@ -918,9 +918,9 @@
       "status": "online"
     },
     "DescribePrometheusConfig": {
-      "document": "拉取Prometheus配置",
+      "document": "获取集群采集配置",
       "input": "DescribePrometheusConfigRequest",
-      "name": "拉取Prometheus配置",
+      "name": "获取集群采集配置",
       "output": "DescribePrometheusConfigResponse",
       "status": "online"
     },
@@ -1345,9 +1345,9 @@
       "status": "online"
     },
     "ModifyPrometheusConfig": {
-      "document": "修改prometheus配置，如果配置项不存在，则会新增",
+      "document": "修改集群采集配置",
       "input": "ModifyPrometheusConfigRequest",
-      "name": "修改prometheus配置",
+      "name": "修改集群采集配置",
       "output": "ModifyPrometheusConfigResponse",
       "status": "online"
     },
@@ -1359,9 +1359,9 @@
       "status": "online"
     },
     "ModifyPrometheusRecordRuleYaml": {
-      "document": "通过yaml的方式修改Prometheus聚合实例",
+      "document": "修改聚合规则yaml方式",
       "input": "ModifyPrometheusRecordRuleYamlRequest",
-      "name": "通过yaml的方式修改Prometheus聚合实例",
+      "name": "修改聚合规则yaml方式",
       "output": "ModifyPrometheusRecordRuleYamlResponse",
       "status": "online"
     },
@@ -6245,7 +6245,7 @@
           "example": "alert-xx",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6291,6 +6291,7 @@
           "example": "alert-def",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6345,7 +6346,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6354,7 +6355,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -6363,7 +6364,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6372,7 +6373,7 @@
         {
           "disabled": false,
           "document": "ServiceMonitors配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
           "required": false,
@@ -6381,7 +6382,7 @@
         {
           "disabled": false,
           "document": "PodMonitors配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
           "required": false,
@@ -6390,9 +6391,18 @@
         {
           "disabled": false,
           "document": "prometheus原生Job配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Probe 配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "Probes",
           "required": false,
           "type": "list"
         }
@@ -6489,7 +6499,7 @@
           "example": "global",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6562,7 +6572,7 @@
           "example": "temp-xxx",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6599,6 +6609,7 @@
           "example": "",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7800,6 +7811,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "在7天可回收期间，强制解除绑定",
+          "example": "false",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7822,7 +7842,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7831,7 +7851,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -7840,7 +7860,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7849,7 +7869,7 @@
         {
           "disabled": false,
           "document": "要删除的ServiceMonitor名字列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ServiceMonitors",
           "required": false,
@@ -7858,7 +7878,7 @@
         {
           "disabled": false,
           "document": "要删除的PodMonitor名字列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PodMonitors",
           "required": false,
@@ -7867,9 +7887,18 @@
         {
           "disabled": false,
           "document": "要删除的RawJobs名字列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的Probe名字列表",
+          "example": "无",
+          "member": "string",
+          "name": "Probes",
           "required": false,
           "type": "list"
         }
@@ -11535,15 +11564,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11920,6 +11951,7 @@
           "example": "",
           "member": "string",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11974,6 +12006,7 @@
           "example": "无",
           "member": "PrometheusAgentOverview",
           "name": "Agents",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11983,6 +12016,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12073,6 +12107,7 @@
           "example": "无",
           "member": "PrometheusAlertHistoryItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12082,6 +12117,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12145,7 +12181,7 @@
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertRules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12155,7 +12191,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12219,6 +12255,7 @@
           "example": "无",
           "member": "PrometheusAlertRuleDetail",
           "name": "AlertRules",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12228,6 +12265,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12282,7 +12320,7 @@
           "example": "无",
           "member": "PrometheusAgentOverview",
           "name": "Agents",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12292,7 +12330,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12311,7 +12349,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12320,7 +12358,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -12329,7 +12367,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -12344,36 +12382,50 @@
         {
           "disabled": false,
           "document": "全局配置",
-          "example": "",
+          "example": "xxxx",
           "member": "string",
           "name": "Config",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "ServiceMonitor配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "PodMonitor配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原生Job",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Probe配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "Probes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12419,7 +12471,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12429,7 +12481,7 @@
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12439,7 +12491,7 @@
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12449,7 +12501,7 @@
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12486,7 +12538,7 @@
           "example": "无",
           "member": "PrometheusNotificationItem",
           "name": "Notification",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12523,7 +12575,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12533,7 +12585,7 @@
           "example": "无",
           "member": "TaskStepInfo",
           "name": "Steps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12543,7 +12595,7 @@
           "example": "无",
           "member": "string",
           "name": "EksClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12580,6 +12632,7 @@
           "example": "prom-test",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12589,6 +12642,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12598,6 +12652,7 @@
           "example": "vpcId-sdasda",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12607,6 +12662,7 @@
           "example": "sub-dsdadad",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12616,6 +12672,7 @@
           "example": "dsdsadada",
           "member": "string",
           "name": "COSBucket",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12625,6 +12682,7 @@
           "example": "http://10.0.0.1:9090",
           "member": "string",
           "name": "QueryAddress",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12634,6 +12692,7 @@
           "example": "无",
           "member": "PrometheusGrafanaInfo",
           "name": "Grafana",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12643,6 +12702,7 @@
           "example": "http://1.1.1.1",
           "member": "string",
           "name": "AlertManagerUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12697,7 +12757,7 @@
           "example": "无",
           "member": "PrometheusInstancesOverview",
           "name": "Instances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12707,7 +12767,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12762,6 +12822,7 @@
           "example": "无",
           "member": "PrometheusInstanceOverview",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12771,6 +12832,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12834,7 +12896,7 @@
           "example": "无",
           "member": "PrometheusRecordRuleYamlItem",
           "name": "Records",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12844,7 +12906,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12908,6 +12970,7 @@
           "example": "",
           "member": "PrometheusJobTargets",
           "name": "Jobs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12962,7 +13025,7 @@
           "example": "无",
           "member": "PrometheusTemp",
           "name": "Templates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12972,7 +13035,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13009,7 +13072,7 @@
           "example": "无",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13046,6 +13109,7 @@
           "example": "无",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13100,6 +13164,7 @@
           "example": "无",
           "member": "PrometheusTemplate",
           "name": "Templates",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13109,6 +13174,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13200,15 +13266,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "RegionInstance",
           "name": "RegionInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13443,7 +13511,7 @@
         {
           "disabled": false,
           "document": "K8S版本",
-          "example": "",
+          "example": "1.20.6",
           "member": "string",
           "name": "K8sVersion",
           "required": true,
@@ -13458,9 +13526,10 @@
         {
           "disabled": false,
           "document": "可选运行时列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "OptionalRuntimes",
           "name": "OptionalRuntimes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13861,20 +13930,20 @@
         {
           "disabled": false,
           "document": "版本数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "VersionInstance",
           "name": "VersionInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13929,7 +13998,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13939,7 +14008,7 @@
           "example": "无",
           "member": "PodLimitsInstance",
           "name": "PodLimitsInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18884,7 +18953,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -18893,7 +18962,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
@@ -18902,7 +18971,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -18911,7 +18980,7 @@
         {
           "disabled": false,
           "document": "ServiceMonitors配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
           "required": false,
@@ -18920,7 +18989,7 @@
         {
           "disabled": false,
           "document": "PodMonitors配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
           "required": false,
@@ -18929,9 +18998,18 @@
         {
           "disabled": false,
           "document": "prometheus原生Job配置",
-          "example": "",
+          "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Probes 配置",
+          "example": "无",
+          "member": "PrometheusConfigItem",
+          "name": "Probes",
           "required": false,
           "type": "list"
         }

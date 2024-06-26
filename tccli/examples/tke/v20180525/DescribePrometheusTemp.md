@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tke DescribePrometheusTemp --cli-unfold-argument  \
-    --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Offset 1
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
@@ -18,102 +18,96 @@ Output:
     "Response": {
         "Templates": [
             {
-                "UpdateTime": "xx",
+                "Name": "abc",
+                "Describe": "abc",
+                "Level": "abc",
                 "RecordRules": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc"
                     }
                 ],
-                "Version": "xx",
-                "Name": "xx",
-                "Level": "xx",
-                "Describe": "xx",
-                "TargetsTotal": 0,
-                "RawJobs": [
+                "ServiceMonitors": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc"
                     }
                 ],
                 "PodMonitors": [
                     {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc"
                     }
                 ],
-                "TemplateId": "xx",
+                "TemplateId": "abc",
+                "UpdateTime": "abc",
+                "Version": "abc",
+                "IsDefault": true,
                 "AlertDetailRules": [
                     {
-                        "Name": "xx",
-                        "Rules": [
-                            {
-                                "Describe": "xx",
-                                "Name": "xx",
-                                "For": "xx",
-                                "Labels": [
-                                    {
-                                        "Name": "xx",
-                                        "Value": "xx"
-                                    }
-                                ],
-                                "Rule": "xx",
-                                "Template": "xx",
-                                "Annotations": [
-                                    {
-                                        "Name": "xx",
-                                        "Value": "xx"
-                                    }
-                                ]
-                            }
-                        ],
+                        "Id": "abc",
+                        "Name": "abc",
+                        "TemplateId": "abc",
                         "Notification": {
-                            "AlertManager": {
-                                "Url": "xx",
-                                "ClusterId": "xx",
-                                "ClusterType": "xx"
-                            },
-                            "RepeatInterval": "xx",
-                            "WebHook": "xx",
                             "Enabled": true,
+                            "Type": "abc",
+                            "WebHook": "abc",
+                            "AlertManager": {
+                                "ClusterType": "abc",
+                                "ClusterId": "abc",
+                                "Url": "abc"
+                            },
+                            "RepeatInterval": "abc",
+                            "TimeRangeStart": "abc",
+                            "TimeRangeEnd": "abc",
+                            "NotifyWay": [
+                                "abc"
+                            ],
+                            "ReceiverGroups": [
+                                "abc"
+                            ],
                             "PhoneNotifyOrder": [
                                 1
                             ],
+                            "PhoneCircleTimes": 0,
                             "PhoneInnerInterval": 0,
                             "PhoneCircleInterval": 0,
-                            "NotifyWay": [
-                                "xx"
-                            ],
-                            "ReceiverGroups": [
-                                "xx"
-                            ],
-                            "PhoneArriveNotice": true,
-                            "PhoneCircleTimes": 0,
-                            "TimeRangeStart": "xx",
-                            "Type": "xx",
-                            "TimeRangeEnd": "xx"
+                            "PhoneArriveNotice": true
                         },
-                        "TemplateId": "xx",
-                        "ClusterId": "xx",
-                        "UpdatedAt": "xx",
-                        "Id": "xx"
+                        "Rules": [
+                            {
+                                "Name": "abc",
+                                "Rule": "abc",
+                                "Labels": [
+                                    {
+                                        "Name": "abc",
+                                        "Value": "abc"
+                                    }
+                                ],
+                                "Template": "abc",
+                                "For": "abc",
+                                "Describe": "abc",
+                                "Annotations": [
+                                    {
+                                        "Name": "abc",
+                                        "Value": "abc"
+                                    }
+                                ],
+                                "RuleState": 0
+                            }
+                        ],
+                        "UpdatedAt": "abc",
+                        "ClusterId": "abc"
                     }
                 ],
-                "IsDefault": true,
-                "ServiceMonitors": [
-                    {
-                        "Config": "xx",
-                        "Name": "xx",
-                        "TemplateId": "xx"
-                    }
-                ]
+                "TargetsTotal": 0
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

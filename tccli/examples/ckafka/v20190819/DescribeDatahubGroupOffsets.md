@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ckafka DescribeDatahubGroupOffsets --cli-unfold-argument  \
-    --Name xxx \
-    --Group "group"
+    --Group "group" \
+    --Name xxx
 ```
 
 Output: 

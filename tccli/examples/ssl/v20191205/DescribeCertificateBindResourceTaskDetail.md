@@ -61,7 +61,8 @@ Output:
                         ]
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "CDN": [
@@ -74,7 +75,8 @@ Output:
                         "Status": "abc",
                         "HttpsBillingSwitch": "abc"
                     }
-                ]
+                ],
+                "Error": ""
             }
         ],
         "WAF": [
@@ -87,7 +89,8 @@ Output:
                         "Keepalive": 1
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "DDOS": [
@@ -101,7 +104,8 @@ Output:
                         "CertId": "abc",
                         "VirtualPort": "abc"
                     }
-                ]
+                ],
+                "Error": ""
             }
         ],
         "LIVE": [
@@ -113,7 +117,8 @@ Output:
                         "CertId": "abc",
                         "Status": 0
                     }
-                ]
+                ],
+                "Error": ""
             }
         ],
         "VOD": [
@@ -124,7 +129,8 @@ Output:
                         "CertId": "abc"
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "TKE": [
@@ -163,7 +169,8 @@ Output:
                         "ClusterVersion": "abc"
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "APIGATEWAY": [
@@ -178,12 +185,14 @@ Output:
                         "Protocol": "abc"
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "TCB": [
             {
                 "Region": "abc",
+                "Error": "",
                 "Environments": [
                     {
                         "Environment": {
@@ -230,7 +239,8 @@ Output:
                         "Status": "abc"
                     }
                 ],
-                "TotalCount": 1
+                "TotalCount": 1,
+                "Error": ""
             }
         ],
         "Status": 1,

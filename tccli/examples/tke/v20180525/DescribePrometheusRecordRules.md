@@ -6,7 +6,11 @@ Input:
 
 ```
 tccli tke DescribePrometheusRecordRules --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId abc \
+    --Offset 1 \
+    --Limit 1 \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 
@@ -15,15 +19,15 @@ Output:
     "Response": {
         "Records": [
             {
-                "Content": "xx",
-                "UpdateTime": "xx",
-                "ClusterId": "xx",
-                "Name": "xx",
-                "TemplateId": "xx"
+                "Name": "abc",
+                "UpdateTime": "abc",
+                "TemplateId": "abc",
+                "Content": "abc",
+                "ClusterId": "abc"
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

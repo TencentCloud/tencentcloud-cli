@@ -85,9 +85,9 @@
       "status": "online"
     },
     "CreateDatahubTopic": {
-      "document": "创建Datahub主题",
+      "document": "创建DIP主题",
       "input": "CreateDatahubTopicRequest",
-      "name": "创建Datahub主题",
+      "name": "创建DIP主题",
       "output": "CreateDatahubTopicResponse",
       "status": "online"
     },
@@ -183,9 +183,9 @@
       "status": "online"
     },
     "DeleteDatahubTask": {
-      "document": "删除Datahub任务",
+      "document": "删除Dip任务",
       "input": "DeleteDatahubTaskRequest",
-      "name": "删除Datahub任务",
+      "name": "删除Dip任务",
       "output": "DeleteDatahubTaskResponse",
       "status": "online"
     },
@@ -323,9 +323,9 @@
       "status": "online"
     },
     "DescribeDatahubTopic": {
-      "document": "获取Datahub主题属性",
+      "document": "获取DIP主题属性",
       "input": "DescribeDatahubTopicRequest",
-      "name": "获取Datahub主题属性",
+      "name": "获取DIP主题属性",
       "output": "DescribeDatahubTopicResponse",
       "status": "online"
     },
@@ -526,9 +526,9 @@
       "status": "online"
     },
     "ModifyDatahubTopic": {
-      "document": "修改Datahub主题属性",
+      "document": "修改DIP主题属性",
       "input": "ModifyDatahubTopicRequest",
-      "name": "修改Datahub主题属性",
+      "name": "修改DIP主题属性",
       "output": "ModifyDatahubTopicResponse",
       "status": "online"
     },
@@ -1025,7 +1025,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2831,7 +2831,7 @@
           "example": "1",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3311,7 +3311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)",
           "example": "xxx",
           "member": "string",
           "name": "Name",
@@ -3366,7 +3366,7 @@
           "example": "无",
           "member": "DatahubTopicResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4247,7 +4247,7 @@
           "example": "data",
           "member": "PrometheusResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4274,7 +4274,7 @@
         },
         {
           "disabled": false,
-          "document": "路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)",
+          "document": "路由网络类型(3:vpc路由;7:内部支撑路由)",
           "example": "1",
           "member": "int64",
           "name": "VipType",
@@ -4402,7 +4402,7 @@
           "example": "904b75130b4b4102bdeb071a7f48523a",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5515,7 +5515,7 @@
           "example": "无",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5552,7 +5552,7 @@
           "example": "xxx",
           "member": "ConnectResourceResourceIdResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5589,7 +5589,7 @@
           "example": "xxx",
           "member": "DatahubTaskIdRes",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6736,7 +6736,7 @@
           "example": "xxx",
           "member": "DescribeConnectResourceResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6981,7 +6981,7 @@
           "example": "无",
           "member": "GroupOffsetResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7174,7 +7174,7 @@
           "example": "xxx",
           "member": "DescribeDatahubTaskRes",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7434,7 +7434,7 @@
           "example": "无",
           "member": "DescribeDatahubTopicResp",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9938,7 +9938,7 @@
           "example": "无",
           "member": "ConsumerRecord",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12974,7 +12974,7 @@
           "example": "xxx",
           "member": "DatahubTaskIdRes",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13038,7 +13038,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

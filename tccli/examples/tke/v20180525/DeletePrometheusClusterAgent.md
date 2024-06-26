@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli tke DeletePrometheusClusterAgent --cli-unfold-argument  \
-    --InstanceId xx \
-    --Agents.0.Describe xx \
-    --Agents.0.ClusterId xx \
-    --Agents.0.ClusterType xx
+    --Agents.0.ClusterType abc \
+    --Agents.0.ClusterId abc \
+    --Agents.0.Describe abc \
+    --Agents.0.Region abc \
+    --InstanceId abc \
+    --Force True
 ```
 
 Output: 

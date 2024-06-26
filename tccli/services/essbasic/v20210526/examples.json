@@ -748,10 +748,10 @@
     ],
     "CreateFlowBlockchainEvidenceUrl": [
       {
-        "document": "拥有访问权限的员工生成合同区块链存证报告查看二维码/链接",
+        "document": "拥有访问权限的员工生成合同区块链存证证书查看二维码/链接",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowBlockchainEvidenceUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ianc_1111\"\n        },\n        \"ProxyOrganizationOpenId\": \"ABC_organization_open_id\",\n        \"AppId\": \"16fd2f7d7*****f8d501d57b5ec\"\n    },\n    \"FlowId\": \"yDCANUUckp******7SI8fHrn0LCd\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredOn\": 1719463451,\n        \"QrCode\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d7914ff197f4b2b099ab565a5733**************3a5b2d692827ec738d02a519c7a9f\",\n        \"RequestId\": \"s17188843684971\",\n        \"Url\": \"https://test.essurl.cn/SR0****F9B\"\n    }\n}",
-        "title": "生成合同区块链存证报告查看二维码/链接"
+        "title": "生成合同区块链存证证书查看二维码/链接"
       }
     ],
     "CreateFlowGroupSignReview": [

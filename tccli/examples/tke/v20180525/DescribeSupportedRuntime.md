@@ -15,10 +15,13 @@ Output:
     "Response": {
         "OptionalRuntimes": [
             {
-                "RuntimeType": "docker"
+                "RuntimeType": "docker",
+                "RuntimeVersions": [
+                    "1.12.4"
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "207bd1e4-30de-4fac-b4fb-f9b15e2b4864"
     }
 }
 ```

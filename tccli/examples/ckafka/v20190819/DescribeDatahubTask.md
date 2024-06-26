@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeDatahubTask --cli-unfold-argument  \
-    --TaskId xx
+    --TaskId abc
 ```
 
 Output: 
@@ -14,687 +14,878 @@ Output:
 {
     "Response": {
         "Result": {
+            "TaskId": "abc",
+            "TaskName": "abc",
+            "TaskType": "abc",
             "Status": 0,
-            "TransformsParam": {
-                "KeepMetadata": true,
-                "OutputFormat": "xx",
-                "SourceType": "xx",
-                "FilterParam": [
+            "SourceResource": {
+                "Type": "abc",
+                "KafkaParam": {
+                    "SelfBuilt": true,
+                    "Resource": "abc",
+                    "Topic": "abc",
+                    "OffsetType": "abc",
+                    "StartTime": 1,
+                    "ResourceName": "abc",
+                    "ZoneId": 0,
+                    "TopicId": "abc",
+                    "PartitionNum": 0,
+                    "EnableToleration": true,
+                    "QpsLimit": 1,
+                    "TableMappings": [
+                        {
+                            "Database": "abc",
+                            "Table": "abc",
+                            "Topic": "abc",
+                            "TopicId": "abc"
+                        }
+                    ],
+                    "UseTableMapping": true,
+                    "UseAutoCreateTopic": true,
+                    "CompressionType": "abc",
+                    "MsgMultiple": 0,
+                    "ConnectorSyncType": "abc",
+                    "KeepPartition": true
+                },
+                "EventBusParam": {
+                    "Type": "abc",
+                    "SelfBuilt": true,
+                    "Resource": "abc",
+                    "Namespace": "abc",
+                    "FunctionName": "abc",
+                    "Qualifier": "abc"
+                },
+                "MongoDBParam": {
+                    "Database": "abc",
+                    "Collection": "abc",
+                    "CopyExisting": true,
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "ListeningEvent": "abc",
+                    "ReadPreference": "abc",
+                    "Pipeline": "abc",
+                    "SelfBuilt": true
+                },
+                "EsParam": {
+                    "Resource": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "SelfBuilt": true,
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "DropInvalidMessage": true,
+                    "Index": "abc",
+                    "DateFormat": "abc",
+                    "ContentKey": "abc",
+                    "DropInvalidJsonMessage": true,
+                    "DocumentIdField": "abc",
+                    "IndexType": "abc",
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsRegion": "abc",
+                        "DropClsOwneruin": "abc",
+                        "DropClsTopicId": "abc",
+                        "DropClsLogSet": "abc"
+                    },
+                    "DatabasePrimaryKey": "abc",
+                    "DropDlq": {
+                        "Type": "abc",
+                        "KafkaParam": {
+                            "SelfBuilt": true,
+                            "Resource": "abc",
+                            "Topic": "abc",
+                            "OffsetType": "abc",
+                            "StartTime": 1,
+                            "ResourceName": "abc",
+                            "ZoneId": 0,
+                            "TopicId": "abc",
+                            "PartitionNum": 0,
+                            "EnableToleration": true,
+                            "QpsLimit": 1,
+                            "TableMappings": [
+                                {
+                                    "Database": "abc",
+                                    "Table": "abc",
+                                    "Topic": "abc",
+                                    "TopicId": "abc"
+                                }
+                            ],
+                            "UseTableMapping": true,
+                            "UseAutoCreateTopic": true,
+                            "CompressionType": "abc",
+                            "MsgMultiple": 0,
+                            "ConnectorSyncType": "abc",
+                            "KeepPartition": true
+                        },
+                        "RetryInterval": 1,
+                        "MaxRetryAttempts": 1,
+                        "TopicParam": {
+                            "Resource": "abc",
+                            "OffsetType": "abc",
+                            "StartTime": 1,
+                            "TopicId": "abc",
+                            "CompressionType": "abc",
+                            "UseAutoCreateTopic": true,
+                            "MsgMultiple": 0
+                        },
+                        "DlqType": "abc"
+                    },
+                    "RecordMappingList": [
+                        {
+                            "ColumnName": "abc",
+                            "JsonKey": "abc"
+                        }
+                    ],
+                    "DateField": "abc",
+                    "RecordMappingMode": "abc"
+                },
+                "TdwParam": {
+                    "Bid": "abc",
+                    "Tid": "abc",
+                    "IsDomestic": true,
+                    "TdwHost": "abc",
+                    "TdwPort": 0
+                },
+                "DtsParam": {
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "Topic": "abc",
+                    "GroupId": "abc",
+                    "GroupUser": "abc",
+                    "GroupPassword": "abc",
+                    "TranSql": true
+                },
+                "ClickHouseParam": {
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "Cluster": "abc",
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Schema": [
+                        {
+                            "ColumnName": "abc",
+                            "JsonKey": "abc",
+                            "Type": "abc",
+                            "AllowNull": true
+                        }
+                    ],
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "Resource": "abc",
+                    "SelfBuilt": true,
+                    "DropInvalidMessage": true,
+                    "Type": "abc",
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsRegion": "abc",
+                        "DropClsOwneruin": "abc",
+                        "DropClsTopicId": "abc",
+                        "DropClsLogSet": "abc"
+                    },
+                    "BatchSize": 0,
+                    "ConsumerFetchMinBytes": 0,
+                    "ConsumerFetchMaxWaitMs": 0
+                },
+                "ClsParam": {
+                    "DecodeJson": true,
+                    "Resource": "abc",
+                    "LogSet": "abc",
+                    "ContentKey": "abc",
+                    "TimeField": "abc"
+                },
+                "CosParam": {
+                    "BucketName": "abc",
+                    "Region": "abc",
+                    "ObjectKey": "abc",
+                    "AggregateBatchSize": 1,
+                    "AggregateInterval": 1,
+                    "FormatOutputType": "abc",
+                    "ObjectKeyPrefix": "abc",
+                    "DirectoryTimeFormat": "abc"
+                },
+                "MySQLParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc",
+                    "DdlTopic": "abc",
+                    "DataSourceMonitorMode": "abc",
+                    "DataSourceMonitorResource": "abc",
+                    "DataSourceIncrementMode": "abc",
+                    "DataSourceIncrementColumn": "abc",
+                    "DataSourceStartFrom": "abc",
+                    "DataTargetInsertMode": "abc",
+                    "DataTargetPrimaryKeyField": "abc",
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "abc",
+                            "Type": "abc",
+                            "AllowNull": true,
+                            "ColumnName": "abc",
+                            "ExtraInfo": "abc",
+                            "ColumnSize": "abc",
+                            "DecimalDigits": "abc",
+                            "AutoIncrement": true,
+                            "DefaultValue": "abc"
+                        }
+                    ],
+                    "TopicRegex": "abc",
+                    "TopicReplacement": "abc",
+                    "KeyColumns": "abc",
+                    "DropInvalidMessage": true,
+                    "DropCls": {
+                        "DropInvalidMessageToCls": true,
+                        "DropClsRegion": "abc",
+                        "DropClsOwneruin": "abc",
+                        "DropClsTopicId": "abc",
+                        "DropClsLogSet": "abc"
+                    },
+                    "OutputFormat": "abc",
+                    "IsTablePrefix": true,
+                    "IncludeContentChanges": "abc",
+                    "IncludeQuery": true,
+                    "RecordWithSchema": true,
+                    "SignalDatabase": "abc",
+                    "IsTableRegular": true,
+                    "SignalTable": "abc",
+                    "DateTimeZone": "abc",
+                    "SelfBuilt": true
+                },
+                "PostgreSQLParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "PluginName": "abc",
+                    "SnapshotMode": "abc",
+                    "DataFormat": "abc",
+                    "DataTargetInsertMode": "abc",
+                    "DataTargetPrimaryKeyField": "abc",
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "abc",
+                            "Type": "abc",
+                            "AllowNull": true,
+                            "ColumnName": "abc",
+                            "ExtraInfo": "abc",
+                            "ColumnSize": "abc",
+                            "DecimalDigits": "abc",
+                            "AutoIncrement": true,
+                            "DefaultValue": "abc"
+                        }
+                    ],
+                    "DropInvalidMessage": true,
+                    "IsTableRegular": true,
+                    "KeyColumns": "abc",
+                    "RecordWithSchema": true
+                },
+                "TopicParam": {
+                    "Resource": "abc",
+                    "OffsetType": "abc",
+                    "StartTime": 1,
+                    "TopicId": "abc",
+                    "CompressionType": "abc",
+                    "UseAutoCreateTopic": true,
+                    "MsgMultiple": 0
+                },
+                "MariaDBParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc",
+                    "KeyColumns": "abc",
+                    "IsTablePrefix": true,
+                    "OutputFormat": "abc",
+                    "IncludeContentChanges": "abc",
+                    "IncludeQuery": true,
+                    "RecordWithSchema": true
+                },
+                "SQLServerParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc"
+                },
+                "CtsdbParam": {
+                    "Resource": "abc",
+                    "CtsdbMetric": "abc"
+                },
+                "ScfParam": {
+                    "FunctionName": "abc",
+                    "Namespace": "abc",
+                    "Qualifier": "abc",
+                    "BatchSize": 0,
+                    "MaxRetries": 0
+                },
+                "MqttParam": {
+                    "Topics": "abc",
+                    "CleanSession": true,
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "Qos": 0,
+                    "MaxTasks": 0,
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "SelfBuilt": true
+                }
+            },
+            "TargetResource": {
+                "Type": "abc",
+                "KafkaParam": {
+                    "SelfBuilt": true,
+                    "Resource": "abc",
+                    "Topic": "abc",
+                    "OffsetType": "abc",
+                    "StartTime": 1,
+                    "ResourceName": "abc",
+                    "ZoneId": 0,
+                    "TopicId": "abc",
+                    "PartitionNum": 0,
+                    "EnableToleration": true,
+                    "QpsLimit": 1,
+                    "TableMappings": [
+                        {
+                            "Database": "abc",
+                            "Table": "abc",
+                            "Topic": "abc",
+                            "TopicId": "abc"
+                        }
+                    ],
+                    "UseTableMapping": true,
+                    "UseAutoCreateTopic": true,
+                    "CompressionType": "abc",
+                    "MsgMultiple": 0,
+                    "ConnectorSyncType": "abc",
+                    "KeepPartition": true
+                },
+                "EventBusParam": {
+                    "Type": "abc",
+                    "SelfBuilt": true,
+                    "Resource": "abc",
+                    "Namespace": "abc",
+                    "FunctionName": "abc",
+                    "Qualifier": "abc"
+                },
+                "MongoDBParam": {
+                    "Database": "abc",
+                    "Collection": "abc",
+                    "CopyExisting": true,
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "ListeningEvent": "abc",
+                    "ReadPreference": "abc",
+                    "Pipeline": "abc",
+                    "SelfBuilt": true
+                },
+                "EsParam": {
+                    "Resource": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "SelfBuilt": true,
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "DropInvalidMessage": true,
+                    "Index": "abc",
+                    "DateFormat": "abc",
+                    "ContentKey": "abc",
+                    "DropInvalidJsonMessage": true,
+                    "DocumentIdField": "abc",
+                    "IndexType": "abc",
+                    "DatabasePrimaryKey": "abc",
+                    "DropDlq": {
+                        "Type": "abc",
+                        "RetryInterval": 1,
+                        "MaxRetryAttempts": 1,
+                        "TopicParam": {
+                            "Resource": "abc",
+                            "OffsetType": "abc",
+                            "StartTime": 1,
+                            "TopicId": "abc",
+                            "CompressionType": "abc",
+                            "UseAutoCreateTopic": true,
+                            "MsgMultiple": 0
+                        },
+                        "DlqType": "abc"
+                    },
+                    "RecordMappingList": [
+                        {
+                            "ColumnName": "abc",
+                            "JsonKey": "abc"
+                        }
+                    ],
+                    "DateField": "abc",
+                    "RecordMappingMode": "abc"
+                },
+                "TdwParam": {
+                    "Bid": "abc",
+                    "Tid": "abc",
+                    "IsDomestic": true,
+                    "TdwHost": "abc",
+                    "TdwPort": 0
+                },
+                "DtsParam": {
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "Topic": "abc",
+                    "GroupId": "abc",
+                    "GroupUser": "abc",
+                    "GroupPassword": "abc",
+                    "TranSql": true
+                },
+                "ClickHouseParam": {
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "Cluster": "abc",
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Schema": [
+                        {
+                            "ColumnName": "abc",
+                            "JsonKey": "abc",
+                            "Type": "abc",
+                            "AllowNull": true
+                        }
+                    ],
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "Resource": "abc",
+                    "SelfBuilt": true,
+                    "DropInvalidMessage": true,
+                    "Type": "abc",
+                    "BatchSize": 0,
+                    "ConsumerFetchMinBytes": 0,
+                    "ConsumerFetchMaxWaitMs": 0
+                },
+                "ClsParam": {
+                    "DecodeJson": true,
+                    "Resource": "abc",
+                    "LogSet": "abc",
+                    "ContentKey": "abc",
+                    "TimeField": "abc"
+                },
+                "CosParam": {
+                    "BucketName": "abc",
+                    "Region": "abc",
+                    "ObjectKey": "abc",
+                    "AggregateBatchSize": 1,
+                    "AggregateInterval": 1,
+                    "FormatOutputType": "abc",
+                    "ObjectKeyPrefix": "abc",
+                    "DirectoryTimeFormat": "abc"
+                },
+                "MySQLParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc",
+                    "DdlTopic": "abc",
+                    "DataSourceMonitorMode": "abc",
+                    "DataSourceMonitorResource": "abc",
+                    "DataSourceIncrementMode": "abc",
+                    "DataSourceIncrementColumn": "abc",
+                    "DataSourceStartFrom": "abc",
+                    "DataTargetInsertMode": "abc",
+                    "DataTargetPrimaryKeyField": "abc",
+                    "DataTargetRecordMapping": [
+                        {
+                            "JsonKey": "abc",
+                            "Type": "abc",
+                            "AllowNull": true,
+                            "ColumnName": "abc",
+                            "ExtraInfo": "abc",
+                            "ColumnSize": "abc",
+                            "DecimalDigits": "abc",
+                            "AutoIncrement": true,
+                            "DefaultValue": "abc"
+                        }
+                    ],
+                    "TopicRegex": "abc",
+                    "TopicReplacement": "abc",
+                    "KeyColumns": "abc",
+                    "DropInvalidMessage": true,
+                    "OutputFormat": "abc",
+                    "IsTablePrefix": true,
+                    "IncludeContentChanges": "abc",
+                    "IncludeQuery": true,
+                    "RecordWithSchema": true,
+                    "SignalDatabase": "abc",
+                    "IsTableRegular": true,
+                    "SignalTable": "abc",
+                    "DateTimeZone": "abc",
+                    "SelfBuilt": true
+                },
+                "PostgreSQLParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "PluginName": "abc",
+                    "SnapshotMode": "abc",
+                    "DataFormat": "abc",
+                    "DataTargetInsertMode": "abc",
+                    "DataTargetPrimaryKeyField": "abc",
+                    "DropInvalidMessage": true,
+                    "IsTableRegular": true,
+                    "KeyColumns": "abc",
+                    "RecordWithSchema": true
+                },
+                "MariaDBParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc",
+                    "KeyColumns": "abc",
+                    "IsTablePrefix": true,
+                    "OutputFormat": "abc",
+                    "IncludeContentChanges": "abc",
+                    "IncludeQuery": true,
+                    "RecordWithSchema": true
+                },
+                "SQLServerParam": {
+                    "Database": "abc",
+                    "Table": "abc",
+                    "Resource": "abc",
+                    "SnapshotMode": "abc"
+                },
+                "CtsdbParam": {
+                    "Resource": "abc",
+                    "CtsdbMetric": "abc"
+                },
+                "ScfParam": {
+                    "FunctionName": "abc",
+                    "Namespace": "abc",
+                    "Qualifier": "abc",
+                    "BatchSize": 0,
+                    "MaxRetries": 0
+                },
+                "MqttParam": {
+                    "Topics": "abc",
+                    "CleanSession": true,
+                    "Resource": "abc",
+                    "Ip": "abc",
+                    "Port": 0,
+                    "UserName": "abc",
+                    "Password": "abc",
+                    "Qos": 0,
+                    "MaxTasks": 0,
+                    "ServiceVip": "abc",
+                    "UniqVpcId": "abc",
+                    "SelfBuilt": true
+                }
+            },
+            "Connections": [
+                {
+                    "TopicName": "abc",
+                    "GroupId": "abc",
+                    "TopicId": "abc"
+                }
+            ],
+            "CreateTime": "abc",
+            "TransformParam": {
+                "AnalysisFormat": "abc",
+                "Regex": "abc",
+                "MapParam": [
                     {
-                        "MatchMode": "xx",
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Type": "abc",
+                        "Value": "abc"
                     }
                 ],
+                "FilterParam": [
+                    {
+                        "Key": "abc",
+                        "Type": "abc",
+                        "MatchMode": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "OutputFormat": "abc",
                 "FailureParam": {
+                    "Type": "abc",
                     "RetryInterval": 1,
-                    "TopicParam": {
-                        "TopicId": "xx",
-                        "OffsetType": "xx",
-                        "Resource": "xx",
-                        "StartTime": 1
-                    },
-                    "KafkaParam": {
-                        "TopicId": "xx",
-                        "Resource": "xx",
-                        "PartitionNum": 0,
-                        "QpsLimit": 1,
-                        "EnableToleration": true,
-                        "SelfBuilt": true,
-                        "Topic": "xx",
-                        "OffsetType": "xx",
-                        "StartTime": 1,
-                        "UseTableMapping": true,
-                        "ResourceName": "xx",
-                        "ZoneId": 0,
-                        "TableMappings": [
-                            {
-                                "Topic": "xx",
-                                "Table": "xx",
-                                "TopicId": "xx",
-                                "Database": "xx"
-                            }
-                        ]
-                    },
                     "MaxRetryAttempts": 1,
-                    "Type": "xx",
-                    "DlqType": "xx"
+                    "DlqType": "abc",
+                    "KafkaParam": {
+                        "SelfBuilt": true,
+                        "Resource": "ccc",
+                        "Topic": "ac",
+                        "OffsetType": "c",
+                        "StartTime": 1703990000,
+                        "ResourceName": "cnnnc",
+                        "ZoneId": 120399,
+                        "TopicId": "corooco",
+                        "PartitionNum": 1,
+                        "EnableToleration": true,
+                        "QpsLimit": 133,
+                        "TableMappings": [],
+                        "UseTableMapping": true,
+                        "UseAutoCreateTopic": true,
+                        "CompressionType": "",
+                        "MsgMultiple": 1,
+                        "ConnectorSyncType": "",
+                        "KeepPartition": true
+                    },
+                    "TopicParam": {
+                        "Resource": "",
+                        "OffsetType": "",
+                        "StartTime": 139001030,
+                        "CompressionType": "cc",
+                        "UseAutoCreateTopic": true,
+                        "MsgMultiple": 1
+                    }
                 },
-                "Content": "xx",
-                "Result": "xx",
+                "Content": "abc",
+                "SourceType": "abc",
+                "Result": "abc",
+                "AnalyseResult": [
+                    {
+                        "Key": "abc",
+                        "Type": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "UseEventBus": true
+            },
+            "DatahubId": "abc",
+            "SchemaId": "abc",
+            "SchemaName": "abc",
+            "TransformsParam": {
+                "Content": "abc",
+                "FailureParam": {
+                    "Type": "abc",
+                    "RetryInterval": 1,
+                    "MaxRetryAttempts": 1,
+                    "DlqType": "abc",
+                    "KafkaParam": {
+                        "SelfBuilt": true,
+                        "Resource": "ccc",
+                        "Topic": "ac",
+                        "OffsetType": "c",
+                        "StartTime": 1703990000,
+                        "ResourceName": "cnnnc",
+                        "ZoneId": 120399,
+                        "TopicId": "corooco",
+                        "PartitionNum": 1,
+                        "EnableToleration": true,
+                        "QpsLimit": 133,
+                        "TableMappings": [],
+                        "UseTableMapping": true,
+                        "UseAutoCreateTopic": true,
+                        "CompressionType": "",
+                        "MsgMultiple": 1,
+                        "ConnectorSyncType": "",
+                        "KeepPartition": true
+                    },
+                    "TopicParam": {
+                        "Resource": "",
+                        "OffsetType": "",
+                        "StartTime": 139001030,
+                        "CompressionType": "cc",
+                        "UseAutoCreateTopic": true,
+                        "MsgMultiple": 1
+                    }
+                },
                 "FieldChain": [
                     {
-                        "AnalyseJsonResult": "xx",
-                        "SecondaryAnalyseJsonResult": "xx",
                         "Analyse": {
-                            "Regex": "xx",
-                            "InputValueType": "xx",
-                            "InputValue": "xx",
-                            "Format": "xx"
+                            "Format": "abc",
+                            "Regex": "abc",
+                            "InputValueType": "abc",
+                            "InputValue": "abc"
+                        },
+                        "SecondaryAnalyse": {
+                            "Regex": "abc"
                         },
                         "SMT": [
                             {
-                                "ValueOperates": [
-                                    {
-                                        "Result": "xx",
-                                        "Replace": {
-                                            "NewValue": "xx",
-                                            "OldValue": "xx"
-                                        },
-                                        "Substr": {
-                                            "Start": 0,
-                                            "End": 0
-                                        },
-                                        "Split": {
-                                            "Regex": "xx"
-                                        },
-                                        "KV": {
-                                            "Regex": "xx",
-                                            "KeepOriginalKey": "xx",
-                                            "Delimiter": "xx"
-                                        },
-                                        "Date": {
-                                            "TargetType": "xx",
-                                            "TimeZone": "xx",
-                                            "Format": "xx"
-                                        },
-                                        "Type": "xx",
-                                        "RegexReplace": {
-                                            "Regex": "xx",
-                                            "NewValue": "xx"
-                                        }
-                                    }
-                                ],
-                                "Value": "xx",
-                                "SchemeType": "xx",
-                                "OriginalValue": "xx",
-                                "Key": "xx",
-                                "Operate": "xx",
+                                "Key": "abc",
+                                "Operate": "abc",
+                                "SchemeType": "abc",
+                                "Value": "abc",
                                 "ValueOperate": {
-                                    "Result": "xx",
+                                    "Type": "abc",
                                     "Replace": {
-                                        "NewValue": "xx",
-                                        "OldValue": "xx"
+                                        "OldValue": "abc",
+                                        "NewValue": "abc"
                                     },
                                     "Substr": {
                                         "Start": 0,
                                         "End": 0
                                     },
+                                    "Date": {
+                                        "Format": "abc",
+                                        "TargetType": "abc",
+                                        "TimeZone": "abc"
+                                    },
+                                    "RegexReplace": {
+                                        "Regex": "abc",
+                                        "NewValue": "abc"
+                                    },
                                     "Split": {
-                                        "Regex": "xx"
+                                        "Regex": "abc"
                                     },
                                     "KV": {
-                                        "Regex": "xx",
-                                        "KeepOriginalKey": "xx",
-                                        "Delimiter": "xx"
+                                        "Delimiter": "abc",
+                                        "Regex": "abc",
+                                        "KeepOriginalKey": "abc"
                                     },
-                                    "Date": {
-                                        "TargetType": "xx",
-                                        "TimeZone": "xx",
-                                        "Format": "xx"
+                                    "Result": "abc",
+                                    "JsonPathReplace": {
+                                        "OldValue": "abc",
+                                        "NewValue": "abc"
                                     },
-                                    "Type": "xx",
-                                    "RegexReplace": {
-                                        "Regex": "xx",
-                                        "NewValue": "xx"
-                                    }
-                                }
-                            }
-                        ],
-                        "SecondaryAnalyseResult": [
-                            {
+                                    "UrlDecode": {
+                                        "CharsetName": "abc"
+                                    },
+                                    "Lowercase": {}
+                                },
+                                "OriginalValue": "abc",
                                 "ValueOperates": [
                                     {
-                                        "Result": "xx",
+                                        "Type": "abc",
                                         "Replace": {
-                                            "NewValue": "xx",
-                                            "OldValue": "xx"
+                                            "OldValue": "abc",
+                                            "NewValue": "abc"
                                         },
                                         "Substr": {
                                             "Start": 0,
                                             "End": 0
                                         },
+                                        "Date": {
+                                            "Format": "abc",
+                                            "TargetType": "abc",
+                                            "TimeZone": "abc"
+                                        },
+                                        "RegexReplace": {
+                                            "Regex": "abc",
+                                            "NewValue": "abc"
+                                        },
                                         "Split": {
-                                            "Regex": "xx"
+                                            "Regex": "abc"
                                         },
                                         "KV": {
-                                            "Regex": "xx",
-                                            "KeepOriginalKey": "xx",
-                                            "Delimiter": "xx"
+                                            "Delimiter": "abc",
+                                            "Regex": "abc",
+                                            "KeepOriginalKey": "abc"
                                         },
-                                        "Date": {
-                                            "TargetType": "xx",
-                                            "TimeZone": "xx",
-                                            "Format": "xx"
+                                        "Result": "abc",
+                                        "JsonPathReplace": {
+                                            "OldValue": "abc",
+                                            "NewValue": "abc"
                                         },
-                                        "Type": "xx",
-                                        "RegexReplace": {
-                                            "Regex": "xx",
-                                            "NewValue": "xx"
-                                        }
+                                        "UrlDecode": {
+                                            "CharsetName": "abc"
+                                        },
+                                        "Lowercase": {}
                                     }
-                                ],
-                                "Value": "xx",
-                                "SchemeType": "xx",
-                                "OriginalValue": "xx",
-                                "Key": "xx",
-                                "Operate": "xx"
+                                ]
                             }
                         ],
-                        "SecondaryAnalyse": {
-                            "Regex": "xx"
-                        },
-                        "Result": "xx",
+                        "Result": "abc",
                         "AnalyseResult": [
                             {
-                                "OriginalValue": "xx",
-                                "Operate": "xx",
-                                "Value": "xx",
-                                "Key": "xx",
-                                "SchemeType": "xx"
+                                "Key": "abc",
+                                "Operate": "abc",
+                                "SchemeType": "abc",
+                                "Value": "abc",
+                                "ValueOperate": {
+                                    "Type": "abc",
+                                    "Replace": {
+                                        "OldValue": "abc",
+                                        "NewValue": "abc"
+                                    },
+                                    "Substr": {
+                                        "Start": 0,
+                                        "End": 0
+                                    },
+                                    "Date": {
+                                        "Format": "abc",
+                                        "TargetType": "abc",
+                                        "TimeZone": "abc"
+                                    },
+                                    "RegexReplace": {
+                                        "Regex": "abc",
+                                        "NewValue": "abc"
+                                    },
+                                    "Split": {
+                                        "Regex": "abc"
+                                    },
+                                    "KV": {
+                                        "Delimiter": "abc",
+                                        "Regex": "abc",
+                                        "KeepOriginalKey": "abc"
+                                    },
+                                    "Result": "abc",
+                                    "JsonPathReplace": {
+                                        "OldValue": "abc",
+                                        "NewValue": "abc"
+                                    },
+                                    "UrlDecode": {
+                                        "CharsetName": "abc"
+                                    },
+                                    "Lowercase": {}
+                                },
+                                "OriginalValue": "abc"
                             }
-                        ]
+                        ],
+                        "SecondaryAnalyseResult": [
+                            {
+                                "Key": "abc",
+                                "Operate": "abc",
+                                "SchemeType": "abc",
+                                "Value": "abc",
+                                "OriginalValue": "abc"
+                            }
+                        ],
+                        "AnalyseJsonResult": "abc",
+                        "SecondaryAnalyseJsonResult": "abc"
                     }
                 ],
-                "RowParam": {
-                    "RowContent": "xx",
-                    "KeyValueDelimiter": "xx",
-                    "EntryDelimiter": "xx"
-                }
-            },
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "SchemaId": "xx",
-            "ErrorMessage": "xx",
-            "TargetResource": {
-                "EventBusParam": {
-                    "Resource": "xx",
-                    "FunctionName": "xx",
-                    "Namespace": "xx",
-                    "SelfBuilt": true,
-                    "Type": "xx",
-                    "Qualifier": "xx"
-                },
-                "ClickHouseParam": {
-                    "UserName": "xx",
-                    "Resource": "xx",
-                    "DropCls": {
-                        "DropInvalidMessageToCls": true,
-                        "DropClsTopicId": "xx",
-                        "DropClsRegion": "xx",
-                        "DropClsLogSet": "xx",
-                        "DropClsOwneruin": "xx"
-                    },
-                    "UniqVpcId": "xx",
-                    "Database": "xx",
-                    "Ip": "xx",
-                    "DropInvalidMessage": true,
-                    "SelfBuilt": true,
-                    "Cluster": "xx",
-                    "ServiceVip": "xx",
-                    "Table": "xx",
-                    "Password": "xx",
-                    "Type": "xx",
-                    "Port": 0,
-                    "Schema": [
-                        {
-                            "ColumnName": "xx",
-                            "Type": "xx",
-                            "JsonKey": "xx",
-                            "AllowNull": true
-                        }
-                    ]
-                },
-                "CtsdbParam": {
-                    "Resource": "xx",
-                    "CtsdbMetric": "xx"
-                },
-                "TdwParam": {
-                    "Tid": "xx",
-                    "Bid": "xx",
-                    "TdwHost": "xx",
-                    "IsDomestic": true,
-                    "TdwPort": 0
-                },
-                "MySQLParam": {
-                    "OutputFormat": "xx",
-                    "DropCls": {
-                        "DropInvalidMessageToCls": true,
-                        "DropClsTopicId": "xx",
-                        "DropClsRegion": "xx",
-                        "DropClsLogSet": "xx",
-                        "DropClsOwneruin": "xx"
-                    },
-                    "DataSourceIncrementMode": "xx",
-                    "DataSourceMonitorMode": "xx",
-                    "IncludeContentChanges": "xx",
-                    "DataTargetPrimaryKeyField": "xx",
-                    "TopicReplacement": "xx",
-                    "TopicRegex": "xx",
-                    "DataTargetInsertMode": "xx",
-                    "DataSourceIncrementColumn": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "DdlTopic": "xx",
-                    "IncludeQuery": true,
-                    "DataTargetRecordMapping": [
-                        {
-                            "JsonKey": "xx",
-                            "ColumnName": "xx",
-                            "AutoIncrement": true,
-                            "DefaultValue": "xx",
-                            "ExtraInfo": "xx",
-                            "AllowNull": true,
-                            "ColumnSize": "xx",
-                            "Type": "xx",
-                            "DecimalDigits": "xx"
-                        }
-                    ],
-                    "DataSourceMonitorResource": "xx",
-                    "KeyColumns": "xx",
-                    "RecordWithSchema": true,
-                    "DropInvalidMessage": true,
-                    "SnapshotMode": "xx",
-                    "IsTablePrefix": true,
-                    "Table": "xx",
-                    "DataSourceStartFrom": "xx"
-                },
-                "CosParam": {
-                    "FormatOutputType": "xx",
-                    "DirectoryTimeFormat": "xx",
-                    "ObjectKey": "xx",
-                    "BucketName": "xx",
-                    "AggregateBatchSize": 1,
-                    "ObjectKeyPrefix": "xx",
-                    "Region": "xx",
-                    "AggregateInterval": 1
-                },
-                "TopicParam": {
-                    "TopicId": "xx",
-                    "OffsetType": "xx",
-                    "Resource": "xx",
-                    "StartTime": 1
-                },
-                "KafkaParam": {
-                    "TopicId": "xx",
-                    "Resource": "xx",
-                    "PartitionNum": 0,
-                    "QpsLimit": 1,
-                    "EnableToleration": true,
-                    "SelfBuilt": true,
-                    "Topic": "xx",
-                    "OffsetType": "xx",
-                    "StartTime": 1,
-                    "UseTableMapping": true,
-                    "ResourceName": "xx",
-                    "ZoneId": 0,
-                    "TableMappings": [
-                        {
-                            "Topic": "xx",
-                            "Table": "xx",
-                            "TopicId": "xx",
-                            "Database": "xx"
-                        }
-                    ]
-                },
-                "EsParam": {
-                    "UserName": "xx",
-                    "Index": "xx",
-                    "Resource": "xx",
-                    "IndexType": "xx",
-                    "UniqVpcId": "xx",
-                    "DropInvalidMessage": true,
-                    "DateFormat": "xx",
-                    "SelfBuilt": true,
-                    "DropInvalidJsonMessage": true,
-                    "ServiceVip": "xx",
-                    "DropCls": {
-                        "DropInvalidMessageToCls": true,
-                        "DropClsTopicId": "xx",
-                        "DropClsRegion": "xx",
-                        "DropClsLogSet": "xx",
-                        "DropClsOwneruin": "xx"
-                    },
-                    "Password": "xx",
-                    "Port": 0,
-                    "DatabasePrimaryKey": "xx",
-                    "ContentKey": "xx",
-                    "DocumentIdField": "xx"
-                },
-                "DtsParam": {
-                    "Resource": "xx",
-                    "Ip": "xx",
-                    "TranSql": true,
-                    "GroupId": "xx",
-                    "Topic": "xx",
-                    "GroupUser": "xx",
-                    "GroupPassword": "xx",
-                    "Port": 0
-                },
-                "MongoDBParam": {
-                    "UserName": "xx",
-                    "CopyExisting": true,
-                    "Pipeline": "xx",
-                    "ListeningEvent": "xx",
-                    "Resource": "xx",
-                    "ReadPreference": "xx",
-                    "Database": "xx",
-                    "Ip": "xx",
-                    "Collection": "xx",
-                    "SelfBuilt": true,
-                    "Password": "xx",
-                    "Port": 0
-                },
-                "PostgreSQLParam": {
-                    "DataTargetInsertMode": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "DropInvalidMessage": true,
-                    "DataTargetRecordMapping": [
-                        {
-                            "JsonKey": "xx",
-                            "ColumnName": "xx",
-                            "AutoIncrement": true,
-                            "DefaultValue": "xx",
-                            "ExtraInfo": "xx",
-                            "AllowNull": true,
-                            "ColumnSize": "xx",
-                            "Type": "xx",
-                            "DecimalDigits": "xx"
-                        }
-                    ],
-                    "SnapshotMode": "xx",
-                    "PluginName": "xx",
-                    "DataFormat": "xx",
-                    "KeyColumns": "xx",
-                    "RecordWithSchema": true,
-                    "DataTargetPrimaryKeyField": "xx",
-                    "Table": "xx",
-                    "IsTableRegular": true
-                },
-                "SQLServerParam": {
-                    "Table": "xx",
-                    "SnapshotMode": "xx",
-                    "Resource": "xx",
-                    "Database": "xx"
-                },
-                "MariaDBParam": {
-                    "OutputFormat": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "IncludeQuery": true,
-                    "SnapshotMode": "xx",
-                    "KeyColumns": "xx",
-                    "IsTablePrefix": true,
-                    "IncludeContentChanges": "xx",
-                    "Table": "xx",
-                    "RecordWithSchema": true
-                },
-                "Type": "xx",
-                "ClsParam": {
-                    "LogSet": "xx",
-                    "TimeField": "xx",
-                    "Resource": "xx",
-                    "ContentKey": "xx",
-                    "DecodeJson": true
-                }
-            },
-            "TaskType": "xx",
-            "Connections": [
-                {
-                    "TopicId": "xx",
-                    "TopicName": "xx",
-                    "GroupId": "xx"
-                }
-            ],
-            "TransformParam": {
-                "Regex": "xx",
-                "OutputFormat": "xx",
-                "SourceType": "xx",
                 "FilterParam": [
                     {
-                        "MatchMode": "xx",
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "abc",
+                        "Type": "abc",
+                        "MatchMode": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "UseEventBus": true,
-                "FailureParam": {
-                    "RetryInterval": 1,
-                    "TopicParam": {
-                        "TopicId": "xx",
-                        "OffsetType": "xx",
-                        "Resource": "xx",
-                        "StartTime": 1
-                    },
-                    "KafkaParam": {
-                        "TopicId": "xx",
-                        "Resource": "xx",
-                        "PartitionNum": 0,
-                        "QpsLimit": 1,
-                        "EnableToleration": true,
-                        "SelfBuilt": true,
-                        "Topic": "xx",
-                        "OffsetType": "xx",
-                        "StartTime": 1,
-                        "UseTableMapping": true,
-                        "ResourceName": "xx",
-                        "ZoneId": 0,
-                        "TableMappings": [
-                            {
-                                "Topic": "xx",
-                                "Table": "xx",
-                                "TopicId": "xx",
-                                "Database": "xx"
-                            }
-                        ]
-                    },
-                    "MaxRetryAttempts": 1,
-                    "Type": "xx",
-                    "DlqType": "xx"
+                "Result": "abc",
+                "SourceType": "abc",
+                "OutputFormat": "abc",
+                "RowParam": {
+                    "RowContent": "abc",
+                    "KeyValueDelimiter": "abc",
+                    "EntryDelimiter": "abc"
                 },
-                "Content": "xx",
-                "AnalysisFormat": "xx",
-                "MapParam": [
-                    {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "AnalyseResult": [
-                    {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "Result": "xx"
-            },
-            "TaskId": "xx",
-            "DatahubId": "xx",
-            "SourceResource": {
-                "EventBusParam": {
-                    "Resource": "xx",
-                    "FunctionName": "xx",
-                    "Namespace": "xx",
-                    "SelfBuilt": true,
-                    "Type": "xx",
-                    "Qualifier": "xx"
-                },
-                "ClickHouseParam": {
-                    "UserName": "xx",
-                    "Resource": "xx",
-                    "UniqVpcId": "xx",
-                    "Database": "xx",
-                    "Ip": "xx",
-                    "DropInvalidMessage": true,
-                    "SelfBuilt": true,
-                    "Cluster": "xx",
-                    "ServiceVip": "xx",
-                    "Table": "xx",
-                    "Password": "xx",
-                    "Type": "xx",
-                    "Port": 0,
-                    "Schema": [
-                        {
-                            "ColumnName": "xx",
-                            "Type": "xx",
-                            "JsonKey": "xx",
-                            "AllowNull": true
-                        }
-                    ]
-                },
-                "CtsdbParam": {
-                    "Resource": "xx",
-                    "CtsdbMetric": "xx"
-                },
-                "TdwParam": {
-                    "Tid": "xx",
-                    "Bid": "xx",
-                    "TdwHost": "xx",
-                    "IsDomestic": true,
-                    "TdwPort": 0
-                },
-                "MySQLParam": {
-                    "OutputFormat": "xx",
-                    "DataSourceIncrementMode": "xx",
-                    "DataSourceMonitorMode": "xx",
-                    "IncludeContentChanges": "xx",
-                    "DataTargetPrimaryKeyField": "xx",
-                    "TopicReplacement": "xx",
-                    "TopicRegex": "xx",
-                    "DataTargetInsertMode": "xx",
-                    "DataSourceIncrementColumn": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "DdlTopic": "xx",
-                    "IncludeQuery": true,
-                    "DataTargetRecordMapping": [
-                        {
-                            "JsonKey": "xx",
-                            "ColumnName": "xx",
-                            "AutoIncrement": true,
-                            "DefaultValue": "xx",
-                            "ExtraInfo": "xx",
-                            "AllowNull": true,
-                            "ColumnSize": "xx",
-                            "Type": "xx",
-                            "DecimalDigits": "xx"
-                        }
-                    ],
-                    "DataSourceMonitorResource": "xx",
-                    "KeyColumns": "xx",
-                    "RecordWithSchema": true,
-                    "DropInvalidMessage": true,
-                    "SnapshotMode": "xx",
-                    "IsTablePrefix": true,
-                    "Table": "xx",
-                    "DataSourceStartFrom": "xx"
-                },
-                "CosParam": {
-                    "FormatOutputType": "xx",
-                    "DirectoryTimeFormat": "xx",
-                    "ObjectKey": "xx",
-                    "BucketName": "xx",
-                    "AggregateBatchSize": 1,
-                    "ObjectKeyPrefix": "xx",
-                    "Region": "xx",
-                    "AggregateInterval": 1
-                },
-                "EsParam": {
-                    "UserName": "xx",
-                    "Index": "xx",
-                    "Resource": "xx",
-                    "IndexType": "xx",
-                    "UniqVpcId": "xx",
-                    "DropInvalidMessage": true,
-                    "DateFormat": "xx",
-                    "SelfBuilt": true,
-                    "ServiceVip": "xx",
-                    "DatabasePrimaryKey": "xx",
-                    "Password": "xx",
-                    "DropInvalidJsonMessage": true,
-                    "Port": 0,
-                    "ContentKey": "xx",
-                    "DocumentIdField": "xx"
-                },
-                "DtsParam": {
-                    "Resource": "xx",
-                    "Ip": "xx",
-                    "TranSql": true,
-                    "GroupId": "xx",
-                    "Topic": "xx",
-                    "GroupUser": "xx",
-                    "GroupPassword": "xx",
-                    "Port": 0
-                },
-                "MongoDBParam": {
-                    "UserName": "xx",
-                    "CopyExisting": true,
-                    "Pipeline": "xx",
-                    "ListeningEvent": "xx",
-                    "Resource": "xx",
-                    "ReadPreference": "xx",
-                    "Database": "xx",
-                    "Ip": "xx",
-                    "Collection": "xx",
-                    "SelfBuilt": true,
-                    "Password": "xx",
-                    "Port": 0
-                },
-                "PostgreSQLParam": {
-                    "DataTargetInsertMode": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "DropInvalidMessage": true,
-                    "SnapshotMode": "xx",
-                    "PluginName": "xx",
-                    "DataFormat": "xx",
-                    "KeyColumns": "xx",
-                    "RecordWithSchema": true,
-                    "DataTargetPrimaryKeyField": "xx",
-                    "Table": "xx",
-                    "IsTableRegular": true
-                },
-                "SQLServerParam": {
-                    "Table": "xx",
-                    "SnapshotMode": "xx",
-                    "Resource": "xx",
-                    "Database": "xx"
-                },
-                "MariaDBParam": {
-                    "OutputFormat": "xx",
-                    "Resource": "xx",
-                    "Database": "xx",
-                    "IncludeQuery": true,
-                    "SnapshotMode": "xx",
-                    "KeyColumns": "xx",
-                    "IsTablePrefix": true,
-                    "IncludeContentChanges": "xx",
-                    "Table": "xx",
-                    "RecordWithSchema": true
-                },
-                "Type": "xx",
-                "ClsParam": {
-                    "LogSet": "xx",
-                    "TimeField": "xx",
-                    "Resource": "xx",
-                    "ContentKey": "xx",
-                    "DecodeJson": true
+                "KeepMetadata": true,
+                "BatchAnalyse": {
+                    "Format": "abc"
                 }
             },
-            "SchemaName": "xx",
-            "TaskName": "xx",
-            "CreateTime": "xx"
+            "ErrorMessage": "abc",
+            "Tags": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

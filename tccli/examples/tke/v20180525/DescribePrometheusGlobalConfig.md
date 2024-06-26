@@ -13,29 +13,29 @@ Output:
 ```
 {
     "Response": {
-        "PodMonitors": [
-            {
-                "Config": "xx",
-                "Name": "xx",
-                "TemplateId": "xx"
-            }
-        ],
-        "Config": "xx",
-        "RawJobs": [
-            {
-                "Config": "xx",
-                "Name": "xx",
-                "TemplateId": "xx"
-            }
-        ],
-        "RequestId": "xx",
+        "Config": "abc",
         "ServiceMonitors": [
             {
-                "Config": "xx",
-                "Name": "xx",
-                "TemplateId": "xx"
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
             }
-        ]
+        ],
+        "PodMonitors": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
+            }
+        ],
+        "RawJobs": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

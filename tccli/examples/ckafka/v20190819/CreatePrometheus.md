@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreatePrometheus --cli-unfold-argument  \
-    --InstanceId xx \
-    --SubnetId xx \
-    --VpcId xx
+    --InstanceId abc \
+    --VpcId abc \
+    --SubnetId abc
 ```
 
 Output: 
@@ -16,13 +16,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnCode": "abc",
+            "ReturnMessage": "abc",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

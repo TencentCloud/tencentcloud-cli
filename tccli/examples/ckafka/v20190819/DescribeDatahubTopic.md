@@ -14,17 +14,18 @@ Output:
 {
     "Response": {
         "Result": {
-            "UserName": "xx",
-            "TopicId": "xx",
-            "Name": "xx",
+            "Name": "abc",
+            "TopicName": "abc",
+            "TopicId": "abc",
             "PartitionNum": 1,
-            "Status": 1,
-            "Note": "xx",
             "RetentionMs": 1,
-            "Password": "xx",
-            "TopicName": "xx"
+            "Note": "abc",
+            "UserName": "abc",
+            "Password": "abc",
+            "Status": 1,
+            "Address": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli tke CreatePrometheusClusterAgent --cli-unfold-argument  \
-    --InstanceId xx \
-    --Agents.0.EnableExternal True \
-    --Agents.0.Region xx \
-    --Agents.0.ClusterId xx \
-    --Agents.0.ClusterType xx \
-    --Agents.0.NotInstallBasicScrape True \
+    --InstanceId abc \
+    --Agents.0.Region abc \
+    --Agents.0.ClusterType abc \
+    --Agents.0.ClusterId abc \
     --Agents.0.InClusterPodConfig.HostNet True \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Operator xx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Effect xx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Key xx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Name xx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Value xx \
-    --Agents.0.NotScrape True \
-    --Agents.0.ExternalLabels.0.Name xx \
-    --Agents.0.ExternalLabels.0.Value xx
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Name abc \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Value abc \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Key abc \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Operator abc \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Effect abc \
+    --Agents.0.EnableExternal True \
+    --Agents.0.ExternalLabels.0.Name abc \
+    --Agents.0.ExternalLabels.0.Value abc \
+    --Agents.0.NotInstallBasicScrape True \
+    --Agents.0.NotScrape True
 ```
 
 Output: 

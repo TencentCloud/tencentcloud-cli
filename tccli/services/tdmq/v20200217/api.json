@@ -5647,7 +5647,7 @@
         {
           "disabled": false,
           "document": "起始下标，不填默认为0。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -5656,7 +5656,7 @@
         {
           "disabled": false,
           "document": "返回数量，不填则默认为10，最大值为20。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5665,7 +5665,7 @@
         {
           "disabled": false,
           "document": "Pulsar 集群的ID",
-          "example": "",
+          "example": "aaa",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -5680,18 +5680,20 @@
         {
           "disabled": false,
           "document": "记录数。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Vpc集合。",
-          "example": "",
+          "example": "空",
           "member": "VpcBindRecord",
           "name": "VpcSets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
