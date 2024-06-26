@@ -71,6 +71,14 @@
         "output": "{\n    \"Response\": {\n        \"ResultId\": \"abc\",\n        \"ReportAuthorized\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "下载报告"
       }
+    ],
+    "ReportPluginResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportPluginResult\n<公共请求参数>\n\n{\n    \"ArchId\": \"arch-nnqlpvnf\",\n    \"Username\": \"tairyao\",\n    \"RequestFrom\": \"ArchAdmin\",\n    \"Result\": \"SessionId: xxx|执行成功\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a2a6387-e36d-47de-901a-166664fd6f3c\"\n    }\n}",
+        "title": "上报插件执行结果"
+      }
     ]
   },
   "version": "1.0"

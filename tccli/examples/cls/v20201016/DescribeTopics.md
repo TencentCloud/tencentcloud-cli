@@ -33,7 +33,10 @@ Output:
                 "Describes": "",
                 "HotPeriod": 0,
                 "BizType": 0,
-                "IsWebTracking": false
+                "IsWebTracking": false,
+                "Extends": {
+                    "AnonymousAccess": null
+                }
             }
         ],
         "RequestId": "cdb48d76-9be0-xxxx-8654-56290de7442e",

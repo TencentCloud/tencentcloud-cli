@@ -1,3 +1,213 @@
+# Release 3.0.1023.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 11 次发布
+
+发布时间：2024-06-27 01:08:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReportPluginResult](http://document.tencentcloudapi.woa.com/document/product/1660/84175)
+
+
+
+## 语音识别(asr) 版本：2019-06-14
+
+### 第 23 次发布
+
+发布时间：2024-06-27 01:09:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+
+	* 新增入参：HotwordList
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 76 次发布
+
+发布时间：2024-06-27 01:12:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MonitorTime](http://document.tencentcloudapi.woa.com/document/product/614/56471#MonitorTime)
+
+	* <font color="#dd0000">**修改成员**：</font>Time
+
+* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#TopicInfo)
+
+	* 新增成员：Extends
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 33 次发布
+
+发布时间：2024-06-27 01:15:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
+
+	* 新增出参：SucDomains
+
+
+新增数据结构：
+
+* [SucDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#SucDomainInfo)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 42 次发布
+
+发布时间：2024-06-27 01:18:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEvent)
+
+	* 新增成员：UploadStatus
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 58 次发布
+
+发布时间：2024-06-27 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificateBindResourceTaskDetail](http://document.tencentcloudapi.woa.com/document/product/400/81792)
+
+	* 新增出参：COS
+
+
+新增数据结构：
+
+* [COSInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#COSInstanceList)
+
+修改数据结构：
+
+* [ApiGatewayInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#ApiGatewayInstanceList)
+
+	* 新增成员：Error
+
+* [CdnInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#CdnInstanceList)
+
+	* 新增成员：Error
+
+* [ClbInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbInstanceList)
+
+	* 新增成员：Error
+
+* [ClbListenerRule](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbListenerRule)
+
+	* <font color="#dd0000">**修改成员**：</font>NoMatchDomains
+
+* [DdosInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#DdosInstanceList)
+
+	* 新增成员：Error
+
+* [LiveInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#LiveInstanceList)
+
+	* 新增成员：Error
+
+* [TCBInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TCBInstanceList)
+
+	* 新增成员：Error
+
+* [TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList)
+
+	* 新增成员：Error
+
+* [TeoInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceList)
+
+	* 新增成员：Error
+
+* [TkeInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TkeInstanceList)
+
+	* 新增成员：Error
+
+* [VODInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#VODInstanceList)
+
+	* 新增成员：Error
+
+* [WafInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#WafInstanceList)
+
+	* 新增成员：Error
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 7 次发布
+
+发布时间：2024-06-27 01:25:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/1701/80191)
+
+	* 新增入参：SchedulerVersion
+
+
+修改数据结构：
+
+* [ClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ClusterOverview)
+
+	* 新增成员：SchedulerVersion
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
 # Release 3.0.1022.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

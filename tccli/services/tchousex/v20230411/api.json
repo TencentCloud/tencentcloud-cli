@@ -18,7 +18,7 @@
   "metadata": {
     "apiVersion": "2023-04-11",
     "api_brief": "云数据仓库api接口",
-    "serviceNameCN": "云数据仓库",
+    "serviceNameCN": "腾讯云数据仓库TCHouse-X",
     "serviceShortName": "tchousex"
   },
   "objects": {

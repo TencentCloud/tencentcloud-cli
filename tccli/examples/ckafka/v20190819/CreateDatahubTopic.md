@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka CreateDatahubTopic --cli-unfold-argument  \
-    --Name xxx \
+    --Name 12345-test \
     --PartitionNum 1 \
     --RetentionMs 3600000
 ```
@@ -16,9 +16,10 @@ Output:
 {
     "Response": {
         "Result": {
-            "TopicName": "xx"
+            "TopicName": "abc",
+            "TopicId": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

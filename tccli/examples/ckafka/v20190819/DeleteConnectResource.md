@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "resource-xx"
+            "ResourceId": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

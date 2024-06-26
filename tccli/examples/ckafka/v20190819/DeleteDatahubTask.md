@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteDatahubTask --cli-unfold-argument  \
-    --TaskId xx
+    --TaskId abc
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "TaskId": "xx"
+            "TaskId": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
