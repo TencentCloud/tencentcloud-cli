@@ -157,7 +157,7 @@ class ServiceCommand(BaseCommand):
             raise Exception("Version: %s is invalid in service: %s, available versions: %s. \n"
                             "Please check your command or configure file to find out "
                             "if version setting is correct."
-                            % (service_name, version, " ".join(available_version_list)))
+                            % (version, service_name, " ".join(available_version_list)))
         self._version = version
         self._command_map = None
         self._service_model = None
