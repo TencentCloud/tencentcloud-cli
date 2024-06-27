@@ -1621,6 +1621,15 @@
           "name": "EnableCopyWarn",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回自动拼接的有效期，默认为true",
+          "example": "无",
+          "member": "bool",
+          "name": "EnablePeriodComplete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17183,6 +17192,16 @@
           "example": "无",
           "member": "int64",
           "name": "RefundMark",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有改签费标识（0：没有，1：有）",
+          "example": "无",
+          "member": "int64",
+          "name": "TicketChangeMark",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

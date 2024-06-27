@@ -1,0 +1,73 @@
+{
+  "actions": {
+    "ConfirmVideoTranslateJob": [
+      {
+        "document": "确认视频翻译结果正例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfirmVideoTranslateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"bEOhlL4G87lFvVmN6PnG3LAH1Kdu5tgs\",\n    \"TranslateResults\": [\n        {\n            \"SourceText\": \"当工作或学习结果不理想，\",\n            \"TargetText\": \"When the result of work or study is not ideal\"\n        },\n        {\n            \"SourceText\": \"甚至面临被全盘否定的情况时，\",\n            \"TargetText\": \"Even when faced with the situation of being completely denied\"\n        },\n        {\n            \"SourceText\": \"你会如何应对？\",\n            \"TargetText\": \"How would you deal with it?\"\n        },\n        {\n            \"SourceText\": \"可以举例说明当时你是如何处理负面情绪，\",\n            \"TargetText\": \"You can give an example of how you dealt with negative emotions at that time.\"\n        },\n        {\n            \"SourceText\": \"并找到解决办法的。\",\n            \"TargetText\": \"And find a solution.\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"bEOhlL4G87lFvVmN6PnG3LAH1Kdu5tgs\",\n        \"RequestId\": \"8357c7a1-d348-4306-b744-ce6625c39fa4\",\n        \"SessionId\": \"0bfda02b562d4432be1176904bbcbe68\",\n        \"TaskId\": \"ecaa9680e41441399b4f29759174383f\"\n    }\n}",
+        "title": "确认视频翻译结果"
+      }
+    ],
+    "DescribeImageAnimateJob": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAnimateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1194931538865782784\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"a06a2134-0306-4554-aa9a-232271bfda4f\",\n        \"ResultVideoUrl\": \"\",\n        \"Status\": \"RUN\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DescribeVideoStylizationJob": [
+      {
+        "document": "成功调用",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"75530f83-a534-47c6-9506-21e1f06d6c5c\",\n        \"ResultVideoUrl\": \"\",\n        \"StatusCode\": \"JobRunning\",\n        \"StatusMsg\": \"处理中\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
+    "DescribeVideoTranslateJob": [
+      {
+        "document": "调用失败示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoTranslateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.JobNotExist\",\n            \"Message\": \"任务不存在。\"\n        },\n        \"RequestId\": \"78254ad1-c184-4e9e-b5a0-9d3fc435576b\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoTranslateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"vlSYvQkMM0KwPuoakawm0tPrREwc2p7c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatus\": 7,\n        \"RequestId\": \"a974b772-3c1d-4868-8909-b1386016b9f0\",\n        \"ResultVideoUrl\": \"http://xxx.com/url/xxx.mp4\",\n        \"TranslateResults\": [\n            {\n                \"SourceText\": \"当工作或学习结果不理想，\",\n                \"TargetText\": \"When the result of work or study is not ideal\"\n            },\n            {\n                \"SourceText\": \"甚至面临被全盘否定的情况时，\",\n                \"TargetText\": \"Even when faced with the situation of being completely denied\"\n            },\n            {\n                \"SourceText\": \"你会如何应对？\",\n                \"TargetText\": \"How would you respond?\"\n            },\n            {\n                \"SourceText\": \"可以举例说明当时你是如何处理负面情绪，\",\n                \"TargetText\": \"You can give an example of how you dealt with negative emotions at that time.\"\n            },\n            {\n                \"SourceText\": \"并找到解决办法的。\",\n                \"TargetText\": \"And find a solution.\"\n            }\n        ]\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SubmitImageAnimateJob": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xxx/image-animate/user_input/1.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1194931538865782784\",\n        \"RequestId\": \"4e6722ba-367b-454e-add0-681a5c50fe20\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SubmitVideoStylizationJob": [
+      {
+        "document": "成功调用",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"http://xxxx.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"b1990ba2-2d71-419d-8c9d-cab8e33f8352\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
+    "SubmitVideoTranslateJob": [
+      {
+        "document": "调用失败示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"zh\",\n    \"Confirm\": 0,\n    \"LipSync\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ParameterValueError\",\n            \"Message\": \"参数字段或者值有误。\"\n        },\n        \"RequestId\": \"3787745f-b446-4b39-9471-9032a4c306ee\"\n    }\n}",
+        "title": "调用失败示例"
+      },
+      {
+        "document": "提交视频翻译任务",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoTranslateJob\n<公共请求参数>\n\n\n\n{\n    \"VideoUrl\": \"https://xxx.com/url/xxx.mp4\",\n    \"SrcLang\": \"zh\",\n    \"DstLang\": \"en\",\n    \"Confirm\": 0,\n    \"LipSync\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"GLo7lni4PubX9xUwzesuKUOLJokVZ0ll\",\n        \"RequestId\": \"950a5a45-7bf5-4db3-aef1-dfedda487575\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

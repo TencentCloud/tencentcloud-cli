@@ -961,7 +961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
@@ -1201,11 +1201,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>",
+          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>",
           "example": "\"\"",
           "member": "string",
           "name": "ActivityType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1215,7 +1215,7 @@
           "example": "NULL",
           "member": "ActivityResItem",
           "name": "ActivityResItem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -2774,10 +2774,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体质检模板 ID 。暂时可以直接使用 预设模板ID 10，后面控制台支持用户配置自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2788,6 +2789,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ChannelExtPara",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6165,7 +6167,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>mp3；</li>\n<li>ac3。</li>\n<li>eac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>",
+          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>",
           "example": "aac",
           "member": "string",
           "name": "Codec",
@@ -6215,7 +6217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>mp3；</li>\n<li>ac3。</li>\n<li>eac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频流的编码格式。\n当不需要对音频进行转码时，可选值为：\n<li>copy。</li>\n当外层参数 Container 为 mp3 时，可选值为：\n<li>mp3。</li>\n当外层参数 Container 为 ogg 或 flac 时，可选值为：\n<li>flac。</li>\n当外层参数 Container 为 m4a 时，可选值为：\n<li>aac；</li>\n<li>ac3。</li>\n当外层参数 Container 为 mp4 或 flv 时，可选值为：\n<li>aac：更适合 mp4；</li>\n<li>mp3：更适合 flv；</li>\n<li>mp2。</li>\n当外层参数 Container 为 hls 时，可选值为：\n<li>aac；</li>\n<li>mp3。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aac",
           "member": "string",
           "name": "Codec",
@@ -8351,6 +8353,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区，非必填，如果开启容灾必须输入两个不同的可用区，否则最多只允许输入一个可用区。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -8439,8 +8450,7 @@
           "member": "string",
           "name": "Mode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8449,8 +8459,7 @@
           "member": "string",
           "name": "StreamId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8459,8 +8468,7 @@
           "member": "int64",
           "name": "Latency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8469,8 +8477,7 @@
           "member": "int64",
           "name": "RecvLatency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8479,8 +8486,7 @@
           "member": "int64",
           "name": "PeerLatency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8489,8 +8495,7 @@
           "member": "int64",
           "name": "PeerIdleTimeout",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8499,8 +8504,7 @@
           "member": "string",
           "name": "Passphrase",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8509,8 +8513,7 @@
           "member": "int64",
           "name": "PbKeyLen",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8519,8 +8522,7 @@
           "member": "SRTSourceAddressReq",
           "name": "SourceAddresses",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -8615,6 +8617,15 @@
           "example": "无",
           "member": "string",
           "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区，output最多只支持输入一个可用区。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
           "required": false,
           "type": "list"
         }
@@ -8745,8 +8756,7 @@
           "member": "CreateOutputSRTSettingsDestinations",
           "name": "Destinations",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8755,8 +8765,7 @@
           "member": "string",
           "name": "StreamId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8765,8 +8774,7 @@
           "member": "int64",
           "name": "Latency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8775,8 +8783,7 @@
           "member": "int64",
           "name": "RecvLatency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8785,8 +8792,7 @@
           "member": "int64",
           "name": "PeerLatency",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8795,8 +8801,7 @@
           "member": "int64",
           "name": "PeerIdleTimeout",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8805,8 +8810,7 @@
           "member": "string",
           "name": "Passphrase",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8815,8 +8819,7 @@
           "member": "int64",
           "name": "PbKeyLen",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8825,8 +8828,7 @@
           "member": "string",
           "name": "Mode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8841,8 +8843,7 @@
           "member": "string",
           "name": "Ip",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8851,8 +8852,7 @@
           "member": "int64",
           "name": "Port",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -9216,7 +9216,7 @@
           "example": "1008",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9634,7 +9634,7 @@
           "example": "1001",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9644,7 +9644,7 @@
           "example": "http://1256768367.vts2.myqcloud.com/8b0dd2b5vtscq1256768367/4d27b39f5285890783754292994/aa.jpeg",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10403,7 +10403,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10413,7 +10413,7 @@
           "example": "无",
           "member": "AIRecognitionTemplateItem",
           "name": "AIRecognitionTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10560,6 +10560,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10569,6 +10570,7 @@
           "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10632,7 +10634,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10642,7 +10644,7 @@
           "example": "无",
           "member": "ContentReviewTemplateItem",
           "name": "ContentReviewTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10900,7 +10902,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10910,7 +10912,7 @@
           "example": "无",
           "member": "ImageSpriteTemplate",
           "name": "ImageSpriteTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11085,6 +11087,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11198,7 +11210,7 @@
           "example": "LISTENER",
           "member": "string",
           "name": "Mode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11208,7 +11220,7 @@
           "example": "StreamId",
           "member": "string",
           "name": "StreamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11218,7 +11230,7 @@
           "example": "0",
           "member": "int64",
           "name": "Latency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11228,7 +11240,7 @@
           "example": "120",
           "member": "int64",
           "name": "RecvLatency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11238,7 +11250,7 @@
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11248,7 +11260,7 @@
           "example": "5000",
           "member": "int64",
           "name": "PeerIdleTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11258,7 +11270,7 @@
           "example": "无",
           "member": "string",
           "name": "Passphrase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11268,7 +11280,7 @@
           "example": "0",
           "member": "int64",
           "name": "PbKeyLen",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11278,7 +11290,7 @@
           "example": "无",
           "member": "SRTSourceAddressResp",
           "name": "SourceAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -11309,6 +11321,7 @@
           "example": "",
           "member": "MediaMetaData",
           "name": "MetaData",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11483,6 +11496,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区，output目前最多只支持一个。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11674,7 +11697,7 @@
           "example": "无",
           "member": "SRTAddressDestination",
           "name": "Destinations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11684,7 +11707,7 @@
           "example": "StreamId",
           "member": "string",
           "name": "StreamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11694,7 +11717,7 @@
           "example": "0",
           "member": "int64",
           "name": "Latency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11704,7 +11727,7 @@
           "example": "120",
           "member": "int64",
           "name": "RecvLatency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11714,7 +11737,7 @@
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11724,7 +11747,7 @@
           "example": "5000",
           "member": "int64",
           "name": "PeerIdleTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11734,7 +11757,7 @@
           "example": "无",
           "member": "string",
           "name": "Passphrase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11744,7 +11767,7 @@
           "example": "0",
           "member": "int64",
           "name": "PbKeyLen",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11754,7 +11777,7 @@
           "example": "CALLER",
           "member": "string",
           "name": "Mode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11764,7 +11787,7 @@
           "example": "无",
           "member": "OutputSRTSourceAddressResp",
           "name": "SourceAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -11840,6 +11863,7 @@
           "example": "",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11849,6 +11873,7 @@
           "example": "",
           "member": "AiSamplePerson",
           "name": "PersonSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11954,7 +11979,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11964,7 +11989,7 @@
           "example": "无",
           "member": "SampleSnapshotTemplate",
           "name": "SampleSnapshotTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12111,7 +12136,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12121,7 +12146,7 @@
           "example": "无",
           "member": "SnapshotByTimeOffsetTemplate",
           "name": "SnapshotByTimeOffsetTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13305,6 +13330,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13314,6 +13340,7 @@
           "example": "无",
           "member": "TranscodeTemplate",
           "name": "TranscodeTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13377,7 +13404,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13387,7 +13414,7 @@
           "example": "无",
           "member": "WatermarkTemplate",
           "name": "WatermarkTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13460,6 +13487,7 @@
           "example": "",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13469,6 +13497,7 @@
           "example": "",
           "member": "AiSampleWord",
           "name": "WordSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13532,7 +13561,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13542,7 +13571,7 @@
           "example": "无",
           "member": "WorkflowInfo",
           "name": "WorkflowInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15661,6 +15690,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleQualityControlTaskResult",
+          "name": "LiveQualityControlTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15670,7 +15709,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>LiveRecord：直播录制。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原子任务类型。\n<li>LiveRecord：直播录制。</li>\n<li>AiQualityControl：媒体质检。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ActivityType",
@@ -19967,6 +20006,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区，非必填，最多支持输入两个可用区，对于需改接口，只要第二个可用区会参与到资源分配。如果input开启容灾或者涉及RTSP_PULL协议切换时有效(会重新分配地址)。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -22164,7 +22212,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容质检类型任务参数。",
+          "document": "媒体质检类型任务参数。",
           "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "AiQualityControlTask",
@@ -22300,7 +22348,7 @@
         },
         {
           "disabled": false,
-          "document": "视频质检类型任务参数。",
+          "document": "媒体质检类型任务参数。",
           "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "AiQualityControlTask",
@@ -22327,7 +22375,7 @@
         },
         {
           "disabled": false,
-          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。",
           "example": "无",
           "member": "string",
           "name": "SessionId",
@@ -22574,7 +22622,7 @@
       "usage": "in"
     },
     "QualityControlData": {
-      "document": "质检结果输出。",
+      "document": "媒体质检结果输出。",
       "members": [
         {
           "disabled": false,
@@ -22608,7 +22656,7 @@
         },
         {
           "disabled": false,
-          "document": "质检检出异常项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容质检检出异常项。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QualityControlResult",
           "name": "QualityControlResultSet",
@@ -23292,7 +23340,7 @@
           "example": "ip",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23302,7 +23350,7 @@
           "example": "port",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -23319,8 +23367,7 @@
           "member": "string",
           "name": "Ip",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -23329,8 +23376,7 @@
           "member": "int64",
           "name": "Port",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -23647,7 +23693,7 @@
       "usage": "out"
     },
     "ScheduleQualityControlTaskResult": {
-      "document": "质检任务结果类型",
+      "document": "媒体质检任务结果类型",
       "members": [
         {
           "disabled": false,
@@ -23691,7 +23737,7 @@
         },
         {
           "disabled": false,
-          "document": "质检任务的输入。",
+          "document": "媒体质检任务的输入。",
           "example": "NULL",
           "member": "AiQualityControlTaskInput",
           "name": "Input",
@@ -23701,7 +23747,7 @@
         },
         {
           "disabled": false,
-          "document": "质检任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体质检任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "QualityControlData",
           "name": "Output",
@@ -24976,6 +25022,7 @@
           "example": "NULL",
           "member": "TerrorismImgReviewTemplateInfo",
           "name": "ImgReviewInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -24986,12 +25033,13 @@
           "example": "NULL",
           "member": "TerrorismOcrReviewTemplateInfo",
           "name": "OcrReviewInfo",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TerrorismConfigureInfoForUpdate": {
       "document": "涉敏任务控制参数。",
@@ -25034,7 +25082,7 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>\n<li>scenario：涉敏画面。</li>",
+          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>",
           "example": "bloody",
           "member": "string",
           "name": "LabelSet",
@@ -25080,7 +25128,7 @@
         },
         {
           "disabled": false,
-          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>\n<li>scenario：涉敏画面。</li>",
+          "document": "画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>guns：武器枪支；</li>\n<li>crowd：人群聚集；</li>\n<li>bloody：血腥画面；</li>\n<li>police：警察部队；</li>\n<li>banners：涉敏旗帜；</li>\n<li>militant：武装分子；</li>\n<li>explosion：爆炸火灾；</li>\n<li>terrorists：涉敏人物；</li>",
           "example": "guns",
           "member": "string",
           "name": "LabelSet",
@@ -25588,6 +25636,7 @@
           "example": "无",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25598,6 +25647,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceLanguage",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25608,6 +25658,7 @@
           "example": "无",
           "member": "string",
           "name": "DestinationLanguage",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25625,8 +25676,7 @@
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -25635,8 +25685,7 @@
           "member": "string",
           "name": "SourceLanguage",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -25645,8 +25694,7 @@
           "member": "string",
           "name": "DestinationLanguage",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -26162,7 +26210,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv，mov。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -26173,7 +26221,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。 注意：自适应码率时取值范围是 [0, 60]",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -26261,7 +26309,7 @@
         },
         {
           "disabled": false,
-          "document": "hls 分片类型，可选值 ：\n<li>6：HLS+TS 切片</li>\n<li>2：HLS+TS byte range</li>\n<li>7：HLS+MP4 切片</li>\n<li>5：HLS+MP4 byte range</li>\n默认值：6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "hls 分片类型，可选值 ：\n<li>0：HLS+TS 切片</li>\n<li>2：HLS+TS byte range</li>\n<li>7：HLS+MP4 切片</li>\n<li>5：HLS+MP4 byte range</li>\n默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "SegmentType",
@@ -26278,7 +26326,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv，mov。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n注意：目前 H.265 编码必须指定分辨率，并且需要在 640*480 以内。\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "h264",
           "member": "string",
           "name": "Codec",
@@ -26289,7 +26337,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -26388,7 +26436,7 @@
         },
         {
           "disabled": false,
-          "document": "hls 分片类型，可选值：\n<li>6：HLS+TS 切片</li>\n<li>2：HLS+TS byte range</li>\n<li>7：HLS+MP4 切片</li>\n<li>5：HLS+MP4 byte range</li>\n默认值：6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "hls 分片类型，可选值：\n<li>0：HLS+TS 切片</li>\n<li>2：HLS+TS byte range</li>\n<li>7：HLS+MP4 切片</li>\n<li>5：HLS+MP4 byte range</li>\n默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "SegmentType",
@@ -26932,7 +26980,7 @@
         },
         {
           "disabled": false,
-          "document": "视频质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",

@@ -531,8 +531,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -540,9 +539,8 @@
           "example": "[\"/mnt/datadisk0\"]",
           "member": "string",
           "name": "MountPoint",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -550,9 +548,8 @@
           "example": "ext4",
           "member": "string",
           "name": "FileSystemType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

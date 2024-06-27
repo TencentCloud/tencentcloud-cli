@@ -22,6 +22,9 @@ Output:
                 {
                     "Bitrate": 95999,
                     "Codec": "aac",
+                    "Codecs": "abc",
+                    "Loudness": 0,
+                    "Channel": 2,
                     "SamplingRate": 44100
                 }
             ],
@@ -36,6 +39,11 @@ Output:
                 {
                     "Bitrate": 313658,
                     "Codec": "h264",
+                    "Codecs": "abc",
+                    "ColorPrimaries": "",
+                    "ColorSpace": "",
+                    "ColorTransfer": "",
+                    "HdrType": "",
                     "Fps": 29,
                     "Height": 360,
                     "Width": 480

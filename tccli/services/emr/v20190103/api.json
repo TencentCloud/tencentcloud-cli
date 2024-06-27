@@ -262,14 +262,14 @@
     "ScaleOutCluster": {
       "document": "扩容集群节点",
       "input": "ScaleOutClusterRequest",
-      "name": "扩容集群节点",
+      "name": "扩容集群节点(新)",
       "output": "ScaleOutClusterResponse",
       "status": "online"
     },
     "ScaleOutInstance": {
       "document": "扩容节点",
       "input": "ScaleOutInstanceRequest",
-      "name": "实例扩容",
+      "name": "实例扩容(旧)",
       "output": "ScaleOutInstanceResponse",
       "status": "online"
     },
@@ -290,7 +290,7 @@
     "TerminateClusterNodes": {
       "document": "销毁集群节点",
       "input": "TerminateClusterNodesRequest",
-      "name": "销毁集群节点",
+      "name": "销毁集群节点(新)",
       "output": "TerminateClusterNodesResponse",
       "status": "online"
     },
@@ -304,7 +304,7 @@
     "TerminateTasks": {
       "document": "缩容Task节点",
       "input": "TerminateTasksRequest",
-      "name": "缩容Task节点",
+      "name": "缩容Task节点(旧)",
       "output": "TerminateTasksResponse",
       "status": "online"
     }
@@ -330,12 +330,21 @@
         },
         {
           "disabled": false,
-          "document": "1表示按负载规则扩容，2表示按时间规则扩容。",
+          "document": "1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配",
           "example": "1",
           "member": "int64",
           "name": "StrategyType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按负载扩容的规则。",
+          "example": "无",
+          "member": "LoadAutoScaleStrategy",
+          "name": "LoadAutoScaleStrategy",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -749,6 +758,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重试英文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RetryEnReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重试描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RetryReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -831,6 +860,105 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\"CVM\"表示规格全部使用CVM相关类型，\"POD\"表示规格使用容器相关类型,默认为\"CVM\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOST",
+          "member": "string",
+          "name": "HardwareType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\"POSTPAY\"表示只使用按量计费，\"SPOT_FIRST\"表示竞价实例优先，只有HardwareType为\"HOST\"时支持竞价实例优先，\"POD\"只支持纯按量计费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "POSTPAY",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "竞价实例优先的场景下，按量计费资源数量的最低百分比，整数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "PostPayPercentMin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ChangeToPod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "node1",
+          "member": "string",
+          "name": "YarnNodeLabel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "int64",
+          "name": "GroupStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "并行伸缩 0关闭；1开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Parallel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持MNode\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMNode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2676,6 +2804,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表示是自动(0)还是托管伸缩(1)",
+          "example": "0",
+          "member": "int64",
+          "name": "RecordSource",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2739,6 +2876,16 @@
     "DescribeAutoScaleStrategiesResponse": {
       "document": "DescribeAutoScaleStrategies返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "按负载伸缩规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LoadAutoScaleStrategy",
+          "name": "LoadAutoScaleStrategies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "按时间伸缩规则\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -6910,6 +7057,320 @@
       ],
       "usage": "both"
     },
+    "LoadAutoScaleStrategy": {
+      "document": "自动扩缩容基于负载指标的规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则生效冷却时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "CalmDownTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容动作，1表示扩容，2表示缩容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScaleAction",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次规则生效时的扩缩容数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ScaleNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容负载指标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LoadMetrics",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则元数据记录ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MetricId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则统计周期，提供300s,600s,900s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StatisticPeriod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标处理方法，1表示MAX，2表示MIN，3表示AVG。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProcessMethod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。",
+          "example": "无",
+          "member": "int64",
+          "name": "TriggerThreshold",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件触发数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerConditions",
+          "name": "TriggerConditions",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，添加时无效，默认为自增。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，1表示启动，3表示禁用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StrategyStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则扩容指定 yarn node label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "YarnNodeLabel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则生效的有效时间",
+          "example": "无",
+          "member": "string",
+          "name": "PeriodValid",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容开关",
+          "example": "false",
+          "member": "bool",
+          "name": "GraceDownFlag",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容等待时间",
+          "example": "1800",
+          "member": "int64",
+          "name": "GraceDownTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设配置组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigGroupAssigned",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容资源计算方法，\"DEFAULT\",\"INSTANCE\", \"CPU\", \"MEMORYGB\"。\n\"DEFAULT\"表示默认方式，与\"INSTANCE\"意义相同。\n\"INSTANCE\"表示按照节点计算，默认方式。\n\"CPU\"表示按照机器的核数计算。\n\"MEMORYGB\"表示按照机器内存数计算。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "MeasureMethod",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LoadMetricsConditions",
+          "name": "LoadMetricsConditions",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadMetricsCondition": {
+      "document": "负载指标条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则统计周期，提供1min,3min,5min。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "StatisticPeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TriggerThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容负载指标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LoadMetrics",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则元数据记录ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MetricId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerCondition",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadMetricsConditions": {
+      "document": "负载指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发规则条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LoadMetricsCondition",
+          "name": "LoadMetrics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LoginSettings": {
       "document": "登录设置",
       "members": [
@@ -7020,6 +7481,15 @@
           "name": "StrategyType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按负载扩缩容的指标。",
+          "example": "无",
+          "member": "LoadAutoScaleStrategy",
+          "name": "LoadAutoScaleStrategies",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9624,10 +10094,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "取值范围\"DAY\",\"DOW\",\"DOM\",\"NONE\"，分别表示按天重复、按周重复、按月重复和一次执行。",
-          "example": "",
+          "document": "取值范围\"DAY\",\"DOW\",\"DOM\",\"NONE\"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写",
+          "example": "无",
           "member": "string",
           "name": "RepeatType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9635,9 +10106,10 @@
         {
           "disabled": false,
           "document": "按天重复规则，当RepeatType为\"DAY\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DayRepeatStrategy",
           "name": "DayRepeat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9645,9 +10117,10 @@
         {
           "disabled": false,
           "document": "按周重复规则，当RepeatType为\"DOW\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "WeekRepeatStrategy",
           "name": "WeekRepeat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9655,9 +10128,10 @@
         {
           "disabled": false,
           "document": "按月重复规则，当RepeatType为\"DOM\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MonthRepeatStrategy",
           "name": "MonthRepeat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9665,19 +10139,21 @@
         {
           "disabled": false,
           "document": "一次执行规则，当RepeatType为\"NONE\"时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "NotRepeatStrategy",
           "name": "NotRepeat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为\"2020-07-23 00:00:00\"。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为\"2020-07-23 00:00:00\"。必须填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Expire",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11417,6 +11893,7 @@
           "example": "1000",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11568,7 +12045,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态，1表示有效，2表示无效，3表示暂停。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则状态，1表示有效，2表示无效，3表示暂停。必须填写\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "StrategyStatus",
@@ -11700,7 +12177,7 @@
         },
         {
           "disabled": false,
-          "document": "节点部署服务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "SoftDeployInfo",
@@ -11784,6 +12261,48 @@
           "example": "无",
           "member": "ShortNodeInfo",
           "name": "NodeInfoList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TriggerCondition": {
+      "document": "规则触发条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件比较方法，1表示大于，2表示小于，3表示大于等于，4表示小于等于。",
+          "example": "",
+          "member": "int64",
+          "name": "CompareMethod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件阈值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "float",
+          "name": "Threshold",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TriggerConditions": {
+      "document": "规则触发条件数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则触发条件数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "TriggerCondition",
+          "name": "Conditions",
           "required": false,
           "type": "list",
           "value_allowed_null": true

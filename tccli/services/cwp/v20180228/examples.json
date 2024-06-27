@@ -3100,14 +3100,6 @@
         "title": "导出网络攻击事件"
       }
     ],
-    "ExportAttackLogs": [
-      {
-        "document": "导出网络攻击日志",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ExportAttackLogs\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"DownloadUrl\": \"http://download.url/xxx.csv\",\n        \"TaskId\": \"1596595610\"\n    }\n}",
-        "title": "导出网络攻击日志"
-      }
-    ],
     "ExportBaselineEffectHostList": [
       {
         "document": "导出漏洞影响主机列表数据",

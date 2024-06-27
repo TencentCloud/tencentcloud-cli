@@ -584,7 +584,7 @@
       {
         "document": "-",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"RabbitMQUserList\": [\n            {\n                \"ModifyTime\": \"1\",\n                \"CreateTime\": \"1\",\n                \"Type\": \"1\",\n                \"InstanceId\": \"amqp-xxx\",\n                \"User\": \"testVhost\",\n                \"Password\": \"123\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"RabbitMQUserList\": [\n            {\n                \"ModifyTime\": \"1\",\n                \"CreateTime\": \"1\",\n                \"MaxChannels\": 1,\n                \"MaxConnections\": 1,\n                \"Type\": \"1\",\n                \"InstanceId\": \"amqp-xxx\",\n                \"User\": \"testVhost\",\n                \"Password\": \"123\",\n                \"Description\": \"hello\",\n                \"Tags\": [\n                    \"shop\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询RabbitMQ 用户列表"
       }
     ],
@@ -810,7 +810,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQVipInstanceDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-rd3545bkkj49\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6d158b6-89b2-40d1-b1f6-5973f0f00cd5\",\n        \"ClusterInfo\": {\n            \"ClusterId\": \"rocketmq-rd3545bkkj49\",\n            \"ClusterName\": \"test-example\",\n            \"Region\": \"ap-beijing\",\n            \"CreateTime\": 1620321019000,\n            \"SupportNamespaceEndpoint\": true,\n            \"Remark\": \"modified\",\n            \"PublicEndPoint\": \"pulsar://xxxxx.com:6650\",\n            \"Vpcs\": [\n                {\n                    \"SubnetId\": \"xx\",\n                    \"VpcId\": \"xx\"\n                }\n            ],\n            \"IsVip\": true,\n            \"RocketMQFlag\": true,\n            \"VpcEndPoint\": \"pulsar://xxxxx.com:6650\"\n        },\n        \"InstanceConfig\": {\n            \"MaxTpsPerNamespace\": 8000,\n            \"UsedNamespaceNum\": 1,\n            \"MaxTopicNum\": 1000,\n            \"UsedTopicNum\": 2,\n            \"MaxGroupNum\": 10000,\n            \"UsedGroupNum\": 1,\n            \"MaxNamespaceNum\": 10,\n            \"ConfigDisplay\": \"xx\",\n            \"NodeCount\": 2,\n            \"NodeDistribution\": [],\n            \"TopicDistribution\": []\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterInfo\": {\n            \"ClusterId\": \"abc\",\n            \"ClusterName\": \"abc\",\n            \"Region\": \"abc\",\n            \"CreateTime\": 1,\n            \"Remark\": \"abc\",\n            \"PublicEndPoint\": \"abc\",\n            \"VpcEndPoint\": \"abc\",\n            \"SupportNamespaceEndpoint\": true,\n            \"Vpcs\": [\n                {\n                    \"VpcId\": \"abc\",\n                    \"SubnetId\": \"abc\"\n                }\n            ],\n            \"IsVip\": true,\n            \"RocketMQFlag\": true,\n            \"Status\": 0,\n            \"IsolateTime\": 0,\n            \"HttpPublicEndpoint\": \"abc\",\n            \"HttpVpcEndpoint\": \"abc\",\n            \"InternalEndpoint\": \"abc\",\n            \"HttpInternalEndpoint\": \"abc\",\n            \"AclEnabled\": true,\n            \"PublicClbId\": \"abc\",\n            \"Vip\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"SupportMigration\": true,\n            \"InstanceStatus\": 0,\n            \"ZoneId\": 0,\n            \"ZoneIds\": [\n                0\n            ]\n        },\n        \"InstanceConfig\": {\n            \"MaxTpsPerNamespace\": 1,\n            \"MaxNamespaceNum\": 1,\n            \"UsedNamespaceNum\": 1,\n            \"MaxTopicNum\": 1,\n            \"UsedTopicNum\": 1,\n            \"MaxGroupNum\": 1,\n            \"UsedGroupNum\": 1,\n            \"ConfigDisplay\": \"abc\",\n            \"NodeCount\": 1,\n            \"NodeDistribution\": [\n                {\n                    \"ZoneName\": \"abc\",\n                    \"ZoneId\": \"abc\",\n                    \"NodeCount\": 1\n                }\n            ],\n            \"TopicDistribution\": [\n                {\n                    \"TopicType\": \"abc\",\n                    \"Count\": 1\n                }\n            ],\n            \"MaxQueuesPerTopic\": 1,\n            \"MaxRetention\": 0,\n            \"MinRetention\": 0,\n            \"Retention\": 0,\n            \"TopicNumLowerLimit\": 0,\n            \"TopicNumUpperLimit\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "huo"
       }
     ],
@@ -857,8 +857,8 @@
     "ExportRocketMQMessageDetail": [
       {
         "document": "导出消息详情",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportRocketMQMessageDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"DeadLetterMsg\": true,\n    \"IncludeMsgBody\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"MsgId\": \"xx\",\n        \"BornTimestamp\": 0,\n        \"StoreTimestamp\": 0,\n        \"BornHost\": \"xx\",\n        \"MsgTag\": \"xx\",\n        \"MsgKey\": \"xx\",\n        \"Properties\": \"xx\",\n        \"ReConsumeTimes\": 1,\n        \"MsgBody\": \"xx\",\n        \"MsgBodyCRC\": 0,\n        \"MsgBodySize\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportRocketMQMessageDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"EnvironmentId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"MsgId\": \"abc\",\n    \"DeadLetterMsg\": true,\n    \"IncludeMsgBody\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"MsgId\": \"abc\",\n        \"BornTimestamp\": 0,\n        \"StoreTimestamp\": 0,\n        \"BornHost\": \"abc\",\n        \"MsgTag\": \"abc\",\n        \"MsgKey\": \"abc\",\n        \"Properties\": \"abc\",\n        \"ReConsumeTimes\": 1,\n        \"MsgBody\": \"abc\",\n        \"MsgBodyCRC\": 0,\n        \"MsgBodySize\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "demo"
       }
     ],
@@ -1119,8 +1119,8 @@
     "SendRocketMQMessage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRocketMQMessage\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgKey\": \"xx\",\n    \"MsgTag\": \"xx\",\n    \"MsgBody\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Result\": true,\n        \"MsgId\": \"7F0000013AEC18B4AAC278B640D30002\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRocketMQMessage\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"NamespaceId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"MsgKey\": \"abc\",\n    \"MsgTag\": \"abc\",\n    \"MsgBody\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"MsgId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
     ],

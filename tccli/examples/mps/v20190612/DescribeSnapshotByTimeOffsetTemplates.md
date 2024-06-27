@@ -16,20 +16,20 @@ Output:
         "TotalCount": 1,
         "SnapshotByTimeOffsetTemplateSet": [
             {
-                "Definition": 10001,
-                "Type": "Custom",
-                "Name": "指定时间点截图模板1",
-                "Comment": "",
-                "CreateTime": "2018-10-01T10:00:00Z",
-                "UpdateTime": "2018-10-01T10:00:00Z",
-                "Format": "jpg",
-                "Height": 540,
-                "Width": 960,
-                "ResolutionAdaptive": "xx",
-                "FillType": "black"
+                "Definition": 1,
+                "Type": "abc",
+                "Name": "abc",
+                "Comment": "abc",
+                "Width": 1,
+                "Height": 1,
+                "ResolutionAdaptive": "abc",
+                "Format": "abc",
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "FillType": "abc"
             }
         ],
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+        "RequestId": "abc"
     }
 }
 ```

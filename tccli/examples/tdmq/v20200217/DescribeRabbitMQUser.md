@@ -18,6 +18,8 @@ Output:
             {
                 "ModifyTime": "1",
                 "CreateTime": "1",
+                "MaxChannels": 1,
+                "MaxConnections": 1,
                 "Type": "1",
                 "InstanceId": "amqp-xxx",
                 "User": "testVhost",

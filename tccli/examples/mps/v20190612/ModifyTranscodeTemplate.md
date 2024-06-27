@@ -8,11 +8,11 @@ Input:
 tccli mps ModifyTranscodeTemplate --cli-unfold-argument  \
     --Definition 1008 \
     --Container mp4 \
-    --VideoTemplate.Codec libx264 \
+    --VideoTemplate.Codec h264 \
     --VideoTemplate.Bitrate 256 \
     --VideoTemplate.Fps 60 \
     --AudioTemplate.SampleRate 48000 \
-    --AudioTemplate.Codec libfdk_aac \
+    --AudioTemplate.Codec aac \
     --AudioTemplate.Bitrate 200
 ```
 

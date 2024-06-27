@@ -13,38 +13,71 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c6d158b6-89b2-40d1-b1f6-5973f0f00cd5",
         "ClusterInfo": {
-            "ClusterId": "rocketmq-rd3545bkkj49",
-            "ClusterName": "test-example",
-            "Region": "ap-beijing",
-            "CreateTime": 1620321019000,
+            "ClusterId": "abc",
+            "ClusterName": "abc",
+            "Region": "abc",
+            "CreateTime": 1,
+            "Remark": "abc",
+            "PublicEndPoint": "abc",
+            "VpcEndPoint": "abc",
             "SupportNamespaceEndpoint": true,
-            "Remark": "modified",
-            "PublicEndPoint": "pulsar://xxxxx.com:6650",
             "Vpcs": [
                 {
-                    "SubnetId": "xx",
-                    "VpcId": "xx"
+                    "VpcId": "abc",
+                    "SubnetId": "abc"
                 }
             ],
             "IsVip": true,
             "RocketMQFlag": true,
-            "VpcEndPoint": "pulsar://xxxxx.com:6650"
+            "Status": 0,
+            "IsolateTime": 0,
+            "HttpPublicEndpoint": "abc",
+            "HttpVpcEndpoint": "abc",
+            "InternalEndpoint": "abc",
+            "HttpInternalEndpoint": "abc",
+            "AclEnabled": true,
+            "PublicClbId": "abc",
+            "Vip": "abc",
+            "VpcId": "abc",
+            "SupportMigration": true,
+            "InstanceStatus": 0,
+            "ZoneId": 0,
+            "ZoneIds": [
+                0
+            ]
         },
         "InstanceConfig": {
-            "MaxTpsPerNamespace": 8000,
+            "MaxTpsPerNamespace": 1,
+            "MaxNamespaceNum": 1,
             "UsedNamespaceNum": 1,
-            "MaxTopicNum": 1000,
-            "UsedTopicNum": 2,
-            "MaxGroupNum": 10000,
+            "MaxTopicNum": 1,
+            "UsedTopicNum": 1,
+            "MaxGroupNum": 1,
             "UsedGroupNum": 1,
-            "MaxNamespaceNum": 10,
-            "ConfigDisplay": "xx",
-            "NodeCount": 2,
-            "NodeDistribution": [],
-            "TopicDistribution": []
-        }
+            "ConfigDisplay": "abc",
+            "NodeCount": 1,
+            "NodeDistribution": [
+                {
+                    "ZoneName": "abc",
+                    "ZoneId": "abc",
+                    "NodeCount": 1
+                }
+            ],
+            "TopicDistribution": [
+                {
+                    "TopicType": "abc",
+                    "Count": 1
+                }
+            ],
+            "MaxQueuesPerTopic": 1,
+            "MaxRetention": 0,
+            "MinRetention": 0,
+            "Retention": 0,
+            "TopicNumLowerLimit": 0,
+            "TopicNumUpperLimit": 0
+        },
+        "RequestId": "abc"
     }
 }
 ```

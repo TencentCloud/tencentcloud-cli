@@ -17,41 +17,51 @@ Output:
         "TotalCount": 1,
         "AIRecognitionTemplateSet": [
             {
-                "Definition": 30,
-                "Name": "模板1",
-                "Comment": "智能识别模板",
-                "Type": "Preset",
+                "Definition": 0,
+                "Name": "abc",
+                "Comment": "abc",
                 "FaceConfigure": {
-                    "Switch": "ON",
-                    "Score": 0.0,
-                    "FaceLibrary": "All",
+                    "Switch": "abc",
+                    "Score": 0,
                     "DefaultLibraryLabelSet": [
-                        "xx"
+                        "abc"
                     ],
                     "UserDefineLibraryLabelSet": [
-                        "xx"
-                    ]
+                        "abc"
+                    ],
+                    "FaceLibrary": "abc"
                 },
                 "OcrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "abc"
                 },
                 "OcrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": []
+                    "Switch": "abc",
+                    "LabelSet": [
+                        "abc"
+                    ]
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON",
-                    "SubtitleFormat": "xx"
+                    "Switch": "abc",
+                    "SubtitleFormat": "abc",
+                    "SourceLanguage": "abc"
                 },
                 "AsrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": []
+                    "Switch": "abc",
+                    "LabelSet": [
+                        "abc"
+                    ]
                 },
-                "CreateTime": "2019-01-01T12:00:00Z",
-                "UpdateTime": "2019-01-01T16:00:00Z"
+                "TranslateConfigure": {
+                    "Switch": "abc",
+                    "SourceLanguage": "abc",
+                    "DestinationLanguage": "abc"
+                },
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "Type": "abc"
             }
         ],
-        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
+        "RequestId": "abc"
     }
 }
 ```
@@ -74,45 +84,51 @@ Output:
         "TotalCount": 1,
         "AIRecognitionTemplateSet": [
             {
-                "Definition": 30,
-                "Name": "模板1",
-                "Type": "Preset",
-                "Comment": "智能识别模板",
+                "Definition": 0,
+                "Name": "abc",
+                "Comment": "abc",
                 "FaceConfigure": {
-                    "Switch": "ON",
-                    "Score": 0.0,
-                    "FaceLibrary": "All",
+                    "Switch": "abc",
+                    "Score": 0,
                     "DefaultLibraryLabelSet": [
-                        "xx"
+                        "abc"
                     ],
                     "UserDefineLibraryLabelSet": [
-                        "xx"
-                    ]
+                        "abc"
+                    ],
+                    "FaceLibrary": "abc"
                 },
                 "OcrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "abc"
                 },
                 "OcrWordsConfigure": {
-                    "Switch": "OFF",
+                    "Switch": "abc",
                     "LabelSet": [
-                        "xx"
+                        "abc"
                     ]
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON",
-                    "SubtitleFormat": "xx"
+                    "Switch": "abc",
+                    "SubtitleFormat": "abc",
+                    "SourceLanguage": "abc"
                 },
                 "AsrWordsConfigure": {
-                    "Switch": "OFF",
+                    "Switch": "abc",
                     "LabelSet": [
-                        "xx"
+                        "abc"
                     ]
                 },
-                "CreateTime": "2019-01-01T12:00:00Z",
-                "UpdateTime": "2019-01-01T16:00:00Z"
+                "TranslateConfigure": {
+                    "Switch": "abc",
+                    "SourceLanguage": "abc",
+                    "DestinationLanguage": "abc"
+                },
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "Type": "abc"
             }
         ],
-        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
+        "RequestId": "abc"
     }
 }
 ```

@@ -98,14 +98,70 @@
       "usage": "both"
     },
     "DescribeAccountGroupsData": {
-      "document": "账户分响应对象集合",
+      "document": "分组名称",
       "members": [
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称path\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
-          "name": "Itime",
+          "name": "NamePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "id patch数组(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "IdPathArr",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Utime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "OrgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -116,48 +172,20 @@
           "example": "-",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "id patch数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "int64",
-          "name": "IdPathArr",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "该分组下用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "UserTotal",
+          "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ExtraInfo",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "导入类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ImportType",
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -166,6 +194,7 @@
           "example": "-",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -176,56 +205,29 @@
           "example": "-",
           "member": "int64",
           "name": "Source",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "miniIAM id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "id path\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
-          "name": "MiniIamId",
+          "name": "IdPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "组织id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
-          "name": "OrgId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否该账户的直接权限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "bool",
-          "name": "ReadOnly",
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "父id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "ParentId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "名称path\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "NamePath",
+          "name": "Itime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -236,26 +238,40 @@
           "example": "-",
           "member": "string",
           "name": "ParentOrgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "id path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
-          "name": "IdPath",
+          "name": "ImportType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自增id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "miniIAM id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "MiniIamId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该分组下用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "int64",
-          "name": "Id",
+          "name": "UserTotal",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -266,22 +282,46 @@
           "example": "-",
           "member": "bool",
           "name": "IsLeaf",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否该账户的直接权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新一次同步任务的结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
-          "name": "Utime",
+          "name": "LatestSyncResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新一次同步任务的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "LatestSyncTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeAccountGroupsPageResp": {
       "document": "账户分组详情响应数据",
@@ -859,8 +899,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1749",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -870,8 +910,8 @@
         },
         {
           "disabled": false,
-          "document": "设备唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备唯一标识码，在ioa中每个设备有唯一标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "702DFBFC9A9E31FDDBCD082B35AB2842667155F7",
           "member": "string",
           "name": "Mid",
           "output_required": false,
@@ -882,7 +922,7 @@
         {
           "disabled": false,
           "document": "终端名（设备名）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -892,8 +932,8 @@
         },
         {
           "disabled": false,
-          "document": "设备所在分组ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备所在分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "GroupId",
           "output_required": false,
@@ -903,8 +943,8 @@
         },
         {
           "disabled": false,
-          "document": "OS平台(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "output_required": false,
@@ -915,7 +955,7 @@
         {
           "disabled": false,
           "document": "设备IP地址（出口IP）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "10.18.104.56",
           "member": "string",
           "name": "Ip",
           "output_required": false,
@@ -925,8 +965,8 @@
         },
         {
           "disabled": false,
-          "document": "在线状态 2 在线 0，1 离线(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "在线状态，2：在线、0或者1:离线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
           "output_required": false,
@@ -937,7 +977,7 @@
         {
           "disabled": false,
           "document": "客户端版本号-大整数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "30399320386433584",
           "member": "string",
           "name": "Version",
           "output_required": false,
@@ -948,7 +988,7 @@
         {
           "disabled": false,
           "document": "客户端版本号-点分字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "108.5.21771.62000",
           "member": "string",
           "name": "StrVersion",
           "output_required": false,
@@ -959,7 +999,7 @@
         {
           "disabled": false,
           "document": "首次在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-18T17:40:07.171192+08:00",
           "member": "string",
           "name": "Itime",
           "output_required": false,
@@ -970,7 +1010,7 @@
         {
           "disabled": false,
           "document": "最后一次在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-20T22:24:19.022634+08:00",
           "member": "string",
           "name": "ConnActiveTime",
           "output_required": false,
@@ -980,8 +1020,8 @@
         },
         {
           "disabled": false,
-          "document": "设备是否加锁 1 锁定 0 2 非锁定(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备是否加锁 ，1：锁定 0或者2：未锁定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Locked",
           "output_required": false,
@@ -992,7 +1032,7 @@
         {
           "disabled": false,
           "document": "设备本地IP列表, 包括IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "192.168.142.138",
           "member": "string",
           "name": "LocalIpList",
           "output_required": false,
@@ -1014,7 +1054,7 @@
         {
           "disabled": false,
           "document": "设备所属分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
@@ -1025,7 +1065,7 @@
         {
           "disabled": false,
           "document": "设备所属分组路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "全网终端.未分组终端",
           "member": "string",
           "name": "GroupNamePath",
           "output_required": false,
@@ -1036,7 +1076,7 @@
         {
           "disabled": false,
           "document": "未修复高危漏洞数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "0",
           "member": "int64",
           "name": "CriticalVulListCount",
           "output_required": false,
@@ -1046,8 +1086,8 @@
         },
         {
           "disabled": false,
-          "document": "设备名 和Name相同，保留参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备名，和Name相同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DESKTOP-U9QR7P1",
           "member": "string",
           "name": "ComputerName",
           "output_required": false,
@@ -1069,7 +1109,7 @@
         {
           "disabled": false,
           "document": "MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "00:0C:29:71:A7:29",
           "member": "string",
           "name": "MacAddr",
           "output_required": false,
@@ -1079,8 +1119,8 @@
         },
         {
           "disabled": false,
-          "document": "漏洞数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "漏洞数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "VulCount",
           "output_required": false,
@@ -1090,8 +1130,8 @@
         },
         {
           "disabled": false,
-          "document": "病毒风险数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "病毒风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RiskCount",
           "output_required": false,
@@ -1102,7 +1142,7 @@
         {
           "disabled": false,
           "document": "病毒库版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2.0.13712.595",
           "member": "string",
           "name": "VirusVer",
           "output_required": false,
@@ -1113,7 +1153,7 @@
         {
           "disabled": false,
           "document": "漏洞库版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024.06.12.11.25.18",
           "member": "string",
           "name": "VulVersion",
           "output_required": false,
@@ -1124,7 +1164,7 @@
         {
           "disabled": false,
           "document": "系统修复引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024.06.17.16.26.22",
           "member": "string",
           "name": "SysRepVersion",
           "output_required": false,
@@ -1157,7 +1197,7 @@
         {
           "disabled": false,
           "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "Lucky",
           "member": "string",
           "name": "UserName",
           "output_required": false,
@@ -1167,8 +1207,8 @@
         },
         {
           "disabled": false,
-          "document": "防火墙状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "防火墙状态，不等于0表示开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "FirewallStatus",
           "output_required": false,
@@ -1179,7 +1219,7 @@
         {
           "disabled": false,
           "document": "SN序列号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "VMware-56 4d 8c 1a 6c 51 b7 71-1f 2a 3b 71 e6 71 a7 29",
           "member": "string",
           "name": "SerialNum",
           "output_required": false,
@@ -1190,7 +1230,7 @@
         {
           "disabled": false,
           "document": "设备管控策略版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "DeviceStrategyVer",
           "output_required": false,
@@ -1201,7 +1241,7 @@
         {
           "disabled": false,
           "document": "NGN策略版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "NGNStrategyVer",
           "output_required": false,
@@ -1211,7 +1251,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近登录账户的账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
           "name": "IOAUserName",
@@ -1223,7 +1263,7 @@
         {
           "disabled": false,
           "document": "设备管控新策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "DeviceNewStrategyVer",
           "output_required": false,
@@ -1234,7 +1274,7 @@
         {
           "disabled": false,
           "document": "NGN策略新版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "NGNNewStrategyVer",
           "output_required": false,
@@ -1278,7 +1318,7 @@
         {
           "disabled": false,
           "document": "身份策略版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-21 17:08:00",
           "member": "string",
           "name": "IdentityStrategyVer",
           "output_required": false,
@@ -1289,7 +1329,7 @@
         {
           "disabled": false,
           "document": "身份策略新版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-06-24 20:27:00",
           "member": "string",
           "name": "IdentityNewStrategyVer",
           "output_required": false,
@@ -1310,7 +1350,7 @@
         },
         {
           "disabled": false,
-          "document": "登录账号姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近登录账户的姓名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
           "name": "AccountName",

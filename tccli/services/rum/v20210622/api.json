@@ -5270,6 +5270,7 @@
           "example": "无",
           "member": "ReleaseFile",
           "name": "Files",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
