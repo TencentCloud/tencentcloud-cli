@@ -8,6 +8,34 @@ Input:
 tccli emr AddMetricScaleStrategy --cli-unfold-argument  \
     --InstanceId abc \
     --StrategyType 0 \
+    --LoadAutoScaleStrategy.StrategyId 0 \
+    --LoadAutoScaleStrategy.StrategyName abc \
+    --LoadAutoScaleStrategy.CalmDownTime 0 \
+    --LoadAutoScaleStrategy.ScaleAction 0 \
+    --LoadAutoScaleStrategy.ScaleNum 0 \
+    --LoadAutoScaleStrategy.LoadMetrics abc \
+    --LoadAutoScaleStrategy.MetricId 0 \
+    --LoadAutoScaleStrategy.StatisticPeriod 0 \
+    --LoadAutoScaleStrategy.ProcessMethod 0 \
+    --LoadAutoScaleStrategy.TriggerThreshold 0 \
+    --LoadAutoScaleStrategy.TriggerConditions.Conditions.0.CompareMethod 0 \
+    --LoadAutoScaleStrategy.TriggerConditions.Conditions.0.Threshold 0 \
+    --LoadAutoScaleStrategy.Priority 0 \
+    --LoadAutoScaleStrategy.StrategyStatus 0 \
+    --LoadAutoScaleStrategy.YarnNodeLabel abc \
+    --LoadAutoScaleStrategy.PeriodValid abc \
+    --LoadAutoScaleStrategy.GraceDownFlag True \
+    --LoadAutoScaleStrategy.GraceDownTime 0 \
+    --LoadAutoScaleStrategy.Tags.0.TagKey abc \
+    --LoadAutoScaleStrategy.Tags.0.TagValue abc \
+    --LoadAutoScaleStrategy.ConfigGroupAssigned abc \
+    --LoadAutoScaleStrategy.MeasureMethod abc \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.StatisticPeriod 0 \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.TriggerThreshold 0 \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.LoadMetrics abc \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.MetricId 0 \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.Conditions.0.CompareMethod 0 \
+    --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.Conditions.0.Threshold 0 \
     --TimeAutoScaleStrategy.StrategyId 1 \
     --TimeAutoScaleStrategy.StrategyName abc \
     --TimeAutoScaleStrategy.IntervalTime 1 \

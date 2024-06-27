@@ -1732,6 +1732,15 @@
           "name": "Qualifier",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "强制删除标记，传true会直接删除容器，并强制关闭还在执行中的函数",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

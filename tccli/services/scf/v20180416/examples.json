@@ -51,7 +51,7 @@
     "DeleteFunction": [
       {
         "document": "用户删除函数时需要使用，可指定版本与命名空间。",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteFunction\n&FunctionName=<FunctionName>\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"<FunctionName>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除函数"
       }

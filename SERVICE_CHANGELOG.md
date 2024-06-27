@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云顾问(advisor) 版本：2020-07-21
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
 
-### 第 11 次发布
+### 第 6 次发布
 
-发布时间：2024-06-27 01:08:18
+发布时间：2024-06-28 01:08:32
 
 本次发布包含了以下内容：
 
@@ -12,34 +12,34 @@
 
 新增接口：
 
-* [ReportPluginResult](http://document.tencentcloudapi.woa.com/document/product/1660/84175)
+* [GenerateAvatar](http://document.tencentcloudapi.woa.com/document/product/1728/84176)
 
 
 
-## 语音识别(asr) 版本：2019-06-14
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 23 次发布
+### 第 32 次发布
 
-发布时间：2024-06-27 01:09:01
+发布时间：2024-06-28 01:10:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateRecTask](http://document.tencentcloudapi.woa.com/document/product/1093/37823)
+* [AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/362/15669#AutoMountConfiguration)
 
-	* 新增入参：HotwordList
+	* <font color="#dd0000">**修改成员**：</font>MountPoint, FileSystemType
 
 
 
 
 ## 日志服务(cls) 版本：2020-10-16
 
-### 第 76 次发布
+### 第 77 次发布
 
-发布时间：2024-06-27 01:12:41
+发布时间：2024-06-28 01:12:41
 
 本次发布包含了以下内容：
 
@@ -47,22 +47,34 @@
 
 修改数据结构：
 
-* [MonitorTime](http://document.tencentcloudapi.woa.com/document/product/614/56471#MonitorTime)
+* [AlarmTargetInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTargetInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>Time
-
-* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#TopicInfo)
-
-	* 新增成员：Extends
+	* 新增成员：SyntaxRule, BizType
 
 
 
 
-## 域名注册(domain) 版本：2018-08-08
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 33 次发布
+### 第 90 次发布
 
-发布时间：2024-06-27 01:15:57
+发布时间：2024-06-28 01:13:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ExportAttackLogs
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 52 次发布
+
+发布时间：2024-06-28 01:16:53
 
 本次发布包含了以下内容：
 
@@ -70,115 +82,174 @@
 
 修改接口：
 
-* [ReservedPreDomains](http://document.tencentcloudapi.woa.com/document/product/242/83330)
+* [AddMetricScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83354)
 
-	* 新增出参：SucDomains
+	* 新增入参：LoadAutoScaleStrategy
+
+* [DescribeAutoScaleRecords](http://document.tencentcloudapi.woa.com/document/product/589/82360)
+
+	* 新增入参：RecordSource
+
+* [DescribeAutoScaleStrategies](http://document.tencentcloudapi.woa.com/document/product/589/83355)
+
+	* 新增出参：LoadAutoScaleStrategies
+
+* [ModifyAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83352)
+
+	* 新增入参：LoadAutoScaleStrategies
 
 
 新增数据结构：
 
-* [SucDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#SucDomainInfo)
+* [LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy)
+* [LoadMetricsCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsCondition)
+* [LoadMetricsConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsConditions)
+* [TriggerCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerCondition)
+* [TriggerConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerConditions)
+
+修改数据结构：
+
+* [AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord)
+
+	* 新增成员：RetryEnReason, RetryReason
+
+* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
+
+	* 新增成员：ChangeToPod, GroupName, YarnNodeLabel, GroupStatus, Parallel, EnableMNode
 
 
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
-### 第 42 次发布
+## 智能全局流量管理(igtm) 版本：2023-10-24
 
-发布时间：2024-06-27 01:18:52
+### 第 7 次发布
+
+发布时间：2024-06-28 01:18:45
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [DescribeInstanceList](http://document.tencentcloudapi.woa.com/document/product/1696/83263)
+
+	* 新增出参：SystemAccessEnabled
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 55 次发布
+
+发布时间：2024-06-28 01:21:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ContainerDiagnoseResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ContainerDiagnoseResultItem)
+
 修改数据结构：
 
-* [CloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEvent)
+* [ActivityPara](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityPara)
 
-	* 新增成员：UploadStatus
+	* 新增成员：QualityControlTask
+
+* [ActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResItem)
+
+	* 新增成员：QualityControlTask
+
+* [ActivityResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResult)
+
+	* <font color="#dd0000">**修改成员**：</font>PredriveIndex, ReardriveIndex
+
+* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+
+	* 新增成员：Zones
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：Zones
+
+* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
+
+	* 新增成员：Zones
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：Zones
+
+* [LiveActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveActivityResItem)
+
+	* 新增成员：LiveQualityControlTask
+
+* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
+
+	* 新增成员：Zones
+
+* [QualityControlData](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlData)
+
+	* 新增成员：ContainerDiagnoseResultSet
+
+* [TerrorismConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TerrorismConfigureInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>OcrReviewInfo
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 47 次发布
+
+发布时间：2024-06-28 01:23:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteFunction](http://document.tencentcloudapi.woa.com/document/product/583/18585)
+
+	* 新增入参：ForceDelete
 
 
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 58 次发布
+### 第 59 次发布
 
-发布时间：2024-06-27 01:23:27
+发布时间：2024-06-28 01:24:14
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeCertificateBindResourceTaskDetail](http://document.tencentcloudapi.woa.com/document/product/400/81792)
-
-	* 新增出参：COS
-
+* [DeleteCertificates](http://document.tencentcloudapi.woa.com/document/product/400/84177)
 
 新增数据结构：
 
-* [COSInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#COSInstanceList)
-
-修改数据结构：
-
-* [ApiGatewayInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#ApiGatewayInstanceList)
-
-	* 新增成员：Error
-
-* [CdnInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#CdnInstanceList)
-
-	* 新增成员：Error
-
-* [ClbInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbInstanceList)
-
-	* 新增成员：Error
-
-* [ClbListenerRule](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbListenerRule)
-
-	* <font color="#dd0000">**修改成员**：</font>NoMatchDomains
-
-* [DdosInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#DdosInstanceList)
-
-	* 新增成员：Error
-
-* [LiveInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#LiveInstanceList)
-
-	* 新增成员：Error
-
-* [TCBInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TCBInstanceList)
-
-	* 新增成员：Error
-
-* [TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList)
-
-	* 新增成员：Error
-
-* [TeoInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceList)
-
-	* 新增成员：Error
-
-* [TkeInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TkeInstanceList)
-
-	* 新增成员：Error
-
-* [VODInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#VODInstanceList)
-
-	* 新增成员：Error
-
-* [WafInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#WafInstanceList)
-
-	* 新增成员：Error
+* [BatchDeleteFail](http://document.tencentcloudapi.woa.com/document/product/400/41679#BatchDeleteFail)
 
 
 
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-## 高性能计算平台(thpc) 版本：2023-03-21
+### 第 107 次发布
 
-### 第 7 次发布
-
-发布时间：2024-06-27 01:25:50
+发布时间：2024-06-28 01:25:56
 
 本次发布包含了以下内容：
 
@@ -186,25 +257,50 @@
 
 修改接口：
 
-* [CreateCluster](http://document.tencentcloudapi.woa.com/document/product/1701/80191)
+* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
 
-	* 新增入参：SchedulerVersion
+	* 新增入参：PayMode, ClusterVersion, IsIntl, ResourceTags, Bandwidth
+
+* [DeleteRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/81058)
+
+	* 新增入参：IsIntl
 
 
 修改数据结构：
 
-* [ClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ClusterOverview)
+* [RabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQUser)
 
-	* 新增成员：SchedulerVersion
+	* 新增成员：MaxConnections, MaxChannels
+
+* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
+
+	* 新增成员：CreateTime
+
+* [RocketMQInstanceConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQInstanceConfig)
+
+	* 新增成员：MaxRetention, MinRetention, Retention, TopicNumLowerLimit, TopicNumUpperLimit
+
+	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, ConfigDisplay, NodeCount, NodeDistribution, TopicDistribution, MaxQueuesPerTopic
 
 
 
 
-## 高性能计算平台(thpc) 版本：2022-04-01
+## 向量数据库(vdb) 版本：2023-06-16
 
+### 第 2 次发布
 
+发布时间：2024-06-28 01:28:33
 
-## 高性能计算平台(thpc) 版本：2021-11-09
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1758/83305#InstanceInfo)
+
+	* 新增成员：IsolateAt, AutoRenew
+
 
 
 
@@ -611,7 +707,7 @@
 
 新增接口：
 
-* [[ReportPluginResult](http://document.tencentcloudapi.woa.com/document/product/1660/84175)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ReportPluginResult](http://document.tencentcloudapi.woa.com/document/product/1660/84175)
 
 ### 第 10 次发布
 
@@ -980,6 +1076,18 @@
 
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 6 次发布
+
+发布时间：2024-06-28 01:08:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GenerateAvatar](http://document.tencentcloudapi.woa.com/document/product/1728/84176)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 5 次发布
 
@@ -11064,6 +11172,21 @@
 
 
 ## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 32 次发布
+
+发布时间：2024-06-28 01:10:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoMountConfiguration](http://document.tencentcloudapi.woa.com/document/product/362/15669#AutoMountConfiguration)
+
+	* <font color="#dd0000">**修改成员**：</font>MountPoint, FileSystemType
+
 
 ### 第 31 次发布
 
@@ -23418,6 +23541,21 @@
 
 ## 日志服务(cls) 版本：2020-10-16
 
+### 第 77 次发布
+
+发布时间：2024-06-28 01:12:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmTargetInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTargetInfo)
+
+	* 新增成员：SyntaxRule, BizType
+
+
 ### 第 76 次发布
 
 发布时间：2024-06-27 01:12:41
@@ -30206,6 +30344,18 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 90 次发布
+
+发布时间：2024-06-28 01:13:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ExportAttackLogs
 
 ### 第 89 次发布
 
@@ -40640,7 +40790,7 @@
 
 新增数据结构：
 
-* [[SucDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#SucDomainInfo)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[SucDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#SucDomainInfo))
+* [SucDomainInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#SucDomainInfo)
 
 ### 第 32 次发布
 
@@ -43792,6 +43942,52 @@
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 52 次发布
+
+发布时间：2024-06-28 01:16:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddMetricScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83354)
+
+	* 新增入参：LoadAutoScaleStrategy
+
+* [DescribeAutoScaleRecords](http://document.tencentcloudapi.woa.com/document/product/589/82360)
+
+	* 新增入参：RecordSource
+
+* [DescribeAutoScaleStrategies](http://document.tencentcloudapi.woa.com/document/product/589/83355)
+
+	* 新增出参：LoadAutoScaleStrategies
+
+* [ModifyAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/83352)
+
+	* 新增入参：LoadAutoScaleStrategies
+
+
+新增数据结构：
+
+* [[LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy))
+* [[LoadMetricsCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsCondition)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[LoadMetricsCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsCondition))
+* [[LoadMetricsConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsConditions)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[LoadMetricsConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadMetricsConditions))
+* [[TriggerCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerCondition)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[TriggerCondition](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerCondition))
+* [[TriggerConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerConditions)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[TriggerConditions](http://document.tencentcloudapi.woa.com/document/product/589/33981#TriggerConditions))
+
+修改数据结构：
+
+* [AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord)
+
+	* 新增成员：RetryEnReason, RetryReason
+
+* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
+
+	* 新增成员：ChangeToPod, GroupName, YarnNodeLabel, GroupStatus, Parallel, EnableMNode
+
 
 ### 第 51 次发布
 
@@ -55311,6 +55507,21 @@
 
 
 ## 智能全局流量管理(igtm) 版本：2023-10-24
+
+### 第 7 次发布
+
+发布时间：2024-06-28 01:18:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceList](http://document.tencentcloudapi.woa.com/document/product/1696/83263)
+
+	* 新增出参：SystemAccessEnabled
+
 
 ### 第 6 次发布
 
@@ -67123,6 +67334,65 @@
 
 ## 媒体处理(mps) 版本：2019-06-12
 
+### 第 55 次发布
+
+发布时间：2024-06-28 01:21:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[ContainerDiagnoseResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ContainerDiagnoseResultItem)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[ContainerDiagnoseResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ContainerDiagnoseResultItem))
+
+修改数据结构：
+
+* [ActivityPara](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityPara)
+
+	* 新增成员：QualityControlTask
+
+* [ActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResItem)
+
+	* 新增成员：QualityControlTask
+
+* [ActivityResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResult)
+
+	* <font color="#dd0000">**修改成员**：</font>PredriveIndex, ReardriveIndex
+
+* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+
+	* 新增成员：Zones
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：Zones
+
+* [DescribeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeInput)
+
+	* 新增成员：Zones
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：Zones
+
+* [LiveActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveActivityResItem)
+
+	* 新增成员：LiveQualityControlTask
+
+* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
+
+	* 新增成员：Zones
+
+* [QualityControlData](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlData)
+
+	* 新增成员：ContainerDiagnoseResultSet
+
+* [TerrorismConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TerrorismConfigureInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>OcrReviewInfo
+
+
 ### 第 54 次发布
 
 发布时间：2024-06-21 01:20:51
@@ -77510,6 +77780,21 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 47 次发布
+
+发布时间：2024-06-28 01:23:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteFunction](http://document.tencentcloudapi.woa.com/document/product/583/18585)
+
+	* 新增入参：ForceDelete
+
+
 ### 第 46 次发布
 
 发布时间：2024-04-19 01:22:02
@@ -80766,6 +81051,22 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 59 次发布
+
+发布时间：2024-06-28 01:24:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteCertificates](http://document.tencentcloudapi.woa.com/document/product/400/84177)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BatchDeleteFail](http://document.tencentcloudapi.woa.com/document/product/400/41679#BatchDeleteFail)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[BatchDeleteFail](http://document.tencentcloudapi.woa.com/document/product/400/41679#BatchDeleteFail))
+
 ### 第 58 次发布
 
 发布时间：2024-06-27 01:23:27
@@ -80783,7 +81084,7 @@
 
 新增数据结构：
 
-* [[COSInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#COSInstanceList)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[COSInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#COSInstanceList))
+* [COSInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#COSInstanceList)
 
 修改数据结构：
 
@@ -87439,6 +87740,42 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 107 次发布
+
+发布时间：2024-06-28 01:25:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
+
+	* 新增入参：PayMode, ClusterVersion, IsIntl, ResourceTags, Bandwidth
+
+* [DeleteRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/81058)
+
+	* 新增入参：IsIntl
+
+
+修改数据结构：
+
+* [RabbitMQUser](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQUser)
+
+	* 新增成员：MaxConnections, MaxChannels
+
+* [RabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVipInstance)
+
+	* 新增成员：CreateTime
+
+* [RocketMQInstanceConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQInstanceConfig)
+
+	* 新增成员：MaxRetention, MinRetention, Retention, TopicNumLowerLimit, TopicNumUpperLimit
+
+	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, ConfigDisplay, NodeCount, NodeDistribution, TopicDistribution, MaxQueuesPerTopic
+
 
 ### 第 106 次发布
 
@@ -101975,6 +102312,21 @@
 
 
 ## 向量数据库(vdb) 版本：2023-06-16
+
+### 第 2 次发布
+
+发布时间：2024-06-28 01:28:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1758/83305#InstanceInfo)
+
+	* 新增成员：IsolateAt, AutoRenew
+
 
 ### 第 1 次发布
 

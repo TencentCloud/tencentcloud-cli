@@ -25,7 +25,11 @@ Output:
                     "GraceDownFlag": true,
                     "HardwareType": "abc",
                     "PayMode": "abc",
-                    "PostPayPercentMin": 0
+                    "PostPayPercentMin": 0,
+                    "ChangeToPod": 0,
+                    "GroupName": "abc",
+                    "YarnNodeLabel": "abc",
+                    "GroupStatus": 0
                 },
                 "CurrentNodes": 0,
                 "CurrentPostPaidNodes": 0,

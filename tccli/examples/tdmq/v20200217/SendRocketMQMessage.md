@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli tdmq SendRocketMQMessage --cli-unfold-argument  \
-    --NamespaceId xx \
-    --ClusterId xx \
-    --TopicName xx \
-    --MsgKey xx \
-    --MsgTag xx \
-    --MsgBody xx
+    --ClusterId abc \
+    --NamespaceId abc \
+    --TopicName abc \
+    --MsgKey abc \
+    --MsgTag abc \
+    --MsgBody abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "Result": true,
-        "MsgId": "7F0000013AEC18B4AAC278B640D30002"
+        "MsgId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

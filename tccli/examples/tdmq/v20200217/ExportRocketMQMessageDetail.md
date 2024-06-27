@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tdmq ExportRocketMQMessageDetail --cli-unfold-argument  \
-    --ClusterId xx \
-    --EnvironmentId xx \
-    --TopicName xx \
-    --MsgId xx \
+    --ClusterId abc \
+    --EnvironmentId abc \
+    --TopicName abc \
+    --MsgId abc \
     --DeadLetterMsg True \
     --IncludeMsgBody True
 ```
@@ -18,18 +18,18 @@ Output:
 ```
 {
     "Response": {
-        "MsgId": "xx",
+        "MsgId": "abc",
         "BornTimestamp": 0,
         "StoreTimestamp": 0,
-        "BornHost": "xx",
-        "MsgTag": "xx",
-        "MsgKey": "xx",
-        "Properties": "xx",
+        "BornHost": "abc",
+        "MsgTag": "abc",
+        "MsgKey": "abc",
+        "Properties": "abc",
         "ReConsumeTimes": 1,
-        "MsgBody": "xx",
+        "MsgBody": "abc",
         "MsgBodyCRC": 0,
         "MsgBodySize": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

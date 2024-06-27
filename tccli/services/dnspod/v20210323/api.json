@@ -2978,6 +2978,7 @@
           "example": "11111111111",
           "member": "string",
           "name": "QcloudUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2987,6 +2988,7 @@
           "example": "yes",
           "member": "string",
           "name": "IsDNSPodNS",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2996,6 +2998,7 @@
           "example": "[\"ns3.dnsv2.com\", \"ns4.dnsv2.com\"]",
           "member": "string",
           "name": "EffectiveDNS",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3005,6 +3008,7 @@
           "example": "enable",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3104,6 +3108,7 @@
           "example": "无",
           "member": "DomainListItemByRecordId",
           "name": "DomainList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3767,7 +3772,7 @@
           "example": "无",
           "member": "DomainListItemByRecordId",
           "name": "DomainList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3911,6 +3916,7 @@
           "example": "2",
           "member": "uint64",
           "name": "NowRoll",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3920,6 +3926,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MaxRoll",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3929,6 +3936,7 @@
           "example": "专业版",
           "member": "string",
           "name": "GradeTitle",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4436,6 +4444,7 @@
           "example": "无",
           "member": "DomainListItemByRecordId",
           "name": "DomainList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4445,6 +4454,7 @@
           "example": "无",
           "member": "RecordListItemById",
           "name": "RecordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

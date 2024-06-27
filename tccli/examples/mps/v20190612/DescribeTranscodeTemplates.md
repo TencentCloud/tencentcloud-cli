@@ -16,40 +16,110 @@ Output:
         "TotalCount": 1,
         "TranscodeTemplateSet": [
             {
-                "Definition": "1008",
-                "Container": "mp4",
-                "Name": "模板1",
-                "Comment": "",
-                "Type": "Preset",
+                "Definition": "abc",
+                "Container": "abc",
+                "Name": "abc",
+                "Comment": "abc",
+                "Type": "abc",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,
                 "VideoTemplate": {
-                    "Codec": "libx264",
-                    "Fps": 24,
-                    "Bitrate": 256,
-                    "ResolutionAdaptive": "open",
-                    "Width": 0,
-                    "Height": 0,
-                    "FillType": "black",
-                    "Vcrf": 23
+                    "Codec": "abc",
+                    "Fps": 0,
+                    "Bitrate": 0,
+                    "ResolutionAdaptive": "abc",
+                    "Width": 1,
+                    "Height": 1,
+                    "Gop": 1,
+                    "FillType": "abc",
+                    "Vcrf": 1,
+                    "SegmentType": 0
                 },
                 "AudioTemplate": {
-                    "Codec": "libfdk_aac",
-                    "Bitrate": 48,
-                    "SampleRate": 48000,
-                    "AudioChannel": 2
+                    "Codec": "abc",
+                    "Bitrate": 0,
+                    "SampleRate": 1,
+                    "AudioChannel": 0
                 },
                 "TEHDConfig": {
-                    "MaxVideoBitrate": 1,
-                    "Type": "TEHD-100"
+                    "Type": "abc",
+                    "MaxVideoBitrate": 0
                 },
-                "EnhanceConfig": null,
-                "ContainerType": "Video",
-                "CreateTime": "2018-10-01T10:00:00Z",
-                "UpdateTime": "2018-10-01T10:00:00Z"
+                "ContainerType": "abc",
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "EnhanceConfig": {
+                    "VideoEnhance": {
+                        "FrameRate": {
+                            "Switch": "abc",
+                            "Fps": 1
+                        },
+                        "SuperResolution": {
+                            "Switch": "abc",
+                            "Type": "abc",
+                            "Size": 0
+                        },
+                        "Hdr": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "Denoise": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "ImageQualityEnhance": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "ColorEnhance": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "SharpEnhance": {
+                            "Switch": "abc",
+                            "Intensity": 0
+                        },
+                        "FaceEnhance": {
+                            "Switch": "abc",
+                            "Intensity": 0
+                        },
+                        "LowLightEnhance": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "ScratchRepair": {
+                            "Switch": "abc",
+                            "Intensity": 0
+                        },
+                        "ArtifactRepair": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        }
+                    },
+                    "AudioEnhance": {
+                        "Denoise": {
+                            "Switch": "abc"
+                        },
+                        "Separate": {
+                            "Switch": "abc",
+                            "Type": "abc",
+                            "Track": "abc"
+                        },
+                        "VolumeBalance": {
+                            "Switch": "abc",
+                            "Type": "abc"
+                        },
+                        "Beautify": {
+                            "Switch": "abc",
+                            "Types": [
+                                "abc"
+                            ]
+                        }
+                    }
+                }
             }
         ],
-        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
+        "RequestId": "abc"
     }
 }
 ```
