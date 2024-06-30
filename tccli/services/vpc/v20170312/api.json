@@ -1730,7 +1730,7 @@
       "status": "online"
     },
     "ModifyDirectConnectGatewayAttribute": {
-      "document": "本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性\n",
+      "document": "本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性",
       "input": "ModifyDirectConnectGatewayAttributeRequest",
       "name": "修改专线网关属性",
       "output": "ModifyDirectConnectGatewayAttributeResponse",
@@ -20825,7 +20825,7 @@
         {
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
-          "example": "",
+          "example": "dcg-k6cswwhx",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -20834,7 +20834,7 @@
         {
           "disabled": false,
           "document": "专线网关名称，可任意命名，但不得超过60个字符。",
-          "example": "",
+          "example": "new+name",
           "member": "string",
           "name": "DirectConnectGatewayName",
           "required": false,
@@ -20843,7 +20843,7 @@
         {
           "disabled": false,
           "document": "云联网路由学习类型，可选值：`BGP`（自动学习）、`STATIC`（静态，即用户配置）。只有云联网类型专线网关且开启了BGP功能才支持修改`CcnRouteType`。",
-          "example": "",
+          "example": "BGP",
           "member": "string",
           "name": "CcnRouteType",
           "required": false,
@@ -20852,7 +20852,7 @@
         {
           "disabled": false,
           "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "ModeType",
           "required": false,

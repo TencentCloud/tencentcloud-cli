@@ -3,7 +3,7 @@
     "AcknowledgeMessage": {
       "document": "根据提供的 MessageID 确认指定 topic 中的消息",
       "input": "AcknowledgeMessageRequest",
-      "name": "确认消息",
+      "name": "确认pulsar消息",
       "output": "AcknowledgeMessageResponse",
       "status": "online"
     },
@@ -1241,7 +1241,7 @@
           "example": "sssss",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

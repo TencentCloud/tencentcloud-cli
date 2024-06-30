@@ -4735,7 +4735,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "过滤条件\n- 按照【标签】过滤\n   Name: Tags\n   Value:   tagKey:tagVal\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4763,6 +4763,7 @@
           "example": "无",
           "member": "TcrNamespaceInfo",
           "name": "NamespaceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4772,6 +4773,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5113,6 +5115,7 @@
           "example": "[       {         \"BriefDescription\": \"\",         \"CreationTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\",         \"Description\": \"\",         \"Name\": \"library/busybox\",         \"Namespace\": \"library\",         \"Public\": false,         \"UpdateTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\"       }     ],",
           "member": "TcrRepositoryInfo",
           "name": "RepositoryList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5122,6 +5125,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

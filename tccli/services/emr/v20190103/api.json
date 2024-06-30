@@ -11541,6 +11541,15 @@
           "name": "StopParams",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程",
+          "example": "无",
+          "member": "bool",
+          "name": "KeepMonitorButNotRecoverProcess",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

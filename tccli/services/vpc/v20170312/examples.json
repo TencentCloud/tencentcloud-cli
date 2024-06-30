@@ -2303,7 +2303,7 @@
     "ModifyDirectConnectGatewayAttribute": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyDirectConnectGatewayAttribute\n&DirectConnectGatewayId=dcg-k6cswwhx\n&DirectConnectGatewayName=new+name\n&CcnRouteType=BGP\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDirectConnectGatewayAttribute\n<公共请求参数>\n\n{\n    \"DirectConnectGatewayId\": \"dcg-k6cswwhx\",\n    \"CcnRouteType\": \"BGP\",\n    \"DirectConnectGatewayName\": \"new+name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
         "title": "修改专线网关属性"
       }

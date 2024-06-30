@@ -8,6 +8,14 @@
         "title": "新增批量发送任务"
       }
     ],
+    "CreateCustomBlacklist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomBlacklist\n<公共请求参数>\n\n{\n    \"ExpireDate\": \"2024-06-19\",\n    \"Emails\": [\n        \"b@gmail.com\",\n        \"a@gmail.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "添加邮箱地址到黑名单"
+      }
+    ],
     "CreateEmailAddress": [
       {
         "document": "",
@@ -68,6 +76,14 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlackList\n<公共请求参数>\n\n{\n    \"EmailAddressList\": [\n        \"23423434@qq.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "删除收件人黑名单"
+      }
+    ],
+    "DeleteCustomBlackList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomBlackList\n<公共请求参数>\n\n{\n    \"Emails\": [\n        \"b@gmail.com\",\n        \"a@gmail.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "删除自定义黑名单邮箱地址"
       }
     ],
     "DeleteEmailAddress": [
@@ -148,6 +164,14 @@
         "title": "获取黑名单邮箱地址"
       }
     ],
+    "ListCustomBlacklist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCustomBlacklist\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Status\": 1,\n    \"Email\": \"abc@mail.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreateTime\": \"2024-06-26 10:04:43\",\n                \"Email\": \"abc@foxmail.com\",\n                \"ExpireDate\": \"2024-06-27\",\n                \"Id\": 304323,\n                \"Status\": 1\n            },\n            {\n                \"CreateTime\": \"2024-06-25 14:27:38\",\n                \"Email\": \"abc@abc.com\",\n                \"ExpireDate\": \"2024-06-26\",\n                \"Id\": 304320,\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"3df4264a-a5c9-4a4d-abfe-770c730ca683\",\n        \"TotalCount\": 293023\n    }\n}",
+        "title": "获取自定义黑名单列表"
+      }
+    ],
     "ListEmailAddress": [
       {
         "document": "",
@@ -214,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
         "title": "发送纯文本邮件"
+      }
+    ],
+    "UpdateCustomBlackList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomBlackList\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ExpireDate\": \"2024-06-19\",\n    \"Email\": \"b@gmail.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "更新自定义黑名单"
       }
     ],
     "UpdateEmailIdentity": [

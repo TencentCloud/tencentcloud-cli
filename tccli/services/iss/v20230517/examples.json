@@ -732,6 +732,14 @@
         "title": "成功"
       }
     ],
+    "QueryForbidPlayChannelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryForbidPlayChannelList\n<公共请求参数>\n\n{\n    \"UserId\": \"10********82\",\n    \"PageSize\": 5,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelId\": \"32525dd7-c3fc-****-****-d5beb4acd1e1\",\n                    \"ChannelName\": \"11\",\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"SDK-NVR05\"\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 1,\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "title": "查询禁播列表"
+      }
+    ],
     "RefreshDeviceChannel": [
       {
         "document": " ",
@@ -744,6 +752,14 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshDeviceChannel\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceUnavailable.DevNoRegister\",\n            \"Message\": \"设备未注册\"\n        },\n        \"RequestId\": \"2b064fb2-a7b9-477a-a114-e3dcdeb2a132\"\n    }\n}",
         "title": "设备未注册"
+      }
+    ],
+    "SetForbidPlayChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetForbidPlayChannels\n<公共请求参数>\n\n{\n    \"UserId\": \"10********02\",\n    \"Channels\": [\n        {\n            \"ChannelId\": \"0001a415-****-****-****-b13cfb96c778\",\n            \"Enable\": true\n        },\n        {\n            \"ChannelId\": \"00037e5f-****-****-****-f30b13a86b02\",\n            \"Enable\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "title": "通道禁播使能"
       }
     ],
     "UpdateAITask": [

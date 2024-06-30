@@ -798,8 +798,8 @@
       {
         "document": "获取创建法人章二维码",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLegalSealQrCode\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDwfwUUgygormhg1UuS2eARxjMT0mxAw\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"xxxxxxxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "获取创建法人章二维码"
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"5X8Af8AwfOf84uv+72f/fR6APgD/gyp/wCUpvx8/wCzAPin/wCtFfsq1/oOf8FNvCfirx7/AME2/wDgoN4F8C+GfEHjTxt40/Yg/av8J+DvB3hPRtR8R+KvFnirxH8BvH2j+HvDPhnw9o9teavr3iDXd（其他图片BASE64编码省略）\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取创建法人章二维码成功"
       }
     ],
     "CreatePartnerAutoSignAuthUrl": [

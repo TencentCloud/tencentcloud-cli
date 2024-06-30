@@ -7,6 +7,13 @@
       "output": "BatchSendEmailResponse",
       "status": "online"
     },
+    "CreateCustomBlacklist": {
+      "document": "添加自定义黑名单",
+      "input": "CreateCustomBlacklistRequest",
+      "name": "批量增加自定义黑名单",
+      "output": "CreateCustomBlacklistResponse",
+      "status": "online"
+    },
     "CreateEmailAddress": {
       "document": "在验证了发信域名之后，您需要一个发信地址来发送邮件。例如发信域名是mail.qcloud.com，那么发信地址可以为 service@mail.qcloud.com。如果您想要收件人在收件箱列表中显示您的别名，例如\"腾讯云邮件通知\"。那么发信地址为： 别名 空格 尖括号 邮箱地址。请注意中间需要有空格",
       "input": "CreateEmailAddressRequest",
@@ -54,6 +61,13 @@
       "input": "DeleteBlackListRequest",
       "name": "删除收件人黑名单",
       "output": "DeleteBlackListResponse",
+      "status": "online"
+    },
+    "DeleteCustomBlackList": {
+      "document": "删除自定义黑名单邮箱地址",
+      "input": "DeleteCustomBlackListRequest",
+      "name": "删除自定义黑名单",
+      "output": "DeleteCustomBlackListResponse",
       "status": "online"
     },
     "DeleteEmailAddress": {
@@ -119,6 +133,13 @@
       "output": "ListBlackEmailAddressResponse",
       "status": "online"
     },
+    "ListCustomBlacklist": {
+      "document": "获取自定义黑名单列表",
+      "input": "ListCustomBlacklistRequest",
+      "name": "获取自定义黑名单列表",
+      "output": "ListCustomBlacklistResponse",
+      "status": "online"
+    },
     "ListEmailAddress": {
       "document": "获取发信地址列表",
       "input": "ListEmailAddressRequest",
@@ -166,6 +187,13 @@
       "input": "SendEmailRequest",
       "name": "发送邮件",
       "output": "SendEmailResponse",
+      "status": "online"
+    },
+    "UpdateCustomBlackList": {
+      "document": "更新自定义黑名单",
+      "input": "UpdateCustomBlackListRequest",
+      "name": "更新自定义黑名单",
+      "output": "UpdateCustomBlackListResponse",
       "status": "online"
     },
     "UpdateEmailIdentity": {
@@ -357,6 +385,62 @@
       ],
       "type": "object"
     },
+    "BlackAddressDetail": {
+      "document": "黑名单详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "黑名单地址id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a@mail.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-06-19",
+          "member": "string",
+          "name": "ExpireDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "黑名单状态，0:已过期，1:生效中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BlackEmailAddress": {
       "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间，以及被拉黑的理由",
       "members": [
@@ -392,6 +476,42 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateCustomBlacklistRequest": {
+      "document": "CreateCustomBlacklist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加到黑名单的邮件地址",
+          "example": "[ \"a@gmail.com\" , \"b@gmail.com\"]",
+          "member": "string",
+          "name": "Emails",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过期日期",
+          "example": "\"2024-06-19\"",
+          "member": "date",
+          "name": "ExpireDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomBlacklistResponse": {
+      "document": "CreateCustomBlacklist返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateEmailAddressRequest": {
       "document": "CreateEmailAddress请求参数结构体",
@@ -756,6 +876,33 @@
     },
     "DeleteBlackListResponse": {
       "document": "DeleteBlackList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomBlackListRequest": {
+      "document": "DeleteCustomBlackList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的邮箱地址",
+          "example": "[\"a@mail.com\",\"b@mail.com\"]",
+          "member": "string",
+          "name": "Emails",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomBlackListResponse": {
+      "document": "DeleteCustomBlackList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1305,6 +1452,80 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCustomBlacklistRequest": {
+      "document": "ListCustomBlacklist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，整型，从0开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目，整型,不超过100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选黑名单的状态，0:已过期，1:生效中, 2:全部",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "黑名单中的邮箱地址",
+          "example": "a@mail.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCustomBlacklistResponse": {
+      "document": "ListCustomBlacklist返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "黑名单列表详情",
+          "example": "无",
+          "member": "BlackAddressDetail",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2390,6 +2611,51 @@
         }
       ],
       "usage": "in"
+    },
+    "UpdateCustomBlackListRequest": {
+      "document": "UpdateCustomBlackList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要更改的黑名单id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的邮件地址",
+          "example": "a@mail.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，为空则表示永久有效",
+          "example": "2024-06-19",
+          "member": "string",
+          "name": "ExpireDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCustomBlackListResponse": {
+      "document": "UpdateCustomBlackList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateEmailIdentityRequest": {
       "document": "UpdateEmailIdentity请求参数结构体",

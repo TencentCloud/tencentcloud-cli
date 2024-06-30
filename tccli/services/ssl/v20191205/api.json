@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateCertificateBindResourceSyncTask": {
-      "document": "创建证书绑定关联云资源异步任务， 该接口用于查询证书关联云资源。 若证书ID已存在查询云资源任务，则结果返回该任务ID。关联云资源类型，支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）。查询关联云资源结果使用DescribeCertificateBindResourceTaskResult接口",
+      "document": "创建证书绑定关联云资源异步任务， 该接口用于查询证书关联云资源。 若证书ID已存在查询云资源任务，则结果返回该任务ID。关联云资源类型，支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）、cos。查询关联云资源结果使用DescribeCertificateBindResourceTaskResult接口",
       "input": "CreateCertificateBindResourceSyncTaskRequest",
       "name": "创建证书关联云资源异步任务",
       "output": "CreateCertificateBindResourceSyncTaskResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "DescribeCertificateBindResourceTaskResult": {
-      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
+      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）、cos",
       "input": "DescribeCertificateBindResourceTaskResultRequest",
       "name": "查询证书关联云资源任务结果 - 仅返回总数",
       "output": "DescribeCertificateBindResourceTaskResultResponse",
@@ -734,6 +734,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9472,7 +9482,7 @@
         },
         {
           "disabled": false,
-          "document": "需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse",
+          "document": "需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse、cos",
           "example": "无",
           "member": "string",
           "name": "ResourceTypes",
