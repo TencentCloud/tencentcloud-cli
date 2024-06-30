@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeArchAsync": {
-      "document": "异步拉取架构最新版本的详情",
+      "document": "已有替代的同步接口，后续有需求再使用其他接口支持\n\n异步拉取架构最新版本的详情",
       "input": "DescribeArchAsyncRequest",
       "name": "异步拉取架构详情",
       "output": "DescribeArchAsyncResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeArchSvg": {
       "document": "获取架构图的SVG图",
@@ -22,11 +22,11 @@
       "status": "online"
     },
     "DescribeArchTaskResult": {
-      "document": "查询任务的结果",
+      "document": "已使用同步接口替代，后续有需求再使用其他接口支持\n\n查询任务的结果",
       "input": "DescribeArchTaskResultRequest",
       "name": "查询任务的结果获取",
       "output": "DescribeArchTaskResultResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDownloadTask": {
       "document": "获取扫描报告下载链接",

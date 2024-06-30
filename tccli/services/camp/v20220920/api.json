@@ -1541,6 +1541,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重降级相关定义\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Downgrade",
+          "name": "Downgrade",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5977,6 +5988,79 @@
       ],
       "usage": "both"
     },
+    "DomainWeight": {
+      "document": "具体某个域的权重定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "可选值为 zone,cluster,specific",
+          "member": "string",
+          "name": "DomainType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域与对应权重比率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainWeightRatio",
+          "name": "DomainWeightRatios",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DomainWeightRatio": {
+      "document": "域与权重比率",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重比率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.35",
+          "member": "float",
+          "name": "WeightRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Downgrade": {
+      "document": "流量降级相关的定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域的权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DomainWeight",
+          "name": "DomainWeight",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EmptyDirVolumeSource": {
       "document": "EmptyDir数据卷",
       "members": [
@@ -8823,6 +8907,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重降级相关定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Downgrade",
+          "name": "Downgrade",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

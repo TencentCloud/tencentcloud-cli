@@ -483,11 +483,25 @@
       "output": "PlayRecordResponse",
       "status": "online"
     },
+    "QueryForbidPlayChannelList": {
+      "document": "查询禁播通道列表",
+      "input": "QueryForbidPlayChannelListRequest",
+      "name": "查询禁播通道列表",
+      "output": "QueryForbidPlayChannelListResponse",
+      "status": "online"
+    },
     "RefreshDeviceChannel": {
       "document": "用于刷新国标设备的通道（接口调用后，触发向设备请求通道列表，新增的通道入库，设备上已删除的通道需自行删除、后台不自动删除）。",
       "input": "RefreshDeviceChannelRequest",
       "name": "刷新设备通道",
       "output": "RefreshDeviceChannelResponse",
+      "status": "online"
+    },
+    "SetForbidPlayChannels": {
+      "document": "禁止主、子账号对视频通道的实况预览",
+      "input": "SetForbidPlayChannelsRequest",
+      "name": "设置通道禁止播流",
+      "output": "SetForbidPlayChannelsResponse",
       "status": "online"
     },
     "UpdateAITask": {
@@ -2502,6 +2516,52 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChannelAttrInfo": {
+      "document": "通道属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备通道所属的设备ID",
+          "example": "389708b2-bcbb-********-a61f528b2a15",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备通道所属的设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NVR05",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备通道ID",
+          "example": "53ca64d3-9627-********-cea5122f6977",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PTZ03",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6405,6 +6465,52 @@
       ],
       "type": "object"
     },
+    "ListForbidplayChannelsData": {
+      "document": "用户禁止播流的通道列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页的设备数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次查询的设备通道总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备通道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChannelAttrInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ListGatewayDevicesData": {
       "document": "查询网关设备列表返回数据",
       "members": [
@@ -7917,6 +8023,61 @@
       ],
       "type": "object"
     },
+    "QueryForbidPlayChannelListRequest": {
+      "document": "QueryForbidPlayChannelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子用户uin，也可以是主用户的uin",
+          "example": "12*******36",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页最大数量，最大为200，超过按照200返回",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryForbidPlayChannelListResponse": {
+      "document": "QueryForbidPlayChannelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListForbidplayChannelsData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RecordPlanBaseInfo": {
       "document": "实时上云计划基础信息",
       "members": [
@@ -8456,6 +8617,66 @@
         }
       ],
       "type": "object"
+    },
+    "SetForbidPlayChannelsRequest": {
+      "document": "SetForbidPlayChannels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要禁播的通道参数，一次最多可以设置200个通道",
+          "example": "无",
+          "member": "SetForbidplayChannelParam",
+          "name": "Channels",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户uin，可以是子用户的也可以是主用户的uin",
+          "example": "12*******36",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetForbidPlayChannelsResponse": {
+      "document": "SetForbidPlayChannels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetForbidplayChannelParam": {
+      "document": "设置通道禁止播流，有通道Id和使能enable字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道Id",
+          "example": "9ee325e9984**********a805c19b4e1",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止通道播流",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "SmokingAIResultInfo": {
       "document": "抽烟识别结果详情",

@@ -1,3 +1,179 @@
+# Release 3.0.1025.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 12 次发布
+
+发布时间：2024-07-01 01:08:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeArchAsync
+* DescribeArchTaskResult
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 36 次发布
+
+发布时间：2024-07-01 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DomainWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeight)
+* [DomainWeightRatio](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeightRatio)
+* [Downgrade](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Downgrade)
+
+修改数据结构：
+
+* [CLBTraitConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLBTraitConfig)
+
+	* 新增成员：Downgrade
+
+* [PolarisConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolarisConfig)
+
+	* 新增成员：Downgrade
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 53 次发布
+
+发布时间：2024-07-01 01:16:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStopServiceOrMonitor](http://document.tencentcloudapi.woa.com/document/product/589/77427)
+
+	* 新增入参：KeepMonitorButNotRecoverProcess
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 43 次发布
+
+发布时间：2024-07-01 01:18:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetTWeCallPkgList](http://document.tencentcloudapi.woa.com/document/product/1081/83999)
+
+	* 新增出参：TWeCallCategoryPkgList
+
+
+新增数据结构：
+
+* [TWeCallCategoryPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallCategoryPkgInfo)
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 17 次发布
+
+发布时间：2024-07-01 01:19:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryForbidPlayChannelList](http://document.tencentcloudapi.woa.com/document/product/1740/84179)
+* [SetForbidPlayChannels](http://document.tencentcloudapi.woa.com/document/product/1740/84178)
+
+新增数据结构：
+
+* [ChannelAttrInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ChannelAttrInfo)
+* [ListForbidplayChannelsData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListForbidplayChannelsData)
+* [SetForbidplayChannelParam](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SetForbidplayChannelParam)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 22 次发布
+
+发布时间：2024-07-01 01:23:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
+* [DeleteCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84183)
+* [ListCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84182)
+* [UpdateCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84181)
+
+新增数据结构：
+
+* [BlackAddressDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#BlackAddressDetail)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 60 次发布
+
+发布时间：2024-07-01 01:23:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BindResourceRegionResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#BindResourceRegionResult)
+
+	* 新增成员：Error
+
+
+
+
+## 微服务观测平台 TSW(tsw) 版本：2021-04-12
+
+### 第 2 次发布
+
+发布时间：2024-07-01 01:27:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeComponentAlertObject
+* DescribeServiceAlertObject
+
+
+
+## 微服务观测平台 TSW(tsw) 版本：2020-09-24
+
+
+
 # Release 3.0.1024.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

@@ -1,18 +1,18 @@
 {
   "actions": {
     "DescribeComponentAlertObject": {
-      "document": "获取告警对象-组件告警",
+      "document": "tsw产品已经处于下线状态，但API还没有完成下线流程。DescribeComponentAlertObject,DescribeServiceAlertObject 因为鉴权不规范触发了CAM侧的风险告警，因此先将这2个接口做下线处理，后续再对tws的其他接口走整体下线流程。\n\n获取告警对象-组件告警",
       "input": "DescribeComponentAlertObjectRequest",
       "name": "获取告警对象-组件告警",
       "output": "DescribeComponentAlertObjectResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeServiceAlertObject": {
-      "document": "获取告警对象-服务告警表",
+      "document": "tsw产品已经处于下线状态，但API还没有完成下线流程。DescribeComponentAlertObject,DescribeServiceAlertObject 因为鉴权不规范触发了CAM侧的风险告警，因此先将这2个接口做下线处理，后续再对tws的其他接口走整体下线流程。\n\n获取告警对象-服务告警表",
       "input": "DescribeServiceAlertObjectRequest",
       "name": "获取告警对象-服务告警表",
       "output": "DescribeServiceAlertObjectResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeToken": {
       "document": "查询token",

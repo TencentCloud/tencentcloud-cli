@@ -22,7 +22,8 @@ Output:
                         "BindResourceRegionResult": [
                             {
                                 "Region": "abc",
-                                "TotalCount": 1
+                                "TotalCount": 1,
+                                "Error": "abc"
                             }
                         ]
                     }
