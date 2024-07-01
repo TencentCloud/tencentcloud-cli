@@ -169,7 +169,7 @@
       "status": "online"
     },
     "InvokeFunction": {
-      "document": " SCF同步调用函数接口",
+      "document": "SCF同步调用函数接口。",
       "input": "InvokeFunctionRequest",
       "name": "同步Invoke调用接口",
       "output": "InvokeFunctionResponse",
@@ -3775,7 +3775,7 @@
           "example": "无",
           "member": "Result",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5776,7 +5776,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Log",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5786,7 +5786,7 @@
           "example": "\"hello from scf\"",
           "member": "string",
           "name": "RetMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5796,7 +5796,7 @@
           "example": "\" \"",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5806,7 +5806,7 @@
           "example": "32",
           "member": "int64",
           "name": "MemUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5816,7 +5816,7 @@
           "example": "100",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5826,7 +5826,7 @@
           "example": "100",
           "member": "int64",
           "name": "BillDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5836,7 +5836,7 @@
           "example": "c2af8a64-c922-4d55-aee0-bd86a5c2cd12",
           "member": "string",
           "name": "FunctionRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5846,7 +5846,7 @@
           "example": "200",
           "member": "int64",
           "name": "InvokeResult",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

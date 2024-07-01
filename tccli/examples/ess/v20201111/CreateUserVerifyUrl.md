@@ -1,4 +1,4 @@
-**Example 1: 获取c端用户实名链接**
+**Example 1: 获取c端用户实名跳转链接**
 
 获取c端用户实名链接
 
@@ -20,9 +20,9 @@ Output:
 {
     "Response": {
         "ExpireTime": 1713080196,
-        "MiniAppId": "wxa023b292fd19d41d",
+        "MiniAppId": "",
         "RequestId": "s1712475396892401448",
-        "UserVerifyUrl": "https://test.essurl.cn/RTo2UBE6X6"
+        "UserVerifyUrl": "https://test.essurl.cn/RTo****6X6"
     }
 }
 ```

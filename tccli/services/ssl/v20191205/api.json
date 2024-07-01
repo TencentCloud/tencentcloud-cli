@@ -6250,7 +6250,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "分页每页数量",
           "example": "无",
           "member": "int64",
@@ -6259,7 +6259,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "分页偏移量",
           "example": "无",
           "member": "int64",
@@ -6279,7 +6279,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6289,7 +6289,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerFirstName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6299,7 +6299,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerMail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6309,7 +6309,7 @@
           "example": "无",
           "member": "string",
           "name": "ContactFirstName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6319,7 +6319,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerLastName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6329,7 +6329,7 @@
           "example": "无",
           "member": "string",
           "name": "ContactPosition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6339,7 +6339,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerPosition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6349,7 +6349,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6359,7 +6359,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6369,7 +6369,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6379,7 +6379,7 @@
           "example": "无",
           "member": "string",
           "name": "ContactLastName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6389,7 +6389,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6399,7 +6399,7 @@
           "example": "无",
           "member": "string",
           "name": "ContactPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6409,7 +6409,7 @@
           "example": "无",
           "member": "string",
           "name": "ContactMail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6419,7 +6419,7 @@
           "example": "无",
           "member": "string",
           "name": "ManagerDepartment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6429,7 +6429,7 @@
           "example": "无",
           "member": "CompanyInfo",
           "name": "CompanyInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6439,7 +6439,7 @@
           "example": "无",
           "member": "int64",
           "name": "CompanyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6449,7 +6449,7 @@
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6459,7 +6459,7 @@
           "example": "无",
           "member": "ManagerStatusInfo",
           "name": "StatusInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7245,7 +7245,48 @@
     },
     "ManagerStatusInfo": {
       "document": "管理人的四种审核状态",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核类型，枚举值：ov,ev,cs,ev_cs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审核状态，枚举值：pending,completed,invalid,submitted,expiring,expired\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "ModifyCertificateAliasRequest": {

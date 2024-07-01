@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli cynosdb DescribeClusterPasswordComplexity --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-bzxxrmtq
+    --ClusterId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "7613eed6-5eb5-4d17-ae69-dd93c44d7ad4",
+        "RequestId": "7651f1c0-3429-11ef-81fc-6fec1c9e2c66",
         "ValidatePasswordDictionary": {
             "CurrentValue": "",
             "Default": "",
             "Description": "The dictionary words that validate_password uses for checking passwords.",
             "EnumValue": [],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",
@@ -36,6 +39,9 @@ Output:
             "Default": "8",
             "Description": "The minimum number of characters that validate_password requires passwords to have.",
             "EnumValue": [],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",
@@ -53,6 +59,9 @@ Output:
             "Default": "1",
             "Description": "The minimum number of lowercase and uppercase characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.",
             "EnumValue": [],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",
@@ -70,6 +79,9 @@ Output:
             "Default": "1",
             "Description": "The minimum number of numeric (digit) characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. ",
             "EnumValue": [],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",
@@ -90,6 +102,9 @@ Output:
                 "MEDIUM",
                 "STRONG"
             ],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",
@@ -107,6 +122,9 @@ Output:
             "Default": "1",
             "Description": "The minimum number of nonalphanumeric characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. ",
             "EnumValue": [],
+            "Func": "",
+            "FuncPattern": "",
+            "IsFunc": false,
             "IsGlobal": 0,
             "MatchType": "",
             "MatchValue": "",

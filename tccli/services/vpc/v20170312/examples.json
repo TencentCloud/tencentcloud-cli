@@ -492,6 +492,38 @@
         "title": "创建弹性网卡"
       }
     ],
+    "CreatePrivateNatGateway": [
+      {
+        "document": "创建一个私网NAT网关",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateNatGateway\n<公共请求参数>\n\n{\n    \"NatGatewayName\": \"test\",\n    \"VpcId\": \"vpc-m7sr81gh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivateNatGatewaySet\": [\n            {\n                \"Status\": \"AVILIABLE\",\n                \"VpcId\": \"vpc-noanwmed\",\n                \"CrossDomain\": false,\n                \"NatGatewayName\": \"test_nat\",\n                \"NatGatewayId\": \"intranat-0g3blj80\",\n                \"TagSet\": [],\n                \"CreatedTime\": \"2022-10-01 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "创建一个私网NAT网关"
+      }
+    ],
+    "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule": [
+      {
+        "document": "创建私网NAT网关目的端口转换规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"LocalDestinationIpPortTranslationNatRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"TranslationPort\": 5666,\n            \"TranslationIp\": \"10.0.0.14\",\n            \"OriginalPort\": 8888,\n            \"OriginalIp\": \"10.0.0.26\",\n            \"Description\": \"desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "创建私网NAT网关目的端口转换规则"
+      }
+    ],
+    "CreatePrivateNatGatewayTranslationAclRule": [
+      {
+        "document": "创建私网NAT网关源端转换访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateNatGatewayTranslationAclRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationDirection\": \"LOCAL\",\n    \"TranslationType\": \"TRANSPORT_LAYER\",\n    \"TranslationIp\": \"10.0.0.156-10.0.0.200\",\n    \"TranslationAclRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"SourcePort\": \"5666\",\n            \"SourceCidr\": \"10.0.1.0/24\",\n            \"DestinationPort\": \"8888\",\n            \"DestinationCidr\": \"10.0.2.0/24\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "创建私网NAT网关源端转换访问控制规则"
+      }
+    ],
+    "CreatePrivateNatGatewayTranslationNatRule": [
+      {
+        "document": "创建私网NAT网关源端转换规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateNatGatewayTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationNatRules\": [\n        {\n            \"TranslationDirection\": \"PEER\",\n            \"TranslationType\": \"NETWORK_LAYER\",\n            \"OriginalIp\": \"10.0.0.86\",\n            \"TranslationIp\": \"10.0.0.222\",\n            \"Description\": \"desc\"\n        },\n        {\n            \"TranslationDirection\": \"PEER\",\n            \"TranslationType\": \"NETWORK_LAYER\",\n            \"OriginalIp\": \"10.0.0.34\",\n            \"TranslationIp\": \"10.0.0.56\",\n            \"Description\": \"desc\"\n        },\n        {\n            \"TranslationDirection\": \"LOCAL\",\n            \"TranslationType\": \"NETWORK_LAYER\",\n            \"OriginalIp\": \"10.0.0.90\",\n            \"TranslationIp\": \"10.0.0.123\",\n            \"Description\": \"desc\"\n        },\n        {\n            \"TranslationDirection\": \"LOCAL\",\n            \"TranslationType\": \"TRANSPORT_LAYER\",\n            \"TranslationIp\": \"10.0.0.156-10.0.0.200\",\n            \"Description\": \"desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NatGatewayId\": \"intranat-0g3blj80\",\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "title": "创建私网NAT网关源端转换规则"
+      }
+    ],
     "CreateRouteTable": [
       {
         "document": "创建路由表",
@@ -838,6 +870,38 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetworkInterface\n\n&NetworkInterfaceId=eni-m6dyj72l\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "删除弹性网卡"
+      }
+    ],
+    "DeletePrivateNatGateway": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGateway\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8877515-7b7a-4109-914d-957001d67eaf\"\n    }\n}",
+        "title": "删除私网NAT网关"
+      }
+    ],
+    "DeletePrivateNatGatewayDestinationIpPortTranslationNatRule": [
+      {
+        "document": "删除私网NAT网关目的端口转换规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"LocalDestinationIpPortTranslationNatRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"TranslationPort\": 5666,\n            \"TranslationIp\": \"10.0.0.14\",\n            \"OriginalPort\": 8888,\n            \"OriginalIp\": \"10.0.0.26\",\n            \"Description\": \"desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "删除私网NAT网关目的端口转换规则"
+      }
+    ],
+    "DeletePrivateNatGatewayTranslationAclRule": [
+      {
+        "document": "删除私网NAT网关源端转换访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGatewayTranslationAclRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationDirection\": \"LOCAL\",\n    \"TranslationType\": \"NETWORK_LAYER\",\n    \"TranslationIp\": \"10.0.0.24\",\n    \"OriginalIp\": \"10.0.0.14\",\n    \"AclRuleIds\": [\n        26\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "删除私网NAT网关源端转换访问控制规则"
+      }
+    ],
+    "DeletePrivateNatGatewayTranslationNatRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGatewayTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationNatRules\": [\n        {\n            \"TranslationDirection\": \"PEER\",\n            \"TranslationType\": \"NETWORK_LAYER\",\n            \"OriginalIp\": \"10.0.0.34\",\n            \"TranslationIp\": \"10.0.0.56\",\n            \"Description\": \"desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"NatGatewayId\": \"intranat-0g3blj80\",\n        \"RequestId\": \"e6da1f54-293d-4fda-a2e2-6f4c6f2bd97e\"\n    }\n}",
+        "title": "删除私网NAT网关源端转换规则"
       }
     ],
     "DeleteRouteTable": [
@@ -1514,6 +1578,60 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkInterfaces\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"TEST\"\n            ],\n            \"Name\": \"tag:Version\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NetworkInterfaceSet\": [\n            {\n                \"VpcId\": \"vpc-709l0i0x\",\n                \"SubnetId\": \"subnet-qymfizh2\",\n                \"NetworkInterfaceId\": \"eni-p17uqigx\",\n                \"NetworkInterfaceName\": \"test\",\n                \"NetworkInterfaceDescription\": \"\",\n                \"GroupSet\": [\n                    \"sg-hcd8t9xj\"\n                ],\n                \"Primary\": false,\n                \"MacAddress\": \"20:90:6F:FC:9F:69\",\n                \"State\": \"AVAILABLE\",\n                \"CreatedTime\": \"2018-04-18 21:46:56\",\n                \"PrivateIpAddressSet\": [\n                    {\n                        \"Description\": \"12312\",\n                        \"Primary\": true,\n                        \"PrivateIpAddress\": \"192.168.3.10\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.104\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"13123\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.18\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.223\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    },\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"PrivateIpAddress\": \"192.168.3.86\",\n                        \"AddressId\": \"\",\n                        \"PublicIpAddress\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"Attachment\": null,\n                \"Business\": \"cvm\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Ipv6AddressSet\": [\n                    {\n                        \"Description\": \"\",\n                        \"Primary\": false,\n                        \"Address\": \"2402:4e00:1000:7400:0:9028:a2c9:85b2\",\n                        \"AddressId\": \"\",\n                        \"IsWanIpBlocked\": false,\n                        \"State\": \"AVAILABLE\"\n                    }\n                ],\n                \"AttachType\": 1,\n                \"EniType\": 1,\n                \"CdcId\": \"\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"Version\",\n                        \"Value\": \"TEST\"\n                    },\n                    {\n                        \"Key\": \"Compony\",\n                        \"Value\": \"Compony-A\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"0c10340b-2551-4414-a8c7-8d90dc24ddd0\"\n    }\n}",
         "title": "查询绑定了标签的网卡列表"
+      }
+    ],
+    "DescribePrivateNatGatewayDestinationIpPortTranslationNatRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGatewayDestinationIpPortTranslationNatRules\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"Filters\": [\n        {\n            \"Name\": \"Description\",\n            \"Values\": [\n                \"desc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"LocalDestinationIpPortTranslationNatRuleSet\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"TranslationIp\": \"10.0.0.34\",\n                \"TranslationPort\": 5666,\n                \"OriginalIp\": \"10.0.0.88\",\n                \"OriginalPort\": 8888,\n                \"Description\": \"chdesc\",\n                \"CreateTime\": \"2022-09-30 14:23:10\",\n                \"UpdateTime\": \"2022-09-30 14:33:16\"\n            },\n            {\n                \"Protocol\": \"TCP\",\n                \"TranslationIp\": \"10.0.0.35\",\n                \"TranslationPort\": 5666,\n                \"OriginalIp\": \"10.0.0.26\",\n                \"OriginalPort\": 8888,\n                \"Description\": \"desc\",\n                \"CreateTime\": \"2022-09-30 14:24:38\",\n                \"UpdateTime\": \"2022-09-30 14:24:38\"\n            }\n        ],\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "查询私网NAT网关目的端口转换规则"
+      }
+    ],
+    "DescribePrivateNatGatewayLimits": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGatewayLimits\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-12234568\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PrivateNatGatewayLimitSet\": [\n            {\n                \"UniqVpcId\": \"vpc-12234568\",\n                \"TotalLimit\": 1000,\n                \"Available\": 998\n            }\n        ],\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "查询可创建的私网NAT网关配额数量"
+      }
+    ],
+    "DescribePrivateNatGatewayRegions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGatewayRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {},\n            {},\n            {},\n            {},\n            {}\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"5f24dd8e-bb8d-4e32-aba5-31a368745c7e\"\n    }\n}",
+        "title": "查询私网NAT网关可支持地域"
+      }
+    ],
+    "DescribePrivateNatGatewayTranslationAclRules": [
+      {
+        "document": "查询私网NAT网关源端转换访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGatewayTranslationAclRules\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationDirection\": \"LOCAL\",\n    \"TranslationType\": \"NETWORK_LAYER\",\n    \"TranslationIp\": \"10.0.0.24\",\n    \"OriginalIp\": \"10.0.0.14\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"TranslationAclRuleSet\": [\n            {\n                \"Protocol\": \"ALL\",\n                \"Action\": 0,\n                \"AclRuleId\": 1,\n                \"SourcePort\": \"0-65535\",\n                \"SourceCidr\": \"0.0.0.0/0\",\n                \"DestinationPort\": \"0-65535\",\n                \"DestinationCidr\": \"0.0.0.0/0\"\n            },\n            {\n                \"Protocol\": \"TCP\",\n                \"Action\": 0,\n                \"AclRuleId\": 26,\n                \"SourcePort\": \"5666\",\n                \"SourceCidr\": \"10.0.0.14\",\n                \"DestinationPort\": \"8888\",\n                \"DestinationCidr\": \"10.0.0.24\"\n            }\n        ],\n        \"RequestId\": \"41fe53eb-6f90-4fde-9e37-c48fa4f8f2ed\"\n    }\n}",
+        "title": "查询私网NAT网关源端转换访问控制规则"
+      }
+    ],
+    "DescribePrivateNatGatewayTranslationNatRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGatewayTranslationNatRules\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"Filters\": [\n        {\n            \"Name\": \"TranslationIp\",\n            \"Values\": [\n                \"10.0.0.24\"\n            ]\n        },\n        {\n            \"Name\": \"Description\",\n            \"Values\": [\n                \"desc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"TranslationNatRuleSet\": [\n            {\n                \"Description\": \"desc\",\n                \"CreateTime\": \"2022-09-29 20:48:28\",\n                \"UpdateTime\": \"2022-09-29 20:48:28\",\n                \"TranslationDirection\": \"PEER\",\n                \"TranslationType\": \"NETWORK_LAYER\",\n                \"TranslationIp\": \"10.0.0.222\",\n                \"OriginalIp\": \"10.0.0.86\"\n            },\n            {\n                \"Description\": \"desc\",\n                \"CreateTime\": \"2022-09-29 20:48:28\",\n                \"UpdateTime\": \"2022-09-29 20:48:28\",\n                \"TranslationDirection\": \"PEER\",\n                \"TranslationType\": \"NETWORK_LAYER\",\n                \"TranslationIp\": \"10.0.0.56\",\n                \"OriginalIp\": \"10.0.0.34\"\n            },\n            {\n                \"Description\": \"desc\",\n                \"CreateTime\": \"2022-09-29 20:48:42\",\n                \"UpdateTime\": \"2022-09-29 20:48:42\",\n                \"TranslationDirection\": \"LOCAL\",\n                \"TranslationType\": \"TRANSPORT_LAYER\",\n                \"TranslationIp\": \"10.0.0.156-10.0.0.200\"\n            }\n        ],\n        \"RequestId\": \"35dc4665-6c7a-474d-bd4a-8c0ed92f1d02\"\n    }\n}",
+        "title": "查询私网NAT网关源端转换规则"
+      }
+    ],
+    "DescribePrivateNatGateways": [
+      {
+        "document": "按ID过滤查询私网NAT网关",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGateways\n<公共请求参数>\n\n{\n    \"NatGatewayIds\": [\n        \"intranat-0g3blj80\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivateNatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"intranat-0g3blj80\",\n                \"NatGatewayName\": \"test_nat\",\n                \"VpcId\": \"vpc-noanwmed\",\n                \"Status\": \"AVAILABLE\",\n                \"CrossDomain\": false,\n                \"CreatedTime\": \"2022-09-29 15:58:00\",\n                \"TagSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"757e8409-faa3-4b7f-bfc3-7e1670bf40af\"\n    }\n}",
+        "title": "按ID过滤查询私网NAT网关"
+      },
+      {
+        "document": "按标签过滤查询私网NAT网关",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNatGateways\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TagKey\",\n            \"Values\": [\n                \"负责人\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PrivateNatGatewaySet\": [\n            {\n                \"NatGatewayId\": \"intranat-ryur99m8\",\n                \"NatGatewayName\": \"example\",\n                \"VpcId\": \"vpc-d3rrkwej\",\n                \"Status\": \"AVAILABLE\",\n                \"CrossDomain\": false,\n                \"CreatedTime\": \"2023-03-09 16:19:24\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"负责人\",\n                        \"Value\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e13d67ca-4b7b-4337-b8c5-7df7707c89ca\"\n    }\n}",
+        "title": "按标签过滤查询私网NAT网关"
       }
     ],
     "DescribeProductQuota": [
@@ -2468,6 +2586,38 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyPrivateIpAddressesAttribute\n&NetworkInterfaceId=eni-afo43z61\n&PrivateIpAddresses.0.PrivateIpAddress=172.16.32.111\n&PrivateIpAddresses.0.Description=new-pip-name\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "修改弹性网卡内网IP属性"
+      }
+    ],
+    "ModifyPrivateNatGatewayAttribute": [
+      {
+        "document": "修改私网NAT网关属性",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateNatGatewayAttribute\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"NatGatewayName\": \"new_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcb47621-838b-428e-8c33-6e210d93c451\"\n    }\n}",
+        "title": "修改私网NAT网关属性"
+      }
+    ],
+    "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule": [
+      {
+        "document": "修改私网NAT网关目的端口转换规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"LocalDestinationIpPortTranslationNatRules\": [\n        {\n            \"OldProtocol\": \"TCP\",\n            \"OldTranslationPort\": 5666,\n            \"OldTranslationIp\": \"10.0.0.34\",\n            \"OldOriginalPort\": 8888,\n            \"OldOriginalIp\": \"10.0.0.88\",\n            \"Protocol\": \"TCP\",\n            \"TranslationPort\": 5666,\n            \"TranslationIp\": \"10.0.0.34\",\n            \"OriginalPort\": 8888,\n            \"OriginalIp\": \"10.0.0.88\",\n            \"Description\": \"chdesc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "修改私网NAT网关目的端口转换规则"
+      }
+    ],
+    "ModifyPrivateNatGatewayTranslationAclRule": [
+      {
+        "document": "修改私网NAT网关源端转换访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateNatGatewayTranslationAclRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationDirection\": \"LOCAL\",\n    \"TranslationType\": \"TRANSPORT_LAYER\",\n    \"TranslationIp\": \"10.0.0.156-10.0.0.200\",\n    \"TranslationAclRules\": [\n        {\n            \"AclRuleId\": 26,\n            \"Protocol\": \"TCP\",\n            \"SourcePort\": \"5666\",\n            \"SourceCidr\": \"10.0.0.34\",\n            \"DestinationPort\": \"8888\",\n            \"DestinationCidr\": \"10.0.0.24\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd37ad3b-6b94-41f4-bd83-8a2b0d801aae\"\n    }\n}",
+        "title": "修改私网NAT网关源端转换访问控制规则"
+      }
+    ],
+    "ModifyPrivateNatGatewayTranslationNatRule": [
+      {
+        "document": "修改私网NAT网关源端转换规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateNatGatewayTranslationNatRule\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"TranslationNatRules\": [\n        {\n            \"TranslationDirection\": \"LOCAL\",\n            \"TranslationType\": \"NETWORK_LAYER\",\n            \"OriginalIp\": \"10.0.0.14\",\n            \"OldOriginalIp\": \"10.0.0.90\",\n            \"TranslationIp\": \"10.0.0.24\",\n            \"OldTranslationIp\": \"10.0.0.123\",\n            \"Description\": \"desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41fe53eb-6f90-4fde-9e37-c48fa4f8f2ed\"\n    }\n}",
+        "title": "修改私网NAT网关源端转换规则"
       }
     ],
     "ModifyRouteTableAttribute": [

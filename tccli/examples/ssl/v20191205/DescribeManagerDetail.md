@@ -13,36 +13,43 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "ManagerFirstName": "xx",
-        "ManagerMail": "xx",
-        "ContactPhone": "xx",
-        "ContactMail": "xx",
-        "CompanyId": 0,
-        "ManagerPosition": "xx",
-        "ContactPosition": "xx",
-        "ManagerLastName": "xx",
-        "VerifyTime": "xx",
-        "ManagerId": 23,
-        "ExpireTime": "xx",
-        "ContactLastName": "xx",
-        "ContactFirstName": "xx",
-        "StatusInfo": [
-            {}
-        ],
-        "RequestId": "xx",
-        "ManagerDepartment": "xx",
+        "Status": "abc",
+        "ManagerFirstName": "abc",
+        "ManagerMail": "abc",
+        "ContactFirstName": "abc",
+        "ManagerLastName": "abc",
+        "ContactPosition": "abc",
+        "ManagerPosition": "abc",
+        "VerifyTime": "abc",
+        "CreateTime": "abc",
+        "ExpireTime": "abc",
+        "ContactLastName": "abc",
+        "ManagerPhone": "abc",
+        "ContactPhone": "abc",
+        "ContactMail": "abc",
+        "ManagerDepartment": "abc",
         "CompanyInfo": {
-            "CompanyCity": "xx",
+            "CompanyName": "abc",
             "CompanyId": 0,
-            "CompanyAddress": "xx",
-            "CompanyName": "xx",
-            "CompanyCountry": "xx",
-            "CompanyProvince": "xx",
-            "CompanyPhone": "xx"
+            "CompanyCountry": "abc",
+            "CompanyProvince": "abc",
+            "CompanyCity": "abc",
+            "CompanyAddress": "abc",
+            "CompanyPhone": "abc",
+            "IdType": "abc",
+            "IdNumber": "abc"
         },
-        "ManagerPhone": "xx",
-        "CreateTime": "xx"
+        "CompanyId": 0,
+        "ManagerId": 0,
+        "StatusInfo": [
+            {
+                "Type": "abc",
+                "Status": "abc",
+                "CreateTime": "abc",
+                "ExpireTime": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

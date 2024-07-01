@@ -546,6 +546,20 @@
       "output": "DescribeDsParentFolderTreeResponse",
       "status": "online"
     },
+    "DescribeDutyScheduleDetails": {
+      "document": "获取值班日历",
+      "input": "DescribeDutyScheduleDetailsRequest",
+      "name": "获取值班日历",
+      "output": "DescribeDutyScheduleDetailsResponse",
+      "status": "online"
+    },
+    "DescribeDutyScheduleList": {
+      "document": "获取值班表列表",
+      "input": "DescribeDutyScheduleListRequest",
+      "name": "获取值班表列表",
+      "output": "DescribeDutyScheduleListResponse",
+      "status": "online"
+    },
     "DescribeEvent": {
       "document": "根据项目ID和事件名称查看事件详情",
       "input": "DescribeEventRequest",
@@ -12364,6 +12378,116 @@
       ],
       "type": "object"
     },
+    "DescribeDutyScheduleDetailsRequest": {
+      "document": "DescribeDutyScheduleDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班表id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间",
+          "example": "2022-02",
+          "member": "string",
+          "name": "QueryDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDutyScheduleDetailsResponse": {
+      "document": "DescribeDutyScheduleDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班日历信息",
+          "example": "无",
+          "member": "DutyScheduleDetailsInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDutyScheduleListRequest": {
+      "document": "DescribeDutyScheduleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小，默认10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "值班表名称",
+          "example": "值班表A",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDutyScheduleListResponse": {
+      "document": "DescribeDutyScheduleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "DutySchedule",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventCasesRequest": {
       "document": "DescribeEventCases请求参数结构体",
       "members": [
@@ -20056,6 +20180,242 @@
         }
       ],
       "type": "object"
+    },
+    "Duty": {
+      "document": "值班信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DutyScheduleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班人员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DutyPerson",
+          "name": "DutyPersons",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DutyPerson": {
+      "document": "值班人员",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班人子账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班人员主账号用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "OwnerUserId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值班人tenantId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "TenantId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "2023-11-02 08:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "添加时间",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Params",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DutySchedule": {
+      "document": "值班表列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DutyScheduleData",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页号",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DutyScheduleData": {
+      "document": "值班表列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班表Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值班表名称",
+          "example": "值班表A",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "12345",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DutyScheduleDetailsInfo": {
+      "document": "值班信息表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值班日期",
+          "example": "2022-02-01",
+          "member": "string",
+          "name": "Day",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值班信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Duty",
+          "name": "Duty",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "EventBatchCaseDTO": {
       "document": "事件连续时间实例信息",

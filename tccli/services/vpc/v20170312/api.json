@@ -357,6 +357,34 @@
       "output": "CreateNetworkInterfaceResponse",
       "status": "online"
     },
+    "CreatePrivateNatGateway": {
+      "document": "本接口（CreatePrivateNatGateway）用于创建私网NAT网关。",
+      "input": "CreatePrivateNatGatewayRequest",
+      "name": "创建私网NAT网关",
+      "output": "CreatePrivateNatGatewayResponse",
+      "status": "online"
+    },
+    "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule": {
+      "document": "本接口（CreatePrivateNatGatewayDestinationIpPortTranslationNatRule）用于创建私网NAT网关目的端口转换规则",
+      "input": "CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest",
+      "name": "创建私网NAT网关目的端口转换规则",
+      "output": "CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "CreatePrivateNatGatewayTranslationAclRule": {
+      "document": "本接口（ CreatePrivateNatGatewayTranslationAclRule）用于创建私网NAT网关源端转换访问控制规则",
+      "input": "CreatePrivateNatGatewayTranslationAclRuleRequest",
+      "name": "创建私网NAT网关源端转换访问控制规则",
+      "output": "CreatePrivateNatGatewayTranslationAclRuleResponse",
+      "status": "online"
+    },
+    "CreatePrivateNatGatewayTranslationNatRule": {
+      "document": "本接口（CreatePrivateNatGatewayTranslationNatRule）用于创建私网NAT网关源端转换规则。",
+      "input": "CreatePrivateNatGatewayTranslationNatRuleRequest",
+      "name": "创建私网NAT网关源端转换规则",
+      "output": "CreatePrivateNatGatewayTranslationNatRuleResponse",
+      "status": "online"
+    },
     "CreateRouteTable": {
       "document": "本接口(CreateRouteTable)用于创建路由表。\n* 创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。\n* 创建路由表同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateRouteTableRequest",
@@ -649,6 +677,34 @@
       "input": "DeleteNetworkInterfaceRequest",
       "name": "删除弹性网卡",
       "output": "DeleteNetworkInterfaceResponse",
+      "status": "online"
+    },
+    "DeletePrivateNatGateway": {
+      "document": "本接口（DeletePrivateNatGateway）用于删除私网NAT网关。",
+      "input": "DeletePrivateNatGatewayRequest",
+      "name": "删除私网NAT网关",
+      "output": "DeletePrivateNatGatewayResponse",
+      "status": "online"
+    },
+    "DeletePrivateNatGatewayDestinationIpPortTranslationNatRule": {
+      "document": "本接口（DeletePrivateNatGatewayDestinationIpPortTranslationNatRule）用于删除私网NAT网关目的端口转换规则",
+      "input": "DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest",
+      "name": "删除私网NAT网关目的端口转换规则",
+      "output": "DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "DeletePrivateNatGatewayTranslationAclRule": {
+      "document": "本接口（DeletePrivateNatGatewayTranslationAclRule）用于删除私网NAT网关源端转换访问控制规则",
+      "input": "DeletePrivateNatGatewayTranslationAclRuleRequest",
+      "name": "删除私网NAT网关源端转换访问控制规则",
+      "output": "DeletePrivateNatGatewayTranslationAclRuleResponse",
+      "status": "online"
+    },
+    "DeletePrivateNatGatewayTranslationNatRule": {
+      "document": "本接口（DeletePrivateNatGatewayTranslationNatRule）用于删除私网NAT网关源端转换规则",
+      "input": "DeletePrivateNatGatewayTranslationNatRuleRequest",
+      "name": "删除私网NAT网关源端转换规则",
+      "output": "DeletePrivateNatGatewayTranslationNatRuleResponse",
       "status": "online"
     },
     "DeleteRouteTable": {
@@ -1104,6 +1160,48 @@
       "input": "DescribeNetworkInterfacesRequest",
       "name": "查询弹性网卡列表",
       "output": "DescribeNetworkInterfacesResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGatewayDestinationIpPortTranslationNatRules": {
+      "document": "本接口（DescribePrivateNatGatewayDestinationIpPortTranslationNatRules）用于查询私网NAT网关目的端口转换规则",
+      "input": "DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesRequest",
+      "name": "查询私网NAT网关目的端口转换规则",
+      "output": "DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGatewayLimits": {
+      "document": "本接口（DescribePrivateNatGatewayLimits）用于查询可创建的私网NAT网关配额数量",
+      "input": "DescribePrivateNatGatewayLimitsRequest",
+      "name": "查询可创建的私网NAT网关配额数量",
+      "output": "DescribePrivateNatGatewayLimitsResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGatewayRegions": {
+      "document": "本接口（DescribePrivateNatGatewayRegions）用于查询查询私网NAT网关可支持地域",
+      "input": "DescribePrivateNatGatewayRegionsRequest",
+      "name": "查询私网NAT网关可支持地域",
+      "output": "DescribePrivateNatGatewayRegionsResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGatewayTranslationAclRules": {
+      "document": "本接口（DescribePrivateNatGatewayTranslationAclRules）用于查询私网NAT网关源端转换访问控制规则",
+      "input": "DescribePrivateNatGatewayTranslationAclRulesRequest",
+      "name": "查询私网NAT网关源端转换访问控制规则",
+      "output": "DescribePrivateNatGatewayTranslationAclRulesResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGatewayTranslationNatRules": {
+      "document": "本接口（DescribePrivateNatGatewayTranslationNatRules）用于查询私网NAT网关源端转换规则",
+      "input": "DescribePrivateNatGatewayTranslationNatRulesRequest",
+      "name": "查询私网NAT网关源端转换规则",
+      "output": "DescribePrivateNatGatewayTranslationNatRulesResponse",
+      "status": "online"
+    },
+    "DescribePrivateNatGateways": {
+      "document": "本接口（DescribePrivateNatGateways）用于查询私网NAT网关",
+      "input": "DescribePrivateNatGatewaysRequest",
+      "name": "查询私网NAT网关",
+      "output": "DescribePrivateNatGatewaysResponse",
       "status": "online"
     },
     "DescribeProductQuota": {
@@ -1860,6 +1958,34 @@
       "input": "ModifyPrivateIpAddressesAttributeRequest",
       "name": "修改弹性网卡内网IP信息",
       "output": "ModifyPrivateIpAddressesAttributeResponse",
+      "status": "online"
+    },
+    "ModifyPrivateNatGatewayAttribute": {
+      "document": "本接口（ModifyPrivateNatGatewayAttribute）用于修改私网NAT网关属性",
+      "input": "ModifyPrivateNatGatewayAttributeRequest",
+      "name": "修改私网NAT网关属性",
+      "output": "ModifyPrivateNatGatewayAttributeResponse",
+      "status": "online"
+    },
+    "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule": {
+      "document": "本接口（ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule）用于修改私网NAT网关目的端口转换规则",
+      "input": "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleRequest",
+      "name": "修改私网NAT网关目的端口转换规则",
+      "output": "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleResponse",
+      "status": "online"
+    },
+    "ModifyPrivateNatGatewayTranslationAclRule": {
+      "document": "本接口（ModifyPrivateNatGatewayTranslationAclRule）用于修改私网NAT网关源端转换访问控制规则",
+      "input": "ModifyPrivateNatGatewayTranslationAclRuleRequest",
+      "name": "修改私网NAT网关源端转换访问控制规则",
+      "output": "ModifyPrivateNatGatewayTranslationAclRuleResponse",
+      "status": "online"
+    },
+    "ModifyPrivateNatGatewayTranslationNatRule": {
+      "document": "本接口（ModifyPrivateNatGatewayTranslationNatRule）用于修改私网NAT网关源端转换规则",
+      "input": "ModifyPrivateNatGatewayTranslationNatRuleRequest",
+      "name": "修改私网NAT网关源端转换规则",
+      "output": "ModifyPrivateNatGatewayTranslationNatRuleResponse",
       "status": "online"
     },
     "ModifyRouteTableAttribute": {
@@ -7304,6 +7430,260 @@
       ],
       "type": "object"
     },
+    "CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest": {
+      "document": "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的端口转换规则列表。",
+          "example": "无",
+          "member": "LocalDestinationIpPortTranslationNatRule",
+          "name": "LocalDestinationIpPortTranslationNatRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse": {
+      "document": "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayRequest": {
+      "document": "CreatePrivateNatGateway请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关名称",
+          "example": "test",
+          "member": "string",
+          "name": "NatGatewayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络实例ID。当创建VPC类型私网NAT网关或者专线网关类型私网NAT网关时，此参数必填。",
+          "example": "vpc-m7sr81gh",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨域参数。仅当取值为True时，才会支持跨域绑定VPC。",
+          "example": "True",
+          "member": "bool",
+          "name": "CrossDomain",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "VPC类型私网NAT网关。仅当取值为True时，才会创建VPC类型私网NAT网关。",
+          "example": "True",
+          "member": "bool",
+          "name": "VpcType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "云联网类型私网NAT网关需要绑定的云联网实例ID。",
+          "example": "ccn-jq193paf",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayResponse": {
+      "document": "CreatePrivateNatGateway返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关对象。",
+          "example": "无",
+          "member": "PrivateNatGateway",
+          "name": "PrivateNatGatewaySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建实例个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayTranslationAclRuleRequest": {
+      "document": "CreatePrivateNatGatewayTranslationAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"TRANSPORT_LAYER",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制列表。",
+          "example": "无",
+          "member": "TranslationAclRule",
+          "name": "TranslationAclRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效。",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayTranslationAclRuleResponse": {
+      "document": "CreatePrivateNatGatewayTranslationAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayTranslationNatRuleRequest": {
+      "document": "CreatePrivateNatGatewayTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则对象数组。",
+          "example": "无",
+          "member": "TranslationNatRuleInput",
+          "name": "TranslationNatRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域参数，当VPC为跨域时填写为True。",
+          "example": "1",
+          "member": "bool",
+          "name": "CrossDomain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNatGatewayTranslationNatRuleResponse": {
+      "document": "CreatePrivateNatGatewayTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRouteTableRequest": {
       "document": "CreateRouteTable请求参数结构体",
       "members": [
@@ -10084,6 +10464,196 @@
     "DeleteNetworkInterfaceResponse": {
       "document": "DeleteNetworkInterface返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest": {
+      "document": "DeletePrivateNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的端口转换规则数组。",
+          "example": "无",
+          "member": "LocalDestinationIpPortTranslationNatRule",
+          "name": "LocalDestinationIpPortTranslationNatRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse": {
+      "document": "DeletePrivateNatGatewayDestinationIpPortTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayRequest": {
+      "document": "DeletePrivateNatGateway请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如\"intranat-xxxxxxxx\"。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayResponse": {
+      "document": "DeletePrivateNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayTranslationAclRuleRequest": {
+      "document": "DeletePrivateNatGatewayTranslationAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"NETWORK_LAYER\"",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制规则对应`ID`",
+          "example": "[1,5,26]",
+          "member": "uint64",
+          "name": "AclRuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayTranslationAclRuleResponse": {
+      "document": "DeletePrivateNatGatewayTranslationAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayTranslationNatRuleRequest": {
+      "document": "DeletePrivateNatGatewayTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则对象数组。",
+          "example": "无",
+          "member": "TranslationNatRule",
+          "name": "TranslationNatRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域参数，当VPC为跨域时填写为True。",
+          "example": "True",
+          "member": "bool",
+          "name": "CrossDomain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNatGatewayTranslationNatRuleResponse": {
+      "document": "DeletePrivateNatGatewayTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13921,6 +14491,447 @@
       ],
       "type": "object"
     },
+    "DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesRequest": {
+      "document": "DescribePrivateNatGatewayDestinationIpPortTranslationNatRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如\"intranat-xxxxxxxx)",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Name可选值\"OriginalIp\",  \"TranslationIp\", \"OriginalPort\",\"TranslationPort\",  \"Protocol\", \"Description\"",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数目，默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesResponse": {
+      "document": "DescribePrivateNatGatewayDestinationIpPortTranslationNatRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总规则数目。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端口转换规则数组。",
+          "example": "无",
+          "member": "PrivateNatDestinationIpPortTranslationNatRule",
+          "name": "LocalDestinationIpPortTranslationNatRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayLimitsRequest": {
+      "document": "DescribePrivateNatGatewayLimits请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询VPC下可创建的私网网关配额数量，可选值：\n<li>VpcId - String - 所在VpcId</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数目，默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayLimitsResponse": {
+      "document": "DescribePrivateNatGatewayLimits返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询返回结果个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网网关配额。",
+          "example": "无",
+          "member": "PrivateNatGatewayLimit",
+          "name": "PrivateNatGatewayLimitSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayRegionsRequest": {
+      "document": "DescribePrivateNatGatewayRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayRegionsResponse": {
+      "document": "DescribePrivateNatGatewayRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域对象",
+          "example": "无",
+          "member": "NatRegionInfoWithArea",
+          "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回可支持地域总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayTranslationAclRulesRequest": {
+      "document": "DescribePrivateNatGatewayTranslationAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"NETWORK_LAYER\"",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效。",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数目，默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayTranslationAclRulesResponse": {
+      "document": "DescribePrivateNatGatewayTranslationAclRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问控制规则列表。",
+          "example": "无",
+          "member": "TranslationAclRule",
+          "name": "TranslationAclRuleSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayTranslationNatRulesRequest": {
+      "document": "DescribePrivateNatGatewayTranslationNatRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "[\"intranat-0g3blj80\"]",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>OriginalIp - String - 转换规则源`IP`。</li>\n<li>TranslationIp - String - 转换`IP`。</li>\n<li>VpcId - String - 私网网关所在`VpcId`。</li>\n<li>Description - String - 转换规则描述</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量。默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewayTranslationNatRulesResponse": {
+      "document": "DescribePrivateNatGatewayTranslationNatRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象数目。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换规则详情数组。",
+          "example": "无",
+          "member": "TranslationNatRule",
+          "name": "TranslationNatRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewaysRequest": {
+      "document": "DescribePrivateNatGateways请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-0g3blj80`。",
+          "example": "[\"intranat-0g3blj80\"]",
+          "member": "string",
+          "name": "NatGatewayIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>NatGatewayId - String - 私网网关唯一`ID`，形如：`intranat-0g3blj80`。</li>\n<li>NatGatewayName - String - 专线网关名称，默认模糊查询。</li>\n<li>VpcId - String - 私网网关所在`VpcId`。</li>\n<li>TagKey - Tag数组 - 私网网关标签键值对数组</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。可选值：\"NatGatewayId\"、\"NatGatewayName\"、\"CreatedTime\"",
+          "example": "\"NatGatewayId\"",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。可选值：\"ASC\"、\"DESC\"。",
+          "example": "\"ASC\"",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNatGatewaysResponse": {
+      "document": "DescribePrivateNatGateways返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的对象数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网网关对象数组。",
+          "example": "无",
+          "member": "PrivateNatGateway",
+          "name": "PrivateNatGatewaySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductQuotaRequest": {
       "document": "DescribeProductQuota请求参数结构体",
       "members": [
@@ -16573,6 +17584,122 @@
         }
       ],
       "usage": "out"
+    },
+    "DestinationIpPortTranslationNatRuleDiff": {
+      "document": "本端目的IP端口转换复杂结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "\"TCP\"",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端口",
+          "example": "80",
+          "member": "int64",
+          "name": "OriginalPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端口",
+          "example": "8081",
+          "member": "int64",
+          "name": "TranslationPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的IP",
+          "example": "\"10.0.13.1\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧协议。",
+          "example": "\"UDP\"",
+          "member": "string",
+          "name": "OldProtocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧源端口",
+          "example": "80",
+          "member": "int64",
+          "name": "OldOriginalPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧源IP",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OldOriginalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧目的端口",
+          "example": "8081",
+          "member": "int64",
+          "name": "OldTranslationPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧目的IP",
+          "example": "\"10.0.13.1\"",
+          "member": "string",
+          "name": "OldTranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DetachCcnInstancesRequest": {
       "document": "DetachCcnInstances请求参数结构体",
@@ -20007,6 +21134,72 @@
       ],
       "usage": "out"
     },
+    "LocalDestinationIpPortTranslationNatRule": {
+      "document": "本端目的IP端口转换复杂结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端口",
+          "example": "",
+          "member": "int64",
+          "name": "OriginalPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP",
+          "example": "",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端口",
+          "example": "",
+          "member": "int64",
+          "name": "TranslationPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的IP",
+          "example": "",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LocalGateway": {
       "document": "本地网关信息",
       "members": [
@@ -21737,6 +22930,195 @@
       ],
       "type": "object"
     },
+    "ModifyPrivateNatGatewayAttributeRequest": {
+      "document": "ModifyPrivateNatGatewayAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私网网关名称，可任意命名，但不得超过60个字符。",
+          "example": "\"newtest\"",
+          "member": "string",
+          "name": "NatGatewayName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayAttributeResponse": {
+      "document": "ModifyPrivateNatGatewayAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleRequest": {
+      "document": "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的端口转换规则列表。",
+          "example": "无",
+          "member": "DestinationIpPortTranslationNatRuleDiff",
+          "name": "LocalDestinationIpPortTranslationNatRules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleResponse": {
+      "document": "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayTranslationAclRuleRequest": {
+      "document": "ModifyPrivateNatGatewayTranslationAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "NETWORK_LAYER",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制列表，需要附带AclRuleId参数。",
+          "example": "无",
+          "member": "TranslationAclRule",
+          "name": "TranslationAclRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayTranslationAclRuleResponse": {
+      "document": "ModifyPrivateNatGatewayTranslationAclRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayTranslationNatRuleRequest": {
+      "document": "ModifyPrivateNatGatewayTranslationNatRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
+          "example": "\"intranat-0g3blj80\"",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转换规则对象数组。仅支持修改单个转换规则",
+          "example": "无",
+          "member": "TranslationNatRuleDiff",
+          "name": "TranslationNatRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨域参数，当VPC为跨域时填写为True。",
+          "example": "True",
+          "member": "bool",
+          "name": "CrossDomain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNatGatewayTranslationNatRuleResponse": {
+      "document": "ModifyPrivateNatGatewayTranslationNatRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRouteTableAttributeRequest": {
       "document": "ModifyRouteTableAttribute请求参数结构体",
       "members": [
@@ -23189,6 +24571,11 @@
       ],
       "usage": "out"
     },
+    "NatRegionInfoWithArea": {
+      "document": "NAT地域地区对象",
+      "members": [],
+      "usage": "out"
+    },
     "NetDetect": {
       "document": "网络探测对象。",
       "members": [
@@ -24380,6 +25767,204 @@
         }
       ],
       "usage": "both"
+    },
+    "PrivateNatDestinationIpPortTranslationNatRule": {
+      "document": "本端目的IP端口转换复杂结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "\"TCP\"",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原端口",
+          "example": "80",
+          "member": "int64",
+          "name": "OriginalPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原IP",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "映射端口",
+          "example": "8081",
+          "member": "int64",
+          "name": "TranslationPort",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "映射IP",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "\"2022-09-30 14:24:38\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "\"2022-09-30 14:24:38\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PrivateNatGateway": {
+      "document": "私网网关对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网网关`ID`。",
+          "example": "intranat-0g3blj80",
+          "member": "string",
+          "name": "NatGatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网网关名称。",
+          "example": "test",
+          "member": "string",
+          "name": "NatGatewayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网网关关联`VPC`实例`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-noanwmed",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私网网关当前状态。",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网网关跨域标志。",
+          "example": "True",
+          "member": "bool",
+          "name": "CrossDomain",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-29 15:58:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PrivateNatGatewayLimit": {
+      "document": "可创建的私网网关配额数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络唯一`ID`。",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Vpc下总计可创建私网网关数量。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "TotalLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可创建私网网关数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Available",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProductQuota": {
       "document": "描述网络中心每个产品的配额信息",
@@ -28010,6 +29595,290 @@
         }
       ],
       "type": "object"
+    },
+    "TranslationAclRule": {
+      "document": "私网网关转发规则匹配ACL",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ACL协议类型，可选值:\"ALL\",\"TCP\",\"UDP\"",
+          "example": "\"ALL\"",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端口。",
+          "example": "\"80\"",
+          "member": "string",
+          "name": "SourcePort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源地址。支持`ip`或`cidr`格式\"xxx.xxx.xxx.000/xx\"",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "SourceCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端口。",
+          "example": "\"8081\"",
+          "member": "string",
+          "name": "DestinationPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的地址。",
+          "example": "\"100.0.20.3\"",
+          "member": "string",
+          "name": "DestinationCidr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ACL规则`ID`。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AclRuleId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否匹配。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Action",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TranslationNatRule": {
+      "document": "私网网关Snat转发规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\",\"PEER\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"NETWORK_LAYER\"",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "\"10.0.13.21\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "\"2022-09-29 15:58:00\"",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "\"2022-09-29 15:58:00\"",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TranslationNatRuleDiff": {
+      "document": "私网网关Snat转发规则修改",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则目标，可选值\"LOCAL\",\"PEER\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"NETWORK_LAYER\"",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则映射`IP`,当转发规则类型为四层时为`IP`池",
+          "example": "\"10.0.13.21\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池",
+          "example": "\"10.0.13.21\"",
+          "member": "string",
+          "name": "OldTranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新转发规则源`IP`,当转发规则类型为三层时有效",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧转发规则源`IP`,当转发规则类型为三层时有效",
+          "example": "\"10.0.13.19\"",
+          "member": "string",
+          "name": "OldOriginalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "TranslationNatRuleInput": {
+      "document": "私网网关Snat转发规则入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转换规则目标，可选值\"LOCAL\",\"PEER\"。",
+          "example": "\"LOCAL\"",
+          "member": "string",
+          "name": "TranslationDirection",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "example": "\"NETWORK_LAYER\"",
+          "member": "string",
+          "name": "TranslationType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "\"10.0.13.21\"",
+          "member": "string",
+          "name": "TranslationIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转换规则描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源`IP`,当转换规则类型为三层时有效。",
+          "example": "\"10.0.13.20\"",
+          "member": "string",
+          "name": "OriginalIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "UnassignIpv6AddressesRequest": {
       "document": "UnassignIpv6Addresses请求参数结构体",

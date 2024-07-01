@@ -1046,8 +1046,8 @@
       {
         "document": "获取c端用户实名链接",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserVerifyUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"19561039c99fe825a934a132520fde6a\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"Name\": \"典子谦\",\n    \"Endpoint\": \"HTTP_SHORT_URL\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"420101XXXXXXXX4059\",\n    \"Mobile\": \"13200000015\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1713080196,\n        \"MiniAppId\": \"wxa023b292fd19d41d\",\n        \"RequestId\": \"s1712475396892401448\",\n        \"UserVerifyUrl\": \"https://test.essurl.cn/RTo2UBE6X6\"\n    }\n}",
-        "title": "获取c端用户实名链接"
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1713080196,\n        \"MiniAppId\": \"\",\n        \"RequestId\": \"s1712475396892401448\",\n        \"UserVerifyUrl\": \"https://test.essurl.cn/RTo****6X6\"\n    }\n}",
+        "title": "获取c端用户实名跳转链接"
       }
     ],
     "CreateWebThemeConfig": [

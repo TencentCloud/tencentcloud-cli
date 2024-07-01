@@ -6642,7 +6642,16 @@
         },
         {
           "disabled": false,
-          "document": "要跳转的链接类型\n\n- HTTP：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型 ，此时返回长链 (默认类型)\n\n- HTTP_SHORT_URL：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型，此时返回短链\n\n- APP：\n第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型\n\n如果不传递，默认值是 APP",
+          "document": "实名完之后的跳转链接，最大长度1000个字符。\n链接类型请参考 <a href=\"https://qian.tencent.com/developers/company/openqianh5\" target=\"_blank\">跳转电子签H5</a>。\n\n注：此参数仅支持 Endpoint 为 <font color=\"red\">H5 或 H5_SHORT_URL </font>的时候传递\n",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型\n\n- HTTP：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型 ，此时返回长链 (默认类型)\n\n- HTTP_SHORT_URL：\n跳转电子签小程序的http_url,短信通知或者H5跳转适合此类型，此时返回短链\n\n- APP：\n第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型\n\n- H5：\n跳转电子签H5实名页面的长链\n\n- H5_SHORT_URL：\n跳转电子签H5实名页面的短链\n\n注：如果不传递，默认值是 <font color=\"red\"> APP </font>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",
@@ -6651,7 +6660,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 实名完成不会自动跳转回来(默认)</li><li>true：是, 实名完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（电子签小程序跳转贵方小程序）场景</font> 的实名链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必需用户手动点击完成按钮（微信的限制）</font> ",
+          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 实名完成不会自动跳转回来(默认)</li><li>true：是, 实名完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（第三方APP或小程序跳转电子签小程序）场景</font> 的实名链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必需用户手动点击完成按钮（微信的限制）</font> ",
           "example": "无",
           "member": "bool",
           "name": "AutoJumpBack",
@@ -6675,7 +6684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n\n注： 生成的链路后面不能再增加参数\n示例值：https://essurl.cn/2n**42Nd",
+          "document": "腾讯电子签小程序的实名认证链接。\n如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。\n\n- 如果EndPoint是APP，\n得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的\"跳转到小程序的实现\"\n\n- 如果EndPoint是HTTP，\n得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是HTTP_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签小程序进行签署\n\n- 如果EndPoint是H5，\n得到的链接类似于 https://quick.test.qian.tencent.cn/guide?Code=yDU****VJhsS5q&CodeType=xxx&shortKey=yD*****frcb，点击后会跳转到腾讯电子签H5页面进行签署\n\n- 如果EndPoint是H5_SHORT_URL，\n得到的链接类似于https://essurl.cn/2n**42Nd，点击后会跳转到腾讯电子签H5页面进行签署\n\n\n`注：` <font color=\"red\">生成的链路后面不能再增加参数</font>\n示例值：https://essurl.cn/2n**42Nd",
           "example": "无",
           "member": "string",
           "name": "UserVerifyUrl",
