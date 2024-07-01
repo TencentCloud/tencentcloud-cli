@@ -8752,6 +8752,34 @@
       ],
       "usage": "out"
     },
+    "PodRestartConfig": {
+      "document": "pod重建/容器重启配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod重建/容器重启时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "RestartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要重启的容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RestartContainers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PolarisConfig": {
       "document": "北极星服务发现 Config",
       "members": [
@@ -10146,6 +10174,17 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod重建/容器重启配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PodRestartConfig",
+          "name": "RestartConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

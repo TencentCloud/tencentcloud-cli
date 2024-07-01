@@ -1975,6 +1975,15 @@
           "name": "CdcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组亲和度，范围[0,10]，0表示不开启",
+          "example": "无",
+          "member": "uint64",
+          "name": "DisasterRecoverGroupAffinity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3906,7 +3915,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3916,7 +3925,7 @@
           "example": "[]",
           "member": "InstanceLog",
           "name": "InstanceLogList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7799,6 +7808,16 @@
           "name": "NetConnectScheme",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "置放群组相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisasterRecoverGroupAffinity",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

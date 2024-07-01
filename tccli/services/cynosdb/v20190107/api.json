@@ -1199,6 +1199,28 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持透明数据加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportTransparentDataEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不支持透明数据加密原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NoSupportTransparentDataEncryptionReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5202,6 +5224,7 @@
           "example": "running",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5212,6 +5235,7 @@
           "example": "2021-05-08 14:29:25",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5222,6 +5246,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5232,6 +5257,7 @@
           "example": "MyClusterName",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5242,6 +5268,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5252,6 +5279,7 @@
           "example": "5.7",
           "member": "string",
           "name": "DbVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5262,6 +5290,7 @@
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5272,6 +5301,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5282,6 +5312,7 @@
           "example": "111111",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5292,6 +5323,7 @@
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5302,6 +5334,7 @@
           "example": "111111",
           "member": "int64",
           "name": "AppId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5312,6 +5345,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5322,6 +5356,7 @@
           "example": "2021-05-08 14:29:25",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5332,6 +5367,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5342,6 +5378,7 @@
           "example": "2021-06-08 14:29:25",
           "member": "string",
           "name": "PeriodEndTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5352,6 +5389,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5362,6 +5400,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5372,6 +5411,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectID",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -5382,6 +5422,7 @@
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5392,6 +5433,7 @@
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5402,6 +5444,7 @@
           "example": "2.0.12",
           "member": "string",
           "name": "CynosVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5412,6 +5455,7 @@
           "example": "1000",
           "member": "int64",
           "name": "StorageLimit",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5422,6 +5466,7 @@
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5432,6 +5477,7 @@
           "example": "ProcessingTask",
           "member": "string",
           "name": "ProcessingTask",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5442,6 +5488,7 @@
           "example": "无",
           "member": "ObjectTask",
           "name": "Tasks",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5452,6 +5499,7 @@
           "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5462,6 +5510,7 @@
           "example": "SERVERLESS",
           "member": "string",
           "name": "DbMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5472,6 +5521,7 @@
           "example": "resume",
           "member": "string",
           "name": "ServerlessStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5482,6 +5532,7 @@
           "example": "1000",
           "member": "int64",
           "name": "Storage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5492,6 +5543,7 @@
           "example": "cynosmysql-xxxxxxxx",
           "member": "string",
           "name": "StorageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5502,6 +5554,7 @@
           "example": "1",
           "member": "int64",
           "name": "StoragePayMode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5512,6 +5565,7 @@
           "example": "10",
           "member": "int64",
           "name": "MinStorageSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5522,6 +5576,7 @@
           "example": "1000",
           "member": "int64",
           "name": "MaxStorageSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5532,6 +5587,7 @@
           "example": "无",
           "member": "NetAddr",
           "name": "NetAddrs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5542,6 +5598,7 @@
           "example": "无",
           "member": "string",
           "name": "PhysicalZone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5552,6 +5609,7 @@
           "example": "无",
           "member": "string",
           "name": "MasterZone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5562,6 +5620,7 @@
           "example": "无",
           "member": "string",
           "name": "HasSlaveZone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5572,6 +5631,7 @@
           "example": "无",
           "member": "string",
           "name": "SlaveZones",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5582,6 +5642,7 @@
           "example": "无",
           "member": "string",
           "name": "BusinessType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5592,6 +5653,7 @@
           "example": "无",
           "member": "string",
           "name": "IsFreeze",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5602,6 +5664,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderSource",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5612,6 +5675,7 @@
           "example": "无",
           "member": "Ability",
           "name": "Ability",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5622,6 +5686,7 @@
           "example": "无",
           "member": "ResourcePackage",
           "name": "ResourcePackages",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6842,6 +6907,16 @@
         },
         {
           "disabled": false,
+          "document": "serverless实例状态, 可能值：\nresume\npause",
+          "example": "无",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "数据库类型",
           "example": "无",
           "member": "string",
@@ -7058,16 +7133,6 @@
           "name": "MaxCpu",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "serverless实例状态, 可能值：\nresume\npause",
-          "example": "无",
-          "member": "string",
-          "name": "ServerlessStatus",
-          "output_required": true,
-          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7514,7 +7579,7 @@
           "example": "12345678",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7524,7 +7589,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7534,7 +7599,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7544,7 +7609,7 @@
           "example": "cynosdb-ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7554,7 +7619,7 @@
           "example": "实例名",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7564,7 +7629,7 @@
           "example": "running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7574,7 +7639,7 @@
           "example": "cynosdb-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7584,7 +7649,7 @@
           "example": "集群名",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7594,8 +7659,28 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vip信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vport信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -9407,7 +9492,7 @@
           "example": "[]",
           "member": "DbInfo",
           "name": "DbInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9417,7 +9502,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9761,7 +9846,7 @@
           "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordDictionary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9771,7 +9856,7 @@
           "example": "8",
           "member": "ParamInfo",
           "name": "ValidatePasswordLength",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9781,7 +9866,7 @@
           "example": "1",
           "member": "ParamInfo",
           "name": "ValidatePasswordMixedCaseCount",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9791,7 +9876,7 @@
           "example": "1",
           "member": "ParamInfo",
           "name": "ValidatePasswordNumberCount",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9801,7 +9886,7 @@
           "example": "MEDIUM",
           "member": "ParamInfo",
           "name": "ValidatePasswordPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9811,7 +9896,7 @@
           "example": "1",
           "member": "ParamInfo",
           "name": "ValidatePasswordSpecialCharCount",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9893,6 +9978,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9902,6 +9988,7 @@
           "example": "无",
           "member": "CynosdbCluster",
           "name": "ClusterSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10215,7 +10302,7 @@
           "example": "无",
           "member": "CynosdbInstanceDetail",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10791,7 +10878,7 @@
           "example": "26",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10801,7 +10888,7 @@
           "example": "无",
           "member": "CynosdbLightInstance",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10838,7 +10925,7 @@
           "example": "[\"Mon\",\"Tue\"]",
           "member": "string",
           "name": "MaintainWeekDays",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10848,7 +10935,7 @@
           "example": "3600",
           "member": "int64",
           "name": "MaintainStartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10858,7 +10945,7 @@
           "example": "3600",
           "member": "int64",
           "name": "MaintainDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16085,7 +16172,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16095,7 +16182,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16105,7 +16192,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "WanDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16115,7 +16202,7 @@
           "example": "3306",
           "member": "int64",
           "name": "WanPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16125,7 +16212,7 @@
           "example": "rw",
           "member": "string",
           "name": "NetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16135,7 +16222,7 @@
           "example": "无",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16145,7 +16232,7 @@
           "example": "无",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16155,7 +16242,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16165,7 +16252,7 @@
           "example": "无",
           "member": "string",
           "name": "WanIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16175,7 +16262,7 @@
           "example": "无",
           "member": "string",
           "name": "WanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16185,7 +16272,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -17311,6 +17398,16 @@
           "member": "string",
           "name": "Func",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持公式的参数的默认公式样式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuncPattern",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -22157,6 +22254,7 @@
           "example": "root",
           "member": "string",
           "name": "DbUserName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -22167,6 +22265,7 @@
           "example": "%",
           "member": "string",
           "name": "DbHost",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -22177,6 +22276,7 @@
           "example": "readonly",
           "member": "string",
           "name": "DbPrivilege",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

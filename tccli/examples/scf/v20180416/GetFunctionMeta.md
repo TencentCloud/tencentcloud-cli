@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": "xx",
-        "RequestId": "xx"
+        "RequestId": "aaaa-bbbb-cccc-dddddddddddd-eeee"
     }
 }
 ```

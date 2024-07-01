@@ -1,3 +1,211 @@
+# Release 3.0.1026.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 37 次发布
+
+发布时间：2024-07-02 01:10:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PodRestartConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodRestartConfig)
+
+修改数据结构：
+
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
+
+	* 新增成员：RestartConfig
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 91 次发布
+
+发布时间：2024-07-02 01:14:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
+	* 新增成员：IsSupportTransparentDataEncryption, NoSupportTransparentDataEncryptionReason
+
+* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
+
+	* 新增成员：Vip, Vport
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceGroupId
+
+* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamInfo)
+
+	* 新增成员：FuncPattern
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 34 次发布
+
+发布时间：2024-07-02 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
+
+	* <font color="#dd0000">**修改成员**：</font>BigDealId
+
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
+
+	* <font color="#dd0000">**修改成员**：</font>Success, Doing, Failed
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 62 次发布
+
+发布时间：2024-07-02 01:16:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：DisasterRecoverGroupAffinity
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：DisasterRecoverGroupAffinity
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 93 次发布
+
+发布时间：2024-07-02 01:17:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
+
+	* 新增入参：JumpUrl
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 48 次发布
+
+发布时间：2024-07-02 01:23:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Result](http://document.tencentcloudapi.woa.com/document/product/583/17244#Result)
+
+	* 新增成员：StatusCode
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 61 次发布
+
+发布时间：2024-07-02 01:23:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
+
+
+修改数据结构：
+
+* [ManagerStatusInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#ManagerStatusInfo)
+
+	* 新增成员：Type, Status, CreateTime, ExpireTime
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 60 次发布
+
+发布时间：2024-07-02 01:28:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyAccessPeriod
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 59 次发布
+
+发布时间：2024-07-02 01:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDutyScheduleDetails](http://document.tencentcloudapi.woa.com/document/product/1607/84187)
+* [DescribeDutyScheduleList](http://document.tencentcloudapi.woa.com/document/product/1607/84186)
+
+新增数据结构：
+
+* [Duty](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Duty)
+* [DutyPerson](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyPerson)
+* [DutySchedule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutySchedule)
+* [DutyScheduleData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleData)
+* [DutyScheduleDetailsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleDetailsInfo)
+
+
+
 # Release 3.0.1025.1
 
 ## 云顾问(advisor) 版本：2020-07-21

@@ -31,7 +31,12 @@ Output:
                 "ExpireTime": "xx",
                 "ManagerMail": "xx",
                 "StatusInfo": [
-                    {}
+                    {
+                        "Status": "xx",
+                        "ExpireTime": "xx",
+                        "Type": "xx",
+                        "CreateTime": "xx"
+                    }
                 ],
                 "DomainCount": 2,
                 "ManagerDepartment": "xx",

@@ -156,7 +156,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionMeta\n<公共请求参数>\n\n{\n    \"VersionID\": \"xx\",\n    \"FunctionID\": \"xx\",\n    \"Qualifier\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"xx\",\n        \"RequestId\": \"aaaa-bbbb-cccc-dddddddddddd-eeee\"\n    }\n}",
         "title": "获取集群元数据"
       }
     ],
@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunctionSquashAddress\n<公共请求参数>\n\n{\n    \"VersionID\": \"xx\",\n    \"FunctionID\": \"xx\",\n    \"Qualifier\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LayerUrl\": \"xx\",\n        \"CodeUrl\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CodeUrl\": \"abc\",\n        \"LayerUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取用于下载可执行文件地址"
       }
     ],

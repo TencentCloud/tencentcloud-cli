@@ -1,27 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云顾问(advisor) 版本：2020-07-21
-
-### 第 12 次发布
-
-发布时间：2024-07-01 01:08:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribeArchAsync
-* DescribeArchTaskResult
-
-
-
 ## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 36 次发布
+### 第 37 次发布
 
-发布时间：2024-07-01 01:10:32
+发布时间：2024-07-02 01:10:15
 
 本次发布包含了以下内容：
 
@@ -29,28 +12,76 @@
 
 新增数据结构：
 
-* [DomainWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeight)
-* [DomainWeightRatio](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeightRatio)
-* [Downgrade](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Downgrade)
+* [PodRestartConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodRestartConfig)
 
 修改数据结构：
 
-* [CLBTraitConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLBTraitConfig)
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
 
-	* 新增成员：Downgrade
-
-* [PolarisConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PolarisConfig)
-
-	* 新增成员：Downgrade
+	* 新增成员：RestartConfig
 
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 53 次发布
+### 第 91 次发布
 
-发布时间：2024-07-01 01:16:50
+发布时间：2024-07-02 01:14:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
+	* 新增成员：IsSupportTransparentDataEncryption, NoSupportTransparentDataEncryptionReason
+
+* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
+
+	* 新增成员：Vip, Vport
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceGroupId
+
+* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamInfo)
+
+	* 新增成员：FuncPattern
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 34 次发布
+
+发布时间：2024-07-02 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
+
+	* <font color="#dd0000">**修改成员**：</font>BigDealId
+
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
+
+	* <font color="#dd0000">**修改成员**：</font>Success, Doing, Failed
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 62 次发布
+
+发布时间：2024-07-02 01:16:58
 
 本次发布包含了以下内容：
 
@@ -58,18 +89,25 @@
 
 修改接口：
 
-* [StartStopServiceOrMonitor](http://document.tencentcloudapi.woa.com/document/product/589/77427)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
 
-	* 新增入参：KeepMonitorButNotRecoverProcess
-
-
+	* 新增入参：DisasterRecoverGroupAffinity
 
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+修改数据结构：
 
-### 第 43 次发布
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
 
-发布时间：2024-07-01 01:18:57
+	* 新增成员：DisasterRecoverGroupAffinity
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 93 次发布
+
+发布时间：2024-07-02 01:17:14
 
 本次发布包含了以下内容：
 
@@ -77,100 +115,94 @@
 
 修改接口：
 
-* [GetTWeCallPkgList](http://document.tencentcloudapi.woa.com/document/product/1081/83999)
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
 
-	* 新增出参：TWeCallCategoryPkgList
-
-
-新增数据结构：
-
-* [TWeCallCategoryPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallCategoryPkgInfo)
+	* 新增入参：JumpUrl
 
 
 
-## 智能视图计算平台(iss) 版本：2023-05-17
 
-### 第 17 次发布
+## 云函数(scf) 版本：2018-04-16
 
-发布时间：2024-07-01 01:19:44
+### 第 48 次发布
+
+发布时间：2024-07-02 01:23:04
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [QueryForbidPlayChannelList](http://document.tencentcloudapi.woa.com/document/product/1740/84179)
-* [SetForbidPlayChannels](http://document.tencentcloudapi.woa.com/document/product/1740/84178)
+* [Result](http://document.tencentcloudapi.woa.com/document/product/583/17244#Result)
 
-新增数据结构：
+	* 新增成员：StatusCode
 
-* [ChannelAttrInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ChannelAttrInfo)
-* [ListForbidplayChannelsData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListForbidplayChannelsData)
-* [SetForbidplayChannelParam](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SetForbidplayChannelParam)
-
-
-
-## 邮件推送(ses) 版本：2020-10-02
-
-### 第 22 次发布
-
-发布时间：2024-07-01 01:23:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
-* [DeleteCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84183)
-* [ListCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84182)
-* [UpdateCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84181)
-
-新增数据结构：
-
-* [BlackAddressDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#BlackAddressDetail)
 
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 60 次发布
+### 第 61 次发布
 
-发布时间：2024-07-01 01:23:41
+发布时间：2024-07-02 01:23:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+修改接口：
+
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
+
 
 修改数据结构：
 
-* [BindResourceRegionResult](http://document.tencentcloudapi.woa.com/document/product/400/41679#BindResourceRegionResult)
+* [ManagerStatusInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#ManagerStatusInfo)
 
-	* 新增成员：Error
-
-
+	* 新增成员：Type, Status, CreateTime, ExpireTime
 
 
-## 微服务观测平台 TSW(tsw) 版本：2021-04-12
 
-### 第 2 次发布
 
-发布时间：2024-07-01 01:27:34
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 60 次发布
+
+发布时间：2024-07-02 01:28:39
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+<font color="#dd0000">**删除接口**：</font>
 
-* DescribeComponentAlertObject
-* DescribeServiceAlertObject
-
+* ModifyAccessPeriod
 
 
-## 微服务观测平台 TSW(tsw) 版本：2020-09-24
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 59 次发布
+
+发布时间：2024-07-02 01:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDutyScheduleDetails](http://document.tencentcloudapi.woa.com/document/product/1607/84187)
+* [DescribeDutyScheduleList](http://document.tencentcloudapi.woa.com/document/product/1607/84186)
+
+新增数据结构：
+
+* [Duty](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Duty)
+* [DutyPerson](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyPerson)
+* [DutySchedule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutySchedule)
+* [DutyScheduleData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleData)
+* [DutyScheduleDetailsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleDetailsInfo)
 
 
 
@@ -9284,6 +9316,25 @@
 
 ## 应用管理平台(camp) 版本：2022-09-20
 
+### 第 37 次发布
+
+发布时间：2024-07-02 01:10:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[PodRestartConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodRestartConfig)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[PodRestartConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodRestartConfig))
+
+修改数据结构：
+
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
+
+	* 新增成员：RestartConfig
+
+
 ### 第 36 次发布
 
 发布时间：2024-07-01 01:10:32
@@ -9294,9 +9345,9 @@
 
 新增数据结构：
 
-* [[DomainWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeight)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[DomainWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeight))
-* [[DomainWeightRatio](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeightRatio)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[DomainWeightRatio](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeightRatio))
-* [[Downgrade](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Downgrade)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[Downgrade](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Downgrade))
+* [DomainWeight](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeight)
+* [DomainWeightRatio](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DomainWeightRatio)
+* [Downgrade](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Downgrade)
 
 修改数据结构：
 
@@ -33155,6 +33206,33 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 91 次发布
+
+发布时间：2024-07-02 01:14:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Ability](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Ability)
+
+	* 新增成员：IsSupportTransparentDataEncryption, NoSupportTransparentDataEncryptionReason
+
+* [CynosdbLightInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbLightInstance)
+
+	* 新增成员：Vip, Vport
+
+* [NetAddr](http://document.tencentcloudapi.woa.com/document/product/1003/48097#NetAddr)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceGroupId
+
+* [ParamInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ParamInfo)
+
+	* 新增成员：FuncPattern
+
+
 ### 第 90 次发布
 
 发布时间：2024-06-26 01:14:44
@@ -40681,6 +40759,25 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 34 次发布
+
+发布时间：2024-07-02 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
+
+	* <font color="#dd0000">**修改成员**：</font>BigDealId
+
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
+
+	* <font color="#dd0000">**修改成员**：</font>Success, Doing, Failed
+
+
 ### 第 33 次发布
 
 发布时间：2024-06-27 01:15:57
@@ -45094,6 +45191,28 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 62 次发布
+
+发布时间：2024-07-02 01:16:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：DisasterRecoverGroupAffinity
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：DisasterRecoverGroupAffinity
+
+
 ### 第 61 次发布
 
 发布时间：2024-06-20 01:15:55
@@ -46457,6 +46576,21 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 93 次发布
+
+发布时间：2024-07-02 01:17:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateUserVerifyUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83837)
+
+	* 新增入参：JumpUrl
+
 
 ### 第 92 次发布
 
@@ -56738,7 +56872,7 @@
 
 新增数据结构：
 
-* [[TWeCallCategoryPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallCategoryPkgInfo)](http://document.tencentcloudapi.woa.com/document/product/1081/34988#[TWeCallCategoryPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallCategoryPkgInfo))
+* [TWeCallCategoryPkgInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TWeCallCategoryPkgInfo)
 
 ### 第 42 次发布
 
@@ -58825,14 +58959,14 @@
 
 新增接口：
 
-* [[QueryForbidPlayChannelList](http://document.tencentcloudapi.woa.com/document/product/1740/84179)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SetForbidPlayChannels](http://document.tencentcloudapi.woa.com/document/product/1740/84178)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [QueryForbidPlayChannelList](http://document.tencentcloudapi.woa.com/document/product/1740/84179)
+* [SetForbidPlayChannels](http://document.tencentcloudapi.woa.com/document/product/1740/84178)
 
 新增数据结构：
 
-* [[ChannelAttrInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ChannelAttrInfo)](http://document.tencentcloudapi.woa.com/document/product/1740/81572#[ChannelAttrInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ChannelAttrInfo))
-* [[ListForbidplayChannelsData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListForbidplayChannelsData)](http://document.tencentcloudapi.woa.com/document/product/1740/81572#[ListForbidplayChannelsData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListForbidplayChannelsData))
-* [[SetForbidplayChannelParam](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SetForbidplayChannelParam)](http://document.tencentcloudapi.woa.com/document/product/1740/81572#[SetForbidplayChannelParam](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SetForbidplayChannelParam))
+* [ChannelAttrInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ChannelAttrInfo)
+* [ListForbidplayChannelsData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListForbidplayChannelsData)
+* [SetForbidplayChannelParam](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SetForbidplayChannelParam)
 
 ### 第 16 次发布
 
@@ -77741,6 +77875,21 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 48 次发布
+
+发布时间：2024-07-02 01:23:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Result](http://document.tencentcloudapi.woa.com/document/product/583/17244#Result)
+
+	* 新增成员：StatusCode
+
+
 ### 第 47 次发布
 
 发布时间：2024-06-28 01:23:33
@@ -78662,14 +78811,14 @@
 
 新增接口：
 
-* [[CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84183)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ListCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84182)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84181)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84184)
+* [DeleteCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84183)
+* [ListCustomBlacklist](http://document.tencentcloudapi.woa.com/document/product/1288/84182)
+* [UpdateCustomBlackList](http://document.tencentcloudapi.woa.com/document/product/1288/84181)
 
 新增数据结构：
 
-* [[BlackAddressDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#BlackAddressDetail)](http://document.tencentcloudapi.woa.com/document/product/1288/51053#[BlackAddressDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#BlackAddressDetail))
+* [BlackAddressDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#BlackAddressDetail)
 
 ### 第 21 次发布
 
@@ -81030,6 +81179,26 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 61 次发布
+
+发布时间：2024-07-02 01:23:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
+
+
+修改数据结构：
+
+* [ManagerStatusInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#ManagerStatusInfo)
+
+	* 新增成员：Type, Status, CreateTime, ExpireTime
+
 
 ### 第 60 次发布
 
@@ -108876,6 +109045,18 @@
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
+### 第 60 次发布
+
+发布时间：2024-07-02 01:28:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyAccessPeriod
+
 ### 第 59 次发布
 
 发布时间：2024-06-25 01:28:09
@@ -110652,6 +110833,27 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 59 次发布
+
+发布时间：2024-07-02 01:29:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDutyScheduleDetails](http://document.tencentcloudapi.woa.com/document/product/1607/84187)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDutyScheduleList](http://document.tencentcloudapi.woa.com/document/product/1607/84186)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Duty](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Duty)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[Duty](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Duty))
+* [[DutyPerson](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyPerson)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[DutyPerson](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyPerson))
+* [[DutySchedule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutySchedule)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[DutySchedule](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutySchedule))
+* [[DutyScheduleData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleData)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[DutyScheduleData](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleData))
+* [[DutyScheduleDetailsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleDetailsInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[DutyScheduleDetailsInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DutyScheduleDetailsInfo))
 
 ### 第 58 次发布
 

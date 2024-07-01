@@ -15,9 +15,9 @@ Output:
 ```
 {
     "Response": {
-        "LayerUrl": "xx",
-        "CodeUrl": "xx",
-        "RequestId": "xx"
+        "CodeUrl": "abc",
+        "LayerUrl": "abc",
+        "RequestId": "abc"
     }
 }
 ```
