@@ -5,33 +5,35 @@
 Input: 
 
 ```
-tccli csip DescribeScanReportList --cli-unfold-argument ```
+tccli csip DescribeScanReportList --cli-unfold-argument  \
+    --Filter.Limit 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "Data": [
             {
-                "TaskId": "xx",
-                "TaskName": "xx",
-                "Status": 0,
-                "Progress": 0,
-                "TaskTime": "xx",
-                "ReportId": "xx",
-                "ReportName": "xx",
+                "AppId": "1300*****",
+                "AssetCount": 33,
+                "Progress": 100,
+                "ReportId": "rpt-**********",
+                "ReportName": "标准体检_标准体检_*********",
                 "ScanPlan": 0,
-                "AssetCount": 0,
-                "AppId": "xx",
-                "UIN": "xx",
-                "UserName": "xx"
+                "Status": 2,
+                "TaskId": "rmis-*********",
+                "TaskName": "标准体检_**********",
+                "TaskTime": "2024-07-01 00:19:17",
+                "UIN": "100**********",
+                "UserName": "天******"
             }
         ],
+        "RequestId": "3d9b475f-**********",
+        "TotalCount": 22,
         "UINList": [
-            "xx"
-        ],
-        "RequestId": "xx"
+            "100*****"
+        ]
     }
 }
 ```

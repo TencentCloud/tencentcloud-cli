@@ -5985,7 +5985,7 @@
           "example": "tdsql-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5995,7 +5995,7 @@
           "example": "tdsql-xxx",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6005,7 +6005,7 @@
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6015,7 +6015,7 @@
           "example": "无",
           "member": "string",
           "name": "ShardId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6025,7 +6025,7 @@
           "example": "/backup/xxx.lz4",
           "member": "string",
           "name": "FilePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6035,7 +6035,7 @@
           "example": "xxx.lz4",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6045,7 +6045,7 @@
           "example": "1",
           "member": "int64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6055,7 +6055,7 @@
           "example": "Binlog",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6065,7 +6065,7 @@
           "example": "0",
           "member": "int64",
           "name": "ManualBackup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6075,7 +6075,7 @@
           "example": "2022-05-10 12:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6085,7 +6085,17 @@
           "example": "2022-05-10 12:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "StorageClass",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

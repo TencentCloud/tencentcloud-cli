@@ -4796,7 +4796,7 @@
         {
           "disabled": false,
           "document": "删除的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4805,7 +4805,7 @@
         {
           "disabled": false,
           "document": "删除的规则ID",
-          "example": "无",
+          "example": "1001",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -4814,7 +4814,7 @@
         {
           "disabled": false,
           "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
-          "example": "无",
+          "example": "clb-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -4823,7 +4823,7 @@
         {
           "disabled": false,
           "document": "批量删除的规则列表",
-          "example": "无",
+          "example": "[]",
           "member": "DomainRuleId",
           "name": "DomainRuleIdList",
           "required": false,
@@ -4838,7 +4838,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -5016,7 +5016,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5025,7 +5025,7 @@
         {
           "disabled": false,
           "document": "删除的ip数组",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "Items",
           "required": true,
@@ -5076,7 +5076,7 @@
         {
           "disabled": false,
           "document": "删除失败的条目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "FailedItems",
           "output_required": true,
@@ -5086,7 +5086,7 @@
         {
           "disabled": false,
           "document": "删除失败的条目数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "FailedCount",
           "output_required": true,
@@ -5214,7 +5214,7 @@
         {
           "disabled": false,
           "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -7106,7 +7106,7 @@
         {
           "disabled": false,
           "document": "过滤数组,name可以是如下的值： RuleID,RuleName,Match",
-          "example": "无",
+          "example": "[]",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -7133,7 +7133,7 @@
         {
           "disabled": false,
           "document": "查询的域名列表,访问控制页面不用传",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "DomainList",
           "required": false,
@@ -7148,7 +7148,7 @@
         {
           "disabled": false,
           "document": "规则详情",
-          "example": "无",
+          "example": "[]",
           "member": "DescribeCustomRulesRspRuleListItem",
           "name": "RuleList",
           "output_required": true,
@@ -7180,7 +7180,7 @@
         {
           "disabled": false,
           "document": "动作类型",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ActionType",
           "output_required": true,
@@ -7190,7 +7190,7 @@
         {
           "disabled": false,
           "document": "跳过的策略",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Bypass",
           "output_required": true,
@@ -7200,7 +7200,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-10-09T16:03:14+08:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -7210,7 +7210,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "无",
+          "example": "2023-10-09T16:03:14+08:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -7220,7 +7220,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "无",
+          "example": "anti",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -7230,7 +7230,7 @@
         {
           "disabled": false,
           "document": "重定向地址",
-          "example": "无",
+          "example": "/",
           "member": "string",
           "name": "Redirect",
           "output_required": true,
@@ -7240,7 +7240,7 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "无",
+          "example": "12211",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -7250,7 +7250,7 @@
         {
           "disabled": false,
           "document": "优先级",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "SortId",
           "output_required": true,
@@ -7260,7 +7260,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -7270,7 +7270,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "无",
+          "example": "[]",
           "member": "Strategy",
           "name": "Strategies",
           "output_required": true,
@@ -7280,7 +7280,7 @@
         {
           "disabled": false,
           "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "EventId",
           "output_required": true,
@@ -7320,7 +7320,7 @@
         {
           "disabled": false,
           "document": "定时任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TimedJob",
           "member": "string",
           "name": "JobType",
           "output_required": false,
@@ -7330,7 +7330,7 @@
         {
           "disabled": false,
           "document": "定时任务配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-10-09T16:03:14+08:00",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "output_required": false,
@@ -7340,7 +7340,7 @@
         {
           "disabled": false,
           "document": "周期任务粒度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "CronType",
           "output_required": false,
@@ -7350,7 +7350,7 @@
         {
           "disabled": false,
           "document": "自定义标签，风控规则用，用来表示是内置规则还是用户自定义的\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Label",
           "output_required": false,
@@ -7360,7 +7360,7 @@
         {
           "disabled": false,
           "document": "拦截页面id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "PageId",
           "output_required": false,
@@ -7370,7 +7370,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -7670,10 +7670,10 @@
         {
           "disabled": false,
           "document": "规则列表详情",
-          "example": "无",
+          "example": "[{Id:1  Type:\"命令注入攻击\"  Level:\"正常\"  Description:\"防护\"  ModifyTime:\"2024-07-02 19:44:33\"  AddTime:\"2023-04-27T22:32:49+08:00\"}]",
           "member": "Rule",
           "name": "Rules",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9730,7 +9730,7 @@
         {
           "disabled": false,
           "document": "地域（标准的ap-格式）列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -9740,7 +9740,7 @@
         {
           "disabled": false,
           "document": "包含详细属性的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{Id:\"sh\"  Text:\"上海\"  Value:\"ap-shanghai\"  Code:\"4\"} ",
           "member": "ClbWafRegionItem",
           "name": "RichDatas",
           "output_required": false,
@@ -14373,7 +14373,7 @@
         {
           "disabled": false,
           "document": "开关状态",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -14382,7 +14382,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -14391,7 +14391,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "无",
+          "example": "waf_0000001",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -14400,7 +14400,7 @@
         {
           "disabled": false,
           "document": "需要批量开启的实体列表",
-          "example": "无",
+          "example": "[]",
           "member": "TargetEntity",
           "name": "TargetList",
           "required": false,
@@ -14418,24 +14418,27 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "不支持开启的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UnSupportedList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "开启/关闭失败的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "FailDomainList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14490,7 +14493,7 @@
         {
           "disabled": false,
           "document": "批量操作的api列表",
-          "example": "无",
+          "example": "[]",
           "member": "ApiSecKey",
           "name": "ApiNameList",
           "required": false,
@@ -17543,20 +17546,20 @@
         {
           "disabled": false,
           "document": "如果成功则返回Success，失败则返回云api定义的错误码",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "如果成功则返回Success，失败则返回WAF定义的二级错误码",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18295,7 +18298,7 @@
         {
           "disabled": false,
           "document": "匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）",
-          "example": "无",
+          "example": "returncode",
           "member": "string",
           "name": "Field",
           "required": true,
@@ -18304,7 +18307,7 @@
         {
           "disabled": false,
           "document": "逻辑符号，固定取值为contains",
-          "example": "无",
+          "example": "contains",
           "member": "string",
           "name": "CompareFunc",
           "required": true,
@@ -18313,7 +18316,7 @@
         {
           "disabled": false,
           "document": "匹配内容。\n以下三个对应Field为information时可取的匹配内容：\nidcard（身份证）、phone（手机号）、bankcard（银行卡）。\n以下为对应Field为returncode时可取的匹配内容：\n400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。\n当对应Field为keywords时由用户自己输入匹配内容。\n",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Content",
           "required": true,

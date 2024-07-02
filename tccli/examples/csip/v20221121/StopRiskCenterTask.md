@@ -5,14 +5,17 @@
 Input: 
 
 ```
-tccli csip StopRiskCenterTask --cli-unfold-argument ```
+tccli csip StopRiskCenterTask --cli-unfold-argument  \
+    --MemberId abcd \
+    --TaskIdList.0.TaskId rmis-abcd
+```
 
 Output: 
 ```
 {
     "Response": {
         "Status": 0,
-        "RequestId": "xx"
+        "RequestId": "abcd"
     }
 }
 ```

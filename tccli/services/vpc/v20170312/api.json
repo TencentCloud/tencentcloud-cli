@@ -8883,6 +8883,15 @@
           "name": "BgpConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查NQA配置。",
+          "example": "无",
+          "member": "HealthCheckConfig",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8896,6 +8905,7 @@
           "example": "无",
           "member": "VpnConnection",
           "name": "VpnConnection",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12815,7 +12825,7 @@
         {
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
-          "example": "",
+          "example": "[\"dcg-dimeg9zd\\r\\n\",\"dcg-6eeis68f\\r\\n\",\"dcg-94cdyvfr\\r\\n\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "required": false,
@@ -12824,7 +12834,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定`DirectConnectGatewayIds`和`Filters`。\n<li>direct-connect-gateway-id - String - 专线网关唯一`ID`，形如：`dcg-9o233uri`。</li>\n<li>direct-connect-gateway-name - String - 专线网关名称，默认模糊查询。</li>\n<li>direct-connect-gateway-ip - String - 专线网关`IP`。</li>\n<li>gateway-type - String - 网关类型，可选值：`NORMAL`（普通型）、`NAT`（NAT型）。</li>\n<li>network-type- String - 网络类型，可选值：`VPC`（私有网络类型）、`CCN`（云联网类型）。</li>\n<li>ccn-id - String - 专线网关所在云联网`ID`。</li>\n<li>vpc-id - String - 专线网关所在私有网络`ID`。</li>",
-          "example": "",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12833,7 +12843,7 @@
         {
           "disabled": false,
           "document": "偏移量。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12842,7 +12852,7 @@
         {
           "disabled": false,
           "document": "返回数量。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12857,18 +12867,20 @@
         {
           "disabled": false,
           "document": "符合条件的对象数。",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "专线网关对象数组。",
-          "example": "",
+          "example": "无",
           "member": "DirectConnectGateway",
           "name": "DirectConnectGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20075,6 +20087,56 @@
       ],
       "type": "object"
     },
+    "HealthCheckConfig": {
+      "document": "VPN通道健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "探测模式，默认值NQA，不可修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NQA",
+          "member": "string",
+          "name": "ProbeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "ProbeInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "ProbeThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "探测超时时间，范围【10-5000】，单位ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "150",
+          "member": "int64",
+          "name": "ProbeTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "IKEOptionsSpecification": {
       "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
       "members": [
@@ -23868,6 +23930,15 @@
           "name": "CustomerGatewayId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查配置",
+          "example": "无",
+          "member": "HealthCheckConfig",
+          "name": "HealthCheckConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -30768,6 +30839,16 @@
           "example": "无",
           "member": "BgpConfigAndAsn",
           "name": "BgpConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Nqa配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HealthCheckConfig",
+          "name": "HealthCheckConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true

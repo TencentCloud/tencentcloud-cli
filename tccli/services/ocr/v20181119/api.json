@@ -1,7 +1,7 @@
 {
   "actions": {
     "AdvertiseOCR": {
-      "document": "本接口支持广告商品图片内文字的检测和识别，返回文本框位置与文字内容。\n\n产品优势：针对广告商品图片普遍存在较多繁体字、艺术字的特点，进行了识别能力的增强。支持中英文、横排、竖排以及倾斜场景文字识别。文字识别的召回率和准确率能达到96%以上。",
+      "document": "本接口支持广告商品图片内文字的检测和识别，返回文本框位置与文字内容。\n\n产品优势：针对广告商品图片普遍存在较多繁体字、艺术字的特点，进行了识别能力的增强。支持中英文、横排、竖排以及倾斜场景文字识别。文字识别的召回率和准确率能达到96%以上。\n\n默认接口请求频率限制：20次/秒。",
       "input": "AdvertiseOCRRequest",
       "name": "广告文字识别",
       "output": "AdvertiseOCRResponse",
@@ -609,7 +609,7 @@
         {
           "disabled": false,
           "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -618,7 +618,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "",
+          "example": "https://xx/a.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -633,10 +633,21 @@
         {
           "disabled": false,
           "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
-          "example": "",
+          "example": "无",
           "member": "AdvertiseTextDetection",
           "name": "TextDetections",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片分辨率信息，单位 px",
+          "example": "无",
+          "member": "ImageSize",
+          "name": "ImageSize",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -6818,6 +6829,32 @@
         }
       ],
       "type": "object"
+    },
+    "ImageSize": {
+      "document": "图片分辨率信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的宽，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片的高，单位像素\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InstitutionOCRRequest": {
       "document": "InstitutionOCR请求参数结构体",

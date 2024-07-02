@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli tdmq CreateRole --cli-unfold-argument  \
-    --RoleName test_role_123 \
-    --Remark 创建角色
+    --RoleName abc \
+    --Remark abc \
+    --ClusterId abc
 ```
 
 Output: 

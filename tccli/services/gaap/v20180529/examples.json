@@ -883,6 +883,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "认证高级配置"
       }
+    ],
+    "SetTlsVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetTlsVersion\n<公共请求参数>\n\n{\n    \"ListenerId\": \"abc\",\n    \"TLSSupportVersion\": [\n        \"TLSv1.2\"\n    ],\n    \"TLSCiphers\": \"GAAP_TLS_CIPHERS_GENERAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wqdcasdca-da-wedqfc\"\n    }\n}",
+        "title": "setTls示例"
+      }
     ]
   },
   "version": "1.0"

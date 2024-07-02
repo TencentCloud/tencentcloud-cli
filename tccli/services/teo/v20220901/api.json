@@ -944,7 +944,7 @@
         },
         {
           "disabled": false,
-          "document": "证书列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务端证书列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CertificateInfo",
           "name": "List",
@@ -952,6 +952,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边缘双向认证配置。",
+          "example": "无",
+          "member": "MutualTLS",
+          "name": "ClientCertInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2805,15 +2816,16 @@
       "usage": "in"
     },
     "CertificateInfo": {
-      "document": "https 服务端证书配置",
+      "document": "https 证书配置。",
       "members": [
         {
           "disabled": false,
-          "document": "服务器证书 ID。",
+          "document": "证书 ID。",
           "example": "EO-dsfdsf",
           "member": "string",
           "name": "CertId",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2824,6 +2836,7 @@
           "member": "string",
           "name": "Alias",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2834,6 +2847,7 @@
           "member": "string",
           "name": "Type",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2844,6 +2858,7 @@
           "member": "datetime_iso",
           "name": "ExpireTime",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2854,6 +2869,7 @@
           "member": "datetime_iso",
           "name": "DeployTime",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2864,6 +2880,7 @@
           "member": "string",
           "name": "SignAlgo",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2874,11 +2891,12 @@
           "member": "string",
           "name": "Status",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CheckCnameStatusRequest": {
       "document": "CheckCnameStatus请求参数结构体",
@@ -11708,7 +11726,7 @@
         },
         {
           "disabled": false,
-          "document": "配置证书的模式，取值有：\n<li>disable：不配置证书；</li>\n<li>eofreecert：配置 EdgeOne 免费证书；</li>\n<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。",
+          "document": "配置服务端证书的模式，取值有：\n<li>disable：不配置服务端证书；</li>\n<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>\n<li>sslcert：配置 SSL 托管服务端证书；</li>\n不填写表示服务端证书保持原有配置。",
           "example": "eoFreeCert",
           "member": "string",
           "name": "Mode",
@@ -11717,7 +11735,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。",
+          "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。",
           "example": "teo-xxxxx",
           "member": "ServerCertInfo",
           "name": "ServerCertInfo",
@@ -11732,6 +11750,15 @@
           "name": "ApplyType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边缘双向认证配置。\n不填写表示边缘双向认证保持原有配置。",
+          "example": "无",
+          "member": "MutualTLS",
+          "name": "ClientCertInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12675,6 +12702,34 @@
         }
       ],
       "type": "object"
+    },
+    "MutualTLS": {
+      "document": "HTTPS 双向认证。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "双向认证配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "双向认证证书列表。\n注意：MutualTLS 在 ModifyHostsCertificate 作为入参使用时，该参数传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "CertInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NoCache": {
       "document": "不缓存配置",

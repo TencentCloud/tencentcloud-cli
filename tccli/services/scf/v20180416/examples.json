@@ -186,7 +186,7 @@
     ],
     "Invoke": [
       {
-        "document": "",
+        "document": "运行函数",
         "input": "https://scf.tencentcloudapi.com/?Action=Invoke\n&FunctionName=xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"MemUsage\": 3207168,\n            \"Log\": \"\",\n            \"RetMsg\": \"hello from scf\",\n            \"BillDuration\": 100,\n            \"FunctionRequestId\": \"6add56fa-58f1-11e8-89a9-5254005d5fdb\",\n            \"Duration\": 0.826,\n            \"ErrMsg\": \"\",\n            \"InvokeResult\": 0\n        },\n        \"RequestId\": \"c2af8a64-c922-4d55-aee0-bd86a5c2cd12\"\n    }\n}",
         "title": "运行函数"

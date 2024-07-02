@@ -15,6 +15,17 @@ Output:
     "Response": {
         "DirectConnectGatewaySet": [
             {
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo",
                 "DirectConnectGatewayId": "dcg-6eeis68f",
                 "DirectConnectGatewayName": "shiliangxie_test",
                 "DirectConnectGatewayIp": "10.6.223.4",
@@ -25,7 +36,11 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-10-22 21:22:26"
+                "CreateTime": "2018-10-22 21:22:26",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "EnableFlowDetails": 1
             },
             {
                 "DirectConnectGatewayId": "dcg-94cdyvfr",
@@ -34,11 +49,26 @@ Output:
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
                 "NetworkInstanceId": "",
+                "EnableFlowDetails": 1,
                 "VpcId": "vpc-f796it7v",
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:40:09"
+                "CreateTime": "2018-08-21 11:40:09",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             },
             {
                 "DirectConnectGatewayId": "dcg-dimeg9zd",
@@ -50,8 +80,23 @@ Output:
                 "VpcId": "vpc-eg3eig77",
                 "CcnId": "ccn-atw2c2j1",
                 "CcnRouteType": "STATIC",
+                "EnableFlowDetails": 1,
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:36:50"
+                "CreateTime": "2018-08-21 11:36:50",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "nat"
             }
         ],
         "TotalCount": 3,
@@ -92,7 +137,22 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:40:09"
+                "EnableFlowDetails": 1,
+                "CreateTime": "2018-08-21 11:40:09",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             },
             {
                 "DirectConnectGatewayId": "dcg-6eeis68f",
@@ -105,7 +165,22 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-10-22 21:22:26"
+                "CreateTime": "2018-10-22 21:22:26",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "EnableFlowDetails": 1,
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             }
         ],
         "TotalCount": 2,

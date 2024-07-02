@@ -3651,6 +3651,15 @@
           "name": "Bandwidth",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开公网接入，不传默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePublicAccess",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4314,7 +4323,7 @@
           "example": "创建角色",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -4323,7 +4332,7 @@
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -4368,7 +4377,7 @@
           "example": "无",
           "member": "EnvironmentRoleSet",
           "name": "EnvironmentRoleSets",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15729,6 +15738,16 @@
           "name": "VirtualHostStatistics",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息轨迹开关,true打开,false关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "TraceFlag",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": true
         },
         {
