@@ -1,221 +1,221 @@
 {
   "actions": {
     "AddCrowdPackInfo": {
-      "document": "添加短信人群包信息",
+      "document": "业务已下线\n\n添加短信人群包信息",
       "input": "AddCrowdPackInfoRequest",
       "name": "添加短信人群包信息",
       "output": "AddCrowdPackInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddSmsSign": {
-      "document": "创建普通短信签名信息",
+      "document": "业务已下线\n\n创建普通短信签名信息",
       "input": "AddSmsSignRequest",
       "name": "短信签名创建接口",
       "output": "AddSmsSignResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddSmsTemplate": {
-      "document": "根据短信标题、模板内容等创建短信模板",
+      "document": "业务已下线\n\n根据短信标题、模板内容等创建短信模板",
       "input": "AddSmsTemplateRequest",
       "name": "短信模板创建接口",
       "output": "AddSmsTemplateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CancelCampaign": {
-      "document": "取消短信推送活动",
+      "document": "业务已下线\n\n取消短信推送活动",
       "input": "CancelCampaignRequest",
       "name": "取消短信活动",
       "output": "CancelCampaignResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCampaign": {
-      "document": "创建短信推送活动",
+      "document": "业务已下线\n\n创建短信推送活动",
       "input": "CreateCampaignRequest",
       "name": "创建短信活动",
       "output": "CreateCampaignResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMmsInstance": {
-      "document": "创建超级短信的素材样例内容",
+      "document": "业务已下线\n\n创建超级短信的素材样例内容",
       "input": "CreateMmsInstanceRequest",
       "name": "创建超级短信素材样例",
       "output": "CreateMmsInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateMpCrowdPack": {
-      "document": "公众号人群包上传接口",
+      "document": "业务已下线\n\n公众号人群包上传接口",
       "input": "CreateMpCrowdPackRequest",
       "name": "公众号人群包上传接口",
       "output": "CreateMpCrowdPackResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateShortUrl": {
-      "document": "小程序短链API生成",
+      "document": "业务已下线\n\n小程序短链API生成",
       "input": "CreateShortUrlRequest",
       "name": "小程序短链API生成接口",
       "output": "CreateShortUrlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateSmsBlacklist": {
-      "document": "添加黑名单列表",
+      "document": "业务已下线\n\n添加黑名单列表",
       "input": "CreateSmsBlacklistRequest",
       "name": "添加黑名单列表",
       "output": "CreateSmsBlacklistResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DelCrowdPack": {
-      "document": "删除人群包",
+      "document": "业务已下线\n\n删除人群包",
       "input": "DelCrowdPackRequest",
       "name": "删除人群包",
       "output": "DelCrowdPackResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DelTemplate": {
-      "document": "删除短信模板",
+      "document": "业务已下线\n\n删除短信模板",
       "input": "DelTemplateRequest",
       "name": "删除短信模板",
       "output": "DelTemplateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMmsInstance": {
-      "document": "删除超级短信样例",
+      "document": "业务已下线\n\n删除超级短信样例",
       "input": "DeleteMmsInstanceRequest",
       "name": "删除超级短信样例",
       "output": "DeleteMmsInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteSmsBlacklist": {
-      "document": "删除黑名单",
+      "document": "业务已下线\n\n删除黑名单",
       "input": "DeleteSmsBlacklistRequest",
       "name": "删除黑名单",
       "output": "DeleteSmsBlacklistResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMmsInstanceInfo": {
-      "document": "获取彩信实例信息",
+      "document": "业务已下线\n\n获取彩信实例信息",
       "input": "DescribeMmsInstanceInfoRequest",
       "name": "获取彩信实例信息",
       "output": "DescribeMmsInstanceInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMmsInstanceList": {
-      "document": "获取彩信实例列表",
+      "document": "业务已下线\n\n获取彩信实例列表",
       "input": "DescribeMmsInstanceListRequest",
       "name": "获取彩信实例列表",
       "output": "DescribeMmsInstanceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeShortUrlList": {
-      "document": "获取已创建的短链列表",
+      "document": "业务已下线\n\n获取已创建的短链列表",
       "input": "DescribeShortUrlListRequest",
       "name": "获取已创建的短链列表",
       "output": "DescribeShortUrlListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmsCampaignStatistics": {
-      "document": "获取短信超短活动统计数据",
+      "document": "业务已下线\n\n获取短信超短活动统计数据",
       "input": "DescribeSmsCampaignStatisticsRequest",
       "name": "获取短信超短活动统计数据",
       "output": "DescribeSmsCampaignStatisticsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmsSignList": {
-      "document": "获取普通短信签名信息",
+      "document": "业务已下线\n\n获取普通短信签名信息",
       "input": "DescribeSmsSignListRequest",
       "name": "短信签名查询接口",
       "output": "DescribeSmsSignListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmsTemplateList": {
-      "document": "获取模板信息",
+      "document": "业务已下线\n\n获取模板信息",
       "input": "DescribeSmsTemplateListRequest",
       "name": "短信模板查询接口",
       "output": "DescribeSmsTemplateListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ExtractCrowd": {
-      "document": "按标签提取人群包",
+      "document": "业务已下线\n\n按标签提取人群包",
       "input": "ExtractCrowdRequest",
       "name": "按标签提取人群包",
       "output": "ExtractCrowdResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCrowdPackList": {
-      "document": "获取人群包列表接口",
+      "document": "业务已下线\n\n获取人群包列表接口",
       "input": "GetCrowdPackListRequest",
       "name": "获取人群包列表",
       "output": "GetCrowdPackListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCrowdStatusById": {
-      "document": "根据人群包id获取人群包详情接口",
+      "document": "业务已下线\n\n根据人群包id获取人群包详情接口",
       "input": "GetCrowdStatusByIdRequest",
       "name": "根据人群包id获取人群包详情接口",
       "output": "GetCrowdStatusByIdResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetCrowdUploadInfo": {
-      "document": "获取短信人群包cos上传需要的信息",
+      "document": "业务已下线\n\n获取短信人群包cos上传需要的信息",
       "input": "GetCrowdUploadInfoRequest",
       "name": "获取短信人群包cos上传信息",
       "output": "GetCrowdUploadInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetSmsAmountInfo": {
-      "document": "获取账号短信额度配置信息",
+      "document": "业务已下线\n\n获取账号短信额度配置信息",
       "input": "GetSmsAmountInfoRequest",
       "name": "获取账号短信额度配置信息",
       "output": "GetSmsAmountInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetSmsBlacklistList": {
-      "document": "获取黑名单列表",
+      "document": "业务已下线\n\n获取黑名单列表",
       "input": "GetSmsBlacklistListRequest",
       "name": "获取黑名单列表",
       "output": "GetSmsBlacklistListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetSmsCampaignStatus": {
-      "document": "获取短信活动状态信息",
+      "document": "业务已下线\n\n获取短信活动状态信息",
       "input": "GetSmsCampaignStatusRequest",
       "name": "获取短信活动状态",
       "output": "GetSmsCampaignStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetSmsSignList": {
-      "document": "获取客户短信签名列表",
+      "document": "业务已下线\n\n获取客户短信签名列表",
       "input": "GetSmsSignListRequest",
       "name": "获取客户短信签名列表",
       "output": "GetSmsSignListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifySmsTemplate": {
-      "document": "对未审核或者审核未通过的短信模板内容进行编辑修改",
+      "document": "业务已下线\n\n对未审核或者审核未通过的短信模板内容进行编辑修改",
       "input": "ModifySmsTemplateRequest",
       "name": "短信模板编辑接口",
       "output": "ModifySmsTemplateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "PushMmsContent": {
-      "document": "推送超级短信",
+      "document": "业务已下线\n\n推送超级短信",
       "input": "PushMmsContentRequest",
       "name": "推送超级短信内容",
       "output": "PushMmsContentResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SendSms": {
-      "document": "发送短信",
+      "document": "业务已下线\n\n发送短信",
       "input": "SendSmsRequest",
       "name": "发送短信",
       "output": "SendSmsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UploadSmsPostLinkData": {
-      "document": "上传短信后链路数据",
+      "document": "业务已下线\n\n上传短信后链路数据",
       "input": "UploadSmsPostLinkDataRequest",
       "name": "上传短信后链路数据",
       "output": "UploadSmsPostLinkDataResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

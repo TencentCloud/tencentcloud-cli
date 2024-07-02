@@ -15000,7 +15000,7 @@
           "example": "[\"cynosdbpg-1xcycbu8\"]",
           "member": "string",
           "name": "AffectedClusterIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

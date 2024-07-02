@@ -1,11 +1,11 @@
 {
   "actions": {
-    "DescribeArchAsync": {
-      "document": "已有替代的同步接口，后续有需求再使用其他接口支持\n\n异步拉取架构最新版本的详情",
-      "input": "DescribeArchAsyncRequest",
-      "name": "异步拉取架构详情",
-      "output": "DescribeArchAsyncResponse",
-      "status": "deprecated"
+    "DescribeArchProducts": {
+      "document": "获取架构图产品列表",
+      "input": "DescribeArchProductsRequest",
+      "name": "获取架构图产品列表",
+      "output": "DescribeArchProductsResponse",
+      "status": "online"
     },
     "DescribeArchSvg": {
       "document": "获取架构图的SVG图",
@@ -21,18 +21,18 @@
       "output": "DescribeArchSyncResponse",
       "status": "online"
     },
-    "DescribeArchTaskResult": {
-      "document": "已使用同步接口替代，后续有需求再使用其他接口支持\n\n查询任务的结果",
-      "input": "DescribeArchTaskResultRequest",
-      "name": "查询任务的结果获取",
-      "output": "DescribeArchTaskResultResponse",
-      "status": "deprecated"
-    },
     "DescribeDownloadTask": {
       "document": "获取扫描报告下载链接",
       "input": "DescribeDownloadTaskRequest",
       "name": "获取扫描报告下载链接",
       "output": "DescribeDownloadTaskResponse",
+      "status": "online"
+    },
+    "DescribePluginArchList": {
+      "document": "获取插件架构图列表",
+      "input": "DescribePluginArchListRequest",
+      "name": "获取插件架构图列表",
+      "output": "DescribePluginArchListResponse",
       "status": "online"
     },
     "DescribeStrategies": {
@@ -78,160 +78,141 @@
     "serviceShortName": "advisor"
   },
   "objects": {
-    "ArchKeyValue": {
-      "document": "键值对",
+    "ArchInfoData": {
+      "document": "ArchInfoData 数据",
       "members": [
         {
           "disabled": false,
-          "document": "键",
-          "example": "name",
+          "document": "架构图Id",
+          "example": "无",
           "member": "string",
-          "name": "Key",
+          "name": "ArchId",
           "output_required": true,
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "值",
-          "example": "aaa",
-          "member": "string",
-          "name": "Value",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "ArchNode": {
-      "document": "云架构节点",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图元Id",
+          "document": "架构图名称",
           "example": "无",
           "member": "string",
-          "name": "DiagramId",
+          "name": "ArchName",
           "output_required": false,
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点所属云产品类型",
+          "document": "创建人",
           "example": "无",
           "member": "string",
-          "name": "ProductType",
-          "output_required": false,
-          "required": true,
+          "name": "CreateUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
-          "name": "NodeName",
-          "output_required": false,
-          "required": true,
+          "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点所属地域",
-          "example": "ap-guangzhou",
+          "document": "更新人",
+          "example": "无",
           "member": "string",
-          "name": "NodeRegion",
-          "output_required": false,
-          "required": false,
+          "name": "UpdateUin",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定的资源列表",
+          "document": "更新时间",
           "example": "无",
-          "member": "ArchResource",
-          "name": "ResourceList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点唯一Id",
+          "document": "版本名称",
           "example": "无",
-          "member": "uint64",
-          "name": "NodeId",
+          "member": "string",
+          "name": "VersionName",
           "output_required": false,
-          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件夹Id",
+          "example": "123",
+          "member": "int64",
+          "name": "FolderId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源绑定方式",
-          "example": "fuzzy",
-          "member": "string",
-          "name": "BindingType",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "筛选条件",
-          "example": "[{\"Key\":\"region\",\"Value\":\"guangzhou\"}]",
-          "member": "ArchKeyValue",
-          "name": "Conditions",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "标签匹配",
-          "example": "[{\"Key\":\"region\",\"Value\":\"guangzhou\"}]",
-          "member": "ArchKeyValue",
-          "name": "Tags",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模糊匹配",
-          "example": "[{\"KvList\":[{\"Key\":\"name\",\"Value\":\"aaa\"}]}]",
-          "member": "KeyValueList",
-          "name": "FuzzyKeys",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "描述",
-          "example": "无",
+          "document": "描述\t",
+          "example": "测试架构图",
           "member": "string",
           "name": "Description",
           "output_required": false,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ShareStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享权限等级文字",
+          "example": "可执行插件",
+          "member": "string",
+          "name": "ShareLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享权限等级数字。不返回则为0",
+          "example": "无",
+          "member": "int64",
+          "name": "ShareLevelValue",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源绑定状态（绑定:true,未绑定：false）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ResourceBindStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
-      "usage": "both"
+      "usage": "out"
     },
     "ArchNodeDetail": {
       "document": "架构节点详情",
@@ -298,34 +279,6 @@
         }
       ],
       "usage": "out"
-    },
-    "ArchResource": {
-      "document": "云架构资源",
-      "members": [
-        {
-          "disabled": false,
-          "document": "每个云产品的实例Id",
-          "example": "无",
-          "member": "string",
-          "name": "InstanceId",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每个云产品的属性",
-          "example": "无",
-          "member": "string",
-          "name": "Attributes",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "ArchResourceDetail": {
       "document": "架构资源详情",
@@ -419,32 +372,41 @@
       ],
       "usage": "out"
     },
-    "DescribeArchAsyncRequest": {
-      "document": "DescribeArchAsync请求参数结构体",
+    "DescribeArchProductsRequest": {
+      "document": "DescribeArchProducts请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "架构ID",
-          "example": "无",
+          "document": "架构图ID",
+          "example": "arch-xxx",
           "member": "string",
           "name": "ArchId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插件标识",
+          "example": "xxxx",
+          "member": "string",
+          "name": "PluginKey",
+          "required": false,
           "type": "string"
         }
       ],
       "type": "object"
     },
-    "DescribeArchAsyncResponse": {
-      "document": "DescribeArchAsync返回参数结构体",
+    "DescribeArchProductsResponse": {
+      "document": "DescribeArchProducts返回参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "任务UUID",
-          "example": "任务UUID",
+          "document": "产品列表",
+          "example": "[]",
           "member": "string",
-          "name": "DescribeArchTaskId",
+          "name": "ProductList",
           "output_required": false,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -483,6 +445,15 @@
           "example": "无",
           "member": "string",
           "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插件标识",
+          "example": "无",
+          "member": "string",
+          "name": "PluginKey",
           "required": false,
           "type": "string"
         }
@@ -541,6 +512,15 @@
           "name": "Refresh",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "插件标识",
+          "example": "无",
+          "member": "string",
+          "name": "PluginKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -637,123 +617,6 @@
       ],
       "type": "object"
     },
-    "DescribeArchTaskResultRequest": {
-      "document": "DescribeArchTaskResult请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务结构ID",
-          "example": "无",
-          "member": "string",
-          "name": "ArchTaskResultId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeArchTaskResultResponse": {
-      "document": "DescribeArchTaskResult返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "架构ID",
-          "example": "无",
-          "member": "string",
-          "name": "ArchId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "架构名称",
-          "example": "无",
-          "member": "string",
-          "name": "ArchName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建Uin",
-          "example": "无",
-          "member": "string",
-          "name": "CreateUin",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "无",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新Uin",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateUin",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "无",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "版本名称",
-          "example": "无",
-          "member": "string",
-          "name": "VersionName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "节点列表",
-          "example": "无",
-          "member": "ArchNode",
-          "name": "NodeList",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态，1:成功 2:执行中 3: 失败",
-          "example": "无",
-          "member": "int64",
-          "name": "TaskStatus",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeDownloadTaskRequest": {
       "document": "DescribeDownloadTask请求参数结构体",
       "members": [
@@ -800,6 +663,98 @@
           "name": "CosUrlPdf",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginArchListRequest": {
+      "document": "DescribePluginArchList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码。>0",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目。>0 且 <=100\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据架构图Id搜索",
+          "example": "无",
+          "member": "string",
+          "name": "ArchId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据架构图名称搜索",
+          "example": "无",
+          "member": "string",
+          "name": "ArchName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按共享状态过滤，传字符串true或false，不传不过滤",
+          "example": "true",
+          "member": "string",
+          "name": "ShareStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插件标识",
+          "example": "无",
+          "member": "string",
+          "name": "PluginKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePluginArchListResponse": {
+      "document": "DescribePluginArchList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "架构图列表",
+          "example": "无",
+          "member": "ArchInfoData",
+          "name": "ArchList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数。如不返回则为0",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1402,23 +1357,6 @@
           "name": "Value",
           "required": false,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "KeyValueList": {
-      "document": "模糊匹配结构",
-      "members": [
-        {
-          "disabled": false,
-          "document": "键值对",
-          "example": "{\"KvList\":[{\"Key\":\"name\",\"Value\":\"aaa\"}]}",
-          "member": "ArchKeyValue",
-          "name": "KvList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -29,6 +29,7 @@ Output:
                     "CurrentChannels": 1,
                     "CurrentUsers": 1
                 },
+                "TraceFlag": true,
                 "MessageHeapCount": 0,
                 "MessageRateIn": 0,
                 "MessageRateOut": 0
@@ -47,6 +48,7 @@ Output:
                     "CurrentChannels": 0,
                     "CurrentUsers": 0
                 },
+                "TraceFlag": true,
                 "MessageHeapCount": 0,
                 "MessageRateIn": 0,
                 "MessageRateOut": 0

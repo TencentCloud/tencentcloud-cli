@@ -5109,7 +5109,7 @@
           "example": "acc-3v3yf470zrpc",
           "member": "string",
           "name": "ModelAccTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5119,7 +5119,7 @@
           "example": "test-task",
           "member": "string",
           "name": "ModelAccTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5129,7 +5129,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5139,7 +5139,7 @@
           "example": "test",
           "member": "string",
           "name": "ModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5149,7 +5149,7 @@
           "example": "v1",
           "member": "string",
           "name": "ModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5159,7 +5159,7 @@
           "example": "JOB",
           "member": "string",
           "name": "ModelSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5169,7 +5169,7 @@
           "example": "FP16",
           "member": "string",
           "name": "OptimizationLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5179,7 +5179,7 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5189,7 +5189,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ModelInputNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5199,7 +5199,7 @@
           "example": "无",
           "member": "ModelInputInfo",
           "name": "ModelInputInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5209,7 +5209,7 @@
           "example": "T4",
           "member": "string",
           "name": "GPUType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5219,7 +5219,7 @@
           "example": "FREE",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5229,7 +5229,7 @@
           "example": "2.86x",
           "member": "string",
           "name": "Speedup",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5239,7 +5239,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelInputPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5249,7 +5249,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelOutputPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5259,7 +5259,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5269,7 +5269,7 @@
           "example": "PYTORCH",
           "member": "string",
           "name": "AlgorithmFramework",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5279,7 +5279,7 @@
           "example": "0",
           "member": "uint64",
           "name": "WaitNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5289,7 +5289,7 @@
           "example": "2022-05-10 22:10:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5299,7 +5299,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TaskProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5309,7 +5309,7 @@
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5319,7 +5319,7 @@
           "example": "无",
           "member": "string",
           "name": "TensorInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5329,7 +5329,7 @@
           "example": "无",
           "member": "HyperParameter",
           "name": "HyperParameter",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5339,7 +5339,7 @@
           "example": "无",
           "member": "string",
           "name": "AccEngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5349,7 +5349,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5359,7 +5359,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsSaved",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5369,7 +5369,7 @@
           "example": "test",
           "member": "string",
           "name": "ModelSignature",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5379,7 +5379,7 @@
           "example": "false",
           "member": "bool",
           "name": "QATModel",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5389,7 +5389,37 @@
           "example": "无",
           "member": "string",
           "name": "FrameworkVersion",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelVersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-rg-id",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

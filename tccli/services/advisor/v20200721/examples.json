@@ -1,11 +1,11 @@
 {
   "actions": {
-    "DescribeArchAsync": [
+    "DescribeArchProducts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeArchAsync\n<公共请求参数>\n\n{\n    \"ArchId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DescribeArchTaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "示例1"
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeArchProducts\n<公共请求参数>\n\n{\n    \"ArchId\": \"arch-s0di7f4y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d803975-476b-4975-b1a4-38fe2f3b048b\",\n        \"ProductList\": [\n            \"ccn\",\n            \"cdb\",\n            \"cdn\",\n            \"ckafka\",\n            \"clb\",\n            \"cos\",\n            \"css\",\n            \"cvm\",\n            \"dcdb\",\n            \"dnspod\",\n            \"domain\",\n            \"emr\",\n            \"es\",\n            \"mongodb\",\n            \"nat\",\n            \"redis\",\n            \"sms\",\n            \"ssl\",\n            \"tke\",\n            \"trtc\",\n            \"vod\",\n            \"vpnx\",\n            \"waf\"\n        ]\n    }\n}",
+        "title": "获取架构图关联的产品列表"
       }
     ],
     "DescribeArchSvg": [
@@ -24,20 +24,20 @@
         "title": "同步获取架构资源详情"
       }
     ],
-    "DescribeArchTaskResult": [
-      {
-        "document": "获取结果",
-        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeArchTaskResult\n<公共请求参数>\n\n{\n    \"ArchTaskResultId\": \"e230bba2-xxx-4996-bbb2-62939bb43b7b\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b90a5cc7-1a1e-4fcd-a7ee-46f767be7b38\",\n        \"ArchId\": \"arch-jcxtbe9t\",\n        \"ArchName\": \"架构图1\",\n        \"CreateTime\": \"2023-11-14 10:29:04\",\n        \"CreateUin\": \"123\",\n        \"UpdateTime\": \"2023-11-14 10:29:04\",\n        \"UpdateUin\": \"123\",\n        \"VersionName\": \"版本1\",\n        \"NodeList\": [\n            {\n                \"NodeId\": 223120,\n                \"DiagramId\": \"diagramid\",\n                \"NodeName\": \"CVM节点\",\n                \"ProductType\": \"CVM\",\n                \"ResourceList\": [\n                    {\n                        \"Attributes\": \"aaa\",\n                        \"InstanceId\": \"ins-j7uxx5im\"\n                    },\n                    {\n                        \"Attributes\": \"bbb\",\n                        \"InstanceId\": \"ins-a8sxx5im\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
-        "title": "获取结果"
-      }
-    ],
     "DescribeDownloadTask": [
       {
         "document": "",
         "input": "https://advisor.tencentcloudapi.com/?Action=DescribeDownloadTask\n&ResultId=-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CosUrl\": \"xx\",\n        \"CosUrlPdf\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskStatus\": \"xx\"\n    }\n}",
         "title": "获取扫描报告下载链接"
+      }
+    ],
+    "DescribePluginArchList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginArchList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"PluginKey\": \"xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b90a5cc7-1a1e-4fcd-a7ee-46f767be7b38\",\n        \"ArchList\": [\n            {\n                \"ArchId\": \"arch-xgosz3yz\",\n                \"ArchName\": \"测试架构图1\",\n                \"FolderId\": 123,\n                \"CreateTime\": \"2023-11-14 15:22:32\",\n                \"CreateUin\": \"123\",\n                \"UpdateTime\": \"2023-11-14 15:22:32\",\n                \"UpdateUin\": \"123\",\n                \"ShareStatus\": true,\n                \"ResourceBindStatus\": true\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "分页获取架构图列表"
       }
     ],
     "DescribeStrategies": [

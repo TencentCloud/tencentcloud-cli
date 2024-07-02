@@ -312,6 +312,15 @@
           "name": "AssociateAction",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请单关联资源",
+          "example": "[{\"Type\":\"cvm\",\"ResourceId\":\"sfehg8-kfjg8\"}]",
+          "member": "Resource",
+          "name": "Resource",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -325,6 +334,7 @@
           "example": "11",
           "member": "uint64",
           "name": "ApplicationId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -590,6 +600,34 @@
         }
       ],
       "type": "object"
+    },
+    "Resource": {
+      "document": "申bpaas申请单关联资源列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请单关联的资源ID（最大50）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sjhgw-4958-in1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请单关联的资源类型（最大100）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Scf": {
       "document": "云函数SCF",

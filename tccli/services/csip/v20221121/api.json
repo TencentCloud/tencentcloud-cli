@@ -2103,7 +2103,7 @@
         {
           "disabled": false,
           "document": "唯一id",
-          "example": "-",
+          "example": "abcd",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -2113,7 +2113,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "无",
+          "example": "高风险子帐号应该开启登录保护",
           "member": "string",
           "name": "CFGName",
           "output_required": true,
@@ -2123,7 +2123,7 @@
         {
           "disabled": false,
           "document": "检查类型",
-          "example": "无",
+          "example": "账号安全",
           "member": "string",
           "name": "CheckType",
           "output_required": true,
@@ -2133,7 +2133,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "无",
+          "example": "1000*****",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -2143,7 +2143,7 @@
         {
           "disabled": false,
           "document": "实例名",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -2153,7 +2153,7 @@
         {
           "disabled": false,
           "document": "实例类型",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -2163,7 +2163,7 @@
         {
           "disabled": false,
           "document": "影响资产",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "AffectAsset",
           "output_required": true,
@@ -2183,7 +2183,7 @@
         {
           "disabled": false,
           "document": "首次识别时间",
-          "example": "无",
+          "example": "2024-06-30 16:19:03",
           "member": "string",
           "name": "FirstTime",
           "output_required": true,
@@ -2193,7 +2193,7 @@
         {
           "disabled": false,
           "document": "最近识别时间",
-          "example": "无",
+          "example": "2024-06-30 16:19:03",
           "member": "string",
           "name": "RecentTime",
           "output_required": true,
@@ -2203,7 +2203,7 @@
         {
           "disabled": false,
           "document": "来源",
-          "example": "无",
+          "example": "云安全配置",
           "member": "string",
           "name": "From",
           "output_required": true,
@@ -2213,7 +2213,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -2222,8 +2222,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "无",
+          "document": "相关规范",
+          "example": "腾讯基线",
           "member": "string",
           "name": "CFGSTD",
           "output_required": true,
@@ -2233,7 +2233,7 @@
         {
           "disabled": false,
           "document": "配置详情",
-          "example": "无",
+          "example": "如果账号被盗用，您的云资产会面临非常高的安全风险，登录保护为您的账号登录提供二次校验，降低账号被恶意登录的可能性。",
           "member": "string",
           "name": "CFGDescribe",
           "output_required": true,
@@ -2243,7 +2243,7 @@
         {
           "disabled": false,
           "document": "修复建议",
-          "example": "无",
+          "example": "建议您立即对账号开启登录保护，且建议您使用MFA进行登录保护。点击“前往处置”，进入安全设置，点击登录保护旁的编辑按钮，开启操作保护，建议您采用“虚拟MFA设备校验”。",
           "member": "string",
           "name": "CFGFix",
           "output_required": true,
@@ -2253,7 +2253,7 @@
         {
           "disabled": false,
           "document": "帮助文档链接",
-          "example": "无",
+          "example": "http://xxx",
           "member": "string",
           "name": "CFGHelpURL",
           "output_required": true,
@@ -2263,7 +2263,7 @@
         {
           "disabled": false,
           "document": "前端使用索引",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -2273,7 +2273,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "无",
+          "example": "130*******",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -2283,7 +2283,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -2293,7 +2293,7 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000***",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -3326,8 +3326,8 @@
         },
         {
           "disabled": false,
-          "document": "资产唯一id",
-          "example": "1",
+          "document": "ID，处理风险使用",
+          "example": "abcd",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -3337,7 +3337,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "1",
+          "example": "abcd",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -3347,7 +3347,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "x",
+          "example": "ins-*********",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -3357,7 +3357,7 @@
         {
           "disabled": false,
           "document": "实例名",
-          "example": "x",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -3367,7 +3367,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -3377,7 +3377,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nickname",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -3387,7 +3387,7 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100***********",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -3397,7 +3397,7 @@
         {
           "disabled": false,
           "document": "弱口令类型",
-          "example": "无",
+          "example": "ftp 弱口令",
           "member": "string",
           "name": "PasswordType",
           "output_required": true,
@@ -3407,7 +3407,7 @@
         {
           "disabled": false,
           "document": "来源",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "From",
           "output_required": true,
@@ -3417,7 +3417,7 @@
         {
           "disabled": false,
           "document": "漏洞类型",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "VULType",
           "output_required": true,
@@ -3427,7 +3427,7 @@
         {
           "disabled": false,
           "document": "漏洞url",
-          "example": "无",
+          "example": "ftp://xx",
           "member": "string",
           "name": "VULURL",
           "output_required": true,
@@ -3437,7 +3437,7 @@
         {
           "disabled": false,
           "document": "修复建议",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "Fix",
           "output_required": true,
@@ -3446,8 +3446,8 @@
         },
         {
           "disabled": false,
-          "document": "负载",
-          "example": "无",
+          "document": "证明",
+          "example": "abc",
           "member": "string",
           "name": "Payload",
           "output_required": true,
@@ -4774,7 +4774,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "rmis-abcd",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4794,7 +4794,7 @@
         {
           "disabled": false,
           "document": "未认证资产列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UnAuthAsset",
           "output_required": false,
@@ -5262,8 +5262,8 @@
         },
         {
           "disabled": false,
-          "document": "-",
-          "example": "无",
+          "document": "资产",
+          "example": "[{\"Asset\": \"1.1.1.1\"}]",
           "member": "PublicIpDomainListKey",
           "name": "Content",
           "required": false,
@@ -5272,7 +5272,7 @@
         {
           "disabled": false,
           "document": "是否保留路径配置，1：保留，其他：不保留，默认不传为不保留",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RetainPath",
           "required": false,
@@ -5281,7 +5281,7 @@
         {
           "disabled": false,
           "document": "以后是否忽略该资产，，1：忽略，其他：不忽略，默认不传为忽略",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IgnoreAsset",
           "required": false,
@@ -5290,7 +5290,7 @@
         {
           "disabled": false,
           "document": "资产标签",
-          "example": "无",
+          "example": "[]",
           "member": "AssetTag",
           "name": "Tags",
           "required": false,
@@ -6979,7 +6979,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -6988,7 +6988,7 @@
         {
           "disabled": false,
           "document": "资产标签",
-          "example": "无",
+          "example": "[]",
           "member": "AssetTag",
           "name": "Tags",
           "required": false,
@@ -7013,7 +7013,7 @@
         {
           "disabled": false,
           "document": "资产视角的配置风险列表",
-          "example": "无",
+          "example": "{}",
           "member": "AssetViewPortRisk",
           "name": "Data",
           "output_required": true,
@@ -7023,7 +7023,7 @@
         {
           "disabled": false,
           "document": "状态列表",
-          "example": "无",
+          "example": "{}",
           "member": "FilterDataObject",
           "name": "StatusLists",
           "output_required": true,
@@ -7033,7 +7033,7 @@
         {
           "disabled": false,
           "document": "危险等级列表",
-          "example": "无",
+          "example": "{}",
           "member": "FilterDataObject",
           "name": "LevelLists",
           "output_required": true,
@@ -7043,7 +7043,7 @@
         {
           "disabled": false,
           "document": "建议列表",
-          "example": "无",
+          "example": "{}",
           "member": "FilterDataObject",
           "name": "SuggestionLists",
           "output_required": true,
@@ -7053,7 +7053,7 @@
         {
           "disabled": false,
           "document": "资产类型列表",
-          "example": "无",
+          "example": "{}",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
           "output_required": true,
@@ -7063,7 +7063,7 @@
         {
           "disabled": false,
           "document": "来源列表",
-          "example": "无",
+          "example": "{}",
           "member": "FilterDataObject",
           "name": "FromLists",
           "output_required": true,
@@ -7419,7 +7419,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -7428,7 +7428,7 @@
         {
           "disabled": false,
           "document": "资产标签",
-          "example": "无",
+          "example": "[]",
           "member": "AssetTag",
           "name": "Tags",
           "required": false,
@@ -7453,7 +7453,7 @@
         {
           "disabled": false,
           "document": "风险服务列表",
-          "example": "无",
+          "example": "[]",
           "member": "ServerRisk",
           "name": "Data",
           "output_required": true,
@@ -7463,7 +7463,7 @@
         {
           "disabled": false,
           "document": "资产类型枚举",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
           "output_required": true,
@@ -7694,7 +7694,7 @@
         {
           "disabled": false,
           "document": "列表过滤条件",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -7712,24 +7712,27 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "ScanTaskInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主账户ID列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UINList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7757,7 +7760,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -7766,7 +7769,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "无",
+          "example": "[]",
           "member": "Tags",
           "name": "Tags",
           "required": false,
@@ -7791,7 +7794,7 @@
         {
           "disabled": false,
           "document": "任务日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "ScanTaskInfoList",
           "name": "Data",
           "output_required": true,
@@ -7801,7 +7804,7 @@
         {
           "disabled": false,
           "document": "主账户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UINList",
           "output_required": true,
@@ -7811,7 +7814,7 @@
         {
           "disabled": false,
           "document": "体检模式过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "TaskModeList",
           "output_required": true,
@@ -7986,7 +7989,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -8011,7 +8014,7 @@
         {
           "disabled": false,
           "document": "报告列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "TaskLogInfo",
           "name": "Data",
           "output_required": true,
@@ -8021,7 +8024,7 @@
         {
           "disabled": false,
           "document": "待查看数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "NotViewNumber",
           "output_required": true,
@@ -8031,7 +8034,7 @@
         {
           "disabled": false,
           "document": "报告模板数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ReportTemplateNumber",
           "output_required": false,
@@ -8053,7 +8056,7 @@
         {
           "disabled": false,
           "document": "0: 预览， 1: 下载",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -8071,7 +8074,7 @@
         {
           "disabled": false,
           "document": "任务报告Id 列表",
-          "example": "无",
+          "example": "[{\"TaskLogList\":[\"rpt-xxxx\"]}]",
           "member": "ReportItemKey",
           "name": "ReportItemKeyList",
           "required": false,
@@ -8080,7 +8083,7 @@
         {
           "disabled": false,
           "document": "报告中任务id列表",
-          "example": "无",
+          "example": "[{\"TaskIdList\":[\"rmis-xxxx\"]}]",
           "member": "ReportTaskIdList",
           "name": "ReportTaskIdList",
           "required": false,
@@ -8095,7 +8098,7 @@
         {
           "disabled": false,
           "document": "返回报告临时下载url",
-          "example": "无",
+          "example": "[ {\"URL\": \"abc\", \"LogId\": \"abc\", \"TaskLogName\": \"abc\", \"AppId\": \"abc\"}]",
           "member": "TaskLogURL",
           "name": "Data",
           "output_required": true,
@@ -8163,7 +8166,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "rmis-*******",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -8172,7 +8175,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -8187,7 +8190,7 @@
         {
           "disabled": false,
           "document": "配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "VULRiskAdvanceCFGList",
           "name": "Data",
           "output_required": true,
@@ -8197,7 +8200,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -8207,7 +8210,7 @@
         {
           "disabled": false,
           "document": "风险等级过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "RiskLevelLists",
           "output_required": true,
@@ -8217,7 +8220,7 @@
         {
           "disabled": false,
           "document": "漏洞类型过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "VULTypeLists",
           "output_required": true,
@@ -8227,7 +8230,7 @@
         {
           "disabled": false,
           "document": "识别来源过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "CheckFromLists",
           "output_required": true,
@@ -8237,7 +8240,7 @@
         {
           "disabled": false,
           "document": "漏洞标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "FilterDataObject",
           "name": "VulTagList",
           "output_required": false,
@@ -10011,7 +10014,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "rmis-abcd",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -10031,7 +10034,7 @@
         {
           "disabled": false,
           "document": "未认证资产列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UnAuthAsset",
           "output_required": false,
@@ -10699,8 +10702,7 @@
           "member": "string",
           "name": "PortSets",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10709,18 +10711,16 @@
           "member": "int64",
           "name": "CheckType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "检测项描述",
-          "example": "xx",
+          "example": "abcd",
           "member": "string",
           "name": "Detail",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10729,8 +10729,7 @@
           "member": "int64",
           "name": "Enable",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -10740,8 +10739,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "影响资产",
-          "example": "1.1.1.1",
+          "document": "未处理数量",
+          "example": "10",
           "member": "int64",
           "name": "NoHandleCount",
           "output_required": true,
@@ -10820,7 +10819,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，0未处理、1已处置、2已忽略",
+          "document": "影响资产数量",
           "example": "0",
           "member": "string",
           "name": "AffectAssetCount",
@@ -10830,8 +10829,8 @@
         },
         {
           "disabled": false,
-          "document": "资产唯一id",
-          "example": "1",
+          "document": "ID",
+          "example": "abcd",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -10840,7 +10839,7 @@
         },
         {
           "disabled": false,
-          "document": "资产子类型",
+          "document": "识别来源",
           "example": "1",
           "member": "string",
           "name": "From",
@@ -10851,7 +10850,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "1",
+          "example": "abcd",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -10861,7 +10860,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -10871,7 +10870,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nickname",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -10881,7 +10880,7 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100**********",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -10891,7 +10890,7 @@
         {
           "disabled": false,
           "document": "服务",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "Service",
           "output_required": true,
@@ -10976,7 +10975,7 @@
         {
           "disabled": false,
           "document": "任务id列表",
-          "example": "无",
+          "example": "[\"rmis-1***\",\"rmis-2****\"]",
           "member": "string",
           "name": "TaskIdList",
           "required": true,
@@ -10985,7 +10984,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "required": false,
@@ -11405,7 +11404,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "abcd",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
@@ -11465,7 +11464,7 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "mis-xxxxxxxx",
+          "example": "rmis-xxxxxxxx",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -11475,7 +11474,7 @@
         {
           "disabled": false,
           "document": "自定义指定扫描资产信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{xx}]",
+          "example": "[]",
           "member": "string",
           "name": "SelfDefiningAssets",
           "output_required": true,
@@ -11655,7 +11654,7 @@
         {
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "error",
           "member": "string",
           "name": "ErrorInfo",
           "output_required": true,
@@ -11715,7 +11714,7 @@
         {
           "disabled": false,
           "document": "资产\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "TaskAssetObject",
           "name": "Assets",
           "output_required": true,
@@ -11725,7 +11724,7 @@
         {
           "disabled": false,
           "document": "用户Appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -11735,7 +11734,7 @@
         {
           "disabled": false,
           "document": "用户主账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100*********",
           "member": "string",
           "name": "UIN",
           "output_required": true,
@@ -11745,7 +11744,7 @@
         {
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -11765,7 +11764,7 @@
         {
           "disabled": false,
           "document": "扫描来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vss",
+          "example": "csip",
           "member": "string",
           "name": "ScanFrom",
           "output_required": true,
@@ -11841,7 +11840,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "x",
+          "example": "ins-********",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -11851,7 +11850,7 @@
         {
           "disabled": false,
           "document": "实例名",
-          "example": "x",
+          "example": "testabcd",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -11861,7 +11860,7 @@
         {
           "disabled": false,
           "document": "资产类型",
-          "example": "5",
+          "example": "cvm",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -11931,7 +11930,7 @@
         {
           "disabled": false,
           "document": "风险详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未授权访问:如果未受管理员授权，可能会被未经授权的人登录和访问 服务器被攻击: WebLogic 可能会被攻击者利用，最终导致整个服务器被攻击",
           "member": "string",
           "name": "RiskDetails",
           "output_required": true,
@@ -11941,7 +11940,7 @@
         {
           "disabled": false,
           "document": "处置建议",
-          "example": "无",
+          "example": "禁用未授权访问:应禁止 WebLogic 未授权的访问，通常可以通过固定的 IP 地址或者域名来做到 更新 WebLogic:WebLogic 应及时更新到最新的版本，来避免存在的漏洞被攻击者利用 定期审计:定期审计 WebLogic 的日志，可以及时发现不正常的访问行为",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -11961,7 +11960,7 @@
         {
           "disabled": false,
           "document": "资产唯一id",
-          "example": "1",
+          "example": "abcd",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -11971,7 +11970,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -11981,7 +11980,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nickname",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -11991,7 +11990,7 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000*******",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -12001,7 +12000,7 @@
         {
           "disabled": false,
           "document": "服务快照\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "url",
+          "example": "https://abcd",
           "member": "string",
           "name": "ServiceSnapshot",
           "output_required": true,
@@ -12011,7 +12010,7 @@
         {
           "disabled": false,
           "document": "服务访问的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://abcd:8000",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -12021,7 +12020,7 @@
         {
           "disabled": false,
           "document": "列表索引值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "666fb1d2*************",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -12031,7 +12030,7 @@
         {
           "disabled": false,
           "document": "风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[   {     \"Title\": \"未授权访问\",     \"Body\": \"如果未受管理员授权，可能会被未经授权的人登录和访问\"   },   {     \"Title\": \"服务器被攻击\",     \"Body\": \" WebLogic 可能会被攻击者利用，最终导致整个服务器被攻击\"   } ]",
           "member": "ServerRiskSuggestion",
           "name": "RiskList",
           "output_required": true,
@@ -12041,7 +12040,7 @@
         {
           "disabled": false,
           "document": "建议列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Title\": \"禁用未授权访问\",     \"Body\": \"应禁止 WebLogic 未授权的访问，通常可以通过固定的 IP 地址或者域名来做到\"   },   {     \"Title\": \"更新 WebLogic\",     \"Body\": \"WebLogic 应及时更新到最新的版本，来避免存在的漏洞被攻击者利用\"   },   {     \"Title\": \"定期审计\",     \"Body\": \"定期审计 WebLogic 的日志，可以及时发现不正常的访问行为\"   } ]",
           "member": "ServerRiskSuggestion",
           "name": "SuggestionList",
           "output_required": true,
@@ -12139,7 +12138,7 @@
         {
           "disabled": false,
           "document": "任务id 列表",
-          "example": "无",
+          "example": "{}",
           "member": "TaskIdListKey",
           "name": "TaskIdList",
           "required": true,
@@ -12166,6 +12165,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12380,9 +12380,10 @@
         {
           "disabled": false,
           "document": "标签名称",
-          "example": "无",
+          "example": "name1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12390,9 +12391,10 @@
         {
           "disabled": false,
           "document": "标签内容",
-          "example": "无",
+          "example": "value1",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12572,12 +12574,11 @@
         {
           "disabled": false,
           "document": "检测项ID",
-          "example": "xx",
+          "example": "abcd******",
           "member": "string",
           "name": "ItemId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12586,18 +12587,16 @@
           "member": "int64",
           "name": "Enable",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "资源类型",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "ResourceType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -12763,7 +12762,7 @@
         {
           "disabled": false,
           "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "130*******",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -12773,7 +12772,7 @@
         {
           "disabled": false,
           "document": "主账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x",
+          "example": "100******",
           "member": "string",
           "name": "UIN",
           "output_required": true,
@@ -12783,7 +12782,7 @@
         {
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x",
+          "example": "testabc",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -12822,7 +12821,7 @@
           "example": "http://xxxx/xxx",
           "member": "string",
           "name": "URL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12832,7 +12831,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "LogId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12842,17 +12841,17 @@
           "example": "xxxx",
           "member": "string",
           "name": "TaskLogName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "APP ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14193,8 +14192,8 @@
         },
         {
           "disabled": false,
-          "document": "资产唯一id",
-          "example": "1",
+          "document": "ID,处理风险使用",
+          "example": "abcd",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -14204,7 +14203,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "1",
+          "example": "abcd",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -14214,7 +14213,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "x",
+          "example": "ins-******",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -14224,7 +14223,7 @@
         {
           "disabled": false,
           "document": "实例名",
-          "example": "x",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -14234,7 +14233,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "无",
+          "example": "130********",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -14244,7 +14243,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nickname",
           "member": "string",
           "name": "Nick",
           "output_required": true,
@@ -14254,7 +14253,7 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100*********",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -14264,7 +14263,7 @@
         {
           "disabled": false,
           "document": "风险链接",
-          "example": "无",
+          "example": "http://xx",
           "member": "string",
           "name": "URL",
           "output_required": true,
@@ -14274,7 +14273,7 @@
         {
           "disabled": false,
           "document": "风险文件地址",
-          "example": "无",
+          "example": "abcd*******",
           "member": "string",
           "name": "URLPath",
           "output_required": true,
@@ -14284,7 +14283,7 @@
         {
           "disabled": false,
           "document": "实例类型",
-          "example": "无",
+          "example": "CVM",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -14294,7 +14293,7 @@
         {
           "disabled": false,
           "document": "类型",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "DetectEngine",
           "output_required": true,
@@ -14304,7 +14303,7 @@
         {
           "disabled": false,
           "document": "结果描述",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "ResultDescribe",
           "output_required": true,
@@ -14314,7 +14313,7 @@
         {
           "disabled": false,
           "document": "源地址url",
-          "example": "无",
+          "example": "http://xx",
           "member": "string",
           "name": "SourceURL",
           "output_required": true,
@@ -14324,7 +14323,7 @@
         {
           "disabled": false,
           "document": "源文件地址",
-          "example": "无",
+          "example": "abcd",
           "member": "string",
           "name": "SourceURLPath",
           "output_required": true,

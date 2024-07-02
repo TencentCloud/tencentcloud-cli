@@ -6494,6 +6494,15 @@
           "name": "AlarmLevels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "收敛历史的唯一id",
+          "example": "112344",
+          "member": "string",
+          "name": "ConvergenceHistoryIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -158,6 +158,14 @@
         "title": "删除SDK验证记录"
       }
     ],
+    "DeleteWebankRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebankRecord\n<公共请求参数>\n\n{\n    \"RecordId\": \"13d37dd64b77d14bda3e761110fa6cdc\",\n    \"ValidateTime\": \"2023-06-01 13:10:10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3229067b-6d82-408e-a630-b51c9f21af97\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DetectAIFakeFaces": [
       {
         "document": "疑似高风险攻击",

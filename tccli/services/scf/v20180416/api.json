@@ -4444,7 +4444,6 @@
           "example": "无",
           "member": "Result",
           "name": "Result",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
