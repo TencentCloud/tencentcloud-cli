@@ -10413,7 +10413,7 @@
       "usage": "both"
     },
     "IpTableRule": {
-      "document": "IP黑白名单详细规则",
+      "document": "自定义规则-基础访问管控配置。",
       "members": [
         {
           "disabled": false,
@@ -10421,29 +10421,32 @@
           "example": "drop",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "根据类型匹配，取值有：\n<li>ip：对ip进行匹配；</li>\n<li>area：对ip所属地区匹配。</li>",
+          "document": "根据类型匹配，取值有：\n<li>ip：客户端 IP 进行匹配；</li>\n<li>area：客户端 IP 所属地区匹配；</li>\n<li>asn：客户端所属的自治系统进行匹配；</li>\n<li>referer：请求头 Referer 进行匹配；</li>\n<li>ua：请求头 User-Agent 进行匹配；</li>\n<li>url：请求 URL 进行匹配。</li>",
           "example": "ip",
           "member": "string",
           "name": "MatchFrom",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则的匹配方式，默认为空代表等于。\n取值有：\n<li> is_emty：配置为空；</li>\n<li> not_exists：配置为不存在；</li>\n<li> include：包含；</li>\n<li> not_include：不包含；</li>\n<li> equal：等于；</li>\n<li> not_equal：不等于。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则的匹配方式。取值有：\n<li> match：匹配，适用于 MatchFrom 为 ip；</li>\n<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>\n<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>\n<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>\n<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>\n<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>\n<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>\n<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>\n<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>\n<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>\n<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>\n<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>",
           "example": "equal",
           "member": "string",
           "name": "Operator",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10451,6 +10454,7 @@
           "example": "0",
           "member": "int64",
           "name": "RuleID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10461,19 +10465,21 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则启用状态，当返回为null时，为启用。取值有：\n<li> on：启用；</li>\n<li> off：未启用。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则启用状态。取值有：\n<li> on：启用；</li>\n<li> off：未启用。</li>\n当入参缺省时，按 on 取值。",
           "example": "on",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10481,16 +10487,18 @@
           "example": "rule1",
           "member": "string",
           "name": "RuleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。",
+          "document": "匹配内容。支持多值输入。\n<li>当输入多个匹配值时，请使用英文逗号分隔；</li>\n<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>\n<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "MatchContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -11862,22 +11862,20 @@
         {
           "disabled": false,
           "document": "Base64编码后的文件内容",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FileBody",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "文件名",
-          "example": "",
+          "document": "文件名，最大长度不超过200字符",
+          "example": "无",
           "member": "string",
           "name": "FileName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

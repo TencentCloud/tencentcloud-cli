@@ -155,8 +155,8 @@
     "DeleteAttackWhiteRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1,\n            2\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询示例"
       }
     ],
@@ -351,7 +351,7 @@
     "DescribeAutoDenyIP": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoDenyIP\n<公共请求参数>\n\n{\n    \"Count\": 0,\n    \"Category\": \"xx\",\n    \"Domain\": \"xx\",\n    \"Name\": \"xx\",\n    \"Ip\": \"xx\",\n    \"VtsMax\": 1,\n    \"VtsMin\": 1,\n    \"Sort\": \"xx\",\n    \"Limit\": 1,\n    \"CtsMin\": 1,\n    \"Skip\": 1,\n    \"CtsMax\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoDenyIP\n<公共请求参数>\n\n{\n    \"Count\": 0,\n    \"Category\": \"\",\n    \"Domain\": \"\",\n    \"Name\": \"\",\n    \"Ip\": \"\",\n    \"VtsMax\": 1,\n    \"VtsMin\": 1,\n    \"Sort\": \"\",\n    \"Limit\": 1,\n    \"CtsMin\": 1,\n    \"Skip\": 1,\n    \"CtsMax\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "描述WAF自动封禁IP 详情"
       }
@@ -521,8 +521,8 @@
     "DescribeHost": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHost\n<公共请求参数>\n\n{\n    \"InstanceID\": \"xx\",\n    \"Domain\": \"xx\",\n    \"DomainId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Host\": {\n            \"Status\": 1,\n            \"Engine\": 1,\n            \"Domain\": \"xx\",\n            \"DomainId\": \"xx\",\n            \"LoadBalancerSet\": [\n                {\n                    \"Protocol\": \"xx\",\n                    \"Zone\": \"xx\",\n                    \"Region\": \"xx\",\n                    \"LoadBalancerId\": \"xx\",\n                    \"ListenerId\": \"xx\",\n                    \"Vip\": \"xx\",\n                    \"ListenerName\": \"xx\",\n                    \"LoadBalancerName\": \"xx\",\n                    \"Vport\": 1\n                }\n            ],\n            \"Level\": 1,\n            \"MainDomain\": \"xx\",\n            \"Region\": \"xx\",\n            \"FlowMode\": 1,\n            \"State\": 1,\n            \"ClsStatus\": 1,\n            \"IsCdn\": 1,\n            \"Mode\": 1,\n            \"CdcClusters\": [\n                \"xx\"\n            ],\n            \"Edition\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHost\n<公共请求参数>\n\n{\n    \"InstanceID\": \"\",\n    \"Domain\": \"\",\n    \"DomainId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Host\": {\n            \"Domain\": \"abc\",\n            \"DomainId\": \"abc\",\n            \"MainDomain\": \"abc\",\n            \"Mode\": 1,\n            \"Status\": 1,\n            \"State\": 1,\n            \"Engine\": 1,\n            \"IsCdn\": 1,\n            \"LoadBalancerSet\": [\n                {\n                    \"LoadBalancerId\": \"abc\",\n                    \"LoadBalancerName\": \"abc\",\n                    \"ListenerId\": \"abc\",\n                    \"ListenerName\": \"abc\",\n                    \"Vip\": \"abc\",\n                    \"Vport\": 1,\n                    \"Region\": \"abc\",\n                    \"Protocol\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"NumericalVpcId\": 0,\n                    \"LoadBalancerType\": \"abc\",\n                    \"LoadBalancerDomain\": \"abc\"\n                }\n            ],\n            \"Region\": \"abc\",\n            \"Edition\": \"abc\",\n            \"FlowMode\": 1,\n            \"ClsStatus\": 1,\n            \"Level\": 1,\n            \"CdcClusters\": [\n                \"abc\"\n            ],\n            \"AlbType\": \"abc\",\n            \"IpHeaders\": [\n                \"abc\"\n            ],\n            \"EngineType\": 0,\n            \"CloudType\": \"abc\",\n            \"Note\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取防护域名详情"
       }
     ],
@@ -538,7 +538,7 @@
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeHosts\n&Domain=www.qcloudwaf.com\n&DomainId=waf-u23yt9Hj\n&Search=aaaa\n&InstanceID=aaaa\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HostList\": [\n            {\n                \"Status\": 1,\n                \"Engine\": 1,\n                \"Domain\": \"xx\",\n                \"DomainId\": \"xx\",\n                \"LoadBalancerSet\": [\n                    {\n                        \"Protocol\": \"xx\",\n                        \"Zone\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"LoadBalancerId\": \"xx\",\n                        \"ListenerId\": \"xx\",\n                        \"Vip\": \"xx\",\n                        \"ListenerName\": \"xx\",\n                        \"LoadBalancerName\": \"xx\",\n                        \"Vport\": 1\n                    }\n                ],\n                \"Level\": 1,\n                \"MainDomain\": \"xx\",\n                \"Region\": \"xx\",\n                \"FlowMode\": 1,\n                \"State\": 1,\n                \"ClsStatus\": 1,\n                \"IsCdn\": 1,\n                \"Mode\": 1,\n                \"Edition\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HostList\": [\n            {\n                \"Domain\": \"abc\",\n                \"DomainId\": \"abc\",\n                \"MainDomain\": \"abc\",\n                \"Mode\": 1,\n                \"Status\": 1,\n                \"State\": 1,\n                \"Engine\": 1,\n                \"IsCdn\": 1,\n                \"LoadBalancerSet\": [\n                    {\n                        \"LoadBalancerId\": \"abc\",\n                        \"LoadBalancerName\": \"abc\",\n                        \"ListenerId\": \"abc\",\n                        \"ListenerName\": \"abc\",\n                        \"Vip\": \"abc\",\n                        \"Vport\": 1,\n                        \"Region\": \"abc\",\n                        \"Protocol\": \"abc\",\n                        \"Zone\": \"abc\",\n                        \"NumericalVpcId\": 0,\n                        \"LoadBalancerType\": \"abc\",\n                        \"LoadBalancerDomain\": \"abc\"\n                    }\n                ],\n                \"Region\": \"abc\",\n                \"Edition\": \"abc\",\n                \"FlowMode\": 1,\n                \"ClsStatus\": 1,\n                \"Level\": 1,\n                \"CdcClusters\": [\n                    \"abc\"\n                ],\n                \"AlbType\": \"abc\",\n                \"IpHeaders\": [\n                    \"abc\"\n                ],\n                \"EngineType\": 0,\n                \"CloudType\": \"abc\",\n                \"Note\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取防护域名列表"
       }
     ],
@@ -693,8 +693,8 @@
     "DescribeUserLevel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Level\": 300\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Level\": 300\n    }\n}",
         "title": "查询示例"
       }
     ],
@@ -973,7 +973,7 @@
     "ModifyGenerateDeals": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGenerateDeals\n<公共请求参数>\n\n{\n    \"Goods\": [\n        {\n            \"GoodsCategoryId\": 101201,\n            \"GoodsNum\": 1,\n            \"ProjectId\": 0,\n            \"GoodsDetail\": {\n                \"ProductCode\": \"xx\",\n                \"LabelCounts\": [\n                    1\n                ],\n                \"SubProductCode\": \"xx\",\n                \"TimeSpan\": 1,\n                \"Type\": \"xx\",\n                \"RealRegion\": 0,\n                \"ElasticQps\": 0,\n                \"Pid\": 0,\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"AutoRenewFlag\": 1,\n                \"FlexBill\": 0,\n                \"TimeUnit\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"LabelTypes\": [\n                    \"sv_wsm_waf_package_ultimate_clb\"\n                ]\n            },\n            \"RegionId\": 1,\n            \"PayMode\": 1,\n            \"Platform\": 0\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGenerateDeals\n<公共请求参数>\n\n{\n    \"Goods\": [\n        {\n            \"GoodsCategoryId\": 101201,\n            \"GoodsNum\": 1,\n            \"ProjectId\": 0,\n            \"GoodsDetail\": {\n                \"ProductCode\": \"p_wsm_waf\",\n                \"LabelCounts\": [\n                    1\n                ],\n                \"SubProductCode\": \"sp_wsm_waf_premium_clb\",\n                \"TimeSpan\": 1,\n                \"Type\": \"sp_wsm_waf_premium_clb\",\n                \"RealRegion\": 0,\n                \"ElasticQps\": 0,\n                \"Pid\": 0,\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"高级版\",\n                        \"Value\": \"一套\"\n                    }\n                ],\n                \"AutoRenewFlag\": 1,\n                \"FlexBill\": 0,\n                \"TimeUnit\": \"m\",\n                \"InstanceName\": \"test\",\n                \"LabelTypes\": [\n                    \"sv_wsm_waf_package_ultimate_clb\"\n                ]\n            },\n            \"RegionId\": 1,\n            \"PayMode\": 1,\n            \"Platform\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"Data\": {\n            \"DealNames\": [\n                \"20211127383000722205671\"\n            ],\n            \"BigDealId\": \"20211127383000722205661\"\n        },\n        \"ReturnMessage\": \"success\",\n        \"RequestId\": \"b705af50-606d-46a7-8cb6-617f7592ed4e\"\n    }\n}",
         "title": "计费下单接口"
       }
@@ -997,7 +997,7 @@
     "ModifyHostMode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostMode\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"DomainId\": \"xxxx\",\n    \"Mode\": 21,\n    \"Type\": 1,\n    \"InstanceID\": \"waf_0e2v15x\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostMode\n<公共请求参数>\n\n{\n    \"Domain\": \"\",\n    \"DomainId\": \"\",\n    \"Mode\": 21,\n    \"Type\": 1,\n    \"InstanceID\": \"waf_0e2v15x\"\n}",
         "output": "{\n    \"Response\": {\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置防护域名防护状态"
       }
@@ -1117,16 +1117,16 @@
     "ModifyUserLevel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Level\": 300\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"\",\n    \"Level\": 300\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "查询示例"
       }
     ],
     "ModifyUserSignatureRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserSignatureRule\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"Domain\": \"xx\",\n    \"MainClassID\": \"xx\",\n    \"RuleID\": [\n        {\n            \"Status\": 0,\n            \"Reason\": 0,\n            \"Id\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserSignatureRule\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"Domain\": \"\",\n    \"MainClassID\": \"\",\n    \"RuleID\": [\n        {\n            \"Status\": 0,\n            \"Reason\": 0,\n            \"Id\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
         "title": "查询示例"
       }
     ],

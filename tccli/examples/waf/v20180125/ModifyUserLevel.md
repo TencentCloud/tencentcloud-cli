@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf ModifyUserLevel --cli-unfold-argument  \
-    --Domain xx \
+    --Domain  \
     --Level 300
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": ""
     }
 }
 ```

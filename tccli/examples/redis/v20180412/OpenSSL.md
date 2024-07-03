@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis OpenSSL --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId crs-dvchdv5
 ```
 
 Output: 

@@ -54,6 +54,12 @@
         "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"SourceTextList\": [\n        \"你好\",\n        \"今天天气怎么样\"\n    ],\n    \"Source\": \"zh\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"beb15bd7-29aa-4f0f-9a80-574d6fc3733f\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"Hello.\",\n            \"What's the weather like today?\"\n        ]\n    }\n}",
         "title": "批量文本翻译调用示例"
+      },
+      {
+        "document": "带术语库例句库",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslateBatch\n<公共请求参数>\n\n{\n    \"Source\": \"auto\",\n    \"Target\": \"en\",\n    \"ProjectId\": 0,\n    \"SourceTextList\": [\n        \"你好啊\",\n        \"这是你的苹果\"\n    ],\n    \"TermRepoIDList\": [\n        \"753899732b0611efbb47037fdf41da5a\"\n    ],\n    \"SentRepoIDList\": [\n        \"\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abf2a2a1-a0da-4d7d-b539-cc34322b78a4\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetTextList\": [\n            \"What's up man!\",\n            \"This is your apple\"\n        ]\n    }\n}",
+        "title": "批量文本翻译示例"
       }
     ]
   },

@@ -171,7 +171,7 @@
     "DeleteIpAccessControlV2": {
       "document": "Waf IP黑白名单最新版本删除接口",
       "input": "DeleteIpAccessControlV2Request",
-      "name": "Waf IP黑白名单删除接口",
+      "name": "IP黑白名单删除接口",
       "output": "DeleteIpAccessControlV2Response",
       "status": "online"
     },
@@ -1513,7 +1513,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RuleId",
           "output_required": false,
@@ -1535,7 +1535,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1544,7 +1544,7 @@
         {
           "disabled": false,
           "document": "需要新增的封禁地域",
-          "example": "无",
+          "example": "cd",
           "member": "string",
           "name": "Areas",
           "required": true,
@@ -1553,7 +1553,7 @@
         {
           "disabled": false,
           "document": "waf版本信息，spart-waf或者clb-waf，其他无效，请一定填写",
-          "example": "无",
+          "example": "spart-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -1562,7 +1562,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "required": false,
@@ -1571,7 +1571,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -1680,7 +1680,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1689,7 +1689,7 @@
         {
           "disabled": false,
           "document": "优先级",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "SortId",
           "required": true,
@@ -1698,7 +1698,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "无",
+          "example": "{}",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -1707,7 +1707,7 @@
         {
           "disabled": false,
           "document": "需要添加策略的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1716,7 +1716,7 @@
         {
           "disabled": false,
           "document": "动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向",
-          "example": "无",
+          "example": "\"1\"",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -1725,7 +1725,7 @@
         {
           "disabled": false,
           "document": "如果动作是重定向，则表示重定向的地址；其他情况可以为空",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Redirect",
           "required": false,
@@ -1734,7 +1734,7 @@
         {
           "disabled": false,
           "document": "过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期",
-          "example": "无",
+          "example": "\"0\"",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
@@ -1743,7 +1743,7 @@
         {
           "disabled": false,
           "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF",
-          "example": "无",
+          "example": "clb-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -1752,7 +1752,7 @@
         {
           "disabled": false,
           "document": "放行的详情",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Bypass",
           "required": false,
@@ -1761,7 +1761,7 @@
         {
           "disabled": false,
           "document": "添加规则的来源，默认为空",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "EventId",
           "required": false,
@@ -1779,7 +1779,7 @@
         {
           "disabled": false,
           "document": "规则执行的时间",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -1797,7 +1797,7 @@
         {
           "disabled": false,
           "document": "规则标签，小程序规则用，标识是内置规则还是自定义规则",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Label",
           "required": false,
@@ -1815,7 +1815,7 @@
         {
           "disabled": false,
           "document": "拦截页面id",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "PageId",
           "required": false,
@@ -1830,7 +1830,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -1862,7 +1862,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1871,7 +1871,7 @@
         {
           "disabled": false,
           "document": "优先级",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "SortId",
           "required": true,
@@ -1880,7 +1880,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "ExpireTime",
           "required": true,
@@ -1889,7 +1889,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "无",
+          "example": "[]",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -1898,7 +1898,7 @@
         {
           "disabled": false,
           "document": "需要添加策略的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1907,7 +1907,7 @@
         {
           "disabled": false,
           "document": "放行的详情",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Bypass",
           "required": true,
@@ -1916,7 +1916,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "required": false,
@@ -1925,7 +1925,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -1940,7 +1940,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -1972,7 +1972,7 @@
         {
           "disabled": false,
           "document": "需要添加的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -1981,7 +1981,7 @@
         {
           "disabled": false,
           "document": "需要添加的规则",
-          "example": "无",
+          "example": "[]",
           "member": "uint64",
           "name": "Rules",
           "required": false,
@@ -1990,7 +1990,7 @@
         {
           "disabled": false,
           "document": "需要添加的规则url",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1999,7 +1999,7 @@
         {
           "disabled": false,
           "document": "规则的方法",
-          "example": "无",
+          "example": "fun",
           "member": "string",
           "name": "Function",
           "required": false,
@@ -2008,7 +2008,7 @@
         {
           "disabled": false,
           "document": "规则的开关，0表示规则关闭，1表示规则打开",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -2023,7 +2023,7 @@
         {
           "disabled": false,
           "document": "规则id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -2521,12 +2521,11 @@
         {
           "disabled": false,
           "document": "api名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "ApiName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2535,8 +2534,7 @@
           "member": "string",
           "name": "Domain",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2545,8 +2543,7 @@
           "member": "string",
           "name": "Method",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2557,40 +2554,40 @@
         {
           "disabled": false,
           "document": "攻击日志的详情内容",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CLS返回内容",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CLS返回内容",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CLS返回内容",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "datetime",
           "name": "TimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3477,7 +3474,7 @@
         {
           "disabled": false,
           "document": "标识",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3487,7 +3484,7 @@
         {
           "disabled": false,
           "document": "名字",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -3497,7 +3494,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -3507,7 +3504,7 @@
         {
           "disabled": false,
           "document": "网址",
-          "example": "无",
+          "example": "path",
           "member": "string",
           "name": "Uri",
           "output_required": true,
@@ -3517,7 +3514,7 @@
         {
           "disabled": false,
           "document": "协议",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -3537,7 +3534,7 @@
         {
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "ModifyTime",
           "output_required": false,
@@ -3547,7 +3544,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -3761,7 +3758,7 @@
         {
           "disabled": false,
           "document": "对象ID",
-          "example": "无",
+          "example": "lb-aca08c1",
           "member": "string",
           "name": "ObjectId",
           "output_required": true,
@@ -3771,7 +3768,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "waf_0000001",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -3781,7 +3778,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -3791,7 +3788,7 @@
         {
           "disabled": false,
           "document": "精准域名列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "PreciseDomains",
           "output_required": true,
@@ -3801,7 +3798,7 @@
         {
           "disabled": false,
           "document": "WAF功能开关状态，0关闭1开启",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -3811,7 +3808,7 @@
         {
           "disabled": false,
           "document": "WAF日志开关状态，0关闭1开启",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ClsStatus",
           "output_required": true,
@@ -3821,7 +3818,7 @@
         {
           "disabled": false,
           "document": "CLB对象对应的虚拟域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "VirtualDomain",
           "output_required": true,
@@ -3831,7 +3828,7 @@
         {
           "disabled": false,
           "document": "对象名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "ObjectName",
           "output_required": true,
@@ -3841,7 +3838,7 @@
         {
           "disabled": false,
           "document": "公网地址",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "PublicIp",
           "output_required": true,
@@ -3851,7 +3848,7 @@
         {
           "disabled": false,
           "document": "内网地址",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "PrivateIp",
           "output_required": true,
@@ -3861,7 +3858,7 @@
         {
           "disabled": false,
           "document": "VPC名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
@@ -3871,7 +3868,7 @@
         {
           "disabled": false,
           "document": "VPC ID",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Vpc",
           "output_required": true,
@@ -3881,7 +3878,7 @@
         {
           "disabled": false,
           "document": "waf实例等级，如果未绑定实例为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "InstanceLevel",
           "output_required": true,
@@ -3891,7 +3888,7 @@
         {
           "disabled": false,
           "document": "clb投递开关",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PostCLSStatus",
           "output_required": true,
@@ -3901,7 +3898,7 @@
         {
           "disabled": false,
           "document": "kafka投递开关",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PostCKafkaStatus",
           "output_required": true,
@@ -3911,7 +3908,7 @@
         {
           "disabled": false,
           "document": "对象类型：CLB:负载均衡器，TSE:云原生网关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CLB",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -3921,11 +3918,61 @@
         {
           "disabled": false,
           "document": "对象地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cd",
           "member": "string",
           "name": "Region",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代理状态: 0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Proxy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定获取客户端IP的头部字段列表。IsCdn为3时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "IpHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "bot防护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BotStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api防护开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ApiStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象接入模式，0表示镜像模式，1表示清洗模式，2表示体检模式，默认为清洗模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ObjectFlowMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4703,7 +4750,7 @@
           "example": "[1,2]",
           "member": "uint64",
           "name": "FailIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4906,7 +4953,7 @@
         {
           "disabled": false,
           "document": "需要删除的规则域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -4915,7 +4962,7 @@
         {
           "disabled": false,
           "document": "需要删除的白名单规则",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -4930,10 +4977,10 @@
         {
           "disabled": false,
           "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Data",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5043,7 +5090,7 @@
         {
           "disabled": false,
           "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "DeleteAll",
           "required": false,
@@ -5108,7 +5155,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5126,7 +5173,7 @@
         {
           "disabled": false,
           "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "DeleteAll",
           "required": false,
@@ -6102,7 +6149,7 @@
         {
           "disabled": false,
           "document": "状态 \"0\"：未开启地域封禁 \"1\"：开启地域封禁",
-          "example": "无",
+          "example": "\"0\"",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6122,7 +6169,7 @@
         {
           "disabled": false,
           "document": "字符串数据，配置的地域列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "Areas",
           "output_required": true,
@@ -6132,7 +6179,7 @@
         {
           "disabled": false,
           "document": "定时任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "output_required": false,
@@ -6142,7 +6189,7 @@
         {
           "disabled": false,
           "document": "定时任务详细配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "output_required": false,
@@ -6152,7 +6199,7 @@
         {
           "disabled": false,
           "document": "周期任务配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "CronType",
           "output_required": false,
@@ -6354,7 +6401,7 @@
         {
           "disabled": false,
           "document": "API风险事件周环比\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ApiRiskEventCircleCount",
           "output_required": false,
@@ -6550,7 +6597,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -6559,7 +6606,7 @@
         {
           "disabled": false,
           "document": "查询IP自动封禁状态",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -6568,7 +6615,7 @@
         {
           "disabled": false,
           "document": "计数标识",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": false,
@@ -6577,7 +6624,7 @@
         {
           "disabled": false,
           "document": "类别",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "Category",
           "required": false,
@@ -6586,7 +6633,7 @@
         {
           "disabled": false,
           "document": "有效时间最小时间戳",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "VtsMin",
           "required": false,
@@ -6595,7 +6642,7 @@
         {
           "disabled": false,
           "document": "有效时间最大时间戳",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "VtsMax",
           "required": false,
@@ -6604,7 +6651,7 @@
         {
           "disabled": false,
           "document": "创建时间最小时间戳",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CtsMin",
           "required": false,
@@ -6613,7 +6660,7 @@
         {
           "disabled": false,
           "document": "创建时间最大时间戳",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CtsMax",
           "required": false,
@@ -6622,7 +6669,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Skip",
           "required": false,
@@ -6631,7 +6678,7 @@
         {
           "disabled": false,
           "document": "限制条数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -6640,7 +6687,7 @@
         {
           "disabled": false,
           "document": "策略名字",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6649,7 +6696,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -6664,9 +6711,10 @@
         {
           "disabled": false,
           "document": "查询IP封禁状态返回结果",
-          "example": "",
+          "example": "{}",
           "member": "IpHitItemsData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8236,10 +8284,10 @@
         {
           "disabled": false,
           "document": "域名详情",
-          "example": "无",
+          "example": "{}",
           "member": "HostRecord",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8285,7 +8333,7 @@
         {
           "disabled": false,
           "document": "复杂的搜索条件",
-          "example": "无",
+          "example": "{}",
           "member": "SearchItem",
           "name": "Item",
           "required": false,
@@ -8312,17 +8360,17 @@
           "example": "aaa",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "防护域名的列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "HostRecord",
           "name": "HostList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9807,7 +9855,7 @@
           "example": "300",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9978,7 +10026,7 @@
         {
           "disabled": false,
           "document": "攻击次数阈值",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AttackThreshold",
           "output_required": true,
@@ -9988,7 +10036,7 @@
         {
           "disabled": false,
           "document": "攻击时间阈值",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TimeThreshold",
           "output_required": true,
@@ -9998,7 +10046,7 @@
         {
           "disabled": false,
           "document": "自动封禁时间",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DenyTimeThreshold",
           "output_required": true,
@@ -10008,7 +10056,7 @@
         {
           "disabled": false,
           "document": "自动封禁状态",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DefenseStatus",
           "output_required": true,
@@ -14538,7 +14586,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14547,7 +14595,7 @@
         {
           "disabled": false,
           "document": "需要调整的地域信息，一个字符串数组",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "Areas",
           "required": true,
@@ -14556,7 +14604,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "required": false,
@@ -14565,7 +14613,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -14737,7 +14785,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "无",
+          "example": "waf_000000111",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -14746,7 +14794,7 @@
         {
           "disabled": false,
           "document": "是否是bot4.0版本",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsVersionFour",
           "required": false,
@@ -14764,7 +14812,7 @@
         {
           "disabled": false,
           "document": "批量开启BOT开关的域名列表",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "DomainList",
           "required": false,
@@ -14779,7 +14827,7 @@
         {
           "disabled": false,
           "document": "正常情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -14789,7 +14837,7 @@
         {
           "disabled": false,
           "document": "未购买BOT的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "UnSupportedList",
           "output_required": false,
@@ -14799,7 +14847,7 @@
         {
           "disabled": false,
           "document": "已购买但操作失败的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "FailDomainList",
           "output_required": false,
@@ -14809,7 +14857,7 @@
         {
           "disabled": false,
           "document": "成功数目",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "output_required": false,
@@ -14921,7 +14969,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "required": false,
@@ -14930,7 +14978,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -14939,7 +14987,7 @@
         {
           "disabled": false,
           "document": "规则来源，判断是不是小程序的",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Source",
           "required": false,
@@ -14948,7 +14996,7 @@
         {
           "disabled": false,
           "document": "开关状态，小程序风控规则的时候传该值",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -14957,7 +15005,7 @@
         {
           "disabled": false,
           "document": "拦截页面id",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "PageId",
           "required": false,
@@ -15003,7 +15051,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "RuleId",
           "required": true,
@@ -15021,7 +15069,7 @@
         {
           "disabled": false,
           "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
-          "example": "无",
+          "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -15030,7 +15078,7 @@
         {
           "disabled": false,
           "document": "规则id",
-          "example": "无",
+          "example": "[]",
           "member": "DomainRuleId",
           "name": "DomainRuleIdList",
           "required": false,
@@ -15045,7 +15093,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -15121,7 +15169,7 @@
         {
           "disabled": false,
           "document": "匹配条件数组",
-          "example": "无",
+          "example": "[]",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -15130,7 +15178,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "JobType",
           "required": false,
@@ -15139,7 +15187,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "无",
+          "example": "{}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -15154,7 +15202,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -15340,7 +15388,7 @@
         {
           "disabled": false,
           "document": "需要更改的规则的域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -15349,7 +15397,7 @@
         {
           "disabled": false,
           "document": "白名单id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -15358,7 +15406,7 @@
         {
           "disabled": false,
           "document": "规则的id列表",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Rules",
           "required": false,
@@ -15367,7 +15415,7 @@
         {
           "disabled": false,
           "document": "规则匹配路径",
-          "example": "无",
+          "example": "path",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -15376,7 +15424,7 @@
         {
           "disabled": false,
           "document": "规则匹配方法",
-          "example": "无",
+          "example": "fun",
           "member": "string",
           "name": "Function",
           "required": false,
@@ -15385,7 +15433,7 @@
         {
           "disabled": false,
           "document": "规则的开关状态，0表示关闭开关，1表示打开开关",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -15466,7 +15514,7 @@
           "example": "详见DealData实体",
           "member": "DealData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -15476,7 +15524,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15486,7 +15534,7 @@
           "example": "返回message",
           "member": "string",
           "name": "ReturnMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15569,7 +15617,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "\"xxx\"",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15578,7 +15626,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "\"xxx\"",
+          "example": "waf_000000111",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -15629,10 +15677,10 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{}",
           "member": "ResponseCode",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16085,7 +16133,7 @@
         {
           "disabled": false,
           "document": "修改对象标识",
-          "example": "无",
+          "example": "lb-acvfds",
           "member": "string",
           "name": "ObjectId",
           "required": true,
@@ -16094,7 +16142,7 @@
         {
           "disabled": false,
           "document": "改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态",
-          "example": "无",
+          "example": "Status",
           "member": "string",
           "name": "OpType",
           "required": true,
@@ -16103,7 +16151,7 @@
         {
           "disabled": false,
           "document": "新的Waf开关状态，如果和已有状态相同认为修改成功",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -16112,7 +16160,7 @@
         {
           "disabled": false,
           "document": "新的实例ID，如果和已绑定的实例相同认为修改成功",
-          "example": "无",
+          "example": "waf_000000111",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -16130,7 +16178,7 @@
         {
           "disabled": false,
           "document": "IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)",
-          "example": "无",
+          "example": "[]",
           "member": "string",
           "name": "IpHeaders",
           "required": false,
@@ -16607,7 +16655,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xx.qcloudwaf.com",
+          "example": "qcloudwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -16670,7 +16718,7 @@
         {
           "disabled": false,
           "document": "下发修改的规则列表",
-          "example": "无",
+          "example": "[]",
           "member": "ReqUserRule",
           "name": "RuleID",
           "required": false,
@@ -18076,7 +18124,7 @@
         {
           "disabled": false,
           "document": "匹配类型",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Category",
           "output_required": true,
@@ -18086,7 +18134,7 @@
         {
           "disabled": false,
           "document": "起始模式",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "KeyOrStartMat",
           "output_required": true,
@@ -18096,7 +18144,7 @@
         {
           "disabled": false,
           "document": "结束模式",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "EndMat",
           "output_required": true,
@@ -18106,7 +18154,7 @@
         {
           "disabled": false,
           "document": "起始偏移",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "StartOffset",
           "output_required": true,
@@ -18116,7 +18164,7 @@
         {
           "disabled": false,
           "document": "结束偏移",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "EndOffset",
           "output_required": true,
@@ -18126,7 +18174,7 @@
         {
           "disabled": false,
           "document": "数据源",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Source",
           "output_required": true,
@@ -18136,7 +18184,7 @@
         {
           "disabled": false,
           "document": "更新时间戳",
-          "example": "无",
+          "example": "1719988467123",
           "member": "string",
           "name": "TsVersion",
           "output_required": true,
@@ -18146,7 +18194,7 @@
         {
           "disabled": false,
           "document": "SessionID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SessionId",
           "output_required": false,
@@ -18156,7 +18204,7 @@
         {
           "disabled": false,
           "document": "Session名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "SessionName",
           "output_required": false,
@@ -18166,7 +18214,7 @@
         {
           "disabled": false,
           "document": "Session是否正在被启用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "SessionInUsed",
           "output_required": false,
@@ -18176,7 +18224,7 @@
         {
           "disabled": false,
           "document": "Session关联的CC规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RelatedRuleID",
           "output_required": false,
@@ -18331,7 +18379,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -18340,7 +18388,7 @@
         {
           "disabled": false,
           "document": "规则列表",
-          "example": "无",
+          "example": "[]",
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -18349,7 +18397,7 @@
         {
           "disabled": false,
           "document": "开关状态，0表示关闭，1表示开启，2表示只观察",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -18358,7 +18406,7 @@
         {
           "disabled": false,
           "document": "设置为观察模式原因，\n1表示业务自身原因观察，2表示系统规则误报上报，3表示核心业务灰度观察，4表示其他",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Reason",
           "required": false,
@@ -19130,7 +19178,7 @@
         {
           "disabled": false,
           "document": "BOT开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "BotStatus",
           "output_required": false,
@@ -19140,7 +19188,7 @@
         {
           "disabled": false,
           "document": "API开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ApiStatus",
           "output_required": false,

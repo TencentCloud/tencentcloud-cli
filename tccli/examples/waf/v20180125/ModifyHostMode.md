@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli waf ModifyHostMode --cli-unfold-argument  \
-    --Domain xx \
-    --DomainId xxxx \
+    --Domain  \
+    --DomainId  \
     --Mode 21 \
     --Type 1 \
     --InstanceID waf_0e2v15x

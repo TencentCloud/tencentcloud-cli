@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf DeleteAttackWhiteRule --cli-unfold-argument  \
-    --Domain xx \
+    --Domain  \
     --Ids 1 2
 ```
 
@@ -15,10 +15,9 @@ Output:
 {
     "Response": {
         "FailIds": [
-            1,
-            2
+            1
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

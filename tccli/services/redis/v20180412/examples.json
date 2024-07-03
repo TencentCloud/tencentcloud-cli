@@ -705,7 +705,7 @@
     "OpenSSL": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-dvchdv5\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 329,\n        \"RequestId\": \"e546784b-709c-401d-aba6-73037eb4e522\"\n    }\n}",
         "title": "开启SSL请求示例"
       }
