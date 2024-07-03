@@ -7,18 +7,18 @@ Input:
 ```
 tccli waf ModifyUserSignatureRule --cli-unfold-argument  \
     --Status 0 \
-    --Domain xx \
-    --MainClassID xx \
+    --Domain  \
+    --MainClassID  \
     --RuleID.0.Status 0 \
     --RuleID.0.Reason 0 \
-    --RuleID.0.Id xx
+    --RuleID.0.Id 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": ""
     }
 }
 ```

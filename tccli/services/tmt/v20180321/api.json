@@ -732,6 +732,24 @@
           "name": "SourceTextList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要使用的术语库列表",
+          "example": "[\"144aed8218c911eb97b88eb0fc7321d4\"]",
+          "member": "string",
+          "name": "TermRepoIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要使用的例句库列表",
+          "example": "[\"b77f64e518ec11ebb2aabf416d88df30\"]",
+          "member": "string",
+          "name": "SentRepoIDList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -825,6 +843,24 @@
           "name": "UntranslatedText",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要使用的术语库列表",
+          "example": "[\"144aed8218c911eb97b88eb0fc7321d4\"]",
+          "member": "string",
+          "name": "TermRepoIDList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要使用的例句库列表",
+          "example": "[\"b77f64e518ec11ebb2aabf416d88df30\"]",
+          "member": "string",
+          "name": "SentRepoIDList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -7,13 +7,13 @@ Input:
 ```
 tccli waf DescribeAutoDenyIP --cli-unfold-argument  \
     --Count 0 \
-    --Category xx \
-    --Domain xx \
-    --Name xx \
-    --Ip xx \
+    --Category  \
+    --Domain  \
+    --Name  \
+    --Ip  \
     --VtsMax 1 \
     --VtsMin 1 \
-    --Sort xx \
+    --Sort  \
     --Limit 1 \
     --CtsMin 1 \
     --Skip 1 \

@@ -1101,7 +1101,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ap-hongkong",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -1111,7 +1111,7 @@
         {
           "disabled": false,
           "document": "可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "AvailableZones",
           "output_required": false,
@@ -1857,20 +1857,20 @@
         {
           "disabled": false,
           "document": "命令名。",
-          "example": "无",
+          "example": "ping",
           "member": "string",
           "name": "Cmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "耗时时长。",
-          "example": "无",
+          "document": "耗时时长。单位：ms。",
+          "example": "4688000",
           "member": "int64",
           "name": "Took",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4070,8 +4070,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
-          "example": "",
+          "document": "实例 ID。",
+          "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4079,8 +4079,8 @@
         },
         {
           "disabled": false,
-          "document": "时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时",
-          "example": "",
+          "document": "时间范围。\n- 1：实时。\n- 2：近30分钟。\n- 3：近6小时。\n- 4：近24小时。",
+          "example": "4",
           "member": "int64",
           "name": "SpanType",
           "required": true,
@@ -4095,7 +4095,7 @@
         {
           "disabled": false,
           "document": "访问命令信息",
-          "example": "",
+          "example": "无",
           "member": "SourceCommand",
           "name": "Data",
           "output_required": true,
@@ -6766,8 +6766,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点名称。",
-          "example": "无",
+          "document": "节点组名称。",
+          "example": "ng-00",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -9618,7 +9618,7 @@
           "example": "486489",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11224,20 +11224,20 @@
         {
           "disabled": false,
           "document": "命令名称。",
-          "example": "无",
+          "example": "ping",
           "member": "string",
           "name": "Cmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行次数。",
-          "example": "无",
+          "example": "179562",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -12079,7 +12079,7 @@
         {
           "disabled": false,
           "document": "可用区ID：如ap-guangzhou-3",
-          "example": "无",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -12088,8 +12088,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区名称",
-          "example": "无",
+          "document": "可用区名称。",
+          "example": "广州三区",
           "member": "string",
           "name": "ZoneName",
           "output_required": true,
@@ -12098,8 +12098,8 @@
         },
         {
           "disabled": false,
-          "document": "可用区是否售罄",
-          "example": "无",
+          "document": "可用区是否售罄。",
+          "example": "false",
           "member": "bool",
           "name": "IsSaleout",
           "output_required": true,
@@ -12108,8 +12108,8 @@
         },
         {
           "disabled": false,
-          "document": "是否为默认可用区",
-          "example": "无",
+          "document": "是否为默认可用区。",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
           "output_required": true,
@@ -12118,8 +12118,8 @@
         },
         {
           "disabled": false,
-          "document": "网络类型：basenet -- 基础网络；vpcnet -- VPC网络",
-          "example": "无",
+          "document": "网络类型。\n- basenet：基础网络。\n- vpcnet -- VPC网络。",
+          "example": "vpcnet ",
           "member": "string",
           "name": "NetWorkType",
           "output_required": true,
@@ -12139,7 +12139,7 @@
         {
           "disabled": false,
           "document": "可用区ID：如100003",
-          "example": "无",
+          "example": "100003",
           "member": "int64",
           "name": "OldZoneId",
           "output_required": true,

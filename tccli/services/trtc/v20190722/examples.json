@@ -64,6 +64,20 @@
         "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
       }
     ],
+    "DescribeConnectRoomRequest": [
+      {
+        "document": "存在{ABCD}房间PK，查询{A}房间状态，查询成功",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400728753,\n    \"RoomIdType\": 1,\n    \"ConnectRoom\": [\n        \"aaa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": null,\n        \"DetailErrorMsg\": null,\n        \"ExistConnectRoom\": [\n            {\n                \"ConnectRooms\": [\n                    \"B\",\n                    \"C\",\n                    \"D\"\n                ],\n                \"LastRequestSeq\": 13,\n                \"SelfRoomId\": \"A\"\n            }\n        ],\n        \"RequestId\": \"f8e446fa-7811-43be-a720-3427de6bc193\"\n    }\n}",
+        "title": "DescribeConnectRoomRequest"
+      },
+      {
+        "document": "存在{ABCD}房间PK",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400728753,\n    \"RoomIdType\": 1,\n    \"ConnectRoom\": [\n        \"A\",\n        \"E\",\n        \"F\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": \"FailedOperation.GetConnectRoomInfoFailed\",\n        \"DetailErrorMsg\": [\n            {\n                \"ErrorCode\": -203010,\n                \"ErrorMsg\": \"room not exist\",\n                \"StrRoomId\": \"F\"\n            },\n            {\n                \"ErrorCode\": -203004,\n                \"ErrorMsg\": \"conned room not exist\",\n                \"StrRoomId\": \"E\"\n            }\n        ],\n        \"ExistConnectRoom\": [\n            {\n                \"ConnectRooms\": [\n                    \"B\",\n                    \"C\",\n                    \"D\"\n                ],\n                \"LastRequestSeq\": 13,\n                \"SelfRoomId\": \"A\"\n            },\n            {\n                \"ConnectRooms\": null,\n                \"SelfRoomId\": \"E\"\n            }\n        ],\n        \"RequestId\": \"a3b69432-51b8-4fd3-b122-338c457578ed\"\n    }\n}",
+        "title": "DescribeConnectRoomRequest-1"
+      }
+    ],
     "DescribeMixTranscodingUsage": [
       {
         "document": "",

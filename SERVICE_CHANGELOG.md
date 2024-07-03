@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云顾问(advisor) 版本：2020-07-21
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
 
-### 第 13 次发布
+### 第 7 次发布
 
-发布时间：2024-07-03 01:08:27
+发布时间：2024-07-04 01:08:29
 
 本次发布包含了以下内容：
 
@@ -12,43 +12,34 @@
 
 新增接口：
 
-* [DescribeArchProducts](http://document.tencentcloudapi.woa.com/document/product/1660/84189)
-* [DescribePluginArchList](http://document.tencentcloudapi.woa.com/document/product/1660/84188)
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeArchAsync
-* DescribeArchTaskResult
-
-修改接口：
-
-* [DescribeArchSvg](http://document.tencentcloudapi.woa.com/document/product/1660/84073)
-
-	* 新增入参：PluginKey
-
-* [DescribeArchSync](http://document.tencentcloudapi.woa.com/document/product/1660/84043)
-
-	* 新增入参：PluginKey
-
-
-新增数据结构：
-
-* [ArchInfoData](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchInfoData)
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ArchKeyValue
-* ArchNode
-* ArchResource
-* KeyValueList
+* [ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)
 
 
 
-## 商业流程服务(bpaas) 版本：2018-12-17
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 4 次发布
+### 第 56 次发布
 
-发布时间：2024-07-03 01:10:09
+发布时间：2024-07-04 01:09:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+
+	* 新增成员：DeductionSubBillCode
+
+
+
+
+## 机器翻译(tmt) 版本：2018-03-21
+
+### 第 5 次发布
+
+发布时间：2024-07-04 01:26:28
 
 本次发布包含了以下内容：
 
@@ -56,83 +47,22 @@
 
 修改接口：
 
-* [CreateSyncApplication](http://document.tencentcloudapi.woa.com/document/product/1628/83833)
+* [TextTranslate](http://document.tencentcloudapi.woa.com/document/product/551/15619)
 
-	* 新增入参：Resource
+	* 新增入参：TermRepoIDList, SentRepoIDList
 
+* [TextTranslateBatch](http://document.tencentcloudapi.woa.com/document/product/551/40566)
 
-新增数据结构：
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/1628/78459#Resource)
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 39 次发布
-
-发布时间：2024-07-03 01:13:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TaskLogURL](http://document.tencentcloudapi.woa.com/document/product/1726/80814#TaskLogURL)
-
-	* <font color="#dd0000">**修改成员**：</font>URL, LogId, TaskLogName, AppId
+	* 新增入参：TermRepoIDList, SentRepoIDList
 
 
 
 
-## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 44 次发布
+### 第 56 次发布
 
-发布时间：2024-07-03 01:15:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#InstanceBackupFileItem)
-
-	* 新增成员：StorageClass
-
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 21 次发布
-
-发布时间：2024-07-03 01:16:15
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/571/78340#Endpoint)
-
-	* 新增成员：SetId
-
-
-
-
-## 数据传输服务(dts) 版本：2018-03-30
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 64 次发布
-
-发布时间：2024-07-03 01:17:43
+发布时间：2024-07-04 01:26:44
 
 本次发布包含了以下内容：
 
@@ -140,212 +70,20 @@
 
 新增接口：
 
-* [DeleteWebankRecord](http://document.tencentcloudapi.woa.com/document/product/1007/84190)
-
-
-
-## 全球应用加速(gaap) 版本：2018-05-29
-
-### 第 26 次发布
-
-发布时间：2024-07-03 01:17:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SetTlsVersion](http://document.tencentcloudapi.woa.com/document/product/608/84191)
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 39 次发布
-
-发布时间：2024-07-03 01:23:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceBackupFileItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#InstanceBackupFileItem)
-
-	* 新增成员：StorageClass
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 84 次发布
-
-发布时间：2024-07-03 01:23:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeAlarmHistories](http://document.tencentcloudapi.woa.com/document/product/248/48684)
-
-	* 新增入参：ConvergenceHistoryIDs
-
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 62 次发布
-
-发布时间：2024-07-03 01:26:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeFreeQuota](http://document.tencentcloudapi.woa.com/document/product/400/84196)
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 108 次发布
-
-发布时间：2024-07-03 01:28:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
-
-	* 新增入参：EnablePublicAccess
-
-* [CreateRole](http://document.tencentcloudapi.woa.com/document/product/1179/62401)
-
-	* <font color="#dd0000">**修改入参**：</font>Remark, ClusterId
-
-
-修改数据结构：
-
-* [RabbitMQVirtualHostInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQVirtualHostInfo)
-
-	* 新增成员：TraceFlag
-
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-09-01
-
-### 第 38 次发布
-
-发布时间：2024-07-03 01:28:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyHostsCertificate](http://document.tencentcloudapi.woa.com/document/product/1738/81140)
-
-	* 新增入参：ClientCertInfo
-
+* [DescribeConnectRoomRequest](http://document.tencentcloudapi.woa.com/document/product/647/84199)
 
 新增数据结构：
 
-* [MutualTLS](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MutualTLS)
-
-修改数据结构：
-
-* [AccelerationDomainCertificate](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AccelerationDomainCertificate)
-
-	* 新增成员：ClientCertInfo
-
-* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CertificateInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>Alias, Type, ExpireTime, DeployTime, SignAlgo, Status
-
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 64 次发布
-
-发布时间：2024-07-03 01:28:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ModelAccelerateTask](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelAccelerateTask)
-
-	* 新增成员：ModelVersionId, ResourceGroupId, ResourceGroupName
-
-	* <font color="#dd0000">**修改成员**：</font>FrameworkVersion
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 139 次发布
-
-发布时间：2024-07-03 01:30:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateVpnConnection](http://document.tencentcloudapi.woa.com/document/product/215/17522)
-
-	* 新增入参：HealthCheckConfig
-
-* [ModifyVpnConnectionAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17508)
-
-	* 新增入参：HealthCheckConfig
-
-
-新增数据结构：
-
-* [HealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/215/15824#HealthCheckConfig)
-
-修改数据结构：
-
-* [VpnConnection](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpnConnection)
-
-	* 新增成员：HealthCheckConfig
-
+* [DetailErrorMsg](http://document.tencentcloudapi.woa.com/document/product/647/44055#DetailErrorMsg)
+* [ExistConnectRoom](http://document.tencentcloudapi.woa.com/document/product/647/44055#ExistConnectRoom)
 
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 61 次发布
+### 第 62 次发布
 
-发布时间：2024-07-03 01:31:30
+发布时间：2024-07-04 01:28:33
 
 本次发布包含了以下内容：
 
@@ -353,56 +91,17 @@
 
 修改接口：
 
-* [DescribeDomainRules](http://document.tencentcloudapi.woa.com/document/product/627/83506)
+* [DeleteDomainWhiteRules](http://document.tencentcloudapi.woa.com/document/product/627/72649)
 
-	* <font color="#dd0000">**修改出参**：</font>Rules
-
-
+	* <font color="#dd0000">**修改出参**：</font>Data
 
 
-## 珠玑(zj) 版本：2019-01-21
+修改数据结构：
 
-### 第 2 次发布
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
 
-发布时间：2024-07-03 01:32:46
+	* 新增成员：Proxy, IpHeaders, BotStatus, ApiStatus, ObjectFlowMode
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* AddCrowdPackInfo
-* AddSmsSign
-* AddSmsTemplate
-* CancelCampaign
-* CreateCampaign
-* CreateMmsInstance
-* CreateMpCrowdPack
-* CreateShortUrl
-* CreateSmsBlacklist
-* DelCrowdPack
-* DelTemplate
-* DeleteMmsInstance
-* DeleteSmsBlacklist
-* DescribeMmsInstanceInfo
-* DescribeMmsInstanceList
-* DescribeShortUrlList
-* DescribeSmsCampaignStatistics
-* DescribeSmsSignList
-* DescribeSmsTemplateList
-* ExtractCrowd
-* GetCrowdPackList
-* GetCrowdStatusById
-* GetCrowdUploadInfo
-* GetSmsAmountInfo
-* GetSmsBlacklistList
-* GetSmsCampaignStatus
-* GetSmsSignList
-* ModifySmsTemplate
-* PushMmsContent
-* SendSms
-* UploadSmsPostLinkData
 
 
 
@@ -809,8 +508,8 @@
 
 新增接口：
 
-* [[DescribeArchProducts](http://document.tencentcloudapi.woa.com/document/product/1660/84189)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribePluginArchList](http://document.tencentcloudapi.woa.com/document/product/1660/84188)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeArchProducts](http://document.tencentcloudapi.woa.com/document/product/1660/84189)
+* [DescribePluginArchList](http://document.tencentcloudapi.woa.com/document/product/1660/84188)
 
 <font color="#dd0000">**删除接口**：</font>
 
@@ -830,7 +529,7 @@
 
 新增数据结构：
 
-* [[ArchInfoData](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchInfoData)](http://document.tencentcloudapi.woa.com/document/product/1660/78752#[ArchInfoData](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchInfoData))
+* [ArchInfoData](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchInfoData)
 
 <font color="#dd0000">**删除数据结构**：</font>
 
@@ -1231,6 +930,18 @@
 
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 7 次发布
+
+发布时间：2024-07-04 01:08:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 6 次发布
 
@@ -6791,6 +6502,21 @@
 
 ## 费用中心(billing) 版本：2018-07-09
 
+### 第 56 次发布
+
+发布时间：2024-07-04 01:09:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+
+	* 新增成员：DeductionSubBillCode
+
+
 ### 第 55 次发布
 
 发布时间：2024-06-21 01:08:11
@@ -8633,7 +8359,7 @@
 
 新增数据结构：
 
-* [[Resource](http://document.tencentcloudapi.woa.com/document/product/1628/78459#Resource)](http://document.tencentcloudapi.woa.com/document/product/1628/78459#[Resource](http://document.tencentcloudapi.woa.com/document/product/1628/78459#Resource))
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1628/78459#Resource)
 
 ### 第 3 次发布
 
@@ -51875,7 +51601,7 @@
 
 新增接口：
 
-* [[DeleteWebankRecord](http://document.tencentcloudapi.woa.com/document/product/1007/84190)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteWebankRecord](http://document.tencentcloudapi.woa.com/document/product/1007/84190)
 
 ### 第 63 次发布
 
@@ -53224,7 +52950,7 @@
 
 新增接口：
 
-* [[SetTlsVersion](http://document.tencentcloudapi.woa.com/document/product/608/84191)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [SetTlsVersion](http://document.tencentcloudapi.woa.com/document/product/608/84191)
 
 ### 第 25 次发布
 
@@ -81548,7 +81274,7 @@
 
 新增接口：
 
-* [[DescribeFreeQuota](http://document.tencentcloudapi.woa.com/document/product/400/84196)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeFreeQuota](http://document.tencentcloudapi.woa.com/document/product/400/84196)
 
 ### 第 61 次发布
 
@@ -91501,7 +91227,7 @@
 
 新增数据结构：
 
-* [[MutualTLS](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MutualTLS)](http://document.tencentcloudapi.woa.com/document/product/1738/81211#[MutualTLS](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MutualTLS))
+* [MutualTLS](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MutualTLS)
 
 修改数据结构：
 
@@ -97728,6 +97454,25 @@
 
 ## 机器翻译(tmt) 版本：2018-03-21
 
+### 第 5 次发布
+
+发布时间：2024-07-04 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextTranslate](http://document.tencentcloudapi.woa.com/document/product/551/15619)
+
+	* 新增入参：TermRepoIDList, SentRepoIDList
+
+* [TextTranslateBatch](http://document.tencentcloudapi.woa.com/document/product/551/40566)
+
+	* 新增入参：TermRepoIDList, SentRepoIDList
+
+
 ### 第 4 次发布
 
 发布时间：2024-05-21 01:28:08
@@ -98581,6 +98326,23 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 56 次发布
+
+发布时间：2024-07-04 01:26:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeConnectRoomRequest](http://document.tencentcloudapi.woa.com/document/product/647/84199)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DetailErrorMsg](http://document.tencentcloudapi.woa.com/document/product/647/44055#DetailErrorMsg)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[DetailErrorMsg](http://document.tencentcloudapi.woa.com/document/product/647/44055#DetailErrorMsg))
+* [[ExistConnectRoom](http://document.tencentcloudapi.woa.com/document/product/647/44055#ExistConnectRoom)](http://document.tencentcloudapi.woa.com/document/product/647/44055#[ExistConnectRoom](http://document.tencentcloudapi.woa.com/document/product/647/44055#ExistConnectRoom))
 
 ### 第 55 次发布
 
@@ -105610,7 +105372,7 @@
 
 新增数据结构：
 
-* [[HealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/215/15824#HealthCheckConfig)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[HealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/215/15824#HealthCheckConfig))
+* [HealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/215/15824#HealthCheckConfig)
 
 修改数据结构：
 
@@ -109517,6 +109279,28 @@
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 62 次发布
+
+发布时间：2024-07-04 01:28:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteDomainWhiteRules](http://document.tencentcloudapi.woa.com/document/product/627/72649)
+
+	* <font color="#dd0000">**修改出参**：</font>Data
+
+
+修改数据结构：
+
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
+
+	* 新增成员：Proxy, IpHeaders, BotStatus, ApiStatus, ObjectFlowMode
+
 
 ### 第 61 次发布
 

@@ -9843,7 +9843,7 @@
         },
         {
           "disabled": false,
-          "document": "国际化语言，默认为en（英语）。当前支持：\nth：泰语；\nen：英语；",
+          "document": "国际化语言，默认为en（英语）。当前支持：\nth：泰语；\nen：英语；\nzh-cn：简体中文；\nzh-tc：繁体中文；\nid：印尼；",
           "example": "en",
           "member": "string",
           "name": "Language",

@@ -56,6 +56,13 @@
       "output": "DescribeCloudRecordingResponse",
       "status": "online"
     },
+    "DescribeConnectRoomRequest": {
+      "document": "查询后台多房间PK状态。例：存在{A,B,C,D}之间PK，传入参数{A},则返回与{A}PK的房间{B,C,D}。其中{BCD}之间的PK关系不明确；\n若传入参数{A,B}，则返回与{A}PK的{B,C,D}和与{B}PK的房间{A,C,D}。",
+      "input": "DescribeConnectRoomRequestRequest",
+      "name": "查询多房间PK状态",
+      "output": "DescribeConnectRoomRequestResponse",
+      "status": "online"
+    },
     "DescribeMixTranscodingUsage": {
       "document": "获取TRTC混流转码的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
       "input": "DescribeMixTranscodingUsageRequest",
@@ -1452,6 +1459,78 @@
           "member": "StorageFile",
           "name": "StorageFileList",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectRoomRequestRequest": {
+      "document": "DescribeConnectRoomRequest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppld",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询列表中房间各自的PK关系。",
+          "example": "{A,B,C}",
+          "member": "string",
+          "name": "ConnectRoom",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "房间信息RoomType,0表示使用数字房间号；1表示使用字符串房间号 默认：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectRoomRequestResponse": {
+      "document": "DescribeConnectRoomRequest返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多房间PK错误码（DetailErrorMsg时存在使用） 具体: FailedOperation.QueryRoomInfoFailed\nFailedOperation.QueryConnectRoomFailed\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectError",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取消PK的房间，具体每个房间失败的详细错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailErrorMsg",
+          "name": "DetailErrorMsg",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后台目前保存的PK状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExistConnectRoom",
+          "name": "ExistConnectRoom",
           "type": "list",
           "value_allowed_null": true
         },
@@ -3016,6 +3095,42 @@
       ],
       "type": "object"
     },
+    "DetailErrorMsg": {
+      "document": "所有发起/取消PK的房间中，具体每个房间失败的详细错误信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC字符串房间号，与填入参数中房间号对应。若填指定的是数字房间号，将以字符串格式返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StrRoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "房间PK创建与取消失败的具体错误码。\n-100012 字符串房间号置换失败  \n-100014 字符串房间号非法    \n-203004 房间不存在PK(不需要取消)  \n-203010 房间不存在  \n-203023 RequestSeq无效   \n-203025 机器过载，保存PK失败  \n-203028 内部信令超时，请重试  \n-203045 房间不支持PK功能  \n-203060 最多支持10个房间互相PK  \n-203061 存在用户PK，不支持房间PK  \n-203063 本地PK状态与OldConnectRoom不同     \n-203064 SDK创建的房间PK，不支持云API更新    \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrorCode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "房间建立PK关系失败的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DismissRoomByStrRoomIdRequest": {
       "document": "DismissRoomByStrRoomId请求参数结构体",
       "members": [
@@ -3280,6 +3395,42 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExistConnectRoom": {
+      "document": "当前房间存在的pk关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本房间（A）字符串房间号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "A",
+          "member": "string",
+          "name": "SelfRoomId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本房间（A)上次处理的云API请求seq\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LastRequestSeq",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "和A房间pk的房间，如{A,[B,C,D]}表示A与B，C，D有pk关系，但B，C，D与A的关系不确定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[B,C,D]",
+          "member": "string",
+          "name": "ConnectRooms",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

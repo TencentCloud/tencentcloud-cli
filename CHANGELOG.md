@@ -1,3 +1,110 @@
+# Release 3.0.1028.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 7 次发布
+
+发布时间：2024-07-04 01:08:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReplaceBackground](http://document.tencentcloudapi.woa.com/document/product/1728/84198)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 56 次发布
+
+发布时间：2024-07-04 01:09:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+
+	* 新增成员：DeductionSubBillCode
+
+
+
+
+## 机器翻译(tmt) 版本：2018-03-21
+
+### 第 5 次发布
+
+发布时间：2024-07-04 01:26:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextTranslate](http://document.tencentcloudapi.woa.com/document/product/551/15619)
+
+	* 新增入参：TermRepoIDList, SentRepoIDList
+
+* [TextTranslateBatch](http://document.tencentcloudapi.woa.com/document/product/551/40566)
+
+	* 新增入参：TermRepoIDList, SentRepoIDList
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 56 次发布
+
+发布时间：2024-07-04 01:26:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeConnectRoomRequest](http://document.tencentcloudapi.woa.com/document/product/647/84199)
+
+新增数据结构：
+
+* [DetailErrorMsg](http://document.tencentcloudapi.woa.com/document/product/647/44055#DetailErrorMsg)
+* [ExistConnectRoom](http://document.tencentcloudapi.woa.com/document/product/647/44055#ExistConnectRoom)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 62 次发布
+
+发布时间：2024-07-04 01:28:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteDomainWhiteRules](http://document.tencentcloudapi.woa.com/document/product/627/72649)
+
+	* <font color="#dd0000">**修改出参**：</font>Data
+
+
+修改数据结构：
+
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
+
+	* 新增成员：Proxy, IpHeaders, BotStatus, ApiStatus, ObjectFlowMode
+
+
+
+
 # Release 3.0.1027.1
 
 ## 云顾问(advisor) 版本：2020-07-21

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf DescribeHost --cli-unfold-argument  \
-    --InstanceID xx \
-    --Domain xx \
-    --DomainId xx
+    --InstanceID  \
+    --Domain  \
+    --DomainId 
 ```
 
 Output: 
@@ -16,37 +16,47 @@ Output:
 {
     "Response": {
         "Host": {
+            "Domain": "abc",
+            "DomainId": "abc",
+            "MainDomain": "abc",
+            "Mode": 1,
             "Status": 1,
+            "State": 1,
             "Engine": 1,
-            "Domain": "xx",
-            "DomainId": "xx",
+            "IsCdn": 1,
             "LoadBalancerSet": [
                 {
-                    "Protocol": "xx",
-                    "Zone": "xx",
-                    "Region": "xx",
-                    "LoadBalancerId": "xx",
-                    "ListenerId": "xx",
-                    "Vip": "xx",
-                    "ListenerName": "xx",
-                    "LoadBalancerName": "xx",
-                    "Vport": 1
+                    "LoadBalancerId": "abc",
+                    "LoadBalancerName": "abc",
+                    "ListenerId": "abc",
+                    "ListenerName": "abc",
+                    "Vip": "abc",
+                    "Vport": 1,
+                    "Region": "abc",
+                    "Protocol": "abc",
+                    "Zone": "abc",
+                    "NumericalVpcId": 0,
+                    "LoadBalancerType": "abc",
+                    "LoadBalancerDomain": "abc"
                 }
             ],
-            "Level": 1,
-            "MainDomain": "xx",
-            "Region": "xx",
+            "Region": "abc",
+            "Edition": "abc",
             "FlowMode": 1,
-            "State": 1,
             "ClsStatus": 1,
-            "IsCdn": 1,
-            "Mode": 1,
+            "Level": 1,
             "CdcClusters": [
-                "xx"
+                "abc"
             ],
-            "Edition": "xx"
+            "AlbType": "abc",
+            "IpHeaders": [
+                "abc"
+            ],
+            "EngineType": 0,
+            "CloudType": "abc",
+            "Note": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
