@@ -7,6 +7,20 @@
       "output": "CreateCloudRecordingResponse",
       "status": "online"
     },
+    "CreateConnectRoomRequest": {
+      "document": "接口说明：\n多房间PK请求。该接口实现传入的多个房间之间互相PK，最终达到所有房间用户互通的功能。\n\n1.该接口和sdk的ConnectOtherRoom接口互斥，同一个房间只支持一种PK方式。\n\n2.该接口实现传入的所有房间互通。如：{A,B,C}则{AB}PK，{AC}PK，{BC}PK。房间内任意一个观众可以看到ABC三个房间内任意一路流。\n\n3.该接口中当ForceFresh = 0时：\n* 仅支持增量增加，取消请调用取消PK接口。如：已经存在{A,B,C,D}，调用{A,B,C}，最终效果是{A,B,C,D}。\n* 不支持房间交叉PK，如：已经存在{A,B}，调用{B,C,D}。{B,C,D}PK失败。\n* 此时会对比OldConnectRoom与后台保存的状态是否一致，不一致则PK失败，同时返回后台当前的PK状态。如：后台存在{A,B,C},发起OldConnectRoom{A,B},NewConnectRoom{A,B,D}。{A,B,D}PK失败，同时返回各个房间的当前状态{A,B,C}{B,A,C}{C,A,B}；\n* 当OldConnectRoom与后台状态一致，PK失败回滚当前请求建立的PK关系。如：存在{A,B} {C,D}PK，调用{A,B,C,D}PK失败，最终状态为{A,B} {C,D}PK。\n\n4.该接口中当ForceFresh = 1时：\n* 不处理OldConnectRoom，后台强制按照NewConnectRoom更新PK状态，更新失败不回滚，返回更新结果。\n\n回滚风险说明：\n\n1.{A,B,C}建立跨房时，AB、AC建立成功，A会收到B、C进房通知，看到B、C的画面；B收到A的进房通知，看到A的画面；C收到A的进房通知，看到A的画面。BC建立失败，短时间内A会收到B、C退房通知，看不到B、C的画面，B收到A的退房通知，看不到A的画面，C收到A的退房通知，看不到A的画面。\n\n2.如开通了事件回调，{A,B,C}建立跨房时，AB、AC建立成功，A房间会收到B、C进房事件，B房间收到A的进房事件，C收到A的进房事件。BC建立失败，短时间内A房间会收到B、C退房事件，B收到A的退房事件，C收到A的退房事件。",
+      "input": "CreateConnectRoomRequestRequest",
+      "name": "创建多房间PK信令",
+      "output": "CreateConnectRoomRequestResponse",
+      "status": "online"
+    },
+    "CreateDisconnectRoomRequest": {
+      "document": "接口说明：  \n1.该接口取消传入的所有房间的PK关系。例：存在{A,B,C,D}之间PK，取消参数中传入{A}，最终剩下{B,C,D}三个房间之间的PK。传入{A,B}，则最终剩下{C,D}两个房间之间的PK。",
+      "input": "CreateDisconnectRoomRequestRequest",
+      "name": "取消多房间PK",
+      "output": "CreateDisconnectRoomRequestResponse",
+      "status": "online"
+    },
     "CreatePicture": {
       "document": "如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁新增自定义背景图或水印，可通过此接口上传新的图片素材。无需频繁新增图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。",
       "input": "CreatePictureRequest",
@@ -746,6 +760,22 @@
       ],
       "usage": "in"
     },
+    "ConnectRoom": {
+      "document": "房间中已存在的pk关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "List中所有房间，任意两个存在相互pk关系。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{A,B,C}",
+          "member": "string",
+          "name": "ConnectedRoomList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateCloudRecordingRequest": {
       "document": "CreateCloudRecording请求参数结构体",
       "members": [
@@ -863,6 +893,195 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectRoomRequestRequest": {
+      "document": "CreateConnectRoomRequest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId。",
+          "example": "1400100089",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求seq，发起PK与取消PK共用一个seq。发起与取消seq都需要增加（序号变大）。当发起/取消seq小于上一个请求seq，忽略该请求。",
+          "example": "163000890000",
+          "member": "uint64",
+          "name": "RequestSeq",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实现参数中所有房间之间互相PK。如：填{A,B,C}，实现{AB}PK，{AC}PK，{BC}PK。",
+          "example": "{A,B,C}",
+          "member": "string",
+          "name": "NewConnectRoom",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "房间信息RoomType,0表示使用数字房间号；1表示使用字符串房间号\n默认：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否按NewConnectRoom强制刷新后台PK状态。0表示不强制刷新，1表示强制刷新。默认：0",
+          "example": "无",
+          "member": "uint64",
+          "name": "ForceFresh",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目前已存在的房间PK关系。\nNewConnectRoom 中任意两个房间PK失败，PK将回滚掉本次请求建立的PK关系。\nOldConnectRoom 如不填，PK失败，将清除所有的历史PK。",
+          "example": "\"OldConnectRoom\":[{\"ConnectedRoomList\":[\"A\",\"B\"]},{\"ConnectedRoomList\":[\"C\",\"D\"]}]",
+          "member": "ConnectRoom",
+          "name": "OldConnectRoom",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectRoomRequestResponse": {
+      "document": "CreateConnectRoomRequest返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求seq",
+          "example": "163000890000",
+          "member": "uint64",
+          "name": "RequestSeq",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多房间PK错误码（DetailErrorMsg时存在使用）\n具体: \nFailedOperation.QueryRoomInfoFailed  \nFailedOperation.ConnectRoomFailed  \nFailedOperation.RollBackFailed  \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectError",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所有发起pk的房间中，具体每个房间失败的详细错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailErrorMsg",
+          "name": "DetailErrorMsg",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后台目前保存的PK状态。仅当入参中ForceRefresh =0且后台保存的状态与参数中OldConnectRoom不一致时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{{A,[B,C]｝,{B,[A,C]},{C,[A,B]}}",
+          "member": "ExistConnectRoom",
+          "name": "ExistConnectRoom",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisconnectRoomRequestRequest": {
+      "document": "CreateDisconnectRoomRequest请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求seq，发起PK与取消PK共用一个seq。发起与取消seq都需要增加（序号变大）。当发起/取消seq小于上一个请求seq，忽略该请求。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RequestSeq",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppld",
+          "example": "无",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取消传入房间的所有房间PK关系。\n如：已存在{A,B},{A,C}，传入{A}，最终所有PK关系将被清理。",
+          "example": "{A,B,C}",
+          "member": "string",
+          "name": "DisconnectRoom",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "房间信息RoomType,0表示使用数字房间号；1表示使用字符串房间号 默认：0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDisconnectRoomRequestResponse": {
+      "document": "CreateDisconnectRoomRequest返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求seq",
+          "example": "无",
+          "member": "uint64",
+          "name": "RequestSeq",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多房间PK错误码（DetailErrorMsg时存在使用） 具体: FailedOperation.QueryRoomInfoFailed\nFailedOperation.DisconnectRoomFailed\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectError",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取消PK的房间，具体每个房间失败的详细错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailErrorMsg",
+          "name": "DetailErrorMsg",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

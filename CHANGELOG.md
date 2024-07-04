@@ -1,3 +1,273 @@
+# Release 3.0.1029.1
+
+## 商业流程服务(bpaas) 版本：2018-12-17
+
+### 第 5 次发布
+
+发布时间：2024-07-05 01:08:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApproveUser](http://document.tencentcloudapi.woa.com/document/product/1628/78459#ApproveUser)
+
+	* 新增成员：ApproveStatus, ApproveMsg, ApproveTime, ApproveGroup
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 78 次发布
+
+发布时间：2024-07-05 01:11:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMachines](http://document.tencentcloudapi.woa.com/document/product/614/56437)
+
+	* 新增入参：Filters, Offset, Limit
+
+	* 新增出参：TotalCount
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 91 次发布
+
+发布时间：2024-07-05 01:12:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExportBaselineHostDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77180)
+
+	* 新增入参：IsExportDetail
+
+* [ExportBaselineItemDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77179)
+
+	* 新增入参：IsExportDetail
+
+* [ExportBaselineRuleDetectList](http://document.tencentcloudapi.woa.com/document/product/296/77177)
+
+	* 新增入参：IsExportDetail
+
+
+修改数据结构：
+
+* [DeliverTypeDetails](http://document.tencentcloudapi.woa.com/document/product/296/19867#DeliverTypeDetails)
+
+	* 新增成员：LogName, LogSetId, Region
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 63 次发布
+
+发布时间：2024-07-05 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeServerlessMetrics](http://document.tencentcloudapi.woa.com/document/product/845/84200)
+
+
+
+## 人脸试妆(fmu) 版本：2019-12-13
+
+### 第 3 次发布
+
+发布时间：2024-07-05 01:16:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* BeautifyVideo
+* CancelBeautifyVideoJob
+* QueryBeautifyVideoJob
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 44 次发布
+
+发布时间：2024-07-05 01:17:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ActivateTWeCallLicense](http://document.tencentcloudapi.woa.com/document/product/1081/84004)
+
+	* 新增出参：DeviceList
+
+
+新增数据结构：
+
+* [DeviceActiveResult](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DeviceActiveResult)
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 8 次发布
+
+发布时间：2024-07-05 01:21:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDocumentList](http://document.tencentcloudapi.woa.com/document/product/1732/81243)
+
+	* 新增入参：Ids
+
+
+修改数据结构：
+
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
+
+	* 新增成员：Slate
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 29 次发布
+
+发布时间：2024-07-05 01:21:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AccountInfo](http://document.tencentcloudapi.woa.com/document/product/409/16778#AccountInfo)
+
+	* 新增成员：UserType
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 63 次发布
+
+发布时间：2024-07-05 01:22:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClbListenerRule](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbListenerRule)
+
+	* 新增成员：Url
+
+* [DeployRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#DeployRecordDetail)
+
+	* 新增成员：Url
+
+* [UpdateRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateRecordDetail)
+
+	* 新增成员：Url
+
+
+
+
+## 图像分析(tiia) 版本：2019-05-29
+
+### 第 18 次发布
+
+发布时间：2024-07-05 01:25:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DetectProductBeta
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 17 次发布
+
+发布时间：2024-07-05 01:25:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceList](http://document.tencentcloudapi.woa.com/document/product/1739/81434)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset, Limit
+
+
+修改数据结构：
+
+* [InstanceItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InstanceItem)
+
+	* 新增成员：RenewFlag
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, InstanceName, Version, InstanceType, InstanceStatus, TopicNumLimit, GroupNumLimit, PayMode, ExpiryTime, Remark, TopicNum, GroupNum, TagList, SkuCode, TpsLimit, ScaledTpsLimit, MessageRetention, MaxMessageDelay
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 57 次发布
+
+发布时间：2024-07-05 01:25:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConnectRoomRequest](http://document.tencentcloudapi.woa.com/document/product/647/84202)
+* [CreateDisconnectRoomRequest](http://document.tencentcloudapi.woa.com/document/product/647/84201)
+
+新增数据结构：
+
+* [ConnectRoom](http://document.tencentcloudapi.woa.com/document/product/647/44055#ConnectRoom)
+
+
+
 # Release 3.0.1028.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

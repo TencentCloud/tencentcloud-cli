@@ -16496,40 +16496,44 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹",
+          "document": "安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报",
           "example": "1",
           "member": "uint64",
           "name": "SecurityType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905",
+          "document": "安全模块下的日志类型",
           "example": "[1,2]",
           "member": "int64",
           "name": "LogType",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "kafka topic id",
+          "document": "主题ID",
           "example": "xx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "kafka topic name",
+          "document": "主题名",
           "example": "xx",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16540,6 +16544,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -16550,6 +16555,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -16560,18 +16566,53 @@
           "example": "xx",
           "member": "string",
           "name": "ErrInfo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近一次状态上报时间戳，s",
+          "document": "最近一次状态上报时间戳",
           "example": "1",
           "member": "int64",
           "name": "StatusTime",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集名",
+          "example": "xx",
+          "member": "string",
+          "name": "LogName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "xx",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -38914,7 +38955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li>HostTag - string - 是否必填：否 - 主机标签</i>\n<li>ItemId - int64 - 是否必填：否 - 项Id</i>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</li>\n<li>IsPassed - int - 是否必填：否 - 是否通过</li>\n<li>RiskTier - int - 是否必填：否 - 风险等级</li>",
+          "document": "<li>HostTag - string - 是否必填：否 - 主机标签</li><li>ItemId - int64 - 是否必填：否 - 项Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -38927,6 +38968,15 @@
           "example": "1",
           "member": "int64",
           "name": "ExportAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0:导出界面展示；1:导出全部结果事件",
+          "example": "0",
+          "member": "int64",
+          "name": "IsExportDetail",
           "required": false,
           "type": "int"
         }
@@ -38950,7 +39000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li>HostId - string - 是否必填：否 - 主机Id</i>\n<li>RuleId - int64 - 是否必填：否 - 规则Id</i>\n<li>IsPassed - int - 是否必填：否 - 是否通过</li>\n<li>RiskTier - int - 是否必填：否 - 风险等级</li>",
+          "document": "<li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -38963,6 +39013,15 @@
           "example": "1",
           "member": "int64",
           "name": "ExportAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0:导出界面展示；1:导出全部结果事件",
+          "example": "1",
+          "member": "int64",
+          "name": "IsExportDetail",
           "required": false,
           "type": "int"
         }
@@ -39076,7 +39135,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li>RuleName - string - 是否必填：否 - 规则名称</i>\n<li>IsPassed - int - 是否必填：否 - 是否通过</li>\n<li>RiskTier - int - 是否必填：否 - 风险等级</li>",
+          "document": "<li>RuleName - string - 是否必填：否 - 规则名称</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -39089,6 +39148,15 @@
           "example": "1",
           "member": "int64",
           "name": "ExportAll",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0:导出界面展示；1:导出全部结果事件",
+          "example": "1",
+          "member": "int64",
+          "name": "IsExportDetail",
           "required": false,
           "type": "int"
         }

@@ -8,6 +8,52 @@
         "title": "启动云端录制"
       }
     ],
+    "CreateConnectRoomRequest": [
+      {
+        "document": "创建多房间PK，本地存在{AB}PK,发起old{AB}，new{ABC}房间PK。PK成功",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RequestSeq\": 1,\n    \"RoomIdType\": 1,\n    \"OldConnectRoom\": [\n        {\n            \"ConnectedRoomList\": [\n                \"A\",\n                \"B\"\n            ]\n        }\n    ],\n    \"NewConnectRoom\": [\n        \"A\",\n        \"B\",\n        \"C\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": null,\n        \"DetailErrorMsg\": null,\n        \"ExistConnectRoom\": null,\n        \"RequestId\": \"xxxxxx\",\n        \"RequestSeq\": 1\n    }\n}",
+        "title": "CreateConnectRoomRequest"
+      },
+      {
+        "document": "创建多房间PK，本地不存在PK，发起old{},new{AB}房间PK。PK成功",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RequestSeq\": 1,\n    \"RoomIdType\": 1,\n    \"NewConnectRoom\": [\n        \"A\",\n        \"B\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": null,\n        \"DetailErrorMsg\": null,\n        \"ExistConnectRoom\": null,\n        \"RequestId\": \"xxxxxx\",\n        \"RequestSeq\": 1\n    }\n}",
+        "title": "CreateConnectRoomRequest-1"
+      },
+      {
+        "document": "创建多房间PK，本地不存在PK，发起old{},new{ABC}房间PK。A房间不存在，PK失败。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RequestSeq\": 1,\n    \"RoomIdType\": 1,\n    \"NewConnectRoom\": [\n        \"A\",\n        \"B\",\n        \"C\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestSeq\": 1,\n        \"ExistConnectRoom\": null,\n        \"ConnectError\": \"FailedOperation.QueryRoomInfoFailed\",\n        \"DetailErrorMsg\": [\n            {\n                \"StrRoomId\": \"A\",\n                \"ErrorCode\": -203010,\n                \"ErrorMsg\": \"room not exist\"\n            }\n        ],\n        \"RequestId\": \"dba067e6-cdb0-4500-bfdb-c6f3a1799e9c\"\n    }\n}",
+        "title": "CreateConnectRoomRequest-2"
+      },
+      {
+        "document": "创建多房间PK，本地存在{AB}PK，发起old{AC},new{ABC}房间PK。本地PK状态与oldlist不一致，PK失败，返回本地状态{AB}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RequestSeq\": 1,\n    \"RoomIdType\": 1,\n    \"OldConnectRoom\": [\n        {\n            \"ConnectedRoomList\": [\n                \"A\",\n                \"C\"\n            ]\n        }\n    ],\n    \"NewConnectRoom\": [\n        \"A\",\n        \"B\",\n        \"C\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": \"FailedOperation.ConnectRoomFailed\",\n        \"DetailErrorMsg\": [\n            {\n                \"ErrorCode\": -203063,\n                \"ErrorMsg\": \"API oldlist not equal with local\",\n                \"StrRoomId\": \"A\"\n            },\n            {\n                \"ErrorCode\": -203063,\n                \"ErrorMsg\": \"API oldlist not equal with local\",\n                \"StrRoomId\": \"B\"\n            },\n            {\n                \"ErrorCode\": -203063,\n                \"ErrorMsg\": \"API oldlist not equal with local\",\n                \"StrRoomId\": \"C\"\n            }\n        ],\n        \"ExistConnectRoom\": [\n            {\n                \"ConnectRooms\": [\n                    \"B\"\n                ],\n                \"LastRequestSeq\": 1,\n                \"SelfRoomId\": \"A\"\n            },\n            {\n                \"ConnectRooms\": [\n                    \"A\"\n                ],\n                \"LastRequestSeq\": 1,\n                \"SelfRoomId\": \"B\"\n            },\n            {\n                \"ConnectRooms\": null,\n                \"SelfRoomId\": \"C\"\n            }\n        ],\n        \"RequestId\": \"dba067e6-cdb0-4500-bfdb-c6f3a1799e9c\",\n        \"RequestSeq\": 1\n    }\n}",
+        "title": "CreateConnectRoomRequest-3"
+      }
+    ],
+    "CreateDisconnectRoomRequest": [
+      {
+        "document": "取消多房间PK。{ABC}存在PK关系，取消A房间PK，A房间不存在，取消失败。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisconnectRoomRequest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RequestSeq\": 1,\n    \"RoomIdType\": 1,\n    \"DisconnectRoom\": [\n        \"A\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestSeq\": 1,\n        \"ConnectError\": \"FailedOperation.QueryRoomInfoFailed\",\n        \"DetailErrorMsg\": [\n            {\n                \"StrRoomId\": \"A\",\n                \"ErrorCode\": -203010,\n                \"ErrorMsg\": \"room not exist\"\n            }\n        ],\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "CreateDisconnectRoomRequest"
+      },
+      {
+        "document": "取消多房间PK。{ABC}存在PK关系，取消A，B房间PK，取消成功。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisconnectRoomRequest\n<公共请求参数>\n\n{\n    \"RequestSeq\": 1,\n    \"SdkAppId\": 1400188366,\n    \"RoomIdType\": 1,\n    \"DisconnectRoom\": [\n        \"A\",\n        \"B\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectError\": null,\n        \"DetailErrorMsg\": null,\n        \"RequestId\": \"xxxxx\",\n        \"RequestSeq\": 1\n    }\n}",
+        "title": "CreateDisconnectRoomRequest-1"
+      },
+      {
+        "document": "取消多房间PK。{ABC}存在PK关系，取消{A,D}，A房间取消PK成功，D房间返回房间不存在。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisconnectRoomRequest\n<公共请求参数>\n\n{\n    \"RequestSeq\": 1,\n    \"SdkAppId\": 1400188366,\n    \"RoomIdType\": 1,\n    \"DisconnectRoom\": [\n        \"A\",\n        \"D\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestSeq\": 1,\n        \"ConnectError\": \"FailedOperation.QueryRoomInfoFailed\",\n        \"DetailErrorMsg\": [\n            {\n                \"StrRoomId\": \"D\",\n                \"ErrorCode\": -203010,\n                \"ErrorMsg\": \"room not exist\"\n            }\n        ],\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "title": "CreateDisconnectRoomRequest-2"
+      }
+    ],
     "CreatePicture": [
       {
         "document": "上传图片",

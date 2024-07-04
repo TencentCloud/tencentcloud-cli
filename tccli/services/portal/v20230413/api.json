@@ -112,7 +112,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID。",
+          "document": "文档ID",
           "example": "44971",
           "member": "uint64",
           "name": "Id",
@@ -172,6 +172,15 @@
           "name": "DocumentLanguage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID列表(最多10个)",
+          "example": "无",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -570,6 +579,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Slate内容。base64编码格式",
+          "example": "[ { \"type\": \"h1\", \"nodeId\": \"1.5C.-.E8.83.8C.E6.99.AF\", \"children\": [ { \"text\": \"云 API 更新历史\" } ] } ]",
+          "member": "string",
+          "name": "Slate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

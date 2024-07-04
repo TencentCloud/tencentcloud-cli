@@ -272,6 +272,14 @@
         "title": "Serverless获取索引列表"
       }
     ],
+    "DescribeServerlessMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessMetrics\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-18jf9xxx\",\n    \"IndexId\": \"index-xxxxxx\",\n    \"MetricType\": [\n        \"Storage\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30204658-3518-11ef-979c-52540xxxxx\",\n        \"Storage\": 2262158.88\n    }\n}",
+        "title": "获取serverless space维度过去5min钟新增存储指标值"
+      }
+    ],
     "DescribeServerlessSpaceUser": [
       {
         "document": "",
