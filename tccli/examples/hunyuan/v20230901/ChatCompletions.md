@@ -228,3 +228,242 @@ Output:
 }
 ```
 
+**Example 6: hunyuan-functioncall模型非流式请求成功示例**
+
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-functioncall模型如何用非流式方式调用接口。
+
+Input: 
+
+```
+tccli hunyuan ChatCompletions --cli-unfold-argument  \
+    --TopP 0 \
+    --Stream False \
+    --Temperature 0 \
+    --Model hunyuan-functioncall \
+    --Messages.0.Role user \
+    --Messages.0.Content 北京和深圳今天天气如何 \
+    --Tools.0.Type function \
+    --Tools.0.Function.Name get_current_weather \
+    --Tools.0.Function.Description 获取当前地点的天气 \
+    --Tools.0.Function.Parameters {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "城市名称"
+                        },
+                        "unit": {
+                            "type": "string",
+                            "enum": [
+                                "celsius",
+                                "fahrenheit"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "location"
+                    ]
+                } \
+    --ToolChoice auto
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e7f5ce41-87fd-4977-803c-54cded687cd9",
+        "Note": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+        "Choices": [
+            {
+                "Message": {
+                    "Role": "assistant",
+                    "Content": "使用get_current_weather工具来获取北京和深圳的当前天气情况。\n\t\n\t用户想要知道北京和深圳今天的天气情况。用户的请求是关于天气的查询，需要使用天气查询工具来获取信息。",
+                    "ToolCalls": [
+                        {
+                            "Type": "function",
+                            "Function": {
+                                "Name": "get_current_weather",
+                                "Arguments": "{\"location\":[\"北京\",\"深圳\"],\"unit\":\"celsius\"}"
+                            }
+                        }
+                    ]
+                },
+                "FinishReason": "tool_calls"
+            }
+        ],
+        "Created": 1719638614,
+        "Usage": {
+            "PromptTokens": 6,
+            "CompletionTokens": 46,
+            "TotalTokens": 52
+        }
+    }
+}
+```
+
+**Example 7: hunyuan-functioncall模型流式请求成功示例**
+
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-functioncall模型如何用流式方式调用接口。
+
+Input: 
+
+```
+tccli hunyuan ChatCompletions --cli-unfold-argument  \
+    --Model hunyuan-functioncall \
+    --Stream True \
+    --Messages.0.Role user \
+    --Messages.0.Content 北京和深圳今天天气如何 \
+    --Tools.0.Type function \
+    --Tools.0.Function.Name get_current_weather \
+    --Tools.0.Function.Description 获取当前地点的天气 \
+    --Tools.0.Function.Parameters {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "城市名称"
+                        },
+                        "unit": {
+                            "type": "string",
+                            "enum": [
+                                "celsius",
+                                "fahrenheit"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "location"
+                    ]
+                } \
+    --ToolChoice auto
+```
+
+Output: 
+```
+说明：  对于Delta.ToolCalls每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并，本示例中的ToolCalls 最终值为：[{"Id": "call_cq177uk2c3m1v7ep35dg","Type": "function","Function": {"Name": "get_current_weather", "Arguments": "{\"location\":[\"北京\",\"深圳\"],\"unit\":\"celsius\"}"}}]
+
+data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"Delta":{"Role":"assistant","Content":"","ToolCalls":[{"Id":"call_cq154vk2c3m1v7ep3530","Type":"function","Function":{"Name":"get_current_weather","Arguments":""}}]},"FinishReason":""}],"Created":1719816830,"Id":"cd37cf66-089f-4ab2-8118-e18baa238462","Usage":{"PromptTokens":6,"CompletionTokens":0,"TotalTokens":6}}
+
+data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"Delta":{"Role":"assistant","Content":"","ToolCalls":[{"Id":"call_cq154vk2c3m1v7ep3530","Type":"function","Function":{"Name":"","Arguments":"{\"location\":\"北京\"}"}}]},"FinishReason":""}],"Created":1719816830,"Id":"cd37cf66-089f-4ab2-8118-e18baa238462","Usage":{"PromptTokens":6,"CompletionTokens":0,"TotalTokens":6}}
+
+data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"Delta":{"Role":"assistant","Content":"计划使用get_current_weather工具来获取北京和深圳的当前天气。\n\t\n\t用户想要知道北京和深圳今天的天气情况。用户的请求是关于天气的查询，需要使用天气查询工具来获取信息。"},"FinishReason":""}],"Created":1719816830,"Id":"cd37cf66-089f-4ab2-8118-e18baa238462","Usage":{"PromptTokens":6,"CompletionTokens":46,"TotalTokens":52}}
+
+data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"Delta":{"Role":"assistant","Content":""},"FinishReason":"tool_calls"}],"Created":1719816830,"Id":"cd37cf66-089f-4ab2-8118-e18baa238462","Usage":{"PromptTokens":6,"CompletionTokens":46,"TotalTokens":52}}
+```
+
+**Example 8: hunyuan-functioncall模型多轮对话示例**
+
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-functioncall模型多轮对话如何调用接口。
+
+Input: 
+
+```
+tccli hunyuan ChatCompletions --cli-unfold-argument  \
+    --Model hunyuan-functioncall \
+    --Messages.0.Role user \
+    --Messages.0.Content 北京和深圳今天天气如何 \
+    --Messages.1.Role assistant \
+    --Messages.1.Content 使用get_current_weather工具来获取北京和深圳的当前天气。
+	
+	用户想要知道北京和深圳今天的天气情况。用户提供了两个城市名称，但没有指定温度单位，根据常识，默认用户需要的是摄氏度。 \
+    --Messages.1.ToolCalls.0.Id call_cq16e7k2c3m1v7ep35c0 \
+    --Messages.1.ToolCalls.0.Type function \
+    --Messages.1.ToolCalls.0.Function.Name get_current_weather \
+    --Messages.1.ToolCalls.0.Function.Arguments {"location":"北京","unit":"celsius"} \
+    --Messages.2.Role tool \
+    --Messages.2.ToolCallId call_cq16e7k2c3m1v7ep35c0 \
+    --Messages.2.Content {"temperature": 35, "wind": "南", "condition": "暴雨"} \
+    --Tools.0.Type function \
+    --Tools.0.Function.Name get_current_weather \
+    --Tools.0.Function.Description 获取当前地点的天气 \
+    --Tools.0.Function.Parameters {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "城市名称"
+                        },
+                        "unit": {
+                            "type": "string",
+                            "enum": [
+                                "celsius",
+                                "fahrenheit"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "location"
+                    ]
+                } \
+    --ToolChoice auto
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "5a112898-d802-4bca-8ba2-7ce2388b98e8",
+        "Note": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+        "Choices": [
+            {
+                "Message": {
+                    "Role": "assistant",
+                    "Content": "北京今天的天气情况是：\n温度：35摄氏度\n风向：南\n天气状况：暴雨\n\n深圳今天的天气情况是：\n温度：35摄氏度\n风向：南\n天气状况：暴雨"
+                },
+                "FinishReason": "stop"
+            }
+        ],
+        "Created": 1719822322,
+        "Id": "5a112898-d802-4bca-8ba2-7ce2388b98e8",
+        "Usage": {
+            "PromptTokens": 71,
+            "CompletionTokens": 42,
+            "TotalTokens": 113
+        }
+    }
+}
+```
+
+**Example 9: 图片理解示例**
+
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-vision模型如何调用接口。
+
+Input: 
+
+```
+tccli hunyuan ChatCompletions --cli-unfold-argument  \
+    --Model hunyuan-vision \
+    --Messages.0.Role user \
+    --Messages.0.Contents.0.Type text \
+    --Messages.0.Contents.0.Text 下面图片中是哪个公司的 Logo？ \
+    --Messages.0.Contents.1.Type image_url \
+    --Messages.0.Contents.1.ImageUrl.Url https://cloudcache.tencent-cloud.com/qcloud/ui/portal-set/build/About/images/bg-product-series_87d.png \
+    --Stream False
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a21f9d7e-c18a-438b-bfb4-7941a2adf8ae",
+        "Note": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+        "Choices": [
+            {
+                "Message": {
+                    "Role": "assistant",
+                    "Content": "这张图片中展示的Logo属于腾讯公司。"
+                },
+                "FinishReason": "stop"
+            }
+        ],
+        "Created": 1714290436,
+        "Id": "a21f9d7e-c18a-438b-bfb4-7941a2adf8ae",
+        "Usage": {
+            "PromptTokens": 7,
+            "CompletionTokens": 10,
+            "TotalTokens": 17
+        }
+    }
+}
+```
+

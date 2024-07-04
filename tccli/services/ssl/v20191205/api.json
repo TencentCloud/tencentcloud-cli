@@ -1928,6 +1928,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则绑定的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3139,6 +3149,16 @@
           "name": "Region",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署CLB监听器的Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/test1\",\"/test2\"]",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -9957,6 +9977,16 @@
           "example": "无",
           "member": "string",
           "name": "TCBType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监听器Url(clb专属)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

@@ -8,18 +8,18 @@
       "status": "online"
     },
     "BeautifyVideo": {
-      "document": "视频美颜(此接口目前已下线)",
+      "document": "产品不再维护，准备下线。\n\n视频美颜(此接口目前已下线)",
       "input": "BeautifyVideoRequest",
       "name": "视频美颜(此接口目前已下线)",
       "output": "BeautifyVideoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CancelBeautifyVideoJob": {
-      "document": "撤销视频美颜任务请求",
+      "document": "产品不再维护，准备下线。\n\n撤销视频美颜任务请求",
       "input": "CancelBeautifyVideoJobRequest",
       "name": "撤销视频美颜任务(此接口目前已下线)",
       "output": "CancelBeautifyVideoJobResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateModel": {
       "document": "在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。\n\n注：您也可以直接使用 [试唇色接口](https://cloud.tencent.com/document/product/1172/40706)，通过输入RGBA模型数值的方式指定唇色，更简单易用。\n",
@@ -43,11 +43,11 @@
       "status": "online"
     },
     "QueryBeautifyVideoJob": {
-      "document": "查询视频美颜处理进度",
+      "document": "产品不再维护，准备下线。\n\n查询视频美颜处理进度",
       "input": "QueryBeautifyVideoJobRequest",
       "name": "查询视频美颜任务(此接口目前已下线)",
       "output": "QueryBeautifyVideoJobResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "StyleImage": {
       "document": "上传一张照片，输出滤镜处理后的图片。",

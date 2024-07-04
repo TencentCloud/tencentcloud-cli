@@ -137,9 +137,53 @@
           "example": "xx",
           "member": "Scf",
           "name": "Scf",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApproveStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批意见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "同意",
+          "member": "string",
+          "name": "ApproveMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-21 12:34:16",
+          "member": "string",
+          "name": "ApproveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApproveGroup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

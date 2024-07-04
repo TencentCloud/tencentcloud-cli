@@ -180,10 +180,10 @@
     ],
     "DescribeAccounts": [
       {
-        "document": "获取实例postgres-apzvwncr的用户列表",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"Details\": [\n            {\n                \"UserName\": \"root\",\n                \"Status\": 2,\n                \"Remark\": \"（测试）这个账户是无效的\",\n                \"DBInstanceId\": \"postgres-apzvwncr\",\n                \"UpdateTime\": \"2018-06-12 17:21:57\",\n                \"CreateTime\": \"2018-06-12 17:21:54\"\n            }\n        ]\n    }\n}",
-        "title": "获取实例postgres-apzvwncr的用户列表"
+        "document": "获取实例postgres-hpe52jnz的账户列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hpe52jnz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"CreateTime\": \"0000-00-00 00:00:00\",\n                \"DBInstanceId\": \"postgres-hpe52jnz\",\n                \"Remark\": \"\",\n                \"Status\": 2,\n                \"UpdateTime\": \"2024-06-06 21:00:12\",\n                \"UserName\": \"test\",\n                \"UserType\": \"tencentDBSuper\"\n            }\n        ],\n        \"RequestId\": \"1299fe3a-9958-440a-bfd0-e4eb1e71b7eb\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取实例postgres-hpe52jnz的账户列表"
       }
     ],
     "DescribeAvailableRecoveryTime": [

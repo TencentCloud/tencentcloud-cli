@@ -463,7 +463,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱地址，支持大小写字母、数字、下划线及@字符， 不能以下划线开头，邮箱地址不可重复。",
+          "document": "邮箱地址，支持大小写字母、数字、下划线、连字符及@字符， 只能以数字或字母开头，邮箱地址不可重复。",
           "example": "test@qq.com",
           "member": "string",
           "name": "ContactInfo",
@@ -491,7 +491,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

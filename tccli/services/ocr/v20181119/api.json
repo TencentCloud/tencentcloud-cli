@@ -11890,7 +11890,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的模板类型\n- General 通用告警\n- LicensePlate 车牌告警",
+          "document": "支持的模板类型\n- General 通用告警（支持所有类型告警）\n- LicensePlate 车牌告警（支持翻拍告警）",
           "example": "无",
           "member": "string",
           "name": "Type",
