@@ -1,39 +1,39 @@
 {
   "actions": {
     "CreateSmpnEpa": {
-      "document": "企业号码认证",
+      "document": "不在使用的API\n\n企业号码认证",
       "input": "CreateSmpnEpaRequest",
       "name": "企业号码认证",
       "output": "CreateSmpnEpaResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmpnChp": {
-      "document": "查询号码的标记和标记次数",
+      "document": "不在使用的API\n\n查询号码的标记和标记次数",
       "input": "DescribeSmpnChpRequest",
       "name": "终端骚扰保护",
       "output": "DescribeSmpnChpResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmpnFnr": {
-      "document": "虚假号码识别",
+      "document": "不在使用的API\n\n虚假号码识别",
       "input": "DescribeSmpnFnrRequest",
       "name": "虚假号码识别",
       "output": "DescribeSmpnFnrResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmpnMhm": {
-      "document": "号码营销监控",
+      "document": "不在使用的API\n\n号码营销监控",
       "input": "DescribeSmpnMhmRequest",
       "name": "号码营销监控",
       "output": "DescribeSmpnMhmResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSmpnMrl": {
-      "document": "查询号码恶意标记等级",
+      "document": "不在使用的API\n\n查询号码恶意标记等级",
       "input": "DescribeSmpnMrlRequest",
       "name": "恶意标记等级",
       "output": "DescribeSmpnMrlResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -1,3 +1,163 @@
+# Release 3.0.1030.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 104 次发布
+
+发布时间：2024-07-08 01:09:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateRotationPassword](http://document.tencentcloudapi.woa.com/document/product/236/84205)
+* [DeleteRotationPassword](http://document.tencentcloudapi.woa.com/document/product/236/84204)
+* [ResetPassword](http://document.tencentcloudapi.woa.com/document/product/236/84203)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 107 次发布
+
+发布时间：2024-07-08 01:14:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#AccessInfo)
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：AccessInfos, EngineNetworkName
+
+* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
+
+	* 新增成员：NetworkConfigNames
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 45 次发布
+
+发布时间：2024-07-08 01:17:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEvent)
+
+	* 新增成员：Data
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 26 次发布
+
+发布时间：2024-07-08 01:18:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1131/75389#CloudStorageEvent)
+
+	* 新增成员：Data
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 56 次发布
+
+发布时间：2024-07-08 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateQualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/84209)
+* [DeleteQualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/84208)
+* [DescribeQualityControlTemplates](http://document.tencentcloudapi.woa.com/document/product/862/84207)
+* [ModifyQualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/84206)
+
+新增数据结构：
+
+* [QualityControlItemConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlItemConfig)
+* [QualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlTemplate)
+
+
+
+## 营销号码安全(smpn) 版本：2019-08-22
+
+### 第 2 次发布
+
+发布时间：2024-07-08 01:22:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateSmpnEpa
+* DescribeSmpnChp
+* DescribeSmpnFnr
+* DescribeSmpnMhm
+* DescribeSmpnMrl
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 58 次发布
+
+发布时间：2024-07-08 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* SummarizeTranscription
+
+修改数据结构：
+
+* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
+
+	* 新增成员：AlternativeLanguage
+
+
+
+
 # Release 3.0.1029.1
 
 ## 商业流程服务(bpaas) 版本：2018-12-17

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ckafka DescribeTopicSyncReplica --cli-unfold-argument  \
-    --InstanceId xx \
-    --TopicName xxx \
-    --Offset 0 \
-    --Limit 10 \
+    --InstanceId abc \
+    --TopicName abc \
+    --Offset 1 \
+    --Limit 0 \
     --OutOfSyncReplicaOnly True
 ```
 
@@ -18,21 +18,21 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 1,
             "TopicInSyncReplicaList": [
                 {
-                    "Partition": "xxxx",
+                    "Partition": "abc",
                     "Leader": 1,
-                    "Replica": "110,3551,2315",
-                    "InSyncReplica": "100,5526",
-                    "BeginOffset": 10,
-                    "EndOffset": 10,
+                    "Replica": "abc",
+                    "InSyncReplica": "abc",
+                    "BeginOffset": 1,
+                    "EndOffset": 1,
                     "MessageCount": 1,
-                    "OutOfSyncReplica": "120,51"
+                    "OutOfSyncReplica": "abc"
                 }
-            ]
+            ],
+            "TotalCount": 1
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
