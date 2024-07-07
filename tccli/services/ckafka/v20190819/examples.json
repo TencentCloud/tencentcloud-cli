@@ -557,8 +557,8 @@
     "DescribeTopicSyncReplica": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSyncReplica\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"TopicName\": \"xxx\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OutOfSyncReplicaOnly\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"TopicInSyncReplicaList\": [\n                {\n                    \"Partition\": \"xxxx\",\n                    \"Leader\": 1,\n                    \"Replica\": \"110,3551,2315\",\n                    \"InSyncReplica\": \"100,5526\",\n                    \"BeginOffset\": 10,\n                    \"EndOffset\": 10,\n                    \"MessageCount\": 1,\n                    \"OutOfSyncReplica\": \"120,51\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicSyncReplica\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 0,\n    \"OutOfSyncReplicaOnly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TopicInSyncReplicaList\": [\n                {\n                    \"Partition\": \"abc\",\n                    \"Leader\": 1,\n                    \"Replica\": \"abc\",\n                    \"InSyncReplica\": \"abc\",\n                    \"BeginOffset\": 1,\n                    \"EndOffset\": 1,\n                    \"MessageCount\": 1,\n                    \"OutOfSyncReplica\": \"abc\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "Topic 未同步详情"
       }
     ],

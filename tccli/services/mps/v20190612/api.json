@@ -70,6 +70,13 @@
       "output": "CreatePersonSampleResponse",
       "status": "online"
     },
+    "CreateQualityControlTemplate": {
+      "document": "创建媒体质检模板，数量上限：50。",
+      "input": "CreateQualityControlTemplateRequest",
+      "name": "创建媒体质检模板",
+      "output": "CreateQualityControlTemplateResponse",
+      "status": "online"
+    },
     "CreateSampleSnapshotTemplate": {
       "document": "创建用户自定义采样截图模板，数量上限：16。",
       "input": "CreateSampleSnapshotTemplateRequest",
@@ -196,6 +203,13 @@
       "output": "DeletePersonSampleResponse",
       "status": "online"
     },
+    "DeleteQualityControlTemplate": {
+      "document": "删除媒体质检模板",
+      "input": "DeleteQualityControlTemplateRequest",
+      "name": "删除媒体质检模板",
+      "output": "DeleteQualityControlTemplateResponse",
+      "status": "online"
+    },
     "DeleteSampleSnapshotTemplate": {
       "document": "删除用户自定义采样截图模板。",
       "input": "DeleteSampleSnapshotTemplateRequest",
@@ -320,6 +334,13 @@
       "input": "DescribePersonSamplesRequest",
       "name": "获取素材样本列表",
       "output": "DescribePersonSamplesResponse",
+      "status": "online"
+    },
+    "DescribeQualityControlTemplates": {
+      "document": "查询用户自定义媒体质检模板，支持根据条件，分页查询。",
+      "input": "DescribeQualityControlTemplatesRequest",
+      "name": "获取媒体质检模板列表",
+      "output": "DescribeQualityControlTemplatesResponse",
       "status": "online"
     },
     "DescribeSampleSnapshotTemplates": {
@@ -565,6 +586,13 @@
       "input": "ModifyPersonSampleRequest",
       "name": "修改素材样本",
       "output": "ModifyPersonSampleResponse",
+      "status": "online"
+    },
+    "ModifyQualityControlTemplate": {
+      "document": "修改媒体质检模板。",
+      "input": "ModifyQualityControlTemplateRequest",
+      "name": "修改媒体质检模板",
+      "output": "ModifyQualityControlTemplateResponse",
       "status": "online"
     },
     "ModifySampleSnapshotTemplate": {
@@ -1096,6 +1124,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiQualityControlTaskInput",
+          "name": "QualityControlTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1190,6 +1229,16 @@
           "member": "ScheduleAnalysisTaskResult",
           "name": "AnalysisTask",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "ScheduleQualityControlTaskResult",
+          "name": "QualityControlTask",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -7387,6 +7436,62 @@
       ],
       "usage": "in"
     },
+    "ContainerDiagnoseResultItem": {
+      "document": "容器格式诊断结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断出的异常类别，取值范围：\nDecodeParamException：解码参数异常\nTimeStampException：时间戳异常\nFrameException： 帧率异常\nStreamStatusException：流状态异常\nStreamInfo：流信息异常\nStreamAbnormalCharacteristics：流特征异常\nDecodeException：解码异常\nHLSRequirements：HLS 格式异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DecodeException",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出的具体异常类型，取值如下：\n\nVideoResolutionChanged：视频分辨率变化\nAudioSampleRateChanged：音频采样率变化\nAudioChannelsChanged：音频通道数变化\nParameterSetsChanged：流参数集信息发生变化\nDarOrSarInvalid：视频的宽高比异常\nTimestampFallback：DTS时间戳回退\nDtsJitter：DTS抖动过大\nPtsJitter：PTS抖动过大\nAACDurationDeviation：AAC帧时间戳间隔不合理\nAudioDroppingFrames：音频丢帧\nVideoDroppingFrames：视频丢帧\nAVTimestampInterleave：音视频交织不合理\nPtsLessThanDts：媒体流的 pts 小于 dts\nReceiveFpsJitter：网络接收帧率抖动过大\nReceiveFpsTooSmall：网络接收视频帧率过小\nFpsJitter：通过PTS计算得到的流帧率抖动过大\nStreamOpenFailed：流打开失败\nStreamEnd：流结束\nStreamParseFailed：流解析失败\nVideoFirstFrameNotIdr：首帧不是IDR帧\nStreamNALUError：NALU起始码错误\nTsStreamNoAud：mpegts的H26x流缺失 AUD NALU\nAudioStreamLack：无音频流\nVideoStreamLack：无视频流\nLackAudioRecover：缺失音频流恢复\nLackVideoRecover：缺失视频流恢复\nVideoBitrateOutofRange：视频流码率(kbps)超出范围\nAudioBitrateOutofRange：音频流码率(kbps)超出范围\nVideoDecodeFailed：视频解码错误\nAudioDecodeFailed：音频解码错误\nAudioOutOfPhase：双通道音频相位相反\nVideoDuplicatedFrame：视频流中存在重复帧\nAudioDuplicatedFrame：音频流中存在重复帧\nVideoRotation：视频画面旋转\nTsMultiPrograms：MPEG2-TS流有多个program\nMp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求\nHLSBadM3u8Format：无效的m3u8文件\nHLSInvalidMasterM3u8：无效的main m3u8文件\nHLSInvalidMediaM3u8：无效的media m3u8文件\nHLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数\nHLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数\nHLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY\nHLSMediaSegmentsStreamNumChange：切片的流数目发生变化\nHLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY\nHLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY\nTimecodeTrackExist：MP4存在tmcd轨道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VideoDecodeFailed",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断出的异常级别，取值范围：\nFatal：影响后续播放和解析，\nError： 可能会影响播放，\nWarning： 可能会有潜在风险，但不一定会影响播放，\nNotice：比较重要的流信息，\nInfo：一般性的流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Fatal",
+          "member": "string",
+          "name": "SeverityLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "警告出现的时间点，形式如 “2022-12-25T13:14:16Z”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2023-06-09T06:54:32Z\",\"2023-06-09T06:54:32Z\"]",
+          "member": "string",
+          "name": "DateTimeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[4.783,                 5.966]",
+          "member": "float",
+          "name": "TimestampSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ContentReviewTemplateItem": {
       "document": "内容审核模板详情",
       "members": [
@@ -8938,6 +9043,61 @@
       ],
       "type": "object"
     },
+    "CreateQualityControlTemplateRequest": {
+      "document": "CreateQualityControlTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板名称，长度限制：64 个字符。",
+          "example": "质检模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检控制参数。",
+          "example": "无",
+          "member": "QualityControlItemConfig",
+          "name": "QualityControlItemSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检模板描述信息，长度限制：256 个字符。",
+          "example": "模板 1",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQualityControlTemplateResponse": {
+      "document": "CreateQualityControlTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板唯一标识。",
+          "example": "31",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSampleSnapshotTemplateRequest": {
       "document": "CreateSampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -9989,6 +10149,33 @@
     },
     "DeletePersonSampleResponse": {
       "document": "DeletePersonSample返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQualityControlTemplateRequest": {
+      "document": "DeleteQualityControlTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板唯一标识。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQualityControlTemplateResponse": {
+      "document": "DeleteQualityControlTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11876,6 +12063,80 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityControlTemplatesRequest": {
+      "document": "DescribeQualityControlTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[\"1001\\n\"]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "\"Preset\"：预设，Custom\":客户魔板",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQualityControlTemplatesResponse": {
+      "document": "DescribeQualityControlTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检模板详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityControlTemplate",
+          "name": "QualityControlTemplateSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20205,6 +20466,60 @@
       ],
       "type": "object"
     },
+    "ModifyQualityControlTemplateRequest": {
+      "document": "ModifyQualityControlTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板唯一标识。",
+          "example": "1002",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检配置参数。",
+          "example": "无",
+          "member": "QualityControlItemConfig",
+          "name": "QualityControlItemSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyQualityControlTemplateResponse": {
+      "document": "ModifyQualityControlTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySampleSnapshotTemplateRequest": {
       "document": "ModifySampleSnapshotTemplate请求参数结构体",
       "members": [
@@ -22663,6 +22978,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式诊断检出异常项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContainerDiagnoseResultItem",
+          "name": "ContainerDiagnoseResultSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -22713,6 +23038,78 @@
       ],
       "usage": "out"
     },
+    "QualityControlItemConfig": {
+      "document": "质检项配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "质检项名称。",
+          "example": "Blur",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样方式，取值范围：\n- Time：根据时间间隔采样。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Time",
+          "member": "string",
+          "name": "Sampling",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采样间隔时间，取值范围：[0, 60000]，单位：ms。\n默认值 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "IntervalTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常持续时间，取值范围：[0, 60000]，单位：ms。\n默认值 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测分值的阈值，使用数学区间格式，当检测值超出区间范围会触发回调。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0.5, 2.0]",
+          "member": "string",
+          "name": "Threshold",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "QualityControlResult": {
       "document": "质检异常项。",
       "members": [
@@ -22735,6 +23132,82 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityControlTemplate": {
+      "document": "媒体质检模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体质检模板唯一标识。",
+          "example": "0",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityControlItemConfig",
+          "name": "QualityControlItemSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -26337,7 +26810,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "Fps",

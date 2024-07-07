@@ -507,7 +507,7 @@
     "DescribeNotebookSessionStatementSqlResult": {
       "document": "本接口（DescribeNotebookSessionStatementSqlResult）用于获取statement运行结果。",
       "input": "DescribeNotebookSessionStatementSqlResultRequest",
-      "name": "获取statement运行结果。",
+      "name": "获取statement运行结果（作用于：Spark交互式SQL任务、Notebook任务）。",
       "output": "DescribeNotebookSessionStatementSqlResultResponse",
       "status": "online"
     },
@@ -633,7 +633,7 @@
     "DescribeTaskResult": {
       "document": "查询任务结果",
       "input": "DescribeTaskResultRequest",
-      "name": "查询任务结果",
+      "name": "查询任务结果(用于: SparkSQL、PrestoSQL、Spark作业任务)",
       "output": "DescribeTaskResultResponse",
       "status": "online"
     },
@@ -995,6 +995,34 @@
     "serviceShortName": "dlc"
   },
   "objects": {
+    "AccessInfo": {
+      "document": "引擎的访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问引擎的方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DLCJDBC",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问引擎的url，内部的部分参数需要根据实际情况替换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jdbc:dlc:xxxx-xxxx",
+          "member": "string",
+          "name": "AccessConnectionInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AddDMSPartitionsRequest": {
       "document": "AddDMSPartitions请求参数结构体",
       "members": [
@@ -6232,6 +6260,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎的访问信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessInfo",
+          "name": "AccessInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎所在网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default-network",
+          "member": "string",
+          "name": "EngineNetworkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

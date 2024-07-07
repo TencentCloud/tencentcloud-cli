@@ -1110,7 +1110,7 @@
         {
           "disabled": false,
           "document": "集群类型: 0 一主一备, 1 一主两备...N-1 一主N备",
-          "example": "",
+          "example": "[0]",
           "member": "int64",
           "name": "InstanceTypes",
           "required": false,
@@ -1119,7 +1119,7 @@
         {
           "disabled": false,
           "document": "产品ID:  0 MYSQL，1 TDSQL",
-          "example": "",
+          "example": "[1]",
           "member": "int64",
           "name": "ProductIds",
           "required": false,
@@ -1128,7 +1128,7 @@
         {
           "disabled": false,
           "document": "集群uuid: 如 dbdc-q810131s",
-          "example": "",
+          "example": "[\"dbdc-qhdgwfs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1137,7 +1137,7 @@
         {
           "disabled": false,
           "document": "是否按金融围笼标志搜索",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "FenceFlag",
           "required": false,
@@ -1146,7 +1146,7 @@
         {
           "disabled": false,
           "document": "按实例名字模糊匹配",
-          "example": "",
+          "example": "exclust",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1155,7 +1155,7 @@
         {
           "disabled": false,
           "document": "每页数目, 整型",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "PageSize",
           "required": false,
@@ -1164,7 +1164,7 @@
         {
           "disabled": false,
           "document": "页码, 整型",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": false,
@@ -1173,7 +1173,7 @@
         {
           "disabled": false,
           "document": "排序字段，枚举：createtime,groupname",
-          "example": "",
+          "example": "createtime",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1182,7 +1182,7 @@
         {
           "disabled": false,
           "document": "排序方式: asc升序, desc降序",
-          "example": "",
+          "example": "asc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -1191,7 +1191,7 @@
         {
           "disabled": false,
           "document": "集群状态: -2 已删除, -1 已隔离, 0 创建中, 1 运行中, 2 扩容中, 3 删除中",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "InstanceStatus",
           "required": false,
@@ -1206,18 +1206,20 @@
         {
           "disabled": false,
           "document": "集群数量",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群扩展信息",
-          "example": "",
+          "example": "[             {                 \"AppId\": 1252328453,                 \"AutoRenewFlag\": 0,                 \"CreateTime\": \"2021-02-25T16:08:47+08:00\",                 \"InstanceDetail\": {                     \"InstanceDeviceInfos\": [                         {                             \"FreeDevice\": [],                             \"InstanceId\": \"szjr-3-7\",                             \"ReadOnlyDevice\": [],                             \"ReadWriteDevice\": [                                 {                                     \"DevClass\": \"SH12\",                                     \"DeviceId\": 191108504,                                     \"DeviceNo\": \"\",                                     \"InstanceNum\": 29,                                     \"MaxDisk\": 28000,                                     \"MaxMemory\": 576,                                     \"RawDeviceNum\": 3,                                     \"RestDisk\": 8800,                                     \"RestMemory\": 248                                 }                             ]                         }                     ],                     \"ReadOnlyTotalDisk\": 0,                     \"ReadOnlyTotalLeaveDisk\": 0,                     \"ReadOnlyTotalLeaveMemory\": 0,                     \"ReadOnlyTotalMemory\": 0,                     \"ReadWriteTotalDisk\": 28000,                     \"ReadWriteTotalLeaveDisk\": 8800,                     \"ReadWriteTotalLeaveMemory\": 248,                     \"ReadWriteTotalMemory\": 576,                     \"Status\": 0                 },                 \"InstanceId\": \"dbdc-qhdgwfs\",                 \"InstanceName\": \"exclust\",                 \"InstanceStatus\": 1,                 \"InstanceType\": 1,                 \"Machine\": \"SH12\",                 \"PeriodEndTime\": \"2021-09-25T16:08:47+08:00\",                 \"Pid\": 10875,                 \"Region\": \"ap-shenzhen-fsi\",                 \"Zone\": \"ap-shenzhen-fsi-3\"             }         ]",
           "member": "InstanceExpand",
           "name": "Instances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -337,11 +337,11 @@
       "status": "online"
     },
     "SummarizeTranscription": {
-      "document": "对转录的文本进行总结。",
+      "document": "接口不再支持\n\n对转录的文本进行总结。",
       "input": "SummarizeTranscriptionRequest",
       "name": "总结转录文本",
       "output": "SummarizeTranscriptionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdatePublishCdnStream": {
       "document": "更新转推任务。\n注：请参见启动转推任务的接口说明和使用说明。",
@@ -4713,7 +4713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "语音识别支持的语言，默认是\"zh\"。目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\ntencent asr不支持\"it\"和\"ru\"，google asr全都支持。",
+          "document": "语音识别支持的语言，默认是\"zh\"。目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\n中文 Chinese = \"zh\"\n中文繁体 Chinese_TW = \"zh-TW\" \n中文方言 Chinese_DIALECT = \"zh-dialect\"\nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -4722,6 +4722,15 @@
         },
         {
           "disabled": false,
+          "document": "额外的可能替代语言，最多3个，仅高级版支持。Language指定中文方言时，不能设置该字段。",
+          "example": "无",
+          "member": "string",
+          "name": "AlternativeLanguage",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
           "document": "使用的模型，目前支持tencent和google，默认是tencent。",
           "example": "tencent",
           "member": "string",
@@ -4731,7 +4740,7 @@
         },
         {
           "disabled": false,
-          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。\ngoogle支持上述语言两两之间翻译，tencent只支持部分语言之间翻译。\n\ntencnet目标语言，各源语言的目标语言支持列表如下，冒号左侧是目标语言，右侧是源语言：\n- zh（简体中文）：zh-TW（繁体中文）、en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）\n- zh-TW（繁体中文）：zh（简体中文）、en（英语）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）\n- en（英语）：zh（中文）、zh-TW（繁体中文）、ja（日语）、ko（韩语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）、vi（越南语）、id（印尼语）、th（泰语）、ms（马来语）、ar（阿拉伯语）、hi（印地语）\n- ja（日语）：zh（中文）、zh-TW（繁体中文）、en（英语）、ko（韩语）\n- ko（韩语）：zh（中文）、zh-TW（繁体中文）、en（英语）、ja（日语）\n- fr（法语）：zh（中文）、zh-TW（繁体中文）、en（英语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- es（西班牙语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- it（意大利语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、de（德语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- de（德语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、tr（土耳其语）、ru（俄语）、pt（葡萄牙语）\n- tr（土耳其语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、ru（俄语）、pt（葡萄牙语）\n- ru（俄语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、pt（葡萄牙语）\n- pt（葡萄牙语）：zh（中文）、zh-TW（繁体中文）、en（英语）、fr（法语）、es（西班牙语）、it（意大利语）、de（德语）、tr（土耳其语）、ru（俄语）\n- vi（越南语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- id（印尼语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- th（泰语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- ms（马来语）：zh（中文）、zh-TW（繁体中文）、en（英语）\n- ar（阿拉伯语）：en（英语）\n- hi（印地语）：en（英语）",
+          "document": "翻译功能支持的语言，如果填写，则会启用翻译，不填则只会使用语音识别。\n目前全量支持的语言如下，等号左面是语言英文名，右面是Language字段需要填写的值，该值遵循[ISO639](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)：\nChinese = \"zh\"\nChinese_TW = \"zh-TW\" \nEnglish = \"en\"\nVietnamese = \"vi\"\nJapanese = \"ja\"\nKorean = \"ko\"\nIndonesia = \"id\"\nThai = \"th\"\nPortuguese = \"pt\"\nTurkish = \"tr\"\nArabic = \"ar\"\nSpanish = \"es\"\nHindi = \"hi\"\nFrench = \"fr\"\nMalay = \"ms\"\nFilipino = \"fil\"\nGerman = \"de\"\nItalian = \"it\"\nRussian = \"ru\"\n\n注意：\n如果缺少满足您需求的语言，请联系我们技术人员。",
           "example": "en",
           "member": "string",
           "name": "TranslationLanguage",

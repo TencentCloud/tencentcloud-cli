@@ -196,6 +196,13 @@
       "output": "CreateRoInstanceIpResponse",
       "status": "online"
     },
+    "CreateRotationPassword": {
+      "document": "开启密码轮转",
+      "input": "CreateRotationPasswordRequest",
+      "name": "开启密码轮转",
+      "output": "CreateRotationPasswordResponse",
+      "status": "online"
+    },
     "DeleteAccounts": {
       "document": "本接口(DeleteAccounts)用于删除云数据库的账户。",
       "input": "DeleteAccountsRequest",
@@ -257,6 +264,13 @@
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse",
+      "status": "online"
+    },
+    "DeleteRotationPassword": {
+      "document": "关闭实例账户密码轮转",
+      "input": "DeleteRotationPasswordRequest",
+      "name": "关闭密码轮转",
+      "output": "DeleteRotationPasswordResponse",
       "status": "online"
     },
     "DeleteTimeWindow": {
@@ -1034,6 +1048,13 @@
       "input": "RenewDBInstanceRequest",
       "name": "续费云数据库实例",
       "output": "RenewDBInstanceResponse",
+      "status": "online"
+    },
+    "ResetPassword": {
+      "document": "手动刷新轮转密码",
+      "input": "ResetPasswordRequest",
+      "name": "手动刷新轮转密码",
+      "output": "ResetPasswordResponse",
       "status": "online"
     },
     "ResetRootAccount": {
@@ -6501,6 +6522,42 @@
       ],
       "type": "object"
     },
+    "CreateRotationPasswordRequest": {
+      "document": "CreateRotationPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前需开启密码轮转的账号信息，包含账户名与主机名",
+          "example": "无",
+          "member": "Account",
+          "name": "Accounts",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRotationPasswordResponse": {
+      "document": "CreateRotationPassword返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomConfig": {
       "document": "proxy配置",
       "members": [
@@ -6919,6 +6976,60 @@
     },
     "DeleteParamTemplateResponse": {
       "document": "DeleteParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRotationPasswordRequest": {
+      "document": "DeleteRotationPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关闭密码轮转的实例账户名,例如root",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关闭密码轮转的实例账户域名，例如%",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关闭密码轮转后实例账户的最新密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRotationPasswordResponse": {
+      "document": "DeleteRotationPassword返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17820,6 +17931,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetPasswordRequest": {
+      "document": "ResetPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手动刷新轮转密码的实例账户名，例如root",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手动刷新轮转密码的实例账户域名，例如%",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetPasswordResponse": {
+      "document": "ResetPassword返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

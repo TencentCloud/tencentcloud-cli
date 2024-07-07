@@ -8611,7 +8611,7 @@
           "example": "无",
           "member": "TopicInSyncReplicaResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

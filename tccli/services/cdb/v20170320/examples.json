@@ -248,6 +248,14 @@
         "title": "创建云数据库只读实例的独立VIP"
       }
     ],
+    "CreateRotationPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Accounts\": [\n        {\n            \"User\": \"abc\",\n            \"Host\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "开启密码轮转"
+      }
+    ],
     "DeleteAccounts": [
       {
         "document": "",
@@ -318,6 +326,14 @@
         "input": "https://cdb.tencentcloudapi.com/?Action=DeleteParamTemplate\n&TemplateId=1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "删除参数模板"
+      }
+    ],
+    "DeleteRotationPassword": [
+      {
+        "document": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRotationPassword\n<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"User\": \"abc\",\n    \"Host\": \"abc\",\n    \"Password\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "关闭实例账户密码轮转"
       }
     ],
     "DeleteTimeWindow": [
@@ -1230,6 +1246,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": \"12\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
+      }
+    ],
+    "ResetPassword": [
+      {
+        "document": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"User\": \"abc\",\n    \"Host\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "手动刷新轮转密码"
       }
     ],
     "ResetRootAccount": [

@@ -2010,6 +2010,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件自定义数据\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
