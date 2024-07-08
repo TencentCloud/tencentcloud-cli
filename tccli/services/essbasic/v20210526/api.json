@@ -6233,6 +6233,15 @@
           "name": "FlowId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。\n默认值为有效期为当前时间后7天。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpiredOn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7701,7 +7710,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID数组，每一个合同模板ID为32位字符串,  最多支持200个模板的批量查询。\n\n注意: \n1.` 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。`\n2. `请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。`\n4. `若传递此参数，分页参数(Limit,Offset)无效`\n\n\n[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png)\n",
+          "document": "合同模板ID数组，每一个合同模板ID为32位字符串,  最多支持100个模板的批量查询。\n\n注意: \n1.` 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。`\n2. `请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。`\n4. `若传递此参数，分页参数(Limit,Offset)无效`\n\n\n[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/e988be12bf28a89b4716aed4502c2e02.png)\n",
           "example": "无",
           "member": "string",
           "name": "TemplateIds",
@@ -7710,7 +7719,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注：`1.默认值为20，单页做大值为200。`",
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注：`1.默认值为20，单页做大值为100。`",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -11322,27 +11331,27 @@
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显示的员工名",
+          "document": "显示的员工名\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工手机号",
+          "document": "员工手机号\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11352,7 +11361,7 @@
           "example": "无",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11362,7 +11371,7 @@
           "example": "无",
           "member": "string",
           "name": "OpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11372,7 +11381,7 @@
           "example": "无",
           "member": "StaffRole",
           "name": "Roles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11382,7 +11391,7 @@
           "example": "无",
           "member": "Department",
           "name": "Department",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11392,7 +11401,7 @@
           "example": "无",
           "member": "bool",
           "name": "Verified",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11402,7 +11411,7 @@
           "example": "无",
           "member": "int64",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11412,7 +11421,7 @@
           "example": "无",
           "member": "int64",
           "name": "VerifiedOn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11422,7 +11431,7 @@
           "example": "无",
           "member": "int64",
           "name": "QuiteJob",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

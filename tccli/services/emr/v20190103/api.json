@@ -7117,7 +7117,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容负载指标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LoadMetrics",
@@ -7128,7 +7128,7 @@
         },
         {
           "disabled": false,
-          "document": "规则元数据记录ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "MetricId",
@@ -7139,7 +7139,7 @@
         },
         {
           "disabled": false,
-          "document": "规则统计周期，提供300s,600s,900s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "StatisticPeriod",
@@ -7161,7 +7161,7 @@
         },
         {
           "disabled": false,
-          "document": "触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。",
+          "document": "触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。",
           "example": "无",
           "member": "int64",
           "name": "TriggerThreshold",
@@ -7172,7 +7172,7 @@
         },
         {
           "disabled": false,
-          "document": "条件触发数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TriggerConditions",
           "name": "TriggerConditions",

@@ -2921,6 +2921,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。\n默认值为有效期为当前时间后7天。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpiredOn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

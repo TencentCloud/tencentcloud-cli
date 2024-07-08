@@ -20851,6 +20851,15 @@
           "name": "OfdFileBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1",
+          "example": "1",
+          "member": "int64",
+          "name": "OfdPageNumber",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

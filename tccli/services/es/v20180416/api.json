@@ -8436,6 +8436,7 @@
           "example": "3d",
           "member": "string",
           "name": "ExpireMaxAge",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8446,6 +8447,18 @@
           "example": "@timestamp",
           "member": "string",
           "name": "TimestampField",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准存储时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SinkCycleAge",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
