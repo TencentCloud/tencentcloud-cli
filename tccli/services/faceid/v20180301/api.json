@@ -1422,6 +1422,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次EKYC卡证OCR的修改详情，当用户自行修改卡证识别结果后（IsEdit=true），EditDetails会返回被修改的字段。当IsEdit=false，EditDetails为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EditDetail",
+          "name": "EditDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3208,6 +3218,42 @@
         }
       ],
       "type": "object"
+    },
+    "EditDetail": {
+      "document": "EKYC卡证OCR结果修改详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改的字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段修改前的值，即OCR的原始结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalFieldValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段修改后的值，即用户手动输入的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RevisedFieldValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "EidInfo": {
       "document": "Eid出参，包括商户方用户的标识和加密的用户姓名身份证信息。",
