@@ -1,6 +1,6 @@
 **Example 1: 查询安全组规则**
 
-
+查询安全组规则
 
 Input: 
 
@@ -60,7 +60,13 @@ Output:
                     "PolicyDescription": "E1"
                 }
             ],
-            "Version": 60
+            "PolicyStatistics": {
+                "IngressIPv4TotalCount": 0,
+                "IngressIPv6TotalCount": 0,
+                "EgressIPv4TotalCount": 0,
+                "EgressIPv6TotalCount": 0
+            },
+            "Version": "60"
         },
         "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
     }

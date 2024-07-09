@@ -42,6 +42,13 @@
       "output": "CreateTaskResponse",
       "status": "online"
     },
+    "CreateVideoSummaryTask": {
+      "document": "创建一个视频缩编任务。\n\n### 回调事件消息通知协议\n\n#### 网络协议\n- 回调接口协议目前仅支持http/https协议；\n- 请求：HTTP POST 请求，包体内容为 JSON，每一种消息的具体包体内容参见后文。\n- 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： `{\"code\":0}`\n\n#### 通知可靠性\n\n事件通知服务具备重试能力，事件通知失败后会总计重试3次；\n为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：\n- 长时间（5 秒）未回包应答。\n- 应答 HTTP STATUS 不为200。\n\n\n#### 回调接口协议\n\n##### 分析任务完成消息回调\n| 参数名称 | 必选 | 类型 | 描述 |\n|---------|---------|---------|---------|\n| TaskId | 是 | String | 任务ID |\n| TaskStatus | 是 | Integer | 任务执行状态 |\n| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |",
+      "input": "CreateVideoSummaryTaskRequest",
+      "name": "创建视频缩编任务",
+      "output": "CreateVideoSummaryTaskResponse",
+      "status": "online"
+    },
     "DeleteCustomCategory": {
       "document": "删除自定义分类信息",
       "input": "DeleteCustomCategoryRequest",
@@ -138,6 +145,20 @@
       "input": "DescribeTasksRequest",
       "name": "批量描述任务",
       "output": "DescribeTasksResponse",
+      "status": "online"
+    },
+    "DescribeUsageAmount": {
+      "document": "获取用户资源使用量",
+      "input": "DescribeUsageAmountRequest",
+      "name": "视频摘要使用量统计",
+      "output": "DescribeUsageAmountResponse",
+      "status": "online"
+    },
+    "DescribeVideoSummaryDetail": {
+      "document": "描述任务信息，如果任务成功完成，还将返回任务结果",
+      "input": "DescribeVideoSummaryDetailRequest",
+      "name": "描述视频缩编任务与任务结果",
+      "output": "DescribeVideoSummaryDetailResponse",
       "status": "online"
     },
     "ImportMedia": {
@@ -309,6 +330,45 @@
         }
       ],
       "usage": "out"
+    },
+    "AsrResult": {
+      "document": "一条 asr 语音结果的结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ASR提取的文字信息",
+          "example": "\"欢迎收看新闻30分\"",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ASR起始时间戳，从0开始",
+          "example": "0.52",
+          "member": "float",
+          "name": "StartTimeStamp",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ASR结束时间戳，从0开始",
+          "example": "1.92",
+          "member": "float",
+          "name": "EndTimeStamp",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AudioData": {
       "document": "音频文件分析结果数据",
@@ -717,6 +777,142 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSummaryTaskRequest": {
+      "document": "CreateVideoSummaryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目前只支持 1，表示新闻缩编。",
+          "example": "1",
+          "member": "int64",
+          "name": "SummaryType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待处理的视频的URL，目前只支持*不带签名的*COS地址，长度最长1KB",
+          "example": "cos://bucket/object.mp4",
+          "member": "string",
+          "name": "VideoURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务处理完成的回调地址。",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "CallbackURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果需要你输出 TTS 或者视频，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。\n",
+          "example": "https://bucket/path/",
+          "member": "string",
+          "name": "WriteBackCosPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启结果视频生成功能，如果开启，需要指定WriteBackCosPath 参数",
+          "example": "true",
+          "member": "bool",
+          "name": "ActiveVideoGenerate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "生成结果视频的时候，控制生成的结果视频的横转竖参数。如果 ActiveVideoGenerate 为 false, 该参数无效。",
+          "example": "无",
+          "member": "VideoRotationMode",
+          "name": "VideoRotationMode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语音合成相关的控制参数",
+          "example": "无",
+          "member": "TTSMode",
+          "name": "TTSMode",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否输出合成好的语音列表。",
+          "example": "true",
+          "member": "bool",
+          "name": "ActiveTTSOutput",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户指定的精确的 asr 结果列表 ",
+          "example": "无",
+          "member": "AsrResult",
+          "name": "ExactAsrSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户指定的精确的文本摘要",
+          "example": "\"文本摘要\"",
+          "member": "string",
+          "name": "ExactTextSummary",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户指定的精确的文本摘要分割结果",
+          "example": "[\"文本摘要分割1\", \"文本摘要分割2\"]",
+          "member": "string",
+          "name": "ExactTextSegSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户指定的精确的镜头分割结果",
+          "example": "无",
+          "member": "ShotInfo",
+          "name": "ExactShotSegSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSummaryTaskResponse": {
+      "document": "CreateVideoSummaryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的任务 id",
+          "example": "task-xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1561,6 +1757,170 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageAmountRequest": {
+      "document": "DescribeUsageAmount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUsageAmountResponse": {
+      "document": "DescribeUsageAmount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源使用小时数",
+          "example": "1.5",
+          "member": "float",
+          "name": "UsedHours",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包总量小时数",
+          "example": "1000",
+          "member": "float",
+          "name": "TotalHours",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSummaryDetailRequest": {
+      "document": "DescribeVideoSummaryDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询的任务Id",
+          "example": "task-xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSummaryDetailResponse": {
+      "document": "DescribeVideoSummaryDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的状态\n1: 等待处理中\n2: 处理中\n3: 处理成功\n4: 处理失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果处理失败，返回失败的原因",
+          "example": "“视频下载失败”",
+          "member": "string",
+          "name": "FailedReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取出的视频的 Asr 结果",
+          "example": "无",
+          "member": "AsrResult",
+          "name": "AsrSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本摘要结果",
+          "example": "\"文本摘要\"",
+          "member": "string",
+          "name": "TextSummary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本摘要分割结果",
+          "example": "[\"文本摘要分割1\", \"文本摘要分割2\"]",
+          "member": "string",
+          "name": "TextSegSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜头分割结果",
+          "example": "无",
+          "member": "ShotInfo",
+          "name": "ShotSegSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数组第 i 个结构 TextSegMatchShotConfidenceSet[i] 表示第 i 个文本摘要分割结果和所有镜头的匹配度。",
+          "example": "无",
+          "member": "TextSegMatchShotScore",
+          "name": "TextSegMatchShotScoreSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TTS 输出音频下载地址列表",
+          "example": "[\"https://example-123456.cos.ap-guangzho.myqcloud.com/exmaple.wav\"]",
+          "member": "string",
+          "name": "TTSResultURLSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合成视频输出下载地址",
+          "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/exmaple.mp4",
+          "member": "string",
+          "name": "VideoResultURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合成后的视频横竖屏转换后的视频下载地址",
+          "example": "https://example-123456.cos.ap-guangzho.myqcloud.com/exmaple_rotate.mp4",
+          "member": "string",
+          "name": "VideoRotateResultURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2561,6 +2921,34 @@
       ],
       "usage": "out"
     },
+    "ShotInfo": {
+      "document": "输入的镜头信息的描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜头开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.52",
+          "member": "float",
+          "name": "StartTimeStamp",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜头结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.92",
+          "member": "float",
+          "name": "EndTimeStamp",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ShowInfo": {
       "document": "视频结构化结果",
       "members": [
@@ -2759,6 +3147,30 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TTSMode": {
+      "document": "TTS 的参数模式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语速，范围：[-2，2]，分别对应不同语速：\n-2代表0.6倍\n-1代表0.8倍\n0代表1.0倍（默认）\n1代表1.2倍\n2代表1.5倍\n如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。",
+          "example": "1",
+          "member": "float",
+          "name": "Speed",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "音色 ID，[音色体验地址](https://cloud.tencent.com/product/tts)。\n\n\n|音乐ID|音色名称|推荐场景|\n|--|--|--|\n|1001|智瑜|情感女声|\n|1002|智聆|通用女声|\n|1003|智美|客服女声|\n|1004|智云|通用男声|\n|1005|智莉|通用女声|\n|1007|智娜|客服女声|\n|1008|智琪|客服女声|\n|1009|智芸|知性女声|\n|1010|智华|通用男声|\n|1017|智蓉|情感女声|\n|1018|智靖|情感男声|\n\n\n",
+          "example": "1001",
+          "member": "int64",
+          "name": "VoiceType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3189,6 +3601,22 @@
       ],
       "usage": "out"
     },
+    "TextSegMatchShotScore": {
+      "document": "单个文本摘要分割结果和所有镜头的匹配度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数组第 i 个值表示该文本摘要和第 i 个镜头的匹配度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"0.1\", \"0.98\", \"0.65\"]",
+          "member": "float",
+          "name": "ScoreSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "UnknownPerson": {
       "document": "未知人物信息",
       "members": [
@@ -3369,6 +3797,21 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoRotationMode": {
+      "document": "视频横转竖的控制参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的视频是否需要横屏转竖屏。",
+          "example": "true",
+          "member": "bool",
+          "name": "ActiveVideoRotation",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

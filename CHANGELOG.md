@@ -1,3 +1,190 @@
+# Release 3.0.1032.1
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 54 次发布
+
+发布时间：2024-07-10 01:15:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* TriggerConditions
+
+修改数据结构：
+
+* [LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy)
+
+	* <font color="#dd0000">**删除成员**：</font>LoadMetrics, MetricId, StatisticPeriod, TriggerThreshold, TriggerConditions
+
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 8 次发布
+
+发布时间：2024-07-10 01:16:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExpandCapacity](http://document.tencentcloudapi.woa.com/document/product/1716/81460)
+
+	* 新增入参：ModifyType
+
+
+新增数据结构：
+
+* [ChargeAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#ChargeAttribute)
+
+修改数据结构：
+
+* [FSAttribute](http://document.tencentcloudapi.woa.com/document/product/1716/81241#FSAttribute)
+
+	* 新增成员：ChargeAttribute
+
+* [MappedBucket](http://document.tencentcloudapi.woa.com/document/product/1716/81241#MappedBucket)
+
+	* 新增成员：Endpoint
+
+
+
+
+## 媒体智能标签(ivld) 版本：2021-09-03
+
+### 第 2 次发布
+
+发布时间：2024-07-10 01:18:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateVideoSummaryTask](http://document.tencentcloudapi.woa.com/document/product/1695/84213)
+* [DescribeUsageAmount](http://document.tencentcloudapi.woa.com/document/product/1695/84212)
+* [DescribeVideoSummaryDetail](http://document.tencentcloudapi.woa.com/document/product/1695/84211)
+
+新增数据结构：
+
+* [AsrResult](http://document.tencentcloudapi.woa.com/document/product/1695/79948#AsrResult)
+* [ShotInfo](http://document.tencentcloudapi.woa.com/document/product/1695/79948#ShotInfo)
+* [TTSMode](http://document.tencentcloudapi.woa.com/document/product/1695/79948#TTSMode)
+* [TextSegMatchShotScore](http://document.tencentcloudapi.woa.com/document/product/1695/79948#TextSegMatchShotScore)
+* [VideoRotationMode](http://document.tencentcloudapi.woa.com/document/product/1695/79948#VideoRotationMode)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 32 次发布
+
+发布时间：2024-07-10 01:21:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReleaseFileSign](http://document.tencentcloudapi.woa.com/document/product/1464/69216)
+
+	* 新增入参：Site
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 59 次发布
+
+发布时间：2024-07-10 01:25:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84216)
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
+* [StopAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84214)
+
+新增数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+* [STTConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#STTConfig)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 67 次发布
+
+发布时间：2024-07-10 01:25:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGateway](http://document.tencentcloudapi.woa.com/document/product/1364/81653)
+
+	* 新增入参：PromId
+
+
+修改数据结构：
+
+* [PublicAddressConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PublicAddressConfig)
+
+	* 新增成员：Description
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 140 次发布
+
+发布时间：2024-07-10 01:26:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyVpnGatewaySslClientCert](http://document.tencentcloudapi.woa.com/document/product/215/84217)
+
+修改接口：
+
+* [DescribeSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15804)
+
+	* 新增入参：ExtendTemplateFlag
+
+
+新增数据结构：
+
+* [PolicyStatistics](http://document.tencentcloudapi.woa.com/document/product/215/15824#PolicyStatistics)
+
+修改数据结构：
+
+* [SecurityGroupPolicySet](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupPolicySet)
+
+	* 新增成员：PolicyStatistics
+
+
+
+
 # Release 3.0.1031.1
 
 ## Elasticsearch Service(es) 版本：2018-04-16

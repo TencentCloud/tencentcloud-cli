@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart QueryDrawPortraitJob --cli-unfold-argument  \
-    --JobId abc
+    --JobId eascexasdfasese
 ```
 
 Output: 

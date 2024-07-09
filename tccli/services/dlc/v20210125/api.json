@@ -10412,7 +10412,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "资源组总数",
           "example": "无",
           "member": "int64",
           "name": "Total",

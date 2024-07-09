@@ -7593,39 +7593,6 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "LoadMetrics",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "MetricId",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "StatisticPeriod",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "指标处理方法，1表示MAX，2表示MIN，3表示AVG。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -7633,28 +7600,6 @@
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。",
-          "example": "无",
-          "member": "int64",
-          "name": "TriggerThreshold",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "TriggerConditions",
-          "name": "TriggerConditions",
-          "output_required": true,
-          "required": false,
-          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -13083,22 +13028,6 @@
           "name": "Threshold",
           "required": false,
           "type": "float",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
-    "TriggerConditions": {
-      "document": "规则触发条件数组",
-      "members": [
-        {
-          "disabled": false,
-          "document": "规则触发条件数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "TriggerCondition",
-          "name": "Conditions",
-          "required": false,
-          "type": "list",
           "value_allowed_null": true
         }
       ],
