@@ -12627,7 +12627,7 @@
         },
         {
           "disabled": false,
-          "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源，https 回源时仅支持源站 443 端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源协议配置\nhttp：强制 http 回源\nfollow：协议跟随回源\nhttps：强制 https 回源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
           "name": "OriginPullProtocol",

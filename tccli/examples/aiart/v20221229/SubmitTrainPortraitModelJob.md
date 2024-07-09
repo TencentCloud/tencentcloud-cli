@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli aiart SubmitTrainPortraitModelJob --cli-unfold-argument  \
-    --ModelId abc
+    --ModelId test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "5ed6909b-9b97-4924-a3f3-3b7a9b02d1-ce"
     }
 }
 ```

@@ -26,6 +26,8 @@ Output:
                 "ClusterId": "tdcpg-77iesdqa",
                 "CreateTime": "2021-12-08T19:50:56+08:00",
                 "DBVersion": "10.17",
+                "DBKernelVersion": "v10.17_r1.1",
+                "DBMajorVersion": "10",
                 "EndpointId": "tdcpg-ep-6c6xs52r",
                 "InstanceId": "tdcpg-ins-pzu77n6e",
                 "InstanceName": "tdcpg-ins-pzu77n6e",

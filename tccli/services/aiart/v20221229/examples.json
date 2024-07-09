@@ -19,7 +19,7 @@
     "QueryDrawPortraitJob": [
       {
         "document": "成功请求",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDrawPortraitJob\n<公共请求参数>\n\n{\n    \"JobId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDrawPortraitJob\n<公共请求参数>\n\n{\n    \"JobId\": \"eascexasdfasese\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"DONE\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"9202070d-02bd-4848-bf54-568a2597e400\",\n        \"ResultDetails\": [\n            \"SUCCESS\"\n        ],\n        \"ResultUrls\": [\n            \"https://xxx.com/a.jpg\"\n        ]\n    }\n}",
         "title": "成功"
       }
@@ -35,7 +35,7 @@
     "QueryTrainPortraitModelJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"DONE\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"d643c325-5fe6-4d90-880c-40516ad27f8e\"\n    }\n}",
         "title": "查询成功"
       }
@@ -67,8 +67,8 @@
     "SubmitTrainPortraitModelJob": [
       {
         "document": "提交训练任务成功",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ed6909b-9b97-4924-a3f3-3b7a9b02d1-ce\"\n    }\n}",
         "title": "成功提交训练任务"
       }
     ],

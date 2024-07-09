@@ -416,14 +416,14 @@
     "DescribeLiveCert": {
       "document": "获取证书信息",
       "input": "DescribeLiveCertRequest",
-      "name": "获取证书信息",
+      "name": "获取证书信息(该接口已下线,请使用新接口 ssl.DescribeCertificateDetail)",
       "output": "DescribeLiveCertResponse",
       "status": "online"
     },
     "DescribeLiveCerts": {
       "document": "获取证书信息列表",
       "input": "DescribeLiveCertsRequest",
-      "name": "获取证书信息列表",
+      "name": "获取证书信息列表(该接口已下线，请使用新接口 DescribeLiveDomainCertBindings)",
       "output": "DescribeLiveCertsResponse",
       "status": "online"
     },
@@ -6181,7 +6181,7 @@
         {
           "disabled": false,
           "document": "DescribeLiveCerts接口获取到的证书Id。",
-          "example": "",
+          "example": "F4eO8WVE",
           "member": "int64",
           "name": "CertId",
           "required": true,
@@ -6196,9 +6196,10 @@
         {
           "disabled": false,
           "document": "证书信息。",
-          "example": "",
+          "example": "{}",
           "member": "CertInfo",
           "name": "CertInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6222,9 +6223,10 @@
         {
           "disabled": false,
           "document": "证书信息列表。",
-          "example": "",
+          "example": "{}",
           "member": "CertInfo",
           "name": "CertInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

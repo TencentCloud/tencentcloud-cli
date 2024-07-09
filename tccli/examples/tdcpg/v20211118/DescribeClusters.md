@@ -65,6 +65,7 @@ Output:
                 "Status": "running",
                 "StatusDesc": "运行中",
                 "StorageLimit": 2048,
+                "StoragePayMode": "POSTPAID_BY_HOUR",
                 "StorageUsed": 0.14,
                 "Zone": "ap-guangzhou-3"
             }

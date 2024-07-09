@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReconstructDocumentFlow\n<公共请求参数>\n\n{\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 1,\n    \"Config\": {\n        \"TableResultType\": \"1\"\n    },\n    \"FileBase64\": \"data:application/pdf;base64,JVBERi0xLjcKXXX...\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"63d30100c7534a82a7eaea10d2ae48a2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"123123123\"\n    }\n}",
         "title": "接口请求成功示例"
       }
     ],
@@ -321,7 +321,7 @@
     "GetReconstructDocumentResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"a9c6a9482c72412fa84445af84125531\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"123123123\"\n}",
         "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://document-restruction-1258344699.cos.ap-guangzhou.myqcloud.com/doc_parse/output_files/a9c6a9482c72412fa84445a44ss125531.zip?q-sign-algorithm=sha1&q-ak=AKIDlWFaadfHLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1715503711%3B1718804311&q-key-time=1718855711%3B1718804311&q-header-list=host&q-url-param-list=&q-signature=71b568b8632d7e45gertdc3d235ef68d41fdfe7f8\",\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Success\"\n    }\n}",
         "title": "接口调用成功示例"
       }

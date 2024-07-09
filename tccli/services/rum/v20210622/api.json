@@ -5171,6 +5171,15 @@
           "name": "FileType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）",
+          "example": "0",
+          "member": "int64",
+          "name": "Site",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

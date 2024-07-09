@@ -32,6 +32,14 @@
         "title": "删除图片"
       }
     ],
+    "DescribeAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbV0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询对话任务状态"
+      }
+    ],
     "DescribeAITranscription": [
       {
         "document": "",
@@ -288,6 +296,14 @@
         "title": "移出用户"
       }
     ],
+    "StartAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAIConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 12345678,\n    \"RoomId\": \"room_987654321\",\n    \"RoomIdType\": 1,\n    \"AgentConfig\": {\n        \"UserId\": \"user_12345\",\n        \"UserSig\": \"user_signature_example\",\n        \"MaxIdleTime\": 120,\n        \"TargetUserId\": \"target_user_54321\"\n    },\n    \"SessionId\": \"session_1234567890abcdef\",\n    \"STTConfig\": {\n        \"Language\": \"en-US\",\n        \"AlternativeLanguage\": [\n            \"en-US\",\n            \"zh\"\n        ]\n    },\n    \"LLMConfig\": \"{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-3.5-turbo\\\", \\\"APIKey\\\": \\\"xxx\\\", \\\"APIBaseUrl\\\": \\\"http://xxxx-api.woa.com/v1\\\", \\\"Streaming\\\": true}\",\n    \"TTSConfig\": \"{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 130000000, \\\"SecretId\\\": \\\"AKIDxxxxx\\\", \\\"SecretKey\\\": \\\"HlDxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启动一个AI机器人对话"
+      }
+    ],
     "StartAITranscription": [
       {
         "document": "",
@@ -358,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://web-record-xxxxx.cos.ap-xxx.myqcloud.com/xxxx/xxx.mp4\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Bucket\": \"webrecord-1234589\",\n            \"Region\": \"ap-chengdu\",\n            \"AccessKey\": \"AKxxxxxx\",\n            \"SecretKey\": \"Idxxxxxx\",\n            \"FileNamePrefix\": [\n                \"record\",\n                \"video\"\n            ]\n        }\n    },\n    \"MaxDurationLimit\": 3600,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "启动一个页面录制任务"
+      }
+    ],
+    "StopAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbVH0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "停止AI对话任务"
       }
     ],
     "StopAITranscription": [

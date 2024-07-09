@@ -3910,6 +3910,15 @@
           "name": "InternetConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "关联的prometheus ID",
+          "example": "prom-788xxxxxx",
+          "member": "string",
+          "name": "PromId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14574,6 +14583,16 @@
           "example": "network-1234adsf",
           "member": "string",
           "name": "NetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网负载均衡描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

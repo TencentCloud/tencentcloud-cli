@@ -310,6 +310,56 @@
       ],
       "type": "object"
     },
+    "ChargeAttribute": {
+      "document": "付费信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CurDeadline",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动付费标识：0:默认未设置 1:自动续费 2 不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100026787145_sp_cdls_goosefs_1716879810",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClientClusterManagerNodeInfo": {
       "document": "客户侧集群管理节点信息",
       "members": [
@@ -1117,6 +1167,15 @@
           "name": "ExpandedCapacity",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容量修改类型：add/sub",
+          "example": "add",
+          "member": "string",
+          "name": "ModifyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1142,7 +1201,7 @@
           "example": "goosefsx",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1152,7 +1211,7 @@
           "example": "x_c60_r3c4fa1f",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1162,7 +1221,7 @@
           "example": "2022-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1172,7 +1231,7 @@
           "example": "无",
           "member": "GooseFSxAttribute",
           "name": "GooseFSxAttribute",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1182,7 +1241,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1192,7 +1251,7 @@
           "example": "ai_fs",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1202,7 +1261,7 @@
           "example": "our test fs",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1212,7 +1271,7 @@
           "example": "vpc-a1b2c3d4",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1222,7 +1281,7 @@
           "example": "subnet-m1n1g1h1",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1232,7 +1291,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1242,7 +1301,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1252,9 +1311,19 @@
           "example": "2022-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统付费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChargeAttribute",
+          "name": "ChargeAttribute",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1470,6 +1539,17 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "BucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义Endpoint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.0.1.16",
+          "member": "string",
+          "name": "Endpoint",
           "output_required": false,
           "required": false,
           "type": "string",

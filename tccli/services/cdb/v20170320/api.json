@@ -1189,24 +1189,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "新账户的名称",
+          "document": "新账户的名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "User",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "新账户的域名",
+          "document": "新账户的域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Host",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AccountInfo": {
       "document": "账号详细信息",
@@ -7779,7 +7783,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7789,7 +7793,7 @@
           "example": "无",
           "member": "AuditPolicy",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8037,7 +8041,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8047,7 +8051,7 @@
           "example": "无",
           "member": "AuditRule",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9485,7 +9489,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsGTIDOpen",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

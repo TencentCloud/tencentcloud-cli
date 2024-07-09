@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lke GetReconstructDocumentResult --cli-unfold-argument  \
-    --TaskId a9c6a9482c72412fa84445af84125531
+    --TaskId 123123123
 ```
 
 Output: 

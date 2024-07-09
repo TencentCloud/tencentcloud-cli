@@ -2107,6 +2107,13 @@
       "output": "ModifyVpnGatewayRoutesResponse",
       "status": "online"
     },
+    "ModifyVpnGatewaySslClientCert": {
+      "document": "更新SslVpnClient证书",
+      "input": "ModifyVpnGatewaySslClientCertRequest",
+      "name": "更新SslVpnClient证书",
+      "output": "ModifyVpnGatewaySslClientCertResponse",
+      "status": "online"
+    },
     "ModifyVpnGatewaySslServer": {
       "document": "本接口用于修改 SSL-VPN 服务端属性",
       "input": "ModifyVpnGatewaySslServerRequest",
@@ -15175,7 +15182,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
@@ -15203,7 +15210,7 @@
           "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -24091,6 +24098,42 @@
       ],
       "type": "object"
     },
+    "ModifyVpnGatewaySslClientCertRequest": {
+      "document": "ModifyVpnGatewaySslClientCert请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SSL-VPN-CLIENT 实例ID列表。",
+          "example": "[\"vpnc-2cpuxfh2\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewaySslClientCertResponse": {
+      "document": "ModifyVpnGatewaySslClientCert返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID。",
+          "example": "12",
+          "member": "int64",
+          "name": "TaskId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVpnGatewaySslServerRequest": {
       "document": "ModifyVpnGatewaySslServer请求参数结构体",
       "members": [
@@ -25718,6 +25761,56 @@
         }
       ],
       "usage": "out"
+    },
+    "PolicyStatistics": {
+      "document": "安全组策略统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "入站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IngressIPv4TotalCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IngressIPv6TotalCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EgressIPv4TotalCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EgressIPv6TotalCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Price": {
       "document": "价格",
@@ -28095,116 +28188,127 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
+          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
+          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
+          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "22",
           "member": "string",
           "name": "Port",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
+          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。",
+          "document": "网段或IPv6(互斥)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-ohuuioma。",
+          "document": "安全组实例ID，例如：sg-ohuuioma。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IP地址ID或者IP地址组ID。",
+          "document": "IP地址ID或者IP地址组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "ACCEPT 或 DROP。",
+          "document": "ACCEPT 或 DROP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全组规则描述。",
+          "document": "安全组规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Desc",
           "member": "string",
           "name": "PolicyDescription",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全组最近修改时间。",
+          "document": "安全组最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SecurityGroupPolicySet": {
       "document": "安全组规则集合",
@@ -28215,6 +28319,7 @@
           "example": "无",
           "member": "string",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -28225,6 +28330,7 @@
           "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Egress",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -28235,8 +28341,20 @@
           "example": "无",
           "member": "SecurityGroupPolicy",
           "name": "Ingress",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组策略条目统计。只用于出参。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyStatistics",
+          "name": "PolicyStatistics",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

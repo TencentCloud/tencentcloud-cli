@@ -2097,7 +2097,7 @@ def doDescribeAddresses(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVpcEndPointService(args, parsed_globals):
+def doModifyVpnGatewaySslServer(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2126,11 +2126,11 @@ def doDescribeVpcEndPointService(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVpcEndPointServiceRequest()
+    model = models.ModifyVpnGatewaySslServerRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeVpcEndPointService(model)
+        rsp = client.ModifyVpnGatewaySslServer(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2443,6 +2443,58 @@ def doModifyNatGatewaySourceIpTranslationNatRule(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyNatGatewaySourceIpTranslationNatRule(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyVpnGatewaySslClientCert(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyVpnGatewaySslClientCertRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyVpnGatewaySslClientCert(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3137,7 +3189,7 @@ def doAssignPrivateIpAddresses(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyVpnGatewaySslServer(args, parsed_globals):
+def doDescribeVpcEndPointService(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3166,11 +3218,11 @@ def doModifyVpnGatewaySslServer(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyVpnGatewaySslServerRequest()
+    model = models.DescribeVpcEndPointServiceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyVpnGatewaySslServer(model)
+        rsp = client.DescribeVpcEndPointService(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3241,7 +3293,7 @@ def doDescribeCrossBorderFlowMonitor(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doEnableRoutes(args, parsed_globals):
+def doRefreshDirectConnectGatewayRouteToNatGateway(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3270,11 +3322,11 @@ def doEnableRoutes(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.EnableRoutesRequest()
+    model = models.RefreshDirectConnectGatewayRouteToNatGatewayRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.EnableRoutes(model)
+        rsp = client.RefreshDirectConnectGatewayRouteToNatGateway(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -14473,7 +14525,7 @@ def doDetachClassicLinkVpc(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRefreshDirectConnectGatewayRouteToNatGateway(args, parsed_globals):
+def doEnableRoutes(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -14502,11 +14554,11 @@ def doRefreshDirectConnectGatewayRouteToNatGateway(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RefreshDirectConnectGatewayRouteToNatGatewayRequest()
+    model = models.EnableRoutesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RefreshDirectConnectGatewayRouteToNatGateway(model)
+        rsp = client.EnableRoutes(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -17436,13 +17488,14 @@ ACTION_MAP = {
     "DeleteAddressTemplateGroup": doDeleteAddressTemplateGroup,
     "DescribeCustomerGatewayVendors": doDescribeCustomerGatewayVendors,
     "DescribeAddresses": doDescribeAddresses,
-    "DescribeVpcEndPointService": doDescribeVpcEndPointService,
+    "ModifyVpnGatewaySslServer": doModifyVpnGatewaySslServer,
     "DescribeVpcTaskResult": doDescribeVpcTaskResult,
     "DeleteLocalGateway": doDeleteLocalGateway,
     "CreateDirectConnectGateway": doCreateDirectConnectGateway,
     "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
     "UnlockCcns": doUnlockCcns,
     "ModifyNatGatewaySourceIpTranslationNatRule": doModifyNatGatewaySourceIpTranslationNatRule,
+    "ModifyVpnGatewaySslClientCert": doModifyVpnGatewaySslClientCert,
     "AssociateNatGatewayAddress": doAssociateNatGatewayAddress,
     "CreatePrivateNatGatewayTranslationNatRule": doCreatePrivateNatGatewayTranslationNatRule,
     "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule": doModifyPrivateNatGatewayDestinationIpPortTranslationNatRule,
@@ -17456,9 +17509,9 @@ ACTION_MAP = {
     "RemoveBandwidthPackageResources": doRemoveBandwidthPackageResources,
     "CloneSecurityGroup": doCloneSecurityGroup,
     "AssignPrivateIpAddresses": doAssignPrivateIpAddresses,
-    "ModifyVpnGatewaySslServer": doModifyVpnGatewaySslServer,
+    "DescribeVpcEndPointService": doDescribeVpcEndPointService,
     "DescribeCrossBorderFlowMonitor": doDescribeCrossBorderFlowMonitor,
-    "EnableRoutes": doEnableRoutes,
+    "RefreshDirectConnectGatewayRouteToNatGateway": doRefreshDirectConnectGatewayRouteToNatGateway,
     "CreateAndAttachNetworkInterface": doCreateAndAttachNetworkInterface,
     "ModifyVpcEndPointServiceWhiteList": doModifyVpcEndPointServiceWhiteList,
     "ModifySnapshotPolicies": doModifySnapshotPolicies,
@@ -17674,7 +17727,7 @@ ACTION_MAP = {
     "ModifyNetworkInterfaceQos": doModifyNetworkInterfaceQos,
     "DetachCcnInstances": doDetachCcnInstances,
     "DetachClassicLinkVpc": doDetachClassicLinkVpc,
-    "RefreshDirectConnectGatewayRouteToNatGateway": doRefreshDirectConnectGatewayRouteToNatGateway,
+    "EnableRoutes": doEnableRoutes,
     "DisassociateDhcpIpWithAddressIp": doDisassociateDhcpIpWithAddressIp,
     "CreateHaVip": doCreateHaVip,
     "ModifyServiceTemplateAttribute": doModifyServiceTemplateAttribute,
