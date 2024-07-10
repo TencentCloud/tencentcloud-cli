@@ -16,6 +16,14 @@
         "title": "新建设备"
       }
     ],
+    "AddGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"GroupId\": \"1a2b3c4d5e\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "AddHardware": [
       {
         "document": "批量新建硬件设备",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "删除设备接口"
+      }
+    ],
+    "DeleteGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteQos": [
@@ -126,6 +142,30 @@
         "title": "根据分组获取用量统计信息"
       }
     ],
+    "GetFlowStatisticByRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatisticByRegion\n<公共请求参数>\n\n{\n    \"BeginTime\": 0,\n    \"EndTime\": 0,\n    \"Type\": 0,\n    \"TimeGranularity\": 0,\n    \"AccessRegion\": \"MC\",\n    \"GatewayType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"NetDetails\": [\n            {\n                \"Current\": 0,\n                \"Time\": \"abc\"\n            }\n        ],\n        \"MaxValue\": 0,\n        \"AvgValue\": 0,\n        \"TotalValue\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "正常场景"
+      }
+    ],
+    "GetGroupDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupDetail\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\",\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupId\": \"abc\",\n            \"GroupName\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"Description\": \"abc\",\n            \"DeviceNum\": 0\n        },\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"AccessScope\": 0,\n                \"LicensePayMode\": 0,\n                \"Payer\": 0,\n                \"GroupId\": \"abc\",\n                \"GroupName\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "GetGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"abc\",\n                \"GroupName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"DeviceNum\": 5\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "GetHardwareList": [
       {
         "document": "硬件信息列表",
@@ -186,6 +226,22 @@
         "title": "获取厂商设备列表"
       }
     ],
+    "GroupAddDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupAddDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        \"mna-test1\",\n        \"mna-test2\"\n    ],\n    \"GroupId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceNum\": 5,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "GroupDeleteDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GroupDeleteDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        \"mna-test1\",\n        \"mna-test2\"\n    ],\n    \"GroupId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceNum\": 5,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "ModifyPackageRenewFlag": [
       {
         "document": "",
@@ -202,12 +258,28 @@
         "title": "示例1"
       }
     ],
+    "SetNotifyUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNotifyUrl\n<公共请求参数>\n\n{\n    \"AlarmValue\": 20,\n    \"NotifyUrl\": \"http://ip:port/callurl\",\n    \"CallbackKey\": \"xd23y5cb89bx23432\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "UpdateDevice": [
       {
         "document": "更新设备",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"UpdateNetInfo\": [\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"UploadLimit\": 1,\n            \"DownloadLimit\": 1,\n            \"NetInfoName\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a400ac72-8f93-4340-a862-f74b56942703\"\n    }\n}",
         "title": "更新设备"
+      }
+    ],
+    "UpdateGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "UpdateHardware": [

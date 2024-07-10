@@ -3386,8 +3386,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 列表，当前最多支持 1 个。",
-          "example": "[\"lhins-f4s49nap\\r\\n\"]",
+          "document": "实例 ID 列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。 当前最多支持1个。",
+          "example": "[\"lhins-f4s49nap\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3405,7 +3405,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3415,7 +3415,7 @@
           "example": "无",
           "member": "BlueprintInstance",
           "name": "BlueprintInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3461,7 +3461,7 @@
         {
           "disabled": false,
           "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds 和 Filters 。",
-          "example": " [         {             \"Name\": \"blueprint-type\",             \"",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3479,15 +3479,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "镜像详细信息列表。",
-          "example": " [             {                 \"BlueprintId\": \"lhbp-5e8807sc\",",
+          "example": "无",
           "member": "Blueprint",
           "name": "BlueprintSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4927,7 +4929,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5085,7 +5087,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-xusdke45\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\",\"lhins-xusdke45\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -5121,7 +5123,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5131,7 +5133,7 @@
           "example": "无",
           "member": "InstanceReturnable",
           "name": "InstanceReturnableSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5921,7 +5923,7 @@
           "example": "lhdisk-p1zflrif",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5931,7 +5933,7 @@
           "example": "lhins-anxwfvxh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5941,7 +5943,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5951,7 +5953,7 @@
           "example": "disk-name",
           "member": "string",
           "name": "DiskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5961,7 +5963,7 @@
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5971,7 +5973,7 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5981,7 +5983,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "DiskChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5991,7 +5993,7 @@
           "example": "20",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6001,7 +6003,7 @@
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6011,7 +6013,7 @@
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6021,7 +6023,7 @@
           "example": "False",
           "member": "bool",
           "name": "Attached",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6031,7 +6033,7 @@
           "example": "False",
           "member": "bool",
           "name": "DeleteWithInstance",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6041,7 +6043,7 @@
           "example": "CreateDisks",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6051,7 +6053,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6061,7 +6063,7 @@
           "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
           "member": "string",
           "name": "LatestOperationRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6071,7 +6073,7 @@
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6081,7 +6083,7 @@
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6091,7 +6093,7 @@
           "example": "2021-08-25T08:50:57Z",
           "member": "datetime_iso",
           "name": "IsolatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6101,7 +6103,7 @@
           "example": "1",
           "member": "int64",
           "name": "DiskBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6111,9 +6113,19 @@
           "example": "1",
           "member": "int64",
           "name": "DiskBackupQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "展示区域。取值范围：\n<li>NORMAL：普通。 </li>\n<li>GAME_PORTAL：游戏专区。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DisplayArea",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9273,7 +9285,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "[\"lhins-ruy9d2tw\\n\",\"lhins-rusdke45\\n\"]",
+          "example": "[\"lhins-ruy9d2tw\",\"lhins-rusdke45\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

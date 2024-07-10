@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse DescribeBlueprints --cli-unfold-argument  \
-    --BlueprintIds lhbp-5e8807sc
+    --BlueprintIds lhbp-lf6jlx98
 ```
 
 Output: 
@@ -16,28 +16,32 @@ Output:
         "TotalCount": 1,
         "BlueprintSet": [
             {
-                "BlueprintId": "lhbp-5e8807sc",
-                "DisplayTitle": "wordpress",
-                "DisplayVersion": "5.3.2",
-                "Description": "个人blog建站",
-                "OsName": "CentOS-7.6-64bit",
-                "Platform": "CENTOS",
+                "BlueprintId": "lhbp-lf6jlx98",
+                "DisplayTitle": "宝塔Linux面板",
+                "DisplayVersion": "8.1.0 腾讯云专享版",
+                "BlueprintName": "btpanel_exclusive",
+                "Description": "宝塔Linux面板（BT-Panel）是一款简单好用的服务器运维管理面板，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能，能够极大提升运维管理效率。宝塔面板腾讯云专享版由腾讯云与堡塔公司联合开发，与普通版相比，专享版默认集成腾讯云COSFS、CDN和DNS解析插件，让用户更便捷的使用宝塔面板对腾讯云产品进行管理和操作。该镜像基于OpenCloudOS 9操作系统。",
+                "OsName": "OpenCloudOS 9",
+                "Platform": "OPENCLOUDOS",
                 "PlatformType": "LINUX_UNIX",
                 "BlueprintType": "APP_OS",
-                "ImageUrl": "http://www.wordpress.com/image",
-                "RequiredSystemDiskSize": 50,
-                "BlueprintState": "NORMAL",
-                "CreatedTime": "2020-04-28T03:46:09Z",
-                "BlueprintName": "Wordpress",
-                "SupportAutomationTools": true,
+                "ImageUrl": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/bt-panel.svg",
+                "RequiredSystemDiskSize": 20,
                 "RequiredMemorySize": 1,
+                "BlueprintState": "NORMAL",
+                "SupportAutomationTools": true,
                 "ImageId": "",
-                "SceneIdSet": [],
-                "CommunityUrl": "CommunityUrl_test",
-                "GuideUrl": "GuideUrl_test"
+                "CommunityUrl": "https://www.bt.cn",
+                "GuideUrl": "https://cloud.tencent.com/document/product/1207/47425",
+                "SceneIdSet": [
+                    "lhsc-3bzsddow"
+                ],
+                "DockerVersion": null,
+                "BlueprintShared": false,
+                "CreatedTime": "2024-05-08T03:43:06Z"
             }
         ],
-        "RequestId": "3df9cd92-cec1-4864-a2a1-358084f41551"
+        "RequestId": "817c4e56-36fc-47ff-bfb6-c4462816972b"
     }
 }
 ```

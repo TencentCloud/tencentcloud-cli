@@ -15510,6 +15510,42 @@
       ],
       "usage": "out"
     },
+    "DescribeMeasureResourceAccountAttribute": {
+      "document": "资源包自定义属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "region",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性类型\n1:限额属性\n2.包销属性\n3:自定义属性\n4:用尽新购属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeMeasureResourceDetailsRequest": {
       "document": "DescribeMeasureResourceDetails请求参数结构体",
       "members": [
@@ -18798,6 +18834,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CycleTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMeasureResourceAccountAttribute",
+          "name": "AccountAttributes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19271,6 +19327,16 @@
           "example": "无",
           "member": "DeductionProperty",
           "name": "DeductionProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMeasureResourceAccountAttribute",
+          "name": "AccountAttributes",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true

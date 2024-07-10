@@ -1,3 +1,180 @@
+# Release 3.0.1033.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 8 次发布
+
+发布时间：2024-07-11 01:07:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChangeClothes](http://document.tencentcloudapi.woa.com/document/product/1728/84219)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 57 次发布
+
+发布时间：2024-07-11 01:11:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DescribeMeasureResourceAccountAttribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureResourceAccountAttribute)
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：CycleTime, AccountAttributes
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：AccountAttributes
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 38 次发布
+
+发布时间：2024-07-11 01:37:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56180)
+
+	* 新增入参：GroupId
+
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 54 次发布
+
+发布时间：2024-07-11 01:54:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Disk)
+
+	* 新增成员：DisplayArea
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 19 次发布
+
+发布时间：2024-07-11 01:58:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddGroup](http://document.tencentcloudapi.woa.com/document/product/1385/84228)
+* [DeleteGroup](http://document.tencentcloudapi.woa.com/document/product/1385/84227)
+* [GetFlowStatisticByRegion](http://document.tencentcloudapi.woa.com/document/product/1385/84226)
+* [GetGroupDetail](http://document.tencentcloudapi.woa.com/document/product/1385/84225)
+* [GetGroupList](http://document.tencentcloudapi.woa.com/document/product/1385/84224)
+* [GroupAddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/84223)
+* [GroupDeleteDevice](http://document.tencentcloudapi.woa.com/document/product/1385/84222)
+* [SetNotifyUrl](http://document.tencentcloudapi.woa.com/document/product/1385/84221)
+* [UpdateGroup](http://document.tencentcloudapi.woa.com/document/product/1385/84220)
+
+修改接口：
+
+* [AddDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76748)
+
+	* 新增入参：FlowTrunc
+
+* [UpdateDevice](http://document.tencentcloudapi.woa.com/document/product/1385/76365)
+
+	* 新增入参：FlowTrunc
+
+
+新增数据结构：
+
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#GroupInfo)
+
+修改数据结构：
+
+* [ActivateHardware](http://document.tencentcloudapi.woa.com/document/product/1385/55846#ActivateHardware)
+
+	* 新增成员：FlowTrunc, DeviceId
+
+* [DeviceBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DeviceBaseInfo)
+
+	* 新增成员：FlowTrunc
+
+* [HardwareInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#HardwareInfo)
+
+	* 新增成员：FlowTrunc
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 58 次发布
+
+发布时间：2024-07-11 02:00:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LiveStreamObjectRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamObjectRecognitionResult)
+
+	* 新增成员：Url
+
+* [LiveStreamTaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamTaskNotifyConfig)
+
+	* 新增成员：NotifyKey
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 49 次发布
+
+发布时间：2024-07-11 02:23:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateProgram](http://document.tencentcloudapi.woa.com/document/product/649/84230)
+* [ModifyProgram](http://document.tencentcloudapi.woa.com/document/product/649/84229)
+
+
+
 # Release 3.0.1032.1
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03

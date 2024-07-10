@@ -14,14 +14,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "36713f94-d07d-4b96-babf-42d139276f23",
-        "MessageID": "71:12:0:0",
-        "MessageIDList": "",
-        "MessagesPayload": "",
-        "MessagePayload": "hello TDMQ",
-        "SubName": "xx",
-        "AckTopic": "persistent://tenant/namespace/topic",
-        "ErrorMsg": "xx"
+        "MessageID": "abc",
+        "MessagePayload": "abc",
+        "AckTopic": "abc",
+        "ErrorMsg": "abc",
+        "SubName": "abc",
+        "MessageIDList": "abc",
+        "MessagesPayload": "abc",
+        "RequestId": "abc"
     }
 }
 ```
