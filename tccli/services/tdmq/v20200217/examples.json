@@ -1056,7 +1056,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReceiveMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"tenant/namespace/topic\",\n    \"SubscriptionName\": \"\\\"test-sub\\\"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\",\n        \"MessageID\": \"71:12:0:0\",\n        \"MessageIDList\": \"\",\n        \"MessagesPayload\": \"\",\n        \"MessagePayload\": \"hello TDMQ\",\n        \"SubName\": \"xx\",\n        \"AckTopic\": \"persistent://tenant/namespace/topic\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MessageID\": \"abc\",\n        \"MessagePayload\": \"abc\",\n        \"AckTopic\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"SubName\": \"abc\",\n        \"MessageIDList\": \"abc\",\n        \"MessagesPayload\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "接收消息"
       }
     ],

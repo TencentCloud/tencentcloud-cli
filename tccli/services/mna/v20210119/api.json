@@ -14,6 +14,13 @@
       "output": "AddDeviceResponse",
       "status": "online"
     },
+    "AddGroup": {
+      "document": "新建分组",
+      "input": "AddGroupRequest",
+      "name": "新建分组",
+      "output": "AddGroupResponse",
+      "status": "online"
+    },
     "AddHardware": {
       "document": "添加硬件设备，生成未激活的硬件设备，可支持批量添加",
       "input": "AddHardwareRequest",
@@ -40,6 +47,13 @@
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
+      "status": "online"
+    },
+    "DeleteGroup": {
+      "document": "删除分组",
+      "input": "DeleteGroupRequest",
+      "name": "删除分组",
+      "output": "DeleteGroupResponse",
       "status": "online"
     },
     "DeleteQos": {
@@ -105,6 +119,27 @@
       "output": "GetFlowStatisticByGroupResponse",
       "status": "online"
     },
+    "GetFlowStatisticByRegion": {
+      "document": "获取指定区域，指定时间点数据流量使用情况",
+      "input": "GetFlowStatisticByRegionRequest",
+      "name": "根据区域获取数据流量统计数据",
+      "output": "GetFlowStatisticByRegionResponse",
+      "status": "online"
+    },
+    "GetGroupDetail": {
+      "document": "查看分组详细信息",
+      "input": "GetGroupDetailRequest",
+      "name": "获取分组详细信息",
+      "output": "GetGroupDetailResponse",
+      "status": "online"
+    },
+    "GetGroupList": {
+      "document": "获取分组列表",
+      "input": "GetGroupListRequest",
+      "name": "获取分组列表",
+      "output": "GetGroupListResponse",
+      "status": "online"
+    },
     "GetHardwareList": {
       "document": "获取厂商硬件列表",
       "input": "GetHardwareListRequest",
@@ -147,6 +182,20 @@
       "output": "GetVendorHardwareResponse",
       "status": "online"
     },
+    "GroupAddDevice": {
+      "document": "向已存在分组中添加设备",
+      "input": "GroupAddDeviceRequest",
+      "name": "分组添加设备",
+      "output": "GroupAddDeviceResponse",
+      "status": "online"
+    },
+    "GroupDeleteDevice": {
+      "document": "删除分组中的设备",
+      "input": "GroupDeleteDeviceRequest",
+      "name": "分组删除设备",
+      "output": "GroupDeleteDeviceResponse",
+      "status": "online"
+    },
     "ModifyPackageRenewFlag": {
       "document": "可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。",
       "input": "ModifyPackageRenewFlagRequest",
@@ -161,11 +210,25 @@
       "output": "OrderFlowPackageResponse",
       "status": "online"
     },
+    "SetNotifyUrl": {
+      "document": "设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key",
+      "input": "SetNotifyUrlRequest",
+      "name": "设置用户流量告警信息",
+      "output": "SetNotifyUrlResponse",
+      "status": "online"
+    },
     "UpdateDevice": {
       "document": "更新设备信息",
       "input": "UpdateDeviceRequest",
       "name": "更新设备",
       "output": "UpdateDeviceResponse",
+      "status": "online"
+    },
+    "UpdateGroup": {
+      "document": "更新分组备注",
+      "input": "UpdateGroupRequest",
+      "name": "更新分组信息",
+      "output": "UpdateGroupResponse",
       "status": "online"
     },
     "UpdateHardware": {
@@ -280,6 +343,28 @@
           "example": "xxx",
           "member": "string",
           "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowTrunc",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活后的设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mna-xxxxxx",
+          "member": "string",
+          "name": "DeviceId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -399,6 +484,15 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowTrunc",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -435,6 +529,52 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddGroupRequest": {
+      "document": "AddGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组的名称",
+          "example": "\"group-test\"",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组的描述",
+          "example": "\"description for group-test\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddGroupResponse": {
+      "document": "AddGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组的唯一ID，仅做分组唯一区分",
+          "example": "1a2b3c4d5e",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -726,6 +866,33 @@
       ],
       "type": "object"
     },
+    "DeleteGroupRequest": {
+      "document": "DeleteGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除指定分组",
+          "example": "1a2b3c4d5e",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupResponse": {
+      "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteQosRequest": {
       "document": "DeleteQos请求参数结构体",
       "members": [
@@ -966,6 +1133,16 @@
           "name": "GroupName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowTrunc",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1918,6 +2095,118 @@
       ],
       "type": "object"
     },
+    "GetFlowStatisticByRegionRequest": {
+      "document": "GetFlowStatisticByRegion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始查找时间",
+          "example": "1659514436",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "截止时间",
+          "example": "1659515436",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "流量种类（1：上行流量，2：下行流量， 3: 上下行总和）",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间粒度（1：按小时统计，2：按天统计）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeGranularity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网关类型。0：公有云网关；1：自有网关。 ",
+          "example": "0",
+          "member": "int64",
+          "name": "GatewayType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填代表全量区域。",
+          "example": "MC",
+          "member": "string",
+          "name": "AccessRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowStatisticByRegionResponse": {
+      "document": "GetFlowStatisticByRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量详细信息",
+          "example": "无",
+          "member": "NetDetails",
+          "name": "NetDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用最大值（单位：byte）",
+          "example": "216516",
+          "member": "float",
+          "name": "MaxValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用平均值（单位：byte）",
+          "example": "25151",
+          "member": "float",
+          "name": "AvgValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查找时间段流量使用总量（单位：byte）",
+          "example": "35465464",
+          "member": "float",
+          "name": "TotalValue",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetFlowStatisticRequest": {
       "document": "GetFlowStatistic请求参数结构体",
       "members": [
@@ -2037,6 +2326,175 @@
           "name": "TotalValue",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupDetailRequest": {
+      "document": "GetGroupDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "1a2b3c4d5e",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字",
+          "example": "test",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupDetailResponse": {
+      "document": "GetGroupDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组基本信息",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "GroupInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组中设备列表",
+          "example": "无",
+          "member": "DeviceBaseInfo",
+          "name": "DeviceInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备总记录条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Length",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupListRequest": {
+      "document": "GetGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索分组的关键字，为空时匹配所有分组",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupListResponse": {
+      "document": "GetGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备信息列表",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "GroupInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备总记录条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Length",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2505,6 +2963,170 @@
       ],
       "type": "object"
     },
+    "GroupAddDeviceRequest": {
+      "document": "GroupAddDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "\"1a2b3c4d5e\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待添加的设备列表",
+          "example": "[\"mna-test1\",\"mna-test2\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupAddDeviceResponse": {
+      "document": "GroupAddDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组中的设备数量",
+          "example": "5",
+          "member": "int64",
+          "name": "DeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupDeleteDeviceRequest": {
+      "document": "GroupDeleteDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "\"1a2b3c4d5e\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的设备列表",
+          "example": "[\"mna-test1\",\"mna-test2\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupDeleteDeviceResponse": {
+      "document": "GroupDeleteDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组中的设备数量",
+          "example": "5",
+          "member": "int64",
+          "name": "DeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupInfo": {
+      "document": "分组的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "\"1a2b3c4d5e\"",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名",
+          "example": "\"group-test\"",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组创建的时间，单位：ms\t",
+          "example": "169043203113091072",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组更新的时间，单位：ms\t",
+          "example": "169043203113091072",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"description for group\"",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组中的设备数量",
+          "example": "5",
+          "member": "int64",
+          "name": "DeviceNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Hardware": {
       "document": "新建Hardware入参",
       "members": [
@@ -2686,6 +3308,16 @@
           "name": "GroupName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FlowTrunc",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -2926,6 +3558,51 @@
       ],
       "type": "object"
     },
+    "SetNotifyUrlRequest": {
+      "document": "SetNotifyUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警通知回调url",
+          "example": "http://ip:port/callurl",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警通知回调key",
+          "example": "xd23y5cb89bx23432",
+          "member": "string",
+          "name": "CallbackKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量包的告警阈值",
+          "example": "20",
+          "member": "int64",
+          "name": "AlarmValue",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SetNotifyUrlResponse": {
+      "document": "SetNotifyUrl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SlotNetInfo": {
       "document": "网卡流量指标数据",
       "members": [
@@ -3036,12 +3713,57 @@
           "name": "UpdateNetInfo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowTrunc",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
     },
     "UpdateDeviceResponse": {
       "document": "UpdateDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGroupRequest": {
+      "document": "UpdateGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "\"1a2b3c4d5e\"",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组备注",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateGroupResponse": {
+      "document": "UpdateGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ChangeClothes": {
+      "document": "上传正面全身模特照和服装平铺图，生成模特换装后的图片。\n生成的换装图片分辨率和模特照分辨率一致。\n模特换装默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "ChangeClothesRequest",
+      "name": "模特换装",
+      "output": "ChangeClothesResponse",
+      "status": "online"
+    },
     "GenerateAvatar": {
       "document": "百变头像接口将根据输入的人像照片，生成风格百变的头像。\n百变头像默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "GenerateAvatarRequest",
@@ -85,6 +92,79 @@
     "serviceShortName": "aiart"
   },
   "objects": {
+    "ChangeClothesRequest": {
+      "document": "ChangeClothes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模特图片 Url。\n图片限制：单边分辨率小于3000，且大于512，转成 Base64 字符串后小于 8MB。\n输入要求：\n1、建议上传正面模特图片，至少完整露出应穿着输入指定服装的身体部位（全身、上半身或下半身），无大角度身体偏转或异常姿势。\n2、建议上传3:4比例的图片，生成效果更佳。\n3、建议模特图片中的原始服装和更换后的服装类别一致，或原始服装在身体上的覆盖范围小于等于更换后的服装（例如需要给模特换上短裤，则原始模特图片中也建议穿短裤，不建议穿长裤），否则会影响人像生成效果。\n",
+          "example": "无",
+          "member": "string",
+          "name": "ModelUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服装图片 Url。\n图片限制：单边分辨率小于3000，大于512，转成 Base64 字符串后小于 8MB。\n输入要求：\n建议上传服装完整的正面平铺图片，仅包含1个服装主体，服装类型支持上衣、下装、连衣裙，三选一。算法将根据输入的图片，结合服装图片给模特换装。",
+          "example": "无",
+          "member": "string",
+          "name": "ClothesUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服装类型，需要和服装图片保持一致。\n取值：\nUpper-body：上衣\nLower-body：下装\nDress：连衣裙",
+          "example": "无",
+          "member": "string",
+          "name": "ClothesType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "无",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。\n生成图分辨率较大时建议选择 url，使用 base64 可能因图片过大导致返回失败。",
+          "example": "base64",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeClothesResponse": {
+      "document": "ChangeClothes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "训练图像质量过滤开关配置。\n支持开启或关闭对训练图像分辨率下限、脸部区域大小、脸部遮挡、脸部角度的过滤，默认开启以上过滤。\n如果训练图像内包含多人脸或无人脸、和 Base 人像不为同一人也将被过滤，不可关闭该过滤条件。\n建议：关闭以上过滤可能导致写真生成效果受损，建议使用单人、正脸、脸部清晰、无遮挡、无夸张表情、脸部区域占比较大的图像进行训练。",
       "members": [

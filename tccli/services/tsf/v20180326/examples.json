@@ -240,6 +240,14 @@
         "title": "批量创建路径重写"
       }
     ],
+    "CreateProgram": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProgram\n<公共请求参数>\n\n{\n    \"ProgramName\": \"abc\",\n    \"ProgramDesc\": \"abc\",\n    \"ProgramItemList\": [\n        {\n            \"ProgramItemId\": \"abc\",\n            \"Resource\": {\n                \"ResourceId\": \"abc\",\n                \"ResourceCode\": \"abc\",\n                \"ResourceName\": \"abc\",\n                \"ServiceCode\": \"abc\",\n                \"ResourceAction\": \"abc\",\n                \"IdField\": \"abc\",\n                \"NameField\": \"abc\",\n                \"SelectIdsField\": \"abc\",\n                \"CreationTime\": 0,\n                \"LastUpdateTime\": 0,\n                \"DeleteFlag\": true,\n                \"ResourceDesc\": \"abc\",\n                \"CanSelectAll\": true,\n                \"SearchWordField\": \"abc\",\n                \"Index\": 0\n            },\n            \"ValueList\": [\n                \"abc\"\n            ],\n            \"IsAll\": true,\n            \"CreationTime\": 0,\n            \"LastUpdateTime\": 0,\n            \"DeleteFlag\": true,\n            \"ProgramId\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b15ccd0-650a-4d9a-96d4-db8a55579d38\",\n        \"Result\": true\n    }\n}",
+        "title": "创建数据集"
+      }
+    ],
     "CreatePublicConfig": [
       {
         "document": "",
@@ -1472,6 +1480,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyPathRewrite\n&PathRewriteId=rewrite-l6ymbvgd\n&Order=100\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
         "title": "修改路径重写顺序"
+      }
+    ],
+    "ModifyProgram": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProgram\n<公共请求参数>\n\n{\n    \"ProgramId\": \"abc\",\n    \"ProgramName\": \"abc\",\n    \"ProgramDesc\": \"abc\",\n    \"ProgramItemList\": [\n        {\n            \"ProgramItemId\": \"abc\",\n            \"Resource\": {\n                \"ResourceId\": \"abc\",\n                \"ResourceCode\": \"abc\",\n                \"ResourceName\": \"abc\",\n                \"ServiceCode\": \"abc\",\n                \"ResourceAction\": \"abc\",\n                \"IdField\": \"abc\",\n                \"NameField\": \"abc\",\n                \"SelectIdsField\": \"abc\",\n                \"CreationTime\": 0,\n                \"LastUpdateTime\": 0,\n                \"DeleteFlag\": true,\n                \"ResourceDesc\": \"abc\",\n                \"CanSelectAll\": true,\n                \"SearchWordField\": \"abc\",\n                \"Index\": 0\n            },\n            \"ValueList\": [\n                \"abc\"\n            ],\n            \"IsAll\": true,\n            \"CreationTime\": 0,\n            \"LastUpdateTime\": 0,\n            \"DeleteFlag\": true,\n            \"ProgramId\": \"abc\"\n        }\n    ],\n    \"EmptyProgramItemList\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b15ccd0-650a-4d9a-96d4-db8a55579d38\",\n        \"Result\": true\n    }\n}",
+        "title": "更新数据集"
       }
     ],
     "ModifyTask": [

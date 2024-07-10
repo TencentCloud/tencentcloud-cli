@@ -17044,52 +17044,62 @@
         {
           "disabled": false,
           "document": "识别的物体名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别片段起始的 PTS 时间，单位：秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "StartPtsOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别片段终止的 PTS 时间，单位：秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "EndPtsOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别片段置信度。取值：0~100。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "AreaCoordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截图链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17428,6 +17438,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于生成回调签名的 Key。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

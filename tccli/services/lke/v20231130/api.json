@@ -182,6 +182,13 @@
       "output": "DescribeRobotBizIDByAppKeyResponse",
       "status": "online"
     },
+    "DescribeSegments": {
+      "document": "获取片段详情",
+      "input": "DescribeSegmentsRequest",
+      "name": "获取片段详情",
+      "output": "DescribeSegmentsResponse",
+      "status": "online"
+    },
     "DescribeStorageCredential": {
       "document": "获取文件上传临时密钥",
       "input": "DescribeStorageCredentialRequest",
@@ -3428,6 +3435,52 @@
       ],
       "type": "object"
     },
+    "DescribeSegmentsRequest": {
+      "document": "DescribeSegments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "无",
+          "member": "string",
+          "name": "SegBizId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSegmentsResponse": {
+      "document": "DescribeSegments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "片段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocSegment",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStorageCredentialRequest": {
       "document": "DescribeStorageCredential请求参数结构体",
       "members": [
@@ -3645,6 +3698,112 @@
         }
       ],
       "type": "object"
+    },
+    "DocSegment": {
+      "document": "文档片段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "片段ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件类型(markdown,word,txt)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档切片类型(segment-文档切片 table-表格)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SegmentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "段落内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PageContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "段落原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文章ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DocumentElement": {
       "document": "文档元素字段",
@@ -10008,7 +10167,7 @@
         },
         {
           "disabled": false,
-          "document": "文档操作类型：1：批量导入；2:文档导入",
+          "document": "文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）",
           "example": "无",
           "member": "uint64",
           "name": "Opt",

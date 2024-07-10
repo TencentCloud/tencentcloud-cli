@@ -208,6 +208,14 @@
         "title": "通过AppKey查询应用业务ID"
       }
     ],
+    "DescribeSegments": [
+      {
+        "document": "片段请求",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSegments\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1771107658358063104\",\n    \"SegBizId\": [\n        \"1111\",\n        \"2222\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"83500528-9870-4c63-ad21-de5dc6d4a059\"\n    }\n}",
+        "title": "片段请求"
+      }
+    ],
     "DescribeStorageCredential": [
       {
         "document": "",

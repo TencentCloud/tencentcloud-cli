@@ -8317,7 +8317,7 @@
           "example": "[\"1.14.1\",\"1.16.1\"]",
           "member": "string",
           "name": "Versions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8327,7 +8327,7 @@
           "example": "1.0.1",
           "member": "string",
           "name": "EdgeVersionLatest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8337,7 +8337,7 @@
           "example": "1.0.1",
           "member": "string",
           "name": "EdgeVersionCurrent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

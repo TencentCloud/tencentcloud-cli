@@ -6747,6 +6747,7 @@
           "example": "[]",
           "member": "string",
           "name": "SuccessInstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6756,6 +6757,7 @@
           "example": "[]",
           "member": "string",
           "name": "FailedInstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

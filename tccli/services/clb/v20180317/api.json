@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n注：查询实例创建状态可以根据返回值中的requestId访问[DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)接口\n\n限制说明：\n实例属性维度限制\n  仅支持克隆按量计费实例，不支持包年包月实例。\n  不支持克隆未关联实例计费项的 CLB。\n  不支持克隆传统型负载均衡实例和高防 CLB。\n  不支持克隆基础网络类型的实例。\n  不支持克隆 IPv6、IPv6 NAT64 版本以及混绑的实例。\n  个性化配置、重定向配置、安全组默认放通开关的配置将不会被克隆，需重新配置。\n  执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n监听器维度限制\n  不支持克隆监听器为 QUIC 类型和端口段的实例。\n  不支持监听器为 TCP_SSL 的内网型负载均衡的实例。\n  不支持克隆七层监听器没有转发规则的实例。\n  当实例的监听器个数超过50个时，不支持克隆。\n后端服务维度限制\n  不支持克隆绑定的后端服务类型为目标组和 SCF 云函数的实例。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/1akuvsmyn0g)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n注：查询实例创建状态可以根据返回值中的requestId访问[DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)接口\n\n限制说明\n实例属性维度限制：\n- 支持克隆网络计费模式为按量计费与包年包月的实例，包年包月实例克隆后的新实例网络计费模式会转换为按小时带宽计费，其带宽、规格与原实例设置保持一致。\n- 不支持克隆未关联实例计费项的 CLB。\n- 不支持克隆传统型负载均衡实例和高防 CLB。\n- 不支持克隆基础网络类型的实例。\n- 不支持克隆 Anycast 类型的实例。\n- 不支持克隆 IPv6 NAT64 版本的实例。\n- 不支持克隆被封禁或冻结的实例。\n- 执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n配额维度限制：\n- 当实例的监听器个数超过 50 个时，不支持克隆。\n- 当共享型实例的公网带宽上限超过 2G 时，不支持克隆。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/1akuvsmyn0g)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse",

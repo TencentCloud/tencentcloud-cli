@@ -1930,6 +1930,15 @@
           "name": "DnssecConflictMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
+          "example": "123",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

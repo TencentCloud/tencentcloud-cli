@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ChangeClothes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeClothes\n<公共请求参数>\n\n{\n    \"ModelUrl\": \"https://xxx.com/test.jpg\",\n    \"ClothesUrl\": \"https://xxx.com/test.jpg\",\n    \"ClothesType\": \"Upper-body\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d0728ed-f777-4861-aa4b-5a6167daa0b6\",\n        \"ResultImage\": \"https://result.jpg\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "GenerateAvatar": [
       {
         "document": "",

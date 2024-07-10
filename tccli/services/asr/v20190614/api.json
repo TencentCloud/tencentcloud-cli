@@ -2727,19 +2727,19 @@
         },
         {
           "disabled": false,
-          "document": "说话人id, 说话人唯一标识",
-          "example": "dasdagfdgddsdsada",
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
+          "example": "无",
           "member": "string",
-          "name": "VoicePrintId",
+          "name": "Data",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M\t",
-          "example": "无",
+          "document": "说话人id, 说话人唯一标识",
+          "example": "dasdagfdgddsdsada",
           "member": "string",
-          "name": "Data",
+          "name": "VoicePrintId",
           "required": true,
           "type": "string"
         }
