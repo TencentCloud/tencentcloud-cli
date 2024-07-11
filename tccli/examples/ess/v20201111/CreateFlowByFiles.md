@@ -1252,3 +1252,265 @@ Output:
 }
 ```
 
+**Example 17: 文件发起B2C合同，发起方设置合同水印（自定义水印内容）**
+
+1.通过PDF文件发起合同
+2.指定B端签署方为企业【典子谦示例企业】，经办人为【何规】
+3.指定C端签署方为个人【张三】
+4.水印控件通过外层 参数 Components 传递，ComponentType 设置为 WATERMARK，设置"ComponentExtra": "{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"CUSTOM_WATERMARK\"}"，ComponentValue 为自定义水印的内容
+
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId yDxbTUyKQWPt5NUuO4zjEuyFAyOX3v9C \
+    --FlowName 文件发起B2C-自定义水印内容 \
+    --Components.0.ComponentType WATERMARK \
+    --Components.0.ComponentName 合同水印 \
+    --Components.0.ComponentExtra {"Font":"黑体","FontSize":20,"Opacity":0.1,"Density":2,"SubType":"CUSTOM_WATERMARK"} \
+    --Components.0.ComponentValue 自定义水印内容 \
+    --Components.0.ComponentPage 0 \
+    --Components.0.ComponentWidth 0 \
+    --Components.0.ComponentHeight 0 \
+    --Components.0.ComponentPosX 0 \
+    --Components.0.ComponentPosY 0 \
+    --Components.0.FileIndex 0 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 何规 \
+    --Approvers.0.ApproverMobile 18200000000 \
+    --Approvers.0.NotifyType NONE \
+    --Approvers.0.SignComponents.0.ComponentHeight 119 \
+    --Approvers.0.SignComponents.0.ComponentPage 7 \
+    --Approvers.0.SignComponents.0.ComponentPosX 143.59375 \
+    --Approvers.0.SignComponents.0.ComponentPosY 169.0625 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.ComponentWidth 119 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.Components.0.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"BUSI-CREDIT-CODE","FontColor":"0,82,217"} \
+    --Approvers.0.Components.0.ComponentHeight 20 \
+    --Approvers.0.Components.0.ComponentPage 1 \
+    --Approvers.0.Components.0.ComponentPosX 205 \
+    --Approvers.0.Components.0.ComponentPosY 114 \
+    --Approvers.0.Components.0.ComponentRequired True \
+    --Approvers.0.Components.0.ComponentType TEXT \
+    --Approvers.0.Components.0.ComponentWidth 339 \
+    --Approvers.0.Components.0.FileIndex 0 \
+    --Approvers.0.Components.1.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"BUSI-CREDIT-CODE"} \
+    --Approvers.0.Components.1.ComponentHeight 20 \
+    --Approvers.0.Components.1.ComponentPage 1 \
+    --Approvers.0.Components.1.ComponentPosX 234 \
+    --Approvers.0.Components.1.ComponentPosY 142 \
+    --Approvers.0.Components.1.ComponentRequired True \
+    --Approvers.0.Components.1.ComponentType TEXT \
+    --Approvers.0.Components.1.ComponentWidth 302 \
+    --Approvers.0.Components.1.FileIndex 0 \
+    --Approvers.0.Components.2.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"BUSI-LEGAL-NAME"} \
+    --Approvers.0.Components.2.ComponentHeight 20 \
+    --Approvers.0.Components.2.ComponentPage 1 \
+    --Approvers.0.Components.2.ComponentPosX 191.09 \
+    --Approvers.0.Components.2.ComponentPosY 172 \
+    --Approvers.0.Components.2.ComponentRequired True \
+    --Approvers.0.Components.2.ComponentType TEXT \
+    --Approvers.0.Components.2.ComponentWidth 335 \
+    --Approvers.0.Components.2.FileIndex 0 \
+    --Approvers.0.Components.3.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","SubType":"LOCATION"} \
+    --Approvers.0.Components.3.ComponentHeight 21 \
+    --Approvers.0.Components.3.ComponentPage 1 \
+    --Approvers.0.Components.3.ComponentPosX 155 \
+    --Approvers.0.Components.3.ComponentPosY 205 \
+    --Approvers.0.Components.3.ComponentRequired True \
+    --Approvers.0.Components.3.ComponentType MULTI_LINE_TEXT \
+    --Approvers.0.Components.3.ComponentWidth 366 \
+    --Approvers.0.Components.3.FileIndex 0 \
+    --Approvers.0.Components.4.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"PERSONAL-NAME"} \
+    --Approvers.0.Components.4.ComponentHeight 20 \
+    --Approvers.0.Components.4.ComponentPage 1 \
+    --Approvers.0.Components.4.ComponentPosX 107 \
+    --Approvers.0.Components.4.ComponentPosY 236 \
+    --Approvers.0.Components.4.ComponentRequired True \
+    --Approvers.0.Components.4.ComponentType TEXT \
+    --Approvers.0.Components.4.ComponentWidth 339 \
+    --Approvers.0.Components.4.FileIndex 0 \
+    --Approvers.0.Components.5.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"PERSONAL-MOBILE"} \
+    --Approvers.0.Components.5.ComponentHeight 20 \
+    --Approvers.0.Components.5.ComponentPage 1 \
+    --Approvers.0.Components.5.ComponentPosX 121 \
+    --Approvers.0.Components.5.ComponentPosY 265 \
+    --Approvers.0.Components.5.ComponentRequired True \
+    --Approvers.0.Components.5.ComponentType TEXT \
+    --Approvers.0.Components.5.ComponentWidth 327 \
+    --Approvers.0.Components.5.FileIndex 0 \
+    --Approvers.0.Components.6.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体"} \
+    --Approvers.0.Components.6.ComponentHeight 20 \
+    --Approvers.0.Components.6.ComponentPage 1 \
+    --Approvers.0.Components.6.ComponentPosX 35.09 \
+    --Approvers.0.Components.6.ComponentPosY 293 \
+    --Approvers.0.Components.6.ComponentRequired True \
+    --Approvers.0.Components.6.ComponentType DISTRICT \
+    --Approvers.0.Components.6.ComponentWidth 306 \
+    --Approvers.0.Components.6.FileIndex 0 \
+    --Approvers.0.Components.7.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体"} \
+    --Approvers.0.Components.7.ComponentHeight 44 \
+    --Approvers.0.Components.7.ComponentPage 1 \
+    --Approvers.0.Components.7.ComponentPosX 44 \
+    --Approvers.0.Components.7.ComponentPosY 652 \
+    --Approvers.0.Components.7.ComponentType MULTI_LINE_TEXT \
+    --Approvers.0.Components.7.ComponentWidth 505 \
+    --Approvers.0.Components.7.FileIndex 0 \
+    --Approvers.0.Components.8.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","ManualFill":true} \
+    --Approvers.0.Components.8.ComponentHeight 20 \
+    --Approvers.0.Components.8.ComponentPage 2 \
+    --Approvers.0.Components.8.ComponentPosX 145 \
+    --Approvers.0.Components.8.ComponentPosY 68 \
+    --Approvers.0.Components.8.ComponentRequired True \
+    --Approvers.0.Components.8.ComponentType DATE \
+    --Approvers.0.Components.8.ComponentWidth 116 \
+    --Approvers.0.Components.8.FileIndex 0 \
+    --Approvers.0.Components.9.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","ManualFill":true} \
+    --Approvers.0.Components.9.ComponentHeight 20 \
+    --Approvers.0.Components.9.ComponentPage 2 \
+    --Approvers.0.Components.9.ComponentPosX 130.09375 \
+    --Approvers.0.Components.9.ComponentPosY 555.09375 \
+    --Approvers.0.Components.9.ComponentType DATE \
+    --Approvers.0.Components.9.ComponentWidth 116 \
+    --Approvers.0.Components.9.FileIndex 0 \
+    --Approvers.0.Components.10.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","SubType":"LOCATION"} \
+    --Approvers.0.Components.10.ComponentHeight 27 \
+    --Approvers.0.Components.10.ComponentPage 2 \
+    --Approvers.0.Components.10.ComponentPosX 134.09 \
+    --Approvers.0.Components.10.ComponentPosY 628.09 \
+    --Approvers.0.Components.10.ComponentType MULTI_LINE_TEXT \
+    --Approvers.0.Components.10.ComponentWidth 398 \
+    --Approvers.0.Components.10.FileIndex 0 \
+    --Approvers.0.Components.11.ComponentExtra {} \
+    --Approvers.0.Components.11.ComponentHeight 16 \
+    --Approvers.0.Components.11.ComponentPage 7 \
+    --Approvers.0.Components.11.ComponentPosX 83.09375 \
+    --Approvers.0.Components.11.ComponentPosY 96.5625 \
+    --Approvers.0.Components.11.ComponentType CHECK_BOX \
+    --Approvers.0.Components.11.ComponentWidth 16 \
+    --Approvers.0.Components.11.FileIndex 0 \
+    --Approvers.0.Components.12.ComponentExtra {"FillMethod":0,"NotMakeImageCenter":true} \
+    --Approvers.0.Components.12.ComponentHeight 119 \
+    --Approvers.0.Components.12.ComponentPage 7 \
+    --Approvers.0.Components.12.ComponentPosX 13 \
+    --Approvers.0.Components.12.ComponentPosY 394 \
+    --Approvers.0.Components.12.ComponentType FILL_IMAGE \
+    --Approvers.0.Components.12.ComponentWidth 119 \
+    --Approvers.0.Components.12.FileIndex 0 \
+    --Approvers.0.Components.13.ComponentExtra {"LimitCount":3,"AttachmentType":"IMG"} \
+    --Approvers.0.Components.13.ComponentHeight 42 \
+    --Approvers.0.Components.13.ComponentPage 7 \
+    --Approvers.0.Components.13.ComponentPosX 12 \
+    --Approvers.0.Components.13.ComponentPosY 537 \
+    --Approvers.0.Components.13.ComponentRequired True \
+    --Approvers.0.Components.13.ComponentType ATTACHMENT \
+    --Approvers.0.Components.13.ComponentWidth 240 \
+    --Approvers.0.Components.13.FileIndex 0 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18700000000 \
+    --Approvers.1.NotifyType NONE \
+    --Approvers.1.SignComponents.0.ComponentHeight 43 \
+    --Approvers.1.SignComponents.0.ComponentPage 7 \
+    --Approvers.1.SignComponents.0.ComponentPosX 433.59375 \
+    --Approvers.1.SignComponents.0.ComponentPosY 196.0625 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentWidth 119 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.Components.0.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"PERSONAL-NAME"} \
+    --Approvers.1.Components.0.ComponentHeight 20 \
+    --Approvers.1.Components.0.ComponentPage 1 \
+    --Approvers.1.Components.0.ComponentPosX 199 \
+    --Approvers.1.Components.0.ComponentPosY 323 \
+    --Approvers.1.Components.0.ComponentRequired True \
+    --Approvers.1.Components.0.ComponentType TEXT \
+    --Approvers.1.Components.0.ComponentWidth 309 \
+    --Approvers.1.Components.0.FileIndex 0 \
+    --Approvers.1.Components.1.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","SubType":"LOCATION"} \
+    --Approvers.1.Components.1.ComponentHeight 24 \
+    --Approvers.1.Components.1.ComponentPage 1 \
+    --Approvers.1.Components.1.ComponentPosX 155 \
+    --Approvers.1.Components.1.ComponentPosY 386 \
+    --Approvers.1.Components.1.ComponentRequired True \
+    --Approvers.1.Components.1.ComponentType MULTI_LINE_TEXT \
+    --Approvers.1.Components.1.ComponentWidth 390 \
+    --Approvers.1.Components.1.FileIndex 0 \
+    --Approvers.1.Components.2.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体"} \
+    --Approvers.1.Components.2.ComponentHeight 20 \
+    --Approvers.1.Components.2.ComponentPage 1 \
+    --Approvers.1.Components.2.ComponentPosX 114.09 \
+    --Approvers.1.Components.2.ComponentPosY 416 \
+    --Approvers.1.Components.2.ComponentRequired True \
+    --Approvers.1.Components.2.ComponentType TEXT \
+    --Approvers.1.Components.2.ComponentWidth 299 \
+    --Approvers.1.Components.2.FileIndex 0 \
+    --Approvers.1.Components.3.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","RecipientInfoType":"PERSONAL-MOBILE"} \
+    --Approvers.1.Components.3.ComponentHeight 20 \
+    --Approvers.1.Components.3.ComponentPage 1 \
+    --Approvers.1.Components.3.ComponentPosX 115.09 \
+    --Approvers.1.Components.3.ComponentPosY 445 \
+    --Approvers.1.Components.3.ComponentRequired True \
+    --Approvers.1.Components.3.ComponentType TEXT \
+    --Approvers.1.Components.3.ComponentWidth 367 \
+    --Approvers.1.Components.3.FileIndex 0 \
+    --Approvers.1.Components.4.ComponentExtra {"SubType":"EDUCATION"} \
+    --Approvers.1.Components.4.ComponentHeight 20 \
+    --Approvers.1.Components.4.ComponentId ComponentId_30 \
+    --Approvers.1.Components.4.ComponentName 学历 \
+    --Approvers.1.Components.4.ComponentPage 1 \
+    --Approvers.1.Components.4.ComponentPosX 8.09375 \
+    --Approvers.1.Components.4.ComponentPosY 473 \
+    --Approvers.1.Components.4.ComponentRequired True \
+    --Approvers.1.Components.4.ComponentType SELECTOR \
+    --Approvers.1.Components.4.ComponentWidth 84 \
+    --Approvers.1.Components.4.FileIndex 0 \
+    --Approvers.1.Components.5.ComponentExtra {"FontSize":12,"FontAlign":"Left","Font":"黑体","SubType":"EMAIL"} \
+    --Approvers.1.Components.5.ComponentHeight 20 \
+    --Approvers.1.Components.5.ComponentId ComponentId_28 \
+    --Approvers.1.Components.5.ComponentName 邮箱 \
+    --Approvers.1.Components.5.ComponentPage 1 \
+    --Approvers.1.Components.5.ComponentPosX 117.09375 \
+    --Approvers.1.Components.5.ComponentPosY 474 \
+    --Approvers.1.Components.5.ComponentType TEXT \
+    --Approvers.1.Components.5.ComponentWidth 292 \
+    --Approvers.1.Components.5.FileIndex 0 \
+    --Approvers.1.Components.6.ComponentExtra {"SubType":"GENDER"} \
+    --Approvers.1.Components.6.ComponentHeight 20 \
+    --Approvers.1.Components.6.ComponentId ComponentId_29 \
+    --Approvers.1.Components.6.ComponentName 性别 \
+    --Approvers.1.Components.6.ComponentPage 1 \
+    --Approvers.1.Components.6.ComponentPosX 424.09375 \
+    --Approvers.1.Components.6.ComponentPosY 472 \
+    --Approvers.1.Components.6.ComponentRequired True \
+    --Approvers.1.Components.6.ComponentType SELECTOR \
+    --Approvers.1.Components.6.ComponentWidth 84 \
+    --Approvers.1.Components.6.FileIndex 0 \
+    --FileIds yDCWqUUckpve5id3U4f5EL77tlNh6zTZ
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCVsUUckpwri2v6U9JHnkxcJrDXddLQ",
+                "SignId": "yDCVsUUckpwri3vwU9JHnky9uvwe3h25"
+            },
+            {
+                "ApproverRoleName": "",
+                "RecipientId": "yDCVsUUckpwri2vbU9JHnkSdZKiAyEs3",
+                "SignId": "yDCVsUUckpwri2vvU9JHnkvaHtOttw1h"
+            }
+        ],
+        "FlowId": "yDCVsUUckpwri3vyU9JHnkBDqTFanBa3",
+        "PreviewUrl": "",
+        "RequestId": "s1709793654575755487"
+    }
+}
+```
+

@@ -22,7 +22,7 @@
       "status": "online"
     },
     "AddShareUnit": {
-      "document": "创建共享单元，只有企业组织管理员可创建。",
+      "document": "创建共享单元。",
       "input": "AddShareUnitRequest",
       "name": "创建共享单元",
       "output": "AddShareUnitResponse",

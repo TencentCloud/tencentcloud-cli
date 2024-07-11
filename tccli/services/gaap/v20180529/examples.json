@@ -656,6 +656,14 @@
         "title": "查询TCP监听器列表"
       }
     ],
+    "DescribeTaskStatus": [
+      {
+        "document": "查询异步任务执行状态",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"766d83c7-c0b1-4973-bdf3-effeeffa34d7\"\n    }\n}",
+        "title": "查询异步任务执行状态"
+      }
+    ],
     "DescribeUDPListeners": [
       {
         "document": "查询UDP监听器列表",

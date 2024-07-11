@@ -894,7 +894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例内存大小，单位：GB。",
+          "document": "实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -903,8 +903,8 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。",
-          "example": "250",
+          "document": "实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "example": "100",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -912,7 +912,7 @@
         },
         {
           "disabled": false,
-          "document": "指副本集数量。\n- 创建副本集实例，该参数只能为1。\n- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "- 创建副本集实例，指副本集数量，该参数只能为1。\n- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。",
           "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -921,7 +921,7 @@
         },
         {
           "disabled": false,
-          "document": "指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "2",
           "member": "uint64",
           "name": "NodeNum",
@@ -930,8 +930,8 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。",
-          "example": "MONGO_3_WT",
+          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。",
+          "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -939,7 +939,7 @@
         },
         {
           "disabled": false,
-          "document": "机器类型。\n- HIO：高IO型。\n- HIO10G：高IO万兆。",
+          "document": "产品规格类型。\n- HIO10G：通用高HIO万兆型。\n- HCD：云盘版类型。",
           "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
@@ -1002,7 +1002,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。若不设置该参数，则为默认项目。",
+          "document": "项目ID。\n- 若不设置该参数，则为默认项目。\n- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。",
           "example": "无",
           "member": "int64",
           "name": "ProjectId",
@@ -1020,7 +1020,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。",
+          "document": "实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：克隆实例，注意：克隆实例RestoreTime为必填项。",
           "example": "1",
           "member": "int64",
           "name": "Clone",
@@ -1038,7 +1038,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组。",
+          "document": "安全组 ID。",
           "example": "无",
           "member": "string",
           "name": "SecurityGroup",
@@ -1065,7 +1065,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区部署的节点列表。具体信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)获取。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。\n- 不支持4.2及以上版本。\n- 不支持只读灾备实例。\n- 不能选择基础网络。",
+          "document": "若多可用区部署云数据库实例，指定多可用区列表。\n- 多可用区部署实例，参数 **Zone** 指定实例主可用区信息；**AvailabilityZoneList** 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。\n- 通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。\n",
           "example": "无",
           "member": "string",
           "name": "AvailabilityZoneList",
@@ -1074,7 +1074,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数。购买分片集群时，必须填写。\n",
+          "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。\n",
           "example": "无",
           "member": "uint64",
           "name": "MongosCpu",
@@ -1083,7 +1083,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。购买分片集群时，必须填写。\n\n",
+          "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。\n\n",
           "example": "无",
           "member": "uint64",
           "name": "MongosMemory",
@@ -1092,7 +1092,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 数量。购买分片集群时，必须填写。\n\n",
+          "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
           "example": "无",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -1101,7 +1101,7 @@
         },
         {
           "disabled": false,
-          "document": "只读节点数量，最大不超过7个。",
+          "document": "只读节点数量，取值范围[0,5]。",
           "example": "无",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
@@ -1110,7 +1110,7 @@
         },
         {
           "disabled": false,
-          "document": "指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
+          "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
           "example": "无",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
@@ -1166,7 +1166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
@@ -1175,7 +1175,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位：GB。",
+          "document": "实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "4",
           "member": "uint64",
           "name": "Memory",
@@ -1184,8 +1184,8 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB。",
-          "example": "250",
+          "document": "实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "example": "100",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -1193,8 +1193,8 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。",
-          "example": "MONGO_3_WT",
+          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。",
+          "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -1220,7 +1220,7 @@
         },
         {
           "disabled": false,
-          "document": "实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
+          "document": "指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。\n",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -1229,7 +1229,7 @@
         },
         {
           "disabled": false,
-          "document": "机器类型。\n- HIO：高IO型。\n- HIO10G：高IO万兆。",
+          "document": "产品规格类型。\n- HIO10G：通用高HIO万兆型。\n- HCD：云盘版类型。",
           "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
@@ -1247,7 +1247,7 @@
         },
         {
           "disabled": false,
-          "document": "指副本集数量。\n- 创建副本集实例，该参数只能为1。\n- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "- 创建副本集实例，指副本集数量，该参数只能为1。\n- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。",
           "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
@@ -1256,7 +1256,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。若不设置该参数，则为默认项目。",
+          "document": "项目ID。\n- 若不设置该参数，则为默认项目。\n- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -1301,7 +1301,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记。\n- 0：不自动续费。默认为不自动续费。\n- 1：自动续费。",
+          "document": "自动续费标记。\n- 0：不自动续费。\n- 1：自动续费。",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -1319,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 1：正式实例。\n- 3：只读实例。\n- 4：灾备实例。",
+          "document": "实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。",
           "example": "1",
           "member": "int64",
           "name": "Clone",
@@ -1337,7 +1337,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组。",
+          "document": "安全组 ID。 ",
           "example": "无",
           "member": "string",
           "name": "SecurityGroup",
@@ -1346,7 +1346,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆实例回档时间。\n- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。\n- 回档时间范围：仅能回档7天内时间点的数据。",
+          "document": "克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。",
           "example": "无",
           "member": "string",
           "name": "RestoreTime",
@@ -1373,7 +1373,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。",
           "example": "无",
           "member": "uint64",
           "name": "MongosCpu",
@@ -1382,7 +1382,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
+          "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。",
           "example": "无",
           "member": "uint64",
           "name": "MongosMemory",
@@ -1391,7 +1391,7 @@
         },
         {
           "disabled": false,
-          "document": "Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。",
+          "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
           "example": "无",
           "member": "uint64",
           "name": "MongosNodeNum",
@@ -1409,7 +1409,7 @@
         },
         {
           "disabled": false,
-          "document": "指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
+          "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
           "example": "无",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",

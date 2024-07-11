@@ -183,7 +183,7 @@
       "status": "online"
     },
     "DescribeTrtcUsage": {
-      "document": "获取TRTC音视频互动的用量明细。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
+      "document": "获取TRTC音视频互动的用量明细，单位:分钟。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。\n- 默认接口请求频率限制：5次/秒。",
       "input": "DescribeTrtcUsageRequest",
       "name": "查询TRTC音视频用量",
       "output": "DescribeTrtcUsageResponse",
@@ -2602,7 +2602,7 @@
         },
         {
           "disabled": false,
-          "document": "各个时间点用量明细。",
+          "document": "各个时间点用量明细，单位:分钟",
           "example": "无",
           "member": "TrtcUsage",
           "name": "UsageList",
@@ -6824,17 +6824,27 @@
           "example": "无",
           "member": "string",
           "name": "TimeKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用量数组。每个数值含义与UsageKey对应。单位：分钟。",
+          "document": "时间点时间戳",
+          "example": "无",
+          "member": "uint64",
+          "name": "TimeStampKey",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量数组。每个数值含义与UsageKey对应。单位:分钟。",
           "example": "无",
           "member": "float",
           "name": "UsageValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

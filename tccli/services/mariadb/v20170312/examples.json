@@ -575,6 +575,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
         "title": "无"
       }
+    ],
+    "UpgradeHourDBInstance": [
+      {
+        "document": "升级MariaDB按量计费实例",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=UpgradeHourDBInstance\n&InstanceId=tdsql-cq3ndzu7\n&Memory=2\n&Storage=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3d8965f-5124-451d-be87-499ea75eb3a4\"\n    }\n}",
+        "title": "升级MariaDB按量计费实例"
+      }
     ]
   },
   "version": "1.0"

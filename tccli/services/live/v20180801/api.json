@@ -7136,6 +7136,7 @@
           "example": "无",
           "member": "PullStreamTaskInfo",
           "name": "TaskInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7145,6 +7146,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7154,6 +7156,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7163,6 +7166,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7172,6 +7176,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7181,6 +7186,7 @@
           "example": "20",
           "member": "uint64",
           "name": "LimitTaskNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

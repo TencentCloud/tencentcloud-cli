@@ -77,6 +77,13 @@
       "output": "CreateEmbedWebUrlResponse",
       "status": "online"
     },
+    "CreateEmployeeQualificationSealQrCode": {
+      "document": "该接口用于获取个人授权执业章给企业的二维码，需要个人用户通过微信扫码。扫描后将跳转到腾讯电子签小程序，进入到授权执业章的流程。个人用户授权成功后，企业印章管理员需对印章进行审核，审核通过后，即可使用个人授权的执业章进行盖章操作。\n\n**注意**\n1. 该二维码**有效期为7天**，过期后将失效，可重新创建。",
+      "input": "CreateEmployeeQualificationSealQrCodeRequest",
+      "name": "创建个人印章授权给企业使用的授权二维码",
+      "output": "CreateEmployeeQualificationSealQrCodeResponse",
+      "status": "online"
+    },
     "CreateExtendedServiceAuthInfos": {
       "document": "创建企业扩展服务授权，当前仅支持授权 “企业自动签” 和 “批量签署” 给企业员工。\n该接口作用和电子签控制台 企业设置-扩展服务-企业自动签署和批量签署授权 两个模块功能相同，可通过该接口授权给企业员工。\n\n注：“企业自动签授权”支持集团代子企业操作，请联系运营开通此功能。",
       "input": "CreateExtendedServiceAuthInfosRequest",
@@ -2747,6 +2754,61 @@
       ],
       "type": "object"
     },
+    "CreateEmployeeQualificationSealQrCodeRequest": {
+      "document": "CreateEmployeeQualificationSealQrCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。 支持填入集团子公司经办人 userId 代发合同。  注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "提示信息，扫码后此信息会展示给扫描用户，用来提示用户授权操作的目的",
+          "example": "无",
+          "member": "string",
+          "name": "HintText",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmployeeQualificationSealQrCodeResponse": {
+      "document": "CreateEmployeeQualificationSealQrCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码图片的Base64  注:  `此二维码的有效时间为7天，过期后需要重新生成新的二维码图片`",
+          "example": "无",
+          "member": "string",
+          "name": "QrcodeBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateExtendedServiceAuthInfosRequest": {
       "document": "CreateExtendedServiceAuthInfos请求参数结构体",
       "members": [
@@ -2990,7 +3052,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n\n该名称还将用于合同签署完成后的下载文件名。",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200个字符，只能由中文、字母、数字、中划线和下划线组成。\n\n该名称还将用于合同签署完成后的下载文件名。",
           "example": "2013年采购西红柿合同",
           "member": "string",
           "name": "FlowName",
@@ -3035,7 +3097,7 @@
         },
         {
           "disabled": false,
-          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li> 单行文本控件      </li>\n<li> 多行文本控件      </li>\n<li> 勾选框控件        </li>\n<li> 数字控件          </li>\n<li> 图片控件          </li>\n<li> 动态表格等填写控件</li></ul>",
+          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li> 单行文本控件      </li>\n<li> 多行文本控件      </li>\n<li> 勾选框控件        </li>\n<li> 数字控件          </li>\n<li> 图片控件          </li>\n<li> 水印控件          </li>\n<li> 动态表格等填写控件</li></ul>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -7521,7 +7583,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>BATCH_SIGN：批量签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
+          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>\n<li>BATCH_SIGN：批量签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>\n<li>FLOW_APPROVAL：合同审批强制开启</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
           "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "ExtendServiceType",
@@ -8574,7 +8636,7 @@
         },
         {
           "disabled": false,
-          "document": "印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 \n\n目前支持以下几种：\n\n<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>",
+          "document": "印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 目前支持以下几种：<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> <li><strong>EMPLOYEE_QUALIFICATION_SEAL</strong>：员工执业章。</li> </ul>",
           "example": "无",
           "member": "string",
           "name": "SealTypes",
@@ -11251,7 +11313,7 @@
         },
         {
           "disabled": false,
-          "document": "要管理的拓展服务类型。\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
+          "document": "要管理的拓展服务类型。\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>\n<li>FLOW_APPROVAL：合同审批强制开启</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
           "example": "MOBILE_CHECK_APPROVER",
           "member": "string",
           "name": "ServiceType",

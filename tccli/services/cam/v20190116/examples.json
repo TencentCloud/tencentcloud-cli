@@ -687,7 +687,7 @@
     "UpdateSAMLProvider": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSAMLProvider\n<公共请求参数>\n\n{\n    \"SAMLMetadataDocument\": \"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48bWQ6RW50aXR5RGVzY3JpcHRvciBlbnRpdHlJRD0iaHR0cDovL3d3dy5va3RhLmNvbS9leGsxa3F4bWNqUW1HQURNeTM1NyIgeG1sbnM6bWQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDptZXRhZGF0YSI%2BPG1kOklEUFNTT0Rlc2NyaXB0b3IgV2FudEF1dGhuUmVxdWVzdHNTaWduZWQ9ImZhbHNlIiBwcm90b2NvbFN1cHBvcnRFbnVtZXJhdGlvbj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnB%3D%3D\",\n    \"Name\": \"testName\",\n    \"Description\": \"testProvider\"\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateSAMLProvider\r\n&Name=testName\r\n&Description=testProvider\r\n&SAMLMetadataDocument=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48bWQ6RW50aXR5RGVzY3JpcHRvciBlbnRpdHlJRD0iaHR0cDovL3d3dy5va3RhLmNvbS9leGsxa3F4bWNqUW1HQURNeTM1NyIgeG1sbnM6bWQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDptZXRhZGF0YSI%2BPG1kOklEUFNTT0Rlc2NyaXB0b3IgV2FudEF1dGhuUmVxdWVzdHNTaWduZWQ9ImZhbHNlIiBwcm90b2NvbFN1cHBvcnRFbnVtZXJhdGlvbj0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOnB%3D%3D&Signature=bmqyzCmdLxEFbsI6pu40V%2BEbWNo%3D\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e44e8e5-7878-4aa0-8bd2-555dde56cddb\"\n    }\n}",
         "title": "更新身份提供商"
       }

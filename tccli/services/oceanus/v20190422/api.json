@@ -4680,6 +4680,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "flink 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Flink-1.13",
+          "member": "string",
+          "name": "FlinkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6735,6 +6745,7 @@
           "example": "ssgA",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6745,6 +6756,7 @@
           "example": "[]",
           "member": "SlotSharingGroupSpec",
           "name": "Spec",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -6755,8 +6767,20 @@
           "example": "ssgA",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SlotSharingGroup的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "Property",
+          "name": "Configuration",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

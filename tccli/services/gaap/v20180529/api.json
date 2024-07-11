@@ -532,6 +532,13 @@
       "output": "DescribeTCPListenersResponse",
       "status": "online"
     },
+    "DescribeTaskStatus": {
+      "document": "查询异步任务执行状态",
+      "input": "DescribeTaskStatusRequest",
+      "name": "查询异步任务状态",
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
+    },
     "DescribeUDPListeners": {
       "document": "该接口（DescribeUDPListeners）用于查询单通道或者通道组下的UDP监听器信息",
       "input": "DescribeUDPListenersRequest",
@@ -6204,6 +6211,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskStatusRequest": {
+      "document": "DescribeTaskStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTaskStatusResponse": {
+      "document": "DescribeTaskStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

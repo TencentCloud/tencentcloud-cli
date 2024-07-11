@@ -18320,7 +18320,7 @@
           "example": "{\"Response\":{\"MessageId\":\"26365:1475:0\"}}",
           "member": "string",
           "name": "MessageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18330,7 +18330,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18477,6 +18477,7 @@
           "example": "{\"Response\":{\"MessageId\":\"26365:1475:0\"}}",
           "member": "string",
           "name": "MessageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -18486,6 +18487,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

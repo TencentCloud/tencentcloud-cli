@@ -5266,6 +5266,15 @@
           "name": "FileVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件（根据sourcemap的文件名模糊匹配）",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -28853,7 +28853,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CheckPattern",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28863,7 +28863,7 @@
           "example": "xxx",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28873,7 +28873,7 @@
           "example": "xxx",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28883,7 +28883,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28893,7 +28893,7 @@
           "example": "[]",
           "member": "string",
           "name": "QuuidList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -28903,7 +28903,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MonitoringPattern",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28913,7 +28913,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Cycle",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28923,7 +28923,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableScan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28933,7 +28933,7 @@
           "example": "xxx",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28943,7 +28943,7 @@
           "example": "1",
           "member": "int64",
           "name": "RealTimeMonitoring",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28953,7 +28953,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoIsolation",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28963,7 +28963,7 @@
           "example": "60",
           "member": "uint64",
           "name": "ClickTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28973,7 +28973,7 @@
           "example": "1",
           "member": "uint64",
           "name": "KillProcess",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28983,7 +28983,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EngineType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28993,7 +28993,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableInspiredEngine",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29003,7 +29003,27 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableMemShellScan",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护模式 0 标准 1 重保",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查杀范围 0 脚本类之外的恶意文件，1全部恶意文件",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectFileScope",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -47976,6 +47996,15 @@
         },
         {
           "disabled": false,
+          "document": "1 清理, 0 不清理\n<li>本操作会修复被篡改的系统命令，计划任务等系统文件，操作中请确保yum/apt 可用</li>",
+          "example": "无",
+          "member": "uint64",
+          "name": "DoClean",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "1标准模式（只报严重、高危）、2增强模式（报严重、高危、中危）、3严格模式（报严重、高、中、低、提示）",
           "example": "1",
           "member": "uint64",
@@ -47998,6 +48027,24 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableMemShellScan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防护模式 0 标准 1重保",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查杀范围 0 脚本类之外的恶意文件，1全部恶意文件",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProtectFileScope",
           "required": false,
           "type": "int"
         }
