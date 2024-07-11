@@ -2818,7 +2818,7 @@
         {
           "disabled": false,
           "document": "SAML身份提供商名称",
-          "example": "",
+          "example": "testName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8225,7 +8225,7 @@
         {
           "disabled": false,
           "document": "SAML身份提供商名称",
-          "example": "",
+          "example": "testName",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8234,7 +8234,7 @@
         {
           "disabled": false,
           "document": "SAML身份提供商描述",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -8243,7 +8243,7 @@
         {
           "disabled": false,
           "document": "SAML身份提供商Base64编码的元数据文档",
-          "example": "",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIi***",
           "member": "string",
           "name": "SAMLMetadataDocument",
           "required": false,

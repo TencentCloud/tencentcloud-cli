@@ -1,5 +1,19 @@
 {
   "actions": {
+    "BulkSearchLinkRelations": {
+      "document": "批量查询链接关联关系",
+      "input": "BulkSearchLinkRelationsRequest",
+      "name": "批量查询链接关联关系",
+      "output": "BulkSearchLinkRelationsResponse",
+      "status": "online"
+    },
+    "BulkUploadLinkRelations": {
+      "document": "批量上传链接关联关系",
+      "input": "BulkUploadLinkRelationsRequest",
+      "name": "批量上传链接关联关系",
+      "output": "BulkUploadLinkRelationsResponse",
+      "status": "online"
+    },
     "CorrectText": {
       "document": "提供文本纠错能力，可以进行错别字，单词拼写，标点符号，代码语法等常见的文本错误检查",
       "input": "CorrectTextRequest",
@@ -28,6 +42,13 @@
       "output": "GetCurrentPolicyResponse",
       "status": "online"
     },
+    "GetSourceModuleList": {
+      "document": "yehe关联页面查询界面，查询所有链接所属模块种类",
+      "input": "GetSourceModuleListRequest",
+      "name": "获取引用记录所属的模块列表",
+      "output": "GetSourceModuleListResponse",
+      "status": "online"
+    },
     "SeparateText": {
       "document": "将比较长的文本按照一定规则切分成多个短文本",
       "input": "SeparateTextRequest",
@@ -43,6 +64,134 @@
     "serviceShortName": "portal"
   },
   "objects": {
+    "BulkSearchLinkRelationsRequest": {
+      "document": "BulkSearchLinkRelations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标页面链接",
+          "example": "无",
+          "member": "string",
+          "name": "TargetUrls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数。数据范围在100以内",
+          "example": "1-100",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小。数据大小在100以内",
+          "example": "0-100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选的站点类型",
+          "example": "无",
+          "member": "int64",
+          "name": "SourceSiteType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选的所属模块",
+          "example": "无",
+          "member": "int64",
+          "name": "SourceModule",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "负责人",
+          "example": "无",
+          "member": "string",
+          "name": "SourceOwner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "DictName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BulkSearchLinkRelationsResponse": {
+      "document": "BulkSearchLinkRelations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源页面链接信息",
+          "example": "无",
+          "member": "SourceUrlInfo",
+          "name": "SourceUrlsInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回记录总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BulkUploadLinkRelationsRequest": {
+      "document": "BulkUploadLinkRelations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "链接关联关系",
+          "example": "无",
+          "member": "LinkRelations",
+          "name": "LinkRelations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BulkUploadLinkRelationsResponse": {
+      "document": "BulkUploadLinkRelations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CorrectTextRequest": {
       "document": "CorrectText请求参数结构体",
       "members": [
@@ -619,6 +768,120 @@
       ],
       "type": "object"
     },
+    "GetSourceModuleListRequest": {
+      "document": "GetSourceModuleList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetSourceModuleListResponse": {
+      "document": "GetSourceModuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "链接所属模块的键值对应关系",
+          "example": "无",
+          "member": "SourceModuleInfo",
+          "name": "ModuleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LinkRelations": {
+      "document": "链接关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源页面唯一KEY",
+          "example": "CP6KVLV1964TQQ9HJ6A0",
+          "member": "string",
+          "name": "SourceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面链接",
+          "example": "https://cloud.tencent.com/",
+          "member": "string",
+          "name": "SourceUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面标题",
+          "example": "腾讯云 产业智变·云启未来 - 腾讯",
+          "member": "string",
+          "name": "SourceTitle",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源链接页面站点类型(10:国内站(默认);20:国际站;30:其他)",
+          "example": "10",
+          "member": "uint64",
+          "name": "SourceSiteType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)",
+          "example": "10",
+          "member": "uint64",
+          "name": "SourceModule",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源页面负责人",
+          "example": "无",
+          "member": "string",
+          "name": "SourceOwner",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标页面信息",
+          "example": "无",
+          "member": "TargetUrls",
+          "name": "TargetUrls",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品字典ID",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DictId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品字典名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "DictName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PolicyItem": {
       "document": "纠错系统当前支持策略单条信息结构",
       "members": [
@@ -750,6 +1013,159 @@
         }
       ],
       "type": "object"
+    },
+    "SourceModuleInfo": {
+      "document": "链接所属模块的对应关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SourceModuleType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "解决方案",
+          "member": "string",
+          "name": "SourceModuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SourceUrlInfo": {
+      "document": "来源页面链接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源页面唯一KEY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CP6KVLV1964TQQ9HJ6A0",
+          "member": "string",
+          "name": "SourceKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源页面链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cloud.tencent.com/",
+          "member": "string",
+          "name": "SourceUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源页面标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云 产业智变·云启未来 - 腾讯",
+          "member": "string",
+          "name": "SourceTitle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源链接页面站点类型(10:国内站(默认);20:国际站;30:其他)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SourceSiteType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源链接页面所属模块 / 接入方(10:解决方案;20:产品介绍页;30:客户案例;40:控制台;50:文档中心;60:私有云文档;70:购买页;80:活动运营;90:在线客服;100:开发者社区;110:课堂;120:其他;)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SourceModule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源页面负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceOwner",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品字典ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "int64",
+          "name": "DictId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品字典名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "DictName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetUrls": {
+      "document": "目标页面信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标页面链接",
+          "example": "https://cloud.tencent.com/product/cvm",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标页面标题",
+          "example": "云服务器CVM_云主机_云计算服务器_弹性云服务器-腾讯云",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标链接位置",
+          "example": "#html.body.tpm-hero2__entries-inner",
+          "member": "string",
+          "name": "Position",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "WrongSegmentInfo": {
       "document": "文本纠错接口返回的错误片段信息",

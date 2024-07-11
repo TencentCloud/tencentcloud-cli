@@ -27,6 +27,8 @@ Output:
                 "DomainName": "yourdomain.com",
                 "EndTime": "2020-04-25T00:30:00Z",
                 "ErrorInfo": "",
+                "BackupToUrl": "",
+                "RecordTemplateId": "",
                 "PushArgs": "txsecret=7cbb8f382a21e8d2f6cd8098100d3b8e&txtime=5ea0450d",
                 "SourceType": "PullLivePushLive",
                 "SourceUrls": [

@@ -746,6 +746,14 @@
         "title": "生成到模板详情的控制台链接"
       }
     ],
+    "CreateEmployeeQualificationSealQrCode": [
+      {
+        "document": "企业需要员工授权执业章使用权限给企业时，调用接口产生二维码",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeQualificationSealQrCode\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwfwUUgygormhg1UuS2eARxjMT0mxAw\",\n        \"ProxyOrganizationOpenId\": \"org_zhangsan\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n02468\"\n        }\n    },\n    \"HintText\": \"我是提示文字\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QrcodeBase64\": \"/9ji1/Z**************/2Q==\",\n        \"RequestId\": \"s1720524882444991481\"\n    }\n}",
+        "title": "生成员工执业章授权二维码"
+      }
+    ],
     "CreateFlowBlockchainEvidenceUrl": [
       {
         "document": "拥有访问权限的员工生成合同区块链存证证书查看二维码/链接",

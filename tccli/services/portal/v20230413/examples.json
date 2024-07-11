@@ -1,5 +1,21 @@
 {
   "actions": {
+    "BulkSearchLinkRelations": [
+      {
+        "document": "野鹤关联页面查询-引用记录-查询",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BulkSearchLinkRelations\n<公共请求参数>\n\n{\n    \"TargetUrls\": [\n        \"https://www.tencentcloud.com/document/product/213/30398\"\n    ],\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"SourceSiteType\": [\n        20\n    ],\n    \"SourceModule\": [\n        10\n    ],\n    \"SourceOwner\": null,\n    \"DictName\": null\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"017a5dc2-0808-4b68-9736-164abb1f3033\",\n        \"SourceUrlsInfo\": [\n            {\n                \"DictId\": 0,\n                \"DictName\": \"\",\n                \"SourceKey\": \"48460-en\",\n                \"SourceModule\": 10,\n                \"SourceOwner\": [\n                    \"v_qqidong\",\n                    \"ericji\"\n                ],\n                \"SourceSiteType\": 20,\n                \"SourceTitle\": \"Tencent Cloud Public IP Service Level Agreement\",\n                \"SourceUrl\": \"https://www.tencentcloud.com/document/product/213/48460\"\n            },\n            {\n                \"DictId\": 0,\n                \"DictName\": \"\",\n                \"SourceKey\": \"52442-en\",\n                \"SourceModule\": 10,\n                \"SourceOwner\": [\n                    \"v_qqidong\",\n                    \"ericji\"\n                ],\n                \"SourceSiteType\": 20,\n                \"SourceTitle\": \"Tencent Cloud Public IP Service Level Agreement123\",\n                \"SourceUrl\": \"https://www.tencentcloud.com/document/product/213/52442\"\n            }\n        ],\n        \"Total\": 2\n    }\n}",
+        "title": "根据输入TargetUrls等参数查询对应的引用记录"
+      }
+    ],
+    "BulkUploadLinkRelations": [
+      {
+        "document": "各个业务接入引用记录数据上报接口",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BulkUploadLinkRelations\n<公共请求参数>\n\n{\n    \"LinkRelations\": [\n        {\n            \"SourceKey\": \"54166-test\",\n            \"SourceModule\": 10,\n            \"SourceOwner\": [\n                \"mkidliu\"\n            ],\n            \"SourceSiteType\": 20,\n            \"SourceTitle\": \"1\",\n            \"SourceUrl\": \"https://www.tencentcloud.com/document/jp/product/1222/54166?test=source#fragment\",\n            \"TargetUrls\": [\n                {\n                    \"Position\": \"1\",\n                    \"Title\": \"1\",\n                    \"Url\": \"https://www.tencentcloud.com/ko/document/product /1222/53874?test=target#\"\n                }\n            ]\n        },\n        {\n            \"SourceKey\": \"1234-test\",\n            \"SourceModule\": 10,\n            \"SourceOwner\": [\n                \"mkidliu\"\n            ],\n            \"SourceSiteType\": 10,\n            \"SourceTitle\": \"1\",\n            \"SourceUrl\": \"https://cloud.tencent.com/solution?lang=en#\",\n            \"TargetUrls\": [\n                {\n                    \"Position\": \"1\",\n                    \"Title\": \"1\",\n                    \"Url\": \"https://cloud.tencent.com/document/product/1222/53874?lang=zh#\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04b96a73-xxxx-4be3-xxxx-5990d5153484\"\n    }\n}",
+        "title": "上报链接引用记录"
+      }
+    ],
     "CorrectText": [
       {
         "document": "对于一段中英文混杂文本中的错别字和单词拼写进行检查",
@@ -30,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCurrentPolicy\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Instruction\": \"敏感数据\",\n                \"Policy\": \"sensitiveNumber\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"错别字\",\n                \"Policy\": \"zhErrCharacters\",\n                \"Props\": \"gpt,botong\"\n            },\n            {\n                \"Instruction\": \"链接\",\n                \"Policy\": \"link\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"代码\",\n                \"Policy\": \"code\",\n                \"Props\": \"php,go\"\n            },\n            {\n                \"Instruction\": \"黑名单检测\",\n                \"Policy\": \"blackList\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"标点符号\",\n                \"Policy\": \"symbols\",\n                \"Props\": \"\"\n            },\n            {\n                \"Instruction\": \"单词拼写\",\n                \"Policy\": \"word\",\n                \"Props\": \"\"\n            }\n        ],\n        \"RequestId\": \"8483c40e-ddb5-4d45-84c2-a36041d14055\"\n    }\n}",
         "title": "当前支持策略"
+      }
+    ],
+    "GetSourceModuleList": [
+      {
+        "document": "野鹤关联页面查询-引用记录-模块栏",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSourceModuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ModuleList\": [\n            {\n                \"SourceModuleName\": \"解决方案\",\n                \"SourceModuleType\": 10\n            },\n            {\n                \"SourceModuleName\": \"产品介绍页\",\n                \"SourceModuleType\": 20\n            },\n            {\n                \"SourceModuleName\": \"客户案例\",\n                \"SourceModuleType\": 30\n            },\n            {\n                \"SourceModuleName\": \"控制台\",\n                \"SourceModuleType\": 40\n            },\n            {\n                \"SourceModuleName\": \"文档中心\",\n                \"SourceModuleType\": 50\n            },\n            {\n                \"SourceModuleName\": \"私有云文档\",\n                \"SourceModuleType\": 60\n            },\n            {\n                \"SourceModuleName\": \"购买页\",\n                \"SourceModuleType\": 70\n            },\n            {\n                \"SourceModuleName\": \"活动运营\",\n                \"SourceModuleType\": 80\n            },\n            {\n                \"SourceModuleName\": \"开发者社区\",\n                \"SourceModuleType\": 100\n            },\n            {\n                \"SourceModuleName\": \"课堂\",\n                \"SourceModuleType\": 110\n            },\n            {\n                \"SourceModuleName\": \"其他\",\n                \"SourceModuleType\": 120\n            }\n        ],\n        \"RequestId\": \"88110dd9-8bbf-470f-b2e6-48edf52d9cc9\"\n    }\n}",
+        "title": "查询现有引用记录中链接所属的所有模块和id的对应关系"
       }
     ],
     "SeparateText": [

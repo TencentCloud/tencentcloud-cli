@@ -1,3 +1,209 @@
+# Release 3.0.1034.1
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 92 次发布
+
+发布时间：2024-07-12 01:28:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMalwareTimingScanSetting](http://document.tencentcloudapi.woa.com/document/product/296/58240)
+
+	* 新增出参：ProtectMode, ProtectFileScope
+
+* [ModifyMalwareTimingScanSettings](http://document.tencentcloudapi.woa.com/document/product/296/52509)
+
+	* 新增入参：DoClean, ProtectMode, ProtectFileScope
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 95 次发布
+
+发布时间：2024-07-12 01:43:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeQualificationSealQrCode](http://document.tencentcloudapi.woa.com/document/product/1668/84231)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 145 次发布
+
+发布时间：2024-07-12 01:44:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeQualificationSealQrCode](http://document.tencentcloudapi.woa.com/document/product/1595/84232)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 27 次发布
+
+发布时间：2024-07-12 01:46:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskStatus](http://document.tencentcloudapi.woa.com/document/product/608/84233)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 40 次发布
+
+发布时间：2024-07-12 01:57:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpgradeHourDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/84234)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 50 次发布
+
+发布时间：2024-07-12 02:02:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [JobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobConfig)
+
+	* 新增成员：FlinkVersion
+
+* [SlotSharingGroup](http://document.tencentcloudapi.woa.com/document/product/849/52010#SlotSharingGroup)
+
+	* 新增成员：Configuration
+
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 9 次发布
+
+发布时间：2024-07-12 02:04:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BulkSearchLinkRelations](http://document.tencentcloudapi.woa.com/document/product/1732/84238)
+* [BulkUploadLinkRelations](http://document.tencentcloudapi.woa.com/document/product/1732/84237)
+* [GetSourceModuleList](http://document.tencentcloudapi.woa.com/document/product/1732/84236)
+
+新增数据结构：
+
+* [LinkRelations](http://document.tencentcloudapi.woa.com/document/product/1732/80923#LinkRelations)
+* [SourceModuleInfo](http://document.tencentcloudapi.woa.com/document/product/1732/80923#SourceModuleInfo)
+* [SourceUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1732/80923#SourceUrlInfo)
+* [TargetUrls](http://document.tencentcloudapi.woa.com/document/product/1732/80923#TargetUrls)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 33 次发布
+
+发布时间：2024-07-12 02:06:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeReleaseFiles](http://document.tencentcloudapi.woa.com/document/product/1464/69215)
+
+	* 新增入参：FileName
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 8 次发布
+
+发布时间：2024-07-12 02:20:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1701/80209#LoginSettings)
+
+	* 新增成员：KeyIds
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 60 次发布
+
+发布时间：2024-07-12 02:23:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TrtcUsage](http://document.tencentcloudapi.woa.com/document/product/647/44055#TrtcUsage)
+
+	* 新增成员：TimeStampKey
+
+
+
+
 # Release 3.0.1033.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29
