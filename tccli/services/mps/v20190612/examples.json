@@ -522,7 +522,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkEvents\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalPage\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"xx\",\n        \"Infos\": [\n            {\n                \"EventId\": \"xx\",\n                \"Status\": 1,\n                \"Description\": \"xx\",\n                \"EventName\": \"xx\",\n                \"AttachedFlowGroup\": [\n                    {\n                        \"FlowId\": \"xx\",\n                        \"Region\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"EventName\": \"abc\",\n                \"EventId\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"Status\": 1,\n                \"AttachedFlowGroup\": [\n                    {\n                        \"FlowId\": \"abc\",\n                        \"Region\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"PageNum\": 0,\n        \"PageSize\": 0,\n        \"TotalNum\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

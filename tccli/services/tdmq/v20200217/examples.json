@@ -40,6 +40,14 @@
         "title": "专业集群开启支撑接入点"
       }
     ],
+    "CreateClusterOpt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterOpt\n<公共请求参数>\n\n{\n    \"ClusterType\": \"share\",\n    \"ClusterResource\": \"cvm\",\n    \"ClusterName\": \"test-cluster\",\n    \"AdminUrl\": \"9.218.28.122:8080\",\n    \"TracingReport\": \"1.1.1.1:8000\",\n    \"TracingToken\": \"toekn:abcdef\",\n    \"ClbInstanceId\": \"lb-abcdefg\",\n    \"BrokerIps\": [\n        \"9.139.216.25\",\n        \"9.139.216.29\",\n        \"9.139.216.46\"\n    ],\n    \"BookieIps\": [\n        \"9.218.28.110\",\n        \"9.218.19.20\",\n        \"9.218.30.124\"\n    ],\n    \"BrokerZookeeperIps\": [\n        \"9.218.30.58\",\n        \"9.218.18.184\",\n        \"9.218.23.66\"\n    ],\n    \"BookieZookeeperIps\": [\n        \"9.139.216.47\",\n        \"9.139.216.6\"\n    ],\n    \"BrokerSpecification\": 0,\n    \"ProtocolList\": [\n        \"PULSAR\"\n    ],\n    \"IsBookieZkTse\": false,\n    \"IsBrokerZkTse\": true,\n    \"NetworkTypes\": [\n        \"Public\",\n        \"Vpc\"\n    ],\n    \"MaxBandwidthOut\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"029f3725-9dab-4f79-870e-b37d43704b7f\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "CreateCmqQueue": [
       {
         "document": "创建队列",

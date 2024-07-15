@@ -2,7 +2,7 @@
   "actions": {
     "ActivateCluster": [
       {
-        "document": "",
+        "document": "恢复集群",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=ActivateCluster\n&ClusterId=cynosdbpg-bzxxrmtq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
         "title": "恢复集群"

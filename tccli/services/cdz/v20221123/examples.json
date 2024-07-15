@@ -8,6 +8,14 @@
         "title": "查询专属可用区可用区级特性"
       }
     ],
+    "DescribeCloudDedicatedZoneHosts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudDedicatedZoneHosts\n<公共请求参数>\n\n{\n    \"CloudDedicatedZoneID\": \"cdz-xxxxxxxx\",\n    \"HostUuids\": [\n        \"9e6b54d0-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    ],\n    \"InstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CloudDedicatedZoneHostsInfoSet\": [\n            {\n                \"HostUuid\": \"9e6b54d0-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n                \"InstancesInfo\": [\n                    \"ins-xxxxxxxx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"fbea6b85-00bc-4d47-ada9-fc06b3ece766\"\n    }\n}",
+        "title": "查询可用区的Host和Host上部署的实例"
+      }
+    ],
     "DescribeCloudDedicatedZoneResourceSummary": [
       {
         "document": "",

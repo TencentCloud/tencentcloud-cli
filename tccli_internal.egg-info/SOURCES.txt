@@ -248,6 +248,8 @@ tccli/services/clb/__init__.py
 tccli/services/clb/clb_client.py
 tccli/services/clb/v20180317/api.json
 tccli/services/clb/v20180317/examples.json
+tccli/services/cloudapp/__init__.py
+tccli/services/cloudapp/cloudapp_client.py
 tccli/services/cloudaudit/__init__.py
 tccli/services/cloudaudit/cloudaudit_client.py
 tccli/services/cloudaudit/v20190319/api.json

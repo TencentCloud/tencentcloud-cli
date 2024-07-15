@@ -1,3 +1,170 @@
+# Release 3.0.1035.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 33 次发布
+
+发布时间：2024-07-15 01:18:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* GetSnapOverview
+
+
+
+## 专属可用区(cdz) 版本：2022-11-23
+
+### 第 5 次发布
+
+发布时间：2024-07-15 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudDedicatedZoneHosts](http://document.tencentcloudapi.woa.com/document/product/1727/84254)
+
+新增数据结构：
+
+* [CloudDedicatedZoneHostsInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#CloudDedicatedZoneHostsInfo)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 55 次发布
+
+发布时间：2024-07-15 01:49:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTrinoQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/84255)
+
+新增数据结构：
+
+* [TrinoQueryInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#TrinoQueryInfo)
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 28 次发布
+
+发布时间：2024-07-15 01:54:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskStatus](http://document.tencentcloudapi.woa.com/document/product/608/84233)
+
+	* 新增入参：TaskId
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 46 次发布
+
+发布时间：2024-07-15 02:00:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTopicRule](http://document.tencentcloudapi.woa.com/document/product/1081/50231)
+
+	* 新增出参：CamTag
+
+* [GetDeviceList](http://document.tencentcloudapi.woa.com/document/product/1081/37653)
+
+	* 新增入参：Filters
+
+* [SearchStudioProduct](http://document.tencentcloudapi.woa.com/document/product/1081/34981)
+
+	* 新增入参：Filters
+
+
+新增数据结构：
+
+* [CamTag](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CamTag)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1081/34988#Filter)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 29 次发布
+
+发布时间：2024-07-15 02:10:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
+
+	* 新增入参：MongosMemory
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 51 次发布
+
+发布时间：2024-07-15 02:15:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52004)
+
+	* 新增入参：FlinkVersion
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 109 次发布
+
+发布时间：2024-07-15 02:33:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusterOpt](http://document.tencentcloudapi.woa.com/document/product/1179/84256)
+
+
+
 # Release 3.0.1034.1
 
 ## 主机安全(cwp) 版本：2018-02-28

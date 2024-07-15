@@ -35,6 +35,13 @@
       "output": "CreateClusterInternalAccessPointResponse",
       "status": "online"
     },
+    "CreateClusterOpt": {
+      "document": "运营端创建物理集群",
+      "input": "CreateClusterOptRequest",
+      "name": "运营端创建物理集群",
+      "output": "CreateClusterOptResponse",
+      "status": "online"
+    },
     "CreateCmqQueue": {
       "document": "创建cmq队列接口",
       "input": "CreateCmqQueueRequest",
@@ -2815,6 +2822,240 @@
     },
     "CreateClusterInternalAccessPointResponse": {
       "document": "CreateClusterInternalAccessPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterOptRequest": {
+      "document": "CreateClusterOpt请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "share-共享集群；exclusive-独占集群",
+          "example": "exclusive",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取值为cvm或eks",
+          "example": "cvm",
+          "member": "string",
+          "name": "ClusterResource",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名",
+          "example": "gz-exclusive-01",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "broker ip列表",
+          "example": "无",
+          "member": "string",
+          "name": "BrokerIps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "bookie ip列表",
+          "example": "无",
+          "member": "string",
+          "name": "BookieIps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "broker zk ip列表",
+          "example": "无",
+          "member": "string",
+          "name": "BrokerZookeeperIps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "bookie zk ip列表",
+          "example": "无",
+          "member": "string",
+          "name": "BookieZookeeperIps",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "broker规格：\n0-入门；1-基础；2-标准；3-高性能",
+          "example": "1",
+          "member": "int64",
+          "name": "BrokerSpecification",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "协议名数组",
+          "example": "无",
+          "member": "string",
+          "name": "ProtocolList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "pulsar admin url",
+          "example": "http://127.0.0.1:8080",
+          "member": "string",
+          "name": "AdminUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Tracing上报地址",
+          "example": "127.0.0.1:9999",
+          "member": "string",
+          "name": "TracingReport",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLB实例ID,已经废弃",
+          "example": "ins-pkqqy3e2",
+          "member": "string",
+          "name": "ClbInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群admin secretKey",
+          "example": "abced",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物理集群admin token",
+          "example": "esfsefeas.dDJE.123",
+          "member": "string",
+          "name": "AdminToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "data-reporter上报地址",
+          "example": "127.0.0.1:9999",
+          "member": "string",
+          "name": "DataReporterServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Tracing上报token",
+          "example": "wsejfwejl:jkwejeliwe",
+          "member": "string",
+          "name": "TracingToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注123",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "bk zk是否tse",
+          "example": "false",
+          "member": "bool",
+          "name": "IsBookieZkTse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "bk zk是否tse",
+          "example": "true",
+          "member": "bool",
+          "name": "IsBrokerZkTse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要开通接入点的网络类型",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预估网络带宽，仅Public 类型接入点需要填写",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "BookkeeperClusterName集群",
+          "example": "tdmq_txy_gz",
+          "member": "string",
+          "name": "BookkeeperClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BookkeeperZkClusterName集群",
+          "example": "tdmq_txy_gz",
+          "member": "string",
+          "name": "BookkeeperZkClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BrokerZkClusterName集群",
+          "example": "tdmq_txy_gz",
+          "member": "string",
+          "name": "BrokerZkClusterName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterOptResponse": {
+      "document": "CreateClusterOpt返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
