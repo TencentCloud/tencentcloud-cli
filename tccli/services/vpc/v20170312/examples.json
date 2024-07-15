@@ -162,6 +162,14 @@
         "title": "专线网关绑定NAT网关"
       }
     ],
+    "AssociateInstancesToCcnRouteTable": [
+      {
+        "document": "关联实例到路由表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateInstancesToCcnRouteTable\n&CcnId=ccn-gree226l\n&RouteTableId=ccnrt-gree2262\n&Instances.0.InstanceType=VPC\n&Instances.0.InstanceId=vpc-3dr1zrr9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
+        "title": "关联实例到路由表"
+      }
+    ],
     "AssociateNatGatewayAddress": [
       {
         "document": "NAT网关绑定弹性IP",
@@ -256,6 +264,14 @@
         "title": "根据网络探测ID验证探测参数"
       }
     ],
+    "ClearRouteTableSelectionPolicies": [
+      {
+        "document": "清空云联网路由选择策略",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ClearRouteTableSelectionPolicies\n&CcnId=ccn-mnvhfmv9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "清空云联网路由选择策略"
+      }
+    ],
     "CloneSecurityGroup": [
       {
         "document": "克隆安全组",
@@ -322,6 +338,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcn\n<公共请求参数>\n\n{\n    \"CcnDescription\": \"test+description\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"CcnName\": \"test+name\",\n    \"QosLevel\": \"PT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Ccn\": {\n            \"CcnId\": \"ccn-gjug0kul\",\n            \"CcnName\": \"test name\",\n            \"RoutePriorityFlag\": false,\n            \"CcnDescription\": \"test description\",\n            \"InstanceCount\": 0,\n            \"QosLevel\": \"PT\",\n            \"State\": \"AVAILABLE\",\n            \"InstanceChargeType\": \"POSTPAID\",\n            \"BandwidthLimitType\": \"OUTER_REGION_LIMIT\",\n            \"CreateTime\": \"2020-09-22 00:00:00\",\n            \"RouteTableFlag\": null,\n            \"RouteTableCount\": null,\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"b8351d12-3c82-4d4b-9d88-972e02ca4620\"\n    }\n}",
         "title": "创建一个CCN"
+      }
+    ],
+    "CreateCcnRouteTables": [
+      {
+        "document": "创建云联网路由表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateCcnRouteTables\n&RouteTable.0.CcnId=ccn-8j0phqix\n&RouteTable.0.Name=rubytest\n&RouteTable.0.Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CcnRouteTableSet\": [\n            {\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"CcnRouteTableId\": \"ccnrtb-mnvhfmv9\",\n                \"RouteTableName\": \"rubytest\",\n                \"RouteTableDescription\": \"test\",\n                \"IsDefaultTable\": true,\n                \"CreateTime\": \"2021-05-11 15:47:53\"\n            }\n        ],\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "创建云联网路由表"
       }
     ],
     "CreateCustomerGateway": [
@@ -742,6 +766,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-8j0phqix\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "删除一个CCN实例"
+      }
+    ],
+    "DeleteCcnRouteTables": [
+      {
+        "document": "删除指定云联网路由表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteCcnRouteTables\n&RouteTableId.0=ccnrt-8j0phqix\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "删除指定云联网路由表"
       }
     ],
     "DeleteCustomerGateway": [
@@ -1208,6 +1240,30 @@
         "title": "查询一个CCN各地域出带宽上限"
       }
     ],
+    "DescribeCcnRouteTableBroadcastPolicys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnRouteTableBroadcastPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-qd6z2ld1\",\n    \"RouteTableId\": \"ccnrtb-1mkezrkd\",\n    \"PolicyVersion\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicySet\": [\n            {\n                \"Policys\": [\n                    {\n                        \"RouteConditions\": [\n                            {\n                                \"Name\": \"instance-region\",\n                                \"Values\": [\n                                    \"ap-beijing\"\n                                ],\n                                \"MatchPattern\": 1\n                            },\n                            {\n                                \"Name\": \"cidr-block\",\n                                \"Values\": [\n                                    \"9.0.0.0/8\",\n                                    \"10.0.0.0/8\",\n                                    \"192.168.0.0/24\"\n                                ],\n                                \"MatchPattern\": 0\n                            }\n                        ],\n                        \"BroadcastConditions\": [\n                            {\n                                \"Name\": \"instance-region\",\n                                \"Values\": [\n                                    \"ap-beijing\"\n                                ],\n                                \"MatchPattern\": 1\n                            },\n                            {\n                                \"Name\": \"instance-type\",\n                                \"Values\": [\n                                    \"VPC\"\n                                ],\n                                \"MatchPattern\": 1\n                            },\n                            {\n                                \"Name\": \"instance-id\",\n                                \"Values\": [\n                                    \"vpc-jdevjrup\",\n                                    \"vpc-hb81v349\"\n                                ],\n                                \"MatchPattern\": 1\n                            }\n                        ],\n                        \"Action\": \"accept\",\n                        \"Description\": \"允许接受北京地域专线、VPC、VPN三大网段\"\n                    },\n                    {\n                        \"RouteConditions\": [\n                            {\n                                \"Name\": \"instance-type\",\n                                \"Values\": [\n                                    \"VPC\",\n                                    \"DIRECTCONNECT\"\n                                ],\n                                \"MatchPattern\": 1\n                            },\n                            {\n                                \"Name\": \"instance-id\",\n                                \"Values\": [\n                                    \"dcg-8zljkrft\",\n                                    \"vpc-jdevjrup\"\n                                ],\n                                \"MatchPattern\": 1\n                            }\n                        ],\n                        \"BroadcastConditions\": [\n                            {\n                                \"Name\": \"instance-id\",\n                                \"Values\": [\n                                    \"vpc-jdevjrup\",\n                                    \"vpc-hb81v349\"\n                                ],\n                                \"MatchPattern\": 1\n                            }\n                        ],\n                        \"Action\": \"accept\",\n                        \"Description\": \"指定vpc接受北京指定专线和vpc\"\n                    }\n                ],\n                \"PolicyVersion\": 5,\n                \"CreateTime\": \"2022-12-19 19:31:17\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"da0f5fee-14f5-4429-85b3-6650beaa6b46\"\n    }\n}",
+        "title": "查询云联网路由传播策略"
+      }
+    ],
+    "DescribeCcnRouteTableInputPolicys": [
+      {
+        "document": "查询路由表接收策略",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnRouteTableInputPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-rxz9krjj\",\n    \"RouteTableId\": \"ccnrtb-63ujxv2h\",\n    \"PolicyVersion\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicySet\": [\n            {\n                \"Policys\": [],\n                \"PolicyVersion\": 29,\n                \"CreateTime\": \"2023-05-16 16:13:39\"\n            },\n            {\n                \"Policys\": [\n                    {\n                        \"RouteConditions\": [\n                            {\n                                \"Name\": \"instance-type\",\n                                \"Values\": [\n                                    \"DIRECTCONNECT\",\n                                    \"VPNGW\"\n                                ],\n                                \"MatchPattern\": 1\n                            }\n                        ],\n                        \"Action\": \"accept\",\n                        \"Description\": \"\"\n                    }\n                ],\n                \"PolicyVersion\": 28,\n                \"CreateTime\": \"2023-05-16 16:13:32\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeCcnRouteTableInputPolicys"
+      }
+    ],
+    "DescribeCcnRouteTables": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeCcnRouteTables\n&Filters.0.Name=route-table-id\n&Filters.0.Values.0=ccnrtb-mnvhfmv9\n&Filters.0.Values.1=ccnrtb-3230jx4x\n&Filters.1.Name=route-table-name\n&Filters.1.Values.0=_default_rtb\n&Filters.1.Values.1=rubytest\n&Filters.2.Name=ccn-id\n&Filters.2.Values.0=ccn-8j0phqix\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CcnRouteTableSet\": [\n            {\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"CcnRouteTableId\": \"ccnrtb-mnvhfmv9\",\n                \"RouteTableName\": \"_default_rtb\",\n                \"RouteTableDescription\": \"\",\n                \"IsDefaultTable\": true,\n                \"CreateTime\": \"2021-05-11 15:47:53\"\n            },\n            {\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"CcnRouteTableId\": \"ccnrtb-3230jx4x\",\n                \"RouteTableName\": \"rubytest\",\n                \"RouteTableDescription\": \"test\",\n                \"IsDefaultTable\": false,\n                \"CreateTime\": \"2021-05-11 16:33:14\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "查询接口"
+      }
+    ],
     "DescribeCcnRoutes": [
       {
         "document": "查询云联网路由列表",
@@ -1648,6 +1704,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRouteConflicts\n&RouteTableId=rtb-q8o2z892\n&DestinationCidrBlocks.0=192.168.0.0/24\n&DestinationCidrBlocks.1=10.11.0.0/24\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RouteConflictSet\": [\n            {\n                \"RouteTableId\": \"rtb-q8o2z892\",\n                \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                \"ConflictSet\": [\n                    {\n                        \"RouteId\": 20662,\n                        \"DestinationCidrBlock\": \"192.168.0.0/24\",\n                        \"GatewayId\": \"135\",\n                        \"GatewayType\": \"11\",\n                        \"RouteDescription\": \"\"\n                    }\n                ]\n            },\n            {\n                \"RouteTableId\": \"rtb-q8o2z892\",\n                \"DestinationCidrBlock\": \"10.11.0.0/24\",\n                \"ConflictSet\": [\n                    {\n                        \"RouteId\": 20661,\n                        \"DestinationCidrBlock\": \"10.11.0.0/24\",\n                        \"GatewayId\": \"135\",\n                        \"GatewayType\": \"11\",\n                        \"RouteDescription\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"cf11a8a4-e7c6-42cf-a35a-649c1789868b\"\n    }\n}",
         "title": "查询路由策略冲突列表"
+      }
+    ],
+    "DescribeRouteTableAssociatedInstances": [
+      {
+        "document": "查询路由表绑定实例列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRouteTableAssociatedInstances\n&Filters.0.Name=route-table-id\n&Filters.0.Values.0=ccnrtb-mnvhfmv9\n&Filters.0.Values.1=ccnrtb-3230jx4x\n&Filters.1.Name=instance-type\n&Filters.1.Values.0=VPC\n&Filters.2.Name=ccn-id\n&Filters.2.Values.0=ccn-8j0phqix\n&Filters.3.Name=instance-id\n&Filters.3.Values.0=vpc-q2nxods9\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceBindSet\": [\n            {\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceId\": \"vpc-q2nxods9\",\n                \"InstanceBindTime\": \"2021-05-20 16:39:34\",\n                \"RouteTableId\": \"ccnrtb-3230jx4x\",\n                \"InstanceName\": \"rubytest\",\n                \"State\": \"0\",\n                \"InstanceRegion\": [\n                    \"ap-guangzhou\"\n                ],\n                \"InstanceUin\": \"329087131\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ad8d1a59-fd88-4e47-b3ab-79c97efa7b5e\"\n    }\n}",
+        "title": "查询路由表绑定实例列表"
+      }
+    ],
+    "DescribeRouteTableSelectionPolicies": [
+      {
+        "document": "查询路由选择策略",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRouteTableSelectionPolicies\n&Filters.0.Name=ccn-id\n&Filters.0.Values.0=ccn-8j0phqix\n&Filters.1.Name=instance-id\n&Filters.1.Values.0=vpc-q2nxods9\n&Filters.2.Name=ccn-route-table-id\n&Filters.2.Values.0=ccnrtb-b0v86f8t\n&Filters.3.Name=instance-type\n&Filters.3.Values.0=VPC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RouteSelectionPolicySet\": [\n            {\n                \"CcnId\": \"ccn-8j0phqix\",\n                \"RouteTableId\": \"ccnrtb-b0v86f8t\",\n                \"RouteTableName\": \"rubytest222\",\n                \"Description\": \"ruby\",\n                \"InstanceType\": 0,\n                \"InstanceId\": \"vpc-q2nxods9\",\n                \"InstanceUin\": \"329087131\",\n                \"SourceCidrBlock\": \"10.0.0.0/24\",\n                \"InstanceName\": \"rubytest\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ed83da8-7eaf-48a4-8488-61bd9c710cfa\"\n    }\n}",
+        "title": "查询路由选择策略"
       }
     ],
     "DescribeRouteTables": [
@@ -2402,6 +2474,14 @@
         "title": "后付费云联网实例修改限速类型"
       }
     ],
+    "ModifyCcnRouteTables": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyCcnRouteTables\n&RouteTableInfo.0.RouteTableId=ccnrtb-mnvhfmv9\n&RouteTableInfo.0.Name=rubytest\n&RouteTableInfo.0.Description=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "修改接口"
+      }
+    ],
     "ModifyCustomerGatewayAttribute": [
       {
         "document": "修改对端网关",
@@ -2626,6 +2706,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyRouteTableAttribute\n&RouteTableId=rtb-n0yejvje\n&RouteTableName=NewRouteTableName\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "修改路由表属性"
+      }
+    ],
+    "ModifyRouteTableSelectionPolicies": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyRouteTableSelectionPolicies\n&CcnId=ccn-mnvhfmv9\n&SelectionPolicies.0.InstanceType=VPC\n&SelectionPolicies.0.InstanceId=vpc-2345rfgt\n&SelectionPolicies.0.SourceCidrBlock=10.0.0.0/24\n&SelectionPolicies.0.RouteTableId=ccnrtb-3456trfg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
+        "title": "创建接口"
       }
     ],
     "ModifySecurityGroupAttribute": [
@@ -2880,6 +2968,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=RenewVpnGateway\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InstanceChargePrepaid.Period=2\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "续费VPN网关"
+      }
+    ],
+    "ReplaceCcnRouteTableBroadcastPolicys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceCcnRouteTableBroadcastPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-qd6z2ld1\",\n    \"RouteTableId\": \"ccnrtb-1mkezrkd\",\n    \"Policys\": [\n        {\n            \"RouteConditions\": [\n                {\n                    \"Name\": \"instance-type\",\n                    \"Values\": [\n                        \"VPC\",\n                        \"DIRECTCONNECT\"\n                    ],\n                    \"MatchPattern\": 1\n                },\n                {\n                    \"Name\": \"instance-id\",\n                    \"Values\": [\n                        \"dcg-8zljkrft\",\n                        \"vpc-jdevjrup\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"BroadcastConditions\": [\n                {\n                    \"Name\": \"instance-id\",\n                    \"Values\": [\n                        \"vpc-jdevjrup\",\n                        \"vpc-hb81v349\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"Action\": \"accept\",\n            \"Description\": \"指定vpc接收北京指定专线和vpc路由\"\n        },\n        {\n            \"RouteConditions\": [\n                {\n                    \"Name\": \"instance-region\",\n                    \"Values\": [\n                        \"ap-beijing\"\n                    ],\n                    \"MatchPattern\": 1\n                },\n                {\n                    \"Name\": \"instance-type\",\n                    \"Values\": [\n                        \"VPC\",\n                        \"DIRECTCONNECT\",\n                        \"VPNGW\"\n                    ],\n                    \"MatchPattern\": 1\n                },\n                {\n                    \"Name\": \"cidr-block\",\n                    \"Values\": [\n                        \"9.0.0.0/8\",\n                        \"10.0.0.0/8\",\n                        \"192.168.0.0/24\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"BroadcastConditions\": [\n                {\n                    \"Name\": \"instance-region\",\n                    \"Values\": [\n                        \"ap-beijing\"\n                    ],\n                    \"MatchPattern\": 1\n                },\n                {\n                    \"Name\": \"instance-id\",\n                    \"Values\": [\n                        \"vpc-jdevjrup\",\n                        \"vpc-hb81v349\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"Action\": \"drop\",\n            \"Description\": \"指定VPC绝收北京地域专线、VPC、VPN三大网段\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fe64d7f-3983-4f17-847d-a60dded41951\"\n    }\n}",
+        "title": "替换云联网路由传播策略"
+      }
+    ],
+    "ReplaceCcnRouteTableInputPolicys": [
+      {
+        "document": "替换路由表接收策略",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceCcnRouteTableInputPolicys\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-rxz9krjj\",\n    \"RouteTableId\": \"ccnrtb-63ujxv2h\",\n    \"Policys\": [\n        {\n            \"RouteConditions\": [\n                {\n                    \"Name\": \"instance-type\",\n                    \"Values\": [\n                        \"VPNGW\"\n                    ],\n                    \"MatchPattern\": 1\n                }\n            ],\n            \"Action\": \"accept\",\n            \"Description\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82f40ff4-5ecf-4d7a-8081-18a652f38728\"\n    }\n}",
+        "title": "ReplaceCcnRouteTableInputPolicys"
       }
     ],
     "ReplaceDirectConnectGatewayCcnRoutes": [

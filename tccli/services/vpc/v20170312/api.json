@@ -105,6 +105,13 @@
       "output": "AssociateDirectConnectGatewayNatGatewayResponse",
       "status": "online"
     },
+    "AssociateInstancesToCcnRouteTable": {
+      "document": "本接口（AssociateInstancesToCcnRouteTable）用于将指定的云联网实例关联到指定的云联网路由表。",
+      "input": "AssociateInstancesToCcnRouteTableRequest",
+      "name": "关联云联网实例到指定的云联网路由表",
+      "output": "AssociateInstancesToCcnRouteTableResponse",
+      "status": "online"
+    },
     "AssociateNatGatewayAddress": {
       "document": "本接口(AssociateNatGatewayAddress)用于NAT网关绑定弹性IP（EIP）。",
       "input": "AssociateNatGatewayAddressRequest",
@@ -182,6 +189,13 @@
       "output": "CheckNetDetectStateResponse",
       "status": "online"
     },
+    "ClearRouteTableSelectionPolicies": {
+      "document": "本接口（ClearRouteTableSelectionPolicies）用于清空指定云联网的路由表选择策略。",
+      "input": "ClearRouteTableSelectionPoliciesRequest",
+      "name": "清空云联网路由表选择策略",
+      "output": "ClearRouteTableSelectionPoliciesResponse",
+      "status": "online"
+    },
     "CloneSecurityGroup": {
       "document": "本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。仅克隆安全组及其规则信息，不会克隆安全组标签信息。",
       "input": "CloneSecurityGroupRequest",
@@ -229,6 +243,13 @@
       "input": "CreateCcnRequest",
       "name": "创建CCN",
       "output": "CreateCcnResponse",
+      "status": "online"
+    },
+    "CreateCcnRouteTables": {
+      "document": "本接口（CreateCcnRouteTables）用于给指定的云联网实例新建路由表。",
+      "input": "CreateCcnRouteTablesRequest",
+      "name": "新建云联网路由表",
+      "output": "CreateCcnRouteTablesResponse",
       "status": "online"
     },
     "CreateCustomerGateway": {
@@ -565,6 +586,13 @@
       "input": "DeleteCcnRequest",
       "name": "删除CCN",
       "output": "DeleteCcnResponse",
+      "status": "online"
+    },
+    "DeleteCcnRouteTables": {
+      "document": "本接口（DeleteCcnRouteTables）用于删除云联网路由表。",
+      "input": "DeleteCcnRouteTablesRequest",
+      "name": "删除云联网路由表",
+      "output": "DeleteCcnRouteTablesResponse",
       "status": "online"
     },
     "DeleteCustomerGateway": {
@@ -931,6 +959,27 @@
       "output": "DescribeCcnRegionBandwidthLimitsResponse",
       "status": "online"
     },
+    "DescribeCcnRouteTableBroadcastPolicys": {
+      "document": "本接口(DescribeCcnRouteTableBroadcastPolicys)用于查询指定云联网路由表的路由传播策略。",
+      "input": "DescribeCcnRouteTableBroadcastPolicysRequest",
+      "name": "查询云联网路由传播策略",
+      "output": "DescribeCcnRouteTableBroadcastPolicysResponse",
+      "status": "online"
+    },
+    "DescribeCcnRouteTableInputPolicys": {
+      "document": "本接口(DescribeCcnRouteTableInputPolicys)用于查询指定云联网路由表的路由接收策略。",
+      "input": "DescribeCcnRouteTableInputPolicysRequest",
+      "name": "查询云联网路由接收策略",
+      "output": "DescribeCcnRouteTableInputPolicysResponse",
+      "status": "online"
+    },
+    "DescribeCcnRouteTables": {
+      "document": "该接口用于查询指定的云联网实例的路由表信息。",
+      "input": "DescribeCcnRouteTablesRequest",
+      "name": "查询云联网路由表信息",
+      "output": "DescribeCcnRouteTablesResponse",
+      "status": "online"
+    },
     "DescribeCcnRoutes": {
       "document": "本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由。",
       "input": "DescribeCcnRoutesRequest",
@@ -1216,6 +1265,20 @@
       "input": "DescribeRouteConflictsRequest",
       "name": "查询路由策略冲突列表",
       "output": "DescribeRouteConflictsResponse",
+      "status": "online"
+    },
+    "DescribeRouteTableAssociatedInstances": {
+      "document": "本接口（DescribeRouteTableAssociatedInstances）用于查询指定的云联网关联的实例所绑定的路由表信息。",
+      "input": "DescribeRouteTableAssociatedInstancesRequest",
+      "name": "查询实例绑定路由表信息",
+      "output": "DescribeRouteTableAssociatedInstancesResponse",
+      "status": "online"
+    },
+    "DescribeRouteTableSelectionPolicies": {
+      "document": "本接口（DescribeRouteTableSelectionPolicies）用于查询云联网路由表选择策略。",
+      "input": "DescribeRouteTableSelectionPoliciesRequest",
+      "name": "查询云联网路由表选择策略信息",
+      "output": "DescribeRouteTableSelectionPoliciesResponse",
       "status": "online"
     },
     "DescribeRouteTables": {
@@ -1813,6 +1876,13 @@
       "output": "ModifyCcnRegionBandwidthLimitsTypeResponse",
       "status": "online"
     },
+    "ModifyCcnRouteTables": {
+      "document": "该接口用于修改云联网路由表名称和备注。",
+      "input": "ModifyCcnRouteTablesRequest",
+      "name": "修改云联网路由表",
+      "output": "ModifyCcnRouteTablesResponse",
+      "status": "online"
+    },
     "ModifyCustomerGatewayAttribute": {
       "document": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。",
       "input": "ModifyCustomerGatewayAttributeRequest",
@@ -1993,6 +2063,13 @@
       "input": "ModifyRouteTableAttributeRequest",
       "name": "修改路由表属性",
       "output": "ModifyRouteTableAttributeResponse",
+      "status": "online"
+    },
+    "ModifyRouteTableSelectionPolicies": {
+      "document": "该接口用于编辑云联网路由表选择策略",
+      "input": "ModifyRouteTableSelectionPoliciesRequest",
+      "name": "编辑云联网路由表选择策略",
+      "output": "ModifyRouteTableSelectionPoliciesResponse",
       "status": "online"
     },
     "ModifySecurityGroupAttribute": {
@@ -2189,6 +2266,20 @@
       "input": "RenewVpnGatewayRequest",
       "name": "续费VPN网关",
       "output": "RenewVpnGatewayResponse",
+      "status": "online"
+    },
+    "ReplaceCcnRouteTableBroadcastPolicys": {
+      "document": "本接口(ReplaceCcnRouteTableBroadcastPolicys)用于替换云联网路由表路由传播策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**传播条件支持以下三种：**\n\n- 实例类型: `instance-type`，格式同路由条件\n- 实例ID: `instance-id`，格式同路由条件\n- 实例地域: `instance-region`，格式同路由条件\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由传播策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
+      "input": "ReplaceCcnRouteTableBroadcastPolicysRequest",
+      "name": "替换云联网路由传播策略",
+      "output": "ReplaceCcnRouteTableBroadcastPolicysResponse",
+      "status": "online"
+    },
+    "ReplaceCcnRouteTableInputPolicys": {
+      "document": "本接口(ReplaceRouteTableInputPolicys)用于替换云联网路由表路由接收策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由接收策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
+      "input": "ReplaceCcnRouteTableInputPolicysRequest",
+      "name": "替换云联网路由接收策略",
+      "output": "ReplaceCcnRouteTableInputPolicysResponse",
       "status": "online"
     },
     "ReplaceDirectConnectGatewayCcnRoutes": {
@@ -3882,6 +3973,51 @@
       ],
       "type": "object"
     },
+    "AssociateInstancesToCcnRouteTableRequest": {
+      "document": "AssociateInstancesToCcnRouteTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-1223cdfe",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由表ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例列表。",
+          "example": "无",
+          "member": "CcnInstanceWithoutRegion",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateInstancesToCcnRouteTableResponse": {
+      "document": "AssociateInstancesToCcnRouteTable返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssociateNatGatewayAddressRequest": {
       "document": "AssociateNatGatewayAddress请求参数结构体",
       "members": [
@@ -5048,6 +5184,42 @@
       ],
       "usage": "out"
     },
+    "CcnBatchRouteTable": {
+      "document": "云联网路由表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-245ecr35",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表描述。",
+          "example": "deerers",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CcnFlowLock": {
       "document": "云联网限速实例锁对象，该对象特用于运营端使用，用于封禁实例流量。",
       "members": [
@@ -5144,6 +5316,32 @@
       "document": "云联网实例对象，该对象特用于运营端使用，不建议给租户的接口中提供该复杂类型。",
       "members": [],
       "usage": "out"
+    },
+    "CcnInstanceWithoutRegion": {
+      "document": "ccn实例信息（不带地域属性）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网支持的实例类型：\n`VPC`\n`DIRECTCONNECT`\n`BMVPC` \n`EDGE`\n`EDGE_TUNNEL`\n`EDGE_VPNGW`\n`VPNGW`",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CcnRegionBandwidthLimit": {
       "document": "云联网（CCN）地域出带宽上限",
@@ -5372,6 +5570,318 @@
         }
       ],
       "usage": "out"
+    },
+    "CcnRouteBroadcastPolicyRouteCondition": {
+      "document": "云联网路由传播策略之路由条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件类型",
+          "example": "instance-type",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件值列表",
+          "example": "['VPC', 'DIRECTCONNECT']",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配模式，`1` 精确匹配，`0` 模糊匹配",
+          "example": "1",
+          "member": "uint64",
+          "name": "MatchPattern",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CcnRouteTable": {
+      "document": "云联网路由表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-245ecr35",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "CcnRouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表名称。",
+          "example": "test",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表描述。",
+          "example": "deerers",
+          "member": "string",
+          "name": "RouteTableDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "True：是默认路由表 False：非默认路由表。",
+          "example": "True",
+          "member": "bool",
+          "name": "IsDefaultTable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2021-05-14 11:16:45",
+          "member": "datetime",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnRouteTableBroadcastPolicy": {
+      "document": "云联网路由传播策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由条件",
+          "example": "无",
+          "member": "CcnRouteBroadcastPolicyRouteCondition",
+          "name": "RouteConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传播条件",
+          "example": "无",
+          "member": "CcnRouteBroadcastPolicyRouteCondition",
+          "name": "BroadcastConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由行为，`accept` 允许，`drop` 拒绝",
+          "example": "accept",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CcnRouteTableBroadcastPolicys": {
+      "document": "云联网路由传播策略列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "无",
+          "member": "CcnRouteTableBroadcastPolicy",
+          "name": "Policys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "10",
+          "member": "uint64",
+          "name": "PolicyVersion",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-05-24 19:28:31",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnRouteTableInputPolicy": {
+      "document": "云联网路由接收策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由条件。",
+          "example": "无",
+          "member": "CcnRouteBroadcastPolicyRouteCondition",
+          "name": "RouteConditions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由行为，`accept` 允许，`drop` 拒绝。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CcnRouteTableInputPolicys": {
+      "document": "云联网路由接收策略列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CcnRouteTableInputPolicy",
+          "name": "Policys",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PolicyVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-24 19:28:31",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnRouteTableSelectPolicy": {
+      "document": "路由表选择策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型：\n私有网络: `VPC`\n专线网关: `DIRECTCONNECT`\n黑石私有网络: `BMVPC`\nEDGE设备: `EDGE`\nEDGE隧道: `EDGE_TUNNEL`\nEDGE网关: `EDGE_VPNGW`\nVPN网关：`VPNGW`",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端CIDR。",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由表备注。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "CheckAssistantCidrRequest": {
       "document": "CheckAssistantCidr请求参数结构体",
@@ -5602,6 +6112,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ClearRouteTableSelectionPoliciesRequest": {
+      "document": "ClearRouteTableSelectionPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClearRouteTableSelectionPoliciesResponse": {
+      "document": "ClearRouteTableSelectionPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloneSecurityGroupRequest": {
       "document": "CloneSecurityGroup请求参数结构体",
@@ -6206,6 +6743,42 @@
           "member": "CCN",
           "name": "Ccn",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcnRouteTablesRequest": {
+      "document": "CreateCcnRouteTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要创建的路由表列表。",
+          "example": "无",
+          "member": "CcnBatchRouteTable",
+          "name": "RouteTable",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCcnRouteTablesResponse": {
+      "document": "CreateCcnRouteTables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表信息列表。",
+          "example": "无",
+          "member": "CcnRouteTable",
+          "name": "CcnRouteTableSet",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9986,6 +10559,33 @@
       ],
       "type": "object"
     },
+    "DeleteCcnRouteTablesRequest": {
+      "document": "DeleteCcnRouteTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的路由表列表。",
+          "example": "无",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCcnRouteTablesResponse": {
+      "document": "DeleteCcnRouteTables返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCustomerGatewayRequest": {
       "document": "DeleteCustomerGateway请求参数结构体",
       "members": [
@@ -11980,6 +12580,199 @@
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimitSet",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTableBroadcastPolicysRequest": {
+      "document": "DescribeCcnRouteTableBroadcastPolicys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-qd6z2ld1",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表ID",
+          "example": "ccnrtb-1mkezrkd",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由传播策略版本号",
+          "example": "10",
+          "member": "uint64",
+          "name": "PolicyVersion",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTableBroadcastPolicysResponse": {
+      "document": "DescribeCcnRouteTableBroadcastPolicys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表传播策略。",
+          "example": "无",
+          "member": "CcnRouteTableBroadcastPolicys",
+          "name": "PolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的对象数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTableInputPolicysRequest": {
+      "document": "DescribeCcnRouteTableInputPolicys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-qd6z2ld1",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表ID。",
+          "example": "ccnrtb-1mkezrkd",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略版本号。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PolicyVersion",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTableInputPolicysResponse": {
+      "document": "DescribeCcnRouteTableInputPolicys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表接收策略。",
+          "example": "无",
+          "member": "CcnRouteTableInputPolicys",
+          "name": "PolicySet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的对象数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTablesRequest": {
+      "document": "DescribeCcnRouteTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>route-table-id - String -（过滤条件）路由表ID。</li>\n<li>route-table-name - String -（过滤条件）路由表名称。</li>\n<li>route-table-description- String -（过滤条件）路由表备注。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一次查询最大返回的数量。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnRouteTablesResponse": {
+      "document": "DescribeCcnRouteTables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表信息列表。",
+          "example": "无",
+          "member": "CcnRouteTable",
+          "name": "CcnRouteTableSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询到的路由表数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -15030,6 +15823,132 @@
           "member": "RouteConflict",
           "name": "RouteConflictSet",
           "type": "list"
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableAssociatedInstancesRequest": {
+      "document": "DescribeRouteTableAssociatedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>ccn-route-table-id - String -（过滤条件）路由表ID。</li>\n<li>instance-type - String -（过滤条件）实例类型：\n私有网络: `VPC`\n专线网关: `DIRECTCONNECT`\n黑石私有网络: `BMVPC`\nEDGE设备: `EDGE`\nEDGE隧道: `EDGE_TUNNEL`\nEDGE网关: `EDGE_VPNGW`\nVPN网关：`VPNGW`</li>\n<li>instance-id- String -（过滤条件）实例ID。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一次查询最大返回的数量。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableAssociatedInstancesResponse": {
+      "document": "DescribeRouteTableAssociatedInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的绑定路由表的实例数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定信息。",
+          "example": "无",
+          "member": "InstanceBind",
+          "name": "InstanceBindSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableSelectionPoliciesRequest": {
+      "document": "DescribeRouteTableSelectionPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型:\n私有网络: `VPC`\n专线网关: `DIRECTCONNECT`\n黑石私有网络: `BMVPC`\nEDGE设备: `EDGE`\nEDGE隧道: `EDGE_TUNNEL`\nEDGE网关: `EDGE_VPNGW`\nVPN网关：`VPNGW`</li>\n<li>ccn-route-table-id - String -（过滤条件）路由表ID。</li>\n<li>instance-id - String -（过滤条件）关联的实例ID。</li>\n<li>route-table-name - String -（过滤条件）路由表名称。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRouteTableSelectionPoliciesResponse": {
+      "document": "DescribeRouteTableSelectionPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的对象数。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表选择策略信息集合。",
+          "example": "无",
+          "member": "RouteSelectionPolicy",
+          "name": "RouteSelectionPolicySet",
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20551,6 +21470,102 @@
       ],
       "type": "object"
     },
+    "InstanceBind": {
+      "document": "云联网实例绑定路由表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-245ecr35",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型：VPC，DIRECTCONNECT，BMVPC，EDGE，EDGE_TUNNEL，EDGE_VPNGW，VPNGW。",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定路由表的时间。",
+          "example": "2021-05-20 16:39:34",
+          "member": "datetime",
+          "name": "InstanceBindTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "tesetsa",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的账户uin。",
+          "example": "329087131",
+          "member": "string",
+          "name": "InstanceUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联实例状态：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "State",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceChargePrepaid": {
       "document": "预付费（包年包月）计费对象。",
       "members": [
@@ -22000,6 +23015,33 @@
       ],
       "type": "object"
     },
+    "ModifyCcnRouteTablesRequest": {
+      "document": "ModifyCcnRouteTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的路由表列表。",
+          "example": "无",
+          "member": "ModifyRouteTableInfo",
+          "name": "RouteTableInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCcnRouteTablesResponse": {
+      "document": "ModifyCcnRouteTables返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCustomerGatewayAttributeRequest": {
       "document": "ModifyCustomerGatewayAttribute请求参数结构体",
       "members": [
@@ -23214,6 +24256,78 @@
     },
     "ModifyRouteTableAttributeResponse": {
       "document": "ModifyRouteTableAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableInfo": {
+      "document": "云联网路由表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网路由表id。",
+          "example": "ccnrtb-245ecr35",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表描述。",
+          "example": "deerers",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyRouteTableSelectionPoliciesRequest": {
+      "document": "ModifyRouteTableSelectionPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择策略信息集合，表示需要按照当前的策略来修改。",
+          "example": "-",
+          "member": "CcnRouteTableSelectPolicy",
+          "name": "SelectionPolicies",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRouteTableSelectionPoliciesResponse": {
+      "document": "ModifyRouteTableSelectionPolicies返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26601,6 +27715,96 @@
       ],
       "type": "object"
     },
+    "ReplaceCcnRouteTableBroadcastPolicysRequest": {
+      "document": "ReplaceCcnRouteTableBroadcastPolicys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-qd6z2ld1",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表ID",
+          "example": "ccnrtb-1mkezrkd",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的路由传播策略",
+          "example": "无",
+          "member": "CcnRouteTableBroadcastPolicy",
+          "name": "Policys",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCcnRouteTableBroadcastPolicysResponse": {
+      "document": "ReplaceCcnRouteTableBroadcastPolicys返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCcnRouteTableInputPolicysRequest": {
+      "document": "ReplaceCcnRouteTableInputPolicys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-qd6z2ld1",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网路由表ID。",
+          "example": "ccnrtb-1mkezrkd",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的路由接收策略。",
+          "example": "无",
+          "member": "CcnRouteTableInputPolicy",
+          "name": "Policys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceCcnRouteTableInputPolicysResponse": {
+      "document": "ReplaceCcnRouteTableInputPolicys返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReplaceDirectConnectGatewayCcnRoutesRequest": {
       "document": "ReplaceDirectConnectGatewayCcnRoutes请求参数结构体",
       "members": [
@@ -27800,6 +29004,102 @@
           "name": "ConflictSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RouteSelectionPolicy": {
+      "document": "路由表选择策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID。",
+          "example": "ccn-245ecr35",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表ID。",
+          "example": "ccnrtb-1234edfr",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表名称。",
+          "example": "34tgrdgs",
+          "member": "string",
+          "name": "RouteTableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。如VPC",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "tesetsa",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端cidr。",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "SourceCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由表描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "vpc-m0c2kcun",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联实例所属UIN（根账号）。",
+          "example": "100000072292",
+          "member": "string",
+          "name": "InstanceUin",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

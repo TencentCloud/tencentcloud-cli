@@ -1,0 +1,305 @@
+{
+  "actions": {
+    "DescribeCloudDedicatedZoneHosts": {
+      "document": "查询可用区的Host和Host上部署的实例",
+      "input": "DescribeCloudDedicatedZoneHostsRequest",
+      "name": "查询用户的专属可用区的母机及该母机下的子机信息",
+      "output": "DescribeCloudDedicatedZoneHostsResponse",
+      "status": "online"
+    },
+    "DescribeCloudDedicatedZoneResourceSummary": {
+      "document": "查询专属可用区各个垂直产品的资源使用情况",
+      "input": "DescribeCloudDedicatedZoneResourceSummaryRequest",
+      "name": "查询专属可用区资源水位概览",
+      "output": "DescribeCloudDedicatedZoneResourceSummaryResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-11-23",
+    "api_brief": "介绍如何使用API对专属可用区进行操作，包括查看专属可用区的基本信息和订单数据，以及获取专属可用区内可用资源情况等。",
+    "serviceNameCN": "专属可用区",
+    "serviceShortName": "cdz"
+  },
+  "objects": {
+    "CloudDedicatedZoneHostsInfo": {
+      "document": "CDZ的母机和子机的对应关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Host的唯一标识uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstancesInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudDedicatedZoneResourceStatisticsInfo": {
+      "document": "专属可用区资源统计项数据详情，对应一个具体的垂直产品的资源统计项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源统计项名称",
+          "example": "CPU",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源统计项单位",
+          "example": "核",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源总量",
+          "example": "300",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已用资源",
+          "example": "16",
+          "member": "string",
+          "name": "Usage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已用资源占比",
+          "example": "5.33%",
+          "member": "string",
+          "name": "UsageRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余资源",
+          "example": "284",
+          "member": "string",
+          "name": "Remain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余资源占比",
+          "example": "94.67%",
+          "member": "string",
+          "name": "RemainRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本周一零点资源使用率",
+          "example": "17.29%",
+          "member": "string",
+          "name": "ThisMondayUsageRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本周资源增长比例",
+          "example": "0.50%",
+          "member": "string",
+          "name": "ThisMondayUsageGrowthRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上周资源增长比例",
+          "example": "-0.12%",
+          "member": "string",
+          "name": "LastMondayUsageGrowthRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudDedicatedZoneResourceSummaryInfo": {
+      "document": "专属可用区资源水位数据详情，对应一个具体的垂直产品。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "SubProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源统计详情",
+          "example": "无",
+          "member": "CloudDedicatedZoneResourceStatisticsInfo",
+          "name": "Statistics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCloudDedicatedZoneHostsRequest": {
+      "document": "DescribeCloudDedicatedZoneHosts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区ID ",
+          "example": "cdz-xxxxxxxx",
+          "member": "string",
+          "name": "CloudDedicatedZoneID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一个或多个Host面的CVM实例信息。最大支持查询100台Host。",
+          "example": "xxxxx-xxxxx-xxxxx",
+          "member": "string",
+          "name": "HostUuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneHostsResponse": {
+      "document": "DescribeCloudDedicatedZoneHosts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回Host和Host上部署的实例信息之间的关系",
+          "example": "无",
+          "member": "CloudDedicatedZoneHostsInfo",
+          "name": "CloudDedicatedZoneHostsInfoSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneResourceSummaryRequest": {
+      "document": "DescribeCloudDedicatedZoneResourceSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区唯一标识",
+          "example": "cdz-8wbc41r9",
+          "member": "string",
+          "name": "CdzId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneResourceSummaryResponse": {
+      "document": "DescribeCloudDedicatedZoneResourceSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源水位详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudDedicatedZoneResourceSummaryInfo",
+          "name": "ResourceSummarySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

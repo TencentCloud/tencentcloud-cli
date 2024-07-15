@@ -3028,6 +3028,15 @@
           "name": "Egress",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例的预付费相关属性",
+          "example": "无",
+          "member": "LBChargePrepaid",
+          "name": "LBChargePrepaid",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -442,7 +442,7 @@
       "status": "online"
     },
     "DescribeExtendedServiceAuthInfo": {
-      "document": "查询企业扩展服务的开通和授权情况，当前支持查询以下内容：\n\n1. **企业自动签**\n2. **企业与港澳台居民签署合同**\n3. **使用手机号验证签署方身份**\n4. **骑缝章**\n5. **拓宽签署方年龄限制**\n6. **下载企业合同/文件**\n7. **隐藏合同经办人姓名**\n\n对应能力开通页面在子客控制台-企业中心-拓展服务，如下图所示:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/931a1e02955ab36e5cc69a489af10352.jpg)\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)",
+      "document": "查询企业扩展服务的开通和授权情况，当前支持查询以下内容：\n\n1. **企业自动签**\n2. **企业与港澳台居民签署合同**\n3. **使用手机号验证签署方身份**\n4. **拓宽签署方年龄限制**\n5. **下载企业合同/文件**\n6. **隐藏合同经办人姓名**\n\n对应能力开通页面在子客控制台-企业中心-拓展服务，如下图所示:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/931a1e02955ab36e5cc69a489af10352.jpg)\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)",
       "input": "DescribeExtendedServiceAuthInfoRequest",
       "name": "查询企业扩展服务授权信息",
       "output": "DescribeExtendedServiceAuthInfoResponse",
@@ -6803,7 +6803,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型 , 可选类型如下: \n<ul><li>**OFFICIAL**: (默认)公章</li>\n<li>**CONTRACT**: 合同专用章;</li>\n<li>**FINANCE**: 财务专用章;</li>\n<li>**PERSONNEL**: 人事专用章</li>\n<li>**INVOICE**: 发票专用章</li>\n</ul>\n注: `同企业下只能有一个公章, 重复创建会报错`",
+          "document": "电子印章类型 , 可选类型如下: <ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>注: `同企业下只能有<font color=\"red\">一个</font>公章, 重复创建会报错`",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",

@@ -87,6 +87,14 @@
         "output": "{\n    \"Response\": {\n        \"JobId\": \"test\",\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
         "title": "调用成功"
       }
+    ],
+    "TextToImageLite": [
+      {
+        "document": "成功调用，并返回生图url",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageLite\n<公共请求参数>\n\n{\n    \"Prompt\": \"冰川，企鹅\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53549a10-0633-4ebe-bf39-466dc51aa2bb\",\n        \"ResultImage\": \"https://rspimg.jpg\"\n    }\n}",
+        "title": "成功调用"
+      }
     ]
   },
   "version": "1.0"

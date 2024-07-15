@@ -2446,8 +2446,8 @@
         },
         {
           "disabled": false,
-          "document": "大陆手机号直接填写，如果是其他国家、地区号码， 按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
-          "example": "13312341234",
+          "document": "按照\"国家地区代码|手机号\"的格式输入。如: \"+86|xxxxxxxx\"",
+          "example": "+86|13312341234",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -2528,6 +2528,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5884,8 +5885,8 @@
         },
         {
           "disabled": false,
-          "document": "大陆手机号直接填写，如果是其他国家、地区号码,按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
-          "example": "13311111111",
+          "document": "按照\"国家地区代码|手机号\"的格式输入。如: \"+86|xxxxxxxx\"",
+          "example": "+86|13311111111",
           "member": "string",
           "name": "Phone",
           "required": false,

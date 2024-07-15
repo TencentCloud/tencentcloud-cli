@@ -127,7 +127,7 @@
       "status": "online"
     },
     "CreateTranscodeTemplate": {
-      "document": "创建用户自定义转码模板，数量上限：1000。",
+      "document": "创建用户自定义转码模板，数量上限：1000",
       "input": "CreateTranscodeTemplateRequest",
       "name": "创建转码模板",
       "output": "CreateTranscodeTemplateResponse",
@@ -8137,7 +8137,7 @@
           "example": "1008",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8228,7 +8228,7 @@
           "example": "30",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8355,7 +8355,7 @@
           "example": "1008",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9042,6 +9042,7 @@
           "example": "",
           "member": "AiSamplePerson",
           "name": "Person",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9051,6 +9052,7 @@
           "example": "",
           "member": "AiSampleFailFaceInfo",
           "name": "FailFaceInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9214,7 +9216,7 @@
           "example": "1008",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9978,6 +9980,7 @@
           "example": "157482",
           "member": "int64",
           "name": "WorkflowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10437,7 +10440,7 @@
         {
           "disabled": false,
           "document": "关键词，数组长度限制：100 个词。",
-          "example": "",
+          "example": "“”",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -13966,7 +13969,7 @@
         {
           "disabled": false,
           "document": "工作流 ID。",
-          "example": "",
+          "example": "12345",
           "member": "int64",
           "name": "WorkflowId",
           "required": true,
@@ -14435,7 +14438,7 @@
           "example": "XXX",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20488,6 +20491,7 @@
           "example": "",
           "member": "AiSamplePerson",
           "name": "Person",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -20497,6 +20501,7 @@
           "example": "",
           "member": "AiSampleFailFaceInfo",
           "name": "FailFaceInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -21228,7 +21233,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23565,6 +23570,7 @@
           "example": "",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23599,7 +23605,7 @@
         {
           "disabled": false,
           "document": "工作流 ID。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "WorkflowId",
           "required": true,
@@ -23608,7 +23614,7 @@
         {
           "disabled": false,
           "document": "工作流名称，最多128字符。同一个用户该名称唯一。",
-          "example": "",
+          "example": "“”",
           "member": "string",
           "name": "WorkflowName",
           "required": true,
@@ -23617,7 +23623,7 @@
         {
           "disabled": false,
           "document": "工作流绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。",
-          "example": "",
+          "example": "无",
           "member": "WorkflowTrigger",
           "name": "Trigger",
           "required": true,
@@ -23626,7 +23632,7 @@
         {
           "disabled": false,
           "document": "视频处理的文件输出配置。不填则继承 Trigger 中的存储位置。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "required": false,
@@ -23634,8 +23640,8 @@
         },
         {
           "disabled": false,
-          "document": "视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。",
-          "example": "",
+          "document": "视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。",
+          "example": "无",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -23644,7 +23650,7 @@
         {
           "disabled": false,
           "document": "视频处理类型任务参数。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
           "required": false,
@@ -23653,7 +23659,7 @@
         {
           "disabled": false,
           "document": "视频内容审核类型任务参数。",
-          "example": "",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
           "required": false,
@@ -23662,7 +23668,7 @@
         {
           "disabled": false,
           "document": "视频内容分析类型任务参数。",
-          "example": "",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
           "required": false,
@@ -23671,7 +23677,7 @@
         {
           "disabled": false,
           "document": "视频内容识别类型任务参数。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
@@ -23680,7 +23686,7 @@
         {
           "disabled": false,
           "document": "工作流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "TaskPriority",
           "required": false,
@@ -23689,7 +23695,7 @@
         {
           "disabled": false,
           "document": "任务的事件通知信息，不填代表不获取事件通知。",
-          "example": "",
+          "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
           "required": false,
@@ -26539,42 +26545,38 @@
         {
           "disabled": false,
           "document": "用户自定文本审核任务开关，可选值：\n<li>ON：开启自定义文本审核任务；</li>\n<li>OFF：关闭自定义文本审核任务。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "用户自定义文本过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义文本关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -26737,7 +26739,7 @@
         },
         {
           "disabled": false,
-          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。 注意：自适应码率时取值范围是 [0, 60]",
+          "document": "视频帧率，取值范围：[0, 120]，单位：Hz。 当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
           "example": "0",
           "member": "int64",
           "name": "Fps",
@@ -27232,7 +27234,7 @@
           "example": "125xxx65-WithdrawsWatermark-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
