@@ -1828,6 +1828,15 @@
           "name": "EsServerlessSpace",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "flink版本",
+          "example": "Flink-1.13",
+          "member": "string",
+          "name": "FlinkVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

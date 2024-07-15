@@ -1744,6 +1744,34 @@
       ],
       "type": "object"
     },
+    "CamTag": {
+      "document": "标签数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CancelAssignTWeCallLicenseRequest": {
       "document": "CancelAssignTWeCallLicense请求参数结构体",
       "members": [
@@ -6981,8 +7009,18 @@
           "example": "无",
           "member": "TopicRule",
           "name": "Rule",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CamTag",
+          "name": "CamTag",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -7997,6 +8035,30 @@
       ],
       "usage": "out"
     },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n- 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n\n- 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段",
+          "example": "tag:tag-key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤的一个或多个值",
+          "example": "tag-value",
+          "member": "string",
+          "name": "Values",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "FirmwareInfo": {
       "document": "设备固件详细信息",
       "members": [
@@ -8529,6 +8591,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次请求的Filters的上限为10，Filter.Values的上限为1。",
+          "example": "NA",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8542,6 +8613,7 @@
           "example": "无",
           "member": "DeviceInfo",
           "name": "Devices",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8551,6 +8623,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12576,6 +12649,15 @@
           "name": "ProductId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次请求的Filters的上限为10，Filter.Values的上限为1。",
+          "example": "NA",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12589,6 +12671,7 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Products",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12598,6 +12681,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

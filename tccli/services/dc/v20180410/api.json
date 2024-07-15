@@ -1166,45 +1166,50 @@
         {
           "disabled": false,
           "document": "IPv6互联网公网允许的最小前缀长度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "64",
           "member": "int64",
           "name": "Ipv6PrefixLen",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "64",
           "member": "int64",
           "name": "Ipv4BgpQuota",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "非BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Ipv4OtherQuota",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "BGP类型IPv4互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "8",
           "member": "int64",
           "name": "Ipv4BgpNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "非BGP类型互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Ipv4OtherNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1291,18 +1296,20 @@
         {
           "disabled": false,
           "document": "互联网公网地址统计信息数量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "互联网公网地址统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"Region\": \"bj\", \"SubnetNum\": 0}",
           "member": "InternetAddressStatistics",
           "name": "InternetAddressStatistics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

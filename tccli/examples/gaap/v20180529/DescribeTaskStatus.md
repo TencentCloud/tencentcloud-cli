@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli gaap DescribeTaskStatus --cli-unfold-argument ```
+tccli gaap DescribeTaskStatus --cli-unfold-argument  \
+    --TaskId 08388e12-d2e2-4376-ade0-1a59fdd9f4d2
+```
 
 Output: 
 ```

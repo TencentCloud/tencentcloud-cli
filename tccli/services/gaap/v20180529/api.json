@@ -6222,7 +6222,17 @@
     },
     "DescribeTaskStatusRequest": {
       "document": "DescribeTaskStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，值为异步接口返回的RequestId",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeTaskStatusResponse": {
