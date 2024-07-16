@@ -60,7 +60,8 @@ Output:
                     "abc"
                 ],
                 "Hidden": true,
-                "IsCoordinationNode": true
+                "IsCoordinationNode": true,
+                "CVMStatus": "abc"
             }
         ],
         "KibanasView": [

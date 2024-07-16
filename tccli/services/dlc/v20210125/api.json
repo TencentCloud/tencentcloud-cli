@@ -8170,12 +8170,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto",
+          "document": "引擎类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto",
           "example": "SQL",
           "member": "string",
           "name": "EngineType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段: InsertTime（插入时间，默认），UpdateTime（更新时间）",
+          "example": "InsertTime",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：false（降序，默认），true（升序）",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -59,7 +59,7 @@
     "CreateAlertRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertRule\n<公共请求参数>\n\n{\n    \"Receivers\": [\n        \"34224\"\n    ],\n    \"InstanceId\": \"prom-abcd1234\",\n    \"Expr\": \"\\\"up{service=\\\\\\\"rig-prometheus-agent\\\\\\\"}>0\\\"\",\n    \"Duration\": \"5m\",\n    \"RuleName\": \"test\",\n    \"RuleState\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertRule\n<公共请求参数>\n\n{\n    \"Receivers\": [\n        \"34224\"\n    ],\n    \"InstanceId\": \"prom-abcd1234\",\n    \"Expr\": \"\\\"up{service=\\\\\\\"rig-prometheus-agent\\\\\\\"}>0\\\"\",\n    \"Duration\": \"5m\",\n    \"RuleName\": \"test\",\n    \"RuleState\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"hfd437lxxdj3455-qxdb3eyydvw4doxm\",\n        \"RuleId\": \"arule-f2vx2owo\"\n    }\n}",
         "title": "创建报警规则"
       }
@@ -287,7 +287,7 @@
     "CreatePrometheusMultiTenantInstancePostPayMode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusMultiTenantInstancePostPayMode\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-hjkasfd\",\n    \"DataRetentionTime\": \"30\",\n    \"VpcId\": \"vpc-thnssd\",\n    \"InstanceName\": \"my-prom-gg\",\n    \"Zone\": \"ap-chengdu-1\",\n    \"GrafanaInstanceId\": \"grafana-xfa222\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusMultiTenantInstancePostPayMode\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-hjkasfd\",\n    \"DataRetentionTime\": 30,\n    \"VpcId\": \"vpc-thnssd\",\n    \"InstanceName\": \"my-prom-gg\",\n    \"Zone\": \"ap-chengdu-1\",\n    \"GrafanaInstanceId\": \"grafana-xfa222\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"prom-xxxxxx\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建按量 Prometheus 实例"
       }
@@ -319,7 +319,7 @@
     "CreateRecordingRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxxsfds\",\n    \"RuleState\": \"2\",\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxxsfds\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xyz\",\n        \"RuleId\": \"rrule-xyz\"\n    }\n}",
         "title": "创建预聚合规则"
       }
@@ -487,7 +487,7 @@
     "DeleteServiceDiscovery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceDiscovery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdfk2342a\",\n    \"Yaml\": \"yaml\",\n    \"Type\": \"1\",\n    \"KubeClusterId\": \"cls-pwerf3k3\",\n    \"KubeType\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceDiscovery\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-sdfk2342a\",\n    \"Yaml\": \"apiVersion: monitoring.coreos.com/v1\\nkind: ServiceMonitor\\nmetadata:\\n  name: go-demo    # 填写一个唯一名称\\n  namespace: cm-prometheus  # namespace固定，不要修改\\nspec:\\n  endpoints:\\n  - interval: 30s\\n    # 填写service yaml中Prometheus Exporter对应的Port的Name\\n    port: 2112\\n    # 填写Prometheus Exporter对应的Path的值，不填默认/metrics\\n    path: /metrics\\n    relabelings:\\n    # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，\\n    # 我们通过 relabel 的 replace 动作把它替换成了 application\\n    - action: replace\\n      sourceLabels:  [__meta_kubernetes_pod_label_app]\\n      targetLabel: application\\n  # 选择要监控service所在的namespace\\n  namespaceSelector:\\n    matchNames:\\n    - golang-demo\\n    # 填写要监控service的Label值，以定位目标service\\n  selector:\\n    matchLabels:\\n      app: golang-app-demo\",\n    \"Type\": 1,\n    \"KubeClusterId\": \"cls-pwerf3k3\",\n    \"KubeType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "删除服务发现"
       }
@@ -880,13 +880,13 @@
       {
         "document": "获取初始化任务状态",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Steps\": [\n            {\n                \"Step\": \"abc\",\n                \"LifeState\": \"abc\",\n                \"StartAt\": \"abc\",\n                \"EndAt\": \"abc\",\n                \"FailedMsg\": \"abc\"\n            }\n        ],\n        \"EksClusterId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Steps\": [\n            {\n                \"Step\": \"abc\",\n                \"LifeState\": \"abc\",\n                \"StartAt\": \"abc\",\n                \"EndAt\": \"abc\",\n                \"FailedMsg\": \"abc\"\n            }\n        ],\n        \"EksClusterId\": \"abc\",\n        \"SecurityGroupId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取初始化任务状态"
       },
       {
         "document": "获取2.0实例初始化任务状态",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusInstanceInitStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71ppt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Steps\": [\n            {\n                \"Step\": \"abc\",\n                \"LifeState\": \"abc\",\n                \"StartAt\": \"abc\",\n                \"EndAt\": \"abc\",\n                \"FailedMsg\": \"abc\"\n            }\n        ],\n        \"EksClusterId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"Steps\": [\n            {\n                \"Step\": \"abc\",\n                \"LifeState\": \"abc\",\n                \"StartAt\": \"abc\",\n                \"EndAt\": \"abc\",\n                \"FailedMsg\": \"abc\"\n            }\n        ],\n        \"EksClusterId\": \"abc\",\n        \"SecurityGroupId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取2.0实例初始化任务状态"
       }
     ],
@@ -973,7 +973,7 @@
     "DescribePrometheusZones": [
       {
         "document": "列出 Prometheus 服务可用区",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusZones\n<公共请求参数>\n\n{\n    \"RegionId\": \"1234\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusZones\n<公共请求参数>\n\n{\n    \"RegionId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"Zone\": \"abc\",\n                \"ZoneId\": 0,\n                \"ZoneState\": 0,\n                \"RegionId\": 0,\n                \"ZoneName\": \"abc\",\n                \"ZoneResourceState\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "列出 Prometheus 服务可用区"
       }

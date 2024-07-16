@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusZones --cli-unfold-argument  \
-    --RegionId 1234
+    --RegionId 1
 ```
 
 Output: 

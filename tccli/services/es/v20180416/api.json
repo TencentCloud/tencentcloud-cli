@@ -2670,7 +2670,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段<li>1：插件名 pluginName",
+          "document": "排序字段<li>1：插件名 pluginName</li>",
           "example": "pluginName",
           "member": "string",
           "name": "OrderBy",
@@ -9595,6 +9595,24 @@
           "example": "1",
           "member": "uint64",
           "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ShardAllocationConcurrents",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发速度",
+          "example": "40",
+          "member": "uint64",
+          "name": "ShardAllocationBytes",
           "required": false,
           "type": "int"
         }

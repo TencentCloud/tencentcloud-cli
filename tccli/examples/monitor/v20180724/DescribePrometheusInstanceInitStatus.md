@@ -24,6 +24,7 @@ Output:
             }
         ],
         "EksClusterId": "abc",
+        "SecurityGroupId": "abc",
         "RequestId": "abc"
     }
 }
@@ -55,6 +56,7 @@ Output:
             }
         ],
         "EksClusterId": "abc",
+        "SecurityGroupId": "abc",
         "RequestId": "abc"
     }
 }

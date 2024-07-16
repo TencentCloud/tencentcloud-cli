@@ -862,7 +862,7 @@
           "example": "无",
           "member": "string",
           "name": "DedicatedClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -872,7 +872,7 @@
           "example": "无",
           "member": "string",
           "name": "DedicatedClusterTypeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -882,7 +882,7 @@
           "example": "无",
           "member": "string",
           "name": "SupportedStorageType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -892,7 +892,7 @@
           "example": "无",
           "member": "int64",
           "name": "SupportedUplinkSpeed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -902,7 +902,7 @@
           "example": "无",
           "member": "string",
           "name": "SupportedInstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -912,7 +912,7 @@
           "example": "无",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -922,7 +922,7 @@
           "example": "无",
           "member": "float",
           "name": "PowerDraw",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -932,7 +932,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -942,7 +942,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -952,7 +952,7 @@
           "example": "ord-aijx4ets ",
           "member": "string",
           "name": "DedicatedClusterOrderId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -962,7 +962,7 @@
           "example": "CREATE",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -972,7 +972,7 @@
           "example": "无",
           "member": "DedicatedClusterOrderItem",
           "name": "DedicatedClusterOrderItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -982,7 +982,7 @@
           "example": "无",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -992,7 +992,7 @@
           "example": "无",
           "member": "int64",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1002,7 +1002,7 @@
           "example": "无",
           "member": "int64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1012,7 +1012,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1022,7 +1022,7 @@
           "example": "MONTHLY",
           "member": "string",
           "name": "PayType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1032,7 +1032,7 @@
           "example": "YEAR",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1042,7 +1042,7 @@
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1052,7 +1052,77 @@
           "example": "CUSTOM",
           "member": "string",
           "name": "OrderType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验收状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DELIVERING",
+          "member": "string",
+          "name": "CheckStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交付预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "DeliverExpectTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交付实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "DeliverFinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验收预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "CheckExpectTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验收实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "CheckFinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderSLA",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderPayPlan",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1808,6 +1878,15 @@
           "name": "ActionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "OrderTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1821,6 +1900,7 @@
           "example": "无",
           "member": "DedicatedClusterOrder",
           "name": "DedicatedClusterOrderSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1830,6 +1910,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

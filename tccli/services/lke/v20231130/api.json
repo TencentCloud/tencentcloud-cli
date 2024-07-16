@@ -274,7 +274,7 @@
       "status": "online"
     },
     "GetMsgRecord": {
-      "document": "获取推荐问题",
+      "document": "获取聊天历史请求",
       "input": "GetMsgRecordRequest",
       "name": "获取聊天历史请求",
       "output": "GetMsgRecordResponse",
