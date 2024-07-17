@@ -13,20 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "abc",
-        "InstanceName": "abc",
-        "VpcId": "abc",
-        "SubnetId": "abc",
-        "InstanceStatus": 0,
-        "ChargeStatus": 0,
+        "InstanceId": "prom-skdfj",
+        "InstanceName": "test-prom",
+        "VpcId": "vpc-sjdh",
+        "SubnetId": "subnet-kdhe",
+        "InstanceStatus": 3,
+        "ChargeStatus": 1,
         "EnableGrafana": 0,
-        "GrafanaURL": "abc",
+        "GrafanaURL": "http://djeb:9000",
         "InstanceChargeType": 0,
-        "SpecName": "abc",
-        "DataRetentionTime": 0,
-        "ExpireTime": "abc",
+        "SpecName": "name-sjdb",
+        "DataRetentionTime": 15,
+        "ExpireTime": "2024-07-16 16:28:54",
         "AutoRenewFlag": 0,
-        "RequestId": "abc"
+        "RequestId": "skdbfdi-akenfhl"
     }
 }
 ```

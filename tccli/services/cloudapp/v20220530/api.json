@@ -1,0 +1,259 @@
+{
+  "actions": {
+    "VerifyLicense": {
+      "document": "通过运行时roleId查询对应的软件 LICENSE",
+      "input": "VerifyLicenseRequest",
+      "name": "从应用软件进程验证授权信息",
+      "output": "VerifyLicenseResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-05-30",
+    "api_brief": "介绍如何使用 API 对云应用进行部署、管理等操作。",
+    "serviceNameCN": "云应用",
+    "serviceShortName": "cloudapp"
+  },
+  "objects": {
+    "License": {
+      "document": "表示应用实例的软件授权，包含颁发信息、激活信息等内容。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "License ID",
+          "example": "LICENSE_CLOUDAPP_A95275D8",
+          "member": "string",
+          "name": "LicenseId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件授权模式。\n\n<table>\n<thead>\n<tr>\n<th>枚举值</th>\n<th>说明</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Permanent</td>\n<td>永久授权。该授权不受有效期限制。</td>\n</tr>\n<tr>\n<td>Subscription</td>\n<td>订阅授权。授权如果过了有效期，则会进入过期状态。</td>\n</tr>\n</tbody></table>",
+          "example": "Subscription",
+          "member": "string",
+          "name": "LicenseMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件的授权状态。\n\n<table>\n<thead>\n<tr>\n<th>枚举值</th>\n<th>说明</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Issued</td>\n<td>已颁发，等待激活。一般来说，如果软件已经在运行，不会出现该状态。</td>\n</tr>\n<tr>\n<td>Active</td>\n<td>授权在有效期内，这是软件运行期间最常见的状态。</td>\n</tr>\n<tr>\n<td>Expired</td>\n<td>授权已过期。订阅类的软件授权有有效期，如果服务器时间已晚于有效期，则会进入过期状态。</td>\n</tr>\n<tr>\n<td>Deactivated</td>\n<td>授权已失效。用户如果退货软件，则授权会自动失效。</td>\n</tr>\n</tbody></table>",
+          "example": "Active",
+          "member": "string",
+          "name": "LicenseStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件供应方 ID。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ProviderId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件包 ID。",
+          "example": "pkg-kby01bv4",
+          "member": "string",
+          "name": "SoftwarePackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件包版本。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "SoftwarePackageVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被授权的用户 UIN。",
+          "example": "100008888888",
+          "member": "string",
+          "name": "AuthorizedUserUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被授权的应用实例 ID。",
+          "example": "cloudapp-95t785d8",
+          "member": "string",
+          "name": "AuthorizedCloudappId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被授权的角色 ID。",
+          "example": "4000008000060000",
+          "member": "string",
+          "name": "AuthorizedCloudappRoleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被授权的软件规格，具体字段请参考结构SaleParam",
+          "example": "无",
+          "member": "SaleParam",
+          "name": "AuthorizedSpecification",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被授权的软件的计费模式。\n\n<table>\n<thead>\n<tr>\n<th>枚举值</th>\n<th>说明</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td>线上计费，软件的授权从腾讯云线上购买，支持续费、退款等操作。</td>\n</tr>\n<tr>\n<td>2</td>\n<td>线下计费，软件的授权线下签订合同购买，定向客户交付，无法从线上续费和退款。</td>\n</tr>\n<tr>\n<td>4</td>\n<td>免费</td>\n</tr>\n</tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "BillingMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权时长（单位由LifeSpanUnit确定，枚举值有Y年/M月/D日三种）",
+          "example": "1",
+          "member": "int64",
+          "name": "LifeSpan",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权颁发时间。",
+          "example": "2024-06-29T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "IssueDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权激活时间，如从未激活则返回 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-06-30T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ActivationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权过期时间，如未过期或者是永久授权，则返回 null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-06-30T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权时长单位，枚举值有Y年/M月/D日三种",
+          "example": "Y",
+          "member": "string",
+          "name": "LifeSpanUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleParam": {
+      "document": "表示商品 SKU 的单个售卖参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "售卖参数标识",
+          "example": "user_scale",
+          "member": "string",
+          "name": "ParamKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售卖参数值",
+          "example": "100",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售卖参数的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户规模",
+          "member": "string",
+          "name": "ParamKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖参数值的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100人",
+          "member": "string",
+          "name": "ParamValueName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VerifyLicenseRequest": {
+      "document": "VerifyLicense请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "VerifyLicenseResponse": {
+      "document": "VerifyLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件的详细授权信息。",
+          "example": "见 License 数据结构。",
+          "member": "License",
+          "name": "License",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

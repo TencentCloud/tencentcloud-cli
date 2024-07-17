@@ -200,6 +200,9 @@ SERVICE_VERSIONS = {
     "clb": [
         "2018-03-17"
     ],
+    "cloudapp": [
+        "2022-05-30"
+    ],
     "cloudaudit": [
         "2019-03-19"
     ],

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli monitor DeletePrometheusRecordRuleYaml --cli-unfold-argument  \
-    --InstanceId prom-xxx \
-    --Names xxx
+    --InstanceId prom-ejfdgh \
+    --Names test-rule
 ```
 
 Output: 

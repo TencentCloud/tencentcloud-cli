@@ -878,7 +878,7 @@
     ],
     "ModifyUserPasswordPersonal": [
       {
-        "document": "ccr修改个人用户登陆密码",
+        "document": "ccr修改个人用户登录密码",
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyUserPasswordPersonal\r\n&Password=XXXXX\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改个人用户登录密码"

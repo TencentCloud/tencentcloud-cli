@@ -18,14 +18,14 @@ Output:
     "Response": {
         "Templates": [
             {
-                "Name": "abc",
-                "Describe": "abc",
-                "Level": "abc",
+                "Name": "test",
+                "Describe": "test",
+                "Level": "instance",
                 "RecordRules": [
                     {
-                        "Name": "abc",
+                        "Name": "testRule",
                         "Config": "abc",
-                        "TemplateId": "abc",
+                        "TemplateId": "temp-asdj",
                         "Targets": {
                             "Total": 1,
                             "Up": 1,
@@ -49,9 +49,9 @@ Output:
                 ],
                 "ServiceMonitors": [
                     {
-                        "Name": "abc",
+                        "Name": "test-sm",
                         "Config": "abc",
-                        "TemplateId": "abc",
+                        "TemplateId": "temp-asdj",
                         "Targets": {
                             "Total": 1,
                             "Up": 1,
@@ -62,9 +62,9 @@ Output:
                 ],
                 "PodMonitors": [
                     {
-                        "Name": "abc",
+                        "Name": "test-pm",
                         "Config": "abc",
-                        "TemplateId": "abc",
+                        "TemplateId": "temp-asdj",
                         "Targets": {
                             "Total": 1,
                             "Up": 1,
@@ -73,32 +73,32 @@ Output:
                         }
                     }
                 ],
-                "TemplateId": "abc",
-                "UpdateTime": "abc",
-                "Version": "abc",
+                "TemplateId": "temp-asdj",
+                "UpdateTime": "2024-07-16T08:28:54Z",
+                "Version": "v1",
                 "IsDefault": true,
                 "AlertDetailRules": [
                     {
-                        "Id": "abc",
-                        "Name": "abc",
-                        "TemplateId": "abc",
+                        "Id": "rule-asdk",
+                        "Name": "testAlert",
+                        "TemplateId": "temp-asdj",
                         "Notification": {
                             "Enabled": true,
-                            "Type": "abc",
+                            "Type": "amp",
                             "WebHook": "abc",
                             "AlertManager": {
-                                "ClusterType": "abc",
-                                "ClusterId": "abc",
-                                "Url": "abc"
+                                "ClusterType": "tke",
+                                "ClusterId": "cls-askj",
+                                "Url": "http://asasdkfh:9000"
                             },
-                            "RepeatInterval": "abc",
-                            "TimeRangeStart": "abc",
-                            "TimeRangeEnd": "abc",
+                            "RepeatInterval": "5m",
+                            "TimeRangeStart": "00:00:00",
+                            "TimeRangeEnd": "23:59:59",
                             "NotifyWay": [
                                 "abc"
                             ],
                             "ReceiverGroups": [
-                                "abc"
+                                "notice-yakj"
                             ],
                             "PhoneNotifyOrder": [
                                 1
@@ -110,35 +110,35 @@ Output:
                         },
                         "Rules": [
                             {
-                                "Name": "abc",
-                                "Rule": "abc",
+                                "Name": "rule-ajdb",
+                                "Rule": "avg by (abc) skdj",
                                 "Labels": [
                                     {
-                                        "Name": "abc",
-                                        "Value": "abc"
+                                        "Name": "label-name",
+                                        "Value": "label-value"
                                     }
                                 ],
-                                "Template": "abc",
-                                "For": "abc",
-                                "Describe": "abc",
+                                "Template": "temp-asdj",
+                                "For": "5m",
+                                "Describe": "test-temp",
                                 "Annotations": [
                                     {
-                                        "Name": "abc",
-                                        "Value": "abc"
+                                        "Name": "label-name",
+                                        "Value": "label-value"
                                     }
                                 ],
                                 "RuleState": 0
                             }
                         ],
-                        "UpdatedAt": "abc",
-                        "ClusterId": "abc"
+                        "UpdatedAt": "2024-07-16 16:28:54",
+                        "ClusterId": "cls-djfb"
                     }
                 ],
                 "TargetsTotal": 0
             }
         ],
         "Total": 1,
-        "RequestId": "abc"
+        "RequestId": "skdh-afbri"
     }
 }
 ```

@@ -3955,6 +3955,33 @@
           "name": "TimingStartTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "random-随机，asc生序，desc降序",
+          "example": "抽样方式",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "抽样的条数，范围30-1000",
+          "example": "20",
+          "member": "int64",
+          "name": "Rows",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "抽样的排序字段",
+          "example": "id",
+          "member": "string",
+          "name": "GlobalOrderField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3968,7 +3995,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3978,7 +4005,7 @@
           "example": "1",
           "member": "int64",
           "name": "ResultId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9480,6 +9507,24 @@
           "name": "FieldResultId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "random",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "id",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9924,6 +9969,24 @@
           "name": "FieldResultId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "random",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "id",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9937,7 +10000,7 @@
           "example": "无",
           "member": "DspaFieldResultDataSample",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli monitor DescribePrometheusInstanceInitStatus --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId prom-asdf1234
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "abc",
+        "Status": "initializing",
         "Steps": [
             {
-                "Step": "abc",
-                "LifeState": "abc",
-                "StartAt": "abc",
-                "EndAt": "abc",
-                "FailedMsg": "abc"
+                "Step": "preCheck",
+                "LifeState": "success",
+                "StartAt": "2022-04-19T07:29:46Z",
+                "EndAt": "2022-04-19T07:30:46Z",
+                "FailedMsg": "message"
             }
         ],
-        "EksClusterId": "abc",
-        "SecurityGroupId": "abc",
-        "RequestId": "abc"
+        "EksClusterId": "cls-asdf1234",
+        "SecurityGroupId": "sg-asdf1234",
+        "RequestId": "abc-123-asdfghjk"
     }
 }
 ```
@@ -38,26 +38,26 @@ Input:
 
 ```
 tccli monitor DescribePrometheusInstanceInitStatus --cli-unfold-argument  \
-    --InstanceId prom-7vp71ppt
+    --InstanceId prom-asdf1234
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "abc",
+        "Status": "initializing",
         "Steps": [
             {
-                "Step": "abc",
-                "LifeState": "abc",
-                "StartAt": "abc",
-                "EndAt": "abc",
-                "FailedMsg": "abc"
+                "Step": "preCheck",
+                "LifeState": "success",
+                "StartAt": "2022-04-19T07:29:46Z",
+                "EndAt": "2022-04-19T07:30:46Z",
+                "FailedMsg": "message"
             }
         ],
-        "EksClusterId": "abc",
-        "SecurityGroupId": "abc",
-        "RequestId": "abc"
+        "EksClusterId": "cls-asdf1234",
+        "SecurityGroupId": "sg-asdf1234",
+        "RequestId": "abc-123-asdfghjk"
     }
 }
 ```

@@ -122,10 +122,10 @@
         "title": "生成个人小程序批量签署链接"
       },
       {
-        "document": "按照合同发起时候填入的信息生成企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制",
+        "document": "按照合同发起时候填入的信息生成saas企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"IdCardNumber\": \"610000000000000000\",\n    \"IdCardType\": \"ID_CARD\",\n    \"Name\": \"小明\",\n    \"NotifyType\": \"SMS\",\n    \"Mobile\": \"1234567890\",\n    \"OrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684899114,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"SignUrl\": \"https://ess.url.cn/FuP**Swc\",\n        \"MiniAppPath\": \"pages/guide/index?shortKey=FuP3**wc\"\n    }\n}",
-        "title": "生成企业经办人小程序批量签署链接"
+        "title": "生成saas企业经办人小程序批量签署链接"
       },
       {
         "document": "合同（yDR1AUUgygja******uO4zjEB8zAkJEFN）中的参与方为：【姓名：张三 ，手机号：18888888888】，发起的时候并未填入证件号且18888888888手机号并未在腾讯电子签注册实名。 \n\n此时，如果使用 【姓名：张三，手机号：17777777777】生成批量签署链接，且FlowIds参数传入（yDR1AUUgygja******uO4zjEB8zAkJEFN）时，会报错，提示签署方信息不存在。\n\n因为手机号不同，无法定位到签署方。 此时，除了将手机号修改成 18888888888 之外来解决问题，也可以在发起合同和生成链接的时候传入证件信息，保证姓名和证件一致的情况下，手机号可以不相同。",
@@ -138,6 +138,12 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ],\n    \"FlowBatchUrlInfo\": {\n        \"FlowBatchApproverInfos\": [\n            {\n                \"FlowId\": \"yDC5yUUckpwexoz4UuoHfkT1DMEDQSG5\",\n                \"RecipientId\": \"yDC5yUUckpwexozwUuoHfkTwB00zdfLo\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684899114,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"SignUrl\": \"https://ess.url.cn/FuP**Swc\",\n        \"MiniAppPath\": \"pages/guide/index?shortKey=FuP3**wc\"\n    }\n}",
         "title": "生成动态签署人批量领取链接"
+      },
+      {
+        "document": "按照合同发起时候填入的信息生成子客企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"OpenId\": \"test_open_id\",\n    \"OrganizationOpenId\": \"test_org_open_id\",\n    \"Name\": \"\",\n    \"NotifyType\": \"SMS\",\n    \"Mobile\": \"\",\n    \"OrganizationName\": \"\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684899114,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"SignUrl\": \"https://ess.url.cn/FuP**Swc\",\n        \"MiniAppPath\": \"pages/guide/index?shortKey=FuP3**wc\"\n    }\n}",
+        "title": "生成子客经办人小程序批量签署链接"
       }
     ],
     "ChannelCreateBoundFlows": [

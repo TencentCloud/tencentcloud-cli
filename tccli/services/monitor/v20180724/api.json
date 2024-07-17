@@ -869,7 +869,7 @@
       "status": "online"
     },
     "ModifyPrometheusConfig": {
-      "document": "修改prometheus配置，如果配置项不存在，则会新增",
+      "document": "修改prometheus采集配置",
       "input": "ModifyPrometheusConfigRequest",
       "name": "修改prometheus配置",
       "output": "ModifyPrometheusConfigResponse",
@@ -4372,7 +4372,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-oejhr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4917,7 +4917,7 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息，YAML 格式\n\n示例值：\n\n```\napiVersion: monitoring.coreos.com/v1\nkind: ServiceMonitor\nmetadata:\n  name: go-demo    # 填写一个唯一名称\n  namespace: cm-prometheus  # namespace固定，不要修改\nspec:\n  endpoints:\n  - interval: 30s\n    # 填写service yaml中Prometheus Exporter对应的Port的Name\n    port: 2112\n    # 填写Prometheus Exporter对应的Path的值，不填默认/metrics\n    path: /metrics\n    relabelings:\n    # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，\n    # 我们通过 relabel 的 replace 动作把它替换成了 application\n    - action: replace\n      sourceLabels:  [__meta_kubernetes_pod_label_app]\n      targetLabel: application\n  # 选择要监控service所在的namespace\n  namespaceSelector:\n    matchNames:\n    - golang-demo\n    # 填写要监控service的Label值，以定位目标service\n  selector:\n    matchLabels:\n      app: golang-app-demo\n```",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
           "example": "yaml",
           "member": "string",
           "name": "Yaml",
@@ -5426,7 +5426,7 @@
         {
           "disabled": false,
           "document": "agent列表",
-          "example": "无",
+          "example": "{\"ClusterType\":\"cls-kehr\",\"ClusterId\":\"tke\",\"Describe\":\"test-des\"}",
           "member": "PrometheusAgentInfo",
           "name": "Agents",
           "required": true,
@@ -5435,7 +5435,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "prome-xx",
+          "example": "prom-kehf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5489,7 +5489,7 @@
         {
           "disabled": false,
           "document": "要删除的ServiceMonitor名字列表",
-          "example": "xxx",
+          "example": "[\"test-sm\"]",
           "member": "string",
           "name": "ServiceMonitors",
           "required": false,
@@ -5498,7 +5498,7 @@
         {
           "disabled": false,
           "document": "要删除的PodMonitor名字列表",
-          "example": "xxx",
+          "example": "[\"test-pm\"]",
           "member": "string",
           "name": "PodMonitors",
           "required": false,
@@ -5507,7 +5507,7 @@
         {
           "disabled": false,
           "document": "要删除的RawJobs名字列表",
-          "example": "xxx",
+          "example": "[\"test-rj\"]",
           "member": "string",
           "name": "RawJobs",
           "required": false,
@@ -5534,7 +5534,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "xxx",
+          "example": "prom-wjheg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5543,7 +5543,7 @@
         {
           "disabled": false,
           "document": "聚合规则列表",
-          "example": "xxx",
+          "example": "[\"test-rule\"]",
           "member": "string",
           "name": "Names",
           "required": true,
@@ -5785,7 +5785,7 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息，YAML 格式\n\n示例值：\n\n```\napiVersion: monitoring.coreos.com/v1\nkind: ServiceMonitor\nmetadata:\n  name: go-demo    # 填写一个唯一名称\n  namespace: cm-prometheus  # namespace固定，不要修改\nspec:\n  endpoints:\n  - interval: 30s\n    # 填写service yaml中Prometheus Exporter对应的Port的Name\n    port: 2112\n    # 填写Prometheus Exporter对应的Path的值，不填默认/metrics\n    path: /metrics\n    relabelings:\n    # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，\n    # 我们通过 relabel 的 replace 动作把它替换成了 application\n    - action: replace\n      sourceLabels:  [__meta_kubernetes_pod_label_app]\n      targetLabel: application\n  # 选择要监控service所在的namespace\n  namespaceSelector:\n    matchNames:\n    - golang-demo\n    # 填写要监控service的Label值，以定位目标service\n  selector:\n    matchLabels:\n      app: golang-app-demo\n```",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
           "example": "yaml",
           "member": "string",
           "name": "Yaml",
@@ -11163,7 +11163,7 @@
         {
           "disabled": false,
           "document": "集群id\n可以是tke, eks, edge的集群id",
-          "example": "cls-xxx",
+          "example": "cls-dkrb",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11178,7 +11178,7 @@
         {
           "disabled": false,
           "document": "关联该集群的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "prom-xxx",
+          "example": "[\"prom-oebnrfg\"]",
           "member": "string",
           "name": "Instances",
           "output_required": true,
@@ -11448,7 +11448,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -11457,7 +11457,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -11937,7 +11937,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-asdfghjk",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11962,7 +11962,7 @@
         {
           "disabled": false,
           "document": "初始化任务步骤\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Step\":\"abc\",\"LifeState\":\"abc\",\"StartAt\":\"abc\",\"EndAt\":\"abc\",\"FailedMsg\":\"abc\"}",
+          "example": "无",
           "member": "TaskStepInfo",
           "name": "Steps",
           "output_required": true,
@@ -11972,7 +11972,7 @@
         {
           "disabled": false,
           "document": "实例eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cls-abc",
+          "example": "cls-asdf1234",
           "member": "string",
           "name": "EksClusterId",
           "output_required": true,
@@ -11982,7 +11982,7 @@
         {
           "disabled": false,
           "document": "eks集群内pod的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sg-abc",
+          "example": "sg-asdf1234",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": false,
@@ -12058,7 +12058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "分页偏移量，默认为0",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -12067,7 +12067,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "返回数量，默认为20，最大值为100",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -12077,7 +12077,7 @@
         {
           "disabled": false,
           "document": "过滤实例，目前支持：\nID: 通过实例ID来过滤 \nName: 通过实例名称来过滤",
-          "example": "无",
+          "example": "[{\"Name\": \"Name\",\"Values\": [\"test\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12535,7 +12535,7 @@
         },
         {
           "disabled": false,
-          "document": "targets偏移量，默认为0",
+          "document": "targets分页偏移量，默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -12560,7 +12560,7 @@
         {
           "disabled": false,
           "document": "所有Job的targets信息",
-          "example": "{                 \"Targets\": [                     {                         \"LastScrape\": \"xx\",                         \"ScrapeDuration\": 0.0,                         \"Url\": \"xx\",                         \"Labels\": [                             {                                 \"Name\": \"xx\",                                 \"Value\": \"xx\"                             }                         ],                         \"State\": \"xx\",                         \"Error\": \"xx\"                     }                 ],                 \"Total\": 1,                 \"Up\": 1,                 \"JobName\": \"xx\"             }",
+          "example": "{\"Targets\":[{\"LastScrape\":\"2024-06-19 16:22:26\",\"ScrapeDuration\":0.2,\"Url\":\"http://1.1.1.1:9000\",\"Labels\":[{\"Name\":\"label-name\",\"Value\":\"label-value\"}],\"State\":\"down\",\"Error\":\"scrape timeout\"}],\"Total\":1,\"Up\":0,\"JobName\":\"test-job\"}",
           "member": "PrometheusJobTargets",
           "name": "Jobs",
           "output_required": true,
@@ -12590,7 +12590,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "分页偏移量，默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -14389,7 +14389,7 @@
         {
           "disabled": false,
           "document": "map表中的Name",
-          "example": "xxx",
+          "example": "label-name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -14400,7 +14400,7 @@
         {
           "disabled": false,
           "document": "map表中的Value",
-          "example": "xxx",
+          "example": "label-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -15719,7 +15719,7 @@
         {
           "disabled": false,
           "document": "新的external_labels",
-          "example": "Name=xx, Value=xxx",
+          "example": "{\"Name\":\"label-name\",\"Value\":\"label-value\"}",
           "member": "Label",
           "name": "ExternalLabels",
           "required": true,
@@ -15836,7 +15836,7 @@
         {
           "disabled": false,
           "document": "0: 更新实例组件镜像版本；\n1: 不更新实例组件镜像版本",
-          "example": "0,1",
+          "example": "0",
           "member": "int64",
           "name": "UpdateImage",
           "required": false,
@@ -19257,7 +19257,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-asdfghjk",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19266,7 +19266,7 @@
         {
           "disabled": false,
           "document": "子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化",
-          "example": "xx-xxx",
+          "example": "subnet-asdfghjk",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -20637,8 +20637,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
-          "example": "xx",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-abcd1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -20646,8 +20646,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取\n\n示例值：[\"agent-abcd1234\"]",
-          "example": "[\"xx\"]",
+          "document": "Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
+          "example": "[\"agent-abcd1234\"]",
           "member": "string",
           "name": "AgentIds",
           "required": true,
@@ -21044,7 +21044,7 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息，YAML 格式\n\n示例值：\n\n```\napiVersion: monitoring.coreos.com/v1\nkind: ServiceMonitor\nmetadata:\n  name: go-demo    # 填写一个唯一名称\n  namespace: cm-prometheus  # namespace固定，不要修改\nspec:\n  endpoints:\n  - interval: 30s\n    # 填写service yaml中Prometheus Exporter对应的Port的Name\n    port: 2112\n    # 填写Prometheus Exporter对应的Path的值，不填默认/metrics\n    path: /metrics\n    relabelings:\n    # ** 必须要有一个 label 为 application，这里假设 k8s 有一个 label 为 app，\n    # 我们通过 relabel 的 replace 动作把它替换成了 application\n    - action: replace\n      sourceLabels:  [__meta_kubernetes_pod_label_app]\n      targetLabel: application\n  # 选择要监控service所在的namespace\n  namespaceSelector:\n    matchNames:\n    - golang-demo\n    # 填写要监控service的Label值，以定位目标service\n  selector:\n    matchLabels:\n      app: golang-app-demo\n```",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
           "example": "yaml",
           "member": "string",
           "name": "Yaml",

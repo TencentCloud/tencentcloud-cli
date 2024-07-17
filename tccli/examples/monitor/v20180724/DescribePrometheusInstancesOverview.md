@@ -18,27 +18,27 @@ Output:
     "Response": {
         "Instances": [
             {
-                "InstanceStatus": 0,
-                "BoundNormal": 0,
-                "VpcId": "xxx",
+                "InstanceStatus": 3,
+                "BoundNormal": 1,
+                "VpcId": "vpc-sjdfb",
                 "AutoRenewFlag": 0,
-                "InstanceId": "xxx",
-                "BoundTotal": 0,
-                "ExpireTime": "xxx",
-                "SpecName": "xxx",
-                "InstanceChargeType": 0,
+                "InstanceId": "prom-ajsh",
+                "BoundTotal": 1,
+                "ExpireTime": "2024-07-16 16:28:54",
+                "SpecName": "spec-name",
+                "InstanceChargeType": 2,
                 "EnableGrafana": 0,
-                "DataRetentionTime": 0,
-                "GrafanaURL": "xxx",
-                "SubnetId": "xxx",
-                "InstanceName": "xxx",
-                "ChargeStatus": 0,
+                "DataRetentionTime": 15,
+                "GrafanaURL": "http://1.1.1.1:9000",
+                "SubnetId": "subnet-ljeb",
+                "InstanceName": "test-prom",
+                "ChargeStatus": 1,
                 "ResourcePackageStatus": 1,
-                "ResourcePackageSpecName": "fff"
+                "ResourcePackageSpecName": "pkg-name"
             }
         ],
         "Total": 1,
-        "RequestId": "xxx"
+        "RequestId": "sjehg-jdgrg"
     }
 }
 ```

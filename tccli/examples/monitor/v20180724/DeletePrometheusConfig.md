@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor DeletePrometheusConfig --cli-unfold-argument  \
-    --InstanceId prom-xxx \
+    --InstanceId prom-pejrh \
     --ClusterType tke \
-    --ClusterId cls-xxx
+    --ClusterId cls-hegr
 ```
 
 Output: 

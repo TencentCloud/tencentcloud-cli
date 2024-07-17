@@ -4837,7 +4837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区列表排序的依据字段。取值范围：\n<li>ZONE：依据可用区排序。\n<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。\n默认按可用区排序。",
+          "document": "可用区列表排序的依据字段。取值范围：\n<li>ZONE：依据可用区排序。</li>\n<li>INSTANCE_DISPLAY_LABEL：依据可用区展示标签排序，可用区展示标签包括：HIDDEN（隐藏）、NORMAL（普通）、SELECTED（默认选中），默认采用的升序排列为：['HIDDEN', 'NORMAL', 'SELECTED']。\n默认按可用区排序。</li>",
           "example": "\"ZONE\"",
           "member": "string",
           "name": "OrderField",
@@ -4846,7 +4846,7 @@
         },
         {
           "disabled": false,
-          "document": "输出可用区列表的排列顺序。取值范围：\n<li>ASC：升序排列。 \n<li>DESC：降序排列。\n默认按升序排列。",
+          "document": "输出可用区列表的排列顺序。取值范围：\n<li>ASC：升序排列。 </li>\n<li>DESC：降序排列。</li>\n默认按升序排列。",
           "example": "\"DESC\"",
           "member": "string",
           "name": "Order",
@@ -4865,7 +4865,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4875,7 +4875,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

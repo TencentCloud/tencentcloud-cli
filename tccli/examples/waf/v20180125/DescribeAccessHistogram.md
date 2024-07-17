@@ -22,6 +22,7 @@ Output:
         "HistogramInfos": [
             {
                 "BTime": 0,
+                "BeginTime": 0,
                 "Count": 0
             }
         ]

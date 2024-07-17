@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "VerifyLicense": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudapp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyLicense\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"License\": {\n            \"LicenseId\": \"abc\",\n            \"LicenseMode\": \"abc\",\n            \"LicenseStatus\": \"abc\",\n            \"ProviderId\": 1,\n            \"SoftwarePackageId\": \"abc\",\n            \"SoftwarePackageVersion\": \"abc\",\n            \"AuthorizedUserUin\": \"abc\",\n            \"AuthorizedCloudappId\": \"abc\",\n            \"AuthorizedCloudappRoleId\": \"abc\",\n            \"AuthorizedSpecification\": [\n                {\n                    \"ParamKey\": \"abc\",\n                    \"ParamValue\": \"abc\",\n                    \"ParamKeyName\": \"abc\",\n                    \"ParamValueName\": \"abc\"\n                }\n            ],\n            \"BillingMode\": 0,\n            \"LifeSpan\": 0,\n            \"IssueDate\": \"2020-09-22T00:00:00+00:00\",\n            \"ActivationDate\": \"2020-09-22T00:00:00+00:00\",\n            \"ExpirationDate\": \"2020-09-22T00:00:00+00:00\",\n            \"LifeSpanUnit\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "通过运行时roleId查询对应的软件 LICENSE"
+      }
+    ]
+  },
+  "version": "1.0"
+}
