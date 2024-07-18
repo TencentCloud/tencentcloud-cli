@@ -4920,7 +4920,7 @@
         },
         {
           "disabled": false,
-          "document": "制品来源，范围：tke-market 或 other",
+          "document": "制品来源，范围：tke-market 或 other默认值：tke-market。",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",
@@ -4965,7 +4965,7 @@
         },
         {
           "disabled": false,
-          "document": "制品命名空间",
+          "document": "制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace",
           "example": "helm-public",
           "member": "string",
           "name": "ChartNamespace",
@@ -25258,7 +25258,7 @@
         },
         {
           "disabled": false,
-          "document": "制品来源，范围：tke-market 或 other默认值：tke-market。",
+          "document": "制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market",
           "example": "tke-market",
           "member": "string",
           "name": "ChartFrom",
@@ -25303,7 +25303,7 @@
         },
         {
           "disabled": false,
-          "document": "制品命名空间",
+          "document": "制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace",
           "example": "helm-public",
           "member": "string",
           "name": "ChartNamespace",

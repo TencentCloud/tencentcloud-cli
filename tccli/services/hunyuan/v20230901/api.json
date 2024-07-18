@@ -8,7 +8,7 @@
       "status": "online"
     },
     "GetEmbedding": {
-      "document": "腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。",
+      "document": "腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。",
       "input": "GetEmbeddingRequest",
       "name": "hunyuan-embedding",
       "output": "GetEmbeddingResponse",
@@ -711,7 +711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文本描述。 算法将根据输入的文本智能生成与之相关的图像。 不能为空，推荐使用中文。最多可传100个 utf-8 字符。",
+          "document": "文本描述。 \n算法将根据输入的文本智能生成与之相关的图像。 \n不能为空，推荐使用中文。最多可传1024个 utf-8 字符。",
           "example": "雨中, 竹林,  小路",
           "member": "string",
           "name": "Prompt",

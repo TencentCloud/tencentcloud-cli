@@ -295,7 +295,7 @@
       "status": "online"
     },
     "StartStreamIngest": {
-      "document": "将一个在线媒体流推到TRTC房间。\n使用此接口的前提条件：需要购买 [尊享版或旗舰版套餐包](https://cloud.tencent.com/document/product/647/85386\n)",
+      "document": "将一个在线媒体流推到TRTC房间，更多功能说明见[输入媒体流进房](https://cloud.tencent.com/document/product/647/102957#50940aad-d90f-4473-9f46-d5dd46917653)。\n使用输入在线媒体流功能需先订阅 [尊享版或旗舰版套餐包](https://cloud.tencent.com/document/product/647/85386) 解锁能力位。",
       "input": "StartStreamIngestRequest",
       "name": "开启输入在线媒体流",
       "output": "StartStreamIngestResponse",
@@ -6025,7 +6025,7 @@
         },
         {
           "disabled": false,
-          "document": "源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。",
+          "document": "源流URL【必填】。如果是视频流，分辨率请保持不变。",
           "example": "https://a.b/test.mp4",
           "member": "string",
           "name": "StreamUrl",

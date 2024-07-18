@@ -5059,7 +5059,7 @@
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "ModifyAttributeLabel",
+          "example": "编辑标签任务类型：ModifyAttributeLabel  导出标签任务类型：ExportAttributeLabel",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -5093,7 +5093,7 @@
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "ModifyAttributeLabel",
+          "example": "编辑标签任务类型：ModifyAttributeLabel  导出标签任务类型：ExportAttributeLabel",
           "member": "string",
           "name": "TaskType",
           "output_required": false,
@@ -5103,7 +5103,7 @@
         {
           "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "RUNNING",
+          "example": "执行中：RUNNING  成功：SUCCESS 失败：FAILED 等待中：PENDING",
           "member": "string",
           "name": "Status",
           "output_required": false,

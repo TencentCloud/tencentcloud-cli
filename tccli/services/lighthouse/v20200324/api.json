@@ -4559,7 +4559,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4569,7 +4569,7 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
