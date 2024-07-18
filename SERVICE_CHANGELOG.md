@@ -1,86 +1,45 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 58 次发布
+### 第 55 次发布
 
-发布时间：2024-07-18 01:08:15
+发布时间：2024-07-19 01:19:56
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增数据结构：
-
-* [Attribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#Attribute)
 
 修改数据结构：
 
-* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
 
-	* 新增成员：DosageAttributes
+	* 新增成员：ActivityId
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 146 次发布
-
-发布时间：2024-07-18 01:16:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
-
-	* 新增入参：OpenId, OrganizationOpenId
+	* <font color="#dd0000">**修改成员**：</font>BundleId, Memory, SystemDiskType, SystemDiskSize, MonthlyTraffic, SupportLinuxUnixPlatform, SupportWindowsPlatform, CPU, InternetMaxBandwidthOut, InternetChargeType, BundleSalesState, BundleType, BundleTypeDescription, BundleTypePriority, BundleDisplayLabel
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
+### 第 52 次发布
 
-
-## 官网(portal) 版本：2023-04-13
-
-### 第 10 次发布
-
-发布时间：2024-07-18 01:21:43
+发布时间：2024-07-19 01:21:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeMenu](http://document.tencentcloudapi.woa.com/document/product/1732/84274)
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
 
-新增数据结构：
+	* 新增成员：BillingResourceMode
 
-* [Menu](http://document.tencentcloudapi.woa.com/document/product/1732/80923#Menu)
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
 
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 143 次发布
-
-发布时间：2024-07-18 01:27:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifySecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15810)
-
-	* 新增入参：BpaasApplicationId
+	* 新增成员：BillingResourceMode
 
 
 
@@ -6504,7 +6463,7 @@
 
 新增数据结构：
 
-* [[Attribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#Attribute)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[Attribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#Attribute))
+* [Attribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#Attribute)
 
 修改数据结构：
 
@@ -61107,6 +61066,23 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 55 次发布
+
+发布时间：2024-07-19 01:19:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
+
+	* 新增成员：ActivityId
+
+	* <font color="#dd0000">**修改成员**：</font>BundleId, Memory, SystemDiskType, SystemDiskSize, MonthlyTraffic, SupportLinuxUnixPlatform, SupportWindowsPlatform, CPU, InternetMaxBandwidthOut, InternetChargeType, BundleSalesState, BundleType, BundleTypeDescription, BundleTypePriority, BundleDisplayLabel
+
+
 ### 第 54 次发布
 
 发布时间：2024-07-11 01:54:49
@@ -71378,6 +71354,25 @@
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
+### 第 52 次发布
+
+发布时间：2024-07-19 01:21:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：BillingResourceMode
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+
+	* 新增成员：BillingResourceMode
+
+
 ### 第 51 次发布
 
 发布时间：2024-07-15 02:15:08
@@ -75280,11 +75275,11 @@
 
 新增接口：
 
-* [[DescribeMenu](http://document.tencentcloudapi.woa.com/document/product/1732/84274)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeMenu](http://document.tencentcloudapi.woa.com/document/product/1732/84274)
 
 新增数据结构：
 
-* [[Menu](http://document.tencentcloudapi.woa.com/document/product/1732/80923#Menu)](http://document.tencentcloudapi.woa.com/document/product/1732/80923#[Menu](http://document.tencentcloudapi.woa.com/document/product/1732/80923#Menu))
+* [Menu](http://document.tencentcloudapi.woa.com/document/product/1732/80923#Menu)
 
 ### 第 9 次发布
 

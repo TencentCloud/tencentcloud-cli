@@ -1,3 +1,49 @@
+# Release 3.0.1037.1
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 55 次发布
+
+发布时间：2024-07-19 01:19:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
+
+	* 新增成员：ActivityId
+
+	* <font color="#dd0000">**修改成员**：</font>BundleId, Memory, SystemDiskType, SystemDiskSize, MonthlyTraffic, SupportLinuxUnixPlatform, SupportWindowsPlatform, CPU, InternetMaxBandwidthOut, InternetChargeType, BundleSalesState, BundleType, BundleTypeDescription, BundleTypePriority, BundleDisplayLabel
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 52 次发布
+
+发布时间：2024-07-19 01:21:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：BillingResourceMode
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+
+	* 新增成员：BillingResourceMode
+
+
+
+
 # Release 3.0.1036.1
 
 ## 费用中心(billing) 版本：2018-07-09
