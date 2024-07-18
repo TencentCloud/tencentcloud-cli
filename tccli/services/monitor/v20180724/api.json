@@ -890,7 +890,7 @@
       "status": "online"
     },
     "ModifyPrometheusConfig": {
-      "document": "修改prometheus配置，如果配置项不存在，则会新增",
+      "document": "修改prometheus采集配置",
       "input": "ModifyPrometheusConfigRequest",
       "name": "修改prometheus配置",
       "output": "ModifyPrometheusConfigResponse",
@@ -3629,7 +3629,7 @@
           "example": "arule-f2vx2owo",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4400,7 +4400,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-oejhr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4910,7 +4910,7 @@
         {
           "disabled": false,
           "document": "Prometheus 实例 ID",
-          "example": "",
+          "example": "prom-sdfk2342a",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4919,7 +4919,7 @@
         {
           "disabled": false,
           "document": "<li>类型为TKE：对应集成的腾讯云容器服务集群 ID</li>",
-          "example": "",
+          "example": "cls-pwerf3k3",
           "member": "string",
           "name": "KubeClusterId",
           "required": true,
@@ -4928,7 +4928,7 @@
         {
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "KubeType",
           "required": true,
@@ -4937,7 +4937,7 @@
         {
           "disabled": false,
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -4945,8 +4945,8 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息",
-          "example": "",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
+          "example": "yaml",
           "member": "string",
           "name": "Yaml",
           "required": true,
@@ -4961,9 +4961,10 @@
         {
           "disabled": false,
           "document": "创建成功之后，返回对应服务发现信息",
-          "example": "",
+          "example": "无",
           "member": "ServiceDiscoveryItem",
           "name": "ServiceDiscovery",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5655,7 +5656,7 @@
         {
           "disabled": false,
           "document": "agent列表",
-          "example": "无",
+          "example": "{\"ClusterType\":\"cls-kehr\",\"ClusterId\":\"tke\",\"Describe\":\"test-des\"}",
           "member": "PrometheusAgentInfo",
           "name": "Agents",
           "required": true,
@@ -5664,7 +5665,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "prome-xx",
+          "example": "prom-kehf",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5718,7 +5719,7 @@
         {
           "disabled": false,
           "document": "要删除的ServiceMonitor名字列表",
-          "example": "xxx",
+          "example": "[\"test-sm\"]",
           "member": "string",
           "name": "ServiceMonitors",
           "required": false,
@@ -5727,7 +5728,7 @@
         {
           "disabled": false,
           "document": "要删除的PodMonitor名字列表",
-          "example": "xxx",
+          "example": "[\"test-pm\"]",
           "member": "string",
           "name": "PodMonitors",
           "required": false,
@@ -5736,7 +5737,7 @@
         {
           "disabled": false,
           "document": "要删除的RawJobs名字列表",
-          "example": "xxx",
+          "example": "[\"test-rj\"]",
           "member": "string",
           "name": "RawJobs",
           "required": false,
@@ -5763,7 +5764,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "xxx",
+          "example": "prom-wjheg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5772,7 +5773,7 @@
         {
           "disabled": false,
           "document": "聚合规则列表",
-          "example": "xxx",
+          "example": "[\"test-rule\"]",
           "member": "string",
           "name": "Names",
           "required": true,
@@ -5871,7 +5872,7 @@
         {
           "disabled": false,
           "document": "模板id",
-          "example": "无",
+          "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -5880,7 +5881,7 @@
         {
           "disabled": false,
           "document": "取消同步的对象列表",
-          "example": "无",
+          "example": "{\"Region\":\"abc\",\"InstanceId\":\"abc\",\"ClusterId\":\"abc\",\"SyncTime\":\"abc\",\"Version\":\"abc\",\"ClusterType\":\"abc\",\"InstanceName\":\"abc\",\"ClusterName\":\"abc\"}",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
           "required": true,
@@ -6014,7 +6015,7 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
           "example": "yaml",
           "member": "string",
           "name": "Yaml",
@@ -11567,7 +11568,7 @@
         {
           "disabled": false,
           "document": "集群id\n可以是tke, eks, edge的集群id",
-          "example": "cls-xxx",
+          "example": "cls-dkrb",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11582,7 +11583,7 @@
         {
           "disabled": false,
           "document": "关联该集群的实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "prom-xxx",
+          "example": "[\"prom-oebnrfg\"]",
           "member": "string",
           "name": "Instances",
           "output_required": true,
@@ -11852,7 +11853,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -11861,7 +11862,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -11989,7 +11990,7 @@
         {
           "disabled": false,
           "document": "全局配置",
-          "example": "无",
+          "example": "\"scrape_configs:\\n- job_name: job1\\n  scrape_interval: 15s\\n  static_configs:\\n  - targets:\\n    - \\\"\\\"\\n\"",
           "member": "string",
           "name": "Config",
           "output_required": true,
@@ -11999,7 +12000,7 @@
         {
           "disabled": false,
           "document": "ServiceMonitor配置",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
           "output_required": true,
@@ -12009,7 +12010,7 @@
         {
           "disabled": false,
           "document": "PodMonitor配置",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
           "output_required": true,
@@ -12019,7 +12020,7 @@
         {
           "disabled": false,
           "document": "原生Job",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
           "output_required": true,
@@ -12029,7 +12030,7 @@
         {
           "disabled": false,
           "document": "Probes",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "Probes",
           "output_required": true,
@@ -12039,7 +12040,7 @@
         {
           "disabled": false,
           "document": "实例组件是否需要升级",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ImageNeedUpdate",
           "output_required": true,
@@ -12184,7 +12185,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-abc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12199,7 +12200,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "prom-abc",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -12209,7 +12210,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "test-Prometheus",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -12219,7 +12220,7 @@
         {
           "disabled": false,
           "document": "VPC ID",
-          "example": "无",
+          "example": "vpc-abc",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -12229,7 +12230,7 @@
         {
           "disabled": false,
           "document": "子网 ID",
-          "example": "无",
+          "example": "subnet-abc",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -12239,7 +12240,7 @@
         {
           "disabled": false,
           "document": "实例业务状态。取值范围：\n\n1：正在创建\n2：运行中\n3：异常\n4：重建中\n5：销毁中\n6：已停服\n8：欠费停服中\n9：欠费已停服",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "InstanceStatus",
           "output_required": true,
@@ -12249,7 +12250,7 @@
         {
           "disabled": false,
           "document": "计费状态\n\n1：正常\n2：过期\n3：销毁\n4：分配中\n5：分配失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
           "output_required": true,
@@ -12259,7 +12260,7 @@
         {
           "disabled": false,
           "document": "是否开启 Grafana\n0：不开启\n1：开启",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "EnableGrafana",
           "output_required": true,
@@ -12269,7 +12270,7 @@
         {
           "disabled": false,
           "document": "Grafana 面板 URL\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://10.0.0.1:3000",
           "member": "string",
           "name": "GrafanaURL",
           "output_required": true,
@@ -12279,7 +12280,7 @@
         {
           "disabled": false,
           "document": "实例计费模式。取值范围：\n\n2：包年包月\n3：按量",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "InstanceChargeType",
           "output_required": true,
@@ -12289,7 +12290,7 @@
         {
           "disabled": false,
           "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "SpecName",
           "output_required": true,
@@ -12299,7 +12300,7 @@
         {
           "disabled": false,
           "document": "存储周期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
           "output_required": true,
@@ -12309,7 +12310,7 @@
         {
           "disabled": false,
           "document": "购买的实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024/07/16 16:06:31",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -12319,7 +12320,7 @@
         {
           "disabled": false,
           "document": "自动续费标记\n\n0：不自动续费\n1：开启自动续费\n2：禁止自动续费\n-1：无效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
@@ -12341,7 +12342,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-asdfghjk",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12356,7 +12357,7 @@
         {
           "disabled": false,
           "document": "实例初始化状态，取值：\nuninitialized 未初始化 \ninitializing 初始化中\nrunning 初始化完成，运行中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -12376,7 +12377,7 @@
         {
           "disabled": false,
           "document": "实例eks集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls-asdf1234",
           "member": "string",
           "name": "EksClusterId",
           "output_required": true,
@@ -12386,7 +12387,7 @@
         {
           "disabled": false,
           "document": "eks集群内pod的安全组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sg-asdf1234",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": false,
@@ -12407,7 +12408,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。请求的实例的上限为100。",
+          "document": "按照一个或者多个实例ID查询。实例ID形如：prom-xxxxxxxx。",
           "example": "[\"prom-xxxxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -12462,7 +12463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "分页偏移量，默认为0",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -12471,7 +12472,7 @@
         },
         {
           "disabled": false,
-          "document": "用于分页",
+          "document": "返回数量，默认为20，最大值为100",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -12481,7 +12482,7 @@
         {
           "disabled": false,
           "document": "过滤实例，目前支持：\nID: 通过实例ID来过滤 \nName: 通过实例名称来过滤",
-          "example": "无",
+          "example": "[{\"Name\": \"Name\",\"Values\": [\"test\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12939,7 +12940,7 @@
         },
         {
           "disabled": false,
-          "document": "targets偏移量，默认为0",
+          "document": "targets分页偏移量，默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -12964,7 +12965,7 @@
         {
           "disabled": false,
           "document": "所有Job的targets信息",
-          "example": "{                 \"Targets\": [                     {                         \"LastScrape\": \"xx\",                         \"ScrapeDuration\": 0.0,                         \"Url\": \"xx\",                         \"Labels\": [                             {                                 \"Name\": \"xx\",                                 \"Value\": \"xx\"                             }                         ],                         \"State\": \"xx\",                         \"Error\": \"xx\"                     }                 ],                 \"Total\": 1,                 \"Up\": 1,                 \"JobName\": \"xx\"             }",
+          "example": "{\"Targets\":[{\"LastScrape\":\"2024-06-19 16:22:26\",\"ScrapeDuration\":0.2,\"Url\":\"http://1.1.1.1:9000\",\"Labels\":[{\"Name\":\"label-name\",\"Value\":\"label-value\"}],\"State\":\"down\",\"Error\":\"scrape timeout\"}],\"Total\":1,\"Up\":0,\"JobName\":\"test-job\"}",
           "member": "PrometheusJobTargets",
           "name": "Jobs",
           "output_required": true,
@@ -12986,7 +12987,7 @@
         {
           "disabled": false,
           "document": "模糊过滤条件，支持\nLevel 按模板级别过滤\nName 按名称过滤\nDescribe 按描述过滤\nID 按templateId过滤",
-          "example": "无",
+          "example": " [{\"Name\": \"Name\",\"Values\": [\"test\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12994,8 +12995,8 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
-          "example": "无",
+          "document": "分页偏移量，默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -13004,7 +13005,7 @@
         {
           "disabled": false,
           "document": "总数限制",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -13019,7 +13020,7 @@
         {
           "disabled": false,
           "document": "模板列表",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Describe\":\"abc\",\"Level\":\"abc\",\"RecordRules\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"RawJobs\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"ServiceMonitors\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"PodMonitors\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"TemplateId\":\"abc\",\"UpdateTime\":\"abc\",\"Version\":\"abc\",\"IsDefault\":true,\"AlertDetailRules\":[{\"Id\":\"abc\",\"Name\":\"abc\",\"TemplateId\":\"abc\",\"Notification\":{\"Enabled\":true,\"Type\":\"abc\",\"WebHook\":\"abc\",\"AlertManager\":{\"ClusterType\":\"abc\",\"ClusterId\":\"abc\",\"Url\":\"abc\"},\"RepeatInterval\":\"abc\",\"TimeRangeStart\":\"abc\",\"TimeRangeEnd\":\"abc\",\"NotifyWay\":[\"abc\"],\"ReceiverGroups\":[\"abc\"],\"PhoneNotifyOrder\":[1],\"PhoneCircleTimes\":0,\"PhoneInnerInterval\":0,\"PhoneCircleInterval\":0,\"PhoneArriveNotice\":true},\"Rules\":[{\"Name\":\"abc\",\"Rule\":\"abc\",\"Labels\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"Template\":\"abc\",\"For\":\"abc\",\"Describe\":\"abc\",\"Annotations\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"RuleState\":0}],\"UpdatedAt\":\"abc\",\"ClusterId\":\"abc\",\"Interval\":\"abc\"}],\"TargetsTotal\": 0}]",
           "member": "PrometheusTemp",
           "name": "Templates",
           "output_required": true,
@@ -13029,7 +13030,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
@@ -13051,7 +13052,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "无",
+          "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -13066,7 +13067,7 @@
         {
           "disabled": false,
           "document": "同步目标详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Region\":\"abc\",\"InstanceId\":\"abc\",\"ClusterId\":\"abc\",\"SyncTime\":\"abc\",\"Version\":\"abc\",\"ClusterType\":\"abc\",\"InstanceName\":\"abc\",\"ClusterName\":\"abc\"}",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
           "output_required": true,
@@ -14951,7 +14952,7 @@
         {
           "disabled": false,
           "document": "map表中的Name",
-          "example": "xxx",
+          "example": "label-name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -14962,7 +14963,7 @@
         {
           "disabled": false,
           "document": "map表中的Value",
-          "example": "xxx",
+          "example": "label-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -16281,7 +16282,7 @@
         {
           "disabled": false,
           "document": "新的external_labels",
-          "example": "Name=xx, Value=xxx",
+          "example": "{\"Name\":\"label-name\",\"Value\":\"label-value\"}",
           "member": "Label",
           "name": "ExternalLabels",
           "required": true,
@@ -16398,7 +16399,7 @@
         {
           "disabled": false,
           "document": "0: 更新实例组件镜像版本；\n1: 不更新实例组件镜像版本",
-          "example": "0,1",
+          "example": "0",
           "member": "int64",
           "name": "UpdateImage",
           "required": false,
@@ -16478,7 +16479,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时长（取值为 15、30、45。此参数不适用于包年包月实例）",
+          "document": "数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一",
           "example": "15",
           "member": "int64",
           "name": "DataRetentionTime",
@@ -17246,7 +17247,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "cls-xxx",
+          "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -17296,7 +17297,7 @@
         {
           "disabled": false,
           "document": "集群所在VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "vpc-abc",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -17306,7 +17307,7 @@
         {
           "disabled": false,
           "document": "记录关联等操作的失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "abc",
           "member": "string",
           "name": "FailedReason",
           "output_required": true,
@@ -17316,7 +17317,7 @@
         {
           "disabled": false,
           "document": "agent名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "abc",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -17826,8 +17827,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "xx-xxx",
+          "document": "地域",
+          "example": "ap-beijing",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -17845,7 +17846,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -17881,7 +17882,7 @@
         {
           "disabled": false,
           "document": "是否安装默认采集配置",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NotInstallBasicScrape",
           "required": false,
@@ -17890,7 +17891,7 @@
         {
           "disabled": false,
           "document": "是否采集指标，true代表drop所有指标，false代表采集默认指标",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NotScrape",
           "required": false,
@@ -17899,7 +17900,7 @@
         {
           "disabled": false,
           "document": "是否开启默认预聚合规则",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "OpenDefaultRecord",
           "required": false,
@@ -18792,80 +18793,80 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "test-record",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近更新时间",
-          "example": "无",
+          "example": "2024-06-19 16:22:26",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Yaml内容",
-          "example": "无",
+          "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "如果该聚合规则来至模板，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -19183,9 +19184,10 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "无",
+          "example": "test-a",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19193,9 +19195,10 @@
         {
           "disabled": false,
           "document": "模板维度，支持以下类型\ninstance 实例级别\ncluster 集群级别",
-          "example": "无",
+          "example": "instance",
           "member": "string",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -19203,9 +19206,10 @@
         {
           "disabled": false,
           "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test template",
           "member": "string",
           "name": "Describe",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19213,9 +19217,10 @@
         {
           "disabled": false,
           "document": "当Level为instance时有效，\n模板中的聚合规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "RecordRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -19223,9 +19228,10 @@
         {
           "disabled": false,
           "document": "当Level为cluster时有效，\n模板中的ServiceMonitor规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -19233,9 +19239,10 @@
         {
           "disabled": false,
           "document": "当Level为cluster时有效，\n模板中的PodMonitors规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -19243,9 +19250,10 @@
         {
           "disabled": false,
           "document": "当Level为cluster时有效，\n模板中的RawJobs规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}]",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -19253,9 +19261,10 @@
         {
           "disabled": false,
           "document": "模板的ID, 用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19263,9 +19272,10 @@
         {
           "disabled": false,
           "document": "最近更新时间，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-07-16 16:28:54",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19273,9 +19283,10 @@
         {
           "disabled": false,
           "document": "当前版本，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -19283,9 +19294,10 @@
         {
           "disabled": false,
           "document": "是否系统提供的默认模板，用于出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDefault",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -19293,9 +19305,10 @@
         {
           "disabled": false,
           "document": "当Level为instance时有效，\n模板中的告警配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Id\":\"abc\",\"Name\":\"abc\",\"TemplateId\":\"abc\",\"Notification\":{\"Enabled\":true,\"Type\":\"abc\",\"WebHook\":\"abc\",\"AlertManager\":{\"ClusterType\":\"abc\",\"ClusterId\":\"abc\",\"Url\":\"abc\"},\"RepeatInterval\":\"abc\",\"TimeRangeStart\":\"abc\",\"TimeRangeEnd\":\"abc\",\"NotifyWay\":[\"abc\"],\"ReceiverGroups\":[\"abc\"],\"PhoneNotifyOrder\":[1],\"PhoneCircleTimes\":0,\"PhoneInnerInterval\":0,\"PhoneCircleInterval\":0,\"PhoneArriveNotice\":true},\"Rules\":[{\"Name\":\"abc\",\"Rule\":\"abc\",\"Labels\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"Template\":\"abc\",\"For\":\"abc\",\"Describe\":\"abc\",\"Annotations\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"RuleState\":0}],\"UpdatedAt\":\"abc\",\"ClusterId\":\"abc\",\"Interval\":\"abc\"}]",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertDetailRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -19303,9 +19316,10 @@
         {
           "disabled": false,
           "document": "关联实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TargetsTotal",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -19889,7 +19903,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-asdfghjk",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19898,7 +19912,7 @@
         {
           "disabled": false,
           "document": "子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化",
-          "example": "xx-xxx",
+          "example": "subnet-asdfghjk",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -20279,7 +20293,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "无",
+          "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -20288,7 +20302,7 @@
         {
           "disabled": false,
           "document": "同步目标",
-          "example": "无",
+          "example": "{\"Region\":\"abc\",\"InstanceId\":\"abc\",\"ClusterId\":\"abc\",\"SyncTime\":\"abc\",\"Version\":\"abc\",\"ClusterType\":\"abc\",\"InstanceName\":\"abc\",\"ClusterName\":\"abc\"}",
           "member": "PrometheusTemplateSyncTarget",
           "name": "Targets",
           "required": true,
@@ -21511,8 +21525,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
-          "example": "xx",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-abcd1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -21521,7 +21535,7 @@
         {
           "disabled": false,
           "document": "Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
-          "example": "[\"xx\"]",
+          "example": "[\"agent-abcd1234\"]",
           "member": "string",
           "name": "AgentIds",
           "required": true,
@@ -21883,7 +21897,7 @@
         {
           "disabled": false,
           "document": "Prometheus 实例 ID",
-          "example": "",
+          "example": "prom-sdfk2342a",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -21892,7 +21906,7 @@
         {
           "disabled": false,
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
-          "example": "",
+          "example": "cls-pwerf3k3",
           "member": "string",
           "name": "KubeClusterId",
           "required": true,
@@ -21901,7 +21915,7 @@
         {
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "KubeType",
           "required": true,
@@ -21910,7 +21924,7 @@
         {
           "disabled": false,
           "document": "服务发现类型，取值如下：\n<li> 1 = ServiceMonitor</li>\n<li> 2 = PodMonitor</li>\n<li> 3 = JobMonitor</li>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -21918,8 +21932,8 @@
         },
         {
           "disabled": false,
-          "document": "服务发现配置信息",
-          "example": "",
+          "document": "服务发现配置信息，YAML 格式，[具体YAML参数内容请参考](https://cloud.tencent.com/document/product/1416/55995#service-monitor)",
+          "example": "yaml",
           "member": "string",
           "name": "Yaml",
           "required": true,
@@ -21934,9 +21948,10 @@
         {
           "disabled": false,
           "document": "更新成功之后，返回对应服务发现的信息",
-          "example": "",
+          "example": " \"ServiceDiscovery\": {             \"Kind\": \"ServiceMonitor\",             \"Name\": \"name\",             \"Namespace\": \"namespace\",             \"Selector\": \"{\\\"matchLabels\\\":{\\\"k8sapp\\\":\\\"mysql-exporter\\\"}}\",             \"Yaml\": \"apiVersion: monitoring.coreos.com...\",             \"NamespaceSelector\": \"{\\\"matchNames\\\":[\\\"demo-ns\\\"]}\",             \"Endpoints\": \"[{\\\"port\\\":\\\"tcp-port\\\",\\\"path\\\":\\\"/metrics\\\",\\\"interval\\\":\\\"30s\\\",\\\"bearerTokenSecret\\\":{\\\"key\\\":\\\"\\\"}}]\"         }",
           "member": "ServiceDiscoveryItem",
           "name": "ServiceDiscovery",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -21963,7 +21978,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：\n<li>qcloud</li>\n<li>cvm_process_exporter</li>\n<li>cvm_node_exporter</li>\n<li>cvm</li>\n<li>kubernetes</li>\n<li>cdwch</li>\n<li>rocketmq</li>\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>\n<li>pts</li>\n<li>kong</li>",
+          "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>",
           "example": "[\"spring-mvc\"]",
           "member": "string",
           "name": "IntegrationCodes",

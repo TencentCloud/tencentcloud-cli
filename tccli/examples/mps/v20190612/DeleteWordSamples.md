@@ -1,6 +1,26 @@
-**Example 1: 删除关键词样本**
+**Example 1: 示例**
 
+一个删除关键词样本示例请求
 
+Input: 
+
+```
+tccli mps DeleteWordSamples --cli-unfold-argument  \
+    --Keywords abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 删除关键词样本**
+
+一个示例请求
 
 Input: 
 

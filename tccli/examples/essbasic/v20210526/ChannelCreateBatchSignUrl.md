@@ -29,9 +29,9 @@ Output:
 }
 ```
 
-**Example 2: 生成企业经办人小程序批量签署链接**
+**Example 2: 生成saas企业经办人小程序批量签署链接**
 
-按照合同发起时候填入的信息生成企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制
+按照合同发起时候填入的信息生成saas企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制
 
 Input: 
 
@@ -111,6 +111,38 @@ tccli essbasic ChannelCreateBatchSignUrl --cli-unfold-argument  \
     --FlowIds yDwFdUUckpsw******yQ0af8bHosXQtb yDR1AUUgygj******uO4zjE8gTG7xvgH \
     --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDC5yUUckpwexoz4UuoHfkT1DMEDQSG5 \
     --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDC5yUUckpwexozwUuoHfkTwB00zdfLo
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1684899114,
+        "RequestId": "5beb5f54-cf3d-4c26-a4ee-a97c85196a3e",
+        "SignUrl": "https://ess.url.cn/FuP**Swc",
+        "MiniAppPath": "pages/guide/index?shortKey=FuP3**wc"
+    }
+}
+```
+
+**Example 5: 生成子客经办人小程序批量签署链接**
+
+按照合同发起时候填入的信息生成子客企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchSignUrl --cli-unfold-argument  \
+    --OpenId test_open_id \
+    --OrganizationOpenId test_org_open_id \
+    --Name  \
+    --NotifyType SMS \
+    --Mobile  \
+    --OrganizationName  \
+    --Agent.ProxyOperator.OpenId test_open_id \
+    --Agent.ProxyOrganizationOpenId test_org_open_id \
+    --Agent.AppId yDxbWUyKQ*******4zjEB8mxCcDjAyF \
+    --FlowIds yDwFdUUckpsw******yQ0af8bHosXQtb yDR1AUUgygj******uO4zjE8gTG7xvgH
 ```
 
 Output: 

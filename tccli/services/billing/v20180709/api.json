@@ -3853,6 +3853,34 @@
       ],
       "usage": "out"
     },
+    "Attribute": {
+      "document": "{\n                            \"key\": \"alias\",\n                            \"value\": \"cfs-qc-prod\"\n                        }",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务自定义属性key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "attribute1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务自定义属性value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BillActionType": {
       "document": "交易类型筛选列表",
       "members": [
@@ -14631,6 +14659,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"key\":\"alias\",\"value\":\"cfs-qc-prod\"},{\"key\":\"realm\",\"value\":\"MAINLAND_CHINA\"}]",
+          "member": "Attribute",
+          "name": "DosageAttributes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

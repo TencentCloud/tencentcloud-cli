@@ -88,6 +88,19 @@ Output:
                             "MosaicSet": []
                         },
                         "Output": {
+                            "OutputStorage": {
+                                "Type": "abc",
+                                "CosOutputStorage": {
+                                    "Bucket": "abc",
+                                    "Region": "abc"
+                                },
+                                "S3OutputStorage": {
+                                    "S3Bucket": "abc",
+                                    "S3Region": "abc",
+                                    "S3SecretId": "abc",
+                                    "S3SecretKey": "abc"
+                                }
+                            },
                             "Path": "/movie/201907/WildAnimal_transcode_20.mp4",
                             "Size": 4189073,
                             "Container": "mov,mp4,m4a,3gp,3g2,mj2",

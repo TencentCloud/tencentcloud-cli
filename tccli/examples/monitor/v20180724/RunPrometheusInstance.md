@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor RunPrometheusInstance --cli-unfold-argument  \
-    --InstanceId prom-xxx
+    --InstanceId prom-asdfghjk
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "abc-123-asdfghjk"
     }
 }
 ```

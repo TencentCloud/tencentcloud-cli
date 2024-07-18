@@ -638,17 +638,17 @@
           "example": "string",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "素材状态",
+          "document": "素材状态\n\n字段取值: \n0   审核中\n1   人工审核通过\n2   人工审核失败\n3   申诉中\n11  申诉成功\n12  申诉失败\n21  机器审核通过\n22  机器审核失败\n31  视频素材预处理成功，素材可用\n32  视频素材预处理失败\n33  角色不在视频中",
           "example": "1",
           "member": "int64",
           "name": "MaterialStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -658,7 +658,7 @@
           "example": "string",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -668,7 +668,7 @@
           "example": "string",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -678,7 +678,7 @@
           "example": "string",
           "member": "MaterialFaces",
           "name": "MaterialFaceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -688,7 +688,7 @@
           "example": "string",
           "member": "string",
           "name": "MaterialName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -698,7 +698,7 @@
           "example": "string",
           "member": "string",
           "name": "AuditResult",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -17,21 +17,32 @@ Output:
 {
     "Response": {
         "Person": {
-            "PersonId": "10569",
-            "Name": "张三",
-            "Description": "华语影视男演员、导演、制片人",
+            "PersonId": "abc",
+            "Name": "abc",
+            "Description": "abc",
             "FaceInfoSet": [
                 {
-                    "FaceId": "10023",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
+                    "FaceId": "abc",
+                    "Url": "abc"
                 }
             ],
-            "TagSet": [],
-            "CreateTime": "2018-10-01T10:00:00Z",
-            "UpdateTime": "2018-10-01T10:00:00Z"
+            "TagSet": [
+                "abc"
+            ],
+            "UsageSet": [
+                "abc"
+            ],
+            "CreateTime": "abc",
+            "UpdateTime": "abc"
         },
-        "FailFaceInfoSet": null,
-        "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
+        "FailFaceInfoSet": [
+            {
+                "Index": 1,
+                "ErrCode": 0,
+                "Message": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```
@@ -58,6 +69,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "abc"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",
@@ -106,6 +120,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "abc"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",
@@ -154,6 +171,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "abc"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",

@@ -65,7 +65,7 @@ tccli essbasic ChannelCreateFlowApprovers --cli-unfold-argument  \
     --Approvers.1.ApproverName 典子谦 \
     --Approvers.1.ApproverMobile 13200000000 \
     --Approvers.1.OrganizationName ***有限公司 \
-    --Approvers.1.FlowId yDCVMUUckpwytrk2UE1RW1FSR2BqdoGS
+    --Approvers.1.FlowId yDC5BUUckpypucutUETpDyAwpDJckfDR
 ```
 
 Output: 

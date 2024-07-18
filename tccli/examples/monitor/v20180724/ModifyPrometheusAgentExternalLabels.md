@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli monitor ModifyPrometheusAgentExternalLabels --cli-unfold-argument  \
-    --InstanceId abc \
-    --ClusterId abc \
-    --ExternalLabels.0.Name abc \
-    --ExternalLabels.0.Value abc
+    --InstanceId prom-jegh \
+    --ClusterId cls-uerhf \
+    --ExternalLabels.0.Name label-name \
+    --ExternalLabels.0.Value label-value
 ```
 
 Output: 

@@ -15,14 +15,14 @@ Output:
     "Response": {
         "Targets": [
             {
-                "Region": "abc",
-                "InstanceId": "abc",
-                "ClusterId": "abc",
-                "SyncTime": "abc",
-                "Version": "abc",
-                "ClusterType": "abc",
-                "InstanceName": "abc",
-                "ClusterName": "abc"
+                "Region": "ap-beijing",
+                "InstanceId": "prom-sjfgh",
+                "ClusterId": "cls-kdje",
+                "SyncTime": "2024-07-16 16:28:54",
+                "Version": "v1",
+                "ClusterType": "tke",
+                "InstanceName": "test-prom",
+                "ClusterName": "test-cluster"
             }
         ],
         "RequestId": "abc"

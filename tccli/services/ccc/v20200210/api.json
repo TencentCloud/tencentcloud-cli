@@ -2331,7 +2331,7 @@
         {
           "disabled": false,
           "document": "SDK 登录 Token。",
-          "example": "6bb56a09278740bc80c5dc6dab783eff",
+          "example": "some_token",
           "member": "string",
           "name": "Token",
           "output_required": true,
@@ -2351,7 +2351,7 @@
         {
           "disabled": false,
           "document": "SDK 加载路径会随着 SDK 的发布而变动。",
-          "example": "https://29294-22989-29805-29810.cdn-go.cn/tccc-agent-sdk/latest/",
+          "example": "https://tccc/sdk.js",
           "member": "string",
           "name": "SdkURL",
           "output_required": true,
@@ -6777,7 +6777,7 @@
         },
         {
           "disabled": false,
-          "document": "SIP通道类型：IP-ALLOW-LIST | REGISTER | UAC-REGISTER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SIP通道类型：IP-ALLOW-LIST | REGISTER | UAC-REGISTER | CREDENTIAL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IP-ALLOW-LIST",
           "member": "string",
           "name": "Mode",
@@ -6942,6 +6942,17 @@
         },
         {
           "disabled": false,
+          "document": "呼出被叫格式，使用 {+E.164} 或 {E.164}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{+E.164}",
+          "member": "string",
+          "name": "OutboundCalleeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "通道状态：0 - 停用 | 1 - 启用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -6957,6 +6968,17 @@
           "example": "无",
           "member": "HostInfo",
           "name": "AllowIpList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "呼入IP白名单，第三方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WhiteIpList",
           "output_required": true,
           "required": false,
           "type": "list",

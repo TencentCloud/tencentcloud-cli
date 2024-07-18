@@ -28,6 +28,13 @@
       "output": "DescribeDocumentListResponse",
       "status": "online"
     },
+    "DescribeMenu": {
+      "document": "描述目录层级",
+      "input": "DescribeMenuRequest",
+      "name": "菜单描述",
+      "output": "DescribeMenuResponse",
+      "status": "online"
+    },
     "DescribeProductDictionaryList": {
       "document": "获取产品字典列表",
       "input": "DescribeProductDictionaryListRequest",
@@ -356,6 +363,150 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMenuRequest": {
+      "document": "DescribeMenu请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品code。联系文档侧获取",
+          "example": "321",
+          "member": "uint64",
+          "name": "ProductCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语言类型。取值：zh-中文，en-英文",
+          "example": "zh",
+          "member": "string",
+          "name": "DocumentLanguage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "顶级标题。",
+          "example": "支持CAM的业务接口",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标题属性。取值：docType-标签类型",
+          "example": "docType",
+          "member": "string",
+          "name": "TitleType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMenuResponse": {
+      "document": "DescribeMenu返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档父Id",
+          "example": "2",
+          "member": "uint64",
+          "name": "Pid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "计算",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面类型。取值：directory-目录、page-文档",
+          "example": "directory",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "菜单类型。取值：api-云API文档、default-普通文档、faq-常见问题、glossary-词汇表、practice-最佳实践、price-购买指南",
+          "example": "default",
+          "member": "string",
+          "name": "DocType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源。取值：slug-业务更新、git-git、sdd-云API、twrite-腾讯写写",
+          "example": "来源",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pdfUrl",
+          "example": "pdf链接",
+          "member": "string",
+          "name": "PdfUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预览链接",
+          "example": "https://xxxx",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子菜单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Menu",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -881,6 +1032,111 @@
         }
       ],
       "usage": "in"
+    },
+    "Menu": {
+      "document": "文档菜单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "Pid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页面类型。取值：directory-目录、page-文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "page",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档菜单类型。取值：api-云API文档、default-普通文档、faq-常见问题、glossary-词汇表、practice-最佳实践、price-购买指南\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "DocType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源。取值：slug-业务更新、git-git、sdd-云API、twrite-腾讯写写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "git",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预览链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pdf链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PdfUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Menu",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PolicyItem": {
       "document": "纠错系统当前支持策略单条信息结构",

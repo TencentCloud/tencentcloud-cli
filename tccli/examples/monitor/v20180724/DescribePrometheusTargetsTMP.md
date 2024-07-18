@@ -20,9 +20,9 @@ Output:
                 "Targets": [
                     {}
                 ],
-                "JobName": "abc",
                 "Total": 1,
-                "Up": 1
+                "Up": 0,
+                "JobName": "test-job"
             }
         ],
         "RequestId": "abc"

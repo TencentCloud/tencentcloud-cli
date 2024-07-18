@@ -32,6 +32,14 @@
         "title": "获取文档列表"
       }
     ],
+    "DescribeMenu": [
+      {
+        "document": "查询Menu",
+        "input": "POST / HTTP/1.1\nHost: portal.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMenu\n<公共请求参数>\n\n{\n    \"ProductCode\": 1,\n    \"Title\": \"abc\",\n    \"DocumentLanguage\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Children\": [\n            {\n                \"Children\": [],\n                \"DocType\": \"default\",\n                \"Id\": 67350,\n                \"PdfUrl\": \"\",\n                \"Pid\": 66380,\n                \"PreviewUrl\": \"https://cloud.tencent.com/document/product/598/67350\",\n                \"Source\": \"cam\",\n                \"Title\": \"概览\",\n                \"Type\": \"page\"\n            }\n        ],\n        \"DocType\": \"default\",\n        \"Id\": 66380,\n        \"PdfUrl\": \"\",\n        \"Pid\": 0,\n        \"PreviewUrl\": \"https://cloud.tencent.com/document/product/598/66380\",\n        \"Source\": \"cam\",\n        \"Title\": \"支持CAM的业务接口\",\n        \"Type\": \"directory\",\n        \"RequestId\": \"cf8fbfe1-a070-43f7-abf3-0cb7cc0f3dd0\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
     "DescribeProductDictionaryList": [
       {
         "document": "获取产品字典列表",

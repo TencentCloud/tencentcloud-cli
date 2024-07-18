@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli monitor CreatePrometheusClusterAgent --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId prom-wjeh \
     --Agents.0.EnableExternal True \
-    --Agents.0.Region xxx \
-    --Agents.0.ClusterId xxx \
-    --Agents.0.ClusterType xxx \
+    --Agents.0.Region ap-jehr \
+    --Agents.0.ClusterId cls-hrbr \
+    --Agents.0.ClusterType eks \
     --Agents.0.NotInstallBasicScrape True \
     --Agents.0.InClusterPodConfig.HostNet True \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Operator xxx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Effect xxx \
-    --Agents.0.InClusterPodConfig.Tolerations.0.Key xxx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Name xxx \
-    --Agents.0.InClusterPodConfig.NodeSelector.0.Value xxx \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Operator Exists \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Effect NoSchedule \
+    --Agents.0.InClusterPodConfig.Tolerations.0.Key key-name \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Name label-name \
+    --Agents.0.InClusterPodConfig.NodeSelector.0.Value label-value \
     --Agents.0.NotScrape True \
-    --Agents.0.ExternalLabels.0.Name xxx \
-    --Agents.0.ExternalLabels.0.Value xxx
+    --Agents.0.ExternalLabels.0.Name label-name \
+    --Agents.0.ExternalLabels.0.Value label-value
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "ejfhfol-lejrgbf"
     }
 }
 ```

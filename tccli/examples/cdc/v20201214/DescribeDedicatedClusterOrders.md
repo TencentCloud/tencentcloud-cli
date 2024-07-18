@@ -13,49 +13,49 @@ Output:
     "Response": {
         "DedicatedClusterOrderSet": [
             {
-                "DedicatedClusterId": "xx",
-                "DedicatedClusterTypeId": "xx",
+                "DedicatedClusterId": "abc",
+                "DedicatedClusterTypeId": "abc",
                 "SupportedStorageType": [
-                    "xx"
+                    "abc"
                 ],
                 "SupportedUplinkSpeed": [
                     0
                 ],
                 "SupportedInstanceFamily": [
-                    "xx"
+                    "abc"
                 ],
                 "Weight": 0,
                 "PowerDraw": 0,
-                "OrderStatus": "xx",
+                "OrderStatus": "abc",
                 "CreateTime": "2020-09-22T00:00:00+00:00",
-                "DedicatedClusterOrderId": "xx",
-                "Action": "xx",
+                "DedicatedClusterOrderId": "abc",
+                "Action": "abc",
                 "DedicatedClusterOrderItems": [
                     {
-                        "DedicatedClusterTypeId": "xx",
+                        "DedicatedClusterTypeId": "abc",
                         "SupportedStorageType": [
-                            "xx"
+                            "abc"
                         ],
                         "SupportedUplinkSpeed": [
                             0
                         ],
                         "SupportedInstanceFamily": [
-                            "xx"
+                            "abc"
                         ],
                         "Weight": 0,
                         "PowerDraw": 0,
-                        "SubOrderStatus": "xx",
+                        "SubOrderStatus": "abc",
                         "CreateTime": "2020-09-22T00:00:00+00:00",
-                        "SubOrderId": "xx",
+                        "SubOrderId": "abc",
                         "Count": 0,
-                        "Name": "xx",
-                        "Description": "xx",
+                        "Name": "abc",
+                        "Description": "abc",
                         "TotalCpu": 0,
                         "TotalMem": 0,
                         "TotalGpu": 0,
-                        "TypeName": "xx",
-                        "ComputeFormat": "xx",
-                        "TypeFamily": "xx",
+                        "TypeName": "abc",
+                        "ComputeFormat": "abc",
+                        "TypeFamily": "abc",
                         "SubOrderPayStatus": 0
                     }
                 ],
@@ -63,14 +63,21 @@ Output:
                 "Mem": 0,
                 "Gpu": 0,
                 "PayStatus": 0,
-                "PayType": "xx",
-                "TimeUnit": "xx",
+                "PayType": "abc",
+                "TimeUnit": "abc",
                 "TimeSpan": 0,
-                "OrderType": "xx"
+                "OrderType": "abc",
+                "CheckStatus": "abc",
+                "DeliverExpectTime": "abc",
+                "DeliverFinishTime": "abc",
+                "CheckExpectTime": "abc",
+                "CheckFinishTime": "abc",
+                "OrderSLA": "abc",
+                "OrderPayPlan": "abc"
             }
         ],
         "TotalCount": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

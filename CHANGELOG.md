@@ -1,3 +1,90 @@
+# Release 3.0.1036.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 58 次发布
+
+发布时间：2024-07-18 01:08:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Attribute](http://document.tencentcloudapi.woa.com/document/product/555/19183#Attribute)
+
+修改数据结构：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+
+	* 新增成员：DosageAttributes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 146 次发布
+
+发布时间：2024-07-18 01:16:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：OpenId, OrganizationOpenId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 10 次发布
+
+发布时间：2024-07-18 01:21:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMenu](http://document.tencentcloudapi.woa.com/document/product/1732/84274)
+
+新增数据结构：
+
+* [Menu](http://document.tencentcloudapi.woa.com/document/product/1732/80923#Menu)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 143 次发布
+
+发布时间：2024-07-18 01:27:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifySecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15810)
+
+	* 新增入参：BpaasApplicationId
+
+
+
+
 # Release 3.0.1035.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

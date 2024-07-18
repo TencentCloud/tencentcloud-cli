@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli dlc DescribeDataEngineImageVersions --cli-unfold-argument  \
-    --EngineType SQL
+    --EngineType SQL \
+    --Sort InsertTime \
+    --Asc False
 ```
 
 Output: 

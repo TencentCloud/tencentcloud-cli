@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusClusterAgents --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId prom-abc \
     --Limit 1 \
     --Offset 1
 ```
@@ -17,29 +17,32 @@ Output:
     "Response": {
         "Agents": [
             {
-                "ClusterType": "abc",
-                "ClusterId": "abc",
-                "Status": "abc",
+                "ClusterId": "cls-abc",
                 "ClusterName": "abc",
+                "ClusterType": "tke",
+                "EnableExternal": false,
                 "ExternalLabels": [
                     {
-                        "Name": "abc",
-                        "Value": "abc"
+                        "Name": "cluster",
+                        "Value": "cls-cde"
+                    },
+                    {
+                        "Name": "cluster_type",
+                        "Value": "tke"
                     }
                 ],
-                "Region": "abc",
-                "VpcId": "abc",
-                "FailedReason": "abc",
-                "Name": "abc",
-                "EnableExternal": true,
-                "DesiredAgentNum": 0,
-                "ReadyAgentNum": 0
+                "FailedReason": "",
+                "Name": "",
+                "ReadyAgentNum": 1,
+                "Region": "ap-guangzhou",
+                "Status": "normal",
+                "VpcId": "vpc-abc"
             }
         ],
-        "Total": 1,
-        "IsFirstBind": true,
-        "ImageNeedUpdate": true,
-        "RequestId": "abc"
+        "IsFirstBind": false,
+        "RequestId": "56ce7-sdsd",
+        "ImageNeedUpdate": false,
+        "Total": 1
     }
 }
 ```

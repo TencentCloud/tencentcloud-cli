@@ -18,9 +18,9 @@ Output:
         "Config": "abc",
         "ServiceMonitors": [
             {
-                "Name": "abc",
-                "Config": "abc",
-                "TemplateId": "abc",
+                "Name": "test-sm",
+                "Config": "scrape_interval:5s\n",
+                "TemplateId": "temp-akdj",
                 "Targets": {
                     "Total": 1,
                     "Up": 1,
@@ -31,9 +31,9 @@ Output:
         ],
         "PodMonitors": [
             {
-                "Name": "abc",
-                "Config": "abc",
-                "TemplateId": "abc",
+                "Name": "test-pm",
+                "Config": "scrape_interval:5s\n",
+                "TemplateId": "temp-akdj",
                 "Targets": {
                     "Total": 1,
                     "Up": 1,
@@ -44,9 +44,9 @@ Output:
         ],
         "RawJobs": [
             {
-                "Name": "abc",
-                "Config": "abc",
-                "TemplateId": "abc",
+                "Name": "test-rawjob",
+                "Config": "scrape_interval:5s\n",
+                "TemplateId": "temp-akdj",
                 "Targets": {
                     "Total": 1,
                     "Up": 1,
@@ -57,9 +57,9 @@ Output:
         ],
         "Probes": [
             {
-                "Name": "abc",
-                "Config": "abc",
-                "TemplateId": "abc",
+                "Name": "test-probe",
+                "Config": "scrape_interval:5s\n",
+                "TemplateId": "temp-akdj",
                 "Targets": {
                     "Total": 1,
                     "Up": 1,

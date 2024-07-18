@@ -164,6 +164,14 @@
         "title": "查询多个实例挂载的云硬盘数量"
       }
     ],
+    "DescribeSnapshotOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalNums\": 13,\n        \"TotalSize\": 92.45,\n        \"FreeQuota\": 50,\n        \"RealTradeSize\": 42.45,\n        \"RequestId\": \"6b5509c3-33dd-4121-835b-bfffd8c2a596\"\n    }\n}",
+        "title": "查询用户快照概览"
+      }
+    ],
     "DescribeSnapshotSharePermission": [
       {
         "document": "查询某个快照的分享信息",
