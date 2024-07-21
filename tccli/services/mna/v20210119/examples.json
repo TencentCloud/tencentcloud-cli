@@ -32,6 +32,14 @@
         "title": "新建硬件设备"
       }
     ],
+    "AddL3Conn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddL3Conn\n<公共请求参数>\n\n{\n    \"Cidr1\": \"173.12.0.0/16\",\n    \"Cidr2\": \"173.13.0.0/16\",\n    \"DeviceId1\": \"abc\",\n    \"DeviceId2\": \"cde\",\n    \"Description\": \"this is a test rule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"L3ConnId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateEncryptedKey": [
       {
         "document": "",
@@ -61,6 +69,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DeleteL3Conn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -180,6 +196,14 @@
         "title": "租户查看厂商设备"
       }
     ],
+    "GetL3ConnList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetL3ConnList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"DeviceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"L3ConnList\": [\n            {\n                \"L3ConnId\": \"abc\",\n                \"DeviceId1\": \"abc\",\n                \"Cidr1\": \"xxx\",\n                \"DeviceId2\": \"cde\",\n                \"Cidr2\": \"xxx\",\n                \"Enable\": true,\n                \"Description\": \"abc\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "GetMultiFlowStatistic": [
       {
         "document": "批量获取指定设备列表流量使用信息",
@@ -288,6 +312,30 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"abc\",\n    \"SN\": \"abc\",\n    \"Description\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新硬件信息"
+      }
+    ],
+    "UpdateL3Cidr": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"xxx\",\n    \"DeviceId1\": \"abc\",\n    \"Cidr1\": \"xxx\",\n    \"DeviceId2\": \"cde\",\n    \"Cidr2\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "UpdateL3Conn": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"abc\",\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "UpdateL3Switch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"abc\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例1"
       }
     ]
   },

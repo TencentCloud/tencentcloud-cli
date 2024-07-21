@@ -562,6 +562,24 @@
           "name": "DbInstanceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名规则,取值范围：only_name,has_lcap",
+          "example": "has_lcap",
+          "member": "string",
+          "name": "TableNameRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建来源，flexdb_recreate 根据flexdb表重建，flexdb_create 根据Flexdb空表创建",
+          "example": "无",
+          "member": "string",
+          "name": "CreateSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

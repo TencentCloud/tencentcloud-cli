@@ -1,10 +1,133 @@
 # 本版本更新包含以下内容：
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 55 次发布
+### 第 38 次发布
 
-发布时间：2024-07-19 01:19:56
+发布时间：2024-07-22 01:09:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77976)
+
+	* 新增出参：VpcID, SubnetID
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 87 次发布
+
+发布时间：2024-07-22 01:10:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyRoutineMaintenanceTask](http://document.tencentcloudapi.woa.com/document/product/597/84277)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 78 次发布
+
+发布时间：2024-07-22 01:12:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [EnterRescueMode](http://document.tencentcloudapi.woa.com/document/product/213/84279)
+* [ExitRescueMode](http://document.tencentcloudapi.woa.com/document/product/213/84278)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 66 次发布
+
+发布时间：2024-07-22 01:15:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/845/48473)
+
+	* 新增入参：ShardAllocationConcurrents, ShardAllocationBytes
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：ShardAllocationConcurrents, ShardAllocationBytes
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 12 次发布
+
+发布时间：2024-07-22 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
+
+	* 新增入参：TableNameRule, CreateSource
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 20 次发布
+
+发布时间：2024-07-22 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84285)
+* [DeleteL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84284)
+* [GetL3ConnList](http://document.tencentcloudapi.woa.com/document/product/1385/84283)
+* [UpdateL3Cidr](http://document.tencentcloudapi.woa.com/document/product/1385/84282)
+* [UpdateL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84281)
+* [UpdateL3Switch](http://document.tencentcloudapi.woa.com/document/product/1385/84280)
+
+新增数据结构：
+
+* [L3ConnInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#L3ConnInfo)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 144 次发布
+
+发布时间：2024-07-22 01:26:27
 
 本次发布包含了以下内容：
 
@@ -12,34 +135,9 @@
 
 修改数据结构：
 
-* [BundleConfig](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BundleConfig)
+* [InstanceBind](http://document.tencentcloudapi.woa.com/document/product/215/15824#InstanceBind)
 
-	* 新增成员：ActivityId
-
-	* <font color="#dd0000">**修改成员**：</font>BundleId, Memory, SystemDiskType, SystemDiskSize, MonthlyTraffic, SupportLinuxUnixPlatform, SupportWindowsPlatform, CPU, InternetMaxBandwidthOut, InternetChargeType, BundleSalesState, BundleType, BundleTypeDescription, BundleTypePriority, BundleDisplayLabel
-
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 52 次发布
-
-发布时间：2024-07-19 01:21:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
-
-	* 新增成员：BillingResourceMode
-
-* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
-
-	* 新增成员：BillingResourceMode
+	* <font color="#dd0000">**修改成员**：</font>InstanceRegion
 
 
 
@@ -9308,6 +9406,21 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 38 次发布
+
+发布时间：2024-07-22 01:09:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77976)
+
+	* 新增出参：VpcID, SubnetID
+
 
 ### 第 37 次发布
 
@@ -19625,6 +19738,18 @@
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
 
+### 第 87 次发布
+
+发布时间：2024-07-22 01:10:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyRoutineMaintenanceTask](http://document.tencentcloudapi.woa.com/document/product/597/84277)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 86 次发布
 
 发布时间：2024-06-20 01:10:35
@@ -28972,6 +29097,19 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 78 次发布
+
+发布时间：2024-07-22 01:12:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[EnterRescueMode](http://document.tencentcloudapi.woa.com/document/product/213/84279)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ExitRescueMode](http://document.tencentcloudapi.woa.com/document/product/213/84278)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 77 次发布
 
@@ -45525,6 +45663,25 @@
 
 
 ## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 66 次发布
+
+发布时间：2024-07-22 01:15:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/845/48473)
+
+	* 新增入参：ShardAllocationConcurrents, ShardAllocationBytes
+
+* [UpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/845/36270)
+
+	* 新增入参：ShardAllocationConcurrents, ShardAllocationBytes
+
 
 ### 第 65 次发布
 
@@ -64098,6 +64255,21 @@
 
 ## 云开发低码(lowcode) 版本：2021-01-08
 
+### 第 12 次发布
+
+发布时间：2024-07-22 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75493)
+
+	* 新增入参：TableNameRule, CreateSource
+
+
 ### 第 11 次发布
 
 发布时间：2024-04-30 01:20:38
@@ -65351,6 +65523,27 @@
 
 
 ## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 20 次发布
+
+发布时间：2024-07-22 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AddL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84285)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84284)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[GetL3ConnList](http://document.tencentcloudapi.woa.com/document/product/1385/84283)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateL3Cidr](http://document.tencentcloudapi.woa.com/document/product/1385/84282)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateL3Conn](http://document.tencentcloudapi.woa.com/document/product/1385/84281)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateL3Switch](http://document.tencentcloudapi.woa.com/document/product/1385/84280)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[L3ConnInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#L3ConnInfo)](http://document.tencentcloudapi.woa.com/document/product/1385/55846#[L3ConnInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#L3ConnInfo))
 
 ### 第 19 次发布
 
@@ -106568,6 +106761,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 144 次发布
+
+发布时间：2024-07-22 01:26:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceBind](http://document.tencentcloudapi.woa.com/document/product/215/15824#InstanceBind)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceRegion
+
 
 ### 第 143 次发布
 
