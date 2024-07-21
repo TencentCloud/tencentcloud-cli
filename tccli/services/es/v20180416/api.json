@@ -8091,6 +8091,24 @@
           "name": "CvmDelayOnlineTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ShardAllocationConcurrents",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发速度",
+          "example": "40",
+          "member": "uint64",
+          "name": "ShardAllocationBytes",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10163,6 +10181,24 @@
           "example": "1",
           "member": "uint64",
           "name": "CvmDelayOnlineTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发数",
+          "example": "2",
+          "member": "uint64",
+          "name": "ShardAllocationConcurrents",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片迁移并发速度",
+          "example": "40",
+          "member": "uint64",
+          "name": "ShardAllocationBytes",
           "required": false,
           "type": "int"
         }

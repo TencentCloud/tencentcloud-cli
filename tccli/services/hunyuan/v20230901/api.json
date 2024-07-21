@@ -142,6 +142,15 @@
           "name": "CustomTool",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "默认是false，在值为true且命中搜索时，接口会返回SearchInfo",
+          "example": "false",
+          "member": "bool",
+          "name": "SearchInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -217,6 +226,16 @@
           "name": "ModerationLevel",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果信息",
+          "example": "无",
+          "member": "SearchInfo",
+          "name": "SearchInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -706,6 +725,62 @@
       ],
       "type": "object"
     },
+    "SearchInfo": {
+      "document": "搜索结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索引文信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchResult",
+          "name": "SearchResults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SearchResult": {
+      "document": "搜索引文信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索引文序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索引文标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索引文链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SubmitHunyuanImageJobRequest": {
       "document": "SubmitHunyuanImageJob请求参数结构体",
       "members": [
@@ -802,7 +877,7 @@
         },
         {
           "disabled": false,
-          "document": "绘画风格。\n请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。",
+          "document": "绘画风格。\n请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。",
           "example": "无",
           "member": "string",
           "name": "Style",
@@ -844,7 +919,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据入参 RspImgType 填入不同，返回不同的内容。如果传入 base64 则返回生成图 Base64 编码。如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
           "example": "url",
           "member": "string",
           "name": "ResultImage",

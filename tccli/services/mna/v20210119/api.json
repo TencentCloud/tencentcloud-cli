@@ -28,6 +28,13 @@
       "output": "AddHardwareResponse",
       "status": "online"
     },
+    "AddL3Conn": {
+      "document": "新建互通规则",
+      "input": "AddL3ConnRequest",
+      "name": "新建互通规则",
+      "output": "AddL3ConnResponse",
+      "status": "online"
+    },
     "CreateEncryptedKey": {
       "document": "通过此接口设置和更新预置密钥",
       "input": "CreateEncryptedKeyRequest",
@@ -54,6 +61,13 @@
       "input": "DeleteGroupRequest",
       "name": "删除分组",
       "output": "DeleteGroupResponse",
+      "status": "online"
+    },
+    "DeleteL3Conn": {
+      "document": "删除互通规则",
+      "input": "DeleteL3ConnRequest",
+      "name": "删除互通规则",
+      "output": "DeleteL3ConnResponse",
       "status": "online"
     },
     "DeleteQos": {
@@ -147,6 +161,13 @@
       "output": "GetHardwareListResponse",
       "status": "online"
     },
+    "GetL3ConnList": {
+      "document": "获取互通规则列表",
+      "input": "GetL3ConnListRequest",
+      "name": "获取互通规则列表",
+      "output": "GetL3ConnListResponse",
+      "status": "online"
+    },
     "GetMultiFlowStatistic": {
       "document": "批量获取设备流量统计曲线",
       "input": "GetMultiFlowStatisticRequest",
@@ -236,6 +257,27 @@
       "input": "UpdateHardwareRequest",
       "name": "更新硬件信息",
       "output": "UpdateHardwareResponse",
+      "status": "online"
+    },
+    "UpdateL3Cidr": {
+      "document": "更新互通规则CIDR",
+      "input": "UpdateL3CidrRequest",
+      "name": "更新互通规则CIDR",
+      "output": "UpdateL3CidrResponse",
+      "status": "online"
+    },
+    "UpdateL3Conn": {
+      "document": "更新互通规则备注",
+      "input": "UpdateL3ConnRequest",
+      "name": "更新互通规则备注",
+      "output": "UpdateL3ConnResponse",
+      "status": "online"
+    },
+    "UpdateL3Switch": {
+      "document": "更新互通规则开关",
+      "input": "UpdateL3SwitchRequest",
+      "name": "修改互通规则开关",
+      "output": "UpdateL3SwitchResponse",
       "status": "online"
     }
   },
@@ -622,6 +664,79 @@
       ],
       "type": "object"
     },
+    "AddL3ConnRequest": {
+      "document": "AddL3Conn请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置互通网段CIDR1，支持： 10.0.0.0 - 10.255.255.255，172.16.0.0 - 172.31.255.255，192.168.0.0 - 192.168.255.255",
+          "example": "\"172.12.0.0/16\"",
+          "member": "string",
+          "name": "Cidr1",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置互通网段CIDR2，支持： 10.0.0.0 - 10.255.255.255，172.16.0.0 - 172.31.255.255，192.168.0.0 - 192.168.255.255",
+          "example": "\"172.13.0.0/16\"",
+          "member": "string",
+          "name": "Cidr2",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CIDR1对应的设备ID",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceId1",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CIDR2对应的设备ID",
+          "example": "cde",
+          "member": "string",
+          "name": "DeviceId2",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddL3ConnResponse": {
+      "document": "AddL3Conn返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID",
+          "example": "\"l3conn-4413p97xxx\"",
+          "member": "string",
+          "name": "L3ConnId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Capacity": {
       "document": "接口能力扩展，用于填充电信的加速Token，并为未来参数提供兼容空间",
       "members": [
@@ -883,6 +998,33 @@
     },
     "DeleteGroupResponse": {
       "document": "DeleteGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL3ConnRequest": {
+      "document": "DeleteL3Conn请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID列表",
+          "example": "[\"l3conn-zfd9rpvxxx\"]",
+          "member": "string",
+          "name": "L3ConnIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL3ConnResponse": {
+      "document": "DeleteL3Conn返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2581,6 +2723,81 @@
       ],
       "type": "object"
     },
+    "GetL3ConnListRequest": {
+      "document": "GetL3ConnList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索分组的DeviceId，为空时匹配所有分组",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetL3ConnListResponse": {
+      "document": "GetL3ConnList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则列表",
+          "example": "无",
+          "member": "L3ConnInfo",
+          "name": "L3ConnList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备总记录条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Length",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetMultiFlowStatisticRequest": {
       "document": "GetMultiFlowStatistic请求参数结构体",
       "members": [
@@ -3323,6 +3540,89 @@
       ],
       "usage": "out"
     },
+    "L3ConnInfo": {
+      "document": "三层互通规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID",
+          "example": "l3conn-abcd",
+          "member": "string",
+          "name": "L3ConnId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通设备ID",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceId1",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通规则CIDR",
+          "example": "173.12.0.0/16",
+          "member": "string",
+          "name": "Cidr1",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通设备ID",
+          "example": "cde",
+          "member": "string",
+          "name": "DeviceId2",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通规则CIDR",
+          "example": "173.13.0.0/16",
+          "member": "string",
+          "name": "Cidr2",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通规则启用状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互通规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyPackageRenewFlagRequest": {
       "document": "ModifyPackageRenewFlag请求参数结构体",
       "members": [
@@ -3809,6 +4109,141 @@
     },
     "UpdateHardwareResponse": {
       "document": "UpdateHardware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3CidrRequest": {
+      "document": "UpdateL3Cidr请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID",
+          "example": "\"l3conn-xxx\"",
+          "member": "string",
+          "name": "L3ConnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通规则CIDR",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Cidr1",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通设备ID",
+          "example": "abc",
+          "member": "string",
+          "name": "DeviceId1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通设备ID",
+          "example": "cde",
+          "member": "string",
+          "name": "DeviceId2",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通规则CIDR",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Cidr2",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3CidrResponse": {
+      "document": "UpdateL3Cidr返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3ConnRequest": {
+      "document": "UpdateL3Conn请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "L3ConnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通规则备注",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3ConnResponse": {
+      "document": "UpdateL3Conn返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3SwitchRequest": {
+      "document": "UpdateL3Switch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互通规则ID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "L3ConnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互通规则开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateL3SwitchResponse": {
+      "document": "UpdateL3Switch返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

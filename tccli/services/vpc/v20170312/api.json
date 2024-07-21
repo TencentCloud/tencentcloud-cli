@@ -21595,7 +21595,7 @@
           "example": "ccn-245ecr35",
           "member": "string",
           "name": "CcnId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21605,7 +21605,7 @@
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21615,7 +21615,7 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21625,7 +21625,7 @@
           "example": "2021-05-20 16:39:34",
           "member": "datetime",
           "name": "InstanceBindTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21635,7 +21635,7 @@
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21645,7 +21645,7 @@
           "example": "tesetsa",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21655,8 +21655,8 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
-          "required": true,
-          "type": "list",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -21665,7 +21665,7 @@
           "example": "329087131",
           "member": "string",
           "name": "InstanceUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21675,7 +21675,7 @@
           "example": "ACTIVE",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

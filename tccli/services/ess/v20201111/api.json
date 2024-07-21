@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateEmbedWebUrl": {
-      "document": "本接口（CreateEmbedWebUrl）用于创建嵌入Web的链接，支持以下类型的Web链接创建：\n1. 创建印章\n2. 创建模板\n3. 修改模板\n4. 预览模板\n5. 预览合同流程\n\n用户可以通过这些链接快速将其集成到自己的系统中。",
+      "document": "本接口（CreateEmbedWebUrl）用于创建可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中），支持以下类型的Web链接创建：\n1. 创建印章\n2. 创建模板\n3. 修改模板\n4. 预览模板\n5. 预览合同流程\n\n预览模板的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/57bdda4a884e3f5b2de12d5a282a3651.png)\n\n预览合同流程的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/dc7af994e2f6da56bdad5975e927de34.png)",
       "input": "CreateEmbedWebUrlRequest",
       "name": "获取其他可嵌入web页面",
       "output": "CreateEmbedWebUrlResponse",
@@ -225,7 +225,7 @@
       "status": "online"
     },
     "CreateOrganizationBatchSignUrl": {
-      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须需作为批量签署合同的签署方，or或签合同的候选人之一。\n- 对于本方企业：如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。\n- 若要生成他发企业签署链接：应传RecipientIds，且制定的合同必须是接口调用方发起的。\n- 支持待签署、待填写状态的合同生成签署链接。",
+      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n\n注：\n<ul>\n<li>员工必须需作为批量签署合同的签署方，或者是或签合同的候选人之一。</li>\n<li><b>本方企业签署链接</b>：如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。</li>\n<li><b>他方企业签署链接</b>：传RecipientIds，且必须是合同发起方调用此接口。打开链接后需要他方签署人登录电子签系统。（<b>如果签署人没有加入对方企业则会引导加入；如果对方企业还没有注册认证，会引导企业注册和认证</b>）</li>\n<li>只支持待签署、待填写状态的合同生成签署链接。</li>\n</ul>\n\n签署的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/a4754bc835a3f837ddec1e28b02ed9c0.png)",
       "input": "CreateOrganizationBatchSignUrlRequest",
       "name": "获取企业签署合同web页面",
       "output": "CreateOrganizationBatchSignUrlResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "CreatePrepareFlow": {
-      "document": "创建发起流程web页面\n<br/>适用场景：通过该接口（CreatePrepareFlow）传入合同文件/模板编号及签署人信息，可获得发起流程的可嵌入页面，在页面完成签署控件等信息的编辑与确认后，快速发起流程。\n<br/>注：该接口包含模板/文件发起流程的全部功能，调用接口后不会立即发起，需在可嵌入页面点击按钮进行发起流程。",
+      "document": "创建发起流程Web页面，通过该接口可以获取发起流程的可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。在页面上完成签署控件等信息的编辑与确认后，可快速发起流程。\n\n <br/>注意：调用接口后，<font color=\"red\">流程不会立即发起，需在嵌入页面上点击【发起合同】按钮来发起流程</font>。\n\n嵌入页面长相如下:\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2ae013fb4d747891dd3815bbe897208.png)",
       "input": "CreatePrepareFlowRequest",
       "name": "创建发起流程web页面",
       "output": "CreatePrepareFlowResponse",
@@ -547,9 +547,9 @@
       "status": "online"
     },
     "ModifyFlowDeadline": {
-      "document": "在已发起的签署流程中，支持对签署截止日期进行延期操作，主要涉及以下两个维度：\n1. 合同（流程）维度：只需要传递签署流程ID。这将对签署流程和发起时未单独设定签署截止时间的签署人进行延期操作。\n2. 签署人维度：需要传递流程ID和签署人ID。此操作将对签署人进行延期操作，尤其对于有序的合同（流程），签署截止时间不能超过后一位合同（流程）签署人的流程截止时间。\n\n此接口有如下限制条件：\n1. 执行操作的员工需为发起方企业的超级管理员、法定代表人或签署流程的发起人。\n2. 在延长整个签署流程时，签署流程应至少还有一方未签署（即签署流程不能处于已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态）。\n3. 在延长整个签署流程时，新的签署截止日期应晚于合同已设定的签署截止日期和当前日期。\n4. 在延长签署方的截止时间时，签署方不能处于流程完结或已终止状态（即签署人不能处于已签署、已拒签、已过期、已撤回、拒绝填写、已解除等状态）。\n5. 在延长签署方的截止时间时，签署方的新签署截止日期应晚于当前日期和签署方已设定的截止日期。若为有序合同，还应早于或等于下一签署人的截止日期，且早于签署流程整体的截止日期。\n6. 不支持操作合同组合同。",
+      "document": "在已启动的签署流程中，可对签署截止日期进行延期操作，主要分为以下两个层面：\n1. <b> 合同（流程）层面</b>：仅需提供签署流程ID。此操作将对整个签署流程以及未单独设置签署截止时间的签署人进行延期。\n2. <b> 签署人层面</b>  ：需提供流程ID和签署人ID。此操作针对特定签署人进行延期，特别是对于有序合同（流程），签署截止时间不得超过后续签署人的流程截止时间。\n\n此接口存在以下限制：\n1. 执行操作的员工须为<font  color=\"red\">发起方企业的超级管理员、法定代表人或签署流程发起人</font>。\n2. 延长整个签署流程时，<font  color=\"red\">应至少有一方尚未签署</font>（即签署流程不能处于已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等状态）。\n3. 延长整个签署流程时，新的签署截止日期应晚于已设定的签署截止日期和当前日期。\n4. 延长签署方截止时间时，<font  color=\"red\">签署方不能处于流程完结或已终止状态</font>（即签署人不能处于已签署、已拒签、已过期、已撤回、拒绝填写、已解除等状态）。\n5. 延长签署方截止时间时，新的签署截止日期应晚于当前日期和已设定的截止日期。若为有序合同，还需早于或等于下一签署人的截止日期，且早于签署流程整体的截止日期。\n6. <font  color=\"red\">不支持操作合同组合同</font>。\n\n合同（流程）层面 截止时间控制台展示的位置：\n![image](https://qcloudimg.tencent-cloud.cn/raw/265b130136bf6e8f01f5880438467dfb.png)",
       "input": "ModifyFlowDeadlineRequest",
-      "name": "管理签署流程截止时间",
+      "name": "修改签署流程截止时间",
       "output": "ModifyFlowDeadlineResponse",
       "status": "online"
     },
@@ -867,7 +867,7 @@
         },
         {
           "disabled": false,
-          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。</li></ul>\n\n默认为1(人脸认证 ),2(签署密码),3(运营商三要素)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n3. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明",
+          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li></ul>\n\n默认为1(人脸认证 ),2(签署密码),3(运营商三要素)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n3. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -2668,7 +2668,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "document": "执行本接口操作的员工信息。\n<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2722,7 +2722,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义参数\n<ul>\n<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>\n<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>\n<li>支持的格式：json字符串的BASE64编码字符串</li>\n<li>示例：<ul>\n                 <li>json字符串：{\"ComeFrom\":\"xxx\"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>\n                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>\n</ul>\n</li>\n</ul>",
+          "document": "<ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{\"ComeFrom\":\"xxx\"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>",
           "example": "eyJDb21lRnJvbSI6IuadpeiHqnh4eOWFrOWPuOeahOaooeeJiCJ9",
           "member": "string",
           "name": "UserData",
@@ -4973,7 +4973,7 @@
         },
         {
           "disabled": false,
-          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n- 1. 若UserId为空，Name和Mobile 必须提供。\n- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。",
+          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n\n<ul>\n<li>1. 若UserId为空，Name和Mobile 必须提供。</li>\n<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -10238,7 +10238,7 @@
         },
         {
           "disabled": false,
-          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。</li></ul>\n注：\n<ul><li>默认情况下，认证校验方式为人脸认证和签署密码两种形式；</li>\n<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>\n\n注:\n`此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主`",
+          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li></ul>\n注：\n<ul><li>默认情况下，认证校验方式为人脸认证和签署密码两种形式；</li>\n<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>\n\n注:\n`此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主`",
           "example": "[1,2]",
           "member": "uint64",
           "name": "ApproverSignTypes",

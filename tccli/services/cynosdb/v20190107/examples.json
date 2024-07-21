@@ -664,6 +664,14 @@
         "title": "导出实例慢日志"
       }
     ],
+    "ExportResourcePackageDeductDetails": [
+      {
+        "document": "资源包使用明细导出",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportResourcePackageDeductDetails\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"ClusterIds\": [\n        \"cynosdbmysql-bcdz3214\"\n    ],\n    \"OrderBy\": \"createTime\",\n    \"OrderByType\": \"desc\",\n    \"StartTime\": \"2022-01-01 01:01:01\",\n    \"EndTime\": \"2024-01-01 01:01:01\",\n    \"Limit\": \"100\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileContent\": \"2022-01-01 01:01:01,package-abcd1234,200.00,1298.98,cynosdbmysql-cdba4312\\n2022-01-01 01:02:01,package-abcd1234,200.00,1498.98,cynosdbmysql-cdba4354\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ExportResourcePackageDeductDetails"
+      }
+    ],
     "GrantAccountPrivileges": [
       {
         "document": "批量授权账号权限",
@@ -902,6 +910,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySourcePackageName\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"PackageName\": \"自定义资源包名称-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改资源包名称"
+      }
+    ],
+    "ModifyResourcePackagesDeductionPriority": [
+      {
+        "document": "修改已绑定资源包抵扣优先级",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackagesDeductionPriority\n<公共请求参数>\n\n{\n    \"PackageType\": \"CCU\",\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"DeductionPriorities\": [\n        {\n            \"PackageId\": \"package-abcd1234\",\n            \"DeductionPriority\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyResourcePackagesDeductionPriority"
       }
     ],
     "ModifyVipVport": [

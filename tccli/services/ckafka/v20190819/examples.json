@@ -682,6 +682,14 @@
         "title": "修改密码"
       }
     ],
+    "ModifyRoutineMaintenanceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoutineMaintenanceTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-9jnejnb9\",\n    \"MaintenanceType\": \"RE_BALANCE\",\n    \"MaintenanceSubtype\": \"INSTANCE_PARTITION_RE_BALANCE\",\n    \"PlannedTime\": 79200,\n    \"Status\": 1,\n    \"Week\": \"1,2,3,4,5,6,7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"abc\",\n            \"ReturnMessage\": \"abc\",\n            \"Data\": {\n                \"FlowId\": 0,\n                \"RouteDTO\": {\n                    \"RouteId\": 0\n                }\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置实例属性"
+      }
+    ],
     "ModifyTopicAttributes": [
       {
         "document": "",
