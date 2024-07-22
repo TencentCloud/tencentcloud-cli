@@ -749,11 +749,11 @@
           "disabled": false,
           "document": "搜索引文序号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "string",
+          "member": "int64",
           "name": "Index",
           "output_required": false,
           "required": false,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": true
         },
         {

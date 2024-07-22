@@ -470,9 +470,9 @@
     ],
     "DescribeImageManifests": [
       {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImageManifests\r\n&<公共请求参数>\r\n&RegistryId=tcr-7s2d14fn\r\n&NamespaceName=test\r\n&RepositoryName=mytest\r\n&ImageVersion=1.0",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef83620-c92e-496c-b206-25b0b638f409\",\n        \"Manifest\": \"{\\\"config\\\":{\\\"digest\\\":\\\"sha256:72f6114b119f1423a2713aca1e15cb9aeadf835a714d36f7a2cf88d10e4bb6be\\\",\\\"mediaType\\\":\\\"application/vnd.docker.container.image.v1+json\\\",\\\"size\\\":2396},\\\"layers\\\":[{\\\"digest\\\":\\\"sha256:9123ac7c32f74759e6283f04dbf571f18246abe5bb2c779efcb32cd50f3ff13c\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":2764173},{\\\"digest\\\":\\\"sha256:8673ef3ff8fc5ede7363cbe74d295b013ef7959ba002af607314d8ee77b58a5a\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":1616975},{\\\"digest\\\":\\\"sha256:a8e22d4a83517ee59537183a2f7ca35fa7b81d36176a9d5d42ca2ab0486af779\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":8446306}],\\\"mediaType\\\":\\\"application/vnd.docker.distribution.manifest.v2+json\\\",\\\"schemaVersion\\\":2}\",\n        \"Config\": \"\"\n    }\n}",
+        "document": "查询容器镜像Manifest、Config和Labels信息",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageManifests\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-7s2d14fn\",\n    \"NamespaceName\": \"test\",\n    \"RepositoryName\": \"mytest\",\n    \"ImageVersion\": \"1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Manifest\": \"{\\\"config\\\":{\\\"digest\\\":\\\"sha256:72f6114b119f1423a2713aca1e15cb9aeadf835a714d36f7a2cf88d10e4bb6be\\\",\\\"mediaType\\\":\\\"application/vnd.docker.container.image.v1+json\\\",\\\"size\\\":2396},\\\"layers\\\":[{\\\"digest\\\":\\\"sha256:9123ac7c32f74759e6283f04dbf571f18246abe5bb2c779efcb32cd50f3ff13c\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":2764173},{\\\"digest\\\":\\\"sha256:8673ef3ff8fc5ede7363cbe74d295b013ef7959ba002af607314d8ee77b58a5a\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":1616975},{\\\"digest\\\":\\\"sha256:a8e22d4a83517ee59537183a2f7ca35fa7b81d36176a9d5d42ca2ab0486af779\\\",\\\"mediaType\\\":\\\"application/vnd.docker.image.rootfs.diff.tar.gzip\\\",\\\"size\\\":8446306}],\\\"mediaType\\\":\\\"application/vnd.docker.distribution.manifest.v2+json\\\",\\\"schemaVersion\\\":2}\",\n        \"Config\": \"abc\",\n        \"Labels\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"6ef83620-c92e-496c-b206-25b0b638f409\"\n    }\n}",
         "title": "查询容器镜像Manifest信息"
       }
     ],
@@ -664,7 +664,7 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionExecutionTask\n&RegistryId=tcr-12345\n&RetentionId=1\n&ExecutionId=1\n&Limit=20\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RetentionTaskList\": [\n            {\n                \"Status\": \"xx\",\n                \"Total\": 0,\n                \"Retained\": 0,\n                \"TaskId\": 0,\n                \"Repository\": \"xx\",\n                \"ExecutionId\": 0,\n                \"StartTime\": \"xx\",\n                \"EndTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RetentionTaskList\": [\n            {\n                \"Status\": \"success\",\n                \"Total\": 0,\n                \"Retained\": 0,\n                \"TaskId\": 0,\n                \"Repository\": \"repo\",\n                \"ExecutionId\": 0,\n                \"StartTime\": \"2024-06-01\",\n                \"EndTime\": \"2024-06-01\"\n            }\n        ],\n        \"RequestId\": \"1234-666\"\n    }\n}",
         "title": "查询版本保留执行任务"
       }
     ],
@@ -672,8 +672,8 @@
       {
         "document": "",
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionRules\n&RegistryId=tcr-12345\n&NamespaceName=test\n&Limit=20\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7abb9f2-9440-43ea-a12f-ae58875acf3d\",\n        \"RetentionPolicyList\": [\n            {\n                \"NextExecutionTime\": \"xx\",\n                \"RetentionId\": 1,\n                \"NamespaceName\": \"aaaa\",\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ],\n                \"CronSetting\": \"weekly\",\n                \"Disabled\": false\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
-        "title": "查询版本保留规则"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7abb9f2-9440-43ea-a12f-ae58875acf3d\",\n        \"RetentionPolicyList\": [\n            {\n                \"NextExecutionTime\": \"2024-06-24\",\n                \"RetentionId\": 1,\n                \"NamespaceName\": \"aaaa\",\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ],\n                \"CronSetting\": \"weekly\",\n                \"Disabled\": false\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询镜像版本保留规则"
       }
     ],
     "DescribeUserQuotaPersonal": [
@@ -694,9 +694,9 @@
     ],
     "DescribeWebhookTriggerLog": [
       {
-        "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeWebhookTriggerLog\r\n&<公共请求参数>\r\n&RegistryId=tcr-ak9876\r\n&Namespace=someNs\r\n&Id=9",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be17f554-32fd-451c-a1cd-64f9bd164e3f\",\n        \"TotalCount\": 3,\n        \"Logs\": [\n            {\n                \"Id\": 2,\n                \"TriggerId\": 25,\n                \"EventType\": \"pushImage\",\n                \"NotifyType\": \"http\",\n                \"Status\": \"finished\",\n                \"Detail\": \"{\\\"type\\\":\\\"pushImage\\\",\\\"occur_at\\\":1586774843,\\\"event_data\\\":{\\\"resources\\\":[{\\\"digest\\\":\\\"sha256:7ac7819e1523911399b798309025935a9968b277d86d50e5255465d6592c0266\\\",\\\"tag\\\":\\\"v1\\\",\\\"resource_url\\\":\\\"wcctest.tencentcloudcr.com/nginx/nginx:v1\\\"}],\\\"repository\\\":{\\\"date_created\\\":1586777885,\\\"name\\\":\\\"nginx\\\",\\\"namespace\\\":\\\"nginx\\\",\\\"repo_full_name\\\":\\\"nginx/nginx\\\",\\\"repo_type\\\":\\\"public\\\"}},\\\"operator\\\":\\\"3211064422\\\"}\",\n                \"CreationTime\": \"2020-04-14T02:47:23.177329+08:00\",\n                \"UpdateTime\": \"2020-04-14T02:47:24.244664+08:00\"\n            }\n        ]\n    }\n}",
+        "document": "用于查询触发器日志",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebhookTriggerLog\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-ab12345\",\n    \"Namespace\": \"someNs\",\n    \"Id\": 9\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8cbb3a5-ae7a-41f3-ba79-950d39ea653b\",\n        \"TotalCount\": 3,\n        \"Logs\": [\n            {\n                \"Id\": 2,\n                \"TriggerId\": 25,\n                \"EventType\": \"pushImage\",\n                \"NotifyType\": \"http\",\n                \"Status\": \"finished\",\n                \"Detail\": \"{\\\"type\\\":\\\"pushImage\\\",\\\"occur_at\\\":1586774843,\\\"event_data\\\":{\\\"resources\\\":[{\\\"digest\\\":\\\"sha256:7ac7819e1523911399b798309025935a9968b277d86d50e5255465d6592c0266\\\",\\\"tag\\\":\\\"v1\\\",\\\"resource_url\\\":\\\"wcctest.tencentcloudcr.com/nginx/nginx:v1\\\"}],\\\"repository\\\":{\\\"date_created\\\":1586777885,\\\"name\\\":\\\"nginx\\\",\\\"namespace\\\":\\\"nginx\\\",\\\"repo_full_name\\\":\\\"nginx/nginx\\\",\\\"repo_type\\\":\\\"public\\\"}},\\\"operator\\\":\\\"3211064422\\\"}\",\n                \"CreationTime\": \"2020-04-14T02:47:23.177329+08:00\",\n                \"UpdateTime\": \"2020-04-14T02:47:24.244664+08:00\"\n            }\n        ]\n    }\n}",
         "title": "查询触发器日志"
       }
     ],

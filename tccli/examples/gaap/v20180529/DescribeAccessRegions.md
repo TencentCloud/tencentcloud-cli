@@ -1,4 +1,4 @@
-**Example 1: 查询加速区域**
+**Example 1: 示例**
 
 
 
@@ -14,15 +14,20 @@ Output:
         "TotalCount": 1,
         "AccessRegionSet": [
             {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
+                "RegionId": "abc",
+                "RegionName": "abc",
+                "RegionArea": "abc",
+                "RegionAreaName": "abc",
+                "IDCType": "abc",
                 "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
+                "SupportFeature": {
+                    "NetworkType": [
+                        "abc"
+                    ]
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

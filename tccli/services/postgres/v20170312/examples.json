@@ -32,6 +32,20 @@
         "title": "关闭serverless公网地址"
       }
     ],
+    "CreateAccount": [
+      {
+        "document": "创建数据库普通账号",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"user_normal\",\n    \"Password\": \"Test_password1\",\n    \"Type\": \"normal\",\n    \"Remark\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d19322f-50fe-4084-a5d3-b0bc680fd3a1\"\n    }\n}",
+        "title": "创建数据库普通账号"
+      },
+      {
+        "document": "创建数据库超级账号\n",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"user_Super\",\n    \"Password\": \"Test_password1\",\n    \"Type\": \"tencentDBSuper\",\n    \"Remark\": \"超级用户\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fad9ac43-c906-4494-bbb5-88d154d2829c\"\n    }\n}",
+        "title": "创建数据库超级账号"
+      }
+    ],
     "CreateBaseBackup": [
       {
         "document": "手动创建实例数据备份。",
@@ -116,6 +130,14 @@
         "title": "创建serverlessDB实例"
       }
     ],
+    "DeleteAccount": [
+      {
+        "document": "删除数据库账号",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"asdfghjkl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6a620-d337-4c7e-a4cc-8b7c082de489\"\n    }\n}",
+        "title": "删除数据库账号"
+      }
+    ],
     "DeleteBaseBackup": [
       {
         "document": "",
@@ -176,6 +198,32 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"serverlessdb-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "指定实例名删除serverlessDB实例"
+      }
+    ],
+    "DescribeAccountPrivileges": [
+      {
+        "document": "查看账号类型",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"user_without_permission\",\n    \"DatabaseObjectSet\": [\n        {\n            \"ObjectType\": \"account\",\n            \"ObjectName\": \"user_without_permission\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeSet\": [\n            {\n                \"Object\": {\n                    \"DatabaseName\": \"\",\n                    \"ObjectName\": \"without_per\",\n                    \"ObjectType\": \"account\",\n                    \"SchemaName\": \"\",\n                    \"TableName\": \"\"\n                },\n                \"PrivilegeSet\": [\n                    \"tencentDBSuper\"\n                ]\n            }\n        ],\n        \"RequestId\": \"dc43ec52-efbe-4bde-b588-bfa427a8c29b\"\n    }\n}",
+        "title": "查看账号类型"
+      },
+      {
+        "document": "查询账号without_per对数据库user_database的权限",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"without_per\",\n    \"DatabaseObjectSet\": [\n        {\n            \"ObjectType\": \"database\",\n            \"ObjectName\": \"user_database\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeSet\": [\n            {\n                \"Object\": {\n                    \"DatabaseName\": \"\",\n                    \"ObjectName\": \"user_database\",\n                    \"ObjectType\": \"database\",\n                    \"SchemaName\": \"\",\n                    \"TableName\": \"\"\n                },\n                \"PrivilegeSet\": [\n                    \"CREATE\",\n                    \"CONNECT\",\n                    \"TEMPORARY\"\n                ]\n            }\n        ],\n        \"RequestId\": \"fc891ba1-8943-4116-8eb6-4696873d90c8\"\n    }\n}",
+        "title": "查询数据库权限"
+      },
+      {
+        "document": "查询账号without_per对user_database数据库下，user_schema的权限",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"without_per\",\n    \"DatabaseObjectSet\": [\n        {\n            \"ObjectType\": \"schema\",\n            \"ObjectName\": \"user_schema\",\n            \"DatabaseName\": \"user_database\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeSet\": [\n            {\n                \"Object\": {\n                    \"DatabaseName\": \"user_database\",\n                    \"ObjectName\": \"user_schema\",\n                    \"ObjectType\": \"schema\",\n                    \"SchemaName\": \"\",\n                    \"TableName\": \"\"\n                },\n                \"PrivilegeSet\": [\n                    \"USAGE\",\n                    \"CREATE\"\n                ]\n            }\n        ],\n        \"RequestId\": \"410f0673-c35c-401e-97c8-d4e196d1f33c\"\n    }\n}",
+        "title": "查询模式权限"
+      },
+      {
+        "document": "批量查询",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"without_per\",\n    \"DatabaseObjectSet\": [\n        {\n            \"ObjectType\": \"table\",\n            \"ObjectName\": \"users\",\n            \"DatabaseName\": \"user_database\",\n            \"SchemaName\": \"user_schema\"\n        },\n        {\n            \"ObjectType\": \"schema\",\n            \"ObjectName\": \"user_schema\",\n            \"DatabaseName\": \"user_database\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeSet\": [\n            {\n                \"Object\": {\n                    \"DatabaseName\": \"user_database\",\n                    \"ObjectName\": \"users\",\n                    \"ObjectType\": \"table\",\n                    \"SchemaName\": \"user_schema\",\n                    \"TableName\": \"\"\n                },\n                \"PrivilegeSet\": [\n                    \"DELETE\",\n                    \"TRUNCATE\",\n                    \"REFERENCES\",\n                    \"TRIGGER\",\n                    \"SELECT\",\n                    \"INSERT\",\n                    \"UPDATE\"\n                ]\n            },\n            {\n                \"Object\": {\n                    \"DatabaseName\": \"user_database\",\n                    \"ObjectName\": \"user_schema\",\n                    \"ObjectType\": \"schema\",\n                    \"SchemaName\": \"\",\n                    \"TableName\": \"\"\n                },\n                \"PrivilegeSet\": [\n                    \"CREATE\",\n                    \"USAGE\"\n                ]\n            }\n        ],\n        \"RequestId\": \"41d71515-447d-4557-a799-3b60ad86323d\"\n    }\n}",
+        "title": "批量查询"
       }
     ],
     "DescribeAccounts": [
@@ -360,6 +408,26 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBXlogs\n<公共请求参数>\n\n{\n    \"EndTime\": \"2018-06-11 17:06:38\",\n    \"DBInstanceId\": \"postgres-apzvwncr\",\n    \"StartTime\": \"2018-06-10 17:06:38\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"XlogList\": [\n            {\n                \"StartTime\": \"2018-06-22 01:56:46\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"EndTime\": \"2018-06-22 01:56:53\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",\n                \"Id\": 450,\n                \"Size\": 247967\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:17\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"EndTime\": \"2018-06-22 01:56:45\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",\n                \"Id\": 450,\n                \"Size\": 899618\n            },\n            {\n                \"StartTime\": \"2018-06-22 01:56:10\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"EndTime\": \"2018-06-22 01:56:10\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015610_20180622015610.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EWUN67hkmzzI32w2wS4KNi5jqNoaHxSJ59WJ9lrYebaz9SZgdOXyUBxlFmOGNchE3Q==\",\n                \"Id\": 450,\n                \"Size\": 41749\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:49\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"EndTime\": \"2018-06-21 01:55:57\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015549_20180621015557.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLPjSmz1BP/DJbQOeznMtdJsr77l4alcITO6f+jyIZ0upCYIFZhCIO2iJSzDXktIsGg==\",\n                \"Id\": 450,\n                \"Size\": 247941\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:20\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"EndTime\": \"2018-06-21 01:55:48\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015520_20180621015548.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLNhfLPY0y78Bi9G0LEDTC70hI3QKhTP7jWZT/+e51oyIRW6hm8MoEKQ2DyBqjqvtaQ==\",\n                \"Id\": 450,\n                \"Size\": 899646\n            },\n            {\n                \"StartTime\": \"2018-06-21 01:55:13\",\n                \"InternalAddr\": \"http://172.16.16.30:8366/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"EndTime\": \"2018-06-21 01:55:13\",\n                \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180621015513_20180621015513.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTGXfsNyKOxst2LTlcd0/LLKcr1q+wVdmFDDcdUtRcVsPlqfMXXg63tRWRtX/jFz6/MNbKg3r+EDkD5NdLA4nWhw==\",\n                \"Id\": 450,\n                \"Size\": 41744\n            }\n        ],\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "获取实例postgres-apzvwncr的Xlog列表"
+      }
+    ],
+    "DescribeDatabaseObjects": [
+      {
+        "document": "查询数据库列表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseObjects\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"ObjectType\": \"database\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ObjectSet\": [\n            \"postgres\",\n            \"postgres_bak_1715170243\",\n            \"user_database\"\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"c90f7a9d-f519-4d2f-bb2f-e3966cd102b6\"\n    }\n}",
+        "title": "查询对象为database"
+      },
+      {
+        "document": "查询user_database下的模式",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseObjects\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"ObjectType\": \"schema\",\n    \"Limit\": 2,\n    \"Offset\": 1,\n    \"DatabaseName\": \"user_database\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ObjectSet\": [\n            \"information_schema\",\n            \"pg_catalog\"\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"bb6146b9-0c63-40ea-b89a-d83944805b79\"\n    }\n}",
+        "title": "查询对象为schema"
+      },
+      {
+        "document": "查询user_database数据库下，属于user_schema模式的表",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseObjects\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"ObjectType\": \"table\",\n    \"DatabaseName\": \"user_database\",\n    \"SchemaName\": \"user_schema\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ObjectSet\": [\n            \"users\",\n            \"users1\",\n            \"users2\"\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"80530420-d73e-4a60-8149-93cf800220b9\"\n    }\n}",
+        "title": "查询对象为table"
       }
     ],
     "DescribeDatabases": [
@@ -548,6 +616,22 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBInstances\n<公共请求参数>\n\n{\n    \"DBInstanceIdSet\": [\n        \"postgres-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "隔离实例"
+      }
+    ],
+    "LockAccount": [
+      {
+        "document": "锁定数据库账号",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-4sfuv15b\",\n    \"UserName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
+        "title": "锁定数据库账号"
+      }
+    ],
+    "ModifyAccountPrivileges": [
+      {
+        "document": "批量修改without_per账号的权限：授予user_database库下user_schema模式的CREATE权限，并撤销对应USAGE权限；授予user_database库下，属于user_schema模式的users表的SELECT权限。修改without_per账号的类型为tencentDBSuper。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountPrivileges\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"without_per\",\n    \"ModifyPrivilegeSet\": [\n        {\n            \"DatabasePrivilege\": {\n                \"Object\": {\n                    \"ObjectType\": \"schema\",\n                    \"ObjectName\": \"user_schema\",\n                    \"DatabaseName\": \"user_database\"\n                },\n                \"PrivilegeSet\": [\n                    \"USAGE\"\n                ]\n            },\n            \"ModifyType\": \"revokeObject\",\n            \"IsCascade\": false\n        },\n        {\n            \"DatabasePrivilege\": {\n                \"Object\": {\n                    \"ObjectType\": \"schema\",\n                    \"ObjectName\": \"user_schema\",\n                    \"DatabaseName\": \"user_database\"\n                },\n                \"PrivilegeSet\": [\n                    \"CREATE\"\n                ]\n            },\n            \"ModifyType\": \"grantObject\"\n        },\n        {\n            \"DatabasePrivilege\": {\n                \"Object\": {\n                    \"ObjectType\": \"table\",\n                    \"ObjectName\": \"users\",\n                    \"DatabaseName\": \"user_database\",\n                    \"SchemaName\": \"user_schema\"\n                },\n                \"PrivilegeSet\": [\n                    \"SELECT\"\n                ]\n            },\n            \"ModifyType\": \"grantObject\"\n        },\n        {\n            \"DatabasePrivilege\": {\n                \"Object\": {\n                    \"ObjectType\": \"account\",\n                    \"ObjectName\": \"without_per\"\n                },\n                \"PrivilegeSet\": [\n                    \"tencentDBSuper\"\n                ]\n            },\n            \"ModifyType\": \"alterRole\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73086328-bdfa-4bf9-8206-8a3d6b2438b1\"\n    }\n}",
+        "title": "批量修改权限"
       }
     ],
     "ModifyAccountRemark": [
@@ -804,6 +888,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDBInstancePrimary\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-idabksrn\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"54eeac1a-1d21-43d9-8293-1352d5874860\"\n    }\n}",
         "title": "切换实例主备关系"
+      }
+    ],
+    "UnlockAccount": [
+      {
+        "document": "账号锁定之后，通过此操作解锁。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-4sfuv15b\",\n    \"UserName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
+        "title": "解除数据库账号锁定"
       }
     ],
     "UpgradeDBInstance": [

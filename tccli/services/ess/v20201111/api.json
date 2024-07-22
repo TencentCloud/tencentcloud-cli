@@ -245,6 +245,13 @@
       "output": "CreateOrganizationInfoChangeUrlResponse",
       "status": "online"
     },
+    "CreatePartnerAutoSignAuthUrl": {
+      "document": "创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。\n该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权\n\n\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId 需要传递超管或者法人的UserId)\n2. 已经在授权中或者授权成功的企业，无法重复授权",
+      "input": "CreatePartnerAutoSignAuthUrlRequest",
+      "name": "创建他方企业自动签授权链接",
+      "output": "CreatePartnerAutoSignAuthUrlResponse",
+      "status": "online"
+    },
     "CreatePersonAuthCertificateImage": {
       "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
       "input": "CreatePersonAuthCertificateImageRequest",
@@ -5170,6 +5177,90 @@
           "example": "1695713654",
           "member": "int64",
           "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartnerAutoSignAuthUrlRequest": {
+      "document": "CreatePartnerAutoSignAuthUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "被授企业id",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章",
+          "example": "无",
+          "member": "string",
+          "name": "SealTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartnerAutoSignAuthUrlResponse": {
+      "document": "CreatePartnerAutoSignAuthUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

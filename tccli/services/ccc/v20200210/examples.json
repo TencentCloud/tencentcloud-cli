@@ -300,7 +300,7 @@
       {
         "document": "获取技能组列表示例",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillGroupInfoList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 0,\n    \"ModifiedTime\": 1590147606,\n    \"SdkAppId\": 1400000000,\n    \"SkillGroupId\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 2,\n        \"SkillGroupList\": [\n            {\n                \"SkillGroupId\": 1115,\n                \"SkillGroupName\": \"luluttt\",\n                \"SkillGroupType\": 1,\n                \"Type\": \"TEL\",\n                \"RoutePolicy\": \"firstCreate\",\n                \"UsingLastSeat\": 0,\n                \"MaxConcurrency\": 1,\n                \"LastModifyTimestamp\": 1613976392\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\",\n        \"TotalCount\": 2,\n        \"SkillGroupList\": [\n            {\n                \"SkillGroupId\": 1115,\n                \"SkillGroupName\": \"luluttt\",\n                \"SkillGroupType\": 1,\n                \"Type\": \"TEL\",\n                \"RoutePolicy\": \"firstCreate\",\n                \"UsingLastSeat\": 0,\n                \"MaxConcurrency\": 1,\n                \"LastModifyTimestamp\": 1613976392,\n                \"Alias\": \"6666\"\n            }\n        ]\n    }\n}",
         "title": "获取技能组列表示例"
       }
     ],

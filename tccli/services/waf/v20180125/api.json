@@ -80,7 +80,7 @@
     "CreateIpAccessControl": {
       "document": "Waf IP黑白名单新增接口",
       "input": "CreateIpAccessControlRequest",
-      "name": "Waf IP黑白名单新增接口",
+      "name": "IP黑白名单新增接口",
       "output": "CreateIpAccessControlResponse",
       "status": "online"
     },
@@ -290,7 +290,7 @@
     "DescribeBatchIpAccessControl": {
       "document": "Waf 批量防护IP黑白名单查询",
       "input": "DescribeBatchIpAccessControlRequest",
-      "name": "Waf 批量防护IP黑白名单查询",
+      "name": "批量防护IP黑白名单查询",
       "output": "DescribeBatchIpAccessControlResponse",
       "status": "online"
     },
@@ -444,7 +444,7 @@
     "DescribeIpAccessControl": {
       "document": "Waf ip黑白名单查询",
       "input": "DescribeIpAccessControlRequest",
-      "name": "Waf IP黑白名单查询",
+      "name": "IP黑白名单查询",
       "output": "DescribeIpAccessControlResponse",
       "status": "online"
     },
@@ -843,7 +843,7 @@
     "ModifyIpAccessControl": {
       "document": "Waf IP黑白名单编辑接口",
       "input": "ModifyIpAccessControlRequest",
-      "name": "Waf IP黑白名单编辑接口",
+      "name": "IP黑白名单编辑接口",
       "output": "ModifyIpAccessControlResponse",
       "status": "online"
     },
@@ -1648,6 +1648,33 @@
           "name": "SignatureIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的大类规则ID",
+          "example": "[\"010000000\",\"020000000\"]",
+          "member": "string",
+          "name": "TypeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0:按照特定规则ID加白, 1:按照规则类型加白",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2798,6 +2825,46 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3090,121 +3157,171 @@
         {
           "disabled": false,
           "document": "动作",
-          "example": "",
+          "example": "22",
           "member": "uint64",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高级模式",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Advance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时间周期",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "限制次数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "匹配方法",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MatchFunc",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名称",
-          "example": "",
+          "example": "test.com",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "优先级",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间戳",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TsVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "匹配url",
-          "example": "",
+          "example": "test.com",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略动作有效时间",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ValidTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "test.com",
           "member": "string",
           "name": "OptionsArr",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "url长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Length",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api_aaa",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的Session规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,200000001]",
+          "member": "int64",
+          "name": "SessionApplied",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4465,8 +4582,8 @@
         },
         {
           "disabled": false,
-          "document": "可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）",
-          "example": "batch",
+          "document": "可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）",
+          "example": "custom",
           "member": "string",
           "name": "SourceType",
           "required": false,
@@ -4480,6 +4597,24 @@
           "name": "Note",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时配置类型",
+          "example": "无",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时配置详情",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6531,7 +6666,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持user_id, signature_id, modify_time",
+          "document": "排序的字段，支持user_id, signature_id, modify_time",
           "example": "signature_id",
           "member": "string",
           "name": "By",
@@ -6550,7 +6685,7 @@
         {
           "disabled": false,
           "document": "筛选条件，支持SignatureId, MatchContent",
-          "example": "无",
+          "example": "[]",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -6568,17 +6703,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则白名单列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "UserWhiteRule",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8412,6 +8547,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "释放延期标识",
+          "example": "1",
+          "member": "uint64",
+          "name": "FreeDelayFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8525,7 +8669,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回的数量",
+          "document": "每页返回的数量，默认为20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -8594,6 +8738,15 @@
           "name": "RuleId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型筛选0 1 2 3 4",
+          "example": "无",
+          "member": "int64",
+          "name": "TimerType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8653,7 +8806,7 @@
         },
         {
           "disabled": false,
-          "document": "类别",
+          "document": "类别，ip封禁传值auto_deny",
           "example": "threat_intelligence",
           "member": "string",
           "name": "Category",
@@ -9919,7 +10072,7 @@
         {
           "disabled": false,
           "document": "筛选条件，支持 MainClassName，SubClassID ,CveID, Status, ID;  ID为规则id",
-          "example": "无",
+          "example": "[]",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -9937,17 +10090,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "UserSignatureRule",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13021,7 +13174,7 @@
         {
           "disabled": false,
           "document": "业务安全包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{}",
           "member": "FraudPkg",
           "name": "FraudPkg",
           "output_required": true,
@@ -13032,7 +13185,7 @@
         {
           "disabled": false,
           "document": "Bot资源包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{}",
           "member": "BotPkg",
           "name": "BotPkg",
           "output_required": true,
@@ -13043,7 +13196,7 @@
         {
           "disabled": false,
           "document": "bot的qps详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{}",
           "member": "BotQPS",
           "name": "BotQPS",
           "output_required": true,
@@ -13219,7 +13372,7 @@
         {
           "disabled": false,
           "document": "最近一次超量时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-11-15 19:23:06",
           "member": "string",
           "name": "LastQpsExceedTime",
           "output_required": false,
@@ -13247,6 +13400,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例延期释放标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FreeDelayFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -13294,7 +13458,7 @@
         {
           "disabled": false,
           "document": "动作",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ActionType",
           "output_required": true,
@@ -13304,7 +13468,7 @@
         {
           "disabled": false,
           "document": "ip",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "output_required": true,
@@ -13314,7 +13478,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Note",
           "output_required": true,
@@ -13324,7 +13488,7 @@
         {
           "disabled": false,
           "document": "来源",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Source",
           "output_required": true,
@@ -13334,7 +13498,7 @@
         {
           "disabled": false,
           "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "TsVersion",
           "output_required": true,
@@ -13344,7 +13508,7 @@
         {
           "disabled": false,
           "document": "有效截止时间戳",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ValidTs",
           "output_required": true,
@@ -13384,11 +13548,41 @@
         {
           "disabled": false,
           "document": "规则创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -14559,7 +14753,7 @@
         {
           "disabled": false,
           "document": "判断是否是更新api的备注，更新api备注的时候，为true",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "UpdateApiRemark",
           "required": false,
@@ -14726,6 +14920,33 @@
           "name": "SignatureIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的大类规则ID",
+          "example": "[\"01000000\"]",
+          "member": "string",
+          "name": "TypeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0表示按照特定规则ID加白, 1表示按照规则类型加白",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16021,6 +16242,24 @@
           "name": "Note",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时配置类型",
+          "example": "无",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时配置详情",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18805,6 +19044,15 @@
           "name": "CreateTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "url长度",
+          "example": "10",
+          "member": "uint64",
+          "name": "Length",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -19207,7 +19455,7 @@
           "example": "010000001",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19217,7 +19465,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19227,7 +19475,7 @@
           "example": "010000000",
           "member": "string",
           "name": "MainClassID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19237,7 +19485,7 @@
           "example": "000000000",
           "member": "string",
           "name": "SubClassID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19247,7 +19495,7 @@
           "example": "reference item1 <#BID-28277::http://www.securityfocus.com/bid/28",
           "member": "string",
           "name": "CveID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19257,7 +19505,7 @@
           "example": "2021-11-24 19:55:55",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19267,7 +19515,7 @@
           "example": "2021-11-24 19:55:55",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19277,7 +19525,7 @@
           "example": "Cross Site Scripting",
           "member": "string",
           "name": "MainClassName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19287,7 +19535,7 @@
           "example": "Signatures for Database",
           "member": "string",
           "name": "SubClassName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19297,7 +19545,7 @@
           "example": "rule description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19307,9 +19555,19 @@
           "example": "reason",
           "member": "int64",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1: 高危 2:中危 3:低危\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19323,7 +19581,7 @@
           "example": "1",
           "member": "uint64",
           "name": "WhiteRuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19333,7 +19591,7 @@
           "example": "010000030",
           "member": "string",
           "name": "SignatureId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19343,7 +19601,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19353,9 +19611,19 @@
           "example": "URL",
           "member": "string",
           "name": "MatchField",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MatchParams",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -19363,7 +19631,7 @@
           "example": "eq",
           "member": "string",
           "name": "MatchMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19373,7 +19641,7 @@
           "example": "/api",
           "member": "string",
           "name": "MatchContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19383,7 +19651,7 @@
           "example": "2021-11-19T19:53:53+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19393,9 +19661,79 @@
           "example": "2021-11-19T19:53:53+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"010000030\", \"010000031\"]",
+          "member": "string",
+          "name": "SignatureIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大类规则ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"010000000\",\"020000000\"]",
+          "member": "string",
+          "name": "TypeIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大类规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TypeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:按照特定规则ID加白, 1:按照规则类型加白\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserWhiteRuleItem",
+          "name": "MatchInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MatchInfo字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MatchInfoStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19435,6 +19773,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "keya",
+          "member": "string",
+          "name": "MatchParams",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

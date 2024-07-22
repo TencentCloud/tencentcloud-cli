@@ -2381,10 +2381,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><br>默认取值与系统盘类型（SystemDisk.DiskType）保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘类型。数据盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li>\n默认取值与系统盘类型（SystemDisk.DiskType）保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2395,6 +2396,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DiskSize",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2405,26 +2407,29 @@
           "example": "snap-l8psqwnt",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：<br><li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘<br><li>FALSE：子机销毁时，保留数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>FALSE：子机销毁时，保留数据盘</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "数据盘是否加密。取值范围：<br><li>TRUE：加密<br><li>FALSE：不加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否加密。取值范围：\n<li>TRUE：加密</li>\n<li>FALSE：不加密</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "Encrypt",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -2435,8 +2440,20 @@
           "example": "100",
           "member": "uint64",
           "name": "ThroughputPerformance",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "突发性能。是否开启突发性能，默认取值为 false。\n\n注：内测中，需提单申请后使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "BurstPerformance",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -4236,6 +4253,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。\n\n假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testsuffix",
+          "member": "string",
+          "name": "InstanceNameSuffix",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -4384,7 +4412,7 @@
         {
           "disabled": false,
           "document": "实例所属项目ID。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "output_required": true,
@@ -4394,7 +4422,7 @@
         {
           "disabled": false,
           "document": "启动配置ID。",
-          "example": "无",
+          "example": "asc-abcd0123",
           "member": "string",
           "name": "LaunchConfigurationId",
           "output_required": true,
@@ -4404,7 +4432,7 @@
         {
           "disabled": false,
           "document": "启动配置名称。",
-          "example": "无",
+          "example": "TestLauchConfig0_0",
           "member": "string",
           "name": "LaunchConfigurationName",
           "output_required": true,
@@ -4414,7 +4442,7 @@
         {
           "disabled": false,
           "document": "实例机型。",
-          "example": "无",
+          "example": "SA2.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -4464,7 +4492,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。",
-          "example": "无",
+          "example": "[\"sg-brwzhm6d\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": true,
@@ -4484,7 +4512,7 @@
         {
           "disabled": false,
           "document": "自定义数据。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "dGVzdA==",
           "member": "string",
           "name": "UserData",
           "output_required": true,
@@ -4494,7 +4522,7 @@
         {
           "disabled": false,
           "document": "启动配置创建时间。",
-          "example": "无",
+          "example": "2021-05-31T12:38:35Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -4514,7 +4542,7 @@
         {
           "disabled": false,
           "document": "镜像ID。",
-          "example": "无",
+          "example": "img-abcd0123",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -4524,7 +4552,7 @@
         {
           "disabled": false,
           "document": "启动配置当前状态。取值范围：<li>NORMAL：正常</li><li>IMAGE_ABNORMAL：启动配置镜像异常</li><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常</li><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常</li>",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "LaunchConfigurationStatus",
           "output_required": true,
@@ -4534,7 +4562,7 @@
         {
           "disabled": false,
           "document": "实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。<li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>",
-          "example": "无",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "output_required": true,
@@ -4554,7 +4582,7 @@
         {
           "disabled": false,
           "document": "实例机型列表。",
-          "example": "无",
+          "example": "[\"SA2.MEDIUM2\"]",
           "member": "string",
           "name": "InstanceTypes",
           "output_required": true,
@@ -4584,7 +4612,7 @@
         {
           "disabled": false,
           "document": "版本号。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VersionNumber",
           "output_required": true,
@@ -4594,7 +4622,7 @@
         {
           "disabled": false,
           "document": "更新时间。",
-          "example": "无",
+          "example": "2023-09-04T11:42:46Z",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": true,
@@ -4604,7 +4632,7 @@
         {
           "disabled": false,
           "document": "CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。",
-          "example": "无",
+          "example": "TestRole",
           "member": "string",
           "name": "CamRoleName",
           "output_required": true,
@@ -4614,7 +4642,7 @@
         {
           "disabled": false,
           "document": "上次操作时，InstanceTypesCheckPolicy 取值。",
-          "example": "无",
+          "example": "ANY",
           "member": "string",
           "name": "LastOperationInstanceTypesCheckPolicy",
           "output_required": true,
@@ -4654,7 +4682,7 @@
         {
           "disabled": false,
           "document": "云盘类型选择策略。取值范围：<li>ORIGINAL：使用设置的云盘类型</li><li>AUTOMATIC：自动选择当前可用区下可用的云盘类型</li>",
-          "example": "无",
+          "example": "ORIGINAL",
           "member": "string",
           "name": "DiskTypePolicy",
           "output_required": true,
@@ -4664,7 +4692,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
-          "example": "无",
+          "example": "hpc-abcd0123",
           "member": "string",
           "name": "HpcClusterId",
           "output_required": true,

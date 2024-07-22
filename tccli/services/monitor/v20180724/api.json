@@ -4326,7 +4326,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-ksnrbv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4350,7 +4350,7 @@
         {
           "disabled": false,
           "document": "告警id",
-          "example": "alert-xx",
+          "example": "alert-oshger",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -5381,7 +5381,7 @@
         {
           "disabled": false,
           "document": "实例ID(可通过 DescribePrometheusInstances 接口获取)",
-          "example": "prom-id",
+          "example": "prom-jsbgr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5390,7 +5390,7 @@
         {
           "disabled": false,
           "document": "告警策略ID列表(可通过 DescribePrometheusAlertPolicy 接口获取)",
-          "example": "[\"alert-id\"]",
+          "example": "[\"alert-oshbve\"]",
           "member": "string",
           "name": "AlertIds",
           "required": true,
@@ -5399,7 +5399,7 @@
         {
           "disabled": false,
           "document": "告警策略名称(可通过 DescribePrometheusAlertPolicy 接口获取)，名称完全相同的告警策略才会删除",
-          "example": "[\"name\"]",
+          "example": "[\"testName\"]",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -11365,8 +11365,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "prom-xxx",
+          "document": "实例ID",
+          "example": "prom-253ac24d",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11374,8 +11374,8 @@
         },
         {
           "disabled": false,
-          "document": "分页",
-          "example": "1",
+          "document": "分页偏移量，默认为0。 示例值：1",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -11383,7 +11383,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "分页返回数量，默认为20，最大值为100",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -11392,8 +11392,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤\n支持ID，Name",
-          "example": "无",
+          "document": "仅支持按Name, Values字段过滤:\n- Name = Name \n  按照给定的告警规则名称列表匹配\n- Name = ID\n  按照给定的告警规则ID列表匹配",
+          "example": "{Name: \"Name\", Values: [\"test-alert\"]}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12296,7 +12296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "实例ID\n\n示例值：prom-343kafd34",
           "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -12305,7 +12305,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "偏移量，默认为0。 示例值：1",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -12314,7 +12314,7 @@
         },
         {
           "disabled": false,
-          "document": "分页",
+          "document": "返回数量，默认为20，最大值为100。\n示例值：1",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -12323,7 +12323,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤",
+          "document": "仅支持按Name, Values字段过滤:\n- Name = Name\n  按照给定的预聚合名称列表匹配",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12581,7 +12581,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模糊过滤条件，支持\nLevel 按模板级别过滤\nName 按名称过滤\nDescribe 按描述过滤\nID 按templateId过滤",
+          "document": "仅支持按Name, Values字段过滤:\n* Name = Name\n  按照给定的模板名称列表匹配\n* Name = ID\n  按照给定的模板ID列表匹配\n* Name = Describe\n  按照给定的模板描述列表匹配\n* Name = Level\n  按照给定的模板维度(instance, cluster)列表匹配",
           "example": " [{\"Name\": \"Name\",\"Values\": [\"test\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -12599,7 +12599,7 @@
         },
         {
           "disabled": false,
-          "document": "总数限制",
+          "document": "分页返回数量，默认为20，最大值为100",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -12793,7 +12793,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12803,7 +12803,7 @@
           "example": "无",
           "member": "RecordingRuleSet",
           "name": "RecordingRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15745,8 +15745,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "无",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-23x33df",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -15754,7 +15754,7 @@
         },
         {
           "disabled": false,
-          "document": "告警配置",
+          "document": "告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)",
           "example": "无",
           "member": "PrometheusAlertPolicyItem",
           "name": "AlertRule",

@@ -6507,6 +6507,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "技能组内线号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6666",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

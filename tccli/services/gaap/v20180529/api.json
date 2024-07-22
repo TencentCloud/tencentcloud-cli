@@ -1572,7 +1572,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CheckFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3832,7 +3832,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3842,7 +3842,7 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "AccessRegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3886,7 +3886,7 @@
           "example": "[{\"X-REAL_IP\",\"remote_addr\"}]",
           "member": "string",
           "name": "BlackHeaders",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4015,7 +4015,7 @@
           "example": "无",
           "member": "CountryAreaMap",
           "name": "CountryAreaMappingList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5699,7 +5699,7 @@
           "example": "26",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5709,7 +5709,7 @@
           "example": "无",
           "member": "RegionDetail",
           "name": "DestRegionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5719,7 +5719,7 @@
           "example": "无",
           "member": "BandwidthPriceGradient",
           "name": "BandwidthUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5729,7 +5729,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7667,7 +7667,7 @@
           "example": "80.64",
           "member": "float",
           "name": "ProxyDailyPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7677,7 +7677,7 @@
           "example": "无",
           "member": "BandwidthPriceGradient",
           "name": "BandwidthUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7687,7 +7687,7 @@
           "example": "56.84",
           "member": "float",
           "name": "DiscountProxyDailyPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7697,7 +7697,7 @@
           "example": "xx",
           "member": "string",
           "name": "Currency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7707,7 +7707,7 @@
           "example": "0",
           "member": "float",
           "name": "FlowUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7717,7 +7717,7 @@
           "example": "0",
           "member": "float",
           "name": "DiscountFlowUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7727,7 +7727,7 @@
           "example": "0",
           "member": "float",
           "name": "Cn2BandwidthPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -7737,7 +7737,7 @@
           "example": "0",
           "member": "float",
           "name": "Cn2BandwidthPriceWithDiscount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },

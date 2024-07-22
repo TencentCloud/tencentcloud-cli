@@ -1,16 +1,16 @@
-**Example 1: 告警列表**
+**Example 1: 查询实例告警列表**
 
-告警列表
+查询实例告警列表
 
 Input: 
 
 ```
 tccli monitor DescribePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId prom-as3d2s1a \
     --Limit 1 \
     --Filters.0.Name Name \
     --Filters.0.Values alert-test \
-    --Offset 1
+    --Offset 0
 ```
 
 Output: 
@@ -19,63 +19,63 @@ Output:
     "Response": {
         "AlertRules": [
             {
-                "Id": "abc",
-                "Name": "abc",
-                "TemplateId": "abc",
+                "Id": "alert-23a6d2ga",
+                "Name": "alert-test",
+                "TemplateId": "temp-as12sf12",
+                "ClusterId": "",
                 "Notification": {
                     "Enabled": true,
-                    "Type": "abc",
-                    "WebHook": "abc",
-                    "AlertManager": {
-                        "ClusterType": "abc",
-                        "ClusterId": "abc",
-                        "Url": "abc"
-                    },
-                    "RepeatInterval": "abc",
-                    "TimeRangeStart": "abc",
-                    "TimeRangeEnd": "abc",
-                    "NotifyWay": [
-                        "abc"
-                    ],
+                    "Type": "amp",
+                    "RepeatInterval": "5m",
+                    "TimeRangeStart": "0:00:00",
+                    "TimeRangeEnd": "23:59:59",
                     "ReceiverGroups": [
-                        "abc"
+                        "notice-13hs61s2"
                     ],
+                    "WebHook": "http://127.0.0.1:9090/alert",
+                    "AlertManager": {
+                        "ClusterType": "tke",
+                        "ClusterId": "cls-a2df21xa",
+                        "Url": "http://127.0.0.1:9090"
+                    },
                     "PhoneNotifyOrder": [
                         1
                     ],
                     "PhoneCircleTimes": 0,
                     "PhoneInnerInterval": 0,
                     "PhoneCircleInterval": 0,
-                    "PhoneArriveNotice": true
+                    "PhoneArriveNotice": true,
+                    "NotifyWay": [
+                        "abc"
+                    ]
                 },
                 "Rules": [
                     {
-                        "Name": "abc",
-                        "Rule": "abc",
+                        "Name": "rule-1",
+                        "Rule": "up{} != 1",
                         "Labels": [
                             {
-                                "Name": "abc",
-                                "Value": "abc"
+                                "Name": "level",
+                                "Value": "warnning"
                             }
                         ],
-                        "Template": "abc",
-                        "For": "abc",
-                        "Describe": "abc",
+                        "Template": "test alert",
+                        "For": "5m",
+                        "Describe": "test alert",
                         "Annotations": [
                             {
-                                "Name": "abc",
-                                "Value": "abc"
+                                "Name": "creator",
+                                "Value": "programer"
                             }
                         ],
-                        "RuleState": 0
+                        "RuleState": 1
                     }
                 ],
-                "UpdatedAt": "abc",
-                "ClusterId": "abc"
+                "UpdatedAt": "2024-07-21 18:10:14"
             }
         ],
         "Total": 1,
-        "RequestId": "abc"
+        "RequestId": "3f04883c-eda1-4498-b024-d266baec6040"
     }
 }
 ```

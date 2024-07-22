@@ -1,4 +1,4 @@
-**Example 1: 查询版本保留规则**
+**Example 1: 查询镜像版本保留规则**
 
 
 
@@ -19,7 +19,7 @@ Output:
         "RequestId": "c7abb9f2-9440-43ea-a12f-ae58875acf3d",
         "RetentionPolicyList": [
             {
-                "NextExecutionTime": "xx",
+                "NextExecutionTime": "2024-06-24",
                 "RetentionId": 1,
                 "NamespaceName": "aaaa",
                 "RetentionRuleList": [

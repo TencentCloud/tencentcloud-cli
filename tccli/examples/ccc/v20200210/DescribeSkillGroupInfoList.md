@@ -28,7 +28,8 @@ Output:
                 "RoutePolicy": "firstCreate",
                 "UsingLastSeat": 0,
                 "MaxConcurrency": 1,
-                "LastModifyTimestamp": 1613976392
+                "LastModifyTimestamp": 1613976392,
+                "Alias": "6666"
             }
         ]
     }

@@ -28,6 +28,13 @@
       "output": "CloseServerlessDBExtranetAccessResponse",
       "status": "online"
     },
+    "CreateAccount": {
+      "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
+      "input": "CreateAccountRequest",
+      "name": "创建数据库账号",
+      "output": "CreateAccountResponse",
+      "status": "online"
+    },
     "CreateBaseBackup": {
       "document": "本接口（CreateBaseBackup）用于创建实例的数据备份。",
       "input": "CreateBaseBackupRequest",
@@ -91,6 +98,13 @@
       "output": "CreateServerlessDBInstanceResponse",
       "status": "online"
     },
+    "DeleteAccount": {
+      "document": "此接口用于删除数据库账号，需要同时输入Oid与UserName，避免误删。",
+      "input": "DeleteAccountRequest",
+      "name": "删除数据库账号",
+      "output": "DeleteAccountResponse",
+      "status": "online"
+    },
     "DeleteBaseBackup": {
       "document": "本接口（DeleteBaseBackup）用于删除实例指定数据备份。",
       "input": "DeleteBaseBackupRequest",
@@ -138,6 +152,13 @@
       "input": "DeleteServerlessDBInstanceRequest",
       "name": "删除ServerlessDB实例",
       "output": "DeleteServerlessDBInstanceResponse",
+      "status": "online"
+    },
+    "DescribeAccountPrivileges": {
+      "document": "查询数据库账号对某数据库对象拥有的权限列表。",
+      "input": "DescribeAccountPrivilegesRequest",
+      "name": "查询数据库账号的权限信息",
+      "output": "DescribeAccountPrivilegesResponse",
       "status": "online"
     },
     "DescribeAccounts": {
@@ -278,6 +299,13 @@
       "input": "DescribeDBXlogsRequest",
       "name": "获取实例Xlog列表（废弃）",
       "output": "DescribeDBXlogsResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseObjects": {
+      "document": "本接口用于查询数据库对象列表。例如查询test数据库下的模式列表。",
+      "input": "DescribeDatabaseObjectsRequest",
+      "name": "查询数据库对象列表",
+      "output": "DescribeDatabaseObjectsResponse",
       "status": "online"
     },
     "DescribeDatabases": {
@@ -432,6 +460,20 @@
       "input": "IsolateDBInstancesRequest",
       "name": "隔离实例",
       "output": "IsolateDBInstancesResponse",
+      "status": "online"
+    },
+    "LockAccount": {
+      "document": "此接口用于锁定数据库账号，锁定后账号当前连接会断开，并且无法建立新连接。",
+      "input": "LockAccountRequest",
+      "name": "锁定数据库账号",
+      "output": "LockAccountResponse",
+      "status": "online"
+    },
+    "ModifyAccountPrivileges": {
+      "document": "修改某账号对某数据库对象的权限、修改账号类型。",
+      "input": "ModifyAccountPrivilegesRequest",
+      "name": "修改数据库账号的权限、类型",
+      "output": "ModifyAccountPrivilegesResponse",
       "status": "online"
     },
     "ModifyAccountRemark": {
@@ -614,6 +656,13 @@
       "input": "SwitchDBInstancePrimaryRequest",
       "name": "切换实例主备关系",
       "output": "SwitchDBInstancePrimaryResponse",
+      "status": "online"
+    },
+    "UnlockAccount": {
+      "document": "解除数据库账号的锁定，解锁后账号可以登陆数据库。",
+      "input": "UnlockAccountRequest",
+      "name": "解除数据库账号锁定",
+      "output": "UnlockAccountResponse",
       "status": "online"
     },
     "UpgradeDBInstance": {
@@ -1558,6 +1607,69 @@
     },
     "CloseServerlessDBExtranetAccessResponse": {
       "document": "CloseServerlessDBExtranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountRequest": {
+      "document": "CreateAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "postgres-4sfuv15b",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的账号名称。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号对应的密码。",
+          "example": "1234qwe",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号类型。当前支持normal、tencentDBSuper两个输入。normal指代普通用户，tencentDBSuper为拥有pg_tencentdb_superuser角色的账号。",
+          "example": "normal",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号备注。",
+          "example": "test Remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountResponse": {
+      "document": "CreateAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3460,6 +3572,131 @@
       ],
       "usage": "both"
     },
+    "DatabaseObject": {
+      "document": "描述数据库中某个对象所属的类型、是在哪个数据库、模式、表中的对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所描述的数据库对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_database\t",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_database",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DatabasePrivilege": {
+      "document": "指定账号对数据库对象拥有的权限列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库对象，当ObjectType为database时，DataseName/SchemaName/TableName可为空；当ObjectType为schema时，SchemaName/TableName可为空；当ObjectType为column时，TableName不可为空，其余情况均可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ObjectType\":\"table\",\"ObjectName\":\"test_table\",\"DatabaseName\":\"test_database\",\"SchemaName\":\"test_schema\"}",
+          "member": "DatabaseObject",
+          "name": "Object",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定账号对数据库对象拥有的权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SELECT\"]",
+          "member": "string",
+          "name": "PrivilegeSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteAccountRequest": {
+      "document": "DeleteAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除的账号名称。\t",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountResponse": {
+      "document": "DeleteAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBaseBackupRequest": {
       "document": "DeleteBaseBackup请求参数结构体",
       "members": [
@@ -3751,6 +3988,61 @@
     "DeleteServerlessDBInstanceResponse": {
       "document": "DeleteServerlessDBInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountPrivilegesRequest": {
+      "document": "DescribeAccountPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询此账号对某数据库对象所拥有的权限信息。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的数据库对象信息",
+          "example": "[{\"ObjectType\":\"table\",\"ObjectName\":\"users\",\"DatabaseName\":\"user_database\",\"SchemaName\":\"user_schema\"}]",
+          "member": "DatabaseObject",
+          "name": "DatabaseObjectSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountPrivilegesResponse": {
+      "document": "DescribeAccountPrivileges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户拥有数据库user_database的CREATE、CONNECT、TEMPORARY权限",
+          "example": "{\"Object\": {\"DatabaseName\": \"\", \"ObjectName\": \"user_database\", \"ObjectType\": \"database\", \"SchemaName\": \"\", \"TableName\": \"\" }, \"PrivilegeSet\": [ \"CREATE\", \"CONNECT\", \"TEMPORARY\"] }",
+          "member": "DatabasePrivilege",
+          "name": "PrivilegeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5180,6 +5472,107 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsRequest": {
+      "document": "DescribeDatabaseObjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的对象类型。支持查询的数据对象有：database,schema,sequence,procedure,type,function,table,view,matview,column。",
+          "example": "table",
+          "member": "string",
+          "name": "ObjectType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单次显示数量，默认20。可选范围为[0,100]。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量，从0开始。\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询对象所属的数据库。当查询对象类型不为database时，此参数必填。",
+          "example": "test_database",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询对象所属的模式。当查询对象类型不为database、schema时，此参数必填。",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询对象所属的表。当查询对象类型为column时，此参数必填。",
+          "example": "test_table",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectsResponse": {
+      "document": "DescribeDatabaseObjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询对象列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"test\"]",
+          "member": "string",
+          "name": "ObjectSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询对象总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7013,6 +7406,42 @@
       ],
       "type": "object"
     },
+    "LockAccountRequest": {
+      "document": "LockAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LockAccountResponse": {
+      "document": "LockAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LogBackup": {
       "document": "数据库日志备份信息",
       "members": [
@@ -7118,6 +7547,51 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAccountPrivilegesRequest": {
+      "document": "ModifyAccountPrivileges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改此账号对某数据库对象的权限。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的权限信息，支持批量修改，一次最高修改50条。",
+          "example": "[{\"DatabasePrivilege\":{\"Object\":{\"ObjectType\":\"account\",\"ObjectName\":\"user_without_permission\"},\"PrivilegeSet\":[\"tencentDBSuper\"]},\"ModifyType\":\"alterRole\"}]",
+          "member": "ModifyPrivilege",
+          "name": "ModifyPrivilegeSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountPrivilegesResponse": {
+      "document": "ModifyAccountPrivileges返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyAccountRemarkRequest": {
       "document": "ModifyAccountRemark请求参数结构体",
@@ -7959,6 +8433,45 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyPrivilege": {
+      "document": "用于修改数据库对象的权限，其中包含了数据库对象描述的数据结构、需要修改的权限列表以及修改的类型等。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要修改的数据库对象及权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Object\":{\"ObjectType\":\"table\",\"ObjectName\":\"test_table\",\"DatabaseName\":\"test_database\",\"SchemaName\":\"test_schema\"},\"Privileges\":[\"SELECT\"]",
+          "member": "DatabasePrivilege",
+          "name": "DatabasePrivilege",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改的方式，当前仅支持grantObject、revokeObject、alterRole。grantObject代表授权、revokeObject代表收回权、alterRole代表修改账号类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "grantObject",
+          "member": "string",
+          "name": "ModifyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当ModifyType为revokeObject才需要此参数，参数为true时，撤销权限会级联撤销。默认为false。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCascade",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyReadOnlyGroupConfigRequest": {
       "document": "ModifyReadOnlyGroupConfig请求参数结构体",
@@ -10248,6 +10761,42 @@
         }
       ],
       "usage": "both"
+    },
+    "UnlockAccountRequest": {
+      "document": "UnlockAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-4sfuv15b\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlockAccountResponse": {
+      "document": "UnlockAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpgradeDBInstanceKernelVersionRequest": {
       "document": "UpgradeDBInstanceKernelVersion请求参数结构体",
