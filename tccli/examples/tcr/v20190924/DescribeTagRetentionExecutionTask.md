@@ -20,17 +20,17 @@ Output:
         "TotalCount": 1,
         "RetentionTaskList": [
             {
-                "Status": "xx",
+                "Status": "success",
                 "Total": 0,
                 "Retained": 0,
                 "TaskId": 0,
-                "Repository": "xx",
+                "Repository": "repo",
                 "ExecutionId": 0,
-                "StartTime": "xx",
-                "EndTime": "xx"
+                "StartTime": "2024-06-01",
+                "EndTime": "2024-06-01"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1234-666"
     }
 }
 ```

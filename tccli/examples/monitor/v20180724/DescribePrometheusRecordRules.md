@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusRecordRules --cli-unfold-argument  \
-    --InstanceId xxx
+    --InstanceId prom-22kxd343
 ```
 
 Output: 

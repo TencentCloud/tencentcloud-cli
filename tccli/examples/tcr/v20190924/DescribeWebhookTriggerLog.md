@@ -1,12 +1,12 @@
 **Example 1: 查询触发器日志**
 
-
+用于查询触发器日志
 
 Input: 
 
 ```
 tccli tcr DescribeWebhookTriggerLog --cli-unfold-argument  \
-    --RegistryId tcr-ak9876 \
+    --RegistryId tcr-ab12345 \
     --Namespace someNs \
     --Id 9
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "be17f554-32fd-451c-a1cd-64f9bd164e3f",
+        "RequestId": "e8cbb3a5-ae7a-41f3-ba79-950d39ea653b",
         "TotalCount": 3,
         "Logs": [
             {

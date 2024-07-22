@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor DeletePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId abc \
-    --AlertIds abc \
-    --Names abc
+    --InstanceId prom-kjshgr \
+    --AlertIds alert-jsbgvr \
+    --Names test
 ```
 
 Output: 

@@ -6635,6 +6635,15 @@
           "name": "CustomTimestamp",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "timestamp; latest-offset;  earliest-offset; 任选一种",
+          "example": "earliest-offset",
+          "member": "string",
+          "name": "KafkaScanMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -19396,21 +19396,48 @@
         },
         {
           "disabled": false,
-          "document": "资源ID",
-          "example": "\"2000013127\"",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "阈值：0-99",
           "example": "0",
           "member": "uint64",
           "name": "Thresholds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源id级别  4:包分组级别 默认为1",
+          "example": "4",
+          "member": "uint64",
+          "name": "ThresholdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID ThresholdType=1时 该变量有效",
+          "example": "\"2000013127\"",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组名 ThresholdType=4时 该变量有效",
+          "example": "cdn_flux_aa",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:百分比类型阈值 1:数值类型阈值  默认为1",
+          "example": "0",
+          "member": "uint64",
+          "name": "ThresholdValueType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -3417,7 +3417,7 @@
         {
           "disabled": false,
           "document": "AI识别结果数量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -6166,7 +6166,7 @@
         {
           "disabled": false,
           "document": "AI 任务数量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -6449,7 +6449,7 @@
         {
           "disabled": false,
           "document": "设备总数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -7618,8 +7618,8 @@
         },
         {
           "disabled": false,
-          "document": "默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，\nBatchUpgradeDevice，\nBatchResetDevice,\nBatchRebootDevice",
-          "example": "无",
+          "document": "默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，\nBatchUpgradeDevice，\nBatchResetDevice,\nBatchRebootDevice,\nBatchRefreshDeviceChannel",
+          "example": "BatchDisableDevice",
           "member": "string",
           "name": "Operation",
           "required": false,
@@ -10143,7 +10143,7 @@
         {
           "disabled": false,
           "document": "模板ID（从查询录像上云模板列表接口ListRecordBackupTemplates中获取）",
-          "example": "无",
+          "example": "584fd9d0-569c-4153-aff7-************",
           "member": "string",
           "name": "TemplateId",
           "required": true,

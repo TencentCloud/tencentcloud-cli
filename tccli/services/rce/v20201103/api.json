@@ -57,6 +57,75 @@
       ],
       "usage": "in"
     },
+    "DataAuthorizationInfo": {
+      "document": "数据授权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户主体名称。\n\n示例值：某某有限公司。",
+          "example": "无",
+          "member": "string",
+          "name": "DataProviderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接收方主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司\n\n示例值：腾讯云计算（北京）有限责任公司",
+          "example": "无",
+          "member": "string",
+          "name": "DataRecipientName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户请求RCE所涉及的用户敏感数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n5-设备指纹；\n\n999-其它；\n\n示例值：[1, 4]",
+          "example": "无",
+          "member": "uint64",
+          "name": "UserDataType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户是否已经获取用户授权。\n\n1-已授权；其它值为未授权。\n\n示例值：1",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsAuthorize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否是用户个人敏感数据。\n\n固定填：1。\n\n示例值：1",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsPersonalData",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填默认无固定期限。\n\n示例值：1719805604",
+          "example": "无",
+          "member": "uint64",
+          "name": "AuthorizationTerm",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得用户授权所依赖的协议地址。\n\n示例值：https://www.*****.com/*****",
+          "example": "无",
+          "member": "string",
+          "name": "PrivacyPolicyLink",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InputCryptoManageMarketingRisk": {
       "document": "全栈式风控引擎入参",
       "members": [
@@ -319,6 +388,15 @@
           "name": "Platform",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据授权信息。",
+          "example": "无",
+          "member": "DataAuthorizationInfo",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
