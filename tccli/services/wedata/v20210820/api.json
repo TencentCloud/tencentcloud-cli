@@ -15172,6 +15172,24 @@
           "name": "EnvType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18175,6 +18193,15 @@
           "example": "\"SchemaName\"",
           "member": "string",
           "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间ID",
+          "example": "\"1455251608631480320\"",
+          "member": "string",
+          "name": "ProjectId",
           "required": false,
           "type": "string"
         }
@@ -21732,7 +21759,7 @@
           "example": "V0",
           "member": "string",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21742,7 +21769,7 @@
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21752,7 +21779,7 @@
           "example": "ADD",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21762,7 +21789,7 @@
           "example": "无",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21772,7 +21799,7 @@
           "example": "无",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21782,7 +21809,7 @@
           "example": "无",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21792,7 +21819,7 @@
           "example": "无",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -32885,6 +32912,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DLC资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dlc_group",
+          "member": "string",
+          "name": "DlcGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

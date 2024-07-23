@@ -9263,6 +9263,15 @@
           "name": "CompareTaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceStop",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

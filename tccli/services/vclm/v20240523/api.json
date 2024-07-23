@@ -554,6 +554,15 @@
           "name": "VideoUrl",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风格化强度 可选参数[\"low\",\"medium\",\"high\"] \n\"low\":风格化强度弱,\"medium\":\"风格化强度中等\",\"high\":\"风格化强度强\" \n默认为medium",
+          "example": "medium",
+          "member": "string",
+          "name": "StyleStrength",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

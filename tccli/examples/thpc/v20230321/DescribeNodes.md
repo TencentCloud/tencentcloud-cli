@@ -17,6 +17,7 @@ Output:
     "Response": {
         "NodeSet": [
             {
+                "NodeId": "node-2sh754ah",
                 "InstanceId": "ins-j3n6kiae",
                 "Zone": "ap-chongqing-1",
                 "NodeState": "RUNNING",

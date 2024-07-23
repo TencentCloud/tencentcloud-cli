@@ -4679,7 +4679,7 @@
           "example": "-",
           "member": "string",
           "name": "CcnId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4689,7 +4689,7 @@
           "example": "-",
           "member": "string",
           "name": "CcnName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4699,7 +4699,7 @@
           "example": "-",
           "member": "string",
           "name": "CcnDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4709,7 +4709,7 @@
           "example": "-",
           "member": "uint64",
           "name": "InstanceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4719,7 +4719,7 @@
           "example": "-",
           "member": "datetime",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4729,7 +4729,7 @@
           "example": "ISOLATED",
           "member": "string",
           "name": "State",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4739,7 +4739,7 @@
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4749,7 +4749,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4759,7 +4759,7 @@
           "example": "INTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4769,7 +4769,7 @@
           "example": "-",
           "member": "Tag",
           "name": "TagSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4779,7 +4779,7 @@
           "example": "True",
           "member": "bool",
           "name": "RoutePriorityFlag",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4789,7 +4789,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RouteTableCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4799,7 +4799,7 @@
           "example": "True",
           "member": "bool",
           "name": "RouteTableFlag",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4809,7 +4809,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsSecurityLock",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4819,7 +4819,57 @@
           "example": "True",
           "member": "bool",
           "name": "RouteBroadcastPolicyFlag",
-          "required": false,
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启等价路由功能。`False` 未开启，`True` 开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteECMPFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启路由重叠功能。`False` 未开启，`True` 开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteOverlapFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启QOS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "TrafficMarkingPolicyFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启路由表选择策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteSelectPolicyFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启二层云联网通道。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "DirectConnectAccelerateChannelFlag",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -25228,6 +25278,15 @@
           "example": "0",
           "member": "uint64",
           "name": "BgpAsn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务端最大连接数个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxConnection",
           "required": false,
           "type": "int"
         }

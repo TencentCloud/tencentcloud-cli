@@ -9598,7 +9598,7 @@
           "example": "无",
           "member": "DescribeOutput",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13273,7 +13273,7 @@
           "example": "无",
           "member": "StreamLinkRegionInfo",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

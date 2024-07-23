@@ -21,6 +21,13 @@
       "output": "AddQueueResponse",
       "status": "online"
     },
+    "AttachNodes": {
+      "document": "本接口 (AttachNodes) 用于绑定一个或者多个计算节点指定资源到指定集群中。",
+      "input": "AttachNodesRequest",
+      "name": "绑定计算资源到集群",
+      "output": "AttachNodesResponse",
+      "status": "online"
+    },
     "CreateCluster": {
       "document": "本接口 (CreateCluster) 用于创建并启动集群。\n\n* 本接口为异步接口， 当创建集群请求下发成功后会返回一个集群`ID`和一个`RequestId`，此时创建集群操作并未立即完成。在此期间集群的状态将会处于“PENDING”或者“INITING”，集群创建结果可以通过调用 [DescribeClusters](https://cloud.tencent.com/document/product/1527/72100)  接口查询，如果集群状态(ClusterStatus)变为“RUNNING(运行中)”，则代表集群创建成功，“ INIT_FAILED”代表集群创建失败。",
       "input": "CreateClusterRequest",
@@ -103,6 +110,13 @@
       "input": "DescribeQueuesRequest",
       "name": "查询队列列表",
       "output": "DescribeQueuesResponse",
+      "status": "online"
+    },
+    "DetachNodes": {
+      "document": "本接口 (DetachNodes) 用于将一个或者多个计算节点从集群中移除，但是不销毁指定计算资源。",
+      "input": "DetachNodesRequest",
+      "name": "从集群解绑节点",
+      "output": "DetachNodesResponse",
       "status": "online"
     },
     "ModifyInitNodeScripts": {
@@ -213,7 +227,7 @@
         },
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。",
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
@@ -231,7 +245,7 @@
         },
         {
           "disabled": false,
-          "document": "节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "document": "节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>",
           "example": "无",
           "member": "string",
           "name": "InstanceType",
@@ -303,7 +317,7 @@
         },
         {
           "disabled": false,
-          "document": "队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。\n",
+          "document": "队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>\n",
           "example": "无",
           "member": "string",
           "name": "QueueName",
@@ -312,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。",
+          "document": "添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>",
           "example": "无",
           "member": "string",
           "name": "NodeRole",
@@ -330,7 +344,7 @@
         },
         {
           "disabled": false,
-          "document": "添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。",
+          "document": "添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>",
           "example": "无",
           "member": "string",
           "name": "NodeType",
@@ -345,6 +359,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。",
+          "example": "CVM",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -387,6 +410,69 @@
     },
     "AddQueueResponse": {
       "document": "AddQueue返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachNodesRequest": {
+      "document": "AttachNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "hpc-cy4pnyp9",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。",
+          "example": "[\"ins-a437qz3d\"]",
+          "member": "string",
+          "name": "ResourceSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称。不指定则为默认队列：\nSLURM默认队列为：compute。 \nSGE默认队列为：all.q。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定有效的镜像ID，格式形如img-xxx。目前仅支持公有镜像和特定自定义镜像。如不指定，则该字段是默认镜像。",
+          "example": "img-n7nyt2d7",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。",
+          "example": "CVM",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachNodesResponse": {
+      "document": "AttachNodes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -786,13 +872,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -801,18 +886,16 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
-          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "document": "节点机型。不同实例机型指定了不同的资源规格。<li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -821,8 +904,7 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -831,8 +913,7 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -841,18 +922,16 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
-          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
+          "document": "节点显示名称。<li>不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。</li>",
           "example": "未命名",
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -861,8 +940,16 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源类型，默认是CVM资源",
+          "example": "CVM",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1545,7 +1632,7 @@
         },
         {
           "disabled": false,
-          "document": "<li><strong>queue-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-role</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点角色</strong>】进行过滤。节点角色形如：Manager。（Manager：管控节点。Compute：计算节点。Login：登录节点。ManagerBackup：备用管控节点。）</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"><li><strong>node-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>节点类型</strong>】进行过滤。节点类型形如：STATIC。(STATIC：静态节点。DYNAMIC：弹性节点。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
+          "document": "<ul>\n    <li><strong>queue-name</strong>\n        <p style=\"padding-left: 30px;\">按照【<strong>队列名称</strong>】进行过滤。队列名称形如：compute。</p>\n        <p style=\"padding-left: 30px;\">类型：String</p>\n        <p style=\"padding-left: 30px;\">必选：否</p>\n    </li>\n    <li><strong>node-role</strong>\n        <p style=\"padding-left: 30px;\">按照【<strong>节点角色</strong>】进行过滤。节点角色形如：Manager。（Manager：管控节点。Compute：计算节点。Login：登录节点。ManagerBackup：备用管控节点。）</p>\n        <p style=\"padding-left: 30px;\">类型：String</p>\n        <p style=\"padding-left: 30px;\">必选：否</p>\n    </li>\n    <li><strong>node-type</strong>\n        <p style=\"padding-left: 30px;\">按照【<strong>节点类型</strong>】进行过滤。节点类型形如：STATIC。(STATIC：静态节点。DYNAMIC：弹性节点。)</p>\n        <p style=\"padding-left: 30px;\">类型：String</p>\n        <p style=\"padding-left: 30px;\">必选：否</p>\n    </li>\n</ul>\n<p style=\"padding-left: 30px;\">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1582,6 +1669,7 @@
           "example": "无",
           "member": "NodeOverview",
           "name": "NodeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1591,6 +1679,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1659,6 +1748,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachNodesRequest": {
+      "document": "DetachNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "hpc-2j8ntf9l",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群中的节点id",
+          "example": "[\"node-9workmoi\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachNodesResponse": {
+      "document": "DetachNodes返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2383,7 +2508,7 @@
           "example": "ins-f5ew7k5w",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2393,17 +2518,17 @@
           "example": "ap-chongqing-1",
           "member": "string",
           "name": "Zone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
           "name": "NodeState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2413,7 +2538,7 @@
           "example": "img-l8og963d",
           "member": "string",
           "name": "ImageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2423,27 +2548,37 @@
           "example": "compute",
           "member": "string",
           "name": "QueueName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Compute",
           "member": "string",
           "name": "NodeRole",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "STATIC",
           "member": "string",
           "name": "NodeType",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "thpc集群节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "node-2sh754ah",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

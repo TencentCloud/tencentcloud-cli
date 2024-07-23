@@ -1977,6 +1977,16 @@
         },
         {
           "disabled": false,
+          "document": "就绪 Machine 个数",
+          "example": "5",
+          "member": "int64",
+          "name": "ReadyReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "公网带宽设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InternetAccessible",

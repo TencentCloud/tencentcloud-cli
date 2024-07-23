@@ -1874,8 +1874,8 @@
         },
         {
           "disabled": false,
-          "document": "包名。使用 JAR 包或者 WAR 包部署的时候必填。",
-          "example": "1",
+          "document": "传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。\n\n如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar\n\n注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。",
+          "example": "/demo-1.0.0.jar",
           "member": "string",
           "name": "PkgName",
           "required": false,
@@ -2141,6 +2141,24 @@
           "name": "RepoType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "启动后执行的脚本，base64 编码",
+          "example": "无",
+          "member": "string",
+          "name": "PostStartEncoded",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "停止前执行的脚本，base64 编码",
+          "example": "无",
+          "member": "string",
+          "name": "PreStopEncoded",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2154,7 +2172,7 @@
           "example": "1",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

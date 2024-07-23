@@ -2213,6 +2213,23 @@
       ],
       "usage": "in"
     },
+    "InstanceDetail": {
+      "document": "Instance表detail字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警策略是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bool",
+          "member": "bool",
+          "name": "EnableAlarmStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceInfo": {
       "document": "实例描述信息",
       "members": [
@@ -2704,6 +2721,16 @@
           "name": "ClickHouseKeeper",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
