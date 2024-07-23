@@ -24,6 +24,14 @@
         "title": "添加队列"
       }
     ],
+    "AttachNodes": [
+      {
+        "document": "往集群ID为hpc-2j8ntf9l的集群的compute队列绑定一个计算节点。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"QueueName\": \"compute\",\n    \"ImageId\": \"img-39ywauzd\",\n    \"ResourceType\": \"CVM\",\n    \"ResourceSet\": [\n        \"ins-7i4yut4b\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e81d404b-4fa2-49de-bce7-6499a3529f04\"\n    }\n}",
+        "title": "绑定计算节点到集群"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "创建一个管控节点和两个计算节点的集群。调度器为：SLURM。",
@@ -108,7 +116,7 @@
       {
         "document": "查询指定集群节点概览信息，集群ID为hpc-ggaqjyax。",
         "input": "https://thpc.tencentcloudapi.com/?Action=DescribeNodes\n&ClusterId=hpc-ggaqjyax\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"InstanceId\": \"ins-j3n6kiae\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"NodeState\": \"RUNNING\",\n                \"ImageId\": \"img-l8og963d\",\n                \"QueueName\": \"compute\",\n                \"NodeRole\": \"Compute\",\n                \"NodeType\": \"DYNAMIC\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"6793673e-3bce-4fbb-adea-923a82267da2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"NodeId\": \"node-2sh754ah\",\n                \"InstanceId\": \"ins-j3n6kiae\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"NodeState\": \"RUNNING\",\n                \"ImageId\": \"img-l8og963d\",\n                \"QueueName\": \"compute\",\n                \"NodeRole\": \"Compute\",\n                \"NodeType\": \"DYNAMIC\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"6793673e-3bce-4fbb-adea-923a82267da2\"\n    }\n}",
         "title": "查询指定集群节点概览信息。"
       }
     ],
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-prkxbd7c\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"compute\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"13ee84a5-7846-4682-8877-1c8f94962dd5\"\n    }\n}",
         "title": "查询集群队列概览信息列表"
+      }
+    ],
+    "DetachNodes": [
+      {
+        "document": "集群ID为hpc-2j8ntf9l的集群解绑计算节点node-8workmoi",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"NodeIds\": [\n        \"node-8workmoi\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40c2e07e-8500-4460-8db8-666d0e791ee5\"\n    }\n}",
+        "title": "从集群解绑计算节点"
       }
     ],
     "ModifyInitNodeScripts": [

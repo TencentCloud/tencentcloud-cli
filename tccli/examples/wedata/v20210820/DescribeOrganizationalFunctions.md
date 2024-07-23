@@ -63,3 +63,28 @@ Output:
 }
 ```
 
+**Example 2: 错误用例**
+
+错误用例
+
+Input: 
+
+```
+tccli wedata DescribeOrganizationalFunctions --cli-unfold-argument  \
+    --Type 1 \
+    --ProjectId 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "当前用户角色或WeData版本没有权限，请进行角色授权或者升级WeData版本"
+        },
+        "RequestId": "da268a37-2a3f-469f-afea-d41cd01d6a7c"
+    }
+}
+```
+

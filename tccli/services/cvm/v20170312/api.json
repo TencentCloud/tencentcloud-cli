@@ -6871,6 +6871,15 @@
           "name": "InheritInstanceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "购买方式。默认 NORMAL 正常购买，ACTIVITY活动优惠。 示例值：NORMAL",
+          "example": "ACTIVITY",
+          "member": "string",
+          "name": "PurchaseType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

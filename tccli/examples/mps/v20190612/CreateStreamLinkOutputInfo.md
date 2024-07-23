@@ -6,31 +6,31 @@ Input:
 
 ```
 tccli mps CreateStreamLinkOutputInfo --cli-unfold-argument  \
-    --FlowId xx \
-    --Output.OutputName xx \
-    --Output.Protocol xx \
-    --Output.Description xx \
+    --FlowId abc \
+    --Output.OutputName abc \
+    --Output.Protocol abc \
+    --Output.Description abc \
     --Output.RTPSettings.IdleTimeout 1000 \
-    --Output.RTPSettings.FEC xx \
-    --Output.RTPSettings.Destinations.0.Ip xx \
+    --Output.RTPSettings.FEC abc \
+    --Output.RTPSettings.Destinations.0.Ip abc \
     --Output.RTPSettings.Destinations.0.Port 0 \
     --Output.SRTSettings.Latency 1000 \
     --Output.SRTSettings.PeerLatency 1000 \
     --Output.SRTSettings.PbKeyLen 0 \
     --Output.SRTSettings.RecvLatency 1000 \
-    --Output.SRTSettings.Passphrase xx \
-    --Output.SRTSettings.StreamId xx \
+    --Output.SRTSettings.Passphrase abc \
+    --Output.SRTSettings.StreamId abc \
     --Output.SRTSettings.PeerIdleTimeout 1000 \
-    --Output.SRTSettings.Destinations.0.Ip xx \
+    --Output.SRTSettings.Destinations.0.Ip abc \
     --Output.SRTSettings.Destinations.0.Port 10000 \
-    --Output.SRTSettings.Destinations.1.Ip xx \
+    --Output.SRTSettings.Destinations.1.Ip abc \
     --Output.SRTSettings.Destinations.1.Port 10000 \
     --Output.RTMPSettings.ChunkSize 4096 \
-    --Output.RTMPSettings.Destinations.0.Url xx \
-    --Output.RTMPSettings.Destinations.0.StreamKey xx \
-    --Output.RTMPSettings.Destinations.1.Url xx \
-    --Output.RTMPSettings.Destinations.1.StreamKey xx \
-    --Output.OutputRegion xx
+    --Output.RTMPSettings.Destinations.0.Url abc \
+    --Output.RTMPSettings.Destinations.0.StreamKey abc \
+    --Output.RTMPSettings.Destinations.1.Url abc \
+    --Output.RTMPSettings.Destinations.1.StreamKey abc \
+    --Output.OutputRegion abc
 ```
 
 Output: 
@@ -69,7 +69,14 @@ Output:
                 "PeerLatency": 1000,
                 "PeerIdleTimeout": 1000,
                 "Passphrase": "",
-                "PbKeyLen": 0
+                "PbKeyLen": 0,
+                "Mode": "abc",
+                "SourceAddresses": [
+                    {
+                        "Ip": "abc",
+                        "Port": 0
+                    }
+                ]
             },
             "AllowIpList": [
                 "test"
@@ -98,7 +105,21 @@ Output:
                 "Destinations": [],
                 "IdleTimeout": 0,
                 "ChunkSize": 0
-            }
+            },
+            "HLSPullSettings": {
+                "ServerUrls": [
+                    {
+                        "Url": "abc"
+                    }
+                ]
+            },
+            "MaxConcurrent": 1,
+            "SecurityGroupIds": [
+                "abc"
+            ],
+            "Zones": [
+                "abc"
+            ]
         },
         "RequestId": "aaaaa"
     }
