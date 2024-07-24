@@ -364,6 +364,14 @@
         "title": "修改实例用户的密码"
       }
     ],
+    "RestartNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-pvwp23v1\",\n    \"NodeIds\": [\n        \"cmgo-pvwp23v1_0-node-slave0\",\n        \"cmgo-pvwp23v1_0-node-slave1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2efcf780-9970-11ec-8975-6bc44e3bfad7\",\n        \"FlowId\": 19677\n    }\n}",
+        "title": "重启Mongod节点"
+      }
+    ],
     "SetAccountUserPrivilege": [
       {
         "document": "为当前实例的指定账号设置操作权限",

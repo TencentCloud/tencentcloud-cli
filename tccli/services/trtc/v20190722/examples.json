@@ -59,8 +59,8 @@
     "DescribeCloudRecording": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"SdkAppId\": 1234\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"aaa\",\n        \"TaskId\": \"abc\"\n    }\n}",
         "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
       }
     ],

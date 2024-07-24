@@ -10275,6 +10275,15 @@
           "name": "ImageUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回头像照片，默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "CropPortrait",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10288,6 +10297,7 @@
           "example": "李明",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10297,6 +10307,7 @@
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10306,6 +10317,7 @@
           "example": "C00000000",
           "member": "string",
           "name": "Number",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10315,6 +10327,7 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10324,6 +10337,7 @@
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10333,6 +10347,7 @@
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10342,6 +10357,7 @@
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10351,6 +10367,17 @@
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像照片的base64",
+          "example": "无",
+          "member": "string",
+          "name": "PortraitImage",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

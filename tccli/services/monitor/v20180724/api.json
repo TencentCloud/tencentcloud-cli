@@ -12296,8 +12296,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n\n示例值：prom-343kafd34",
-          "example": "prom-xxx",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-343kafd34",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12305,8 +12305,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。 示例值：1",
-          "example": "无",
+          "document": "偏移量，默认为0。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12314,8 +12314,8 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。\n示例值：1",
-          "example": "无",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12323,8 +12323,8 @@
         },
         {
           "disabled": false,
-          "document": "仅支持按Name, Values字段过滤:\n- Name = Name\n  按照给定的预聚合名称列表匹配",
-          "example": "无",
+          "document": "仅支持按Name, Values字段过滤。",
+          "example": " [{\"Name\": \"name\",\"Values\": [\"test\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,

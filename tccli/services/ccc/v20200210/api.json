@@ -2440,7 +2440,7 @@
         },
         {
           "disabled": false,
-          "document": "待删除客服邮箱列表",
+          "document": "待删除客服邮箱列表，一次最大支持200个。",
           "example": "[\"a\",\"b\",\"c\"]",
           "member": "string",
           "name": "StaffList",
@@ -4599,7 +4599,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间戳，Unix 秒级时间戳",
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
           "example": "1611631881",
           "member": "int64",
           "name": "StartTimeStamp",
@@ -4608,7 +4608,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳，Unix 秒级时间戳",
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
           "example": "1611631881",
           "member": "int64",
           "name": "EndTimeStamp",

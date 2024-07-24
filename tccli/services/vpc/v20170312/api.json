@@ -6988,6 +6988,7 @@
           "example": "{\"VpcId\":\"vpc-8mpwlbdv\",\"SubnetId\":\"subnet-l9emqwnw\"}",
           "member": "DefaultVpcSubnet",
           "name": "Vpc",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -26299,7 +26300,7 @@
         },
         {
           "disabled": false,
-          "document": "端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
+          "document": "端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。",
           "example": "无",
           "member": "string",
           "name": "Port",

@@ -1577,6 +1577,15 @@
         },
         {
           "disabled": false,
+          "document": "任务过滤条件，支持多个关键字匹配，与Info参数互斥。",
+          "example": "where",
+          "member": "string",
+          "name": "Infos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "任务过滤条件，用户类型。",
           "example": "root",
           "member": "string",
@@ -1614,7 +1623,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

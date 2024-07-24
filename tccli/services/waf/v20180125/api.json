@@ -16569,7 +16569,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。证书类型。\n0：仅配置HTTP监听端口，没有证书\n1：证书来源为自有证书\n2：证书来源为托管证书",
+          "document": "证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书",
           "example": "0",
           "member": "int64",
           "name": "CertType",
@@ -16605,7 +16605,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。waf前是否部署有七层代理服务。\n0：没有部署代理服务\n1：有部署代理服务，waf将使用XFF获取客户端IP\n2：有部署代理服务，waf将使用remote_addr获取客户端IP\n3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
+          "document": "waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
           "example": "0",
           "member": "int64",
           "name": "IsCdn",
@@ -16632,7 +16632,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
+          "document": "是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转",
           "example": "1",
           "member": "uint64",
           "name": "HttpsRewrite",
@@ -16641,7 +16641,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。回源类型。\n0：通过IP回源\n1：通过域名回源",
+          "document": "回源类型。0：通过IP回源1：通过域名回源",
           "example": "0",
           "member": "int64",
           "name": "UpstreamType",
@@ -16668,7 +16668,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
+          "document": "是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsHttp2",
@@ -16677,7 +16677,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。是否开启WebSocket支持。\n0：关闭\n1：开启",
+          "document": "是否开启WebSocket支持。0：关闭1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsWebsocket",
@@ -16686,7 +16686,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。回源负载均衡策略。\n0：轮询\n1：IP hash\n2：加权轮询",
+          "document": "回源负载均衡策略。0：轮询1：IP hash2：加权轮询",
           "example": "0",
           "member": "int64",
           "name": "LoadBalance",
@@ -16713,7 +16713,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。",
+          "document": "端口信息，可通过DescribeDomains接口获取具体参数信息。",
           "example": "无",
           "member": "SpartaProtectionPort",
           "name": "Ports",
@@ -16722,7 +16722,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。是否开启长连接。\n0： 短连接\n1： 长连接",
+          "document": "是否开启长连接。0： 短连接1： 长连接",
           "example": "1",
           "member": "string",
           "name": "IsKeepAlive",
@@ -16731,7 +16731,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
+          "document": "待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
@@ -16749,7 +16749,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启主动健康检测。\n0：不开启\n1：开启",
+          "document": "是否开启主动健康检测。0：不开启1：开启",
           "example": "0",
           "member": "int64",
           "name": "ActiveCheck",
@@ -16776,7 +16776,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。加密套件模板。\n0：不支持选择，使用默认模板  \n1：通用型模板 \n2：安全型模板\n3：自定义模板",
+          "document": "加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
@@ -16830,7 +16830,7 @@
         },
         {
           "disabled": false,
-          "document": "必填项。是否开启XFF重置。\n0：关闭\n1：开启",
+          "document": "是否开启XFF重置。0：关闭1：开启",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",

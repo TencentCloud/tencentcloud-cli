@@ -308,6 +308,13 @@
       "output": "ResetDBInstancePasswordResponse",
       "status": "online"
     },
+    "RestartNodes": {
+      "document": "本接口用于重启数据库节点。",
+      "input": "RestartNodesRequest",
+      "name": "重启数据库节点",
+      "output": "RestartNodesResponse",
+      "status": "online"
+    },
     "SetAccountUserPrivilege": {
       "document": "本接口（SetAccountUserPrivilege）用于设置实例的账号权限。",
       "input": "SetAccountUserPrivilegeRequest",
@@ -1160,6 +1167,15 @@
           "name": "HiddenZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板 ID。参数模板是一组 MongoDB 的参数并为预设置了参数值的集合，将一组有相同诉求的参数及值 存为模板，在创建实例时，可直接引用参数值到新实例。合理使用参数模板，可以提高MongoDB数据库的效率。模板列表从 DescribeDBInstanceParamTpl 接口获取，注意模板支持的版本。",
+          "example": "tpl-0vswufxag",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1539,6 +1555,15 @@
           "example": "无",
           "member": "string",
           "name": "HiddenZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板 ID。参数模板是一组 MongoDB 的参数并为预设置了参数值的集合，将一组有相同诉求的参数及值 存为模板，在创建实例时，可直接引用参数值到新实例。合理使用参数模板，可以提高MongoDB数据库的效率。模板列表从 DescribeDBInstanceParamTpl 接口获取，注意模板支持的版本及实例类型。",
+          "example": "tpl-0vswufxag",
+          "member": "string",
+          "name": "ParamTemplateId",
           "required": false,
           "type": "string"
         }
@@ -5692,6 +5717,52 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartNodesRequest": {
+      "document": "RestartNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点Id。",
+          "example": "[\"cmgo-6heje4jp_0-node-slave0\",\"cmgo-6heje4jp_1-node-slave0\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartNodesResponse": {
+      "document": "RestartNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程Id。",
+          "example": "2313431",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

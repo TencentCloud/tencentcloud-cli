@@ -829,9 +829,15 @@
     "CreatePartnerAutoSignAuthUrl": [
       {
         "document": "创建他方自动签授权链接\n",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDSxxxxxxxxxOnHtH51\"\n    },\n    \"AuthorizedOrganizationId\": \"yDRt2UUgygqxuvlqUuO4zjEySqVWqO9J\",\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDSxxxxxxxxxOnHtH51\"\n    },\n    \"AuthorizedOrganizationId\": \"yDRt2UUgygqxuvlqUuO4zjEySqVWqO9J\",\n    \"AuthToMe\": false,\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1721984586,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDCpEUNqf8CyuealGCfc\",\n        \"RequestId\": \"s1721379786690441960\",\n        \"Url\": \"https://test.essurl.cn/g4sjUBHlHx\"\n    }\n}",
-        "title": "创建他方自动签授权链接"
+        "title": "创建他方自动签授权链接-我方授权"
+      },
+      {
+        "document": "他方授权给我方",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDSxxxxxxxxxOnHtH51\"\n    },\n    \"AuthorizedOrganizationId\": \"\",\n    \"AuthorizedOrganizationName\": \"他方企业名称\",\n    \"AuthToMe\": true,\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1721984586,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDCpEUNqf8CyuealGCfc\",\n        \"RequestId\": \"s1721379786690441960\",\n        \"Url\": \"https://test.essurl.cn/g4sjUBHlHx\"\n    }\n}",
+        "title": "创建他方自动签授权链接-他方授权"
       }
     ],
     "CreatePersonAuthCertificateImage": [

@@ -7154,7 +7154,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子企业注册认证的的链接列表",
+          "document": "子企业注册认证的链接列表",
           "example": "无",
           "member": "OrganizationAuthUrl",
           "name": "OrganizationAuthUrls",
