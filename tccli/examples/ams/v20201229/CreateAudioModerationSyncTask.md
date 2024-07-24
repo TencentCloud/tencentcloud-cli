@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "24235235-sfsddgsdg-242532-test",
         "DataId": "test0000000000001",
         "Label": "Normal",
         "SubLabel": "",
@@ -29,7 +29,7 @@ Output:
             {
                 "Label": "Normal",
                 "Score": 0,
-                "Keywords": 0,
+                "Keywords": [],
                 "Suggestion": "Pass",
                 "LibId": "",
                 "LibType": 0,

@@ -6,7 +6,6 @@ Input:
 
 ```
 tccli cls UploadLog --cli-unfold-argument  \
-    --HashKey abc \
     --TopicId abc \
     --CompressType abc
 ```

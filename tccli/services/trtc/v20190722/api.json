@@ -1813,7 +1813,7 @@
           "example": "123",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1823,7 +1823,7 @@
           "example": "InProgress",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1833,7 +1833,7 @@
           "example": "无",
           "member": "StorageFile",
           "name": "StorageFileList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

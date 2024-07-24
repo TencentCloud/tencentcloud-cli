@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CreateAudioModerationSyncTask": {
-      "document": "本接口（CreateAudioModerationSyncTask） 用于提交短音频内容进行智能审核任务，使用前请您使用腾讯云主账号登录控制台 [开通音频内容安全服务](https://console.cloud.tencent.com/cms/audio/package) 并调整好对应的业务配置。\n\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms/audio/package)”开启使用音频内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**10小时**免费调用时长，有效期为1个月。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云音频内容安全定价](https://cloud.tencent.com/product/ams/pricing)。\n\n### 接口调用说明：\n- 音频文件大小支持：**文件 <= 4M**;\n- 音频文件**时长不超过60s**，超过60s音频调用则报错；\n- 音频文件支持格式：**wav (PCM编码)** 、**mp3**、**aac**、**m4a** (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：**16kHz/16bit/单声道**)；\n- 接口仅限音频文件传入，视频文件传入请调用长音频异步接口；\n- 接口**默认QPS为20**，如需自定义配置并发或请求频率，请工单咨询；\n- 接口**默认超时为10s**，请求如超过该时长则接口会报错。\n",
+      "document": "本接口（CreateAudioModerationSyncTask） 用于提交短音频内容进行智能审核任务，使用前请您使用腾讯云主账号登录控制台 [开通音频内容安全服务](https://console.cloud.tencent.com/cms/audio/package) 并调整好对应的业务配置。\n\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms/audio/package)”开启使用音频内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**10小时**免费调用时长，有效期为1个月。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云音频内容安全定价](https://cloud.tencent.com/product/ams/pricing)。\n\n### 接口调用说明：\n- 音频文件大小支持：**文件 <= 4M**;\n- 音频文件**时长不超过60s**，超过60s音频调用则报错；\n- 音频文件支持格式：**wav (PCM编码)** 、**mp3**、**aac**、**m4a** (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：**16kHz/16bit/单声道**)；\n- 接口仅限音频文件传入，视频文件传入请调用长音频异步接口；\n- 接口**默认QPS为20**，如需自定义配置并发或请求频率，请工单咨询；\n- 接口**默认超时为10s**，请求如超过该时长则接口会报错。",
       "input": "CreateAudioModerationSyncTaskRequest",
       "name": "短音频审核同步接口",
       "output": "CreateAudioModerationSyncTaskResponse",
@@ -604,7 +604,7 @@
           "example": "1",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -614,7 +614,7 @@
           "example": "1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -624,7 +624,7 @@
           "example": "1",
           "member": "string",
           "name": "BizType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -634,7 +634,7 @@
           "example": "1",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -644,7 +644,7 @@
           "example": "1",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -654,7 +654,7 @@
           "example": "1",
           "member": "string",
           "name": "AsrText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -664,7 +664,7 @@
           "example": "无",
           "member": "TextResult",
           "name": "TextResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -674,7 +674,7 @@
           "example": "无",
           "member": "MoanResult",
           "name": "MoanResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -684,7 +684,7 @@
           "example": "1",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -694,7 +694,7 @@
           "example": "无",
           "member": "AudioResultDetailLanguageResult",
           "name": "LanguageResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -704,7 +704,7 @@
           "example": "1",
           "member": "AudioResultDetailSpeakerResult",
           "name": "SpeakerResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -714,7 +714,7 @@
           "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -724,7 +724,7 @@
           "example": "15",
           "member": "string",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

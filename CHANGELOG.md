@@ -1,3 +1,166 @@
+# Release 3.0.1041.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 48 次发布
+
+发布时间：2024-07-25 01:10:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAddressTemplateList](http://document.tencentcloudapi.woa.com/document/product/1132/81902)
+
+	* 新增出参：UsedTemplateCount, TemplateQuotaCount
+
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/1132/77159)
+
+	* 新增出参：AppProtocolList
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 79 次发布
+
+发布时间：2024-07-25 01:11:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadLog](http://document.tencentcloudapi.woa.com/document/product/614/59470)
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 29 次发布
+
+发布时间：2024-07-25 01:13:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateKillTask](http://document.tencentcloudapi.woa.com/document/product/1130/67783)
+
+	* 新增入参：Infos
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 56 次发布
+
+发布时间：2024-07-25 01:15:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceRenewInstance](http://document.tencentcloudapi.woa.com/document/product/589/38064)
+
+	* <font color="#dd0000">**修改入参**：</font>Placement
+
+* [InquiryPriceUpdateInstance](http://document.tencentcloudapi.woa.com/document/product/589/38063)
+
+	* <font color="#dd0000">**修改入参**：</font>UpdateSpec, Placement
+
+	* 新增出参：NewConfigPrice
+
+
+新增数据结构：
+
+* [PriceResult](http://document.tencentcloudapi.woa.com/document/product/589/33981#PriceResult)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 97 次发布
+
+发布时间：2024-07-25 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePartnerAutoSignAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/84286)
+
+	* 新增入参：AuthorizedOrganizationName, AuthToMe
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 31 次发布
+
+发布时间：2024-07-25 01:19:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RestartNodes](http://document.tencentcloudapi.woa.com/document/product/240/84302)
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/240/38571)
+
+	* 新增入参：ParamTemplateId
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/240/38570)
+
+	* 新增入参：ParamTemplateId
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 61 次发布
+
+发布时间：2024-07-25 01:27:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OrganizationalFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrganizationalFunction)
+
+	* 新增成员：EnvType
+
+
+
+
 # Release 3.0.1040.1
 
 ## 云顾问(advisor) 版本：2020-07-21

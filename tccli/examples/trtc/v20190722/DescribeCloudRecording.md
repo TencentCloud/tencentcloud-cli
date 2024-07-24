@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trtc DescribeCloudRecording --cli-unfold-argument  \
-    --TaskId xx \
+    --TaskId abc \
     --SdkAppId 1234
 ```
 
@@ -16,8 +16,8 @@ Output:
     "Response": {
         "Status": "InProgress",
         "StorageFileList": [],
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "RequestId": "aaa",
+        "TaskId": "abc"
     }
 }
 ```
