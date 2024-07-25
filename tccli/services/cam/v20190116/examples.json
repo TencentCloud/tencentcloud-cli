@@ -644,6 +644,14 @@
         "title": "设置用户权限边界"
       }
     ],
+    "QueryApiKeyRecord": [
+      {
+        "document": "查询指定接口访问的服务和接口记录",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryApiKeyRecord\n<公共请求参数>\n\n{\n    \"ApiKey\": \"AKID****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Product\": \"cvm\",\n                \"Action\": \"GetTestInstance\",\n                \"Cnt\": 12,\n                \"UpdateTime\": \"2023-05-18 00:18:03\"\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"5205360d-2995-4034-858c-13aee99bef09\"\n    }\n}",
+        "title": "查询密钥访问记录"
+      }
+    ],
     "RemoveUserFromGroup": [
       {
         "document": "",
@@ -746,6 +754,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\n&RoleId=4611686018427731422\n&Description=abc234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\n    }\n}",
         "title": "修改角色描述信息"
+      }
+    ],
+    "UpdateRoleSessionDuration": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleSessionDuration\n&RoleId=1234567\n&SessionDuration=1234567\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
+        "title": "修改角色会话时长"
       }
     ],
     "UpdateSAMLProvider": [

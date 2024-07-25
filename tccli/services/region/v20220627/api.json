@@ -7,6 +7,13 @@
       "output": "DescribeClusterResponse",
       "status": "online"
     },
+    "DescribeProductRegionsAndZonesConfig": {
+      "document": "提供给各个产品方查询产品的地域系统配置数据",
+      "input": "DescribeProductRegionsAndZonesConfigRequest",
+      "name": "查询产品的地域和可用区配置数据",
+      "output": "DescribeProductRegionsAndZonesConfigResponse",
+      "status": "online"
+    },
     "DescribeProducts": {
       "document": "本接口(DescribeProducts)用于查询各个支持地域列表查询的产品信息。",
       "input": "DescribeProductsRequest",
@@ -125,6 +132,63 @@
           "name": "ResourceClusterSet",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductRegionsAndZonesConfigRequest": {
+      "document": "DescribeProductRegionsAndZonesConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "如果不填则默认查所有地域和可用区，否则为某个产品的",
+          "example": "tag",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductRegionsAndZonesConfigResponse": {
+      "document": "DescribeProductRegionsAndZonesConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域信息",
+          "example": "无",
+          "member": "ResourceRegionInfo",
+          "name": "ResourceRegionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代表当前产品是地域级还是可用区级，只有入参传入Product此字段才有意义",
+          "example": "zone",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

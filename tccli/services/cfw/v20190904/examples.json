@@ -418,6 +418,14 @@
         "title": "查询NAT访问控制列表"
       }
     ],
+    "DescribeNatFwDnatRule": [
+      {
+        "document": "查询Nat防火墙Dnat规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwDnatRule\n<公共请求参数>\n\n{\n    \"Index\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 0,\n                \"IpProtocol\": \"abc\",\n                \"PublicIpAddress\": \"abc\",\n                \"PublicPort\": 0,\n                \"PrivateIpAddress\": \"abc\",\n                \"PrivatePort\": 0,\n                \"Description\": \"abc\",\n                \"IsReferenced\": 0,\n                \"FwInsId\": \"abc\",\n                \"NatGwId\": \"abc\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询Nat防火墙Dnat规则"
+      }
+    ],
     "DescribeNatFwInfoCount": [
       {
         "document": "",

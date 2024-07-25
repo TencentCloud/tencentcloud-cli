@@ -553,6 +553,13 @@
       "output": "PutUserPermissionsBoundaryResponse",
       "status": "online"
     },
+    "QueryApiKeyRecord": {
+      "document": "此接口用于查询密钥访问的服务和接口调用记录。",
+      "input": "QueryApiKeyRecordRequest",
+      "name": "查询密钥访问记录",
+      "output": "QueryApiKeyRecordResponse",
+      "status": "online"
+    },
     "RemoveUserFromGroup": {
       "document": "从用户组删除用户",
       "input": "RemoveUserFromGroupRequest",
@@ -642,6 +649,13 @@
       "input": "UpdateRoleDescriptionRequest",
       "name": "修改角色描述信息",
       "output": "UpdateRoleDescriptionResponse",
+      "status": "online"
+    },
+    "UpdateRoleSessionDuration": {
+      "document": "修改角色会话时长 ",
+      "input": "UpdateRoleSessionDurationRequest",
+      "name": "修改角色会话时长",
+      "output": "UpdateRoleSessionDurationResponse",
       "status": "online"
     },
     "UpdateSAMLProvider": {
@@ -6954,6 +6968,106 @@
       ],
       "type": "object"
     },
+    "QueryApiKeyRecordNode": {
+      "document": "查询密钥访问记录数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求的服务。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求的服务对应接口。",
+          "example": "GetTestInstance",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求次数。",
+          "example": "3",
+          "member": "uint64",
+          "name": "Cnt",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后访问时间。",
+          "example": "2023-05-17 00:18:14",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryApiKeyRecordRequest": {
+      "document": "QueryApiKeyRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户的密钥ID，长度为36个字符。必须以AKID或IKID开头。",
+          "example": "AK****",
+          "member": "string",
+          "name": "ApiKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询对应目标子账号Uin。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryApiKeyRecordResponse": {
+      "document": "QueryApiKeyRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥访问记录列表。",
+          "example": "无",
+          "member": "QueryApiKeyRecordNode",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数目。取值范围大于0。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveUserFromGroupRequest": {
       "document": "RemoveUserFromGroup请求参数结构体",
       "members": [
@@ -8219,6 +8333,51 @@
     },
     "UpdateRoleDescriptionResponse": {
       "document": "UpdateRoleDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleSessionDurationRequest": {
+      "document": "UpdateRoleSessionDuration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时长(秒)",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "SessionDuration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "角色名(与角色ID必填一个)",
+          "example": "QCS_RoleName",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色ID(与角色名必填一个)",
+          "example": "1234567",
+          "member": "uint64",
+          "name": "RoleId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRoleSessionDurationResponse": {
+      "document": "UpdateRoleSessionDuration返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -4077,6 +4077,24 @@
           "name": "CLSInfoList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否维护时间运行",
+          "example": "无",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8056,6 +8074,24 @@
           "name": "CLSTopicIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否维护时间运行",
+          "example": "无",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10241,6 +10277,15 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -13391,6 +13436,16 @@
           "example": "creating",
           "member": "string",
           "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -21015,6 +21070,24 @@
           "name": "CLSTopicIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否维护时间运行",
+          "example": "无",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -21061,6 +21134,24 @@
           "name": "CLSTopicIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否维护时间运行",
+          "example": "无",
+          "member": "string",
+          "name": "IsInMaintainPeriod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

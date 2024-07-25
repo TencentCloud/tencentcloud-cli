@@ -8,6 +8,14 @@
         "title": "demo"
       }
     ],
+    "DescribeGlobalDomainList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalDomainList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DomainTypes\": [\n        0\n    ],\n    \"Keyword\": \"abc\",\n    \"GlobalTeamId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"DataList\": [\n                {\n                    \"DomainId\": 0,\n                    \"CustomerID\": \"abc\",\n                    \"DomainURL\": \"abc\",\n                    \"DomainType\": 0,\n                    \"CreateUser\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"UpdateUser\": \"abc\",\n                    \"UpdateTime\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DEMO"
+      }
+    ],
     "DescribeMNPDetail": [
       {
         "document": "demo",

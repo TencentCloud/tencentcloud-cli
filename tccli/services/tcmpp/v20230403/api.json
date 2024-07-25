@@ -7,6 +7,13 @@
       "output": "CreateMNPResponse",
       "status": "online"
     },
+    "DescribeGlobalDomainList": {
+      "document": "全局域名列表",
+      "input": "DescribeGlobalDomainListRequest",
+      "name": "全局域名列表",
+      "output": "DescribeGlobalDomainListResponse",
+      "status": "online"
+    },
     "DescribeMNPDetail": {
       "document": "小程序详情",
       "input": "DescribeMNPDetailRequest",
@@ -139,6 +146,79 @@
       ],
       "type": "object"
     },
+    "DescribeGlobalDomainListRequest": {
+      "document": "DescribeGlobalDomainList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名类型 1 白名单 2 黑名单",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalTeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalDomainListResponse": {
+      "document": "DescribeGlobalDomainList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "GlobalDomainDescribeListPageResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMNPDetailRequest": {
       "document": "DescribeMNPDetail请求参数结构体",
       "members": [
@@ -193,6 +273,118 @@
         }
       ],
       "type": "object"
+    },
+    "GlobalDomainDescribeListInfoResp": {
+      "document": "全局域名列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型 1 白名单 2 黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DomainType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GlobalDomainDescribeListPageResp": {
+      "document": "全局域名分页列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GlobalDomainDescribeListInfoResp",
+          "name": "DataList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MNPDetail": {
       "document": "小程序列表项详情",
