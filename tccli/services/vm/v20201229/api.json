@@ -15,7 +15,7 @@
       "status": "online"
     },
     "DescribeTaskDetail": {
-      "document": "通过查看任务详情 DescribeTaskDetail 接口，可主动轮询获取检测结果详情。<br>\n\n默认接口请求频率限制：**200次/秒**。",
+      "document": "通过查看任务详情 DescribeTaskDetail 接口，可主动轮询获取检测结果详情。",
       "input": "DescribeTaskDetailRequest",
       "name": "查看任务详情",
       "output": "DescribeTaskDetailResponse",
@@ -91,7 +91,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回音频片段存储的链接地址，该地址有效期为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -594,7 +594,7 @@
           "example": "task-video-XwxJtbkKXWgCt8AZ",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -604,7 +604,7 @@
           "example": "data_test_01",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -614,7 +614,7 @@
           "example": "1001",
           "member": "string",
           "name": "BizType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -624,7 +624,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -634,7 +634,7 @@
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -644,7 +644,7 @@
           "example": "VIDEO",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -654,7 +654,7 @@
           "example": "Block",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -664,7 +664,7 @@
           "example": "无",
           "member": "TaskLabel",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -674,7 +674,7 @@
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -684,7 +684,7 @@
           "example": "无",
           "member": "InputInfo",
           "name": "InputInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -694,7 +694,7 @@
           "example": "2020-07-13T11:47:01.925Z",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -704,27 +704,27 @@
           "example": "2020-07-13T11:47:25.840Z",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageSegments",
           "name": "ImageSegments",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioSegments",
           "name": "AudioSegments",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -734,7 +734,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -744,7 +744,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -754,8 +754,48 @@
           "example": "Normal",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回检测结果明细数据相关的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SegmentCosUrlList",
+          "name": "SegmentCosUrlList",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回音频审核的ASR识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "在秒后重试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TryInSeconds",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回音频文件识别出的对应文本内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RcbAsr",
+          "name": "Asrs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -827,7 +867,7 @@
           "example": "1",
           "member": "string",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -837,7 +877,7 @@
           "example": "无",
           "member": "TaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -847,7 +887,7 @@
           "example": "4765-48dXwxJtbkKXW8d3eb",
           "member": "string",
           "name": "PageToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -869,7 +909,7 @@
           "example": "1",
           "member": "int64",
           "name": "HitFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -879,7 +919,7 @@
           "example": "1",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -889,7 +929,7 @@
           "example": "1",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -899,7 +939,7 @@
           "example": "1",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -909,17 +949,17 @@
           "example": "1",
           "member": "ImageResultResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段用于返回审核结果的访问链接（URL），图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：数据**默认有效期为12小时**。如您需要更长时间的保存，请在数据储存的COS桶中配置对应的储存时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -929,7 +969,7 @@
           "example": "1",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -939,8 +979,18 @@
           "example": "1",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecognitionResult",
+          "name": "RecognitionResults",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1051,7 +1101,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1061,7 +1111,7 @@
           "example": "无",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1071,7 +1121,7 @@
           "example": "无",
           "member": "ImageResultsResultDetailLocation",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1081,7 +1131,7 @@
           "example": "无",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1091,7 +1141,7 @@
           "example": "无",
           "member": "string",
           "name": "LibId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1101,7 +1151,7 @@
           "example": "无",
           "member": "string",
           "name": "LibName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1111,7 +1161,7 @@
           "example": "无",
           "member": "string",
           "name": "Keywords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1121,7 +1171,7 @@
           "example": "无",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1131,7 +1181,7 @@
           "example": "无",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1141,7 +1191,17 @@
           "example": "无",
           "member": "string",
           "name": "SubLabelCode",
-          "required": true,
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1213,7 +1273,7 @@
           "example": "无",
           "member": "string",
           "name": "OffsetTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1223,9 +1283,29 @@
           "example": "无",
           "member": "ImageResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回视频片段的具体截帧审核时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回视频片段的截帧时间，单位为豪秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OffsetusTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1282,6 +1362,34 @@
       ],
       "usage": "out"
     },
+    "RcbAsr": {
+      "document": "审核切片asr文本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持前1000个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "the text",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-07-13T11:47:01.925Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RecognitionResult": {
       "document": "识别类标签结果信息",
       "members": [
@@ -1303,6 +1411,62 @@
           "name": "Tags",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SegmentCosUrlList": {
+      "document": "明细数据相关的cos url",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量图片片段的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageAllUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全量音频片段的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioAllUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "违规图片片段的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageBlockUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "违规音频片段的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioBlockUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全量音频识别文本的cos url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsrUrl",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

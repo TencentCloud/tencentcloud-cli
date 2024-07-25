@@ -21,19 +21,7 @@ Output:
                 "CalmDownTime": 0,
                 "ScaleAction": 0,
                 "ScaleNum": 0,
-                "LoadMetrics": "abc",
-                "MetricId": 0,
-                "StatisticPeriod": 0,
                 "ProcessMethod": 0,
-                "TriggerThreshold": 0,
-                "TriggerConditions": {
-                    "Conditions": [
-                        {
-                            "CompareMethod": 0,
-                            "Threshold": 0
-                        }
-                    ]
-                },
                 "Priority": 0,
                 "StrategyStatus": 0,
                 "YarnNodeLabel": "abc",

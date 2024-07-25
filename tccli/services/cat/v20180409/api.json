@@ -202,6 +202,15 @@
           "name": "NodeIpType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "供应商子账户同步标志",
+          "example": "无",
+          "member": "int64",
+          "name": "SubSyncFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -10657,7 +10657,7 @@
         {
           "disabled": false,
           "document": "VPC实例ID。形如：vpc-f49l6u0z。",
-          "example": "",
+          "example": "vpc-m7sr81gh",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -10666,7 +10666,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-shenyang-ecm-cu",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -10675,7 +10675,7 @@
         {
           "disabled": false,
           "document": "私有网络名称，可任意命名，但不得超过60个字符。",
-          "example": "",
+          "example": "TEST",
           "member": "string",
           "name": "VpcName",
           "required": false,
@@ -10684,7 +10684,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10693,9 +10693,27 @@
         {
           "disabled": false,
           "document": "私有网络描述",
-          "example": "",
+          "example": "TEST",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS地址，最多支持4个，第1个默认为主，其余为备。\t",
+          "example": "['183.60.83.19']",
+          "member": "string",
+          "name": "DnsServers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "TEST",
+          "member": "string",
+          "name": "DomainName",
           "required": false,
           "type": "string"
         }

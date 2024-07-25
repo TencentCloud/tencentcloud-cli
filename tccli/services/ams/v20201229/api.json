@@ -52,7 +52,7 @@
           "example": "无",
           "member": "int64",
           "name": "HitFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -62,7 +62,7 @@
           "example": "无",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -72,7 +72,7 @@
           "example": "无",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -82,7 +82,7 @@
           "example": "无",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -92,17 +92,17 @@
           "example": "无",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段用于返回音频片段存储的链接地址，该地址有效期为1天。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -112,7 +112,7 @@
           "example": "无",
           "member": "string",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -122,7 +122,7 @@
           "example": "无",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -132,7 +132,7 @@
           "example": "无",
           "member": "AudioResultDetailTextResult",
           "name": "TextResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -142,7 +142,7 @@
           "example": "无",
           "member": "AudioResultDetailMoanResult",
           "name": "MoanResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -152,7 +152,7 @@
           "example": "无",
           "member": "AudioResultDetailLanguageResult",
           "name": "LanguageResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -162,7 +162,7 @@
           "example": "无",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -172,9 +172,39 @@
           "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人结果",
+          "example": "无",
+          "member": "SpeakerResults",
+          "name": "SpeakerResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "歌曲识别结果",
+          "example": "无",
+          "member": "LabelResults",
+          "name": "LabelResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出行结果",
+          "example": "无",
+          "member": "TravelResults",
+          "name": "TravelResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -244,7 +274,7 @@
           "example": "无",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -254,7 +284,7 @@
           "example": "无",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -264,7 +294,7 @@
           "example": "无",
           "member": "float",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -274,17 +304,17 @@
           "example": "无",
           "member": "float",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "*内测中，敬请期待*",
           "example": "无",
           "member": "string",
           "name": "SubLabelCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -294,7 +324,7 @@
           "example": "无",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -304,7 +334,7 @@
           "example": "Pass",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -452,7 +482,7 @@
           "example": "无",
           "member": "string",
           "name": "OffsetTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -462,8 +492,18 @@
           "example": "无",
           "member": "AudioResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -769,7 +809,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数，该字段表示回调签名的key信息，用于保证数据的安全性。 签名方法为在返回的HTTP头部添加 X-Signature 的字段，值为： seed + body 的 SHA256 编码和Hex字符串，在收到回调数据后，可以根据返回的body，用 **sha256(seed + body)**, 计算出 `X-Signature` 进行验证。<br>具体使用实例可参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53263)。",
+          "document": "验证签名参数，具体可以参考[验签说明](https://cloud.tencent.com/document/product/1219/104000#42dd87d2-580f-46cf-a953-639a787d1eda)。",
           "example": "seed",
           "member": "string",
           "name": "Seed",
@@ -778,7 +818,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数，该字段表示接受审核信息回调的地址，格式为URL链接默认格式。配置成功后，审核过程中产生的违规音频片段将通过此接口发送。回调返回内容格式请参考 [回调签名示例](https://cloud.tencent.com/document/product/1219/53257#.E7.A4.BA.E4.BE.8B2-.E5.9B.9E.E8.B0.83.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)",
+          "document": "接收审核信息回调地址。如果设置了该字段，在审核过程中发现违规音频片段结果将发送至该接口。更多详情请参阅[回调配置说明](https://cloud.tencent.com/document/product/1219/104000)。",
           "example": "https://example.com/url",
           "member": "string",
           "name": "CallbackUrl",
@@ -852,7 +892,7 @@
           "example": "w-audio-YBJzazmYs4vO27p2",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -862,7 +902,7 @@
           "example": "azmYs4vO27p2",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -872,7 +912,7 @@
           "example": "default",
           "member": "string",
           "name": "BizType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -882,7 +922,7 @@
           "example": "名称",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -892,7 +932,7 @@
           "example": "FINISH",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -902,7 +942,7 @@
           "example": "AUDIO",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -912,7 +952,7 @@
           "example": "Pass",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -922,7 +962,7 @@
           "example": "{}",
           "member": "TaskLabel",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -932,7 +972,7 @@
           "example": "{}",
           "member": "InputInfo",
           "name": "InputInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -942,7 +982,7 @@
           "example": "the text",
           "member": "string",
           "name": "AudioText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -952,7 +992,7 @@
           "example": "{}",
           "member": "AudioSegments",
           "name": "AudioSegments",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -962,7 +1002,7 @@
           "example": "URL_ERROR",
           "member": "string",
           "name": "ErrorType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -972,7 +1012,7 @@
           "example": "the url is request is 404",
           "member": "string",
           "name": "ErrorDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -982,7 +1022,7 @@
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -992,7 +1032,7 @@
           "example": "2021-01-28T08:20:25.759Z",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1002,8 +1042,18 @@
           "example": "Normal",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "MediaInfo",
+          "name": "MediaInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -1075,7 +1125,7 @@
           "example": "1",
           "member": "string",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1085,7 +1135,7 @@
           "example": "无",
           "member": "TaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1095,7 +1145,7 @@
           "example": "4765-48dXwxJtbkKXW8d3eb",
           "member": "string",
           "name": "PageToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1139,6 +1189,82 @@
           "name": "BucketInfo",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LabelResults": {
+      "document": "歌曲识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称：歌曲名，语种名，说话人名 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -1292,6 +1418,52 @@
       ],
       "usage": "out"
     },
+    "SpeakerResults": {
+      "document": "说话人结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "得分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "StorageInfo": {
       "document": "用于表示数据存储的相关信息",
       "members": [
@@ -1383,7 +1555,7 @@
           "example": "无",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1393,7 +1565,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1403,7 +1575,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1413,7 +1585,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1423,7 +1595,7 @@
           "example": "无",
           "member": "string",
           "name": "BizType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1433,7 +1605,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1443,7 +1615,7 @@
           "example": "无",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1453,7 +1625,7 @@
           "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1463,7 +1635,7 @@
           "example": "无",
           "member": "TaskLabel",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1473,7 +1645,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1483,8 +1655,18 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputInfo",
+          "name": "InputInfo",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -1745,6 +1927,82 @@
           "name": "SubLabel",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TravelResults": {
+      "document": "出行结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubLabel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出行音频角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出行语音文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AudioText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

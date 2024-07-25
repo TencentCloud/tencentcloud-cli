@@ -1258,6 +1258,14 @@
         "title": "获取地域列表"
       }
     ],
+    "DescribeReservedInstanceUtilizationRate": [
+      {
+        "document": "预留券使用率",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstanceUtilizationRate\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PodNum\": 1,\n        \"PodRate\": 0,\n        \"UtilizationRateSet\": [\n            {\n                \"Rate\": 0,\n                \"Num\": 1,\n                \"PodNum\": 1,\n                \"CPU\": 1,\n                \"Memory\": 2,\n                \"Type\": \"common\",\n                \"GpuNum\": \"\",\n                \"Zone\": \"\",\n                \"ClusterId\": \"\",\n                \"NodeName\": \"\"\n            }\n        ],\n        \"RequestId\": \"0be873cf-014f-408b-8527-03c25c32725b\"\n    }\n}",
+        "title": "查询预留券使用率"
+      }
+    ],
     "DescribeReservedInstances": [
       {
         "document": "Filter Name只支持文档中的示例值",

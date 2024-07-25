@@ -932,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "page表示嵌出页面，panel表嵌出整个看板",
+          "document": "page表示嵌出页面，panel表示嵌出整个看板",
           "example": "1",
           "member": "string",
           "name": "Scope",

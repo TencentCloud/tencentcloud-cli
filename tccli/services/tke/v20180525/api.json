@@ -1022,6 +1022,13 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
+    "DescribeReservedInstanceUtilizationRate": {
+      "document": "查询各种规格类型的预留券使用率",
+      "input": "DescribeReservedInstanceUtilizationRateRequest",
+      "name": "查询预留券使用率",
+      "output": "DescribeReservedInstanceUtilizationRateResponse",
+      "status": "online"
+    },
     "DescribeReservedInstances": {
       "document": "查询预留实例列表",
       "input": "DescribeReservedInstancesRequest",
@@ -13292,6 +13299,81 @@
       ],
       "type": "object"
     },
+    "DescribeReservedInstanceUtilizationRateRequest": {
+      "document": "DescribeReservedInstanceUtilizationRate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 节点名称",
+          "example": "eklet-subnet-0j105iya",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReservedInstanceUtilizationRateResponse": {
+      "document": "DescribeReservedInstanceUtilizationRate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券使用率",
+          "example": "无",
+          "member": "ReservedInstanceUtilizationRate",
+          "name": "UtilizationRateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按量计费的 Pod 总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PodNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " Pod 被预留券抵扣的抵扣率",
+          "example": "0.5",
+          "member": "float",
+          "name": "PodRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeReservedInstancesRequest": {
       "document": "DescribeReservedInstances请求参数结构体",
       "members": [
@@ -22977,6 +23059,112 @@
         }
       ],
       "usage": "in"
+    },
+    "ReservedInstanceUtilizationRate": {
+      "document": "预留券的使用率信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Rate",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预留券数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Num",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "CPU",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Memory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 预留券类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU 卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "string",
+          "name": "GpuNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eklet-subnet-12345678",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod 数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PodNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ResourceDeleteOption": {
       "document": "资源删除选项",

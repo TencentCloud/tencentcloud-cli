@@ -13,51 +13,100 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "w-audio-X_Qnzci_GulDQ01r",
-        "DataId": "",
-        "BizType": "202012161",
-        "Name": "",
-        "Status": "FINISH",
-        "Type": "AUDIO",
-        "Suggestion": "Review",
+        "TaskId": "abc",
+        "DataId": "abc",
+        "BizType": "abc",
+        "Name": "abc",
+        "Status": "abc",
+        "Type": "abc",
+        "Suggestion": "abc",
         "Labels": [
             {
-                "Label": "Abuse",
-                "Suggestion": "Review",
+                "Label": "abc",
+                "Suggestion": "abc",
                 "Score": 0,
-                "SubLabel": ""
+                "SubLabel": "abc"
             }
         ],
         "InputInfo": {
-            "Type": "URL",
-            "Url": "https://test.cos.ap-guangzhou.myqcloud.com/porn5.mp3"
+            "Type": "abc",
+            "Url": "abc",
+            "BucketInfo": {
+                "Bucket": "abc",
+                "Region": "abc",
+                "Object": "abc"
+            }
         },
-        "AudioText": "音频文本",
+        "AudioText": "abc",
         "AudioSegments": [
             {
+                "OffsetTime": "abc",
                 "Result": {
                     "HitFlag": 0,
-                    "Url": "https://cos.ap-guangzhou.myqcloud.com/0.mp3",
-                    "Suggestion": "Pass",
-                    "Label": "Normal",
-                    "Text": "",
-                    "TextResults": [],
-                    "MoanResults": [],
-                    "LanguageResults": [],
-                    "Duration": "60000",
+                    "Label": "abc",
+                    "Suggestion": "abc",
                     "Score": 0,
-                    "Extra": "",
-                    "SubLabel": ""
-                },
-                "OffsetTime": "0"
+                    "Text": "abc",
+                    "Url": "abc",
+                    "Duration": "abc",
+                    "Extra": "abc",
+                    "TextResults": [
+                        {
+                            "Label": "abc",
+                            "Keywords": [
+                                "abc"
+                            ],
+                            "LibId": "abc",
+                            "LibName": "abc",
+                            "Score": 0,
+                            "Suggestion": "abc",
+                            "LibType": 0,
+                            "SubLabel": "abc"
+                        }
+                    ],
+                    "MoanResults": [
+                        {
+                            "Label": "abc",
+                            "Score": 0,
+                            "StartTime": 0,
+                            "EndTime": 0,
+                            "SubLabelCode": "abc",
+                            "SubLabel": "abc",
+                            "Suggestion": "abc"
+                        }
+                    ],
+                    "LanguageResults": [
+                        {
+                            "Label": "abc",
+                            "Score": 0,
+                            "StartTime": 0,
+                            "EndTime": 0,
+                            "SubLabelCode": "abc"
+                        }
+                    ],
+                    "SubLabel": "abc",
+                    "RecognitionResults": [
+                        {
+                            "Label": "abc",
+                            "Tags": [
+                                {
+                                    "Name": "abc",
+                                    "Score": 0,
+                                    "StartTime": 0,
+                                    "EndTime": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
         ],
-        "ErrorType": "",
-        "ErrorDescription": "",
-        "CreatedAt": "2021-01-05T08:48:13.069Z",
-        "UpdatedAt": "2021-01-05T08:49:31.421Z",
-        "RequestId": "34785328532523",
-        "Label": "Abuse"
+        "ErrorType": "abc",
+        "ErrorDescription": "abc",
+        "CreatedAt": "abc",
+        "UpdatedAt": "abc",
+        "Label": "abc",
+        "RequestId": "abc"
     }
 }
 ```

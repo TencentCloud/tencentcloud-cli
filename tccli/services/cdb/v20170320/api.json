@@ -5304,7 +5304,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆实例类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例。 不指定则默认为通用型。",
+          "document": "克隆实例类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -5373,6 +5373,15 @@
           "name": "Period",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群版节点拓扑配置。",
+          "example": "无",
+          "member": "ClusterTopology",
+          "name": "ClusterTopology",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5711,7 +5720,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - ONTKE单节点实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -5816,6 +5825,15 @@
           "name": "Vips",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群版节点拓扑配置。",
+          "example": "无",
+          "member": "ClusterTopology",
+          "name": "ClusterTopology",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6091,7 +6109,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - ONTKE单节点实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -6196,6 +6214,15 @@
           "name": "Vips",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群版节点拓扑配置。",
+          "example": "无",
+          "member": "ClusterTopology",
+          "name": "ClusterTopology",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

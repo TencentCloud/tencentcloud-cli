@@ -8635,6 +8635,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamFilter",
+          "name": "ParamFilter",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13319,6 +13329,73 @@
       ],
       "usage": "both"
     },
+    "ParamFilter": {
+      "document": "参数黑名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 参数黑名单开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数黑名单规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ParamFilterRule",
+          "name": "FilterRules",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ParamFilterRule": {
+      "document": "参数黑名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "exampleParam",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数值数组, 小于10个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['blacklistValue1', 'blacklistValue2']",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "http 返回码 ( 暂仅支持403)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "403",
+          "member": "string",
+          "name": "ReturnCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PathBasedOriginRule": {
       "document": "分路径回源规则",
       "members": [
@@ -17377,6 +17454,15 @@
           "example": "无",
           "member": "HttpsBilling",
           "name": "HttpsBilling",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "参数黑名单",
+          "example": "无",
+          "member": "ParamFilter",
+          "name": "ParamFilter",
           "required": false,
           "type": "object"
         }
