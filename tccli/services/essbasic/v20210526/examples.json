@@ -827,7 +827,13 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDSxxxxxxxxxOnHtH51\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"user_open_id\"\n        }\n    },\n    \"AuthorizedOrganizationId\": \"org_open_id_another\",\n    \"AuthorizedOrganizationName\": \"典子谦子客企业\",\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1702982931,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDSxxxxxxxxxOnHtH51\",\n        \"RequestId\": \"s1702378131281988373\",\n        \"Url\": \"https://test.essurl.cn/WxxxxxwH\"\n    }\n}",
-        "title": "创建他方自动签授权链接"
+        "title": "创建他方自动签授权链接-我方授权"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDSxxxxxxxxxOnHtH51\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"user_open_id\"\n        }\n    },\n    \"AuthorizedOrganizationId\": \"org_open_id_another\",\n    \"AuthorizedOrganizationName\": \"典子谦子客企业\",\n    \"AuthToMe\": true,\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1702982931,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDSxxxxxxxxxOnHtH51\",\n        \"RequestId\": \"s1702378131281988373\",\n        \"Url\": \"https://test.essurl.cn/WxxxxxwH\"\n    }\n}",
+        "title": "创建他方自动签授权链接-他方授权"
       }
     ],
     "CreateSealByImage": [

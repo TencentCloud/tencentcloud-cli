@@ -1,3 +1,84 @@
+# Release 3.0.1043.1
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 10 次发布
+
+发布时间：2024-07-29 01:10:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateTaskFromAction](http://document.tencentcloudapi.woa.com/document/product/1694/84312)
+* [DescribeActionFieldConfigList](http://document.tencentcloudapi.woa.com/document/product/1694/84311)
+* [DescribeActionLibraryList](http://document.tencentcloudapi.woa.com/document/product/1694/84310)
+* [DescribeObjectTypeList](http://document.tencentcloudapi.woa.com/document/product/1694/84309)
+
+新增数据结构：
+
+* [ActionFieldConfigDetail](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionFieldConfigDetail)
+* [ActionFieldConfigResult](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionFieldConfigResult)
+* [ActionLibraryListResult](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ActionLibraryListResult)
+* [ObjectType](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ObjectType)
+* [ObjectTypeConfig](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ObjectTypeConfig)
+* [ObjectTypeConfigFields](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ObjectTypeConfigFields)
+* [ObjectTypeJsonParse](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ObjectTypeJsonParse)
+* [ResourceOffline](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ResourceOffline)
+
+
+
+## 多媒体创作引擎(cme) 版本：2019-10-29
+
+### 第 24 次发布
+
+发布时间：2024-07-29 01:12:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1156/40359)
+
+	* 新增出参：IntermediateFileSize
+
+
+修改数据结构：
+
+* [VideoEditProjectOutput](http://document.tencentcloudapi.woa.com/document/product/1156/40360#VideoEditProjectOutput)
+
+	* <font color="#dd0000">**修改成员**：</font>CoverURL
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 147 次发布
+
+发布时间：2024-07-29 01:16:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePartnerAutoSignAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82841)
+
+	* 新增入参：AuthToMe
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
 # Release 3.0.1042.1
 
 ## 音频内容安全(ams) 版本：2020-12-29

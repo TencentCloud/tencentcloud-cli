@@ -49,6 +49,7 @@ Output:
                 "Width": 1920
             },
             "URL": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
+            "CoverURL": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg",
             "VodFileId": "5285890802029089"
         }
     }

@@ -2496,6 +2496,16 @@
         },
         {
           "disabled": false,
+          "document": "对应于当前任务进度的输出文件大小，单位字节。该值可用于评估最终生成的文件大小，数值为粗略值，不保证精度。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。",
+          "example": "50",
+          "member": "uint64",
+          "name": "IntermediateFileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
           "example": "0",
           "member": "uint64",
@@ -8211,30 +8221,30 @@
         {
           "disabled": false,
           "document": "导出的多媒体创作引擎媒体 Id，仅当导出目标为多媒体创作引擎媒体时有效。",
-          "example": "无",
+          "example": "5f73f8ad54953bce323f",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云点播媒资 FileId。",
-          "example": "无",
+          "example": "2c65f425b86ad532",
           "member": "string",
           "name": "VodFileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "导出的媒资 URL。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.mp4",
           "member": "string",
           "name": "URL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8244,17 +8254,17 @@
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "导出视频的封面图片 URL。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.jpg",
           "member": "string",
           "name": "CoverURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
